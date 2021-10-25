@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>オブジェクト指向プログラミングとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="オブジェクト指向とはなんぞやという難しいことを記述する前に、オブジェクト指向で書かれたモジュールを使ってみましょう。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="オブジェクト指向プログラミングとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="オブジェクト指向とはなんぞやという難しいことを記述する前に、オブジェクト指向で書かれたモジュールを使ってみましょう。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161030147778.html">
+      <span itemprop="name">オブジェクト指向</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">オブジェクト指向プログラミングとは</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20090307123532.html">オブジェクト指向プログラミングとは</a></h2>
+<p>
+  オブジェクト指向とはなんぞやという難しいことを記述する前に、オブジェクト指向で書かれたモジュールを使ってみましょう。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>オブジェクト指向で書かれたモジュールの使用方法</h3>
+<p>
+  オブジェクト指向で書かれたモジュールを使用するには、まずモジュールを<strong>useを使用して読み込み</strong>ます。CGIモジュールを読み込んでみます。
+</p>
+<pre>
+use CGI;
+</pre>
+<p>
+  オブジェクトを作成するには、<strong>モジュール名->new</strong> のように記述します。作成されたオブジェクトを$cgiに代入しています。
+</p>
+<pre>
+my $cgi = CGI-&gt;new();
+</pre>
+<p>
+  <strong>newはオブジェクトを作成するためのメソッド</strong>でコンストラクタと呼ばれます。<strong>メソッドとは、-> から呼び出せる関数</strong>だと最初は考えればよいです。
+</p>
+<p>
+  new以外のメソッドも呼び出してみましょう。
+</p>
+<pre>
+my $str = $cgi-&gt;h1( 'a' );
+</pre>
+<p>
+  h1 メソッドは文字列を受け取って
+</p>
+<pre>
+&lt;h1&gt;...&lt;/h1&gt;
+</pre>
+<p>
+  という文字列を返却します。
+</p>
+<h3>サンプル</h3>
+<p>
+  ここまでの記述をサンプルにまとめておきます。
+</p>
+<pre>
+use strict;
+use warnings;
+
+use CGI;
+my $cgi = CGI-&gt;new;
+my $str = $cgi-&gt;h1('a');
+
+# &lt;h1&gt;a&lt;/h1&gt; と出力される
+print $str; 
+</pre>
+<h3>オブジェクト指向の特徴</h3>
+<p>
+  オブジェクト指向では、<strong>メソッドは->を使ってモジュール名かオブジェクトから</strong>呼び出されます。
+</p>
+<table>
+  <tr>
+    <td>
+      記述
+    </td>
+    <td>
+      メソッドの呼び出し方法
+    </td>
+  </tr>
+  <tr>
+    <td>
+      CGI->new()
+    </td>
+    <td>
+       モジュール名からの呼び出し
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $cgi->h1
+    </td>
+    <td>
+       オブジェクトからの呼び出し
+    </td>
+  </tr>
+</table>
+<p>
+  メソッドがモジュール名かオブジェクトから呼び出されるというのがオブジェクト指向のひとつの特徴です。
+</p>
+<h3>Javaでのクラスの使い方</h3>
+<p>
+  javaをでの記述もPerlとほぼ同じになることがわかると思います。
+</p>
+<pre>
+import java.awt.Button;
+import java.lang.Math;
+
+# Buttonクラスからコンストラクタ(new に該当)を呼び出す
+Button btn = new Button();
+
+# btnオブジェクトから描画を行うpaintメソッドを呼び出す
+btn.paint();
+
+# Math クラスから絶対値を返すabsメソッドを呼び出す
+Math.abs(-3);
+</pre>
+<h3>Perlでのクラスとは</h3>
+<p>
+  Perlにはクラスを作る専用の文法はありません。Perlでクラスといった場合には、単にオブジェクト指向で書かれたモジュールのことを指します。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

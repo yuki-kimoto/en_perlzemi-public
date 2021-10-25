@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>IO::Capture - 標準出力・標準エラー出力をキャプチャ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="標準出力を試験した場合がときどきあります。対話的なプログラミングを作成したり、print をソースコードの中で使用している関数を試験したい場合などです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="IO::Capture - 標準出力・標準エラー出力をキャプチャ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="標準出力を試験した場合がときどきあります。対話的なプログラミングを作成したり、print をソースコードの中で使用している関数を試験したい場合などです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20090304123521.html">IO::Capture - 標準出力・標準エラー出力をキャプチャ</a></h2>
+<p>
+  標準出力を試験した場合がときどきあります。対話的なプログラミングを作成したり、print をソースコードの中で使用している関数を試験したい場合などです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  標準出力を取得するには、<a href="http://search.cpan.org/dist/IO-Capture/lib/IO/Capture.pm">IO::Capture</a>というモジュール使用します。標準出力が取得できれば、いつもどおりの自動試験を行うだけです。
+</p>
+<p>
+  IO::Captureは標準モジュールではないので、
+</p>
+<pre>
+cpan IO::Capture
+</pre>
+<p>
+  でインストールします。
+</p>
+<h3>1. 標準出力をキャプチャする</h3>
+<p>
+  標準出力を取得するには、IO::Capture::Stdoutモジュールを使用します。IO::Captureモジュールをインストールすると一緒についてきます。
+</p>
+<p>
+  startメソッドでキャプチャ開始、stopメソッドでキャプチャ終了です。そのあとに、readメソッドを呼び出すと、キャプチャした標準出力を取得できます。
+</p>
+<pre>
+use IO::Capture::Stdout;
+
+my $capture = IO::Capture::Stdout-&gt;new;
+$capture-&gt;start;
+print "aaa";
+$capture-&gt;stop;
+my $stdout = $capture-&gt;read;
+</pre>
+<p>
+  複数回の標準出力を取得したい場合は以下のように記述できます。
+</p>
+<pre>
+$capture-&gt;start;
+print "aaa";
+print "bbb";
+$capture-&gt;stop;
+my @stdout = $capture-&gt;read;
+</pre>
+<p>
+  リストコンテキストで、readを呼び出すと、("aaa", "bbb") が取得できます。
+</p>
+<h4>標準の機能だけを使って標準出力をキャプチャする方法</h4>
+<p>
+  モジュールを使わないで、標準の機能だけを使って標準出力をキャプチャする方法も存在したので、記述しておきます。
+</p>
+<p>
+  open関数で、STDOUTの出力先を切り替える方法です。
+</p>
+<pre>
+my $stdout;
+
+# STDOUTのキャプチャを開始
+open my $temp, '&gt;&amp;', STDOUT;
+close STDOUT;
+open STDOUT, '&gt;', \$stdout;
+
+print "hoge";
+
+# STDOUTのキャプチャを終了
+close STDOUT;
+open STDOUT, '&gt;&amp;', $temp;
+close $temp;
+
+print $stdout; # "hoge"が出力
+</pre>
+<h3>2. 標準エラー出力をキャプチャする</h3>
+<p>
+  IO::Capture::Stderr を使って同じようにできます。
+</p>
+<pre>
+use IO::Capture::Stderr;
+
+my $capture = IO::Capture::Stderr-&gt;new;
+$capture-&gt;start;
+print STDERR "aaa";
+$capture-&gt;stop;
+my $stderr = $capture-&gt;read;
+</pre>
+<h4>標準の機能だけを使って標準エラー出力をキャプチャする方法</h4>
+<p>
+  モジュールを使わないで、標準の機能だけを使って標準エラー出力をキャプチャする方法も存在したので、記述しておきます。
+</p>
+<p>
+  open関数で、STDERRの出力先を切り替える方法です。
+</p>
+<pre>
+my $stderr;
+
+# Start capture STDERR
+open my $temp, '&gt;&amp;', STDERR;
+close STDERR;
+open STDERR, '&gt;', \$stderr;
+
+print STDERR "hoge";
+
+# End capture STDERR
+close STDERR;
+open STDERR, '&gt;&amp;', $temp;
+close $temp;
+
+
+print $stderr; # "hoge" が出力
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

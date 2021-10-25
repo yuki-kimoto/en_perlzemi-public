@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>なぜPerlで例外処理のfinallyが特に必要と感じないかを考えてみた - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlでは例外を発生させるにはdieを使います。これはJava言語でいうthrowにあたります。例外をキャッチするにはevalを使用します。これはJava言語でいうcatchにあたります。例外が発生したかどうかは$@にメッセージが設定されたかで判定できます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="なぜPerlで例外処理のfinallyが特に必要と感じないかを考えてみた - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlでは例外を発生させるにはdieを使います。これはJava言語でいうthrowにあたります。例外をキャッチするにはevalを使用します。これはJava言語でいうcatchにあたります。例外が発生したかどうかは$@にメッセージが設定されたかで判定できます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20130220136137.html">
+        <span itemprop="name">読み物</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20100531127859.html">なぜPerlで例外処理のfinallyが特に必要と感じないかを考えてみた</a></h2>
+<p>
+  Perlでは例外を発生させるにはdieを使います。これはJava言語でいうthrowにあたります。例外をキャッチするには<a href="/blog/20100312126967.html">eval</a>を使用します。これはJava言語でいうcatchにあたります。例外が発生したかどうかは$@にメッセージが設定されたかで判定できます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# Perlの例外処理
+
+eval {
+  # 例外を発生させる処理
+}
+
+if ($@) {
+  
+}
+</pre>
+<p>
+  Perlには知ってのとおりfinally文がありません。でも特に困るというような話を聞きません。なぜでしょうか。finally文で実行される処理は、ほとんどの場合、外部リソースの解放です。ファイルを閉じたり、一時ファイルを削除したり、DBへの接続を解放したりする処理です。このような処理をfinally文で実行したいという要望があります。
+</p>
+<p>
+  なぜJavaではfinally文は必須なのでしょうか。JavaではGCが「世代別GC」という仕組みを利用しているために、オブジェクトの解放のタイミングをプログラマが把握することができないからです。Javaではファイナライザでリソースの解放を行ってはいけません。ですからfinnaly文は必須のものになっています。
+</p>
+<p>
+  PerlのGCは単純な参照カウント方式を利用していますから、オブジェクトが解放されたタイミングでデストラクタを確実に実行することができます。この位置にリソースの解放のロジックを記述することができるため、finally文は必須の機能とはされていないと感じます。
+</p>
+<p>
+  またrubyはGCがマークアンドスイープなので、「デストラクタは利用しないように設計すべき」です。ですのでfinally文(Rubyではeusure文)はぜひとも必要な機能になります。
+</p>
+<p>
+  Perlにfinally文がないからといって、大きな不便があるかというとないというのが実感です。ですからPerlの例外処理は駄目で、finallyを実装している例外処理はすばらしいという考え方は妥当な評価ではないと思われます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

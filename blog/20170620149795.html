@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlが30倍速くなるかもしれないSPVMの開発版をリリースしました。 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlが30倍速くなるかもしれないSPVMの開発版をリリースしました。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlが30倍速くなるかもしれないSPVMの開発版をリリースしました。 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlが30倍速くなるかもしれないSPVMの開発版をリリースしました。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20170620149795.html">Perlが30倍速くなるかもしれないSPVMの開発版をリリースしました。</a></h2>
+<p>
+  <b>Perlが30倍速くなるかもしれないSPVMの開発版をリリースしました。</b>
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<blockquote>
+<p>
+  <a href="https://metacpan.org/pod/SPVM">SPVM(CPAN)</a>
+</p>
+</blockquote>
+<p>
+  かもしれないと書いたのはベンチマークをまだとってないからで、理論的にはJava VMの速度まで、近づけることができるんじゃないかなと思うから。
+</p>
+<p>
+  開発版なので、まだ機能が足りないのだけれど、CPANにリリースして、CentOS, FreeBSD, Windowsで動かすところまでやったので、ここで公開します。Macを持っていないので、Macの方は、CPANからインストールできるか確認していただけるとありがたいです。
+</p>
+<ul>
+  <li>
+    <b>SPVMはPerlに似た新しいプログラミング言語で、バーチャルマシン上で動き、関数をPerlから簡単に呼び出すことができる。</b>
+  </li>
+  <li>
+    <b>完全な静的型を持ち、Javaと同じデータ型、byte, short, int, long, float, doubleを持つ</b>
+  </li>
+  <li>
+    <b>モジュールを書いてすぐに実行できる。XSのように事前のコンパイルはいらない。</b>
+  </li>
+  <li>
+    64ビット整数をサポートしている環境のみサポート(longの値が渡せない受け取れないため)
+  </li>
+</ul>
+<pre>
+use FindBin;
+use lib "$FindBin::Bin/lib";
+ 
+use SPVM 'MyModule2';
+ 
+my $total = SPVM::MyModule2::foo(3, 5);
+print $total . "\n";
+</pre>
+<p>
+  (参考)<a href="/blog/20100524127696.html">FindBin</a>
+</p>
+<p>
+  以下はSPVMのモジュールファイルで、拡張子は「spvm」です。
+</p>
+<pre>
+# lib/SPVM/MyModule1.spvm
+package MyModule1 {
+  has x : int;
+  has y : int;
+   
+  sub sum ($a : int, $b : int) : int {
+     
+    my $total = $a + $b;
+     
+    return $total;
+  }
+}
+ 
+# lib/SPVM/MyModule2.spvm
+use MyModule1;
+package MyModule2 {
+   
+  sub foo ($a : int, $b : int) : int {
+     
+    my $total = ($a * $b) + MyModule1::sum(2, 4);
+     
+    return $total;
+  }
+}
+</pre>
+<p>
+  用語や文法は、できる限りPerlと同じにしています。Perlを書きなれた人が、すぐに書くことができるように。<a href="/blog/20100809127859.html">XS</a>のように事前のコンパイルの必要はありません。
+</p>
+<h3>開発中に考えていたこと</h3>
+<p>
+  CPANリリースまで、来たので、ここまで開発中に考えていたことを書いておく。
+</p>
+<h4>動機</h4>
+<p>
+  動機は、統計・解析と機械学習のために、Perlの集合演算を速くしたいというものだ。Perlの弱点は数値演算と集合演算で、Perlは、高速化を行うための、データ構造を持っていない。
+</p>
+<p>
+  たとえば、intの配列というものはなく、すべてのデータはSV構造体に入れられ、それが、メモリ上に飛び飛びに配置される。また関数は、スタック上に、整数型や浮動小数点型を積むことはできない。
+</p>
+<p>
+  Perlは文字列に関しては、優秀なパフォーマンスを出しますが、数値計算と集合演算に関しては、ものすごく悪いパフォーマンスだ。
+</p>
+<p>
+  これを解決するためには、XSというC言語拡張を書くしかない。でも、XSは、ものすごく難しいし、メモリ管理に失敗するとセグメンテーションフォールトが起こるし、事前にコンパイルする必要がある。
+</p>
+<p>
+  もちろん、速度はC言語なので、ピカイチなのだけれど、PerlとXSの中間地点で、もう少し簡単で、安全で、書ける方法はないかと考えていた。
+</p>
+<p>
+  僕は<a href="http://search.cpan.org/dist/Rstats/lib/Rstats.pm">Rstats</a>というR言語のAPIをPerlに持ってくるためのプロジェクトをC++で書いていたのだけれど、行き詰ってしまった。
+</p>
+<p>
+  それは、集合演算を書くためには、つねに、XSを書かないといけないという部分だ。XSの最大の弱点は、モジュール化ができないということだ。XSで書いたコードを、Perlから呼び出すことは簡単だけれど、XSどうしで運用するのは、不可能に近い。
+</p>
+<ul>
+  <li>
+    <b>適切なデータ構造</b>
+  </li>
+  <li>
+    <b>高速な処理</b>
+  </li>
+  <li>
+    <b>モジュール化</b>
+  </li>
+  <li>
+    <b>Perlから簡単に利用できる</b>
+  </li>
+</ul>
+<h3>試行錯誤</h3>
+<p>
+  これをPerlでやろうと思ったときに、方法を考えていたのだけれど、いろいろと参考にした。
+</p>
+<h4>静的型</h4>
+<p>
+  pythonには<a href="http://blog.shibu.jp/article/51727956.html">RPython</a>というものがある。これは、pythonのサブセットで、pythonに静的型をつけようというものだ。
+</p>
+<p>
+  最近ではこれを真似して<a href="http://rperl.org/">RPerl</a>というのもある。
+</p>
+<p>
+  動的言語のサブセットとして、静的型をもたせるというアイデアは、グッっときた。
+</p>
+<p>
+  そうだ「静的型にして、集合演算に適切なデータ構造が必要だなぁ」という感じ。
+</p>
+<p>
+  静的型はパフォーマンスのためには必須だ。データがあらかじめ決定していれば、型の判定のための条件分岐をいれる必要がない。
+</p>
+<p>
+  最近のCPUは、分岐予測というものを行うから、最初は、数値、次は、浮動小数点、次は、オブジェクトのように、データ判定に条件分岐を使うと、そこで、速度が遅くなる。
+</p>
+<p>
+  静的型だとコンパイル時に、データが決定されるから、条件分岐を行うことがそもそもない。
+</p>
+<h4>型推論か自動型変換か</h4>
+<p>
+  実装していた感じたのは、型推論と自動型変換の両方を実装するのは、ちょっと無理があるということだった。
+</p>
+<p>
+  最初はgoのような型推論と、Javaのような自動型変換を両方実装していたのだけれど、両方実装するのは、きつい(というか無理?)という感じになってきたので、型推論の方を採用した。
+</p>
+<pre>
+# 型推論
+my $num = 5;
+</pre>
+<h4>バーチャルマシン</h4>
+<p>
+  次は、バーチャルマシン。最初は、コンパイル型がよいのか、バーチャルマシンが良いのかということを考えた。でも、コンパイルしてマシン語にするのはないなというのを考えて、バーチャルマシンでも、最終的にJITで最適化すれば、かなり速くなるんじゃないかなということを思った。
+</p>
+<p>
+  Java HotSpotは、かなり速くってC言語にかなり近い速度がでるようだし、バーチャルマシンにしておけば、後で、性能は何とかなるかなと考えた。
+</p>
+<h4>GC</h4>
+<p>
+  開発中は、Javaのように世代別GCにしようかなぁとも考えていたのだけれど、Perlとの相互運用を考えるとどうもうまくいかない。
+</p>
+<p>
+  Perlは、メモリをがばがばと使えるだけ使う。Perlのメモリ管理は、いわば<a href="http://marupeke296.com/CPP_No18_allocator.html">フリーリスト</a>のようなもので、リファレンスカウント式のGCだ。
+</p>
+<p>
+  Javaのメモリ管理は、ヒープが拡大していって、あるところで止める。ヒープの中で、世代別GCをする。
+</p>
+<p>
+  Perlとの相互運用をやるために、結論としては、リファレンスカウント方式のGCにした。循環参照の解決は、オブジェクトどうしの相互参照をできないようにした。単独のプログラミング言語であれば、、だめなんだけど、Perlから運用するから、とりあえず、これでいってみようという形。
+</p>
+<p>
+  オブジェクトの配列は作れる、配列の配列も作れる、オブジェクトは、数値型と数値の配列型を所有できる。オブジェクトは、オブジェクトと、オブジェクトの配列を所有できない。これで、循環参照を回避。うまくいかなかったときはまた考えればいいさ。
+</p>
+<h3>技術</h3>
+<p>
+  技術的な話題を。SPVMは、C言語で書いています。理由は、PerlがC言語で書かれているので、C言語で書いておけば、もっとも安全で、問題が起こりにくいから。
+</p>
+<h4>字句解析</h4>
+<p>
+  字句解析は自前で書いてます。spvm_toke.c
+</p>
+<h4>構文解析</h4>
+<p>
+  構文解析はbison(yaccのラッパ)を使ってます。spvm_yacc.y。
+</p>
+<h4>構文木の作成</h4>
+<p>
+  抽象構文木の作成はspvm_op.c。
+</p>
+<p>
+  部分的に解析するのではなくって、すべてのソースコードを読み込んでから、解析するような実装です。すべてのパッケージ、フィールド、サブルーチンを読み込んでから、型チェック、構文チェックを行う。
+</p>
+<h4>定数プールの生成</h4>
+<p>
+  環境として定数プールを持っています。constant_pool.c
+</p>
+<h4>バイトコードの生成</h4>
+<p>
+  バイトコードは90%がJava VMを参考にしています。spvm_bytecode_builder.c。
+</p>
+<h4>ランタイム - サブルーチンの実行</h4>
+<p>
+  サブルーチンの実行は、ランタイムで。spvm_runtime.c。ここで、バイトコードが解析されて実行されます。ダイレクトスレッディドコードになっています。
+</p>
+<h4>グローバル変数、マクロ関数と定数のマクロ定義なし</h4>
+<p>
+  C言語で、使わないほうがよいとされている、グローバル変数、マクロ関数、定数のマクロ定義を0個にしました。使ったら負けだという意思を貫くと、複雑なソースコードでも、なしで行けるという確信が持てた。
+</p>
+<p>
+  唯一使っているのは、インクルードガードだけ。
+</p>
+<h4>辛かったこと・発見したこと</h4>
+<p>
+  字句解析はまぁまぁ簡単。yaccは、reduce/reduceとの闘い。どうやったら、reduce/reduceしないか試行錯誤。構文木の構築は、辛い。ツリー構造というのは、きつい。それが、やたら多い。再帰処理は、精神的にきつい。
+</p>
+<p>
+  If else文を作るのが意外と難しい。どこでどうジャンプするバイトコードに置き換えるか。for文のほうが難しそうだけど、If elseのほうが実装がちょっと難しい。
+</p>
+<p>
+  ランタイムは、バイトコードと定数プールだけの情報で、実行できるようにしなくちゃいけなかったこと。解析機とランタイムは、完全に分離させて、解析機のメモリを解放したとしても、ランタイムを動かさないといけない。
+</p>
+<p>
+  C言語はメモリ管理との戦い。すべてのメモリ管理を自前で実装しないといけない。動的配列、連想配列、メモリプールというデータ構造も、自前で実装。コードを書けば書くほど、作らないといけない部品が、あらたにあることがわかってくる。
+</p>
+<h3>今後</h3>
+<p>
+  今後は、バグをなくすのと、Perlからの型変換を実装するのと、SPVMのデータ仕様を書くのと、やります。
+</p>
+<p>
+  Macを持っていないので、Macで、インストールできるか、確認していただけるとありがたいです。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

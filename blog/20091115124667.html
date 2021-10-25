@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Net::FTP - FTPを使ったファイル転送 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Net::FTPを使用すると、FTPでファイルのダウンロード・アップロードができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Net::FTP - FTPを使ったファイル転送 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Net::FTPを使用すると、FTPでファイルのダウンロード・アップロードができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20091115124667.html">Net::FTP - FTPを使ったファイル転送</a></h2>
+<p>
+  Net::FTPを使用すると、FTPでファイルのダウンロード・アップロードができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  IT関連の仕事ではサーバにアクセスしてファイルをダウンロード・アップロードすることが頻繁にあります。FFFTPなどのFTPのクライアントのソフトウェアなどを使用してこれを行うのは非常に手間がかかります。できれば自動化したいと思うことでしょう。
+</p>
+<p>
+  PerlにはFTPを行うためのクライアントアプリケーションを作成するためのNet::FTPというモジュールが標準で添付されています。Net::FTPを使えばファイルのダウンロード・アップロード作業は自動化され業務の効率化を図ることができます。
+</p>
+<h3>FTPとは</h3>
+<p>
+  FTPはファイルを転送するためのプロトコルです。FTPを使用すればファイルのアップロードやダウンロードを行うことができます。FTPのもうすこし解説は「<a href="http://www5e.biglobe.ne.jp/~aji/3min/56.html">第56回FTP(1) 概要(3分間Networking</a>」がわかりやすいと思います。
+</p>
+<p>
+  ここでは詳しい解説は行わずにFTPサーバに接続してファイルをダウンロードする手順を簡単に解説します。FTPサーバに接続してファイルをダウンロードするには次の3つ手順を踏みます。
+</p>
+<ol>
+  <li>
+    ホスト名(あるいはIPアドレス)を指定してFTPサーバに接続する。
+  </li>
+  <li>
+    ユーザ名とパスワードを入力してログインする
+  </li>
+  <li>
+    FTPコマンドを使用してファイルをダウンロードする
+  </li>
+  <li>
+    接続を終了する
+  </li>
+</ol>
+<h3>ファイルをダウンロードする簡単なサンプル</h3>
+<p>
+  実際にファイルをダウンロードする簡単なサンプルを書いてみます。
+</p>
+<pre>
+# モジュールの読み込み
+use Net::FTP;
+
+# FTPサーバへの接続(ホスト名でもIPアドレスでもOK)
+my $ftp = Net::FTP-&gt;new('somehost');
+
+# ユーザ名とパスワードを指定してログイン
+$ftp-&gt;login('user', 'password');
+
+# getというファイルを取得するコマンドを使ってファイルをダウンロード
+$ftp-&gt;get('/dir/somefile');
+
+# 接続を終了する
+$ftp-&gt;quit;
+</pre>
+<p>
+  newメソッドに接続先を指定するとFTPサーバに接続することができます。また戻り値にはオブジェクトが返却されこれを利用してログインしたりFTPコマンドを発行したりします。
+</p>
+<p>
+  loginメソッドにユーザ名とパスワードを指定するとFTPサーバにログインすることができます。ログインというのは簡単にいうとサーバによってFTPコマンドを実行する許可が与えられた状態のことをいいます。
+</p>
+<p>
+  getというメソッドを使用するとファイルをダウンロードすることができます。ファイルはカレントディレクトリにダウンロードされます。ファイル名はディレクトリ名を含まない末尾の名前(このサンプルではsomefile)になります。
+</p>
+<h3>よく使用するメソッド</h3>
+<p>
+  よく使用するメソッドについて紹介します。
+</p>
+<h4>new</h4>
+<p>
+  Net::FTPオブジェクトを作成してFTPサーバに接続します。
+</p>
+<pre>
+$ftp = Net::FTP-&gt;new($host);
+</pre>
+<p>
+  引数にはホスト名かIPアドレスを指定することができます。また第2引数以降はオプションを指定することができます。オプションはハッシュのリファレンスで指定します。よく使用するオプションとしてはタイムアウトの秒数を設定するためのTimeoutなどがあります。デフォルトのタイムアウトの秒数は120秒です。
+</p>
+<pre>
+$ftp = Net::FTP-&gt;new($host, Timeout =&gt; 180)
+</pre>
+<h4>login</h4>
+<p>
+  ユーザ名とパスワードを指定してログインします。
+</p>
+<pre>
+$ftp-&gt;login($user, $password)
+</pre>
+<p>
+  匿名でFTPサーバに接続する場合はユーザ名に「anonymous」を指定します。
+</p>
+<pre>
+$ftp-&gt;login('anonymous')
+</pre>
+<h4>cwd</h4>
+<p>
+  接続先のカレントディレクトリを変更します。
+</p>
+<pre>
+$ftp-&gt;cwd($dir)
+</pre>
+<p>
+  FTPはステートフルなプロトコルで接続先のディレクトリを変更することができます。ファイルをダウンロードする場合はカレントディレクトリを変更してからファイル名だけを指定するのが一般的かもしれません。
+</p>
+<pre>
+$ftp-&gt;cwd('dir')     # カレントディレクトリ変更
+$ftp-&gt;get('somefile') # ファイルのダウンロード
+</pre>
+<h4>get</h4>
+<p>
+  ファイルをダウンロードするにはgetを使用します。
+</p>
+<pre>
+$ftp-&gt;get($file)
+</pre>
+<p>
+  第2引数にファイル名を指定すると名前を変えてダウンロードを行うことができます。
+</p>
+<pre>
+$ftp-&gt;get($file, $renamed_file)
+</pre>
+<h4>put</h4>
+<p>
+  ファイルをアップロードするにはputを使用します。
+</p>
+<pre>
+$ftp-&gt;put($file$)
+</pre>
+<p>
+  第2引数にファイル名を指定すると名前を変えてアップロードを行うことができます。
+</p>
+<pre>
+$ftp-&gt;put($file, $renamed_file)
+</pre>
+<h4>binary</h4>
+<p>
+  ファイルの転送モードをバイナリモードに変更します。
+</p>
+<pre>
+$ftp-&gt;binary
+</pre>
+<p>
+  FTPにはファイルの転送モードという考え方があります。転送モードにはバイナリモードとアスキーモードの2種類があります。
+</p>
+<p>
+  バイナリモードを指定するとファイルを転送するときに何の変換も行いません。画像ファイルや動画ファイルなどを転送する場合はかならずバイナリモードで転送する必要があります。
+</p>
+<h4>ascii</h4>
+<p>
+  ファイルの転送モードをアスキーモードに変更します。
+</p>
+<pre>
+$ftp-&gt;ascii
+</pre>
+<p>
+  アスキーモードを指定すると改行コードの自動変換を行ってくれます。たとえばWindowsのデフォルトの改行コードは\r\nです。Unixのデフォルトの改行コードは\nです。Windowsのメモ帳などで作成したファイルをそのままUnixに転送すると正しく表示することができません。アスキーモードで転送するとこの変換を自動で行ってくれます。
+</p>
+<h4>ls</h4>
+<p>
+  ファイル名の一覧を取得します。
+</p>
+<pre>
+@files = $ftp-&gt;ls($dir)
+</pre>
+<p>
+  ディレクトリ名を省略した場合は接続先のカレントディレクトリに含まれるファイルの一覧を取得します。
+</p>
+<p>
+  ファイルの存在を確認するには、lsメソッドを使って、ファイルの一覧を取得して、確認します。
+</p>
+<h4>dir</h4>
+<p>
+  ファイル名の一覧を詳細な情報を含めて取得します。
+</p>
+<pre>
+@file_infos = $ftp-&gt;dir($dir)
+</pre>
+<p>
+  dirコマンドはOS依存です。そのOSで「ls -l」を実行した出力結果が得られます。たとえば私の現在使用しているFedora7の場合は次のような出力になります。
+</p>
+<pre>
+-rw-r--r--  1 someuser  somegroup   6618 Aug  8 17:22 button.html
+-rwxr-xr-x  3 someuser  somegroup    512 Apr  1  2009 a.pl
+-rwx------  1 someuser  somegroup     77 Apr  1  2009 mm.txt
+</pre>
+<h4>rmdir</h4>
+<p>
+  ディレクトリを削除します。
+</p>
+<pre>
+# ディレクトリの削除
+$ftp-&gt;rmdir($dir)
+</pre>
+<h4>mkdir</h4>
+<p>
+  ディレクトリを作成します。第二引数が真であれば、再帰的にディレクトリを作成します。
+</p>
+<pre>
+# ディレクトリを作成
+$ftp-&gt;mkdir($dir)
+
+# 再帰的にディレクトリを作成
+$ftp-&gt;mkdir($dir, $is_recurse)
+</pre>
+<h4>quit</h4>
+<p>
+  FTPサーバーとの接続を閉じます。
+</p>
+<pre>
+$ftp-&gt;quit;
+</pre>
+<h4>ときどき使用するメソッド</h4>
+<p>
+  ときどき使用するメソッドです。
+</p>
+<table>
+  <tr>
+    <td>
+      メソッド名
+    </td>
+    <td>
+      機能
+    </td>
+  </tr>
+  <tr>
+    <td>
+      pwd
+    </td>
+    <td>
+      接続先のカレントディレクトリの取得
+    </td>
+  </tr>
+  <tr>
+    <td>
+      rename
+    </td>
+    <td>
+      ファイル名の変更
+    </td>
+  </tr>
+  <tr>
+    <td>
+      mkdir
+    </td>
+    <td>
+      ディレクトリの作成
+    </td>
+  </tr>
+  <tr>
+    <td>
+      rmdir
+    </td>
+    <td>
+      ディレクトリの削除
+    </td>
+  </tr>
+  <tr>
+    <td>
+      size
+    </td>
+    <td>
+      ファイルサイズの取得
+    </td>
+  </tr>
+</table>
+<h4>すべてのメソッドの一覧</h4>
+<p>
+  メソッドのすべての一覧はNet::FTPのマニュアルを参照してください。
+</p>
+<p>
+  <a href="http://perldoc.jp/docs/modules/libnet-1.12/Net/FTP.pod">Net::FTP(perldocjp)</a>
+</p>
+<h3>Net::FTPのエラー処理</h3>
+<p>
+  実は最初のサンプルではNet::FTPの使い方を簡潔に説明するためにエラー処理を省いていました。Net::FTPはコマンドなどが失敗した場合に例外を投げてくれないので自前でエラー処理を行う必要があります。最初のサンプルにエラー処理を加えると次のようになります。
+</p>
+<pre>
+# FTPサーバへの接続
+my $ftp = Net::FTP-&gt;new('somehost')
+  or die "Cannot connect to '$host': $!";
+
+# ログイン
+$ftp-&gt;login('user', 'password')
+  or die "Cannot login '$host:$user:$password': " . $ftp-&gt;message;
+
+# ダウンロード
+$ftp-&gt;get('/dir/somefile');
+  or die "FTP command fail: " . $ftp-&gt;message;
+
+$ftp-&gt;quit;
+</pre>
+<p>
+  エラー処理はなぜ行う必要があるのでしょうか?それはFTPサーバは外部にあるため確実に成功する保障はどこにもないからです。ネットワークのエラーやサーバのダウンなどで接続できないというときのことについて考える必要があります。
+</p>
+<p>
+  またホスト名が間違っていた場合は接続に失敗します。このような場合に残りの処理を続けたとしても意味がありません。わかりやすいエラーメッセージを表示してプログラムは止まるべきです。
+</p>
+<p>
+  ではNet::FTPのエラー処理について簡単に解説します。
+</p>
+<h4>[A]接続のエラー処理</h4>
+<p>
+  newメソッドでFTPサーバへの接続に失敗した場合は戻り値はundefになりますのでor dieをしてプログラムを終了させます。OSのエラーメッセージである$!を含めておきましょう。
+</p>
+<pre>
+my $ftp = Net::FTP-&gt;new('somehost')
+  or die "Cannot connect to '$host': $!";
+</pre>
+<h4>[B]それ以外のエラー処理</h4>
+<p>
+  接続した後にエラーが発生した場合は$ftp->messageでエラーの内容を取得することができます。このエラーメッセージをエラーメッセージに含めるようにします。
+</p>
+<pre>
+# ログイン
+$ftp-&gt;login('user', 'password')
+  or die "Cannot login '$host:$user:$password: '" . $ftp-&gt;message;
+
+# ダウンロード
+$ftp-&gt;get('/dir/somefile');
+  or die "FTP command fail: " . $ftp-&gt;message;
+</pre>
+<h3>Net::FTPの実行できるサンプル</h3>
+<p>
+  ユーザとパスワードを指定するFTPサーバにはサンプルでは接続することができません。パスワードを指定しないでもよい匿名サーバからファイルをダウンロードしてみます。CPANのミラーサイトからCPANのトップページ(index.html)をダウンロードするサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+use Net::FTP;
+
+my $host = 'ftp.u-aizu.ac.jp';
+my $user = 'anonymous';
+
+my $ftp = Net::FTP-&gt;new($host)
+  or die "Cannot connect to '$host': $!";
+
+$ftp-&gt;login($user)
+  or die "Cannot login '$host:$user':" . $ftp-&gt;message;
+
+$ftp-&gt;cwd('/pub/CPAN')
+  or die "FTP command fail: " . $ftp-&gt;message;
+
+$ftp-&gt;get('index.html')
+  or die "FTP command fail: " . $ftp-&gt;message;
+
+$ftp-&gt;quit;
+</pre>
+<h3>FTPSによる接続 - FTP over SSL/TLS</h3>
+<p>
+  Net::FTPによるFTPSによる接続方法について解説します。FTPSは、SSL/TSL上でFTP接続するプロトコルです。SSH上でファイル転送を行うSFTPとは、異なるものなので注意してください。
+</p>
+<p>
+  ここでは、FTPのポート番号(標準で21)でFTP接続した後に、AUTHコマンドでSSL接続要求を行う「明示的なTSL/SSL暗号化」を行う方法について解説します。
+</p>
+<p>
+  Net::FTPは、IO::Socket::SSLがインストールされている場合、FTPSを使って通信を行うことができます。IO::Socket::SSLのバージョンが古い場合は、アップグレードしてください。
+</p>
+<p>
+  「明示的なTSL/SSL暗号化」を行うには、newメソッドで接続した直後に、starttlsメソッドを呼び出すだけです。上記のサンプルを「明示的なTSL/SSL暗号化」で書き直してみましょう。
+</p>
+<pre>
+use strict;
+use warnings;
+
+use Net::FTP;
+
+my $host = 'ftp.u-aizu.ac.jp';
+my $user = 'anonymous';
+
+my $ftp = Net::FTP-&gt;new($host)
+  or die "Cannot connect to '$host': $!";
+
+# 明示的なTSL/SSL暗号化を開始
+$ftp-&gt;starttls() or die "Can't upgrade start TLS:";
+
+$ftp-&gt;login($user)
+  or die "Cannot login '$host:$user':" . $ftp-&gt;message;
+
+$ftp-&gt;cwd('/pub/CPAN')
+  or die "FTP command fail: " . $ftp-&gt;message;
+
+$ftp-&gt;get('index.html')
+  or die "FTP command fail: " . $ftp-&gt;message;
+
+$ftp-&gt;quit;
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

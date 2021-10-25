@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>クラスを継承する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="今回は他のクラスを継承する方法について解説します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="クラスを継承する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="今回は他のクラスを継承する方法について解説します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161030147778.html">
+      <span itemprop="name">オブジェクト指向</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">クラスの継承</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20090324123747.html">クラスを継承する</a></h2>
+<p>
+  今回は他のクラスを継承する方法について解説します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>他のクラスを継承する</h3>
+<p>
+  他のクラスを継承してみます。少し注意してほしいことがあります。通常はクラスというものは、ファイル単位で作成します。もしパッケージ名を、Componet にしたとすると、そのパッケージだけを含んだファイルをComponent.pm という名前をつけて保存します。
+</p>
+<p>
+  そして、そのクラスを利用したいスクリプトから呼び出します。けれども、解説を簡易にするために、多くのサンプルでは、ひとつのファイルの中に複数のクラスを記述します。
+</p>
+<p>
+  x, y というメソッドを持つComponentというクラスを継承したButtonクラスの例を考えてみます。
+</p>
+<h3>@ISAを使用した継承</h3>
+<p>
+  Perlの継承はどのような仕組みで動くのでしょうか。それを説明するために以下のサンプルを動かしてみましょう。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# コンポーネントクラス
+package Component;
+sub x { return 5 }
+
+
+# ボタンクラス
+package Button;
+# 継承
+our @ISA = ('Component');
+
+sub new { bless {}, 'Button' }
+
+package main;
+# ボタンクラスを使用する。
+my $button = Button-&gt;new;
+print $button-&gt;x;
+</pre>
+<p>
+  このスクリプトを動かしてみるとわかるのですが、 5と表示されると思います。大切なことは、Buttonクラスには、 x というメソッドはないにもかかわらず、 xというメソッドを呼ぶことができるということです。
+</p>
+<p>
+  Componentクラスにxというメソッドがあり、ButtonクラスがComponentクラスを継承しているので、このようなことができます。
+</p>
+<pre>
+our @ISA = ('Component');
+</pre>
+<p>
+  という部分に注目してください。これが継承を行っている部分です。継承するにはパッケージ変数 @ISA に継承したいクラスの名前を代入するだけです。
+</p>
+<pre>
+package main
+</pre>
+<p>
+  という部分が気になるかもしれません。クラスをファイルに分けて記述した場合はこの記述はいりません。
+</p>
+<p>
+  スクリプトが始まったときは、最初はmainパッケージというものに属しています。Button クラスを利用するときに、mainパッケージに戻って実行するのが自然なためそのようにしています。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

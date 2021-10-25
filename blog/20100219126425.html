@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>defined関数 - 値が定義されているかを確認する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="値が定義されているかを確認するにはdefined関数を使用します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="defined関数 - 値が定義されているかを確認する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="値が定義されているかを確認するにはdefined関数を使用します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161004147558.html">
+      <span itemprop="name">標準関数</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100219126425.html">defined関数 - 値が定義されているかを確認する</a></h2>
+<p>
+  値が定義されているかを確認するには<strong>defined関数</strong>を使用します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# 値が定義されているかの確認
+$is_defined = defined $value;
+</pre>
+<h3>定義されているとは</h3>
+<p>
+  defined関数で判定できる定義されている値とはなんでしょうか。考えてみましょう。
+</p>
+<p>
+  変数宣言した場合は、代入による初期化を行わなかった場合は未定義となります。
+</p>
+<pre>
+# 宣言直後は未定義
+my $value;
+</pre>
+<p>
+  値を代入すると、値が定義されている状態になります。
+</p>
+<pre>
+# 値を代入したので定義されている状態になる
+$value = 5;
+</pre>
+<p>
+  <a href="/blog/20100220126425.html">undef関数</a>を使って、未定義値が代入されると値は未定義になります。
+</p>
+<pre>
+# undefを代入すると未定義になる
+$value = undef;
+</pre>
+<h3>真偽値との違いは?</h3>
+<p>
+  defined関数で判定できる「定義されている/定義されていない」というのは「真/偽」という概念とは異なることに注意してください。定義されているとは未定義値ではないということです。
+</p>
+<p>
+  一方、真であるというのはPerlにおける偽の値ではないということです。真偽値については以下の記事を参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080323120628.html">真偽値</a>
+  </li>
+</ul>
+<h3>「ハッシュの値が定義されている」と「キーが存在している」のとの違いは?</h3>
+<p>
+  <a href="/blog/20080213120291.html">exists関数</a>を使うとハッシュのキーが存在しているかどうかを確認することができます。キーが存在していることと、値が定義されていることは異なることです。
+</p>
+<p>
+  defined関数による判定とexists関数による判定の結果は異なることがあります。
+</p>
+<p>
+  次のような場合は、値は未定義だけれど、ハッシュのキーは存在しているといえます。
+</p>
+<pre>
+my %scores;
+
+# キーは存在するが、値は未定義
+$scores{math} = undef;
+</pre>
+<h3>配列とハッシュへのdefine関数は廃止予定</h3>
+<p>
+  配列とハッシュは宣言されると未定義値にはならずに、空リストが代入されます。
+</p>
+<pre>
+my @nums;
+my %scores;
+</pre>
+<p>
+  これは以下と同じです。
+</p>
+<pre>
+my @nums = ();
+my %scores = ();
+</pre>
+<p>
+  配列やハッシュに対するdefined関数に使用は廃止予定となっています。代わりに単純に空リストであるかどうかをチェックしてください。
+</p>
+<pre>
+if (@nums) { ... }
+if (%scores) { ... }
+</pre>
+<h3>便利なDefined-or演算子</h3>
+<p>
+  値が未定義だった場合に右辺を代入できる<a href="/blog/20120702134129.html">Defined-or演算子</a>という便利な演算子があるので紹介しておきます。
+</p>
+<pre>
+my $num;
+
+# 未定義だったら「defined-or演算」を使って3を代入
+$num //= 3;
+</pre>
+<h3>サンプル</h3>
+<p>
+  defined関数を使って定義されているかどうかを確認するサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my $num = 3;
+
+if (defined $num) {
+  print "Defined\n";
+}
+else {
+  print "Not defined\n";
+}
+</pre>
+<p>
+  定義されていないことが主要なロジックであった場合は<a href="/blog/20100125126425.html">unless</a>と組み合わせるのも読みやすいです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my $num;
+unless (defined $num) {
+  print "Not defined\n";
+}
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

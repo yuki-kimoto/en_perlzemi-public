@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>複数階層のディレクトリを再帰的にコピー - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="複数階層のディレクトリを再帰的にコピーするにはFile::Findモジュールを使用します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="複数階層のディレクトリを再帰的にコピー - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="複数階層のディレクトリを再帰的にコピーするにはFile::Findモジュールを使用します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/"><span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161126148016.html"><span itemprop="name">ファイル操作</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080601121230.html">複数階層のディレクトリを再帰的にコピー</a></h2>
+<p>
+  複数階層のディレクトリを再帰的にコピーするには<a href="/blog/20080530121229.html">File::Find</a>モジュールを使用します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use strict;
+use warnings;
+use File::Path 'mkpath';
+use Fcntl;
+use File::Find 'find';
+use File::Copy 'copy';
+use Cwd 'getcwd';
+
+# 準備( ディレクトリとファイルの作成 )
+my $top_dir = "dir_20080601_$$";
+my @dirs = (
+  "$top_dir/dir1", "$top_dir/dir1/dir1_1", "$top_dir/dir1/dir1_2",
+  "$top_dir/dir2",
+);
+for my $dir (@dirs) {
+  eval{ mkpath $dir };
+  if (@!){ die "@!" }
+}
+
+my @files = (
+  "$top_dir/top.txt", "$top_dir/dir1/1.txt",
+  "$top_dir/dir1/dir1_1/1_1.txt", "$top_dir/dir1/dir1_2/1_2.txt",
+  "$top_dir/dir2/2.txt"
+);
+for my $file (@files) {
+  sysopen( my $fh, $file, O_WRONLY | O_CREAT | O_EXCL )
+    or die "$file を作成することができません。: $!";
+  close $fh;
+}
+print "準備: $top_dir を作成しました。\n\n";
+
+# 再帰的なディレクトリコピーのサンプル
+print "1: ディレクトリを再帰的にコピーする。\n";
+
+my $cur_dir = getcwd();
+# File::Find は、内部で、chdir を繰り返すので、
+# 絶対パスで、コピー先ディレクトリ名を作成。
+my $dir_copy_to = "$cur_dir/dir_20080601_${$}_cp"; 
+
+find(\&amp;recursive_copy, $top_dir);
+print "$top_dir が、$dir_copy_to にコピーされました。\n";
+
+# 再帰コピーするための関数
+sub recursive_copy {
+  # コピー元のファイルあるいはディレクトリ
+  my $file_from = $_;
+
+  # コピー元のトップディレクトリを
+  # コピー先のトップディレクトリに
+  # 置き換える。
+  my $file_to = $File::Find::name;       
+  $file_to =~ s#^$top_dir#$dir_copy_to#;
+                                        
+  if (-d $file_from) {
+    # ディレクトリは、コピーできないので、同じ名前で作成。
+    mkdir $file_to
+      or die "$file_to を作成することができません。\n";
+  }
+  else{
+    copy $file_from, $file_to
+      or die "$file_from を $file_to にコピーすることができません。\n";
+  }
+}
+</pre>
+<p>
+  (参考)<a href="/blog/20100409127089.html">File::Path</a>、<a href="/blog/20100408127089.html">File::Copy</a>、<a href="/blog/20100312126967.html">eval</a>、<a href="/blog/20080804121794.html">sysopen関数</a>、<a href="/blog/20180310152509.html">Fcntl</a>
+</p>
+<h3>複数階層のディレクトリを再帰的にコピーする</h3>
+<pre>
+find(\&amp;recursive_copy, $top_dir);
+
+# 再帰コピーするための関数
+sub recursive_copy {
+  # コピー元のファイルあるいはディレクトリ
+  my $file_from = $_;
+
+  # コピー元のトップディレクトリを
+  # コピー先のトップディレクトリに
+  # 置き換える。
+  my $file_to = $File::Find::name;       
+  $file_to =~ s#^$top_dir#$dir_copy_to#;
+                                        
+  if (-d $file_from) {
+    # ディレクトリは、コピーできないので、同じ名前で作成。
+    mkdir $file_to
+      or die "$file_to を作成することができません。\n";
+  }
+  else {
+    copy $file_from, $file_to
+      or die "$file_from を $file_to にコピーすることができません。\n";
+  }
+}
+</pre>
+<p>
+  ディレクトリを再帰的にコピーするには、File::Find モジュールを使って、ディレクトリの作成とファイルのコピーを繰り返します。トップディレクトリ以外の構成は、コピー元と同じなので、トップディレクトリ名だけを置きかえます。
+</p>
+<p>
+  ディレクトリは、コピーできないので、コピー先の名称で、作成してあげます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

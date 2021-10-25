@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlの変数 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlの変数についての解説です。変数宣言と変数の種類について解説します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlの変数 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlの変数についての解説です。変数宣言と変数の種類について解説します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">変数</span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20161107147852.html">Perlの変数</a></h2>
+<p>
+  Perlの変数についての解説です。変数宣言と変数の種類について解説します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>変数宣言</h3>
+<p>
+  Perlの変数宣言について解説します。
+</p>
+<h4>「my」による「レキシカル変数」の宣言</h4>
+<p>
+  「my」を使って「レキシカル変数」を宣言することができます。
+</p>
+<pre>
+# スカラ変数の宣言
+my $num;
+
+# 配列変数の宣言
+my @nums;
+
+# ハッシュ変数の宣言
+my %score;
+</pre>
+<p>
+  「my」を使った「レキシカル変数の宣言」の詳しい解説については以下の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080307120491.html">myを使ってレキシカル変数を宣言する</a>
+  </li>
+</ul>
+<h4>「our」による「パッケージ変数」の宣言</h4>
+<p>
+  「our」を使って「パッケージ変数」を宣言することができます。
+</p>
+<p>
+  パッケージ変数を宣言するには<strong>our</strong>を使用します。
+</p>
+<pre>
+# スカラ変数の宣言
+our $NUM;
+
+# 配列変数の宣言
+our @NUMS;
+
+# ハッシュ変数の宣言
+our %SCORE;
+</pre>
+<p>
+  「our」を使った「パッケージ変数の宣言」については以下の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080308120495.html">ourによるパッケージ変数の宣言</a>
+  </li>
+</ul>
+<h4>「local」による値の保存と復元</h4>
+<p>
+  「local」を使うと、パッケージ変数を一時的に保存して、スコープの終わりで、復元することができます。
+</p>
+<pre>
+our $NUM = 5;
+{
+  local $NUM = 3;
+}
+# ここで「$NUM」は「元の値」である「5」に戻る
+</pre>
+<p>
+  「local」による「値の保存と復元」については以下の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    localについては「<a href="/blog/20080309120507.html">local - パッケージ変数を一時的に退避して復元</a>」で解説しています。
+  </li>
+</ul>
+<h3>Perlの変数型</h3>
+<p>
+  Perlにはみっつの「変数型」である「スカラ変数」「配列変数」「ハッシュ変数」があります。C言語やJavaのように「int型」「double型」のように数値の型を示しているのではないので注意してください。
+</p>
+<h4>「スカラ変数」 - ひとつの値を格納</h4>
+<p>
+  「スカラ変数」は、変数の中にたった一つの何らかの値を、含むことができる。「$」を変数名の前につけることで、スカラ変数を表す。
+</p>
+<p>
+  <b>代表的なスカラ値</b>
+</p>
+<p>
+  代表的なスカラ値には以下のようなものがあります。
+</p>
+<ul class="check-list">
+<ul>
+  <li>
+    文字列
+  </li>
+  <li>
+    数値
+  </li>
+  <li>
+    リファレンス
+  </li>
+  <li>
+    未定義値(<a href="/blog/20100220126425.html">undef</a>)
+  </li>
+</ul>
+</ul>
+<p>
+  <b>スカラ値のスカラ変数への代入のサンプル</b>
+</p>
+<pre>
+my $scalar;
+$scalar = "one"; #文字列
+$scalar = 2; #数値
+$scalar = [ 3, 4, 5 ]; # 配列へのリファレンス
+$scalar = { x =&gt; 6 }; # ハッシュへのリファレンス
+$scalar = sub { return 7 }; #サブルーチンへのリファレンス
+$scalar = undef; #未定義値
+</pre>
+<h4>「配列変数」 - 複数の値を格納</h4>
+<p>
+  「配列変数」は複数の値を含むことができる。配列変数の「各要素」に含むことができるのは、スカラ変数のみである。
+</p>
+<p>
+  「@」を変数の前につけることで、配列変数を表す。配列変数に代入できるのは、「リスト ()」 だけである。
+</p>
+<pre>
+# 配列変数は、スカラを要素に持つことができる
+my @elements = (
+  "one",
+  2,
+  [3, 4, 5],
+  {x =&gt; 6, y =&gt; 7},
+  sub { return 8 },
+  undef
+)
+</pre>
+<p>
+  <b>配列の入れ子は、配列の連結になる</b>
+</p>
+<p>
+  Perlでは、配列の入れ子は、配列の連結になります。
+</p>
+<pre>
+my @list_in_list = ((1, 2), (3, 4));
+# これと同じになる。
+my @list = ( 1, 2, 3, 4 );
+</pre>
+<h4>「ハッシュ変数」 - キーと値のペアを格納</h4>
+<p>
+  ハッシュには以下の特徴があります。
+</p>
+<p>
+  「キーと値」がセットになった複数の値を含む。ハッシュ変数の「各要素」に含むことができるのは、スカラ変数のみである。
+</p>
+<p>
+  「%」を変数の前につけることで、ハッシュ変数を表す。ハッシュ変数に代入できるのは「リスト ()」 だけである。
+</p>
+<pre>
+my %scores = (math =&gt; 70, engligh =&gt; 80);
+</pre>
+<p>
+  <b>配列型とハッシュ型の変換</b>
+</p>
+<p>
+  配列変数もハッシュ変数も、リストを内容として持つので、互いに変換可能。
+</p>
+<pre>
+@array = %hash;
+%hash = @array;
+</pre>
+<h3>変数とスコープ</h3>
+<p>
+  変数について、もうひとつ知っておきたいのは変数の<b>スコープ</b>と<b>寿命</b>についてです。スコープは、変数がどの位置から見えるかということを表現する言葉です。寿命というのは、変数に値が保存されている期間のことです。
+</p>
+<p>
+  たとえば、myで宣言されたレキシカル変数の場合は「{」から「}」までがスコープとなります。
+</p>
+<pre>
+{
+  # ここで宣言
+  my $num = 3;
+}
+# ここからは見えない
+</pre>
+<p>
+  「$num」に保存された値は「{ ... }」によるスコープが終わると、メモリ上からなくなり、$numという変数自体も見えなくなります。
+</p>
+<p>
+  変数のスコープと寿命については、以下の記事で詳しく解説していますので、ご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110128130016.html">Perlのスコープについて理解しよう</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>wait関数 - 子プロセスの終了を待つ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="forkで分岐させた場合は親プロセスと子プロセスはどちらが先に終了するかはわかりません。今回は親プロセスが子プロセスの終了を待つ方法を解説します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="wait関数 - 子プロセスの終了を待つ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="forkで分岐させた場合は親プロセスと子プロセスはどちらが先に終了するかはわかりません。今回は親プロセスが子プロセスの終了を待つ方法を解説します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161004147558.html">
+      <span itemprop="name">標準関数</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20090414124049.html">wait関数 - 子プロセスの終了を待つ</a></h2>
+<p>
+  forkで分岐させた場合は親プロセスと子プロセスはどちらが先に終了するかはわかりません。今回は親プロセスが子プロセスの終了を待つ方法を解説します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>1. waitで子プロセスの終了を待つ</h3>
+<p>
+  子プロセスの終了を待つには<b>wait</b>関数を使用します。wait関数は<b>ひとつの子プロセスが終了するまで待機</b>し続けます。戻り値は<b>終了した子プロセスのプロセスID</b>です。子プロセスが何らかの理由で自動的に回収されていた場合は-1が返却されます。
+</p>
+<pre>
+my $pid = wait;
+</pre>
+<p>
+  子プロセスを待つサンプルです。前回のサンプルを少し修正します。結果がわかりやすいように、子プロセス側でprint文を実行する前に、<a href="/blog/20170522149546.html">sleep関数</a>で2秒待機しています。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my $pid = fork;
+
+die "Cannot fork: $!" unless defined $pid;
+
+if ($pid) {
+  # 子プロセスの終了を待機する。
+  wait;
+  print "親プロセス(子プロセスID: $pid)\n";
+}
+else {
+  # 子プロセスで2秒待つ
+  sleep 2;
+  print "子プロセス\n";
+}
+</pre>
+<p>
+  出力結果は
+</p>
+<pre>
+子プロセス
+親プロセス( 子プロセスID: 25870 )
+</pre>
+<p>
+  となります。親プロセスが子プロセスを待機していることがわかると思います。
+</p>
+<h3>2. 子プロセスの終了とプロセステーブルからの削除</h3>
+<p>
+  子プロセスが終了した場合、<b>即座にプロセステーブルから削除されるわけではありません</b>。(プロセステーブルはOSがプロセスを管理するために使用されます。)
+</p>
+<p>
+  子プロセスは終了後にプロセステーブルから削除されるのを待ちます。この状態のことを指して「死んだ子プロセス」と呼ばれます。子プロセスがプロセステーブルからの削除を待つのは<b>親プロセスが子プロセスの終了スターテスを知る</b>必要があるからです。
+</p>
+<p>
+  waitを呼び出すと終了した子プロセスがプロセステーブルから削除されます。また親プロセスが終了した場合も子プロセスはプロセステーブルから削除されます。
+</p>
+<h3>3. 子プロセスの終了ステータス</h3>
+<p>
+  waitを呼ぶと
+</p>
+<pre>
+$?
+</pre>
+<p>
+  という特殊変数に子プロセスの終了ステータスを含めた複数のデータが格納されます。$?の中に格納された子プロセスの終了ステータスの取得の仕方については次回解説します。
+</p>
+<h3>4. waitが本当に行っていること</h3>
+<p>
+  実際は<b>waitは子プロセスの終了を待っているのではありません</b>。子プロセスが<b>CHLDシグナルを発生させる</b>のを待っています。CHLDシグナルは子プロセスの終了時だけではなく、子プロセスが停止した場合や、再開した場合にも発生します。
+</p>
+<p>
+  これはwaitを使用しても<b>確実には死んだ子プロセスを回収できない</b>ということを意味します。確実に死んだ子プロセスを回収するには、CHLDシグナルのシグナルハンドラにIGNOREを設定するか、waitpid関数を適切に使用します。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

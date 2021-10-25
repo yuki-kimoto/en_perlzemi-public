@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>File::Spec - OSに依存しないファイル名を作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="File::Specモジュールを使用すると、ファイル名に対して移植性のある処理を行うことができます。たとえばOS固有のファイル名の区切り文字を使ってファイル名を作成したりすることができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="File::Spec - OSに依存しないファイル名を作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="File::Specモジュールを使用すると、ファイル名に対して移植性のある処理を行うことができます。たとえばOS固有のファイル名の区切り文字を使ってファイル名を作成したりすることができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100412127089.html">File::Spec - OSに依存しないファイル名を作成</a></h2>
+<p>
+  <strong>File::Spec</strong>モジュールを使用すると、ファイル名に対して移植性のある処理を行うことができます。たとえばOS固有のファイル名の区切り文字を使ってファイル名を作成したりすることができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# モジュールの読み込み
+use File::Spec;
+</pre>
+<p>
+  File::Specのメソッドはクラスメソッドとして実装されており次の形式で呼び出します。
+</p>
+<pre>
+# クラスメソッド呼び出し
+File::Spec-&gt;$method;
+</pre>
+<h3>メソッド</h3>
+<h4>catfile</h4>
+<p>
+  個々のパーツからファイル名を作成するにはcatfileを使用します。$fileはWindowsの場合は「xxx\yyy\zzz」、Unixの場合は「xxx/yyy/zzz」になります。OS固有の区切り文字がファイル名の作成に使用されます。
+</p>
+<pre>
+# ファイル名の作成
+my $file = File::Spec-&gt;catfile('xxx', 'yyy', 'zzz');
+</pre>
+<p>
+  またディレクトリ名とファイル名を連結するのに利用できます。ディレクトリ名の末尾に「/」や「\」などの区切り文字が存在しているかどうかを意識する必要がありません。
+</p>
+<pre>
+# ディレクトリ名とファイル名を連結
+my $dir = 'xxx/yyy/';
+my $file = 'zzz';
+
+my $file_abs = File::Spec-&gt;catfile($dir, $file);
+</pre>
+<h4>splitdir</h4>
+<p>
+  ファイル名を個々のパーツに分解するにはsplitdirを使用します。@partsは('xxx', 'yyy', 'zzz')になります。
+</p>
+<pre>
+# ファイル名を分解
+my @parts = File::Spec-&gt;splitdir('xxx/yyy/zzz');
+</pre>
+<h4>File::Specのテクニック</h4>
+<p>
+  Windows上でも区切り文字「/」でファイル名を作成したい場合があります。これを実現するにはFile::Spec::UnixをFile::Specの代わりに使用します。
+</p>
+<pre>
+# ファイル名を「/」で連結
+use File::Spec::Unix;
+my $file = File::Spec::Unix-&gt;catfile('xxx', 'yyy', 'zzz');
+</pre>
+<h3>補足</h3>
+<p>
+  標準関数のopen関数等はUnixの区切り文字「/」でも、Windowsの区切り文字「\」でも正しく動作します。ですので単にファイルオープンをすることが目的であればUnixの区切り文字をWindowsの区切り文字に変換する必要はありません。
+</p>
+<h3>関連記事</h3>
+<ul>
+  <li>
+    <a href="/blog/20080516121095.html">OSに依存しないファイル名を作成する</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

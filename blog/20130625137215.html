@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlを使ったモダンなCGIスクリプトについて書いておきたい - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="「いまさらCGIですか」と誰かがいった。CGIという言葉には、偏ったイメージがついてしまっていて、代表的なイメージは「Perl=CGI=古い」というイメージだと思います。このみっつがセットになっていて、否定的に語られることが多いように思います。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlを使ったモダンなCGIスクリプトについて書いておきたい - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="「いまさらCGIですか」と誰かがいった。CGIという言葉には、偏ったイメージがついてしまっていて、代表的なイメージは「Perl=CGI=古い」というイメージだと思います。このみっつがセットになっていて、否定的に語られることが多いように思います。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20130625137215.html">Perlを使ったモダンなCGIスクリプトについて書いておきたい</a></h2>
+<p>
+  「いまさらCGIですか」と誰かがいった。CGIという言葉には、偏ったイメージがついてしまっていて、代表的なイメージは<b>「Perl=CGI=古い」</b>というイメージだと思います。このみっつがセットになっていて、否定的に語られることが多いように思います。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  でもよく考えてみればレンタル共有サーバーのPHPはCGIで動いている。拡張子はPHPだけど、プロトコルはCGIだ。ということを、あんまり理解していない人も多いのかも知れない。
+</p>
+<p>
+  WordPressをまるっと共有レンタルサーバーにアップロードするけれど、あれってCGIですね。　拡張子はPHPだけれど、CGIスクリプトとして実行されている。
+</p>
+<p>
+  CGIの悪い点というのは、実質的にはパフォーマンスで、これだけがCGIの欠点だといえると思います。だからたとえば100000人のアクセスは無理だけど、100人未満で利用する分には、十分という場合も多いかと思います。
+</p>
+<p>
+  CGIスクリプトの特徴である、共有レンタルサーバーを借りてまるっとアップロードするだけで動くというのは、結構うれしい特徴なんじゃないかと思う。
+</p>
+<h3>CGIという言葉の意味を理解する</h3>
+<p>
+  エンジニアであるならCGIという言葉の意味は理解しておいておいたほうがいいと思う。古いとか、Perlというイメージはそもそも間違って流布されたイメージで、CGIとは、Webアプリケーションを実行するための、ひとつのプロトコルです。
+</p>
+<p>
+  「プロセスを起動して、出力をもらって返す」ということをやります。毎回プロセスの起動があるので、パフォーマンスは遅い。アプリケーションの規模が大きくなると、CGIではない速い方法に比べて、100倍くらいは違うのかも。
+</p>
+<h3>Perlの主流はPSGIか組み込みのWebサーバー</h3>
+<p>
+  5年くらい前までは、Perlの主流といえばmod_perlでしたし、Perlを高速に実行するためには、mod_perlを利用するのが普通でした。でもこれは使いにくい。mod_perlで書くと、もちろんCGIスクリプトとしては動かせんません。
+</p>
+<p>
+  けれども最近はPSGIというプロトコルがでてきて、PSGIというプロトコルにWebフレームワークが対応していれば、PerlのWebアプリケーションを高速に実行できるようになりました。またWebフレームワーク自体が持つWebサーバーで実行するという方法もよく利用される方法です。
+</p>
+<h3>最近のPerlのWebフレームワークはプロトコル層を選択できる</h3>
+<p>
+  最近のPerlのWebフレームワークはプロトコル層を選択できます。つまり、上にのせるアプリケーションを書いて、それをPSGIで動かしたり、組み込みのWebサーバーで動かしたり、CGIスクリプトで動かしたりするということが、やりやすくなったということです。
+</p>
+<pre>
+        |-組み込みWebサーバー
+        |
+Web App - PSGI(+PSGIに対応したWebサーバー)
+        |
+        |-CGI
+</pre>
+<p>
+  つまりWebアプリケーションを作成して、ユーザーの側に、CGIで動かしてもらうか、組み込みのWebサーバーで動かしてもらうか、選択してもらうことができるWebアプリケーションを書きやすくなりました。これは、ここ数年のことです。
+</p>
+<h3>実際の実装</h3>
+<p>
+  理論的にはできるだろうなぁと思っていたのですが、実際に実装してみないことにはできるかどうかがわかりません。それで、よし作ろうとCGIと組み込みサーバーに対応したWebアプリを作ってみることにしたのですが、どうやら実現が可能なことがわかりました。
+</p>
+<p>
+  以下はサクラのレンタルサーバースタンダードで、CGIスクリプトとして実行しているところです。
+</p>
+<ul>
+  <li>
+    <a href="http://perlcodesample.sakura.ne.jp/gitprep.cgi">GitPrep(CGIスクリプト)</a>
+  </li>
+  <li>
+    <a href="http://perlcodesample.sakura.ne.jp/webdbviewer.cgi">Web DB Viewer(CGIスクリプト)</a>(もう少しでリリースします)
+  </li>
+</ul>
+<p>
+  CGIだとサンプルを見せるのにも、だたサーバー上に配置しておけばよいだけなのでとても楽です。パーミッションの設定がネックに感じますが、PHPがインストールされているサーバーであれば、自動的にパーミッションを設定してくれるので、意識する必要がありません。
+</p>
+<p>
+  このWebアプリケーションは組み込みのWebサーバーを使って起動することもできるので、パフォーマンスが必要になったときは、乗り換えることも容易です。
+</p>
+<p>
+  実装は以下のリポジトリを見ると仕組みを見ることができます。
+</p>
+<ul>
+  <li>
+    <a href="https://github.com/yuki-kimoto/gitprep">GitPrep(GitHub)</a>
+  </li>
+  <li>
+    <a href="https://github.com/yuki-kimoto/webdbviewer">Web DB Viewer(GitHub)</a>
+  </li>
+</ul>
+<h3>モダンなCGIは十分書くことができる</h3>
+<p>
+  CGIといえば機能が足りないとか古いというイメージですが、上のアプリケーションを見ると、モダンなWebアプリケーションも十分書くことができることがわかります。ユーザーに選択してもらえるように作成しておけば、CGIのシンプルさと、組み込みWebサーバーのパフォーマンスをあわせて提供することができます。
+</p>
+<hr>
+<p>
+  <a href="/blog/20130220136137.html">読み物へ</a>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

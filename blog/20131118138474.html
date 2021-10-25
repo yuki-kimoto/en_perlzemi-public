@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Data::Page::Navigation - ページナビゲーションの実装 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Data::Page::NavigationモジュールはData::Pageに機能を追加するモジュールで、ページナビゲーション用のデータを簡単に作成することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Data::Page::Navigation - ページナビゲーションの実装 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Data::Page::NavigationモジュールはData::Pageに機能を追加するモジュールで、ページナビゲーション用のデータを簡単に作成することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20131118138474.html">Data::Page::Navigation - ページナビゲーションの実装</a></h2>
+<p>
+  <strong>Data::Page::Navigation</strong>モジュールは<a href="/blog/20110527130888.html">Data::Page</a>に機能を追加するモジュールで、ページナビゲーション用のデータを簡単に作成することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use strict;
+use warnings;
+
+use Data::Page;
+use Data::Page::Navigation;
+
+my $total_entries = 180;
+my $entries_per_page = 10;
+my $current_page = 1;
+my $pager = Data::Page-&gt;new($total_entries, $entries_per_page, $current_page);
+
+# ページナビゲーションの個数を設定
+$pager-&gt;pages_per_navigation(10);
+
+# ページナビゲーション用のデータを取得
+my @pages = $pager-&gt;pages_in_navigation;
+
+# 1 2 3 4 5 6 7 8 9 10
+print "@pages\n";
+
+# 現在のページを変更
+$pager-&gt;current_page(9);
+my @pages2 = $pager-&gt;pages_in_navigation;
+
+# 5 6 7 8 9 10 11 12 13 14
+print "@pages2\n";
+</pre>
+<h3>メソッド</h3>
+<h4>pages_per_navigation</h4>
+<p>
+  ひとつのページに表示されるページの数を設定します。デフォルトは10です。
+</p>
+<pre>
+my $pages_per_navigation = $pager-&gt;pages_per_navigation;
+$pager-&gt;pages_per_navigation(15);
+</pre>
+<h4>pages_in_navigation</h4>
+<p>
+  このメソッドは、ページナンバーのリストを返却します。
+</p>
+<pre>
+my @pages = $pager-&gt;pages_in_navigation;
+my $pages = $pager-&gt;pages_in_navigation;
+</pre>
+<h4>first_navigation_page</h4>
+<p>
+  最初のナビゲーションページを返します。
+</p>
+<pre>
+my $first_page = $pager-&gt;first_navigation_page;
+</pre>
+<h4>last_navigation_page</h4>
+<p>
+  最後のナビゲーションページを返します。
+</p>
+<pre>
+my $last_page = $pager-&gt;last_navigation_page;
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlのサブルーチンの柔軟性をC言語と比較してみる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlのサブルーチンの特徴をまとめておきます。C言語と比較してみました。Perlの言語としての柔軟性が理解できると思います。※1">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlのサブルーチンの柔軟性をC言語と比較してみる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlのサブルーチンの特徴をまとめておきます。C言語と比較してみました。Perlの言語としての柔軟性が理解できると思います。※1" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/"><span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20101130129876.html"><span itemprop="name">サブルーチン</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080615121350.html">Perlのサブルーチンの柔軟性をC言語と比較してみる</a></h2>
+<p>
+  Perlのサブルーチンの特徴をまとめておきます。C言語と比較してみました。Perlの言語としての柔軟性が理解できると思います。※1
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>Perlのサブルーチンの特徴</h3>
+<table>
+  <tr>
+    <td>
+      　
+    </td>
+    <td>
+      Perl
+    </td>
+    <td>
+      C言語
+    </td>
+  </tr>
+  <tr>
+    <td>
+      1
+    </td>
+    <td>
+      サブルーチンの定義はどこで行っても良い
+    </td>
+    <td>
+      一般的に、関数の前方宣言(プロトタイプ宣言)が必要
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2
+    </td>
+    <td>
+      引数の型を宣言しておく必要がない
+    </td>
+    <td>
+      引数の型を宣言しておく必要がある。
+    </td>
+  </tr>
+  <tr>
+    <td>
+      3
+    </td>
+    <td>
+      戻り値の型を宣言しておく必要がない
+    </td>
+    <td>
+      戻り値の型を宣言しておく必要がある。
+    </td>
+  </tr>
+  <tr>
+    <td>
+      4
+    </td>
+    <td>
+      デフォルトで可変個の引数を受け取る
+    </td>
+    <td>
+      引数の個数を宣言時に決めておく必要がある
+    </td>
+  </tr>
+  <tr>
+    <td>
+      5
+    </td>
+    <td>
+      リストを戻り値として使用可能
+    </td>
+    <td>
+      配列を戻り値にすることはできない
+    </td>
+  </tr>
+  <tr>
+    <td>
+      6
+    </td>
+    <td>
+      レキシカル変数へのリファレンスを戻り値にできる
+    </td>
+    <td>
+      ローカル変数のアドレスを戻り値にできない
+    </td>
+  </tr>
+  <tr>
+    <td>
+      7
+    </td>
+    <td>
+      コンテキストという概念がある
+    </td>
+    <td>
+      コンテキストという概念はない
+    </td>
+  </tr>
+  <tr>
+    <td>
+      8
+    </td>
+    <td>
+      サブルーチンが属する名前空間がある
+    </td>
+    <td>
+      関数が属する名前空間はない
+    </td>
+  </tr>
+</table>
+<h3>1. サブルーチンの定義はどこで行っても良い</h3>
+<pre>
+# perl ( サブルーチンの定義はどこで行ってもよい )
+
+func() # ここでも使えるし 
+
+sub func {
+
+}
+
+func() # ここでも使える
+</pre>
+<pre>
+/* C言語 ( 一般的には、前方宣言が必要 ) */
+
+int func(int x); /* 関数プロトタイプ宣言 */
+
+func(3) /* ここで、使うためには、前方宣言( プロトタイプ宣言 ) が必要 */
+
+int func( int x ){
+
+}
+</pre>
+<p>
+  Perlでは、実行時にサブルーチンの名前をシンボルテーブルに探しにいきます。だから、どこにでも書くことができます。
+</p>
+<p>
+  C言語では、コンパイル時に、関数の名前が解決されます。関数を使う場所より後ろに関数定義があった場合は、使う場所より前で前方宣言( プロトタイプ宣言 ) がなされていなくてはなりません。
+</p>
+<h3>2. 3. 4. 引数の型、引数の個数、戻り値の型を、決めておく必要がない</h3>
+<pre>
+# Perl (最初に決めておくことは、サブルーチンの名前だけ。)
+sub func {
+
+}
+</pre>
+<pre>
+/* C言語 ( 引数の型、引数の個数、戻り値の型を決めておく必要がある。 ) */
+
+int func(int x, int y) {
+
+}
+</pre>
+<p>
+  Perlでは、引数の型、引数の個数、戻り値の型は、実行時に決定されます。C言語では、引数の型、引数の個数、戻り値の型は、コンパイル時に決定されます。
+</p>
+<h3>5. リストを戻り値として使用可能</h3>
+<pre>
+# Perl (リストを戻り値として使用可能)
+
+sub func {
+    return (1, 2, 3);
+}
+</pre>
+<pre>
+/* C言語 ( 配列を返却するには,引数で受け取ったポインタを操作する必要がある ) */
+
+int ary[100];
+fucn(ary); /* ポインタを渡す */
+
+void func(int *ary) {
+  /* ここで、ポインタを通じて、 ary に値を代入する必要がある。 */
+}
+</pre>
+<p>
+  Perlでは、リストを戻り値に、することができます。C言語では、配列を戻り値として返却することができません。呼び出し元へ、配列を返却したい場合は、引数で、ポインタとして渡して、それを操作する必要があります。
+</p>
+<h3>6. レキシカル変数へのリファレンスを戻り値にできる</h3>
+<pre>
+# Perl 
+sub func {
+  my $val = 1;
+  return \$val;
+}
+</pre>
+<pre>
+/* C言語 */
+int func(){
+    int x;
+    return &amp;x;
+}
+</pre>
+<p>
+  Perlでは、レキシカル変数は、どこかから参照されている限りは、メモリ上から破棄されません。C言語では、関数が終了してしまうと、ローカル変数は、破棄されてしまいます。
+</p>
+<h3>7. コンテキストという概念がある</h3>
+<p>
+  Perlには、コンテキストに応じて、スカラーかリストを関数の戻り値として使用することができます。C言語には、このような概念はありません。
+</p>
+<h3>8. サブルーチンが属する名前空間がある</h3>
+<pre>
+# Perl
+# 本当の名前は、main::func ( mainパッケージに属するfuncサブルーチン )
+sub func {
+
+}
+
+package SomePackage;
+# 本当の名前は、SomePackage::func 
+# ( SomePackageパッケージに属する funcサブルーチン ) 
+# 上記のfuncとは、まったく別のもの
+sub func {
+
+}
+</pre>
+<pre>
+/* C言語 */
+/* func は func であり、プログラムのどこから見ても func です。*/
+int func() {
+
+}
+</pre>
+<p>
+  Perlでは、すべてのサブルーチンは、名前空間に属します。Perlでは、名前空間のことをパッケージと呼びます。C言語は、名前空間を持ちません。
+</p>
+<h3>注</h3>
+<p>
+  <span style="font-size:small;">※1 Cを批判しているわけではないのであしからず。Cは、「実行速度が速い」「ハードウェアよりのプログラミングが可能」「低レベルなデータ操作が得意」という特徴を持ちます。Perlはこれが苦手なのです。</span>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

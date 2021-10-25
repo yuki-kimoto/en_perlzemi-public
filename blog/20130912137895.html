@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>strict - 文法チェックを厳しくする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="文法チェックを厳しくするにはstrictモジュールを使用します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="strict - 文法チェックを厳しくする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="文法チェックを厳しくするにはstrictモジュールを使用します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20130912137895.html">strict - 文法チェックを厳しくする</a></h2>
+<p>
+  文法チェックを厳しくするには<b>strictモジュール</b>を使用します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use strict;
+</pre>
+<p>
+  strictプラグマはPerlの文法チェックを厳しくするためのプラグマです。strictプラグマは、Perlのスクリプトを書くときには、必ず記述するようにしてください。宣言されていない変数が利用されていた場合は、スクリプトを実行しようとしたときに、コンパイルエラーで止まります。
+</p>
+<h3>strictプラグマの解説</h3>
+<p>
+  strictモジュールとは呼ばずに、strictプラグマと呼んでいますが、これはモジュールの一種で、Perlのコンパイル時の挙動を変化させるものは、プラグマと呼ばれ、小文字で始める習慣になっています。
+</p>
+<p>
+  strictプラグマの効果を見ていきましょう。strictプラグマには、みっつの効果があります。
+</p>
+<h4>変数宣言を強制する</h4>
+<p>
+  ひとつめは<strong>変数宣言を強制する</strong>という効果です。Perlではmyで宣言された変数はレキシカル変数と呼ばれます。strictプラグマを使用した場合は、宣言されていない変数を使用することができなくなります。
+</p>
+<pre>
+use strict;
+
+# 変数を宣言して利用しているのでエラーにならない
+my $num;
+$num = 1
+</pre>
+<pre>
+use strict;
+
+# 宣言しないで利用しているのでエラーになる
+$num2 = 2
+</pre>
+<p>
+  二番目のケースでは、以下のようなエラーメッセージが表示されて、プログラムは実行されずに、終了します。
+</p>
+<pre>
+Global symbol "$num2" requires explicit package name at a.pl line 4.
+</pre>
+<p>
+  英語で書かれているので翻訳します。
+</p>
+<pre>
+グローバルなシンボル「$num2」は明示的なパッケージ名を必要とします。4行目。
+</pre>
+<p>
+  このメッセージが表示されたら、宣言されていない変数が利用されていると考えて、ほぼ間違いはありません。行番号がわかるので、その行番号を見て、変数名に間違いがないか、事前に変数宣言をしているかをチェックしましょう。
+</p>
+<h4>クォートされていない文字列の文字列の禁止</h4>
+<p>
+  strictプラグマは、<strong>クォートされていない文字列の使用を禁止</strong>します。実はPerlでは、strictプラグマが有効になっていない場合は、クォートされていない文字列を使用することができます。strictプラグマを有効にした場合は、クォートされていない文字列を使用できなくなります。
+</p>
+<pre>
+use strict;
+
+# 文字列をクォートしているのでエラーにならない
+my $str = 'abcde';
+</pre>
+<pre>
+use strict;
+
+# 文字列をクォートしているのでエラーになる
+my $str = abcde;
+</pre>
+<p>
+  二番目のケースでは、以下のようなエラーメッセージが表示されて、プログラムは実行されずに、終了します。
+</p>
+<pre>
+Bareword "abcde" not allowed while "strict subs" in use at a.pl line 3.
+</pre>
+<p>
+  英語で書かれているので翻訳します。
+</p>
+<pre>
+裸の「abcde」は「strict subs」の利用下では許可されていません。3行目。
+</pre>
+ このような間違いを避けるためにも、strictプラグマは必ず有効にしましょう。
+<h4>シンボリックリファレンスの禁止</h4>
+<p>
+  三つ目の効果は<strong>シンボリックリファレンスの禁止</strong>です。Perlにはシンボリックリファレンスと呼ばれる機能がありますが、strictプラグマはシンボリックリファレンスの使用を禁止します。
+</p>
+<p>
+  シンボリックリファレンスとは、間単にいうと文字列によって、シンボル(変数や関数)を参照できる機能のことです。
+</p>
+<p>
+  以下のスクリプトを見てください。
+</p>
+<pre>
+# 足し算をする関数
+sub total {
+  my ($num1, $num2) = @_;
+  
+  return $num1 + $num2;
+}
+
+# シンボリックリファレンスで関数を参照して実行
+my $num = &amp;{'total'}(1 + 2);
+
+print $num;
+</pre>
+<p>
+  このスクリプトではtatalという関数がありますが。「total(1 + 2)」とは呼び出さずに「&{'total'}(1 + 2)」として、シンボリックリファレンスで関数を参照して呼び出しています。
+</p>
+<p>
+  strictプラグマが有効になっている場合は、次のようなエラーメッセージを表示してスクリプトは終了します。
+</p>
+<pre>
+Can't use string ("total") as a subroutine ref while "strict refs" in use at a.pl line 11.
+</pre>
+<p>
+  英語で書かれているので翻訳します。
+</p>
+<pre>
+「strict refs」の利用下では、文字列「total」をサブルーチンとして利用することはできません。11行目。
+</pre>
+<p>
+  ときには、シンボリックリファレンスを使用しなければならない場合が発生すると思います。動的にサブルーチンやメソッド名を決定したい場合などです。そういう場合は、次のようにして、シンボリックリファレンスの禁止を解除することができます。
+</p>
+<pre>
+use strict;
+
+# シンボリックリファレンスの禁止だけを解除
+no strict 'refs';
+</pre>
+<p>
+  このようにstrictプラグマには「変数宣言を強制する」「クォートされていない文字列の文字列の禁止」「シンボリックリファレンスの禁止」という三つの効果があることを、覚えておきましょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

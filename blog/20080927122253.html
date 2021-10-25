@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>crypt関数 - ダイジェストを作成してパスワードの照合を行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="crypt関数を使うと、パスワードをダイジェストにして保存しておくことができます。パスワードを平文で保存しておくと見られてしまいます。第一引数はパスワードです。第二引数はサルトという任意の文字列で、ダイジェストを解読されにくくするためのものです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="crypt関数 - ダイジェストを作成してパスワードの照合を行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="crypt関数を使うと、パスワードをダイジェストにして保存しておくことができます。パスワードを平文で保存しておくと見られてしまいます。第一引数はパスワードです。第二引数はサルトという任意の文字列で、ダイジェストを解読されにくくするためのものです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161004147558.html">
+      <span itemprop="name">標準関数</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20080927122253.html">crypt関数 - ダイジェストを作成してパスワードの照合を行う</a></h2>
+<p>
+  crypt関数を使うと、パスワードをダイジェストにして保存しておくことができます。パスワードを平文で保存しておくと見られてしまいます。第一引数はパスワードです。第二引数はサルトという任意の文字列で、ダイジェストを解読されにくくするためのものです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+my $digest = crypt($passwd, $salt);
+</pre>
+<p>
+  ダイジェストの作成を行うなら現在ならばcrypt関数よりも、<a href="/blog/20100501127089.html">Digest::MD5</a>や<a href="/blog/20100502127089.html">Digest::SHA</a>を使うのがお勧めです。
+</p>
+<h3>crypt関数のサンプル</h3>
+<p>
+  crypt関数を使ったサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# パスワードを作成
+# [./0-9A-Za-z] からなるランダムな2文字をsaltとして作成する
+print "(1)パスワードからダイジェストを作成する。\n";
+my $passwd = 'secret';
+my $salt = join '' . ('.', '/', 0 .. 9, 'A' .. 'Z', 'a' .. 'z')[rand 64, rand 64];
+             
+my $digest = crypt($passwd, $salt);
+print "$digest\n\n";
+
+
+print "(2)パスワードの照合を行う。\n";
+if (crypt($passwd, $digest) eq $digest) {
+  print "パスワードが一致しました。\n";
+}
+</pre>
+<h4>パスワードからダイジェストを作成する</h4>
+<pre>
+my $passwd = 'secret'; # パスワードを作成
+my $salt = join '', ('.', '/', 0 .. 9, 'A' .. 'Z', 'a' .. 'z')[rand 64, rand 64];
+my $digest = crypt($passwd, $salt);
+</pre>
+<p>
+  パスワードからダイジェストを作成するにはcrypt関数を使用します。crypt関数は一方向ハッシュ関数です。一方向ハッシュによって変換された文字列をダイジェストと呼びます。
+</p>
+<p>
+  crypt関数によって作成されたダイジェストは複合することが非常に困難です。
+</p>
+<p>
+  cryptの第1引数には、ダイジェストの元になる文字列を指定します。最初の8バイトだけが意味を持ちます。それより長い文字は無視されます。
+</p>
+<p>
+  cryptの第2引数には、[./0-9A-Za-z]の64文字のうちの2文字を指定します。2文字目以降は無視されます。この64文字からランダムな2文字を選ぶようにするとダイジェストの安全性が高くなります。
+</p>
+<p>
+  作成されるダイジェストの先頭はこの2文字になります。
+</p>
+<h4>パスワードの照合を行う</h4>
+<pre>
+if (crypt($passwd, $digest) eq $digest){ }
+</pre>
+<p>
+  パスワードの照合を行うときは、crypt関数を使用して再びダイジェストを作成します。作成したダイジェストが、以前に作成されたダイジェストと一致すれば、正しいパスワードであることがわかります。
+</p>
+<p>
+  ダイジェストの先頭2文字には、$saltで指定された2文字ですから、crypt関数の第2引数にそのまま使用することができます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

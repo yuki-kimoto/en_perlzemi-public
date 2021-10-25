@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>無名ハッシュ生成子 - ハッシュのリファレンスを作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlには無名ハッシュ生成子「{}」という演算子があります。名前はちょっと難しいですが、実用的には、簡単にハッシュのリファレンスを作成するためのものです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="無名ハッシュ生成子 - ハッシュのリファレンスを作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlには無名ハッシュ生成子「{}」という演算子があります。名前はちょっと難しいですが、実用的には、簡単にハッシュのリファレンスを作成するためのものです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20170926150643.html">無名ハッシュ生成子 - ハッシュのリファレンスを作成</a></h2>
+<p>
+  Perlには<b>無名ハッシュ生成子</b>「{}」という演算子があります。名前はちょっと難しいですが、実用的には、簡単にハッシュのリファレンスを作成するためのものです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  無名ハッシュ生成子を使うと、以下のように簡単に<a href="/blog/20180208151809.html">ハッシュのリファレンス</a>が作成できます。
+</p>
+<pre>
+# 無名ハッシュ生成子
+my $point = {x =&gt; 1, y =&gt; 2};
+</pre>
+<p>
+  もし無名ハッシュ生成子を使わない場合は、次のように書きます。まず<a href="/blog/20161013147635.html">ハッシュ</a>を作成してから、リファレンス生成子を使って、ハッシュのリファレンスを作成します。
+</p>
+<pre>
+# 無名ハッシュ生成子を使わない場合
+my %point = (x =&gt; 1, y =&gt; 2);
+my $point = \%point;
+</pre>
+<p>
+  無名ハッシュ生成子を使うと、上の処理を省略して書くことができるんです。{x => 1, y => 2}を見た時は、上の処理が省略されているという感覚を持つと理解しやすいと思います。
+</p>
+<p>
+  <b>どうして「無名ハッシュ生成子」というの?</b>
+</p>
+<p>
+  無名ハッシュ生成子を使うと「%point」というハッシュを作成する必要がありませんね。つまり、内部的に「%point」に該当する「無名のハッシュ」が作成されているのです。
+</p>
+<p>
+  きっと、この部分に焦点を当てて命名されたのでしょう。
+</p>
+<p>
+  無名ハッシュ生成子に対応して<a href="/blog/20170924150634.html">無名配列生成子</a>というものあります。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

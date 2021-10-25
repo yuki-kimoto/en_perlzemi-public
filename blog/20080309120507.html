@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>local - パッケージ変数を一時的に退避して復元 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="localを使うと、パッケージ変数を一時的に変更することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="local - パッケージ変数を一時的に退避して復元 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="localを使うと、パッケージ変数を一時的に変更することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+      <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20080309120507.html">local - パッケージ変数を一時的に退避して復元</a></h2>
+<p>
+  <b>local</b>を使うと、パッケージ変数を一時的に変更することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+local 変数名 = 値；
+</pre>
+<p>
+  値が指定されなかった場合は、<a href="/blog/20100220126425.html">未定義値</a>が設定されます。
+</p>
+<h3>値の保存と復元</h3>
+<p>
+  localを使って値を代入すると、<a href="/blog/20110128130016.html">スコープ</a>の終わりで以前の値が復元されます。
+</p>
+<pre>
+our $NUM = 5;
+{
+  local $NUM = 3;
+}
+# ここでは「$NUM」は「元の値」である「5」に戻る
+</pre>
+<p>
+  localによって変更されたパッケージ変数は、<a href="/blog/20110128130016.html">スコープ</a>の最後で復元されます。
+</p>
+<p>
+  初期化を行わなかった場合は、変数の値の初期値は、未定義値になります。
+</p>
+<pre>
+local $NUM;
+</pre>
+<p>
+  localは、<a href="/blog/20080308120495.html">ourで宣言されたパッケージ変数</a>が対象であって、<a href="/blog/20080307120491.html">myで宣言されたレキシカル変数</a>には利用できないことに注意してください。
+</p>
+<pre>
+# コンパイルエラー
+my $num;
+local $num;
+</pre>
+<p>
+  ただし例外があって、<a href="/blog/20161012147627.html">配列</a>の値と<a href="/blog/20161013147635.html">ハッシュ</a>の値には使用することができます。
+</p>
+<pre>
+my @nums = (1, 2, 3);
+local $nums[1];
+
+my %score = (math =&gt; 90, english =&gt; 70);
+local $score{math};
+</pre>
+<h3>特殊変数に対するlocal</h3>
+<p>
+  Perlで最もよくlocalを使う場面は「$/」や「%ENV」や「@ARGV」などの、<a href="/blog/20161102147817.html">特殊変数</a>に対してです。
+</p>
+<p>
+  localはパッケージ変数を対象としますが、実は特殊変数は、mainという<a href="/blog/20100419127089.html">パッケージ</a>に属しています。
+</p>
+<p>
+  ですので、特殊変数に対しても、localを使用できます。
+</p>
+<pre>
+local $/;
+local $ENV{HOME};
+local @ARGV;
+</pre>
+<h3>変数宣言にはmyを使う</h3>
+<p>
+  <a href="/blog/20160225145640.html">Perl 5.0</a>以降のPerlには「my」による変数宣言が導入されていて、lcoalによって変数を宣言する必要性はほとんどなくなっています。ほぼすべての変数宣言は「my」を使うようにしましょう。
+</p>
+<pre>
+# 変数宣言
+my $num;
+</pre>
+<h3>myとlocalの違い</h3>
+<p>
+  localは、名前の期待に反して、変数宣言ではありません。ダイナミックなスコープを持ちます。
+</p>
+<p>
+  他の言語でいうローカル変数とはPerlにおけるmyを使ったレキシカル変数のことです。
+</p>
+<table>
+  <tr>
+    <th>
+      local
+    </th>
+    <th>
+      my
+    </th>
+  </tr>
+  <tr>
+    <td>
+      変数宣言ではない
+    </td>
+    <td>
+      変数宣言である
+    </td>
+  </tr>
+  <tr>
+    <td>
+      値を保存・復元する
+    </td>
+    <td>
+      変数を宣言する
+    </td>
+  </tr>
+  <tr>
+    <td>
+      ダイナミックスコープを持つ
+    </td>
+    <td>
+      レキシカルスコープを持つ
+    </td>
+  </tr>
+</table>
+<h3>ファイルの内容を一度に読み込む</h3>
+<p>
+  localを自発的に使う場面は、あまりありませんが、使う場面があります。それは、ファイルの内容を一度に読み込むという処理を記述する場合です。
+</p>
+<p>
+  ファイルの内容を一度に読み込む処理を記述してみます。
+</p>
+<pre>
+my $file = 'a.txt';
+open my $fh, '&lt;', $file
+  or die "Can't open $file: $!";
+
+# ファイルの内容を一度に読み込む
+my $content = do { local $/; &lt;$fh&gt; };
+</pre>
+<p>
+  <a href="/blog/20090208123289.html">doブロック</a>は最後に評価された値を返すものです。
+</p>
+<p>
+  localによって、ファイルの中での改行を表す<a href="/blog/20161102147817.html">特殊変数</a>「$/」を未定義にしています。
+</p>
+<p>
+  これによって<a href="/blog/20080722121673.html">ファイル入力演算子</a>「<$fh>」が、ファイル全体の内容を返すようにしています。
+</p>
+<p>
+  そして、スコープが終わると「$/」は元の状態に戻ります。
+</p>
+<p>
+  ファイルを一度に読むこむ関数を標準で持たないPerlでは、このようにしてファイル全体の内容を読み込むことがあるということを覚えておきましょう。
+</p>
+<h3>localのサンプルプログラム</h3>
+<p>
+  localを使って、特殊変数を一時的に変更するサンプルです。特殊変数はmainパッケージに属するパッケージ変数です。
+</p>
+<pre>
+{
+    # 特殊変数$/の一時的な変更
+    local $/ = undef;
+}
+# スコープを抜けると元の値が復元される
+</pre>
+<p>
+  localを理解するためのサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# localの説明
+
+our $NUM = 1;
+print "\$NUM = $NUM\n";
+
+# $NUM の完全修飾名は、$main::NUM で、mainパッケージに属する。
+# ( Perlでは、どんな変数もグローバル変数にはならない 
+# Perlには、レキシカル変数とパッケージ変数しか存在しない。)
+
+print "\$main::NUM = $main::NUM\n";
+print "\n";
+
+{ 
+  # レキシカルスコープの内部で「$NUM」の値を一時的に変更
+  local $NUM = 2; 
+
+  print "In scope\n";
+  
+  # 2を出力
+  print "\$NUM = $NUM\n"; 
+}
+print "\n";
+
+# 1を出力 
+print "Out of scope\n";
+print "\$NUM = $NUM\n"; 
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Strawberry PerlとコマンドプロンプトでLinux風環境を作る方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Strawberry PerlとコマンドプロンプトでLinux風の環境を作る方法を紹介します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Strawberry PerlとコマンドプロンプトでLinux風環境を作る方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Strawberry PerlとコマンドプロンプトでLinux風の環境を作る方法を紹介します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20200117144713.html">Strawberry PerlとコマンドプロンプトでLinux風環境を作る方法</a></h2>
+<p>
+  Strawberry Perlとコマンドプロンプトで<a href="https://linux.perlclub.net/">Linux</a>風の環境を作る方法を紹介します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  Perlエンジニアは、開発やサーバー運用をするときは、Linux/Unix環境で作業をしていることが多いです。
+</p>
+<p>
+  <a href="https://linux.perlclub.net/">Linux</a>用に作ったプログラムをWindowsで試験をしたいといった場合に、実行するコマンドがLinuxとなるべく近いとやりやすいですね。
+</p>
+<p>
+  コマンドプロンプトでもLinuxと同じ感覚で作業ができる方法を紹介します。
+</p>
+<h3>Linux環境とコマンドプロンプトで同じ方法で作業ができること</h3>
+<p>
+  先にLinux環境とコマンドプロンプトで、同じ方法で作業ができることはなんでしょうか? 2020年1月に、以下は、Windows 10の環境で確認した項目です。
+</p>
+<h4>cdコマンド</h4>
+<p>
+  Linuxの<a href="https://linux.perlclub.net/blog/20191012191854.html">cdコマンド</a>は、コマンドプロンプトにも、cdコマンドとして存在します。
+</p>
+<h4>ファイルパスの区切りは「/」でOK</h4>
+<p>
+  Windowsのファイルパスの区切りは「\」ですが、実は「/」を使うこともできます。コマンドプロンプトのcdコマンドで、「/」を使った例です。
+</p>
+<pre>
+cd labo/perlzemi
+</pre>
+<h4>gccはStrawberry Perlがインストールされていれば使える</h4>
+<p>
+  PerlのXSモジュールをインストールするのに必要な、C言語のコンパイラであるgccは、<a href="/blog/20180808153368.html">Strawberry Perl</a>がインストールされていれば最初から使うことができます。
+</p>
+<pre>
+gcc --help
+</pre>
+<h4>コマンドプロンプトを閉じる</h4>
+<p>
+  コマンドプロンプトを閉じる場合は、Linuxのexitコマンドと同じコマンドがコマンドプロンプトにも存在します。
+</p>
+<pre>
+exit
+</pre>
+<h4>右クリックで、コピーと張り付け</h4>
+<p>
+  コマンドプロンプトの設定で、簡易編集モードにチェックをいれると、右クリックとで、コピーと貼り付けができます。
+</p>
+<p>
+  <a href="https://www.relief.jp/docs/003578.html">コマンドプロンプトのコピー＆ペーストを簡単に−右クリック</a>
+</p>
+<h4>&&によるコマンドの連続実行</h4>
+<p>
+  コマンドプロンプトでも&&は、Linuxと同じように使えます。
+</p>
+<pre>
+command1 &amp;&amp; command2
+</pre>
+<h4>リダイレクトとパイプ</h4>
+<p>
+  Linuxのリダイレクトとパイプは、コマンドプロンプトでも利用できます。
+</p>
+<pre>
+command &gt; file.txt
+command &lt; file.txt
+command1 | command2
+</pre>
+<h3>コマンドプロンプトには、存在しないLinuxコマンド</h3>
+<p>
+  次は、コマンドプロンプトには、存在しないLinuxコマンドです。存在しないのであれば、作ってしまいましょう。
+</p>
+<p>
+  Strawberry Perlがインストールされていれば、次のパスが、コマンドの検索パスに含まれているはずです。
+</p>
+<pre>
+C:\Strawberry\perl\site\bin
+</pre>
+<p>
+  これは、ユーザーがインストールした実行ファイルやバッチファイルが格納される場所です。
+</p>
+<p>
+  このパスの中に、存在しないコマンドを書いてみましょう。
+</p>
+<h4>lsコマンドの作成</h4>
+<p>
+  Linuxの<a href="https://linux.perlclub.net/blog/20191126082723.html">lsコマンド</a>に該当するコマンドを作成しましょう。
+</p>
+<p>
+  拡張子を「.bat」にするとWindowsは、それはコマンドとして認識します。
+</p>
+<p>
+  Strawberry Perlのコマンドの検索パスの中に「ls.bat」というファイルを作成してください。
+</p>
+<p>
+  以下の内容を書き込みます。これでlsコマンドでdirコマンドを呼び出します。
+</p>
+<pre>
+dir
+</pre>
+<p>
+  コマンドプロンプトで以下のコマンドを実行できるようになります。
+</p>
+<pre>
+ls
+</pre>
+<h4>makeコマンドの作成</h4>
+<p>
+  gmakeというコマンドは、<a href="/blog/20180808153368.html">Strawberry Perl</a>がインストールされていれば最初から使うことができます。
+</p>
+<p>
+  ですので、これをラッピングしてmakeコマンドを作成してみましょう。
+</p>
+<p>
+  Strawberry Perlのコマンドの検索パスの中に「make.bat」というファイルを作成してください。
+</p>
+<p>
+  以下の内容を書き込みます。これでmakeコマンドでgmakeコマンドを呼び出します。
+</p>
+<pre>
+gmake %1
+</pre>
+<p>
+  %1は、コマンドライン引数です。これを指定しておくと「make test」のように、makeコマンドに引数を与えることができます。
+</p>
+<p>
+  コマンドプロンプトで以下のコマンドを実行できるようになります。
+</p>
+<pre>
+make
+</pre>
+<h4>その他のLinuxコマンド</h4>
+<p>
+  必要になれば<a href="https://linux.perlclub.net/blog/20200113083613.html">catコマンド</a>や<a href="https://linux.perlclub.net/blog/20191210081417.html">rmコマンド</a>なども、同じ方法で、簡単につくれそうですね。
+</p>
+<h3>Linux風環境を試す</h3>
+<p>
+  さぁ、Linuxのあれをやってみましょう。例のあれです。
+</p>
+<pre>
+cd proj/MyModule
+perl Makefile.PL
+make &amp;&amp; make test
+</pre>
+<p>
+  いいですね!
+</p>
+<h3>よくある質問</h3>
+<p>
+  よくある質問です。
+</p>
+<h4>DOSKEYで、エイリアスを使えばよいのでは?</h4>
+<p>
+  はい、これは試しました。ですが、&&を実行するときは、コマンドプロンプトは新しいプロセスを実行します。実はこのとき環境を受け継いでくれず、エイリアスが効かなくなります。
+</p>
+<h4>パワーシェルではだめなのですか?</h4>
+<p>
+  パワーシェルは、コマンドプロンプトの改良というよりは、Windowsの運用をやりやすい用に設計されているように感じます。
+</p>
+<p>
+  リダイレクトやパイプは、.netに接続されて、加工された情報が出力されます。
+</p>
+<p>
+  リダイレクトやパイプを使って、プログラムの動作を確認したい場合は、そのままの情報が出力される、コマンドプロンプトが優れていると感じます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

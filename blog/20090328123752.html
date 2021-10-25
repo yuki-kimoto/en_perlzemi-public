@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>環境に応じたオブジェクトを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="クラスを少しだけ改造してOSに応じて振る舞いを変更するようにしてみましょう。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="環境に応じたオブジェクトを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="クラスを少しだけ改造してOSに応じて振る舞いを変更するようにしてみましょう。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161030147778.html">
+      <span itemprop="name">オブジェクト指向</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">環境に応じた振る舞い</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20090328123752.html">環境に応じたオブジェクトを作成する</a></h2>
+<p>
+  クラスを少しだけ改造してOSに応じて振る舞いを変更するようにしてみましょう。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>1. 環境に応じて振る舞いを変えるポリモーフィズム</h3>
+<p>
+  環境がWindowsだった場合は、FilePath::Windowsクラスのオブジェクトを作成して、環境がそれ以外だったら、FilaPath::Unixクラスのオブジェクトを作成するクラスを書いてみました。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my $file_path = FilePath-&gt;new;
+
+my $result = $file_path-&gt;cat_path('a', 'b');
+
+print "結果: $result\n";
+
+# ユーザが利用するクラス
+package FilePath;
+
+sub new　{
+  my $self = shift;
+  if ($^O eq 'MSWin32') {
+    return FilePath::Windows-&gt;new;
+  }
+  else {
+    return FilePath::Unix-&gt;new;
+  }
+}
+
+# ファイルパスを扱うための基底クラス
+package FilePath::Base;
+
+sub new {
+  my $proto = shift;
+  my $class = ref $proto || $proto;
+  my $self = {};
+  bless $self, $class;
+  return $self;
+}
+
+sub cat_path {
+  my ($self, $str1, $str2) = @_;
+  return $str1 . $self-&gt;delimiter . $str2;
+}
+
+# Unix 用
+package FilePath::Unix;
+use base 'FilePath::Base';
+
+# Unixの場合の区切り文字
+sub delimiter{ return '/' }
+
+
+# Windows用
+package FilePath::Windows;
+use base 'FilePath::Base';
+
+# Windowsの場合の区切り文字
+sub delimiter{ return '\\' }
+</pre>
+<p>
+  実行結果は、環境がWindowsの場合は、
+</p>
+<pre>
+結果: a\b
+</pre>
+<p>
+  それ以外の場合は、
+</p>
+<pre>
+結果: a/b
+</pre>
+<p>
+  となります。環境がWindowsの場合は、FilePath::Windowsクラスのオブジェクトが生成されて、それ以外の場合は、FilePath::Unixクラスのオブジェクトが生成されているということです。
+</p>
+<pre>
+print ref $file_path;
+</pre>
+<p>
+  とするとどのクラスのオブジェクトが作成されているかが見えると思います。
+</p>
+<h3>2. コンストラクタで振る舞いを変える</h3>
+<p>
+  ユーザが利用するクラスとして、FilePathというクラスを準備しました。このクラスのコンストラクタが、環境に応じたオブジェクトを生成してくれます。(一般的には、ファクトリークラスと呼ばれるものになります。)
+</p>
+<pre>
+package FilePath;
+
+sub new {
+  my $self = shift;
+  if ($^O eq 'MSWin32') {
+    return FilePath::Windows-&gt;new;
+  }
+  else {
+    return FilePath::Unix-&gt;new;
+  }
+}
+</pre>
+<p>
+  $^O を見てOSの種類を調べて、作成するオブジェクトを変更しています。この例のコンストラクタは引数を受け取りませんが、コンストラクタというのは、一般的には引数を受け取るので
+</p>
+<pre>
+sub new {
+  my $self = shift;
+  if ($^O eq 'MSWin32') {
+    return FilePath::Windows-&gt;new(@_);
+  }
+  else {
+    return FilePath::Unix-&gt;new(@_);
+  }
+}
+</pre>
+<p>
+  と記述する場合のほうが多いです。３項演算子を使って書くとさらにすっきりします。
+</p>
+<pre>
+sub new {
+  my $self = shift;
+  return $^O eq 'MSWin32' ? FilePath::Windows-&gt;new(@_) :
+                            FilePath::Unix-&gt;new(@_);
+}
+</pre>
+<h3>3. 継承の便利なところ</h3>
+<p>
+  継承をうまく使えば、環境に応じた振る舞いをさせる記述をすっきと記述することができることがわかると思います。
+</p>
+<p>
+  また、ほかの環境にも対応させたい場合は「FilePath::ほにゃらら」というクラスを作って、FilePathクラスのコンストラクタを少し修正すれば良いだけです。
+</p>
+<p>
+  つまりどのような場面で継承が威力を発揮するかといえば、数多くのパターンが存在して、拡張の可能性が高い場面ということになります。　
+</p>
+<h3>4. 継承が難しいと感じる場合は</h3>
+<p>
+  このサンプルをデバッガでたどってください。クラスの間をどういう風に動き回っているかを、観察すれば、理解できてくるはずです。
+</p>
+<p>
+  $^O の値を変えれば、Windows の場合や、Unixの場合をエミュレートできます。また、ref関数を使って、作成されたオブジェクトが属するクラスを見たりしてください。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

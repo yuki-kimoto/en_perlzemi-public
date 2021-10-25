@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlの比較演算子 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="比較演算子は、二つの値の大小について比較する演算子です。Perlには、数値を比較する数値比較演算子と文字列が辞書順でどちらが大きいかを比較する文字列比較演算子があります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlの比較演算子 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="比較演算子は、二つの値の大小について比較する演算子です。Perlには、数値を比較する数値比較演算子と文字列が辞書順でどちらが大きいかを比較する文字列比較演算子があります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080318120585.html">Perlの比較演算子</a></h2>
+<p>
+  <b>比較演算子</b>は、二つの値の大小について比較する演算子です。Perlには、数値を比較する<b>数値比較演算子</b>と文字列が辞書順でどちらが大きいかを比較する<b>文字列比較演算子</b>があります。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>数値比較演算子</h3>
+<p>
+  数値比較演算子は、値を数値として比較するときに利用する演算子です。
+</p>
+<table>
+  <tr>
+    <td>
+      *演算子
+    </td>
+    <td>
+      *意味
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A == B
+    </td>
+    <td>
+      AとBは等しい
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A != B
+    </td>
+    <td>
+      AとBは等しくない
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A > B
+    </td>
+    <td>
+      AはBより大きい
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A >= B
+    </td>
+    <td>
+      AはB以上
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A < B
+    </td>
+    <td>
+      AはBより小さい
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A <= B
+    </td>
+    <td>
+      AはB以下
+    </td>
+  </tr>
+</table>
+<p>
+  比較演算子は、条件を満たすと真値、満たさない場合は偽値を返します。
+</p>
+<p>
+  Perlの真偽値については以下の記事も参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080323120628.html">Perlにおける真偽値</a>
+  </li>
+</ul>
+<h4>if文の条件部で使う</h4>
+<p>
+  <a href="/blog/20161107147852.html">変数</a>に代入された数値を比較するサンプルプログラムを<a href="/blog/20161023147731.html">if文</a>を使って書いてみます。
+</p>
+<pre>
+my $num1 = 4;
+my $num2 = 3;
+
+if ($num1 &gt; $num2) {
+  print "Left is big";
+}
+</pre>
+<p>
+  このプログラムでは$num1には4が、$num2には3が代入されています。$num1は$num2より大きいので、条件が真になって、ブロックの中が実行されます。
+</p>
+<h4>三項演算子の条件部で使う</h4>
+<p>
+  比較演算子を<a href="/blog/20080325120646.html">三項演算子</a>の条件部で使用してみましょう。
+</p>
+<pre>
+my $num1 = 4;
+my $num2 = 3;
+
+my $message = $num1 &gt; $num2 ? "OK" : "Not OK";
+</pre>
+<p>
+  $num1は$num2より大きいので真が返され「OK」が$messageに代入されます。
+</p>
+<h3>文字列比較演算子</h3>
+<p>
+  文字列比較演算子は<a href="/blog/20161003147558.html">文字列</a>を辞書順で比較するときに利用する演算子です。
+</p>
+<p>
+  辞書順比較では、先頭から1文字づつ、文字コードの大きさを比べてゆきます。「a」は「b」より小さくなります。「1」は「02」より大きくなります。
+</p>
+<table>
+  <tr>
+    <td>
+      *演算子
+    </td>
+    <td>
+      *意味
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A eq B
+    </td>
+    <td>
+      AとBは等しい
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A ne B
+    </td>
+    <td>
+      AとBは等しくない
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A gt B
+    </td>
+    <td>
+      AはBより大きい
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A ge B
+    </td>
+    <td>
+      AはB以上
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A lt B
+    </td>
+    <td>
+      AはBより小さい
+    </td>
+  </tr>
+  <tr>
+    <td>
+      A le B
+    </td>
+    <td>
+      AはB以下
+    </td>
+  </tr>
+</table>
+<h4>if文の条件部で使う</h4>
+<p>
+  文字列比較演算子をif文の条件部で使うサンプルです。
+</p>
+<pre>
+my $str1 = "1";
+my $str2 = "02";
+
+if ($num1 gt $num2) {
+  print "Left is big";
+}
+</pre>
+<h3>論理演算子で条件を組み合わせる</h3>
+<p>
+  論理演算子を使うと比較演算子を組み合わせた条件で使用することができます。
+</p>
+<pre>
+# $num1は1より大きい、かつ、5より小さい
+if ($num1 &gt; 1 &amp;&amp; $num1 &lt; 5) {
+  ...
+}
+
+# $num1は1より小さい、または、5より大きい
+if ($num1 &lt; 1 || $num1 &gt; 5) {
+  ...
+}
+</pre>
+<p>
+  論理演算子についてはこちらで解説しています。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100816136168.html">Perlの論理演算子</a>
+  </li>
+</ul>
+<h3>文字列の部分位置を調べる方法</h3>
+<p>
+  Perlの文字列比較演算子の「eq」は完全に文字列が一致するときに利用しますが、文字列の部分一致を知りたいときもありますね。そういう場合は、正規表現を使いましょう。
+</p>
+<pre>
+# $str1が「Cat」を含んでいたら
+if ($str1 =~ /Cat/) {
+  ...
+}
+</pre>
+<p>
+  正規表現については、以下で解説しています。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100827127859.html">Perlの正規表現</a>
+  </li>
+</ul>
+<h3>サンプルプログラム</h3>
+<p>
+  数値比較と辞書順比較のサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# 数値比較と辞書順比較
+print "1: 数値比較と辞書順比較を比べる\n";
+my $num1 = "1";  
+my $num2 = "02"; 
+
+if ($num1 &lt;  $num2) {
+  print "数値で比較して$num1 は $num2 より小さい\n";
+}
+
+if ($num1 gt $num2) {
+  print "辞書順で比較して, $num1 は $num2 より、大きい\n";
+}
+
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+1: 数値比較と辞書順比較を比べる
+数値で比較して1 は 02 より小さい
+辞書順で比較して, 1 は 02 より、大きい
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

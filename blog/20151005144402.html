@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>データの種類を覚えよう | Rstats入門(統計解析・科学技術計算) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Rstatsで利用できるデータ型を覚えましょう。Rstatsの型は、R言語の型と同じです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="データの種類を覚えよう | Rstats入門(統計解析・科学技術計算) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Rstatsで利用できるデータ型を覚えましょう。Rstatsの型は、R言語の型と同じです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20151005144402.html">データの種類を覚えよう | Rstats入門(統計解析・科学技術計算)</a></h2>
+<p>
+  Rstatsで利用できるデータ型を覚えましょう。Rstatsの型は、R言語の型と同じです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>NULL - 何もない</h3>
+<p>
+  何もないということを表現するのにNULLを使用します。配列の初期化やnames属性などの属性を取り除くときに利用できます。
+</p>
+<pre>
+NULL
+</pre>
+<h3>欠損値 NA</h3>
+<p>
+  欠損値は<b>NA</b>で表現します。NAというのはデータの欠損を表します。
+</p>
+<pre>
+NA
+</pre>
+<h3>非数 - NaN, Inf(不動少数点演算のみ)</h3>
+<p>
+  NaNは、NAと名前はにていますがまったく異なるものです。NaN不動少数点の演算において、数として表現できないことを意味します。
+</p>
+<pre>
+NaN
+</pre>
+<p>
+  たとえば、「0/0」という演算の結果は、数として表現できないので、「NaN」になります。
+</p>
+<p>
+  また、浮動小数点の演算が、無限大として表現できる場合は「Inf」が返ります。
+</p>
+<p>
+  =====
+</p>
+<pre>
+Inf
+</pre>
+<p>
+  たとえば「1/0」という演算の結果は「Inf」になります。
+</p>
+<h3>文字列</h3>
+<p>
+  文字列を作成するには、Perlの文字列を<b>「c_」</b>関数の引数に指定します。
+</p>
+<pre>
+c_("abc");
+</pre>
+<h3>数値</h3>
+<p>
+  数値を作成するには、Perlの数値を<b>「c_」</b>関数の引数に指定します。
+</p>
+<pre>
+c_(34.4);
+</pre>
+<h3>複素数</h3>
+<p>
+  複素数を表現するには<b>i_</b>を使用します。たとえば「1+2i」という複素数を表現するには「<b>i_</b>」関数を使って次のようにします。
+</p>
+<pre>
+1 + 2*i_
+</pre>
+<p>
+  数値の「1」と複素数「1 + 0*i_」は異なるので注意してください。
+</p>
+<h3>論理値</h3>
+<p>
+  論理地は「<b>TRUE</b>」と「<b>FALSE</b>」で表現します。
+</p>
+<pre>
+# 真
+TRUE
+
+# 偽
+FALSE
+</pre>
+<p>
+  省略形として<b>T_</b>と<b>F_</b>を使うこともできます。
+</p>
+<pre>
+# 真
+T_
+
+# 偽
+F_
+</pre>
+<h3>日付(実装未)</h3>
+<p>
+  日付型が存在しますが、現在は、未実装です。
+</p>
+<hr>
+<p>
+  <a href="/blog/20151002144374.html">Rstats入門(統計解析・科学技術計算) </a>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

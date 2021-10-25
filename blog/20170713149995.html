@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlで人工知能・機械学習を行うAI::MXNetの出来が凄そうだ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="最近知った。Perlで人工知能プログラミングを行うAI::MXNetの出来が凄そうだ。ディープラーニングという手法を使った機械学習を行うライブラリです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlで人工知能・機械学習を行うAI::MXNetの出来が凄そうだ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="最近知った。Perlで人工知能プログラミングを行うAI::MXNetの出来が凄そうだ。ディープラーニングという手法を使った機械学習を行うライブラリです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20170713149995.html">Perlで人工知能・機械学習を行うAI::MXNetの出来が凄そうだ</a></h2>
+<p>
+  最近知った。Perlで<b>人工知能プログラミング</b>を行うAI::MXNetの出来が凄そうだ。ディープラーニングという手法を使った機械学習を行うライブラリです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  これは公式のAmazonクラウドのMZNetでも、Perlの公式ライブラリとして受け入れられたそうだ。
+</p>
+<p>
+  インターフェースはPythonのMXNetライブラリとほぼ一緒に仕上がっているみたい。C++で書かれたMXNetのPerlバインディングになっている。
+</p>
+<blockquote>
+<p>
+  <a href="https://metacpan.org/release/AI-MXNet">Perlで人工知能プログラミングを行うAI::MXNet(CPAN)</a>
+</p>
+</blockquote>
+<p>
+  MXNetのかなり多くの機能をPerlから利用できるようだ。Perlで人口知能プログラミングに興味がある方は、ぜひチャレンジしてみて!
+</p>
+<p>
+  ライブラリがあるとPerlでも、人工知能プログラミングができるんだね。すごいね! GPUも使えるみたいよ!
+</p>
+<pre>
+## Convolutional NN for recognizing hand-written digits in MNIST dataset
+## It's considered "Hello, World" for Neural Networks
+## For more info about the MNIST problem please refer to http://neuralnetworksanddeeplearning.com/chap1.html
+ 
+use strict;
+use warnings;
+use AI::MXNet qw(mx);
+use AI::MXNet::TestUtils qw(GetMNIST_ubyte);
+use Test::More tests =&gt; 1;
+ 
+# symbol net
+my $batch_size = 100;
+ 
+### model
+my $data = mx-&gt;symbol-&gt;Variable('data');
+my $conv1= mx-&gt;symbol-&gt;Convolution(data =&gt; $data, name =&gt; 'conv1', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
+my $bn1  = mx-&gt;symbol-&gt;BatchNorm(data =&gt; $conv1, name =&gt; "bn1");
+my $act1 = mx-&gt;symbol-&gt;Activation(data =&gt; $bn1, name =&gt; 'relu1', act_type =&gt; "relu");
+my $mp1  = mx-&gt;symbol-&gt;Pooling(data =&gt; $act1, name =&gt; 'mp1', kernel =&gt; [2,2], stride =&gt;[2,2], pool_type=&gt;'max');
+ 
+my $conv2= mx-&gt;symbol-&gt;Convolution(data =&gt; $mp1, name =&gt; 'conv2', num_filter =&gt; 32, kernel=&gt;[3,3], stride=&gt;[2,2]);
+my $bn2  = mx-&gt;symbol-&gt;BatchNorm(data =&gt; $conv2, name=&gt;"bn2");
+my $act2 = mx-&gt;symbol-&gt;Activation(data =&gt; $bn2, name=&gt;'relu2', act_type=&gt;"relu");
+my $mp2  = mx-&gt;symbol-&gt;Pooling(data =&gt; $act2, name =&gt; 'mp2', kernel=&gt;[2,2], stride=&gt;[2,2], pool_type=&gt;'max');
+ 
+ 
+my $fl   = mx-&gt;symbol-&gt;Flatten(data =&gt; $mp2, name=&gt;"flatten");
+my $fc1  = mx-&gt;symbol-&gt;FullyConnected(data =&gt; $fl,  name=&gt;"fc1", num_hidden=&gt;30);
+my $act3 = mx-&gt;symbol-&gt;Activation(data =&gt; $fc1, name=&gt;'relu3', act_type=&gt;"relu");
+my $fc2  = mx-&gt;symbol-&gt;FullyConnected(data =&gt; $act3, name=&gt;'fc2', num_hidden=&gt;10);
+my $softmax = mx-&gt;symbol-&gt;SoftmaxOutput(data =&gt; $fc2, name =&gt; 'softmax');
+ 
+# check data
+GetMNIST_ubyte();
+ 
+my $train_dataiter = mx-&gt;io-&gt;MNISTIter({
+    image=&gt;"data/train-images-idx3-ubyte",
+    label=&gt;"data/train-labels-idx1-ubyte",
+    data_shape=&gt;[1, 28, 28],
+    batch_size=&gt;$batch_size, shuffle=&gt;1, flat=&gt;0, silent=&gt;0, seed=&gt;10});
+my $val_dataiter = mx-&gt;io-&gt;MNISTIter({
+    image=&gt;"data/t10k-images-idx3-ubyte",
+    label=&gt;"data/t10k-labels-idx1-ubyte",
+    data_shape=&gt;[1, 28, 28],
+    batch_size=&gt;$batch_size, shuffle=&gt;1, flat=&gt;0, silent=&gt;0});
+ 
+my $n_epoch = 1;
+my $mod = mx-&gt;mod-&gt;new(symbol =&gt; $softmax);
+$mod-&gt;fit(
+    $train_dataiter,
+    eval_data =&gt; $val_dataiter,
+    optimizer_params=&gt;{learning_rate=&gt;0.01, momentum=&gt; 0.9},
+    num_epoch=&gt;$n_epoch
+);
+my $res = $mod-&gt;score($val_dataiter, mx-&gt;metric-&gt;create('acc'));
+ok($res-&gt;{accuracy} &gt; 0.8);
+</pre>
+<h3>参考記事</h3>
+<ul>
+  <li>
+    <a href="http://dokechin.hatenablog.com/entry/2017/07/15/204726">MacでAI::MXNetを動かして見た|鈍足ランナーのＩＴ日記</a>
+  </li>
+  <li>
+    <a href="http://codehex.hateblo.jp/entry/2017/09/06/150712">MXNet の基礎を Perl で学んでみた part 1|アルパカ三銃士</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

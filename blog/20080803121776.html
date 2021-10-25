@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>オプションを指定できるフィルタプログラムを書く - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="コマンドライン引数で、オプションを指定できるフィルタプログラムを書いてみます。オプションに指定できるのは、切り出す列の位置と区切り文字です。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="オプションを指定できるフィルタプログラムを書く - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="コマンドライン引数で、オプションを指定できるフィルタプログラムを書いてみます。オプションに指定できるのは、切り出す列の位置と区切り文字です。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20110212130370.html">
+      <span itemprop="name">ファイル入出力</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080803121776.html">オプションを指定できるフィルタプログラムを書く</a></h2>
+<p>
+  コマンドライン引数で、オプションを指定できるフィルタプログラムを書いてみます。オプションに指定できるのは、切り出す列の位置と区切り文字です。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  <a href="/blog/20100123126425.html">while文</a>と行入力演算子を使って、行を読み込んでいきます。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# コマンドラインオプションを扱うためのモジュール
+use Getopt::Long 'GetOptions';
+
+# Unix風のフィルタプログラミングを記述する。
+# 今回はカンマ区切りの文字列の一列目を取り出すフィルタプログラムです。
+
+# コマンドラインオプションが指定されなかった場合のデフォルト値
+my $col = 1;
+my $sep = ',';
+
+# コマンドラインオプションを受け取る
+GetOptions(
+  'col=i' =&gt; \$col,
+  'sep=s' =&gt; \$sep,
+);
+
+# . など正規表現で特別な意味を持つ文字が指定された
+# 場合でも正しく動くように文字列をエスケープ
+$sep = quotemeta($sep); 
+
+# 特殊な行入力演算子
+while (&lt;&gt;) { 
+  # chomp関数は引数を省略したときは、$_が対象とされる。
+  chomp;
+  
+  # splitの第３引数の-1は、最終列が空文字であった場合に
+  # も正しく動くようにするために指定
+  # split関数がリストを返すので、必要な部分だけ
+  # 配列スライスで取得
+  my $item = (split( /$sep/, $_, -1))[$col - 1];
+  print $item . "\n";
+}
+</pre>
+<p>
+  (参考)<a href="/blog/20100827127859.html">正規表現</a>
+</p>
+<p>
+  以下は、読み込み用のファイルです。
+</p>
+<pre>
+masao:10:Japan
+taro:20:USA
+rika:38:France
+</pre>
+<h3>コード解説</h3>
+<h4>(1)コマンドラインオプションの指定方法</h4>
+<pre>
+use Getopt::Long;
+</pre>
+<p>
+  <a href="/blog/20100514127696.html">Getopt::Long</a>を使うと、コマンドラインオプションを簡単に指定できます。コマンドラインオプションを指定する場合は以下のようにします。
+</p>
+<p>
+  コマンドライン引数についてわからない場合は、先に次の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080108132865.html">コマンドライン引数を処理する</a>
+  </li>
+</ul>
+<pre>
+# 指定方法1( --name val 形式)
+perl スクリプト名 --col 1 --sep : ファイル名
+
+# 指定方法2( --name=val 形式)
+perl スクリプト名 --col=1 --sep=: ファイル名
+
+# 指定方法3( 省略形式 )
+perl スクリプト名 -c1 -s: ファイル名
+</pre>
+<h3>(2)GetOptions関数</h3>
+<p>
+  GetOption関数は、コマンドラインオプションの受け取りを簡単にするための関数です。use Getopt::Long したときに、インポートされます。
+</p>
+<p>
+  以下は書き方のサンプルです。
+</p>
+<pre>
+# コマンドラインオプションが指定されなかった場合のデフォルト値
+my $col = 1;
+my $sep = ',';
+
+# コマンドラインオプションを受け取る
+GetOptions(
+  'col=i' =&gt; \$col,
+  'sep=s' =&gt; \$sep,
+);
+</pre>
+<p>
+  まず、コマンドラインオプションのデフォルト値を設定します。
+</p>
+<p>
+  次にGetOption関数を呼び出して指定したいオプションの数だけ
+</p>
+<pre>
+'オプション名=値の種類' =&gt; 変数へのリファレンス
+</pre>
+<p>
+  という記述を並べます。値の種類には、文字列を表す s 数値を表す i などを指定できます。
+</p>
+<h4>(3) whileループでの行読み込みの改良</h4>
+<pre>
+while (&lt;&gt;) {
+  chomp;
+  my $item = (split(/$sep/, $_, -1))[$col - 1];
+  print $item,"\n";
+}
+</pre>
+<p>
+  whileでのループ処理については、次の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170521149524.html">for文、while文を使った繰り返し処理</a>
+  </li>
+</ul>
+<h4>(3)-1 $_の省略</h4>
+<pre>
+chomp;
+</pre>
+<p>
+  <a href="/blog/20080226120403.html">chomp関数</a>で引数を省略すると作用する対象は<a href="/blog/20161102147817.html">特殊変数</a>「$_」になります。Perlには、引数を省略すると$_に作用する関数が他にもたくさんあります。
+</p>
+<h4>(3)-2 split関数の第３引数に-1を指定</h4>
+<pre>
+split(/$sep/, $_, -1)
+</pre>
+<p>
+  <a href="/blog/20080301120434.html">split関数</a>の第３引数を省略すると要素の最後が空白の場合は、最後の空文字が無視されてしまいます。(hutaさんに指摘されました。)
+</p>
+<pre>
+taro,10,
+</pre>
+<p>
+  を読み込んだ場合、ほしいのは
+</p>
+<pre>
+('taro', 10, '')
+</pre>
+<p>
+  というリストであるのに
+</p>
+<pre>
+('taro', 10)
+</pre>
+<p>
+  を取得してしまいます。これを解決するために、splitの第３引数に、-1を与えることで最後の空文字を認識させることができます。
+</p>
+<h4>(3)-3 配列スライスで指定した要素だけを取得</h4>
+<pre>
+my $item = (split(/$sep/, $_, -1))[$col - 1];
+</pre>
+<p>
+  splitは、リストを返すので<a href="/blog/20080216120316.html">配列スライス</a>で、指定した要素だけを取得しています。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

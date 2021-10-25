@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>goto文 - 任意のラベルにジャンプする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="goto文を使うを任意のラベルにジャンプすることができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="goto文 - 任意のラベルにジャンプする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="goto文を使うを任意のラベルにジャンプすることができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+        <span itemprop="name">構文・文法</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20170514149606.html">goto文 - 任意のラベルにジャンプする</a></h2>
+<p>
+  <b>goto文</b>を使うを任意のラベルにジャンプすることができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+goto ラベル
+</pre>
+<h3>gotoは使わないのが良い作法</h3>
+<p>
+  <a href="/blog/20091120124667.html">Perlの現代的な記述方法</a>で解説していますが、gotoは、使わないのがよいプログラミングの作法です。
+</p>
+<p>
+  エラー処理を行いたい場合は<a href="/blog/20100411127089.html">例外処理</a>を使い、ループから脱出したい場合は<a href="/blog/20170527149589.html">last文</a>を使いましょう。Perlには代替手段が用意されているので、gotoを使うことはまずありません。
+</p>
+<h3>関数を再帰させる場合がgotoの唯一の使いどころ</h3>
+<p>
+  gotoはラベルにジャンプするほかに、関数をコールスタックを増やさずに、実行することができます。Perlは末尾再帰の最適化を行なわず、深いスタックになると警告が発生しますが、「goto &関数名」という構文で回避できます。
+</p>
+<pre>
+goto &amp;関数名
+</pre>
+<p>
+  末尾再帰でgotoを使ったサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# 末尾再帰する関数
+my $fact = fact(3, 2);
+
+print "$fact\n";
+
+sub fact {
+  my ($i, $n) = @_;
+  if ($n == 0){
+    return $i;
+  }
+  else {
+    @_ = ($i * $n, $n-1);
+    goto &amp;fact;
+  }
+}
+</pre>
+<p>
+  gotoの唯一の使いどころは末尾再帰ですが、そもそも末尾再帰で書けることは<a href="/blog/20170521149524.html">for文</a>を使って、同じことを記述することができます。ですので、末尾再帰ではなくfor文を使って書いて、gotoをまったくソースコードで使わないようにするのが、お勧めです。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

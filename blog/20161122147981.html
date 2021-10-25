@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>MySQLとの連携 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlで「MySQL」を利用する方法を解説します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="MySQLとの連携 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlで「MySQL」を利用する方法を解説します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20170130148603.html">
+      <span itemprop="name">データベース</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20161122147981.html">MySQLとの連携</a></h2>
+<p>
+  Perlで「MySQL」を利用する方法を解説します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>DBIとDBIの解説</h3>
+<p>
+  まずMySQLを扱う基本的な知識として、DBIとDBIというものについて解説します。プログラムからデータベースに接続する場合は、DBIというものを使用するのが一般的です。また実際のRDBMSとのやりとりは、DBDを通して行われます。
+</p>
+<h4>さまざまなRDBMSを利用できる共通のAPI DBI</h4>
+<p>
+  DBIとは、RDBMS(リレーショナルデータベース管理システム)に依存しないAPIのことです。( DBIは、Database Interface の略 )
+</p>
+<p>
+  RDBMSには、MySQL、Oracle,DB2,Postgre SQLなどがありますが、別々の人が作ったものですので、利用方法は少しづつ異なります。DBIを使用すれば、異なるベータベースに共通の記述で、接続したり、SQLをリクエストしたりできます。
+</p>
+<h4>データベースに接続するための関数群 DBI</h4>
+<p>
+  Perlに同名のモジュールがあるのでインストールします。
+</p>
+<pre>
+cpan DBI
+</pre>
+<h4>RDBMSと実際にやり取りを行うドライバ DBD</h4>
+<p>
+  DBIは関数を提供しますが、実際は内部でDBDがデータベースとやり取りを行っています。DBDには、MySQL用、PostgreSQL用、Oracle用,SQLite用などさまざまな種類があります。
+</p>
+<p>
+  MySQL用のDBDをインストールします。MySQLがインストールされていることが必要です。
+</p>
+<pre>
+cpan DBD::mysql
+</pre>
+<h4>DBIとDBDとデータベースサーバのやり取りのイメージ</h4>
+<p>
+  DBIというのは、どのデータベースに接続するときも変わりません。DBIはデータベースに依存しないように作られた接続のための関数の集まりだからです。DBDというのが、データベースと実際にデータをやり取りをします。
+</p>
+<pre>
+|-----|       |-------------|         |-------------|
+|     |       |             |         |             |
+|     |-------| DBD::mysql  |---------| MySQL       |
+|     |       |             |         |             |
+|     |       |-------------|         |-------------|
+| DBI |              
+|     |       |-------------|         |-------------|
+|     |       |             |         |             |
+|     |-------| DBD::Oracle |---------| Oracle      |
+|     |       |             |         |             |
+|-----|       |-------------|         |-------------|
+</pre>
+<h3>MySQLサーバーへ接続する</h3>
+<p>
+  MySQLサーバに接続するには<strong>connect</strong>メソッドを使用します。
+</p>
+<pre>
+use DBI;
+my $dbh = DBI-&gt;connect("DBI:mysql:$database", $user, $password);
+</pre>
+<p>
+  リモートのMySQLサーバに接続するには、ホスト名を指定して
+</p>
+<pre>
+use DBI;
+my $dbh = DBI-&gt;connect(
+  "DBI:mysql:$database:$hostname",
+  $user,
+  $password
+);
+</pre>
+<p>
+  のようにします。
+</p>
+<p>
+  ポート番号も指定することができます。
+</p>
+<pre>
+use DBI;
+my $dbh = DBI-&gt;connect(
+  "DBI:mysql:$database:$hostname:$port",
+  $user,
+  $password
+);
+</pre>
+<h4>データベースハンドル</h4>
+<p>
+  connectメソッドは、データベースの操作に利用するデータベースハンドルというものを戻り値に返却します。
+</p>
+<p>
+  データベースハンドルを使用して、MySQLサーバとやり取りします。
+</p>
+<h4>エラー処理</h4>
+<p>
+  データベース名が間違っていたり、パスワードが間違っていたり、何らかの理由でデータベースに接続できない場合は、戻り値にundefが返却されます。そのときのエラーの内容は、
+</p>
+<pre>
+$DBI::errstr;
+</pre>
+<p>
+  で取得できます。errは数字、errstrには、エラーの内容が入っています。
+</p>
+<p>
+  データベースはプログラムの外部にあるシステムですので、エラー処理は必須です。最初のサンプルでは、エラー処理を行っていませんが必ず、エラー処理を行います。
+</p>
+<pre>
+use DBI;
+my $dbh = DBI-&gt;connect(
+  "DBI:mysql:$database:$hostname",
+  $user,
+  $password
+) or die "cannot connect to MySQL: $DBI::errstr";
+</pre>
+<h3>現在時刻をMySQLの日付時刻型に変換する</h3>
+<p>
+  現在時刻をMySQLの日付時刻型に変換するにはlocaltime関数とstrftime関数を使用します。
+</p>
+<pre>
+use POSIX 'strftime';
+
+# MySQLの日付時刻型(datetime型)
+my $current_datetime = strftime("%Y-%m-%d %H:%M:%S", localtime);
+
+# MySQLの日付型(date型)
+my $current_date = strftime("%Y-%m-%d", localtime);
+</pre>
+<h3>「MySQL::Diff」モジュールで「データベースの定義の差分」を抽出する</h3>
+<p>
+  MySQLのデータベースの差分から、差分をなくすようなコマンドを自動生成するツールを探していたら<a href="/blog/20111101132239.html">MySQL::Diff</a>モジュールを発見した。このモジュールにはmysqldiffというコマンドラインツールがついているので、通常はこちらを使うのが良いみたい。
+</p>
+<p>
+  開発環境と本番環境の差分を埋めるのにとても役立つ。すべての差分を表示してくれるわけではなく、テーブル定義に関する部分だけのようなので、トリガやインデックスについては、自分で設定する必要があるようです。
+</p>
+<p>
+  ドキュメントにはオプションの説明がないようなので、--helpコマンドで確認できる。
+</p>
+<pre>
+mysqldiff --help
+</pre>
+<h3>DBD::mysqlをインストールするためにはmysql-develが必要</h3>
+<p>
+  PerlでDBIからMySQLに接続しようと思う場合は<strong>DBD::mysql</strong>というモジュールが必要になります。このモジュールは、C言語のライブラリに依存しており、単独ではインストールが失敗します。。たとえばCent OSなどのRed Hat系のOSであれば<strong>mysql-devel</strong>というパッケージをインストールしておく必要があります。
+</p>
+<pre>
+yum -y install mysql-devel
+</pre>
+<p>
+  「mysql-devel」がインストールされるとDBD::mysqlのインストールは成功するようになります。
+</p>
+<pre>
+cpan DBD::mysql
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

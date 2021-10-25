@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>シンボルテーブルの中身を覗いてみる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlは、シンボルテーブルというものを持ち、プログラマーが、それを参照したり、変更を加えたりすることができます。Perlは、他の言語に比べて、柔軟で、高い適応力を持ちますが、その力をを生み出している機能のひとつがシンボルテーブルです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="シンボルテーブルの中身を覗いてみる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlは、シンボルテーブルというものを持ち、プログラマーが、それを参照したり、変更を加えたりすることができます。Perlは、他の言語に比べて、柔軟で、高い適応力を持ちますが、その力をを生み出している機能のひとつがシンボルテーブルです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161130148051.html"><span itemprop="name">モジュール作成</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080613121341.html">シンボルテーブルの中身を覗いてみる</a></h2>
+<p>
+  Perlは、シンボルテーブルというものを持ち、プログラマーが、それを参照したり、変更を加えたりすることができます。Perlは、他の言語に比べて、柔軟で、高い適応力を持ちますが、その力をを生み出している機能のひとつがシンボルテーブルです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  シンボルテーブルは、%main:: という名前の単なるハッシュです。%main:: というハッシュから、実行されているスクリプトの持つすべてのサブルーチンとパッケージ変数を知ることができます。( レキシカル変数を除く )
+</p>
+<h3>シンボルテーブルの内容を覗いてみる</h3>
+<pre>
+# mainパッケージの内容を含むシンボルテーブル
+%main::
+# %main:: の別名
+%::
+</pre>
+<h3>シンボルテーブルを通じて、パッケージ変数の内容を知る</h3>
+<pre>
+our $num = 1;
+${$main::{num}};
+</pre>
+<p>
+  詳しい説明は、型グロブの解説で、説明します。ここでは、シンボルテーブルから、パッケージ変数の内容やサブルーチンの内容を知ることができるというPerlの機能について、覚えておいてください。
+</p>
+<p>
+  シンボルテーブルを中身を出力するサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# シンボルテーブルを覗いてみる。
+# このサブルーチンは、コンパイル時に、シンボルテーブルに登録される。
+# パッケージ宣言を、行っていないので、暗黙的にmain パッケージに属するものと
+# されます。
+
+our $num = 1;
+
+sub func {
+  return 2;
+}
+
+print "1: シンボルテーブルを覗いてみる\n";
+require Data::Dumper;
+print # シンボルテーブルは、単なるハッシュです。
+# main パッケージに、属するものは、
+# %main:: という名前で、参照できます。
+Data::Dumper-&gt;Dump([\%main::], [qw( *main:: )]),"\n";
+
+print "2:mainパッケージの num と func の内容を見る。\n";
+print $main::{ num },"\n";
+# main:: の別名として、 :: も使うことができます。 
+print $::{ num }, "\n";
+
+print $main::{ func }, "\n";
+print $::{ func }, "\n\n";
+
+print "3: シンボルテーブルから、変数の内容を取得する。\n";
+# ${ } で、'*main::num' から、スカラー変数を取り出す。
+my $num_from_symbol = ${$main::{num}};
+print $num_from_symbol;
+
+</pre>
+<h3>出力結果の意味</h3>
+<pre>
+print $main::{num};
+# 出力結果
+*main::num
+</pre>
+<p>
+  上記の出力結果は、 *main::num と表示されます。* 記号は、型グロブを表現する記号です。型グロブは、次回説明。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

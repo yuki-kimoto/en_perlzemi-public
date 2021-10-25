@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>ファイルハンドルの概念を理解する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlにおけるファイルハンドルの概念はややこしいので、解説しておきます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="ファイルハンドルの概念を理解する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlにおけるファイルハンドルの概念はややこしいので、解説しておきます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="/blog/20110212130370.html"><span itemprop="name">ファイル入出力</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20080721121664.html">ファイルハンドルの概念を理解する</a></h2>
+<p>
+  Perlにおけるファイルハンドルの概念はややこしいので、解説しておきます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>ファイルハンドルは実体ではなくて概念的なもの</h3>
+<p>
+  Perlでファイルハンドルといった場合は、Perlがファイルハンドルとして認識する複数の実体のことをいっています。ファイルハンドルという実体があるわけではないのです。
+</p>
+<h3>Perlが、ファイルハンドルとして認識するもの</h3>
+<ol>
+  <li>
+    シンボル( FH )
+  </li>
+  <li>
+    型グロブ( *FH )
+  </li>
+  <li>
+    型グロブへのリファレンス( \*FH )
+  </li>
+  <li>
+    IO::Handleクラスのオブジェクト
+  </li>
+  <li>
+    IO::Handleオブジェクトを継承したクラスのオブジェクト( IO::File など )
+  </li>
+</ol>
+<p>
+  Perlが、ファイルハンドルとして認識するものは、上記の5つです。以下の記述はすべて有効です。
+</p>
+<pre>
+# 1. シンボル FH
+open(FH, "&lt;", $file) or die "$!";
+
+# 2. 型グロブ *FH
+open(*FH, "&lt;", $file) or die "$!";
+
+# 3. 型グロブへのリファレンス \*FH
+my $fh = \*FH;
+open($fh, "&lt;", $file) or die "$!";
+
+# 4. IO::Handleオブジェクト
+use IO::Handle;
+my $fh = IO::Handle-&gt;new;
+open( $fh, "&lt;", $file ) or die "$!";
+
+# 5. IO::Fileオブジェクト( IO::Handleを継承 )
+use IO::File;
+my $fh = IO::File-&gt;new;
+open($fh, "&lt;", $file) or die "$!";
+</pre>
+<h3>現代的なファイルオープンの書き方</h3>
+<p>
+  現代的なファイルオープンの書き方は、
+</p>
+<pre>
+open(my $fh, "&lt;", $file) 
+  or die "Can't open file $file:$!";
+</pre>
+<p>
+  です。
+</p>
+<p>
+  未定義のスカラー変数がopen関数の第一引数に渡されると、無名型グロブへのリファレンスが自動的に生成されます。「3.型グロブへのリファレンス( \*FH )」と同じ記述で、my $fh = \*FH; の部分を自動的に行っているだけです。(これは、Perlの現代の実装で、将来的にはIO::Handleへのオブジェクトを自動生成するようになるかもしれません。)
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>warningsモジュール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="警告を表示するにはwarningsプラグマを使用します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="warningsモジュール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="警告を表示するにはwarningsプラグマを使用します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20130916137930.html">warningsモジュール</a></h2>
+<p>
+  警告を表示するには<strong>warnings</strong>プラグマを使用します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use warnings;
+</pre>
+<p>
+  Perlにおいては、デフォルトの状態では、警告は表示されず、スクリプトが実行されます。warningsプラグマを使えば、警告を表示させることができます。スクリプトを書く場合は、strictプラグマとあわせて、必ず記述するようにしましょう。
+</p>
+<h3>よく見る警告</h3>
+<p>
+  よく見るであろう警告についていくつか解説しておきます。
+</p>
+<h4>未定義値の使用</h4>
+<p>
+  未定義値を使用すると警告が表示されます。以下のスクリプトでは、未定義の値をそのままprint関数で出力してしまっています。
+</p>
+<pre>
+use warnings;
+
+# 未定義値を使用
+my $str;
+print $str;
+</pre>
+<p>
+  次のような警告が表示されます。
+</p>
+<pre>
+Use of uninitialized value $str in print at a.pl line 6
+</pre>
+<p>
+  英語なので翻訳します。
+</p>
+<pre>
+printにおいて未定義値$strを使用しています。6行目。
+</pre>
+<p>
+  未定義を利用しているという内容の警告が発生した場合は、変数に値が代入さないままになっているということです。つまり、スクリプトにミスがあるということです。スクリプトを修正して、この警告が表示されないようにしましょう。
+</p>
+<h3>文字列がエンコードされていない</h3>
+<p>
+  日本語などのマルチバイト文字を使用するときに、文字列がエンコードされていないことを知らせる警告が表示される場合があります。以下は警告が発生するスクリプトです。
+</p>
+<pre>
+use warnings;
+use utf8;
+
+# 文字列がエンコードされていない
+my $str = 'こんにちは';
+print $str;
+</pre>
+<p>
+  次のような警告が表示されます。
+</p>
+<pre>
+Wide character in print at a.pl line 7.
+</pre>
+<p>
+  英語なので翻訳します。
+</p>
+<pre>
+ワイド文字が使用されています。7行目。
+</pre>
+<p>
+  これは、文字列がエンコードされずに出力されているということを意味しています。ですから、きちんとエンコードしましょう。
+</p>
+<pre>
+use warnings;
+use utf8;
+use Encode 'encode';
+
+# 文字列がエンコードされていない
+my $str = 'こんにちは';
+print encode('UTF-8', $str);
+</pre>
+<h3>サブルーチンが再定義されている</h3>
+<p>
+  サブルーチンを、二回以上定義したときは、サブルーチンが再定義されているという警告が発生します。以下は警告が発生するスクリプトです。
+</p>
+<pre>
+use warnings;
+
+# サブルーチンの再定義
+sub one { 1 }
+sub one { 1 }
+</pre>
+<p>
+  次のような警告が表示されます。
+</p>
+<pre>
+Subroutine one redefined at a.pl line 5.
+</pre>
+<p>
+  英語なので翻訳します。
+</p>
+<pre>
+サブルーチンoneが再定義されています。5行目。
+</pre>
+<p>
+  サブルーチンを再定義しているときは、通常は間違いの可能性が高いのですが、一時的にサブルーチンを置き換えたいという場合がときどき発生します。そのような場合は、この警告を抑止することができます。
+</p>
+<pre>
+no warnings 'redefine';
+</pre>
+<p>
+  この定義を行うと、サブルーチンの再定義の警告は発生しなくなります。
+</p>
+<pre>
+use warnings;
+no warnings 'redefine';
+
+# サブルーチンの再定義の警告は発生しない
+sub one { 1 }
+sub one { 1 }
+</pre>
+<p>
+  サブルーチンの再定義の警告以外の警告も似たような方法で抑止することができますけれど、原則として警告は抑止してはいけません。警告が発生している原因の部分のほうを修正すべきです。
+</p>
+<h3>サブルーチンの再定義の警告を抑制する</h3>
+<p>
+  開発中にバグがあって、急遽修正しないといけないときは、モンキーパッチを当てることがときどきありますね。モンキーパッチというのは、サブルーチンやメソッドの定義を上書きして、正しい動きにしてあげることです。
+</p>
+<p>
+  でもサブルーチンの再定義を行うと、警告が発生します。この警告を表示しないようにするには<b>warnings</b>プラグマでサブルーチンの再定義の警告をとめるようにコンパイラに指示してあげます。
+</p>
+<pre>
+no warnings 'redefine';
+</pre>
+<p>
+  これで警告が表示されなくなります。これはレキシカルなスコープを持ちます。以下はモジュールのメソッドを上書きするサンプルです。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>order by句の生成 / DBIx::Custom - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="DBIx::Custom::Orderクラスを利用するとorder by句を簡単に記述することができます。たとえば、デフォルトの順序を最初に指定しておいて、状況に応じて順序をカスタマイズすることが簡単にできます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="order by句の生成 / DBIx::Custom - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="DBIx::Custom::Orderクラスを利用するとorder by句を簡単に記述することができます。たとえば、デフォルトの順序を最初に指定しておいて、状況に応じて順序をカスタマイズすることが簡単にできます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <script>location.href='https://dbix-custom.perlzemi.com/blog/20110928132041.html';</script>
+<ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+        <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20170130148603.html">
+      <span itemprop="name">データベース</span></a>
+    <meta itemprop="position" content="3" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20110401130559.html">
+      <span itemprop="name">DBIx::Custom</span></a>
+    <meta itemprop="position" content="4" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20110928132041.html">order by句の生成 / DBIx::Custom</a></h2>
+<p>
+  <strong>DBIx::Custom::Order</strong>クラスを利用するとorder by句を簡単に記述することができます。たとえば、デフォルトの順序を最初に指定しておいて、状況に応じて順序をカスタマイズすることが簡単にできます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  DBIx::Custom::Orderオブジェクトを生成するには、orderメソッドを使用します。
+</p>
+<pre>
+my $order = $dbi-&gt;order;
+</pre>
+<p>
+  DBIx::Custom::Orderオブジェクトが取得できます。
+</p>
+<p>
+  並びを指定するにはprependメソッドを使用します。order by句のパーツが前へ前へと追加されていきます。
+</p>
+<pre>
+$order-&gt;prepend('title', 'price desc');
+$order-&gt;prepend('author desc');
+</pre>
+<p>
+  最終的にorder句で利用する文字列に変換するにはto_stringメソッドを利用するか、DBIx::Custom::Orderオブジェクトを文字列として評価します。
+</p>
+<pre>
+my $order_str = $order-&gt;to_string;
+my $order_str = "$order";
+</pre>
+<p>
+  次のようなorder句が生成されます。
+</p>
+<pre>
+order by author desc, title, price desc
+</pre>
+<p>
+  では次に同名の列名を含むものをさらにprependして見ましょう。
+</p>
+<pre>
+$order-&gt;prepend('price asc');
+</pre>
+<p>
+  この場合には、priceが二つ存在しますが、DBIx::Custom::Orderオブジェクトは、重複を適切に処理してくれます。後で追加されたものが優先されます。文字列化すると次のようなorder by句が生成されるのが確認できます。
+</p>
+<pre>
+order by price asc, author desc, title
+</pre>
+<p>
+  もし並びの順序が固定されている場合はDBIx::Custom::Orderオブジェクトを使わずに直接記述するのが簡単です。並びの順序を動的に変えたい場合にDBIx::Custom::Orderオブジェクトを利用しましょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

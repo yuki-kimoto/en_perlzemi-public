@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>JSON - JSONデータを解析 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="JSONモジュールを使用すると、JSONデータを解析することができます。JSONはデータを記述するための言語で、配列やハッシュなどのデータ構造を表現することができます。JSONは単なる文字列ですので可搬性があります。他のプログラム言語とデータをやり取りした場合によく利用されます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="JSON - JSONデータを解析 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="JSONモジュールを使用すると、JSONデータを解析することができます。JSONはデータを記述するための言語で、配列やハッシュなどのデータ構造を表現することができます。JSONは単なる文字列ですので可搬性があります。他のプログラム言語とデータをやり取りした場合によく利用されます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100427127089.html">JSON - JSONデータを解析</a></h2>
+<p>
+  <strong>JSONモジュール</strong>を使用すると、JSONデータを解析することができます。JSONはデータを記述するための言語で、配列やハッシュなどのデータ構造を表現することができます。JSONは単なる文字列ですので可搬性があります。他のプログラム言語とデータをやり取りした場合によく利用されます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# モジュールの読み込みと関数のインポート
+use JSON qw/encode_json decode_json/;
+</pre>
+<p>
+  JSONをPerlのデータ構造に変換するには<strong>decode_json関数</strong>を使用します。
+</p>
+<pre>
+# JSONをPerlのデータ構造に変換する
+my $json_in = '[{"name" : "Ken", "age" : 19}, {"name" : "Ken", "age" : 25}]';
+
+my $data = decode_json($json_in);
+</pre>
+<p>
+  これは次のようなPerlのデータ構造に変換されます。
+</p>
+<pre>
+# JSON
+'[{"name" : "Ken", "age" : 19}, {"name" : "Ken", "age" : 25}]'
+</pre>
+<p>
+  　　　　　　　　　　　　　　▼
+</p>
+<pre>
+# Perl
+[
+  {
+    'name' =&gt; 'Ken',
+    'age' =&gt; 19
+  },
+  {
+    'name' =&gt; 'Ken',
+    'age' =&gt; 25
+  }
+];
+</pre>
+<p>
+  逆にPerlのデータ構造をJSONに変換するには<strong>encode_json関数</strong>を使用します。
+</p>
+<pre>
+# Perlのデータ構造をJSONに変換する
+my $json_out = encode_json($data);
+</pre>
+<h3>JSONモジュールでの日本語の扱い</h3>
+<p>
+  JSONモジュールで日本語を扱うときは少し注意が必要です。次のことを覚えておく必要があります。
+</p>
+<ol>
+  <li>
+    decode_jsonは「UTF-8バイト文字列-JSON」から「内部文字列-Perlデータ」への変換を行う
+  </li>
+  <li>
+    encode_jsonは「内部文字列-Perlデータ」から「UTF-8バイト文字列-JSON」への変換を行う
+  </li>
+</ol>
+<p>
+  この関係を図示すると次のようになります。
+</p>
+<pre>
+UTF-8バイト文字列-JSON     UTF-8バイト文字列-Perlデータ
+                      \
+encode_jsonは          \
+左上への変換            \
+                         \   decode_jsonは右下への変換
+                          \
+内部文字列JSON             内部文字列-Perlデータ
+</pre>
+<p>
+  左上から右下への変換がdecode_jsonによって行われ、右下から左上への変換がencode_jsonによって行われます。上下や左右への変換を行うメソッドは用意されていません。
+</p>
+<p>
+  たとえば間違いやすい例ですが次のように書くとうまくいきません。(日本語をスクリプトの中で扱うので、utf8プラグマを有効にして、スクリプトはUTF-8で保存しています。)
+</p>
+<pre>
+# 日本語を扱うときのよくある間違い。decode_jsonはUTF-8バイト文字列を受け取る必要がある
+use utf8;
+use JSON 'decode_json';
+
+my $json = '{"name" : "増田"}';
+
+my $data = decode_json($json);
+</pre>
+<p>
+  これがうまくいかない理由は、utf8プラグマが有効になっているので$jsonはすでに内部文字列に変換されているからです。decode_jsonはバイト文字列を引数に取りますので、これではうまくいきません。Encodeモジュールのencode_utf8関数でUTF-8バイト文字列に変換する必要があります。
+</p>
+<pre>
+# 日本語を扱う場合の正しい例
+use utf8;
+use JSON 'decode_json';
+use Encode 'encode_utf8';
+
+my $json = '{"name" : "増田"}';
+
+# UTF-8バイト文字列に変換
+$json = encode_utf8($json);
+
+my $data = decode_json($json);
+</pre>
+<h3>ファイルに書かれたJSONを読み込む</h3>
+<p>
+  JSONモジュールにはファイルを読み込む機能はありませんので、ファイルから読み込む方法を記載しておきます。
+</p>
+<pre>
+# ファイルからJSONを読み込むサンプル
+use JSON 'decode_json';
+
+my $file = shift;
+
+my $data = decode_json(get_content($file));
+
+# ファイルの内容を取得する関数
+sub get_content {
+  my $file = shift;
+
+  open my $fh, '&lt;', $file
+    or die "Can't open file \"$file\": $!";
+  
+  my $content = do { local $/; &lt;$fh&gt; };
+ 
+  close $fh;
+
+  return $content;
+}
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Class::Accessor::Fast - アクセサを簡単に作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Class::Accessor::Fastはアクセサを簡単に作成するためのモジュールです。アクセサとはオブジェクトの属性にアクセスするためのメソッドのことです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Class::Accessor::Fast - アクセサを簡単に作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Class::Accessor::Fastはアクセサを簡単に作成するためのモジュールです。アクセサとはオブジェクトの属性にアクセスするためのメソッドのことです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100223126425.html">Class::Accessor::Fast - アクセサを簡単に作成する</a></h2>
+<p>
+  <strong>Class::Accessor::Fast</strong>はアクセサを簡単に作成するためのモジュールです。アクセサとはオブジェクトの属性にアクセスするためのメソッドのことです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  mk_accessorsメソッドを使用してアクセサを生成することができます。Class::Accessor::Fastを継承してパッケージ名からmk_accesors()を呼び出します。
+</p>
+<pre>
+# アクセサの生成
+package YourClass;
+use base 'Class::Accessor::Fast';
+
+__PACKAGE__-&gt;mk_accessors($meth1, $meth2, ...);
+</pre>
+<p>
+  一般的なクラスのサンプルです。Pointクラスはx()とy()というアクセサを持ちます。Class::Accessor::Fastのnew()はハッシュのリファレンスしか受け取ることしかできないので、ハッシュとハッシュのリファレンスを受け取ることができるようにオーバーライドするのが良いと思います。
+</p>
+<pre>
+package Point;
+
+use strict;
+use warnings;
+
+use base 'Class::Accessor::Fast';
+
+# アクセサ
+__PACKAGE__-&gt;mk_accessors(qw/x y/);
+
+# コンストラクタ
+sub new {
+    my $class = shift;
+    
+    # 属性
+    my $args = ref $_[0] eq 'HASH' ? $_[0] : {@_};
+    
+    # new()のオーバーライド
+    return $class-&gt;SUPER::new({
+        x =&gt; 0,
+        y =&gt; 0,
+        %$args
+    });
+}
+</pre>
+<p>
+  このクラスは次のように使用します。
+</p>
+<pre>
+my $point = Point-&gt;new(x =&gt; 1, y =&gt; 2);
+$point-&gt;x(4);
+$point-&gt;y(5);
+</pre>
+<h3>Class::Accessor::Fastに関するFAQ</h3>
+<p>
+  Q. コンストラクタの引数にハッシュリファレンスではなくハッシュを渡したり、アクセサのデフォルト値を設定したいです。
+</p>
+<p>
+  A. <a href="/blog/20100224126425.html">Object::Simple</a>モジュールでそれらの機能が提供されています。Object::Simpleではコンストラクタにハッシュを渡したり、アクセサのデフォルト値を指定することができます。Class::Accessor::Fastで行いたい場合はサンプルのようにnewをオーバーライドすることで可能になります。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

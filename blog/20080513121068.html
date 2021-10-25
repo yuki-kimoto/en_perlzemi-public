@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>「_」 - ファイルテストの結果の再利用 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="「_」を使用するとファイルテスト演算子、あるいはstat関数の結果を再利用することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="「_」 - ファイルテストの結果の再利用 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="「_」を使用するとファイルテスト演算子、あるいはstat関数の結果を再利用することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080513121068.html">「_」 - ファイルテストの結果の再利用</a></h2>
+<p>
+  「<strong>_</strong>」を使用すると<a href="/blog/20100820127859.html">ファイルテスト演算子</a>、あるいは<a href="/blog/20080512121060.html">stat関数</a>の結果を再利用することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+if( -s $file &gt; $size &amp;&amp; -A _ &gt; $from_last_access ){ 
+  ...
+}
+</pre>
+<p>
+  -s $file で、サイズを取得しますが、実は背後では、stat を呼んでいます。そのときに、サイズ以外の情報も内部的に保存されます。_ を利用すれば、一回目のファイルテストで取得した、ファイルの情報を再利用できます。
+</p>
+<p>
+  _ を使う意義はパフォーマンスだけです。ファイルの情報を得るには、OSに対してシステムコールを行わなければなりません。システムコールは、一般的にコストがかかります。_ を使えば、すでに取得しているファイル情報を利用するので、2回目のシステムコールが省かれます。
+</p>
+<p>
+  注意点は、近接している場所以外では使わないことです。どこかで、statが呼ばれると、情報が更新されてしまいます。
+</p>
+<h3>サンプル</h3>
+<p>
+  ファイルテストの結果を再利用するサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# ファイル演算子(あるいは stat )の結果を再利用する。
+
+# 準備
+my $file = 'a.txt';
+unless (-f $file){
+  die "$file は存在しません。\n"; # ファイルの存在をチェック
+}
+
+print " 1: 古くて、ファイルサイズの大きいファイルかをチェックする\n";
+my $size = 1_000_000;
+my $from_last_access = 90;
+
+if (-s $file &gt; $size &amp;&amp; -A _ &gt; $from_last_access) { 
+  # 2回目のファイルテストには、_ が利用できる。
+  print "$file は、$sizeバイトより大きくて、" .
+    "最終アクセスから $from_last_access日以上たっています。\n\n"; 
+}
+else { print "$fileは、条件に当てはまりませんでした。\n" }
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

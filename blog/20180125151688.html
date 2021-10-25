@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>or演算子 - 優先順位が低い論理和  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="orはPerlの論理演算子のひとつで、論理和を表現します。||と意味は同じですが、orの方が演算子の優先順位が低く、文と文の間に利用するのが一般的です。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="or演算子 - 優先順位が低い論理和  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="orはPerlの論理演算子のひとつで、論理和を表現します。||と意味は同じですが、orの方が演算子の優先順位が低く、文と文の間に利用するのが一般的です。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20180125151688.html">or演算子 - 優先順位が低い論理和 </a></h2>
+<p>
+  <b>or</b>はPerlの<a href="/blog/20100816136168.html">論理演算子</a>のひとつで、論理和を表現します。||と意味は同じですが、orの方が演算子の優先順位が低く、文と文の間に利用するのが一般的です。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+文1 or 文2
+</pre>
+<p>
+  このように記述すると、文1が偽を返したときに、文2が実行されます。
+</p>
+<h3>orを条件分岐として使う</h3>
+<p>
+  このような性質を利用してorは条件分岐に使われることが多いです。たとえば<a href="/blog/20080718121643.html">open関数</a>が失敗した場合は次のように記述します。
+</p>
+<pre>
+open my $fh, '&lt;', $file
+  or die qq/Can't open file "$file": $!/;
+</pre>
+<p>
+  open関数が成功した場合は真が返されるのでorの右辺は実行されません。open関数が失敗した場合はundefが返されるので右辺の<a href="/blog/20100212126425.html">die</a>が実行されプログラムは終了します。
+</p>
+<p>
+  もうひとつの例として、system関数と一緒に使われることもあります。system関数は成功すると0を返すので、次のように記述します。
+</p>
+<pre>
+system(@cmd) == 0
+  or die "Can't execute command @cmd";
+</pre>
+<p>
+  主要な処理を先に記述して、補足的なエラー処理を後で書きたい場合に、orによる条件分岐を使うことができます。
+</p>
+<p>
+  「and」を条件分岐に使うこともできますが、読みにくいので「or」をお勧めします。
+</p>
+<pre>
+# andで書き換えた例
+system(@cmd)
+  and die "Can't execute command @cmd";
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

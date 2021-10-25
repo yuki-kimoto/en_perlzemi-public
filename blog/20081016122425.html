@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>月末日を取得する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="月末日を取得する関数のサンプルです。Time::Localモジュールのtimelocal関数を使って存在する日付を確かめています。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="月末日を取得する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="月末日を取得する関数のサンプルです。Time::Localモジュールのtimelocal関数を使って存在する日付を確かめています。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161123147990.html">
+        <span itemprop="name">日付・時刻</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20081016122425.html">月末日を取得する</a></h2>
+<p>
+  月末日を取得する関数のサンプルです。Time::Localモジュールのtimelocal関数を使って存在する日付を確かめています。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use strict;
+use warnings;
+
+print "(1)月末日を取得する。\n";
+my $end_of_month_200802 = end_of_month(2008, 2);
+print "2008年2月の月末日は$end_of_month_200802日です。\n";
+
+# 月末日を求める関数。
+sub end_of_month {
+  my ($year, $month) = @_;
+  return if !$year || !$month;
+
+  # Time::Local::timelocal関数は1900からの経過年を引数
+  # にとるので、1900を引く。    
+  $year -= 1900; 
+
+  # Time::Local::timelocal関数は 1月は0,2月は1のように0から
+  # 始まる月を引数に取るので、1を引く。
+  $month--;
+
+  # 月末日の候補はこの4つ
+  my @days = (31, 30, 29, 28); 
+    
+  # 日付の存在チェック用に使用。
+  require Time::Local; 
+  
+  for my $day (@days) {
+    eval{
+      # 存在しない日を指定すると例外が起こる。
+      Time::Local::timelocal(0, 0, 0, $day, $month, $year);
+    };
+    # 例外が起こらなければ存在する日付。
+    return $day unless $@;
+  }
+  return;
+}
+</pre>
+<p>
+  (参考)<a href="/blog/20100312126967.html">eval</a>
+</p>
+<h3>コード解説</h3>
+<h4>月末日の候補になる日付</h4>
+<p>
+  月末日になるのは、28日、29日、30日、31日のどれかです。31日から順にチェックしていって存在する日付であればそれが月末日です。
+</p>
+<pre>
+my @days = (31, 30, 29, 28);
+</pre>
+<h4>存在する日付のチェック</h4>
+<p>
+  「存在する日付かどうかを判定する。」で解説したように、Time::Localモジュールのtimelocal関数で日付のチェックを行います。
+</p>
+<p>
+  31日から順に28日までチェックをしていきます。存在しない日付を指定すると例外が起こるので、例外が起こらなければそれが月末日です。
+</p>
+<pre>
+require Time::Local; 
+  
+for my $day (@days) {
+  eval{
+    # 存在しない日を指定すると例外が起こる。
+    Time::Local::timelocal(0, 0, 0, $day, $month, $year);
+  };
+  # 例外が起こらなければ存在する日付。
+  return $day unless $@;
+}
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

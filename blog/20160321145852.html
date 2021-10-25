@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>interpvar.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="interpvar.hには、インタープリタ変数の定義が記述されています。インタープリタ変数とは、Perlのインタープリタごとに、定義される変数のことです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="interpvar.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="interpvar.hには、インタープリタ変数の定義が記述されています。インタープリタ変数とは、Perlのインタープリタごとに、定義される変数のことです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20130416136637.html">
+      <span itemprop="name">言語実装</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20160321145852.html">interpvar.h</a></h2>
+<p>
+  <strong>interpvar.h</strong>には、インタープリタ変数の定義が記述されています。インタープリタ変数とは、Perlのインタープリタごとに、定義される変数のことです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>インタープリタとは</h3>
+<p>
+  Perlは、複数のインタープリタを持つことができます。Perlは、インタープリタを生成して、ソースコードの解釈を始めます。通常は、インタープリタはひとつで十分ですが、C言語のプログラムの中で、複数保持したい場合は、複数生成することが可能です。
+</p>
+<pre>
+# 複数のインタープリタ
+Perl - インタープリタ1
+     |
+     - インタープリタ2
+     |
+     - インタープリタ3
+</pre>
+<p>
+  ただし、Perlがインタープリタを複数持つことができるのは「MULTIPLICITY」というマクロが有効になっているときだけです。これは、コンパイルオプションとして設定できます。自分の環境の場合は、CentOSのデフォルトのPerlであれば、有効で、perlbrewでインストールしたものは、無効になっていました。パフォーマンスは「MULTIPLICITY」が有効になっていないもののほうが、速いようです。
+</p>
+<p>
+  もし「MULTIPLICITY」が有効でなければ、Perlの構造は次のようになります。
+</p>
+<pre>
+Perl - (インタープリタなし)
+</pre>
+<p>
+  =====
+</p>
+<h3>インタープリタ変数</h3>
+<p>
+  インタープリタ変数は、インタープリタごとに持つ変数です。Perlのソースコードを読むときは、非常に頻繁に、interpvar.hを開くことになります。ここで、定義されている変数が、Perlのソースコードのあちらこちらで利用されているからです。
+</p>
+<p>
+  たとえば、サブルーチンのコールスタック情報、現在実行されている構文木のノード、レキシカル変数の情報、ローカル変数の情報、制御情報、SVのメモリ確保にかかわる変数、プログラムの実行の開始位置などです。
+</p>
+<p>
+  インタープリタ変数は、特殊なマクロを使って、定義されています。それは、PERLVARというマクロです。
+</p>
+<pre>
+PERLVAR(I, stack_sp,	SV **)		/* top of the stack */
+PERLVAR(I, op,		OP *)		/* currently executing op */
+PERLVAR(I, curpad,	SV **)		/* active pad (lexicals+tmps) */
+</pre>
+<p>
+  PERLVARマクロを見てみましょう。「perl.h」に定義があります。
+</p>
+<pre>
+/* perl.h */
+#  define PERLVAR(prefix,var,type) type prefix##var;
+</pre>
+<p>
+  C言語のdefine定義を使ったことがある人も「##」という記号を見た人は、少ないんじゃないでしょうか。「##」を使うと文字列が結合できます。
+</p>
+<p>
+  つまり、PERLVARマクロによって、次のように展開されます。
+</p>
+<pre>
+SV ** Istack_sp;
+OP * Iop;
+SV ** Icurpad;
+</pre>
+<p>
+  でも、この変数は、Perlのソースコード上ではほとんど使われていません。多くの場合は「PL_stacksp」という変数名でアクセスされます。これは「embedvar.h」で定義されています。
+</p>
+<pre>
+#define PL_stack_sp		(vTHX-&gt;Istack_sp)
+</pre>
+<p>
+  ソースコードを実際に読み込んでいく上では、「PL_stack_sp」という変数名を見たなら、これは、インタープリタ変数だなとまず推測します。そして、「interpvar.h」を開いて「PERLVAR(I, stack_sp,	SV **)」のような定義があるかどうかを確認します。
+</p>
+<h3>インタープリタ変数は「MULTIPLICITY」が有効でないときは、グローバル変数として定義される</h3>
+<p>
+  インタープリタ変数は「MULTIPLICITY」が有効でないときは、インタープリタ変数は、グローバル変数として定義されます。その記述は「perl.h」にあります。
+</p>
+<pre>
+#if !defined(MULTIPLICITY)
+START_EXTERN_C
+#  include "intrpvar.h"
+END_EXTERN_C
+#endif
+</pre>
+<h3>vTHXは現在のインタープリタのこと</h3>
+<p>
+  vTHXは、ひとつのインタープリタです。「MULTIPLICITY」の下では、「vTHX」は「aTHX」と「PERL_GET_INTERP」に展開されますが、一般的なPerlでは、「PERL_IMPLICIT_CONTEXT」が定義されているとして読みましょう。つまり「aTHX」に展開されると考えましょう。
+</p>
+<pre>
+#if defined(MULTIPLICITY)
+/* cases 2 and 3 above */
+
+#  if defined(PERL_IMPLICIT_CONTEXT)
+#    define vTHX	aTHX
+#  else
+#    define vTHX	PERL_GET_INTERP
+#  endif
+</pre>
+<p>
+  さらに「perl.h」の中で「aTXH」は「my_perl」に展開されます。
+</p>
+<pre>
+/* perl.h */
+#  define aTHX	my_perl
+</pre>
+<p>
+  「my_perl」は、現在のインタープリタを表す変数で「perl_main.c」の中で定義されています。
+</p>
+<pre>
+/* perl.h */
+static PerlInterpreter *my_perl;
+</pre>
+<p>
+  PerlInterpreterは「perl.h」の中で「interpreter構造体」の別名として定義されています。
+</p>
+<pre>
+/* perl.h */
+typedef struct interpreter PerlInterpreter;
+</pre>
+<p>
+  そして最後に「interpreter構造体」は次のように定義されています。「interpvar.h」のインタープリタ変数の定義が、構造体のメンバとして記述されています。
+</p>
+<pre>
+/* perl.h */
+struct interpreter {
+#  include "intrpvar.h"
+};
+</pre>
+<p>
+  「PL_stack_sp」は「my_perl->Istack_sp」に展開されるということがわかります。これは、現在のインタープリタの「Istack_sp」というメンバ変数にアクセスするということです。
+</p>
+<h3>まとめ</h3>
+<p>
+  覚えておいてほしいことは、「PL_stack_sp」は「my_perl->Istack_sp」に展開されるということ。それに加えて、「MULTIPLICITY」が有効でない場合は、グローバル変数として「Istack_sp」が直接利用できるということです。「PL_stack_sp」を使うことで、複数のインタープリタを持つ場合と、持たない場合で、それを意識しないで、アクセスできます。
+</p>
+<p>
+  Perlのマクロ定義は、階層が深すぎますが、とことん深くもぐっていくと、着地点があります。
+</p>
+<hr>
+<p>
+  <a href="/blog/20130416136637.html">Perl言語研究</a>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

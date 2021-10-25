@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>our - パッケージ変数の宣言 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="ourによるパッケージ変数の宣言について解説します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="our - パッケージ変数の宣言 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="ourによるパッケージ変数の宣言について解説します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+      <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="3" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">my</span>
+    <meta itemprop="position" content="4" />
+  </li>
+</ol>
+<h2><a href="/blog/20080308120495.html">our - パッケージ変数の宣言</a></h2>
+<p>
+  <b>our</b>による<b>パッケージ変数</b>の宣言について解説します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>パッケージ変数の宣言</h3>
+<p>
+  パッケージ変数を宣言するには<strong>our</strong>を使用します。
+</p>
+<pre>
+our $NUM;
+</pre>
+<p>
+  パッケージ変数は、ひとつの名前空間に属するグローバル変数です。パッケージ変数は、修飾名(パッケージ名)を持ち、ソースコードのどの位置からでも参照できます。
+</p>
+<p>
+  パッケージ変数の変数名は「大文字」にするのが、Perlでは慣習となっています。
+</p>
+<h3>パッケージ変数の初期化</h3>
+<p>
+  パッケージ変数の宣言と同時に「初期化」を行うことができます。
+</p>
+<pre>
+our $NUM = 5;
+</pre>
+<h3>パッケージ変数のスコープと寿命</h3>
+<p>
+  パッケージ変数の寿命とスコープについて解説します。
+</p>
+<h4>パッケージ変数の寿命</h4>
+<p>
+  パッケージ変数は、宣言して初期化されると、プログラムの最後まで、その値は存在し続けます。
+</p>
+<h4>パッケージ変数のスコープ</h4>
+<p>
+  スコープが終わると、パッケージ名なしで、参照できなくなります。完全修飾名を、使えば、参照できます。
+</p>
+<pre>
+package SomePackage;
+
+our $package_var1;
+$package_var1 = 1;
+
+# ourのスコープ
+{
+  our $package_var2 = 2;
+}
+# スコープが終わると、完全修飾名でのみ、参照できる
+$SomePackage::$package_var2;
+</pre>
+<p>
+  スコープの詳しい解説については以下をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110128130016.html">Perlのスコープについて理解しよう</a>
+  </li>
+</ul>
+<h3>パッケージの宣言</h3>
+<p>
+  Perlではパッケージの宣言は、他の言語の名前空間の宣言にあたります。一般的には、パッケージ名は大文字ではじめる。単語の区切りも大文字にします。
+</p>
+<pre>
+package SomePackage;
+</pre>
+<p>
+  パッケージ変数は完全修飾名でアクセスすることもできます。
+</p>
+<pre>
+$SomePackage::package_var1
+</pre>
+<p>
+  パッケージの宣言については詳しくは以下の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100419127089.html">package - パッケージの宣言</a>
+  </li>
+</ul>
+<h3>mainパッケージ</h3>
+<p>
+  パッケージの宣言が行われない場合、ourで宣言されたパッケージ変数は、mainパッケージに属します。
+</p>
+<pre>
+# 「$main::NUM」として「mainパッケージ」に属する
+our $NUM;
+</pre>
+<p>
+  Perlには、パッケージを持たない変数は存在しません。パッケージがないように見えるものは実は、mainパッケージに属しています。
+</p>
+<p>
+  たとえば<a href="/blog/20161102147817.html">特殊変数</a>はパッケージに属さないように見えますが、mainパッケージに属しています。
+</p>
+<h3>ourによる変数宣言は使うべきか</h3>
+<p>
+  自分でプログラムを書く場合は、ourによる変数宣言を使う機会は、ほとんどありません。より安全で速い「my」による変数宣言によって、完全なプログラムが書けてしまうからです。できる限り「our」は避けて「my」だけを使うようにしましょう。
+</p>
+<p>
+  myはレキシカルなスコープを持ちアクセス可能な範囲が小さく安全です。連続した領域にあるため変数へのアクセス速度が速いという特徴があります。
+</p>
+<p>
+  myによる変数宣言については以下の記事をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080307120491.html">my - レキシカル変数の宣言</a>
+  </li>
+</ul>
+<h3>サンプル</h3>
+<p>
+  パッケージ変数を使ったサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# パッケージ変数
+print "1: パッケージ変数は、修飾名( SomePackage )を持ち".
+    "プログラムのどの位置からも( スコープの外部からでも )参照できる。\n";
+{
+  # SomePackageに属するpackage_var1
+  $SomePackage::package_var1 = 1; 
+  
+  # OtherPackageに属するpackage_var1;
+  $OtherPackage::package_var1 = 2; 
+}
+
+print "\$SomePackage::package_var1 = $SomePackage::package_var1\n";
+print "\$OtherPackage::package_var1 = $OtherPackage::package_var1\n\n";
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+1: パッケージ変数は、修飾名( SomePackage )を持ちプログラムのどの位置からも( スコ
+ープの外部からでも )参照できる。
+$SomePackage::package_var1 = 1
+$OtherPackage::package_var1 = 2
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

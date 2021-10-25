@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Carp - 呼び出し元の観点で例外を発生させる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Carpモジュールを使用すると、モジュールの呼び出し元の観点で例外を発生させることができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Carp - 呼び出し元の観点で例外を発生させる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Carpモジュールを使用すると、モジュールの呼び出し元の観点で例外を発生させることができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100430127089.html">Carp - 呼び出し元の観点で例外を発生させる</a></h2>
+<p>
+  <strong>Carp</strong>モジュールを使用すると、モジュールの呼び出し元の観点で例外を発生させることができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# モジュールの読み込みと関数のインポート
+use Carp 'croak';
+</pre>
+<p>
+  <strong>croak関数</strong>を使用するとモジュールの呼び出し元の観点で例外を発生させることができます。メッセージの末尾には呼び出し元の行番号が追加されます。
+</p>
+<pre>
+# 呼び出し元の行番号をエラーメッセージに含めて例外を発生させる
+croak "Exception!";
+</pre>
+<p>
+  例外はdie関数で発生させることができますが、die関数は実行された位置の行番号をメッセージの末尾に追加します。croakはcroakが実行された位置の行番号ではなく、呼び出し元の行番号を末尾に追加する点がdieと異なります。
+</p>
+<p>
+  dieとcroakの使いわけとして、次の点を覚えておきましょう。
+</p>
+<ul>
+  <li>
+    Perlスクリプト(*.pl)で例外を発生させる場合はdieを使用する
+  </li>
+  <li>
+    Perlモジュール(*.pm)で例外を発生させる場合はcroakを使用する。
+  </li>
+</ul>
+<h3>モジュールの呼び出し元の観点とは</h3>
+<p>
+  モジュールの呼び出し元の観点という言葉は少し理解しづらい部分があると思いますので、サンプルを使って説明してみます。
+</p>
+<p>
+  YourModuleモジュールでparse関数が定義されているとしましょう。mainパッケージでこの関数を呼び出して例外が発生したとします。
+</p>
+<p>
+  最初はdieの例を見てみましょう。
+</p>
+<pre>
+# dieで例外を発生させた場合               # 1
+package YourModule;                       # 2
+                                          # 3
+                                          # 4
+sub parse {                               # 5
+  # dieで例外を発生させる                 # 6
+  die "Exception!";                       # 7
+}                                         # 8
+                                          # 9
+package main;                             #10
+                                          #11
+                                          #12
+# parse関数の呼び出し。例外が発生する。   #13
+YourModule::parse();                      #14
+</pre>
+<p>
+  このプログラムは次のメッセージを表示して終了します。dieが実行された行番号が含まれています。
+</p>
+<pre>
+Exception! at a.pl line 7.
+</pre>
+<p>
+  次はcroakの場合です。
+</p>
+<pre>
+# croakで例外を発生させた場合             # 1
+package YourModule;                       # 2
+use Carp 'croak';                         # 3
+                                          # 4
+sub parse {                               # 5
+  # dieで例外を発生させる                 # 6
+  croak "Exception!";                     # 7
+}                                         # 8
+                                          # 9
+package main;                             #10
+                                          #11
+                                          #12
+# parse関数の呼び出し。例外が発生する。   #13
+YourModule::parse();                      #14
+</pre>
+<p>
+  するとプログラムは次のメッセージを表示して終了します。parseが呼び出された位置の行番号が含まれています。
+</p>
+<pre>
+Exception! at a.pl line 14
+</pre>
+<p>
+  このようにcroakを使用すると呼び出し元の観点で例外を投げることができます。
+</p>
+<h3>完全なスタックトレースを見る</h3>
+<p>
+  どこから関数が呼び出されてどの位置で例外が発生したかというすべての情報について知りたい場合があります。このような場合にはcroakで追加されるメッセージを変更して完全なスタックとレースを表示する方法があります。
+</p>
+<p>
+  次の一行をスクリプトの好きな位置に追加するだけです。
+</p>
+<pre>
+# croakのメッセージを完全なスタックトレース情報を含むものに変える
+use Carp 'verbose';
+</pre>
+<p>
+  先ほどのスクリプトに埋め込んでみました。YourModule::parse()の直前に置きました。
+</p>
+<pre>
+package main;
+
+# parse関数の呼び出し
+use Carp 'verbose';
+YourModule::parse();
+</pre>
+<p>
+  すると次のように完全なスタックトレースを見ることができます。
+</p>
+<pre>
+Exception! at a.pl line 7
+        YourModule::parse() called at a.pl line 14
+</pre>
+<p>
+  一般的にいえばCPANに存在するPerlモジュールの多くは例外を発生させるときにcroakを使用しています。つまりuse Carp 'verbose'を記述することで、完全なスタックトレースを見ることが期待できるということです。
+</p>
+<p>
+  またモジュールがさらに他のモジュールを利用している場合に、そこで発生した例外は本当の呼び出し元の観点ではないということがあります。
+</p>
+<pre>
+呼び出し元
+　▼
+モジュール1
+　▼
+モジュール2 - ここでcroakが実行されると呼び出し元はモジュール1になってしまい
+              本当の呼び出し元の行番号がわからない。
+</pre>
+<p>
+  このような場合にもuse Carp 'verbose'を記述することで完全なスタックトレースを取得することができます。
+</p>
+<h3>Carpモジュールに関するFAQ</h3>
+<p>
+  Q. Carpモジュールにはconfessという関数もありますがcroakを使ったほうがよいのでしょうか。
+</p>
+<p>
+  A. confessは完全なスタックトレース情報を表示させることができますが、croakはメッセージが簡潔で、オプションを指定することで完全なスタックトレース情報に切り替えることができるので好んで利用されるようです。
+</p>
+<p>
+  Q. 例外ではなく警告を発生させたいです。
+</p>
+<p>
+  A. carp関数を使用すると警告を発生させることができます。
+</p>
+<pre>
+# 警告
+use Carp 'carp';
+carp 'Warning!';
+</pre>
+<p>
+  Q.スクリプトを変更せずに完全なスタックトレースを表示させたいのですが可能でしょうか。
+</p>
+<p>
+  A.はい可能です。スクリプト単位で指定したい場合は次のようにします。
+</p>
+<pre>
+perl -MCarp=verbose script.pl
+</pre>
+<p>
+  またPERL5OPTという環境変数を利用すれば、すべてのスクリプトについて完全なスタックトレースを表示することができます。PERL5OPTにすでに値が設定されている場合は空白の後ろに接続するようにしてください。
+</p>
+<pre>
+# bash
+export PERL5OPT=-MCarp=verbose
+export PERL5OPT='-Mstrict -MCarp=verbose'
+
+# Windows
+set PERL5OPT=-MCarp=verbose
+set PERL5OPT=-Mstrict -MCarp=verbose
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

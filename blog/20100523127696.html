@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Storable - データをシリアライズ化する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Storableモジュールを使用すると、データをシリアライズ化することができます。シリアライズ化というのはPerlのデータ構造を外部に保存できる形式に変換することをいいます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Storable - データをシリアライズ化する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Storableモジュールを使用すると、データをシリアライズ化することができます。シリアライズ化というのはPerlのデータ構造を外部に保存できる形式に変換することをいいます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100523127696.html">Storable - データをシリアライズ化する</a></h2>
+<p>
+  <strong>Storable</strong>モジュールを使用すると、データをシリアライズ化することができます。シリアライズ化というのはPerlのデータ構造を外部に保存できる形式に変換することをいいます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# モジュールの読み込みと関数のインポート
+use Storable qw/freeze thaw/;
+</pre>
+<p>
+  データをシリアライズ化するには<strong>freeze</strong>関数を使用します。
+</p>
+<pre>
+# データをシリアライズ化する
+my $data = [
+  {name =&gt; 'Ken',  age =&gt; 19},
+  {name =&gt; 'Taro', age =&gt; 20}
+];
+my $serialized_data = freeze $data;
+</pre>
+<p>
+  シリアライズ化されたデータを元に戻すには<strong>thaw</strong>関数を使用します。
+</p>
+<pre>
+# シリアライズ化されたデータを復元する
+my $data = thaw $serialized_data;
+</pre>
+<h3>Storableモジュールに関するFAQ</h3>
+<p>
+  Q. nfreeze関数というものを見かけたのですが、freeze関数と何が異なりますか。
+</p>
+<p>
+  A. nfreeze関数を使用すると、OSに依存しない形でデータをシリアライズ化することができます。たとえばあるOSでfreeze関数でシリアライズ化したデータをデータベースサーバに保存したとします。他のOSがデータベースサーバからシリアライズ化されたデータを取り出した場合、thawで復元することはできません。このような場合はnfreezeでシリアライズ化する必要があります。
+</p>
+<p>
+  Q. Perlのデータ構造をJSONで保存する場合と比較して利点と欠点を教えてください。
+</p>
+<p>
+  A. 利点になるのはパフォーマンスです。StorableはJSONやData::Dumperに比べて高速です。欠点はそのデータはPerlのthawでしか復元できないということです。またPerlのバージョンが仮に上がってバイナリ互換性が失われた場合は、バージョンがアップしたPerlのthawでは復元できない可能性もあります。ですのでStorableでシリアライズ化するデータは一時的なデータに限るのがよいでしょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

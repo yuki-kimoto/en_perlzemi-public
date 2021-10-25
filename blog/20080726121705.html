@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>標準出力をリダイレクトしてファイルに書き込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="ファイルに出力する最も簡単で頻繁に使われる方法があります。リダイレクトというOSの機能を使って、print関数で行っているディスプレイへの出力を、ファイルに変更します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="標準出力をリダイレクトしてファイルに書き込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="ファイルに出力する最も簡単で頻繁に使われる方法があります。リダイレクトというOSの機能を使って、print関数で行っているディスプレイへの出力を、ファイルに変更します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161124147999.html">
+      <span itemprop="name">ファイル入出力</span>
+    </a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20080726121705.html">標準出力をリダイレクトしてファイルに書き込む</a></h2>
+<p>
+  ファイルに出力する最も簡単で頻繁に使われる方法があります。リダイレクトというOSの機能を使って、print関数で行っているディスプレイへの出力を、ファイルに変更します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  以下は、ディスプレイに文字列を表示するサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# ファイルへの書き込み
+print "writed to file\n";
+</pre>
+<p>
+  上記のファイルを、sample20080726.pl という名前で保存して、コマンドプロンプトかシェルで
+</p>
+<pre>
+perl sample20080726.pl &gt; 出力するファイル名
+</pre>
+<p>
+  と入力してください。( ディスプレイへの出力が、指定したファイルへの出力に変更されます。)
+</p>
+<h3>コード解説</h3>
+<h3>(1)標準出力とは</h3>
+<p>
+  「標準出力」とはディスプレイのことです。print 関数は、デフォルトで標準出力であるディスプレイに出力を行います。以下のように明示的に標準出力を意味するSTDOUTを指定することもできます。
+</p>
+<pre>
+print "writed to file\n";
+
+# 以下と同じ
+print STDOUT "writed to file\n"+
+</pre>
+<h3>(2)リダイレクトで、標準出力を切り替える</h3>
+<pre>
+perl sample20080726.pl &gt; 出力するファイル名
+</pre>
+<p>
+  > 記号で、標準出力をファイルに切り替えることができます。この機能をリダイレクトと呼びます。ディスプレイに表示されるはずの内容が、ファイルに書き込まれます。
+</p>
+<p>
+  print関数で標準出力に出力しておけば、ディスプレイに出力することもファイルに出力することもできます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>C++のクラスをXSから利用する方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="XSでC++のクラスを呼び出す方法を学びましょう。これができるようになれば、どんなC++のライブラリでも、Perlにバインディングができるようになると思います。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="C++のクラスをXSから利用する方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="XSでC++のクラスを呼び出す方法を学びましょう。これができるようになれば、どんなC++のライブラリでも、Perlにバインディングができるようになると思います。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20100809127859.html">
+        <span itemprop="name">XS</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20170204150055.html">C++のクラスをXSから利用する方法</a></h2>
+<p>
+  XSで<b>C++のクラス</b>を呼び出す方法を学びましょう。これができるようになれば、どんなC++のライブラリでも、Perlにバインディングができるようになると思います。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>h2xsでモジュールを作成</h3>
+<p>
+  最初に<a href="/blog/20170209150055.html">h2xs</a>でXS用のモジュールを作成します。
+</p>
+<pre>
+h2xs -A -n MyClass
+</pre>
+<p>
+  こうすると「MyClass」というディレクトリが作成されます。次のようなファイルとディレクトリが作成されます。
+</p>
+<pre>
+Changes
+lib/
+Makefile.PL
+MANIFEST
+ppport.h
+README
+MyClass.xs
+t/
+</pre>
+<h3>C++でクラスの作成</h3>
+<p>
+  C++でクラスを作成しましょう。ヘッダファイルとソースファイルを作成します。
+</p>
+<p>
+  <b>MyClass.h</b>
+</p>
+<p>
+  ヘッダファイルです。コンストラクタ、メソッド、クラスメソッドを宣言しています。通常のメソッドとクラスメソッドの呼び出し方の違いを理解するために、このような構成にしています。ファイル名は「MyClass.h」です。
+</p>
+<pre>
+#ifndef MYCLASS_INCLUDE
+#define MYCLASS_INCLUDE
+class MyClass {
+  
+  public:
+  
+  // コンストラクタ
+  MyClass();
+  
+  // メソッド
+  void print();
+  
+  // クラスメソッド
+  static void print_static();
+};
+#endif
+
+</pre>
+<p>
+  「#ifndef」で始まっているのは、インクルードガードと呼ばれるものです。ヘッダファイルは、XSファイルと、ソースファイルの2箇所から読み込まれる必要があります。すると、そのままでは、ヘッダファイルが二重に取り込まれて、コンパイルエラーになってしまいます。それを防ぐために、インクルードを行っています。
+</p>
+<h3>MyClass_src.cpp</h3>
+<p>
+  C++のソースファイルです。コンストラクタ、メソッド、クラスメソッドの実装を行っています。ソースファイルでは、MyClassというシンボルを解決するために、ヘッダファイルを読み込む必要があります。ファイル名は「MyClass_src.cpp」にしてあります。これは「MyClass.cpp」としてしまうと、コンパイル後の名前は「MyClass.o」となりますが、これはXSファイル「MyClass.xs」のコンパイル後の名前「MyClass.o」とかぶってしまうためです。
+</p>
+<pre>
+#include &lt;iostream&gt;
+#include "MyClass.h"
+
+// コンストラクタ
+MyClass::MyClass() {}
+
+// メソッド
+void MyClass::print() {
+  std::cout &lt;&lt; "MyClass::print\n";
+}
+
+// クラスメソッド
+void MyClass::print_static() {
+  std::cout &lt;&lt; "MyClass::print_static\n";
+}
+
+</pre>
+<p>
+  ヘッダファイルとソースファイルは保存して、XSファイルが存在するディレクトリと同じディレクトリに配置してください。
+</p>
+<h3>XSファイルの記述</h3>
+<p>
+  XSファイルを記述しましょう。
+</p>
+<pre>
+#include "EXTERN.h"
+#include "perl.h"
+#include "XSUB.h"
+
+#include "ppport.h"
+#include "MyClass.h"
+
+#define XS_OBJ_TO_PTR(x, type)     (INT2PTR(type, SvROK(x) ? SvIV(SvRV(x)) : SvIV(x)))
+#define XS_PTR_TO_OBJ(x, class) \
+  sv_bless( \
+    sv_2mortal( \
+      newRV_inc( \
+        sv_2mortal( \
+          newSViv(PTR2IV(x)) \
+        ) \
+      ) \
+    ), \
+    gv_stashpv(class, 1) \
+  );
+
+MODULE = MyClass		PACKAGE = MyClass		
+
+void
+new(...)
+  PPCODE:
+{
+  MyClass* self = new MyClass();
+  SV* self_sv = XS_PTR_TO_OBJ(self, "MyClass");
+  
+  XPUSHs(self_sv);
+  XSRETURN(1);
+}
+
+void
+print(...)
+  PPCODE:
+{
+  MyClass* self = XS_OBJ_TO_PTR(ST(0), MyClass*);
+  
+  self-&gt;print();
+  XSRETURN(0);
+}
+
+void
+print_static(...)
+  PPCODE:
+{
+  MyClass::print_static();
+  XSRETURN(0);
+}
+
+void DESTORY(...)
+  PPCODE:
+{
+  MyClass* self = XS_OBJ_TO_PTR(ST(0), MyClass*);
+  delete self;
+}
+
+</pre>
+<p>
+  <b>型の変換を行うためのマクロ</b>
+</p>
+<p>
+  少し解説をしておきます。以下は、Perlのオブジェクト(SV*型)をC(あるいはC++)のポインタに変換するマクロと、C(あるいはC++)のポインタをPerlのオブジェクト(SV*型)に変換するマクロになっています。
+</p>
+<pre>
+#define XS_OBJ_TO_PTR(x, type)     (INT2PTR(type, SvROK(x) ? SvIV(SvRV(x)) : SvIV(x)))
+#define XS_PTR_TO_OBJ(x, class) \
+  sv_bless( \
+    sv_2mortal( \
+      newRV_inc( \
+        sv_2mortal( \
+          newSViv(PTR2IV(x)) \
+        ) \
+      ) \
+    ), \
+    gv_stashpv(class, 1) \
+  );
+</pre>
+<p>
+  <b>コンストラクタ</b>
+</p>
+<p>
+  コンストラクタです。newを使ってMyClassをインスタンス化してMyClass*型に代入します。そして、このポンイタを、Perlのオブジェクト変換して、返します。
+</p>
+<pre>
+void
+new(...)
+  PPCODE:
+{
+  MyClass* self = new MyClass();
+  SV* self_sv = XS_PTR_TO_OBJ(self, "MyClass");
+  
+  XPUSHs(self_sv);
+  XSRETURN(1);
+}
+</pre>
+<p>
+  <b>メソッド呼び出し</b>
+</p>
+<p>
+  メソッドの呼び出しです。
+</p>
+<pre>
+void
+print(...)
+  PPCODE:
+{
+  MyClass* self = XS_OBJ_TO_PTR(ST(0), MyClass*);
+  
+  self-&gt;print();
+  XSRETURN(0);
+}
+</pre>
+<p>
+  メソッド呼び出しでは、第一引数にはPerlのオブジェクトが渡ってくるので、これをポインタ「MyClass*」に変換します。そして「self->print」としてメソッドを呼び出します。
+</p>
+<p>
+  <b>クラスメソッドの呼び出し</b>
+</p>
+<p>
+  クラスメソッドの呼び出しです。
+</p>
+<pre>
+void
+print_static(...)
+  PPCODE:
+{
+  MyClass::print_static();
+  XSRETURN(0);
+}
+</pre>
+<p>
+  「MyClass::print_static()」と完全修飾名で呼び出しているだけです。
+</p>
+<p>
+  <b>デストラクタ</b>
+</p>
+<p>
+  デストラクタです。deleteを使って、メモリの開放を行う必要があります。
+</p>
+<pre>
+void DESTORY(...)
+  PPCODE:
+{
+  MyClass* self = XS_OBJ_TO_PTR(ST(0), MyClass*);
+  delete self;
+}
+</pre>
+<h3>Makefile.PLの修正</h3>
+<p>
+  次に<a href="/blog/20150725143778.html">Makefile.PL</a>を少し修正しましょう。一番下の「OBJECT」オプションがデフォルトではコメントアウトされているので、コメントを取り除きます。「$(O_FILES)」という設定をすれば、カレントディレクトリのすべてのC言語のソースファイルとC++のソースファイルがコンパイルの対象になります。
+</p>
+<p>
+  そしてコンパイラとリンカを「g++」に変更します。コンパイラは「CC」オプション、リンカは「LD」で設定できます。
+</p>
+<pre>
+use ExtUtils::MakeMaker;
+use strict;
+use warnings;
+
+WriteMakefile(
+    NAME              =&gt; 'MyClass',
+    VERSION_FROM      =&gt; 'lib/MyClass.pm', # finds $VERSION
+    PREREQ_PM         =&gt; {}, # e.g., Module::Name =&gt; 1.1
+    ($] &gt;= 5.005 ?     ## Add these new keywords supported since 5.005
+      (ABSTRACT_FROM  =&gt; 'lib/MyClass.pm', # retrieve abstract from module
+       AUTHOR         =&gt; 'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') : ()),
+    LIBS              =&gt; [''], # e.g., '-lm'
+    DEFINE            =&gt; '', # e.g., '-DHAVE_SOMETHING'
+    INC               =&gt; '-I.', # e.g., '-I. -I/usr/include/other'
+    OBJECT            =&gt; '$(O_FILES)', # link all the C files too
+    CC =&gt;'g++',
+    LD =&gt; 'g++',
+);
+</pre>
+<h3>テストスクリプト</h3>
+<p>
+  テストスクリプトを作成します。これは、XSファイルがあるディレクトリと同じディレクトリにおいてください。
+</p>
+<pre>
+use strict;
+use warnings;
+
+use MyClass;
+
+my $obj = MyClass-&gt;new;
+$obj-&gt;print;
+MyClass-&gt;print_static;
+</pre>
+<h3>コンパイルして実行</h3>
+<p>
+  コンパイルして実行してみましょう。
+</p>
+<pre>
+perl Makefile.PL
+make
+perl -Mblib test.pl
+</pre>
+<p>
+  次のように出力されれば成功です。
+</p>
+<pre>
+MyClass::print
+MyClass::print_static
+</pre>
+<p>
+  これで、C++のクラスをXSファイルから利用することができるようになりました。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

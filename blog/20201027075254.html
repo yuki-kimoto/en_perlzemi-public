@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>シングルクォート文字列 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="シングルクォート文字列とは、シングルクォートで囲まれた文字列です。ダブルクォート文字列とは違って、変数展開は行われず、改行文字「\n」などのダブルクォート用のエスケープシーケンスも使えません。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="シングルクォート文字列 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="シングルクォート文字列とは、シングルクォートで囲まれた文字列です。ダブルクォート文字列とは違って、変数展開は行われず、改行文字「\n」などのダブルクォート用のエスケープシーケンスも使えません。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+        <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161003147558.html">
+        <span itemprop="name">文字列</span></a>
+    <meta itemprop="position" content="3" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20201027075254.html">シングルクォート文字列</a></h2>
+<p>
+  <b>シングルクォート文字列</b>とは、シングルクォートで囲まれた文字列です。<a href="/blog/20201026075254.html">ダブルクォート文字列</a>とは違って、<a href="/blog/20180228151982.html">変数展開</a>は行われず、改行文字「\n」などの<a href="/blog/20201030075254.html">ダブルクォート用のエスケープシーケンス</a>も使えません。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# シングルクォート文字列
+my $name = 'Perl Tutorial Book';
+</pre>
+<p>
+  変数展開は行われず、改行文字もそのまま表示されます。
+</p>
+<pre>
+my $message = 'I like $book\n';
+
+# 「I like $book\n」と表示される。
+print $message;
+</pre>
+<p>
+  シングルクォート文字列は、変数展開や改行文字を使わない文字列定数であることを明示的に表現したいときに使うことができます。
+</p>
+<h3>シングルクォート文字列のエスケープシーケンス</h3>
+<p>
+  シングルクォート文字列のエスケープシーケンスの一覧です。
+</p>
+<table>
+  <tr><th>エスケープシーケンス</th><th>意味</th></tr>
+  <tr><td>\'</td><td>'</td></tr>
+  <tr><td>\\</td><td>\</td></tr>
+</table>
+<p>
+  シングルクォートの中で、シングルクォートを表現する「\'」と、バックスラッシュ自体を表現する「\\」を覚えておきましょう。
+</p>
+<pre>
+my $message = 'I \'m honest Perl User\\';
+</pre>
+<p>
+  シングルクォート文字列のエスケープシーケンスの解説ページは以下です。
+</p>
+<ul>
+  <li><a href="/blog/20201029075254.html">シングルクォート文字列のエスケープシーケンス</a></li>
+</ul>
+<p>
+  もしシングルクォートが含まれた文字列をコピー＆ペーストで利用したい場合は、<a href="/blog/20100304126967.html">シングルクォート演算子</a>を使うこともできます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

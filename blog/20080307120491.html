@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>my - レキシカル変数の宣言 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="myを使えばレキシカル変数を宣言することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="my - レキシカル変数の宣言 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="myを使えばレキシカル変数を宣言することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+      <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20080307120491.html">my - レキシカル変数の宣言</a></h2>
+<p>
+  <b>my</b>を使えばレキシカル変数を宣言することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# レキシカル変数の宣言
+my $num;
+my @nums;
+my %scores;
+</pre>
+<p>
+  レキシカル変数というのは、C言語でいうところの、ローカル変数のことです。
+</p>
+<p>
+  Perlには<a href="/blog/20080309120507.html">local</a>というキーワードがあるのですが、こちらは実際には、ローカル変数を作成しません。localキーワードは、<a href="/blog/20080308120495.html">パッケージ変数</a>を一時的に保存して復元するという機能を持っています。
+</p>
+<p>
+  myによる変数宣言は、<a href="/blog/20160225145640.html">Perl 5.6</a>で追加された機能です。これは他の言語におけるローカル変数そのものなのですが、localというキーワードがすでにあるので、紛らわしくならないようにレキシカル変数という名前になったのかもしれません。
+</p>
+<p>
+  Perlでレキシカル変数といえば、他の言語におけるローカル変数のことだと考えてください。
+</p>
+<h3>変数宣言とは</h3>
+<p>
+  変数宣言というのはこれから<a href="/blog/20161107147852.html">変数</a>を使うよということを宣言するものです。新しく使う変数は「my」を使って変数宣言しましょう。
+</p>
+<pre>
+# スカラ変数の宣言
+my $num;
+</pre>
+<p>
+  スカラ変数のほかに、<a href="/blog/20161012147627.html">配列変数</a>、<a href="/blog/20161013147635.html">ハッシュ変数</a>を宣言することもできます。
+</p>
+<pre>
+# 配列変数の宣言
+my @nums;
+
+# ハッシュ変数の宣言
+my %score;
+</pre>
+<h3>変数の初期化</h3>
+<p>
+  変数宣言と同時に「変数の初期化」を行うことができます。
+</p>
+<pre>
+# スカラ変数の初期化
+my $num = 3;
+
+# 配列変数の初期化
+my @nums = (1, 2, 3);
+
+# ハッシュ変数の初期化
+my %score = (math =&gt; 80, english =&gt; 70);
+</pre>
+<p>
+  初期化を行わなかった場合はスカラ変数の場合は<a href="/blog/20100220126425.html">未定義値</a>が代入されます。配列変数とハッシュ変数の場合は<a href="/blog/20100308126967.html">空リスト</a>が代入されます。
+</p>
+<h3>レキシカル変数とは</h3>
+<p>
+  myを使うと「レキシカル変数」を宣言できると書きましたが、レキシカル変数とは、いったいなんでしょうか。レキシカル変数とは、レキシカルなスコープを持つ変数のことです。
+</p>
+<p>
+  レキシカル変数は、スコープの終わりになると、寿命がつきて、メモリから解放されます。
+</p>
+<pre>
+# スコープの開始
+{
+  my $num = 2;
+}
+# ここでは「$num」を利用できない。
+</pre>
+<p>
+  レキシカルなスコープについての詳しい解説は以下をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110128130016.html">Perlのスコープを理解する</a>
+  </li>
+</ul>
+<h3>strictモジュールとの連携</h3>
+<p>
+  strictモジュールとmyによる変数宣言を一緒に使うと、変数宣言がない場合に、変数を使おうとした場合に、コンパイルエラーになります。
+</p>
+<pre>
+use strict;
+
+my $num = 1;
+
+# 変数名が間違っているのでコンパイルエラーになる
+print $nam;
+</pre>
+<p>
+  意図しない変数の利用をすぐに発見できるので、Perlのプログラムでは、必ずstrictモジュールを使うようにしましょう。
+</p>
+<p>
+  strictモジュールについての詳しい解説は以下をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20130912137895.html">strict - 文法チェックを厳しくする</a>
+  </li>
+</ul>
+<h3>「my」と「our」と「local」による変数宣言の違い</h3>
+<p>
+  Perlの変数宣言には「my」と「our」と「local」の三つがあります。
+</p>
+<p>
+  簡単に違いをいうと「my」は「レキシカル変数」の宣言、「our」は「パッケージ変数」の宣言、「local」は「パッケージ変数を宣言してスコープが終わるまで値を保存」という効果があります。
+</p>
+<p>
+  Perlで変数を宣言するときは「our」や「local」の使用はできる限り避けてください。現代のPerlでは「my」による変数宣言だけで、完全なプログラミングを行うことができます。
+</p>
+<p>
+  our、localに追加の解説は以下をご覧ください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080308120495.html">our - パッケージ変数の宣言</a>
+  </li>
+  <li>
+    <a href="/blog/20080309120507.html">local - パッケージ変数を一時的に退避して復元</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Imager - 画像の編集を簡単に行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="「Imager」モジュールを使用すると「画像の編集」が簡単にできます。Tipsを紹介します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Imager - 画像の編集を簡単に行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="「Imager」モジュールを使用すると「画像の編集」が簡単にできます。Tipsを紹介します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20110820131832.html">Imager - 画像の編集を簡単に行う</a></h2>
+<p>
+  「Imager」モジュールを使用すると「画像の編集」が簡単にできます。Tipsを紹介します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>「日本語」を描画する</h3>
+<p>
+  Imagerで日本語を描画するには次のようにします。
+</p>
+<pre>
+use strict;
+use warnings;
+use utf8;
+
+use Imager;
+
+my $img = Imager-&gt;new;
+
+# 画像の読み込み
+$img-&gt;read(file =&gt; 'example.jpg')
+  or die $img-&gt;errstr;
+
+# フォント
+my $font = Imager::Font-&gt;new(
+  file =&gt; '/usr/share/fonts/ja/TrueType/kochi-gothic-subst.ttf'
+);
+
+# 文字列の描画
+$img-&gt;string(
+  x =&gt; 50,
+  y =&gt; 50,
+  string =&gt; 'やったー',
+  font =&gt; $font,
+  size =&gt; 15,
+  aa =&gt; 1,
+  color =&gt; '#000000',
+) or die $img-&gt;errstr;
+
+# 画像の保存
+$img-&gt;write(file =&gt; 'new_example.jpg')
+  or die $img-&gt;errstr;
+</pre>
+<p>
+  Imager::Fontでフォントオブジェクトを作成しています、フォントが実際に存在するパスを指定します。上記の例はCentOSの場合です。
+</p>
+<p>
+  stringメソッドを使って、画像の上に文字列を描画しています。aaはアンチエイリアスをかけるオプションです。
+</p>
+<p>
+  スクリプトはUTF-8で保存して、utf8プラグマを有効にしましょう。
+</p>
+<h3>バイナリデータを読み込む</h3>
+<p>
+  PerlのImagerモジュールでバイナリデータを読み込むにはreadメソッドのdataオプションを使用します。
+</p>
+<pre>
+$img-&gt;read(data =&gt; $data, type =&gt; 'jpeg')
+  or die $img-&gt;errstr;
+</pre>
+<p>
+  画像のタイプも合わせて指定する必要があるので注意してください。
+</p>
+<h3>CentOSでImagerを使うための準備</h3>
+<p>
+  Imagerは画像を加工するためのPerlのモジュールです。jpeg, png, gifという画像形式とフォントを扱うためにあらかじめ以下のライブラリをCentOSにインストールしておきましょう。
+</p>
+<pre>
+yum -y install libjpeg-devel
+yum -y install libpng-devel
+yum -y install giflib-devel
+yum -y install freetype-devel
+</pre>
+<p>
+  それからImagerをインストールします。
+</p>
+<pre>
+cpan Imager
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

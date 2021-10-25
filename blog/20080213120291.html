@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>exists関数 - ハッシュのキーの存在確認 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="exists関数を使用するとハッシュのキーの存在を確認することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="exists関数 - ハッシュのキーの存在確認 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="exists関数を使用するとハッシュのキーの存在を確認することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161004147558.html">
+        <span itemprop="name">標準関数</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20080213120291.html">exists関数 - ハッシュのキーの存在確認</a></h2>
+<p>
+  <strong>exists関数</strong>を使用すると<a href="/blog/20161013147635.html">ハッシュ</a>のキーの存在を確認することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# ハッシュのキーの存在確認
+my $is_exists = exists $hash{$key};
+</pre>
+<p>
+  ageというキーが存在するかを確認するには以下のようにします。
+</p>
+<pre>
+# ageというキーが存在することを確認
+my %person = (name =&gt; 'Ken', age =&gt; 1);
+my $is_exists = exists $person{age};
+</pre>
+<p>
+  <a href="/blog/20180208151809.html">ハッシュのリファレンス</a>の場合には以下のようにすることができます。
+</p>
+<pre>
+# キーの存在確認。ハッシュのリファレンスの場合。
+my $person = {name =&gt; 'Ken', age =&gt; 1};
+my $is_exists = exists $person-&gt;{age};
+</pre>
+<h4>defined関数との違い</h4>
+<p>
+  よく似た関数に<a href="/blog/20100219126425.html">defined関数</a>があります。exists関数がハッシュのキーの存在を調べるのに対して、defined関数は値が定義されているかどうかを調べるのに利用します。
+</p>
+<pre>
+my $defined = defined $person{age};
+</pre>
+<h3>サンプルプログラム</h3>
+<p>
+  exists関数でハッシュの要素の状態を調べるサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+use Data::Dumper;
+
+# 生徒の数学の点数
+my %math_scores = (
+  Aiko =&gt; 89,
+  Kenta =&gt; 0,
+  Taro =&gt; undef
+);  
+
+print Dumper \%math_scores;
+print "\n";
+
+# 1: キーの存在を確認する exists関数
+print "1: キーの存在を確認する\n";
+for my $key (qw/Aiko Kenta Taro Masao/) {
+  if (exists $math_scores{$key}) {
+    print "\$math_scores{$key} は存在します。\n";
+  }
+  else {
+    print "\$math_scores{$key} は存在しません。\n";
+  }
+} 
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+%math_scores = (
+                 'Aiko' =&gt; 89,
+                 'Kenta' =&gt; 0,
+                 'Taro' =&gt; undef
+               );
+
+1: キーの存在を確認する
+$math_scores{Aiko} は存在します。
+$math_scores{Kenta} は存在します。
+$math_scores{Taro} は存在します。
+$math_scores{Masao} は存在しません。
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

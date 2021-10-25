@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>msys2をWindowsにインストールしてPerlを使う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="msys2をWindowsにインストールしてPerlを使う方法を解説します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="msys2をWindowsにインストールしてPerlを使う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="msys2をWindowsにインストールしてPerlを使う方法を解説します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name"><a href="/blog/20180820153471.html">インストール</a></span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20180806153350.html">msys2をWindowsにインストールしてPerlを使う</a></h2>
+<p>
+  msys2をWindowsにインストールしてPerlを使う方法を解説します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  <a href="https://www.msys2.org">msys2</a>(エムシスツー)は、<b>Windows上でLinux風のシェル環境を提供</b>するツールです。Linux風の環境でPerlを使って開発ができます。
+</p>
+<p>
+  <b>msys2の画面</b>
+</p>
+<div>
+  <img src="/images/msys2.png">
+</div>
+<p>
+  msys2なら、ls、cat、tar、gitといったLinuxコマンドを利用することができますし、UTF-8も正しく表示できます。
+</p>
+<p>
+  POSIX互換レイヤーがありますので、Linuxでの起動を前提とした、<a href="/blog/20140319139520.html">Mojolicious</a>の開発サーバーも正しく動きます。
+</p>
+<h3>msys2のインストール 10分</h3>
+<p>
+  msys2をダウンロードしてインストールしましょう。
+</p>
+<h4>msys2のダウンロード</h4>
+<p>
+  msys2をインストールしましょう。64bit版Windowsの場合は64bit版のmsys2を、32bit版のWindowsの場合は32bit版のmsys2を利用しましょう。
+</p>
+<p>
+  現在(2021年3月8日)では、たいていのWindowsは64bit版かと思われますので、普通は64bit版で大丈夫なはず。以下の解説は64bit版を前提に行います。
+</p>
+<ul>
+  <li>
+    <a href="https://www.msys2.org/">トップページ - 「1. Download the installer: msys2-x86_64-日付.exe」をクリック</a>
+  </li>
+</ul>
+<p>
+  クリックして、msys2をデスクトップに、ダウンロードしましょう。
+</p>
+<h4>ユーザー名の確認</h4>
+<p>
+  Windowsの「C:\Users」(日本語表示は C:\ユーザー)以下にあるユーザーディレクトリが、以下のように英語になっていることを確認してください。
+</p>
+<pre>
+kimot
+</pre>
+<p>
+  もし、以下のように日本語になっている場合は、追加の設定が必要になります。
+</p>
+<pre>
+木本
+</pre>
+<p>
+  日本語になっていた場合は、msys2をインストールする前に、環境変数の設定で、変数名に「HOME」を、変数値に「C:\msys64\home\msys2user」のように設定してください。
+</p>
+<ul>
+  <li><a href="http://www.wannko.net/windows10/etc/kankyo.html">環境変数の追加</a>
+</ul>
+<p>
+  msys2のホームディレクトリに上記のディレクトリが設定されます。
+</p>
+<h4>msys2のインストール</h4>
+<p>
+  デスクトップにあるmsys2のアイコンをダブルクリックします。
+</p>
+<p>
+  次へを押していくと、インストールが始まります。3分くらいかかりますので、待ちましょう。
+</p>
+<p>
+  完了を押すとmsys2が起動しますが、いったん右上のバツを押して終了させましょう。
+</p>
+<h4>msys2の二回目以降の起動</h4>
+<p>
+  msys2を一度閉じると、次は、どこから起動したらいいんだろうと迷いますね。
+</p>
+<p>
+  Windowsのスタート－メニューのアプリケーションの一覧からmの目次を探すと「MSYS2 64bit」のディレクトリがあります。
+</p>
+<p>
+  その中に
+</p>
+<ul>
+  <li>
+    MSYS2 MinGW 64bit
+  </li>
+  <li>
+    MSYS2 MINGW 32bit
+  </li>
+  <li>
+    <b>MSYS2 MSYS</b>
+  </li>
+</ul>
+<p>
+  がありますが、<b>「MSYS2 MSYS」</b>を起動しましょう。msys2には、3種類の起動スクリプトがありますが、<b>Perlを正しく動かす場合は、Linuxの再現性が最も高い「MSYS2 MSYS」を選択</b>します。
+</p>
+<p>
+  これを間違うと正しくPerlの環境が整えられないので、注意してください。
+</p>
+<p>
+  他の二つは、Windowsネイティブアプリを開発する場合に利用するようです。
+</p>
+<p>
+  デスクトップにショートカットを作成しておくと起動が便利です。その場合は「右クリック」「その他」「ファイルの場所を開く」から「MSYS2 MSYS」を「右クリック」「コピー」して、デスクトップで「貼り付け」です。
+</p>
+<h3>Perl環境構築 20分</h3>
+<p>
+  msys2でPerlを利用できるようにします。PerlとPerlで必要となる開発環境の一覧をまとめてインストールしましょう。
+</p>
+<p>
+  pacmanはmsys2のパッケージマネージャーです。
+</p>
+<pre>
+pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
+</pre>
+<p>
+  上記をコピーして、msys2で「右クリック」→「Paste」するとペーストされます。Enterを押して、上記のコマンドを実行しましょう。
+</p>
+<p>
+  インストールするか聞かれるので「Enter」を押して進めましょう。何を聞かれても「Enter」で大丈夫。
+</p>
+<p>
+  以下がインストールされます。これが、Perlを正しく動かすために必要な最小限の環境です。Perlは<a href="https://clanguage.perlclub.net/">C言語</a>で書かれており、PerlのモジュールのコンパイルにC言語コンパイラ<a href="https://linux.perlclub.net/blog/20201216103956.html">gcc</a>が必要です。
+</p>
+<ul>
+  <li>
+    perl (perl)
+  </li>
+  <li>
+    cpan (perl-CPAN)
+  </li>
+  <li>
+    gcc (msys2-devel)
+  </li>
+  <li>
+    make (make)
+  </li>
+  <li>
+    crypt.h (libcrypt-devel)
+  </li>
+</ul>
+<p>
+  <b>ここで一度右上のバツを押して、ターミナルを閉じて、「MSYS2 MSYS」再起動してください。これを行わないと、PATHの設定が正しくされず、cpanコマンドが正しく動きません。</b>
+</p>
+<p>
+  Perlがインストールされているか確認しましょう。
+</p>
+<pre>
+perl -v
+</pre>
+<p>
+  以下のように表示されれば、インストールされています。バージョンは、新しい場合もあります。
+</p>
+<pre>
+This is perl 5, version 24, subversion 4 (v5.24.4) built for x86_64-msys-thread-multi
+</pre>
+<h4>Perlスクリプトを実行</h4>
+<p>
+  msys2のユーザーディレクトリは以下の場所になっています。ユーザーディレクトリの下にPerlスクリプトを配置しましょう。
+</p>
+<pre>
+C:\msys64\home\ユーザー名
+</pre>
+<p>
+  カレントディレクトリを移動。
+</p>
+<pre>
+cd C:\msys64\home\ユーザー名
+</pre>
+<p>
+  ここに「test.pl」というファイルを作成。以下を記述しましょう。
+</p>
+<pre>
+print "Hello, World!\n";
+</pre>
+<p>
+  Perlスクリプトを実行してみましょう。
+</p>
+<pre>
+perl test.pl
+</pre>
+<p>
+  以下のように表示されれば、Perlはうまくインストールされて、プログラムが実行できています。
+</p>
+<pre>
+Hello, World!
+</pre>
+<h4>CPANモジュールのインストール</h4>
+<p>
+  Perlの環境が正しく構築されているかを確認するために、ピュアPerlで動くMojoliciousとXSで書かれているJSON::XSをインストールしてみましょう。
+</p>
+<p>
+  CPANモジュールの中には、Unix/Linux環境で動くことが想定されているものもあります。以下の設定で、シンボリックリンクが、msys2で正しく動くようにしてください。
+</p>
+<pre>
+export MSYS=winsymlinks
+</pre>
+<p>
+  初回はcpanを自動設定するか聞かれるので「Enter」で進めましょう。何を聞かれても「Enter」で大丈夫です。
+</p>
+<pre>
+cpan Mojolicious
+cpan JSON::XS
+</pre>
+<p>
+  このインストールが確認できると作業は終了です。お疲れさまでした。
+</p>
+<h3>トラブルシューティング</h3>
+<p>
+  msys2のインストール、Perlのインストール手順が失敗する場合に、ウイルスチェッカー(Avast、マカフィー、ノートン、etc)が、msys2をウイルスソフトだと誤検知する場合がありました。
+</p>
+<p>
+  また、ウイルスチェッカーによって管理者権限で、実行できない場合がありました。
+</p>
+<p>
+  この問題が起こった場合は、msys2のインストーラーを起動する前に、ウイルスチェッカーを一時的に停止して、右クリック「管理者権限として実行」を行ってください。
+</p>
+<p>
+  Windows 10である場合は、デフォルトのウイルスソフトであるWindows Defenderを使えば、問題なくインストールできるようです。
+</p>
+<h3>よく使うLinuxコマンド</h3>
+<p>
+  <a href="https://git.perlclub.net/">git</a>やrsyncなどの、よく使う<a href="https://linux.perlclub.net/blog/20200211081227.html">Linuxコマンド</a>も一緒にインストールしておくと、よいでしょう。
+</p>
+<pre>
+pacman -S git
+pacman -S rsync
+</pre>
+<h3>お願い</h3>
+<p>
+  msys2は定期的にアップデートされて、パッケージ名やアップデートコマンドが変わったりするので、この手順でうまくいかない場合は、<a href="https://github.com/yuki-kimoto/perlzemitut">リポジトリ</a>かTwitterにてお知らせください。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

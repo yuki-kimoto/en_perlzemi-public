@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlを実行するためのコマンドプロンプト入門 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlのプログラミングは、コマンドと呼ばれるテキストを入力して実行します。まず最初にWindowsにおけるコマンド実行ツールであるコマンドプロンプトについて解説したいと思います。解説はWindows 10であることを前提にします。Windows 7, 8でも、ほとんど同じ手順で実行できますが、アプリケーションを探す場所など、一部異なる場合があります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlを実行するためのコマンドプロンプト入門 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlのプログラミングは、コマンドと呼ばれるテキストを入力して実行します。まず最初にWindowsにおけるコマンド実行ツールであるコマンドプロンプトについて解説したいと思います。解説はWindows 10であることを前提にします。Windows 7, 8でも、ほとんど同じ手順で実行できますが、アプリケーションを探す場所など、一部異なる場合があります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20080603121251.html">Perlを実行するためのコマンドプロンプト入門</a></h2>
+<p>
+  Perlのプログラミングは、コマンドと呼ばれるテキストを入力して実行します。まず最初にWindowsにおけるコマンド実行ツールであるコマンドプロンプトについて解説したいと思います。解説はWindows 10であることを前提にします。Windows 7, 8でも、ほとんど同じ手順で実行できますが、アプリケーションを探す場所など、一部異なる場合があります。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h4>コマンドプロンプトとは</h4>
+<p>
+  コマンドプロンプトとは、Windows環境におけるCUIを用いたプログラムの実行環境です。CUIとは、Character-based User Interfaceの略で、テキストを入力して、プログラムを実行するインターフェースのことです。Windows上で、Perlプログラミングをするときは、コマンドプロンプトを用いて、Perlを実行することになります。
+</p>
+<h4>コマンドプロンプトを実行するには</h4>
+<p>
+  画面左下のWindowsメニューからアプリの一覧で「Windowsシステムツール」→「コマンドプロンプト」で実行できます。コマンドプロンプトのアイコンを右クリックでドラッグして、デスクトップに、ショートカットを作っておくと便利です。
+</p>
+<p>
+  コマンドプロンプトを実行すると、以下のようにコマンドプロンプトが立ち上がります。
+</p>
+<p>
+  <img src="/images/commandprompt/commandprompt.png">
+</p>
+<p>
+  コマンドプロンプトのホームディレクトリは、ユーザーディレクトリです。
+</p>
+<p>
+  この例では以下です。
+</p>
+<pre>
+C:\Users\kimot
+</pre>
+<h4>拡張子を表示する</h4>
+<p>
+  Perlのプログラムは単なるテキストファイルですが、拡張子が「.pl」なので、拡張子を表示するように設定しておきましょう。拡張子とはプログラムの種類を表すためのものです。
+</p>
+<p>
+  画面左下のWindowsメニューを右クリック → 「エクスプローラー」をクリック → 上のタブの「表示」をクリック → 「ファイル名拡張子」にチェックを入れる。
+</p>
+<h4>Perlプログラムを作成する</h4>
+<p>
+  コマンドプロンプトのホームディレクトリをエクスプローラーで開きましょう。
+</p>
+<p>
+  この例では以下のディレクトリにアクセスします。
+</p>
+<pre>
+C:\Users\kimot
+</pre>
+<p>
+  画面左下のWindowsメニューを右クリック → 「エクスプローラー」をクリック → 左メニュー「OS(C:)」をクリック → 「ユーザー」をクリック → 「kimot」をクリック。
+</p>
+<p>
+  Usersに該当する部分は、日本語では「ユーザー」と表示されていることに注意してください。
+</p>
+<p>
+  C:\Users\kimotのディレクトリの空いている部分を右クリック→「新規作成」→「テキスト文書」。名前を「start.pl」にして保存してください。「拡張子を変えると動かなくなる可能性があります」の注意ができますが、そのまま進めます。
+</p>
+<p>
+  「.pl」の関連づけをメモ帳に変更します。使っているテキストエディタがある場合は、使っているテキストエディタに関連づけを変更してください。
+</p>
+<p>
+  「start.pl」を右クリック →「プログラムから開く」→「別のプログラムを選択」→「メモ帳」→「常にこのアプリを使って.plファイルを開く」にチェック。
+</p>
+<p>
+  「start.pl」をクリックして、メモ帳で開く。
+</p>
+<p>
+  以下の内容を入力してください。
+</p>
+<pre>
+print "Hello World";
+</pre>
+<p>
+  左上の「ファイル」→「上書き保存」で保存します。
+</p>
+<h4>Perlを実行する</h4>
+<p>
+  Perlを実行するにはperlコマンドを使用します。コマンドプロンプトで以下の記述してEnterを入力してください。
+</p>
+<pre>
+perl start.pl
+</pre>
+<p>
+  以下のように出力されれば、Perlプログラムを実行できています。おめでとうございます。
+</p>
+<pre>
+Hello World
+</pre>
+<h4>最初に覚えておきたいコマンド</h4>
+<p>
+  dirコマンドでファイルの一覧を表示できます。dirと入力して、Enterを押してください。
+</p>
+<pre>
+dir
+</pre>
+<p>
+  cdコマンドで、作業ディレクトリを変更できます。
+</p>
+<pre>
+cd ディレクトリ名
+</pre>
+<p>
+  ひとつ上のディレクトリに移動するには、 cd .. とします。
+</p>
+<pre>
+cd ..
+</pre>
+<h4>空白のある引数を渡す</h4>
+<pre>
+perl start.pl "a i u"
+</pre>
+<p>
+  引数に空白が含まれている場合は、ダブルクオーテーションで囲みます。
+</p>
+<h4>ドライブを変更する</h4>
+<pre>
+c:
+d:
+</pre>
+<p>
+  c: で、C ドライブに、d: で、D ドライブにドライブを変更することができます。
+</p>
+<h4>コマンド履歴を参照する</h4>
+<pre>
+↑
+↓
+</pre>
+<p>
+  上下キーでコマンド履歴をたどることができます。
+</p>
+<h4>ファイル名を補完する</h4>
+<pre>
+Ctrl + f
+</pre>
+<p>
+  ファイル名を途中まで入力して、Ctrl + f で、ファイル名を補完することができます。以下で記述するコマンドプロンプトの設定の変更が必要になります。
+</p>
+<h4>環境変数を表示する</h4>
+<pre>
+echo %PATH% ( 環境変数PATHの内容をみる場合 )
+</pre>
+<p>
+  環境変数を見るには、echo %環境変数名%とします。
+</p>
+<h4>環境変数を設定する</h4>
+<pre>
+SET DATE=20080604 ( 環境変数DATEに、20080604を設定する場合 )
+perl start.pl %DATE% ( 環境変数を引数として使用する例 )
+</pre>
+<p>
+  環境変数を、SET 環境変数名=値 で環境変数を設定できます。= の左右には、空白を入れてはいけません。環境変数を使用するには、 %環境変数名%  とします。
+</p>
+<p>
+  環境変数を設定しても、OSの環境変数の値は変わりません。起動しているコマンドプロンプト内でだけ有効です。
+</p>
+<h4>コマンドプロンプトの便利な設定</h4>
+<p>
+  <b>コマンドプロンプトの設定の変更方法</b>
+</p>
+<p>
+  ショートカットをデスクトップに作ったら、右クリック「プロパティ」で、設定を変更できます。
+</p>
+<p>
+  <b>作業フォルダの設定とファイル名補完の設定</b>
+</p>
+<p>
+  「ショートカット」タブから作業フォルダの設定とファイル名補完の設定ができます。作業フォルダとは、ショートカットを起動したときの、カレントディレクトリのことです。
+</p>
+<p>
+  ファイル名補完の設定をするには、「リンク先」とかかれた、コマンドプロンプトのパスの最後に、 :/f on と追加します。: の前には、空白が必要です。これで、 「 8. ファイル名を補完 」のコマンドが有効になります。
+</p>
+<p>
+  例 %SystemRoot%\system32\cmd.exe :/f on
+</p>
+<p>
+  <b>簡易編集モードの設定</b>
+</p>
+<p>
+  「オプション」タブから、簡易編集モードの設定ができます。チェックを入れると、右クリックで、コピー＆ペーストができるようになります。
+</p>
+<p>
+  <b>フォントサイズの設定</b>
+</p>
+<p>
+  「フォント」タブから、フォントサイズを設定できます。少し小さめにしたほうが見やすいと思います。
+</p>
+<p>
+  <b>画面バッファサイズの設定</b>
+</p>
+<p>
+  「レイアウト」タブから、画面バッファサイズの設定ができます。「高さ」の項目を最大値にしておきます。
+</p>
+<p>
+  画面バッファサイズ「高さ」を大きくしておくと、画面がスクロールしても、設定した行数分だけ、出力を保存しておくことができます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

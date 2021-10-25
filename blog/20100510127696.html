@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Archive::Tar - tarファイルの作成と展開 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Archive::Tarを使用すると、tarファイルを展開あるいは作成することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Archive::Tar - tarファイルの作成と展開 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Archive::Tarを使用すると、tarファイルを展開あるいは作成することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100510127696.html">Archive::Tar - tarファイルの作成と展開</a></h2>
+<p>
+  <strong>Archive::Tar</strong>を使用すると、tarファイルを展開あるいは作成することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# モジュールの読み込みとオブジェクトの作成
+use Archive::Tar;
+my $tar = Archive::Tar-&gt;new;
+</pre>
+<p>
+  メモリ上にtarファイルの情報を読み込むには<strong>read</strong>メソッドを使用します。ファイルを展開するにはtarファイルを読み込んだ後に、<strong>extract</strong>メソッドを使用します。ファイルはカレントディレクトリに展開されます。
+</p>
+<pre>
+# tarファイルの展開
+$tar-&gt;read('archive.tar');
+$tar-&gt;extract;
+</pre>
+<p>
+  tarファイルがgzip形式で圧縮されている場合も展開することができます。ファイルがgzip形式で圧縮されているかどうかは自動的に判定されます。
+</p>
+<pre>
+# gzip形式で圧縮されているtarファイルの展開
+$tar-&gt;read('archive.tar.gz');
+$tar-&gt;extract;
+</pre>
+<p>
+  tarファイルを作成するには、<strong>add_files</strong>メソッドでファイルを追加してから、<strong>write</strong>メソッドでtarファイルに書き込みます。ファイル名はカレントディレクトリを変更してから、相対パスでadd_filesで追加します。
+</p>
+<pre>
+# tarファイルの作成
+my $curdir = '/somedir';
+chdir $curdir
+  or die qq/Can't change directory "$curdir": $!/;
+
+$tar-&gt;add_files('xxx.txt', 'dir/yyy.txt');
+$tar-&gt;write('archive.tar');
+</pre>
+<p>
+  またgzip形式で圧縮されたtarファイルを作成することもできます。gzip形式に圧縮する場合は、第二引数に圧縮率を示す2～9の値を指定します。大きな数を指定するほど圧縮率が高くなります。
+</p>
+<pre>
+# tar.gzファイルの作成
+$tar-&gt;write('archive.tar.gz', 9);
+</pre>
+<h3>Archive::Tarのその他のテクニック</h3>
+<p>
+  extractの引数にファイル名を指定すれば指定したファイルだけを展開することができます。
+</p>
+<pre>
+# 指定したファイルのみを展開
+$tar-&gt;extract('xxx.txt', 'dir/yyy.txt');
+</pre>
+<p>
+  tarファイルに含まれているファイルを調べるには<strong>list_files</strong>メソッドを使用します。
+</p>
+<pre>
+# tarファイルに含まれているファイル一覧を取得
+my @files = $tar-&gt;list_files;
+</pre>
+<p>
+  tarファイルから指定したファイルを取り除くには<strong>remove</strong>メソッドを使用します。
+</p>
+<pre>
+# tarファイルから指定したファイルを取り除く
+$tar-&gt;remove('xxx.txt');
+</pre>
+<p>
+  tarファイルに含まれるファイル名を変更するには<strong>rename</strong>メソッドを使用します。
+</p>
+<pre>
+# tarファイルに含まれるファイル名を変更する
+$tar-&gt;rename('from.txt', 'to.txt');
+</pre>
+<p>
+  <strong>clearメソッド</strong>を使用するとメモリ上のtarファイルの情報をクリアすることができます。
+</p>
+<pre>
+# メモリ上のtarファイルの情報をクリア
+$tar-&gt;clear;
+</pre>
+<h3>Archive::Tarに関するFAQ</h3>
+<p>
+  Q. ディレクトリを指定して、そこに含まれるすべてのファイルをtarファイルにすることはできますか。
+</p>
+<p>
+  A. そのようなメソッドは存在しないので、工夫する必要があります。再帰的にすべてのファイルを検索することができるFile::Findモジュールを利用します。topという名前のディレクトリ以下に含まれるすべてのファイル(topディレクトリ自体も含みます)からtarファイルを作成するサンプルです。
+</p>
+<pre>
+# ディレクトリを指定してそれ以下のすべてのファイルからtarファイルを作成
+use File::Find 'find';
+use Archive::Tar;
+
+my $curdir = '/somedir';
+chdir $curdir
+  or die qq/Can't change directory "$curdir": $!/;
+
+my $tar = Archive::Tar-&gt;new;
+my $top = 'top';
+
+my @files;
+find(sub {
+  push @files, $File::Find::name;
+}, $top);
+
+$tar-&gt;add_files(@files);
+$tar-&gt;write("$top.tar");
+</pre>
+<p>
+  Q. シンボリックリンク先のファイルをtarファイルに含めることはできますか
+</p>
+<p>
+  A. はい。パッケージ変数 $Archive::Tar::FOLLOW_SYMLINK に 1 を設定します。
+</p>
+<pre>
+# シンボリックリンク先のファイルをtarファイルに含める
+local $Archive::Tar::FOLLOW_SYMLINK = 1;
+$tar-&gt;write('archive.tar');
+</pre>
+<p>
+  (参考)<a href="/blog/20080309120507.html">local - パッケージ変数を一時的に退避して復元</a>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

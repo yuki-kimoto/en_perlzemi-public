@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>C++のライブラリをXSから利用する方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="PerlのXSではC++で書かれたライブラリを呼び出すこともできます。コンパイラとリンカに、C++用の「g++」を指定するだけです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="C++のライブラリをXSから利用する方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="PerlのXSではC++で書かれたライブラリを呼び出すこともできます。コンパイラとリンカに、C++用の「g++」を指定するだけです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20100809127859.html">
+        <span itemprop="name">XS</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20170203150055.html">C++のライブラリをXSから利用する方法</a></h2>
+<p>
+  PerlのXSでは<b>C++</b>で書かれたライブラリを呼び出すこともできます。コンパイラとリンカに、C++用の「g++」を指定するだけです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>h2xsでモジュールを作成</h3>
+<p>
+  最初にh2xsでXS用のモジュールを作成します。
+</p>
+<pre>
+h2xs -A -n SomeModule
+</pre>
+<p>
+  こうすると「SomeModule」というディレクトリが作成されます。次のようなファイルとディレクトリが作成されます。
+</p>
+<pre>
+Changes
+lib/
+Makefile.PL
+MANIFEST
+ppport.h
+README
+SomeModule.xs
+t/
+</pre>
+<h3>C++のライブラリの作成</h3>
+<p>
+  C++のライブラリを作成しましょう。ヘッダファイルとソースファイルを作成します。
+</p>
+<p>
+  <b>mylib.h</b>
+</p>
+<p>
+  ヘッダファイルです。mylib_printを宣言しています。
+</p>
+<pre>
+void mylib_print();
+</pre>
+<p>
+  <b>mylib.cpp</b>
+</p>
+<p>
+  C++のソースファイルです。mylib_printは「mylib_cpp」という文字列を出力する関数です。ファイル名の拡張子が「.cpp」であることに注意してください。
+</p>
+<pre>
+#include &lt;iostream&gt;
+
+void mylib_print() {
+  std::cout &lt;&lt; "mylib_cpp\n";
+}
+</pre>
+<p>
+  ヘッダファイルとソースファイルは保存して、XSファイルが存在するディレクトリと同じディレクトリに配置してください。
+</p>
+<h3>XSファイルの記述</h3>
+<p>
+  XSファイルを記述しましょう。mylib_printを呼び出しています。
+</p>
+<pre>
+#include "EXTERN.h"
+#include "perl.h"
+#include "XSUB.h"
+
+#include "ppport.h"
+#include "mylib.h"
+
+MODULE = SomeModule		PACKAGE = SomeModule		
+
+void
+foo(...)
+  PPCODE:
+{
+  mylib_print();
+  XSRETURN(0);
+}
+</pre>
+<h3>Makefile.PLの修正</h3>
+<p>
+  次にMakefile.PLを少し修正しましょう。一番下の「OBJECT」オプションがデフォルトではコメントアウトされているので、コメントを取り除きます。「$(O_FILES)」という設定をすれば、カレントディレクトリのすべてのC言語のソースファイルとC++のソースファイルがコンパイルの対象になります。
+</p>
+<p>
+  そしてコンパイラとリンカを「g++」に変更します。コンパイラは「CC」オプション、リンカは「LD」で設定できます。
+</p>
+<pre>
+use ExtUtils::MakeMaker;
+use strict;
+use warnings;
+
+WriteMakefile(
+    NAME              =&gt; 'SomeModule',
+    VERSION_FROM      =&gt; 'lib/SomeModule.pm', # finds $VERSION
+    PREREQ_PM         =&gt; {}, # e.g., Module::Name =&gt; 1.1
+    ($] &gt;= 5.005 ?     ## Add these new keywords supported since 5.005
+      (ABSTRACT_FROM  =&gt; 'lib/SomeModule.pm', # retrieve abstract from module
+       AUTHOR         =&gt; 'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') : ()),
+    LIBS              =&gt; [''], # e.g., '-lm'
+    DEFINE            =&gt; '', # e.g., '-DHAVE_SOMETHING'
+    INC               =&gt; '-I.', # e.g., '-I. -I/usr/include/other'
+    OBJECT            =&gt; '$(O_FILES)', # link all the C files too
+    CC =&gt;'g++',
+    LD =&gt; 'g++',
+);
+</pre>
+<h3>テストスクリプト</h3>
+<p>
+  テストスクリプトを作成します。これは、XSファイルがあるディレクトリと同じディレクトリにおいてください。
+</p>
+<pre>
+use strict;
+use warnings;
+
+use SomeModule;
+
+SomeModule::foo();
+</pre>
+<h3>コンパイルして実行</h3>
+<p>
+  コンパイルして実行してみましょう。
+</p>
+<pre>
+perl Makefile.PL
+make
+perl -Mblib test.pl
+</pre>
+<p>
+  次のように出力されれば成功です。
+</p>
+<pre>
+mylib_cpp
+</pre>
+<p>
+  これで、C++のライブラリをXSファイルから利用することができるようになりました。
+</p>
+<h3>FAQ</h3>
+<h4>XSファイルの中に直接C++を記述することはできますか。</h4>
+<p>
+  できます。けれども、Perlのシンボルと衝突してしまうなどの不具合が起こりがちですので、ソースファイルとヘッダファイルに記述するのがよいと思います。
+</p>
+<h4>C言語のライブラリとC++のライブラリを混在させて利用することはできますか。</h4>
+<p>
+  C++はC言語のほぼ上位互換なので、C言語のライブラリがg++でコンパイル可能であれば大丈夫だと思います。そうでない場合は、ちょっとわかりません。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

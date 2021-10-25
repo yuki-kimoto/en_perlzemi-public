@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Strawberry PerlをWindowsにインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Strawberry Perl(ストロベリーパール)はWindowsでPerlを利用するために作成されたPerlのディストリビューションのひとつです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Strawberry PerlをWindowsにインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Strawberry Perl(ストロベリーパール)はWindowsでPerlを利用するために作成されたPerlのディストリビューションのひとつです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name"><a href="/blog/20180820153471.html">インストール</a></span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20180808153368.html">Strawberry PerlをWindowsにインストールする</a></h2>
+<p>
+  Strawberry Perl(ストロベリーパール)はWindowsでPerlを利用するために作成されたPerlのディストリビューションのひとつです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  <a href="http://strawberryperl.com"><img style="border:#ddd 1px solid" src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180808/20180808073552.png?1533681423"></a>
+</p>
+<p>
+  <a href="http://strawberryperl.com">Strawberry Perl for Windows</a>
+</p>
+<p>
+  Strawberry Perlの良いところは、
+</p>
+<ul>
+  <li>
+    Unix/Linux環境のPerlと近い感覚で使うことができる
+  </li>
+  <li>
+    gccなどの開発環境が準備されていて、CPANモジュールがインストール可能
+  </li>
+  <li>
+    古いバージョンのPerlも公開されている
+  </li>
+</ul>
+<p>
+  です。
+</p>
+<p>
+  PerlのUnix生まれの言語なので、Windowsでもなるべく<b>Unix環境に近い感覚</b>で利用できると使いやすく感じます。
+</p>
+<p>
+  Strawberry Perlを使うと、<b>ほとんどのCPANモジュールがインストールが可能</b>です。
+</p>
+<p>
+  <b>古いバージョンのPerlもそのまま残してくれている</b>ので、開発をしていて、古いPerlがダウンロードできなくなったという心配もありません。
+</p>
+<p>
+  WindowsでPerlを利用する場合は、一番最初に試してみてほしいPerlです。
+</p>
+<p>
+  以下では、Windows 10を想定して、インストール方法を解説します。Windowsの古いバージョンでも、手順はほとんど同じです。
+</p>
+<h4>Strawberry Perlのダウンロード</h4>
+<p>
+  Strawberry Perlをダウンロードして、インストールしてみましょう。2018年の最新のPerlは、Perl 5.28です。
+</p>
+<p>
+  以下のリンクから<b>Strawberry Perl 5.28 64bit MSI installer</b>をクリックして、Strawberry Perlをデスクトップにダウンロードしましょう。
+</p>
+<ul>
+  <li>
+    <a href="http://strawberryperl.com/releases.html">Strawberry Perl Releases</a>
+  </li>
+</ul>
+<p>
+  <a href="http://strawberryperl.com/releases.html"><img style="border:1px solid #ddd" src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180808/20180808073518.png?1533681603"></a>
+</p>
+<p>
+  MSI installerというのはWindowsのデフォルトのインストーラーという意味です。
+</p>
+<p>
+  末尾のバージョン番号が少し違うこともあるかもしれませんが、気にしないで大丈夫です。
+</p>
+<p>
+  ほとんどの場合は64bit版のWindowsで大丈夫だと思いますが、32bit版が必要な方は、32bitの方のStrawberry Perlをダウンロードしてください。
+</p>
+<h4>Strawberry Perlのインストール</h4>
+<p>
+  ダウンロードしたStrawberry Perlをダブルクリックします。
+</p>
+<p>
+  インストーラーが起動します。空き容量の計算に少し時間がかかる場合がありますが、そのまま待ちましょう。
+</p>
+<p>
+  インストーラーが起動しますので「Next」を押して進みます。
+</p>
+<p>
+  途中で「I accept the terms in the License Agreement」というチェックボックスがでてくるので、チェックをいれて「Next」を押します。
+</p>
+<p>
+  さらに「Next」を押して進んでいって、最後に「Install」をクリックするとStrawberry Perlのインストールが始まります。
+</p>
+<p>
+  ここで「この不明な発行元からのアプリがデバイスに変更を加えることを許可しますか?」というダイアログが表示されると思いますが、「はい」をクリックしましょう。
+</p>
+<p>
+  5分くらい時間がかかるので待ちましょう。
+</p>
+<p>
+  プログレスバーが満タンになると、Strawberry Perlのインストールが完了します。
+</p>
+<p>
+  「Finish」を押してダイアログを閉じましょう。Readmeが表示されますが、これも閉じて大丈夫です。
+</p>
+<h4>Perlがインストールされていることの確認</h4>
+<p>
+  インストールが完了したら実際にStrawberry Perlがインストールできているか確認してみましょう。
+</p>
+<p>
+  コマンドプロンプトというツールをを実行してPerlのバージョンを表示してみます。
+</p>
+<p>
+  コマンドプロンプトは、「スタートメニュー」→「アプリの一覧」→「Windowsシステムツール」→「コマンドプロンプト」から実行できます。
+</p>
+<p>
+  黒い画面がでてくるので、以下の文字をキーボードからうち「Enter」を押してみてください。
+</p>
+<pre>
+perl -v
+</pre>
+<p>
+  次のようにバージョン情報が表示されればインストールは成功しています。
+</p>
+<pre>
+This is perl 5, version 28, subversion 0 (v5.28.0) built for MSWin32-x64-multi-thread
+</pre>
+<p>
+  これでStrawberry Perlのインストールは完了です。
+</p>
+<p>
+  WindowsでPerlを実行するためにはコマンドプロンプトと呼ばれるものを利用します。perlコマンドを使ってPerlスクリプトを実行できるようになります。
+</p>
+<p>
+  コマンドプロンプトの使い方を知りたい方は「<a href="/blog/20080603121251.html">Perlを実行するためのコマンドプロンプト入門</a>」という記事で解説しています。
+</p>
+<p>
+  Strawberry Perlとコマンドプロンプトで、<a href="https://linux.perlclub.net/">Linux</a>風の環境を作りたいという場合は、以下の記事を参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20200117144713.html">Strawberry PerlとコマンドプロンプトでLinux風環境を作る方法</a>
+  </li>
+</ul>
+<h3>実演動画</h3>
+<p>
+  Strawberry Perlのインストールの動画による実演です。
+</p>
+<p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/J7kkZ4zLNMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<h3>その他のインストール方法</h3>
+<p>
+  WindowsでPerlを利用するその他の方法については、以下を参考にしてください。それぞれに長所があります。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080602121231.html">ActivePerlをWindowsにインストールする</a>
+  </li>
+  <li>
+    <a href="/blog/20180806153350.html">msys2をWindowsにインストールしてPerlを使う</a>
+  </li>
+</ul>
+<h3>Strawberry Perlがうまく動かない</h3>
+<p>
+  Active PerlやStrawbery Perl 32bitなど別のPerlがインストールされていると、うまく動かない場合があります。別のPerlを<a href="https://win10labo.info/apli-uninstall/">アプリのアンインストール画面</a>からアンインストールして、もう一度Strawberry Perlをインストールしなおしてみてください。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

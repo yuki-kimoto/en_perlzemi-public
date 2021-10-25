@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Module::Starter - 配布形式のモジュールを作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="モジュールを配布したい場合には、配布形式を自動で作成してくれるモジュールがあると便利です。たとえばCPANに作成したモジュールをアップロードしたい場合は、定められた配布形式にしなければなりません。その雛形を作成してくれるモジュールのひとつがModule::Starterです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Module::Starter - 配布形式のモジュールを作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="モジュールを配布したい場合には、配布形式を自動で作成してくれるモジュールがあると便利です。たとえばCPANに作成したモジュールをアップロードしたい場合は、定められた配布形式にしなければなりません。その雛形を作成してくれるモジュールのひとつがModule::Starterです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20090513124489.html">Module::Starter - 配布形式のモジュールを作成</a></h2>
+<p>
+  モジュールを配布したい場合には、配布形式を自動で作成してくれるモジュールがあると便利です。たとえばCPANに作成したモジュールをアップロードしたい場合は、定められた配布形式にしなければなりません。その雛形を作成してくれるモジュールのひとつが<strong>Module::Starter</strong>です。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>module-starterコマンドで雛形を作成する</h3>
+<p>
+  Module::Starterをインストールすると<strong>module-starter</strong>コマンドも一緒にインストールされます。このコマンドを使用してモジュールを作成します。　実行するとSomo-Moduleというディレクトリが作成されているのを確認することができます。
+</p>
+<pre>
+module-starter --module=Some::Module --author="Yuki Kimoto" --email=kimoto.yuki@gmail.com
+</pre>
+<h4>モジュール名の指定</h4>
+<p>
+  <strong>--module</strong>でモジュール名を指定します。
+</p>
+<h4>ビルド方法の指定</h4>
+<p>
+  --builderでビルド方法を指定します。Unix系OSでの標準的なビルド方式であるmakeを使用する「ExtUtils::MakeMaker」と純正Perlで書かれたBuildを使用する「Module::Build」のどちらかを指定することができます。デフォルトで「ExtUtils::MakeMaker」が使用されます。ここでは「Module::Build」を使用しています。
+</p>
+<p>
+  特に必要がなければ、古いバージョンのPerlでも対応しているExtUtils::MakeMakerを使うのが無難です。
+</p>
+<h4>あなたの名前</h4>
+<p>
+  <strong>--author</strong>であなたの名前を指定します。
+</p>
+<h4>あなたのメールアドレス</h4>
+<p>
+  <strong>--email</strong>であなたのメールアドレスを指定します。
+</p>
+<h3>ディレクトリ構成</h3>
+<p>
+  雛形を作成した直後は以下のようなディレクトリ構成になっています。
+</p>
+<pre>
+-rw-r--r-- 1 root root  457 2009-06-14 12:40 Makefile.PL
+-rw-r--r-- 1 root root  111 2009-06-14 12:40 Changes
+drwxr-xr-x 3 root root 4096 2009-06-14 12:40 lib
+-rw-r--r-- 1 root root   89 2009-06-14 12:40 MANIFEST
+-rw-r--r-- 1 root root 1398 2009-06-14 12:40 README
+drwxr-xr-x 2 root root 4096 2009-06-14 12:40 t
+</pre>
+<p>
+  役割を簡単にひとつづつ解説します。
+</p>
+<h4>Makefile.PL</h4>
+<p>
+  Makefile.PLはMakefileというスクリプトを作成するためのPerlで書かれたスクリプトです。Makefileというスクリプトは、モジュールを構築して、試験をして、インストールするためのスクリプトです。
+</p>
+<p>
+  なぜ最初からMakefileというスクリプトを用意していないかといえば、OSの違いなどの環境によってMakefileスクリプトの内容が異なってくるからです。
+</p>
+<p>
+  環境の差異を吸収して、モジュールの構築からインストールまでの処理を行うために、Makefile.PLを実行してMakefileスクリプトを作成します。
+</p>
+<pre>
+perl Makefile.PL
+</pre>
+<p>
+  とするとMakefileというスクリプトが作成されます。
+</p>
+<h4>Changes</h4>
+<p>
+  Changesはモジュールをバージョンアップをしたときの履歴を書くためのものです。モジュールをバージョンアップした場合に書き忘れることが多いので注意しましょう。
+</p>
+<h3>lib</h3>
+<p>
+  libはモジュールが格納されるディレクトリです。この中にモジュールの本体であるスクリプトが格納されます。
+</p>
+<h3>MANIFEST</h3>
+<p>
+  MANIFESTには、モジュールを配布するときに格納するファイルを記述します。MANIFESTファイルは直接編集することもできますが、自動で作成することもできます。
+</p>
+<h4>t</h4>
+<p>
+  モジュールの自動試験を格納するディレクトリです。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

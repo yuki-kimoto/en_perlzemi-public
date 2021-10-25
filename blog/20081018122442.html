@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>時刻の差を求める(24時間を越えない場合) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="時刻の差を求めるには、まずhhmmssと表記されているものを秒に変換する必要があります。秒の差を求めた上で再度hhmmssの時刻表現に復元します。時刻の差を求めるサンプルです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="時刻の差を求める(24時間を越えない場合) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="時刻の差を求めるには、まずhhmmssと表記されているものを秒に変換する必要があります。秒の差を求めた上で再度hhmmssの時刻表現に復元します。時刻の差を求めるサンプルです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161123147990.html">
+        <span itemprop="name">日付・時刻</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20081018122442.html">時刻の差を求める(24時間を越えない場合)</a></h2>
+<p>
+  時刻の差を求めるには、まずhhmmssと表記されているものを秒に変換する必要があります。秒の差を求めた上で再度hhmmssの時刻表現に復元します。時刻の差を求めるサンプルです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use strict;
+use warnings;
+
+print "(1)時刻の差を求める(24時間を越えない)\n";
+my $time_str1 = '03:44:23';
+my $time_str2 = '22:34:45';
+
+# 時刻の文字列表現を時刻情報のハッシュに変換する。
+my $time1 = time_from_str($time_str1);
+my $time2 = time_from_str($time_str2);
+
+# 時刻情報のハッシュを秒に変換して経過秒を計算
+my $sec_interval = time_to_sec($time2) - time_to_sec($time1);
+
+# 経過秒を時刻表現のハッシュに変換
+my $time_interval = sec_to_time($sec_interval);
+
+# 時刻表現のハッシュを時刻の文字列表現に変換
+my $time_interval_str = str_from_time($time_interval);
+
+print "時刻の差は$time_interval_strです。\n";
+
+# 時刻の文字列表現を時刻情報を表すハッシュに変換する関数
+sub time_from_str {
+  my $time_str = shift;
+  return unless $time_str;
+  
+  my $time = {};
+  if ($time_str =~ /^(\d{2}):(\d{2}):(\d{2})$/) {
+    @{$time}{qw/hour min sec/} = ($1, $2, $3);
+    return wantarray ? %$time : $time;
+  }
+  return;
+}
+
+# 時刻情報を表すハッシュを時刻の文字列表現に変換する関数
+sub str_from_time {
+  my $time;
+  if (ref $_[0] eq 'HASH') {
+    $time = shift;
+  }
+  else {
+    %$time = @_;
+  }
+    
+  return unless defined $time-&gt;{hour};
+  return unless defined $time-&gt;{min};
+  return unless defined $time-&gt;{sec};
+    
+  my $time_str
+    = sprintf("%02s:%02s:%02s", @{$time}{qw/hour min sec/});
+  return $time_str;
+}
+
+# 時刻を秒に変換する関数
+sub time_to_sec {
+  my $time;
+  if (ref $_[0] eq 'HASH') {
+    $time = shift;
+  }
+  else {
+    %$time = @_;
+  }
+    
+  return unless defined $time-&gt;{hour};
+  return unless defined $time-&gt;{min};
+  return unless defined $time-&gt;{sec};
+  
+  my $sec = $time-&gt;{hour} * 3600 +
+            $time-&gt;{min} * 60 +
+            $time-&gt;{sec};
+  
+  return $sec;
+}
+
+# 秒を時刻に変換する関数。
+sub sec_to_time {
+  my $sec = int(shift);
+  my $time = {};
+  
+  $time-&gt;{hour} = int($sec / 3600);
+  $sec = $sec % 3600;
+  
+  $time-&gt;{min} = int($sec / 60);
+  $sec = $sec % 60;
+  
+  $time-&gt;{sec} = $sec;
+  
+  return wantarray ? %$time : $time;
+}
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+(1)時刻の差を求める(24時間を越えない)
+時刻の差は18:50:22です。
+</pre>
+<h3>コード解説</h3>
+<h4>時刻の文字列表現を時刻情報を表すハッシュに変換する</h4>
+<p>
+  ログなどに時刻が表示されている場合は文字列になっています。この文字列を時刻情報を表すハッシュに変換しておくのが便利です。
+</p>
+<p>
+  このように文字列をハッシュに変換することはよく行われます。(データを構造化しておくと抽象性、可読性、再利用性が増します。)
+</p>
+<pre>
+# 時刻の文字列表現を時刻情報のハッシュに変換する。
+my $time1 = time_from_str( $time_str1 );
+my $time2 = time_from_str( $time_str2 );
+
+# 時刻の文字列表現を時刻情報を表すハッシュに変換する関数
+sub time_from_str {
+  my $time_str = shift;
+  return unless $time_str;
+  
+  my $time = {};
+  if ($time_str =~ /^(\d{2}):(\d{2}):(\d{2})$/) {
+    @{$time}{qw/hour min sec/} = ($1, $2, $3);
+    return wantarray ? %$time : $time;
+  }
+  return;
+}
+</pre>
+<p>
+  以下の部分はハッシュスライスになっています。$timeをデリファレンスしてハッシュスライスで代入する形です。qwは文字列リスト演算子です。
+</p>
+<pre>
+@{$time}{qw/hour min sec/} = ($1, $2, $3);
+</pre>
+<p>
+  戻り値はリストとスカラーを選択できるようにしてあります。
+</p>
+<pre>
+return wantarray ? %$time : $time;
+</pre>
+<h4>時刻情報のハッシュを秒に変換して経過秒を計算</h4>
+<p>
+  時刻を秒に直す計算は 「 時 × 3600 + 分 × 60 + 秒 」です。 
+</p>
+<pre>
+my $sec_interval = time_to_sec($time2) - time_to_sec($time1);
+
+# 時刻を秒に変換する関数
+sub time_to_sec {
+  my $time;
+  if (ref $_[0] eq 'HASH') {
+    $time = shift;
+  }
+  else {
+    %$time = @_;
+  }
+    
+  return unless defined $time-&gt;{hour};
+  return unless defined $time-&gt;{min};
+  return unless defined $time-&gt;{sec};
+  
+  my $sec = $time-&gt;{hour} * 3600 +
+            $time-&gt;{min} * 60 +
+            $time-&gt;{sec};
+  
+  return $sec;
+}
+</pre>
+<h4>経過秒を時刻表現のハッシュに変換</h4>
+<p>
+  秒を時刻に変換するには、秒を3600で割った商と余りを求めます。この商が「時」になります。
+</p>
+<p>
+  さらに、その余りを60で割った商と余りを求めます。この商が「分」、余りが「秒」になります。
+</p>
+<pre>
+my $time_interval = sec_to_time($sec_interval);
+
+# 秒を時刻に変換する関数。
+sub sec_to_time {
+  my $sec = int(shift);
+  my $time = {};
+  
+  $time-&gt;{hour} = int($sec / 3600);
+  $sec = $sec % 3600;
+  
+  $time-&gt;{min} = int($sec / 60);
+  $sec = $sec % 60;
+  
+  $time-&gt;{sec} = $sec;
+  
+  return wantarray ? %$time : $time;
+}
+</pre>
+<h4>時刻表現のハッシュを時刻の文字列表現に変換</h4>
+<p>
+  最後に再び文字列に戻します。ここでは、sprintf関数を使いました。
+</p>
+<pre>
+my $time_interval_str = str_from_time($time_interval);
+
+# 時刻情報を表すハッシュを時刻の文字列表現に変換する関数
+sub str_from_time {
+  my $time;
+  if (ref $_[0] eq 'HASH') {
+    $time = shift;
+  }
+  else {
+    %$time = @_;
+  }
+    
+  return unless defined $time-&gt;{hour};
+  return unless defined $time-&gt;{min};
+  return unless defined $time-&gt;{sec};
+    
+  my $time_str
+    = sprintf("%02s:%02s:%02s", @{$time}{qw/hour min sec/});
+  return $time_str;
+}
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

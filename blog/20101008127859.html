@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>日本のCPANミラーサイト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="CPANの日本のミラーサイトを紹介しています。CPANはPerlのモジュールが配布されているサイトですべてのモジュールを無料で利用することができます。(CPAN)">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="日本のCPANミラーサイト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="CPANの日本のミラーサイトを紹介しています。CPANはPerlのモジュールが配布されているサイトですべてのモジュールを無料で利用することができます。(CPAN)" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161115147930.html">
+        <span itemprop="name">CPAN</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20101008127859.html">日本のCPANミラーサイト</a></h2>
+<p>
+  <strong>CPAN</strong>の日本のミラーサイトを紹介しています。CPANはPerlのモジュールが配布されているサイトですべてのモジュールを無料で利用することができます。(<a href="http://www.cpan.org/">CPAN</a>)
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+ftp://ftp.u-aizu.ac.jp/pub/CPAN
+ftp://ftp.kddilabs.jp/CPAN/
+http://ftp.nara.wide.ad.jp/pub/CPAN/
+ftp://ftp.nara.wide.ad.jp/pub/CPAN/
+http://ftp.jaist.ac.jp/pub/CPAN/
+ftp://ftp.jaist.ac.jp/pub/CPAN/
+ftp://ftp.dti.ad.jp/pub/lang/CPAN/
+ftp://ftp.ring.gr.jp/pub/lang/perl/CPAN/
+http://ftp.riken.jp/lang/CPAN/
+ftp://ftp.riken.jp/lang/CPAN/
+http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/
+ftp://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/
+</pre>
+<p>
+  ftp://ftp.riken.jp/lang/CPAN/ がなんとなくいつも良い気がします。FTPとHTTPの違いはダウンロードするときにプロトコルが異なるだけで、ユーザから見た違いはあんまりないです。PerlはコアモジュールにHTTPクライアントがないですが、FTPクライアントはあるので、FTPのほうが若干良いかもしれません。
+</p>
+<h3>CPANでのURLリストの追加方法</h3>
+<p>
+  CPANでURLリストを追加する方法です。
+</p>
+<pre>
+# cpanシェル起動
+cpan
+
+# URLの確認
+o conf urllist
+
+# URLの追加
+o conf urllist unshift ftp://ftp.riken.jp/lang/CPAN/
+
+# 変更を有効にする
+o conf commit
+
+# cpanシェル終了
+q
+</pre>
+<p>
+  接続先のミラーに接続できない場合は、このように他のミラーを追加するとダウンロードがうまくいきます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

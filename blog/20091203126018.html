@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>WindowsへSQLiteをインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="慣れてくるとさまざまな種類のSQLを実行して実験したくなると思います。そのためには対話的にSQLを実行できる環境があったほうが便利です。今回はWindows上でSQLを実行するための環境を作成してみます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="WindowsへSQLiteをインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="慣れてくるとさまざまな種類のSQLを実行して実験したくなると思います。そのためには対話的にSQLを実行できる環境があったほうが便利です。今回はWindows上でSQLを実行するための環境を作成してみます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20091203126018.html">WindowsへSQLiteをインストールする</a></h2>
+<p>
+  慣れてくるとさまざまな種類のSQLを実行して実験したくなると思います。そのためには対話的にSQLを実行できる環境があったほうが便利です。今回はWindows上でSQLを実行するための環境を作成してみます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>ライブラリとコマンドラインプログラムのダウンロード</h3>
+<p>
+  SQLiteを利用するためにはデータベースを操作するためのライブラリとSQLを実行するためのコマンドラインプログラムが必要になります。このふたつを入手する必要があります。
+</p>
+<h4>SQLiteのホームページ</h4>
+<p>
+  以下がSQLiteのホームページになります。
+</p>
+<blockquote>
+<p>
+  <a href="http://www.sqlite.org/">SQLiteのサイト</a>
+</p>
+</blockquote>
+<h4>SQLiteのダウンロードページ</h4>
+<p>
+  ホームページの上段の真ん中あたりに「Download」と書かれたリンクがあります。これがSQLiteのダウンロードのページへのリンクです。
+</p>
+<blockquote>
+<p>
+  <a href="http://www.sqlite.org/download.html">SQLite Download Page</a>
+</p>
+</blockquote>
+<h4>Windows用のSQLiteのライブラリとコマンドラインプログラムを探す</h4>
+<p>
+  くるくるとページをたどってWindowsようのSQLiteのライブラリとコマンドラインプログラムを探します。「For Windows」などと書かれていると思います。「sqlitedll～.zip」というのがSQLiteのライブラリです。「sqlite～.zip」というのがSQLiteのコマンドラインプログラムです。この2つをダウンロードしましょう。
+</p>
+<p>
+  2009年12月07日現在で最新版のものにリンクを張っておきます。
+</p>
+<ul>
+  <li>
+    <a href="http://www.sqlite.org/sqlitedll-3_6_20.zip">sqlitedll-3_6_20.zip</a>(SQLiteのライブラリ)
+  </li>
+  <li>
+    <a href="http://www.sqlite.org/sqlite-3_6_20.zip">sqlite-3_6_20.zip</a>(SQLiteのコマンドラインプログラム)
+  </li>
+</ul>
+<p>
+  これらをダウンロードしてzipファイルを展開してください。
+</p>
+<h3>ファイルの配置</h3>
+<p>
+  ファイルを展開すると「sqlitedll～.zip」の中には
+</p>
+<blockquote>
+<p>
+  sqlite3.def
+</p>
+<p>
+  sqlite3.dll
+</p>
+</blockquote>
+<p>
+  というファイルが、
+</p>
+<p>
+  「sqlite～.zip」の中には
+</p>
+<blockquote>
+<p>
+  sqlite3.exe
+</p>
+</blockquote>
+<p>
+  というファイルが入っていると思います。sqlite3.defというのは静的なライブラリを作成するために必要なものですので、今は必要ありません。
+</p>
+<blockquote>
+<p>
+  sqlite3.dll
+</p>
+<p>
+  sqlite3.exe
+</p>
+</blockquote>
+<p>
+  というファイルを自分の好きなディレクトリに配置してください。今回は
+</p>
+<blockquote>
+<p>
+  c:\sqlite
+</p>
+</blockquote>
+<p>
+  というディレクトリに配置することにします。
+</p>
+<h3>環境変数Pathの設定</h3>
+<h4>環境変数Pathを探す</h4>
+<p>
+  次にコマンドプロンプトから「sqlite3.exe」を実行できるように環境変数Pathというものを設定します。このパスの設定の操作は十分注意してください。これから環境変数Pathの値に変更を加えるのですが、間違ってしまうと正しく動かなくなる危険があります。Pathの値はコピーしてどこかに保存しておくようにしてください。
+</p>
+<p>
+  まず「マイコンピュータ」を右クリックしてポップアップメニューにある「プロパティ」をクリックしてください。すると上のほうに「詳細設定」というタブがあるのでそれをクリックします。「詳細設定」タブの下のほうに「環境変数」というボタンがあると思います。これをクリックしてください。
+</p>
+<p>
+  「環境変数」のウインドウが開いたら下部の「システム環境変数」のリストの中からPathという項目を探してください。
+</p>
+<h4>環境変数Pathの設定</h4>
+<p>
+  Pathという項目をクリックして、右下にある「編集」というボタンを押しましょう。そうしたらPathの値を編集できますので、まず最初にそれをコピーしてどこかテキストファイルに保存しておきましょう。元に戻すことができるので安心です。
+</p>
+<p>
+  その作業を終えたら、環境変数Pathの先頭に
+</p>
+<blockquote>
+<p>
+  c:\sqlite;(元の環境変数Pathの値)
+</p>
+</blockquote>
+<p>
+  を追加してください。「c:\sqlite」の後ろにセミコロンがあることに注意してください。設定できたらOKを何回か押してプロパティを閉じましょう。
+</p>
+<h3>SQLiteのコマンドラインプログラムが実行できることの確認</h3>
+<p>
+  ではコマンドプロンプトを起動して
+</p>
+<blockquote>
+<p>
+  sqlite3
+</p>
+</blockquote>
+<p>
+  としてみましょう。環境変数の設定はコマンドプロンプトを再起動したときに反映されますので、すでに立ち上がっている場合はコマンドプロンプトを立ち上げなおしましょう。
+</p>
+<p>
+  下記のようにsqlite3が実行できれば正常にインストールできています。
+</p>
+<blockquote>
+<p>
+  SQLite version 3.6.20
+</p>
+<p>
+  Enter ".help" for instructions
+</p>
+<p>
+  Enter SQL statements terminated with a ";"
+</p>
+<p>
+  sqlite>
+</p>
+</blockquote>
+<p>
+  終了する場合は
+</p>
+<blockquote>
+<p>
+  .quit
+</p>
+</blockquote>
+<p>
+  とします。
+</p>
+<p>
+  これで対話的にSQLを実行できる環境が整いました。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

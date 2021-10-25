@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>File::Basename - ファイルのベース名を取得 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="File::Basenameはファイル名からベース名やディレクトリ名を取得するためのモジュールです。次の3つの関数を使用することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="File::Basename - ファイルのベース名を取得 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="File::Basenameはファイル名からベース名やディレクトリ名を取得するためのモジュールです。次の3つの関数を使用することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100225126425.html">File::Basename - ファイルのベース名を取得</a></h2>
+<p>
+  <strong>File::Basename</strong>はファイル名からベース名やディレクトリ名を取得するためのモジュールです。次の3つの関数を使用することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<ul>
+  <li>
+    <strong>basename</strong> - ファイルのベース名の取得
+  </li>
+  <li>
+    <strong>dirname</strong> - ディレクトリ名の取得
+  </li>
+  <li>
+    <strong>fileparse</strong> - もう少し細かな操作
+  </li>
+</ul>
+<p>
+  これらの関数を使用するには関数を明示的にインポートするのがよいでしょう。
+</p>
+<pre>
+# 関数のインポート
+use File::Basename 'basename', 'dirname';
+</pre>
+<h3>basename関数</h3>
+<p>
+  ファイルのベース名を取得するにはbasename関数を使用します。ベース名というのはファイル名の中の末尾の部分です。
+</p>
+<pre>
+# ベース名の取得
+$basename = basename $file;
+</pre>
+<h3>dirname関数</h3>
+<p>
+  ディレクトリ名を取得するにはdirname関数を使用します。
+</p>
+<pre>
+# ディレクトリ名の取得
+$dirname = dirname $file;
+</pre>
+<p>
+  basenameとdirnameのサンプルです。ファイル名が「dir/a.txt」の場合はbasenameで「a.txt」を、dirnameで「dir」を取得することができます。
+</p>
+<pre>
+# ベース名とディレクトリ名を取得
+use File::Basename qw/basename dirname/;
+my $file = 'dir/a.txt';
+my $basename = basename $file;
+my $dirname = dirname $file;
+</pre>
+<h3>ファイル名に対するもう少し細かな操作</h3>
+<p>
+  fileparseを使用するとベース名とディレクトリ名を一度に取得することができます。
+</p>
+<pre>
+# ベース名とディレクトリ名の取得
+($basename, $dirname) = fileparse $file;
+</pre>
+<p>
+  またfileparseの第二引数に拡張子を<a href="/blog/20100827127859.html">正規表現</a>で指定すると拡張子とベース名を分けて取り出すことができます。
+</p>
+<pre>
+# ベース名、ディレクトリ名、拡張子を取得
+($basename, $dirname, $ext) = fileparse($file, $regex);
+</pre>
+<p>
+  拡張子を取り出すサンプルです。第二引数には正規表現を指定します。正規表現「\..*$」は「.がきて何でもよい文字が0個以上続いて終わる」という意味になります。$fileが「dir/a.txt」の場合は$basenameは「a」に、$extは「.txt」になります。
+</p>
+<pre>
+# 拡張子を取り出す
+use File::Basename 'fileparse';
+my $file = 'dir/a.txt';
+my ($basename, $dirname, $ext) = fileparse($file, qr/\..*$/);
+</pre>
+<p>
+  上記は拡張子を取り出す例ですが、拡張子がふたつ続いた場合は先頭の拡張子以降が取り出されます。たとえばファイル名が「dir/a.txt.gz」であった場合は、$extは「.txt.gz」になります。
+</p>
+<p>
+  「.gz」を取り出したい場合は正規表現を「\.[^\.]*$」に変更します。この正規表現の意味は「.がきて.以外の文字が0個以上続いて終わる」という意味になります。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

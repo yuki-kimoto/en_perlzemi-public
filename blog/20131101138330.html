@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>PDLのインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="統計・解析のためのモジュール「PDL」をインストールしてみましょう。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="PDLのインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="統計・解析のためのモジュール「PDL」をインストールしてみましょう。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+        <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop="name">PDL</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20131101138330.html">PDLのインストール</a></h2>
+<p>
+  統計・解析のためのモジュール「PDL」をインストールしてみましょう。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>Linux/Unix</h3>
+<p>
+  cpanかcpanmを使ってインストールするだけです。PDLとPDL::Statsをインストールしておきましょう。
+</p>
+<pre>
+cpan PDL
+cpan PDL::Stats
+</pre>
+<p>
+  あるいはcpanmをダウンロードして以下のようにします。
+</p>
+<pre>
+cpanm PDL
+cpanm PDL::Stats
+</pre>
+<h3>Windows(Active Perl + ppm)</h3>
+<p>
+  ActivePerlを使ったWindowsへのインストールにはppmを利用するのが簡単です。まず最初に以下のパッケージをインストールします。
+</p>
+<pre>
+ppm install http://www.sisyphusion.tk/ppm/Astro-FITS-Header.ppd --force
+ppm install http://www.sisyphusion.tk/ppm/Convert-UU.ppd --force
+ppm install http://www.sisyphusion.tk/ppm/Sub-Exporter-Progressive.ppd --force
+ppm install http://www.sisyphusion.tk/ppm/PerlIO-Layers.ppd --force
+ppm install http://www.sisyphusion.tk/ppm/Const-Fast.ppd --force
+ppm install http://www.sisyphusion.tk/ppm/File-Map.ppd --force
+ppm install http://www.sisyphusion.tk/ppm/OpenGL.ppd --force
+
+</pre>
+<p>
+  次にPDLをインストールします。
+</p>
+<pre>
+ppm install http://www.sisyphusion.tk/ppm/PDL.ppd --force
+
+</pre>
+<p>
+  インストールを行うと次のようなメッセージが表示されるので、自分の環境でのメッセージを控えておいてください。
+</p>
+<pre>
+  In order to utilise the built in proj4 capability set your
+  PROJ_LIB environment variable to C:\Perl\site\lib\PDL\proj_supp
+</pre>
+<p>
+  Enterを押してインストールを完了します。
+</p>
+<p>
+  先ほど表示された環境変数の設定を行いましょう。「スタート」->「コンピュータ」->「プロパティ」->「システムの詳細設定」->「環境変数」から環境変数の設定を行うことができます。ユーザーの環境変数に新規にPROJ_LIBを追加して値を先ほど表示された値に設定しましょう。この例では「C:\Perl\site\lib\PDL\proj_supp」です。
+</p>
+<p>
+  統計のライブラリであるPDL::Statsもついでにインストールしておきましょう。
+</p>
+<pre>
+ppm install http://www.sisyphusion.tk/ppm/PDL-Stats.ppd --force
+</pre>
+<h3>WindowsのActivePerlのcpanコマンドでPDLがインストールできない場合の対処</h3>
+<p>
+  僕の場合はWindowsのActivePerlのcpanコマンドでPDLをインストールしようとしましたが、Devel::CheckLibの試験が失敗して、インストールできませんでした。(Perl 5.16.3 + Devel::CheckLib 1.01)
+</p>
+<p>
+  こういう場合はppmと呼ばれるActivePerlのモジュールのインストール機構を利用するとうまくインストールできる場合が多いです。
+</p>
+<pre>
+ppm install PDL
+</pre>
+<p>
+  cpanコマンドでインストールできるのが一番望ましいのですが、次善策としてppmと呼ばれるパッケージマネージャを利用できることも覚えておくとよいと思います。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

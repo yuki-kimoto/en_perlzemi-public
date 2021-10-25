@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>標準入出力とリダイレクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="リダイレクトとは、標準入力の入力元、標準出力、標準エラー出力の出力先を切り替えるOSの機能のことです。現代的なOSは基本的なリダイレクトの機能を備えています。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="標準入出力とリダイレクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="リダイレクトとは、標準入力の入力元、標準出力、標準エラー出力の出力先を切り替えるOSの機能のことです。現代的なOSは基本的なリダイレクトの機能を備えています。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20110212130370.html">
+      <span itemprop="name">ファイル入出力</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080731121760.html">標準入出力とリダイレクト</a></h2>
+<p>
+  リダイレクトとは、標準入力の入力元、標準出力、標準エラー出力の出力先を切り替えるOSの機能のことです。現代的なOSは基本的なリダイレクトの機能を備えています。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  リダイレクトの中でも覚えておかなければならないのは、標準入力の入力元をファイルに切り替えるリダイレクト、標準出力の出力先をファイルに切り替えるリダイレクト、標準エラー出力の出力先をファイルに切り替えるリダイレクトの3つです。
+</p>
+<h3>1.準備</h3>
+<p>
+  リダイレクトの動きを見るためのサンプルを作っておきます。
+</p>
+<p>
+  標準入力から1行読みこんで、標準出力に書き込みます。また標準エラー出力に"error\n"という文字列を出力します。
+</p>
+<p>
+  このスクリプトを好きな名前で保存してください。ここでは、sample_20080731.plという名前とします。
+</p>
+<p>
+  リダイレクトでファイルに出力する場合は、ファイルの上書き確認がされませんので、十分注意してください。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my $line = &lt;STDIN&gt;; # 標準入力から1行読み込む
+
+print $line; # 標準出力に出力
+print STDERR "error\n"; # 標準エラー出力に出力
+</pre>
+<h3>2.通常の動きを確認する</h3>
+<pre>
+perl sample_20080731.pl
+</pre>
+<p>
+  上記を実行して
+</p>
+<pre>
+aaa
+</pre>
+<p>
+  とキーボードから打つと
+</p>
+<pre>
+aaa
+error
+</pre>
+<p>
+  と出力されます。標準入力はキーボード、標準出力と標準エラー出力はディスプレイになっています。
+</p>
+<h3>3.標準入力の入力元をファイルに切り替える</h3>
+<p>
+  入力元をキーボードからファイルに切り替えるので、準備としてinput_20080731.txt というファイルを作って、内容を
+</p>
+<pre>
+line
+</pre>
+<p>
+  とします。
+</p>
+<pre>
+perl sample_20080731.pl &lt; input_20080731.txt
+</pre>
+<p>
+  とコマンドラインで打つと
+</p>
+<pre>
+line
+error
+</pre>
+<p>
+  とディスプレイに表示されます。< 記号が、標準入力の入力元をファイルに切り替えるリダイレクト記号です。読み込む内容を標準入力から受け取るようにプログラムを作成すれば、リダイレクトを利用して入力元をユーザが選択することができます。
+</p>
+<h3>4.標準出力の出力先をファイルに切り替える</h3>
+<pre>
+perl sample_20080731.pl &gt; output_20080731.txt
+</pre>
+<p>
+  とコマンドラインで入力して
+</p>
+<pre>
+aaa
+</pre>
+<p>
+  と打ち込むとoutput_20080731.txtには、aaaという内容が書き込まれ、ディスプレイには、errorと表示されます。> という記号は、標準出力の出力先をファイルに切り替えるリダイレクト記号です。出力内容を標準出力に出力するようにプログラムを作成していれば、リダイレクトを利用して出力先をユーザが選択することができます。
+</p>
+<h3>5.標準エラー出力の出力先をファイルに切り替える</h3>
+<pre>
+perl sample_20080731.pl 2&gt; error_20080731.txt
+</pre>
+<p>
+  とコマンドラインで入力して
+</p>
+<pre>
+aaa
+</pre>
+<p>
+  と打つと、error_20080731.txt にerror、ディスプレイにaaaと表示されます。2> という記号は、標準エラー出力の出力先をファイルに切り替えるリダイレクト記号です。この切り替えを使うのは、エラーをファイルに出力したい場合です。
+</p>
+<h3>6.リダイレクトを組み合わせて使う</h3>
+<p>
+  リダイレクトは組み合わせて使うことができます。
+</p>
+<pre>
+perl sample_20080731.pl &lt; input_20080731.txt &gt; output_20080731.txt 2&gt; error_20080731.txt
+</pre>
+<p>
+  と打ち込むと、output_20080731.txtにはlineと書き込まれ、error_20080731.txtには、errorと書き込まれます。output_20080731.txtに書き込まれたlineは、input_20080731.txtの1行目に書かれていたものです。このように、リダイレクト記号は組み合わせて使うことができます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

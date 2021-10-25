@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>XSモジュールを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlから呼び出すことのできるように作成したC言語(あるいはC++)の関数のことをエクステンションといいます。一般的にはXSと総称して呼ばれることが多いようですので、XSと呼ぶことにします。XSモジュールを作成してPerlから呼び出すためのモジュールの作成までの流れを書きたいと思います。次のような作業の流れになります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="XSモジュールを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlから呼び出すことのできるように作成したC言語(あるいはC++)の関数のことをエクステンションといいます。一般的にはXSと総称して呼ばれることが多いようですので、XSと呼ぶことにします。XSモジュールを作成してPerlから呼び出すためのモジュールの作成までの流れを書きたいと思います。次のような作業の流れになります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20100809127859.html">
+        <span itemprop="name">XS</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20170209150055.html">XSモジュールを作成する</a></h2>
+<p>
+  Perlから呼び出すことのできるように作成したC言語(あるいはC++)の関数のことをエクステンションといいます。一般的にはXSと総称して呼ばれることが多いようですので、XSと呼ぶことにします。XSモジュールを作成してPerlから呼び出すためのモジュールの作成までの流れを書きたいと思います。次のような作業の流れになります。　
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<ol>
+  <li>
+    XSファイルの作成
+  </li>
+  <li>
+    XSファイルからC言語のソースファイルを生成
+  </li>
+  <li>
+    C言語のソースファイルからダイナミックリンクライブラリを生成
+  </li>
+  <li>
+    ダイナミックリンクライブラリを呼び出すためのPerlモジュールの作成
+  </li>
+</ol>
+<p>
+  C言語がまったくわからないという方は、以下の講座をご用意しています。
+</p>
+<ul>
+  <li><a href="https://clanguage.perlclub.net/">Perl XSユーザーのC言語入門</a></li>
+</ul>
+<h3>XSモジュール作成の流れ</h3>
+<h4>XSファイルの作成</h4>
+<p>
+  最初はXSファイルの作成です。拡張子は(.xs)です。ファイルの中にはC言語のソースコードとXSUBが含まれています。XSUBはXS言語で書かれC言語の関数にとてもよく似ています。実質としてはC言語の関数を記述するものだと思ってください。
+</p>
+<pre>
+# C言語セクション(ライブラリの読み込みなど)
+...
+
+# XSUBセクション(XS言語で書かれる)
+戻り値
+関数名
+型
+処理(処理の部分はC言語)
+
+戻り値
+関数名
+型
+処理(処理の部分はC言語)
+</pre>
+<h4>XSファイルからC言語のソースファイルを生成</h4>
+<p>
+  XSファイルをxsubppと呼ばれるプログラムを使って、C言語のソースファイルに変換します。このときにtypemapと呼ばれる、C言語のPerlの型を相互変換するため定義が利用されます。typemapはExtUtils::MakeMakerモジュールに含まれています。
+</p>
+<pre>
+                        xsubpp
+XSファイル + typemap ------------&gt; C言語ソースファイル
+</pre>
+<p>
+  XS言語を利用すると、多くの場合C言語とPerlの型の変換の処理を自分で書く必要がありません。xsubppがtypemapファイルを参照して、自動的に変換処理を追加してくれます。変換処理を自分で書くことやtypemapを拡張することもできます。
+</p>
+<h4>ダイナミックリンクライブラリの生成</h4>
+<p>
+  C言語ソースファイルはCのコンパイラ(gccなど)を使ってコンパイルされ、ダイナミックリンクライブラリ(*.soなど)に変換されます。
+</p>
+<pre>
+                       Cコンパイラ
+C言語ソースファイル  ------------------&gt;   ダイナミックリンクライブラリ
+</pre>
+<p>
+  ダイナミックリンクライブラリは動的に呼び出すことが可能なライブラリのことです。通常はこの形式でライブラリは作成されます。
+</p>
+<h4>ダイナミックリンクライブラリを呼び出すためのPerlモジュールの作成</h4>
+<p>
+  最後にダイナミックリンクライブラリを呼び出すためのPerlのモジュールを作成します。XSLoaderというモジュールを使うと、ダイナミックリンクライブラリを読み込んで、Perlの関数として、ダイナミックリンクライブラリに書かれた関数を呼び出すことができるようになります。
+</p>
+<pre>
+package YourPackage;
+use XSLoader;
+
+XSLoader::load 'YourPackage', $YourPackage::VERSION;
+</pre>
+<p>
+  XSLoaderは@INCに含まれる検索パスのautoというディレクトリの下にあるダイナミックリンクライブラリを読み込みます。ダイナミックリンクライブラリは、Windowsではdll、Linux等ではsoという拡張子です。
+</p>
+<h4>実際にXSモジュールを作成するには</h4>
+<p>
+  上記の流れをしっかりと覚えておきましょう。XSモジュールを作成する場合はどのようなものを作成する場合でも流れは同じです。プログラマが専念する必要があるのはXSファイルの作成です。残りのほとんどの作業は自動化することができますので、簡単なXSモジュールの作成は難しいものではありません。
+</p>
+<p>
+  ただし一般的にいえばXSモジュールの作成は難しいものです。「XS言語」「typemap」「Perl API」「make」「Cコンパイラ」「リンカ」「ExtUtils::MakeMaker」などのそれほど簡単ではない周辺知識を大量に必要とするからです。ですから、まず基本きっちり押さえた上で、周辺知識を身につけることが大切です。
+</p>
+<h3>XSモジュールの作成 - h2xsコマンド</h3>
+<p>
+  XSモジュールを作成するには<b>h2xs</b>というコマンドを使用します。
+</p>
+<pre>
+# h2xsコマンド
+h2xs [オプション] C言語ヘッダファイル
+</pre>
+<p>
+  このコマンドは本来はC言語のヘッダファイルからXSモジュールを作成するものです。
+</p>
+<p>
+  そのためh2xs(つまり「C言語のヘッダファイル to XS」という意味)という名前がついていますが、単にXSモジュールの雛形を作成するのにも利用できます。
+</p>
+<p>
+  XSモジュールを作成するには次のオプションでh2xsを実行します。
+</p>
+<pre>
+# XSモジュールの作成
+h2xs -A -n SomeModule
+</pre>
+<p>
+  「-A」はオートローディングの機能を省くオプションです。XSモジュールを作成するときは通常オートローディングの機能を省きます。「-n」でXSモジュールの名前を指定します。
+</p>
+<p>
+  このコマンドを実行するとカレントディレクトリに「SomeModule」という名前のディレクトリが作成されます。
+</p>
+<h4>モジュールの構成</h4>
+<p>
+  作成されたモジュールは次のような構成になっています。
+</p>
+<pre>
+Changes
+SomeModule.xs
+lib - SomeModule.pm
+Makefile.PL
+MANIFEST
+ppport.h
+README
+t - SomeModule.t
+</pre>
+<p>
+  簡単にそれぞれのファイルの役割について解説したいと思います。
+</p>
+<ul>
+  <li>
+    Changes - モジュールの変更履歴を記述します。
+  </li>
+  <li>
+    SomeModule.xs - XSファイル。XS言語でXSUBを記述します。
+  </li>
+  <li>
+    lib - Perlのモジュールが格納されます。このモジュールからC言語で書かれたライブラリが呼び出されます。
+  </li>
+  <li>
+    Makefile.PL - C言語ソースファイルのコンパイルやモジュールのインストールなどのためのmakeファイルを生成するためのPerlスクリプトです。
+  </li>
+  <li>
+    MANIFEST -XSモジュールを配布するときに必要なファイルを記載します。
+  </li>
+  <li>
+    ppport.h - 古いPerlとの互換性を維持するためのC言語ヘッダファイルです。
+  </li>
+  <li>
+    README - モジュールの簡単な説明です。
+  </li>
+  <li>
+    t - テストスクリプトが格納されます。
+  </li>
+</ul>
+<p>
+  この中で一番大切なのは「SomeModule.xs」です。最も簡単なXSを書く場合に記述する必要があるのは「SomeModule.xs」だけです。少し難しいことをするためには、Makefile.PLの書き方を覚える必要があります。lib以下に含まれるPerlモジュールのファイルに追加で記述することもあるでしょう。また配布用にパッケージ化するときには、Changes、MANIFEST、READMEを書く必要があります。またテストスクリプトを書くことも必要になります。
+</p>
+<p>
+  Makefile.PLの書き方については以下で詳しく解説しています。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20150725143778.html">Makefile.PLの書き方 - ExtUtil::MakeMakerを学ぶ</a>
+  </li>
+</ul>
+<h4>XSファイルの雛形</h4>
+<p>
+  では最初にSomeModule.xsを開いてみてください。次のような雛形が生成されているはずです。
+</p>
+<pre>
+#include "EXTERN.h"
+#include "perl.h"
+#include "XSUB.h"
+
+#include "ppport.h"
+
+
+MODULE = SomeModule		PACKAGE = SomeModule		
+</pre>
+<p>
+  XSファイルの先頭にはC言語の記述を行うことができます。「#include "EXTERN.h"」などはC言語の記述です。C言語を書いたことがない人のために少し解説をしておきます。「#include」は他のファイルをソースコードに取り込むためのものです。C言語では#から始まる命令はディレクティブと呼ばれ、プリプロセッサに対する命令になります。プリプロセッサとはソースコードをコンパイルする前に、ディレクティブの指定に従ってソースコードに変更を加えるプログラムのことです。
+</p>
+<pre>
+#include "EXTERN.h"
+</pre>
+<p>
+  という記述は、EXTERN.hというC言語のヘッダファイルをソースコードの中に取り込むということを意味しています。
+</p>
+<p>
+  「.h」という拡張子を持つファイルはC言語のヘッダファイルです。ヘッダファイルというのは、C言語の関数の宣言やマクロの定義が記述されているファイルです。C言語のソースコードの中でヘッダに書かれた関数を使用したい場合にインクルードする必要があります。
+</p>
+<p>
+  XSファイルを書く場合に必要になるC言語ヘッダファイルについて簡単に解説しておきます。
+</p>
+<ul>
+  <li>
+    EXTERN.h - Perlのグローバル変数を参照するために必要なヘッダファイル
+  </li>
+  <li>
+    perl.h - Perlのヘッダファイル
+  </li>
+  <li>
+    XSUB.h - XSUBのためのヘッダファイル
+  </li>
+  <li>
+    ppport.h - Perlのバージョン間のAPIの差異を吸収するためのヘッダファイル
+  </li>
+</ul>
+<p>
+  次の記述からXS言語での記述が始まります。
+</p>
+<pre>
+MODULE = SomeModule		PACKAGE = SomeModule		
+</pre>
+<p>
+  MODULEはXS言語の始まりと、定義される関数の名前空間を指定するのに使われます。これはPerlのパッケージとは異なるので注意してください。本来C言語というのは名前空間を持たない言語です。簡単な名前の関数を定義したとするならば、衝突してしまうことでしょう。XSファイル内ではXSUBと呼ばれる関数を定義することになりますが、XSUBの関数名はシンプルなものでかまいません。たとえば数値を2倍する関数であれば、twiceという名前でよいでしょう。けれども、これをC言語でそのまま利用したとするならば、名前の衝突が発生するでしょう。そこでこのtwiceという名前の関数はxsubppで処理されるときに「XS_SomeModule_twice」という名前に置き換えられます。衝突しない仕組みを与えるために必要になるのがMODULEです。
+</p>
+<p>
+  PACKAGEはPerlのパッケージ名です。つまりMODULEの記述とPACKAGEの記述でPerlとC言語の関数の間に次のような対応ができることになります。このような対応を作成して、PerlからC言語の関数を呼び出せるようにすることをブートストラップ(bootstrap)するといいます。
+</p>
+<pre>
+Perl                        C言語
+SomeModule::twice    ---&gt;    XS_SomeModule_twice
+</pre>
+<h4>XSUBの記述</h4>
+<p>
+  ここからはXS言語を記述する部分です。XS言語を使ってXSUBを記述してみましょう。XSUBはXS言語を使った関数の記述で、C言語の関数とよく似ています。以下では受け取った整数を2倍する関数を書いています。
+</p>
+<pre>
+void
+twice (...)
+  PPCODE:
+{
+  // 引数の個数をチェック
+  if (items != 1) {
+    croak("Usage twice(x)");
+  }
+  // Perlのスカラをintに変換。「ST(0)」は第一引数
+  int x = SvIV(ST(0));
+  
+  // 2倍を計算
+  int x2 = x * 2;
+  
+  // intをPerlのSVに変換して、戻り値に設定。XPUSHsは、戻り値をひとつ積む。
+  XPUSHs(sv_2mortal(newSViv(x2)));
+  
+  // 戻り値の個数を指定してreturn
+  XSRETURN(1);
+}
+</pre>
+<p>
+  itemsという変数には引数の個数が代入されているのでチェックに利用できます。croakという関数を使って、エラーメッセージを出力してプログラムを終了することができます。
+</p>
+<p>
+  XSで書かなければいけないことは、型変換という作業につきます。引数で受けとったPerlの型をC言語の型に変換します。それから、C言語による処理を行って、C言語の型を、再びPerlの型に変換します。型変換については、後ほど詳しく解説します。
+</p>
+<p>
+  また以下の形はそのまま覚えてしまいましょう。
+</p>
+<pre>
+void
+関数名(...)
+  PPCODE:
+{
+  
+}
+</pre>
+<p>
+  XSにおけるPerlの型については以下で詳しく解説しているので、参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170208150055.html">XSにおけるPerlの型とC言語の型の相互変換</a>
+  </li>
+</ul>
+<h4>コンパイルと実行</h4>
+<p>
+  ここまでで解説したようにPerlのモジュールから利用するためには、XSファイルをxsubppで処理し、C言語ソースファイルをコンパイルして、ダイナミックリンクライブラリを作成する必要がありました。けれどもこの処理はmakeというプログラムによって自動化することができます。Makefile.PLはこの作業を自動化するmakeファイルを生成してくれます。ですから以下のコマンドを実行するだけです。
+</p>
+<pre>
+# makeファイルの生成
+perl Makefile.PL
+
+# xsubppの処理とコンパイル
+make
+</pre>
+<p>
+  成功しない場合はXS言語に間違いがある可能性があります。この作業が終わるとダイナミックリンクライブラリやPerlのモジュールが含まれるblibというディレクトリが生成されます。
+</p>
+<p>
+  モジュールを呼び出すスクリプトを記述してみましょう。XSファイルがあるディレクトリと同じディレクトリにtest.plというファイルを作成してください。
+</p>
+<pre>
+# test.pl
+use SomeModule;
+print SomeModule::twice(2);
+</pre>
+<p>
+  このスクリプトは次のように実行できます。blibのモジュールを読み込むために、blibというモジュールを-Mオプションを使って読み込む必要があります。
+</p>
+<pre>
+# C言語で書かれた関数を実行
+perl -Mblib test.pl
+</pre>
+<p>
+  出力結果は次のようになりました。
+</p>
+<pre>
+4
+</pre>
+<p>
+  これでXSの基礎を学び終えました。これをアレンジすれば、XSを応用することができます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

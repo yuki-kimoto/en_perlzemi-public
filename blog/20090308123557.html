@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>「もの型」オブジェクトと「ひと型」オブジェクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="オブジェクト指向プログラミングにおいてオブジェクトは「もの」ではありません。　オブジェクトには、「もの」型オブジェクトと、「ひと」型オブジェクトの2種類があります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="「もの型」オブジェクトと「ひと型」オブジェクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="オブジェクト指向プログラミングにおいてオブジェクトは「もの」ではありません。　オブジェクトには、「もの」型オブジェクトと、「ひと」型オブジェクトの2種類があります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161030147778.html">
+      <span itemprop="name">オブジェクト指向</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">「もの型」と「ひと型」</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20090308123557.html">「もの型」オブジェクトと「ひと型」オブジェクト</a></h2>
+<p>
+  オブジェクト指向プログラミングにおいて<strong>オブジェクトは「もの」ではありません。</strong>　オブジェクトには、<strong>「もの」</strong>型オブジェクトと、<strong>「ひと」</strong>型オブジェクトの2種類があります。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>1.「もの」型オブジェクト</h3>
+<p>
+  「もの」型オブジェクトとは、<strong>「もの」</strong>を表現したオブジェクトです。以下は、本オブジェクトですが、属性としてtitle( タイトル )とprice( 価格 )を持ちます。
+</p>
+<pre>
+my $book = Book-&gt;new(title =&gt; 'a', price =&gt; 2300);
+</pre>
+<p>
+  このような「もの」型オブジェクトはコンストラクタで、<strong>タイトルや価格などの本の性質</strong>を設定します。「もの」型オブジェクトは、<strong>ハッシュに非常に近い</strong>ものだと考えればよいと思います。もの型オブジェクトは構造化されたデータを表現します。
+</p>
+<pre>
+my $book = {title =&gt; 'a', price =&gt; 2300};
+</pre>
+<h3>2.「ひと」型オブジェクト</h3>
+<p>
+  「ひと」型オブジェクトとは、<strong>「ひと」</strong>を表現したオブジェクトです。以下は、ファイルを解析するオブジェクトです。属性として、encoding( 円コーディング方法 )とerr_raise( 解析に失敗した場合に例外を発生させる )を持ちます。
+</p>
+<p>
+  その後に、parseというファイルを解析するメソッドが呼ばれることが予定されています。
+</p>
+<pre>
+my $file_parser = FileParser-&gt;new(encoding =&gt; 'utf8', err_raise =&gt; 1);
+$file_parser-&gt;parse($file);
+</pre>
+<p>
+  このような「ひと」型オブジェクトは、コンストラクタで、その後に使用する<strong>メソッドが使用するオプション</strong>を指定することが多いです。「ひと」型オブジェクトは、<strong>関数に非常に近い</strong>ものだと考えればよいと思います。
+</p>
+<pre>
+my $opt = {encoding =&gt; 'utf8', err_raise =&gt; 1};
+parse_file($file, $opt);
+</pre>
+<h3>3. クラスの設計の指針</h3>
+<ol>
+  <li>
+    まず作りたいものが「もの」型オブジェクトなのか「ひと」型オブジェクトなのかを意識すること。
+  </li>
+  <li>
+    データを表現したい場合は「もの」型クラスを作る
+  </li>
+  <li>
+    オプションを指定してメソッドを呼び出したい場合は「ひと」型クラスを作る
+  </li>
+  <li>
+    利便性が勝る場合は、「もの」型が「ひと」型と混在するハイブリッドクラスになる場合もある。
+  </li>
+</ol>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>package - パッケージの宣言 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="他の言語では名前空間と呼ばれている機能はPerlではパッケージと呼ばれます(※1)。名前空間とは実際の世界の住所のようなものです。日本に「田中達也」さんは何人かいると思いますが、「東京都新宿区3-○-△」の「田中達也」さんはひとりしかいません。住所を指定すればどの田中達也なのかを決定することができます。実際の世界の住所にあたるものが名前空間です。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="package - パッケージの宣言 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="他の言語では名前空間と呼ばれている機能はPerlではパッケージと呼ばれます(※1)。名前空間とは実際の世界の住所のようなものです。日本に「田中達也」さんは何人かいると思いますが、「東京都新宿区3-○-△」の「田中達也」さんはひとりしかいません。住所を指定すればどの田中達也なのかを決定することができます。実際の世界の住所にあたるものが名前空間です。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+      <span itemprop="name">構文</span>
+    </a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20100419127089.html">package - パッケージの宣言</a></h2>
+<p>
+  他の言語では名前空間と呼ばれている機能はPerlでは<strong>パッケージ</strong>と呼ばれます(※1)。名前空間とは実際の世界の住所のようなものです。日本に「田中達也」さんは何人かいると思いますが、「東京都新宿区3-○-△」の「田中達也」さんはひとりしかいません。住所を指定すればどの田中達也なのかを決定することができます。実際の世界の住所にあたるものが名前空間です。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>パッケージの宣言</h3>
+<p>
+  パッケージを宣言するには<strong>package</strong>を使用します。
+</p>
+<pre>
+# パッケージの宣言
+package パッケージ名;
+</pre>
+<p>
+  パッケージ名には裸の文字列を指定します。クォートやダブルクォートで囲った文字列を渡すことはできません。
+</p>
+<pre>
+# 裸の文字列で指定
+package SomeModule;
+</pre>
+<p>
+  パッケージ名は複数階層にすることができます。「::」で個々のパーツを連結します。
+</p>
+<pre>
+# 複数階層のパッケージ名
+package File::Basename;
+package Class::Accessor::Fast;
+</pre>
+<p>
+  現在属するパッケージは__PACKAGE__で取得できます。
+</p>
+<pre>
+# 現在属しているパッケージ名
+__PACKAGE__
+</pre>
+<h3>デフォルトの名前空間main</h3>
+<p>
+  Perlではパッケージに属さないという状態はありません。パッケージ宣言を行っていない間はmainというパッケージに属します。デフォルトの名前空間に戻したいときはパッケージ名にmainを指定します。
+</p>
+<pre>
+# デフォルトの名前空間に戻る
+package main;
+</pre>
+<h3>パッケージ変数とサブルーチンは特定のパッケージに属する</h3>
+<p>
+  パッケージ変数とサブルーチンは必ず特定のパッケージに属します。これは最初に解説した「山田達也」さん(名前の部分)に該当します。
+</p>
+<pre>
+# パッケージ変数とサブルーチンはパッケージに属する
+package SomeModule;
+
+# パッケージSomeModuleに属する$VARという変数
+our $VAR;
+
+# パッケージSomeModuleに属するfuncというサブルーチン
+sub func {
+  ...
+}
+</pre>
+<p>
+  パッケージ名までを含めた変数名やサブルーチン名のことを完全修飾名と呼びます。完全修飾名はパッケージ名と変数名(あるいはサブルーチン名)を「::」で連結したものになります。別のパッケージに属していても完全修飾名を使えば、その変数やサブルーチンにアクセスすることができます。
+</p>
+<pre>
+# 完全修飾名
+$SomeModule::VAR;
+SomeModule::func();
+</pre>
+<p>
+  関数を完全修飾名を使って呼び出すサンプルです。
+</p>
+<pre>
+# 完全修飾名で関数を呼び出す
+use File::Basename;
+File::Basename::basename('xxx/yyy.txt');
+</pre>
+<h3>パッケージ名とモジュールのファイルの構成</h3>
+<p>
+  パッケージ名はモジュールのファイル構成と密接な関連があります。たとえば、「Foo::Bar::Baz」というモジュール名であれば、それに対応するファイル構成は「Foo/Bar/Baz.pm」になります。「Foo」というディレクトリの中に「Bar」というディレクトリを作り、その中に「Baz.pm」というファイルを作成します。「Baz.pm」の先頭でパッケージ宣言を行います。
+</p>
+<pre>
+# Baz.pm
+package Foo::Bar::Baz;
+</pre>
+<p>
+  このような構成にしておくことで、useやrequireでモジュールを検索して読み込むことが可能になります。
+</p>
+<p>
+  一般的な言語感覚としてはパッケージという名前でライブラリやモジュールの集まりを連想してしまうと思います。ですがPerlでパッケージといった場合は単に名前空間を意味するだけなので注意しましょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

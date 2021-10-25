@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>foreach - 配列の各要素の処理 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="配列の各要素を順番に処理するにはforeachを使用します。Perlではwhile文よりも好んで使用されます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="foreach - 配列の各要素の処理 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="配列の各要素を順番に処理するにはforeachを使用します。Perlではwhile文よりも好んで使用されます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161023147731.html">
+        <span itemprop="name">制御構造</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+        <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="3" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">foreach文</span>
+    <meta itemprop="position" content="4" />
+  </li>
+</ol>
+<h2><a href="/blog/20080328120673.html">foreach - 配列の各要素の処理</a></h2>
+<p>
+  <strong>配列の各要素を順番に処理</strong>するには<strong>foreach</strong>を使用します。Perlでは<a href="/blog/20100123126425.html">while文</a>よりも好んで使用されます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+foreach my $item (@array) {
+  ...
+}
+</pre>
+<p>
+  またPerlではforeachはforの別名なので、foreachの代わりにforを使うこともできます。こちらのほうが簡潔でよいと思います。
+</p>
+<pre>
+for my $item (@array) {
+  ...
+}
+</pre>
+<p>
+  要素を順番に出力する方法は以下のページで詳しく解説しています。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170521149524.html">for文、while文を使った繰り返しの処理を覚えよう</a>
+  </li>
+</ul>
+<h3>サンプル</h3>
+<p>
+  配列の要素を順番に出力するサンプルです。
+</p>
+<pre>
+# 配列の要素を順番に出力
+my @nums = (3, 4, 5);
+foreach my $num (@nums) {
+  print "$num\n";
+}
+</pre>
+<p>
+  データ構造が配列のリファレンスの場合に配列の要素を順番に出力するサンプルです。
+</p>
+<pre>
+# 配列の要素を順番に出力(配列のリファレンス)
+my $nums = [3, 4, 5];
+foreach my $num (@$nums) {
+  print "$num\n";
+}
+</pre>
+ 2次元配列に含まれる値を行ごとにタブ区切りで出力するサンプルです。<a href="/blog/20081007122338.html">join関数</a>を使って配列に含まれる文字列をタブでつなげています。
+<pre>
+# 2次元配列に含まれる値を行ごとにタブ区切で出力
+my $data = [
+  ['a', 1],
+  ['b', 2]
+];
+
+foreach my $record (@$data) {
+  print join("\t", @$record) . "\n";
+}
+</pre>
+<p>
+  ハッシュの配列に含まれる値を行ごとにタブ区切りで出力するサンプルです。
+</p>
+<pre>
+# ハッシュの配列の含まれる値を行ごとにタブ区切りで出力
+my $persons = [
+  {name =&gt; 'Ken',  age =&gt; 19},
+  {name =&gt; 'Taro', age =&gt; 32}
+];
+
+foreach my $person (@$persons) {
+  my @record = ($person-&gt;{name}, $person-&gt;{age});
+  print join("\t", @record) . "\n";
+}
+</pre>
+<p>
+  foreachのいくつかのサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+print "[1]\n";
+my @persons = ('tom', 'taro', 'sinji');
+foreach my $person (@persons){
+  print $person, "\n";
+}
+print "\n";
+
+print "[2]\n";
+my @numbers = (1, 2, 3);
+foreach my $number (@numbers){
+  # $numberに渡されるのは、要素の別名なので、配列そのものの値を変更できる。
+  $number = $number * 2;
+}
+print "\@numbers = (", join(',', @numbers), ")\n\n";
+
+print "[3]\n";
+foreach my $index (0 .. $#persons){ 
+  # 要素番号を使いたい時は、配列そのものの要素を渡さずに、要素番号を渡す。
+  print "\$persons[ $index ] = $persons[ $index ]\n";
+}
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+[1]
+tom
+taro
+sinji
+
+[2]
+@numbers = (2,4,6)
+
+[3]
+$persons[ 0 ] = tom
+$persons[ 1 ] = taro
+$persons[ 2 ] = sinji
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

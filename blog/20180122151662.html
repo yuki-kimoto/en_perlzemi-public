@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>デストラクタ - DESTROY - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlはリファレンスカウント方式のGCを持つプログラミング言語です。オブジェクトが解放されるのは、リファレンスカウントが0になった場合です。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="デストラクタ - DESTROY - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlはリファレンスカウント方式のGCを持つプログラミング言語です。オブジェクトが解放されるのは、リファレンスカウントが0になった場合です。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+        <span itemprop="name">構文・文法</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20180122151662.html">デストラクタ - DESTROY</a></h2>
+<p>
+  Perlは<a href="/blog/20131010138141.html">リファレンスカウント方式のGC</a>を持つプログラミング言語です。オブジェクトが解放されるのは、リファレンスカウントが0になった場合です。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  DESTROYというメソッドを実装することで、リファレンスカウントが0になるタイミングで、デストラクタを実行することができます。
+</p>
+<pre>
+sub DESTROY {
+  # オブジェクトが解放されるときに実行される処理
+  ...
+}
+</pre>
+<h3>ファイルハンドルをデストラクタでクローズする</h3>
+<p>
+  たとえば、ファイルを表現するFileクラスがあったとします。Fileクラスはfhフィールドに、<a href="/blog/20080718121643.html">open関数</a>でオープンしたファイルハンドルを保存しています。
+</p>
+<p>
+  これを、オブジェクトを開放するタイミングで<a href="/blog/20160312145776.html">close関数</a>を使ってクローズしたいとします。
+</p>
+<p>
+  そのような場合、次のようにデストラクタを記述します。
+</p>
+<pre>
+package File;
+use Carp 'croak';
+
+# コンストラクタ
+sub new {
+  my ($class, $file) = @_;
+  
+  my $self = {};
+  open my $fh, '&lt;', $file
+    or croak "Can't open $file: $!";
+  $self-&gt;{fh} = $fh;
+  
+  return bless $self, $class;
+}
+
+# デストラクタ
+sub DESTROY {
+  my $self = shift;
+  print "DESTROY";
+  close $self-&gt;{fh};
+}
+
+package main;
+
+{
+  my $file = File-&gt;new('a.txt');
+}
+</pre>
+<p>
+  参考: <a href="/blog/20161030147778.html">オブジェクト指向</a>、<a href="/blog/20100430127089.html">Carpモジュール</a>、<a href="/blog/20110128130016.html">スコープ</a>、<a href="/blog/20100419127089.html">mainパッケージ</a>
+</p>
+<p>
+  このスクリプトを実行すると「DESTROY」と表示されますが、これは、デストラクタが実行されていることを確認するために入れたものです。デストラクタが実行されており、ファイルハンドルはクローズされます。
+</p>
+<h3>デストラクタの主な用途</h3>
+<p>
+  デストラクタが利用されることが多いのは、ファイルやデータベースなどの外部リソースをクローズするときです。Perlはオブジェクトが解放されるタイミングが明確なので、デストラクタ内でリソースのクローズ処理を書いておくことができます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

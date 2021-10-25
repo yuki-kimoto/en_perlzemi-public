@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>「=~」 - パターンマッチ演算子 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="「=~」は「パターンマッチ演算子」と呼ばれ、正規表現でパターンマッチと置換を行うときに利用します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="「=~」 - パターンマッチ演算子 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="「=~」は「パターンマッチ演算子」と呼ばれ、正規表現でパターンマッチと置換を行うときに利用します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080331120697.html">「=~」 - パターンマッチ演算子</a></h2>
+<p>
+  「=~」は「パターンマッチ演算子」と呼ばれ、<a href="/blog/20100827127859.html">正規表現</a>でパターンマッチと置換を行うときに利用します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>パターンマッチ</h3>
+<p>
+  文字列が、指定した正規表現を含むかどうかを調べるには次のようにします。
+</p>
+<pre>
+$message =~ /play/
+</pre>
+<p>
+  $string =~ /正規表現/。$string が 正規表現を含んでいれば、0以外が返ります。=~ を、パターンマッチ演算子と呼びます。今回の例では、正規表現を使わずに play という文字を使っています。
+</p>
+<h3>パターンマッチしない</h3>
+<p>
+  文字列が、指定した正規表現を含まないかを調べるには次のようにします。
+</p>
+<pre>
+$message !~ /you/
+</pre>
+<p>
+  $string !~ /正規表現/。$string が 正規表現を含んでいなければ、0以外が返ります。
+</p>
+<h3>置換</h3>
+<p>
+  正規表現によって文字列を置換するには次のようにします。
+</p>
+<pre>
+$message =~ s/tennis/baseball/;
+</pre>
+<p>
+  $string =~ s/正規表現/置換する文字列/。$string が、正規表現を含んでいれば、指定した文字列で置き換えます。$message そのものが、置き換わります。
+</p>
+<h3>サンプル</h3>
+<p>
+  正規表現によるパターンマッチと置換とサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# 正規表現によるパターンマッチと置換
+
+my $message = 'I play tennis.';
+print "\$message = '$message' \n\n";
+
+# パターンマッチの基本( $var =~ /正規表現/ ) ( ここでは、単なる文字列( play )で説明 )
+print "1: 文字列が、 play を含んでいるかどうかを調べる。\n";
+if ($message =~ /play/) {
+  print "\$message は、playを含んでいます。\n\n";
+}
+
+print "2: 文字列が、youを含んでいないかどうかを調べる。\n";
+if ($message !~ /you/) {
+  print "\$message は、youを含んでいません。\n\n";
+}
+
+# 置換の基本
+print "3: 文字列の tennis を baseball に置換する。\n";
+
+# $var =~ s/正規表現/置換する文字列/
+$message =~ s/tennis/baseball/;
+
+print "$message\n";
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

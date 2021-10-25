@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>スカラ変数のリファレンス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="スカラ変数のリファレンスは、スカラ変数を指し示すものです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="スカラ変数のリファレンス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="スカラ変数のリファレンスは、スカラ変数を指し示すものです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20100930127859.html">
+      <span itemprop="name">リファレンス</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20180308152051.html">スカラ変数のリファレンス</a></h2>
+<p>
+  スカラ変数のリファレンスは、スカラ変数を指し示すものです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h4>スカラ変数のリファレンスの作成</h4>
+<p>
+  スカラ変数のリファレンスを作成するには次のようにします。
+</p>
+<pre>
+my $str = "Hello";
+my $str_ref = \$str;
+</pre>
+<h4>スカラ変数のリファレンスをデリファレンス</h4>
+<p>
+  スカラ変数のリファレンスをデリファレンスするには「${}」とします。
+</p>
+<pre>
+my $str = ${$str_ref};
+</pre>
+<p>
+  単純な変数であれば先頭に「$」を付けるだけでデリファレンスできます。
+</p>
+<pre>
+my $str = $$str_ref;
+</pre>
+<h3>スカラ変数のリファレンスを使う意義はありますか?</h3>
+<p>
+  大きなサイズの<a href="/blog/20161003147558.html">文字列</a>を<a href="/blog/20101130129876.html">サブルーチン</a>に渡す場合は、リファレンスを使ったほうが、速い気がしますね。
+</p>
+<p>
+  でも、Perlでは、文字列はコピーオンライトと呼ばれる手法を使ってコピーされるので、実際に文字列に変更が加えられるまでは、コピーが行われません。
+</p>
+<p>
+  ですから、大きなサイズの文字列でも、気にしないで、サブルーチンの引数に渡してください。
+</p>
+<h4>Getopt::Long</h4>
+<p>
+  自分でプログラミングをするときは、スカラ変数のリファレンスを利用する機会はほぼありませんが、ライブラリが使っている場合は、使い方を覚えておく必要があります。
+</p>
+<p>
+  よく利用するモジュールとしては<a href="/blog/20100514127696.html">Getopt::Long</a>があります。
+</p>
+<pre>
+# GetOptionsによるコマンドライン引数のオプションの処理
+
+# デフォルト値の設定
+my $enable_cache;
+my $max_clients = 5;
+my $type = 'prefork';
+
+# オプションの処理
+GetOptions(
+  'enable_cache'  =&gt; \$enable_cache,
+  'max_clients=i' =&gt; \$max_clients,
+  'type=s'        =&gt; \$type
+);
+
+# オプション以外の引数を受け取る 
+my $conf_file = shift;
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

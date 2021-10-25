@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Validator::Custom::Validation - バリデーションの結果 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Validator::Custom::Validation - バリデーションの結果">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Validator::Custom::Validation - バリデーションの結果 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Validator::Custom::Validation - バリデーションの結果" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20151210144988.html">Validator::Custom::Validation - バリデーションの結果</a></h2>
+<h3> 名前</h3>
+<p>
+  Validator::Custom::Validation - バリデーションの結果
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3> 使い方</h3>
+<pre>
+  my $validation = $vc-&gt;validation;
+  
+  $validation-&gt;add_failed(title =&gt; 'title is invalid');
+  $validation-&gt;add_failed(name =&gt; 'name is invalid');
+  
+  # 正しいか
+  my $is_valid = $validation-&gt;is_valid;
+  my $title_is_valid = $validation-&gt;is_valid('title');
+  
+  # 失敗したパラメーターの名前
+  my $failed = $validation-&gt;failed;
+  
+  # メッセージ
+  my $messages = $validation-&gt;messages;
+  my $title_message = $validation-&gt;message('title');
+  my $messages_h = $validation-&gt;messages_to_hash;
+</pre>
+<p>
+  =====
+</p>
+<h3> メソッド</h3>
+<p>
+  Validator::Custom::Validationは<a href="http://search.cpan.org/dist/Object-Simple/lib/Object/Simple.pm">Object::Simple</a>からすべてのメソッドを継承しており、次の新しいメソッドを実装しています。
+</p>
+<h4> new</h4>
+<pre>
+  my $validation = Validator::Custom::Validation-&gt;new;
+</pre>
+<p>
+  新しいValidator::Custom::Validationオブジェクトを生成します。
+</p>
+<p>
+  一般的にはこのメソッドは利用されません。<a href="/blog/20151212144988.html">Validator::Custom</a>の<b>validation</b>メソッドを使うのがよいでしょう。
+</p>
+<pre>
+  my $validation = $vc-&gt;validation;
+</pre>
+<h4> is_valid</h4>
+<pre>
+  my $is_valid = $validation-&gt;is_valid;
+  my $is_valid = $validation-&gt;is_valid('title');
+</pre>
+<p>
+  バリデーションの結果が正しいかどうかをチェックします。もし名前が与えられた場合は、その名前に対応するパラメータが正しいかどうかをチェックします。
+</p>
+<h4> add_failed</h4>
+<pre>
+  $validation-&gt;add_failed('title' =&gt; 'title is invalid value');
+  $validation-&gt;add_failed('title');
+</pre>
+<p>
+  失敗したパラメーターの名前とメッセージを追加します。もし、メッセージが省略されれば、デフォルトのメッセージが自動的に設定されます。
+</p>
+<h4> failed</h4>
+<pre>
+  my $failed = $validation-&gt;failed;
+</pre>
+<p>
+  すべての失敗したパラメーターの名前を取得します。
+</p>
+<h4> message</h4>
+<pre>
+  my $message = $validation-&gt;message('title');
+</pre>
+<p>
+  名前に対応する失敗のメッセージを取得します。
+</p>
+<h4> messages</h4>
+<pre>
+  my $messgaes = $validation-&gt;messages;
+</pre>
+<p>
+  すべての失敗メッセージを取得します。
+</p>
+<h4> messages_to_hash</h4>
+<pre>
+  my $messages_h = $validation-&gt;messages_to_hash;
+</pre>
+<p>
+  すべての失敗したパラメーター名とメッセージを、ハッシュリファレンスとして取得します。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

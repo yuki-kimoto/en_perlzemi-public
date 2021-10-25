@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>SPVMの開発の今後の道のり - 仕様作成からJITによる最適化まで - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlの処理を30倍速くすることを目標に開発しているSPVMですが、今後の道のりをここに記しておきます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="SPVMの開発の今後の道のり - 仕様作成からJITによる最適化まで - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlの処理を30倍速くすることを目標に開発しているSPVMですが、今後の道のりをここに記しておきます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20170807150210.html">SPVMの開発の今後の道のり - 仕様作成からJITによる最適化まで</a></h2>
+<p>
+  Perlの処理を30倍速くすることを目標に開発している<a href="https://github.com/yuki-kimoto/SPVM">SPVM</a>ですが、今後の道のりをここに記しておきます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>デバッグモード追加</h3>
+<p>
+  現状は例外が起こったときに、コールスタックは表示されるけど、行番号とファイルは表示されない。これは、開発のときはちょっと不便なので、デバッグモードを追加する予定。
+</p>
+<h3>ウィークリファレンスの実装</h3>
+<p>
+  Perlと同じように、SPVMのGCはリファレンスカウントで実装されている。現在制限として、オブジェクトの循環参照は禁止されているが、ウィークリファレンスを実装して、この制限を解きたい。
+</p>
+<p>
+  タグポインタという仕組みを使って、実装しようと思うのだが、まだ構想段階で、パフォーマンスを悪くすることなく、実装できるかは未知数。なんとかなりそうな気もする。
+</p>
+<h3>ネイティブインターフェース</h3>
+<p>
+  JavaにはJNIというC言語に接続するためのインターフェースがあるのだけれど、これをSPVMでも作成する。このインターフェースがあれば、SPVMの配列などのデータ構造にC言語レベルでアクセスできる。
+</p>
+<p>
+  GPUやSIMDなどの並列処理を、記述したいときは、このネイティブインターフェースを使って実装できるようにする。
+</p>
+<h3>ダイナミックリンクライブラリ</h3>
+<p>
+  ダイナミックリンクライブラリの機能を追加する。ダイナミックリンクライブラリが読み込めるようになると、必要に応じてC言語のライブラリが読み込めるようになる。
+</p>
+<p>
+  ダイナミックリンクライブラリが読み書きできるようになると、ネイティブインターフェースを使って書いたSPVMのライブラリを、CPAN上にアップして再利用できるようになる。
+</p>
+<p>
+  PerlのもっているXSやDynaLoaderの機能を使ってうまく実装できるような気もしている。
+</p>
+<h3>定数畳み込み</h3>
+<p>
+  1 + 3 のようなものをコンパイル時に4にするような最適化を定数畳み込みという。これを実装する。
+</p>
+<h3>インライン展開</h3>
+<p>
+  小さな関数を展開して、関数呼び出しをなくすインライン展開の機能
+</p>
+<h3>抽象構文木をSSA形式にして最適化</h3>
+<p>
+  SSA形式というのは、「結果、演算子、値1、(値2)」という線形の形式で表現されたプログラムのことで、変数名がかぶらないように採番されるのが特徴のようだ。
+</p>
+<p>
+  SSA形式に変換すると、定数伝播や不要な式の削除が行いやすくなるらしい。
+</p>
+<h3>ループ最適化</h3>
+<p>
+  ループの中で、undefのチェックや配列の範囲チェックしている部分を、外に追い出す。これによって命令数を少なくする。これは、かなり難しそうだ。
+</p>
+<h3>レジスタ型VM</h3>
+<p>
+  現在はスタック型のVMとして実装している。でも、僕が調査したことによると、現在のCPUにおいては、コードサイズが小さいことよりも、命令数が少ないということが、パフォーマンスにとって重要らしい。
+</p>
+<p>
+  レジスタ型VMは命令長が長くなる代わりに、加算や減算などの命令数を減らすことができる。
+</p>
+<p>
+  またレジスタ型VMにすると、JITを行う場合に、ちょうどCPUの命令に近いような表現ができる。
+</p>
+<p>
+  VMを書き直すのはかなり大変そう。
+</p>
+<h3>機械語に対応するバイトコード生成</h3>
+<p>
+  レジスタAにレジスタBを加算するというような、機械語に対応するバイトコードを作成する。これによって、定数決め打ちで演算ができるので、速くなる。また、JITにちょうど対応する命令を生成できる。
+</p>
+<h3>JIT</h3>
+<p>
+  最後にJIT。つまり実行時コンパイル。僕は、どうしてJITにすると速くなるのかという疑問を持っていた、だってVMだって結局は機械語で実行されているのにねって。
+</p>
+<p>
+  JITを行うと速くなる理由は、命令のジャンプがなくなるということに尽きる。
+</p>
+<p>
+  バイトコード命令の場合は、命令を実行するために、その命令の位置までジャンプしないといけない。このジャンプの負荷が大きい。
+</p>
+<p>
+  JITを行うと機械語命令を、連続した領域に並べることができる。これでジャンプがなくなり、速くなるというわけ。
+</p>
+<p>
+  「次期PHPにJITがやってきそうでうらやましそう」といっていた方がいましたけど、Perlにもやってきますよ!
+</p>
+<h3>地道に順番に実装してく</h3>
+<p>
+  これを地道に順番に実装していく。SPVMは、Javaとgperlとluajit2が、大きな参考になっている。
+</p>
+<p>
+  Perlの可能性が広がって、ますますPerlが面白く、いろんな分野にチャレンジできると思う。30代の目標は、ひたすらオープンソースで開発して、インフラを作ること。40代の目標は、教育、研究、出版という分野で、Perlを横に広げることだ。今はそういう目標を持っている。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

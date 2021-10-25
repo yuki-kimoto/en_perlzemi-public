@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>redo文 - 繰り返しの先頭に戻る - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="redo文を使うと繰り返しの先頭に戻ることができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="redo文 - 繰り返しの先頭に戻る - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="redo文を使うと繰り返しの先頭に戻ることができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+        <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20170515149615.html">redo文 - 繰り返しの先頭に戻る</a></h2>
+<p>
+  <b>redo文</b>を使うと繰り返しの先頭に戻ることができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+redo
+</pre>
+<p>
+  redoを使ったサンプルプログラムです。今いるループの先頭に戻っています。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my @nums = (1, 2, 3);
+
+while (1) {
+  my $num = pop @nums;
+  print "$num\n";
+  
+  if (@nums) {
+    redo;
+  }
+  else {
+    last;
+  }
+}
+</pre>
+<h3>redoは非推奨の構文です</h3>
+<p>
+  <a href="/blog/20091120124667.html">Perlの現代的な記述方法</a>にも書いていますが、redo文は、お勧めしない記述方法です。
+</p>
+<p>
+  理由は、<a href="/blog/20100123126425.html">while文</a>, for文, last文, next文、if文があれば、あらゆる繰り返しと条件分岐が書けるので、redoを積極的に利用する理由がないからです。redoは、Perl独自の構文で、見慣れないものですし、ソースコードの見通しがよくなるというわけでもありません。
+</p>
+<h3>関連情報</h3>
+<p>
+  redoのようにループを制御する構文として<b>next文</b>と<b>last文</b>があります。
+</p>
+<h4>next文を使うとループの先頭にジャンプできる</h4>
+<p>
+  next文を使うと、次のループの先頭に移動することができます。
+</p>
+<pre>
+next
+</pre>
+<p>
+  next文については、以下の記事を参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080329120687.html">next文 - 次の繰り返しの先頭にジャンプする</a>
+  </li>
+</ul>
+<h4>last文を使うとループを脱出できる</h4>
+<p>
+  last文を使うと、ループを抜けることができます。
+</p>
+<pre>
+last
+</pre>
+<p>
+  last文については、以下の記事を参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170527149589.html">last文 - 繰り返しから抜ける</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

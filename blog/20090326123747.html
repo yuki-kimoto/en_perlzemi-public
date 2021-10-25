@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>baseモジュールを使ってクラスを継承する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="@ISAを使用したクラスの継承を解説しました。けれども、この方法は何かパッケージ変数を触っているので、ほかの言語で継承の構文を学んだ人から見るとどこか変な感じです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="baseモジュールを使ってクラスを継承する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="@ISAを使用したクラスの継承を解説しました。けれども、この方法は何かパッケージ変数を触っているので、ほかの言語で継承の構文を学んだ人から見るとどこか変な感じです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161030147778.html">
+      <span itemprop="name">オブジェクト指向</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">base</span>
+    <meta itemprop="position" content="4" />
+  </li>
+</ol>
+<h2><a href="/blog/20090326123747.html">baseモジュールを使ってクラスを継承する</a></h2>
+<p>
+  @ISAを使用したクラスの継承を解説しました。けれども、この方法は何かパッケージ変数を触っているので、ほかの言語で継承の構文を学んだ人から見るとどこか変な感じです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  もうすこし、継承を表現するわかりやすい方法があります。それは、<a href="/blog/20100425127089.html">baseモジュール</a>を使用する方法です。
+</p>
+<h3>baseモジュール</h3>
+<p>
+  Perlの継承は@ISAを使うよりも、baseモジュールを使うほうが良いです。baseモジュールは内部では、 @ISA を触って同じことをしますが、@ISAを触っていることを隠蔽してくれます。
+</p>
+<p>
+  またコンパイル時に@ISAを操作するので、ひとつのスクリプトにクラスの定義とオブジェクトの生成を書く場合に便利です。
+</p>
+<p>
+  では@ISAを使った継承をbaseを使って書き直してみます。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# ボタンクラスを使用する。
+my $button = Button-&gt;new;
+print $button-&gt;x;
+
+
+# コンポーネントクラス
+package Component;
+sub x { return 5 }
+
+# ボタンクラス
+package Button;
+# 継承
+use base 'Component'; 
+
+sub new { bless {}, 'Button' }
+</pre>
+<p>
+  use base と記述して引数に継承したいクラス名を渡します。コンパイル時にuse base が実行されるため
+</p>
+<pre>
+my $button = Button-&gt;new;
+</pre>
+<p>
+  を上側に書いても問題ありません。ここからのサンプルは、baseモジュールを使って書いていきたいと思います。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

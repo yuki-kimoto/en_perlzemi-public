@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>cpanmによるPerlのローカル環境構築 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="cpanmを使ってローカル環境を構築する手順です。迷わない一直線の手順です。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="cpanmによるPerlのローカル環境構築 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="cpanmを使ってローカル環境を構築する手順です。迷わない一直線の手順です。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20101027127859.html">cpanmによるPerlのローカル環境構築</a></h2>
+<p>
+  cpanmを使ってローカル環境を構築する手順です。迷わない一直線の手順です。 
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>cpanmのインストール</h3>
+<p>
+  以下のコマンドを個人ユーザで実行してください。
+</p>
+<pre>
+# cpanmのインストール
+curl -L -O http://xrl.us/cpanm
+perl cpanm App::cpanminus
+</pre>
+<p>
+  cpanmを使うと簡単にローカル環境にCPANモジュールをインストールできるようになります。root権限がない場合はユーザのホームディレクトリ以下のperl5というディレクトリ以下にCPANモジュールがインストールされます。インストールには時間がかかるかもしれませんが、しばらく待ちます。
+</p>
+<h3>モジュールやコマンドを利用するための設定</h3>
+<p>
+  インストールしたモジュールやコマンドを利用するには次の設定を「.bashrc」というbashの設定ファイルに追加する必要があります。
+</p>
+<pre>
+export PERL_CPANM_OPT="--local-lib=~/perl5"
+export PATH=$HOME/perl5/bin:$PATH;
+export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB;
+</pre>
+<p>
+  PERL_CPANM_OPTはcpanmの設定を行うための環境変数です。モジュールをインストールするディレクトリを指定しています。デフォルトで「~/perl5」以下にインストールされるのですが、警告が発生するので明示的に指定します。PATHはインストールされたコマンドを利用するための設定です。たとえばcpanmコマンドが利用できるようになります。PERL5LIBでモジュールのインクルードパスを追加できます。この設定を行うとスクリプトからインストールしたモジュールが利用できるようになります。
+</p>
+<p>
+  次のように「.bashrc」を編集して、上記の記述を追加しましょう。
+</p>
+<pre>
+vi ~/.bashrc
+</pre>
+<p>
+  次にこの設定を反映させます。
+</p>
+<pre>
+source ~/.bashrc
+</pre>
+<h3>モジュールのインストール</h3>
+<p>
+  ためしにMojoliciousというモジュールをインストールしてみましょう。
+</p>
+<pre>
+cpanm Mojolicious
+</pre>
+<p>
+  lsコマンドを使って「~/perl5/lib/perl5」というディレクトリにMojoliciousがインストールされていることを確認できます。
+</p>
+<pre>
+ls ~/perl5/lib/perl5
+</pre>
+<p>
+  またモジュールを実際に利用できるかどうかを試してみましょう。コマンドラインから次のコマンドを実行してエラーが出なかったら成功です。
+</p>
+<pre>
+perl -MMojolicious -e 1
+</pre>
+<p>
+  これでローカル環境にモジュールをどんどんインストールすることができます。他のサーバにモジュールを配置したい場合は、アーキテクチャがまったく同じであれば、「~/perl5」をまるまるコピーするだけです。もちろん「.bashrc」の記述も忘れずに行います。Perlでのデプロイ作業はとても簡単ですね。
+</p>
+<h3>cpanmを使って指定したディレクトリにCPANモジュールをインストールする</h3>
+<p>
+  cpanmを使って指定したディレクトrにCPANモジュールをインストールするには<b>-L</b>オプションを使用します。
+</p>
+<pre>
+cpanm -L extlib DBIx::Custom
+</pre>
+<p>
+  カレントディレクトリの<b>extlib</b>というディレクトリにDBIx::Customがインストールされます。
+</p>
+<h3>cpanmとcpanfileでバージョンを指定してモジュールをインストールする</h3>
+<p>
+  <strong>cpanm</strong>と<strong>cpanfile</strong>を使うと、バージョンを指定してモジュールをインストールすることができます。
+</p>
+<h4>cpanfileの記述</h4>
+<p>
+  cpanfileを記述します。cpanfileはモジュールのバージョンを指定するためのファイルです。cpanfileという名前のファイルを作成してください。以下のような記述を行います。
+</p>
+<pre>
+requires 'DBI', '== 1.619';
+requires 'DBD::SQLite', '== 1.36_04';
+requires 'DBIx::Custom', '== 0.25';
+</pre>
+<p>
+  次のフォーマットで記述します。
+</p>
+<pre>
+requires モジュール名 バージョン
+</pre>
+<p>
+  バージョンには次の表記を使うことができます。
+</p>
+<table>
+  <tr>
+    <td>
+      <b>意味</b>
+    </td>
+    <td>
+      <b>書式</b>
+    </td>
+    <td>
+      <b>サンプル</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      指定したバージョン
+    </td>
+    <td>
+      == バージョン
+    </td>
+    <td>
+      == 0.03
+    </td>
+  </tr>
+  <tr>
+    <td>
+      指定したバージョン以上
+    </td>
+    <td>
+      バージョンのみ あるいは >= バージョン
+    </td>
+    <td>
+      0.03 あるいは >= 0.03
+    </td>
+  </tr>
+  <tr>
+    <td>
+      指定したバージョン以下
+    </td>
+    <td>
+      <=
+    </td>
+    <td>
+      <= 0.03
+    </td>
+  </tr>
+  <tr>
+    <td>
+      指定したバージョンより大きい
+    </td>
+    <td>
+      > バージョン
+    </td>
+    <td>
+      > 0.03
+    </td>
+  </tr>
+  <tr>
+    <td>
+      指定したバージョンより小さい
+    </td>
+    <td>
+      < バージョン
+    </td>
+    <td>
+      < 0.03
+    </td>
+  </tr>
+</table>
+<h4>モジュールのインストール</h4>
+<p>
+  cpanmの<strong>--installdeps</strong>オプションを使うと、cpanfileの記述を調べて、モジュールをインストールしてくれます。(ドットがオプションの後ろに続くことに注意)
+</p>
+<pre>
+perl cpanm --installdeps .
+</pre>
+<p>
+  <strong>-L</strong>オプションを使えば、指定したディレクトリにモジュールをインストールすることもできます。
+</p>
+<pre>
+perl cpanm -L extlib --installdeps .
+</pre>
+<p>
+  自分の作成したPerlのアプリケーションが、CPANに存在するモジュールに依存しているときは、cpanmとcpanfileを一緒に含めておくと、ユーザーに簡単に利用してもらうことができます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

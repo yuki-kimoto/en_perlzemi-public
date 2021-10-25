@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlにおけるお勧めのシェバンの書き方 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlにおける、お勧めのシェバンの書き方。「#!/usr/bin/env perl」。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlにおけるお勧めのシェバンの書き方 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlにおける、お勧めのシェバンの書き方。「#!/usr/bin/env perl」。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20200731104457.html">Perlにおけるお勧めのシェバンの書き方</a></h2>
+<p>
+  Perlにおける、お勧めのシェバンの書き方。「#!/usr/bin/env perl」。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+#!/usr/bin/env perl
+</pre>
+<p>
+  Unix/Linuxには、シェバンと呼ばれる機能があり、シェバンに書かれたコマンドで、ファイルに書かれた内容を実行してくれます。
+</p>
+<p>
+  シェバンは「#!」で始まります。
+</p>
+<p>
+  「#!/usr/bin/env perl」がお勧めな理由は、ほとんどの<a href="https://linux.perlclub.net/">Linux</a>/Unix環境で動くからです。
+</p>
+<p>
+  <a href="https://perlzemi.com/blog/20110220130464.html">perlbrew</a>や<a href="https://perlzemi.com/blog/20180816153437.html">plenv</a>でユーザー環境にPerlをインストールした場合でも正しく動きます。
+</p>
+<p>
+  envコマンドは、環境変数PATHのディレクトリを検索して最初に見つかったperlで実行してくれます。
+</p>
+<h3>envを使うことのデメリット</h3>
+<p>
+  envを使うことのデメリットは、どのPerlを使うかが確定されないということです。envという名前のとおり、PATH環境変数という、環境に依存します。
+</p>
+<p>
+  Perlスクリプトのポータビリティを高めるか、指定したPerlでプログラムを実行するのと、どちらがメリットがあるかという選択になります。
+</p>
+<h3>シェバン行は必須ですか?</h3>
+<p>
+  シェバン行は必須ではないです。
+</p>
+<p>
+  perlコマンドを実行すれば、シェバンに関係なく、perlで実行できるからです。
+</p>
+<pre>
+perl script.pl
+</pre>
+<p>
+  Windows環境であれば、シェバンを書かずに、直接Perlで実行するということも多いでしょう。
+</p>
+<p>
+  サーバー運用の現場で作るプログラムでは、perlスクリプトは、シェバンを書いて、拡張子をなしにして、実行ファイルのように扱うという規約や慣例があれば、それに従ってください。
+</p>
+<p>
+  Perlを中心に開発している現場では、Perlのプログラムは、拡張子をplにして、perlで実行するという選択もよいでしょう。
+</p>
+<p>
+  CGIスクリプトにおいては、シェバンは必須です。CGIというプロトコルは、実行権限のあるファイルをそのまま実行し、perlというコマンドで実行してくれるわけではないからです。ApacheなどのWebサーバーでは、シェバンを書かないと「Internal Server Error」になります。
+</p>
+<h3>CPANモジュールに含むスクリプトは「#!perl」がお勧め</h3>
+<p>
+  CPANモジュールを配布する場合に含むスクリプトは「#!perl」がお勧めです。
+</p>
+<pre>
+#!perl
+</pre>
+<p>
+  <a href="https://mojolicious.perlzemi.com/">Mojolicious</a>の本番サーバー起動コマンドの<a href="https://mojolicious.perlzemi.com/blog/20110122130016.html">hypnotoad</a>も「#!perl」を使っています。CPANクライアントは、インストール先の、Unix/Linux/Windowsで、スクリプトを実行できるように、この行を、自動的に書き換えてくれます。
+</p>
+<p>
+  <a href="https://github.com/mojolicious/mojo/blob/master/script/hypnotoad">hypnotoadで「#!perl」をシェバンとして使っている例</a>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

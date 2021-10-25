@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>File::Temp - 一時ファイルを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="File::Tempを使用すると、一時ファイルや一時ディレクトリを作成することができます。OSに依存せず安全な方法で一時ファイル(あるいは一時ディレクトリ)を作成することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="File::Temp - 一時ファイルを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="File::Tempを使用すると、一時ファイルや一時ディレクトリを作成することができます。OSに依存せず安全な方法で一時ファイル(あるいは一時ディレクトリ)を作成することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100413127089.html">File::Temp - 一時ファイルを作成する</a></h2>
+<p>
+  <strong>File::Temp</strong>を使用すると、<b>一時ファイル</b>や<b>一時ディレクトリ</b>を作成することができます。OSに依存せず安全な方法で一時ファイル(あるいは一時ディレクトリ)を作成することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# モジュールの読み込みと関数のインポート
+use File::Temp qw/tempfile tempdir/;
+</pre>
+<p>
+  一時ファイルを作成するには<strong>tempfile</strong>関数を使用します。戻り値はスカラコンテキストの場合は一時ファイルのファイルハンドル、リストコンテキストの場合は一時ファイルのファイルハンドルとファイル名になります。
+</p>
+<pre>
+# 一時ファイルの作成
+$fh              = tempfile;
+($fh, $filename) = tempfile;
+</pre>
+<p>
+  一時ディレクトリを作成するには<strong>tempdir</strong>関数を使用します。
+</p>
+<pre>
+# 一時ディレクトリの作成
+$dir = tempdir;
+</pre>
+<p>
+  一時ファイルを利用してファイルを安全に上書きするサンプルです。(※1)
+</p>
+<pre>
+# ファイルの安全な上書き
+use File::Temp 'tempfile';
+use File::Copy 'move';
+
+my $file = shift;
+
+# ファイルの内容の取得
+my $old = get_content($file);
+
+# テキストを追加
+my $new = $old . "Add new text";
+
+# 新しい内容をファイルに書き込み
+my ($tempfh, $tempfile) = tempfile;
+print $tempfh $new;
+close $tempfh;
+
+# 新しいファイルを古いファイルに上書き
+move $tempfile, $file
+  or die "Can't move \"$tempfile\" to \"$file\": $!";
+
+sub get_content {
+  my $file = shift;
+  
+  open my $fh, '&lt;', $file
+    or die "Can't open file \"$file\": $!";
+  
+  my $content = join('', &lt;$fh&gt;);
+  
+  close $fh;
+  
+  return $content;
+}
+</pre>
+<p>
+  (参考)<a href="/blog/20100408127089.html">File::Copy</a>
+</p>
+<h3>tempfileのオプション</h3>
+<p>
+  tempfileの引数としてオプションを指定することができます。
+</p>
+<pre>
+# tempfileのオプション
+tempfile(DIR =&gt; 'somedir', SUFFIX =&gt; '.dat');
+</pre>
+<table>
+  <tr>
+    <td>
+      DIR
+    </td>
+    <td>
+      一時ファイルが作成されるディレクトリ
+    </td>
+  </tr>
+  <tr>
+    <td>
+      SUFFIX
+    </td>
+    <td>
+      一時ファイルの末尾に付加する拡張子
+    </td>
+  </tr>
+</table>
+<p>
+  DIRが省略された場合は一時ファイルを作成するディレクトリは自動的に決められます。Unixの場合は/tmpになります。
+</p>
+<h3>注</h3>
+<p>
+  ※1 ファイルを読み書きモードでオープンして、読み込んだファイルに書き込むのは安全性に欠けます。書き込み途中でコンピュータがクラッシュした場合、読み込む前のデータが破損してしまうからです。読み込んだファイルとは別のファイルに書き込んでから、そのファイルで上書きするのが安全です。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>splice関数 - 配列の要素の複雑な操作 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="splice関数を使用すると配列の要素に対して複雑な操作を行うことができます。複数の要素を取り出したり、置換したりすることができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="splice関数 - 配列の要素の複雑な操作 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="splice関数を使用すると配列の要素に対して複雑な操作を行うことができます。複数の要素を取り出したり、置換したりすることができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161004147558.html">
+      <span itemprop="name">標準関数</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20080127120141.html">splice関数 - 配列の要素の複雑な操作</a></h2>
+<p>
+  <strong>splice関数</strong>を使用すると<a href="/blog/20161012147627.html">配列</a>の要素に対して複雑な操作を行うことができます。複数の要素を取り出したり、置換したりすることができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h4>複数要素の取り出し</h4>
+<p>
+  次の方法で配列の複数要素を取り出すことができます。
+</p>
+<pre>
+# 複数要素の取り出し
+@parts = splice @array, $pos, $length;
+</pre>
+<p>
+  $posは取り出しの開始位置を指定します。$lengthには、取り出す長さを指定します。複数要素の取り出しにおいて$lengthを省略すると$posの位置から配列の末尾までが対象になります。
+</p>
+<h4>複数要素の置換</h4>
+<p>
+  第４引数に、配列を指定することで、指定した配列で置換を行うことができます。対象の配列は、上記の構文と同じです。
+</p>
+<pre>
+# 複数要素の置換
+splice @array, $pos, $length, @replace;
+</pre>
+<h4>splice関数の使いどころ</h4>
+<p>
+  まず最初に、<a href="/blog/20100104126425.html">shift関数</a>、<a href="/blog/20100105126425.html">unshift関数</a>、<a href="/blog/20100106126425.html">pop関数</a>、<a href="/blog/20100107126425.html">push関数</a>の四つの関数を使って配列操作のプログラムを記述できるかどうかを検討してみてください。9割のプログラムは、この四つの関数を使えば、記述できます。
+</p>
+<p>
+  その上で、複雑な操作が必要な場合にsplice関数を使用してください。
+</p>
+<h3>サンプルプログラム</h3>
+<p>
+  複数要素を取り出すサンプルプログラムです。@partsには(2,3)が代入され@numsは(1, 4)になります。
+</p>
+<pre>
+# 複数要素の取り出し
+my @nums = (1, 2, 3, 4);
+my @parts = splice @nums, 1, 2;
+</pre>
+<p>
+  複数の要素を置換するサンプルです。@numsは(1, 5, 6, 4)になります。
+</p>
+<pre>
+# 複数要素の置換
+my @nums = (1, 2, 3, 4);
+my @replace = (5, 6);
+splice @nums, 1, 2, @replace;
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

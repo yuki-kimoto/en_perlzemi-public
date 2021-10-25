@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>morboをWindowsで動かすツール - winmorbo - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Mojolicious開発サーバー「morbo」をWindowsでうまく動作させるツールwinmorboをリリースしました。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="morboをWindowsで動かすツール - winmorbo - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Mojolicious開発サーバー「morbo」をWindowsでうまく動作させるツールwinmorboをリリースしました。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20180430152504.html">morboをWindowsで動かすツール - winmorbo</a></h2>
+<p>
+  Mojolicious開発サーバー「morbo」をWindowsでうまく動作させるツール<b>winmorbo</b>をリリースしました。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<blockquote>
+<p>
+  <a href="https://github.com/yuki-kimoto/winmorbo">winmorbo</a>
+</p>
+</blockquote>
+<p>
+  Windowsでは、Mojolicious開発サーバーmorboはうまく動きません。なぜなら、ワーカープロセスは親TERMシグナルをうまく受信できないからです。
+</p>
+<p>
+  このため、Windows上では、Web開発は、とても面倒なものになります。
+</p>
+<p>
+  Windowsでmorboをうまく動作させるため、Mojo::Server::Morboを簡単な方法でハックしました。
+</p>
+<h3>winmorboのインストール方法</h3>
+<h4>winmorbo.batのダウンロード</h4>
+<p>
+  まず、Mojoliciousプロジェクトディレクトリにwinmorb.batをダウンロードします。
+</p>
+<blockquote>
+<p>
+  <a href="https://github.com/yuki-kimoto/winmorbo">winmorbo - Github</a>
+</p>
+</blockquote>
+<p>
+  GitHubでwinmorbo.batをクリックし、Rawボタンをクリックしてwinmorbo.batをダウンロードします。
+</p>
+<h4>winmorbo.batを実行</h4>
+<p>
+  Mojoliciousアプリケーションを実行するには以下のコマンドを実行します。
+</p>
+<p>
+  Windowsバッチファイルなので、.bat拡張子は指定する必要はありません。
+</p>
+<p>
+  このサンプルでは、Mojoliciousアプリケーションはapp.plです。
+</p>
+<pre>
+    winmorbo app.pl
+</pre>
+<p>
+  ウィンドウが開いて次の画面がでれば成功です。
+</p>
+<pre>
+    C:\Users\kimot\labo&gt;cmd /C perl -x -S winmorbo app.pl
+    Server available at http://127.0.0.1:3000
+</pre>
+<p>
+  これでファイルを変更するたびに、自動的にmorboサーバーが再起動するようになります。
+</p>
+<h3>よくある質問</h3>
+<h4>"Can't opendir(templates)"エラーが表示されます</h4>
+<p>
+  これは、Windowsのユーザーディレクトリに「Templates」ディレクトリがあるためです。
+</p>
+<p>
+  Mojoliciousもは「templates」ディレクトリも使用します。
+</p>
+<p>
+  この問題を解決するには、ひとつディレクトリを作成します（例：labo）。
+</p>
+<pre>
+    cd C:\Users\kimot
+    mkdir labo
+    cd labo
+</pre>
+<p>
+  そして、laboディレクトリの中にapp.plを作成しましょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

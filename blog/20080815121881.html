@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>ロック用のファイルを使ってファイルロックする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="ロック用のファイルを作ってそれにロックを掛けることもできます。ファイルロック用のファイルを作って排他制御を行う利点は、更新対象のファイルを削除したり、リネームしたりできることです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="ロック用のファイルを使ってファイルロックする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="ロック用のファイルを作ってそれにロックを掛けることもできます。ファイルロック用のファイルを作って排他制御を行う利点は、更新対象のファイルを削除したり、リネームしたりできることです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20110212130370.html">
+      <span itemprop="name">ファイル入出力</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080815121881.html">ロック用のファイルを使ってファイルロックする</a></h2>
+<p>
+  ロック用のファイルを作ってそれにロックを掛けることもできます。ファイルロック用のファイルを作って排他制御を行う利点は、更新対象のファイルを削除したり、リネームしたりできることです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  以下のサンプルは前回のサンプルをロック用のファイルを使うように修正したものです。ループ用のスクリプトは前回とまったく同じです。ロックするためのスクリプトはsample_20080815.pl、ループ用のスクリプトは、data_20080815.txtで保存してください。
+</p>
+<p>
+  実行方法は、前回のサンプルを参照してください。
+</p>
+<pre>
+use strict;
+use warnings;
+use Fcntl qw/:DEFAULT :flock :seek/;
+
+# ロック用のファイル(なければ作成)
+my $lock_file = "lock";  
+sysopen(my $lock_fh, $lock_file, O_RDONLY | O_CREAT)
+  or die "Cannot open $lock_file: $!";
+
+# ロック用のファイルを排他ロック(読み込んで書き込むので排他ロック)
+flock($lock_fh, LOCK_EX)
+  or die "Cannot lock $lock_file: $!";
+
+#上書きするので注意
+my $file = "data_20080815.txt";
+
+# 読み書きモードでオープン(あまり安全でない)
+# O_CREATでファイルがなければ作成する。
+sysopen(my $fh, $file, O_RDWR | O_CREAT)
+  or die "Cannot open $file: $!";
+
+my $cnt;
+$cnt = &lt;$fh&gt;;
+if (!defined $cnt &amp;&amp; $!){ die "Cannot read $file: $!"; }
+
+$cnt++;
+
+# ファイルポインタを先頭に移動
+seek($fh, 0, SEEK_SET)
+  or die "Cannot seek $file: $!";
+
+# 書き込み。
+print { $fh } $cnt
+  or die "Cannot Write $file: $!";
+
+# 書き込みサイズにファイルを切り詰める
+truncate($fh, length $cnt);
+
+close $fh
+  or die "Cannot close $file: $!";
+
+# closeの際にファイルロックは解除される。
+close $lock_fh
+  or die "Cannot close $lock_file: $!";
+
+print "現在のカウント: $cnt\n";
+</pre>
+<p>
+  (参考)<a href="/blog/20080804121794.html">sysopen関数</a>、<a href="/blog/20080814121872.html">flock関数</a>、<a href="/blog/20180310152509.html">Fcntl</a>
+</p>
+<p>
+  ループスクリプト
+</p>
+<pre>
+use strict;
+use warnings;
+use FindBin;
+
+my $script = "$FindBin::Bin/sample_20080815.pl";
+
+while (1) {
+  system("perl $script");
+  
+  # 1より小さいランダムな数
+  my $random = rand 1; 
+  sleep $random;
+}
+</pre>
+<p>
+  <a href="/blog/20100123126425.html">while文</a>を使って、スクリプトを繰り返し実行しています。
+</p>
+<p>
+  (参考)<a href="/blog/20100524127696.html">FindBin</a>、<a href="/blog/20080906122079.html">rand関数</a>
+</p>
+<h3>コード解説</h3>
+<h4>(1)ロック用のファイルを作成する</h4>
+<pre>
+# ロック用のファイル(上書きするので注意)
+my $lock_file = "lock";  
+sysopen(my $lock_fh, $lock_file, O_RDONLY | O_CREAT)
+  or die "Cannot open $lock_file: $!";
+</pre>
+<p>
+  ロック用のファイルを作成します。
+</p>
+<h4>(2)flock関数を使ってロック用ファイルをロックする</h4>
+<p>
+  <a href="/blog/20080814121872.html">flock関数</a>を使ってロック用ファイルをロックしています。
+</p>
+<pre>
+# ロック用のファイルを排他ロック(読み込んで書き込むので排他ロック)
+flock($lock_fh, LOCK_EX)
+  or die "Cannot lock $lock_file: $!";
+</pre>
+<p>
+  このファイルをロックできたプロセスだけが、更新対象のファイルにアクセスを行うようにします。このロックに続いて、更新対象のファイルをオープンしてファイルを更新します。
+</p>
+<h4>(3)ロックの解除</h4>
+<pre>
+# closeの際にファイルロックは解除される。
+close $lock_fh
+  or die "Cannot close $lock_file: $!";
+</pre>
+<p>
+  ロック用ファイルをクローズすることで、ロックが解除されます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>絶対パスと相対パス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="プログラムの中で、ファイル名を表現する方法に、絶対パスと相対パスという2通りの表現の仕方があります。絶対パスとは、ファイル名をルートから省略せずに記述したファイル名のことです。相対パスとは、カレントディレクトリから相対的に記述したファイル名のことです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="絶対パスと相対パス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="プログラムの中で、ファイル名を表現する方法に、絶対パスと相対パスという2通りの表現の仕方があります。絶対パスとは、ファイル名をルートから省略せずに記述したファイル名のことです。相対パスとは、カレントディレクトリから相対的に記述したファイル名のことです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161126148016.html">
+      <span itemprop="name">ファイル操作</span>
+    </a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080514121077.html">絶対パスと相対パス</a></h2>
+<p>
+  プログラムの中で、ファイル名を表現する方法に、絶対パスと相対パスという2通りの表現の仕方があります。絶対パスとは、ファイル名をルートから省略せずに記述したファイル名のことです。相対パスとは、カレントディレクトリから相対的に記述したファイル名のことです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>絶対パスと相対パスの例</h3>
+<table>
+  <tr>
+    <td>
+      　
+    </td>
+    <td>
+      Unix系OSの場合
+    </td>
+    <td>
+      Windowsの場合
+    </td>
+  </tr>
+  <tr>
+    <td>
+      絶対パスの例
+    </td>
+    <td>
+      /home/yk/sample1 
+    </td>
+    <td>
+       c:\home\yk\sample1.txt 
+    </td>
+  </tr>
+  <tr>
+    <td>
+      相対パスの例( *1 )
+    </td>
+    <td>
+       sample1
+    </td>
+    <td>
+      sample1.txt
+    </td>
+  </tr>
+</table>
+<p>
+  　　*1 <small>カレントディレクトリが、それぞれ 「/home/yk」「c:\home\yk」の場合</small>
+</p>
+<h3>絶対パスと相対パスの解釈のされ方。</h3>
+<p>
+  ファイル名は、/　で始まっていれば、絶対パスであると解釈され、/　で始まっていなければ、相対パスであると解釈されます。Windowsの場合も似たようなもので、 c:\ ( ドライブ名\ ) で始まっていれば、絶対パスであると解釈され、そうでなければ、相対パスであると解釈されます。
+</p>
+<h3>カレントディレクトリとは</h3>
+<p>
+  カレントディレクトリとは、相対パス名の基点となるディレクトリのことです。コマンドプロンプトやシェルから実行する場合は、スクリプトを実行したディレクトリが、カレントディレクトリになります。
+</p>
+<h3>ファイル名とディレクトリ名は名前からは区別できない。</h3>
+<p>
+  /home/yk/sample1 は、ディレクトリである場合もありますし、ファイルである場合もあります。/home/yk/sample1/ と表現すれば、それは、必ずディレクトリ名になります。( Windowsの場合は、c:\home\yk\sample1\ )
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Class::Struct - オブジェクト指向を提供するコアモジュール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Class::Structは、Perlにオブジェクト指向の機能を提供する古典的なモジュールです。コンストラクタnewの自動生成、アクセッサの自動生成ができます。アクセッサとは、フィールドの設定・取得を行うためのメソッドのことです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Class::Struct - オブジェクト指向を提供するコアモジュール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Class::Structは、Perlにオブジェクト指向の機能を提供する古典的なモジュールです。コンストラクタnewの自動生成、アクセッサの自動生成ができます。アクセッサとは、フィールドの設定・取得を行うためのメソッドのことです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20200115082029.html">Class::Struct - オブジェクト指向を提供するコアモジュール</a></h2>
+<p>
+  Class::Structは、Perlに<a href="/blog/20161030147778.html">オブジェクト指向</a>の機能を提供する古典的なモジュールです。コンストラクタnewの自動生成、アクセッサの自動生成ができます。アクセッサとは、フィールドの設定・取得を行うためのメソッドのことです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  Perl入門ゼミでは、オブジェクトの基本型として、ハッシュリファレンスを持ち、スカラのアクセッサを提供する方法を解説します。
+</p>
+<h3>xとyというフィールドを持つPointクラスの作成</h3>
+<p>
+  Class::Structを使って、xとyというフィールドを持つPointクラスを作成してみましょう。
+</p>
+<pre>
+package Point;
+
+use Class::Struct __PACKAGE__, {
+  x =&gt; '$',
+  y =&gt; '$',
+};
+</pre>
+<p>
+  <a href="/blog/20090205123287.html">use</a>では、モジュール名の後ろに引数を渡すことができます。
+</p>
+<p>
+  第一引数は、パッケージ名です。この引数で、どのパッケージに対して、コンストラクタやアクセッサを生成するのかを指定します。<a href="/blog/20080425120914.html">__PACKAGE__</a>は、現在のパッケージ名を返す関数で、Pointが返ります。
+</p>
+<p>
+  第二引数は、フィールドを定義した、<a href="/blog/20180208151809.html">ハッシュのリファレンス</a>です。アクセッサが自動生成されます。
+</p>
+<h3>Pointクラスの利用</h3>
+<p>
+  Pointクラスを利用してみましょう。先ほどのコードに続けて以下を記述します。
+</p>
+<pre>
+package main;
+
+# オブジェクトの生成
+my $point = Point-&gt;new(x =&gt; 1, y =&gt; 2);
+
+# フィールドの値をアクセッサを使って取得
+my $x = $point-&gt;x;
+my $y = $point-&gt;y;
+print "($x, $y)\n";
+
+# フィールドの値をアクセッサを使って設定
+$point-&gt;x(5);
+$point-&gt;y(10);
+my $x2 = $point-&gt;x;
+my $y2 = $point-&gt;y;
+print "($x2, $y2)\n";
+</pre>
+<p>
+  mainパッケージについては、<a href="/blog/20100419127089.html">パッケージの宣言</a>の記事を参考にしてください。
+</p>
+<h4>コンストラクタnewの呼び出し</h4>
+<p>
+  コンストラクタnewを呼び出すことができます。フィールドの値を渡すこともできます。
+</p>
+<pre>
+# オブジェクトの生成
+my $point = Point-&gt;new(x =&gt; 1, y =&gt; 2);
+</pre>
+<h4>アクセッサの呼び出し</h4>
+<p>
+  値の設定・取得を行うために、アクセッサを呼び出すことができます。
+</p>
+<pre>
+# フィールドの値をアクセッサを使って取得
+my $x = $point-&gt;x;
+my $y = $point-&gt;y;
+print "($x, $y)\n";
+
+# フィールドの値をアクセッサを使って設定
+$point-&gt;x(5);
+$point-&gt;y(10);
+my $x2 = $point-&gt;x;
+my $y2 = $point-&gt;y;
+print "($x2, $y2)\n";
+</pre>
+<h3>Class::Structで、継承することはできますか?</h3>
+<p>
+  Class::Strcutによって作成したクラスを継承することは可能ですが、制限として、フィールドを追加するということはできません。継承を行いたい場合は、フィールドを追加したい場合が、ほとんどですので、できないと考えておくのがよいでしょう。
+</p>
+<p>
+  継承を予定しているのであれば、Perlコア限定なら<a href="/blog/20100203126425.html">bless</a>を使ってオブジェクトを作成します。CPANモジュールを利用する場合は、継承によるフィールド定義の追加をサポートしているモジュールを利用しましょう。
+</p>
+<h3>コンストラクタをオーバライドすることはできますか?</h3>
+<p>
+  Class::Strcutでは、対象のクラスにコンストラクタが生成されますので、コンストラクタをオーバーライドすることはできません。
+</p>
+<p>
+  コンストラクタのカスタマイズを予定しているのであれば、Perlコア限定なら<a href="/blog/20100203126425.html">bless</a>を使ってオブジェクトを作成します。CPANモジュールを利用する場合は、コンストラクタのカスタマイズをサポートしているモジュールを利用しましょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

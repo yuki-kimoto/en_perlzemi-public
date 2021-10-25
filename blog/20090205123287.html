@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>use - モジュールを読み込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="モジュールをコンパイル時に読み込むにはuseを使用します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="use - モジュールを読み込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="モジュールをコンパイル時に読み込むにはuseを使用します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+      <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20090205123287.html">use - モジュールを読み込む</a></h2>
+<p>
+  モジュールをコンパイル時に読み込むには<strong>use</strong>を使用します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use モジュール名
+</pre>
+<p>
+  モジュール名は裸の文字列で指定する必要があります。クォートやダブルクォートで囲んだ文字列は受け付けません。また変数も受付ません。
+</p>
+<pre>
+# 裸の文字列でモジュール名を指定する
+use CGI;
+</pre>
+<p>
+  また標準的な慣習としてモジュール名の後ろに関数名を指定すると、関数を現在の名前空間にインポートすることができます。
+</p>
+<pre>
+# 関数のインポート
+use File::Basename 'basename', 'dirname';
+</pre>
+<p>
+  モジュールを読み込む手段としては、useの他にrequire関数がありますが、モジュールを読み込む場合は通常はuseを使っておきましょう。モジュールは、importメソッドを呼ばれることを期待しているので、use を使えば自動で行ってくれます。
+</p>
+<h3>useで実行される処理</h3>
+<p>
+  useで実行されるのは次の処理です。File::Basenameの場合を例にしています。
+</p>
+<pre>
+# useで実行される処理
+BEGIN {
+  require File::Basename;
+  File::Basename-&gt;import(qw/basename dirname/);
+}
+</pre>
+<p>
+  BEGINブロックで囲われた部分はコンパイル時に実行されます。requireでモジュールが読み込まれ、そのモジュールのimportがメソッド呼び出しとして実行されます。
+</p>
+<h3>importを実行しない方法</h3>
+<p>
+  useは自動的にimportを実行します。importを実行したくない場合は次のようにします。
+</p>
+<pre>
+# importを実行しない
+use File::Basename ();
+</pre>
+<h3>useに変数を渡す方法</h3>
+<p>
+  useは裸の文字列しか受け取ることができないため、変数を渡すには工夫が必要です。<a href="/blog/20100312126967.html">eval</a>を使って変数名を裸の文字列として認識させる必要があります。
+</p>
+<p>
+  またevalは危険がある処理を実行する可能性があるので、必ず有害な処理を含まないことを確認してから実行します。モジュールの読み込みに失敗した場合はエラーメッセージが$@に格納されます。
+</p>
+<pre>
+# useに変数を渡す
+
+# モジュール名
+my $module = 'AAA';
+
+# ワード文字だけで構成されていることを確認
+die "Invalid module name" if $module =~ /\W/;
+
+# モジュールの読み込み
+eval "use $module";
+
+# モジュール読み込みに失敗した場合の処理
+die $@ if $@;
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

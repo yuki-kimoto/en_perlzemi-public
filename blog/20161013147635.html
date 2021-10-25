@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlのハッシュを理解しよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlの「ハッシュ」についての解説です。Perlのハッシュは、他の言語でいうところの「連想配列」のことです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlのハッシュを理解しよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlの「ハッシュ」についての解説です。Perlのハッシュは、他の言語でいうところの「連想配列」のことです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">ハッシュ</span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20161013147635.html">Perlのハッシュを理解しよう</a></h2>
+<p>
+  Perlの「ハッシュ」についての解説です。Perlのハッシュは、他の言語でいうところの「連想配列」のことです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  配列では、番号を指定して要素を取り出すことができましたが、「連想配列」では、文字列をキーとして指定して、要素を取り出すことができます。
+</p>
+<h3>ハッシュの基礎</h3>
+<p>
+  ハッシュの基礎。ハッシュの宣言と初期化。ハッシュの出力と代入。ハッシュは、文字列を、添え字として、値を取得できる配列だと考えればよい。文字列をキーとして、値を取り出すことができる。
+</p>
+<h4>ハッシュの宣言と初期化</h4>
+<p>
+  ハッシュの宣言と初期化は次のようにして行います。
+</p>
+<pre>
+my %fathers = ('Taro' =&gt; 'Kenji', 'Naoko' =&gt; 'Yoshio');
+#あるいは
+my %fathers = (Taro =&gt; 'Kenji', Naoko =&gt; 'Yoshio');
+</pre>
+<p>
+  変数の接頭辞は<b>パーセント記号</b>です「%」。(キー1 => 値1, キー2 => 値2, ...)。Taroの父親はKenji, Naokoの父親はYoshioと読むことができる
+</p>
+<h4>ハッシュの要素の出力</h4>
+<pre>
+print $mothers{'Taro'};
+</pre>
+<p>
+  出力する場合は、%ではなくて$ 。単一の要素を扱う場合は$ 。{  }を使ってキーを指定する。( 配列の場合は[ ]でした  )。{} はブラケットと読みます。( [] はブレース。 () はかっこ )
+</p>
+<h3>ハッシュの要素の代入</h3>
+<pre>
+$mothers{'Naoko'} = 'Haruna';
+</pre>
+<h3>ハッシュの各要素の処理</h3>
+<ul>
+  <li>
+    <a href="/blog/20080210120265.html">ハッシュのすべてのを取得する - keys関数</a><span style="color:red">【重要】</span>
+  </li>
+  <li>
+    <a href="/blog/20100222126425.html">ハッシュのすべての値を取得する - values関数</a>
+  </li>
+  <li>
+    <a href="/blog/20080212120283.html">ハッシュのすべてのキーと値を取得する - each関数</a>
+  </li>
+</ul>
+<h3>ハッシュの操作</h3>
+<ul>
+  <li>
+    <a href="/blog/20080213120291.html">キーの存在を調べる - exists関数</a><span style="color:red">【重要】</span>
+  </li>
+  <li>
+    <a href="/blog/20080214120300.html">ハッシュのキーを削除する - delete関数</a><span style="color:red">【重要】</span>
+  </li>
+  <li>
+    <a href="/blog/20080227120413.html">ハッシュのキーと値を入れ替える reverse関数</a>
+  </li>
+  <li>
+    <a href="/blog/20080215120307.html">ハッシュスライス ･･･ ハッシュの複数の値を取り出す</a>
+  </li>
+</ul>
+<h3>ハッシュのリファレンス</h3>
+<p>
+  ハッシュのリファレンスは以下のように作ることができます。
+</p>
+<pre>
+my $math_scores_ref = \%math_scores;
+</pre>
+<p>
+  %の前に \ をつけ、ハッシュへのリファレンスを生成。生成したリファレンスを、スカラー変数 $math_score_href に代入
+</p>
+<h4>無名ハッシュを使って、直接ハッシュへのリファレンスを作る。</h4>
+<pre>
+my $math_scores_ref2 = { 
+  Aiko =&gt; 89,
+  Kenta =&gt; 100,
+  Taro =&gt; 34,
+};
+</pre>
+<p>
+  ( ) の代わりに { } を使って、直接ハッシュへのリファレンスを作成できる
+</p>
+<h4>ハッシュの要素にアクセスする</h4>
+<pre>
+$math_scores_ref-&gt;{Aiko}
+</pre>
+<h4>ハッシュのリファレンスからハッシュを取り出す</h4>
+<p>
+  ハッシュのリファレンスからハッシュを取り出すにはデリファレンスを行います。
+</p>
+<pre>
+my %hash = %$hash_ref;
+my %hash = %{$hash_ref};
+</pre>
+<p>
+  ハッシュへのリファレンスをデリファレンスしてハッシュを取り出すこともできます。
+</p>
+<pre>
+my %math_scores = %$math_scores;
+</pre>
+<p>
+  %$math_scoresでデリファレンスしてハッシュを取り出すことができる。
+</p>
+<p>
+  ひとつの要素しか必要としないときは「->{key}」を使うことができます。
+</p>
+<pre>
+$math_scores-&gt;{Taro};
+</pre>
+<p>
+  ハッシュのリファレンスについてはこちらで詳しく解説しています。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180208151809.html">ハッシュのリファレンス</a>
+  </li>
+</ul>
+<h3>ハッシュを使った多次元データ構造</h3>
+<p>
+  ハッシュを使った多次元データ構造については、以下の記事で詳しく解説しています。「配列のハッシュ」「ハッシュの配列」「ハッシュのハッシュ」について学ぶことができます。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100930127859.html">「配列」と「ハッシュ」で「多次元データ構造」を自由に操る</a>
+  </li>
+</ul>
+<h3>コラム「連想配列をハッシュと呼ぶようになったのはPerlのせい」</h3>
+<p>
+  Perlは、連想配列を言語の機能として取り入れるという素晴らしい決定をした。とてつもなく便利だ。これは、大成功で、他のほぼすべてのスクリプト言語は、影響を受けて、言語自体に連想配列を取り入れている。
+</p>
+<p>
+  連想配列という名前は長かったのか、Perlはそれをハッシュと呼ぶことにした。これは、ハッシュ関数からの連想だね。
+</p>
+<p>
+  でも、意外とぴったりと、データ構造を表現しているようにも思えるね。
+</p>
+<h3>サンプルコード</h3>
+<h4>ハッシュの基礎</h4>
+<p>
+  ハッシュの基礎。ハッシュの宣言と初期化。ハッシュの出力と代入のサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+# ハッシュとは
+# 文字列を、添え字として、値を取得できる配列だと考えればよい。
+# 文字列をキーとして、値を取り出すことができる。
+
+# ハッシュの宣言と初期化( 変数の接頭辞は、% )
+# ( キー1 =&gt; 値1, キー2 =&gt; 値2, ... )
+# Taroの父親はKenji, Naokoの父親はYoshioと読む
+my %fathers = ('Taro' =&gt; 'Kenji', 'Naoko' =&gt; 'Yoshio');
+
+# よりPerl的な書き方
+# =&gt; の左側の''は省略できる
+my %mathers = (Taro =&gt; 'Tomoko', Naoko =&gt; 'Shizuka');
+
+# 1: ハッシュの要素出力
+print "1:ハッシュの要素の出力\n";  
+# 出力する場合は、%ではなくて$
+# {} ブラケットを使う 
+print "\$mathers{'Taro'} = ", $mathers{'Taro'}, "\n"; 
+print "\n";
+
+# 2: ハッシュの要素の代入
+print "2:ハッシュの要素の代入\n";
+$mathers{'Naoko'} = 'Haruna';
+print "\$mathers{'Naoko'} = ", $mathers{'Naoko'} . "\n";
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+1:ハッシュの要素の出力
+$mothers{'Taro'} = Tomoko
+
+2:ハッシュの要素の代入
+$mothers{'Naoko'} = Haruna
+</pre>
+<h4>ハッシュのリファレンス</h4>
+<p>
+  ハッシュのリファレンスを使ったのサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+use Data::Dumper;
+
+# 生徒の数学の点数
+my %math_scores = ( 
+  Aiko =&gt; 89,
+  Kenta =&gt; 100,
+  Taro =&gt; 34,
+);
+
+# 1:ハッシュのリファレンス %の前に \ をつけ、ハッシュへのリファレンスを生成。
+# 生成したリファレンスを、スカラー変数 $math_scores_ref に代入
+my $math_scores_ref = \%math_scores;
+print "1:  ハッシュのリファレンス\n";
+print Data::Dumper-&gt;Dump([$math_scores_ref], ['$math_scores_ref']);
+print "\n\n";
+
+# 2:無名ハッシュ( { } )を使って、直接ハッシュへのリファレンスを作る。
+my $math_scores_ref2 = { 
+  Aiko =&gt; 89,
+  Kenta =&gt; 100,
+  Taro =&gt; 34,
+};
+
+print "2: 無名ハッシュ\n";
+print Data::Dumper-&gt;Dump([$math_scores_ref2], ['$math_scores_ref2']);
+print "\n\n";
+
+# 3:ハッシュの要素にアクセスする。($hash_ref-&gt;{key})
+print "3: ハッシュの要素にアクセスする。\n";
+print "\$math_scores_ref-&gt;{Aiko} = $math_scores_ref-&gt;{Aiko}\n";
+print "\$math_scores_ref-&gt;{Kenta} = $math_scores_ref-&gt;{Kenta}\n";
+
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+1:  ハッシュのリファレンス
+$math_scores_ref = {
+                     'Aiko' =&gt; 89,
+                     'Kenta' =&gt; 100,
+                     'Taro' =&gt; 34
+                   };
+
+
+2: 無名ハッシュ
+$math_scores_ref2 = {
+                      'Aiko' =&gt; 89,
+                      'Kenta' =&gt; 100,
+                      'Taro' =&gt; 34
+                    };
+
+
+3: ハッシュの要素にアクセスする。
+$math_scores_ref-&gt;{Aiko} = 89
+$math_scores_ref-&gt;{Kenta} = 100
+</pre>
+<h4>ハッシュのリファレンスのデリファレンス</h4>
+<p>
+  ハッシュのリファレンスをデリファレンスするサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+use Data::Dumper;
+
+# 生徒の数学の点数
+my $math_scores = {
+  Taro =&gt; 89,
+  Naoko =&gt; 54,
+  Kenji =&gt; 54
+};
+
+# 1:デリファレンスしてハッシュのすべての要素を出力する
+print "1: デリファレンスしてハッシュのすべての要素を出力する\n";
+for my $key (keys %$math_scores){
+  print "\$math_scores-&gt;{$key} = " . $math_scores-&gt;{$key} . "\n";
+}
+print "\n";
+
+# 2:ひとつの要素を参照するときは、-&gt; 演算子を使う。
+print "2: ひとつのキーを削除\n";
+delete $math_scores-&gt;{Taro};
+
+print Data::Dumper-&gt;Dump([$math_scores], ['$math_scores']);
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+1: デリファレンスしてハッシュのすべての要素を出力する
+$math_scores-&gt;{Kenji} = 54
+$math_scores-&gt;{Taro} = 89
+$math_scores-&gt;{Naoko} = 54
+
+2: ひとつのキーを削除
+$math_scores = {
+                 'Kenji' =&gt; 54,
+                 'Naoko' =&gt; 54
+               };
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

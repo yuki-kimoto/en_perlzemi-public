@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Selenium::Chrome - Chromeを使ったJavaScript対応のWebスクレイピング - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Selenium::Chromeを使うと、Chromeを使ったJavaScript対応のWebスクレイピングができます。Selenium::ChromeはSelenium::Remote::DriverをChrome用に拡張したものです。Selenium::Remote::Driverをインストールすると利用できるようになります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Selenium::Chrome - Chromeを使ったJavaScript対応のWebスクレイピング - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Selenium::Chromeを使うと、Chromeを使ったJavaScript対応のWebスクレイピングができます。Selenium::ChromeはSelenium::Remote::DriverをChrome用に拡張したものです。Selenium::Remote::Driverをインストールすると利用できるようになります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20210107090920.html">Selenium::Chrome - Chromeを使ったJavaScript対応のWebスクレイピング</a></h2>
+<p>
+  Selenium::Chromeを使うと、Chromeを使ったJavaScript対応のWebスクレイピングができます。Selenium::Chromeは<a href="/blog/20210105145700.html">Selenium::Remote::Driver</a>をChrome用に拡張したものです。Selenium::Remote::Driverをインストールすると利用できるようになります。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h4>Windows, Macで実行する場合</h4>
+<pre>
+# Windows, Macで実行する場合
+use Selenium::Chrome;
+my $driver = Selenium::Chrome-&gt;new;
+$driver-&gt;get('http://www.google.com');
+print $driver-&gt;get_title();
+$driver-&gt;shutdown_binary();
+</pre>
+<h4>Unix/LinuxなどGUI画面がない場合に、ヘッドレス実行する場合</h4>
+<p>
+  GUI環境がない場合にCUI画面で実行する場合は以下のようにヘッドレス実行します。
+</p>
+<pre>
+# Unix/LinuxなどGUI画面がない場合に、ヘッドレス実行する場合
+use Selenium::Chrome;
+my $driver = Selenium::Chrome-&gt;new(
+  extra_capabilities =&gt; {
+    'goog:chromeOptions' =&gt; {
+      args =&gt; ['headless', 'disable-gpu', 'window-size=1920,1080', 'no-sandbox' ]
+    }
+  }
+);
+$driver-&gt;get('http://www.google.com');
+print $driver-&gt;get_title();
+$driver-&gt;shutdown_binary();
+</pre>
+<p>
+  以下のようなエラーが発生した場合は、上記のオプションをつけてヘッドレス実行してください。
+</p>
+<blockquote>
+<p>
+  Could not create new session: unknown error: Chrome failed to start: exited abnormally.
+</p>
+  (unknown error: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) at access.pl line 79.
+</blockquote>
+<h3>実行環境の準備</h3>
+<p>
+  Selenium::Chromeを使ったJavaScript対応のWebスクレイピングの実行環境として、Chromeブラウザ本体とChromeDriverが必要になります。ChromeDriverはChrome本体を操作するためのソフトウェアです。環境構築手順はOSによって異なります、以下を参考にしてください。
+</p>
+<p>
+  バイナリ互換性の問題が発生しないように、Chromeブラウザ本体とChromeDriverのバージョンはできる限り合わせるのが良いです。
+</p>
+<h4>Unix/Linuxの場合</h4>
+<p>
+  <a href="https://centos.perlclub.net/blog/20210103090837.html">ChromeDriverをインストールする - Cent OS 7</a>
+</p>
+<p>
+  <a href="https://centos.perlclub.net/blog/20210104090837.html">Google Chromeをインストールする - CentOS 7</a>
+</p>
+<p>
+  Ubuntu、Debian、FreeBSDなどの他の<a href="https://linux.perlclub.net/">UNIX/Linux</a>の場合は、Chromeブラウザ本体とChromeDriverのインストール方法を検索してみましょう。
+</p>
+<h4>Windows</h4>
+<p>
+  <a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27">SPAサイトにおいて、Selenium::Remote::DriverでGUIテストを行う</a>の環境構築手順が参考になります。
+</p>
+<p>
+  <a href="https://perlzemi.com/blog/20080602121231.html">Active Perl</a>でも<a href="https://perlzemi.com/blog/20180808153368.html">Strawberry Perl</a>でも大丈夫かと思います。
+</p>
+<h4>Macの場合</h4>
+<p>
+  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Perl から Selenium を使う</a>の環境構築手順が参考になります。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

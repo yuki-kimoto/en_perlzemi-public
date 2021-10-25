@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>DBIx::Custom 0.38 リリース - 5年前に廃止予定になっていた機能の削除 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="DBIx::Custom 0.38をリリースしました。今回のリリースは、5年前に廃止予定になっていた機能の削除です。5年以上前に、DBIx::Customを利用していて、今アップデートする方はご注意ください。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="DBIx::Custom 0.38 リリース - 5年前に廃止予定になっていた機能の削除 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="DBIx::Custom 0.38をリリースしました。今回のリリースは、5年前に廃止予定になっていた機能の削除です。5年以上前に、DBIx::Customを利用していて、今アップデートする方はご注意ください。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20170316148966.html">DBIx::Custom 0.38 リリース - 5年前に廃止予定になっていた機能の削除</a></h2>
+<p>
+  DBIx::Custom 0.38をリリースしました。今回のリリースは、5年前に廃止予定になっていた機能の削除です。5年以上前に、DBIx::Customを利用していて、今アップデートする方はご注意ください。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  余分な条件分岐がなくなったので、その分高速化しています。
+</p>
+<blockquote>
+<p>
+  <a href="http://search.cpan.org/dist/DBIx-Custom/lib/DBIx/Custom.pm">DBIx::Custom 0.38</a>
+</p>
+</blockquote>
+<p>
+  <b>DBIx::Customは今後は、SQL生成のみする機能、データベースへの非同期クエリ対応、DBIx::Custom::Fastを作って高速化する機能を追加する予定です。</b>
+</p>
+<h4>Changes</h4>
+<p>
+  廃止された機能の一覧。
+</p>
+<blockquote>
+<p>
+  0.38
+</p>
+  ---------------------------------------------------
+  NOTE: This release remove many DEPRECATED features. 
+  ---------------------------------------------------
+  - remove DEPRECATED default_filter method(DBIx::Custom::Result).
+  - remove DEPRECATED default_fetch_filter(DBIx::Custom).
+  - remove DEPRECATED default_bind_filter(DBIx::Custom).
+  - remove DEPRECATED DBIx::Custom::Query.
+  - remove DEPRECATED DBIx::Custom::QueryBuilder.
+  - remove DEPRECATED execute(DBIx::Custom) method's query option
+  - remove DEPRECATED execute method receiving query object
+  - remove DEPRECATED cache_method(DBIx::Custom).
+  - remove DEPRECATED query_builder(DBIx::Custom).
+  - remove DEPRECATED tag_parse(DBIx::Custom)
+  - remove DBIX_CUSTOM_TAG_PARSE environment variable
+  - remove DEPRECATED register_tag_processor(DBIx::Custom)
+  - remove DEPRECATED register_tag(DBIx::Custom)
+  - remove DEPRECATED tag parsing functionality
+  - remove DEPRECATED prepend method(DBIx::Custom::Order) array reference receiving
+  - remove DEPRECATED remote_end_filter(DIBx::Custom::Result)
+  - remote DEPRECATED remove_filter(DIBx::Custom::Result)
+  - remove DEPRECATED filter_on(DBIx::Custom::Result)
+  - remove DEPRECATED filter_off(DBIx::Custom::Result)
+  - remove DEPRECATED end_filter(DBIx::Custom::Result)
+  - remove DEPRECATED filter_check(DBIx::Custom::Result)
+  - remove DEPRECATED column(DBIx::Custom::Result)
+  - remove DEPRECATED fetch_first(DBIx::Custom::Result)
+  - remove DEPRECATED fetch_hash_first(DBIx::Custom::Result)
+  - remove DEPRECATED execute(DBIx::Custom::Model)
+  - remove DEPRECATED method(DBIx::Custom::Model)
+  - remove DEPRECATED filter(DBIx::Custom::Model)
+  - remove DEPRECATED name(DBIx::Custom::Model)
+  - remove DEPRECATED type(DBIx::Custom::Model)
+  - remove DEPRECATED DBIX_CUSTOM_DISABLE_MODEL_EXECUTE environment variable
+  - remove DEPRECATED default_dbi_option(DBIx::Custom)
+  - remove DEPRECATED dbi_option(DBIx::Custom)
+  - remove DEPRECATED data_source(DBIx::Custom)
+  - remove DEPRECATED dbi_options(DBIx::Custom)
+  - remove DEPRECATED filter_check(DBIx::Custom)
+  - remove DEPRECATED reserved_word_quote(DBIx::Custom)
+  - remove DEPRECATED select_at(DBIx::Custom)
+  - remove DEPRECATED delete_at(DBIx::Custom)
+  - remove DEPRECATED update_at(DBIx::Custom)
+  - remove DEPRECATED insert_at(DBIx::Custom)
+  - remove DEPRECATED insert_param_tag(DBIx::Custom)
+  - remove DEPRECATED update_param_tag(DBIx::Custom)
+  - remove DEPRECATED assign_param(DBIx::Custom)
+  - remove DEPRECATED update_param(DBIx::Custom)
+  - remove DEPRECATED insert_param(DBIx::Custom)
+  - remove DEPRECATED create_query(DBIx::Custom)
+  - remove DEPRECATED apply_filter(DBIx::Custom)
+  - remove DEPRECATED query caching system
+  - remove DEPRECATED cache(DBIx::Custom)
+  - remove DEPRECATED execute method(DBIx::Custom)'s sqlfilter option
+  - remove DEPRECATED update_timestamp
+  - remove DEPRECATED insert_timestamp
+  - remove DEPRECATED select method relation option
+  - remove DEPRECATED update timestamp option
+  - remove DEPRECATED insert timestamp option
+  - remove DEPRECATED update(DBIx::Custom) method's updated_at option
+  - remove DEPRECATED update(DBIx::Custom) method's param option
+  - remove DEPRECATED insert method param option
+  - remove DEPRECATED select method column option [COLUMN, as => ALIAS] format
+  - remove DEPRECATED select method column option [COLUMN => ALIAS] format
+  - remove DEPRECATED select method where_param option
+  - remove DEPRECATED delete method where_param option
+  - remove DEPRECATED update method where_param option
+  - remove DEPRECATED execute(DBIx::Custom) method's id option
+</blockquote>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

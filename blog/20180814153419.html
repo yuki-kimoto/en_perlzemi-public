@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>macOSへのPerlのインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="macOSの環境には、すでにPerlがインストールされています。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="macOSへのPerlのインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="macOSの環境には、すでにPerlがインストールされています。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name"><a href="/blog/20180820153471.html">インストール</a></span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20180814153419.html">macOSへのPerlのインストール</a></h2>
+<p>
+  macOSの環境には、すでにPerlがインストールされています。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  以下のコマンドでPerlがインストールされているか確認してみましょう。
+</p>
+<pre>
+perl -v
+</pre>
+<p>
+  バージョン情報が表示されれば、OKです。
+</p>
+<p>
+  さっそく、Perlを使い始めてみましょう。
+</p>
+<h4>ユーザー環境へのPerlのインストール</h4>
+<p>
+  最新のPerlなどを使いたい場合は、ユーザー環境にPerlをインストールすることもできます。
+</p>
+<p>
+  またCPANモジュールをインストールしたい場合は、ユーザー環境へPerlをインストールするのが推奨です。
+</p>
+<p>
+  新しいMac OS X(mojave)のシステムPerlは、セキュリティ上の理由で、C言語で書かれたPerlモジュールのインストールに失敗するからです。
+</p>
+<p>
+  自分のユーザー環境にPerlをインストールしたい場合はperlbrewあるいはplenvというツールを使うことができます。
+</p>
+<p>
+  ルート権限が必要ないので、インストールが簡単で、OSの環境を汚しません。最新のPerlをインストールして使うことができます。
+</p>
+<p>
+  本番環境のWebサービスでPerlを実行する場合は、この方法が2019年現在は主流となっています。
+</p>
+<p>
+  perlbrewとplenvはどちらも、似ているツールで、ユーザー環境にPerlをインストールするためのツールです。お好みで選択してください。
+</p>
+<p>
+  <a href="https://syncer.jp/mac-terminal">macOSでターミナルを立ち上げ</a>てから、以下の手順を実行してください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110220130464.html">perlbrew - ユーザー環境にPerlをインストールする</a>
+  </li>
+  <li>
+    <a href="/blog/20180816153437.html">plenv - ユーザー環境にPerlをインストールする</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

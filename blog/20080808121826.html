@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>シーケンシャルアクセスとランダムアクセス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="ファイルにアクセスする方法には、シーケンシャルアクセスとランダムアクセスという2種類の方法があります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="シーケンシャルアクセスとランダムアクセス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="ファイルにアクセスする方法には、シーケンシャルアクセスとランダムアクセスという2種類の方法があります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20110212130370.html">
+      <span itemprop="name">ファイル入出力</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080808121826.html">シーケンシャルアクセスとランダムアクセス</a></h2>
+<p>
+  ファイルにアクセスする方法には、シーケンシャルアクセスとランダムアクセスという2種類の方法があります。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  シーケンシャルアクセスとは、ファイルを先頭から順番に読み込んでいくアクセスのことで、ランダムアクセスとは、ファイルの特定のバイト位置を指定するアクセスのことです。
+</p>
+<p>
+  シーケンシャルアクセスは、可変長のテキストファイルを扱う場合に利用され、ランダムアクセスは固定長バイナリファイル高速に処理する場合に利用されます。
+</p>
+<h3>シーケンシャルアクセスとは</h3>
+<p>
+  シーケンシャルアクセスは順次アクセスとも呼ばれます。シーケンシャルアクセスとは、ファイルを先頭から順番に読み込んでいくアクセス方法のことです。ファイルを<a href="/blog/20080718121643.html">open関数</a>でオープンして、<a href="/blog/20180424152457.html">readline関数</a>で1行づつ読み込んでいくのは、シーケンシャルアクセスになります。テキストファイルは、この方法でアクセスします。
+</p>
+<p>
+  シーケンシャルアクセスの欠点としては、たとえば、変更したい部分がファイルの1万行目にあった場合は、必要のない9999行を読み込む必要があることです。高速にアクセスする必要があるときは、シーケンシャルアクセスは向いていません。
+</p>
+<p>
+  ただ、改行を区切り文字とするような可変長のテキストファイルを扱う場合はシーケンシャルアクセスしか利用できません。
+</p>
+<h3>ランダムアクセスとは</h3>
+<p>
+  ランダムアクセスとは、ファイルのなかの特定のバイト位置を指定しておこなうファイルアクセス方法のことです。たとえば、「10バイト目から8バイト」のように指定します。ランダムアクセスという名前ですが、ランダムにアクセスするという意味はありません。バイト位置を指定したアクセスを意味します。
+</p>
+<pre>
+|---------------------------------------|
+|    |         |データ|        |        |
+|----+---------+------+--------+--------|
+</pre>
+<p>
+  上記の「データ」が先頭から10バイト目で、8バイトのデータならば、その位置を指定することで、直接アクセスすることができます。
+</p>
+<p>
+  バイト位置を直接指定できるので、ファイルへのアクセスが非常に高速になります。シーケンシャルアクセスのように、余分な部分を読み込む必要がないからです。ただし、特定のバイト位置を指定してファイルにアクセスするためには、ファイルを固定長のデータを扱うように設計しなければなりません。ファイルが可変長であれば、特定の位置を指し示すことができないからです。
+</p>
+<h3>シーケンシャルアクセスとランダムアクセスの比較</h3>
+<table>
+  <tr>
+    <td>
+      　
+    </td>
+    <td>
+      <span style="font-weight:bold;">シーケンシャルアクセス</span>
+    </td>
+    <td>
+      <span style="font-weight:bold;">ランダムアクセス</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <span style="font-weight:bold;">アクセス方法</span>
+    </td>
+    <td>
+      順次読み込み
+    </td>
+    <td>
+      バイト位置の指定
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <span style="font-weight:bold;">主な用途</span>
+    </td>
+    <td>
+      テキストファイルの読み込み
+    </td>
+    <td>
+      速度が要求されるアプリケーション
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <span style="font-weight:bold;">速度</span>
+    </td>
+    <td>
+      データが後ろにあるほど低速
+    </td>
+    <td>
+      直接アクセスできるため高速
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <span style="font-weight:bold;">ファイル設計</span>
+    </td>
+    <td>
+      可変長データでも可
+    </td>
+    <td>
+      固定長データ
+    </td>
+  </tr>
+</table>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

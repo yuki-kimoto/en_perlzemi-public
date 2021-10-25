@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlモジュール紹介 - CPANの豊富なジュールの紹介 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perlモジュール徹底解説では、Perlのモジュールについて詳しく解説していますが、最近は時間が取れずに、解説を書きたいモジュールがあっても、詳しい解説が書けないことが多くなっています。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlモジュール紹介 - CPANの豊富なジュールの紹介 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perlモジュール徹底解説では、Perlのモジュールについて詳しく解説していますが、最近は時間が取れずに、解説を書きたいモジュールがあっても、詳しい解説が書けないことが多くなっています。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20170922150608.html">Perlモジュール紹介 - CPANの豊富なジュールの紹介</a></h2>
+<p>
+  <a href="/blog/20091116124667.html:title">Perlモジュール徹底解説</a>では、Perlのモジュールについて詳しく解説していますが、最近は時間が取れずに、解説を書きたいモジュールがあっても、詳しい解説が書けないことが多くなっています。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  そこで、モジュール紹介という形で、簡単に紹介して、リンクを張りたいと思います。「リンクに掲載してほしい」というモジュールがあれば、コメント欄にモジュール名と一行解説をどうぞ。自推、他推問いません。すべて紹介します。
+</p>
+<h4>FFI - Perlから共有ライブラリ(.so, .dll)を直接呼び出す</h4>
+<table>
+  <tr>
+    <td>
+      <a href="/blog/20121207135484.html">FFI::Raw</a>
+    </td>
+    <td>
+      シンプルなFFIモジュール
+    </td>
+    <td>
+      <a href="http://search.cpan.org/dist/FFI-Raw/lib/FFI/Raw.pm">cpan</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://qiita.com/yukikimoto/items/8e595d8b890294b45912">FFI::Platypus</a>
+    </td>
+    <td>
+      機能豊富なFFIモジュール
+    </td>
+    <td>
+      <a href="http://search.cpan.org/dist/FFI-Platypus/lib/FFI/Platypus.pm">cpan</a>
+    </td>
+  </tr>
+</table>
+<h4>日付・時刻</h4>
+<table>
+  <tr>
+    <td>
+      <a href="http://www.moongift.jp/2014/10/time-moment-%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%92%E6%84%8F%E8%AD%98%E3%81%97%E3%81%9F/">Time::Moment</a>
+    </td>
+    <td>
+      日付・時刻の高速な処理
+    </td>
+    <td>
+      <a href="http://search.cpan.org/dist/Time-Moment/lib/Time/Moment.pod">cpan</a>
+    </td>
+  </tr>
+</table>
+<h4>人工知能</h4>
+<table>
+  <tr>
+    <td>
+      <a href="/blog/20170713149995.html">AI::MXNet</a>
+    </td>
+    <td>
+      MXNet機械学習ライブラリのPerlインターフェース
+    </td>
+    <td>
+      <a href="http://search.cpan.org/dist/AI-MXNet/lib/AI/MXNet.pm">cpan</a>
+    </td>
+  </tr>
+</table>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

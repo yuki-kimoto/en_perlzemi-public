@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>バッククォート演算子 - 別プロセスを実行し標準出力を取得 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="バッククォート演算子を使うと、別のプロセスを実行し、プロセスが生成した標準出力を取得することができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="バッククォート演算子 - 別プロセスを実行し標準出力を取得 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="バッククォート演算子を使うと、別のプロセスを実行し、プロセスが生成した標準出力を取得することができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20180201151749.html">バッククォート演算子 - 別プロセスを実行し標準出力を取得</a></h2>
+<p>
+  <b>バッククォート演算子</b>を使うと、別のプロセスを実行し、プロセスが生成した標準出力を取得することができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# バッククォート演算子
+my $output = `$cmd`;
+</pre>
+<p>
+  <a href="/blog/20180124151680.html">system関数</a>とかなりよく似ていますね。system関数が戻り値として、終了ステータスを返すのに対して、バッククォート演算子は、プロセスの標準出力を返します。
+</p>
+<h3>lsコマンドを実行する</h3>
+<p>
+  バッククォート演算子のひとつの例としてカレントディレクトリの内容を表示するLinuxのlsコマンドを実行してみます。
+</p>
+<pre>
+my $output = `ls`;
+</pre>
+<p>
+  $outputには、カレントディレクトリの一覧が表示されます。
+</p>
+<pre>
+a.pl              gperl                             module-starter.txt                not_important_project  ringowiki  static-perl.tar
+batch             Image-PNG-Simple                  mojo                              Object-Simple          role       taskdeal
+crontab.txt       imager-japanese-translation.wiki  mojo-examples
+</pre>
+<h3>呼び出したプロセスの戻り値をチェックするには</h3>
+<p>
+  バッククォート演算子で呼び出すプロセスが失敗したりエラーステータスを返したりした場合は、どのようにチェックするのでしょうか。
+</p>
+<p>
+  <a href="/blog/20161102147817.html">特殊変数</a>「$?」を使用します。
+</p>
+<p>
+  この値が0以外だった場合は、何らかのエラーが発生しています。
+</p>
+<pre>
+# エラーチェック
+if ($?) {
+  die "Command error";
+}
+</pre>
+<p>
+  さらに詳しくエラーの状態を知ることもできます。
+</p>
+<p>
+  $?は16bitの値で、上位8bitに、子プロセスの終了ステータスが格納されます。右8bitシフトをすれば、終了ステータスが取り出せます。
+</p>
+<pre>
+my $output = `ls`;
+
+# 子プロセスの終了ステータスをチェック
+my $status = $? &gt;&gt; 8;
+if ($status != 0) {
+  # エラー処理
+}
+</pre>
+<h3>バッククォート演算子のセキュリティ</h3>
+<p>
+  バッククォート演算子は、セキュリティの問題が起こりやすい演算子です。たとえば、もしWebからの入力データが「rm」で、それをバッククォート演算子にチェックせずに渡したとしたらと考えてください。
+</p>
+<p>
+  バッククォート演算子によって、意図しないコマンドを実行されてしまいます。
+</p>
+<p>
+  ユーザーからの入力をプログラムで受け取っている場合は、バッククォート演算子に渡す文字列については、必ず入力が安全なものであることを確認してください。
+</p>
+<h3>バッククォート演算子のサンプル</h3>
+<p>
+  バッククォート演算子のサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+
+my $output = `ls -l`;
+
+if ($?) {
+  die "Command error";
+}
+
+print "$output\n";
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

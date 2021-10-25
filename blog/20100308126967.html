@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Perlのリスト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="リストとは複数の値の並びを表現したものです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Perlのリスト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="リストとは複数の値の並びを表現したものです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161005147566.html">
+      <span itemprop="name">演算子</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20100308126967.html">Perlのリスト</a></h2>
+<p>
+  <strong>リスト</strong>とは複数の値の並びを表現したものです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# リスト
+('a', 'b', 'c', 'd')
+</pre>
+<p>
+  リストは<a href="/blog/20161012147627.html">配列</a>や<a href="/blog/20161013147635.html">ハッシュ</a>に代入して、初期化に利用できます。
+</p>
+<pre>
+# 配列への代入
+my @array = ('a', 'b', 'c', 'd');
+
+# ハッシュへの代入
+my %hash = ('a', 'b', 'c', 'd');
+</pre>
+<h3>配列とリストの違い</h3>
+<p>
+  配列とリストは、似ていますが、実際にはいくつか異なる部分があります。
+</p>
+<p>
+  一つ目の違いは、言語的な意味での違いです。配列は変数であり、リストは表記法であるということです。
+</p>
+<p>
+  二つ目は、<a href="/blog/20080608121292.html">スカラコンテキスト</a>で評価された場合に値が異なるということです。
+</p>
+<p>
+  次のコードを見てください。「$num1」と「$num2」はどうなると思いますか?
+</p>
+<pre>
+# スカラコンテキストでリストを評価
+my $num1 = (5, 6, 7);
+
+# スカラコンテキストで配列を評価
+my @nums = (5, 6, 7);
+my $num2 = @nums;
+
+</pre>
+<p>
+  答えは「$num1」は「7」になり、$num2は「3」になります。
+</p>
+<p>
+  スカラコンテキストで、リストを評価すると「リストの最後の値」が返り、配列を評価すると「配列の個数」が返るからです。
+</p>
+<h3>ハッシュ用のリストの表記法</h3>
+<p>
+  ハッシュに代入を行うために、「=>」を使用した簡易記法が用意されています。
+</p>
+<pre>
+# ハッシュ用の記法
+my %hash = (a =&gt; 'b', c =&gt; 'd');
+</pre>
+<p>
+  記法が異なるだけで通常のリストとまったく同じ意味です。=>の左側の文字列については英数字とアンダーバーのみで構成される場合にシングルクォートを省略することができます。シングルクォートを省略する記法が好んで用いられます。
+</p>
+<h3>リスト代入</h3>
+<p>
+  リストを左辺に使うことによってリスト代入を行うことができます。複数の値を、複数の変数に代入できます。
+</p>
+<pre>
+my ($var1, $var2) = (3, 5);
+</pre>
+<p>
+  <a href="/blog/20080108132865.html">コマンドライン引数</a>の受け取りや、<a href="/blog/20101130129876.html">サブルーチン</a>での引数の受け取りで、リスト代入を使うことができます。
+</p>
+<pre>
+# コマンドライン引数の受け取り
+my ($var1, $var2) = @ARGV;
+
+# サブルーチンでの引数の受け取り
+sub foo {
+  my ($var1, $var2) = @_;
+  ...
+}
+</pre>
+<p>
+  これは使用頻度が高いので、ぜひ覚えておきましょう。
+</p>
+<h3>文字列リスト演算子</h3>
+<p>
+  文字列リスト演算子を使用すると、文字列のリストを簡単に表現することができます。
+</p>
+<pre>
+qw(Cat Mouse Dog)
+</pre>
+<p>
+  文字列リスト演算子の詳しい解説については以下の記事を参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080222120369.html">文字列リスト演算子</a>
+  </li>
+</ul>
+<h3>空のリストによる自動的な初期化</h3>
+<p>
+  配列とハッシュは宣言されると同時に、空のリストによって初期化されます。
+</p>
+<pre>
+# 以下は同じ
+my @nums;
+my @nums = ();
+</pre>
+<pre>
+# 以下は同じ
+my %score;
+my %score = ();
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

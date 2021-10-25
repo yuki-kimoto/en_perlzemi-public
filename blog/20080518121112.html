@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>ファイル名から拡張子を取り出す - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="ファイル名から、拡張子を取り出すにはFile::Basenameモジュールのfileparseの第二引数で拡張子を指定します。戻り値の三つ目で、拡張子が得られます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="ファイル名から拡張子を取り出す - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="ファイル名から、拡張子を取り出すにはFile::Basenameモジュールのfileparseの第二引数で拡張子を指定します。戻り値の三つ目で、拡張子が得られます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/"><span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161126148016.html"><span itemprop="name">ファイル操作</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+<h2><a href="/blog/20080518121112.html">ファイル名から拡張子を取り出す</a></h2>
+<p>
+  ファイル名から、拡張子を取り出すには<a href="/blog/20100225126425.html">File::Basename</a>モジュールの<strong>fileparse</strong>の第二引数で拡張子を指定します。戻り値の三つ目で、拡張子が得られます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+use File::Basename;
+my ($base_name, $dir, $suffix) = fileparse($file_txt, '.txt');
+</pre>
+<p>
+  File::Basename モジュールの fileparse 関数の第2引数に、拡張子名を指定することで、拡張子を取り出すことができます。
+</p>
+<p>
+  <a href="/blog/20100827127859.html">正規表現</a>を使って、拡張子のパターンを指定することもできます。
+</p>
+<pre>
+use File::Basename;
+my $regex_suffix = qr/\.[^\.]+$/;
+my $suffix_txt = ( fileparse( $file_txt, $regex_suffix ) )[2];
+</pre>
+<p>
+  この正規表現は一番最後に出現する . より後ろの拡張子を取り出すものです。一番最初に現れる . より後ろの拡張子でをマッチさせたい場合は、「 qw(\..+$) 」という正規表現を使います。
+</p>
+<h3>サンプル</h3>
+<p>
+  ファイル名から拡張子を取り出すサンプルです。
+</p>
+<pre>
+use strict;
+use warnings;
+use File::Basename 'fileparse';
+
+# ファイル名から、拡張子を取り出す。
+my $file_txt = 'dir1/dir2/base_name.txt';
+my $file_log = 'dir1/dir2/base_name.log';
+my $file_bak = 'dir1/dir2/base_name.log.bak';
+
+print "1: ファイル名から、拡張子を取り出す。( 拡張子名を指定 )\n";
+my ($base_name, $dir, $suffix) = fileparse($file_txt, '.txt');
+print "\$dir = $dir\n",
+  "\$base_name = $base_name\n",
+  "\$suffix = $suffix\n\n";
+
+print "2: ファイル名から、拡張子を取り出す。( 拡張子名のパターンを指定 )\n";
+my $regex_suffix = qr/\.[^\.]+$/;
+
+my $suffix_txt = (fileparse $file_txt, $regex_suffix)[2];
+my $suffix_log = (fileparse $file_log, $regex_suffix)[2];
+my $suffix_bak = (fileparse $file_bak, $regex_suffix)[2];
+
+print "\$suffix_txt = $suffix_txt\n",
+  "\$suffix_log = $suffix_log\n",
+  "\$suffix_bak = $suffix_bak\n";
+</pre>
+<p>
+  実行結果
+</p>
+<pre>
+1: ファイルを作成する。
+C:\Users\kimoto\labo&gt;perl a.pl
+1: ファイル名から、拡張子を取り出す。( 拡張子名を指定 )
+$dir = dir1/dir2/
+$base_name = base_name
+$suffix = .txt
+
+2: ファイル名から、拡張子を取り出す。( 拡張子名のパターンを指定 )
+$suffix_txt = .txt
+$suffix_log = .log
+$suffix_bak = .bak
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Exporter - 関数をエクスポートする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Exporterモジュールを使用すると、モジュールから関数をエクスポートすることができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Exporter - 関数をエクスポートする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Exporterモジュールを使用すると、モジュールから関数をエクスポートすることができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20091116124667.html">
+      <span itemprop="name">モジュール</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li>
+    here
+  </li>
+</ol>
+<h2><a href="/blog/20100426127089.html">Exporter - 関数をエクスポートする</a></h2>
+<p>
+  <strong>Exporter</strong>モジュールを使用すると、モジュールから関数をエクスポートすることができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# パッケージの宣言
+package YourModule;
+
+# Exporterを継承
+use Exporter 'import';
+
+# エクスポートする関数を記述
+our @EXPORT = qw/func1 func2/;
+
+# エクスポート可能な関数を記述
+our @EXPORT_OK = qw/func3 func4/;
+
+# 関数
+sub func1 { ... }
+sub func2 { ... }
+sub func3 { ... }
+sub func4 { ... }
+</pre>
+<p>
+  Exporterを使ってモジュールを作成すると、そのモジュールをuseしたときに関数がインポートされます。
+</p>
+<p>
+  「use モジュール名;」という形でuseを実行した場合は@EXPORTに含まれる関数がインポートされます。
+</p>
+<pre>
+# @EXPORTに含まれる関数(func1とfunc2)がインポートされる。
+use YourModule;
+</pre>
+<p>
+  「use モジュール名 引数1 引数2 ..」という形で実行した場合は@EXPORT_OKあるいは@EXPORTに含まれ、かつ引数で指定されている関数がインポートされます。
+</p>
+<pre>
+# @EXPORT_OKあるいは@EXPORTに含まれる関数(func2とfunc3とfunc4)がインポートされる
+use YourModule qw/func2 func3 func4/;
+</pre>
+<p>
+  @EXPORT, @EXPORT_OKはパッケージ変数です。
+</p>
+<h3>Exporterモジュールのエクスポートの仕組み</h3>
+<p>
+  Exporterモジュールの仕組みについて少し解説したいと思います。まず知っておいてほしいことはuseを実行すると指定したモジュールのimportメソッドを自動的に呼び出すということです。この例ではYourModuleのimportメソッドを実行しようとします。
+</p>
+<p>
+  YourModuleにはimportメソッドは定義されていませんが、Exporterモジュールのimportメソッドをインポートしているので、Exporterのimportメソッドが呼び出されます。
+</p>
+<p>
+  Exporterのimportメソッドの中では呼び出し元のパッケージに関数をエクスポートする処理が記述されています。雰囲気が伝えることができるように@EXPORTに書かれた関数を呼び出し元のパッケージにエクスポートする処理を書いてみます。
+</p>
+<pre>
+sub import {
+  # useの第一引数(今回の例だとYourModule)
+  my $class = shift;
+
+  # 呼び出し元のパッケージ(今回の例だとmain)
+  my $caller = caller;
+
+  # 関数のエクスポート
+  no strict 'refs';
+  foreach my $func (@{"${class}::EXPORT"}) {
+      *{"${caller}::$func"} = \&amp;{"${class}::$func"};
+  }
+}
+</pre>
+<h3>Exporterモジュールはどの書き方がよいの</h3>
+<p>
+  Exporterモジュールには、複数の書き方があって次のような書き方ができます。
+</p>
+<pre>
+# その1
+use Exporter 'import';
+
+# その2
+push @ISA, 'Exporter';
+
+# その3
+use base 'Exporter';
+</pre>
+<p>
+  ここでは、もっとも直感的であると思われる一番目を紹介しています。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

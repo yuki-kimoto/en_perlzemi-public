@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>PERL5LIB環境変数を使ってモジュールの検索パスを追加する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="PERL5LIB環境変数を使ってモジュールの検索パスを追加する方法の解説です。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="PERL5LIB環境変数を使ってモジュールの検索パスを追加する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="PERL5LIB環境変数を使ってモジュールの検索パスを追加する方法の解説です。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20200617111016.html">PERL5LIB環境変数を使ってモジュールの検索パスを追加する</a></h2>
+<p>
+  PERL5LIB環境変数を使ってモジュールの検索パスを追加する方法の解説です。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h4>Linuxのbashの環境変数</h4>
+<p>
+  以下は<a href="https://linux.perlclub.net/">Linux</a>の<a href="https://linux.perlclub.net/blog/20200617103220.html">bashの環境変数</a>で「PERL5LIB」を設定して、モジュールの検索パスを追加する方法です。これを「<a href="https://linux.perlclub.net/blog/20200616103220.html">.bashrc</a>」ファイルに追記してください。
+</p>
+<pre>
+export PERL5LIB=/foo/lib
+</pre>
+<p>
+  複数指定する場合はコロンで区切ります。
+</p>
+<pre>
+export PERL5LIB=/foo/lib:/bar/lib
+</pre>
+<h4>商用UNIXなどのcshの環境変数</h4>
+<p>
+  FreeBSDなど商用UNIXにおけるcshの環境変数で「PERL5LIB」を設定して、モジュールの検索パスを追加する方法です。これを「~/.cshrc」ファイルに追記してください。
+</p>
+<pre>
+setenv PERL5LIB /foo/lib
+</pre>
+<p>
+  複数指定する場合はコロンで区切ります。
+</p>
+<pre>
+setenv PERL5LIB /foo/lib:/bar/lib
+</pre>
+<h4>Windowsにおける環境変数</h4>
+<p>
+  Windowsで環境変数「PERL5LIB」を設定して、モジュールの検索パスを追加する方法です。Windowsの環境変数の設定方法は、GUIで追加するので、方法については調べてみてください。
+</p>
+<pre>
+# 環境変数PERL5LIBの値
+/foo/lib
+</pre>
+<p>
+  複数指定する場合はセミコロンで区切ります。ここはUnix/Linuxと異なる部分です。
+</p>
+<pre>
+# 環境変数PERL5LIBの値
+/foo/lib;/bar/lib
+</pre>
+<h4>環境変数PERL5LIBはポータブルではない</h4>
+<p>
+  OSによって環境変数の表現方法が異なるため、環境変数PERL5LIBはポータブルな方法ではありません。
+</p>
+<p>
+  一方、スクリプトと密結合してしまいますが、<a href="/blog/20100525127859.html">libモジュール</a>はどのような環境でも同じように動きます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>パイプの仕組みを理解する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="現代的なOSでは、「あるプログラムの標準出力」を「別のプログラムの標準入力」に渡すことが可能です。このOSの機能をパイプと呼びます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="パイプの仕組みを理解する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="現代的なOSでは、「あるプログラムの標準出力」を「別のプログラムの標準入力」に渡すことが可能です。このOSの機能をパイプと呼びます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20110212130370.html">
+      <span itemprop="name">ファイル入出力</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20080801121768.html">パイプの仕組みを理解する</a></h2>
+<p>
+  現代的なOSでは、「あるプログラムの標準出力」を「別のプログラムの標準入力」に渡すことが可能です。このOSの機能をパイプと呼びます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  パイプという機能は非常に便利な機能です。標準入力からデータを受け取り、標準出力に出力するようにプログラムを作成しておけば、複数のプログラムを連動させることができます。
+</p>
+<h3>1. パイプのイメージ</h3>
+<pre>
+               |-----------|    |-----------|    |-----------|
+最初の入力 ---&gt;|プログラムA|---&gt;|プログラムB|---&gt;|プログラムC|---&gt; 最終的な出力
+               |-----------|    |-----------|    |-----------|
+</pre>
+<p>
+  パイプを使えば、プログラムAの標準出力をプログラムBの標準入力に連結することができます。さらに、プログラムBの標準出力をプログラムCの標準入力に連結することもできます。このように、標準出力と標準入力を連結することで、中間ファイルを作らずに、データを連続的に処理することができます。
+</p>
+<h3>2. パイプを使用する</h3>
+<pre>
+perldoc perlintro | perl -ne "print if /open/"
+</pre>
+<p>
+  | というのがパイプ記号です。この例では、perldoc perlintro の標準出力を、perl -ne "print if /open/"の標準入力に連結しています。
+</p>
+<p>
+  perldocコマンドはperlのマニュアル表示コマンドです。perl -ne "print if /open/" は、unix の grepに該当するワンライナーです。openという文字を含む行を選択して出力します。
+</p>
+<p>
+  全体として見ると、perlintoのマニュアルページから、openを含む行を取り出しています。パイプを利用すると、データを複数のプログラムで連続的に処理することができます。
+</p>
+<h3>3.パイプの仕組み</h3>
+<p>
+  パイプとは、あるプログラムの標準出力を別のプログラムの標準入力に連結する機能だといいました。実際に内部的にOSがやっていることを知ると理解が深まると思いますので書いておきます。
+</p>
+<p>
+  誤解を恐れずにいうと、パイプとは一時ファイル(※1)です。プログラムAは一時ファイルに出力し、その一時ファイルからプログラムBが読み取ります。以下のようなイメージです。
+</p>
+<pre>
+|-----------|                               |-----------|
+|プログラムA|---&gt;  一時ファイル(パイプ) ---&gt;|プログラムB|
+|-----------|                               |-----------|
+</pre>
+<p>
+  OSが暗黙的に一時ファイルを利用しているので、プログラムAの出力が直接プログラムBの入力になっているように見えます。これがパイプの背後にある仕組みです。
+</p>
+<p>
+  もうひとつ大事な話をします。プログラムAとプログラムBはいつ一時ファイルを閉じるのかという話です。
+</p>
+<p>
+  プログラムAは書き込みモードで一時ファイルを開いています。プログラムBは読み込みモードで一時ファイルを開いています。プログラムAは一時ファイルを読み取る必要はないし、プログラムBは一時ファイルに書き込む必要がないのでこのようにオープンされます。
+</p>
+<p>
+  さて、プログラムAとプログラムBはいつ一時ファイルをクローズするのでしょうか?マルチタスクで、プログラムAとプログラムBが同時に起動している場合で考えます。
+</p>
+<p>
+  プログラムAの答えは簡単です。プログラムAの出力が終わったら一時ファイルをクローズします。プログラムAの処理は、プログラムBに依存しません。
+</p>
+<p>
+  では、プログラムBは、いつ一時ファイルををクローズするのでしょうか。答えは、プログラムAが一時ファイルをクローズして、かつ一時ファイルのデータを最後まで読み取った場合です。通常のファイルのようにEOFに到達しただけでは、クローズしません。なぜなら、プログラムAがまだ書き込みを続ける可能性が残っているからです。だから、プログラムBが、一時ファイルを閉じるためには、プログラムAが一時ファイルをクローズしている必要があるのです。
+</p>
+<p>
+  ※1 パイプの実装はOSによって異なります。Unix系OSでは、メモリ上でパイプが作成されます。Windowsでは、ディスク上に一時ファイルとしてパイプが作られます。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

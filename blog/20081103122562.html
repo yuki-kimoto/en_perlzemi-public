@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>変数に適切な名前をつけるようにしよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="変数をよい名前にするとプログラムが読みやすくなります。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="変数に適切な名前をつけるようにしよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="変数をよい名前にするとプログラムが読みやすくなります。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20130220136137.html">
+        <span itemprop="name">読み物</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20081103122562.html">変数に適切な名前をつけるようにしよう</a></h2>
+<p>
+  変数をよい名前にするとプログラムが読みやすくなります。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  個人的な意見になりますが、変数名のつけ方について自分の考えていることを書いておきます。
+</p>
+<ol>
+  <li>
+    変数名は意味のあるものにする。
+  </li>
+  <li>
+    変数名はすべて小文字で、単語のつなぎ目は _ (アンダーバー)を使用する。
+  </li>
+  <li>
+    変数名をどの程度詳細にするか
+  </li>
+  <li>
+    省略してもよい変数名
+  </li>
+  <li>
+    真偽値を表す変数の命名方法
+  </li>
+  <li>
+    配列の命名方法
+  </li>
+</ol>
+<h3>(1)変数名は意味のあるものにする。</h3>
+<p>
+  プログラミングで一番読み取りにくいのはコードを書いた人の意図です。
+</p>
+<p>
+  適切な変数名をつけることによって意図が伝わりやすくなります。
+</p>
+<h4>(a)変数に意味を持たせた場合</h4>
+<pre>
+# この変数は何かの合計を格納するものだ
+my $total;
+
+# この変数は何らかのオフセットを表すものだ。
+my $offset;
+
+# この変数はクライアント数の最大値を表すものだ
+my $max_client 
+</pre>
+<h4>(b)変数に意味を持たせない場合</h4>
+<pre>
+# 何かわからない
+my $p;
+my $q;
+my $k;
+</pre>
+<p>
+  コンピュータにとっての関心ごとは変数名が区別できるかということだけですが、人間にとっては変数名が何を意図しているかということが重要です。
+</p>
+<h3>(2)変数名はすべて小文字で、単語のつなぎ目は _ ( アンダーバーにする。 )</h3>
+<p>
+  変数名には大文字は使用せずに、小文字だけにします。単語のつなぎ目にはアンダーバーを使用します。
+</p>
+<pre>
+my $user_name;
+my $search_word;
+my $max_database_connection;
+</pre>
+<p>
+  これはPerlの慣習であって、強制ではないですが、Perlでコードを書くなら守っておいたほうがよいと思われます。使う人にとって混乱が少ないと思うからです。
+</p>
+<p>
+  逆にjavaでプログラミングするときは、perlの慣習を持ち込まないで、userNameのように書きましょう。
+</p>
+<h3>(3)変数名をどの程度詳細にするか</h3>
+<p>
+  変数名をどの程度詳細にするかは、そのスコープの中で意味の区別がつくかを基準にするとよいと思います。
+</p>
+<h4>(a) 意図がはっきりとわかるなら短い変数名でOK</h4>
+<pre>
+sub sum {
+  # 合計値を表す
+  my $total;
+}
+</pre>
+<h4>(b)区別する必要がある場合は状況に応じて意味を区別できる変数名にする</h4>
+<p>
+  たとえば、奇数の合計と偶数の合計を足し合わせる関数があったとするならば、それぞれの合計に適切な名前をつけます。
+</p>
+<pre>
+sub sum {
+  # 奇数の合計
+  my $odd_total;
+  
+  # 偶数の合計
+  my $even_total 
+}
+</pre>
+<h4>(c) for文で意図がはっきりわかる場合は $i のように短い変数名でOK</h4>
+<pre>
+for my $i (0 .. @nums - 1) {
+  ...
+}
+</pre>
+<h4>(d) for文で意図がわかりにくくなる可能性がある場合は意味を区別できる変数名にする</h4>
+<pre>
+my $data_table = [[ 1, 2, 3 ], [ 2, 4, 6 ]];
+for my $row_num (0 .. @$data_table - 1){
+  for my $colum_num (0 .. @{$data_table[$row_num]} - 1) {
+    ...
+  }
+}
+</pre>
+<h3>(4)省略してもよい変数名</h3>
+<p>
+  慣習的に意味が通じるものは省略してもよいかもしれません。また変数スコープの範囲が狭い場合は、省略することも可能でしょう。省略するときは、先頭の何文字かを残すのがわかりやすいと思います。
+</p>
+<h4>省略しても理解できると考えられる変数名</h4>
+<pre>
+my $num; # number
+my $len; # length;
+my $char; # charactor;
+</pre>
+<h3>(5)真偽値を表す変数の命名方法</h3>
+<p>
+  真偽値を表す変数名の例をいくつか書いておきます。
+</p>
+<pre>
+# 安全である (is ＋ 形容詞)
+my $is_safe;
+
+# スイッチが入っている (名詞 + 前置詞)
+my $switch_on;
+
+# リクエストをロード中 (名詞 + 現在分詞)
+my $request_loading;
+
+# 書き込みが終了している(名詞 + 過去分詞) 
+my $write_done;
+
+# チェックが成功している(名詞 + 名詞)
+my $check_success;
+
+# 状態はokである。(名詞 + 名詞)
+my $status_ok;   
+</pre>
+<h3>(6)配列の命名方法</h3>
+<p>
+  配列に名前をつける場合は、末尾にs をつけます。
+</p>
+<pre>
+# sを末尾につける方法
+my @members; 
+
+for my $member (@members) {
+  # ...
+}
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>Dモジュール - データをエンコードし標準エラー出力へダンプ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Dモジュールは、データをエンコードし標準エラー出力へダンプするユーティリティ関数を提供します。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Dモジュール - データをエンコードし標準エラー出力へダンプ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Dモジュールは、データをエンコードし標準エラー出力へダンプするユーティリティ関数を提供します。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20200212001942.html">Dモジュール - データをエンコードし標準エラー出力へダンプ</a></h2>
+<p>
+  Dモジュールは、データをエンコードし標準エラー出力へダンプするユーティリティ関数を提供します。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>利用例</h3>
+<p>
+  Dモジュールは、以下のように利用します。
+</p>
+<pre>
+use utf8;
+ 
+# du, dw, dn, dustr, dwstr, dnstr関数をexportします
+use D;
+ 
+# デコードされた文字列を含むデータ(リファレンス)を準備します
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+ 
+# リファレンスデータをエンコード(UTF-8)し、標準エラー出力へダンプします。
+du $data;
+
+# リファレンスデータをエンコード(cp932)し、標準エラー出力へダンプします。
+dw $data;
+
+# リファレンスデータをエンコードせず、標準エラー出力へダンプします。
+dn $data;
+
+# 便利なOnelinerの例です。
+use D;du $data;
+use D;dw $data;
+use D;dn $data;
+
+# du関数の出力サンプルです。
+[
+  {
+    'name' =&gt; 'あ'
+  },
+  {
+    'name' =&gt; 'い'
+  }
+] at test.pl line 7.
+</pre>
+<h3>特徴</h3>
+<ul>
+<li>du, dw, dnなどの関数をエクスポートします。これらの関数名は、2文字のため'p' などのデバックコマンドと競合しないでください。</li>
+<li>dustr, dwstr関数はリファレンスデータの全ての文字列をエンコードします。</li>
+<li>duは'dump UTF-8'の短縮名です。</li>
+<li>dwは'dump Windows cp932'の短縮名です。</li>
+<li>dnは'dump no encoding'の短縮名です。</li>
+<li>Data::DumperのDump関数を使用してデータをダンプします。</li>
+<li>行番号とファイル名を標準エラーへ出力します。</li>
+<li>ダンプされたデータのハッシュのキーでソートします。</li>
+<li>Data::Dumperのデフォルトとは異なり、'$VAR1 ='を出力しません。</li>
+</ul>
+<h3>関数</h3>
+<h4>du関数</h4>
+<p>
+  リファレンスデータ内のすべての文字列をUTF-8にエンコードし、リファレンスデータをファイル名, 行番号とともに標準エラー出力へダンプします。
+</p>
+<p>
+  引数が文字列などの参照データでない場合も、リファレンスデータと同じ方法でダンプされます。
+</p>
+<p>
+  この関数はexportされます。
+</p>
+<pre>
+use D;
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+du $data;
+</pre>
+<p>
+  以下の例ではワンライナーを使用しています。全ての関数で利用できます。
+</p>
+<pre>
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+use D;du $data;
+</pre>
+<h4>dw関数</h4>
+<p>
+  リファレンスデータ内のすべての文字列をcp932にエンコードし、リファレンスデータをファイル名, 行番号とともに標準エラー出力へダンプします。
+</p>
+<p>
+  引数が文字列などの参照データでない場合も、リファレンスデータと同じ方法でダンプされます。
+</p>
+<p>
+  この関数はexportされます。
+</p>
+<pre>
+use D;
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+dw $data;
+</pre>
+<h4>dn関数</h4>
+<p>
+  リファレンスデータ内のすべての文字列をエンコードせず、リファレンスデータをファイル名, 行番号とともに標準エラー出力へダンプします。
+</p>
+<p>
+  引数が文字列などの参照データでない場合も、リファレンスデータと同じ方法でダンプされます。
+</p>
+<p>
+  この関数はexportされます。
+</p>
+<pre>
+use D;
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+dn $data;
+</pre>
+<h4>dustr関数</h4>
+<p>
+  この関数はUTF-8でエンコードされた文字列を返します。
+</p>
+<p>
+  この関数はexportされます。
+</p>
+<p>
+  以下の例は、UTF-8でエンコードされた文字列を取得しています。
+</p>
+<pre>
+use D;
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+my $str = dustr $data;
+</pre>
+<h4>dwstr関数</h4>
+<p>
+  この関数はcp932でエンコードされた文字列を返します。
+</p>
+<p>
+  この関数はexportされます。
+</p>
+<p>
+  以下の例は、cp932でエンコードされた文字列を取得しています。
+</p>
+<pre>
+use D;
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+my $str = dwstr $data;
+</pre>
+<h4>dnstr関数</h4>
+<p>
+  この関数はエンコードせずに文字列を返します。
+</p>
+<p>
+  この関数はexportされます。
+</p>
+<p>
+  以下の例は、エンコードされない文字列を取得しています。
+</p>
+<pre>
+use D;
+my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+my $str = dnstr $data;
+</pre>
+<h3>バグレポート</h3>
+<p>
+  <a href="https://github.com/YoshiyukiItoh/D" target="_blank">https://github.com/YoshiyukiItoh/D</a>
+</p>
+<h3>関連項目</h3>
+<ul>
+<li><a href="https://metacpan.org/pod/Data::Dumper" target="_blank">Data::Dumper</a></li>
+<li><a href="https://metacpan.org/pod/Carp" target="_blank">Carp</a></li>
+<li><a href="https://metacpan.org/pod/Data::Recursive::Encode" target="_blank">Data::Recursive::Encode</a></li>
+</ul>
+<h3>元ページ(meta::cpan)</h3>
+<p>
+  <a href="https://metacpan.org/pod/D" target="_blank">https://metacpan.org/pod/D</a>
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

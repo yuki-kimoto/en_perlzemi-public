@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>ActivePerlのインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="ActivePerlはActiveState社によって無償で提供されているWindowsで商用利用可能なPerlディストリビューションの一つです。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="ActivePerlのインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="ActivePerlはActiveState社によって無償で提供されているWindowsで商用利用可能なPerlディストリビューションの一つです。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name"><a href="/blog/20180820153471.html">インストール</a></span>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+<h2><a href="/blog/20080602121231.html">ActivePerlのインストール</a></h2>
+<p>
+  <strong>ActivePerl</strong>はActiveState社によって無償で提供されているWindowsで商用利用可能なPerlディストリビューションの一つです。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  特徴はWindows関連のモジュールが多く添付されていることです。Excelなどを直接操作できるWin32::OLEなどのモジュールが標準で添付されています。
+</p>
+<p>
+  ActivePerlをWindowsにインストールしてPerlを使えるようにしましょう。インストールは簡単です。
+</p>
+<h3>ActivePerlのダウンロード</h3>
+<p>
+  ActivePerlをt次のページからダウンロードします。2021年現在の最新版は、5.32です。
+</p>
+<ul>
+  <li>
+    <a href="https://www.activestate.com/activeperl/downloads">ActivePerlのダウンロード</a>
+  </li>
+</ul>
+<p>
+  <a href="https://www.activestate.com/activeperl/downloads"><img style="border:1px solid #ddd;width:100%;" src="/images/active_perl/active_perl_click.png"></a>
+</p>
+<p>
+  2021年現在は、ActivePerlのダウンロードにはActiveStateへの会員登録が必要です。msiという拡張子はWindowsのインストーラであることを表します。
+</p>
+<p>
+  フリーで提供されているのは64bit版だけです。
+</p>
+<h3>ActivePerlのインストール</h3>
+<p>
+  ダウンロードしたActive Perlをダブルクリックします。
+</p>
+<p>
+  インストーラーが起動します。「Next」を押して進みます。
+</p>
+<p>
+  途中で「I accept the terms in the License Agreement」というチェックボックスがでてくるので、チェックをいれて「Next」を押します。
+</p>
+<p>
+  「typical」を選択します。
+</p>
+<p>
+  さらに「Next」を押して進んでいって、最後に「Install」をクリックするとActive Perlのインストールが始まります。
+</p>
+<p>
+  ここで「この不明な発行元からのアプリがデバイスに変更を加えることを許可しますか?」というダイアログが表示されると思いますが、「はい」をクリックしましょう。
+</p>
+<p>
+  5分くらい時間がかかるので待ちましょう。
+</p>
+<p>
+  プログレスバーが満タンになると、Active Perlのインストールが完了します。
+</p>
+<p>
+  「Finish」を押してダイアログを閉じましょう。Readmeが表示されますが、これも閉じて大丈夫です。
+</p>
+<h3>Perlがインストールされていることの確認</h3>
+<p>
+  インストールが完了したら実際にActive Perlがインストールできているか確認してみましょう。
+</p>
+<p>
+  コマンドプロンプトというツールをを実行してPerlのバージョンを表示してみます。
+</p>
+<p>
+  コマンドプロンプトは、「スタートメニュー」→「アプリの一覧」→「Windowsシステムツール」→「コマンドプロンプト」から実行できます。
+</p>
+<p>
+  黒い画面がでてくるので、以下の文字をキーボードからうち「Enter」を押してみてください。
+</p>
+<pre>
+perl -v
+</pre>
+<p>
+  次のようにバージョン情報が表示されればインストールは成功しています。
+</p>
+<pre>
+This is perl 5, version 32, subversion 1 (v5.32.1) built for MSWin32-x64-multi-thread
+(with 1 registered patch, see perl -V for more detail)
+</pre>
+<p>
+  これでActive Perlのインストールは完了です。
+</p>
+<h3>Active Perlの使い方</h3>
+<p>
+  Active Perlは、Windowsでは、コマンドプロンプトと呼ばれるツール上でperlコマンドを使って、実行します。
+</p>
+<p>
+  コマンドプロンプトの使い方を知りたい方は「<a href="/blog/20080603121251.html">Perlを実行するためのコマンドプロンプト入門</a>」という記事を参考にしてください。
+</p>
+<h3>Active Perlのその他の情報</h3>
+<p>
+  Active Perlのその他の情報です。
+</p>
+<h4>Active Perlのアンインストール方法</h4>
+<p>
+  Active Perlのアンインストール方法の解説です。Windows 10で実行した例です。
+</p>
+<p>
+  「スタートメニュー」→「設定」→「アプリ」→「Active Perlをクリック」→「アンインストール」
+</p>
+<h4>ActivePerlとStrawberry Perlの違い</h4>
+<p>
+  Strawberry Perlは、ActivePerlによく似ていますが、会員登録が必要ない、<a href="https://c.perlzemi.com/">C言語</a>のコンパイラでPerlの<a href="/blog/20100809127859.html">XSモジュール</a>のコンパイルに必要なMinGWがデフォルトでインストールされている、<a href="https://perlzemi.com/blog/20101027127859.html">cpanm</a>がデフォルトでインストールされている、使用頻度の高い画像処理などのライブラリが使えるなど、Perlユーザーが使いやすい構成になっています。
+</p>
+<p>
+  またActive Perlは無償利用では、最新バージョンのPerlだけが公開されているのに対して、Strawberry Perlでは、古いバージョンのPerlも公開されています。
+</p>
+<h4>ActivePerlのインストールのサポート</h4>
+<p>
+  ActivePerlをインストールできない、ActivePerlのインストールに失敗したということでお困りの場合は、Perlゼミを運営しているPerlクラブのPerlクラブフォーラムでご質問ください。
+</p>
+<ul>
+  <li><a href="https://perlclub.net/forum">Perlクラブフォーラム</a></li>
+</ul>
+<h4>Windowsへのその他のPerlのインストール方法</h4>
+<p>
+  WindowsでPerlを利用するその他の方法については、以下を参考にしてください。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180808153368.html">Strawberry Perl(ストロベリーパール)をWindowsにインストールする</a>
+  </li>
+  <li>
+    <a href="/blog/20180806153350.html">msys2をWindowsにインストールしてPerlを使う</a>
+  </li>
+</ul>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>do - 値を返すブロック、スクリプトの読み込み - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="doを使用すると、ブロック構文の場合は、最後に評価された値を返すブロックを作成することができます。文字列構文の場合は、ファイルを名を指定して、スクリプトを読み込むことができます。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="do - 値を返すブロック、スクリプトの読み込み - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="doを使用すると、ブロック構文の場合は、最後に評価された値を返すブロックを作成することができます。文字列構文の場合は、ファイルを名を指定して、スクリプトを読み込むことができます。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+      <span itemprop="name">Perl</span></a>
+    <meta itemprop="position" content="1" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+      <span itemprop="name">構文</span></a>
+    <meta itemprop="position" content="2" />
+  </li>
+  &#8250;
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop="name">here</span>
+  </li>
+</ol>
+<h2><a href="/blog/20090208123289.html">do - 値を返すブロック、スクリプトの読み込み</a></h2>
+<p>
+  <b>do</b>を使用すると、ブロック構文の場合は、最後に評価された値を返すブロックを作成することができます。文字列構文の場合は、ファイルを名を指定して、スクリプトを読み込むことができます。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<pre>
+# doブロック - 最後の値を返すブロック
+do { ... };
+
+#  do文字列 - スクリプトの読み込み
+do $file_name;
+</pre>
+<p>
+  ブロックの構文と、文字列の構文は、機能がまったく異なるので注意してください。それぞれの構文について詳しく解説します。
+</p>
+<h3>最後の値を返すブロック - doブロック</h3>
+<p>
+  <b>doブロック</b>を使用すると最後に評価された値を返すブロックを作成することができます。
+</p>
+<pre>
+# doブロック
+my $value = do {
+  1;
+  2;
+  3;
+};
+</pre>
+<p>
+  上のように記述すると3が返され、$valueに3が代入されます。
+</p>
+<p>
+  普通にプログラミングするときには、この構文を使う理由は特にありませんが、慣例的に、ファイルの内容を一度に読み込みたい場合は、この構文が利用されます。
+</p>
+<h4>ファイルの内容を一度に読み込む</h4>
+<p>
+  次の記述によって、ファイルの内容のすべて一度で読み込むことができます。
+</p>
+<pre>
+my $content = do { local $/; &lt;$fh&gt; };
+</pre>
+<p>
+  この記述の詳しい解説は以下で行っています。
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180521152690.html">ファイルの内容をすべて読み込む</a>
+  </li>
+</ul>
+<p>
+  localについては「<a href="/blog/20080309120507.html">local - パッケージ変数を一時的に退避して復元</a>」で解説しています。
+</p>
+<h3>スクリプトの読み込み - do文字列</h3>
+<p>
+  <b>do文字列</b>の構文を使うことで、ファイルをPerlのソースコードとして読み込むことができます。
+</p>
+<p>
+  よく利用する方法として、設定ファイルをPerlで記述して読み込むことができます。
+</p>
+<h4>設定ファイルをPerlで記述する</h4>
+<p>
+  設定ファイルはPerlで記述するのが便利です。
+</p>
+<pre>
+my $conf_file = "app.conf";
+my $conf = do $conf_file
+  or die qq/Can't load config file "$conf_file": $!$@/;
+</pre>
+<p>
+  設定ファイルの内容です。
+</p>
+<pre>
+{
+  name =&gt; 'Foo',
+  number =&gt; 9
+}
+</pre>
+<p>
+  ファイルの読み込みか解析に成功しなかった場合は未定義値が返却されます。ファイル名が存在しなかった場合は$!に、Perlのソースコードの読み込みに失敗した場合は$@にエラーの内容が設定されます。
+</p>
+<p>
+  設定ファイルはXMLやJSONで書くこともできますが、Perlで書くのが一番楽ですね。
+</p>
+<p>
+  do文字列の構文は、設定を記述したスクリプトを読み込むためだけに、利用するのが良いでしょう。モジュールを読み込みたい場合は、<a href="/blog/20090205123287.html">use</a>か<a href="/blog/20090207123288.html">require</a>を使うようにしましょう。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    // google code prettifyの有効化
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+    var vc_pid = "886663612";
+</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
+<title>YAPC::Kansaiでのメールフォームのリファクタリングは僕ならどう書くかな - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="3月4日はYAPC::Kansaiが新大阪でありましたね。熱気と楽しみに盛り上がっていましたね!!! 今週中には、自分のプレゼンテーションをアップしようと思っています。">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="YAPC::Kansaiでのメールフォームのリファクタリングは僕ならどう書くかな - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="3月4日はYAPC::Kansaiが新大阪でありましたね。熱気と楽しみに盛り上がっていましたね!!! 今週中には、自分のプレゼンテーションをアップしようと思っています。" />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1>
+    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+  </h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20170306148880.html">YAPC::Kansaiでのメールフォームのリファクタリングは僕ならどう書くかな</a></h2>
+<p>
+  3月4日はYAPC::Kansaiが新大阪でありましたね。熱気と楽しみに盛り上がっていましたね!!! 今週中には、自分のプレゼンテーションをアップしようと思っています。
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<p>
+  ところで弾さんが実演でメールフォームのリファクタリングやってましたけど、僕ならどう書くかなぁって考えてました。
+</p>
+<h3>メール送信はMIME::LiteかEmail::Senderで置き換える</h3>
+<p>
+  メール送信はCPANモジュールを使って<a href="http://search.cpan.org/~rjbs/MIME-Lite-3.030/lib/MIME/Lite.pm">MIME::Lite</a>か<a href="http://search.cpan.org/~rjbs/Email-Sender-1.300030/lib/Email/Sender.pm">Email::Sender</a>で置き換えるのがいいんじゃないかな。
+</p>
+<p>
+  どちらもsendmailを簡単に使うためのラッパーになっているよ。それ以外の送信方法もあるけど、デフォルトはsendmailを使う。
+</p>
+<p>
+  MIME::Liteは開発が終わっちゃたんだけど、ちょっと使う分には今でもやっぱりこれが便利ね。Eメールモジュール開発コミュニティの意向にそうのであれば、Email::Senderを使うのがいいんじゃないかな。
+</p>
+<h3>メールのバリデーションはEmail::Valid::Loose</h3>
+<p>
+  メールのバリデーションは簡単にやるなら<a href="/blog/20100827127859.html">正規表現</a>で「アスキー文字@アスキー文字」っていう正規表現を書くと思う。
+</p>
+<p>
+  CPANモジュールを使ってやるなら<a href="http://perldoc.jp/docs/modules/Email-Valid-Loose-0.02/Email/Valid/Loose.pod">Email::Valid::Loose</a>がいいんじゃないかな。日本の携帯電話のEmailは、メールの仕様を一部満たしていないようで、このモジュールはそれに対応している。
+</p>
+<p>
+  本当に正しいメールをフォームの時点で判定するよりは、ゆるやかに受け入れておいて、そのあとにバッチ処理とかで、無効なメールを処理するなんて方法もよいかもね。
+</p>
+<h3>送信フォームの部分はMojoliciousのテンプレートで</h3>
+<p>
+  cgi-lib.plを使って、HTMLをprintして送るというのはちょっと辛いものがあるね。HTMLはMojoliciouのテンプレートで書いて、CGI対応させるとよい。MojoliciousはCGIに対応しているから、CGIフォームの書き換えがそのままできるよ。
+</p>
+<p>
+  CGIの出力フォーマットに合うデータをMojoliciousが書き出してくれる。
+</p>
+<h3>10年耐えられるメールフォームになる</h3>
+<p>
+  本編では3日くらいしか耐えられなさそうだったけど、この三つをやると10年耐えられるようになると思うよ。
+</p>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
