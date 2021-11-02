@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Perlのダウンロードとインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlのダウンロードとインストール方法を解説します。Windows、macOS、LinuxでそれぞれPerlのインストール方法を紹介します。">
+<title>Perl Downloading and Installation - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Explains the way to download and install Perl to Windows, Mac, and Linux.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Perlのダウンロードとインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlのダウンロードとインストール方法を解説します。Windows、macOS、LinuxでそれぞれPerlのインストール方法を紹介します。" />
+<meta name="twitter:title" content="Perl Downloading and Installation - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Explains the way to download and install Perl to Windows, Mac, and Linux." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -71,9 +71,9 @@
     <meta itemprop="position" content="2" />
   </li>
 </ol>
-<h2><a href="/blog/20180820153471.html">Perlのダウンロードとインストール</a></h2>
+<h2><a href="/blog/20180820153471.html">Perl Downloading and Installation</a></h2>
 <p>
-  Perlのダウンロードとインストール方法を解説します。Windows、macOS、LinuxでそれぞれPerlのインストール方法を紹介します。
+  Explains the way to download and install Perl to Windows, Mac, and Linux.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -92,88 +92,22 @@
 
 
 <div id="windows"></div>
-<h3>WindowsにおけるPerlのインストール</h3>
+<h3>Windows Perl Installation</h3>
 <p>
-  PerlはUnix/Linux生まれの言語ですが、Windowsを使っている人も簡単にPerlをインストールすることができます。3種類の方法を紹介します。
+  Let's install Perl to Windows. Explains the way to using Strawberry Perl, ActivePerl, or msys2.
 </p>
-<h4>Strawberry Perlのインストール</h4>
+<h4>Strawberry Perl Installation</h4>
 <p>
-  Strawberry Perl(ストロベリーパール)は、WindowsでPerlを使えるように設定されたPerlのひとつです。Linux環境に近い形でPerlが利用できるので、まずはこれがお勧めです。
-</p>
-<p>
-  <a href="/blog/20180808153368.html"><img style="border:1px solid #ddd" width="340" src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180808/20180808073552.png?1533681423"></a>
+  Strawberry Perl is one of Windows Perl distributions. Strawberry Perl is easy to install and has a compiler of <a href="https://c-perlzemi-com.translate.goog/?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=nui">C Language</a> "<a href="https://ja-m-wikipedia-org.translate.goog/wiki/MinGW?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=nui">MinGW</a>", a <a href="https://perlzemi-com.translate.goog/blog/20101008127859.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=nui">CPAN</a> module installer "<a href="https://perlzemi-com.translate.goog/blog/20101027127859.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=nui">cpanm</a>", C libraries which is offten used in the image processing.
 </p>
 <p>
-  <a href="/blog/20180808153368.html">Strawberry Perl(ストロベリーパール)をWindowsにインストールする</a>
-</p>
-<h4>ActivePerlのインストール</h4>
-<p>
-  ActivePerlも、WindowsでPerlを使えるように設定されたPerlのひとつです。ExcelなどのWindowsアプリと連携したり、GUIの画面を作ったりしたい場合は、これがおすすめです。
+  <a href="https://perlzemi-com.translate.goog/blog/20180808153368.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=nui"><img style="border:1px solid #ddd;max-width:450px;" src="https://perlzemi.com/images/strawberry_perl/strawberry_perl_logo.png"></a>
 </p>
 <p>
-  <a href="/blog/20080602121231.html"><img style="border:1px solid #ddd" src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180809/20180809180334.png?1533805550"></a>
+  <a href="https://perlzemi-com.translate.goog/blog/20180808153368.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=nui">Strawberry Perl Installation into Windows</a>
 </p>
 <p>
-  <a href="/blog/20080602121231.html">ActivePerlをWindowsにインストールする</a>
-</p>
-<h4>msys2をWindowsにインストールしてPerlを使う</h4>
-<p>
-  msys2はWindows上に完全なLinux環境を再現できるツールです。
-</p>
-<p>
-  たとえば、Windowsでは、<a href="/blog/20161103147817.html">プロセス間通信</a>に関する機能が通常ではうまく動きませんが、msys2上であればうまく動きます。
-</p>
-<p>
-  これによって、<a href="/blog/20140319139520.html">Mojolicious</a>の開発Webサーバーなど、プロセス間通信に依存するモジュールが問題なく動きます。
-</p>
-<p>
-  Web開発をWindowsで体験してみたい場合は、お勧めの方法です。
-</p>
-<p>
-  <a href="/blog/20180806153350.html"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180806/20180806080447.png"></a>
-</p>
-<p>
-  <a href="/blog/20180806153350.html">msys2をWindowsにインストールしてPerlを使う</a>
-</p>
-<div id="mac"></div>
-<h3>macOSにおけるPerlのインストール</h3>
-<p>
-  ITエンジニアといえばmacOSというくらいに、開発者はmacOS所有率が高しです。
-</p>
-<p>
-  macOSにはPerlが標準でインストールされていますが、ユーザー環境に最新のPerlをインストールすることもできたりします。
-</p>
-<p>
-  ユーザー環境にPerlがインストールできるとシステム環境を汚さなくっても済むのでお勧めの方法でもあります。
-</p>
-<p>
-  次の記事では、macOSへのPerlのインストール方法を解説しています。
-</p>
-<p>
-  <a href="/blog/20180814153419.html"><img style="border:1px solid #ddd" src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180821/20180821072522.png"></a>
-</p>
-<p>
-  <a href="/blog/20180814153419.html">macOSへのPerlのインストール</a>
-</p>
-<div id="linux"></div>
-<h3>Unix/LinuxにおけるPerlのインストール</h3>
-<p>
-  Perlで作ったWebサイトを公開する場合は、最終的にはUnix/Linuxのサーバーに配置することになります。
-</p>
-<p>
-  Perlに慣れてくると開発環境をUnix/Linuxそのものにしたほうが開発効率が良くなることでしょう。
-</p>
-<p>
-  本番環境と同じ環境で開発をしたほうが、本番環境と開発環境のずれがなくって、やりやすいということもあります。
-</p>
-<p>
-  次の記事では、Unix/LinuxにおけるPerlのインストール方法を解説していますので参考にしてください。
-</p>
-<p>
-  <a alt="Unix/LinuxへのPerlのインストール" href="/blog/20180813153411.html"><img style="border:1px solid #ddd" src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180820/20180820075726.png"></a>
-</p>
-<p>
-  <a href="/blog/20180813153411.html">Unix/LinuxへのPerlのインストール</a>
+  (Uncompleted)
 </p>
 
   </div>
