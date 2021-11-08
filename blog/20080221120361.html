@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>文字列連結演算子「.」 - 文字列の連結  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="文字列連結演算子「.」を使うと文字列を連結することができます。">
+<title> String concatenation operator "." - String concatenation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can concatenate  strings using the string concatenation operator ".".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="文字列連結演算子「.」 - 文字列の連結  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="文字列連結演算子「.」を使うと文字列を連結することができます。" />
+<meta name="twitter:title" content=" String concatenation operator "." - String concatenation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can concatenate  strings using the string concatenation operator "."." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
+        <span itemprop = "name"> Perl </span></a>
+    <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
+      <span itemprop = "name"> operator </span></a>
+    <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080221120361.html">文字列連結演算子「.」 - 文字列の連結 </a></h2>
+<h2><a href="/blog/20080221120361.html"> String concatenation operator "." - String concatenation </a></h2>
 <p>
-  文字列連結演算子「.」を使うと<a href="/blog/20161003147558.html">文字列</a>を連結することができます。
+  You can concatenate <a href="/blog/20161003147558.html"> strings</a> using the string concatenation operator ".".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,7 +100,7 @@
 my $str3 = $str1 . $str2;
 </pre>
 <p>
-  文字列を連結するサンプルです。
+  This is a sample to concatenate character strings.
 </p>
 <pre>
 my $str1 = 'ABC';
@@ -108,22 +108,22 @@ my $str2 = 'DEF';
 my $str3 = $str1 . $str2;
 </pre>
 <p>
-  文字列「$str3」は「ABCDEF」になります。
+  The string "$str3" becomes "ABCDEF".
 </p>
 <p>
-  Perlでは文字列連結を加算演算子「+」で行うのではないので注意しましょう。「+」は数値の加算に使い「.」は文字列の連結に使います。
+  Note that Perl does not concatenate strings with the addition operator "+" . "+" Is used to add numbers and "." Is used to concatenate character strings.
 </p>
-<h4>変数展開との使い分け</h4>
+<h4> How to use with variable expansion </h4>
 <p>
-  文字列が変数だけで構成される場合は変数展開を使って書くのが簡単です。
+  If the string consists only of variables, it is easy to write using variable expansion.
 </p>
 <pre>
 my $str1 = 'ABC';
 my $str2 = 'DEF';
-my $str3 = "$str1$str2";
+my $str3 = "$str1 $str2";
 </pre>
 <p>
-  <a href="/blog/20161004147558.html">関数</a>と組み合わせて使う場合は、文字列連結演算子が便利です。
+  The string concatenation operator is useful when used in combination with <a href="/blog/20161004147558.html"> functions</a>.
 </p>
 <pre>
 my @nums = (1, 2, 3);
@@ -131,55 +131,55 @@ my $title = 'Number:';
 my $output = $title . join(',', @nums) . "\n";
 </pre>
 <p>
-  参考:<a href="/blog/20081007122338.html">join関数</a>
+  Reference: <a href="/blog/20081007122338.html"> join function</a>
 </p>
-<h4>特殊な代入演算子</h4>
+<h4> Special assignment operator </h4>
 <p>
-  特殊な代入演算子「.=」を使うと、自分自身の文字列に連結することができます。
+  You can use the special assignment operator " . =" To concatenate to your own string.
 </p>
 <pre>
 my $str1 = 'ABC';
 $str1 .= 'DEF';
 </pre>
 <p>
-  文字列「$str1」は「ABCDEF」になります。
+  The string "$str1" becomes "ABCDEF".
 </p>
-<h4>繰り返し演算子</h4>
+<h4> Repeat operator </h4>
 <p>
-  繰り返し演算子「x」を使うと、同じ文字列を複数回連結することができます。
+  You can use the repeat operator "x" to concatenate the same string multiple times.
 </p>
 <pre>
 my $str = 'ABC' x 3;
 </pre>
 <p>
-  文字列「$str」は「ABCABCABC」になります。
+  The string "$str" becomes "ABCABCABC".
 </p>
-<h3>サンプルプログラム</h3>
+<h3> Sample program </h3>
 <p>
-  文字列を連結するサンプルです。
+  This is a sample to concatenate character strings.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# 1: 文字列の連結
+# 1: String concatenation
 my $str1 = "1";
 my $str2 = "2";
-print "\$str1 = $str1 \n";
-print "\$str2 = $str2 \n\n";
+print "\$str1 = $str1\n";
+print "\$str2 = $str2\n\n";
 
 my $cat_str = $str1 . $str2;
 
-print "1: 文字列の連結\n";
+print "1: String concatenation\n";
 print "\$cat_str = $cat_str\n\n";
 
-print " + で結ぶと計算してしまう\n";
+print "If you connect with +, it will be calculated\n";
 my $sum_str = $str1 + $str2;
 print "\$sum_str = $sum_str\n\n";
 
-# 2: 繰り替えし同じ文字列を連結する。
+# 2: Repeat and concatenate the same string.
 my $multi_cat_str = $str1 x 5;
-print "2: 繰り返し連結\n";
+print "2: Repeated concatenation\n";
 print "\$multi_cat_str = $multi_cat_str\n";
 </pre>
 

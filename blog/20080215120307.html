@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ハッシュスライス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ハッシュスライスという機能を利用するとハッシュから複数の値を取り出すことができます。">
+<title> Hash slice  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can retrieve multiple values ​​from a  hash using a feature called  hash slice .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ハッシュスライス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ハッシュスライスという機能を利用するとハッシュから複数の値を取り出すことができます。" />
+<meta name="twitter:title" content=" Hash slice  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can retrieve multiple values ​​from a  hash using a feature called  hash slice ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
+        <span itemprop = "name"> Perl </span></a>
+    <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
+      <span itemprop = "name"> operator </span></a>
+    <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
   <li>
-      <span itemprop="name">here</span>
+      <span itemprop = "name"> here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080215120307.html">ハッシュスライス</a></h2>
+<h2><a href="/blog/20080215120307.html"> Hash slice </a></h2>
 <p>
-  <strong>ハッシュスライス</strong>という機能を利用すると<a href="/blog/20161013147635.html">ハッシュ</a>から複数の値を取り出すことができます。
+  You can retrieve multiple values ​​from a <a href="/blog/20161013147635.html"> hash</a> using a feature called <strong> hash slice </strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,62 +100,62 @@
 my @math_score_slice = @math_scores{'Aiko', 'Kenta'};
 </pre>
 <p>
-  ハッシュスライスを使うと、キーを複数指定して、値をリストとして取り出すことができる。接頭辞が$や%でなく、@であること、キー指定が、{ }であることに注意してください。
+  Hash slices allow you to specify multiple keys and retrieve the values ​​as a list. Note that the prefix is ​​@, not $ or %, and the keying is {}.
 </p>
 <p>
-  <a href="/blog/20180208151809.html">ハッシュのリファレンス</a>に対して、ハッシュスライスを行うときは次のようにできます。
+  For <a href="/blog/20180208151809.html"> hash reference</a>, you can do a hash slice like this:
 </p>
 <pre>
 my @math_score_slice = @$math_scores{'Aiko', 'Kenta'};
 </pre>
-<h4>ハッシュスライスを左辺値として使う</h4>
+<h4> Use hash slices as lvalues ​​</h4>
 <pre>
-@math_score_of{'Aiko', 'Kenta'} = (20, 40); 
+@math_score_of{'Aiko', 'Kenta'} = (20, 40);
 </pre>
 <p>
-  ハッシュスライスを左辺値として使うことで、対応するキーに代入することができます。
+  You can assign a hash slice to the corresponding key by using it as an lvalue.
 </p>
-<h4>配列スライス</h4>
+<h4> Array slice </h4>
 <p>
-  ハッシュスライスとよく似た機能として<a href="/blog/20080216120316.html">配列スライス</a>があります。配列スライスは、<a href="/blog/20161012147627.html">配列</a>の複数の要素を取り出すのに利用することができます。
+  A similar feature to hash slices is <a href="/blog/20080216120316.html"> array slices</a>. Array slices can be used to retrieve multiple elements of an <a href="/blog/20161012147627.html"> array</a>.
 </p>
 <pre>
-# 配列スライス
+# Array slice
 my @values = @array[0, 3, 5];
 </pre>
-<h3>サンプルプログラム</h3>
+<h3> Sample program </h3>
 <p>
-  ハッシュスライスのサンプルプログラムです。
+  This is a sample program for hash slices.
 </p>
 <pre>
 use strict;
 use warnings;
 use Data::Dumper;
 
-# 生徒の数学の点数
-my %math_scores = ( 
+# Student math scores
+my %math_scores = (
   Aiko =&gt; 89,
   Kenta =&gt; 100,
   Taro =&gt; 34,
-);  
+);
 
-print "元のハッシュ\n";
+print "original hash\n";
 print Dumper \%math_scores;
 print "\n\n";
 
-# 1: ハッシュスライス
-print "1: ハッシュスライス(Aiko と Kenta の値を取得する)\n";
+# 1: Hash slice
+print "1: Hash slice (get values ​​for Aiko and Kenta)\n";
 my @math_score_slice = @math_scores{'Aiko', 'Kenta'};
-print "\@math_score_slice = (", join(', ', @math_score_slice), ")\n\n";
+print "\@math_score_slice =", join(',', @math_score_slice), ")\n\n";
 
-# 2: ハッシュスライスを左辺値として使う( Aiko と Kenta に値を設定する )
-print "2: ハッシュスライスを左辺値として使う"
-  . "(Aiko と Kenta に値を設定する)\n";
-@math_scores{'Aiko', 'Kenta'} = (20, 40); 
+# 2: Use hash slices as lvalues ​​(set values ​​for Aiko and Kenta)
+print "2: Use hash slice as lvalue"
+  . "(Set values ​​for Aiko and Kenta)\n";
+@math_scores{'Aiko', 'Kenta'} = (20, 40);
 print Dumper \%math_scores;
 </pre>
 <p>
-  参考:<a href="/blog/20081007122338.html">join関数</a>
+  Reference: <a href="/blog/20081007122338.html"> join function</a>
 </p>
 
   </div>
