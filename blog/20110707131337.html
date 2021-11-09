@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>DBD::Oracleをインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="(CentOS5.5, CentOS5.7で確認)">
+<title> Install DBD :: Oracle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="(Confirmed with CentOS5.5, CentOS5.7)">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="DBD::Oracleをインストール - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="(CentOS5.5, CentOS5.7で確認)" />
+<meta name="twitter:title" content=" Install DBD :: Oracle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="(Confirmed with CentOS5.5, CentOS5.7)" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20170130148603.html">
-      <span itemprop="name">データベース</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> database </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20110707131337.html">DBD::Oracleをインストール</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20110707131337.html"> Install DBD :: Oracle </a></ h2>
 <p>
-  (CentOS5.5, CentOS5.7で確認)
+  (Confirmed with CentOS5.5, CentOS5.7)
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,62 +97,60 @@
 
 
 <p>
-  PerlモジュールのDBD::Oracleをインストールしたのでメモ。
+  Note that I installed the Perl module DBD :: Oracle.
 </p>
 <p>
-  DBD::Oracleをインストールするためには以下のライブラリが必要でした。
+  The following libraries were required to install DBD :: Oracle.
 </p>
 <pre>
 oracle-instantclient11.2-basic-11.2.0.2.0.i386.rpm
 oracle-instantclient11.2-devel-11.2.0.2.0.i386.rpm
 oracle-instantclient11.2-sqlplus-11.2.0.2.0.i386.rpm
-</pre>
-<p>
-  <a href="http://www.oracle.com/technetwork/jp/topics/linuxsoft-083388-ja.html">Oracleのサイトからダウンロード</a>できますが、ユーザー登録が必要になります。
-</p>
-<p>
-  次にこれらのrpmパッケージをインストールします。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;a href="http://www.oracle.com/technetwork/jp/topics/linuxsoft-083388-ja.html"&gt; You can download it from the Oracle site &lt;/a&gt;, but user registration is required. ..
+
+Then install these rpm packages.
+
+&lt;pre&gt;
 rpm -hiv oracle-instantclient11.2-basic-11.2.0.2.0.i386.rpm
 rpm -hiv oracle-instantclient11.2-devel-11.2.0.2.0.i386.rpm
 rpm -hiv oracle-instantclient11.2-sqlplus-11.2.0.2.0.i386.rpm
-</pre>
-<p>
-  次に必要な環境変数の設定を行います。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Next, set the required environment variables.
+
+&lt;pre&gt;
 vi /etc/profile.d/oracle.sh
-</pre>
-<p>
-  上記の空のファイルに以下の設定を追加します。
-</p>
-<pre>
-export ORACLE_HOME='/usr/lib/oracle/11.2/client'
-export C_INCLUDE_PATH='/usr/include/oracle/11.2/client'
-export LD_LIBRARY_PATH='/usr/lib/oracle/11.2/client/lib'
-</pre>
-<p>
-  次にライブラリの設定を行います。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Add the following settings to the above empty file.
+
+&lt;pre&gt;
+export ORACLE_HOME ='/usr/lib/oracle/11.2/client'
+export C_INCLUDE_PATH ='/usr/include/oracle/11.2/client'
+export LD_LIBRARY_PATH ='/usr/lib/oracle/11.2/client/lib'
+&lt;/ pre&gt;
+
+Next, set the library.
+
+&lt;pre&gt;
 vi /etc/ld.so.conf.d/oracle.conf
-</pre>
-<p>
-  上記の空のファイルに以下の項目を追加します。
-</p>
-<pre>
-/usr/lib/oracle/11.2/client/lib
-</pre>
-<p>
-  この状態で環境変数を反映させるために端末を立ち上げなおしてください。
-</p>
-<p>
-  後はcpanコマンドでインストールするだけです。
-</p>
-<pre>
-cpan DBD::Oracle
-</pre>
+&lt;/ pre&gt;
+
+Add the following items to the above empty file.
+
+&lt;pre&gt;
+/usr/lib/oracle/112/client/lib
+&lt;/ pre&gt;
+
+In this state, restart the terminal to reflect the environment variables.
+
+All you have to do now is install it with the cpan command.
+
+&lt;pre&gt;
+cpan DBD :: oracle
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

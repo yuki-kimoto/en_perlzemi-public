@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Errno - システムのエラー番号をあらわす定数 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Errnoモジュールを使用すれば、システムのエラー番号をあらわす定数をインポートすることができます。">
+<title> Errno --Constant representing system error number  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  Errno  module to import constants that represent system error numbers.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Errno - システムのエラー番号をあらわす定数 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Errnoモジュールを使用すれば、システムのエラー番号をあらわす定数をインポートすることができます。" />
+<meta name="twitter:title" content=" Errno --Constant representing system error number  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  Errno  module to import constants that represent system error numbers." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20110613130982.html">Errno - システムのエラー番号をあらわす定数</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20110613130982.html"> Errno --Constant representing system error number </a></ h2>
 <p>
-  <strong>Errno</strong>モジュールを使用すれば、システムのエラー番号をあらわす定数をインポートすることができます。
+  You can use the <strong> Errno </ strong> module to import constants that represent system error numbers.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,31 +97,30 @@
 
 
 <pre>
-use Errno qw/EAGAIN EINTR ECONNRESET EWOULDBLOCK/;
-</pre>
-<p>
-  インポートできる定数の種類についてはこちらを参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20110612130982.html">Unix系errno一覧</a>
-  </li>
-</ul>
-<p>
-  システムコールのエラーが代入される特殊変数$!と数値比較することでどのようなエラーが発生したのかを調べることができます。
-</p>
-<pre>
-# 何らかのシステムコールの呼び出し
+use Errno qw / EAGAIN EINTR ECONNRESET EWOULDBLOCK /;
+&lt;/ pre&gt;
+
+Please refer to here for the types of constants that can be imported.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20110612130982.html"&gt; Unix errno list &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+You can find out what kind of error occurred by numerically comparing the system call error with the special variable $! To which it is assigned.
+
+&lt;pre&gt;
+# Call some system call
 # ...
 
-# エラー番号を比較
+#Compare error numbers
 if ($! == EAGAIN) {
 
 }
-</pre>
-<p>
-  $!は特別な変数であり数値比較を行った場合は、エラー番号として評価され、文字列として利用した場合はエラーの内容として評価されることに注意してください。
-</p>
+&lt;/ pre&gt;
+
+Please note that $! Is a special variable and is evaluated as an error number when a numerical comparison is performed, and as an error content when used as a character string.
 
   </div>
   <div class="bottom">

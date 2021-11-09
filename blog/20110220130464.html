@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>perlbrew - ユーザー環境にPerlをインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ユーザー環境にPerlをインストールするにはperlbrewというツールを使用します。システム標準のPerlを利用したくない場合や新しいバージョンのPerlを利用したい場合は便利です。またperlbrewを使うと複数のバージョンのPerlの切り替えを行うことができます。">
+<title> perlbrew --Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="To install Perl in your environment, use a tool called perlbrew. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use perlbrew to switch between multiple versions of Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="perlbrew - ユーザー環境にPerlをインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ユーザー環境にPerlをインストールするにはperlbrewというツールを使用します。システム標準のPerlを利用したくない場合や新しいバージョンのPerlを利用したい場合は便利です。またperlbrewを使うと複数のバージョンのPerlの切り替えを行うことができます。" />
+<meta name="twitter:title" content=" perlbrew --Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="To install Perl in your environment, use a tool called perlbrew. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use perlbrew to switch between multiple versions of Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20110220130464.html">perlbrew - ユーザー環境にPerlをインストールする</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20110220130464.html"> perlbrew --Install Perl in your environment </a></ h2>
 <p>
-  ユーザー環境にPerlをインストールするにはperlbrewというツールを使用します。システム標準のPerlを利用したくない場合や新しいバージョンのPerlを利用したい場合は便利です。またperlbrewを使うと複数のバージョンのPerlの切り替えを行うことができます。
+  To install Perl in your environment, use a tool called perlbrew. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use perlbrew to switch between multiple versions of Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,175 +96,171 @@
 </div>
 
 
-<h3>perlbrewのインストール</h3>
+<h3> Install perlbrew </ h3>
 <p>
-  以下のコマンドを実行します。
+  Execute the following command.
 </p>
 <pre>
 curl -L http://install.perlbrew.pl | bash
-</pre>
-<p>
-  もしcurlコマンドがなければ、以下のコマンドを実行してみてください。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+If you don't have the curl command, try running the following command:
+
+&lt;pre&gt;
 # Linux
-wget -O - http://install.perlbrew.pl | bash
+wget -O --http://install.perlbrew.pl | bash
 
-# FreeBSD
+#FreeBSD
 fetch -o- http://install.perlbrew.pl | sh
-</pre>
-<p>
-  cpanから二つの手順でインストールすることもできます。
-</p>
-<pre>
-sudo cpan App::perlbrew
-perlbrew init
-</pre>
-<p>
-  次にperlbrewのパスを通しましょう。perlbrewで用意されているbash用の設定ファイルを「~/.bashrc」に追加します(bashの場合)。
-</p>
-<pre>
-echo "source ~/perl5/perlbrew/etc/bashrc" &gt;&gt; ~/.bashrc
-</pre>
-<p>
-  「.bashrc」を読み込みなおします。
-</p>
-<pre>
-source  ~/.bashrc
-</pre>
-<h3>ユーザー環境へのPerlのインストール</h3>
-<p>
-  ユーザー環境にPerlをインストールします。5.28.2のPerlをインストールしてみましょう。時間がかかるので待ちます(約30分程度)。
-</p>
-<pre>
-perlbrew install perl-5.28.2
-</pre>
-<p>
-  インストールできない場合は、Perlのコンパイルに必要なツールが、まだインストールされていない可能性があります。以下のツールが必要になりますので、各環境に応じて、インストールしてください。
-</p>
-<ul>
-  <li>make</li>
-  <li>gcc</li>
-  <li>patch</li>
-</ul>
-<p>
-  試験を強制的に飛ばして強制的にインストールしたい場合は「-n」オプションを使用します。
-</p>
-<pre>
-perlbrew install -n perl-5.28.2
-</pre>
-<p>
-  利用できるPerlの一覧を見てみましょう。perlbrewのlistコマンドを使用します。
-</p>
-<pre>
-perlbrew list
-</pre>
-<p>
-  以下のように利用できるPerlが表示されます。アスタリスクのあるものが現在利用しているPerlです。
-</p>
-<pre>
-  perl-5.28.2
-* /usr/bin/perl (5.8.8)
-</pre>
-<p>
-  Perlを切り替えるにはperlbrewのswitchコマンドを使用します。
-</p>
-<pre>
-perlbrew switch perl-5.28.2
-</pre>
-<p>
-  Perlのバージョンを実際に確認してみましょう。
-</p>
-<pre>
-perl -v
-</pre>
-<p>
-  以下のように5.28.2のバージョンになっています。
-</p>
-<pre>
-This is perl 5, version 16, subversion 3 (v5.28.2) built for i686-linux
-</pre>
-<h3>cpanmのインストール</h3>
-<p>
-  モジュールをインストールするのに便利なcpanmもインストールしておきましょう。
-</p>
-<pre>
-perlbrew install-cpanm
-</pre>
-<p>
-  これで以下のコマンドでモジュールがインストールできるようになります。
-</p>
-<pre>
-cpanm JSON
-</pre>
-<p>
-  モジュールは以下のディレクトリなどにインストールされます。
-</p>
-<pre>
-/home/kimoto/perl5/perlbrew/perls/perl-5.28.2/lib/site_perl/5.28.2/
-</pre>
-<h3>元のPerlに戻す</h3>
-<p>
-  元のPerlに戻すには以下のようにします。
-</p>
-<pre>
-perlbrew off
-</pre>
-<h3>perlbrewで指定したバージョンのPerlをcrontabで使う方法</h3>
-<p>
-  perlbrewのはまりどころのひとつは、perlbrewで指定したバージョンのPerlがcronからは利用されないということでしょう。これはcronから実行するときは、シェルが起動されないので.bash_profileが読み込まれないことが原因です。perlbrewによる設定は、.bash_profileの中に記述したからですね。
-</p>
-<p>
-  一番簡単な解決策は、crontabの中でPATHを、そのユーザーが持っている環境変数PATHの値に書き換えてあげることです。
-</p>
-<p>
-  まずperlbrewをインストールしたユーザーで、PATH環境変数の値を表示します。
-</p>
-<pre>
-env | grep PATH
-</pre>
-<p>
-  PATHを含んだ環境変数がいくつか表示されるので、PATHというものを探します。(ユーザー名がadminsの場合の例です。)
-</p>
-<pre>
-PATH=/home/admins/perl5/perlbrew/bin:/home/admins/perl5/perlbrew/perls/perl-5.16.2/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/admins/bin
-</pre>
-<p>
-  以下のコマンドでcrontabを編集します。
-</p>
-<pre>
-crontab -e
-</pre>
-<p>
-  そして上記のPATHの値をcrontabの一番上に書き込みます。
-</p>
-<pre>
-PATH=/home/admins/perl5/perlbrew/bin:/home/admins/perl5/perlbrew/perls/perl-5.16.2/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/admins/bin
+&lt;/ pre&gt;
 
-# cronの設定が続く...
-</pre>
-<p>
-  これでcronが指定したバージョンのPerlを利用してくれるようになります。
-</p>
-<h4>Perlスクリプトの一行目の記述</h4>
-<p>
-  Perlスクリプトの一行目の記述は以下のようenvコマンドを使った記述をしましょう。
-</p>
-<pre>
-#!/usr/bin/env perl
-</pre>
-<p>
-  こうすると設定したPATHの値から自動的にperlを検出してくれます。
-</p>
-<p>
-  この方法は、見てのとおり、PATHをベタ書きしますので、crontabの移植性がまったくないです。ユーザー名のadminsが直接埋め込まれていますし、perlのバージョン番号がそのまま記述されているので、perlbrewでバージョンを変更したときは、動かなくなります。
-</p>
-<p>
-  でもこの方法が一番よいと思います。その理由はcrontab内では、環境変数の変数展開ができないという制限があるので、うまく移植性を持たせることが難しいということが理由です。移植性を持たせると、記述量が多くなったり、追加のスクリプトが必要になったり、管理が煩雑になってしまいます。
-</p>
-<p>
-  それとどんなにがんばっても、crontabって環境ごとに、何らかの差分があることがほとんどなので、移植性を保たせてもあんまりメリットがないということもあります。
-</p>
+You can also install from cpan in two steps.
+
+&lt;pre&gt;
+sudo cpan App :: perlbrew
+perlbrew init
+&lt;/ pre&gt;
+
+Next, let's pass the path of perlbrew. Add the configuration file for bash provided by perlbrew to "~ / .bashrc" (in the case of bash).
+
+&lt;pre&gt;
+echo "source ~ / perl5 / perlbrew / etc / bashrc" &gt;&gt; ~ / .bashrc
+&lt;/ pre&gt;
+
+Reload ".bashrc".
+
+&lt;pre&gt;
+source ~ / .bashrc
+&lt;/ pre&gt;
+
+&lt;h3&gt; Installing Perl in the user environment &lt;/ h3&gt;
+
+Install Perl in your environment. Let's install Perl for 5.28.2. It will take some time, so wait (about 30 minutes).
+
+&lt;pre&gt;
+perlbrew install perl-5.28.2
+&lt;/ pre&gt;
+
+If you can't install it, the tools needed to compile Perl may not have been installed yet. The following tools are required, so install them according to each environment.
+
+&lt;ul&gt;
+  &lt;li&gt; make &lt;/ li&gt;
+  &lt;li&gt; gcc &lt;/ li&gt;
+  &lt;li&gt; patch &lt;/ li&gt;
+&lt;/ ul&gt;
+
+If you want to force the test to skip and force the installation, use the "-n" option.
+
+&lt;pre&gt;
+perlbrew install -n perl-5.28.2
+&lt;/ pre&gt;
+
+Let's take a look at the list of available Perls. Use the perlbrew list command.
+
+&lt;pre&gt;
+perlbrew list
+&lt;/ pre&gt;
+
+The available Perls are displayed as shown below. The one with the asterisk is the Perl you are currently using.
+
+&lt;pre&gt;
+  perl-5.28.2
+* / usr / bin / perl (5.8.8)
+&lt;/ pre&gt;
+
+Use perlbrew's switch command to switch Perl.
+
+&lt;pre&gt;
+perlbrew switch perl-5.28.2
+&lt;/ pre&gt;
+
+Let's actually check the version of Perl.
+
+&lt;pre&gt;
+perl -v
+&lt;/ pre&gt;
+
+The version is 5.28.2 as shown below.
+
+&lt;pre&gt;
+This is perl 5, version 16, subversion 3 (v5.28.2) built for i686-linux
+&lt;/ pre&gt;
+
+&lt;h3&gt; Install cpanm &lt;/ h3&gt;
+
+Let's also install cpanm, which is convenient for installing modules.
+&lt;pre&gt;
+perlbrew install-cpanm
+&lt;/ pre&gt;
+
+Now you can install the module with the following command.
+
+&lt;pre&gt;
+cpanm JSON
+&lt;/ pre&gt;
+
+The module will be installed in the following directories.
+
+&lt;pre&gt;
+/home/kimoto/perl5/perlbrew/perls/perl-5.28.2/lib/site_perl/5.28.2/
+&lt;/ pre&gt;
+
+&lt;h3&gt; Revert to original Perl &lt;/ h3&gt;
+
+To revert to the original Perl:
+
+&lt;pre&gt;
+perlbrew off
+&lt;/ pre&gt;
+
+&lt;h3&gt; How to use the version of Perl specified by perlbrew with crontab &lt;/ h3&gt;
+
+One of the main points of perlbrew is that the version of Perl specified by perlbrew is not used by cron. This is because .bash_profile is not loaded when running from cron because the shell is not started. The setting by perlbrew is described in .bash_profile.
+
+The simplest solution is to rewrite PATH in crontab to the value of the environment variable PATH that the user has.
+
+First, as the user who installed perlbrew, display the value of the PATH environment variable.
+
+&lt;pre&gt;
+env | grep PATH
+&lt;/ pre&gt;
+
+You will see some environment variables that include PATH, so look for something called PATH. (This is an example when the user name is admins.)
+
+&lt;pre&gt;
+PATH = / home / admins / perl5 / perlbrew / bin: / home / admins / perl5 / perlbrew / perls / perl-5.16.2 / bin: / usr / kerberos / bin: / usr / local / bin: / bin: / usr / bin: / home / admins / bin
+&lt;/ pre&gt;
+
+Edit crontab with the following command.
+&lt;pre&gt;
+crontab -e
+&lt;/ pre&gt;
+
+Then write the above PATH value to the top of crontab.
+
+&lt;pre&gt;
+PATH = / home / admins / perl5 / perlbrew / bin: / home / admins / perl5 / perlbrew / perls / perl-5.16.2 / bin: / usr / kerberos / bin: / usr / local / bin: / bin: / usr / bin: / home / admins / bin
+
+# cron settings continue ...
+&lt;/ pre&gt;
+
+Now cron will use the specified version of Perl.
+
+&lt;h4&gt; First line description of Perl script &lt;/ h4&gt;
+
+Write the first line of the Perl script using the env command as shown below.
+
+&lt;pre&gt;
+#! / usr / bin / env perl
+&lt;/ pre&gt;
+
+This will automatically detect perl from the set PATH value.
+
+As you can see, this method solidifies the PATH, so crontab is not portable at all. Since the user name admins is directly embedded and the version number of perl is written as it is, it will not work when changing the version with perlbrew.
+
+But I think this method is the best. The reason is that it is difficult to make it portable because there is a limitation that environment variables cannot be expanded in crontab. Portability increases the amount of description, requires additional scripts, and complicates management.
+
+Also, no matter how hard you try, crontab usually has some differences depending on the environment, so even if you keep portability, there may not be much merit.
 
   </div>
   <div class="bottom">

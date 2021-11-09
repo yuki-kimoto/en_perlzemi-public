@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Text::CSV::Encoded - 日本語を含んだCSVファイルを扱う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="日本語を含んだCSVファイルを扱うにはText::CSV::Encodedモジュールを使用します。以下にCSVを処理するサンプルを示します。スクリプトはUTF-8で保存します。">
+<title> Text :: CSV :: Encoded --Handle CSV files containing Japanese  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the  Text :: CSV :: Encoded  module to work with CSV files containing Japanese. Below is a sample that processes CSV. Save the script in UTF-8.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Text::CSV::Encoded - 日本語を含んだCSVファイルを扱う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="日本語を含んだCSVファイルを扱うにはText::CSV::Encodedモジュールを使用します。以下にCSVを処理するサンプルを示します。スクリプトはUTF-8で保存します。" />
+<meta name="twitter:title" content=" Text :: CSV :: Encoded --Handle CSV files containing Japanese  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the  Text :: CSV :: Encoded  module to work with CSV files containing Japanese. Below is a sample that processes CSV. Save the script in UTF-8." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">Text::CSV::Encoded</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20110627131112.html">Text::CSV::Encoded - 日本語を含んだCSVファイルを扱う</a></h2>
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Text :: CSV :: Encoded </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20110627131112.html"> Text :: CSV :: Encoded --Handle CSV files containing Japanese </a></ h2>
 <p>
-  日本語を含んだCSVファイルを扱うには<strong>Text::CSV::Encoded</strong>モジュールを使用します。以下にCSVを処理するサンプルを示します。スクリプトはUTF-8で保存します。
+  Use the <strong> Text :: CSV :: Encoded </ strong> module to work with CSV files containing Japanese. Below is a sample that processes CSV. Save the script in UTF-8.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -102,34 +102,33 @@ use strict;
 use warnings;
 use utf8;
 
-use Text::CSV::Encoded;
+use Text :: CSV :: Encoded;
 
-my $file = shift;
+my $ file = shift;
 
-my $encoding = 'UTF-8';
-my $csv = Text::CSV::Encoded-&gt;new({
-  encoding_in =&gt; $encoding,
-  encoding_out =&gt; $encoding
+my $ encoding ='UTF-8';
+my $ csv = Text :: CSV :: Encoded-&gt; new ({{
+  encoding_in =&gt; $ encoding,
+  encoding_out =&gt; $ encoding
 });
 
-open my $fh, "&lt;", $file
-  or die "Can't open $file: $!";
+open my $ fh, "&lt;", $ file
+  or die "Can't open $ file: $!";
 
-while (my $fields = $csv-&gt;getline($fh)) {
+while (my $ fields = $ csv-&gt; getline ($ fh)) {
 
-  # データの編集(ここでは最初のフィールドに編集という文字をくっつける)
-  $fields-&gt;[0] .= '編集';
+  #Edit data (here, put the word edit in the first field)
+  $ fields-&gt; [0]. ='Edit';
   
-  # フィールドのデータを出力
-  $csv-&gt;print(*STDOUT, $fields);
+  # Output field data
+  $ csv-&gt; print (* STDOUT, $ fields);
   
-  # 改行を出力
-  print "\n";
+  # Output line breaks
+  print "\ n";
 }
-</pre>
-<p>
-  <a href="/blog/20100123126425.html">while文</a>を使って、CSVファイルの行を1行づつ読み込んでいます。
-</p>
+&lt;/ pre&gt;
+
+The &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; is used to read the lines of the CSV file line by line.
 
   </div>
   <div class="bottom">
