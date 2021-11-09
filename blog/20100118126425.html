@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> map function-transformation of all elements of an array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use the  map function  to convert all the elements of a  array . Each element of @array is passed to the default variable $ _, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order.">
+<meta name="description" content="Use the  map function  to convert all the elements of a  array . Each element of @array is passed to the default variable $_, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" map function-transformation of all elements of an array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use the  map function  to convert all the elements of a  array . Each element of @array is passed to the default variable $ _, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order." />
+<meta name="twitter:description" content="Use the  map function  to convert all the elements of a  array . Each element of @array is passed to the default variable $_, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100118126425.html"> map function-transformation of all elements of an array </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100118126425.html"> map function-transformation of all elements of an array </a></h2>
 <p>
-  Use the <strong> map function </ strong> to convert all the elements of a <strong> array </ strong>. Each element of @array is passed to the default variable $ _, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order.
+  Use the <strong> map function </strong> to convert all the elements of a <strong> array </strong>. Each element of @array is passed to the default variable $_, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,55 +97,54 @@
 
 
 <pre>
-#Conversion of all elements of the array
+# Conversion of all elements of the array
 @mapped = map {conversion} @array;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample that doubles all elements using map. If @nums is (1, 2, 3) then @doubled is (2, 4, 6).
-&lt;pre&gt;
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample that doubles all elements using map. If @nums is (1, 2, 3) then @doubled is (2, 4, 6).
+</p>
+<pre>
 # Double all elements
 my @nums = (1, 2, 3);
-my @doubled = map {$ _ * 2} @nums;
-&lt;/ pre&gt;
-
-This is a sample that deletes the first string of all elements using map. If @strs is ('&amp; nbsp; &amp; nbsp; a','&amp; nbsp; &amp; nbsp; b','&amp; nbsp; &amp; nbsp; &amp; nbsp; c'), then @trimed is ('a','b','c') Become.
-
-&lt;pre&gt;
+my @doubled = map {$_ * 2} @nums;
+</pre>
+<p>
+  This is a sample that deletes the first string of all elements using map. If @strs is ('& nbsp; & nbsp; a','& nbsp; & nbsp; b','& nbsp; & nbsp; & nbsp; c'), then @trimed is ('a','b','c') Become.
+</p>
+<pre>
 # Excluding leading blanks
 my @strs = ('a','b','c');
-my @trimed = map {$ _ = ~ s / ^ \ s + //; $ _} @strs;
-&lt;/ pre&gt;
-
-You can also convert one element into two elements. If @keys is ('a','b','c') then @mapped is (a =&gt; 1, b =&gt; 1, c =&gt; 1).
-
-&lt;pre&gt;
+my @trimed = map {$_ = ~ s / ^ \ s + //; $_} @strs;
+</pre>
+<p>
+  You can also convert one element into two elements. If @keys is ('a','b','c') then @mapped is (a => 1, b => 1, c => 1).
+</p>
+<pre>
 # Convert to two elements
 my @keys = ('a','b','c');
-my @mapped = map {$ _ =&gt; 1} @keys;
-&lt;/ pre&gt;
-
-What can be written on the map can also be written on the foreach statement. Maps are often used in Perl because they are simpler to write.
-
-&lt;pre&gt;
+my @mapped = map {$_ =&gt; 1} @keys;
+</pre>
+<p>
+  What can be written on the map can also be written on the foreach statement. Maps are often used in Perl because they are simpler to write.
+</p>
+<pre>
 # for
 my @nums = (1, 2, 3);
 my @doubled;
-for my $ num (@nums) {
-  push @doubled, $ num * 2;
+for my $num (@nums) {
+  push @doubled, $num * 2;
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Reference "Array of Perl" &lt;/ h3&gt;
-
-See below for a description of Perl's "arrays".
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161012147627.html"&gt; Understand Perl's "arrays" &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<h3> Reference "Array of Perl" </h3>
+<p>
+  See below for a description of Perl's "arrays".
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161012147627.html"> Understand Perl's "arrays"</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

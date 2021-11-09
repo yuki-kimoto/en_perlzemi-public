@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop = "name"> XS </ span> </a>
+        <span itemprop = "name"> XS </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20170206150055.html"> How to load C library from XS file </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20170206150055.html"> How to load C library from XS file </a></h2>
 <p>
   I will explain how to read the C language library from the XS file.
 </p>
@@ -96,17 +96,17 @@
 </div>
 
 
-<h3> Create a module with h2xs </ h3>
+<h3> Create a module with h2xs </h3>
 <p>
-  First, create a module for XS with <a href="/blog/20170209150055.html"> h2xs </a>.
+  First, create a module for XS with <a href="/blog/20170209150055.html"> h2xs</a>.
 </p>
 <pre>
 h2xs -A -n SomeModule
-&lt;/ pre&gt;
-
-This will create a directory called "SomeModule". The following files and directories will be created.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This will create a directory called "SomeModule". The following files and directories will be created.
+</p>
+<pre>
 Changes
 lib /
 Makefile.PL
@@ -115,45 +115,47 @@ ppport.h
 README
 SomeModule.xs
 t /
-&lt;/ pre&gt;
+</pre>
+<h3> Creating a C language library </h3>
+<p>
+  First, let's create a C language library. Create a header file and a source file.
+</p>
+<p>
+  <b> mylib.h </b>
+</p>
+<p>
+  This is a header file. Declaring mylib_print.
+</p>
+<pre>
+void mylib_print();
+</pre>
+<p>
+  <b> mylib.c </b>
+</p>
+<p>
+  This is the source file. mylib_print is a function that outputs the string "mylib".
+</p>
+<pre>
+# include &lt;stdio.h&gt;
 
-&lt;h3&gt; Creating a C language library &lt;/ h3&gt;
-
-First, let's create a C language library. Create a header file and a source file.
-
-&lt;b&gt; mylib.h &lt;/ b&gt;
-
-This is a header file. Declaring mylib_print.
-
-&lt;pre&gt;
-void mylib_print ();
-&lt;/ pre&gt;
-
-&lt;b&gt; mylib.c &lt;/ b&gt;
-
-This is the source file. mylib_print is a function that outputs the string "mylib".
-
-&lt;pre&gt;
-#include &lt;stdio.h&gt;
-
-void mylib_print () {
-  printf ("mylib \ n");
+void mylib_print() {
+  printf("mylib\n");
 }
-&lt;/ pre&gt;
+</pre>
+<p>
+  Save the header and source files and place them in the same directory where the XS files are located. Keeping it in the same directory is the point of view because there are few later settings.
+</p>
+<h3> XS file description </h3>
+<p>
+  Let's write an XS file. I am calling mylib_print.
+</p>
+<pre>
+# include "EXTERN.h"
+# include "perl.h"
+# include "XSUB.h"
 
-Save the header and source files and place them in the same directory where the XS files are located. Keeping it in the same directory is the point of view because there are few later settings.
-
-&lt;h3&gt; XS file description &lt;/ h3&gt;
-
-Let's write an XS file. I am calling mylib_print.
-
-&lt;pre&gt;
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-
-#include "ppport.h"
-#include "mylib.h"
+# include "ppport.h"
+# include "mylib.h"
 
 MODULE = SomeModule PACKAGE = SomeModule
 
@@ -161,61 +163,60 @@ void
 foo (...)
   PPCODE:
 {
-  mylib_print ();
+  mylib_print();
   XSRETURN (0);
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Modify Makefile.PL &lt;/ h3&gt;
-
-Next, let's modify &lt;a href="/blog/20150725143778.html"&gt; Makefile.PL &lt;/a&gt; a little. The bottom "OBJECT" option is commented out by default, so uncomment it. If you set "$ (O_FILES)", all C language source files in the current directory will be compiled.
-&lt;pre&gt;
-use ExtUtils :: MakeMaker;
+</pre>
+<h3> Modify Makefile.PL </h3>
+<p>
+  Next, let's modify <a href="/blog/20150725143778.html"> Makefile.PL</a> a little. The bottom "OBJECT" option is commented out by default, so uncomment it. If you set "$(O_FILES)", all C language source files in the current directory will be compiled.
+</p>
+<pre>
+use ExtUtils::MakeMaker;
 
 WriteMakefile (
     NAME =&gt;'SomeModule',
-    VERSION_FROM =&gt;'lib / SomeModule.pm', # finds $ VERSION
-    PREREQ_PM =&gt; {}, # e.g., Module :: Name =&gt; 1.1
-    ($]&gt; = 5.005? ## Add these new keywords supported since 5.005
+    VERSION_FROM =&gt;'lib / SomeModule.pm', # finds $VERSION
+    PREREQ_PM =&gt; {}, # e.g., Module::Name =&gt; 1.1
+    ($]&gt; = 5.005? # # Add these new keywords supported since 5.005
       (ABSTRACT_FROM =&gt;'lib / SomeModule.pm', # retrieve abstract from module
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') :()),
     LIBS =&gt; [''], # e.g.,'-lm'
     DEFINE =&gt;'', # e.g.,'-DHAVE_SOMETHING'
     INC =&gt;'-I.', # e.g.,'-I. -I / usr / include / other'
-    OBJECT =&gt;'$ (O_FILES)', # link all the C files too
+    OBJECT =&gt;'$(O_FILES)', # link all the C files too
 );
-&lt;/ pre&gt;
-
-&lt;h3&gt; Test script &lt;/ h3&gt;
-
-Create a test script. This should be in the same directory where the XS files are located.
-
-&lt;pre&gt;
+</pre>
+<h3> Test script </h3>
+<p>
+  Create a test script. This should be in the same directory where the XS files are located.
+</p>
+<pre>
 use strict;
 use warnings;
 
 use SomeModule;
 
-SomeModule :: foo ();
-&lt;/ pre&gt;
-
-&lt;h3&gt; Compile and run &lt;/ h3&gt;
-
-Let's compile and run it.
-
-&lt;pre&gt;
+SomeModule::foo ();
+</pre>
+<h3> Compile and run </h3>
+<p>
+  Let's compile and run it.
+</p>
+<pre>
 perl Makefile.PL
 make
 perl -Mblib test.pl
-&lt;/ pre&gt;
-
-If the output is as follows, it is successful.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the output is as follows, it is successful.
+</p>
+<pre>
 mylib
-&lt;/ pre&gt;
-
-Now you can load the C library from the XS file.
+</pre>
+<p>
+  Now you can load the C library from the XS file.
+</p>
 
   </div>
   <div class="bottom">

@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> bitwise operation </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080806121804.html"> Bitwise operator-Performs bitwise operations </a></ h2>
-<Strong> Bit operation </ strong> is an operation to obtain the logical sum and logical product of each bit. There are few opportunities to use bit operations, but when using functions that directly use C language libraries such as <a href="/blog/20080804121794.html"> sysopen </a>, it is possible to perform bit operations. I have. It may also be used when you want to perform low-level data manipulation on a bit-by-bit basis.
+      <span itemprop = "name"> bitwise operation </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080806121804.html"> Bitwise operator-Performs bitwise operations </a></h2>
+<Strong> Bit operation </strong> is an operation to obtain the logical sum and logical product of each bit. There are few opportunities to use bit operations, but when using functions that directly use C language libraries such as <a href="/blog/20080804121794.html"> sysopen</a>, it is possible to perform bit operations. I have. It may also be used when you want to perform low-level data manipulation on a bit-by-bit basis.
 <p>
   Bit operations include AND, OR, Exclusive OR, and negation.
 </p>
@@ -101,299 +101,299 @@
   <tr>
     <td>
       operator
-    </ td>
+    </td>
     <td>
       meaning
-    </ td>
+    </td>
     <td>
       Bitwise operation example
-    </ td>
+    </td>
     <td>
       Bitwise operation result
-    </ td>
-  </ tr>
+    </td>
+  </tr>
 <p>
   Interpretation of bit operations |
 </p>
   <tr>
     <td>
       &
-    </ td>
+    </td>
     <td>
       Logical AND
-    </ td>
+    </td>
     <td>
       1100 & 1010
-    </ td>
+    </td>
     <td>
       1000
-    </ td>
-  </ tr>
+    </td>
+  </tr>
 <p>
   1 if both are 1, otherwise 0 |
 </p>
   <tr>
     <td>
-      & # x7c;
-    </ td>
+      &#x7c;
+    </td>
     <td>
       Logical sum
-    </ td>
+    </td>
     <td>
-      1100 & # x7c; 1010
-    </ td>
+      1100 &#x7c; 1010
+    </td>
     <td>
       1110
-    </ td>
-  </ tr>
+    </td>
+  </tr>
 <p>
   1 if either is 1, otherwise 0 |
 </p>
   <tr>
     <td>
       ^ ^
-    </ td>
+    </td>
     <td>
       Exclusive OR
-    </ td>
+    </td>
     <td>
       1100 ^ 1010
-    </ td>
+    </td>
     <td>
       0110
-    </ td>
-  </ tr>
+    </td>
+  </tr>
 <p>
   1 if only one is 1, otherwise 0 |
 </p>
   <tr>
     <td>
       ~
-    </ td>
+    </td>
     <td>
       denial
-    </ td>
+    </td>
     <td>
       ^ 1100
-    </ td>
+    </td>
     <td>
       0011
-    </ td>
-  </ tr>
+    </td>
+  </tr>
 <p>
   Invert Bits |
 </p>
-</ table>
-<h3> Binary, hexadecimal, and decimal support </ h3>
+</table>
+<h3> Binary, hexadecimal, and decimal support </h3>
 <table>
   <tr>
     <td>
       Binary number
-    </ td>
+    </td>
     <td>
       Decimal number
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0001
-    </ td>
+    </td>
     <td>
       01 01
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0010
-    </ td>
+    </td>
     <td>
       02 02
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0011
-    </ td>
+    </td>
     <td>
       03 03
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0100
-    </ td>
+    </td>
     <td>
       04
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0101
-    </ td>
+    </td>
     <td>
       05 05
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0110
-    </ td>
+    </td>
     <td>
       06 06
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       0111
-    </ td>
+    </td>
     <td>
       07 07
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1000
-    </ td>
+    </td>
     <td>
       08 08
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1001
-    </ td>
+    </td>
     <td>
       09 09
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1010
-    </ td>
+    </td>
     <td>
       Ten
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1011
-    </ td>
+    </td>
     <td>
       11
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1100
-    </ td>
+    </td>
     <td>
       12
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1101
-    </ td>
+    </td>
     <td>
       13
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1110
-    </ td>
+    </td>
     <td>
       14
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       1111
-    </ td>
+    </td>
     <td>
       15
-    </ td>
-  </ tr>
-</ table>
-<h3> Binary carry and decimal </ h3>
+    </td>
+  </tr>
+</table>
+<h3> Binary carry and decimal </h3>
 <table>
   <tr>
     <td>
       Binary
-    </ td>
-  </ tr>
+    </td>
+  </tr>
 <p>
   | Decimal |
 </p>
   <tr>
     <td>
       00000001
-    </ td>
+    </td>
     <td>
       1
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       00000010
-    </ td>
+    </td>
     <td>
       2
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       00000100
-    </ td>
+    </td>
     <td>
       Four
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       00001000
-    </ td>
+    </td>
     <td>
       8
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       00010000
-    </ td>
+    </td>
     <td>
       16
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       00100000
-    </ td>
+    </td>
     <td>
       32
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       01000000
-    </ td>
+    </td>
     <td>
       64
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       10000000
-    </ td>
+    </td>
     <td>
       128
-    </ td>
-  </ tr>
-</ table>
+    </td>
+  </tr>
+</table>
 <p>
   It corresponds to doubling in decimal and raising one place in binary.
 </p>
-<h3> Bit shift operator </ h3>
+<h3> Bit shift operator </h3>
 <p>
   Bit shift is to shift the arrangement of bits to the left or right. There are two types of bit shifts: right bit shift and left bit shift. From a mathematical point of view, the left bit shift is double and the right bit shift is the same as his quotient divided by two.
 </p>
@@ -401,79 +401,81 @@
   <tr>
     <td>
       operator
-    </ td>
+    </td>
     <td>
       meaning
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       >> >>
-    </ td>
+    </td>
     <td>
       Right bit shift
-    </ td>
-  </ tr>
+    </td>
+  </tr>
   <tr>
     <td>
       <<
-    </ td>
+    </td>
     <td>
       Left bit shift
-    </ td>
-  </ tr>
-</ table>
-<h4> Bit shift operator </ h4>
+    </td>
+  </tr>
+</table>
+<h4> Bit shift operator </h4>
 <pre>
-#Left bit shift
-$ num &lt;&lt; 1;
-$ num &lt;&lt; 2;
-$ num &lt;&lt; 3;
+# Left bit shift
+$num &lt;&lt; 1;
+$num &lt;&lt; 2;
+$num &lt;&lt; 3;
 
 # Right bit shift
-$ num &gt;&gt; 1;
-$ num &gt;&gt; 2;
-$ num &gt;&gt; 3;
-&lt;/ pre&gt;
-
-&lt;&lt; and &gt;&gt; are bit shift operators. The shift operation is performed only for the specified numerical value.
-
-What is the above binary number in decimal? It can be calculated from the place and bit values ​​as follows.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+$num &gt;&gt; 1;
+$num &gt;&gt; 2;
+$num &gt;&gt; 3;
+</pre>
+<< and >> are bit shift operators. The shift operation is performed only for the specified numerical value.
+<p>
+  What is the above binary number in decimal? It can be calculated from the place and bit values ​​as follows.
+</p>
+<table>
+  <tr>
+    <td>
       Rank
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       7
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       6
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Five
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-4 | 3 | 2 | 1 | 0 |
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+<p>
+  4 | 3 | 2 | 1 | 0 |
+</p>
+  <tr>
+    <td>
       bit
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       1
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-0 | 0 | 1 | 0 | 0 |
-&lt;/ table&gt;
-
-&lt;pre&gt;
+    </td>
+  </tr>
+<p>
+  0 | 0 | 1 | 0 | 0 |
+</p>
+</table>
+<pre>
 2 to the 7th power x 0 +
 2 to the 6th power x 0 +
 2 to the 5th power x 1 +
@@ -482,11 +484,11 @@ What is the above binary number in decimal? It can be calculated from the place 
 2 squared x 1 +
 2 to the 1st power x 0 +
 2 to the 0th power x 0
-&lt;/ pre&gt;
-
-That is,
-
-&lt;pre&gt;
+</pre>
+<p>
+  That is,
+</p>
+<pre>
 128 x 0 +
  64 x 0 +
  32 x 1 +
@@ -496,80 +498,92 @@ That is,
   2 x 0 +
   1 x 0 +
 = 32 + 4 = 36
-&lt;/ pre&gt;
-
-&lt;h3&gt; Meaning of left bit shift &lt;/ h3&gt;
-
-Left bit shift is equivalent to doubling the value.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<h3> Meaning of left bit shift </h3>
+<p>
+  Left bit shift is equivalent to doubling the value.
+</p>
+<table>
+  <tr>
+    <td>
       Rank
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       7
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       6
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Five
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-4 | 3 | 2 | 1 | 0 |
-  &lt;tr&gt;
-    &lt;td&gt;
-bit
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+<p>
+  4 | 3 | 2 | 1 | 0 |
+</p>
+  <tr>
+    <td>
+<p>
+  bit
+</p>
+    </td>
+    <td>
       0
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       1
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-0 | 0 | 1 | 0 | 0 |
-&lt;/ table&gt;
-If you shift the left bit
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+<p>
+  0 | 0 | 1 | 0 | 0 |
+</p>
+</table>
+<p>
+  If you shift the left bit
+</p>
+<table>
+  <tr>
+    <td>
       Rank
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       7
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       6
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Five
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-4 | 3 | 2 | 1 | 0 |
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+<p>
+  4 | 3 | 2 | 1 | 0 |
+</p>
+  <tr>
+    <td>
       bit
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       1
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-0 | 1 | 0 | 0 | 0 |
-&lt;/ table&gt;
-When calculated
-
-&lt;pre&gt;
+    </td>
+  </tr>
+<p>
+  0 | 1 | 0 | 0 | 0 |
+</p>
+</table>
+<p>
+  When calculated
+</p>
+<pre>
 128 x 0 +
  64 x 1 +
  32 x 0 +
@@ -579,201 +593,198 @@ When calculated
   2 x 0 +
   1 x 0 +
 = 64 + 8 = 72
-&lt;/ pre&gt;
-
-It certainly doubles.
-
-On the contrary, right bit shift is the same as the quotient divided by 2.
-
-&lt;h3&gt; Understand the meaning of bits in a computer &lt;/ h3&gt;
-
-If you don't understand the meaning of a bit, please click here.
-
-A bit is the smallest unit of data that a computer handles. There are only two bit states, "standing" and "not standing". Expressed in binary, it means "1" or "0". A sequence of 1s and 0s is called a bit string.
-Some computer devices are called memory, which is a device that stores a huge string of bits.
-
-&lt;h4&gt; The parable of a light bulb &lt;/ h4&gt;
-
-I think it's difficult to imagine memory at first, but it's easy to imagine if you think of a lot of light bulbs lined up in a straight line. There are many light bulbs lined up, and there are "light bulbs with" and "light bulbs without".
-
-&lt;pre&gt;
+</pre>
+<p>
+  It certainly doubles.
+</p>
+<p>
+  On the contrary, right bit shift is the same as the quotient divided by 2.
+</p>
+<h3> Understand the meaning of bits in a computer </h3>
+<p>
+  If you don't understand the meaning of a bit, please click here.
+</p>
+<p>
+  A bit is the smallest unit of data that a computer handles. There are only two bit states, "standing" and "not standing". Expressed in binary, it means "1" or "0". A sequence of 1s and 0s is called a bit string.
+</p>
+<p>
+  Some computer devices are called memory, which is a device that stores a huge string of bits.
+</p>
+<h4> The parable of a light bulb </h4>
+<p>
+  I think it's difficult to imagine memory at first, but it's easy to imagine if you think of a lot of light bulbs lined up in a straight line. There are many light bulbs lined up, and there are "light bulbs with" and "light bulbs without".
+</p>
+<pre>
 ○ × ○ × ○ ○ ○ ×
-&lt;/ pre&gt;
-
-As mentioned above, suppose you have 8 light bulbs. You can express "on" and "not on" with one light bulb. In other words, one light bulb can be used in two ways. If there are eight, 2 to the 8th power can express 256 ways.
-
-&lt;h4&gt; Information transmission using light bulbs &lt;/ h4&gt;
-
-I will try to convey information using a light bulb. Let's say that Mr. A and Mr. B have made the following arrangements regarding how to light a light bulb.
-
-&lt;pre&gt;
+</pre>
+<p>
+  As mentioned above, suppose you have 8 light bulbs. You can express "on" and "not on" with one light bulb. In other words, one light bulb can be used in two ways. If there are eight, 2 to the 8th power can express 256 ways.
+</p>
+<h4> Information transmission using light bulbs </h4>
+<p>
+  I will try to convey information using a light bulb. Let's say that Mr. A and Mr. B have made the following arrangements regarding how to light a light bulb.
+</p>
+<pre>
 ○○○○ ×××× → Please help me.
 × ○ ○ ○ ○ × × × → I arrived safely.
-&lt;/ pre&gt;
-
-In this way, Mr. A and Mr. B can exchange information using light bulbs even in places where nothing can be seen at night or where no sound can be heard in the distance. Information can be exchanged by human beings giving meaning to symbols that are meaningless by themselves, such as "○○○○ ××××".
-
-&lt;h4&gt; Gives the mathematical meaning of a sequence of light bulbs in binary &lt;/ h4&gt;
-
-It gives the mathematical meaning of a binary number as well as a light bulb.
-&lt;pre&gt;
+</pre>
+<p>
+  In this way, Mr. A and Mr. B can exchange information using light bulbs even in places where nothing can be seen at night or where no sound can be heard in the distance. Information can be exchanged by human beings giving meaning to symbols that are meaningless by themselves, such as "○○○○ ××××".
+</p>
+<h4> Gives the mathematical meaning of a sequence of light bulbs in binary </h4>
+<p>
+  It gives the mathematical meaning of a binary number as well as a light bulb.
+</p>
+<pre>
 ×××××××× → 00000000
 ××××××× ○ → 00000001
 ○ × × × × ○ × ○ → 10000101
-&lt;/ pre&gt;
-
-By doing this, the mere arrangement of light bulbs has a mathematical meaning. This is called a bit string and is the basis of computer calculations.
-
-&lt;h3&gt; Sample code &lt;/ h3&gt;
-
-The following is a sample of bit operation and a sample of expressing a flag with bits.
-
-&lt;pre&gt;
+</pre>
+<p>
+  By doing this, the mere arrangement of light bulbs has a mathematical meaning. This is called a bit string and is the basis of computer calculations.
+</p>
+<h3> Sample code </h3>
+<p>
+  The following is a sample of bit operation and a sample of expressing a flag with bits.
+</p>
+<pre>
 use strict;
 use warnings;
 
 You can express it in binary by prefixing the number with # 0b.
-Fill in 4 digits left 0 with the format specification #% 04b
+Fill in 4 digits left 0 with the format specification # % 04b
 # You can output binary representation.
-print "1: Logical product of binary numbers 1100 and 1010 \ n";
-printf ("% 04b", 0b1100 &amp; 0b1010);
+print "1: Logical product of binary numbers 1100 and 1010\n";
+printf("% 04b", 0b1100 &amp; 0b1010);
 
-print "\ n";
+print "\n";
 
-print "2: OR of binary numbers 1100 and 1010 \ n";
-printf ("% 04b", 0b1100 | 0b1010);
-print "\ n";
+print "2: OR of binary numbers 1100 and 1010\n";
+printf("% 04b", 0b1100 | 0b1010);
+print "\n";
 
-print "3: Exclusive OR of binary numbers 1100 and 1010 \ n";
-printf ("% 04b", 0b1100 ^ 0b1010);
-print "\ n";
+print "3: Exclusive OR of binary numbers 1100 and 1010\n";
+printf("% 04b", 0b1100 ^ 0b1010);
+print "\n";
 
-# Perl double-precision floating point (32 bits)
-Since it is represented by #, all 32 bits are
+# Perl double-precision floating point(32 bits)
+Since it is represented by # , all 32 bits are
 # Invert.
-print "4: Negation of binary 1100 \ n";
-printf ("% 04b", ~ 0b1100);
-print "\ n \ n";
+print "4: Negation of binary 1100\n";
+printf("% 04b", ~ 0b1100);
+print "\n\n";
 
-print "5: Use bitwise operations to indicate that all flags are on. \ N";
+print "5: Use bitwise operations to indicate that all flags are on.\n";
 sub FLG1 {1;} A subroutine that returns # 1. 1 is 1 in binary.
 A subroutine that returns sub FLG2 {2;} # 2. 2 is 10 in binary.
 A subroutine that returns sub FLG3 {4;} # 4. 4 is 100 in base.
 
-my $ all_flg_on = FLG1 | FLG2 | FLG3;
-printf ("% 03b", $ all_flg_on);
-print "\ n \ n";
+my $all_flg_on = FLG1 | FLG2 | FLG3;
+printf("% 03b", $all_flg_on);
+print "\n\n";
 
-print "6: Make sure FLG3 is on. \ N";
-if ($ all_flg_on &amp; FLG3) {
-  print "FLG3 is turned on. \ N";
+print "6: Make sure FLG3 is on.\n";
+if ($all_flg_on &amp; FLG3) {
+  print "FLG3 is turned on.\n";
 }
-&lt;/ pre&gt;
-
-
-&lt;pre&gt;
-printf ("% 04b", 0b1100 &amp; 0b1010);
-&lt;/ pre&gt;
-
-&lt;h4&gt; (1) Express numbers in binary &lt;/ h4&gt;
-
-You can use the prefix 0b to represent numbers in binary.
-
-&lt;h4&gt; (2) Output in binary notation &lt;/ h4&gt;
-
-To output in binary, use the &lt;a href="/blog/20170326149148.html"&gt; printf function &lt;/a&gt; and specify% b in the format. 04 between% and b is an option that means to fill the missing part with 0 in 4-digit display.
-
-&lt;h4&gt; (3) Expressing flags by bit operation &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
+printf("% 04b", 0b1100 &amp; 0b1010);
+</pre>
+<h4> (1) Express numbers in binary </h4>
+<p>
+  You can use the prefix 0b to represent numbers in binary.
+</p>
+<h4> (2) Output in binary notation </h4>
+<p>
+  To output in binary, use the <a href="/blog/20170326149148.html"> printf function</a> and specify% b in the format. 04 between% and b is an option that means to fill the missing part with 0 in 4-digit display.
+</p>
+<h4> (3) Expressing flags by bit operation </h4>
+<pre>
 sub FLG1 {1;} A subroutine that returns # 1. 1 is 1 in binary.
 A subroutine that returns sub FLG2 {2;} # 2. 2 is 10 in binary.
 A subroutine that returns sub FLG3 {4;} # 4. 4 is 100 in base.
 
-my $ all_flg_on = FLG1 | FLG2 | FLG3;
-printf ("% 03b", $ all_flg_on);
-print "\ n \ n";
+my $all_flg_on = FLG1 | FLG2 | FLG3;
+printf("% 03b", $all_flg_on);
+print "\n\n";
 
-print "6: Make sure FLG3 is on. \ N";
-if ($ all_flg_on &amp; FLG3) {
-  print "FLG3 is turned on. \ N";
+print "6: Make sure FLG3 is on.\n";
+if ($all_flg_on &amp; FLG3) {
+  print "FLG3 is turned on.\n";
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (3) -1 Expressing a constant with a subroutine &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> (3) -1 Expressing a constant with a subroutine </h4>
+<pre>
 sub FLG1 {1};
-&lt;/ pre&gt;
-
-If you write this, 1 will be returned when &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt; is called, and you can treat it like a constant. When calling, you can call it with FGG1 without writing FLG1 ().
-
-&lt;h4&gt; (3)-Set the flag value to a multiple of 2 so that the bits do not overlap &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you write this, 1 will be returned when <a href="/blog/20101130129876.html"> subroutine</a> is called, and you can treat it like a constant. When calling, you can call it with FGG1 without writing FLG1 ().
+</p>
+<h4> (3)-Set the flag value to a multiple of 2 so that the bits do not overlap </h4>
+<pre>
 sub FLG1 {1;} A subroutine that returns # 1. 1 is 1 in binary.
 A subroutine that returns sub FLG2 {2;} # 2. 2 is 10 in binary.
 A subroutine that returns sub FLG3 {4;} # 4. 4 is 100 in base.
-&lt;/ pre&gt;
-
-Use multiples of 2 to prevent the bits from overlapping. In order to use it as a flag, each bit must be able to be determined separately.
-
-&lt;h4&gt; (3) -3 Expression that all flags are turned on &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ all_flg_on = FLG1 | FLG2 | FLG3;
-&lt;/ pre&gt;
-
-OR the bits you want to turn on.
-
-&lt;h4&gt; (3) -4 Make sure the flag is on &lt;/ h4&gt;
-
-&lt;pre&gt;
-if ($ all_flg_on &amp; FLG3) {
+</pre>
+<p>
+  Use multiples of 2 to prevent the bits from overlapping. In order to use it as a flag, each bit must be able to be determined separately.
+</p>
+<h4> (3) -3 Expression that all flags are turned on </h4>
+<pre>
+my $all_flg_on = FLG1 | FLG2 | FLG3;
+</pre>
+<p>
+  OR the bits you want to turn on.
+</p>
+<h4> (3) -4 Make sure the flag is on </h4>
+<pre>
+if ($all_flg_on &amp; FLG3) {
   # ...
 }
-&lt;/ pre&gt;
-You can check if the flag is on by taking the logical product with the flag that you want to check if it is on.
-
-&lt;h4&gt; (3) -5 Basically avoid bit operations &lt;/ h4&gt;
-
-Basically, I don't write a program that uses bit operations. Bitwise operations are only needed when calling a Perl function that directly wraps a C library.
-
-The significance of bit operations is to save memory and speed up processing. Since it can be judged with 1 bit, a lot of information can be expressed with a small number of bits. In addition, the processing speed is high because only one bit is judged for each condition.
-
-The following is a sample bit shift operation.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can check if the flag is on by taking the logical product with the flag that you want to check if it is on.
+</p>
+<h4> (3) -5 Basically avoid bit operations </h4>
+<p>
+  Basically, I don't write a program that uses bit operations. Bitwise operations are only needed when calling a Perl function that directly wraps a C library.
+</p>
+<p>
+  The significance of bit operations is to save memory and speed up processing. Since it can be judged with 1 bit, a lot of information can be expressed with a small number of bits. In addition, the processing speed is high because only one bit is judged for each condition.
+</p>
+<p>
+  The following is a sample bit shift operation.
+</p>
+<pre>
 use strict;
 use warnings;
 
-my $ num = 8;
-print "\ $ num = $ num \ n \ n";
+my $num = 8;
+print "\ $num = $num\n\n";
 
-print "1: Left bit shift \ n";
+print "1: Left bit shift\n";
 # Same as 2 times
-print "1 bit left shift:". $ Num &lt;&lt; 1. "\ n";
+print "1 bit left shift:". $Num &lt;&lt; 1. "\n";
 Same as # 2 squared
-print "2-bit left shift:". $ Num &lt;&lt; 2. "\ n";
+print "2-bit left shift:". $Num &lt;&lt; 2. "\n";
 Same as # 2 cubed
-print "3-bit left shift:". $ Num &lt;&lt; 3. "\ n";
-print "\ n";
+print "3-bit left shift:". $Num &lt;&lt; 3. "\n";
+print "\n";
 
-print "2: Right bit shift \ n";
+print "2: Right bit shift\n";
 Same as the quotient divided by # 2
-print "1 bit right shift:". $ Num &gt;&gt; 1. "\ n";
+print "1 bit right shift:". $Num &gt;&gt; 1. "\n";
 Same as the quotient divided by # 2 squared
-print "2-bit right shift:". $ Num &gt;&gt; 2. "\ n";
+print "2-bit right shift:". $Num &gt;&gt; 2. "\n";
 Same as the quotient of # 2 divided by the cube
-print "3-bit right shift:". $ Num &gt;&gt; 3. "\ n";
-print "\ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Binary to Decimal Conversion &lt;/ h4&gt;
-
-&lt;pre&gt;
+print "3-bit right shift:". $Num &gt;&gt; 3. "\n";
+print "\n";
+</pre>
+<h4> Binary to Decimal Conversion </h4>
+<pre>
 00100100
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

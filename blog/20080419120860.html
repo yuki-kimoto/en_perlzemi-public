@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> qr operator-create a regular expression reference  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can create a  regular expression  reference with the  qr operator . You can use the qr operator to save a regular expression as a reference in a variable. You can also save regular expression options. Regular expressions are compiled, so they work faster when doing repeated pattern matching.">
+<meta name="description" content="You can create a  regular expression reference with the  qr operator . You can use the qr operator to save a regular expression as a reference in a variable. You can also save regular expression options. Regular expressions are compiled, so they work faster when doing repeated pattern matching.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" qr operator-create a regular expression reference  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can create a  regular expression  reference with the  qr operator . You can use the qr operator to save a regular expression as a reference in a variable. You can also save regular expression options. Regular expressions are compiled, so they work faster when doing repeated pattern matching." />
+<meta name="twitter:description" content="You can create a  regular expression reference with the  qr operator . You can use the qr operator to save a regular expression as a reference in a variable. You can also save regular expression options. Regular expressions are compiled, so they work faster when doing repeated pattern matching." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080419120860.html"> qr operator-create a regular expression reference </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080419120860.html"> qr operator-create a regular expression reference </a></h2>
 <p>
-  You can create a <a href="/blog/20100827127859.html"> regular expression </a> reference with the <strong> qr operator </ strong>. You can use the qr operator to save a regular expression as a reference in a variable. You can also save regular expression options. Regular expressions are compiled, so they work faster when doing repeated pattern matching.
+  You can create a <a href="/blog/20100827127859.html"> regular expression</a> reference with the <strong> qr operator </strong>. You can use the qr operator to save a regular expression as a reference in a variable. You can also save regular expression options. Regular expressions are compiled, so they work faster when doing repeated pattern matching.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,58 +97,56 @@
 
 
 <pre>
-#Regular expression reference
-my $ regex = qr / \ d + / sm;
-&lt;/ pre&gt;
-
-When performing pattern matching, you can put it in // or use it as it is. I think it's a little easier to see if you put it in //.
-
-&lt;pre&gt;
+# Regular expression reference
+my $regex = qr / \ d + / sm;
+</pre>
+<p>
+  When performing pattern matching, you can put it in // or use it as it is. I think it's a little easier to see if you put it in //.
+</p>
+<pre>
 Used in # //
-if ($ str = ~ / $ regex /) {
+if ($str = ~ / $regex /) {
   ...
 }
 
 # Use as it is
-if ($ str = ~ $ regex) {
+if ($str = ~ $regex) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; What is a reference? &lt;/ H3&gt;
-
-The reference is explained in detail in the following article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    Let's master how to use &lt;a href="/blog/20100930127859.html"&gt; reference &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample using a regular expression reference.
-
-&lt;pre&gt;
+</pre>
+<h3> What is a reference? </H3>
+<p>
+  The reference is explained in detail in the following article.
+</p>
+<ul>
+  <li>
+    Let's master how to use <a href="/blog/20100930127859.html"> reference</a>
+  </li>
+</ul>
+<h3> Sample </h3>
+<p>
+  This is a sample using a regular expression reference.
+</p>
+<pre>
 use strict;
 use warnings;
 
 You can use # qr // to save the options as well.
 # (The g option cannot be specified.)
-my $ word = "ababab";
-my $ regex = qr / A / i;
+my $word = "ababab";
+my $regex = qr / A / i;
                     
-my $ replace ='c';
+my $replace ='c';
 
-$ word = ~ s / $ regex / $ replace / g;
-print "\ $ word = $ word \ n";
-&lt;/ pre&gt;
-
-Execution result.
-
-&lt;pre&gt;
-$ word = cbcbcb
-&lt;/ pre&gt;
+$word = ~ s / $regex / $replace / g;
+print "\ $word = $word\n";
+</pre>
+<p>
+  Execution result.
+</p>
+<pre>
+$word = cbcbcb
+</pre>
 
   </div>
   <div class="bottom">

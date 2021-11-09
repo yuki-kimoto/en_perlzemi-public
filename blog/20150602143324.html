@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20160225145640.html">
-      <span itemprop = "name"> Version information </ span> </a>
+      <span itemprop = "name"> Version information </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
+    <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20150602143324.html"> Perl 5.22 has been released-math related enhancements, method performance improvements, regular expression improvements </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20150602143324.html"> Perl 5.22 has been released-math related enhancements, method performance improvements, regular expression improvements </a></h2>
 <p>
   The latest version of Perl 5.22 was released on June 1, 2015.
 </p>
@@ -99,169 +99,170 @@
 
 <blockquote>
 <p>
-  <a href="http://perl5.git.perl.org/perl.git/commit/70f63a4c7dba89e8e48b44de7978faae4319e693"> Perl 5.22 release </a>
+  <a href="http://perl5.git.perl.org/perl.git/commit/70f63a4c7dba89e8e48b44de7978faae4319e693"> Perl 5.22 release</a>
 </p>
-</ blockquote>
+</blockquote>
 <p>
   This release has a lot of feature additions.
 </p>
-<h3> Performance improvements </ h3>
+<h3> Performance improvements </h3>
 <p>
   The best part about Perl 5.22 is the performance improvements. Improved performance with multi-reference parsing and improved method parsing.
 </p>
-<h4> Improved performance of multi-level dereference </ h4>
+<h4> Improved performance of multi-level dereference </h4>
 <p>
   Perl's internal parser can now efficiently parse multi-tier dereferences. This has improved the performance of multi-tier dereferences.
 </p>
 <pre>
-$ scores-&gt; [0] {math};
-&lt;/ pre&gt;
-
-&lt;h4&gt; Method call and SUPER pseudo-class performance improvement &lt;/ h4&gt;
-
-Method calls and SUPER pseudo-classes are pre-parsed and their information cached. This improves the performance of method calls at runtime.
-
-&lt;pre&gt;
-$ obj-&gt; method
-$ obj-&gt; SUPER :: method;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Performance improvement of length function &lt;/ h4&gt;
-
-The length function improves performance by 20% for non-UTF-8 strings.
-
-&lt;h4&gt; Array and hash performance improvements &lt;/ h4&gt;
-
-Access to array and hash elements is faster if the key is a constant or a simple variable.
-
-&lt;h3&gt; Addition of Perl 5.22 features &lt;/ h3&gt;
-
-Perl 5.22 includes improvements to math-related features.
-
-&lt;h3&gt; C99 math functions are now available &lt;/ h3&gt;
-
-Mathematical functions supported by C99 in Perl are now available through the POSIX module.
-
-&lt;pre&gt;
+$scores-&gt; [0] {math};
+</pre>
+<h4> Method call and SUPER pseudo-class performance improvement </h4>
+<p>
+  Method calls and SUPER pseudo-classes are pre-parsed and their information cached. This improves the performance of method calls at runtime.
+</p>
+<pre>
+$obj-&gt; method
+$obj-&gt; SUPER::method;
+</pre>
+<h4> Performance improvement of length function </h4>
+<p>
+  The length function improves performance by 20% for non-UTF-8 strings.
+</p>
+<h4> Array and hash performance improvements </h4>
+<p>
+  Access to array and hash elements is faster if the key is a constant or a simple variable.
+</p>
+<h3> Addition of Perl 5.22 features </h3>
+<p>
+  Perl 5.22 includes improvements to math-related features.
+</p>
+<h3> C99 math functions are now available </h3>
+<p>
+  Mathematical functions supported by C99 in Perl are now available through the POSIX module.
+</p>
+<pre>
 atanh
 tgamma
-&lt;/ pre&gt;
-
-&lt;h4&gt; Improved handling of infinity and NaN (non-numeric) &lt;/ h4&gt;
-
-Inf and NaN are now more robustly available.
+</pre>
+<h4> Improved handling of infinity and NaN (non-numeric) </h4>
+<p>
+  Inf and NaN are now more robustly available.
+</p>
  
-&lt;h4&gt; Improved hexadecimal floating point parsing &lt;/ h4&gt;
-
-Hexadecimal floating point parsing has been improved. It also adds a literal that describes floating point points in hexadecimal.
-
-&lt;pre&gt;
+<h4> Improved hexadecimal floating point parsing </h4>
+<p>
+  Hexadecimal floating point parsing has been improved. It also adds a literal that describes floating point points in hexadecimal.
+</p>
+<pre>
 0x1.23p-4
-&lt;/ pre&gt;
-
-Now it is possible to represent numbers at the Perl level that are consistent with the machine level.
-
-As you can see, Perl 5.22 has significantly improved math-related features.
-
-&lt;h4&gt; Flags that don't use regular parentheses for capture &lt;/ h4&gt;
-
-Perl 5.22 adds a new flag for &lt;a href="/blog/20100827127859.html"&gt; regular expressions &lt;/a&gt; that doesn't use regular parentheses for capture. This makes it possible to write complex regular expressions concisely without using the uncaptured parentheses "(? :)".
-
-&lt;pre&gt;
+</pre>
+<p>
+  Now it is possible to represent numbers at the Perl level that are consistent with the machine level.
+</p>
+<p>
+  As you can see, Perl 5.22 has significantly improved math-related features.
+</p>
+<h4> Flags that don't use regular parentheses for capture </h4>
+<p>
+  Perl 5.22 adds a new flag for <a href="/blog/20100827127859.html"> regular expressions</a> that doesn't use regular parentheses for capture. This makes it possible to write complex regular expressions concisely without using the uncaptured parentheses "(? :)".
+</p>
+<pre>
  "hello" = ~ / (hi | hello) / n
-&lt;/ pre&gt;
+</pre>
+<p>
+  I'm using parentheses, but I don't capture them. If you want to capture with the n option, do the following:
+</p>
+<pre>
+"hello" = ~ / (?-n :( hi | hello)) / n; # $1 is "hello"
+"hello" = ~ / (? &lt;greet&gt; hi | hello) / n; # $1 is "hello", $+ {greet} is also "hello"
+</pre>
+<p>
+  When writing complex regular expressions, it might be easier to see them in combination with the n option and a named capture.
+</p>
+<h4> Unicode 7.0 support </h4>
+<p>
+  Perl 5.22 now supports Unicode 7.0. Perl supports Unicode very quickly.
+</p>
+<h4> Alias ​​through reference </h4>
+<p>
+  There is a feature called aliases as a feature of Perl, which can now be called at the syntax level. This feature is experimental.
+</p>
+<pre>
+use experimental::refaliasing;
 
-I'm using parentheses, but I don't capture them. If you want to capture with the n option, do the following:
-
-&lt;pre&gt;
-"hello" = ~ / (?-n :( hi | hello)) / n; # $ 1 is "hello"
-"hello" = ~ / (? &lt;greet&gt; hi | hello) / n; # $ 1 is "hello", $ + {greet} is also "hello"
-&lt;/ pre&gt;
-
-When writing complex regular expressions, it might be easier to see them in combination with the n option and a named capture.
-
-&lt;h4&gt; Unicode 7.0 support &lt;/ h4&gt;
-
-Perl 5.22 now supports Unicode 7.0. Perl supports Unicode very quickly.
-
-&lt;h4&gt; Alias ​​through reference &lt;/ h4&gt;
-
-There is a feature called aliases as a feature of Perl, which can now be called at the syntax level. This feature is experimental.
-
-&lt;pre&gt;
-use experimental :: refaliasing;
-
-my $ nums = [1, 2, 3];
-my $ nums_alias;
-\ $ nums_alias = \ $ nums;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Constant function support &lt;/ h4&gt;
-
-Constant functions are now supported by the const subroutine attribute. Once the function is executed, its value is saved, and the value is used from the second time onward. This feature is experimental.
-
-&lt;pre&gt;
-my $ value = sub: const {100 * 100};
-&lt;/ pre&gt;
-
-&lt;h4&gt; Double Diamond Operator-Safer Diamond Operator &lt;/ h4&gt;
-
-A safer double diamond operator "&lt;&lt; &gt;&gt;" is now supported. Traditional diamond operators use the two-argument open function internally, while double-diamond operators use the three-argument open function.
-
-&lt;pre&gt;
-my $ line = &lt;&lt;&gt;&gt;;
-&lt;/ pre&gt;
-
-&lt;h4&gt; encoding module now has lexical scope &lt;/ h4&gt;
-
-The encoding module is a deprecated module, but it is still alive. Therefore, the range of impact when using encoding as a functional improvement has changed from global to lexical. The encoding module can now be partially used, such as on a file-by-file basis.
-
-&lt;h3&gt; Deprecated features &lt;/ h3&gt;
-
-Converting all &lt;h4&gt; warnings to fatal errors has been deprecated. &lt;/ h4&gt;
-
-Any statement that makes all warnings fatal errors has been deprecated. The following description is deprecated in the future and should be avoided.
-
-&lt;pre&gt;
+my $nums = [1, 2, 3];
+my $nums_alias;
+\ $nums_alias = \ $nums;
+</pre>
+<h4> Constant function support </h4>
+<p>
+  Constant functions are now supported by the const subroutine attribute. Once the function is executed, its value is saved, and the value is used from the second time onward. This feature is experimental.
+</p>
+<pre>
+my $value = sub: const {100 * 100};
+</pre>
+<h4> Double Diamond Operator-Safer Diamond Operator </h4>
+<p>
+  A safer double diamond operator "<< >>" is now supported. Traditional diamond operators use the two-argument open function internally, while double-diamond operators use the three-argument open function.
+</p>
+<pre>
+my $line = &lt;&lt;&gt;&gt;;
+</pre>
+<h4> encoding module now has lexical scope </h4>
+<p>
+  The encoding module is a deprecated module, but it is still alive. Therefore, the range of impact when using encoding as a functional improvement has changed from global to lexical. The encoding module can now be partially used, such as on a file-by-file basis.
+</p>
+<h3> Deprecated features </h3>
+<p>
+  Converting all <h4> warnings to fatal errors has been deprecated. </h4>
+</p>
+<p>
+  Any statement that makes all warnings fatal errors has been deprecated. The following description is deprecated in the future and should be avoided.
+</p>
+<pre>
 use warnings FATAL =&gt;'all';
-&lt;/ pre&gt;
-
-This is because when the Perl core adds a new warning, there is a risk that the previously running application will get stuck due to an error. It seems that Perl's core team has opted for safe addition of new warnings rather than full compatibility. I also agree with this.
-
-&lt;h3&gt; Incompatible changes &lt;/ h3&gt;
-
-The following description resulted in an error.
-
-&lt;pre&gt;
-defined (@array)
-defined (% hash)
-&lt;/ pre&gt;
-
-This description was deprecated as of 5.6.1, and in 5.16, a warning of deprecation was issued, but in 5.22, an error occurred. When upgrading Perl, please note that the old source code may have this description.
-
-&lt;h3&gt; Module off core &lt;/ h3&gt;
-
-&lt;h4&gt; CGI module is off core &lt;/ h4&gt;
-
-The CGI module is off the core. This may come as a surprise, but it's also a trend of the times. After that, please install and use it from CPAN.
-
-Today, the mainstream is to develop web applications using web frameworks. You can find the framework you need for web development from the following pages.
-
-&lt;blockquote&gt;
-&lt;a href="http://search.cpan.org/~ether/Task-Kensho-0.38/lib/Task/Kensho.pm#Task :: Kensho :: WebDev: _Web_Development"&gt; Task :: Kensho :: WebDev : _Web_Development &lt;/a&gt;
-&lt;/ blockquote&gt;
-
-&lt;h4&gt; Module :: Build is off core &lt;/ h4&gt;
-
-Module :: Build has been removed from the core. When Module :: Build is needed, it has been removed for the purpose of having a mechanism in Perl that automatically installs from CPAN and to keep core management as small as possible.
-
-&lt;h3&gt; Summary &lt;/ h3&gt;
-
-First of all, I like Perl's enhancements to math-related features. We're happy to see the addition of features that cover areas where Perl is lagging behind.
-
-Also, I think it's great that the performance of methods and multi-level dereferences has improved. For example, it was reported that the Perl web framework Mojolicious had a performance improvement of 20% or more after upgrading to Perl 5.22.
-
-Also, I'm happy to say that converting warnings to fatal errors has been deprecated, giving you the possibility to add them when "use warnings" is "use v5.xx". It was opened. Early policy changes will help improve functions later.
+</pre>
+<p>
+  This is because when the Perl core adds a new warning, there is a risk that the previously running application will get stuck due to an error. It seems that Perl's core team has opted for safe addition of new warnings rather than full compatibility. I also agree with this.
+</p>
+<h3> Incompatible changes </h3>
+<p>
+  The following description resulted in an error.
+</p>
+<pre>
+defined(@array)
+defined(% hash)
+</pre>
+<p>
+  This description was deprecated as of 5.6.1, and in 5.16, a warning of deprecation was issued, but in 5.22, an error occurred. When upgrading Perl, please note that the old source code may have this description.
+</p>
+<h3> Module off core </h3>
+<h4> CGI module is off core </h4>
+<p>
+  The CGI module is off the core. This may come as a surprise, but it's also a trend of the times. After that, please install and use it from CPAN.
+</p>
+<p>
+  Today, the mainstream is to develop web applications using web frameworks. You can find the framework you need for web development from the following pages.
+</p>
+<blockquote>
+<p>
+  <a href="http://search.cpan.org/~ether/Task-Kensho-0.38/lib/Task/Kensho.pm#Task::Kensho::WebDev: _Web_Development"> Task::Kensho::WebDev : _Web_Development</a>
+</p>
+</blockquote>
+<h4> Module::Build is off core </h4>
+<p>
+  Module::Build has been removed from the core. When Module::Build is needed, it has been removed for the purpose of having a mechanism in Perl that automatically installs from CPAN and to keep core management as small as possible.
+</p>
+<h3> Summary </h3>
+<p>
+  First of all, I like Perl's enhancements to math-related features. We're happy to see the addition of features that cover areas where Perl is lagging behind.
+</p>
+<p>
+  Also, I think it's great that the performance of methods and multi-level dereferences has improved. For example, it was reported that the Perl web framework Mojolicious had a performance improvement of 20% or more after upgrading to Perl 5.22.
+</p>
+<p>
+  Also, I'm happy to say that converting warnings to fatal errors has been deprecated, giving you the possibility to add them when "use warnings" is "use v5.xx". It was opened. Early policy changes will help improve functions later.
+</p>
 
   </div>
   <div class="bottom">

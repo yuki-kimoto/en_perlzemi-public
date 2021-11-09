@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Lingua :: JA :: Regular :: Unicode module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Lingua::JA::Regular::Unicode module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Old Jcode had a method called h2z that converts half-width katakana to full-width katakana, but modern Perl doesn't use Jcode. In modern Perl, it's best to treat strings as internal strings inside your program.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Lingua :: JA :: Regular :: Unicode module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Lingua::JA::Regular::Unicode module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Old Jcode had a method called h2z that converts half-width katakana to full-width katakana, but modern Perl doesn't use Jcode. In modern Perl, it's best to treat strings as internal strings inside your program." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20140425139840.html"> Lingua :: JA :: Regular :: Unicode module </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20140425139840.html"> Lingua::JA::Regular::Unicode module </a></h2>
 <p>
   Old Jcode had a method called h2z that converts half-width katakana to full-width katakana, but modern Perl doesn't use Jcode. In modern Perl, it's best to treat strings as internal strings inside your program.
 </p>
@@ -97,16 +97,17 @@
 
 
 <p>
-  I think it's a good idea to use the <strong> katakana_h2z </ strong> function of the <strong> Lingua :: JA :: Regular :: Unicode </ strong> module to replace the old code.
+  I think it's a good idea to use the <strong> katakana_h2z </strong> function of the <strong> Lingua::JA::Regular::Unicode </strong> module to replace the old code.
 </p>
 <pre>
 use utf8;
-use Lingua :: JA :: Regular :: Unicode'katakana_h2z';
-my $ str_h ='Aiueo';
-my $ str_z = katakana_h2z $ str_h;
-&lt;/ pre&gt;
-
-This source code must be saved in UTF-8.
+use Lingua::JA::Regular::Unicode'katakana_h2z';
+my $str_h ='Aiueo';
+my $str_z = katakana_h2z $str_h;
+</pre>
+<p>
+  This source code must be saved in UTF-8.
+</p>
 
   </div>
   <div class="bottom">

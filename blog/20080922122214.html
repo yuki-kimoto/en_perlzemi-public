@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Round off  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To round off, use the  sprintf function . Specify the format like "% .3g" or "% .5g" if you want to round off by specifying a valid digit, and "% .3f" or "%." If you want to round off by a digit with a decimal point. Specify as 5f ".">
+<meta name="description" content="To round off, use the  sprintf function. Specify the format like "% .3g" or "% .5g" if you want to round off by specifying a valid digit, and "% .3f" or "%." If you want to round off by a digit with a decimal point. Specify as 5f ".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Round off  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To round off, use the  sprintf function . Specify the format like "% .3g" or "% .5g" if you want to round off by specifying a valid digit, and "% .3f" or "%." If you want to round off by a digit with a decimal point. Specify as 5f "." />
+<meta name="twitter:description" content="To round off, use the  sprintf function. Specify the format like "% .3g" or "% .5g" if you want to round off by specifying a valid digit, and "% .3f" or "%." If you want to round off by a digit with a decimal point. Specify as 5f "." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161026147748.html">
-      <span itemprop = "name"> Numerical value </ span> </a>
+      <span itemprop = "name"> Numerical value </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080922122214.html"> Round off </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080922122214.html"> Round off </a></h2>
 <p>
-  To round off, use the <a href="/blog/20081001122296.html"> sprintf function </a>. Specify the format like "% .3g" or "% .5g" if you want to round off by specifying a valid digit, and "% .3f" or "%." If you want to round off by a digit with a decimal point. Specify as 5f ".
+  To round off, use the <a href="/blog/20081001122296.html"> sprintf function</a>. Specify the format like "% .3g" or "% .5g" if you want to round off by specifying a valid digit, and "% .3f" or "%." If you want to round off by a digit with a decimal point. Specify as 5f ".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,64 +99,69 @@
 
 <pre>
 # Specify by the number of digits after the decimal point.
-sprintf ("% .1f", $ num1);
+sprintf("% .1f", $num1);
 
-#Specified by the number of significant digits.
-sprintf ("% .1g", $ num1);
-&lt;/ pre&gt;
-
-To round off, use the sprintf function. The format "% .1f" is a format that rounds a floating point number to the first decimal place. The second decimal place is rounded off.
-
-If you want to round off by specifying the number of significant digits, specify as "% .1g". For example, if you format 37.48 with "% .3g", you will get a number of 37.5.
-
-&lt;h4&gt; Notes on rounding &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ num2 = 0.725;
-my $ num2_round = sprintf ("% .2f", $ num2);
-&lt;/ pre&gt;
-
-0.725 expressed in &lt;a href="/blog/20080826121977.html"&gt; numeric literal &lt;/a&gt; is not 0.725 internally. Numerical values ​​that are not expressed in binary are always treated as an approximation 0.72499999999999998 (in my environment) due to internal error.
-
-Rounding this to the third decimal place gives 0.724. This is not the expected result.
-
-&lt;h4&gt; Rounding by sprintf is incorrect &lt;/ h4&gt;
-
-&lt;blockquote&gt;
-&lt;a href="http://d.hatena.ne.jp/end0tknr/20080928/1222581535"&gt; Rounded by perl &lt;/a&gt; (&lt;a href="http://d.hatena.ne.jp/end0tknr" / "&gt; end0tknr kipple &lt;/a&gt;)
-&lt;/ blockquote&gt;
-
-It was pointed out that rounding by sprintf should not be done.
-
-As you said, you shouldn't use sprintf if you want to round exactly. Rounding with sprintf works in most cases, with the exceptions mentioned above.
-
-If you want to round more accurately, there is a CPAN module called Math :: Round :: nearest.
-
-Thank you for pointing out, end0tknr.
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-This is a sample for rounding.
-
-&lt;pre&gt;
+# Specified by the number of significant digits.
+sprintf("% .1g", $num1);
+</pre>
+<p>
+  To round off, use the sprintf function. The format "% .1f" is a format that rounds a floating point number to the first decimal place. The second decimal place is rounded off.
+</p>
+<p>
+  If you want to round off by specifying the number of significant digits, specify as "% .1g". For example, if you format 37.48 with "% .3g", you will get a number of 37.5.
+</p>
+<h4> Notes on rounding </h4>
+<pre>
+my $num2 = 0.725;
+my $num2_round = sprintf("% .2f", $num2);
+</pre>
+<p>
+  0.725 expressed in <a href="/blog/20080826121977.html"> numeric literal</a> is not 0.725 internally. Numerical values ​​that are not expressed in binary are always treated as an approximation 0.72499999999999998 (in my environment) due to internal error.
+</p>
+<p>
+  Rounding this to the third decimal place gives 0.724. This is not the expected result.
+</p>
+<h4> Rounding by sprintf is incorrect </h4>
+<blockquote>
+<p>
+  <a href="http://d.hatena.ne.jp/end0tknr/20080928/1222581535"> Rounded by perl</a> (<a href="http://d.hatena.ne.jp/end0tknr" / "> end0tknr kipple</a>)
+</p>
+</blockquote>
+<p>
+  It was pointed out that rounding by sprintf should not be done.
+</p>
+<p>
+  As you said, you shouldn't use sprintf if you want to round exactly. Rounding with sprintf works in most cases, with the exceptions mentioned above.
+</p>
+<p>
+  If you want to round more accurately, there is a CPAN module called Math::Round::nearest.
+</p>
+<p>
+  Thank you for pointing out, end0tknr.
+</p>
+<h3> Sample program </h3>
+<p>
+  This is a sample for rounding.
+</p>
+<pre>
 use strict;
 use warnings;
 
-my $ num1 = 100.47;
+my $num1 = 100.47;
 
-print "(1) Round off. \ N";
-my $ num1_round = sprintf ("% .1f", $ num1);
-print "Rounding $ num1 to the second decimal place gives $ {num1_round}. \ N \ n";
+print "(1) Round off.\n";
+my $num1_round = sprintf("% .1f", $num1);
+print "Rounding $num1 to the second decimal place gives ${num1_round}.\n\n";
 
-print "(2) Notes on rounding \ n";
-my $ num2 = 0.725;
+print "(2) Notes on rounding\n";
+my $num2 = 0.725;
 
 It does not become # 0.73.
-my $ num2_round = sprintf ("% .2f", $ num2);
-print "If you round 0.725 to the third decimal place, you get $ {num2_round} \ n \ n";
+my $num2_round = sprintf("% .2f", $num2);
+print "If you round 0.725 to the third decimal place, you get ${num2_round}\n\n";
 
-printf ("caused internally by the number% .30f \ n". $ Num2);
-&lt;/ pre&gt;
+printf("caused internally by the number% .30f\n". $Num2);
+</pre>
 
   </div>
   <div class="bottom">

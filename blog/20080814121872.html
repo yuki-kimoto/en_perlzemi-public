@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> flock function --exclusive control of files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> flock function - exclusive control of files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  flock function  for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" flock function --exclusive control of files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" flock function - exclusive control of files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  flock function  for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080814121872.html"> flock function --exclusive control of files </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080814121872.html"> flock function - exclusive control of files </a></h2>
 <p>
-  You can use the <strong> flock function </ strong> for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)
+  You can use the <strong> flock function </strong> for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -105,194 +105,193 @@ use warnings;
 use Fcntl qw /: DEFAULT: flock: seek /;
 
 # Be careful as it will be overwritten
-my $ file = "data_20080814.txt";
+my $file = "data_20080814.txt";
 
-#Open in read / write mode (not very secure)
+# Open in read / write mode (not very secure)
 If there is no file with # O_CREAT, create it.
-sysopen (my $ fh, $ file, O_RDWR | O_CREAT)
-  or die "Cannot open $ file: $!";
+sysopen(my $fh, $file, O_RDWR | O_CREAT)
+  or die "Cannot open $file: $!";
 
-#Exclusive lock (exclusive lock because it reads and writes)
-flock ($ fh, LOCK_EX)
-  or die "Cannot lock $ file: $!";
+# Exclusive lock (exclusive lock because it reads and writes)
+flock($fh, LOCK_EX)
+  or die "Cannot lock $file: $!";
 
-my $ cnt;
-$ cnt = &lt;$ fh&gt;;
-if (! Defined $ cnt &amp;&amp; $!) {Die "Cannot read $ file: $!";}
+my $cnt;
+$cnt = &lt;$fh&gt;;
+if (! Defined $cnt &amp;&amp; $!) {Die "Cannot read $file: $!";}
 
-$ cnt ++;
+$cnt ++;
 
-#Move the file pointer to the beginning
-seek ($ fh, 0, SEEK_SET)
-  or die "Cannot seek $ file: $!";
+# Move the file pointer to the beginning
+seek ($fh, 0, SEEK_SET)
+  or die "Cannot seek $file: $!";
 
 # write in.
-print {$ fh} $ cnt
-  or die "Cannot Write $ file: $!";
+print {$fh} $cnt
+  or die "Cannot Write $file: $!";
 
 # Truncate the file to write size
-truncate ($ fh, length $ cnt);
+truncate ($fh, length $cnt);
 
 The file lock is released at the time of # close.
-close $ fh
-  or die "Cannot close $ file: $!";
+close $fh
+  or die "Cannot close $file: $!";
 
-print "Current count: $ cnt \ n";
-&lt;/ pre&gt;
-
-A script that repeats the above script at random time intervals. Save it as write_loop_20080814.pl.
-
-&lt;pre&gt;
+print "Current count: $cnt\n";
+</pre>
+<p>
+  A script that repeats the above script at random time intervals. Save it as write_loop_20080814.pl.
+</p>
+<pre>
 use strict;
 use warnings;
 use FindBin;
-use Time :: HiRes'usleep';
+use Time::HiRes'usleep';
 
-my $ script = "$ FindBin :: Bin / sample_20080814.pl";
+my $script = "$FindBin::Bin / sample_20080814.pl";
 
 while (1) {
   # Repeat the above script.
-  system ("perl $ script");
+  system("perl $script");
 
   # Random number less than 100,000 (1 second)
-  my $ random = rand 1000_000;
-  usleep $ random;
+  my $random = rand 1000_000;
+  usleep $random;
 }
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt;, &lt;a href="/blog/20180309152509.html"&gt; Time :: HiRes &lt;/a&gt;
-
-The script is called repeatedly using the &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
-
-Launch about 3 command prompts and execute write_loop_20080814.pl at all prompts. Read data_20080814.txt, count up and write back in 3 parallels.
-
-If the order is not followed, the written content will be duplicated or the file will be corrupted. If the order is followed, it should count up correctly.
-
-Kill all three processes with Ctrl + C and make sure there are no duplicate counts. If the counts do not overlap, you can see that you are reading and writing in order. (Flock doesn't work on some operating systems (such as Winows98), but it will work on most operating systems.)
-
-&lt;h3&gt; Code explanation &lt;/ h3&gt;
-
-&lt;h4&gt; Fcntl --Read constants for file locking &lt;/ h4&gt;
-
-The &lt;a href="/blog/20180310152509.html"&gt; Fcntl &lt;/a&gt; module allows you to use the file locking constants used by flock.
-
-&lt;pre&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100524127696.html"> FindBin</a>, <a href="/blog/20180309152509.html"> Time::HiRes</a>
+</p>
+<p>
+  The script is called repeatedly using the <a href="/blog/20100123126425.html"> while statement</a>.
+</p>
+<p>
+  Launch about 3 command prompts and execute write_loop_20080814.pl at all prompts. Read data_20080814.txt, count up and write back in 3 parallels.
+</p>
+<p>
+  If the order is not followed, the written content will be duplicated or the file will be corrupted. If the order is followed, it should count up correctly.
+</p>
+<p>
+  Kill all three processes with Ctrl + C and make sure there are no duplicate counts. If the counts do not overlap, you can see that you are reading and writing in order. (Flock doesn't work on some operating systems (such as Winows98), but it will work on most operating systems.)
+</p>
+<h3> Code explanation </h3>
+<h4> Fcntl - Read constants for file locking </h4>
+<p>
+  The <a href="/blog/20180310152509.html"> Fcntl</a> module allows you to use the file locking constants used by flock.
+</p>
+<pre>
 use Fcntl qw /: DEFAULT: flock: seek /;
-&lt;/ pre&gt;
-
-Use use Fcntl qw (: flock) to read the constants used by flock. There are three constants read by the: flock tag: LOCK_SH, LOCK_EX, and LOCK_UN.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<p>
+  Use use Fcntl qw (: flock) to read the constants used by flock. There are three constants read by the: flock tag: LOCK_SH, LOCK_EX, and LOCK_UN.
+</p>
+<table>
+  <tr>
+    <td>
       LOCK_SH
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Shared lock
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       LOCK_EX
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Exclusive lock
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       LOCK_NB
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Non-block mode
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-LOCK_NB is used with LOCK_SH LOCK_EX to return control to the program without waiting for the lock to be released if the lock has already been applied.
-
-As a side note: DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the &lt;a href="/blog/20080804121794.html"&gt; sysopen function &lt;/a&gt;. Therefore, it is specified.
-
-&lt;h4&gt; (2) If the file does not exist, create it and open it in read / write mode &lt;/ h4&gt;
-
-&lt;pre&gt;
-#Open in read / write mode (not very secure)
+    </td>
+  </tr>
+</table>
+<p>
+  LOCK_NB is used with LOCK_SH LOCK_EX to return control to the program without waiting for the lock to be released if the lock has already been applied.
+</p>
+<p>
+  As a side note: DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the <a href="/blog/20080804121794.html"> sysopen function</a>. Therefore, it is specified.
+</p>
+<h4> (2) If the file does not exist, create it and open it in read / write mode </h4>
+<pre>
+# Open in read / write mode (not very secure)
 If there is no file with # O_CREAT, create it.
-sysopen (my $ fh, $ file, O_RDWR | O_CREAT)
-  or die "Cannot open $ file: $!";
-&lt;/ pre&gt;
+sysopen(my $fh, $file, O_RDWR | O_CREAT)
+  or die "Cannot open $file: $!";
+</pre>
+<p>
+  In sysopen, specify O_RDWR and O_CREAT for the open flags.
+</p>
+<h4> (3) Exclusive lock is performed with the flock function </h4>
+<pre>
+# Exclusive lock (exclusive lock because it reads and writes)
+flock($fh, LOCK_EX)
+  or die "Cannot lock $file: $!";
+</pre>
+<p>
+  This time, we will use an exclusive lock (write lock) because we will read the data, count it up, and write it back. To perform an exclusive lock, specify LOCK_EX in the second argument of the flock function. If you just want to read, specify LOCK_SH.
+</p>
+<p>
+  Note that the first argument is an open filehandle, not a file. When all processes access a file, they can access the file in order by keeping the promise of acquiring the lock with flock.
+</p>
+<h4> (4) Count up and write </h4>
+<pre>
+my $cnt;
+$cnt = &lt;$fh&gt;;
+if (! Defined $cnt &amp;&amp; $!) {Die "Cannot read $file: $!";}
 
-In sysopen, specify O_RDWR and O_CREAT for the open flags.
+$cnt ++;
 
-&lt;h4&gt; (3) Exclusive lock is performed with the flock function &lt;/ h4&gt;
-
-&lt;pre&gt;
-#Exclusive lock (exclusive lock because it reads and writes)
-flock ($ fh, LOCK_EX)
-  or die "Cannot lock $ file: $!";
-&lt;/ pre&gt;
-
-This time, we will use an exclusive lock (write lock) because we will read the data, count it up, and write it back. To perform an exclusive lock, specify LOCK_EX in the second argument of the flock function. If you just want to read, specify LOCK_SH.
-
-Note that the first argument is an open filehandle, not a file. When all processes access a file, they can access the file in order by keeping the promise of acquiring the lock with flock.
-
-&lt;h4&gt; (4) Count up and write &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ cnt;
-$ cnt = &lt;$ fh&gt;;
-if (! Defined $ cnt &amp;&amp; $!) {Die "Cannot read $ file: $!";}
-
-$ cnt ++;
-
-#Move the file pointer to the beginning
-seek ($ fh, 0, SEEK_SET)
-  or die "Cannot seek $ file: $!";
+# Move the file pointer to the beginning
+seek ($fh, 0, SEEK_SET)
+  or die "Cannot seek $file: $!";
 
 # write in.
-print {$ fh} $ cnt
-  or die "Cannot Write $ file: $!";
+print {$fh} $cnt
+  or die "Cannot Write $file: $!";
 
 # Truncate the file to write size
-truncate ($ fh, length $ cnt);
-&lt;/ pre&gt;
-
-Read from the file and count up if there are no errors. Since the file pointer is advanced at the time of reading, use the seek function to return it to the beginning. Write with the print function and truncate to the written size with the truncate function. (This time, the numbers are just going up, so there is no need for truncate.)
-
-&lt;h4&gt; (5) Unlock &lt;/ h4&gt;
-
-&lt;pre&gt;
+truncate ($fh, length $cnt);
+</pre>
+<p>
+  Read from the file and count up if there are no errors. Since the file pointer is advanced at the time of reading, use the seek function to return it to the beginning. Write with the print function and truncate to the written size with the truncate function. (This time, the numbers are just going up, so there is no need for truncate.)
+</p>
+<h4> (5) Unlock </h4>
+<pre>
 The file lock is released at the time of # close.
-close $ fh
-  or die "Cannot close $ file: $!";
-&lt;/ pre&gt;
-
-Calling the close function unlocks the file.
-
-&lt;h3&gt; A brief explanation of the loop script &lt;/ h3&gt;
-
-&lt;pre&gt;
+close $fh
+  or die "Cannot close $file: $!";
+</pre>
+<p>
+  Calling the close function unlocks the file.
+</p>
+<h3> A brief explanation of the loop script </h3>
+<pre>
 use FindBin;
-use Time :: HiRes'usleep';
+use Time::HiRes'usleep';
 
-my $ script = "$ FindBin :: Bin / sample_20080814.pl";
+my $script = "$FindBin::Bin / sample_20080814.pl";
 
 while (1) {
   # Repeat the above script.
-  system ("perl $ script");
+  system("perl $script");
 
   # Random number less than 100,000 (1 second)
-  my $ random = rand 1000_000;
-  usleep $ random;
+  my $random = rand 1000_000;
+  usleep $random;
 }
-&lt;/ pre&gt;
-
-FindBin is a module that allows you to know the path of a script. The system function is a function that can execute a specified command. The rand function is a function for generating a random number. The usleep function is a function that stops the script for a certain period of time. Unlike the &lt;a href="/blog/20170522149546.html"&gt; sleep function &lt;/a&gt;, you can specify the number of seconds in microseconds.
-
-The usleep function is given a random value of 1 second or less, and when this process is run in parallel, it is devised so that a file conflict occurs.
+</pre>
+<p>
+  FindBin is a module that allows you to know the path of a script. The system function is a function that can execute a specified command. The rand function is a function for generating a random number. The usleep function is a function that stops the script for a certain period of time. Unlike the <a href="/blog/20170522149546.html"> sleep function</a>, you can specify the number of seconds in microseconds.
+</p>
+<p>
+  The usleep function is given a random value of 1 second or less, and when this process is run in parallel, it is devised so that a file conflict occurs.
+</p>
 
   </div>
   <div class="bottom">

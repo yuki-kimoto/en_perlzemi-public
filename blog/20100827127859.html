@@ -62,18 +62,18 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Regular expression </ span>
+      <span itemprop = "name"> Regular expression </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20100827127859.html"> Let's master Perl regular expressions </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100827127859.html"> Let's master Perl regular expressions </a></h2>
 <p>
-  A description of Perl's <strong> regular expressions </ strong>. After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice
+  A description of Perl's <strong> regular expressions </strong>. After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,814 +96,764 @@
 </p>
 <pre>
 a {1,3}
-&lt;/ pre&gt;
-
-The set of character strings "a", "aa", and "aaa" is represented by one regular expression "a {1,3}". {} Is called a quantifier and can represent consecutive characters.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The set of character strings "a", "aa", and "aaa" is represented by one regular expression "a {1,3}". {} Is called a quantifier and can represent consecutive characters.
+</p>
+<pre>
 a
 aa-&gt; a {1,3}
 aaa
-&lt;/ pre&gt;
-
-Let's look at another example of a regular expression. A set of character strings "p1", "q1", and "r1" can be represented by one regular expression "[pqr] 1". [] Is called &lt;a href="/blog/20200114103559.html"&gt; character class &lt;/a&gt; and can represent a set of multiple characters.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's look at another example of a regular expression. A set of character strings "p1", "q1", and "r1" can be represented by one regular expression "[pqr] 1". [] Is called <a href="/blog/20200114103559.html"> character class</a> and can represent a set of multiple characters.
+</p>
+<pre>
 p1
 q1-&gt; [pqr] 1
 r1
-&lt;/ pre&gt;
-
-In this way, you can write multiple strings with one regular expression.
-
-&lt;h3&gt; Pattern matching &lt;/ h3&gt;
-
-Pattern matching is an operation to check whether a set of characters represented by a regular expression is included in the target character string. Use the pattern matching operator to do pattern matching.
-
-&lt;pre&gt;
-#Pattern matching
-$ str = ~ / regular expression /
-&lt;/ pre&gt;
-
-The pattern matching operator is "= ~". Regular expressions must be enclosed in slashes "/". Returns true if there is a match, false if there is no match. Pattern matching is often used in combination with if statements.
-
-&lt;pre&gt;
-if ($ str = ~ / regular expression /) {
+</pre>
+<p>
+  In this way, you can write multiple strings with one regular expression.
+</p>
+<h3> Pattern matching </h3>
+<p>
+  Pattern matching is an operation to check whether a set of characters represented by a regular expression is included in the target character string. Use the pattern matching operator to do pattern matching.
+</p>
+<pre>
+# Pattern matching
+$str = ~ / regular expression /
+</pre>
+<p>
+  The pattern matching operator is "= ~". Regular expressions must be enclosed in slashes "/". Returns true if there is a match, false if there is no match. Pattern matching is often used in combination with if statements.
+</p>
+<pre>
+if ($str = ~ / regular expression /) {
   # What to do if there is a match
 }
-&lt;/ pre&gt;
-
-Let's check if the regular expression "a {1,3}" pattern matches the string "This string is aa.".
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's check if the regular expression "a {1,3}" pattern matches the string "This string is aa.".
+</p>
+<pre>
 String: "This string is aa."
 
 Regular expression: "a {1,3}"
-&lt;/ pre&gt;
+</pre>
+<p>
+  The script is as follows.
+</p>
+<pre>
+my $str ='This string is aa.';
 
-The script is as follows.
-
-&lt;pre&gt;
-my $ str ='This string is aa.';
-
-if ($ str = ~ / a {1,3} /) {
-  print "Match \ n";
+if ($str = ~ / a {1,3} /) {
+  print "Match\n";
 }
-&lt;/ pre&gt;
-
-"Match!" Is output.
-
-On the other hand, there is also an operator "! ~" That means that the pattern does not match.
-
-&lt;pre&gt;
-$ str! ~ / Regular expression /
-&lt;/ pre&gt;
-
-&lt;h4&gt; Get the matched string &lt;/ h4&gt;
-
-You can use pattern matching to get the matched string. To get the matched character string, enclose the part you want to get in "()". Let's get "aa" and "r1" in the string "This string is aar1".
-
-&lt;pre&gt;
+</pre>
+<p>
+  "Match!" Is output.
+</p>
+<p>
+  On the other hand, there is also an operator "! ~" That means that the pattern does not match.
+</p>
+<pre>
+$str! ~ / Regular expression /
+</pre>
+<h4> Get the matched string </h4>
+<p>
+  You can use pattern matching to get the matched string. To get the matched character string, enclose the part you want to get in "()". Let's get "aa" and "r1" in the string "This string is aar1".
+</p>
+<pre>
 String: "This string is aar 1"
 
 Regular expression: (a {1,3}) ([pqr] 1)
-&lt;/ pre&gt;
-
-The script looks like this: &lt;a href="/blog/20161102147817.html"&gt; Special variables &lt;/a&gt; The parts enclosed in parentheses are assigned to "$ 1" and "$ 2" in order.
-
-&lt;pre&gt;
-my $ str ='This string is aar1';
-if ($ str = ~ / (a ​​{1,3}) ([pqr] 1) /) {
-  print "Get $ 1 and $ 2";
+</pre>
+<p>
+  The script looks like this: <a href="/blog/20161102147817.html"> Special variables</a> The parts enclosed in parentheses are assigned to "$1" and "$2" in order.
+</p>
+<pre>
+my $str ='This string is aar1';
+if ($str = ~ / (a ​​{1,3}) ([pqr] 1) /) {
+  print "Get $1 and $2";
 }
-&lt;/ pre&gt;
-
-The output is as follows.
-&lt;pre&gt;
+</pre>
+<p>
+  The output is as follows.
+</p>
+<pre>
 Get aa and r1
-&lt;/ pre&gt;
-
-Let's change the string to "This string is aaap1". The output is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's change the string to "This string is aaap1". The output is as follows.
+</p>
+<pre>
 Get aaa and p1
-&lt;/ pre&gt;
-
-&lt;h3&gt; Replacement &lt;/ h3&gt;
-
-You can use a regular expression to replace the matched string. The replacement syntax is as follows:
-
-&lt;pre&gt;
+</pre>
+<h3> Replacement </h3>
+<p>
+  You can use a regular expression to replace the matched string. The replacement syntax is as follows:
+</p>
+<pre>
 Target string = ~ s / regular expression / replacement string /;
-&lt;/ pre&gt;
-
-Now let's replace the string "This string is aa" with the string "This string is bb". This sample uses the regular expression "a {1,3}" that matches aa.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Now let's replace the string "This string is aa" with the string "This string is bb". This sample uses the regular expression "a {1,3}" that matches aa.
+</p>
+<pre>
 Regular expression Replaced string
-a {1,3} ---&gt; bb
+a {1,3} - -&gt; bb
 
 Target character string
-This string is aa ---&gt; This string is bb
-&lt;/ pre&gt;
-
-The script looks like this:
-
-&lt;pre&gt;
-my $ str ='This string is aa';
-$ str = ~ s / a {1,3} / bb /;
-&lt;/ pre&gt;
-
-Only one is replaced. For example, if you have the string "This string is aa aaa", the above replacement will result in "This string is bb aaa" and only the first matching string will be replaced.
-
-Use the regular expression option "g" to replace all match strings. Regular expression options are specified at the end.
-
-&lt;pre&gt;
-#Replace all matched strings
+This string is aa - -&gt; This string is bb
+</pre>
+<p>
+  The script looks like this:
+</p>
+<pre>
+my $str ='This string is aa';
+$str = ~ s / a {1,3} / bb /;
+</pre>
+<p>
+  Only one is replaced. For example, if you have the string "This string is aa aaa", the above replacement will result in "This string is bb aaa" and only the first matching string will be replaced.
+</p>
+<p>
+  Use the regular expression option "g" to replace all match strings. Regular expression options are specified at the end.
+</p>
+<pre>
+# Replace all matched strings
 Target string = ~ s / regular expression / replaced string / g;
-&lt;/ pre&gt;
-
-The script that replaces all the matched strings looks like this:
-
-&lt;pre&gt;
-my $ str ='This string is aa aaa';
-$ str = ~ s / a {1,3} / bb / g;
-&lt;/ pre&gt;
-
-The output of the replaced character string is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The script that replaces all the matched strings looks like this:
+</p>
+<pre>
+my $str ='This string is aa aaa';
+$str = ~ s / a {1,3} / bb / g;
+</pre>
+<p>
+  The output of the replaced character string is as follows.
+</p>
+<pre>
 This string is bb bb
-&lt;/ pre&gt;
-
-Now let's look at various regular expressions.
-
-&lt;h3&gt; Regular expression character &lt;/ h3&gt;
-
-Regular expressions that represent a set of characters include:
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<p>
+  Now let's look at various regular expressions.
+</p>
+<h3> Regular expression character </h3>
+<p>
+  Regular expressions that represent a set of characters include:
+</p>
+<table>
+  <tr>
+    <td>
       ..
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       All characters except line breaks
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ d
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Numbers
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ D
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Characters other than numbers
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ w
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Word letters ("a-z" "A-Z" "0-9" underscore "_")
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ W
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Characters other than word characters
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ s
-    &lt;/ td&gt;
-    &lt;td&gt;
-      White space (space "", tab character "\ t", newline character "\ n, \ r", etc.)
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+    <td>
+      White space (space "", tab character "\t", newline character "\n,\r", etc.)
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ S
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Characters other than whitespace
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       ^ ^
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       The beginning of the string
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       $
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       End of string
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       \ b
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Word character boundaries
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-&lt;h4&gt; Any single character "." Except for line breaks &lt;/ h4&gt;
-
-Use "." To represent any single character except line breaks.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<h4> Any single character "." Except for line breaks </h4>
+<p>
+  Use "." To represent any single character except line breaks.
+</p>
+<pre>
 a
 b b
 c-&gt;.
 )
 @
-&lt;/ pre&gt;
-
-You can also match the "." To any character, including newlines. If you want the "." To match a newline, use the regular expression option "s".
-
-&lt;pre&gt;
-Match #. To any character, including newlines
-$ str = ~ /./s;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Number "\ d" &lt;/ h4&gt;
-
-Use "\ d" to represent numbers. Matches 0-9.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also match the "." To any character, including newlines. If you want the "." To match a newline, use the regular expression option "s".
+</p>
+<pre>
+Match # . To any character, including newlines
+$str = ~ /./s;
+</pre>
+<h4> Number "\ d" </h4>
+<p>
+  Use "\ d" to represent numbers. Matches 0-9.
+</p>
+<pre>
 0
 1
 2-&gt; \ d
 8
 9
-&lt;/ pre&gt;
-
-&lt;h4&gt; Other than numbers "\ D" &lt;/ h4&gt;
-
-Use "\ D" to represent non-numeric characters. This is a companion to "\ d".
-
-&lt;pre&gt;
+</pre>
+<h4> Other than numbers "\ D" </h4>
+<p>
+  Use "\ D" to represent non-numeric characters. This is a companion to "\ d".
+</p>
+<pre>
 Other than the number "\ d"-&gt; \ D
-&lt;/ pre&gt;
-
-&lt;h4&gt; White space "\ s" &lt;/ h4&gt;
-
-Whitespace is spaces, tabs, page breaks, carriage returns, and line feeds. Use "\ s" to represent whitespace.
-
-&lt;pre&gt;
+</pre>
+<h4> White space "\ s" </h4>
+<p>
+  Whitespace is spaces, tabs, page breaks, carriage returns, and line feeds. Use "\ s" to represent whitespace.
+</p>
+<pre>
 space " "
-Tab "\ t"
-Page break "\ f"-&gt; \ s
-Carriage return "\ n"
-Line feed "\ r"
-&lt;/ pre&gt;
-
-&lt;h4&gt; "\ S" other than white space &lt;/ h4&gt;
-
-Use "\ S" to represent non-whitespace characters. This is a companion to "\ s".
-
-&lt;pre&gt;
+Tab "\t"
+Page break "\f"-&gt; \ s
+Carriage return "\n"
+Line feed "\r"
+</pre>
+<h4> "\ S" other than white space </h4>
+<p>
+  Use "\ S" to represent non-whitespace characters. This is a companion to "\ s".
+</p>
+<pre>
 Other than the space character "\ s"-&gt; \ S
-&lt;/ pre&gt;
-
-&lt;h4&gt; Word character "\ w" &lt;/ h4&gt;
-
-A word character is a set of "alphabets, numbers, and underscores". Use "\ w" to represent word characters.
-
-&lt;pre&gt;
+</pre>
+<h4> Word character "\ w" </h4>
+<p>
+  A word character is a set of "alphabets, numbers, and underscores". Use "\ w" to represent word characters.
+</p>
+<pre>
 A-Z
 a-z
        -&gt; \ w
 0-9
 _
-&lt;/ pre&gt;
-
-&lt;h4&gt; Non-word characters "\ W" &lt;/ h4&gt;
-
-Use "\ W" to represent non-word characters.
-
-&lt;pre&gt;
+</pre>
+<h4> Non-word characters "\ W" </h4>
+<p>
+  Use "\ W" to represent non-word characters.
+</p>
+<pre>
 Other than the word character "\ w"-&gt; \ W
-&lt;/ pre&gt;
-
-&lt;h4&gt; The beginning of the character string "^" &lt;/ h4&gt;
-
-Some regular expression characters can represent the beginning of a character. Use "^" to represent the beginning of a character.
-
-&lt;pre&gt;
+</pre>
+<h4> The beginning of the character string "^" </h4>
+<p>
+  Some regular expression characters can represent the beginning of a character. Use "^" to represent the beginning of a character.
+</p>
+<pre>
 Beginning of string-&gt; ^
-&lt;/ pre&gt;This regular expression character has no character length. Use in combination with other characters. For example, the regular expression "^ abc" matches strings that start with "abc". Even if "abc" is included, it will not match unless it starts with "abc".
-
-&lt;pre&gt;
+</pre>This regular expression character has no character length. Use in combination with other characters. For example, the regular expression "^ abc" matches strings that start with "abc". Even if "abc" is included, it will not match unless it starts with "abc".
+<pre>
 abcppp
 abcqqq-&gt; ^ abc
 abcrrr
-&lt;/ pre&gt;
-
-When combined with the m option, ^ changes to mean the beginning of a line. Use "\ A" if you want to represent the beginning of a string when using the m option. "\ A" always represents the beginning of the string regardless of the existence of the option.
-
-&lt;h4&gt; End of string "$" &lt;/ h4&gt;
-
-Use "$" to represent the end of a string. For example, the regular expression "abc $" matches strings ending in "abc".
-
-&lt;pre&gt;
+</pre>
+<p>
+  When combined with the m option, ^ changes to mean the beginning of a line. Use "\ A" if you want to represent the beginning of a string when using the m option. "\ A" always represents the beginning of the string regardless of the existence of the option.
+</p>
+<h4> End of string "$" </h4>
+<p>
+  Use "$" to represent the end of a string. For example, the regular expression "abc $" matches strings ending in "abc".
+</p>
+<pre>
 pppabc
 qqqabc-&gt; abc $
 rrrabc
-&lt;/ pre&gt;
-
-When combined with the m option, $ changes to mean the end of a line. Use "\ z" if you want to represent the end of a string when using the m option. "\ Z" always represents the end of the string regardless of the existence of the option.
-
-&lt;h4&gt; Word character boundaries &lt;/ h4&gt;
-
-Use "\ b" to represent word character boundaries. The boundary of a word character is the part that changes from a word character to another character. For example, the regular expression "abc \ b" does not match "abcd" but does match "abc /", "abc @", and "abc".
-
-&lt;pre&gt;
+</pre>
+<p>
+  When combined with the m option, $changes to mean the end of a line. Use "\ z" if you want to represent the end of a string when using the m option. "\ Z" always represents the end of the string regardless of the existence of the option.
+</p>
+<h4> Word character boundaries </h4>
+<p>
+  Use "\ b" to represent word character boundaries. The boundary of a word character is the part that changes from a word character to another character. For example, the regular expression "abc \ b" does not match "abcd" but does match "abc /", "abc @", and "abc".
+</p>
+<pre>
 abc /
 abc @-&gt; abc \ b
 abc
-&lt;/ pre&gt;
-
-&lt;h3&gt; Character class &lt;/ h3&gt;
-
-Use &lt;a href="/blog/20200114103559.html"&gt; character class &lt;/a&gt; to represent a set of multiple characters.
-
-&lt;pre&gt;
+</pre>
+<h3> Character class </h3>
+<p>
+  Use <a href="/blog/20200114103559.html"> character class</a> to represent a set of multiple characters.
+</p>
+<pre>
 [Character set]
-&lt;/ pre&gt;
-
-For example, if you want to express the letters "a", "b", or "c", write [abc].
-
-&lt;pre&gt;
+</pre>
+<p>
+  For example, if you want to express the letters "a", "b", or "c", write [abc].
+</p>
+<pre>
 a
 b-&gt; [abc]
 c
-&lt;/ pre&gt;
-
-You can use the hyphen "-" symbol to specify a range of letters or numbers.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use the hyphen "-" symbol to specify a range of letters or numbers.
+</p>
+<pre>
 a
 b b
 c-&gt; [a-e]
 d
 e
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 0
 1
 2-&gt; [0-4]
 3
 Four
-&lt;/ pre&gt;
-
-If you want to express either an alphabet or a numerical value, write [a-zA-Z0-9].
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you want to express either an alphabet or a numerical value, write [a-zA-Z0-9].
+</p>
+<pre>
 Alphabets and numbers-&gt; [a-zA-Z0-9]
-&lt;/ pre&gt;
-
-You can also use character classes to represent non-specific characters. Use "^" to represent something other than a specific character. Note that if "^" is used at the beginning of the character class [], it means "other than that", not "the beginning of the character".
-
-For example, to represent a character other than "a", "b", and "c":
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also use character classes to represent non-specific characters. Use "^" to represent something other than a specific character. Note that if "^" is used at the beginning of the character class [], it means "other than that", not "the beginning of the character".
+</p>
+<p>
+  For example, to represent a character other than "a", "b", and "c":
+</p>
+<pre>
 Characters other than "a", "b" and "c"-&gt; [^ abc]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Quantifier &lt;/ h3&gt;
-
-You can use the quantifier to specify how many consecutive characters will continue. The quantifiers are:
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<h3> Quantifier </h3>
+<p>
+  You can use the quantifier to specify how many consecutive characters will continue. The quantifiers are:
+</p>
+<table>
+  <tr>
+    <td>
       ??
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0 or 1 character immediately before
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
        *
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       0 or more characters immediately before
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       +
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       One or more characters immediately before
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       {m, n}
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Immediately before m or more and n or less
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       {m,}
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Last character is m or more
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       {0, n}
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       N or less characters immediately before
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-&lt;h4&gt;? 0 or 1 character immediately before &lt;/ h4&gt;
-
-? Is a quantity specifier that expresses that the previous character is 0 or 1. In other words, it may or may not have the previous character.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<h4>? 0 or 1 character immediately before </h4>
+<p>
+  ? Is a quantity specifier that expresses that the previous character is 0 or 1. In other words, it may or may not have the previous character.
+</p>
+<pre>
 aaap
         -&gt; aaap?
 aaa
-&lt;/ pre&gt;
-
-It can be used in combination with regular expression characters as well as quantifiers.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It can be used in combination with regular expression characters as well as quantifiers.
+</p>
+<pre>
 aaa
 aaap
         -&gt; aaa [pqr]?
 aaaq
 aaar
-&lt;/ pre&gt;
-
-&lt;h4&gt; * 0 or more previous characters &lt;/ h4&gt;
-
-* Is a quantity specifier that expresses that the immediately preceding character is 0 or more.
-
-&lt;pre&gt;
+</pre>
+<h4> * 0 or more previous characters </h4>
+<p>
+  * Is a quantity specifier that expresses that the immediately preceding character is 0 or more.
+</p>
+<pre>
 aaa
 aaap-&gt; aaap *
 aaapp
-&lt;/ pre&gt;
-
-&lt;h4&gt; + One or more characters immediately before &lt;/ h4&gt;
-
-+ Is a quantity specifier that expresses that there is at least one character immediately before.
-
-&lt;pre&gt;
+</pre>
+<h4> + One or more characters immediately before </h4>
+<p>
+  + Is a quantity specifier that expresses that there is at least one character immediately before.
+</p>
+<pre>
 aaap
 aaapp-&gt; aaap +
 aaappp
-&lt;/ pre&gt;
-
-&lt;h4&gt; {m, n} The previous character is m or more and n or less &lt;/ h4&gt;
-
-{m, n} is a quantity specifier that expresses that the previous character is m or more and n or less.
-
-&lt;pre&gt;
+</pre>
+<h4> {m, n} The previous character is m or more and n or less </h4>
+<p>
+  {m, n} is a quantity specifier that expresses that the previous character is m or more and n or less.
+</p>
+<pre>
 aaap
 aaapp-&gt; aaap {1,3}
 aaappp
-&lt;/ pre&gt;
-
-&lt;h4&gt; {m,} &lt;/ h4&gt;
-
-{m,} is a quantity specifier that expresses that the previous character is m or more.
-
-&lt;pre&gt;
+</pre>
+<h4> {m,} </h4>
+<p>
+  {m,} is a quantity specifier that expresses that the previous character is m or more.
+</p>
+<pre>
 aaapp
 aaappp-&gt; aaap {2,}
 aaapppp
-&lt;/ pre&gt;
-
-&lt;h4&gt; {0, n} &lt;/ h4&gt;
-
-{0, n} is a quantifier that expresses that the previous character is n or less.
-
-&lt;pre&gt;
+</pre>
+<h4> {0, n} </h4>
+<p>
+  {0, n} is a quantifier that expresses that the previous character is n or less.
+</p>
+<pre>
 aaappp
 aaapppp-&gt; aaap {0,5}
 aaappppp
-&lt;/ pre&gt;
-
-&lt;h3&gt; A set of strings &lt;/ h3&gt;
-
-Use "|" to represent a set of strings. Usually used in combination with parentheses "()".
-
-&lt;pre&gt;
+</pre>
+<h3> A set of strings </h3>
+<p>
+  Use "|" to represent a set of strings. Usually used in combination with parentheses "()".
+</p>
+<pre>
 a123b
 a456b-&gt; a (123 | 456 | 789) b
 a789b
-&lt;/ pre&gt;
-
-&lt;h3&gt; Escape regular expression characters &lt;/ h3&gt;
-
-To make a regular expression character mean a normal character, you need to add a \ immediately before it. For example, to represent the character "." Itself, you need to use "\.".
-
-&lt;pre&gt;
+</pre>
+<h3> Escape regular expression characters </h3>
+<p>
+  To make a regular expression character mean a normal character, you need to add a \ immediately before it. For example, to represent the character "." Itself, you need to use "\.".
+</p>
+<pre>
 .txt-&gt; \ .txt
-&lt;/ pre&gt;
-
-If you use &lt;a href="/blog/20100329127089.html"&gt; quotemeta function &lt;/a&gt;, it will automatically escape the entire string.
-
-&lt;pre&gt;
-my $ regex = quotemeta ('.txt');
-&lt;/ pre&gt;
-
-You can also use the special regular expression character \ Q for escaping. The characters from \ Q to \ E are escaped. If there is no \ E, the target is up to the end of the regular expression.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you use <a href="/blog/20100329127089.html"> quotemeta function</a>, it will automatically escape the entire string.
+</p>
+<pre>
+my $regex = quotemeta('.txt');
+</pre>
+<p>
+  You can also use the special regular expression character \ Q for escaping. The characters from \ Q to \ E are escaped. If there is no \ E, the target is up to the end of the regular expression.
+</p>
+<pre>
 /\Q.txt\E/
-&lt;/ pre&gt;
-
-&lt;h3&gt; Regular expression technique &lt;/ h3&gt;
-
-&lt;h4&gt; (? :) Uncaptured parentheses &lt;/ h4&gt;
-
-The regular expression parentheses "()" are used for capture and when you want to mean "or" like "(A | B)". You can use "(? :)" instead of "()" to use () just for "or".
-
-&lt;pre&gt;
+</pre>
+<h3> Regular expression technique </h3>
+<h4> (? :) Uncaptured parentheses </h4>
+<p>
+  The regular expression parentheses "()" are used for capture and when you want to mean "or" like "(A | B)". You can use "(? :)" instead of "()" to use () just for "or".
+</p>
+<pre>
 (?: A | B)
-&lt;/ pre&gt;
-
-&lt;h4&gt; Change the enclosing character of the regular expression &lt;/ h4&gt;
-
-If you see a lot of slashes in your regular expression, it's very annoying because you have to escape with \. In such cases, you can put m immediately before to change the enclosing character of the regular expression.
-
-&lt;pre&gt;
+</pre>
+<h4> Change the enclosing character of the regular expression </h4>
+<p>
+  If you see a lot of slashes in your regular expression, it's very annoying because you have to escape with \. In such cases, you can put m immediately before to change the enclosing character of the regular expression.
+</p>
+<pre>
 / \ / aaa \ / bbb /
 
 # Above and meaning
 m # / aaa / bbb #
 m {/ aaa / bbb}
-&lt;/ pre&gt;
-
-You can also change the enclosing character for replacement.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also change the enclosing character for replacement.
+</p>
+<pre>
 s # aaa # bbb #
 s | aaa | bbb |
-&lt;/ pre&gt;
-
-&lt;h4&gt; Regular expression reference &lt;/ h4&gt;
-
-Regular expressions can be referenced using the &lt;a href="/blog/20080419120860.html"&gt; qr operator &lt;/a&gt;. You can use it as a regular expression reference and assign it to a variable, including regular expression options.
-
-&lt;pre&gt;
-my $ regex = qr / (\ d +) / sm;
-&lt;/ pre&gt;
-
-This can also be used in regular pattern matching.
-
-&lt;pre&gt;
-my $ num = 34;
-if ($ num = ~ / $ regex /) {
+</pre>
+<h4> Regular expression reference </h4>
+<p>
+  Regular expressions can be referenced using the <a href="/blog/20080419120860.html"> qr operator</a>. You can use it as a regular expression reference and assign it to a variable, including regular expression options.
+</p>
+<pre>
+my $regex = qr / (\ d +) / sm;
+</pre>
+<p>
+  This can also be used in regular pattern matching.
+</p>
+<pre>
+my $num = 34;
+if ($num = ~ / $regex /) {
    
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Regular expression options &lt;/ h3&gt;
-
-You can specify options for the regular expression as needed.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<h3> Regular expression options </h3>
+<p>
+  You can specify options for the regular expression as needed.
+</p>
+<table>
+  <tr>
+    <td>
       g
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Repeat pattern matching
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       s
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Match "." To line breaks
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       m
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Match "^" and "$" to the beginning and end of a line
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       i
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Match case insensitively
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       e
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Use an expression for permutation
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       x
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Ignore spaces in regular expressions
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       o o
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Perform variable expansion only once
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-Regular expression options are specified at the end of the regular expression. It is also possible to combine multiple options.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<p>
+  Regular expression options are specified at the end of the regular expression. It is also possible to combine multiple options.
+</p>
+<pre>
 / Regular expression / sm
-&lt;/ pre&gt;
-
-&lt;h4&gt; g Replace all matched strings &lt;/ h4&gt;
-
-You can replace everything that matches by specifying the g option.
-
-&lt;blockquote&gt;
-$ message2 = ~ s / yah / yes / g;
-&lt;/ blockquote&gt;
-
-We've already covered m, s, and g, so we'll cover the remaining options.
-
-&lt;h4&gt; m Match "^" and "$" to the beginning and end of a line &lt;/ h4&gt;
-
-You can use the &lt;strong&gt; m &lt;/ strong&gt; option to match "^" and "$" to the beginning and end of a line.
-
-&lt;pre&gt;
-$ message = ~ / ^ i / m
-&lt;/ pre&gt;
-
-&lt;h4&gt; s Match "." To line breaks s option &lt;/ h4&gt;
-
-You can use the &lt;strong&gt; s &lt;/ strong&gt; option to match a "line break" to a ".".
-
-&lt;pre&gt;
-$ message = ~ / ^ i / s
-&lt;/ pre&gt;
-
-&lt;h4&gt; i Case sensitiveMatch without &lt;/ h4&gt;
-
-You can use the i option to match case insensitively.
-
-&lt;pre&gt;
+</pre>
+<h4> g Replace all matched strings </h4>
+<p>
+  You can replace everything that matches by specifying the g option.
+</p>
+<blockquote>
+<p>
+  $message2 = ~ s / yah / yes / g;
+</p>
+</blockquote>
+<p>
+  We've already covered m, s, and g, so we'll cover the remaining options.
+</p>
+<h4> m Match "^" and "$" to the beginning and end of a line </h4>
+<p>
+  You can use the <strong> m </strong> option to match "^" and "$" to the beginning and end of a line.
+</p>
+<pre>
+$message = ~ / ^ i / m
+</pre>
+<h4> s Match "." To line breaks s option </h4>
+<p>
+  You can use the <strong> s </strong> option to match a "line break" to a ".".
+</p>
+<pre>
+$message = ~ / ^ i / s
+</pre>
+<h4> i Case sensitiveMatch without </h4>
+<p>
+  You can use the i option to match case insensitively.
+</p>
+<pre>
 abc
 Abc-&gt; / abc / i
 ABC
-&lt;/ pre&gt;
-
-&lt;h4&gt; e Use an expression for permutation &lt;/ h4&gt;
-
-The e option allows you to use an expression as the result of the replacement.
-
-The following sample is a sample that doubles the matched number.
-
-&lt;pre&gt;
-s / (\ d +) / $ 1 * 2 / e;
-&lt;/ pre&gt;
-
-&lt;h4&gt; x Ignore whitespace in regular expressions &lt;/ h4&gt;
-
-You can use the x option to ignore whitespace in regular expressions. You will also be able to write comments. If space is not important, you can use the x option to write the regular expression more clearly.
-
-&lt;pre&gt;
-my $ time = '03: 02: 56';
-my $ regex = qr /
+</pre>
+<h4> e Use an expression for permutation </h4>
+<p>
+  The e option allows you to use an expression as the result of the replacement.
+</p>
+<p>
+  The following sample is a sample that doubles the matched number.
+</p>
+<pre>
+s / (\ d +) / $1 * 2 / e;
+</pre>
+<h4> x Ignore whitespace in regular expressions </h4>
+<p>
+  You can use the x option to ignore whitespace in regular expressions. You will also be able to write comments. If space is not important, you can use the x option to write the regular expression more clearly.
+</p>
+<pre>
+my $time = '03: 02: 56';
+my $regex = qr /
   (\ d {2}) # hour
-  ::
-  (\ d {2}) # min
-  ::
-  (\ d {2}) #seconds
+::  (\ d {2}) # min
+::  (\ d {2}) # seconds
 / x;
 
-if ($ time = ~ / $ regex /) {
-  my $ hour = $ 1;
-  my $ minute = $ 2;
-  my $ second = $ 3;
+if ($time = ~ / $regex /) {
+  my $hour = $1;
+  my $minute = $2;
+  my $second = $3;
 }
-&lt;/ pre&gt;
-
-If you want to use the blank itself, escape the blank like "\".
-
-&lt;h4&gt; o Variable expansion only once &lt;/ h4&gt;
-
-The regular expression option "o" allows variable expansion to be done only once. This will improve performance because it doesn't re-evaluate the regular expression, but it's also prone to bugs, so use it as needed.
-
-&lt;pre&gt;
-my $ regex = "a pen";
+</pre>
+<p>
+  If you want to use the blank itself, escape the blank like "\".
+</p>
+<h4> o Variable expansion only once </h4>
+<p>
+  The regular expression option "o" allows variable expansion to be done only once. This will improve performance because it doesn't re-evaluate the regular expression, but it's also prone to bugs, so use it as needed.
+</p>
+<pre>
+my $regex = "a pen";
 for (1 .. 10) {
-  $ message = ~ / $ regex / o;
+  $message = ~ / $regex / o;
 }
-&lt;/ pre&gt;
-
-With the o option, variable expansion is done only the first time. In other words, from the second time of the loop, / a pen / is used as it is without the variable expansion of / $ regex / → / a pen /.
-
-&lt;h3&gt; Shortest match &lt;/ h3&gt;
-
-Perl regular expressions have one quirk. That is, the quantifier matches at the longest position. For example, which part would match given the following regular expression and string?
-
-&lt;pre&gt;
+</pre>
+<p>
+  With the o option, variable expansion is done only the first time. In other words, from the second time of the loop, / a pen / is used as it is without the variable expansion of / $regex / → / a pen /.
+</p>
+<h3> Shortest match </h3>
+<p>
+  Perl regular expressions have one quirk. That is, the quantifier matches at the longest position. For example, which part would match given the following regular expression and string?
+</p>
+<pre>
 # Regular expressions
 . + \ S
 
-#String
+# String
 aaa bbb ccc
-&lt;/ pre&gt;
-
-The regular expression .+ \ s means "one or more characters other than newline and blank". There are multiple candidates in the sample above. There are two candidates, "aaa" and "aaa bbb". Perl's default behavior is to match the longest position and match "aaa bbb".
-
-&lt;pre&gt;
+</pre>
+<p>
+  The regular expression .+ \ s means "one or more characters other than newline and blank". There are multiple candidates in the sample above. There are two candidates, "aaa" and "aaa bbb". Perl's default behavior is to match the longest position and match "aaa bbb".
+</p>
+<pre>
 # Matching string
 "Aaaa bbb"
-&lt;/ pre&gt;
-
-It is possible to match this with "aaa". This technique is called the shortest match. Add? After the quantifier for the shortest match. If you change the regular expression to (. +? \ S), it will match "aaa".
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is possible to match this with "aaa". This technique is called the shortest match. Add? After the quantifier for the shortest match. If you change the regular expression to (. +? \ S), it will match "aaa".
+</p>
+<pre>
 # Regular expression with the shortest match
 . +? \ S
-&lt;/ pre&gt;
-
-The regular expression will now match "aaa".
-
-&lt;pre&gt;
+</pre>
+<p>
+  The regular expression will now match "aaa".
+</p>
+<pre>
 "Aaaa"
-&lt;/ pre&gt;
-
-&lt;h3&gt; Japanese and regular expressions &lt;/ h3&gt;
-
-In order to use Japanese in a regular expression, both the regular expression and the target character string must be converted to an internal character string. Please refer to &lt;a href="/blog/20091118124667.html"&gt; How to use the Encode module &lt;/a&gt; for the conversion to an internal character string.
-
-&lt;h3&gt; At the end &lt;/ h3&gt;
-
-As long as you remember what you learned in this commentary, you will not have any problems in practice. Regular expressions allow you to extract or easily replace only the lines you need. Please enjoy the regular expressions that are the real pleasure of Perl.
+</pre>
+<h3> Japanese and regular expressions </h3>
+<p>
+  In order to use Japanese in a regular expression, both the regular expression and the target character string must be converted to an internal character string. Please refer to <a href="/blog/20091118124667.html"> How to use the Encode module</a> for the conversion to an internal character string.
+</p>
+<h3> At the end </h3>
+<p>
+  As long as you remember what you learned in this commentary, you will not have any problems in practice. Regular expressions allow you to extract or easily replace only the lines you need. Please enjoy the regular expressions that are the real pleasure of Perl.
+</p>
 
   </div>
   <div class="bottom">

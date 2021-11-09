@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080826121977.html"> Numeric literals-Representation of numbers in source code </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080826121977.html"> Numeric literals-Representation of numbers in source code </a></h2>
 <p>
-  The representation of numbers in the source code is called <strong> number literals </ strong>. Numeric literals can be written as follows.
+  The representation of numbers in the source code is called <strong> number literals </strong>. Numeric literals can be written as follows.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,113 +96,105 @@
 </div>
 
 
-<h4> integer </ h4>
+<h4> integer </h4>
 <p>
   Numbers that are not enclosed in quotes or double quotes are interpreted by Perl as numeric literals.
 </p>
 <pre>
-my $ num1 = 1;
+my $num1 = 1;
 
 # Negative number
-my $ num2 = -1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Digit separator expression &lt;/ h4&gt;
-
-If an underscore is included in a numeric literal, it will be ignored. The notations 1_000_000 and 1000000 are equivalent. Underscores can be used to make large numbers easier to read.
-
-&lt;pre&gt;
+my $num2 = -1;
+</pre>
+<h4> Digit separator expression </h4>
+<p>
+  If an underscore is included in a numeric literal, it will be ignored. The notations 1_000_000 and 1000000 are equivalent. Underscores can be used to make large numbers easier to read.
+</p>
+<pre>
 You can use # _ as a digit separator.
-my $ num3 = 1_000_000;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Decimal (floating point) &lt;/ h4&gt;
-
-If it contains a. (Dot), it is interpreted as a decimal. It is the same as the notation in mathematics. A few Perls are double precision floating point.
-
-&lt;pre&gt;
+my $num3 = 1_000_000;
+</pre>
+<h4> Decimal (floating point) </h4>
+<p>
+  If it contains a. (Dot), it is interpreted as a decimal. It is the same as the notation in mathematics. A few Perls are double precision floating point.
+</p>
+<pre>
 # Decimal point
-my $ num4 = 1.33;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Minority exponential notation &lt;/ h4&gt;
-
-You can use exponential notation to represent a small number of numbers. 1.3E3 is equivalent to 1300. 1.3E-3 is equivalent to 0.0013.
-
-&lt;pre&gt;
+my $num4 = 1.33;
+</pre>
+<h4> Minority exponential notation </h4>
+<p>
+  You can use exponential notation to represent a small number of numbers. 1.3E3 is equivalent to 1300. 1.3E-3 is equivalent to 0.0013.
+</p>
+<pre>
 # 1.3 x 10 cubed
-my $ num5 = 1.3E3;
+my $num5 = 1.3E3;
 
 # 1.3 x 10 to the -3rd power
-my $ num6 = 1.3E-3;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Binary number &lt;/ h4&gt;
-
-You can specify a numerical value in binary by prefixing it with 0b.
-
-&lt;pre&gt;
-my $ num_bin = 0b1111;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Octal number &lt;/ h4&gt;
-
-If you add 0 to the beginning, you can specify a numerical value in octal.
-
-&lt;pre&gt;
-my $ num_oct = 0777;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Hexadecimal &lt;/ h4&gt;
-
-You can specify a number in hexadecimal by prefixing it with 0x.
-
-&lt;pre&gt;
-my $ num_hex = 0xFFFF;
-&lt;/ pre&gt;
-
-&lt;h4&gt; What are the numbers in Perl? &lt;/ H4&gt;
-
-The numbers in Perl are explained in detail below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161026147748.html"&gt; Handling of numbers in Perl &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-This is a sample program that uses numerical literals.
-
-&lt;pre&gt;
+my $num6 = 1.3E-3;
+</pre>
+<h4> Binary number </h4>
+<p>
+  You can specify a numerical value in binary by prefixing it with 0b.
+</p>
+<pre>
+my $num_bin = 0b1111;
+</pre>
+<h4> Octal number </h4>
+<p>
+  If you add 0 to the beginning, you can specify a numerical value in octal.
+</p>
+<pre>
+my $num_oct = 0777;
+</pre>
+<h4> Hexadecimal </h4>
+<p>
+  You can specify a number in hexadecimal by prefixing it with 0x.
+</p>
+<pre>
+my $num_hex = 0xFFFF;
+</pre>
+<h4> What are the numbers in Perl? </H4>
+<p>
+  The numbers in Perl are explained in detail below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161026147748.html"> Handling of numbers in Perl</a>
+  </li>
+</ul>
+<h3> Sample program </h3>
+<p>
+  This is a sample program that uses numerical literals.
+</p>
+<pre>
 use strict;
 use warnings;
 
-my $ num1 = 1;
+my $num1 = 1;
 
 # Negative number
-my $ num2 = -1;
+my $num2 = -1;
 
 You can use # _ as a digit separator.
-my $ num3 = 1_000_000;
+my $num3 = 1_000_000;
 
 # Decimal
-my $ num4 = 1.33;
+my $num4 = 1.33;
 
 # Minority exponential notation 1.3 x 10 cubed
-my $ num5 = 1.3E3;
+my $num5 = 1.3E3;
 
 # 1.3 x 10 to the -3rd power
-my $ num6 = 1.3E-3;
+my $num6 = 1.3E-3;
 
-print "\ $ num1 = $ num1 \ n";
-print "\ $ num2 = $ num2 \ n";
-print "\ $ num3 = $ num3 \ n";
-print "\ $ num4 = $ num4 \ n";
-print "\ $ num5 = $ num5 \ n";
-print "\ $ num6 = $ num6 \ n";
-&lt;/ pre&gt;
+print "\ $num1 = $num1\n";
+print "\ $num2 = $num2\n";
+print "\ $num3 = $num3\n";
+print "\ $num4 = $num4\n";
+print "\ $num5 = $num5\n";
+print "\ $num6 = $num6\n";
+</pre>
 
   </div>
   <div class="bottom">

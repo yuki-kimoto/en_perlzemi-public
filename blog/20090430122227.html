@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20090430122227.html"> floor function-round down the fractional part </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090430122227.html"> floor function-round down the fractional part </a></h2>
 <p>
-  To round down the decimal point, use the POSIX module's <strong> floor function </ strong>.
+  To round down the decimal point, use the POSIX module's <strong> floor function </strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,28 +98,27 @@
 
 <pre>
 use POSIX'floor';
-my $ ret = floor $ num;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample to round down the decimal point.
-
-&lt;pre&gt;
+my $ret = floor $num;
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample to round down the decimal point.
+</p>
+<pre>
 use strict;
 use warnings;
 use POSIX'floor';
 
-my $ num1 = 1.5;
-my $ num2 = -1.5;
+my $num1 = 1.5;
+my $num2 = -1.5;
 
-print "(2) Round down the decimal point. \ N";
-my $ num1_floor = floor $ num1;
-my $ num2_floor = floor $ num2;
+print "(2) Round down the decimal point.\n";
+my $num1_floor = floor $num1;
+my $num2_floor = floor $num2;
 
-print "Devaluation of $ num1: $ num1_floor \ n";
-print "Devaluation of $ num2: $ num2_floor \ n";
-&lt;/ pre&gt;
+print "Devaluation of $num1: $num1_floor\n";
+print "Devaluation of $num2: $num2_floor\n";
+</pre>
 
   </div>
   <div class="bottom">

@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Name collision prevention </ span>
+      <span itemprop = "name"> Name collision prevention </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090310123564.html"> Object-oriented advantage # 1 Prevent name collisions </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090310123564.html"> Object-oriented advantage # 1 Prevent name collisions </a></h2>
 <p>
-  Modules written in object orientation are often <strong> easy to use </ strong>. Writing object-oriented is just because it's convenient, not because "functional descriptions are old".
+  Modules written in object orientation are often <strong> easy to use </strong>. Writing object-oriented is just because it's convenient, not because "functional descriptions are old".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,43 +100,48 @@
 <p>
   For the time being, I'll list the advantages of object-oriented modules that functional modules don't have.
 </p>
-<h3> 1. Prevents name collisions </ h3>
+<h3> 1. Prevents name collisions </h3>
 <p>
-  The first object-oriented advantage is that it <strong> prevents name collisions </ strong>. Let's compare Encode, a functional module, with XML :: Simple, an object-oriented module.
+  The first object-oriented advantage is that it <strong> prevents name collisions </strong>. Let's compare Encode, a functional module, with XML::Simple, an object-oriented module.
 </p>
-<h4> Encode </ h4>
+<h4> Encode </h4>
 <p>
   When you use Encode, you can use a function called decode.
 </p>
 <pre>
 use Encode;
 
-my $ string ='ah';
-my $ dec_string = decode ('utf8', $ string);
-&lt;/ pre&gt;
-
-&lt;h4&gt; XML :: Simple &lt;/ h4&gt;
-
-Using XML :: Simple doesn't allow me to use any function. Methods can be used from objects created by XML :: Simple-&gt; new.
-
-&lt;pre&gt;
-use XML :: Simple;
-my $ file ='a.xml';
-my $ parser = XML :: Simple-&gt; new;
-$ parser-&gt; XMLin ($ file);
-&lt;/ pre&gt;
-
-When I use Encode, I can use a function called decode, but what if a function called decode has already been defined somewhere?
-
-This will cause a &lt;strong&gt; name collision &lt;/ strong&gt;. On the other hand, the object-oriented module XML :: Parser does not import any functions. Object-oriented modules are &lt;strong&gt; users don't have to worry about name collisions &lt;/ strong&gt;.
-
-This is the first advantage. The &lt;strong&gt; disadvantage &lt;/ strong&gt; of object-oriented modules is that they are verbose. Encode has a shorter description, isn't it?
-
-As a guideline, it will be used frequently in the program, and if you do not specify complicated options, create it as a functional module to simplify the description.
-
-On the other hand, for special purposes and complicated option specifications, object-oriented modules are easy to use without name conflicts.
-
-In most cases it's better to create an object-oriented module. Think carefully before making a functional module.
+my $string ='ah';
+my $dec_string = decode ('utf8', $string);
+</pre>
+<h4> XML::Simple </h4>
+<p>
+  Using XML::Simple doesn't allow me to use any function. Methods can be used from objects created by XML::Simple-> new.
+</p>
+<pre>
+use XML::Simple;
+my $file ='a.xml';
+my $parser = XML::Simple-&gt; new;
+$parser-&gt; XMLin ($file);
+</pre>
+<p>
+  When I use Encode, I can use a function called decode, but what if a function called decode has already been defined somewhere?
+</p>
+<p>
+  This will cause a <strong> name collision </strong>. On the other hand, the object-oriented module XML::Parser does not import any functions. Object-oriented modules are <strong> users don't have to worry about name collisions </strong>.
+</p>
+<p>
+  This is the first advantage. The <strong> disadvantage </strong> of object-oriented modules is that they are verbose. Encode has a shorter description, isn't it?
+</p>
+<p>
+  As a guideline, it will be used frequently in the program, and if you do not specify complicated options, create it as a functional module to simplify the description.
+</p>
+<p>
+  On the other hand, for special purposes and complicated option specifications, object-oriented modules are easy to use without name conflicts.
+</p>
+<p>
+  In most cases it's better to create an object-oriented module. Think carefully before making a functional module.
+</p>
 
   </div>
   <div class="bottom">

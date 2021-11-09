@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Subroutine definitions are not affected by scope  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Subroutine definitions are not affected by  scope .">
+<meta name="description" content="Subroutine definitions are not affected by  scope.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Subroutine definitions are not affected by scope  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Subroutine definitions are not affected by  scope ." />
+<meta name="twitter:description" content="Subroutine definitions are not affected by  scope." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20101130129876.html">
-        <span itemprop = "name"> Subroutine </ span> </a>
+        <span itemprop = "name"> Subroutine </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080612121341.html"> Subroutine definitions are not affected by scope </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080612121341.html"> Subroutine definitions are not affected by scope </a></h2>
 <p>
-  Subroutine definitions are not affected by <a href="/blog/20110128130016.html"> scope </a>.
+  Subroutine definitions are not affected by <a href="/blog/20110128130016.html"> scope</a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,23 +103,24 @@
     return 2;
   }
 }
-my $ ret = func ();
-&lt;/ pre&gt;
-
-Subroutines are not affected by scope. At first glance, it's easy to think that func is invisible outside the scope, but that's not the case.
-
-The subroutine definition is registered in the &lt;a href="/blog/20080613121341.html"&gt; symbol table &lt;/a&gt; at compile time. Since the symbol table can be referenced from anywhere in the program, subroutines can also be referenced from anywhere in the program.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-The subroutine definition is a sample to understand that it is not affected by scope.
-
-&lt;pre&gt;
+my $ret = func ();
+</pre>
+<p>
+  Subroutines are not affected by scope. At first glance, it's easy to think that func is invisible outside the scope, but that's not the case.
+</p>
+<p>
+  The subroutine definition is registered in the <a href="/blog/20080613121341.html"> symbol table</a> at compile time. Since the symbol table can be referenced from anywhere in the program, subroutines can also be referenced from anywhere in the program.
+</p>
+<h3> Sample </h3>
+<p>
+  The subroutine definition is a sample to understand that it is not affected by scope.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Subroutine definition and scope
-#Subroutines are not affected by scope.
+# Subroutines are not affected by scope.
 
 {
   sub func {
@@ -127,10 +128,10 @@ use warnings;
   }
 }
 
-print "1: Subroutine definition is not affected by scope. \ N";
-my $ ret = func ();
-print "\ $ ret is $ ret. \ N";
-&lt;/ pre&gt;
+print "1: Subroutine definition is not affected by scope.\n";
+my $ret = func ();
+print "\ $ret is $ret.\n";
+</pre>
 
   </div>
   <div class="bottom">

@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100523127696.html"> Storable-Serialize data </a></ ​​h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100523127696.html"> Storable-Serialize data </a></​​h2>
 <p>
-  The <strong> Storable </ strong> module allows you to serialize your data. Serialization is the conversion of Perl's data structure into a format that can be stored externally.
+  The <strong> Storable </strong> module allows you to serialize your data. Serialization is the conversion of Perl's data structure into a format that can be stored externally.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,35 +97,40 @@
 
 
 <pre>
-#Loading modules and importing functions
+# Loading modules and importing functions
 use Storable qw / freeze thaw /;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; freeze &lt;/ strong&gt; function to serialize the data.
-
-&lt;pre&gt;
-#Serialize data
-my $ data = [
+</pre>
+<p>
+  Use the <strong> freeze </strong> function to serialize the data.
+</p>
+<pre>
+# Serialize data
+my $data = [
   {name =&gt;'Ken', age =&gt; 19},
   {name =&gt;'Taro', age =&gt; 20}
 ];;
-my $ serialized_data = freeze $ data;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; thaw &lt;/ strong&gt; function to restore the serialized data.
-
-&lt;pre&gt;
-#Restore serialized data
-my $ data = thaw $ serialized_data;
-&lt;/ pre&gt;
-
-&lt;h3&gt; FAQ about Storable modules &lt;/ h3&gt;
-
-Q. I saw an nfreeze function. How is it different from the freeze function?
-A. You can use the nfreeze function to serialize your data in an OS-independent manner. For example, suppose you save the data serialized by the freeze function on a database server on a certain OS. If another OS retrieves the serialized data from the database server, it cannot be restored by thaw. In such cases, you need to serialize with nfreeze.
-
-Q. What are the advantages and disadvantages of saving Perl data structures in JSON?
-A. The advantage is performance. Storable is faster than JSON and Data :: Dumper. The downside is that the data can only be restored with Perl's thaw. Also, if the version of Perl goes up and binary compatibility is lost, it may not be possible to restore it with the upgraded version of Perl. Therefore, it is better to limit the data serialized by Storable to temporary data.
+my $serialized_data = freeze $data;
+</pre>
+<p>
+  Use the <strong> thaw </strong> function to restore the serialized data.
+</p>
+<pre>
+# Restore serialized data
+my $data = thaw $serialized_data;
+</pre>
+<h3> FAQ about Storable modules </h3>
+<p>
+  Q. I saw an nfreeze function. How is it different from the freeze function?
+</p>
+<p>
+  A. You can use the nfreeze function to serialize your data in an OS-independent manner. For example, suppose you save the data serialized by the freeze function on a database server on a certain OS. If another OS retrieves the serialized data from the database server, it cannot be restored by thaw. In such cases, you need to serialize with nfreeze.
+</p>
+<p>
+  Q. What are the advantages and disadvantages of saving Perl data structures in JSON?
+</p>
+<p>
+  A. The advantage is performance. Storable is faster than JSON and Data::Dumper. The downside is that the data can only be restored with Perl's thaw. Also, if the version of Perl goes up and binary compatibility is lost, it may not be possible to restore it with the upgraded version of Perl. Therefore, it is better to limit the data serialized by Storable to temporary data.
+</p>
 
   </div>
   <div class="bottom">

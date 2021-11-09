@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180519152690.html"> Check the processing time </a></ h2>
+    <h2><a href="/blog/20180519152690.html"> Check the processing time </a></h2>
 <p>
   When creating a batch processing program, it is often the case that you want to know how long it took from the start of processing to the end of processing.
 </p>
@@ -83,25 +83,26 @@
   I would like to know how long it takes if I download a large zip file or insert a large amount of data into a database or the like.
 </p>
 <p>
-  In such a case, use the <a href="/blog/20081008122347.html"> time function </a> to get the processing start time and hunting time to calculate the processing time.
+  In such a case, use the <a href="/blog/20081008122347.html"> time function</a> to get the processing start time and hunting time to calculate the processing time.
 </p>
 <pre>
 # Start time
-my $ start_time = time;
+my $start_time = time;
 
 # process
 ...
 
 # ending time
-my $ end_time = time;
+my $end_time = time;
 
-#Elapsed seconds
-my $ process_time = $ end_time-$ start_time;
+# Elapsed seconds
+my $process_time = $end_time-$start_time;
 
-print "$ process_time \ n";
-&lt;/ pre&gt;
-
-You can calculate how long it took to process by subtracting the start time from the end time.
+print "$process_time\n";
+</pre>
+<p>
+  You can calculate how long it took to process by subtracting the start time from the end time.
+</p>
 
   </div>
   <div class="bottom">

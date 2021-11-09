@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20101130129876.html">
-        <span itemprop = "name"> Subroutine </ span> </a>
+        <span itemprop = "name"> Subroutine </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080620121405.html"> Subroutine exercises </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080620121405.html"> Subroutine exercises </a></h2>
 <p>
   Here are some examples to help you learn with concrete examples of subroutines.
 </p>
@@ -97,153 +97,148 @@
 </div>
 
 
-<h3> Convert a csv format string to an array of arrays </ h3>
+<h3> Convert a csv format string to an array of arrays </h3>
 <p>
-  This is a sample to convert <a href="/blog/20161003147558.html"> string </a> in csv format to an array of arrays.
+  This is a sample to convert <a href="/blog/20161003147558.html"> string</a> in csv format to an array of arrays.
 </p>
 <pre>
 use strict;
 use warnings;
 
-#Name, age, origin
-my $ text = &lt;&lt;'EOS';
+# Name, age, origin
+my $text = &lt;&lt;'EOS';
 tora, 24, Japan
 rika,12,USA
 kenta, 25, Chinese
 EOS
 
-print "1: Convert a csv format string to an array of arrays. \ N";
-my $ people = parse ($ text);
+print "1: Convert a csv format string to an array of arrays.\n";
+my $people = parse ($text);
 
-require Data :: Dumper;
-print Data :: Dumper-&gt; Dump ([$ persons], ['$ perlsons']);
+require Data::Dumper;
+print Data::Dumper-&gt; Dump ([$persons], ['$perlsons']);
 
 sub parse {
-  my $ text = shift;
-  my @lines = split ("\ n", $ text);
+  my $text = shift;
+  my @lines = split("\n", $text);
   
-  my $ items_list = [];
-  for my $ line (@lines) {
-    my @items = split (',', $ line);
-    push @ $ items_list, [@items];
+  my $items_list = [];
+  for my $line (@lines) {
+    my @items = split(',', $line);
+    push @ $items_list, [@items];
   }
   
-  wantarray? return @ $ items_list: $ items_list;
+  wantarray? return @ $items_list: $items_list;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Conversion image &lt;/ h4&gt;
-
-&lt;pre&gt;
-| ------------------ |
+</pre>
+<h4> Conversion image </h4>
+<pre>
+| - -- -- -- -- -- - |
 | tora, 24, Japan |
 | rika,12,USA |
 | kenta, 25, Chinese |
-| ------------------ |
+| - -- -- -- -- -- - |
         ↓
 [
   [tora, 24, Japan],
   [rika, 12, USA],
   [kenta, 25, Chinese],
 ]
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
+</pre>
+<ul>
+  <li>
     Converts text to an array of arrays.
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; (1) For those who do not understand here documents. &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ text = &lt;&lt;'EOS';
+  </li>
+</ul>
+<h4> (1) For those who do not understand here documents. </h4>
+<pre>
+my $text = &lt;&lt;'EOS';
 tora, 24, Japan
 rika,12,USA
 kenta, 25, Chinese
 EOS
-&lt;/ pre&gt;
-See &lt;a href="/blog/20080619121405.html"&gt; Here Document &lt;/a&gt;.
-
-&lt;h4&gt; (2) Subroutine call &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ people = parse ($ text);
-&lt;/ pre&gt;
-
-Pass an argument called $ text to a subroutine called parse. This will cause a parse to be executed and its return value will be assigned to $ person.
-
-&lt;h4&gt; (3) How to create an array of arrays &lt;/ h4&gt;
-
-&lt;pre&gt;
-push @ $ items_list, [@items];
-&lt;/ pre&gt;
-The &lt;a href="/blog/20100107126425.html"&gt; push function &lt;/a&gt; requires an array as the first argument. Dereference and pass an array with @ $ items_list.
-The push function requests a list after the second argument, but do not pass an array as @items. And finally,
-&lt;pre&gt;
+</pre>
+<p>
+  See <a href="/blog/20080619121405.html"> Here Document</a>.
+</p>
+<h4> (2) Subroutine call </h4>
+<pre>
+my $people = parse ($text);
+</pre>
+<p>
+  Pass an argument called $text to a subroutine called parse. This will cause a parse to be executed and its return value will be assigned to $person.
+</p>
+<h4> (3) How to create an array of arrays </h4>
+<pre>
+push @ $items_list, [@items];
+</pre>
+<p>
+  The <a href="/blog/20100107126425.html"> push function</a> requires an array as the first argument. Dereference and pass an array with @ $items_list.
+</p>
+<p>
+  The push function requests a list after the second argument, but do not pass an array as @items. And finally,
+</p>
+<pre>
 [tora, 24, Japan, rika, 12, USA, kenta, 25, Chinese]
-&lt;/ pre&gt;
-
-Will be created. Create a reference to the array as [@items] and push it.
-
-&lt;h4&gt; (4) Selectively return the return value &lt;/ h4&gt;
-
-&lt;pre&gt;
-wantarray? return @ $ items_list: $ items_list;
-&lt;/ pre&gt;
-
-You can use the &lt;a href="/blog/20080610121319.html"&gt; wantarray function &lt;/a&gt; to return the return value depending on the context. (Currently I don't recommend want array)
-
-&lt;h3&gt; Convert csv format string to hash array &lt;/ h3&gt;
-
-This is a sample to convert a csv format string to an array of &lt;a href="/blog/20161013147635.html"&gt; hash &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Will be created. Create a reference to the array as [@items] and push it.
+</p>
+<h4> (4) Selectively return the return value </h4>
+<pre>
+wantarray? return @ $items_list: $items_list;
+</pre>
+<p>
+  You can use the <a href="/blog/20080610121319.html"> wantarray function</a> to return the return value depending on the context. (Currently I don't recommend want array)
+</p>
+<h3> Convert csv format string to hash array </h3>
+<p>
+  This is a sample to convert a csv format string to an array of <a href="/blog/20161013147635.html"> hash</a>.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Name, age, origin
-my $ text = &lt;&lt;'EOS';
+# Name, age, origin
+my $text = &lt;&lt;'EOS';
 tora, 24, Japan
 rika,12,USA
 kenta, 25, Chinese
 EOS
 
-print "1: Convert a csv format string to an array of hashes. \ N";
-my $ headers = ['name','age','country'];
+print "1: Convert a csv format string to an array of hashes.\n";
+my $headers = ['name','age','country'];
 
-my $ people = parse ($ text, $ headers);
+my $people = parse ($text, $headers);
 
-require Data :: Dumper;
-print Data :: Dumper-&gt; Dump ([$ persons], ['$ perlsons']);
+require Data::Dumper;
+print Data::Dumper-&gt; Dump ([$persons], ['$perlsons']);
 
 sub parse {
-  my ($ text, $ headers) = @_;
+  my ($text, $headers) = @_;
   
-  my @lines = split ("\ n", $ text);
+  my @lines = split("\n", $text);
   
-  my $ items_hash_list = [];
-  foreach my $ line (@lines) {
-    my @items = split (',', $ line);
+  my $items_hash_list = [];
+  foreach my $line (@lines) {
+    my @items = split(',', $line);
     
-    my% items_hash = ();
-    @items_hash {@ $ headers} = @items;
+    my %items_hash = ();
+    @items_hash {@ $headers} = @items;
     
-    push @ $ items_hash_list, {% items_hash};
+    push @ $items_hash_list, {% items_hash};
   }
   
-  wantarray? return @ $ items_hash_list: $ items_hash_list;
+  wantarray? return @ $items_hash_list: $items_hash_list;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Conversion image &lt;/ h4&gt;
-
-&lt;pre&gt;
-| ------------------ |
+</pre>
+<h4> Conversion image </h4>
+<pre>
+| - -- -- -- -- -- - |
 | tora, 24, Japan |
 | rika,12,USA |
 | kenta, 25, Chinese |
-| ------------------ |
+| - -- -- -- -- -- - |
         ↓
 [
     {
@@ -262,285 +257,302 @@ sub parse {
       'age' =&gt; '25'
     }
 ]
-&lt;/ pre&gt;
-
-Converts text to an array of arrays.
-
-&lt;h4&gt; (1) Subroutine call &lt;/ h4&gt;
-&lt;pre&gt;
-my $ people = parse ($ text, $ headers);
-&lt;/ pre&gt;
-
-Pass the arguments $ text and $ header to a subroutine called parse. By passing the header together, you don't have to write the header name in the subroutine.
-
-If you write the header name in the subroutine, the subroutine and the header name will be tightly coupled and the versatility of the subroutine will be lost. By giving the header name as an argument, this subroutine can be used for any csv format string.
-
-&lt;h4&gt; (2) How to create an array of hashes &lt;/ h4&gt;
-
-&lt;pre&gt;
-for my $ line (@lines) {
-  my @items = split (',', $ line);
+</pre>
+<p>
+  Converts text to an array of arrays.
+</p>
+<h4> (1) Subroutine call </h4>
+<pre>
+my $people = parse ($text, $headers);
+</pre>
+<p>
+  Pass the arguments $text and $header to a subroutine called parse. By passing the header together, you don't have to write the header name in the subroutine.
+</p>
+<p>
+  If you write the header name in the subroutine, the subroutine and the header name will be tightly coupled and the versatility of the subroutine will be lost. By giving the header name as an argument, this subroutine can be used for any csv format string.
+</p>
+<h4> (2) How to create an array of hashes </h4>
+<pre>
+for my $line (@lines) {
+  my @items = split(',', $line);
     
-  my% items_hash = ();
-  @items_hash {@ $ headers} = @items;
+  my %items_hash = ();
+  @items_hash {@ $headers} = @items;
     
-  push @ $ items_hash_list, {% items_hash};
+  push @ $items_hash_list, {% items_hash};
 }
-&lt;/ pre&gt;
-
-Use &lt;a href="/blog/20080215120307.html"&gt; hash slice &lt;/a&gt; to create the hash corresponding to the header.
-
-&lt;pre&gt;
-@items_hash {@ $ headers} = @items;
+</pre>
+<p>
+  Use <a href="/blog/20080215120307.html"> hash slice</a> to create the hash corresponding to the header.
+</p>
+<pre>
+@items_hash {@ $headers} = @items;
 
 # Same meaning as below
 @items_hash {('name','age','country') = ('tora', 24,'Japan');
 
 # When disassembled
-$ items_hash {name} ='tora';
-$ items_hash {age} = 24;
-$ items_hash {contry} ='Japan';
-&lt;/ pre&gt;
-
-Using hash slices in this way eliminates the need to write iterations.
-
-&lt;pre&gt;
-push @ $ items_hash_list, {% items_hash};
-&lt;/ pre&gt;
-
-The push function requests a list after the second argument, but do not pass a hash as% items_hash. Then finally create a reference to the hash as {% items_hash} and push it.
-
-&lt;h3&gt; Find the maximum and minimum values ​​&lt;/ h3&gt;
-
-This is a sample to find the maximum and minimum values.
-
-&lt;pre&gt;
+$items_hash {name} ='tora';
+$items_hash {age} = 24;
+$items_hash {contry} ='Japan';
+</pre>
+<p>
+  Using hash slices in this way eliminates the need to write iterations.
+</p>
+<pre>
+push @ $items_hash_list, {% items_hash};
+</pre>
+<p>
+  The push function requests a list after the second argument, but do not pass a hash as% items_hash. Then finally create a reference to the hash as {% items_hash} and push it.
+</p>
+<h3> Find the maximum and minimum values ​​</h3>
+<p>
+  This is a sample to find the maximum and minimum values.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @nums = (1, 2, 3);
 
-print "1: Subroutine for finding maximum and minimum values ​​\ n";
-print "(". join (',', @nums). ") \ n";
-print "maximum value:". Max (@nums). "\ n";
-print "Minimum:". Min (@nums). "\ n";
+print "1: Subroutine for finding maximum and minimum values ​​\n";
+print "(". join(',', @nums). ")\n";
+print "maximum value:". Max (@nums). "\n";
+print "Minimum:". Min (@nums). "\n";
 
 sub max {
   my @nums = @_;
-my $ max_num;
-  for my $ num (@nums) {
-    if (! defined $ max_num) {
-      $ max_num = $ num;
+my $max_num;
+  for my $num (@nums) {
+    if (! defined $max_num) {
+      $max_num = $num;
     }
     else {
-      if ($ num&gt; $ max_num) {
-        $ max_num = $ num;
+      if ($num&gt; $max_num) {
+        $max_num = $num;
       }
     }
   }
-  return $ max_num;
+  return $max_num;
 }
 
 sub min {
-  my $ min_num;
-  for my $ num (@nums) {
-    if (! defined $ min_num) {
-      $ min_num = $ num;
+  my $min_num;
+  for my $num (@nums) {
+    if (! defined $min_num) {
+      $min_num = $num;
     }
     else {
-      if ($ num &lt;$ min_num) {
-        $ min_num = $ num;
+      if ($num &lt;$min_num) {
+        $min_num = $num;
       }
     }
   }
-  return $ min_num;
+  return $min_num;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (1) Algorithm for finding the maximum value &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> (1) Algorithm for finding the maximum value </h4>
+<pre>
 sub max {
   my @nums = @_;
   
-  my $ max_num;
-  for my $ num (@nums) {
-    if (! defined $ max_num) {
-      $ max_num = $ num;
+  my $max_num;
+  for my $num (@nums) {
+    if (! defined $max_num) {
+      $max_num = $num;
     }
     else {
-      if ($ num&gt; $ max_num) {
-        $ max_num = $ num;
+      if ($num&gt; $max_num) {
+        $max_num = $num;
       }
     }
   }
-  return $ max_num;
+  return $max_num;
 }
-&lt;/ pre&gt;
-
-A subroutine that takes an array as input and outputs the maximum value. The one that is assumed to be the maximum value is assigned to the variable and left. You can see that the last remaining $ max_num is the maximum value. It is a unique way of thinking about programming that is different from mathematics.
-
-Initially, $ max_num is an undefined value, so if it is an undefined value, $ num is assigned to $ max_num without comparison.
-
-&lt;h3&gt; Bubble sort &lt;/ h3&gt;
-
-This is a sample for bubble sort. Sorting is done using &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; and for statement.
-
-&lt;pre&gt;
+</pre>
+<p>
+  A subroutine that takes an array as input and outputs the maximum value. The one that is assumed to be the maximum value is assigned to the variable and left. You can see that the last remaining $max_num is the maximum value. It is a unique way of thinking about programming that is different from mathematics.
+</p>
+<p>
+  Initially, $max_num is an undefined value, so if it is an undefined value, $num is assigned to $max_num without comparison.
+</p>
+<h3> Bubble sort </h3>
+<p>
+  This is a sample for bubble sort. Sorting is done using <a href="/blog/20100123126425.html"> while statement</a> and for statement.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @nums = (5, 2, 7, 3, 4);
 
-print "1: Subroutine that sorts in ascending order by bubble sort \ n";
-print join (',', @nums). "(Initial state) \ n";
+print "1: Subroutine that sorts in ascending order by bubble sort\n";
+print join(',', @nums). "(Initial state)\n";
 my @sorted_nums_ascend = bubble_sort_ascend (@nums);
-print join (',', @sorted_nums_ascend). "(Last state) \ n \ n";
+print join(',', @sorted_nums_ascend). "(Last state)\n\n";
 
-print "2: Subroutine that sorts in descending order by bubble sort \ n";
-print join (',', @nums). "(Initial state) \ n";
+print "2: Subroutine that sorts in descending order by bubble sort\n";
+print join(',', @nums). "(Initial state)\n";
 my @sorted_nums_descend = bubble_sort_descend (@nums);
-print join (',', @sorted_nums_descend). "(Last state) \ n";
+print join(',', @sorted_nums_descend). "(Last state)\n";
 
-#Bubble sort subroutine. (Ascending order)
+# Bubble sort subroutine. (Ascending order)
 sub bubble_sort_ascend {
   my @nums = @_;
   if (@nums &lt;2) {
     return @nums;
   }
   
-  my $ change_cnt = @nums --1;
+  my $change_cnt = @nums - 1;
 
-  #If you have an array a with n elements
-  # At first, do n --one exchange.
+  # If you have an array a with n elements
+  # At first, do n - one exchange.
   # a [0] and a [1], a [1] and a [2], ...., a [n-2] and a [n-1]
 
-  # 2nd time, n --2 exchanges
+  # 2nd time, n - 2 exchanges
   # a [0] and a [1], a [1] and a [2], ...., a [n-3] and a [n-2]
 
-  #Finally
+  # Finally
   # Swap a [0] and a [1].
 
-  In #bubble sort, the maximum value is set every time the exchange goes around.
+  In # bubble sort, the maximum value is set every time the exchange goes around.
   # It will be confirmed, so every time the exchange goes around
   # Decrease the number of exchanges by 1.
                        
-  while ($ change_cnt&gt; 0) {
-    for my $ i (0 .. $ change_cnt --1) {
+  while ($change_cnt&gt; 0) {
+    for my $i (0 .. $change_cnt - 1) {
        
-     #If you are bigger than the next number, replace it,
+     # If you are bigger than the next number, replace it,
      # If you are smaller, do nothing.
      # By doing this, the last element becomes the maximum.
-     if ($ nums [$ i]&gt; $ nums [$ i + 1]) {
-       ($ nums [$ i], $ nums [$ i + 1]) = ($ nums [$ i + 1], $ nums [$ i]);
-       print join (',', @nums). "(Snap) \ n";
+     if ($nums [$i]&gt; $nums [$i + 1]) {
+       ($nums [$i], $nums [$i + 1]) = ($nums [$i + 1], $nums [$i]);
+       print join(',', @nums). "(Snap)\n";
      }
     }
-    $ change_cnt-;
+    $change_cnt-;
   }
   
   return @nums;
 }
 
-#Bubble sort subroutine. (Descending order)
+# Bubble sort subroutine. (Descending order)
 sub bubble_sort_descend {
   my @nums = @_;
   if (@nums &lt;2) {
     return @nums;
   }
   
-  my $ change_cnt = @nums --1;
+  my $change_cnt = @nums - 1;
                        
-  while ($ change_cnt&gt; 0) {
-    for my $ i (0 .. $ change_cnt --1) {
-     if ($ nums [$ i] &lt;$ nums [$ i + 1]) {
-       ($ nums [$ i], $ nums [$ i + 1]) = ($ nums [$ i + 1], $ nums [$ i]);
-       print join (',', @nums). "(Snap) \ n";
+  while ($change_cnt&gt; 0) {
+    for my $i (0 .. $change_cnt - 1) {
+     if ($nums [$i] &lt;$nums [$i + 1]) {
+       ($nums [$i], $nums [$i + 1]) = ($nums [$i + 1], $nums [$i]);
+       print join(',', @nums). "(Snap)\n";
      }
     }
-    $ change_cnt-;
+    $change_cnt-;
   }
   
   return @nums;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; What is bubble sort? &lt;/ H4&gt;
-
-Bubble sort is an algorithm that compares adjacent numbers, swaps if you are larger than the next number, and finally sorts. (In ascending order)
-
-&lt;h4&gt; Bubble sort process (for 5,4,3,2,1) &lt;/ h4&gt;
-
-&lt;blockquote&gt;
-# 1st week
-&lt;b&gt; 5 &lt;/ b&gt;, &lt;b&gt; 4 &lt;/ b&gt;, 3,2,1 (5 and 4 are exchanged.)
-4, &lt;b&gt; 5 &lt;/ b&gt;, &lt;b&gt; 3 &lt;/ b&gt;, 2,1 (5 and 3 are exchanged)
-4,3, &lt;b&gt; 5 &lt;/ b&gt;, &lt;b&gt; 2 &lt;/ b&gt;, 1 (5 and 2 are exchanged)
-4,3,2, &lt;b&gt; 5 &lt;/ b&gt;, &lt;b&gt; 1 &lt;/ b&gt; (5 and 1 are exchanged)
-4,3,2,1, &lt;b&gt; &lt;span style = "color: # 000099;"&gt; 5 &lt;/ span&gt; &lt;/ b&gt; (5 is fixed to the maximum value, next is the same for the previous 4 Exchange.)
-
-# 2nd week
-&lt;b&gt; 4 &lt;/ b&gt;, &lt;b&gt; 3 &lt;/ b&gt;, 2,1, &lt;b&gt; &lt;span style = "color: # 000099;"&gt; 5 &lt;/ span&gt; &lt;/ b&gt;
-3, &lt;b&gt; 4 &lt;/ b&gt;, &lt;b&gt; 2 &lt;/ b&gt;, 1, &lt;b&gt; &lt;span style = "color: # 000099;"&gt; 5 &lt;/ span&gt; &lt;/ b&gt;
-3,2, &lt;b&gt; 4 &lt;/ b&gt;, &lt;b&gt; 1 &lt;/ b&gt;, &lt;b&gt; &lt;span style = "color: # 000099;"&gt; 5 &lt;/ span&gt; &lt;/ b&gt;
-3,2,1, &lt;span style = "color: # 000099;"&gt; &lt;b&gt; 4 &lt;/ b&gt; &lt;/ span&gt; &lt;span style = "color: # 000099;"&gt; &lt;b&gt; 5 &lt;/ b&gt; &lt;/ span&gt; &lt;/ b&gt; (4 is fixed to the maximum value, and next, the same exchange is performed with the previous three.)
-
-# 3rd week and below
-&lt;/ blockquote&gt;
-
-
-&lt;h3&gt; Select descending order and ascending order to sort bubbles &lt;/ h3&gt;
-
-By devising the previous bubble sort, it is possible to select descending order or ascending order. I also added error handling.
-
-&lt;pre&gt;
+</pre>
+<h4> What is bubble sort? </H4>
+<p>
+  Bubble sort is an algorithm that compares adjacent numbers, swaps if you are larger than the next number, and finally sorts. (In ascending order)
+</p>
+<h4> Bubble sort process (for 5,4,3,2,1) </h4>
+<blockquote>
+<p>
+  # 1st week
+</p>
+<p>
+  <b> 5 </b>, <b> 4 </b>, 3,2,1 (5 and 4 are exchanged.)
+</p>
+<p>
+  4, <b> 5 </b>, <b> 3 </b>, 2,1 (5 and 3 are exchanged)
+</p>
+<p>
+  4,3, <b> 5 </b>, <b> 2 </b>, 1 (5 and 2 are exchanged)
+</p>
+<p>
+  4,3,2, <b> 5 </b>, <b> 1 </b> (5 and 1 are exchanged)
+</p>
+<p>
+  4,3,2,1, <b> <span style = "color: # 000099;"> 5 </span> </b> (5 is fixed to the maximum value, next is the same for the previous 4 Exchange.)
+</p>
+<p>
+  # 2nd week
+</p>
+<p>
+  <b> 4 </b>, <b> 3 </b>, 2,1, <b> <span style = "color: # 000099;"> 5 </span> </b>
+</p>
+<p>
+  3, <b> 4 </b>, <b> 2 </b>, 1, <b> <span style = "color: # 000099;"> 5 </span> </b>
+</p>
+<p>
+  3,2, <b> 4 </b>, <b> 1 </b>, <b> <span style = "color: # 000099;"> 5 </span> </b>
+</p>
+<p>
+  3,2,1, <span style = "color: # 000099;"> <b> 4 </b> </span> <span style = "color: # 000099;"> <b> 5 </b> </span> </b> (4 is fixed to the maximum value, and next, the same exchange is performed with the previous three.)
+</p>
+<p>
+  # 3rd week and below
+</p>
+</blockquote>
+<h3> Select descending order and ascending order to sort bubbles </h3>
+<p>
+  By devising the previous bubble sort, it is possible to select descending order or ascending order. I also added error handling.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @nums = (5,2,7,3,4);
-print "1: Subroutine that selects descending order and ascending order and sorts bubbles \ n";
-print join (',', @nums). "(Initial state) \ n";
+print "1: Subroutine that selects descending order and ascending order and sorts bubbles\n";
+print join(',', @nums). "(Initial state)\n";
 
-my @sorted_nums_ascend = bubble_sort (\ @ nums, {order =&gt;'ascend'});
-my @sorted_nums_descend = bubble_sort (\ @ nums, {order =&gt;'descend'});
+my @sorted_nums_ascend = bubble_sort(\ @ nums, {order =&gt;'ascend'});
+my @sorted_nums_descend = bubble_sort(\ @ nums, {order =&gt;'descend'});
 
 if (@sorted_nums_ascend) {
-  print join (',', @sorted_nums_ascend). "(Ascending order) \ n";
+  print join(',', @sorted_nums_ascend). "(Ascending order)\n";
 }
 else {
-  print "\ @sorted_nums_ascend is an empty list. \ N";
+  print "\ @sorted_nums_ascend is an empty list.\n";
 }
 
 if (@sorted_nums_descend) {
-  print join (',', @sorted_nums_descend). "(Descending) \ n \ n";
+  print join(',', @sorted_nums_descend). "(Descending)\n\n";
 }
 else {
-  print "\ @ sorted_nums_descend is an empty list. \ n \ n";
+  print "\ @ sorted_nums_descend is an empty list.\n\n";
 }
 
 # Subroutine that selects descending order and ascending order to sort bubbles
 sub bubble_sort {
-  my ($ nums, $ opt) = @_;
+  my ($nums, $opt) = @_;
   
-  #Error handling
+  # Error handling
   my @nums;
-  Check if # $ nums is an array reference.
-  if (defined $ nums) {
-   if (ref $ nums eq'ARRAY') {
-     @nums = @ $ nums
+  Check if # $nums is an array reference.
+  if (defined $nums) {
+   if (ref $nums eq'ARRAY') {
+     @nums = @ $nums
    }
    else {return}
   }
   else {return}
   
-  my $ order ='ascend';
-  Check if # $ opt is a hash reference
-  if (defined $ opt) {
-    if (ref $ opt eq'HASH') {
-      Substitute if # $ opt-&gt; {order} is a true value.
-      $ order = $ opt-&gt; {order} if $ opt-&gt; {order};
+  my $order ='ascend';
+  Check if # $opt is a hash reference
+  if (defined $opt) {
+    if (ref $opt eq'HASH') {
+      Substitute if # $opt-&gt; {order} is a true value.
+      $order = $opt-&gt; {order} if $opt-&gt; {order};
       
-      unless ($ order eq'ascend' || $ order eq'descend') {
+      unless ($order eq'ascend' || $order eq'descend') {
         return;
       }
     }
@@ -552,92 +564,90 @@ sub bubble_sort {
     return @nums;
   }
   
-  my $ change_cnt = @nums --1;
+  my $change_cnt = @nums - 1;
                        
-  while ($ change_cnt&gt; 0) {
-    for my $ i (0 .. $ change_cnt --1) {
+  while ($change_cnt&gt; 0) {
+    for my $i (0 .. $change_cnt - 1) {
       # To select ascending or descending order, you only have to rewrite this part from the last time.
-      my $ is_change;
-      if ($ order eq'ascend') {
-        # In ascending order, exchange if $ nums [$ i]&gt; $ nums [$ i + 1]
-        $ is_change = $ nums [$ i]&gt; $ nums [$ i + 1];
+      my $is_change;
+      if ($order eq'ascend') {
+        # In ascending order, exchange if $nums [$i]&gt; $nums [$i + 1]
+        $is_change = $nums [$i]&gt; $nums [$i + 1];
       }
-elsif ($ order eq'descend') {
-        # In descending order, exchange if $ nums [$ i] &lt;$ nums [$ i + 1]
-        $ is_change = $ nums [$ i] &lt;$ nums [$ i + 1];
+elsif ($order eq'descend') {
+        # In descending order, exchange if $nums [$i] &lt;$nums [$i + 1]
+        $is_change = $nums [$i] &lt;$nums [$i + 1];
       }
 
-      if ($ is_change) {
-        ($ nums [$ i], $ nums [$ i + 1]) = ($ nums [$ i + 1], $ nums [$ i]);
+      if ($is_change) {
+        ($nums [$i], $nums [$i + 1]) = ($nums [$i + 1], $nums [$i]);
       }
     }
-    $ change_cnt-;
+    $change_cnt-;
   }
   
   return @nums;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (1) Explanation of arguments (options are passed as a reference to the hash) &lt;/ h4&gt;
-
-&lt;pre&gt;
-my @sorted_nums_ascend = bubble_sort (\ @ nums, {order =&gt;'ascend'});
-&lt;/ pre&gt;
-
-I want to pass an array and a hash, so I'll use a reference. In actual programming, options are often passed in &lt;a href="/blog/20180208151809.html"&gt; hash reference &lt;/a&gt;.
-
-&lt;h4&gt; (2) Error handling &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> (1) Explanation of arguments (options are passed as a reference to the hash) </h4>
+<pre>
+my @sorted_nums_ascend = bubble_sort(\ @ nums, {order =&gt;'ascend'});
+</pre>
+<p>
+  I want to pass an array and a hash, so I'll use a reference. In actual programming, options are often passed in <a href="/blog/20180208151809.html"> hash reference</a>.
+</p>
+<h4> (2) Error handling </h4>
+<pre>
 my @nums;
-if (defined $ nums) {
-  if (ref $ nums eq'ARRAY') {
-    @nums = @ $ nums;
+if (defined $nums) {
+  if (ref $nums eq'ARRAY') {
+    @nums = @ $nums;
   }
   else {return}
 }
 else {return}
-&lt;/ pre&gt;
-
-If the first argument is not defined, &lt;a href="/blog/20171111151040.html"&gt; return &lt;/a&gt; will end the process. If the first argument is defined but the first argument is not a reference to the array, return ends the process.
-
-If the variable has an invalid state, do not continue processing. For fatal errors, you may want to use the &lt;a href="/blog/20100212126425.html"&gt; die function &lt;/a&gt; to throw an exception.
-
-&lt;h4&gt; (3) Set the default value &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ order ='ascend';
-$ order = $ opt-&gt; {order} if $ opt-&gt; {order};
-&lt;/ pre&gt;
-
-If $ opt-&gt; {order} is not specified, it is a kind way to specify the default value instead of returning it with an error. Overwrite only if $ opt-&gt; {order} exists.
-
-&lt;h4&gt; (4) Select ascending and descending algorithms &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the first argument is not defined, <a href="/blog/20171111151040.html"> return</a> will end the process. If the first argument is defined but the first argument is not a reference to the array, return ends the process.
+</p>
+<p>
+  If the variable has an invalid state, do not continue processing. For fatal errors, you may want to use the <a href="/blog/20100212126425.html"> die function</a> to throw an exception.
+</p>
+<h4> (3) Set the default value </h4>
+<pre>
+my $order ='ascend';
+$order = $opt-&gt; {order} if $opt-&gt; {order};
+</pre>
+<p>
+  If $opt-> {order} is not specified, it is a kind way to specify the default value instead of returning it with an error. Overwrite only if $opt-> {order} exists.
+</p>
+<h4> (4) Select ascending and descending algorithms </h4>
+<pre>
 # Last bubble sort
-if ($ nums [$ i] &lt;$ nums [$ i + 1]) {
-  ($ nums [$ i], $ nums [$ i + 1]) = ($ nums [$ i + 1], $ nums [$ i]);
-  print join (',', @nums). "(Snap) \ n";
+if ($nums [$i] &lt;$nums [$i + 1]) {
+  ($nums [$i], $nums [$i + 1]) = ($nums [$i + 1], $nums [$i]);
+  print join(',', @nums). "(Snap)\n";
 }
 
 # This bubble sort
-my $ is_change;
-if ($ order eq'ascend') {
-  $ is_change = $ nums [$ i]&gt; $ nums [$ i + 1];
+my $is_change;
+if ($order eq'ascend') {
+  $is_change = $nums [$i]&gt; $nums [$i + 1];
 }
-elsif ($ order eq'descend') {
-  $ is_change = $ nums [$ i] &lt;$ nums [$ i + 1];
+elsif ($order eq'descend') {
+  $is_change = $nums [$i] &lt;$nums [$i + 1];
 }
 
-if ($ is_change) {
-  ($ nums [$ i], $ nums [$ i + 1]) = ($ nums [$ i + 1], $ nums [$ i]);
+if ($is_change) {
+  ($nums [$i], $nums [$i + 1]) = ($nums [$i + 1], $nums [$i]);
 }
-&lt;/ pre&gt;
-
-In the case of ascend, the judgment is $ nums [$ i]&gt; $ nums [$ i + 1], and in the case of descend, the judgment is $ nums [$ i] &lt;$ nums [$ i + 1]. It's good.
-
-Rather than thinking about such an algorithm all at once from the beginning, it is easier to see if it is made separately and modified by focusing only on the differences as in this case.
+</pre>
+<p>
+  In the case of ascend, the judgment is $nums [$i]> $nums [$i + 1], and in the case of descend, the judgment is $nums [$i] <$nums [$i + 1]. It's good.
+</p>
+<p>
+  Rather than thinking about such an algorithm all at once from the beginning, it is easier to see if it is made separately and modified by focusing only on the differences as in this case.
+</p>
 
   </div>
   <div class="bottom">

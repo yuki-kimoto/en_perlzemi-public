@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> require --load module at runtime  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> require - load module at runtime  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use  require  to  load modules at runtime . Use loads the module at compile time, while require loads it at run time.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" require --load module at runtime  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" require - load module at runtime  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use  require  to  load modules at runtime . Use loads the module at compile time, while require loads it at run time." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-      <span itemprop = "name"> Syntax </ span> </a>
+      <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090207123288.html"> require --load module at runtime </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090207123288.html"> require - load module at runtime </a></h2>
 <p>
-  Use <strong> require </ strong> to <strong> load modules at runtime </ strong>. Use loads the module at compile time, while require loads it at run time.
+  Use <strong> require </strong> to <strong> load modules at runtime </strong>. Use loads the module at compile time, while require loads it at run time.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,57 +98,61 @@
 
 
 <pre>
-#Load module
+# Load module
 require module name
-&lt;/ pre&gt;
-
-The module name must be specified as a bare string. Strings enclosed in quotes or double quotes will not be accepted. It also does not accept variables.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The module name must be specified as a bare string. Strings enclosed in quotes or double quotes will not be accepted. It also does not accept variables.
+</p>
+<pre>
 # Specify the module name with a bare string
 require CGI;
-&lt;/ pre&gt;
-
-When you load a module, you can use the functions described in the loaded module with the fully qualified name.
-
-&lt;pre&gt;
+</pre>
+<p>
+  When you load a module, you can use the functions described in the loaded module with the fully qualified name.
+</p>
+<pre>
 require Carp;
 
 # You can use the carp module's croak function with a fully qualified name.
-Carp :: croak ("croak function");
-&lt;/ pre&gt;
-
-The standard way to load a module is to use use, but there are times when you want to use require. If you use use, all modules will be loaded at compile time. Therefore, if the module is huge, it will take extra time to compile.
-
-If a module is not required and is a large module, you may be able to mitigate the performance impact by loading it at runtime using require as needed.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample using require.
-
-&lt;pre&gt;
-#Load the Carp module.
+Carp::croak ("croak function");
+</pre>
+<p>
+  The standard way to load a module is to use use, but there are times when you want to use require. If you use use, all modules will be loaded at compile time. Therefore, if the module is huge, it will take extra time to compile.
+</p>
+<p>
+  If a module is not required and is a large module, you may be able to mitigate the performance impact by loading it at runtime using require as needed.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample using require.
+</p>
+<pre>
+# Load the Carp module.
 require Carp;
-&lt;/ pre&gt;
-
-require will import the module at runtime. This is useful if you want to selectively import modules.
-
-For example, if you want to process according to the extension, you only need one of the modules that parses the csv file and the module that parses the xml.
-
-In such a case, if you write as follows, you can load fewer modules.
-
-&lt;pre&gt;
-if ($ ext eq'.csv') {
-  require Text :: CSV;
+</pre>
+<p>
+  require will import the module at runtime. This is useful if you want to selectively import modules.
+</p>
+<p>
+  For example, if you want to process according to the extension, you only need one of the modules that parses the csv file and the module that parses the xml.
+</p>
+<p>
+  In such a case, if you write as follows, you can load fewer modules.
+</p>
+<pre>
+if ($ext eq'.csv') {
+  require Text::CSV;
   # ...
 }
-elsif ($ ext eq'.xml') {
-  require XML :: Simple;
+elsif ($ext eq'.xml') {
+  require XML::Simple;
   # ...
 }
-&lt;/ pre&gt;
-
-Less module loading means faster boot times and less memory usage. With use, all modules will be loaded at compile time, even if they are written in a conditional branch such as an if statement.
+</pre>
+<p>
+  Less module loading means faster boot times and less memory usage. With use, all modules will be loaded at compile time, even if they are written in a conditional branch such as an if statement.
+</p>
 
   </div>
   <div class="bottom">

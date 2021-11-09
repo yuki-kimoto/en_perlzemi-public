@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Create constructor </ span>
+      <span itemprop = "name"> Create constructor </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090317123712.html"> Creating a constructor </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090317123712.html"> Creating a constructor </a></h2>
 <p>
   Last time, I created the following class template.
 </p>
@@ -105,75 +105,82 @@ sub new {# Constructor implementation}
 sub title {# Implementation of accessor}
 sub author {# Implementation of accessor}
 
-&lt;/ pre&gt;
-
-&lt;h3&gt; 1. What is a constructor? &lt;/ H3&gt;
-
-&lt;b&gt; Objects are created based on the class &lt;/ b&gt;. Forget a little about what an object is and what a class is, and remember that "objects are created from a class".
-
-And a constructor is a method that creates an object. If you create a constructor
-
-&lt;pre&gt;
-my $ book = Book-&gt; new;
-&lt;/ pre&gt;
-
-You will be able to create an object with the description.
-
-The name &lt;b&gt; new &lt;/ b&gt; is customarily used for the constructor name. But be sure to name the constructor new (because those who use your module expect the constructor name to be new)
-
-&lt;h3&gt; 2. Implementation of the simplest constructor &lt;/ h3&gt;
-
-Now let's implement the constructor. Below is the simplest constructor implementation. But the easiest is a little difficult.
-
-&lt;pre&gt;
+</pre>
+<h3> 1. What is a constructor? </H3>
+<p>
+  <b> Objects are created based on the class </b>. Forget a little about what an object is and what a class is, and remember that "objects are created from a class".
+</p>
+<p>
+  And a constructor is a method that creates an object. If you create a constructor
+</p>
+<pre>
+my $book = Book-&gt; new;
+</pre>
+<p>
+  You will be able to create an object with the description.
+</p>
+<p>
+  The name <b> new </b> is customarily used for the constructor name. But be sure to name the constructor new (because those who use your module expect the constructor name to be new)
+</p>
+<h3> 2. Implementation of the simplest constructor </h3>
+<p>
+  Now let's implement the constructor. Below is the simplest constructor implementation. But the easiest is a little difficult.
+</p>
+<pre>
 sub new {
-    my $ class = shift;
-    my $ self = {};
-    return bless $ self, $ class;
+    my $class = shift;
+    my $self = {};
+    return bless $self, $class;
 }
-&lt;/ pre&gt;
-
-Call the following
-
-&lt;pre&gt;
-my $ book = Book-&gt; new;
-&lt;/ pre&gt;
-
-What will be assigned to $ class when you do?
-
-The answer is &lt;b&gt; Book &lt;/ b&gt;. The constructor new takes a &lt;b&gt; class name &lt;/ b&gt; as the first argument.
-
-&lt;h3&gt; 3. Prepare a hash reference &lt;/ h3&gt;
-
-&lt;pre&gt;
-  my $ self = {};
-&lt;/ pre&gt;
-
-What is the line doing?
-
-This is actually &lt;b&gt; object-owned data &lt;/ ​​b&gt;. It's important, so I'll say it again. The &lt;b&gt; object owns the data &lt;/ ​​b&gt;. And, in general, the &lt;b&gt; hash reference &lt;/ b&gt; is selected as the data.
-
-(To tell the truth, the object is the data itself. Remember that the object owns the data at first so it doesn't get confusing.)
-
-&lt;h3&gt; 4. Connect data to class &lt;/ h3&gt;
-
-Last line
-
-&lt;pre&gt;
-return bless $ self, $ class;
-&lt;/ pre&gt;
-
-Has a function called bless.
-
-The bless function takes data in the first argument and the class name in the second argument, and connects the data and the class.
-
-Objects are created by &lt;b&gt; connecting data and classes &lt;/ b&gt;. Then, I will return the tied one to the caller.
-
-&lt;h3&gt; 5. What are objects in Perl? &lt;/ H3&gt;
-
-A Perl object is the data associated with a &lt;b&gt; class &lt;/ b&gt;. It doesn't mean anything more or less.
-
-And the objects created in this way perform as well as the objects used in other languages.
+</pre>
+<p>
+  Call the following
+</p>
+<pre>
+my $book = Book-&gt; new;
+</pre>
+<p>
+  What will be assigned to $class when you do?
+</p>
+<p>
+  The answer is <b> Book </b>. The constructor new takes a <b> class name </b> as the first argument.
+</p>
+<h3> 3. Prepare a hash reference </h3>
+<pre>
+  my $self = {};
+</pre>
+<p>
+  What is the line doing?
+</p>
+<p>
+  This is actually <b> object-owned data </​​b>. It's important, so I'll say it again. The <b> object owns the data </​​b>. And, in general, the <b> hash reference </b> is selected as the data.
+</p>
+<p>
+  (To tell the truth, the object is the data itself. Remember that the object owns the data at first so it doesn't get confusing.)
+</p>
+<h3> 4. Connect data to class </h3>
+<p>
+  Last line
+</p>
+<pre>
+return bless $self, $class;
+</pre>
+<p>
+  Has a function called bless.
+</p>
+<p>
+  The bless function takes data in the first argument and the class name in the second argument, and connects the data and the class.
+</p>
+<p>
+  Objects are created by <b> connecting data and classes </b>. Then, I will return the tied one to the caller.
+</p>
+<h3> 5. What are objects in Perl? </H3>
+<p>
+  A Perl object is the data associated with a <b> class </b>. It doesn't mean anything more or less.
+</p>
+<p>
+  And the objects created in this way perform as well as the objects used in other languages.
+</p>
 
   </div>
   <div class="bottom">

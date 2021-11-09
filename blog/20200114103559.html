@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> <a href="/blog/20100827127859.html"> Regular expression </a> </ span>
+      <span itemprop = "name"> <a href="/blog/20100827127859.html"> Regular expression</a> </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20200114103559.html"> Regular expression character class </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20200114103559.html"> Regular expression character class </a></h2>
 <p>
   Use a character class to represent a set of characters.
 </p>
@@ -98,57 +98,56 @@
 
 <pre>
 [Character set]
-&lt;/ pre&gt;
-
-For example, if you want to express the letters "a", "b", or "c", write [abc].
-
-&lt;pre&gt;
+</pre>
+<p>
+  For example, if you want to express the letters "a", "b", or "c", write [abc].
+</p>
+<pre>
 a
 b-&gt; [abc]
 c
-&lt;/ pre&gt;
-
-You can use the hyphen "-" symbol to specify a range of letters or numbers.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use the hyphen "-" symbol to specify a range of letters or numbers.
+</p>
+<pre>
 a
 b b
 c-&gt; [a-e]
 d
 e
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 0
 1
 2-&gt; [0-4]
 3
 Four
-&lt;/ pre&gt;
-
-If you want to express either an alphabet or a numerical value, write [a-zA-Z0-9].
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you want to express either an alphabet or a numerical value, write [a-zA-Z0-9].
+</p>
+<pre>
 Alphabets and numbers-&gt; [a-zA-Z0-9]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Negation of character class &lt;/ h3&gt;
-
-You can also use character classes to represent non-specific characters. Use "^" to represent something other than a specific character. Note that if "^" is used at the beginning of the character class [], it means "other than that", not "the beginning of the character".
-
-For example, to represent a character other than "a", "b", and "c":
-
-&lt;pre&gt;
+</pre>
+<h3> Negation of character class </h3>
+<p>
+  You can also use character classes to represent non-specific characters. Use "^" to represent something other than a specific character. Note that if "^" is used at the beginning of the character class [], it means "other than that", not "the beginning of the character".
+</p>
+<p>
+  For example, to represent a character other than "a", "b", and "c":
+</p>
+<pre>
 Characters other than "a", "b" and "c"-&gt; [^ abc]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Perl-defined character classes &lt;/ h3&gt;
-
-There is a character class defined in Perl. "\ D" is a predefined character class.
-
-&lt;a href="https://perldoc.jp/docs/perl/5.16.1/perlreref.pod#CHARACTER32CLASSES"&gt; Character class --Regular expression reference &lt;/a&gt;, quote the defined character class ..
-
-&lt;pre&gt;
+</pre>
+<h3> Perl-defined character classes </h3>
+<p>
+  There is a character class defined in Perl. "\ D" is a predefined character class.
+</p>
+<p>
+  <a href="https://perldoc.jp/docs/perl/5.16.1/perlreref.pod#CHARACTER32CLASSES"> Character class - Regular expression reference</a>, quote the defined character class ..
+</p>
+<pre>
    \ d Numerical value
    \ D non-numeric
    \ w word letter
@@ -157,60 +156,63 @@ There is a character class defined in Perl. "\ D" is a predefined character clas
    \ S Non-whitespace character
    \ h Horizontal whitespace
    \ H Non-horizontal whitespace character
-   \ N Non-line feed (if not followed by'{NAME}'; experimental; in character class
-           Illegal; equivalent to [^ \ n]; similar to'.' Without / s)
+  \n Non-line feed (if not followed by'{NAME}'; experimental; in character class
+           Illegal; equivalent to [^\n]; similar to'.' Without / s)
    \ v Vertical whitespace
    \ V Non-vertical whitespace
-   \ R General line breaks (?&gt; \ V | \ x0D \ x0A)
+  \r General line breaks (?&gt; \ V | \ x0D \ x0A)
    \ C Match 1 byte (in Unicode,'.' Matches a character)
    \ pP P P's name (Unicode) property
    \ p {...} Matches a Unicode property with a name longer than one character
    \ PP Matches non-P
    \ P {...} Matches one that does not have a Unicode property with a name longer than one character
    \ X Matches Unicode extended grapheme clusters
-&lt;/ pre&gt;
-
-Character classes can also be used within character classes.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Character classes can also be used within character classes.
+</p>
+<pre>
 [a-c \ d \ s]
-&lt;/ pre&gt;
-
-Please note that all of these are Unicode affected. Perl supports Unicode, and a good practice for working with Japanese is all &lt;a href="https://perlzemi.com/blog/20091118124667.html"&gt; internal strings (decoded) in your program. Treat it as a string) &lt;/a&gt;.
-
-In this case, "\ d" matches not only half-width 0-9 but also full-width 0-9. \ s matches not only half-width space characters but also full-width space characters.
-
-If you want to limit it to the ASCII range, read the instructions below.
-
-&lt;h4&gt; Limit character classes to ASCII range only &lt;/ h4&gt;
-
-Perl 5.14 introduces the "a" option, which limits the character class to the ASCII range only.
-
-&lt;pre&gt;
-#Match only numbers in the ASCII range.
-$ str = ~ / \ d + / a;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Character class that represents only ASCII range &lt;/ h4&gt;
-
-Perl also has character classes that represent ASCII ranges. This method is another solution if you want to limit it to the ASCII range only.
-
-For example, in the ASCII range, character classes that match alphabets and numbers can be expressed as follows.
-
-&lt;pre&gt;
-Character classes that match alphabets and numbers in the #ASCII range
+</pre>
+<p>
+  Please note that all of these are Unicode affected. Perl supports Unicode, and a good practice for working with Japanese is all <a href="https://perlzemi.com/blog/20091118124667.html"> internal strings (decoded) in your program. Treat it as a string)</a>.
+</p>
+<p>
+  In this case, "\ d" matches not only half-width 0-9 but also full-width 0-9. \ s matches not only half-width space characters but also full-width space characters.
+</p>
+<p>
+  If you want to limit it to the ASCII range, read the instructions below.
+</p>
+<h4> Limit character classes to ASCII range only </h4>
+<p>
+  Perl 5.14 introduces the "a" option, which limits the character class to the ASCII range only.
+</p>
+<pre>
+# Match only numbers in the ASCII range.
+$str = ~ / \ d + / a;
+</pre>
+<h4> Character class that represents only ASCII range </h4>
+<p>
+  Perl also has character classes that represent ASCII ranges. This method is another solution if you want to limit it to the ASCII range only.
+</p>
+<p>
+  For example, in the ASCII range, character classes that match alphabets and numbers can be expressed as follows.
+</p>
+<pre>
+Character classes that match alphabets and numbers in the # ASCII range
 \ p {PosixAlnum}
-&lt;/ pre&gt;
-
-&lt;a href="https://perldoc.jp/docs/perl/5.16.1/perlreref.pod#CHARACTER32CLASSES"&gt; Character class --Regular expression reference &lt;/a&gt;, quote the defined character class ..
-
-Notice the character class in the column labeled ASCII-range.
-
-&lt;pre&gt;
+</pre>
+<p>
+  <a href="https://perldoc.jp/docs/perl/5.16.1/perlreref.pod#CHARACTER32CLASSES"> Character class - Regular expression reference</a>, quote the defined character class ..
+</p>
+<p>
+  Notice the character class in the column labeled ASCII-range.
+</p>
+<pre>
             ASCII- Full-
    POSIX range range backslash
  [[: ...:]] \ p {...} \ p {...} sequence Description
- -------------------------------------------------- ---------------------
+ - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --- - -- -- -- -- -- -- -
  alnum PosixAlnum XPosixAlnum Alpha and Digit
  alpha PosixAlpha XPosixAlpha alphabet
  ascii ASCII any ASCII character
@@ -235,46 +237,45 @@ Notice the character class in the column labeled ASCII-range.
  xdigit ASCII_Hex_Digit XPosixDigit Hexadecimal;
                                                     In the ASCII range
                                                     [0-9A-Fa-f]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Character class sample &lt;/ h3&gt;
-
-This is a sample character class. &lt;a href="https://webapp.perlzemi.com/blog/20200112082904.html"&gt; Sample user ID regular expression and web service password regular expression that can also be used for website membership registration &lt;/a&gt; I also wrote.
-
-&lt;pre&gt;
+</pre>
+<h3> Character class sample </h3>
+<p>
+  This is a sample character class. <a href="https://webapp.perlzemi.com/blog/20200112082904.html"> Sample user ID regular expression and web service password regular expression that can also be used for website membership registration</a> I also wrote.
+</p>
+<pre>
 use strict;
 use warnings;
 use utf8;
 
 # Use character class
-my $ str ='Hello';
-if ($ str = ~ / [abcde] /) {
-  print "Match \ n";
+my $str ='Hello';
+if ($str = ~ / [abcde] /) {
+  print "Match\n";
 }
 
-#Match with web service user ID (a-zA-Z0-9_)
-my $ user_id ='kimoto_yuki089';
-my $ user_id_invalid ='abc &amp; cde';
-if ($ user_id = ~ / ^ \ p {PosixWord} + $ /) {print "user_is valid \ n";
+# Match with web service user ID (a-zA-Z0-9_)
+my $user_id ='kimoto_yuki089';
+my $user_id_invalid ='abc &amp; cde';
+if ($user_id = ~ / ^ \ p {PosixWord} + $/) {print "user_is valid\n";
 }
-unless ($ user_id_invalid = ~ / ^ \ p {PosixWord} + $ /) {
-   print "user_id_invalid is invalid \ n";
+unless ($user_id_invalid = ~ / ^ \ p {PosixWord} + $/) {
+   print "user_id_invalid is invalid\n";
 }
 
-#Match a web service password (a non-blank visible character in the ASCII range)
-my $ password ='Ufy | &amp; 123_';
-my $ passowrd_invalid1 ='abc def';
-my $ passowrd_invalid2 ='abc a';
-if ($ password = ~ / ^ \ p {PosixGraph} + $ /) {
-   print "password is valid \ n";
+# Match a web service password(a non-blank visible character in the ASCII range)
+my $password ='Ufy | &amp; 123_';
+my $passowrd_invalid1 ='abc def';
+my $passowrd_invalid2 ='abc a';
+if ($password = ~ / ^ \ p {PosixGraph} + $/) {
+   print "password is valid\n";
 }
-unless ($ passowrd_invalid1 = ~ / ^ \ p {PosixGraph} + $ /) {
-   print "passowrd_invalid1 is inalid \ n";
+unless ($passowrd_invalid1 = ~ / ^ \ p {PosixGraph} + $/) {
+   print "passowrd_invalid1 is inalid\n";
 }
-unless ($ passowrd_invalid2 = ~ / ^ \ p {PosixGraph} + $ /) {
-   print "passowrd_invalid2 is inalid \ n";
+unless ($passowrd_invalid2 = ~ / ^ \ p {PosixGraph} + $/) {
+   print "passowrd_invalid2 is inalid\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Insert image --PDF :: Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="I will explain how to insert PNG, GIF, JPEG images with PDF :: API2.">
+<title> Insert image - PDF::Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I will explain how to insert PNG, GIF, JPEG images with PDF::API2.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Insert image --PDF :: Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="I will explain how to insert PNG, GIF, JPEG images with PDF :: API2." />
+<meta name="twitter:title" content=" Insert image - PDF::Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I will explain how to insert PNG, GIF, JPEG images with PDF::API2." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20191228171433.html">
-      <span itemprop = "name"> Form creation </ span> </a>
+      <span itemprop = "name"> Form creation </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20191231143440.html"> Insert image --PDF :: Create form with API2 </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20191231143440.html"> Insert image - PDF::Create form with API2 </a></h2>
 <p>
-  I will explain how to insert PNG, GIF, JPEG images with PDF :: API2.
+  I will explain how to insert PNG, GIF, JPEG images with PDF::API2.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,108 +97,112 @@
 
 
 <p>
-  The PDF can contain images. PDF :: API2 allows you to insert PNG, GIF, JPEG images into PDF.
+  The PDF can contain images. PDF::API2 allows you to insert PNG, GIF, JPEG images into PDF.
 </p>
-<h3> Insert image file </ h3>
+<h3> Insert image file </h3>
 <p>
   To insert an image file, you must first read the image file and create a resource object to represent the image.
 </p>
-<h4> Reading image files </ h4>
+<h4> Reading image files </h4>
 <p>
   Let's read the image file and generate a resource object to represent the image.
 </p>
 <p>
-  <b> Reading JPEG files </ b>
+  <b> Reading JPEG files </b>
 </p>
 <p>
-  To read a JPEG file with PDF :: API2, use the image_jpeg method. Returns a resource object that represents the JPEG image.
+  To read a JPEG file with PDF::API2, use the image_jpeg method. Returns a resource object that represents the JPEG image.
 </p>
 <pre>
 # Generate a resource object that represents a JPEG image
-my $ image_file ='/path/image.jpeg';
-my $ image_object = $ pdf-&gt; image_jpeg ($ image_file);
-&lt;/ pre&gt;
+my $image_file ='/path/image.jpeg';
+my $image_object = $pdf-&gt; image_jpeg ($image_file);
+</pre>
+<p>
+  <b> Reading PNG files </b>
+</p>
+<p>
+  To read a PNG file in PDF::API2, use the image_png method. Returns a resource object that represents the PNG image.
+</p>
+<pre>
+# Create a resource object that represents a PNG image
+my $image_file ='/path/image.png';
+my $image_object = $pdf-&gt; image_png ($image_file);
+</pre>
+<p>
+  If you get the error "Unsupported Interlace", you need to turn off the PNG interlacing feature.
+</p>
+<p>
+  <b> Reading GIF files </b>
+</p>
+<p>
+  In PDF::API2, use the image_gif method to read a GIF file. Returns a resource object that represents the GIF image.
+</p>
+<pre>
+# Create a resource object that represents a GIF image
+my $image_file ='/path/image.gif';
+my $image_object = $pdf-&gt; image_gif ($image_file);
+</pre>
+<h4> Generation of image content object </h4>
+<p>
+  Create a content object to insert the image. This is a PDF::API2::Content object.
+</p>
+<pre>
+# Content object needed to insert an image
+my $gfx = $page-&gt; gfx;
+</pre>
+<h4> Insert image file </h4>
+<p>
+  In PDF::API2, use the image method of the content object to insert an image file.
+</p>
+<pre>
+# Insert image at specified position
+$gfx-&gt; image ($image_object, $x, $y);
 
-&lt;b&gt; Reading PNG files &lt;/ b&gt;
+# Insert image at the specified position. Specify width and height
+$gfx-&gt; image ($image_object, $x, $y, $width, $height);
 
-To read a PNG file in PDF :: API2, use the image_png method. Returns a resource object that represents the PNG image.
+# Insert image at the specified position. Specify scale (1.5x, etc.)
+$gfx-&gt; image ($image_object, $x, $y, $scale);
+</pre>
+<p>
+  The image will be inserted at the specified position.
+</p>
+<p>
+  Note that the width and height are in PDF units. Note that the coordinates move toward the upper right, so they are drawn in the upper right when viewed from the specified point.
+</p>
+<p>
+  As an example, if you want to display a 600x600 image at 600dpi resolution, specify 72.
+</p>
+<h3> Sample to insert PNG image </h3>
+<p>
+  Let's write a sample to insert a PNG image.
+</p>
+<pre>
+use PDF::API2;
 
-&lt;pre&gt;
-#Create a resource object that represents a PNG image
-my $ image_file ='/path/image.png';
-my $ image_object = $ pdf-&gt; image_png ($ image_file);
-&lt;/ pre&gt;
+my $pdf = PDF::API2-&gt; new;
 
-If you get the error "Unsupported Interlace", you need to turn off the PNG interlacing feature.
+my $page = $pdf-&gt; page;
 
-&lt;b&gt; Reading GIF files &lt;/ b&gt;
+# Create a resource object that represents a PNG image
+my $image_file = "$FindBin::Bin / rokkaku.png";
+my $image_object = $pdf-&gt; image_png ($image_file);
 
-In PDF :: API2, use the image_gif method to read a GIF file. Returns a resource object that represents the GIF image.
+# Content object needed to insert an image
+my $gfx = $page-&gt; gfx;
 
-&lt;pre&gt;
-#Create a resource object that represents a GIF image
-my $ image_file ='/path/image.gif';
-my $ image_object = $ pdf-&gt; image_gif ($ image_file);
-&lt;/ pre&gt;
+# Insert image at specified position
+my $x = 50;
+my $y = 500;
+$gfx-&gt; image ($image_object, $x, $y);
 
-&lt;h4&gt; Generation of image content object &lt;/ h4&gt;
-
-Create a content object to insert the image. This is a PDF :: API2 :: Content object.
-
-&lt;pre&gt;
-#Content object needed to insert an image
-my $ gfx = $ page-&gt; gfx;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Insert image file &lt;/ h4&gt;
-
-In PDF :: API2, use the image method of the content object to insert an image file.
-
-&lt;pre&gt;
-#Insert image at specified position
-$ gfx-&gt; image ($ image_object, $ x, $ y);
-
-#Insert image at the specified position. Specify width and height
-$ gfx-&gt; image ($ image_object, $ x, $ y, $ width, $ height);
-
-#Insert image at the specified position. Specify scale (1.5x, etc.)
-$ gfx-&gt; image ($ image_object, $ x, $ y, $ scale);
-&lt;/ pre&gt;
-
-The image will be inserted at the specified position.
-
-Note that the width and height are in PDF units. Note that the coordinates move toward the upper right, so they are drawn in the upper right when viewed from the specified point.
-
-As an example, if you want to display a 600x600 image at 600dpi resolution, specify 72.
-
-&lt;h3&gt; Sample to insert PNG image &lt;/ h3&gt;
-
-Let's write a sample to insert a PNG image.
-
-&lt;pre&gt;
-use PDF :: API2;
-
-my $ pdf = PDF :: API2-&gt; new;
-
-my $ page = $ pdf-&gt; page;
-
-#Create a resource object that represents a PNG image
-my $ image_file = "$ FindBin :: Bin / rokkaku.png";
-my $ image_object = $ pdf-&gt; image_png ($ image_file);
-
-#Content object needed to insert an image
-my $ gfx = $ page-&gt; gfx;
-
-#Insert image at specified position
-my $ x = 50;
-my $ y = 500;
-$ gfx-&gt; image ($ image_object, $ x, $ y);
-
-my $ pdf_file ='image_png.pdf';
-$ pdf-&gt; saveas ($ pdf_file);
-&lt;/ pre&gt;
-
-&lt;a href="/examples/pdf/image_png.pdf"&gt; Output result PNG image insertion &lt;/a&gt;
+my $pdf_file ='image_png.pdf';
+$pdf-&gt; saveas ($pdf_file);
+</pre>
+<p>
+  <a href="/examples/pdf/image_png.pdf"> Output result PNG image insertion</a>
+</p>
 
   </div>
   <div class="bottom">

@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100219126425.html"> defined function-check if the value is defined </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100219126425.html"> defined function-check if the value is defined </a></h2>
 <p>
-  Use the <strong> defined function </ strong> to see if the value is defined.
+  Use the <strong> defined function </strong> to see if the value is defined.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,125 +97,123 @@
 
 
 <pre>
-#Check if the value is defined
-$ is_defined = defined $ value;
-&lt;/ pre&gt;
-
-&lt;h3&gt; What is defined &lt;/ h3&gt;
-
-What is the defined value that can be determined by the defined function? Let's think about it.
-
-If a variable is declared, it will be undefined if initialization by assignment is not performed.
-
-&lt;pre&gt;
+# Check if the value is defined
+$is_defined = defined $value;
+</pre>
+<h3> What is defined </h3>
+<p>
+  What is the defined value that can be determined by the defined function? Let's think about it.
+</p>
+<p>
+  If a variable is declared, it will be undefined if initialization by assignment is not performed.
+</p>
+<pre>
 # Undefined immediately after declaration
-my $ value;
-&lt;/ pre&gt;
-
-When you assign a value, the value is defined.
-
-&lt;pre&gt;
+my $value;
+</pre>
+<p>
+  When you assign a value, the value is defined.
+</p>
+<pre>
 Since the # value is assigned, it will be in the defined state.
-$ value = 5;
-&lt;/ pre&gt;
-
-If an undefined value is assigned using the &lt;a href="/blog/20100220126425.html"&gt; undef function &lt;/a&gt;, the value becomes undefined.
-
-&lt;pre&gt;
-Substituting #undef makes it undefined
-$ value = undef;
-&lt;/ pre&gt;
-
-&lt;h3&gt; What is the difference from the boolean value? &lt;/ H3&gt;
-
-Note that the "defined / undefined" that can be determined by the defined function is different from the concept of "true / false". Defined means that it is not an undefined value.
-
-True, on the other hand, is not a false value in Perl. Please refer to the following article for the boolean value.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080323120628.html"&gt; Boolean value &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; What is the difference between "hash value defined" and "key exists"? &lt;/ H3&gt;
-
-You can use the &lt;a href="/blog/20080213120291.html"&gt; exists function &lt;/a&gt; to check if the hash key exists. The existence of the key is different from the defined value.
-
-The result of the judgment by the defined function and the judgment by the exists function may be different.
-
-In the following cases, the value is undefined, but the hash key exists.
-
-&lt;pre&gt;
-my% scores;
+$value = 5;
+</pre>
+<p>
+  If an undefined value is assigned using the <a href="/blog/20100220126425.html"> undef function</a>, the value becomes undefined.
+</p>
+<pre>
+Substituting # undef makes it undefined
+$value = undef;
+</pre>
+<h3> What is the difference from the boolean value? </H3>
+<p>
+  Note that the "defined / undefined" that can be determined by the defined function is different from the concept of "true / false". Defined means that it is not an undefined value.
+</p>
+<p>
+  True, on the other hand, is not a false value in Perl. Please refer to the following article for the boolean value.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080323120628.html"> Boolean value</a>
+  </li>
+</ul>
+<h3> What is the difference between "hash value defined" and "key exists"? </H3>
+<p>
+  You can use the <a href="/blog/20080213120291.html"> exists function</a> to check if the hash key exists. The existence of the key is different from the defined value.
+</p>
+<p>
+  The result of the judgment by the defined function and the judgment by the exists function may be different.
+</p>
+<p>
+  In the following cases, the value is undefined, but the hash key exists.
+</p>
+<pre>
+my %scores;
 
 # Key exists, but value is undefined
-$ scores {math} = undef;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Define functions for arrays and hashes are deprecated &lt;/ h3&gt;
-
-Arrays and hashes are not undefined values ​​when declared, but are assigned an empty list.
-
-&lt;pre&gt;
+$scores {math} = undef;
+</pre>
+<h3> Define functions for arrays and hashes are deprecated </h3>
+<p>
+  Arrays and hashes are not undefined values ​​when declared, but are assigned an empty list.
+</p>
+<pre>
 my @nums;
-my% scores;
-&lt;/ pre&gt;
-
-This is the same as:
-
-&lt;pre&gt;
+my %scores;
+</pre>
+<p>
+  This is the same as:
+</p>
+<pre>
 my @nums = ();
-my% scores = ();
-&lt;/ pre&gt;
-
-Its use for defined functions for arrays and hashes is deprecated. Instead, simply check if it's an empty list.
-
-&lt;pre&gt;
+my %scores = ();
+</pre>
+<p>
+  Its use for defined functions for arrays and hashes is deprecated. Instead, simply check if it's an empty list.
+</p>
+<pre>
 if (@nums) {...}
 if (% scores) {...}
-&lt;/ pre&gt;
+</pre>
+<h3> Convenient Defined-or operator </h3>
+<p>
+  There is a convenient operator called <a href="/blog/20120702134129.html"> Defined-or operator</a> that allows you to assign the right-hand side if the value is undefined.
+</p>
+<pre>
+my $num;
 
-&lt;h3&gt; Convenient Defined-or operator &lt;/ h3&gt;
-
-There is a convenient operator called &lt;a href="/blog/20120702134129.html"&gt; Defined-or operator &lt;/a&gt; that allows you to assign the right-hand side if the value is undefined.
-
-&lt;pre&gt;
-my $ num;
-
-#If undefined, substitute 3 using "defined-or operation"
-$ num // = 3;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample to check if it is defined using the defined function.
-
-&lt;pre&gt;
+# If undefined, substitute 3 using "defined-or operation"
+$num // = 3;
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample to check if it is defined using the defined function.
+</p>
+<pre>
 use strict;
 use warnings;
 
-my $ num = 3;
+my $num = 3;
 
-if (defined $ num) {
-  print "Defined \ n";
+if (defined $num) {
+  print "Defined\n";
 }
 else {
-  print "Not defined \ n";
+  print "Not defined\n";
 }
-&lt;/ pre&gt;
-
-It's also easy to read in combination with &lt;a href="/blog/20100125126425.html"&gt; unless &lt;/a&gt; if undefined was the main logic.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It's also easy to read in combination with <a href="/blog/20100125126425.html"> unless</a> if undefined was the main logic.
+</p>
+<pre>
 use strict;
 use warnings;
 
-my $ num;
-unless (defined $ num) {
-  print "Not defined \ n";
+my $num;
+unless (defined $num) {
+  print "Not defined\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

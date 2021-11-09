@@ -62,17 +62,17 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161123147990.html">
-        <span itemprop = "name"> Date / Time </ span> </a>
+        <span itemprop = "name"> Date / Time </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20081012122377.html"> Determine if it is a leap year </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081012122377.html"> Determine if it is a leap year </a></h2>
 <p>
   The leap year determination method is as follows.
 </p>
@@ -101,50 +101,55 @@ use strict;
 use warnings;
 
 # 1900 is not a leap year, 2000 is a leap year, 2003 is not a leap year, 2004 is a leap year.
-print "(1) Determine the leap year. \ N";
+print "(1) Determine the leap year.\n";
 my @years = (1900, 2000, 2003, 2004);
 
-for my $ year (@years) {
-  if (is_leap_year ($ year)) {
-    print "$ year is a leap year. \ N";
+for my $year (@years) {
+  if (is_leap_year ($year)) {
+    print "$year is a leap year.\n";
   }
   else {
-    print "$ year year is not a leap year. \ N";
+    print "$year year is not a leap year.\n";
   }
 }
 
 # A function that determines a leap year.
 sub is_leap_year {
-  my $ year = shift;
+  my $year = shift;
 
   If it is not divisible by # 4, it is not a leap year.
-  return if $ year% 4;
+  return if $year% 4;
 
   # If it is not divisible by 100 and not divisible by 400
   # Not a leap year.
-  return if! ($ year% 100) &amp;&amp; ($ year% 400);
+  return if! ($year% 100) &amp;&amp; ($year% 400);
 
   # Other than that, it is a leap year.
   return 1;
 }
-&lt;/ pre&gt;
-&lt;h3&gt; Determine if it is a leap year. &lt;/ h3&gt;
-
-The leap year determination method is as follows.
-First, determine if it is divisible by 4. Being divisible by 4 is a prerequisite for a leap year. If it is not divisible by 4, it is not a leap year.
-&lt;pre&gt;
-return if $ year% 4;
-&lt;/ pre&gt;
-
-Only those that are divisible by 4 in the above judgment are left. In the sample example, (1900, 2000, 2003, 2004) remains (1900, 2000, 2004).
-
-Next, make a judgment that "it is divisible by 100 and not divisible by 400". Those that meet this condition are not leap years. The 1900 meets this requirement.
-
-&lt;pre&gt;
-return if! ($ year% 100) &amp;&amp; ($ year% 400);
-&lt;/ pre&gt;
-
-With the above judgment, (2000, 2004) remains. These are leap years.
+</pre>
+<h3> Determine if it is a leap year. </h3>
+<p>
+  The leap year determination method is as follows.
+</p>
+<p>
+  First, determine if it is divisible by 4. Being divisible by 4 is a prerequisite for a leap year. If it is not divisible by 4, it is not a leap year.
+</p>
+<pre>
+return if $year% 4;
+</pre>
+<p>
+  Only those that are divisible by 4 in the above judgment are left. In the sample example, (1900, 2000, 2003, 2004) remains (1900, 2000, 2004).
+</p>
+<p>
+  Next, make a judgment that "it is divisible by 100 and not divisible by 400". Those that meet this condition are not leap years. The 1900 meets this requirement.
+</p>
+<pre>
+return if! ($year% 100) &amp;&amp; ($year% 400);
+</pre>
+<p>
+  With the above judgment, (2000, 2004) remains. These are leap years.
+</p>
 
   </div>
   <div class="bottom">

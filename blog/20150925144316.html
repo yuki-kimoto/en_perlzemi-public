@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20150925144316.html"> Get width and height of the image with Imager getwidth, getheight </a></ h2>
+    <h2><a href="/blog/20150925144316.html"> Get width and height of the image with Imager getwidth, getheight </a></h2>
 <p>
-  In Perl's image manipulation module Imager, use the <b> getwidth </ b> and <b> getheight </ b> methods to get the width and height.
+  In Perl's image manipulation module Imager, use the <b> getwidth </b> and <b> getheight </b> methods to get the width and height.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -81,24 +81,23 @@
 
 <pre>
 # Get width
-$ imager-&gt; getwidth
+$imager-&gt; getwidth
 
-#Get height
-$ imager-&gt; getheight;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample using getwidth and gettheight.
-
-&lt;pre&gt;
+# Get height
+$imager-&gt; getheight;
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample using getwidth and gettheight.
+</p>
+<pre>
 use Imager;
-my $ imager = Imager-&gt; new;
-my $ image_file ='image.png';
-$ imager-&gt; read (file =&gt; $ image_file);
-my $ width = $ imager-&gt; getwidth;
-my $ height = $ imager-&gt; getheight;
-&lt;/ pre&gt;
+my $imager = Imager-&gt; new;
+my $image_file ='image.png';
+$imager-&gt; read(file =&gt; $image_file);
+my $width = $imager-&gt; getwidth;
+my $height = $imager-&gt; getheight;
+</pre>
 
   </div>
   <div class="bottom">

@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20170410149183.html"> Address @INC issues to Perl 5.26 before upgrading </a></ h2>
+    <h2><a href="/blog/20170410149183.html"> Address @INC issues to Perl 5.26 before upgrading </a></h2>
 <p>
   In Perl 5.26, a security issue removes the "." (Current directory) from the module's include path.
 </p>
@@ -84,10 +84,10 @@
 </p>
 <ul>
   <li>
-    <a href="http://d.hatena.ne.jp/charsbar/20170318/1489828167">'.' In @INC problem and how to deal with it (March 2017 version) Add Star </a>
-  </ li>
-</ ul>
-<h3> Address this issue before upgrading to Perl 5.26 </ h3>
+    <a href="http://d.hatena.ne.jp/charsbar/20170318/1489828167">'.' In @INC problem and how to deal with it (March 2017 version) Add Star</a>
+  </li>
+</ul>
+<h3> Address this issue before upgrading to Perl 5.26 </h3>
 <p>
   As for the CPAN module, it seems to address this issue, so it's the script you're using that needs to be fixed.
 </p>
@@ -99,31 +99,34 @@
 </p>
 <pre>
 find. \ (-name \ * .pl -or -name \ * .pm -or -name \ *. cgi \) | xargs grep -e require -e do [^ a-zA-Z];
-&lt;/ pre&gt;
-
-If you execute the above command at the top level of the directory where the Perl script exists, "require" and "do" in the script with the extensions ".pl", ".pm" and ".cgi" will be used. You can extract all the locations where you are.
-
-For example, the following line will be output.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you execute the above command at the top level of the directory where the Perl script exists, "require" and "do" in the script with the extensions ".pl", ".pm" and ".cgi" will be used. You can extract all the locations where you are.
+</p>
+<p>
+  For example, the following line will be output.
+</p>
+<pre>
 require "mylib.pl";
 do "myconf.pl";
-&lt;/ pre&gt;
-
-If you find such a location, add the following to the beginning of your script: The absolute path of the directory where the script resides is added to the module's include path.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you find such a location, add the following to the beginning of your script: The absolute path of the directory where the script resides is added to the module's include path.
+</p>
+<pre>
 use FindBin;
-use lib $ FindBin :: Bin;
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt;
-
-It's easier to deal with it before the upgrade than to deal with it after upgrading.
-
-&lt;h3&gt; Addendum &lt;/ h3&gt;
-
-I've written many times that "." Has been added to the beginning of @INC, but it was a mistake that &lt;b&gt; "." Was added to the end &lt;/ b&gt;. I got an indication on Twitter.
+use lib $FindBin::Bin;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100524127696.html"> FindBin</a>
+</p>
+<p>
+  It's easier to deal with it before the upgrade than to deal with it after upgrading.
+</p>
+<h3> Addendum </h3>
+<p>
+  I've written many times that "." Has been added to the beginning of @INC, but it was a mistake that <b> "." Was added to the end </b>. I got an indication on Twitter.
+</p>
 
   </div>
   <div class="bottom">

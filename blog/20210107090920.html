@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Selenium :: Chrome --JavaScript-enabled web scraping using Chrome  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Selenium :: Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium :: Chrome is an extension of  Selenium :: Remote :: Driver  for Chrome. You can use it by installing Selenium :: Remote :: Driver.">
+<title> Selenium::Chrome - JavaScript-enabled web scraping using Chrome  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of  Selenium::Remote::Driver for Chrome. You can use it by installing Selenium::Remote::Driver.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Selenium :: Chrome --JavaScript-enabled web scraping using Chrome  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Selenium :: Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium :: Chrome is an extension of  Selenium :: Remote :: Driver  for Chrome. You can use it by installing Selenium :: Remote :: Driver." />
+<meta name="twitter:title" content=" Selenium::Chrome - JavaScript-enabled web scraping using Chrome  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of  Selenium::Remote::Driver for Chrome. You can use it by installing Selenium::Remote::Driver." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20210107090920.html"> Selenium :: Chrome --JavaScript-enabled web scraping using Chrome </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20210107090920.html"> Selenium::Chrome - JavaScript-enabled web scraping using Chrome </a></h2>
 <p>
-  Selenium :: Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium :: Chrome is an extension of <a href="/blog/20210105145700.html"> Selenium :: Remote :: Driver </a> for Chrome. You can use it by installing Selenium :: Remote :: Driver.
+  Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of <a href="/blog/20210105145700.html"> Selenium::Remote::Driver</a> for Chrome. You can use it by installing Selenium::Remote::Driver.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,66 +96,71 @@
 </div>
 
 
-<h4> When running on Windows, Mac </ h4>
+<h4> When running on Windows, Mac </h4>
 <pre>
 # When running on Windows, Mac
-use Selenium :: Chrome;
-my $ driver = Selenium :: Chrome-&gt; new;
-$ driver-&gt; get ('http://www.google.com');
-print $ driver-&gt; get_title ();
-$ driver-&gt; shutdown_binary ();
-&lt;/ pre&gt;
-
-&lt;h4&gt; When executing headless when there is no GUI screen such as Unix / Linux &lt;/ h4&gt;
-
-If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
-
-&lt;pre&gt;
+use Selenium::Chrome;
+my $driver = Selenium::Chrome-&gt; new;
+$driver-&gt; get ('http://www.google.com');
+print $driver-&gt; get_title ();
+$driver-&gt; shutdown_binary ();
+</pre>
+<h4> When executing headless when there is no GUI screen such as Unix / Linux </h4>
+<p>
+  If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
+</p>
+<pre>
 When executing headless when there is no GUI screen such as # Unix / Linux
-use Selenium :: Chrome;
-my $ driver = Selenium :: Chrome-&gt; new (
+use Selenium::Chrome;
+my $driver = Selenium::Chrome-&gt; new (
   extra_capabilities =&gt; {
     'goog: chromeOptions' =&gt; {
       args =&gt; ['headless','disable-gpu','window-size = 1920,1080','no-sandbox']
     }
   }
 );
-$ driver-&gt; get ('http://www.google.com');
-print $ driver-&gt; get_title ();
-$ driver-&gt; shutdown_binary ();
-&lt;/ pre&gt;
-
-If the following error occurs, please execute headless with the above option.
-
-&lt;blockquote&gt;
-Could not create new session: unknown error: Chrome failed to start: exited abnormally.
+$driver-&gt; get ('http://www.google.com');
+print $driver-&gt; get_title ();
+$driver-&gt; shutdown_binary ();
+</pre>
+<p>
+  If the following error occurs, please execute headless with the above option.
+</p>
+<blockquote>
+<p>
+  Could not create new session: unknown error: Chrome failed to start: exited abnormally.
+</p>
   (unknown error: DevToolsActivePort file doesn't exist)
   (The process started from chrome location / usr / bin / google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) At access.pl line 79.
-&lt;/ blockquote&gt;
-
-&lt;h3&gt; Preparation of execution environment &lt;/ h3&gt;
-
-Chrome browser and Chrome Driver are required as an execution environment for JavaScript-compatible web scraping using Selenium :: Chrome. Chrome Driver is software for operating Chrome itself. The environment construction procedure differs depending on the OS, refer to the following.
-
-It's a good idea to match Chrome browser and Chrome Driver versions as much as possible to avoid binary compatibility issues.
-
-&lt;h4&gt; For Unix / Linux &lt;/ h4&gt;
-
-&lt;a href="https://centos.perlclub.net/blog/20210103090837.html"&gt; Install Chrome Driver --Cent OS 7 &lt;/a&gt;
-
-&lt;a href="https://centos.perlclub.net/blog/20210104090837.html"&gt; Install Google Chrome --CentOS 7 &lt;/a&gt;
-
-For other &lt;a href="https://linux.perlclub.net/"&gt; UNIX / Linux &lt;/a&gt; such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
-
-&lt;h4&gt; Windows &lt;/ h4&gt;
-
-&lt;a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27"&gt; On the SPA site, the environment construction procedure of performing GUI test with Selenium :: Remote :: Driver &lt;/a&gt; will be helpful.
-
-&lt;a href="https://perlzemi.com/blog/20080602121231.html"&gt; Active Perl &lt;/a&gt; but &lt;a href="https://perlzemi.com/blog/20180808153368.html"&gt; Strawberry Perl &lt; / a&gt; I think it's okay.
-
-&lt;h4&gt; For Mac &lt;/ h4&gt;
-
-&lt;a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455"&gt; Using Selenium from Perl &lt;/a&gt; The environment construction procedure will be helpful.
+</blockquote>
+<h3> Preparation of execution environment </h3>
+<p>
+  Chrome browser and Chrome Driver are required as an execution environment for JavaScript-compatible web scraping using Selenium::Chrome. Chrome Driver is software for operating Chrome itself. The environment construction procedure differs depending on the OS, refer to the following.
+</p>
+<p>
+  It's a good idea to match Chrome browser and Chrome Driver versions as much as possible to avoid binary compatibility issues.
+</p>
+<h4> For Unix / Linux </h4>
+<p>
+  <a href="https://centos.perlclub.net/blog/20210103090837.html"> Install Chrome Driver - Cent OS 7</a>
+</p>
+<p>
+  <a href="https://centos.perlclub.net/blog/20210104090837.html"> Install Google Chrome - CentOS 7</a>
+</p>
+<p>
+  For other <a href="https://linux.perlclub.net/"> UNIX / Linux</a> such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
+</p>
+<h4> Windows </h4>
+<p>
+  <a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27"> On the SPA site, the environment construction procedure of performing GUI test with Selenium::Remote::Driver</a> will be helpful.
+</p>
+<p>
+  <a href="https://perlzemi.com/blog/20080602121231.html"> Active Perl</a> but <a href="https://perlzemi.com/blog/20180808153368.html"> Strawberry Perl </a> I think it's okay.
+</p>
+<h4> For Mac </h4>
+<p>
+  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455"> Using Selenium from Perl</a> The environment construction procedure will be helpful.
+</p>
 
   </div>
   <div class="bottom">

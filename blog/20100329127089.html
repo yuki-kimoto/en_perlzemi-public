@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> quotemeta function-regular expression character escaping  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  quotemeta function  to treat strings used in  regular expressions  as normal characters. All characters except word characters are preceded by \.">
+<meta name="description" content="You can use the  quotemeta function  to treat strings used in  regular expressions as normal characters. All characters except word characters are preceded by \.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" quotemeta function-regular expression character escaping  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  quotemeta function  to treat strings used in  regular expressions  as normal characters. All characters except word characters are preceded by \." />
+<meta name="twitter:description" content="You can use the  quotemeta function  to treat strings used in  regular expressions as normal characters. All characters except word characters are preceded by \." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100329127089.html"> quotemeta function-regular expression character escaping </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100329127089.html"> quotemeta function-regular expression character escaping </a></h2>
 <p>
-  You can use the <strong> quotemeta function </ strong> to treat strings used in <a href="/blog/20100827127859.html"> regular expressions </a> as normal characters. All characters except word characters are preceded by \.
+  You can use the <strong> quotemeta function </strong> to treat strings used in <a href="/blog/20100827127859.html"> regular expressions</a> as normal characters. All characters except word characters are preceded by \.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,31 +98,32 @@
 
 <pre>
 # Treat regular expression strings as normal characters
-$ ret = quotemeta $ str;
-&lt;/ pre&gt;
-
-This is a sample that pattern matches a character string containing regular expression characters as a normal character string.
-
-&lt;pre&gt;
+$ret = quotemeta $str;
+</pre>
+<p>
+  This is a sample that pattern matches a character string containing regular expression characters as a normal character string.
+</p>
+<pre>
 # Pattern matching using a character string containing regular expression characters as a normal character string
-my $ message ='This message contains a {2}';
+my $message ='This message contains a {2}';
 
-my $ match = "a {2}";
-$ match = quotemeta $ match;
+my $match = "a {2}";
+$match = quotemeta $match;
 
-if ($ message = ~ / $ match /) {
-  print "Match! \ N";
+if ($message = ~ / $match /) {
+  print "Match!\n";
 }
-&lt;/ pre&gt;
-
-quotemeta has the same meaning as the regular expression special character \ Q. The above quotemeta does not have the same meaning as the following description.
-
-&lt;pre&gt;
+</pre>
+<p>
+  quotemeta has the same meaning as the regular expression special character \ Q. The above quotemeta does not have the same meaning as the following description.
+</p>
+<pre>
 Express the same meaning as quotemeta using # \ Q
-my $ match = "\ Qa {2}";
-&lt;/ pre&gt;
-
-For more information on regular expressions, see &lt;a href="/blog/20100827127859.html"&gt; Practical Perl Regular Expressions Complete Explanation &lt;/a&gt;.
+my $match = "\ Qa {2}";
+</pre>
+<p>
+  For more information on regular expressions, see <a href="/blog/20100827127859.html"> Practical Perl Regular Expressions Complete Explanation</a>.
+</p>
 
   </div>
   <div class="bottom">

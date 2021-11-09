@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Exporter --Export function  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Exporter - Export function  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  Exporter  module allows you to export a function from a module.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Exporter --Export function  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Exporter - Export function  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  Exporter  module allows you to export a function from a module." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100426127089.html"> Exporter --Export function </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100426127089.html"> Exporter - Export function </a></h2>
 <p>
-  The <strong> Exporter </ strong> module allows you to export a function from a module.
+  The <strong> Exporter </strong> module allows you to export a function from a module.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,10 +97,10 @@
 
 
 <pre>
-#Package declaration
+# Package declaration
 package Your Module;
 
-Inherit #Exporter
+Inherit # Exporter
 use Exporter'import';
 
 # Write the function to export
@@ -109,60 +109,62 @@ our @EXPORT = qw / func1 func2 /;
 # Write an exportable function
 our @EXPORT_OK = qw / func3 func4 /;
 
-#Function
+# Function
 sub func1 {...}
 sub func2 {...}
 sub func3 {...}
 sub func4 {...}
-&lt;/ pre&gt;
-
-When you create a module using Exporter, the function is imported when you use the module.
-
-If you execute use in the form of "use module name;", the functions included in @EXPORT will be imported.
-
-&lt;pre&gt;
+</pre>
+<p>
+  When you create a module using Exporter, the function is imported when you use the module.
+</p>
+<p>
+  If you execute use in the form of "use module name;", the functions included in @EXPORT will be imported.
+</p>
+<pre>
 The functions (func1 and func2) included in # @EXPORT are imported.
 use Your Module;
-&lt;/ pre&gt;
-
-When executed in the form of "use module name argument 1 argument 2 ..", the function included in @EXPORT_OK or @EXPORT and specified by the argument is imported.
-
-&lt;pre&gt;
+</pre>
+<p>
+  When executed in the form of "use module name argument 1 argument 2 ..", the function included in @EXPORT_OK or @EXPORT and specified by the argument is imported.
+</p>
+<pre>
 # @EXPORT_OK or the functions contained in @EXPORT (func2, func3 and func4) are imported
 use YourModule qw / func2 func3 func4 /;
-&lt;/ pre&gt;
-
-@EXPORT, @EXPORT_OK are package variables.
-
-&lt;h3&gt; Exporter module export mechanism &lt;/ h3&gt;
-
-I would like to explain a little about how the Exporter module works. The first thing you should know is that when you run use, it will automatically call the import method of the specified module. This example tries to execute the import method of YourModule.
-
-The import method is not defined in YourModule, but since you are importing the import method of the Exporter module, the import method of the Exporter is called.
-
-In the import method of Exporter, the process of exporting the function to the calling package is described. Let's write a process to export the function written in @EXPORT to the calling package so that the atmosphere can be conveyed.
-
-&lt;pre&gt;
+</pre>
+<p>
+  @EXPORT, @EXPORT_OK are package variables.
+</p>
+<h3> Exporter module export mechanism </h3>
+<p>
+  I would like to explain a little about how the Exporter module works. The first thing you should know is that when you run use, it will automatically call the import method of the specified module. This example tries to execute the import method of YourModule.
+</p>
+<p>
+  The import method is not defined in YourModule, but since you are importing the import method of the Exporter module, the import method of the Exporter is called.
+</p>
+<p>
+  In the import method of Exporter, the process of exporting the function to the calling package is described. Let's write a process to export the function written in @EXPORT to the calling package so that the atmosphere can be conveyed.
+</p>
+<pre>
 sub import {
   First argument of # use (YourModule in this example)
-  my $ class = shift;
+  my $class = shift;
 
-  #Caller's package (main in this example)
-  my $ caller = caller;
+  # Caller's package (main in this example)
+  my $caller = caller;
 
-  #Export function
+  # Export function
   no strict'refs';
-  foreach my $ func (@ {"$ {class} :: EXPORT"}) {
-      * {"$ {caller} :: $ func"} = \ &amp; {"$ {class} :: $ func"};
+  foreach my $func (@ {"${class}::EXPORT"}) {
+      * {"${caller}::$func"} = \ &amp; {"${class}::$func"};
   }
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Which way to write the Exporter module &lt;/ h3&gt;
-
-There are multiple ways to write the Exporter module, and you can write as follows.
-
-&lt;pre&gt;
+</pre>
+<h3> Which way to write the Exporter module </h3>
+<p>
+  There are multiple ways to write the Exporter module, and you can write as follows.
+</p>
+<pre>
 # Part 1
 use Exporter'import';
 
@@ -171,9 +173,10 @@ push @ISA,'Exporter';
 
 # 3
 use base'Exporter';
-&lt;/ pre&gt;
-
-Here is the first one that seems to be the most intuitive.
+</pre>
+<p>
+  Here is the first one that seems to be the most intuitive.
+</p>
 
   </div>
   <div class="bottom">

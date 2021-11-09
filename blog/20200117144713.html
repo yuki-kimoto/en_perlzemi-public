@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> How to create a Linux-like environment with Strawberry Perl and command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="I will show you how to create a  Linux  -like environment with Strawberry Perl and a command prompt.">
+<meta name="description" content="I will show you how to create a  Linux -like environment with Strawberry Perl and a command prompt.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" How to create a Linux-like environment with Strawberry Perl and command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="I will show you how to create a  Linux  -like environment with Strawberry Perl and a command prompt." />
+<meta name="twitter:description" content="I will show you how to create a  Linux -like environment with Strawberry Perl and a command prompt." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200117144713.html"> How to create a Linux-like environment with Strawberry Perl and command prompt </a></ h2>
+    <h2><a href="/blog/20200117144713.html"> How to create a Linux-like environment with Strawberry Perl and command prompt </a></h2>
 <p>
-  I will show you how to create a <a href="https://linux.perlclub.net/"> Linux </a> -like environment with Strawberry Perl and a command prompt.
+  I will show you how to create a <a href="https://linux.perlclub.net/"> Linux</a> -like environment with Strawberry Perl and a command prompt.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -83,155 +83,160 @@
   Perl engineers often work in a Linux / Unix environment when developing or operating a server.
 </p>
 <p>
-  If you want to test a program created for <a href="https://linux.perlclub.net/"> Linux </a> on Windows, it will be easier if the command to be executed is as close as possible to Linux. ..
+  If you want to test a program created for <a href="https://linux.perlclub.net/"> Linux</a> on Windows, it will be easier if the command to be executed is as close as possible to Linux. ..
 </p>
 <p>
   I will show you how to work at the command prompt in the same way as Linux.
 </p>
-<h3> You can work in the same way in Linux environment and command prompt </ h3>
+<h3> You can work in the same way in Linux environment and command prompt </h3>
 <p>
   Is it possible to work in the same way in the Linux environment and the command prompt first? In January 2020, the following items were confirmed in the Windows 10 environment.
 </p>
-<h4> cd command </ h4>
+<h4> cd command </h4>
 <p>
-  The Linux <a href="https://linux.perlclub.net/blog/20191012191854.html"> cd command </a> also exists as a cd command at the command prompt.
+  The Linux <a href="https://linux.perlclub.net/blog/20191012191854.html"> cd command</a> also exists as a cd command at the command prompt.
 </p>
-<h4> File path delimiter is OK with "/" </ h4>
+<h4> File path delimiter is OK with "/" </h4>
 <p>
   The Windows file path delimiter is "\", but you can actually use "/". This is an example of using "/" in the cd command of the command prompt.
 </p>
 <pre>
 cd labo / perlzemi
-&lt;/ pre&gt;
-
-&lt;h4&gt; gcc can be used if Strawberry Perl is installed &lt;/ h4&gt;
-
-Use gcc, the C language compiler required to install Perl's XS module, from the beginning if &lt;a href="/blog/20180808153368.html"&gt; Strawberry Perl &lt;/a&gt; is installed. I can.
-
-&lt;pre&gt;
-gcc --help
-&lt;/ pre&gt;
-
-&lt;h4&gt; Close command prompt &lt;/ h4&gt;
-
-If you close the command prompt, the same command as the Linux exit command exists at the command prompt.
-
-&lt;pre&gt;
+</pre>
+<h4> gcc can be used if Strawberry Perl is installed </h4>
+<p>
+  Use gcc, the C language compiler required to install Perl's XS module, from the beginning if <a href="/blog/20180808153368.html"> Strawberry Perl</a> is installed. I can.
+</p>
+<pre>
+gcc - help
+</pre>
+<h4> Close command prompt </h4>
+<p>
+  If you close the command prompt, the same command as the Linux exit command exists at the command prompt.
+</p>
+<pre>
 exit
-&lt;/ pre&gt;
-
-&lt;h4&gt; Right-click to copy and paste &lt;/ h4&gt;
-
-If you check the simple edit mode in the command prompt settings, you can copy and paste by right-clicking.
-
-&lt;a href="https://www.relief.jp/docs/003578.html"&gt; Easily copy and paste command prompt-right click &lt;/a&gt;
-
-&lt;h4&gt; Continuous command execution by &amp;&amp; &lt;/ h4&gt;
-
-You can use &amp;&amp; at the command prompt as you would Linux.
-
-&lt;pre&gt;
+</pre>
+<h4> Right-click to copy and paste </h4>
+<p>
+  If you check the simple edit mode in the command prompt settings, you can copy and paste by right-clicking.
+</p>
+<p>
+  <a href="https://www.relief.jp/docs/003578.html"> Easily copy and paste command prompt-right click</a>
+</p>
+<h4> Continuous command execution by && </h4>
+<p>
+  You can use && at the command prompt as you would Linux.
+</p>
+<pre>
 command1 &amp;&amp; command2
-&lt;/ pre&gt;
-
-&lt;h4&gt; Redirects and pipes &lt;/ h4&gt;
-
-Linux redirection and pipes are also available at the command prompt.
-
-&lt;pre&gt;
+</pre>
+<h4> Redirects and pipes </h4>
+<p>
+  Linux redirection and pipes are also available at the command prompt.
+</p>
+<pre>
 command&gt; file.txt
 command &lt;file.txt
 command1 | command2
-&lt;/ pre&gt;
-
-
-&lt;h3&gt; Linux commands that do not exist at the command prompt &lt;/ h3&gt;
-
-The following are Linux commands that do not exist at the command prompt. If it doesn't exist, let's create it.
-
-If you have Strawberry Perl installed, the following path should be included in the command's search path:
-
-&lt;pre&gt;
+</pre>
+<h3> Linux commands that do not exist at the command prompt </h3>
+<p>
+  The following are Linux commands that do not exist at the command prompt. If it doesn't exist, let's create it.
+</p>
+<p>
+  If you have Strawberry Perl installed, the following path should be included in the command's search path:
+</p>
+<pre>
 C: \ Strawberry \ perl \ site \ bin
-&lt;/ pre&gt;
-
-This is where the user-installed executables and batch files are stored.
-
-Let's write a command that does not exist in this path.
-
-&lt;h4&gt; Create ls command &lt;/ h4&gt;
-
-Let's create a command that corresponds to the Linux &lt;a href="https://linux.perlclub.net/blog/20191126082723.html"&gt; ls command &lt;/a&gt;.
-
-If you set the extension to ".bat", Windows will recognize it as a command.
-
-Create a file called "ls.bat" in the search path of Strawberry Perl commands.
-
-Write the following content. Now call the dir command with the ls command.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is where the user-installed executables and batch files are stored.
+</p>
+<p>
+  Let's write a command that does not exist in this path.
+</p>
+<h4> Create ls command </h4>
+<p>
+  Let's create a command that corresponds to the Linux <a href="https://linux.perlclub.net/blog/20191126082723.html"> ls command</a>.
+</p>
+<p>
+  If you set the extension to ".bat", Windows will recognize it as a command.
+</p>
+<p>
+  Create a file called "ls.bat" in the search path of Strawberry Perl commands.
+</p>
+<p>
+  Write the following content. Now call the dir command with the ls command.
+</p>
+<pre>
 dir
-&lt;/ pre&gt;
-
-You will be able to execute the following commands at the command prompt.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You will be able to execute the following commands at the command prompt.
+</p>
+<pre>
 ls
-&lt;/ pre&gt;
-
-&lt;h4&gt; Create make command &lt;/ h4&gt;
-
-The command gmake can be used from the beginning if &lt;a href="/blog/20180808153368.html"&gt; Strawberry Perl &lt;/a&gt; is installed.
-
-So let's wrap this and create a make command.
-
-Create a file called "make.bat" in the search path of Strawberry Perl commands.
-
-Write the following content. Now the make command calls the gmake command.
-
-&lt;pre&gt;
+</pre>
+<h4> Create make command </h4>
+<p>
+  The command gmake can be used from the beginning if <a href="/blog/20180808153368.html"> Strawberry Perl</a> is installed.
+</p>
+<p>
+  So let's wrap this and create a make command.
+</p>
+<p>
+  Create a file called "make.bat" in the search path of Strawberry Perl commands.
+</p>
+<p>
+  Write the following content. Now the make command calls the gmake command.
+</p>
+<pre>
 gmake% 1
-&lt;/ pre&gt;
-
-% 1 is a command line argument. If this is specified, arguments can be given to the make command, such as "make test".
-
-You will be able to execute the following commands at the command prompt.
-
-&lt;pre&gt;
+</pre>
+<p>
+  % 1 is a command line argument. If this is specified, arguments can be given to the make command, such as "make test".
+</p>
+<p>
+  You will be able to execute the following commands at the command prompt.
+</p>
+<pre>
 make
-&lt;/ pre&gt;
-
-&lt;h4&gt; Other Linux commands &lt;/ h4&gt;
-
-&lt;a href="https://linux.perlclub.net/blog/20200113083613.html"&gt; cat command &lt;/a&gt; or &lt;a href="https://linux.perlclub.net/blog/" if needed 20191210081417.html "&gt; rm command &lt;/a&gt; etc. seems to be easy to make in the same way.
-
-&lt;h3&gt; Try a Linux-like environment &lt;/ h3&gt;
-
-Now let's do that for Linux. That is an example.
-
-&lt;pre&gt;
+</pre>
+<h4> Other Linux commands </h4>
+<p>
+  <a href="https://linux.perlclub.net/blog/20200113083613.html"> cat command</a> or <a href="https://linux.perlclub.net/blog/" if needed 20191210081417.html "> rm command</a> etc. seems to be easy to make in the same way.
+</p>
+<h3> Try a Linux-like environment </h3>
+<p>
+  Now let's do that for Linux. That is an example.
+</p>
+<pre>
 cd proj / MyModule
 perl Makefile.PL
 make &amp;&amp; make test
-&lt;/ pre&gt;
-
-Sounds good!
-
-&lt;h3&gt; Frequently Asked Questions &lt;/ h3&gt;
-
-Frequently asked questions.
-
-&lt;h4&gt; Should I use an alias with DOSKEY? &lt;/ H4&gt;
-
-Yes, I tried this. But when you run &amp;&amp;, the command prompt runs a new process. Actually, at this time, the environment is not inherited and the alias does not work.
-
-&lt;h4&gt; Is powershell useless? &lt;/ H4&gt;
-
-I feel that Powershell is designed to make Windows easier to operate, rather than improving the command prompt.
-
-Redirects and pipes are connected to .net and the processed information is output.
-
-If you want to check the operation of the program by using redirect or pipe, I feel that the command prompt, which outputs the information as it is, is excellent.
+</pre>
+<p>
+  Sounds good!
+</p>
+<h3> Frequently Asked Questions </h3>
+<p>
+  Frequently asked questions.
+</p>
+<h4> Should I use an alias with DOSKEY? </H4>
+<p>
+  Yes, I tried this. But when you run &&, the command prompt runs a new process. Actually, at this time, the environment is not inherited and the alias does not work.
+</p>
+<h4> Is powershell useless? </H4>
+<p>
+  I feel that Powershell is designed to make Windows easier to operate, rather than improving the command prompt.
+</p>
+<p>
+  Redirects and pipes are connected to .net and the processed information is output.
+</p>
+<p>
+  If you want to check the operation of the program by using redirect or pipe, I feel that the command prompt, which outputs the information as it is, is excellent.
+</p>
 
   </div>
   <div class="bottom">

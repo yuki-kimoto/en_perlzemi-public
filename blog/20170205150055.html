@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop = "name"> XS </ span> </a>
+        <span itemprop = "name"> XS </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20170205150055.html"> How to treat a C language structure as a Perl object in XS </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20170205150055.html"> How to treat a C language structure as a Perl object in XS </a></h2>
 <p>
   In XS, you can also treat the structure itself as a Perl object. I will explain how to treat a C language structure as a Perl object.
 </p>
@@ -96,17 +96,17 @@
 </div>
 
 
-<h3> Create a module with h2xs </ h3>
+<h3> Create a module with h2xs </h3>
 <p>
   First, create a module for XS with h2xs.
 </p>
 <pre>
 h2xs -A -n SomeModule
-&lt;/ pre&gt;
-
-This will create a directory called "SomeModule". The following files and directories will be created.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This will create a directory called "SomeModule". The following files and directories will be created.
+</p>
+<pre>
 Changes
 lib /
 Makefile.PL
@@ -115,22 +115,23 @@ ppport.h
 README
 SomeModule.xs
 t /
-&lt;/ pre&gt;
+</pre>
+<h3> XS file description </h3>
+<p>
+  Let's write an XS file. The pointer of the structure is converted to size_t type by PTR2INT. In addition, size_t type is converted to SV * type, SV * type is converted to SV * type reference, and finally bless is converted to object.
+</p>
+<p>
+  The size_t type is an integer type, but the address value should be received as the size_t type.
+</p>
+<p>
+  When retrieving, dereference is performed, the value of IV contained in SV * is fetched, and INT2PTR is converted into a pointer to the structure.
+</p>
+<pre>
+# include "EXTERN.h"
+# include "perl.h"
+# include "XSUB.h"
 
-&lt;h3&gt; XS file description &lt;/ h3&gt;
-
-Let's write an XS file. The pointer of the structure is converted to size_t type by PTR2INT. In addition, size_t type is converted to SV * type, SV * type is converted to SV * type reference, and finally bless is converted to object.
-
-The size_t type is an integer type, but the address value should be received as the size_t type.
-
-When retrieving, dereference is performed, the value of IV contained in SV * is fetched, and INT2PTR is converted into a pointer to the structure.
-
-&lt;pre&gt;
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-
-#include "ppport.h"
+# include "ppport.h"
 
 typedef struct {
   double x;
@@ -165,7 +166,7 @@ new (...)
   SV * point_svrv = sv_2mortal (newRV_inc (point_sv));
   
   // create an object
-  SV * point_obj = sv_bless (point_svrv, gv_stashpv (class_name, 1));
+  SV * point_obj = sv_bless(point_svrv, gv_stashpv (class_name, 1));
   
   XPUSHs (point_obj);
   XSRETURN (1);
@@ -246,49 +247,46 @@ DESTORY (...)
 }
 
 MODULE = SomeModule PACKAGE = SomeModule
-&lt;/ pre&gt;
-
-&lt;h3&gt; Creating a Point module &lt;/ h3&gt;
-
-Please put a file called Point.pm under lib. SomeModule is loaded because SomeModule has a binding description.
-
-&lt;pre&gt;
+</pre>
+<h3> Creating a Point module </h3>
+<p>
+  Please put a file called Point.pm under lib. SomeModule is loaded because SomeModule has a binding description.
+</p>
+<pre>
 package Point;
 use SomeModule;
 
 1;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Test script &lt;/ h3&gt;
-
-Create a test script. This should be in the same directory where the XS files are located.
-
-&lt;pre&gt;
+</pre>
+<h3> Test script </h3>
+<p>
+  Create a test script. This should be in the same directory where the XS files are located.
+</p>
+<pre>
 use strict;
 use warnings;
 use Point;
 
-my $ point = Point-&gt; new (1, 2);
-print $ point-&gt; x. "\ n";
-print $ point-&gt; y. "\ n";
-&lt;/ pre&gt;
-
-&lt;h3&gt; Compile and run &lt;/ h3&gt;
-
-Let's compile and run it.
-
-&lt;pre&gt;
+my $point = Point-&gt; new (1, 2);
+print $point-&gt; x. "\n";
+print $point-&gt; y. "\n";
+</pre>
+<h3> Compile and run </h3>
+<p>
+  Let's compile and run it.
+</p>
+<pre>
 perl Makefile.PL
 make
 perl -Mblib test.pl
-&lt;/ pre&gt;
-
-If the output is as follows, it is successful.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the output is as follows, it is successful.
+</p>
+<pre>
 1
 2
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

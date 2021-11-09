@@ -62,20 +62,20 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <a href="/blog/20110212130370.html"> <span itemprop = "name"> File input / output </ span> </a>
+      <a href="/blog/20110212130370.html"> <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080721121664.html"> Understand the concept of file handles </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080721121664.html"> Understand the concept of file handles </a></h2>
 <p>
   The concept of file handles in Perl is confusing, so I'll explain it here.
 </p>
@@ -95,64 +95,66 @@
 </div>
 
 
-<h3> File handles are conceptual rather than real </ h3>
+<h3> File handles are conceptual rather than real </h3>
 <p>
   When we talk about file handles in Perl, we mean multiple entities that Perl recognizes as file handles. There is no such thing as a file handle.
 </p>
-<h3> What Perl recognizes as a filehandle </ h3>
+<h3> What Perl recognizes as a filehandle </h3>
 <ol>
   <li>
     Symbol (FH)
-  </ li>
+  </li>
   <li>
-    Type glob (* FH)
-  </ li>
+    Type glob(* FH)
+  </li>
   <li>
     Reference to typeglobs (\ * FH)
-  </ li>
+  </li>
   <li>
-    IO :: Handle class object
-  </ li>
+    IO::Handle class object
+  </li>
   <li>
-    An object of a class that inherits the IO :: Handle object (such as IO :: File)
-  </ li>
-</ ol>
+    An object of a class that inherits the IO::Handle object (such as IO::File)
+  </li>
+</ol>
 <p>
   Perl recognizes the above five as file handles. The following statements are all valid.
 </p>
 <pre>
 # 1. Symbol FH
-open (FH, "&lt;", $ file) or die "$!";
+open(FH, "&lt;", $file) or die "$!";
 
 # 2. Type glob * FH
-open (* FH, "&lt;", $ file) or die "$!";
+open(* FH, "&lt;", $file) or die "$!";
 
 # 3. Reference to typeglobs \ * FH
-my $ fh = \ * FH;
-open ($ fh, "&lt;", $ file) or die "$!";
+my $fh = \ * FH;
+open($fh, "&lt;", $file) or die "$!";
 
-# 4. IO :: Handle object
-use IO :: Handle;
-my $ fh = IO :: Handle-&gt; new;
-open ($ fh, "&lt;", $ file) or die "$!";
+# 4. IO::Handle object
+use IO::Handle;
+my $fh = IO::Handle-&gt; new;
+open($fh, "&lt;", $file) or die "$!";
 
-# 5. IO :: File object (inheriting IO :: Handle)
-use IO :: File;
-my $ fh = IO :: File-&gt; new;
-open ($ fh, "&lt;", $ file) or die "$!";
-&lt;/ pre&gt;
-
-&lt;h3&gt; How to write a modern file open &lt;/ h3&gt;
-
-How to write a modern file open
-&lt;pre&gt;
-open (my $ fh, "&lt;", $ file)
-  or die "Can't open file $ file: $!";
-&lt;/ pre&gt;
-
-is.
-
-When an undefined scalar variable is passed as the first argument to the open function, a reference to the anonymous glob is automatically generated. With the same description as "3. Reference to typeglob (\ * FH)", only the part of my $ fh = \ * FH; is automatically performed. (This is a modern implementation of Perl, which may in the future automatically generate objects to IO :: Handle.)
+# 5. IO::File object (inheriting IO::Handle)
+use IO::File;
+my $fh = IO::File-&gt; new;
+open($fh, "&lt;", $file) or die "$!";
+</pre>
+<h3> How to write a modern file open </h3>
+<p>
+  How to write a modern file open
+</p>
+<pre>
+open(my $fh, "&lt;", $file)
+  or die "Can't open file $file: $!";
+</pre>
+<p>
+  is.
+</p>
+<p>
+  When an undefined scalar variable is passed as the first argument to the open function, a reference to the anonymous glob is automatically generated. With the same description as "3. Reference to typeglob(\ * FH)", only the part of my $fh = \ * FH; is automatically performed. (This is a modern implementation of Perl, which may in the future automatically generate objects to IO::Handle.)
+</p>
 
   </div>
   <div class="bottom">

@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </ span> </a>
+      <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080731121760.html"> Standard I / O and redirection </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080731121760.html"> Standard I / O and redirection </a></h2>
 <p>
   Redirection is an OS function that switches the input source of standard input, standard output, and output destination of standard error output. Modern operating systems have basic redirection capabilities.
 </p>
@@ -99,12 +99,12 @@
 <p>
   There are three redirects to keep in mind: a redirect that switches the input source of standard input to a file, a redirect that switches the output destination of standard output to a file, and a redirect that switches the output destination of standard error output to a file.
 </p>
-<h3> 1. Preparation </ h3>
+<h3> 1. Preparation </h3>
 <p>
   I will make a sample to see the redirect movement.
 </p>
 <p>
-  Reads one line from standard input and writes to standard output. It also outputs the character string "error \ n" to the standard error output.
+  Reads one line from standard input and writes to standard output. It also outputs the character string "error\n" to the standard error output.
 </p>
 <p>
   Save this script with a name of your choice. Here, the name is sample_20080731.pl.
@@ -116,93 +116,90 @@
 use strict;
 use warnings;
 
-my $ line = &lt;STDIN&gt;; # Read one line from standard input
+my $line = &lt;STDIN&gt;; # Read one line from standard input
 
-print $ line; # Output to standard output
-print STDERR "error \ n"; # Output to standard error output
-&lt;/ pre&gt;
-
-&lt;h3&gt; 2. Check normal movement &lt;/ h3&gt;
-
-&lt;pre&gt;
+print $line; # Output to standard output
+print STDERR "error\n"; # Output to standard error output
+</pre>
+<h3> 2. Check normal movement </h3>
+<pre>
 perl sample_20080731.pl
-&lt;/ pre&gt;
-
-Do the above
-
-&lt;pre&gt;
+</pre>
+<p>
+  Do the above
+</p>
+<pre>
 aaa
-&lt;/ pre&gt;
-
-And hit from the keyboard
-
-&lt;pre&gt;
+</pre>
+<p>
+  And hit from the keyboard
+</p>
+<pre>
 aaa
 error
-&lt;/ pre&gt;
-
-Is output. The standard input is the keyboard, and the standard output and standard error output are the display.
-
-&lt;h3&gt; 3. Switch the input source of standard input to a file &lt;/ h3&gt;
-
-Since the input source is switched from the keyboard to the file, create a file called input_20080731.txt as a preparation and add the contents
-
-&lt;pre&gt;
+</pre>
+<p>
+  Is output. The standard input is the keyboard, and the standard output and standard error output are the display.
+</p>
+<h3> 3. Switch the input source of standard input to a file </h3>
+<p>
+  Since the input source is switched from the keyboard to the file, create a file called input_20080731.txt as a preparation and add the contents
+</p>
+<pre>
 line
-&lt;/ pre&gt;
-
-will do.
-
-&lt;pre&gt;
+</pre>
+<p>
+  will do.
+</p>
+<pre>
 perl sample_20080731.pl &lt;input_20080731.txt
-&lt;/ pre&gt;
-
-And hit on the command line
-
-&lt;pre&gt;
+</pre>
+<p>
+  And hit on the command line
+</p>
+<pre>
 line
 error
-&lt;/ pre&gt;
-
-Is displayed on the display. The &lt;symbol is the redirect symbol that switches the source of standard input to a file. If you write a program to receive the contents to be read from the standard input, the user can select the input source using redirection.
-
-&lt;h3&gt; 4. Switch the output destination of standard output to a file &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Is displayed on the display. The <symbol is the redirect symbol that switches the source of standard input to a file. If you write a program to receive the contents to be read from the standard input, the user can select the input source using redirection.
+</p>
+<h3> 4. Switch the output destination of standard output to a file </h3>
+<pre>
 perl sample_20080731.pl&gt; output_20080731.txt
-&lt;/ pre&gt;
-
-At the command line
-
-&lt;pre&gt;
+</pre>
+<p>
+  At the command line
+</p>
+<pre>
 aaa
-&lt;/ pre&gt;
-
-When you type, the content aaa is written in output_20080731.txt, and error is displayed on the display. The&gt; symbol is a redirect symbol that switches the output destination of standard output to a file. If the program is written to output the output contents to the standard output, the user can select the output destination by using the redirect.
-
-&lt;h3&gt; 5. Switch the output destination of standard error output to a file &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  When you type, the content aaa is written in output_20080731.txt, and error is displayed on the display. The> symbol is a redirect symbol that switches the output destination of standard output to a file. If the program is written to output the output contents to the standard output, the user can select the output destination by using the redirect.
+</p>
+<h3> 5. Switch the output destination of standard error output to a file </h3>
+<pre>
 perl sample_20080731.pl 2&gt; error_20080731.txt
-&lt;/ pre&gt;
-
-At the command line
-
-&lt;pre&gt;
+</pre>
+<p>
+  At the command line
+</p>
+<pre>
 aaa
-&lt;/ pre&gt;
-
-If you type, error_20080731.txt will show error and the display will show aaa. The 2&gt; symbol is a redirect symbol that switches the output destination of standard error output to a file. Use this switch if you want to output the error to a file.
-
-&lt;h3&gt; 6. Use redirects in combination &lt;/ h3&gt;
-
-Redirects can be used in combination.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you type, error_20080731.txt will show error and the display will show aaa. The 2> symbol is a redirect symbol that switches the output destination of standard error output to a file. Use this switch if you want to output the error to a file.
+</p>
+<h3> 6. Use redirects in combination </h3>
+<p>
+  Redirects can be used in combination.
+</p>
+<pre>
 perl sample_20080731.pl &lt;input_20080731.txt&gt; output_20080731.txt 2&gt; error_20080731.txt
-&lt;/ pre&gt;
-
-Will be written as line in output_20080731.txt and error in error_20080731.txt. The line written in output_20080731.txt is the one written in the first line of input_20080731.txt. In this way, redirect symbols can be used in combination.
+</pre>
+<p>
+  Will be written as line in output_20080731.txt and error in error_20080731.txt. The line written in output_20080731.txt is the one written in the first line of input_20080731.txt. In this way, redirect symbols can be used in combination.
+</p>
 
   </div>
   <div class="bottom">

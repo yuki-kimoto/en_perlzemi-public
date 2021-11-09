@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20170130148603.html">
-      <span itemprop = "name"> database </ span> </a>
+      <span itemprop = "name"> database </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20161122147981.html"> Cooperation with MySQL </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20161122147981.html"> Cooperation with MySQL </a></h2>
 <p>
   I will explain how to use "MySQL" in Perl.
 </p>
@@ -96,147 +96,151 @@
 </div>
 
 
-<h3> Explanation of DBI and DBI </ h3>
+<h3> Explanation of DBI and DBI </h3>
 <p>
   First, I will explain about DBI and DBI as basic knowledge about dealing with MySQL. When connecting to a database programmatically, it is common to use something called DBI. Also, the actual interaction with the RDBMS is done through the DBD.
 </p>
-<h4> Common API DBI that can use various RDBMS </ h4>
+<h4> Common API DBI that can use various RDBMS </h4>
 <p>
   DBI is an API that does not depend on RDBMS (relational database management system). (DBI stands for Database Interface)
 </p>
 <p>
   RDBMS includes MySQL, Oracle, DB2, Postgre SQL, etc., but since they are created by different people, their usage is slightly different. DBI allows you to connect and request SQL with a common description for different beta bases.
 </p>
-<h4> Functions for connecting to the database DBI </ h4>
+<h4> Functions for connecting to the database DBI </h4>
 <p>
   There is a module with the same name in Perl, so install it.
 </p>
 <pre>
 cpan DBI
-&lt;/ pre&gt;
-
-&lt;h4&gt; Driver DBD that actually interacts with the RDBMS &lt;/ h4&gt;
-
-DBI provides functions, but in reality DBD interacts with the database internally. There are various types of DBD, such as for MySQL, PostgreSQL, Oracle, and SQLite.
-
-Install the DBD for MySQL. MySQL must be installed.
-
-&lt;pre&gt;
-cpan DBD :: mysql
-&lt;/ pre&gt;
-
-&lt;h4&gt; Image of interaction between DBI, DBD and database server &lt;/ h4&gt;
-
-DBI does not change when connecting to any database. This is because DBI is a collection of functions for connections that are designed to be database independent. The DBD actually exchanges data with the database.
-
-&lt;pre&gt;
-| ----- | | ------------- | | ------------- |
+</pre>
+<h4> Driver DBD that actually interacts with the RDBMS </h4>
+<p>
+  DBI provides functions, but in reality DBD interacts with the database internally. There are various types of DBD, such as for MySQL, PostgreSQL, Oracle, and SQLite.
+</p>
+<p>
+  Install the DBD for MySQL. MySQL must be installed.
+</p>
+<pre>
+cpan DBD::mysql
+</pre>
+<h4> Image of interaction between DBI, DBD and database server </h4>
+<p>
+  DBI does not change when connecting to any database. This is because DBI is a collection of functions for connections that are designed to be database independent. The DBD actually exchanges data with the database.
+</p>
+<pre>
+| - --- | | - -- -- -- -- | | - -- -- -- -- |
 | | | | | |
-| | ------- | DBD :: mysql | --------- | MySQL |
+| | - -- -- | DBD::mysql | - -- -- - | MySQL |
 | | | | | |
-| | | ------------- | | ------------- |
+| | | - -- -- -- -- | | - -- -- -- -- |
 DBI |
-| | | ------------- | | ------------- |
+| | | - -- -- -- -- | | - -- -- -- -- |
 | | | | | |
-| | ------- | DBD :: Oracle | --------- | Oracle |
+| | - -- -- | DBD::Oracle | - -- -- - | Oracle |
 | | | | | |
-| ----- | | ------------- | | ------------- |
-&lt;/ pre&gt;
-
-&lt;h3&gt; Connect to MySQL server &lt;/ h3&gt;
-
-Use the &lt;strong&gt; connect &lt;/ strong&gt; method to connect to the MySQL server.
-
-&lt;pre&gt;
+| - --- | | - -- -- -- -- | | - -- -- -- -- |
+</pre>
+<h3> Connect to MySQL server </h3>
+<p>
+  Use the <strong> connect </strong> method to connect to the MySQL server.
+</p>
+<pre>
 use DBI;
-my $ dbh = DBI-&gt; connect ("DBI: mysql: $ database", $ user, $ password);
-&lt;/ pre&gt;
-
-To connect to a remote MySQL server, specify the host name
-
-&lt;pre&gt;
+my $dbh = DBI-&gt; connect ("DBI: mysql: $database", $user, $password);
+</pre>
+<p>
+  To connect to a remote MySQL server, specify the host name
+</p>
+<pre>
 use DBI;
-my $ dbh = DBI-&gt; connect (
-  "DBI: mysql: $ database: $ hostname",
-  $ user,
-  $ password
+my $dbh = DBI-&gt; connect (
+  "DBI: mysql: $database: $hostname",
+  $user,
+  $password
 );
-&lt;/ pre&gt;
-To do.
-
-You can also specify the port number.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To do.
+</p>
+<p>
+  You can also specify the port number.
+</p>
+<pre>
 use DBI;
-my $ dbh = DBI-&gt; connect (
-  "DBI: mysql: $ database: $ hostname: $ port",
-  $ user,
-  $ password
+my $dbh = DBI-&gt; connect (
+  "DBI: mysql: $database: $hostname: $port",
+  $user,
+  $password
 );
-&lt;/ pre&gt;
-
-&lt;h4&gt; Database handle &lt;/ h4&gt;
-The connect method returns a database handle used for database operations as a return value.
-Use the database handle to interact with the MySQL server.
-
-&lt;h4&gt; Error handling &lt;/ h4&gt;
-If the database name is incorrect, the password is incorrect, or the database cannot be connected for some reason, undef will be returned in the return value. The content of the error at that time is
-
-&lt;pre&gt;
-$ DBI :: errstr;
-&lt;/ pre&gt;
-
-You can get it at. err is a number and errstr is the content of the error.
-
-Since the database is a system outside the program, error handling is essential. In the first sample, error handling is not performed, but error handling is always performed.
-
-&lt;pre&gt;
+</pre>
+<h4> Database handle </h4>
+<p>
+  The connect method returns a database handle used for database operations as a return value.
+</p>
+<p>
+  Use the database handle to interact with the MySQL server.
+</p>
+<h4> Error handling </h4>
+<p>
+  If the database name is incorrect, the password is incorrect, or the database cannot be connected for some reason, undef will be returned in the return value. The content of the error at that time is
+</p>
+<pre>
+$DBI::errstr;
+</pre>
+<p>
+  You can get it at. err is a number and errstr is the content of the error.
+</p>
+<p>
+  Since the database is a system outside the program, error handling is essential. In the first sample, error handling is not performed, but error handling is always performed.
+</p>
+<pre>
 use DBI;
-my $ dbh = DBI-&gt; connect (
-  "DBI: mysql: $ database: $ hostname",
-  $ user,
-  $ password
-) or die "cannot connect to MySQL: $ DBI :: errstr";
-&lt;/ pre&gt;
-
-&lt;h3&gt; Convert current time to MySQL datetime type &lt;/ h3&gt;
-
-Use the localtime and strftime functions to convert the current time to a MySQL datetime type.
-
-&lt;pre&gt;
+my $dbh = DBI-&gt; connect (
+  "DBI: mysql: $database: $hostname",
+  $user,
+  $password
+) or die "cannot connect to MySQL: $DBI::errstr";
+</pre>
+<h3> Convert current time to MySQL datetime type </h3>
+<p>
+  Use the localtime and strftime functions to convert the current time to a MySQL datetime type.
+</p>
+<pre>
 use POSIX'strftime';
 
 # MySQL datetime type (datetime type)
-my $ current_datetime = strftime ("% Y-% m-% d% H:% M:% S", localtime);
+my $current_datetime = strftime("% Y-% m-% d% H:% M:% S", localtime);
 
 # MySQL date type (date type)
-my $ current_date = strftime ("% Y-% m-% d", localtime);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Extract "database definition difference" with "MySQL :: Diff" module &lt;/ h3&gt;
-
-When I was looking for a tool to automatically generate commands that eliminate the differences from the differences in the MySQL database, I found the &lt;a href="/blog/20111101132239.html"&gt; MySQL :: Diff &lt;/a&gt; module. This module comes with a command line tool called mysqldiff, so it's usually best to use it.
-
-Very useful for bridging the gap between development and production environments. It doesn't show all the differences, it seems to be only the part related to the table definition, so it seems that you need to set the trigger and index yourself.
-
-The documentation doesn't seem to explain the options, so you can check with the --help command.
-&lt;pre&gt;
-mysqldiff --help
-&lt;/ pre&gt;
-
-&lt;h3&gt; You need mysql-devel to install DBD :: mysql &lt;/ h3&gt;
-
-If you want to connect to MySQL from DBI with Perl, you need a module called &lt;strong&gt; DBD :: mysql &lt;/ strong&gt;. This module depends on the C language library and will fail to install on its own. .. For example, if you have a Red Hat OS such as Cent OS, you need to install the package &lt;strong&gt; mysql-devel &lt;/ strong&gt;.
-
-&lt;pre&gt;
+my $current_date = strftime("% Y-% m-% d", localtime);
+</pre>
+<h3> Extract "database definition difference" with "MySQL::Diff" module </h3>
+<p>
+  When I was looking for a tool to automatically generate commands that eliminate the differences from the differences in the MySQL database, I found the <a href="/blog/20111101132239.html"> MySQL::Diff</a> module. This module comes with a command line tool called mysqldiff, so it's usually best to use it.
+</p>
+<p>
+  Very useful for bridging the gap between development and production environments. It doesn't show all the differences, it seems to be only the part related to the table definition, so it seems that you need to set the trigger and index yourself.
+</p>
+<p>
+  The documentation doesn't seem to explain the options, so you can check with the - help command.
+</p>
+<pre>
+mysqldiff - help
+</pre>
+<h3> You need mysql-devel to install DBD::mysql </h3>
+<p>
+  If you want to connect to MySQL from DBI with Perl, you need a module called <strong> DBD::mysql </strong>. This module depends on the C language library and will fail to install on its own. .. For example, if you have a Red Hat OS such as Cent OS, you need to install the package <strong> mysql-devel </strong>.
+</p>
+<pre>
 yum -y install mysql-devel
-&lt;/ pre&gt;
-
-Once "mysql-devel" is installed, the DBD :: mysql installation will be successful.
-
-&lt;pre&gt;
-cpan DBD :: mysql
-&lt;/ pre&gt;
+</pre>
+<p>
+  Once "mysql-devel" is installed, the DBD::mysql installation will be successful.
+</p>
+<pre>
+cpan DBD::mysql
+</pre>
 
   </div>
   <div class="bottom">

@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20151002144374.html"> Introduction to Statistical Analysis / Scientific Calculation Rstats </a></ h2>
+    <h2><a href="/blog/20151002144374.html"> Introduction to Statistical Analysis / Scientific Calculation Rstats </a></h2>
 <p>
   I am currently creating a module called Rstats for statistical analysis and scientific calculation in Perl. The goal of Rstats is to implement the R language, which is a language for statistical analysis and scientific computing, on top of Perl.
 </p>
@@ -91,77 +91,79 @@
 <p>
   I am currently studying physics, mathematics, information engineering, etc. because I think it is necessary to implement Rstats.
 </p>
-<h3> Install Rstats </ h3>
+<h3> Install Rstats </h3>
 <p>
   Rstats can be easily installed and used from CPAN on both Windows and Unix. If you want to run it on Windows, please install ActivePerl or Strawbery Perl. If you have Perl 5.10.1 or higher, you can run it.
 </p>
 <pre>
 cpan Rstats
-&lt;/ pre&gt;
-
-Or if cpanm is installed
-
-&lt;pre&gt;
+</pre>
+<p>
+  Or if cpanm is installed
+</p>
+<pre>
 cpanm Rstats
-&lt;/ pre&gt;
-
-&lt;h3&gt; How to use &lt;/ h3&gt;
-
-Easy to use.
-
-&lt;pre&gt;
+</pre>
+<h3> How to use </h3>
+<p>
+  Easy to use.
+</p>
+<pre>
 use strict;
 use warnings;
 
 use Rstats;
 
 # vector
-my $ x1 = c_ (1, 2, 3);
-my $ x2 = c_ (5, 6, 7);
-my $ x3 = -c_ (8, 9, 10);
+my $x1 = c_ (1, 2, 3);
+my $x2 = c_ (5, 6, 7);
+my $x3 = -c_ (8, 9, 10);
 
-my $ x4 = $ x1 + ($ x2 * $ x3);
+my $x4 = $x1 + ($x2 * $x3);
 
-print $ x4;
+print $x4;
 
 # Creating a vector containing 1 to 10 in the element
-my $ x5 = C_ ('1:10');
-print $ x5;
+my $x5 = C_ ('1:10');
+print $x5;
 
 Calculate # sin
-my $ x6 = c_ (pi / 4, pi / 2);
-my $ x7 = r-&gt; sin ($ x6);
-print $ x7;
-&lt;/ pre&gt;
-
-You can create a vector with the "&lt;b&gt; c_ &lt;/ b&gt;" function. The created vector can perform four arithmetic operations.
-
-You can automatically create a sequence of numbers with the "&lt;b&gt; C_ &lt;/ b&gt;" function. You can express 10 numbers from 1 to 10 with the expression "'1:10'".
-
-The underscore after the function name, such as "c_" or "C_", is due to Perl's restrictions on single-letter functions. This is because in Perl, when you write "-c ()", the minus of the c function is not understood and is understood as the file operator "-c". This is a frequent mistake, so I gave up and named the functions "c_" and "C_".
-
-Functions corresponding to the R language can be called from the "&lt;b&gt; r &lt;/ b&gt;" object as "r-&gt; sin (...)".
-
-The output result is as follows.
-
-&lt;pre&gt;
+my $x6 = c_ (pi / 4, pi / 2);
+my $x7 = r-&gt; sin($x6);
+print $x7;
+</pre>
+<p>
+  You can create a vector with the "<b> c_ </b>" function. The created vector can perform four arithmetic operations.
+</p>
+<p>
+  You can automatically create a sequence of numbers with the "<b> C_ </b>" function. You can express 10 numbers from 1 to 10 with the expression "'1:10'".
+</p>
+<p>
+  The underscore after the function name, such as "c_" or "C_", is due to Perl's restrictions on single-letter functions. This is because in Perl, when you write "-c ()", the minus of the c function is not understood and is understood as the file operator "-c". This is a frequent mistake, so I gave up and named the functions "c_" and "C_".
+</p>
+<p>
+  Functions corresponding to the R language can be called from the "<b> r </b>" object as "r-> sin(...)".
+</p>
+<p>
+  The output result is as follows.
+</p>
+<pre>
 [1] -39 -52 -67
 [1] 1 2 3 4 5 6 7 8 9 10
 [1] 0.707106781186547 1
-&lt;/ pre&gt;
-
-&lt;h3&gt; Introduction to Rstats &lt;/ h3&gt;
-
-This is an introduction to statistical analysis and scientific and technological calculations using Rstats. I will explain the basics.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20151003144384.html"&gt; Let's do a simple calculation &lt;/a&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20151005144402.html"&gt; Remember the data type &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<h3> Introduction to Rstats </h3>
+<p>
+  This is an introduction to statistical analysis and scientific and technological calculations using Rstats. I will explain the basics.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20151003144384.html"> Let's do a simple calculation</a>
+  </li>
+  <li>
+    <a href="/blog/20151005144402.html"> Remember the data type</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

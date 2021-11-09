@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Default variable $ _  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Default variable $_  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="There is a default variable in Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Default variable $ _  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Default variable $_  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="There is a default variable in Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161102147817.html">
-        <span itemprop = "name"> Special variables </ span> </a>
+        <span itemprop = "name"> Special variables </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20180118151628.html"> Default variable $ _ </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20180118151628.html"> Default variable $_ </a></h2>
 <p>
   There is a default variable in Perl.
 </p>
@@ -98,98 +98,98 @@
 
 
 <pre>
-$ _
-&lt;/ pre&gt;
-
-Let's first look at some examples where default variables are used.
-
-&lt;h4&gt; grep function &lt;/ h4&gt;
-
-Each element of the array passed to the &lt;a href="/blog/20100119126425.html"&gt; grep function &lt;/a&gt; is assigned to the default variable.
-
-&lt;pre&gt;
-my @ values2 = grep {$ _ eq'cat'} @ values1;
-&lt;/ pre&gt;
-
-"$ _" Is the default variable, and each element of @ values1 is assigned in order.
-
-This is easy to understand if you think of it as expressing the English pronoun "it".
-
-&lt;h4&gt; map function &lt;/ h4&gt;
-
-Each element of the array passed to the &lt;a href="/blog/20100118126425.html"&gt; map function &lt;/a&gt; is assigned to the default variable.
-
-&lt;pre&gt;
-my @ values2 = map {lc $ _} @ values1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; When the declaration of a lexical variable is omitted in for &lt;/ h4&gt;
-
-If for omits the declaration of a lexical variable, each element of the array is assigned to the default variable.
-
-&lt;pre&gt;
+$_
+</pre>
+<p>
+  Let's first look at some examples where default variables are used.
+</p>
+<h4> grep function </h4>
+<p>
+  Each element of the array passed to the <a href="/blog/20100119126425.html"> grep function</a> is assigned to the default variable.
+</p>
+<pre>
+my @ values2 = grep {$_ eq'cat'} @ values1;
+</pre>
+<p>
+  "$_" Is the default variable, and each element of @ values1 is assigned in order.
+</p>
+<p>
+  This is easy to understand if you think of it as expressing the English pronoun "it".
+</p>
+<h4> map function </h4>
+<p>
+  Each element of the array passed to the <a href="/blog/20100118126425.html"> map function</a> is assigned to the default variable.
+</p>
+<pre>
+my @ values2 = map {lc $_} @ values1;
+</pre>
+<h4> When the declaration of a lexical variable is omitted in for </h4>
+<p>
+  If for omits the declaration of a lexical variable, each element of the array is assigned to the default variable.
+</p>
+<pre>
 for (@values) {
-  print "$ _ \ n";
+  print "$_\n";
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Postfix for &lt;/ h4&gt;
-
-If you use the trailing for, each element of the array is assigned to the default variable.
-
-&lt;pre&gt;
-print "$ _ \ n" for @values;
-&lt;/ pre&gt;
-
-&lt;h4&gt; When the diamond operator is used alone in the while statement &lt;/ h4&gt;
-
-&lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; &lt;a href="http://d.hatena.ne.jp/perlcodesample/comment/20080722/1216737340"&gt; Diamond operator &lt; If you use / a&gt; alone, each line is assigned to the default argument in turn.
-
-&lt;pre&gt;
+</pre>
+<h4> Postfix for </h4>
+<p>
+  If you use the trailing for, each element of the array is assigned to the default variable.
+</p>
+<pre>
+print "$_\n" for @values;
+</pre>
+<h4> When the diamond operator is used alone in the while statement </h4>
+<p>
+  <a href="/blog/20100123126425.html"> while statement</a> <a href="http://d.hatena.ne.jp/perlcodesample/comment/20080722/1216737340"> Diamond operator < If you use / a> alone, each line is assigned to the default argument in turn.
+</p>
+<pre>
 while (&lt;&gt;) {
-  print "$ _ \ n";
+  print "$_\n";
 }
-&lt;/ pre&gt;
-
-This usage above is the usage of default variables that you often see.
-
-&lt;h3&gt; Implicit arguments in standard functions &lt;/ h3&gt;
-
-Some &lt;a href="/blog/20161004147558.html"&gt; Perl standard functions &lt;/a&gt; use default variables as implicit arguments if you omit the arguments.
-
-This is a bad way to avoid writing it yourself, as it will reduce readability.
-
-For example, if you omit the argument in the &lt;a href="/blog/20100326127089.html"&gt; lc function &lt;/a&gt;, the default variable becomes the implicit argument.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This usage above is the usage of default variables that you often see.
+</p>
+<h3> Implicit arguments in standard functions </h3>
+<p>
+  Some <a href="/blog/20161004147558.html"> Perl standard functions</a> use default variables as implicit arguments if you omit the arguments.
+</p>
+<p>
+  This is a bad way to avoid writing it yourself, as it will reduce readability.
+</p>
+<p>
+  For example, if you omit the argument in the <a href="/blog/20100326127089.html"> lc function</a>, the default variable becomes the implicit argument.
+</p>
+<pre>
 my @ values2 = map {lc} @ values1;
-&lt;/ pre&gt;
-
-This has the same meaning as if you explicitly wrote the default arguments.
-
-&lt;pre&gt;
-my @ values2 = map {lc $ _} @ values1;
-&lt;/ pre&gt;
-
-If the argument is omitted in the standard function, suspect that an implicit argument is being used.
-
-&lt;h3&gt; Implicit target in regular expression &lt;/ h3&gt;
-
-If the left side of the &lt;a href="/blog/20100827127859.html"&gt; regular expression &lt;/a&gt; pattern matching operator is omitted, the default variable will be used.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This has the same meaning as if you explicitly wrote the default arguments.
+</p>
+<pre>
+my @ values2 = map {lc $_} @ values1;
+</pre>
+<p>
+  If the argument is omitted in the standard function, suspect that an implicit argument is being used.
+</p>
+<h3> Implicit target in regular expression </h3>
+<p>
+  If the left side of the <a href="/blog/20100827127859.html"> regular expression</a> pattern matching operator is omitted, the default variable will be used.
+</p>
+<pre>
 for (@values) {
   s / cat / dog /;
 }
-&lt;/ pre&gt;
-
-This has the same meaning as if you explicitly wrote the default variable.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This has the same meaning as if you explicitly wrote the default variable.
+</p>
+<pre>
 for (@values) {
-  $ _ = ~ s / cat / dog /;
+  $_ = ~ s / cat / dog /;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

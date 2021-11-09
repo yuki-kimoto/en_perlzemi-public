@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span>
-    </a>
+      <span itemprop = "name"> Perl </span>
+</a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop = "name"> Mojolicious </ span>
-    </a>
+      <span itemprop = "name"> Mojolicious </span>
+</a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20101227127859.html"> What to do if a "505 Internal Server" error occurs on Sakura's rental server </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20101227127859.html"> What to do if a "505 Internal Server" error occurs on Sakura's rental server </a></h2>
 <p>
   Mojolicious applications can run locally, but often don't work when I upload them to a rental server and try to run them as CGI. The following causes are possible, so let's deal with them in order.
 </p>
@@ -94,36 +94,36 @@
 </div>
 
 
-<h3> 404 Not Found is displayed </ h3>
+<h3> 404 Not Found is displayed </h3>
 <p>
   The URL is incorrect. Enter the correct URL in your browser.
 </p>
-<h3> The contents of the script are displayed </ h3>
+<h3> The contents of the script are displayed </h3>
 <p>
   Is the extension other than ".cgi"? It will not be executed as a CGI script without the ".cgi" extension.
 </p>
-<h3> Module not loaded </ h3>
+<h3> Module not loaded </h3>
 <p>
   In your local environment, the CPAN module may be present, but not on the server. If you add the following description to the beginning of the script, the error content when loading fails will be displayed.
 </p>
 <pre>
-use CGI :: Carp'fatalsToBrowser';
-&lt;/ pre&gt;
-
-&lt;h3&gt; Line feed code conversion error &lt;/ h3&gt;
-
-When uploading an application from Windows to a rental server, you need to convert the line feed code. Make sure you are transferring in ASCII mode. Only app.cgi needs to be transferred in ASCII mode. For other scripts, it doesn't matter which mode you use.
-
-&lt;h3&gt; CGI script does not have execute permission &lt;/ h3&gt;
-
-If the CGI script does not have execute permission, an error will occur. Make sure that the execution permission of the CGI script is 755 (in the case of suEXEC environment. Sakura rental server is in the suEXEC environment). You only need to change the permissions of app.cgi, other files are fine.
-
-&lt;h3&gt; Perl path error on the first line &lt;/ h3&gt;
-
-An error will occur if the Perl path on the first line is incorrect.
-&lt;pre&gt;
-#! / usr / bin / perl
-&lt;/ pre&gt;
+use CGI::Carp'fatalsToBrowser';
+</pre>
+<h3> Line feed code conversion error </h3>
+<p>
+  When uploading an application from Windows to a rental server, you need to convert the line feed code. Make sure you are transferring in ASCII mode. Only app.cgi needs to be transferred in ASCII mode. For other scripts, it doesn't matter which mode you use.
+</p>
+<h3> CGI script does not have execute permission </h3>
+<p>
+  If the CGI script does not have execute permission, an error will occur. Make sure that the execution permission of the CGI script is 755 (in the case of suEXEC environment. Sakura rental server is in the suEXEC environment). You only need to change the permissions of app.cgi, other files are fine.
+</p>
+<h3> Perl path error on the first line </h3>
+<p>
+  An error will occur if the Perl path on the first line is incorrect.
+</p>
+<pre>
+# ! / usr / bin / perl
+</pre>
 
   </div>
   <div class="bottom">

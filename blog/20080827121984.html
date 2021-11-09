@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161026147748.html">
-      <span itemprop = "name"> Numerical value </ span> </a>
+      <span itemprop = "name"> Numerical value </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080827121984.html"> Binary, octal, and hexadecimal numerical representations </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080827121984.html"> Binary, octal, and hexadecimal numerical representations </a></h2>
 <p>
   I will explain the representation of numerical values ​​in binary, octal, and hexadecimal numbers.
 </p>
@@ -97,88 +97,84 @@
 </div>
 
 
-<h4> Binary number </ h4>
+<h4> Binary number </h4>
 <p>
   You can specify a numerical value in binary by prefixing it with 0b.
 </p>
 <pre>
-my $ num_bin = 0b1111;
-&lt;/ pre&gt;
+my $num_bin = 0b1111;
+</pre>
+<h4> Octal number </h4>
+<p>
+  If you add 0 to the beginning, you can specify a numerical value in octal.
+</p>
+<pre>
+my $num_oct = 0777;
+</pre>
+<h4> Hexadecimal </h4>
+<p>
+  You can specify a number in hexadecimal by prefixing it with 0x.
+</p>
+<pre>
+my $num_hex = 0xFFFF;
+</pre>
+<h4> Output decimal, octal, hexadecimal </h4>
+<p>
+  If you want to output in binary, octal, or hexadecimal, specify the format with <a href="/blog/20170326149148.html"> printf function</a> and output. You can output in binary with% b, octal with% o, hexadecimal (lowercase) with% x, and hexadecimal (uppercase) with% X.
+</p>
+<pre>
+Output in binary display with # % b
+printf("\ $num_bin =% b\n", $num_bin);
 
-&lt;h4&gt; Octal number &lt;/ h4&gt;
+Output in octal display with # % o
+printf("\ $num_oct =% o\n", $num_oct);
 
-If you add 0 to the beginning, you can specify a numerical value in octal.
+Output in hexadecimal with # % x (lowercase)
+printf("\ $num_hex =% x\n", $num_hex);
 
-&lt;pre&gt;
-my $ num_oct = 0777;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Hexadecimal &lt;/ h4&gt;
-
-You can specify a number in hexadecimal by prefixing it with 0x.
-
-&lt;pre&gt;
-my $ num_hex = 0xFFFF;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Output decimal, octal, hexadecimal &lt;/ h4&gt;
-
-If you want to output in binary, octal, or hexadecimal, specify the format with &lt;a href="/blog/20170326149148.html"&gt; printf function &lt;/a&gt; and output. You can output in binary with% b, octal with% o, hexadecimal (lowercase) with% x, and hexadecimal (uppercase) with% X.
-
-&lt;pre&gt;
-Output in binary display with #% b
-printf ("\ $ num_bin =% b \ n", $ num_bin);
-
-Output in octal display with #% o
-printf ("\ $ num_oct =% o \ n", $ num_oct);
-
-Output in hexadecimal with #% x (lowercase)
-printf ("\ $ num_hex =% x \ n", $ num_hex);
-
-Output in hexadecimal with #% X (uppercase)
-printf ("\ $ num_hex =% X \ n", $ num_hex);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample using binary, octal, and hexadecimal numbers.
-
-&lt;pre&gt;
+Output in hexadecimal with # % X (uppercase)
+printf("\ $num_hex =% X\n", $num_hex);
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample using binary, octal, and hexadecimal numbers.
+</p>
+<pre>
 use strict;
 use warnings;
 
 You can specify a numerical value in binary by prefixing it with # 0b.
-my $ num_bin = 0b1111;
+my $num_bin = 0b1111;
 
 If you add # 0 at the beginning, you can specify the numerical value in octal.
-my $ num_oct = 0777;
+my $num_oct = 0777;
 
 You can specify a number in hexadecimal by prefixing it with # 0x.
-my $ num_hex = 0xFFFF;
+my $num_hex = 0xFFFF;
 
 
 # Numeric literals expressed in binary, octal, and hexadecimal numbers become decimal when printed.
-print "(1) Decimal value \ n";
-print "\ $ num_bin = $ num_bin \ n";
-print "\ $ num_oct = $ num_oct \ n";
-print "\ $ num_hex = $ num_hex \ n";
+print "(1) Decimal value\n";
+print "\ $num_bin = $num_bin\n";
+print "\ $num_oct = $num_oct\n";
+print "\ $num_hex = $num_hex\n";
 
-print "\ n";
+print "\n";
 
-print "(2) Output in each base \ n";
+print "(2) Output in each base\n";
 
-Output in binary display with #% b
-printf ("\ $ num_bin =% b \ n", $ num_bin);
+Output in binary display with # % b
+printf("\ $num_bin =% b\n", $num_bin);
 
-Output in octal display with #% o
-printf ("\ $ num_oct =% o \ n", $ num_oct);
+Output in octal display with # % o
+printf("\ $num_oct =% o\n", $num_oct);
 
-Output in hexadecimal with #% x (lowercase)
-printf ("\ $ num_hex =% x \ n", $ num_hex);
+Output in hexadecimal with # % x (lowercase)
+printf("\ $num_hex =% x\n", $num_hex);
 
-Output in hexadecimal with #% X (uppercase)
-printf ("\ $ num_hex =% X \ n", $ num_hex);
-&lt;/ pre&gt;
+Output in hexadecimal with # % X (uppercase)
+printf("\ $num_hex =% X\n", $num_hex);
+</pre>
 
   </div>
   <div class="bottom">

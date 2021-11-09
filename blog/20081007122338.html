@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> join function-join array with delimiter  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  join function  to join  arrays  by specifying a delimiter.">
+<meta name="description" content="You can use the  join function  to join  arrays by specifying a delimiter.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" join function-join array with delimiter  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  join function  to join  arrays  by specifying a delimiter." />
+<meta name="twitter:description" content="You can use the  join function  to join  arrays by specifying a delimiter." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20081007122338.html"> join function-join array with delimiter </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081007122338.html"> join function-join array with delimiter </a></h2>
 <p>
-  You can use the <strong> join function </ strong> to join <a href="/blog/20161012147627.html"> arrays </a> by specifying a delimiter.
+  You can use the <strong> join function </strong> to join <a href="/blog/20161012147627.html"> arrays</a> by specifying a delimiter.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,65 +97,65 @@
 
 
 <pre>
-my $ joined = join (',', @array);
-&lt;/ pre&gt;
-
-The first argument is the delimiter. In this example, a comma is specified as the delimiter. The strings contained in the array given in the second and subsequent arguments are combined with a delimiter.
-
-See the following simple example. Here is a simple example of how to use the join function. CSV data is created by concatenating the character strings contained in the array with commas.
-
-&lt;pre&gt;
+my $joined = join(',', @array);
+</pre>
+<p>
+  The first argument is the delimiter. In this example, a comma is specified as the delimiter. The strings contained in the array given in the second and subsequent arguments are combined with a delimiter.
+</p>
+<p>
+  See the following simple example. Here is a simple example of how to use the join function. CSV data is created by concatenating the character strings contained in the array with commas.
+</p>
+<pre>
 # Create "Yuki, Toro, Kato" from an array
 my @names = ('Yuki','Taro','Kato');
-my $ names_csv = join (',', @names);
-&lt;/ pre&gt;
-
-The delimiter can be anything, and the tab character "\ t" is often used.
-
-&lt;pre&gt;
-#Create "Yuki Toro Kato" from the array
+my $names_csv = join(',', @names);
+</pre>
+<p>
+  The delimiter can be anything, and the tab character "\t" is often used.
+</p>
+<pre>
+# Create "Yuki Toro Kato" from the array
 my @names = ('Yuki','Taro','Kato');
-my $ names_csv = join ("\ t", @names);
-&lt;/ pre&gt;
-
-Strings rarely contain tabs, so they are often easier to work with than commas.
-
-If you add a line break at the end, you can easily create one line of data separated by tabs.
-
-&lt;pre&gt;
-my $ line = join ("\ t", @names). "\ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Decompose to array by specifying delimiter &lt;/ h4&gt;
-
-You can use the &lt;a href="/blog/20080301120434.html"&gt; split function &lt;/a&gt; to split into an array by doing the opposite of the join function, that is, by specifying a delimiter.
-
-&lt;pre&gt;
-my @names = split (/, /, "Yuki, Taro, Kato");
-&lt;/ pre&gt;
-
-&lt;h4&gt; Push function to add data to the array to join &lt;/ h4&gt;
-
-If you want to add data to combine, you can use &lt;a href="/blog/20100106126425.html"&gt; push function &lt;/a&gt;.
-
-&lt;pre&gt;
+my $names_csv = join("\t", @names);
+</pre>
+<p>
+  Strings rarely contain tabs, so they are often easier to work with than commas.
+</p>
+<p>
+  If you add a line break at the end, you can easily create one line of data separated by tabs.
+</p>
+<pre>
+my $line = join("\t", @names). "\n";
+</pre>
+<h4> Decompose to array by specifying delimiter </h4>
+<p>
+  You can use the <a href="/blog/20080301120434.html"> split function</a> to split into an array by doing the opposite of the join function, that is, by specifying a delimiter.
+</p>
+<pre>
+my @names = split(/, /, "Yuki, Taro, Kato");
+</pre>
+<h4> Push function to add data to the array to join </h4>
+<p>
+  If you want to add data to combine, you can use <a href="/blog/20100106126425.html"> push function</a>.
+</p>
+<pre>
 push @names,'Kenta';
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample join function &lt;/ h3&gt;
-
-This is a sample that joins characters by "tab" using the join function.
-
-&lt;pre&gt;
+</pre>
+<h3> Sample join function </h3>
+<p>
+  This is a sample that joins characters by "tab" using the join function.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Concatenate multiple strings with tabs
 my @animals = qw (cat dog sheep);
-my $ line = join ("\ t", @animals);
-&lt;/ pre&gt;
-
-Reference: &lt;a href="/blog/20080221120361.html"&gt; qw () String concatenation operator &lt;/a&gt;
+my $line = join("\t", @animals);
+</pre>
+<p>
+  Reference: <a href="/blog/20080221120361.html"> qw () String concatenation operator</a>
+</p>
 
   </div>
   <div class="bottom">

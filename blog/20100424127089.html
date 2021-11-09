@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> XML :: Simple --Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="The  XML :: Simple  module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML :: Simple is the best in terms of easy handling.">
+<title> XML::Simple - Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  XML::Simple  module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML::Simple is the best in terms of easy handling.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" XML :: Simple --Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="The  XML :: Simple  module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML :: Simple is the best in terms of easy handling." />
+<meta name="twitter:title" content=" XML::Simple - Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  XML::Simple  module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML::Simple is the best in terms of easy handling." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100424127089.html"> XML :: Simple --Easy to parse XML </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100424127089.html"> XML::Simple - Easy to parse XML </a></h2>
 <p>
-  The <strong> XML :: Simple </ strong> module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML :: Simple is the best in terms of easy handling.
+  The <strong> XML::Simple </strong> module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML::Simple is the best in terms of easy handling.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,50 +100,53 @@
   XML is a common format for writing data in text files. It can be used when writing a program configuration file.
 </p>
 <pre>
-#Load module and create object
-use XML :: Simple;
-my $ xml = XML :: Simple-&gt; new;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; XMLin method &lt;/ strong&gt; to read the XML file. XML is transformed into Perl data structures (multidimensional hashes and arrays).
-
-&lt;pre&gt;
+# Load module and create object
+use XML::Simple;
+my $xml = XML::Simple-&gt; new;
+</pre>
+<p>
+  Use the <strong> XMLin method </strong> to read the XML file. XML is transformed into Perl data structures (multidimensional hashes and arrays).
+</p>
+<pre>
 # XML file parsing
-my $ data = $ xml-&gt; XMLin ('conf.xml');
-&lt;/ pre&gt;
-
-This is a sample XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
-
-&lt;pre&gt;
+my $data = $xml-&gt; XMLin ('conf.xml');
+</pre>
+<p>
+  This is a sample XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
+</p>
+<pre>
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
 &lt;conf&gt;
   &lt;!-Version 1.01-&gt;
 
   &lt;!-Application home directory-&gt;
-  &lt;app-home-dir&gt; c: \ apphome &lt;/ app-home-dir&gt;
+  &lt;app-home-dir&gt; c: \ apphome &lt;/app-home-dir&gt;
 
   &lt;!-Library directory-&gt;
-  &lt;lib-dir&gt; lib &lt;/ lib-dir&gt;
+  &lt;lib-dir&gt; lib &lt;/lib-dir&gt;
 
   &lt;!-Directory to store logs-&gt;
-  &lt;log-dir&gt; log &lt;/ log-dir&gt;
+  &lt;log-dir&gt; log &lt;/log-dir&gt;
 
   &lt;!-System type-&gt;
-  &lt;system&gt; xxx yyy zzz &lt;/ system&gt;
+  &lt;system&gt; xxx yyy zzz &lt;/system&gt;
 
   &lt;!-Log type-&gt;
   &lt;log-types&gt;
     &lt;cpu script = "parse_cpu.pl" from-dir = "raw / cpu" to-dir = "edit / cpu" /&gt;
     &lt;mem script = "parse_mem.pl" from-dir = "raw / mem" to-dir = "edit / mem" /&gt;
     &lt;gclog script = "parse_gclog.pl" from-dir = "raw / gclog" to-dir = "edit / gclog" /&gt;
-  &lt;/ log-types&gt;
-&lt;/ conf&gt;
-&lt;/ pre&gt;
-
-This file is converted to the following data structure.
-▼
-&lt;pre&gt;
-$ conf = {
+  &lt;/log-types&gt;
+&lt;/conf&gt;
+</pre>
+<p>
+  This file is converted to the following data structure.
+</p>
+<p>
+  ▼
+</p>
+<pre>
+$conf = {
   'log-types' =&gt; {
     'cpu' =&gt; {
       'to-dir' =&gt;'edit / cpu',
@@ -166,82 +169,77 @@ $ conf = {
   'app-home-dir' =&gt;' c: \\ apphome',
   'lib-dir' =&gt;'lib'
 };
-&lt;/ pre&gt;
-
-&lt;h3&gt; Handling Japanese in XML :: Simple &lt;/ h3&gt;
-
-When a character string containing Japanese is read by XMLin, the character code specified by the encoding attribute of the XML declaration is converted to the internal character string. Note that it is not a byte string.
-
-&lt;pre&gt;
+</pre>
+<h3> Handling Japanese in XML::Simple </h3>
+<p>
+  When a character string containing Japanese is read by XMLin, the character code specified by the encoding attribute of the XML declaration is converted to the internal character string. Note that it is not a byte string.
+</p>
+<pre>
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
 &lt;conf&gt;
-  &lt;name&gt; Masuda &lt;/ name&gt;
-&lt;/ conf&gt;
-&lt;/ pre&gt;
-
-Since it is converted to an internal character string, if you want to output it, you need to convert it to a byte character string using the encode function of the Encode module.
-
-&lt;pre&gt;
+  &lt;name&gt; Masuda &lt;/name&gt;
+&lt;/conf&gt;
+</pre>
+<p>
+  Since it is converted to an internal character string, if you want to output it, you need to convert it to a byte character string using the encode function of the Encode module.
+</p>
+<pre>
 # When outputting, convert from internal character string to byte character string
 use Encode'encode';
-my $ conf = $ xml-&gt; XMLin ('japanese.xml');
-print encode ('UTF-8', $ conf-&gt; {name});
-&lt;/ pre&gt;
-
-&lt;h3&gt; XML :: Simple options &lt;/ h3&gt;
-
-XML :: Simple allows you to specify options in the constructor arguments.
-
-&lt;pre&gt;
-#Option
-my $ xml = XML :: Simple-&gt; new (ForceArray =&gt; 1);
-&lt;/ pre&gt;
-
-The following two options may be used frequently.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;b&gt; Option name &lt;/ b&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;b&gt; Explanation &lt;/ b&gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+my $conf = $xml-&gt; XMLin ('japanese.xml');
+print encode ('UTF-8', $conf-&gt; {name});
+</pre>
+<h3> XML::Simple options </h3>
+<p>
+  XML::Simple allows you to specify options in the constructor arguments.
+</p>
+<pre>
+# Option
+my $xml = XML::Simple-&gt; new (ForceArray =&gt; 1);
+</pre>
+<p>
+  The following two options may be used frequently.
+</p>
+<table>
+  <tr>
+    <td>
+      <b> Option name </b>
+    </td>
+    <td>
+      <b> Explanation </b>
+    </td>
+  </tr>
+  <tr>
+    <td>
       ForceArray
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Make sure nested elements are array references
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       KeyAttr
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Treat the specified attribute as a hash key
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-&lt;h3&gt; XML :: LibXML --Standard and fast XML parsing &lt;/ h3&gt;
-
-XML :: Simple is not suitable for parsing complex XML. If you want to parse XML in a standard and fast way, you can choose the XML :: LibXML module. XML :: LibXML can read XML as a DOM tree. You can also access each element of XML using a method called XPath.
-
-This method requires more coding than XML :: Simple and is technically difficult, but it is the best method for some requirements.
-
-&lt;h4&gt; What to do if the XML :: LibXML module cannot be installed on CentOS &lt;/ h4&gt;
-
-If the &lt;strong&gt; XML :: LibXML &lt;/ strong&gt; module &lt;strong&gt; installation fails &lt;/ strong&gt; on CentOS, the &lt;b&gt; libxml2-devel &lt;/ b&gt; package is missing and you should install it.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<h3> XML::LibXML - Standard and fast XML parsing </h3>
+<p>
+  XML::Simple is not suitable for parsing complex XML. If you want to parse XML in a standard and fast way, you can choose the XML::LibXML module. XML::LibXML can read XML as a DOM tree. You can also access each element of XML using a method called XPath.
+</p>
+<p>
+  This method requires more coding than XML::Simple and is technically difficult, but it is the best method for some requirements.
+</p>
+<h4> What to do if the XML::LibXML module cannot be installed on CentOS </h4>
+<p>
+  If the <strong> XML::LibXML </strong> module <strong> installation fails </strong> on CentOS, the <b> libxml2-devel </b> package is missing and you should install it.
+</p>
+<pre>
 yum -y install libxml2-devel
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

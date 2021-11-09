@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20141219141897.html"> How to compile Perl itself from source code </a></ h2>
+    <h2><a href="/blog/20141219141897.html"> How to compile Perl itself from source code </a></h2>
 <p>
   How to compile Perl itself from source code. First, fetch the Perl source code with "git clone".
 </p>
@@ -81,55 +81,58 @@
 
 <pre>
 git clone http://perl5.git.perl.org/perl.git
-&lt;/ pre&gt;
-
-This is the latest branch of the current development version.
-
-Then execute the following command listed in the README.
-
-&lt;pre&gt;
-./Configure -des -Dprefix = $ HOME / localperl
-&lt;/ pre&gt;
-
-In the release version, this command will generate a Makefile, but in the development version it will fail, so execute the following command.
-
-&lt;pre&gt;
-./Configure -des -Dusedevel -Dprefix = $ HOME / localperl
-&lt;/ pre&gt;
-
-Next is compilation. Execute the make command.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is the latest branch of the current development version.
+</p>
+<p>
+  Then execute the following command listed in the README.
+</p>
+<pre>
+./Configure -des -Dprefix = $HOME / localperl
+</pre>
+<p>
+  In the release version, this command will generate a Makefile, but in the development version it will fail, so execute the following command.
+</p>
+<pre>
+./Configure -des -Dusedevel -Dprefix = $HOME / localperl
+</pre>
+<p>
+  Next is compilation. Execute the make command.
+</p>
+<pre>
 make
-&lt;/ pre&gt;
-
-Next is the test.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Next is the test.
+</p>
+<pre>
 make test
-&lt;/ pre&gt;
-
-Finally installed. It will be installed in "$ HOME / localperl".
-
-&lt;pre&gt;
+</pre>
+<p>
+  Finally installed. It will be installed in "$HOME / localperl".
+</p>
+<pre>
 make install
-&lt;/ pre&gt;
-
-I've been touching the Perl source code a bit lately, but running make and make test after making changes is a bit unrealistic. This does everything, including testing the module.
-
-So there is a way to compile a minimal amount of Perl or run a minimal amount of testing.
-
-You can compile a small Perl called miniperl with the following command:
-
-&lt;pre&gt;
+</pre>
+<p>
+  I've been touching the Perl source code a bit lately, but running make and make test after making changes is a bit unrealistic. This does everything, including testing the module.
+</p>
+<p>
+  So there is a way to compile a minimal amount of Perl or run a minimal amount of testing.
+</p>
+<p>
+  You can compile a small Perl called miniperl with the following command:
+</p>
+<pre>
 make miniperl
-&lt;/ pre&gt;
-
-You can run a small test with the following command:
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can run a small test with the following command:
+</p>
+<pre>
 make minitest
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

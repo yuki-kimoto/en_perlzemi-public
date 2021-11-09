@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> What is inheritance? </ Span>
+      <span itemprop = "name"> What is inheritance? </Span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090323123746.html"> What is inheritance? </a></ H2>
+  </li>
+</ol>
+<h2><a href="/blog/20090323123746.html"> What is inheritance? </a></H2>
 <p>
   Inheritance is one of the object-oriented features.
 </p>
@@ -97,7 +97,7 @@
 </div>
 
 
-<h3> 1. Consider Winwods application components as an example of inheritance </ h3>
+<h3> 1. Consider Winwods application components as an example of inheritance </h3>
 <p>
   Consider a Windows application as a straightforward analogy to inheritance. Windows applications have roughly the same shape. There's a title bar at the top, a menu bar below it, a toolbar below it, and so on. There is a menu in the menu bar. There are buttons inside the toolbar.
 </p>
@@ -107,12 +107,12 @@
 <p>
   Let's find something in common. First, every part has a position and size.
 </p>
-<h3> 2. Create a class that does not use inheritance </ h3>
+<h3> 2. Create a class that does not use inheritance </h3>
 <p>
   Consider implementing a component that does not use inheritance.
 </p>
 <pre>
-#Menu bar class
+# Menu bar class
 package MenuBar;
 sub new {...}
 sub x {...}
@@ -134,7 +134,7 @@ sub height {...}
 # Write other methods.
 sub method_for_toolbar {...}
 
-#Button class
+# Button class
 package Button;
 sub new {...}
 sub x {...}
@@ -145,25 +145,26 @@ sub height {...}
 # Write other methods.
 sub method_for_button {...}
 
-&lt;/ pre&gt;
-
-I wrote three classes like this, but all of them have the common accessors x, y, width, and height. I want to do something about this.
-
-Inheritance is a mechanism that removes such duplication.
-
-&lt;h3&gt; 3. Rewrite class with inheritance &lt;/ h3&gt;
-
-Let's rewrite the class with inheritance. Please take a look.
-
-&lt;pre&gt;
-#Component class
+</pre>
+<p>
+  I wrote three classes like this, but all of them have the common accessors x, y, width, and height. I want to do something about this.
+</p>
+<p>
+  Inheritance is a mechanism that removes such duplication.
+</p>
+<h3> 3. Rewrite class with inheritance </h3>
+<p>
+  Let's rewrite the class with inheritance. Please take a look.
+</p>
+<pre>
+# Component class
 package Component;
 sub x {...}
 sub y {...}
 sub width {...}
 sub height {...}
 
-#Menu bar class
+# Menu bar class
 package MenuBar;
 use base'Component';
 
@@ -177,37 +178,44 @@ use base'Component';
 sub new {...}
 sub method_for_toolbar {...}
 
-#Button class
+# Button class
 package Button;
 use base'Component';
 
 sub new {...}
 sub method_for_button {...}
-&lt;/ pre&gt;
-
-As I will explain the inheritance method later, you can see that the methods x, y, width, and height have been added to the Component class.
-
-Component is called a superclass, and classes that inherit from Component can call methods x, y, width, height.
-
-I think there are various ways of thinking about inheritance, but I personally think that the role of inheritance is to &lt;b&gt; create common parts &lt;/ b&gt;.
-
-I will write mathematical formulas to facilitate figurative interpretation.
-
-&lt;pre&gt;
+</pre>
+<p>
+  As I will explain the inheritance method later, you can see that the methods x, y, width, and height have been added to the Component class.
+</p>
+<p>
+  Component is called a superclass, and classes that inherit from Component can call methods x, y, width, height.
+</p>
+<p>
+  I think there are various ways of thinking about inheritance, but I personally think that the role of inheritance is to <b> create common parts </b>.
+</p>
+<p>
+  I will write mathematical formulas to facilitate figurative interpretation.
+</p>
+<pre>
 pa + pb + pc = p (a + b + c)
-&lt;/ pre&gt;
-
-The left and right are equivalent as expressions, but the description of three overlapping ps is reduced to one. If you don't understand the essential role of inheritance, remember this formula.
-
-Inheritance is a function that pulls out common parts and eliminates duplication of code writing.
-
-&lt;h3&gt; 4. What is commonly thought of &lt;/ h3&gt;
-
-In general, the image of inheritance may be seen as an extension of a class. But it's rare to use inheritance to extend an implemented class.
-
-In most cases, you design a class that you plan to inherit and then inherit it.
-
-In other words, the common functions should be created in the classes that are planned to be inherited.
+</pre>
+<p>
+  The left and right are equivalent as expressions, but the description of three overlapping ps is reduced to one. If you don't understand the essential role of inheritance, remember this formula.
+</p>
+<p>
+  Inheritance is a function that pulls out common parts and eliminates duplication of code writing.
+</p>
+<h3> 4. What is commonly thought of </h3>
+<p>
+  In general, the image of inheritance may be seen as an extension of a class. But it's rare to use inheritance to extend an implemented class.
+</p>
+<p>
+  In most cases, you design a class that you plan to inherit and then inherit it.
+</p>
+<p>
+  In other words, the common functions should be created in the classes that are planned to be inherited.
+</p>
 
   </div>
   <div class="bottom">

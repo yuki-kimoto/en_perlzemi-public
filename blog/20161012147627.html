@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20161012147627.html"> Let's understand Perl arrays </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20161012147627.html"> Let's understand Perl arrays </a></h2>
 <p>
   An array is a variable that can store multiple values. Use arrays when you need to work with multiple pieces of the same type of data. Perl arrays are useful because they are called dynamic arrays and automatically grow in size.
 </p>
@@ -91,585 +91,552 @@
 </div>
 
 
-<h3> Array basics </ h3>
+<h3> Array basics </h3>
 <p>
   I will explain the basics of arrays.
 </p>
 <ul>
   <li>
     Array declaration
-  </ li>
+  </li>
   <li>
     Initialize
-  </ li>
+  </li>
   <li>
     Element reference
-  </ li>
+  </li>
   <li>
     Assignment to element
-  </ li>
+  </li>
   <li>
     Number of arrays
-  </ li>
+  </li>
   <li>
     Iterative processing
-  </ li>
-</ ul>
-<h4> Array declaration </ h4>
+  </li>
+</ul>
+<h4> Array declaration </h4>
 <p>
   Use my to declare an array as you would for a scalar variable. Prefix with @ (at sign) to represent the array.
 </p>
 <pre>
 my @numbers;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array initialization &lt;/ h4&gt;
-
-You can assign data representing multiple values ​​called &lt;a href="/blog/20100308126967.html"&gt; list &lt;/a&gt; to the array. The list is
-
-&lt;pre&gt;
+</pre>
+<h4> Array initialization </h4>
+<p>
+  You can assign data representing multiple values ​​called <a href="/blog/20100308126967.html"> list</a> to the array. The list is
+</p>
+<pre>
 (Value 1, Value 2, Value 3)
-&lt;/ pre&gt;
-
-It is expressed using () like.
-
-To assign a list to an array:
-&lt;pre&gt;
+</pre>
+<p>
+  It is expressed using () like.
+</p>
+<p>
+  To assign a list to an array:
+</p>
+<pre>
 @numbers = (10, 25, 40, 4, -6);
-&lt;/ pre&gt;
-
-You can also declare and assign an array at the same time.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also declare and assign an array at the same time.
+</p>
+<pre>
 my @numbers = (10, 25, 40, 4, -6);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array element reference &lt;/ h4&gt;
-
-To reference the elements of an array: Note that the first character is $, not @. Subscripts start at 0.
-
-&lt;pre&gt;
-$ Array [subscript]
-&lt;/ pre&gt;
-
-You can output the first element and the second element as follows:
-
-&lt;pre&gt;
-print $ numbers [0];
-print $ numbers [1];
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array element assignment &lt;/ h4&gt;
-
-To make an assignment:
-
-&lt;pre&gt;
-$ Array [subscript] = value
-&lt;/ pre&gt;
-
-Try substituting 20 for the first element.
-
-&lt;pre&gt;
-$ numbers [0] = 20;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Number of elements in the array &lt;/ h4&gt;
-
-To get the number of arrays, evaluate the arrays in a scalar context. I'll explain the scalar context elsewhere, but remember that you can get the number of arrays by assigning an array to a scalar variable at first.
-
-&lt;pre&gt;
-my $ cnt = @nums;
-&lt;/ pre&gt;
-
-See the following article for a detailed explanation of how to get the number of elements in an array.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20180604152811.html"&gt; Get the number of elements in the array &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Process the elements of the array in order &lt;/ h4&gt;
-
-Use a for or foreach statement to process the elements of an array in sequence. For is used when you want to access in order using subscripts, and foreach is used when you simply want to process arrays in order. It's a good practice in Perl to use for when foreach can't handle it.
-Let's output the elements of the array in order with the for statement.
-
-&lt;pre&gt;
-for (my $ i = 0; $ i &lt;@nums; $ i ++) {
-  print $ nums [$ i], "\ n";
+</pre>
+<h4> Array element reference </h4>
+<p>
+  To reference the elements of an array: Note that the first character is $, not @. Subscripts start at 0.
+</p>
+<pre>
+$Array [subscript]
+</pre>
+<p>
+  You can output the first element and the second element as follows:
+</p>
+<pre>
+print $numbers [0];
+print $numbers [1];
+</pre>
+<h4> Array element assignment </h4>
+<p>
+  To make an assignment:
+</p>
+<pre>
+$Array [subscript] = value
+</pre>
+<p>
+  Try substituting 20 for the first element.
+</p>
+<pre>
+$numbers [0] = 20;
+</pre>
+<h4> Number of elements in the array </h4>
+<p>
+  To get the number of arrays, evaluate the arrays in a scalar context. I'll explain the scalar context elsewhere, but remember that you can get the number of arrays by assigning an array to a scalar variable at first.
+</p>
+<pre>
+my $cnt = @nums;
+</pre>
+<p>
+  See the following article for a detailed explanation of how to get the number of elements in an array.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180604152811.html"> Get the number of elements in the array</a>
+  </li>
+</ul>
+<h4> Process the elements of the array in order </h4>
+<p>
+  Use a for or foreach statement to process the elements of an array in sequence. For is used when you want to access in order using subscripts, and foreach is used when you simply want to process arrays in order. It's a good practice in Perl to use for when foreach can't handle it.
+</p>
+<p>
+  Let's output the elements of the array in order with the for statement.
+</p>
+<pre>
+for (my $i = 0; $i &lt;@nums; $i++) {
+  print $nums [$i], "\n";
 }
-&lt;/ pre&gt;
-
-Let's output the elements of the array in order with the foreach statement.
-
-&lt;pre&gt;
-foreach my $ num (@nums) {
-  print $ num, "\ n";
+</pre>
+<p>
+  Let's output the elements of the array in order with the foreach statement.
+</p>
+<pre>
+foreach my $num (@nums) {
+  print $num, "\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Manipulation of array elements &lt;/ h3&gt;
-
-You can use functions to add and retrieve elements from the array.
-
-&lt;ul&gt;
-  &lt;li&gt;
+</pre>
+<h3> Manipulation of array elements </h3>
+<p>
+  You can use functions to add and retrieve elements from the array.
+</p>
+<ul>
+  <li>
     shift function
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     unshift function
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     pop function
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     push function
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; shift function &lt;/ h4&gt;
-
-You can use the "shift function" to "get the first element" of an array. If @array was (1, 2, 3), 1 would be assigned to $ first and @array would be (2, 3).
-
-&lt;pre&gt;
-my $ first = shift @array;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100104126425.html"&gt; shift function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; unshift function &lt;/ h4&gt;
-
-You can use the "unshift function" to "add an element to the beginning" of an array. If @array was (1, 2, 3) then @array would be (5, 1, 2, 3).
-
-&lt;pre&gt;
+  </li>
+</ul>
+<h4> shift function </h4>
+<p>
+  You can use the "shift function" to "get the first element" of an array. If @array was (1, 2, 3), 1 would be assigned to $first and @array would be (2, 3).
+</p>
+<pre>
+my $first = shift @array;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100104126425.html"> shift function</a>
+  </li>
+</ul>
+<h4> unshift function </h4>
+<p>
+  You can use the "unshift function" to "add an element to the beginning" of an array. If @array was (1, 2, 3) then @array would be (5, 1, 2, 3).
+</p>
+<pre>
 unshift @array, 5;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100105126425.html"&gt; unshift function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; pop function &lt;/ h4&gt;
-
-You can use the "pop function" to "extract the last element" of an array. If @array is (1, 2, 3), 3 is assigned to $ last and @array becomes (1, 2).
-
-&lt;pre&gt;
-my $ last = pop @array;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100106126425.html"&gt; pop function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; push function &lt;/ h4&gt;
-
-You can use the "push function" to "add an element to the end" of an array. .. If @array was (1, 2, 3) then @array would be (1, 2, 3, 5).
-
-&lt;pre&gt;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100105126425.html"> unshift function</a>
+  </li>
+</ul>
+<h4> pop function </h4>
+<p>
+  You can use the "pop function" to "extract the last element" of an array. If @array is (1, 2, 3), 3 is assigned to $last and @array becomes (1, 2).
+</p>
+<pre>
+my $last = pop @array;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100106126425.html"> pop function</a>
+  </li>
+</ul>
+<h4> push function </h4>
+<p>
+  You can use the "push function" to "add an element to the end" of an array. .. If @array was (1, 2, 3) then @array would be (1, 2, 3, 5).
+</p>
+<pre>
 push @array, 5;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100107126425.html"&gt; push function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Sorting the array &lt;/ h3&gt;
-
-Use the sort function to sort the array.
-
-&lt;h4&gt; sort function &lt;/ h4&gt;
-
-Pass a code block for comparison as the first argument. To sort in ascending order, write $ a before $ b, and to sort in descending order, write $ b before $ a. Use &lt;=&gt; as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order.
-
-&lt;pre&gt;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100107126425.html"> push function</a>
+  </li>
+</ul>
+<h3> Sorting the array </h3>
+<p>
+  Use the sort function to sort the array.
+</p>
+<h4> sort function </h4>
+<p>
+  Pass a code block for comparison as the first argument. To sort in ascending order, write $a before $b, and to sort in descending order, write $b before $a. Use <=> as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order.
+</p>
+<pre>
 # Sort in ascending order
-@sorted = sort {$ a operator $ b} @array;
+@sorted = sort {$a operator $b} @array;
 
 # Sort in descending order
-@sorted = sort {$ b operator $ a} @array;
-&lt;/ pre&gt;
-
-Let's sort the numbers in ascending order. @nums becomes (2, 3, 5, 8).
-
-&lt;pre&gt;
+@sorted = sort {$b operator $a} @array;
+</pre>
+<p>
+  Let's sort the numbers in ascending order. @nums becomes (2, 3, 5, 8).
+</p>
+<pre>
 # Sort by numerical value in ascending order
 my @nums = (5, 8, 3, 2);
-@nums = sort {$ a &lt;=&gt; $ b} @nums;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100110126528.html"&gt; sort function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Easily sort in reverse order &lt;/ h4&gt;
-
-You can also use the "reverse function" if you want to easily sort in reverse order.
-
-&lt;pre&gt;
+@nums = sort {$a &lt;=&gt; $b} @nums;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100110126528.html"> sort function</a>
+  </li>
+</ul>
+<h4> Easily sort in reverse order </h4>
+<p>
+  You can also use the "reverse function" if you want to easily sort in reverse order.
+</p>
+<pre>
 @reverse = reverse @elements;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080227120413.html"&gt; reverse function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Array reference &lt;/ h3&gt;
-
-&lt;span style = "font-weight: bold;"&gt; A reference is the location of the memory that contains the array &lt;/ span&gt;. If you know C language, think of it as a "pointer that cannot perform address arithmetic". If you know Java, think of it as a "reference".
-
-&lt;h4&gt; Creating an array reference &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ numbers_ref1 = \ @ numbers;
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; You can create an array reference by prefixing @ with \.
-
-&lt;h4&gt; Create a direct array reference &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ numbers_ref2 = [1, 2, 3, 4];
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; Enclose the list in [] to serve as an array reference. &lt;/ span&gt;
-
-&lt;h4&gt; Array element reference &lt;/ h4&gt;
-
-&lt;pre&gt;
-$ numbers_ref2-&gt; [0]
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; Array reference-&gt; [element number] &lt;/ span&gt;
-
-&lt;h3&gt; Comparison of arrays and array references &lt;/ h3&gt;
-
-I compared the array and the array reference. It's easy to misunderstand, so let's get a better understanding of the difference between the two.
-
-&lt;h4&gt; Element reference &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20080227120413.html"> reverse function</a>
+  </li>
+</ul>
+<h3> Array reference </h3>
+<p>
+  <span style = "font-weight: bold;"> A reference is the location of the memory that contains the array </span>. If you know C language, think of it as a "pointer that cannot perform address arithmetic". If you know Java, think of it as a "reference".
+</p>
+<h4> Creating an array reference </h4>
+<pre>
+my $numbers_ref1 = \ @ numbers;
+</pre>
+<p>
+  <span style = "font-weight: bold;"> You can create an array reference by prefixing @ with \.
+</p>
+<h4> Create a direct array reference </h4>
+<pre>
+my $numbers_ref2 = [1, 2, 3, 4];
+</pre>
+<p>
+  <span style = "font-weight: bold;"> Enclose the list in [] to serve as an array reference. </span>
+</p>
+<h4> Array element reference </h4>
+<pre>
+$numbers_ref2-&gt; [0]
+</pre>
+<p>
+  <span style = "font-weight: bold;"> Array reference-> [element number] </span>
+</p>
+<h3> Comparison of arrays and array references </h3>
+<p>
+  I compared the array and the array reference. It's easy to misunderstand, so let's get a better understanding of the difference between the two.
+</p>
+<h4> Element reference </h4>
+<pre>
 # arrangement
-$ numbers [0]
+$numbers [0]
 
-#Array reference
-$ numbers_ref-&gt; [0]
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array reference dereference &lt;/ h4&gt;
-
-&lt;pre&gt;
-@ $ numbers_ref
-&lt;/ pre&gt;
-
-Dereference when you want to return to an array such as a for statement or a function that takes an array as an argument
-
-Array references are also explained in detail on the following pages.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20180214151861.html"&gt; Array reference &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; List &lt;/ h3&gt;
-
-A &lt;strong&gt; list &lt;/ strong&gt; is a representation of a sequence of multiple values. Lists and arrays are different. Lists are notations, while arrays are variables.
-
-&lt;pre&gt;
-#List
+# Array reference
+$numbers_ref-&gt; [0]
+</pre>
+<h4> Array reference dereference </h4>
+<pre>
+@ $numbers_ref
+</pre>
+<p>
+  Dereference when you want to return to an array such as a for statement or a function that takes an array as an argument
+</p>
+<p>
+  Array references are also explained in detail on the following pages.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180214151861.html"> Array reference</a>
+  </li>
+</ul>
+<h3> List </h3>
+<p>
+  A <strong> list </strong> is a representation of a sequence of multiple values. Lists and arrays are different. Lists are notations, while arrays are variables.
+</p>
+<pre>
+# List
 ('a', case:
 
   break; b','c','d')
-&lt;/ pre&gt;
-
-Lists can be assigned to arrays.
-
-&lt;pre&gt;
-#Assignment to array
+</pre>
+<p>
+  Lists can be assigned to arrays.
+</p>
+<pre>
+# Assignment to array
 my @array = ('a','b','c','d');
-&lt;/ pre&gt;
-
-RiSee &lt;a href="/blog/20100308126967.html"&gt; List-A list of multiple values ​​&lt;/a&gt; for more information on strikes.
-
-&lt;h3&gt; Functions / syntax / operators related to arrays &lt;/ h3&gt;
-
-&lt;h4&gt; splice function &lt;/ h4&gt;
-
-Use the &lt;strong&gt; splice function &lt;/ strong&gt; to perform complex operations on &lt;strong&gt; array elements &lt;/ strong&gt;. You can retrieve and replace multiple elements. If $ length is omitted when fetching multiple elements, the target is from the position of $ pos to the end of the array.
-
-&lt;pre&gt;
+</pre>
+<p>
+  RiSee <a href="/blog/20100308126967.html"> List-A list of multiple values ​​</a> for more information on strikes.
+</p>
+<h3> Functions / syntax / operators related to arrays </h3>
+<h4> splice function </h4>
+<p>
+  Use the <strong> splice function </strong> to perform complex operations on <strong> array elements </strong>. You can retrieve and replace multiple elements. If $length is omitted when fetching multiple elements, the target is from the position of $pos to the end of the array.
+</p>
+<pre>
 # Extraction of multiple elements
-@parts = splice @array, $ pos, $ length;
+@parts = splice @array, $pos, $length;
 
 # Multi-element replacement
-splice @array, $ pos, $ length, @replace;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080127120141.html"&gt; splice function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; grep function &lt;/ h4&gt;
-
-You can use the "&lt;strong&gt; grep function &lt;/ strong&gt;" to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $ _. Only elements that meet the conditional statement will be added to @matched.
-
-&lt;pre&gt;
+splice @array, $pos, $length, @replace;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20080127120141.html"> splice function</a>
+  </li>
+</ul>
+<h4> grep function </h4>
+<p>
+  You can use the "<strong> grep function </strong>" to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $_. Only elements that meet the conditional statement will be added to @matched.
+</p>
+<pre>
 # Extract only the elements that match the conditions
 @matched = grep {conditional statement} @array;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100119126425.html"&gt; grep function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; map function &lt;/ h4&gt;
-
-Use the &lt;strong&gt; map function &lt;/ strong&gt; to convert all the elements of a &lt;strong&gt; array &lt;/ strong&gt;. Each element of @array is passed to the default variable $ _, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order.
-
-&lt;pre&gt;
-#Conversion of all elements of the array
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100119126425.html"> grep function</a>
+  </li>
+</ul>
+<h4> map function </h4>
+<p>
+  Use the <strong> map function </strong> to convert all the elements of a <strong> array </strong>. Each element of @array is passed to the default variable $_, so perform the necessary conversions in the code block {}. The last evaluated conversion statement is added to @mapped in order.
+</p>
+<pre>
+# Conversion of all elements of the array
 @mapped = map {conversion} @array;
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100118126425.html"&gt; map function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; String list operator &lt;/ h4&gt;
-
-There is an operator called the &lt;strong&gt; string list operator &lt;/ strong&gt; to concisely describe a list of strings. You can use the string list operator to represent a list of strings without writing single quotes or commas.
-
-&lt;pre&gt;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20100118126425.html"> map function</a>
+  </li>
+</ul>
+<h4> String list operator </h4>
+<p>
+  There is an operator called the <strong> string list operator </strong> to concisely describe a list of strings. You can use the string list operator to represent a list of strings without writing single quotes or commas.
+</p>
+<pre>
 qw (string 1 string 2 string 3)
-&lt;/ pre&gt;
-
-This is an example of actually using the string list operator.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is an example of actually using the string list operator.
+</p>
+<pre>
 my @strings = qw / cat dog mouse /;
-&lt;/ pre&gt;
-
-It has the same meaning as the following list of strings.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It has the same meaning as the following list of strings.
+</p>
+<pre>
 my @strings = ('cat','dog','mouse');
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080222120369.html"&gt; Operator Dictionary-String list operator "qw" &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Array slice &lt;/ h4&gt;
-
-To retrieve multiple elements by specifying the element number from the array, use a technique called &lt;strong&gt; array slice &lt;/ strong&gt;.
-
-&lt;pre&gt;
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20080222120369.html"> Operator Dictionary-String list operator "qw"</a>
+  </li>
+</ul>
+<h4> Array slice </h4>
+<p>
+  To retrieve multiple elements by specifying the element number from the array, use a technique called <strong> array slice </strong>.
+</p>
+<pre>
 # Array slice
 my @values ​​= @array ['m','n', ...]
-&lt;/ pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080216120316.html"&gt; Syntax Dictionary-Array Slice &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; "Multidimensional data structure" that combines arrays and hashes &lt;/ h3&gt;
-
-Understanding "multidimensional data structures" that combine "arrays", "hashes" and "references" is essential to becoming an intermediate player.
-
-&lt;pre&gt;
-#Hash array
-my $ people = [
+</pre>
+<ul>
+  <li>
+    <a href="/blog/20080216120316.html"> Syntax Dictionary-Array Slice</a>
+  </li>
+</ul>
+<h3> "Multidimensional data structure" that combines arrays and hashes </h3>
+<p>
+  Understanding "multidimensional data structures" that combine "arrays", "hashes" and "references" is essential to becoming an intermediate player.
+</p>
+<pre>
+# Hash array
+my $people = [
   {name =&gt;'Kimoto', age =&gt; 36},
   {name =&gt;'Tanaka', age =&gt; 20}
 ]
-&lt;/ pre&gt;
-
-The "multidimensional data structure" is explained in detail in the next article, so please refer to it.
-
-&lt;div class = "icon-arrow"&gt; "&lt;a href="/blog/20100930127859.html"&gt; Perl's" arrays "and" hashes "are free to manipulate" multidimensional data structures "&lt;/a&gt;" &lt; / div&gt;
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-&lt;h4&gt; Search for elements in an array, remove duplicate elements in an array, count duplicates &lt;/ h4&gt;
-
-This is a sample to search for elements in an array, remove duplicate elements in an array, and count duplicates.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The "multidimensional data structure" is explained in detail in the next article, so please refer to it.
+</p>
+<div class = "icon-arrow"> "<a href="/blog/20100930127859.html"> Perl's" arrays "and" hashes "are free to manipulate" multidimensional data structures "</a>" < / div>
+<h3> Sample program </h3>
+<h4> Search for elements in an array, remove duplicate elements in an array, count duplicates </h4>
+<p>
+  This is a sample to search for elements in an array, remove duplicate elements in an array, and count duplicates.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @numbers = (1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8);
-print'array: @numbers = ('. join (',', @numbers). ") \ n \ n";
+print'array: @numbers = ('. join(',', @numbers). ")\n\n";
 
 # 1: Check if the array contains the specified element.
 Apply # grep.
-my $ saerch_number = 3;
-if (grep {$ _ == $ saerch_number} @numbers) {
-  #If the element to be searched is found, the inside of the if statement will be true.
-  print "1: $ saerch_number exists. \ N";
+my $saerch_number = 3;
+if (grep {$_ == $saerch_number} @numbers) {
+  # If the element to be searched is found, the inside of the if statement will be true.
+  print "1: $saerch_number exists.\n";
 }
 
 # 2: Remove duplicates from array (order is not guaranteed)
-The #hash key has the property of not allowing duplication.
-my% no_duplicate_hash;
-for my $ number (@numbers) {
-  $ no_duplicate_hash {$ number} ++;
+The # hash key has the property of not allowing duplication.
+my %no_duplicate_hash;
+for my $number (@numbers) {
+  $no_duplicate_hash {$number} ++;
 }
 
 # Get a list of hash keys
-my @no_duplicate_numbers = keys% no_duplicate_hash;
-print '2: @no_duplicate_numbers = ('. join (',', @no_duplicate_numbers). ") \ N \ n";
+my @no_duplicate_numbers = keys %no_duplicate_hash;
+print '2: @no_duplicate_numbers = ('. join(',', @no_duplicate_numbers). ")\n\n";
 
 # 3: Count the number of overlapping elements in the array (continued above)
-print "3: Number of elements \ n";
-for my $ key (sort keys% no_duplicate_hash) {
-  print "$ key contains $ no_duplicate_hash {$ key}. \ N";
+print "3: Number of elements\n";
+for my $key (sort keys %no_duplicate_hash) {
+  print "$key contains $no_duplicate_hash {$key}.\n";
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array reference &lt;/ h4&gt;
-
-This is a sample program for array reference, array conversion, and element reference.
-
-&lt;pre&gt;
+</pre>
+<h4> Array reference </h4>
+<p>
+  This is a sample program for array reference, array conversion, and element reference.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @numbers = (1, 2, 3, 4, 5, 6, 7, 8);
-print "array: \ @numbers =", join (',', @numbers). ") \ N \ n";
+print "array: \ @numbers =", join(',', @numbers). ")\n\n";
 
 # 1: Array reference If you put \ before @, it becomes an array reference.
-my $ numbers_ref1 = \ @ numbers;
+my $numbers_ref1 = \ @ numbers;
 
 You can revert to the original array by prefixing the # array reference with @.
 # This is called a dereference.
-print "array: \ @ \ $ numbers_ref1 =" .join (',', @ $ numbers_ref1), ") \ n";
+print "array: \ @ \ $numbers_ref1 =" .join(',', @ $numbers_ref1), ")\n";
 
 # 2: However, I usually don't write it like the above.
 # Make a direct array reference using something called an anonymous array ([]).
-my $ numbers_ref2 = [1, 2, 3, 4];
-print "array: \ $ numbers_ref2 =", join (',', @ $ numbers_ref2). "] \ N \ n";
+my $numbers_ref2 = [1, 2, 3, 4];
+print "array: \ $numbers_ref2 =", join(',', @ $numbers_ref2). "]\n\n";
 
-# 3: Access the elements of the array. ($ array_ref-&gt; [element number])
-print "\ $ numbers_ref2-&gt; [0] = $ numbers_ref2-&gt; [0] \ n";
-print "\ $ numbers_ref2-&gt; [1] = $ numbers_ref2-&gt; [1] \ n";
-&lt;/ pre&gt;
-
-Execution result
-&lt;pre&gt;
+# 3: Access the elements of the array. ($array_ref-&gt; [element number])
+print "\ $numbers_ref2-&gt; [0] = $numbers_ref2-&gt; [0]\n";
+print "\ $numbers_ref2-&gt; [1] = $numbers_ref2-&gt; [1]\n";
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 Array: @numbers = (1,2,3,4,5,6,7,8)
 
-Array: @ $ numbers_ref1 = (1,2,3,4,5,6,7,8)
-Array: $ numbers_ref2 = [1,2,3,4]
+Array: @ $numbers_ref1 = (1,2,3,4,5,6,7,8)
+Array: $numbers_ref2 = [1,2,3,4]
 
-$ numbers_ref2-&gt; [0] = 1
-$ numbers_ref2-&gt; [1] = 2
-&lt;/ pre&gt;
-
-&lt;h4&gt; Sample of array and array reference comparison &lt;/ h4&gt;
-
-This is a sample program that allows you to see how arrays and array references differ.
-
-&lt;pre&gt;
+$numbers_ref2-&gt; [0] = 1
+$numbers_ref2-&gt; [1] = 2
+</pre>
+<h4> Sample of array and array reference comparison </h4>
+<p>
+  This is a sample program that allows you to see how arrays and array references differ.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @numbers = (1, 2, 3);
-print "array: \ @numbers =", join (',', @numbers), ") \ n \ n";
+print "array: \ @numbers =", join(',', @numbers), ")\n\n";
 
-my $ numbers_ref = [1, 2, 3];
+my $numbers_ref = [1, 2, 3];
 
 # 1. Element reference
-print "1. Element reference \ n";
-print "\ $ numbers [0] =", $ numbers [0], "\ n";
+print "1. Element reference\n";
+print "\ $numbers [0] =", $numbers [0], "\n";
 
 # Array reference
-print "\ $ numbers_ref-&gt; [0] =", $ numbers_ref-&gt; [0], "\ n";
-print "\ n";
+print "\ $numbers_ref-&gt; [0] =", $numbers_ref-&gt; [0], "\n";
+print "\n";
 
 # 2. Processing of each element
-print "2. Processing of each element \ n";
+print "2. Processing of each element\n";
 
 # arrangement
 print "\ @ numbers =";
-for my $ number (@numbers) {
-  print $ number. ",";
+for my $number (@numbers) {
+  print $number. ",";
 }
-print "\ n";
+print "\n";
 
 # Array reference (dereference it to the for statement)
-print "\ @ {\ $ numbers_ref} =";
-for my $ number (@ $ numbers_ref) {
-  print $ number. ","
+print "\ @ {\ $numbers_ref} =";
+for my $number (@ $numbers_ref) {
+  print $number. ","
 }
-print "\ n \ n";
+print "\n\n";
 
 # 3. How to use the function
-print "3. How to use the function \ n";
+print "3. How to use the function\n";
 
 # arrangement
 push @numbers, 4;
-@numbers = sort {$ b &lt;=&gt; $ a} @numbers;
-print "\ @ numbers = (", join (',', @numbers), ") \ n";
+@numbers = sort {$b &lt;=&gt; $a} @numbers;
+print "\ @ numbers = (", join(',', @numbers), ")\n";
 
 # Array reference (dereference and pass to function)
-push @ $ numbers_ref, 4;
+push @ $numbers_ref, 4;
 
-The #sort function returns an array, so use an anonymous array []
-#Recreating an array reference.
-$ numbers_ref = [sort {$ b &lt;=&gt; $ a} @ $ numbers_ref];
-print "\ @ \ $ numbers_ref =", join (',', @ $ numbers_ref), ") \ n \ n";
-&lt;/ pre&gt;
-
-Execution result
-
-&lt;pre&gt;
+The # sort function returns an array, so use an anonymous array []
+# Recreating an array reference.
+$numbers_ref = [sort {$b &lt;=&gt; $a} @ $numbers_ref];
+print "\ @ \ $numbers_ref =", join(',', @ $numbers_ref), ")\n\n";
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 Array: @numbers = (1,2,3)
 
 1. Element reference
-$ numbers [0] = 1
-$ numbers_ref-&gt; [0] = 1
+$numbers [0] = 1
+$numbers_ref-&gt; [0] = 1
 
 2. Processing of each element
 @numbers = 1,2,3,
-@ {$ numbers_ref} = 1,2,3,
+@ {$numbers_ref} = 1,2,3,
 
 3. How to use the function
 @numbers = (4,3,2,1)
-@ $ numbers_ref = (4,3,2,1)
-&lt;/ pre&gt;
-
-&lt;h3&gt; Column "Perl that incorporates dynamic arrays into language features" &lt;/ h3&gt;
-
-Arrays that are built into Perl as a language feature are called dynamic arrays because you can freely add and remove values.
-
-Perl has made a great decision to incorporate dynamic arrays into the language as a language feature. It's a very useful idea to handle arrays freely. This was a huge success, with most later scripting languages incorporating dynamic arrays into their languages.
-
-Perl, a treasure trove of ideas created by linguist Larry Wall, is still alive.
+@ $numbers_ref = (4,3,2,1)
+</pre>
+<h3> Column "Perl that incorporates dynamic arrays into language features" </h3>
+<p>
+  Arrays that are built into Perl as a language feature are called dynamic arrays because you can freely add and remove values.
+</p>
+<p>
+  Perl has made a great decision to incorporate dynamic arrays into the language as a language feature. It's a very useful idea to handle arrays freely. This was a huge success, with most later scripting languages incorporating dynamic arrays into their languages.
+</p>
+<p>
+  Perl, a treasure trove of ideas created by linguist Larry Wall, is still alive.
+</p>
 
   </div>
   <div class="bottom">

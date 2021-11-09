@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> accessor </ span>
+      <span itemprop = "name"> accessor </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090321123713.html"> Generate accessor </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090321123713.html"> Generate accessor </a></h2>
 <p>
   Let's create an accessor this time.
 </p>
@@ -97,73 +97,78 @@
 </div>
 
 
-<h3> 1. What is an accessor? </ H3>
+<h3> 1. What is an accessor? </H3>
 <p>
-  You can't <b> directly mess with data </ ​​b> in object-oriented programming. This is because in object-oriented programming, it is correct to access objects through <b> exposed methods </ b>.
+  You can't <b> directly mess with data </​​b> in object-oriented programming. This is because in object-oriented programming, it is correct to access objects through <b> exposed methods </b>.
 </p>
 <pre>
-my $ book = Book-&gt; new;
+my $book = Book-&gt; new;
 
-#No!
-$ book-&gt; {title} ='aaa';
-&lt;/ pre&gt;
-
-If you want to mess with the data, do it through the accessor. An accessor is a &lt;b&gt; method for modifying or retrieving data &lt;/ ​​b&gt;.
-
-The correct way to set a value in the data is to use an accessor as shown below.
-
-&lt;pre&gt;
-my $ book = Book-&gt; new;
-$ book-&gt; title ('aaa');
-&lt;/ pre&gt;
-The creator of the class is obliged to create and publish the accessor.
-
-&lt;h3&gt; 2. Creating an accessor &lt;/ h3&gt;
-
-Now let's create an accessor. In Perl, it's common to use the same accessor to get and set a value.
-
-(The book Perl Best Plastis says that the accessor for setting and the accessor for getting should be separated, but in practice such as CPAN, it seems that it is preferable to make only one accessor. is.)
-
-&lt;pre&gt;
+# No!
+$book-&gt; {title} ='aaa';
+</pre>
+<p>
+  If you want to mess with the data, do it through the accessor. An accessor is a <b> method for modifying or retrieving data </​​b>.
+</p>
+<p>
+  The correct way to set a value in the data is to use an accessor as shown below.
+</p>
+<pre>
+my $book = Book-&gt; new;
+$book-&gt; title ('aaa');
+</pre>
+<p>
+  The creator of the class is obliged to create and publish the accessor.
+</p>
+<h3> 2. Creating an accessor </h3>
+<p>
+  Now let's create an accessor. In Perl, it's common to use the same accessor to get and set a value.
+</p>
+<p>
+  (The book Perl Best Plastis says that the accessor for setting and the accessor for getting should be separated, but in practice such as CPAN, it seems that it is preferable to make only one accessor. is.)
+</p>
+<pre>
 sub title {
-  my $ self = shift;
+  my $self = shift;
   if (@_) {
-    $ self-&gt; {title} = $ _ [0];
+    $self-&gt; {title} = $_ [0];
   }
-  return $ self-&gt; {title};
+  return $self-&gt; {title};
 }
-&lt;/ pre&gt;
-
-The object is in $ self. So, if @_ has a value, I set $ _ [0] to $ self-&gt; {title}.
-
-The last line returns $ self-&gt; {title}.
-
-&lt;h3&gt; 3. If a value is set, create an accessor that returns the old value &lt;/ h3&gt;
-
-In addition to the above accessors, it is also common to implement an accessor that &lt;b&gt; returns the old value &lt;/ b&gt; when a value is set.
-
-&lt;pre&gt;
-my $ book = Book-&gt; new (title =&gt;'aaa');
-my $ old_val = $ book-&gt; title ('bbb');
-&lt;/ pre&gt;
-
-Create an accessor that returns the old value as follows:
-
-&lt;pre&gt;
+</pre>
+<p>
+  The object is in $self. So, if @_ has a value, I set $_ [0] to $self-> {title}.
+</p>
+<p>
+  The last line returns $self-> {title}.
+</p>
+<h3> 3. If a value is set, create an accessor that returns the old value </h3>
+<p>
+  In addition to the above accessors, it is also common to implement an accessor that <b> returns the old value </b> when a value is set.
+</p>
+<pre>
+my $book = Book-&gt; new (title =&gt;'aaa');
+my $old_val = $book-&gt; title ('bbb');
+</pre>
+<p>
+  Create an accessor that returns the old value as follows:
+</p>
+<pre>
 sub title {
-  my $ self = shift;
+  my $self = shift;
   if (@_) {
-    my $ old = $ self-&gt; {title};
-    $ self-&gt; {title} = $ _ [0];
-    return $ old;
+    my $old = $self-&gt; {title};
+    $self-&gt; {title} = $_ [0];
+    return $old;
   }
   else {
-    return $ self-&gt; {title};
+    return $self-&gt; {title};
   }
 }
-&lt;/ pre&gt;
-
-This concludes the discussion of constructors and accessors. All you have to do now is add your favorite methods.
+</pre>
+<p>
+  This concludes the discussion of constructors and accessors. All you have to do now is add your favorite methods.
+</p>
 
   </div>
   <div class="bottom">

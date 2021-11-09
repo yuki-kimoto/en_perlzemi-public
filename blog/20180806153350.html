@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> <a href="/blog/20180820153471.html"> Installation </a> </ span>
+      <span itemprop = "name"> <a href="/blog/20180820153471.html"> Installation</a> </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20180806153350.html"> Install msys2 on Windows and use Perl </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20180806153350.html"> Install msys2 on Windows and use Perl </a></h2>
 <p>
   Learn how to install msys2 on Windows and use Perl.
 </p>
@@ -92,25 +92,25 @@
 
 
 <p>
-  <a href="https://www.msys2.org"> msys2 </a> is a tool that <b> provides a Linux-like shell environment on Windows </ b>. You can develop using Perl in a Linux-like environment.
+  <a href="https://www.msys2.org"> msys2</a> is a tool that <b> provides a Linux-like shell environment on Windows </b>. You can develop using Perl in a Linux-like environment.
 </p>
 <p>
-  <b> msys2 screen </ b>
+  <b> msys2 screen </b>
 </p>
 <div>
   <img src = "/ images / msys2.png">
-</ div>
+</div>
 <p>
   With msys2, you can use Linux commands such as ls, cat, tar, and git, and UTF-8 can be displayed correctly.
 </p>
 <p>
-  Since there is a POSIX compatibility layer, the development server of <a href="/blog/20140319139520.html"> Mojolicious </a> will work properly, assuming booting on Linux.
+  Since there is a POSIX compatibility layer, the development server of <a href="/blog/20140319139520.html"> Mojolicious</a> will work properly, assuming booting on Linux.
 </p>
-<h3> 10 minutes to install msys2 </ h3>
+<h3> 10 minutes to install msys2 </h3>
 <p>
   Download and install msys2.
 </p>
-<h4> Download msys2 </ h4>
+<h4> Download msys2 </h4>
 <p>
   Let's install msys2. Use the 64-bit version of msys2 for 64-bit Windows, and use the 32-bit version of msys2 for 32-bit Windows.
 </p>
@@ -119,191 +119,204 @@
 </p>
 <ul>
   <li>
-    <a href="https://www.msys2.org/"> Top page-Click "1. Download the installer: msys2-x86_64-Date.exe" </a>
-  </ li>
-</ ul>
+    <a href="https://www.msys2.org/"> Top page-Click "1. Download the installer: msys2-x86_64-Date.exe"</a>
+  </li>
+</ul>
 <p>
   Click to download msys2 to your desktop.
 </p>
-<h4> Confirm user name </ h4>
+<h4> Confirm user name </h4>
 <p>
   Make sure that the user directory under "C: \ Users" (Japanese display is C: \ users) in Windows is in English as shown below.
 </p>
 <pre>
 kimot
-&lt;/ pre&gt;
-
-If it is in Japanese as shown below, additional settings are required.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If it is in Japanese as shown below, additional settings are required.
+</p>
+<pre>
 Kimoto
-&lt;/ pre&gt;
-
-If it is in Japanese, before installing msys2, set the variable name to "HOME" and the variable value to "C: \ msys64 \ home \ msys2user" in the environment variable settings. ..
-
-&lt;ul&gt;
-  &lt;li&gt; &lt;a href="http://www.wannko.net/windows10/etc/kankyo.html"&gt; Add environment variables &lt;/a&gt;
-&lt;/ ul&gt;
-
-The above directory is set as the home directory of msys2.
-
-&lt;h4&gt; Install msys2 &lt;/ h4&gt;
-
-Double-click the msys2 icon on your desktop.
-
-Press Next to start the installation. It will take about 3 minutes, so let's wait.
-
-When you press Finish, msys2 will start, but let's press the cross on the upper right to end it.
-
-&lt;h4&gt; Second and subsequent startups of msys2 &lt;/ h4&gt;
-
-Once you close msys2, you're wondering where to start next.
-
-If you look for the table of contents of m from the list of applications in the Windows Start-menu, you will find the directory "MSYS2 64bit".
-
-In it
-
-&lt;ul&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  If it is in Japanese, before installing msys2, set the variable name to "HOME" and the variable value to "C: \ msys64 \ home \ msys2user" in the environment variable settings. ..
+</p>
+<ul>
+  <li> <a href="http://www.wannko.net/windows10/etc/kankyo.html"> Add environment variables</a>
+</ul>
+<p>
+  The above directory is set as the home directory of msys2.
+</p>
+<h4> Install msys2 </h4>
+<p>
+  Double-click the msys2 icon on your desktop.
+</p>
+<p>
+  Press Next to start the installation. It will take about 3 minutes, so let's wait.
+</p>
+<p>
+  When you press Finish, msys2 will start, but let's press the cross on the upper right to end it.
+</p>
+<h4> Second and subsequent startups of msys2 </h4>
+<p>
+  Once you close msys2, you're wondering where to start next.
+</p>
+<p>
+  If you look for the table of contents of m from the list of applications in the Windows Start-menu, you will find the directory "MSYS2 64bit".
+</p>
+<p>
+  In it
+</p>
+<ul>
+  <li>
     MSYS2 MinGW 64bit
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     MSYS2 MINGW 32bit
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;b&gt; MSYS2 MSYS &lt;/ b&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-However, let's start &lt;b&gt; "MSYS2 MSYS" &lt;/ b&gt;. There are three types of startup scripts in msys2, but &lt;b&gt; for Perl to work properly, select "MSYS2 MSYS", which has the highest Linux reproducibility &lt;/ b&gt;.
-
-Please note that if you make a mistake, the Perl environment will not be set up correctly.
-
-The other two seem to be used when developing Windows native apps.
-
-It is convenient to start by creating a shortcut on the desktop. In that case, select "Right click", "Other", "Open file location", "Right click" and "Copy" "MSYS2 MSYS", and then "Paste" on the desktop.
-
-&lt;h3&gt; Perl environment construction 20 minutes &lt;/ h3&gt;
-
-Make Perl available on msys2. Let's install Perl and the list of development environments required for Perl together.
-
-pacman is a package manager for msys2.
-
-&lt;pre&gt;
+  </li>
+  <li>
+    <b> MSYS2 MSYS </b>
+  </li>
+</ul>
+<p>
+  However, let's start <b> "MSYS2 MSYS" </b>. There are three types of startup scripts in msys2, but <b> for Perl to work properly, select "MSYS2 MSYS", which has the highest Linux reproducibility </b>.
+</p>
+<p>
+  Please note that if you make a mistake, the Perl environment will not be set up correctly.
+</p>
+<p>
+  The other two seem to be used when developing Windows native apps.
+</p>
+<p>
+  It is convenient to start by creating a shortcut on the desktop. In that case, select "Right click", "Other", "Open file location", "Right click" and "Copy" "MSYS2 MSYS", and then "Paste" on the desktop.
+</p>
+<h3> Perl environment construction 20 minutes </h3>
+<p>
+  Make Perl available on msys2. Let's install Perl and the list of development environments required for Perl together.
+</p>
+<p>
+  pacman is a package manager for msys2.
+</p>
+<pre>
 pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
-&lt;/ pre&gt;
-
-Copy the above and select "Right click"-&gt; "Paste" in msys2 to paste it. Press Enter to execute the above command.
-
-You will be asked if you want to install it, so press "Enter" to proceed. No matter what you ask, just press "Enter".
-
-The following will be installed. This is the minimum environment required for Perl to work properly. Perl is written in &lt;a href="https://clanguage.perlclub.net/"&gt; C language &lt;/a&gt; and is a C language compiler &lt;a href="https://linux" for compiling Perl modules. .perlclub.net/blog/20201216103956.html "&gt; gcc &lt;/a&gt; is required.
-
-&lt;ul&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  Copy the above and select "Right click"-> "Paste" in msys2 to paste it. Press Enter to execute the above command.
+</p>
+<p>
+  You will be asked if you want to install it, so press "Enter" to proceed. No matter what you ask, just press "Enter".
+</p>
+<p>
+  The following will be installed. This is the minimum environment required for Perl to work properly. Perl is written in <a href="https://clanguage.perlclub.net/"> C language</a> and is a C language compiler <a href="https://linux" for compiling Perl modules. .perlclub.net/blog/20201216103956.html "> gcc</a> is required.
+</p>
+<ul>
+  <li>
     perl (perl)
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     cpan (perl-CPAN)
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     gcc (msys2-devel)
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make (make)
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     crypt.h (libcrypt-devel)
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;b&gt; Now press the cross on the upper right once to close the terminal and restart "MSYS2 MSYS". If you don't do this, your PATH settings will be incorrect and the cpan command will not work properly. &lt;/ b&gt;
-
-Make sure you have Perl installed.
-
-&lt;pre&gt;
+  </li>
+</ul>
+<p>
+  <b> Now press the cross on the upper right once to close the terminal and restart "MSYS2 MSYS". If you don't do this, your PATH settings will be incorrect and the cpan command will not work properly. </b>
+</p>
+<p>
+  Make sure you have Perl installed.
+</p>
+<pre>
 perl -v
-&lt;/ pre&gt;
-
-If you see the following, it is installed. The version may be new.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you see the following, it is installed. The version may be new.
+</p>
+<pre>
 This is perl 5, version 24, subversion 4 (v5.24.4) built for x86_64-msys-thread-multi
-&lt;/ pre&gt;
-
-&lt;h4&gt; Run Perl script &lt;/ h4&gt;
-
-The user directory of msys2 is in the following location. Place your Perl script under your user directory.
-
-&lt;pre&gt;
+</pre>
+<h4> Run Perl script </h4>
+<p>
+  The user directory of msys2 is in the following location. Place your Perl script under your user directory.
+</p>
+<pre>
 C: \ msys64 \ home \ username
-&lt;/ pre&gt;
-
-Move the current directory.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Move the current directory.
+</p>
+<pre>
 cd C: \ msys64 \ home \ username
-&lt;/ pre&gt;
-
-Create a file called "test.pl" here. Let's write the following.
-
-&lt;pre&gt;
-print "Hello, World! \ N";
-&lt;/ pre&gt;
-
-Let's run a Perl script.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Create a file called "test.pl" here. Let's write the following.
+</p>
+<pre>
+print "Hello, World!\n";
+</pre>
+<p>
+  Let's run a Perl script.
+</p>
+<pre>
 perl test.pl
-&lt;/ pre&gt;
-
-If you see something like the following, Perl is successfully installed and the program is running.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you see something like the following, Perl is successfully installed and the program is running.
+</p>
+<pre>
 Hello, World!
-&lt;/ pre&gt;
-
-&lt;h4&gt; Install CPAN module &lt;/ h4&gt;
-
-To make sure your Perl environment is built correctly, install Mojolicious running pure Perl and JSON :: XS written in XS.
-
-Some CPAN modules are expected to work in Unix / Linux environments. Make sure the symlink works properly on msys2 with the following settings.
-
-&lt;pre&gt;
+</pre>
+<h4> Install CPAN module </h4>
+<p>
+  To make sure your Perl environment is built correctly, install Mojolicious running pure Perl and JSON::XS written in XS.
+</p>
+<p>
+  Some CPAN modules are expected to work in Unix / Linux environments. Make sure the symlink works properly on msys2 with the following settings.
+</p>
+<pre>
 export MSYS = winsymlinks
-&lt;/ pre&gt;
-
-At the first time, you will be asked if you want to set cpan automatically, so press "Enter" to proceed. No matter what you ask, just press "Enter".
-
-&lt;pre&gt;
+</pre>
+<p>
+  At the first time, you will be asked if you want to set cpan automatically, so press "Enter" to proceed. No matter what you ask, just press "Enter".
+</p>
+<pre>
 cpan Mojolicious
-cpan JSON :: XS
-&lt;/ pre&gt;
-
-If you can confirm this installation, the work is finished. Thank you for your hard work.
-
-&lt;h3&gt; Troubleshooting &lt;/ h3&gt;
-
-When the msys2 installation and Perl installation procedures fail, virus checkers (Avast, McAfee, Norton, etc.) may falsely detect msys2 as virus software.
-
-Also, depending on the virus checker, it may not be possible to execute with administrator privileges.
-
-If you encounter this issue, temporarily stop the virus checker and right-click "Run as administrator" before launching the msys2 installer.
-
-If you are using Windows 10, it seems that you can install it without any problem by using the default virus software, Windows Defender.
-
-&lt;h3&gt; Frequently used Linux commands &lt;/ h3&gt;
-
-Frequently used &lt;a href="https://linux.perlclub.net/blog/20200211081227.html" such as &lt;a href="https://git.perlclub.net/"&gt; git &lt;/a&gt; and rsync It's a good idea to have the&gt; Linux commands &lt;/a&gt; installed as well.
-
-&lt;pre&gt;
+cpan JSON::XS
+</pre>
+<p>
+  If you can confirm this installation, the work is finished. Thank you for your hard work.
+</p>
+<h3> Troubleshooting </h3>
+<p>
+  When the msys2 installation and Perl installation procedures fail, virus checkers (Avast, McAfee, Norton, etc.) may falsely detect msys2 as virus software.
+</p>
+<p>
+  Also, depending on the virus checker, it may not be possible to execute with administrator privileges.
+</p>
+<p>
+  If you encounter this issue, temporarily stop the virus checker and right-click "Run as administrator" before launching the msys2 installer.
+</p>
+<p>
+  If you are using Windows 10, it seems that you can install it without any problem by using the default virus software, Windows Defender.
+</p>
+<h3> Frequently used Linux commands </h3>
+<p>
+  Frequently used <a href="https://linux.perlclub.net/blog/20200211081227.html" such as <a href="https://git.perlclub.net/"> git</a> and rsync It's a good idea to have the> Linux commands</a> installed as well.
+</p>
+<pre>
 pacman -S git
 pacman -S rsync
-&lt;/ pre&gt;
-
-&lt;h3&gt; Please &lt;/ h3&gt;
-
-msys2 is updated regularly and the package name and update command change, so if this procedure doesn't work, &lt;a href="https://github.com/yuki-kimoto/perlzemitut"&gt; repository &lt;/ strong&gt; Please let us know on a&gt; or Twitter.
+</pre>
+<h3> Please </h3>
+<p>
+  msys2 is updated regularly and the package name and update command change, so if this procedure doesn't work, <a href="https://github.com/yuki-kimoto/perlzemitut"> repository </strong> Please let us know on a> or Twitter.
+</p>
 
   </div>
   <div class="bottom">

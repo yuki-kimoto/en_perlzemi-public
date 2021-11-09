@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080512121060.html"> stat function-get detailed information about the file </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080512121060.html"> stat function-get detailed information about the file </a></h2>
 <p>
-  Use the <strong> stat </ strong> function to get detailed information about the file.
+  Use the <strong> stat </strong> function to get detailed information about the file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,143 +97,129 @@
 
 
 <pre>
-my @infos = stat $ file;
-&lt;/ pre&gt;
-
-The following is the information that can be obtained with stat.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+my @infos = stat $file;
+</pre>
+<p>
+  The following is the information that can be obtained with stat.
+</p>
+<table>
+  <tr>
+    <td>
       0
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       File system device number
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       1
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
        inode number
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       2
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       File mode
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       3
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Number of hard links to this file
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Four  
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       File owner user ID (number)
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Five  
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       File owner group ID (number)
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       6
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Device identifier
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       7
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       File size (bytes)
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       8
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       The number of seconds since the last access since the epoch
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       9
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       The number of seconds since the last update since the epoch
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Ten 
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       The number of seconds since the epoch that has passed since the inode was changed
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       11
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Block size considered appropriate for reading and writing files
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       12
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Actual number of blocks allocated
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample to get detailed information of a file using the stat function.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<h3> Sample </h3>
+<p>
+  This is a sample to get detailed information of a file using the stat function.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Get detailed information about the file stat
 
-my $ file ='a.txt';
-my @stat_inf = stat $ file;
+my $file ='a.txt';
+my @stat_inf = stat $file;
 
 Creating a # stat commentary
 my @stat_exp = (
@@ -253,30 +239,28 @@ my @stat_exp = (
 );
 
 if (@stat_inf) {
-  for my $ i (0 .. 12) {
-    Output by combining the information of #stat and the explanation.
-    printf ("% -15s% s \ n", $ stat_inf [$ i], $ stat_exp [$ i]);
+  for my $i (0 .. 12) {
+    Output by combining the information of # stat and the explanation.
+    printf("% -15s% s\n", $stat_inf [$i], $stat_exp [$i]);
   }
 }
-else {print "stat $ file failed. \ N"}
-&lt;/ pre&gt;
-
-&lt;h3&gt; Simple supplementary rule &lt;/ h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-     &lt;span style = "font-weight: bold;"&gt; Device number: &lt;/ span&gt; The file system is built in association with the device (hard disk). A number that identifies the hard disk (probably). → File system
-  &lt;/ li&gt;
-  &lt;li&gt;
-     &lt;span style = "font-weight: bold;"&gt; inode: &lt;/ span&gt; In Unix-like OS, it is like an identifier for managing files. → &lt;a href="http://itpro.nikkeibp.co.jp/article/Keyword/20070207/261208/"&gt; inode &lt;/a&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;span style = "font-weight: bold;"&gt; File mode: &lt;/ span&gt; &lt;a href="http://www.tech-faq.com/lang/ja/unix-file-permissions.shtml" on Unix A value that represents "&gt; file type &lt;/a&gt; and &lt;a href="/blog/20080822121950.html"&gt; permissions &lt;/a&gt;. →
-  &lt;/ li&gt;
-  &lt;li&gt;
-     &lt;span style = "font-weight: bold;"&gt; Hard link: &lt;/ span&gt; On Unix-like operating systems, files can be aliased. The number of hard links is the total number of aliases that point to this file. → Hard link
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+else {print "stat $file failed.\n"}
+</pre>
+<h3> Simple supplementary rule </h3>
+<ul>
+  <li>
+     <span style = "font-weight: bold;"> Device number: </span> The file system is built in association with the device (hard disk). A number that identifies the hard disk (probably). → File system
+  </li>
+  <li>
+     <span style = "font-weight: bold;"> inode: </span> In Unix-like OS, it is like an identifier for managing files. → <a href="http://itpro.nikkeibp.co.jp/article/Keyword/20070207/261208/"> inode</a>
+  </li>
+  <li>
+    <span style = "font-weight: bold;"> File mode: </span> <a href="http://www.tech-faq.com/lang/ja/unix-file-permissions.shtml" on Unix A value that represents "> file type</a> and <a href="/blog/20080822121950.html"> permissions</a>. →
+  </li>
+  <li>
+     <span style = "font-weight: bold;"> Hard link: </span> On Unix-like operating systems, files can be aliased. The number of hard links is the total number of aliases that point to this file. → Hard link
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

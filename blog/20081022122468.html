@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Find the date n days later  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To find the date n days later, convert n days to seconds and add them to the current time (seconds from the epoch) obtained with the time function. Convert the added seconds to date and time notation using the localtime function.">
+<meta name="description" content="To find the date n days later, convert n days to seconds and add them to the current time(seconds from the epoch) obtained with the time function. Convert the added seconds to date and time notation using the localtime function.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Find the date n days later  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To find the date n days later, convert n days to seconds and add them to the current time (seconds from the epoch) obtained with the time function. Convert the added seconds to date and time notation using the localtime function." />
+<meta name="twitter:description" content="To find the date n days later, convert n days to seconds and add them to the current time(seconds from the epoch) obtained with the time function. Convert the added seconds to date and time notation using the localtime function." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20081022122468.html"> Find the date n days later </a></ h2>
+    <h2><a href="/blog/20081022122468.html"> Find the date n days later </a></h2>
 <p>
-  To find the date n days later, convert n days to seconds and add them to the current time (seconds from the epoch) obtained with the time function. Convert the added seconds to date and time notation using the localtime function.
+  To find the date n days later, convert n days to seconds and add them to the current time(seconds from the epoch) obtained with the time function. Convert the added seconds to date and time notation using the localtime function.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -82,76 +82,75 @@
 <pre>
 use strict;
 use warnings;
-use Time :: Local'timelocal';
+use Time::Local'timelocal';
 
-print "(1) Find the date n days later \ n";
+print "(1) Find the date n days later\n";
 
 # 2 days later
-my $ n = 2;
+my $n = 2;
 
 # Convert the date to seconds and add it.
-my $ sec_from_epoch = time + (60 * 60 * 24 * $ n);
+my $sec_from_epoch = time + (60 * 60 * 24 * $n);
 
-#Convert seconds to date and time
-my ($ sec, $ min, $ hour, $ mday, $ month, $ year)
-  = localtime ($ sec_from_epoch);
+# Convert seconds to date and time
+my ($sec, $min, $hour, $mday, $month, $year)
+  = localtime($sec_from_epoch);
 
-$ month ++;
-$ year + = 1900;
+$month ++;
+$year + = 1900;
 
-print "$ n days later is $ year year $ month month $ mday day $ hour hour $ min minutes $ sec seconds. \ N";
-&lt;/ pre&gt;
-
-Execution result
-
-&lt;pre&gt;
+print "$n days later is $year year $month month $mday day $hour hour $min minutes $sec seconds.\n";
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 (1) Find the date n days later
 Two days later, it is 23:02:43 on October 24, 2008.
-&lt;/ pre&gt;
-
-&lt;h3&gt; Explanation &lt;/ h3&gt;
-
-&lt;h4&gt; Convert date to seconds and add &lt;/ h4&gt;
-
-When dealing with time, convert it to seconds before handling it. You can get the number of seconds from the epoch with the time function, so add the number of seconds after n days to it.
-
-&lt;pre&gt;
+</pre>
+<h3> Explanation </h3>
+<h4> Convert date to seconds and add </h4>
+<p>
+  When dealing with time, convert it to seconds before handling it. You can get the number of seconds from the epoch with the time function, so add the number of seconds after n days to it.
+</p>
+<pre>
 # 2 days later
-my $ n = 2;
+my $n = 2;
 
 # Convert the date to seconds and add it.
-my $ sec_from_epoch = time + (60 * 60 * 24 * $ n);
-&lt;/ pre&gt;
-
-If you want to get two days after a particular date, first use the timelocal function of the Time :: Local module to find the number of seconds since the epoch on a particular date.
-
-After that, the procedure is the same as above.
-
-&lt;pre&gt;
-use Time :: Local'timelocal';
+my $sec_from_epoch = time + (60 * 60 * 24 * $n);
+</pre>
+<p>
+  If you want to get two days after a particular date, first use the timelocal function of the Time::Local module to find the number of seconds since the epoch on a particular date.
+</p>
+<p>
+  After that, the procedure is the same as above.
+</p>
+<pre>
+use Time::Local'timelocal';
 
 # March 31, 2000
-my $ year = 2000 --1900;
-my $ mon = 3 -1;
-my $ mday = 31;
-my $ sec_from_epoch = timelocal (0, 0, 0, $ mday, $ mon, $ year);
-&lt;/ pre&gt;
+my $year = 2000 - 1900;
+my $mon = 3 -1;
+my $mday = 31;
+my $sec_from_epoch = timelocal (0, 0, 0, $mday, $mon, $year);
+</pre>
+<h4> Convert seconds to date and time </h4>
+<p>
+  Convert seconds to date and time using the localtime function.
+</p>
+<pre>
+# Convert seconds to date and time
+my ($sec, $min, $hour, $mday, $month, $year)
+  = localtime($sec_from_epoch);
 
-&lt;h4&gt; Convert seconds to date and time &lt;/ h4&gt;
-
-Convert seconds to date and time using the localtime function.
-
-&lt;pre&gt;
-#Convert seconds to date and time
-my ($ sec, $ min, $ hour, $ mday, $ month, $ year)
-  = localtime ($ sec_from_epoch);
-
-$ month ++;
-$ year + = 1900;
-&lt;/ pre&gt;
-
-&lt;hr&gt;
-&lt;a href="/blog/20080229122347.html"&gt; Perl Reverse Dictionary / To Date and Time &lt;/a&gt;
+$month ++;
+$year + = 1900;
+</pre>
+<hr>
+<p>
+  <a href="/blog/20080229122347.html"> Perl Reverse Dictionary / To Date and Time</a>
+</p>
 
   </div>
   <div class="bottom">

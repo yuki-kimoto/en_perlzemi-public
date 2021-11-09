@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20090114123103.html"> Enable Delete key of Tera Term </a></ h2>
+    <h2><a href="/blog/20090114123103.html"> Enable Delete key of Tera Term </a></h2>
 <p>
   By default, Tera Term behaves strangely on some keyboards, including the delete key. To fix this, you need to modify the keyboard configuration file of Tera Term.
 </p>
@@ -79,7 +79,7 @@
 </div>
 
 
-<h4> Keys that need to be modified </ h4>
+<h4> Keys that need to be modified </h4>
 <p>
   It seems that the arrangement of the following 6 keys is misplaced.
 </p>
@@ -90,17 +90,18 @@ Home
 End
 PageUp
 PageDown
-&lt;/ pre&gt;
-
-&lt;h4&gt; Modify keyboard configuration file &lt;/ h4&gt;
-
-Modify the keyboard configuration file. The actual keyboard file is KEYBOARD.cnf, but I'm not sure that file is a shortcut for the abbreviated dial.
-
-[f: id: perlcodesample: 20090104113504p: image]
-
-You can't open it as it is, so open Notepad and drag and drop this icon there. Then you can open it. Copy the original file somewhere and save it. Modify the following parts as follows.
-
-&lt;pre&gt;
+</pre>
+<h4> Modify keyboard configuration file </h4>
+<p>
+  Modify the keyboard configuration file. The actual keyboard file is KEYBOARD.cnf, but I'm not sure that file is a shortcut for the abbreviated dial.
+</p>
+<p>
+  [f: id: perlcodesample: 20090104113504p: image]
+</p>
+<p>
+  You can't open it as it is, so open Notepad and drag and drop this icon there. Then you can open it. Copy the original file somewhere and save it. Modify the following parts as follows.
+</p>
+<pre>
 ; Insert key
 Find = 338
 Home key
@@ -113,9 +114,11 @@ Select = 339
 Prev = 335
 ; PageDown key
 Next = 337
-&lt;/ pre&gt;
-↓
-&lt;pre&gt;
+</pre>
+<p>
+  ↓
+</p>
+<pre>
 ; Insert key
 Insert = 338
 Home key
@@ -128,20 +131,21 @@ Remove = 339
 Select = 335
 ; PageDown key
 Next = 337
-&lt;/ pre&gt;
-
-&lt;h3&gt; Settings that should not be forgotten &lt;/ h3&gt;
-
-There is one more task. Restart Tera Term and from the menu bar
-
-&lt;pre&gt;
+</pre>
+<h3> Settings that should not be forgotten </h3>
+<p>
+  There is one more task. Restart Tera Term and from the menu bar
+</p>
+<pre>
 setup-&gt; keyboard
-&lt;/ pre&gt;
-
-Go to and uncheck "BackSpace key" and "Del key" in Transmit DEL by. You should now be able to use the del key as usual.
-
-&lt;hr&gt;
-&lt;a href="/blog/20090820124848.html"&gt; CentOS memo &lt;/a&gt;
+</pre>
+<p>
+  Go to and uncheck "BackSpace key" and "Del key" in Transmit DEL by. You should now be able to use the del key as usual.
+</p>
+<hr>
+<p>
+  <a href="/blog/20090820124848.html"> CentOS memo</a>
+</p>
 
   </div>
   <div class="bottom">

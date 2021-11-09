@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File :: Find --Recursively process subdirectories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use  File :: Find  to process all files recursively.">
+<title> File::Find - Recursively process subdirectories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  File::Find  to process all files recursively.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File :: Find --Recursively process subdirectories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use  File :: Find  to process all files recursively." />
+<meta name="twitter:title" content=" File::Find - Recursively process subdirectories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  File::Find  to process all files recursively." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080530121229.html"> File :: Find --Recursively process subdirectories </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080530121229.html"> File::Find - Recursively process subdirectories </a></h2>
 <p>
-  You can use <strong> File :: Find </ strong> to process all files recursively.
+  You can use <strong> File::Find </strong> to process all files recursively.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,158 +97,154 @@
 
 
 <pre>
-use File :: Find;
-find (\ &amp; process, $ top_dir);
+use File::Find;
+find (\ &amp; process, $top_dir);
 
 sub process {
   # What you want to do
 }
-&lt;/ pre&gt;
-
-File :: Find is chdir, which processes all files while changing directories. Pass a reference to the subroutine as the first argument. (&amp; process is a subroutine and the \ symbol creates a reference.)
-
-After the second argument, pass the list of directories you want to process. (In the example, only one). You can change the scan order by using finddepth instead of find. (Explanation below)
-
-&lt;h4&gt; If you do not want to change the current directory &lt;/ h4&gt;
-
-If you want to scan without changing the current directory, you can use the "no_chdir" option.
-
-In this case, specify "wanted" as the reference to the subroutine.
-
-&lt;pre&gt;
-find ({wanted =&gt; \ &amp; process, no_chdir =&gt; 1}, $ top_dir);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Variables that can be used in the processing description &lt;/ h3&gt;
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<p>
+  File::Find is chdir, which processes all files while changing directories. Pass a reference to the subroutine as the first argument. (& process is a subroutine and the \ symbol creates a reference.)
+</p>
+<p>
+  After the second argument, pass the list of directories you want to process. (In the example, only one). You can change the scan order by using finddepth instead of find. (Explanation below)
+</p>
+<h4> If you do not want to change the current directory </h4>
+<p>
+  If you want to scan without changing the current directory, you can use the "no_chdir" option.
+</p>
+<p>
+  In this case, specify "wanted" as the reference to the subroutine.
+</p>
+<pre>
+find ({wanted =&gt; \ &amp; process, no_chdir =&gt; 1}, $top_dir);
+</pre>
+<h3> Variables that can be used in the processing description </h3>
+<table>
+  <tr>
+    <td>
       Current current directory
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ File :: Find :: dir
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+    <td>
+      $File::Find::dir
+    </td>
+  </tr>
+  <tr>
+    <td>
       Current file name (base name)
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ _
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+    <td>
+      $_
+    </td>
+  </tr>
+  <tr>
+    <td>
       Current file name (absolute path)
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ File :: Find :: name
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-
-In the sub process, you can get the current directory and the file name to be processed. Use these to describe what you want to do in each file.
-
-&lt;h3&gt; Find scan order (going order) &lt;/ h3&gt;
-
-&lt;pre&gt;
-(1) $ top_dir |-(2) top.txt
+    </td>
+    <td>
+      $File::Find::name
+    </td>
+  </tr>
+</table>
+<p>
+  In the sub process, you can get the current directory and the file name to be processed. Use these to describe what you want to do in each file.
+</p>
+<h3> Find scan order (going order) </h3>
+<pre>
+(1) $top_dir |-(2) top.txt
              |
              |-(3) dir1 |-(4) 1.txt
              | |-(5) dir1_1 |-(6) 1_1.txt
              | |-(7) dir1_2 |-(8) 1_2.txt
              |
              |-(8) dir2 |-(9) 2.txt
-&lt;/ pre&gt;
-
-Scan in what is commonly referred to as the destination order. In the case of the same hierarchy, files are processed before the directory. (2) comes before (3).
-
-&lt;h3&gt; Finddepth scanning order (returning order) &lt;/ h3&gt;
-
-&lt;pre&gt;
-(10) $ top_dir |-(1) top.txt
+</pre>
+<p>
+  Scan in what is commonly referred to as the destination order. In the case of the same hierarchy, files are processed before the directory. (2) comes before (3).
+</p>
+<h3> Finddepth scanning order (returning order) </h3>
+<pre>
+(10) $top_dir |-(1) top.txt
               |
               |-(7) dir1 |-(2) 1.txt
               | |-(4) dir1_1 |-(3) 1_1.txt
               | |-(6) dir1_2 |-(5) 1_2.txt
               |
               |-(9) dir2 |-(8) 2.txt
-&lt;/ pre&gt;
-
-Scan in what is commonly referred to as the return order. Each directory is processed immediately after all the processing in the hierarchy below it is completed. In the case of the same hierarchy, files are processed before the directory.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample that recursively processes all files.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Scan in what is commonly referred to as the return order. Each directory is processed immediately after all the processing in the hierarchy below it is completed. In the case of the same hierarchy, files are processed before the directory.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample that recursively processes all files.
+</p>
+<pre>
 use strict;
 use warnings;
-use File :: Path;
+use File::Path;
 use Fcntl;
-use File :: Find;
+use File::Find;
 
 # Process all files recursively.
 
-#Create directories and files
-my $ top_dir = "dir_20080530_$$";
+# Create directories and files
+my $top_dir = "dir_20080530_$$";
 my @dirs = (
-  "$ top_dir / dir1", "$ top_dir / dir1 / dir1_1", "$ top_dir / dir1 / dir1_2",
-  "$ top_dir / dir2",
+  "$top_dir / dir1", "$top_dir / dir1 / dir1_1", "$top_dir / dir1 / dir1_2",
+  "$top_dir / dir2",
 );
-for my $ dir (@dirs) {
-  eval {mkpath $ dir};
+for my $dir (@dirs) {
+  eval {mkpath $dir};
   if (@!) {die "@!"}
 }
 
 my @files = (
-  "$ top_dir / top.txt", "$ top_dir / dir1 / 1.txt",
-  "$ top_dir / dir1 / dir1_1 / 1_1.txt", "$ top_dir / dir1 / dir1_2 / 1_2.txt",
-  "$ top_dir / dir2 / 2.txt"
+  "$top_dir / top.txt", "$top_dir / dir1 / 1.txt",
+  "$top_dir / dir1 / dir1_1 / 1_1.txt", "$top_dir / dir1 / dir1_2 / 1_2.txt",
+  "$top_dir / dir2 / 2.txt"
 );
-for my $ file (@files) {
-  sysopen (my $ fh, $ file, O_WRONLY | O_CREAT | O_EXCL)
-    or die "Unable to create $ file .: $!";
-  close $ fh;
+for my $file (@files) {
+  sysopen(my $fh, $file, O_WRONLY | O_CREAT | O_EXCL)
+    or die "Unable to create $file .: $!";
+  close $fh;
 }
-print "Preparation: $ top_dir has been created. \ N \ n";
+print "Preparation: $top_dir has been created.\n\n";
 
-# File :: Find sample
+# File::Find sample
 
-print "1: Recursively print all file names (base names). \ N";
+print "1: Recursively print all file names (base names).\n";
 # In the first argument, write the processing you want to do for each file
 # Pass a reference to the subroutine.
-find (\ &amp; print_file_name, $ top_dir);
+find (\ &amp; print_file_name, $top_dir);
                                      
 sub print_file_name {
-  In # $ _, the directory you are currently scanning
+  In # $_, the directory you are currently scanning
   # The file name used as the base point is stored.
-  # $ File :: Find :: dir is currently scanning
-  #The directory name is stored.
-  print "$ _ ($ File :: Find :: dir) \ n";
+  # $File::Find::dir is currently scanning
+  # The directory name is stored.
+  print "$_ ($File::Find::dir)\n";
 }
-print "\ n";
+print "\n";
 
-print "2: Recursively print all file names (full path). \ N";
-find (\ &amp; print_file_full_name, $ top_dir);
+print "2: Recursively print all file names (full path).\n";
+find (\ &amp; print_file_full_name, $top_dir);
 
 sub print_file_full_name {
-  In # $ _, the directory you are currently scanning
+  In # $_, the directory you are currently scanning
   # The file name used as the base point is stored.
-  print $ File :: Find :: name, "\ n";
+  print $File::Find::name, "\n";
 }
-print "\ n";
+print "\n";
 
-print "3: Scan directories in return order \ n";
-finddepth (\ &amp; print_file_full_name, $ top_dir);
-&lt;/ pre&gt;
-Execution result
-&lt;pre&gt;
+print "3: Scan directories in return order\n";
+finddepth (\ &amp; print_file_full_name, $top_dir);
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 Preparation: You have created dir_20080530_4944.
 
 1: Recursively output all file names (base names).
@@ -286,17 +282,18 @@ dir_20080530_4944 / dir1
 dir_20080530_4944 / dir2 / 2.txt
 dir_20080530_4944 / dir2
 dir_20080530_4944
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100409127089.html"&gt; File :: Path &lt;/a&gt;, &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt;, &lt;a href="/ blog/20080804121794.html "&gt; sysopen function &lt;/a&gt;, &lt;a href="/blog/20180310152509.html"&gt; F
-
-cntl &lt;/a&gt;
-
-&lt;ul&gt;
-   &lt;li&gt;
-     &lt;a href="/blog/20080601121230.html"&gt; Recursively copy multi-level directories &lt;/a&gt;
-   &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100409127089.html"> File::Path</a>, <a href="/blog/20100312126967.html"> eval</a>, <a href="/ blog/20080804121794.html "> sysopen function</a>, <a href="/blog/20180310152509.html"> F
+</p>
+<p>
+  cntl</a>
+</p>
+<ul>
+   <li>
+     <a href="/blog/20080601121230.html"> Recursively copy multi-level directories</a>
+   </li>
+</ul>
 
   </div>
   <div class="bottom">

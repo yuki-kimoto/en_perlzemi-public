@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Validator :: Custom --validation of HTML input data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Validator :: Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations.">
+<title> Validator::Custom - validation of HTML input data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Validator::Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Validator :: Custom --validation of HTML input data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Validator :: Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations." />
+<meta name="twitter:title" content=" Validator::Custom - validation of HTML input data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Validator::Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20151212144988.html"> Validator :: Custom --validation of HTML input data </a></ ​​h2>
+  </li>
+</ol>
+<h2><a href="/blog/20151212144988.html"> Validator::Custom - validation of HTML input data </a></​​h2>
 <p>
-  Validator :: Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations.
+  Validator::Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,912 +96,914 @@
 </div>
 
 
-<h3> Name </ h3>
+<h3> Name </h3>
 <p>
-  Validator :: Custom --HTML form validation, concise and flexible
+  Validator::Custom - HTML form validation, concise and flexible
 </p>
-<h3> How to use </ h3>
+<h3> How to use </h3>
 <pre>
-  use Validator :: Custom;
-  my $ vc = Validator :: Custom-&gt; new;
+  use Validator::Custom;
+  my $vc = Validator::Custom-&gt; new;
   
   # Input data
-  my $ id = 1;
-  my $ name ='Ken Suzuki';
-  my $ price = '19.23';
-  my $ favorite = ['001', '002'];
+  my $id = 1;
+  my $name ='Ken Suzuki';
+  my $price = '19.23';
+  my $favorite = ['001', '002'];
   
-  #Create validation object
-  my $ validation = $ vc-&gt; validation;
+  # Create validation object
+  my $validation = $vc-&gt; validation;
   
   # Check that "ID" is an integer
-  if (! $ vc-&gt; check ($ id,'int')) {
+  if (! $vc-&gt; check ($id,'int')) {
     # Add message on failure
-    $ validation-&gt; add_failed (id =&gt;'id must be integer');
+    $validation-&gt; add_failed (id =&gt;'id must be integer');
   }
   
   # Check that the "name" has a length
-  if (! (length $ name)) {
-    $ validation-&gt; add_failed (name =&gt;'name must have length');
+  if (! (length $name)) {
+    $validation-&gt; add_failed (name =&gt;'name must have length');
   }
   # Check that the length of the "name" is less than 30
-  elsif (! (length $ name &lt;30)) {
-    $ validation-&gt; add_failed (name =&gt;'name is too long');
+  elsif (! (length $name &lt;30)) {
+    $validation-&gt; add_failed (name =&gt;'name is too long');
   }
   
   # Filter "price" to remove left and right blanks
-  $ price = $ vc-&gt; filter ($ price,'trim');
+  $price = $vc-&gt; filter ($price,'trim');
 
   # Check that "Price" is a number with two decimal places
-  if (! $ vc-&gt; check ($ price ,,'number', {decimal_part_max =&gt; 2})) {
+  if (! $vc-&gt; check ($price ,,'number', {decimal_part_max =&gt; 2})) {
     # Set default value if validation fail
-    $ price = 20.25;
+    $price = 20.25;
   }
   
   # Filter each value of "Favorites" using the "trim" filter function
-  $ favorite = $ vc-&gt; filter_each ($ favorite,'trim');
+  $favorite = $vc-&gt; filter_each($favorite,'trim');
   
   # Check that "Favorites" have at least one value
-  if (@ $ favorite == 0) {
-    $ validation-&gt; add_failed (favorite =&gt;'favorite must be selected more than one');
+  if (@ $favorite == 0) {
+    $validation-&gt; add_failed (favorite =&gt;'favorite must be selected more than one');
   }
   # Check that "Favorites" is one of "001", "002", and "003"
-  elsif (! ($ vc-&gt; check_each ($ favorite,'in', ['001', '002', '003']))) {
-    $ validation-&gt; add_failed (favorite =&gt;'favorite is invalid');
+  elsif (! ($vc-&gt; check_each($favorite,'in', ['001', '002', '003']))) {
+    $validation-&gt; add_failed (favorite =&gt;'favorite is invalid');
   }
   
-  #Check if the validation result is correct
-  if ($ validation-&gt; is_valid) {
+  # Check if the validation result is correct
+  if ($validation-&gt; is_valid) {
     # ...
   }
   else {
     
     # Check which parameter failed
-    unless ($ validation-&gt; is_valid ('name')) {
+    unless ($validation-&gt; is_valid ('name')) {
       # ...
     }
     
     # Get the names of all failed parameters
-    my $ failed = $ validation-&gt; failed;
+    my $failed = $validation-&gt; failed;
 
     # Get message for one failed parameter
-    my $ name_message = $ validation-&gt; message ('name');
+    my $name_message = $validation-&gt; message ('name');
     
     # Get messages for all failed parameters
-    my $ messages = $ validation-&gt; messages;
+    my $messages = $validation-&gt; messages;
     
     # Get the names and messages of all failed parameters as a hash reference
-    my $ messages_h = $ validation-&gt; messages_to_hash;
+    my $messages_h = $validation-&gt; messages_to_hash;
   }
-&lt;/ pre&gt;
-
-=====
-
-&lt;h3&gt; Explanation &lt;/ h3&gt;
-
-Validator :: Custom is a validator of HTML forms, with simplicity and good flexibility.
-
-The features are as follows.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    Some check functions are available by default. &lt;b&gt; ascii_graphic &lt;/ b&gt;, &lt;b&gt; int &lt;/ b&gt;, &lt;b&gt; number &lt;/ b&gt;, &lt;b&gt; in &lt;/ b&gt;, etc.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Some filter functions are available by default. &lt;b&gt; trim &lt;/ b&gt;, &lt;b&gt; remove_blank &lt;/ b&gt;, etc.
-  &lt;/ li&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  =====
+</p>
+<h3> Explanation </h3>
+<p>
+  Validator::Custom is a validator of HTML forms, with simplicity and good flexibility.
+</p>
+<p>
+  The features are as follows.
+</p>
+<ul>
+  <li>
+    Some check functions are available by default. <b> ascii_graphic </b>, <b> int </b>, <b> number </b>, <b> in </b>, etc.
+  </li>
+  <li>
+    Some filter functions are available by default. <b> trim </b>, <b> remove_blank </b>, etc.
+  </li>
+  <li>
     You can add your own check and filter functions.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     A concise validation object is available. You can save the names and messages of failed parameters in order.
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Guide &lt;/ h3&gt;
-
-&lt;h4&gt; 1. Basics &lt;/ h4&gt;
-
-&lt;b&gt; 1. Create a new Validator :: Custom object &lt;/ b&gt;
-
-First, use the &lt;b&gt; new &lt;/ b&gt; method to create a Validator :: Custom object.
-
-&lt;pre&gt;
-  use Validator :: Custom;
-  my $ vc = Validator :: Custom-&gt; new;
-&lt;/ pre&gt;
-
-&lt;b&gt; 2. Preparation of input data for validation &lt;/ b&gt;
-
-Next, prepare the input data.
-
-&lt;pre&gt;
-  my $ id = 1;
-  my $ name ='Ken Suzuki';
-  my $ price = '19.23';
-  my $ favorite = ['001', '002'];
-&lt;/ pre&gt;
-
-&lt;b&gt; 3. Creating a validation object &lt;/ b&gt;
-
-Then use the &lt;b&gt; validation &lt;/ b&gt; method to create a new validation object.
-
-&lt;pre&gt;
-  my $ validation = $ vc-&gt; validation;
-&lt;/ pre&gt;
-
-this is,
-A &lt;a href="/blog/20151210144988.html"&gt; Validator :: Custom :: Validation &lt;/a&gt; object to store the failed parameter name and message.
-
-&lt;b&gt; 4. Validation of input data &lt;/ ​​b&gt;
-
-&lt;pre&gt;
+  </li>
+</ul>
+<h3> Guide </h3>
+<h4> 1. Basics </h4>
+<p>
+  <b> 1. Create a new Validator::Custom object </b>
+</p>
+<p>
+  First, use the <b> new </b> method to create a Validator::Custom object.
+</p>
+<pre>
+  use Validator::Custom;
+  my $vc = Validator::Custom-&gt; new;
+</pre>
+<p>
+  <b> 2. Preparation of input data for validation </b>
+</p>
+<p>
+  Next, prepare the input data.
+</p>
+<pre>
+  my $id = 1;
+  my $name ='Ken Suzuki';
+  my $price = '19.23';
+  my $favorite = ['001', '002'];
+</pre>
+<p>
+  <b> 3. Creating a validation object </b>
+</p>
+<p>
+  Then use the <b> validation </b> method to create a new validation object.
+</p>
+<pre>
+  my $validation = $vc-&gt; validation;
+</pre>
+<p>
+  this is,
+</p>
+<p>
+  A <a href="/blog/20151210144988.html"> Validator::Custom::Validation</a> object to store the failed parameter name and message.
+</p>
+<p>
+  <b> 4. Validation of input data </​​b>
+</p>
+<pre>
   # Check that "ID" is an integer
-  if (! $ vc-&gt; check ($ id,'int')) {
+  if (! $vc-&gt; check ($id,'int')) {
     # Add message on failure
-    $ validation-&gt; add_failed (id =&gt;'id must be integer');
+    $validation-&gt; add_failed (id =&gt;'id must be integer');
   }
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; int &lt;/ b&gt; check function to check that the value is an integer. The &lt;b&gt; int &lt;/ b&gt; check function is the default check function. The check function is available through the &lt;b&gt; check &lt;/ b&gt; method.
-
-If the check is unsuccessful, give the name and message of the failing parameter to the &lt;b&gt; add_failed &lt;/a&gt; of the &lt;a href="/blog/20151210144988.html"&gt; Validator :: Custom :: Validation &lt;/a&gt; class. You can add it using the b&gt; method.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use the <b> int </b> check function to check that the value is an integer. The <b> int </b> check function is the default check function. The check function is available through the <b> check </b> method.
+</p>
+<p>
+  If the check is unsuccessful, give the name and message of the failing parameter to the <b> add_failed</a> of the <a href="/blog/20151210144988.html"> Validator::Custom::Validation</a> class. You can add it using the b> method.
+</p>
+<pre>
   # Filter "price" to remove left and right blanks
-  $ price = $ vc-&gt; filter ($ price,'trim');
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; trim &lt;/ b&gt; filter function to remove the left and right spaces.
-
-&lt;pre&gt;
+  $price = $vc-&gt; filter ($price,'trim');
+</pre>
+<p>
+  You can use the <b> trim </b> filter function to remove the left and right spaces.
+</p>
+<pre>
   # Filter each value of "Favorites" using the "trim" filter function
-  $ favorite = $ vc-&gt; filter_each ($ favorite,'trim');
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; filter_each &lt;/ b&gt; method to filter each value of "Favorites".
-
-&lt;pre&gt;
+  $favorite = $vc-&gt; filter_each($favorite,'trim');
+</pre>
+<p>
+  You can use the <b> filter_each </b> method to filter each value of "Favorites".
+</p>
+<pre>
   # Check that "Favorites" have at least one value
-  if (@ $ favorite == 0) {
-    $ validation-&gt; add_failed (favorite =&gt;'favorite must be selected more than one');
+  if (@ $favorite == 0) {
+    $validation-&gt; add_failed (favorite =&gt;'favorite must be selected more than one');
   }
   # Check that "Favorites" is one of "001", "002", and "003"
-  elsif (! ($ vc-&gt; check_each ($ favorite,'in', ['001', '002', '003']))) {
-    $ validation-&gt; add_failed (favorite =&gt;'favorite is invalid');
+  elsif (! ($vc-&gt; check_each($favorite,'in', ['001', '002', '003']))) {
+    $validation-&gt; add_failed (favorite =&gt;'favorite is invalid');
   }
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; check_each &lt;/ b&gt; method to check each value of "favorites".
-
-If you want to know the default check function and filter function, see the "Check function" and "Filter function" items.
-
-&lt;h4&gt; 2 Handling of validation objects &lt;/ h4&gt;
-
-Use the &lt;b&gt; is_valid &lt;/ b&gt; method to check that all input data is correct.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use the <b> check_each </b> method to check each value of "favorites".
+</p>
+<p>
+  If you want to know the default check function and filter function, see the "Check function" and "Filter function" items.
+</p>
+<h4> 2 Handling of validation objects </h4>
+<p>
+  Use the <b> is_valid </b> method to check that all input data is correct.
+</p>
+<pre>
   # Make sure the validation results are correct
-  if($ validation-&gt; is_valid) {
-    #Success
+  if($validation-&gt; is_valid) {
+    # Success
   }
   else {
-    #Failure
+    # Failure
   }
-&lt;/ pre&gt;
-
-If you want to check if one input data is correct, use the &lt;b&gt; is_valid &lt;/ b&gt; method with parameters.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you want to check if one input data is correct, use the <b> is_valid </b> method with parameters.
+</p>
+<pre>
   # Check which parameter failed
-  unless ($ validation-&gt; is_valid ('name')) {
+  unless ($validation-&gt; is_valid ('name')) {
     # ...
   }
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; failed &lt;/ b&gt; method to get the names of all parameters that failed validation.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use the <b> failed </b> method to get the names of all parameters that failed validation.
+</p>
+<pre>
   # Get the names of all parameters that failed validation
-  my $ failed = $ validation-&gt; failed;
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; message &lt;/ b&gt; method to get the message of the parameter that failed validation.
-
-&lt;pre&gt;
+  my $failed = $validation-&gt; failed;
+</pre>
+<p>
+  You can use the <b> message </b> method to get the message of the parameter that failed validation.
+</p>
+<pre>
   # Get message for parameters that failed validation
-  my $ name_message = $ validation-&gt; message ('name');
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; messages &lt;/ b&gt; method to get messages for all parameters that failed validation.
-
-&lt;pre&gt;
+  my $name_message = $validation-&gt; message ('name');
+</pre>
+<p>
+  You can use the <b> messages </b> method to get messages for all parameters that failed validation.
+</p>
+<pre>
   # Get messages for all parameters that failed validation
-  my $ messages = $ validation-&gt; messages;
-&lt;/ pre&gt;
-
-You can use the &lt;b&gt; messages_to_hash &lt;/ b&gt; method to get the names and messages of all parameters that failed validation in hash-reference format.
-
-&lt;pre&gt;
+  my $messages = $validation-&gt; messages;
+</pre>
+<p>
+  You can use the <b> messages_to_hash </b> method to get the names and messages of all parameters that failed validation in hash-reference format.
+</p>
+<pre>
   # Get the names and messages of all failed parameters as a hash reference
-  my $ messages_h = $ validation-&gt; messages_to_hash;
-&lt;/ pre&gt;
-
-Please also refer to &lt;a href="/blog/20151210144988.html"&gt; Validator :: Custom :: Validation &lt;/a&gt;.
-
-&lt;h4&gt; 3 Advanced technology &lt;/ h4&gt;
-
-&lt;b&gt; 1. Addition of check function &lt;/ b&gt;
-
-If you want, you can add the check function yourself using the &lt;b&gt; add_check &lt;/ b&gt; method.
-
-&lt;pre&gt;
-  $ vc-&gt; add_check (
+  my $messages_h = $validation-&gt; messages_to_hash;
+</pre>
+<p>
+  Please also refer to <a href="/blog/20151210144988.html"> Validator::Custom::Validation</a>.
+</p>
+<h4> 3 Advanced technology </h4>
+<p>
+  <b> 1. Addition of check function </b>
+</p>
+<p>
+  If you want, you can add the check function yourself using the <b> add_check </b> method.
+</p>
+<pre>
+  $vc-&gt; add_check (
     telephone =&gt; sub {
-      my ($ vc, $ value, $ arg) = @_;
+      my ($vc, $value, $arg) = @_;
       
-      my $ is_valid;
-      if ($ value = ~ / ^ [\ d-] + $ /) {
-        $ is_valid = 1;
+      my $is_valid;
+      if ($value = ~ / ^ [\ d-] + $/) {
+        $is_valid = 1;
       }
-      return $ is_valid;
+      return $is_valid;
     }
   );
-&lt;/ pre&gt;
-
-The check function takes three arguments. The first argument is the Validator :: Custom object, the second argument is the value to check, and the third argument is the argument to the check function.
-
-The check function must return a true or false value.
-
-&lt;b&gt; 2. Addition of filter function &lt;/ b&gt;
-
-If you want, you can add the filter function yourself using the &lt;b&gt; add_filter &lt;/ b&gt; method.
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (
+</pre>
+<p>
+  The check function takes three arguments. The first argument is the Validator::Custom object, the second argument is the value to check, and the third argument is the argument to the check function.
+</p>
+<p>
+  The check function must return a true or false value.
+</p>
+<p>
+  <b> 2. Addition of filter function </b>
+</p>
+<p>
+  If you want, you can add the filter function yourself using the <b> add_filter </b> method.
+</p>
+<pre>
+  $vc-&gt; add_filter (
     to_upper_case =&gt; sub {
-      my ($ vc, $ value, $ arg) = @_;
+      my ($vc, $value, $arg) = @_;
       
-      my $ new_ $ value = uc $ value;
+      my $new_ $value = uc $value;
                   
-      return $ new_value;
+      return $new_value;
     }
   );
-&lt;/ pre&gt;
-
-The filter function takes three arguments. The first argument is the Validator :: Custom object, the second argument is the value for filtering, and the third argument is the argument to the filter function.
-
-The filter function should return the result of the filter.
-
-&lt;h3&gt; Check function &lt;/ h3&gt;
-
-Validator :: Custom has the following default check functions: All check functions can be called using the &lt;b&gt; check &lt;/ b&gt; method.
-
-&lt;h4&gt; int &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ value = 19;
-  my $ is_valid = $ vc-&gt; check ($ value,'int');
-&lt;/ pre&gt;
-
-Check if it is an integer value.
-
-Example of correct value
-
-&lt;pre&gt;
+</pre>
+<p>
+  The filter function takes three arguments. The first argument is the Validator::Custom object, the second argument is the value for filtering, and the third argument is the argument to the filter function.
+</p>
+<p>
+  The filter function should return the result of the filter.
+</p>
+<h3> Check function </h3>
+<p>
+  Validator::Custom has the following default check functions: All check functions can be called using the <b> check </b> method.
+</p>
+<h4> int </h4>
+<pre>
+  my $value = 19;
+  my $is_valid = $vc-&gt; check ($value,'int');
+</pre>
+<p>
+  Check if it is an integer value.
+</p>
+<p>
+  Example of correct value
+</p>
+<pre>
   "-Ten"
   "234"
-&lt;/ pre&gt;
-
-Illegal value example
-
-&lt;pre&gt;
+</pre>
+<p>
+  Illegal value example
+</p>
+<pre>
   "10.11"
   "abc"
-&lt;/ pre&gt;
-
-If you also want to check the range of values, you can write:
-
-&lt;pre&gt;
-  my $ is_valid = $ vc-&gt; check ($ value,'int') &amp;&amp; $ value&gt; 0;
-&lt;/ pre&gt;
-
-&lt;h4&gt; number &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ is_valid = $ vc-&gt; check ($ value,'number');
-&lt;/ pre&gt;
-
-Checks if the value is a number. Numbers mean integers and decimals.
-
-Example of correct value:
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you also want to check the range of values, you can write:
+</p>
+<pre>
+  my $is_valid = $vc-&gt; check ($value,'int') &amp;&amp; $value&gt; 0;
+</pre>
+<h4> number </h4>
+<pre>
+  my $is_valid = $vc-&gt; check ($value,'number');
+</pre>
+<p>
+  Checks if the value is a number. Numbers mean integers and decimals.
+</p>
+<p>
+  Example of correct value:
+</p>
+<pre>
   '1'
   'one two Three'
   '123.456'
   '-1'
   '-100'
   '-100.789'
-&lt;/ pre&gt;
-
-Illegal value example:
-
-&lt;pre&gt;
+</pre>
+<p>
+  Illegal value example:
+</p>
+<pre>
   'a';
   '1.a';
   'a.1';
-&lt;/ pre&gt;
-
-You can also use the &lt;b&gt; decimal_part_max &lt;/ b&gt; option to specify the maximum number of decimal places.
-
-&lt;pre&gt;
-  my $ is_valid = $ vc-&gt; check ($ value,'number', {decimal_part_max =&gt; 3});
-&lt;/ pre&gt;
-
-Example of correct value:
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also use the <b> decimal_part_max </b> option to specify the maximum number of decimal places.
+</p>
+<pre>
+  my $is_valid = $vc-&gt; check ($value,'number', {decimal_part_max =&gt; 3});
+</pre>
+<p>
+  Example of correct value:
+</p>
+<pre>
   'one two Three'
   '123.456'
   '-100.789'
-&lt;/ pre&gt;
-
-Illegal value example:
-
-&lt;pre&gt;
+</pre>
+<p>
+  Illegal value example:
+</p>
+<pre>
   '12 3.4567'
   '-100.7891'
-&lt;/ pre&gt;
-
-&lt;h4&gt; ascii_graphic &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ is_valid = $ vc-&gt; check ($ value,'ascii');
-&lt;/ pre&gt;
-
-Check if the value is an ASCII graphic character (hexadecimal "21-7e"). Generally, it is used to check the characters of the password.
-
-Example of correct value:
-
-&lt;pre&gt;
+</pre>
+<h4> ascii_graphic </h4>
+<pre>
+  my $is_valid = $vc-&gt; check ($value,'ascii');
+</pre>
+<p>
+  Check if the value is an ASCII graphic character (hexadecimal "21-7e"). Generally, it is used to check the characters of the password.
+</p>
+<p>
+  Example of correct value:
+</p>
+<pre>
   "Ken! @-"
-&lt;/ pre&gt;
-
-Illegal value example:
-
-&lt;pre&gt;
+</pre>
+<p>
+  Illegal value example:
+</p>
+<pre>
   "aa aa"
-  "\ taaa"
-&lt;/ pre&gt;
-
-&lt;h4&gt; in &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ value = '001';
-  my $ is_valid = $ vc-&gt; check ($ value,'in', ['001', '002', '003']);
-&lt;/ pre&gt;
-
-Checks if the value is one of several given values.
-
-Example of correct value:
-
-&lt;pre&gt;
+  "\taaa"
+</pre>
+<h4> in </h4>
+<pre>
+  my $value = '001';
+  my $is_valid = $vc-&gt; check ($value,'in', ['001', '002', '003']);
+</pre>
+<p>
+  Checks if the value is one of several given values.
+</p>
+<p>
+  Example of correct value:
+</p>
+<pre>
   '001'
   '002'
   '003'
-&lt;/ pre&gt;
-
-Illegal value example:
-
-&lt;pre&gt;
+</pre>
+<p>
+  Illegal value example:
+</p>
+<pre>
   '004'
   '005'
-&lt;/ pre&gt;
-
-&lt;h3&gt; Filter function &lt;/ h3&gt;
-
-Validator :: Custom has the following default filter functions: All filter functions are y C &lt;filter&gt; method.
-
-&lt;h4&gt; trim &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ new_value = $ vc-&gt; filter ($ value,'trim');
-&lt;/ pre&gt;
-
-Remove the leading and trailing blanks. Note that it removes Unicode whitespace as well as ASCII whitespace [\ t \ n \ r \ f].
-
-Filtering example:
-
-&lt;pre&gt;
+</pre>
+<h3> Filter function </h3>
+<p>
+  Validator::Custom has the following default filter functions: All filter functions are y C <filter> method.
+</p>
+<h4> trim </h4>
+<pre>
+  my $new_value = $vc-&gt; filter ($value,'trim');
+</pre>
+<p>
+  Remove the leading and trailing blanks. Note that it removes Unicode whitespace as well as ASCII whitespace [\t\n\r\f].
+</p>
+<p>
+  Filtering example:
+</p>
+<pre>
   Input:'Ken'
   Output:'Ken'
-&lt;/ pre&gt;
-
-&lt;h4&gt; remove_blank &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ new_values ​​= $ vc-&gt; filter ($ values,'remove_blank');
-&lt;/ pre&gt;
-
-Removes empty and undefined characters from the array reference.
-
-Filtering example:
-
-&lt;pre&gt;
+</pre>
+<h4> remove_blank </h4>
+<pre>
+  my $new_values ​​= $vc-&gt; filter ($values,'remove_blank');
+</pre>
+<p>
+  Removes empty and undefined characters from the array reference.
+</p>
+<p>
+  Filtering example:
+</p>
+<pre>
   Input: [1, 2,'', undef, 4]
   Output: [1, 2, 4]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Method &lt;/ h3&gt;
-
-Validator :: Custom inherits all the methods of &lt;a href="http://search.cpan.org/dist/Object-Simple/lib/Object/Simple.pm"&gt; Object :: Simple &lt;/a&gt; And implements the following new methods:
-
-&lt;h4&gt; new &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ vc = Validator :: Custom-&gt; new;
-&lt;/ pre&gt;
-
-Create a new Validator :: Custom object.
-
-&lt;h4&gt; add_check &lt;/ h4&gt;
-
-&lt;pre&gt;
-  $ vc-&gt; add_check (int =&gt; sub {...});
-&lt;/ pre&gt;
-
-Add a check function.
-
-sample:
-
-&lt;pre&gt;
-  $ vc-&gt; add_check (
+</pre>
+<h3> Method </h3>
+<p>
+  Validator::Custom inherits all the methods of <a href="http://search.cpan.org/dist/Object-Simple/lib/Object/Simple.pm"> Object::Simple</a> And implements the following new methods:
+</p>
+<h4> new </h4>
+<pre>
+  my $vc = Validator::Custom-&gt; new;
+</pre>
+<p>
+  Create a new Validator::Custom object.
+</p>
+<h4> add_check </h4>
+<pre>
+  $vc-&gt; add_check (int =&gt; sub {...});
+</pre>
+<p>
+  Add a check function.
+</p>
+<p>
+  sample:
+</p>
+<pre>
+  $vc-&gt; add_check (
     int =&gt; sub {
-      my ($ vc, $ value, $ arg) = @_;
+      my ($vc, $value, $arg) = @_;
       
-      my $ is_valid = $ value = ~ / ^ \-? [\ D] + $ /;
+      my $is_valid = $value = ~ / ^ \-? [\ D] + $/;
       
-      return $ is_valid;
+      return $is_valid;
     }
   );
-&lt;/ pre&gt;
-
-The check function takes three arguments. The first argument is the Validator :: Custom object, the second argument is the value to check, and the third argument is the argument to the check function. The check function must return a true or false value.
-
-&lt;h4&gt; add_filter &lt;/ h4&gt;
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim =&gt; sub {...});
-&lt;/ pre&gt;
-
-Add a filter function.
-
-sample:
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (
+</pre>
+<p>
+  The check function takes three arguments. The first argument is the Validator::Custom object, the second argument is the value to check, and the third argument is the argument to the check function. The check function must return a true or false value.
+</p>
+<h4> add_filter </h4>
+<pre>
+  $vc-&gt; add_filter (trim =&gt; sub {...});
+</pre>
+<p>
+  Add a filter function.
+</p>
+<p>
+  sample:
+</p>
+<pre>
+  $vc-&gt; add_filter (
     trim =&gt; sub {
-      my ($ vc, $ value, $ arg) = @_;
+      my ($vc, $value, $arg) = @_;
       
-      $ value = ~ s / ^ \ s + //;
-      $ value = ~ s / \ s + $ //;
+      $value = ~ s / ^ \ s + //;
+      $value = ~ s / \ s + $//;
       
-      return $ value;
+      return $value;
     }
   );
-&lt;/ pre&gt;
-
-The filter function takes three arguments. The first argument is the Validator :: Custom object, the second argument is the value for filtering, and the third argument is the argument to the filter function.
-
-The filter function should return the result of the filter.
-
-&lt;h4&gt; check &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ is_valid = $ vc-&gt; check ($ value,'int');
-  my $ is_valid = $ vc-&gt; check ($ value,'int', $ arg);
-&lt;/ pre&gt;
-
-Execute the check function.
-
-The first argument is the value to check. The second argument is the name of the check function. The third argument is the argument of the check function.
-
-&lt;h4&gt; check_each &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ is_valid = $ vc-&gt; check_each ($ values,'int');
-  my $ is_valid = $ vc-&gt; check_each ($ values,'int', $ arg);
-&lt;/ pre&gt;
-
-Executes the check function on all elements of the array reference. If one or more values ​​are invalid, the &lt;b&gt; check_each &lt;/ b&gt; method returns a fake value.
-
-The first argument is the value to check. This should be an array reference. The second argument is the name of the check function. The third argument is the argument of the check function.
-
-&lt;h4&gt; filter &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ new_value = $ vc-&gt; filter ($ value,'trim');
-  my $ new_value = $ vc-&gt; filter ($ value,'trim', $ arg);
-&lt;/ pre&gt;
-
-Execute the filter function.
-
-The first argument is the value to filter. The second argument is the name of the filter function. The third argument is the argument of the filter function.
-
-&lt;h4&gt; filter_each &lt;/ h4&gt;
-
-&lt;pre&gt;
-  my $ new_values ​​= $ vc-&gt; filter_each ($ values,'trim');
-  my $ new_values ​​= $ vc-&gt; filter_each ($ values,'trim', $ arg);
-&lt;/ pre&gt;
-
-Executes the filter function on all elements of the array reference.
-
-The first argument is the value to filter. This should be an array reference. The second argument is the name of the filter function. The third argument is the argument of the filter function.
-
-&lt;h4&gt; Sample &lt;/ h4&gt;
-
-Here are some samples for validation.
-
-Password check:
-
-&lt;pre&gt;
-  my $ password ='abc';
-  my $ password2 ='abc';
+</pre>
+<p>
+  The filter function takes three arguments. The first argument is the Validator::Custom object, the second argument is the value for filtering, and the third argument is the argument to the filter function.
+</p>
+<p>
+  The filter function should return the result of the filter.
+</p>
+<h4> check </h4>
+<pre>
+  my $is_valid = $vc-&gt; check ($value,'int');
+  my $is_valid = $vc-&gt; check ($value,'int', $arg);
+</pre>
+<p>
+  Execute the check function.
+</p>
+<p>
+  The first argument is the value to check. The second argument is the name of the check function. The third argument is the argument of the check function.
+</p>
+<h4> check_each </h4>
+<pre>
+  my $is_valid = $vc-&gt; check_each($values,'int');
+  my $is_valid = $vc-&gt; check_each($values,'int', $arg);
+</pre>
+<p>
+  Executes the check function on all elements of the array reference. If one or more values ​​are invalid, the <b> check_each </b> method returns a fake value.
+</p>
+<p>
+  The first argument is the value to check. This should be an array reference. The second argument is the name of the check function. The third argument is the argument of the check function.
+</p>
+<h4> filter </h4>
+<pre>
+  my $new_value = $vc-&gt; filter ($value,'trim');
+  my $new_value = $vc-&gt; filter ($value,'trim', $arg);
+</pre>
+<p>
+  Execute the filter function.
+</p>
+<p>
+  The first argument is the value to filter. The second argument is the name of the filter function. The third argument is the argument of the filter function.
+</p>
+<h4> filter_each </h4>
+<pre>
+  my $new_values ​​= $vc-&gt; filter_each($values,'trim');
+  my $new_values ​​= $vc-&gt; filter_each($values,'trim', $arg);
+</pre>
+<p>
+  Executes the filter function on all elements of the array reference.
+</p>
+<p>
+  The first argument is the value to filter. This should be an array reference. The second argument is the name of the filter function. The third argument is the argument of the filter function.
+</p>
+<h4> Sample </h4>
+<p>
+  Here are some samples for validation.
+</p>
+<p>
+  Password check:
+</p>
+<pre>
+  my $password ='abc';
+  my $password2 ='abc';
   
-  my $ validation = $ vc-&gt; validation;
+  my $validation = $vc-&gt; validation;
   
-  if (! length $ password) {
-    $ validation-&gt; add_failed (password =&gt;'password must have length');
+  if (! length $password) {
+    $validation-&gt; add_failed (password =&gt;'password must have length');
   }
-  elsif (! $ vc-&gt; check ($ password,'ascii')) {
-    $ validation-&gt; add_failed (password =&gt;'password contains invalid characters');
+  elsif (! $vc-&gt; check ($password,'ascii')) {
+    $validation-&gt; add_failed (password =&gt;'password contains invalid characters');
   }
-  elsif ($ password ne $ password2) {
-    $ validation-&gt; add_failed (password =&gt; "two passwords don't match");
+  elsif ($password ne $password2) {
+    $validation-&gt; add_failed (password =&gt; "two passwords don't match");
   }
   
-  if ($ validation-&gt; is_valid) {
+  if ($validation-&gt; is_valid) {
     # ...
   }
   else {
     # ...
   }
-&lt;/ pre&gt;
+</pre>
+<p>
+  At least one check box is selected. Specific value.
+</p>
+<pre>
+  my $favorite = ['001', '002'];
 
-At least one check box is selected. Specific value.
-
-&lt;pre&gt;
-  my $ favorite = ['001', '002'];
-
-  my $ validation = $ vc-&gt; validation;
+  my $validation = $vc-&gt; validation;
   
-  if (@ $ favorite == 0) {
+  if (@ $favorite == 0) {
 
-    $ validation-&gt; add_failed (favorite =&gt;'favorite must be selected at least 1');
+    $validation-&gt; add_failed (favorite =&gt;'favorite must be selected at least 1');
   }
-  elsif (! $ V c-&gt; check ($ favorite,'in', ['001', '002', '003'])) {
-    $ validation-&gt; add_failed (favorite =&gt;'favorite have invalid value');
+  elsif (! $V c-&gt; check ($favorite,'in', ['001', '002', '003'])) {
+    $validation-&gt; add_failed (favorite =&gt;'favorite have invalid value');
   }
   
-  if ($ validation-&gt; is_valid) {
+  if ($validation-&gt; is_valid) {
     # ...
   }
   else {
     # ...
   }
-&lt;/ pre&gt;
-
-Convert date string to Time :: Piece object:
-
-&lt;pre&gt;
-  my $ date = '2014/05/16';
+</pre>
+<p>
+  Convert date string to Time::Piece object:
+</p>
+<pre>
+  my $date = '2014/05/16';
   
-  my $ validation = $ vc-&gt; validation;
+  my $validation = $vc-&gt; validation;
   
-  my $ date_tp;
-  if (! length $ datetime) {
-    $ validation-&gt; add_failed (date =&gt;'date must have length');
+  my $date_tp;
+  if (! length $datetime) {
+    $validation-&gt; add_failed (date =&gt;'date must have length');
   }
   else {
-    eval {$ date_tp = Time :: Piece-&gt; strptime ($ date,'% Y /% m /% d')};
-    if (! $ date_tp) {
-      $ validation-&gt; add_failed (date =&gt;'date value is invalid');
+    eval {$date_tp = Time::Piece-&gt; strptime($date,'% Y /% m /% d')};
+    if (! $date_tp) {
+      $validation-&gt; add_failed (date =&gt;'date value is invalid');
     }
   }
-&lt;/ pre&gt;
-
-Convert datetime string to Time :: Piece object:
-
-&lt;pre&gt;
-  my $ datetime = '2014/05/16 12:30:40';
+</pre>
+<p>
+  Convert datetime string to Time::Piece object:
+</p>
+<pre>
+  my $datetime = '2014/05/16 12:30:40';
   
-  my $ validation = $ vc-&gt; validation;
+  my $validation = $vc-&gt; validation;
   
-  my $ datetime_tp;
-  if (! length $ datetime) {
-    $ validation-&gt; add_failed (datetime =&gt;'datetime must have length');
+  my $datetime_tp;
+  if (! length $datetime) {
+    $validation-&gt; add_failed (datetime =&gt;'datetime must have length');
   }
   else {
-    eval {$ datetime_tp = Time :: Piece-&gt; strptime ($ datetime,'% Y /% m /% d% H:% M:% S')};
-    if (! $ Datetime_tp) {
-      $ validation-&gt; add_failed (datetime =&gt;'datetime value is invalid');
+    eval {$datetime_tp = Time::Piece-&gt; strptime($datetime,'% Y /% m /% d% H:% M:% S')};
+    if (! $Datetime_tp) {
+      $validation-&gt; add_failed (datetime =&gt;'datetime value is invalid');
     }
   }
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt;
-
-&lt;h3&gt; FAQ &lt;/ h3&gt;
-
-&lt;h4&gt; I'm still using the 0.xx version of Validator :: Custom. I would like to see the documentation. &lt;/ h4&gt;
-
-&lt;a href="http://search.cpan.org/~kimoto/Validator-Custom/lib/Validator/Custom/Document/Version0.pod"&gt; Validator :: Custom :: Document :: Version0 &lt;/a&gt; please look. This is the complete documentation for "Validator :: Custom 0.xx".
-
-&lt;h4&gt; What should I be aware of in version 1.xx? &lt;/ h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    The &lt;b&gt; in_array &lt;/ b&gt; constraint function has been renamed to the &lt;b&gt; in &lt;/ b&gt; check function.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    The &lt;b&gt; trim &lt;/ b&gt; filter function now removes unicode strings as well as [\ t \ n \ r \ f].
-  &lt;/ li&gt;
-  &lt;li&gt;
-    The &lt;b&gt; decimal &lt;/ b&gt; constraint function has been renamed to the &lt;b&gt; number &lt;/ b&gt; check function for simplification.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    The &lt;b&gt; date_to_timepiece &lt;/ b&gt; constraint function no longer exists. For an alternative method, see "Converting a Date String to a Time :: Piece Object" in the Samples.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    The &lt;b&gt; datetime_to_timepiece &lt;/ b&gt; constraint function no longer exists. For an alternative method, see "Converting Date-Time Strings to Time :: Piece Objects" in the Samples.
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; How do I create a check function that corresponds to a version 0.xx constraint function? &lt;/ H4&gt;
-
-I will show you some samples.
-
-space
-
-&lt;pre&gt;
-  $ vc-&gt; add_check (space =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
-    return defined $ value &amp;&amp; $ value = ~'^ [\ t \ n \ r \ f] * $'? 1: 0;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100312126967.html"> eval</a>
+</p>
+<h3> FAQ </h3>
+<h4> I'm still using the 0.xx version of Validator::Custom. I would like to see the documentation. </h4>
+<p>
+  <a href="http://search.cpan.org/~kimoto/Validator-Custom/lib/Validator/Custom/Document/Version0.pod"> Validator::Custom::Document::Version0</a> please look. This is the complete documentation for "Validator::Custom 0.xx".
+</p>
+<h4> What should I be aware of in version 1.xx? </h4>
+<ul>
+  <li>
+    The <b> in_array </b> constraint function has been renamed to the <b> in </b> check function.
+  </li>
+  <li>
+    The <b> trim </b> filter function now removes unicode strings as well as [\t\n\r\f].
+  </li>
+  <li>
+    The <b> decimal </b> constraint function has been renamed to the <b> number </b> check function for simplification.
+  </li>
+  <li>
+    The <b> date_to_timepiece </b> constraint function no longer exists. For an alternative method, see "Converting a Date String to a Time::Piece Object" in the Samples.
+  </li>
+  <li>
+    The <b> datetime_to_timepiece </b> constraint function no longer exists. For an alternative method, see "Converting Date-Time Strings to Time::Piece Objects" in the Samples.
+  </li>
+</ul>
+<h4> How do I create a check function that corresponds to a version 0.xx constraint function? </H4>
+<p>
+  I will show you some samples.
+</p>
+<p>
+  space
+</p>
+<pre>
+  $vc-&gt; add_check (space =&gt; sub {
+    my ($vc, $value, $arg) = @_;
+    return defined $value &amp;&amp; $value = ~'^ [\t\n\r\f] * $'? 1: 0;
   });
-&lt;/ pre&gt;
-
-http_url
-
-&lt;pre&gt;
-  $ vc-&gt; add_check (http_url =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
-    return defined $ value &amp;&amp; $ value = ~ / ^ s? https ?: \ / \ / [-_.! ~ *'() A-zA-Z0-9; \ /?: ​​\ @ &amp; = + \ $, % #] + $ /? 1: 0;
+</pre>
+<p>
+  http_url
+</p>
+<pre>
+  $vc-&gt; add_check (http_url =&gt; sub {
+    my ($vc, $value, $arg) = @_;
+    return defined $value &amp;&amp; $value = ~ / ^ s? https ?: \ / \ / [-_.! ~ *'() A-zA-Z0-9; \ /?: ​​\ @ &amp; = + \ $, % # ] + $/? 1: 0;
   });
-&lt;/ pre&gt;
+</pre>
+<p>
+  decimal
+</p>
+<pre>
+  $vc-&gt; add_check (decimal =&gt; sub {
+    my ($vc, $value, $arg) = @_;
 
-decimal
-
-&lt;pre&gt;
-  $ vc-&gt; add_check (decimal =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
-
-    return undef unless defined $ value;
+    return undef unless defined $value;
     
-    my $ digits_tmp = $ arg;
+    my $digits_tmp = $arg;
     
-    #Digit
-    my $ digits;
-    if (defined $ digits_tmp) {
-      if (ref $ digits_tmp eq'ARRAY') {
-        $ digits = $ digits_tmp;
+    # Digit
+    my $digits;
+    if (defined $digits_tmp) {
+      if (ref $digits_tmp eq'ARRAY') {
+        $digits = $digits_tmp;
       }
       else {
-        $ digits = [$ digits_tmp, undef];
+        $digits = [$digits_tmp, undef];
       }
     }
     else {
-      $ digits = [undef, undef];
+      $digits = [undef, undef];
     }
     
     # Regex
-    my $ re;
-    if (defined $ digits-&gt; [0] &amp;&amp; defined $ digits-&gt; [1]) {
-      $ re = qr / ^ [0-9] {1, $ digits-&gt; [0]} (\. [0-9] {0, $ digits-&gt; [1]})? $ /;
+    my $re;
+    if (defined $digits-&gt; [0] &amp;&amp; defined $digits-&gt; [1]) {
+      $re = qr / ^ [0-9] {1, $digits-&gt; [0]} (\. [0-9] {0, $digits-&gt; [1]})? $/;
     }
-    elsif (defined $ digits-&gt; [0]) {
-      $ re = qr / ^ [0-9] {1, $ digits-&gt; [0]} (\. [0-9] *)? $ /;
+    elsif (defined $digits-&gt; [0]) {
+      $re = qr / ^ [0-9] {1, $digits-&gt; [0]} (\. [0-9] *)? $/;
     }
-    elsif (defined $ digits-&gt; [1]) {
-      $ re = qr / ^ [0-9] + (\. [0-9] {0, $ digits-&gt; [1]})? $ /;
+    elsif (defined $digits-&gt; [1]) {
+      $re = qr / ^ [0-9] + (\. [0-9] {0, $digits-&gt; [1]})? $/;
     }
     else {
-      $ re = qr / ^ [0-9] + (\. [0-9] *)? $ /;
+      $re = qr / ^ [0-9] + (\. [0-9] *)? $/;
     }
     
-    #Check value
-    if ($ value = ~ / $ re /) {
+    # Check value
+    if ($value = ~ / $re /) {
       return 1;
     }
     else {
       return 0;
     }
   }
-&lt;/ pre&gt;
-
-&lt;h4&gt; How do I create a filter function that corresponds to the version 0.xx constraint function? &lt;/ H4&gt;
-
-I will show you some samples.
-
-trim_collapse
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_collapse =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
+</pre>
+<h4> How do I create a filter function that corresponds to the version 0.xx constraint function? </H4>
+<p>
+  I will show you some samples.
+</p>
+<p>
+  trim_collapse
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_collapse =&gt; sub {
+    my ($vc, $value, $arg) = @_;
     
-    return undef unless defined $ value;
+    return undef unless defined $value;
     
-    $ value = ~ s / [\ t \ n \ r \ f] + / / g;
-    $ value= ~ s / ^ [\ t \ n \ r \ f] * (. *?) [\ T \ n \ r \ f] * $ / $ 1 / ms;
+    $value = ~ s / [\t\n\r\f] + / / g;
+    $value= ~ s / ^ [\t\n\r\f] * (. *?) [\t\n\r\f] * $/ $1 / ms;
 
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
-
-trim_lead
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_lead =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
+</pre>
+<p>
+  trim_lead
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_lead =&gt; sub {
+    my ($vc, $value, $arg) = @_;
     
-    return undef unless defined $ value;
+    return undef unless defined $value;
 
-    $ value = ~ s / ^ [\ t \ n \ r \ f] + (. *) $ / $ 1 / ms;
+    $value = ~ s / ^ [\t\n\r\f] + (. *) $/ $1 / ms;
 
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
-
-trim_trail
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_trail =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
+</pre>
+<p>
+  trim_trail
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_trail =&gt; sub {
+    my ($vc, $value, $arg) = @_;
     
-    return undef unless defined $ value;
+    return undef unless defined $value;
 
-    $ value = ~ s / ^ (. *?) [\ T \ n \ r \ f] + $ / $ 1 / ms;
+    $value = ~ s / ^ (. *?) [\t\n\r\f] + $/ $1 / ms;
 
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
-
-trim_uni
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_uni =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
+</pre>
+<p>
+  trim_uni
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_uni =&gt; sub {
+    my ($vc, $value, $arg) = @_;
     
-    return undef unless defined $ value;
+    return undef unless defined $value;
 
-    $ value = ~ s / ^ \ s * (. *?) \ S * $ / $ 1 / ms;
+    $value = ~ s / ^ \ s * (. *?) \ S * $/ $1 / ms;
 
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
+</pre>
+<p>
+  trim_uni_collapse
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_uni_collapse =&gt; sub {
+    my ($vc, $value, $arg) = @_;
 
-trim_uni_collapse
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_uni_collapse =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
-
-    return undef unless defined $ value;
+    return undef unless defined $value;
     
-    $ value = ~ s / \ s + / / g;
-    $ value = ~ s / ^ \ s * (. *?) \ S * $ / $ 1 / ms;
+    $value = ~ s / \ s + / / g;
+    $value = ~ s / ^ \ s * (. *?) \ S * $/ $1 / ms;
 
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
-
-trim_uni_lead
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_uni_lead =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
+</pre>
+<p>
+  trim_uni_lead
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_uni_lead =&gt; sub {
+    my ($vc, $value, $arg) = @_;
     
-    return undef unless defined $ value;
+    return undef unless defined $value;
     
-    $ value = ~ s / ^ \ s + (. *) $ / $ 1 / ms;
+    $value = ~ s / ^ \ s + (. *) $/ $1 / ms;
     
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
-
-trim_uni_trail
-
-&lt;pre&gt;
-  $ vc-&gt; add_filter (trim_uni_trail =&gt; sub {
-    my ($ vc, $ value, $ arg) = @_;
+</pre>
+<p>
+  trim_uni_trail
+</p>
+<pre>
+  $vc-&gt; add_filter (trim_uni_trail =&gt; sub {
+    my ($vc, $value, $arg) = @_;
     
-    return undef unless defined $ value;
+    return undef unless defined $value;
 
-    $ value = ~ s / ^ (. *?) \ S + $ / $ 1 / ms;
+    $value = ~ s / ^ (. *?) \ S + $/ $1 / ms;
 
-    return $ value;
+    return $value;
   });
-&lt;/ pre&gt;
-
-&lt;h3&gt; Author &lt;/ h3&gt;
-
-Yuki Kimoto (kimoto.yuki@gmail.com)
-
-[http://github.com/yuki-kimoto/Validator-Custom]
-
-&lt;h3&gt; Validator :: Custom check function sample &lt;/ h3&gt;
-
-Here are some sample check functions such as "Hiragana", "Katakana", and email address check.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20101019127859.html"&gt; Validator :: Custom check function sample &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Documentation for Validator :: Custom 1.0 and earlier &lt;/ h3&gt;
-
-Documentation for Validator :: Custom 1.0 and earlier can be found here.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20120110132619.html"&gt; Validator :: Custom 1.0 and earlier documentation &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Check function sample &lt;/ h3&gt;
-
-Here are some sample check functions for validation in Validator :: Custom.
-
-&lt;h4&gt; Hiragana and Katakana &lt;/ h4&gt;
-
-To determine that it is &lt;strong&gt; Hiragana &lt;/ strong&gt; and &lt;/ strong&gt; Katakana &lt;/ strong&gt;, register the following constraint function.
-
-&lt;pre&gt;
+</pre>
+<h3> Author </h3>
+<p>
+  Yuki Kimoto (kimoto.yuki@gmail.com)
+</p>
+<p>
+  [http://github.com/yuki-kimoto/Validator-Custom]
+</p>
+<h3> Validator::Custom check function sample </h3>
+<p>
+  Here are some sample check functions such as "Hiragana", "Katakana", and email address check.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20101019127859.html"> Validator::Custom check function sample</a>
+  </li>
+</ul>
+<h3> Documentation for Validator::Custom 1.0 and earlier </h3>
+<p>
+  Documentation for Validator::Custom 1.0 and earlier can be found here.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20120110132619.html"> Validator::Custom 1.0 and earlier documentation</a>
+  </li>
+</ul>
+<h3> Check function sample </h3>
+<p>
+  Here are some sample check functions for validation in Validator::Custom.
+</p>
+<h4> Hiragana and Katakana </h4>
+<p>
+  To determine that it is <strong> Hiragana </strong> and </strong> Katakana </strong>, register the following constraint function.
+</p>
+<pre>
 # Hiragana
-$ vc-&gt; add_check (
+$vc-&gt; add_check (
   hiragana =&gt; sub {
-    my ($ vc, $ value) = @_;
-    my $ is_valid = $ value = ~ / ^ \ p {InHiragana} + $ /;
-    return $ is_valid;
+    my ($vc, $value) = @_;
+    my $is_valid = $value = ~ / ^ \ p {InHiragana} + $/;
+    return $is_valid;
   }
 );
 
 # Katakana
-$ vc-&gt; add_check (
+$vc-&gt; add_check (
   katakana =&gt; sub {
-    my ($ vc, $ value) = @_;
-    my $ is_valid = $ value = ~ / ^ \ p {InKatakana} + $ /
-    return $ is_valid;
+    my ($vc, $value) = @_;
+    my $is_valid = $value = ~ / ^ \ p {InKatakana} + $/
+    return $is_valid;
   }
 );
-&lt;/ pre&gt;
+</pre>
+<h4> Email validation </h4>
+<p>
+  Email validation is not provided as a default check function. If necessary, it is recommended to install Email::Valid::Loose and then register and use the check function.
+</p>
+<pre>
+use Email::Valid::Loose;
 
-&lt;h4&gt; Email validation &lt;/ h4&gt;
-
-Email validation is not provided as a default check function. If necessary, it is recommended to install Email :: Valid :: Loose and then register and use the check function.
-
-&lt;pre&gt;
-use Email :: Valid :: Loose;
-
-$ vc-&gt; add_check (
+$vc-&gt; add_check (
   email =&gt; sub {
-    my ($ vc, $ value) = @_;
-    return Email :: Valid :: Loose-&gt; address ($ value);
+    my ($vc, $value) = @_;
+    return Email::Valid::Loose-&gt; address ($value);
   }
 );
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

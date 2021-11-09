@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Determine if the string represents an integer  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To determine if  string  represents an integer,  regular expression  > Is used. Determines if a regular expression is made up of numbers from start to finish.">
+<meta name="description" content="To determine if  string represents an integer,  regular expression > Is used. Determines if a regular expression is made up of numbers from start to finish.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Determine if the string represents an integer  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To determine if  string  represents an integer,  regular expression  > Is used. Determines if a regular expression is made up of numbers from start to finish." />
+<meta name="twitter:description" content="To determine if  string represents an integer,  regular expression > Is used. Determines if a regular expression is made up of numbers from start to finish." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161026147748.html">
-      <span itemprop = "name"> Numerical value </ span> </a>
+      <span itemprop = "name"> Numerical value </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080831122025.html"> Determine if the string represents an integer </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080831122025.html"> Determine if the string represents an integer </a></h2>
 <p>
-  To determine if <a href="/blog/20161003147558.html"> string </a> represents an integer, <a href="/blog/20100827127859.html"> regular expression </a> > Is used. Determines if a regular expression is made up of numbers from start to finish.
+  To determine if <a href="/blog/20161003147558.html"> string</a> represents an integer, <a href="/blog/20100827127859.html"> regular expression</a> > Is used. Determines if a regular expression is made up of numbers from start to finish.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,41 +98,40 @@
 
 
 <pre>
-/ ^ [0-9] + $ /
-&lt;/ pre&gt;
-
-To determine if it's an integer, just add to the regular expression above that it doesn't matter if it's prefixed with + or-.
-
-&lt;pre&gt;
-/ ^ [+-]? [0-9] + $ /
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample to judge whether a variable is a numerical value.
-
-&lt;pre&gt;
+/ ^ [0-9] + $/
+</pre>
+<p>
+  To determine if it's an integer, just add to the regular expression above that it doesn't matter if it's prefixed with + or-.
+</p>
+<pre>
+/ ^ [+-]? [0-9] + $/
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample to judge whether a variable is a numerical value.
+</p>
+<pre>
 use strict;
 use warnings;
 
-print "1: Determine if the string represents the correct number \ n";
+print "1: Determine if the string represents the correct number\n";
 
-my $ num1 = "345";
+my $num1 = "345";
 # Determining if the string is only numbers
 # Read "One or more numbers continue from the beginning to the end"
-if ($ num1 = ~ / ^ [0-9] + $ /) {
-  print "$ num1 is a string of numbers only. \ N";
+if ($num1 = ~ / ^ [0-9] + $/) {
+  print "$num1 is a string of numbers only.\n";
 }
 
 # Judgment whether it is an integer
-my $ num2 = "-123";
+my $num2 = "-123";
 
 # "With or without + or-at the beginning, after that
-#One or more numbers follow to the end "
-if ($ num2 = ~ / ^ [+-]? [0-9] + $ /) {
-  print "$ num2 is an integer. \ N";
+# One or more numbers follow to the end "
+if ($num2 = ~ / ^ [+-]? [0-9] + $/) {
+  print "$num2 is an integer.\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> for statement --Repeat using element number  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use  for  to iterate over  element numbers . Other iterative syntax is  while statement  and foreach statement, but for is used when the element number of the array is required.">
+<title> for statement - Repeat using element number  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use  for  to iterate over  element numbers . Other iterative syntax is  while statement and foreach statement, but for is used when the element number of the array is required.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" for statement --Repeat using element number  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use  for  to iterate over  element numbers . Other iterative syntax is  while statement  and foreach statement, but for is used when the element number of the array is required." />
+<meta name="twitter:title" content=" for statement - Repeat using element number  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use  for  to iterate over  element numbers . Other iterative syntax is  while statement and foreach statement, but for is used when the element number of the array is required." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> for statement </ span>
+      <span itemprop = "name"> for statement </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080327120662.html"> for statement --Repeat using element number </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080327120662.html"> for statement - Repeat using element number </a></h2>
 <p>
-  Use <strong> for </ strong> to iterate over <strong> element numbers </ strong>. Other iterative syntax is <a href="/blog/20100123126425.html"> while statement </a> and foreach statement, but for is used when the element number of the array is required.
+  Use <strong> for </strong> to iterate over <strong> element numbers </strong>. Other iterative syntax is <a href="/blog/20100123126425.html"> while statement</a> and foreach statement, but for is used when the element number of the array is required.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -102,65 +102,64 @@
 for (Initialize counter variable; Condition; Update counter variable) {
   ...
 }
-&lt;/ pre&gt;
-
-The repetition using the for statement is explained in detail below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170521149524.html"&gt; Let's learn the iterative processing using for statement and while statement &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample that outputs the elements of the array in order.
-
-&lt;pre&gt;
-#Process array elements in sequence
+</pre>
+<p>
+  The repetition using the for statement is explained in detail below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170521149524.html"> Let's learn the iterative processing using for statement and while statement</a>
+  </li>
+</ul>
+<h3> Sample </h3>
+<p>
+  This is a sample that outputs the elements of the array in order.
+</p>
+<pre>
+# Process array elements in sequence
 my @nums = (3, 4, 5);
-for (my $ i = 0; $ i &lt;@nums; $ i ++) {
-  print "$ i:". $ Nums [$ i]. "\ n";
+for (my $i = 0; $i &lt;@nums; $i++) {
+  print "$i:". $Nums [$i]. "\n";
 }
-&lt;/ pre&gt;
-
-This is a sample that outputs the elements of an array in order when the data structure is an array reference.
-
-&lt;pre&gt;
-#Process array elements in sequence (array reference)
-my $ nums = [3, 4, 5];
-for (my $ i = 0; $ i &lt;@ $ nums; $ i ++) {
-  print "$ i:". $ Nums-&gt; [$ i]. "\ n";
+</pre>
+<p>
+  This is a sample that outputs the elements of an array in order when the data structure is an array reference.
+</p>
+<pre>
+# Process array elements in sequence (array reference)
+my $nums = [3, 4, 5];
+for (my $i = 0; $i &lt;@ $nums; $i++) {
+  print "$i:". $Nums-&gt; [$i]. "\n";
 }
-&lt;/ pre&gt;
-
-This is a sample that outputs all the elements of a two-dimensional array in order. In Perl, 2D arrays must be created using references.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is a sample that outputs all the elements of a two-dimensional array in order. In Perl, 2D arrays must be created using references.
+</p>
+<pre>
 # Output all elements of 2D array
-my $ data = [
+my $data = [
   ['a', 1],
   ['b', 2]
 ];;
 
-for (my $ i = 0; $ i &lt;@ $ data; $ i ++) {
-  for (my $ k = 0; $ k &lt;@ {$ data-&gt; [$ i]}; $ k ++) {
-    print "($ i, $ k):". $ Data-&gt; [$ i]-&gt; [$ k]. "\ n";
+for (my $i = 0; $i &lt;@ $data; $i++) {
+  for (my $k = 0; $k &lt;@ {$data-&gt; [$i]}; $k ++) {
+    print "($i, $k):". $Data-&gt; [$i]-&gt; [$k]. "\n";
   }
 }
-&lt;/ pre&gt;
-
-This is a sample that outputs the values ​​contained in the two-dimensional array, separated by tabs for each line.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is a sample that outputs the values ​​contained in the two-dimensional array, separated by tabs for each line.
+</p>
+<pre>
 # Output 2D array line by row, separated by tabs
-my $ data = [
+my $data = [
   ['a', 1],
   ['b', 2]
 ];;
 
-for (my $ i = 0; $ i &lt;@ $ data; $ i ++) {
-  print join ("\ t", @ {$ data-&gt; [$ i]}). "\ n";
+for (my $i = 0; $i &lt;@ $data; $i++) {
+  print join("\t", @ {$data-&gt; [$i]}). "\n";
 }
 
 Here are some samples of the for statement.
@@ -169,24 +168,25 @@ Here are some samples of the for statement.
 use strict;
 use warnings;
 
-print "[1] \ n";
-for (my $ i = 0; $ i &lt;5; $ i ++) {
-  # Add 1 at a time, and when $ val reaches 5, exit the loop.
-  print "$ i \ n";
+print "[1]\n";
+for (my $i = 0; $i &lt;5; $i++) {
+  # Add 1 at a time, and when $val reaches 5, exit the loop.
+  print "$i\n";
 }
-print "\ n";
+print "\n";
 
-print "[2] \ n";
+print "[2]\n";
 my @chars = qw / a b c d e /;
-for (my $ i = 0; $ i &lt;@chars; $ i ++) {
-  # @chars (array size) is 5, so when $ index becomes 5, it exits the loop.
-  print "$ chars [$ i] \ n";
+for (my $i = 0; $i &lt;@chars; $i++) {
+  # @chars (array size) is 5, so when $index becomes 5, it exits the loop.
+  print "$chars [$i]\n";
 }
-print "\ n";
-&lt;/ pre&gt;
-
-Execution result
-&lt;pre&gt;
+print "\n";
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 [1]
 0
 1
@@ -200,7 +200,7 @@ b b
 c
 d
 e
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

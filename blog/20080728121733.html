@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </ span> </a>
+      <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080728121733.html"> Read a CSV file and convert it to an array of arrays </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080728121733.html"> Read a CSV file and convert it to an array of arrays </a></h2>
 <p>
   This is a sample that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.
 </p>
@@ -97,88 +97,84 @@
 
 
 <p>
-  CSV etc. including line breaks etc. cannot be processed correctly by the following programs. If you want to process CSV correctly, <a href="https://perldoc.jp/docs/modules/Text-CSV_XS-0.23/Text-CSV_XS-0.23.pod"> Text :: CSV_XS </a> or There is <a href="https://perlzemi.com/blog/20110627131112.html"> Text :: CSV :: Encoded </a>. Text :: CSV :: Encoded is a wrapper module of Text :: CSV or Text :: CSV_XS and can handle Japanese easily.
+  CSV etc. including line breaks etc. cannot be processed correctly by the following programs. If you want to process CSV correctly, <a href="https://perldoc.jp/docs/modules/Text-CSV_XS-0.23/Text-CSV_XS-0.23.pod"> Text::CSV_XS</a> or There is <a href="https://perlzemi.com/blog/20110627131112.html"> Text::CSV::Encoded</a>. Text::CSV::Encoded is a wrapper module of Text::CSV or Text::CSV_XS and can handle Japanese easily.
 </p>
 <pre>
 use strict;
 use warnings;
 
-#Argument processing
-my $ file = shift;
+# Argument processing
+my $file = shift;
 
-unless ($ file) {
+unless ($file) {
   # If there is no argument, indicate the usage and end.
-  die "Usage: $ 0 file";
+  die "Usage: $0 file";
 }
 
 # Parse the file and convert the csv format data to an array of arrays.
-my @recs = parse_file ($ file);
+my @recs = parse_file ($file);
 
-#Output (because it is a two-dimensional array, follow it with for)
-for my $ items (@recs) {
-  Output by connecting with #comma.
-  print join (',', @ $ items). "\ n";
+# Output (because it is a two-dimensional array, follow it with for)
+for my $items (@recs) {
+  Output by connecting with # comma.
+  print join(',', @ $items). "\n";
 }
 
-#Function for file analysis (I just write it back this time ...)
+# Function for file analysis (I just write it back this time ...)
 sub parse_file {
-  my $ file = shift;
+  my $file = shift;
     
-  open (my $ fh, "&lt;", $ file)
-    or die "Cannot open $ file for read: $!";
+  open(my $fh, "&lt;", $file)
+    or die "Cannot open $file for read: $!";
   
   # Prepare a reference to an array that stores multiple records
-  my $ recs = [];
-  while (my $ line = &lt;$ fh&gt;) {
-    chomp $ line; # Remove line breaks
+  my $recs = [];
+  while (my $line = &lt;$fh&gt;) {
+    chomp $line; # Remove line breaks
     
-    #Prepare a reference to the array that stores the data
-    #Separate rows with commas and store in array
-    #split returns an array, so
-    Dereference with # @ $ items
+    # Prepare a reference to the array that stores the data
+    # Separate rows with commas and store in array
+    # split returns an array, so
+    Dereference with # @ $items
 
-    my $ items = [];
-    @ $ items = split (/, /, $ line);
+    my $items = [];
+    @ $items = split(/, /, $line);
 
-    The first argument of the #push function is an array, so @ $ recs
+    The first argument of the # push function is an array, so @ $recs
     # And dereference.
-    push @ $ recs, $ items;
+    push @ $recs, $items;
   }
-  close $ fh;
-  return $ recs;
+  close $fh;
+  return $recs;
 }
-&lt;/ pre&gt;
-
-Below is a sample of csv data. Create a CSV file, give it to the first argument of the script, and execute it.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Below is a sample of csv data. Create a CSV file, give it to the first argument of the script, and execute it.
+</p>
+<pre>
 masao, 10, Japan
 taro, 20, USA
 rika, 38, France
-&lt;/ pre&gt;
-
-&lt;h3&gt; Code explanation &lt;/ h3&gt;
-
-&lt;h4&gt; (1) Processing when the file name is not given in the first argument &lt;/ h4&gt;
-
-&lt;pre&gt;
-unless ($ file) {
+</pre>
+<h3> Code explanation </h3>
+<h4> (1) Processing when the file name is not given in the first argument </h4>
+<pre>
+unless ($file) {
   # If there is no argument, indicate the usage and end.
-  die "Usage: $ 0 file";
+  die "Usage: $0 file";
 }
-&lt;/ pre&gt;
-
-Check the arguments as much as possible. If there is no file name in the first argument, indicate the usage and exit. $ 0 is the name of the script running in the special variable.
-
-&lt;h4&gt; (2) Read the file and convert the csv format text to an array of arrays &lt;/ h4&gt;
-
-&lt;pre&gt;
-my @recs = parse_file ($ file);
-&lt;/ pre&gt;
-
-parse_file is a self-made subroutine. Read the file and convert the csv format text to an array of arrays. The input and output images are as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Check the arguments as much as possible. If there is no file name in the first argument, indicate the usage and exit. $0 is the name of the script running in the special variable.
+</p>
+<h4> (2) Read the file and convert the csv format text to an array of arrays </h4>
+<pre>
+my @recs = parse_file ($file);
+</pre>
+<p>
+  parse_file is a self-made subroutine. Read the file and convert the csv format text to an array of arrays. The input and output images are as follows.
+</p>
+<pre>
 masao, 10, Japan
 taro, 20, USA
 rika, 38, France
@@ -190,161 +186,149 @@ rika, 38, France
     ['taro', 20,'USA'],
     ['rika', 38,'France'],
 )
-&lt;/ pre&gt;
-
-&lt;h4&gt; (3) Output in csv format &lt;/ h4&gt;
-
-&lt;pre&gt;
-for my $ items (@recs) {
-  Output by connecting with #comma.
-  print join (',', @ $ items). "\ n";
+</pre>
+<h4> (3) Output in csv format </h4>
+<pre>
+for my $items (@recs) {
+  Output by connecting with # comma.
+  print join(',', @ $items). "\n";
 }
-&lt;/ pre&gt;
-
-To output, repeat the foreach statement for the number of records contained in @recs. Each record is concatenated with a comma with &lt;a href="/blog/20081007122338.html"&gt; join function &lt;/a&gt; and output. Add a line break at the end.
-
-&lt;h4&gt; (4) Explanation of the function that reads a file and converts csv format text into an array of arrays &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  To output, repeat the foreach statement for the number of records contained in @recs. Each record is concatenated with a comma with <a href="/blog/20081007122338.html"> join function</a> and output. Add a line break at the end.
+</p>
+<h4> (4) Explanation of the function that reads a file and converts csv format text into an array of arrays </h4>
+<pre>
 sub parse_file {
-  my $ file = shift;
+  my $file = shift;
   
-  open (my $ fh, "&lt;", $ file)
-    or die "Cannot open $ file for read: $!";
+  open(my $fh, "&lt;", $file)
+    or die "Cannot open $file for read: $!";
   
   # Prepare a reference to an array that stores multiple records
-  my $ recs = [];
-  while (my $ line = &lt;$ fh&gt;) {
+  my $recs = [];
+  while (my $line = &lt;$fh&gt;) {
     # Remove line breaks
-    chomp $ line;
+    chomp $line;
     
-    #Prepare a reference to the array that stores the data
-    #Separate rows with commas and store in array
-    #split returns an array, so
-    Dereference with # @ $ items
-    my $ items = [];
-    @ $ items = split (/, /, $ line);
+    # Prepare a reference to the array that stores the data
+    # Separate rows with commas and store in array
+    # split returns an array, so
+    Dereference with # @ $items
+    my $items = [];
+    @ $items = split(/, /, $line);
 
-    Since the first argument of the #push function is an array, dereference it with @ $ recs.
-    push @ $ recs, $ items;
+    Since the first argument of the # push function is an array, dereference it with @ $recs.
+    push @ $recs, $items;
   }
-  close $ fh;
-  return $ recs;
+  close $fh;
+  return $recs;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (4) -1 Receive file name as an argument &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ file = shift;
-&lt;/ pre&gt;
-
-Give the file name as an argument to open and close the file in the subroutine.
-
-&lt;h4&gt; (4) -2 Creating an array of arrays to return as a return value &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ recs = []; # Prepare a reference to an array that stores multiple records
-&lt;/ pre&gt;
-
-The final result will be as follows, but first create only the outermost frame.
-
-&lt;pre&gt;
-$ recs = [
+</pre>
+<h4> (4) -1 Receive file name as an argument </h4>
+<pre>
+my $file = shift;
+</pre>
+<p>
+  Give the file name as an argument to open and close the file in the subroutine.
+</p>
+<h4> (4) -2 Creating an array of arrays to return as a return value </h4>
+<pre>
+my $recs = []; # Prepare a reference to an array that stores multiple records
+</pre>
+<p>
+  The final result will be as follows, but first create only the outermost frame.
+</p>
+<pre>
+$recs = [
   ['masao', 10,'Japan'],
   ['taro', 20,'USA'],
   ['rika', 38,'France'],
 ]
-&lt;/ pre&gt;
-
-&lt;h4&gt; (4) -3 Processing in a while loop &lt;/ h4&gt;
-
-I'm using a &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; to create a Perl data structure.
-
-&lt;pre&gt;
-while (my $ line = &lt;$ fh&gt;) {
+</pre>
+<h4> (4) -3 Processing in a while loop </h4>
+<p>
+  I'm using a <a href="/blog/20100123126425.html"> while statement</a> to create a Perl data structure.
+</p>
+<pre>
+while (my $line = &lt;$fh&gt;) {
   # Remove line breaks
-  chomp $ line;
+  chomp $line;
 
-  #Prepare a reference to the array that stores the data
-  my $ items = [];
+  # Prepare a reference to the array that stores the data
+  my $items = [];
 
-  #Separate rows with commas and store in array
-  #split returns an array, so
-  Dereference with # @ $ items
-  @ $ items = split (/, /, $ line);
+  # Separate rows with commas and store in array
+  # split returns an array, so
+  Dereference with # @ $items
+  @ $items = split(/, /, $line);
 
-  Since the first argument of the #push function is an array, dereference it with @ {$ recs}.
-  push @ $ recs, $ items;
+  Since the first argument of the # push function is an array, dereference it with @ {$recs}.
+  push @ $recs, $items;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (4) -3-a Creating a reference to an empty array &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ items = [];
-&lt;/ pre&gt;
-
-At the end of the first while loop, it will be [masao, 10, Japan], but first create only the frame.
-
-&lt;h4&gt; (4) -3-b Comma-separated string split &lt;/ h4&gt;
-
-&lt;pre&gt;
-@ $ items = split (/, /, $ line);
-&lt;/ pre&gt;
-
-The split function returns an array, so to receive it, dereference $ items to @ $ items.
-
-&lt;h4&gt; (4) -3-c Add the created record to the reference to the array &lt;/ h4&gt;
-
-&lt;pre&gt;
-push @ $ recs, $ items;
-&lt;/ pre&gt;
-
-Add $ items to $ recs. When the first while is finished, it will be as follows.
-
-&lt;pre&gt;
-$ recs = [
+</pre>
+<h4> (4) -3-a Creating a reference to an empty array </h4>
+<pre>
+my $items = [];
+</pre>
+<p>
+  At the end of the first while loop, it will be [masao, 10, Japan], but first create only the frame.
+</p>
+<h4> (4) -3-b Comma-separated string split </h4>
+<pre>
+@ $items = split(/, /, $line);
+</pre>
+<p>
+  The split function returns an array, so to receive it, dereference $items to @ $items.
+</p>
+<h4> (4) -3-c Add the created record to the reference to the array </h4>
+<pre>
+push @ $recs, $items;
+</pre>
+<p>
+  Add $items to $recs. When the first while is finished, it will be as follows.
+</p>
+<pre>
+$recs = [
   ['masao', 10,'Japan'],
 ]
-&lt;/ pre&gt;
-
-The first argument of push receives an array and dereferences it.
-
-&lt;h3&gt; Rewrote the subroutine after being pointed out by kits &lt;/ h3&gt;
-
-&lt;pre&gt;
-Put the data in my @recs rather than push @ $ recs
+</pre>
+<p>
+  The first argument of push receives an array and dereferences it.
+</p>
+<h3> Rewrote the subroutine after being pointed out by kits </h3>
+<pre>
+Put the data in my @recs rather than push @ $recs
 It's like returning @recs or \ @recs at the end.
 (I feel that the effort of dereference is wasted)
-&lt;/ pre&gt;
-
-The following is a rewritten subroutine. As kits said, this one is much cleaner. Thank you very much.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The following is a rewritten subroutine. As kits said, this one is much cleaner. Thank you very much.
+</p>
+<pre>
 sub parse_file {
-  my $ file = shift;
+  my $file = shift;
     
-  open (my $ fh, "&lt;", $ file)
-    or die "Cannot open $ file for read: $!";
+  open(my $fh, "&lt;", $file)
+    or die "Cannot open $file for read: $!";
     
   # Change to array
   my @recs;
-  while (my $ line = &lt;$ fh&gt;) {
+  while (my $line = &lt;$fh&gt;) {
     # Remove line breaks
-chomp $ line;
+chomp $line;
       
      # Change to array
      my @items;
-     @items = split (/, /, $ line);
+     @items = split(/, /, $line);
 
-     Create a reference with [] when #pushing.
+     Create a reference with [] when # pushing.
      push @recs, [@items];
    }
-   close $ fh;
+   close $fh;
    return \ @recs;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> CPAN --Module installation from CPAN  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  CPAN  module to install the module from  CPAN . CPAN is a collection of modules that you can use for free. The CPAN module is supposed to be used from the command line, and you can use various functions from the cpan command.">
+<title> CPAN - Module installation from CPAN  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  CPAN  module to install the module from  CPAN. CPAN is a collection of modules that you can use for free. The CPAN module is supposed to be used from the command line, and you can use various functions from the cpan command.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" CPAN --Module installation from CPAN  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  CPAN  module to install the module from  CPAN . CPAN is a collection of modules that you can use for free. The CPAN module is supposed to be used from the command line, and you can use various functions from the cpan command." />
+<meta name="twitter:title" content=" CPAN - Module installation from CPAN  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  CPAN  module to install the module from  CPAN. CPAN is a collection of modules that you can use for free. The CPAN module is supposed to be used from the command line, and you can use various functions from the cpan command." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100504127089.html"> CPAN --Module installation from CPAN </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100504127089.html"> CPAN - Module installation from CPAN </a></h2>
 <p>
-  You can use the <strong> CPAN </ strong> module to install the module from <a href="http://search.cpan.org/"> CPAN </a>. CPAN is a collection of modules that you can use for free. The CPAN module is supposed to be used from the command line, and you can use various functions from the cpan command.
+  You can use the <strong> CPAN </strong> module to install the module from <a href="http://search.cpan.org/"> CPAN</a>. CPAN is a collection of modules that you can use for free. The CPAN module is supposed to be used from the command line, and you can use various functions from the cpan command.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,46 +100,48 @@
   You can install the module by running the cpan command on the command line.
 </p>
 <pre>
-#Install module
+# Install module
 cpan module name
-&lt;/ pre&gt;
-
-There is also a feature called the cpan shell that allows you to install interactively. If you don't specify any arguments to the cpan command, the cpan shell will start. (You may get a YAML error in ActivePerl, but the solution is &lt;a href="/blog/20110520130853.html"&gt; here &lt;/a&gt;.)
-
-&lt;pre&gt;
+</pre>
+<p>
+  There is also a feature called the cpan shell that allows you to install interactively. If you don't specify any arguments to the cpan command, the cpan shell will start. (You may get a YAML error in ActivePerl, but the solution is <a href="/blog/20110520130853.html"> here</a>.)
+</p>
+<pre>
 # cpan shell launch
 cpan
 
 # Module installation (cpan shell)
 install module name
-&lt;/ pre&gt;
-
-Use the exit command to exit the cpan shell.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the exit command to exit the cpan shell.
+</p>
+<pre>
 # Exit cpan shell (cpan shell)
 exit
-&lt;/ pre&gt;
-
-If you're new to running cpan, you'll need to configure cpan the first time you start it. You may be surprised to hear about a lot of settings, but let's press Enter to proceed with the default settings. You can also change the settings later.
-
-Recent cpan sets everything automatically, but if it's a bit older, there are some items that need to be set manually.
-
-This item determines from which mirror site to install. CPAN has mirror sites around the world, so choose the closest mirror site.
-
-&lt;pre&gt;
-#CPAN Mirror Selection
+</pre>
+<p>
+  If you're new to running cpan, you'll need to configure cpan the first time you start it. You may be surprised to hear about a lot of settings, but let's press Enter to proceed with the default settings. You can also change the settings later.
+</p>
+<p>
+  Recent cpan sets everything automatically, but if it's a bit older, there are some items that need to be set manually.
+</p>
+<p>
+  This item determines from which mirror site to install. CPAN has mirror sites around the world, so choose the closest mirror site.
+</p>
+<pre>
+# CPAN Mirror Selection
 
 First, pick a nearby continent and country (you can pick several of
 each, separated by spaces, or none if you just want to keep your
 existing selections). Then, you will be presented with a list of URLs
 of CPAN mirrors in the countries you selected, along with previously
 selected URLs. Select some of those URLs, or just keep the old list.
-Finally, you will be prompted for any extra URLs --file :, ftp :, or
-http: --that host a CPAN mirror.
+Finally, you will be prompted for any extra URLs - file :, ftp :, or
+http: - that host a CPAN mirror.
 
 (1) Africa
-(2) Asia &lt;--------- Select this
+(2) Asia &lt;- -- -- - Select this
 (3) Australasia
 (4) Central America
 (5) Europe
@@ -151,7 +153,7 @@ Select your continent (or several nearby continents) [] 2
 (2) Hong Kong
 (3) Indonesia
 (4) Israel
-(5) Japan &lt;---------- Select this
+(5) Japan &lt;- -- -- -- Select this
 (6) Saudi-Arabia
 (7) Singapore
 (8) South Korea
@@ -163,30 +165,30 @@ Select your country (or several nearby countries) [] 5
 (2) ftp://ftp.jaist.ac.jp/pub/lang/perl/CPAN/
 (3) ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/
 (4) ftp://ftp.meisei-u.ac.jp/pub/CPAN/
-(5) ftp://ftp.ring.gr.jp/pub/lang/perl/CPAN/ &lt;----- Any one is fine, but 5 is selected this time.
+(5) ftp://ftp.ring.gr.jp/pub/lang/perl/CPAN/ &lt;- --- Any one is fine, but 5 is selected this time.
 (6) ftp://mirror.nucba.ac.jp/mirror/Perl/
 
 Select as many URLs as you like [] 5
-&lt;/ pre&gt;
-
-If you want to reconfigure cpan, use the "o conf init" command in the cpan shell.
-&lt;pre&gt;
-#Reconfigure (cpan shell)
+</pre>
+<p>
+  If you want to reconfigure cpan, use the "o conf init" command in the cpan shell.
+</p>
+<pre>
+# Reconfigure (cpan shell)
 o conf init
-&lt;/ pre&gt;
-
-&lt;h3&gt; Change cpan settings &lt;/ h3&gt;
-
-To change the cpan settings, start the cpan shell and then use the "o conf" command. Type "o conf" to see all settings.
-
-&lt;pre&gt;
+</pre>
+<h3> Change cpan settings </h3>
+<p>
+  To change the cpan settings, start the cpan shell and then use the "o conf" command. Type "o conf" to see all settings.
+</p>
+<pre>
 # See all settings (cpan shell)
 o conf
-&lt;/ pre&gt;
-
-A list of settings is displayed as shown below.
-
-&lt;pre&gt;
+</pre>
+<p>
+  A list of settings is displayed as shown below.
+</p>
+<pre>
 List of # cpan settings
     applypatch []
     auto_commit [0]
@@ -200,25 +202,25 @@ List of # cpan settings
     wget [/ usr / bin / wget]
     yaml_load_code [0]
     yaml_module [YAML]
-&lt;/ pre&gt;
-
-The setting items can be changed.
-
-&lt;pre&gt;
-#Change settings (cpan shell)
+</pre>
+<p>
+  The setting items can be changed.
+</p>
+<pre>
+# Change settings (cpan shell)
 o conf build_cache 200
-&lt;/ pre&gt;
-
-The items you set are valid only while the cpan shell is running. You need to do a commit to save your settings.
-
-&lt;pre&gt;
-#Save settings (cpan shell)
+</pre>
+<p>
+  The items you set are valid only while the cpan shell is running. You need to do a commit to save your settings.
+</p>
+<pre>
+# Save settings (cpan shell)
 o conf commit
-&lt;/ pre&gt;
-
-If the setting item is a list, you can also use the unshift, push, pop, and shift commands.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the setting item is a list, you can also use the unshift, push, pop, and shift commands.
+</p>
+<pre>
 # Add to the beginning
 o conf urllist unshift http://cpan.dev.local/CPAN
 
@@ -230,78 +232,107 @@ o conf urllist pop
 
 # Delete the beginning
 o conf urllist shift
-&lt;/ pre&gt;
-
-&lt;h3&gt; If the CPAN module installation fails &lt;/ h3&gt;
-
-Installation of CPAN modules often fails. It's difficult to pinpoint the cause of this, but here are some possible situations.
-
-1. The CPAN mirror is down
--&gt; Add an available CPAN mirror to the beginning of the urllist
-
-2. The module is huge, so there is not enough space to reserve for building the module.
--&gt; Try increasing the value of build_cache to about 100M
-
-3. The module only assumes a Unix environment. Alternatively, it includes tests that fail on Windows.
--&gt; If you think it's just because the test is failing, you can try a forced installation, but it's a good idea to report it.
-
-4. XS is included but cannot be installed because there is no gcc compiler.
--&gt; If the gcc package is Linux, install gcc with yum or apt-get, if it is Windows, MinGW is packed if it is 5.10.1 or later ActivePerl, and there is a gcc environment.
-
-5. You are in an environment where you can only use the Internet with a proxy connection.
--&gt; In the case of a corporate network, you may not be able to connect to the Internet via a proxy server. In that case, you can set a proxy. You need to find out the domain name and port number of the proxy. Twice
-
-&lt;pre&gt;
+</pre>
+<h3> If the CPAN module installation fails </h3>
+<p>
+  Installation of CPAN modules often fails. It's difficult to pinpoint the cause of this, but here are some possible situations.
+</p>
+<p>
+  1. The CPAN mirror is down
+</p>
+<p>
+  -> Add an available CPAN mirror to the beginning of the urllist
+</p>
+<p>
+  2. The module is huge, so there is not enough space to reserve for building the module.
+</p>
+<p>
+  -> Try increasing the value of build_cache to about 100M
+</p>
+<p>
+  3. The module only assumes a Unix environment. Alternatively, it includes tests that fail on Windows.
+</p>
+<p>
+  -> If you think it's just because the test is failing, you can try a forced installation, but it's a good idea to report it.
+</p>
+<p>
+  4. XS is included but cannot be installed because there is no gcc compiler.
+</p>
+<p>
+  -> If the gcc package is Linux, install gcc with yum or apt-get, if it is Windows, MinGW is packed if it is 5.10.1 or later ActivePerl, and there is a gcc environment.
+</p>
+<p>
+  5. You are in an environment where you can only use the Internet with a proxy connection.
+</p>
+<p>
+  -> In the case of a corporate network, you may not be able to connect to the Internet via a proxy server. In that case, you can set a proxy. You need to find out the domain name and port number of the proxy. Twice
+</p>
+<pre>
 # Proxy settings
 o conf http_proxy ftp_proxy = http: //proxy.you.com: 8000 /
 o conf ftp_proxy http_proxy = http: //proxy.you.com: 8000 /
-&lt;/ pre&gt;
-
-Also, even though only HTTP connection is allowed to the outside, if the urllist contains the ftp URL, the connection will fail. Include one of the URLs below at the beginning of your urllist.
-
-&lt;pre&gt;
-#When installing with HTTP connection
+</pre>
+<p>
+  Also, even though only HTTP connection is allowed to the outside, if the urllist contains the ftp URL, the connection will fail. Include one of the URLs below at the beginning of your urllist.
+</p>
+<pre>
+# When installing with HTTP connection
 http://ftp.nara.wide.ad.jp/pub/CPAN/
 http://ftp.jaist.ac.jp/pub/CPAN/
 http://ftp.riken.jp/lang/CPAN/
 http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/
-&lt;/ pre&gt;
-
-6. The module depends on another (non-Perl) library
--&gt; For example XML :: LibXML depends on a library called libxml2. If that library is not installed, CPAN installation will fail. You need to install the package containing libxml2 with commands such as yum and apt-get.
-
-&lt;h3&gt; FAQ about CPAN modules &lt;/ h3&gt;
-
-Q. Can I automatically answer yes when installing dependent modules?
-A. Yes. I can do it. prerequisites_polic from cpan shellSet y to follow.
-
-&lt;pre&gt;
+</pre>
+<p>
+  6. The module depends on another (non-Perl) library
+</p>
+<p>
+  -> For example XML::LibXML depends on a library called libxml2. If that library is not installed, CPAN installation will fail. You need to install the package containing libxml2 with commands such as yum and apt-get.
+</p>
+<h3> FAQ about CPAN modules </h3>
+<p>
+  Q. Can I automatically answer yes when installing dependent modules?
+</p>
+<p>
+  A. Yes. I can do it. prerequisites_polic from cpan shellSet y to follow.
+</p>
+<pre>
 # Automatically install dependent modules
 o conf prerequisites_policy follow
 o conf commit
-&lt;/ pre&gt;
-
-If ask is specified, it will be confirmed whether to install. If ignore is specified, the dependent modules will not be installed.
-
-Q. Is there a site that has a list of CPAN mirror URLs?
-A. It will be the following site.
-
-&lt;a href="http://www.cpan.org/SITES.html"&gt; CPAN SITES &lt;/a&gt;
-
-Q. Can I use cpan on Windows?
-A. Yes you can. Previously, using cpan on Windows required a command called nmake instead of the make command. Currently, if ActivePerl is 5.10.1 or later, a development tool called MinGW is packed. It includes an alternative to the make command and a C compiler, so cpan is now working well on Windows.
-
-Q. Can I see the module installation history?
-A. The installation history is recorded in a document called perllocal.
-
-&lt;pre&gt;
-#View installation history
+</pre>
+<p>
+  If ask is specified, it will be confirmed whether to install. If ignore is specified, the dependent modules will not be installed.
+</p>
+<p>
+  Q. Is there a site that has a list of CPAN mirror URLs?
+</p>
+<p>
+  A. It will be the following site.
+</p>
+<p>
+  <a href="http://www.cpan.org/SITES.html"> CPAN SITES</a>
+</p>
+<p>
+  Q. Can I use cpan on Windows?
+</p>
+<p>
+  A. Yes you can. Previously, using cpan on Windows required a command called nmake instead of the make command. Currently, if ActivePerl is 5.10.1 or later, a development tool called MinGW is packed. It includes an alternative to the make command and a C compiler, so cpan is now working well on Windows.
+</p>
+<p>
+  Q. Can I see the module installation history?
+</p>
+<p>
+  A. The installation history is recorded in a document called perllocal.
+</p>
+<pre>
+# View installation history
 perldoc perllocal
-&lt;/ pre&gt;
-
-The installation history is displayed as shown below.
-&lt;pre&gt;
-       Tue Jun 8 20:15:01 2010: "Module" Mail :: Address :: MobileJp
+</pre>
+<p>
+  The installation history is displayed as shown below.
+</p>
+<pre>
+       Tue Jun 8 20:15:01 2010: "Module" Mail::Address::MobileJp
 
        -"Installed into: /usr/lib/perl5/site_perl/5.8.8"
 
@@ -311,7 +342,7 @@ The installation history is displayed as shown below.
 
        ・ "EXE_FILES:"
 
-       Tue Jun 8 20:24:46 2010: "Module" Business :: CreditCard
+       Tue Jun 8 20:24:46 2010: "Module" Business::CreditCard
 
        -"Installed into: /usr/lib/perl5/site_perl/5.8.8"
 
@@ -320,50 +351,62 @@ The installation history is displayed as shown below.
        ・ "VERSION: 0.31"
 
        ・ "EXE_FILES:"
-&lt;/ pre&gt;
-
-Q. I just want the name of the list of installed modules.
-A. Use the following script. ExtUtils :: Installed is available.
-
-&lt;pre&gt;
-#List of installed module names
-use ExtUtils :: Installed;
-print join "\ n", ExtUtils :: Installed-&gt; new-&gt; modules;
-&lt;/ pre&gt;
-
-Q. How can I install the modules in a new environment?
-A. Feed cpan the file created above. It's a good idea to combine it with xargs.
-
-&lt;pre&gt;
-#Install all CPAN modules together
+</pre>
+<p>
+  Q. I just want the name of the list of installed modules.
+</p>
+<p>
+  A. Use the following script. ExtUtils::Installed is available.
+</p>
+<pre>
+# List of installed module names
+use ExtUtils::Installed;
+print join "\n", ExtUtils::Installed-&gt; new-&gt; modules;
+</pre>
+<p>
+  Q. How can I install the modules in a new environment?
+</p>
+<p>
+  A. Feed cpan the file created above. It's a good idea to combine it with xargs.
+</p>
+<pre>
+# Install all CPAN modules together
 cat installed.txt | xargs cpan
-&lt;/ pre&gt;
-
-Q. I would like to know the distribution name of the installed module.
-
-A. The distribution name is something like "ADAMK / DBD-SQLite-1.29.tar.gz"
-It has a structure like "author name / module name-version.tar.gz".
-
-You can find this out on "cpan -a".
-
-&lt;pre&gt;
-#View installed modules and distribution names
+</pre>
+<p>
+  Q. I would like to know the distribution name of the installed module.
+</p>
+<p>
+  A. The distribution name is something like "ADAMK / DBD-SQLite-1.29.tar.gz"
+</p>
+<p>
+  It has a structure like "author name / module name-version.tar.gz".
+</p>
+<p>
+  You can find this out on "cpan -a".
+</p>
+<pre>
+# View installed modules and distribution names
 cpan -a
-&lt;/ pre&gt;
-
-But this has a lot of module duplication, so to get rid of the duplication: It will take some time.
-
-&lt;pre&gt;
-cpan -a | awk'{print $ 4;}' | sort -u
-&lt;/ pre&gt;
-
-Q. I don't have root privileges, but I want to use cpan. Can it be installed in the user area?
-
-A. It's a good idea to use a tool called cpanm instead of cpan.
-
-Q. Is there a way to ensure that the CPAN module is deployed in another environment? Certainty is required in practice.
-
-A. It is a good idea to write the required modules in a file called cpanfile and install using cpanm.
+</pre>
+<p>
+  But this has a lot of module duplication, so to get rid of the duplication: It will take some time.
+</p>
+<pre>
+cpan -a | awk'{print $4;}' | sort -u
+</pre>
+<p>
+  Q. I don't have root privileges, but I want to use cpan. Can it be installed in the user area?
+</p>
+<p>
+  A. It's a good idea to use a tool called cpanm instead of cpan.
+</p>
+<p>
+  Q. Is there a way to ensure that the CPAN module is deployed in another environment? Certainty is required in practice.
+</p>
+<p>
+  A. It is a good idea to write the required modules in a file called cpanfile and install using cpanm.
+</p>
 
   </div>
   <div class="bottom">

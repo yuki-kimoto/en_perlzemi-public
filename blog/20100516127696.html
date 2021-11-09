@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> MIME :: Base64 --Encode and decode to base64 format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="The  MIME :: Base64  module allows you to encode your data into base64 format.">
+<title> MIME::Base64 - Encode and decode to base64 format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  MIME::Base64  module allows you to encode your data into base64 format.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" MIME :: Base64 --Encode and decode to base64 format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="The  MIME :: Base64  module allows you to encode your data into base64 format." />
+<meta name="twitter:title" content=" MIME::Base64 - Encode and decode to base64 format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  MIME::Base64  module allows you to encode your data into base64 format." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100516127696.html"> MIME :: Base64 --Encode and decode to base64 format </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100516127696.html"> MIME::Base64 - Encode and decode to base64 format </a></h2>
 <p>
-  The <strong> MIME :: Base64 </ strong> module allows you to encode your data into base64 format.
+  The <strong> MIME::Base64 </strong> module allows you to encode your data into base64 format.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,28 +97,30 @@
 
 
 <pre>
-#Loading modules and importing functions
-use MIME :: Base64 qw / encode_base64 decode_base64 /;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; encode_base64 &lt;/ strong&gt; function to encode to base64 format.
-
-&lt;pre&gt;
+# Loading modules and importing functions
+use MIME::Base64 qw / encode_base64 decode_base64 /;
+</pre>
+<p>
+  Use the <strong> encode_base64 </strong> function to encode to base64 format.
+</p>
+<pre>
 Encode to # base64 format
-my $ b64_data = encode_base64 $ data;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; decode_base64 &lt;/ strong&gt; function to decode base64 format data.
-
-&lt;pre&gt;
+my $b64_data = encode_base64 $data;
+</pre>
+<p>
+  Use the <strong> decode_base64 </strong> function to decode base64 format data.
+</p>
+<pre>
 Decode # base64 format data
-my $ data = decode_base64 $ b64_data;
-&lt;/ pre&gt;
-
-&lt;h3&gt; FAQ about MIME :: Base64 module &lt;/ h3&gt;
-
-Q. What is the base64 format in a nutshell?
-A. This is a data format that uses only 64 alphanumeric characters. From a usage point of view, it is used to convert binary data and multi-byte character strings to alphanumeric characters only. For example, e-mail cannot exchange data other than 7-bit character strings. In such a case, convert binary data such as attachments to base64 format.
+my $data = decode_base64 $b64_data;
+</pre>
+<h3> FAQ about MIME::Base64 module </h3>
+<p>
+  Q. What is the base64 format in a nutshell?
+</p>
+<p>
+  A. This is a data format that uses only 64 alphanumeric characters. From a usage point of view, it is used to convert binary data and multi-byte character strings to alphanumeric characters only. For example, e-mail cannot exchange data other than 7-bit character strings. In such a case, convert binary data such as attachments to base64 format.
+</p>
 
   </div>
   <div class="bottom">

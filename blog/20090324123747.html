@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Class inheritance </ span>
+      <span itemprop = "name"> Class inheritance </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090324123747.html"> Inherit class </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090324123747.html"> Inherit class </a></h2>
 <p>
   This time, I will explain how to inherit other classes.
 </p>
@@ -97,7 +97,7 @@
 </div>
 
 
-<h3> Inherit other classes </ h3>
+<h3> Inherit other classes </h3>
 <p>
   Try inheriting another class. There is something I want you to be careful about. Classes are usually created on a file-by-file basis. If you name the package Componet, save the file containing only that package as Component.pm.
 </p>
@@ -107,7 +107,7 @@
 <p>
   Consider an example of a Button class that inherits a class called Component that has methods x and y.
 </p>
-<h3> Inheritance using @ISA </ h3>
+<h3> Inheritance using @ISA </h3>
 <p>
   How does Perl inheritance work? Let's run the following sample to illustrate it.
 </p>
@@ -115,12 +115,12 @@
 use strict;
 use warnings;
 
-#Component class
+# Component class
 package Component;
 sub x {return 5}
 
 
-#Button class
+# Button class
 package Button;
 # Inheritance
 our @ISA = ('Component');
@@ -128,28 +128,31 @@ our @ISA = ('Component');
 sub new {bless {},'Button'}
 
 package main;
-Use the #button class.
-my $ button = Button-&gt; new;
-print $ button-&gt; x;
-&lt;/ pre&gt;
-
-If you try running this script, you'll see that it says 5. The important thing is that the Button class doesn't have a method called x, but you can call a method called x.
-
-You can do this because the Component class has a method called x, and the Button class inherits from the Component class.
-
-&lt;pre&gt;
+Use the # button class.
+my $button = Button-&gt; new;
+print $button-&gt; x;
+</pre>
+<p>
+  If you try running this script, you'll see that it says 5. The important thing is that the Button class doesn't have a method called x, but you can call a method called x.
+</p>
+<p>
+  You can do this because the Component class has a method called x, and the Button class inherits from the Component class.
+</p>
+<pre>
 our @ISA = ('Component');
-&lt;/ pre&gt;
-
-Please pay attention to the part. This is the part that inherits. To inherit, just assign the name of the class you want to inherit to the package variable @ISA.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Please pay attention to the part. This is the part that inherits. To inherit, just assign the name of the class you want to inherit to the package variable @ISA.
+</p>
+<pre>
 package main
-&lt;/ pre&gt;
-
-You may be worried about that part. This description is not necessary if the class is described separately in a file.
-
-When the script starts, it initially belongs to something called the main package. I do that because it's natural to go back and run the main package when using the Button class.
+</pre>
+<p>
+  You may be worried about that part. This description is not necessary if the class is described separately in a file.
+</p>
+<p>
+  When the script starts, it initially belongs to something called the main package. I do that because it's natural to go back and run the main package when using the Button class.
+</p>
 
   </div>
   <div class="bottom">

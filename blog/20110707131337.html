@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Install DBD :: Oracle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Install DBD::Oracle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="(Confirmed with CentOS5.5, CentOS5.7)">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Install DBD :: Oracle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Install DBD::Oracle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="(Confirmed with CentOS5.5, CentOS5.7)" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20170130148603.html">
-      <span itemprop = "name"> database </ span> </a>
+      <span itemprop = "name"> database </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20110707131337.html"> Install DBD :: Oracle </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20110707131337.html"> Install DBD::Oracle </a></h2>
 <p>
   (Confirmed with CentOS5.5, CentOS5.7)
 </p>
@@ -97,60 +97,62 @@
 
 
 <p>
-  Note that I installed the Perl module DBD :: Oracle.
+  Note that I installed the Perl module DBD::Oracle.
 </p>
 <p>
-  The following libraries were required to install DBD :: Oracle.
+  The following libraries were required to install DBD::Oracle.
 </p>
 <pre>
 oracle-instantclient11.2-basic-11.2.0.2.0.i386.rpm
 oracle-instantclient11.2-devel-11.2.0.2.0.i386.rpm
 oracle-instantclient11.2-sqlplus-11.2.0.2.0.i386.rpm
-&lt;/ pre&gt;
-
-&lt;a href="http://www.oracle.com/technetwork/jp/topics/linuxsoft-083388-ja.html"&gt; You can download it from the Oracle site &lt;/a&gt;, but user registration is required. ..
-
-Then install these rpm packages.
-
-&lt;pre&gt;
+</pre>
+<p>
+  <a href="http://www.oracle.com/technetwork/jp/topics/linuxsoft-083388-ja.html"> You can download it from the Oracle site</a>, but user registration is required. ..
+</p>
+<p>
+  Then install these rpm packages.
+</p>
+<pre>
 rpm -hiv oracle-instantclient11.2-basic-11.2.0.2.0.i386.rpm
 rpm -hiv oracle-instantclient11.2-devel-11.2.0.2.0.i386.rpm
 rpm -hiv oracle-instantclient11.2-sqlplus-11.2.0.2.0.i386.rpm
-&lt;/ pre&gt;
-
-Next, set the required environment variables.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Next, set the required environment variables.
+</p>
+<pre>
 vi /etc/profile.d/oracle.sh
-&lt;/ pre&gt;
-
-Add the following settings to the above empty file.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Add the following settings to the above empty file.
+</p>
+<pre>
 export ORACLE_HOME ='/usr/lib/oracle/11.2/client'
 export C_INCLUDE_PATH ='/usr/include/oracle/11.2/client'
 export LD_LIBRARY_PATH ='/usr/lib/oracle/11.2/client/lib'
-&lt;/ pre&gt;
-
-Next, set the library.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Next, set the library.
+</p>
+<pre>
 vi /etc/ld.so.conf.d/oracle.conf
-&lt;/ pre&gt;
-
-Add the following items to the above empty file.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Add the following items to the above empty file.
+</p>
+<pre>
 /usr/lib/oracle/112/client/lib
-&lt;/ pre&gt;
-
-In this state, restart the terminal to reflect the environment variables.
-
-All you have to do now is install it with the cpan command.
-
-&lt;pre&gt;
-cpan DBD :: oracle
-&lt;/ pre&gt;
+</pre>
+<p>
+  In this state, restart the terminal to reflect the environment variables.
+</p>
+<p>
+  All you have to do now is install it with the cpan command.
+</p>
+<pre>
+cpan DBD::oracle
+</pre>
 
   </div>
   <div class="bottom">

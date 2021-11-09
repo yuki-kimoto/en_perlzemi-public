@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> gmtime function-gets the current date and time (Coordinated Universal Time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> gmtime function-gets the current date and time(Coordinated Universal Time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  gmtime function  to get the current date and time in Coordinated Universal Time. It's called gmtime, but it's now a function that gets Coordinated Universal Time, not a function that gets Greenwich Mean Time (GMT).">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" gmtime function-gets the current date and time (Coordinated Universal Time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" gmtime function-gets the current date and time(Coordinated Universal Time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  gmtime function  to get the current date and time in Coordinated Universal Time. It's called gmtime, but it's now a function that gets Coordinated Universal Time, not a function that gets Greenwich Mean Time (GMT)." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-        <span itemprop = "name"> standard function </ span> </a>
+        <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-        <span itemprop = "name"> gmtime </ span>
+        <span itemprop = "name"> gmtime </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20081010122376.html"> gmtime function-gets the current date and time (Coordinated Universal Time) </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081010122376.html"> gmtime function-gets the current date and time(Coordinated Universal Time) </a></h2>
 <p>
-  Use the <strong> gmtime function </ strong> to get the current date and time in Coordinated Universal Time. It's called gmtime, but it's now a function that gets Coordinated Universal Time, not a function that gets Greenwich Mean Time (GMT).
+  Use the <strong> gmtime function </strong> to get the current date and time in Coordinated Universal Time. It's called gmtime, but it's now a function that gets Coordinated Universal Time, not a function that gets Greenwich Mean Time (GMT).
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,64 +101,66 @@
 # Seconds Minutes Hours Day Months Years of the week Beginning of the year or daylight saving time
 Apply # et al.
 # Elapsed days
-my ($ sec, $ min, $ hour, $ mday, $ mon, $ year, $ wday, $ yday, $ isdst) = gmtime;
+my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = gmtime;
 
 # Time string
-my $ localtime = gmtime;
-&lt;/ pre&gt;
-
-If you want to get the local time, use &lt;a href="/blog/20081009122357.html"&gt; localtime function &lt;/a&gt;.
-
-If you only need to know the elapsed time since the epoch, use the &lt;a href="/blog/20081008122347.html"&gt; time function &lt;/a&gt;.
-
-&lt;a href="/blog/20091105124627.html"&gt; Time :: Piece &lt;/a&gt; is also recommended if you want to handle the date and time more conveniently.
-
-For general information about dates and times, please refer to the following.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161123147990.html"&gt; Handling dates and times in Perl &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; gmtime function sample &lt;/ h3&gt;
-
-This is a sample of the gmtime function.
-
-&lt;pre&gt;
+my $localtime = gmtime;
+</pre>
+<p>
+  If you want to get the local time, use <a href="/blog/20081009122357.html"> localtime function</a>.
+</p>
+<p>
+  If you only need to know the elapsed time since the epoch, use the <a href="/blog/20081008122347.html"> time function</a>.
+</p>
+<p>
+  <a href="/blog/20091105124627.html"> Time::Piece</a> is also recommended if you want to handle the date and time more conveniently.
+</p>
+<p>
+  For general information about dates and times, please refer to the following.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161123147990.html"> Handling dates and times in Perl</a>
+  </li>
+</ul>
+<h3> gmtime function sample </h3>
+<p>
+  This is a sample of the gmtime function.
+</p>
+<pre>
 use strict;
 use warnings;
 
-print "(1) Get the current date and time (Coordinated Universal Time). \ N";
+print "(1) Get the current date and time(Coordinated Universal Time).\n";
 # Seconds Minutes Hours Day Months Years of the week Beginning of the year or daylight saving time
 Apply # et al.
 # Elapsed days
-my ($ sec, $ min, $ hour, $ mday, $ mon, $ year, $ wday, $ yday, $ isdst) = gmtime;
+my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = gmtime;
 
-The #localtime function returns the year counted from 1900.
-$ year + = 1900;
+The # localtime function returns the year counted from 1900.
+$year + = 1900;
 
-#Month starts from 0, so add 1 to display it.
-$ mon ++;
+# Month starts from 0, so add 1 to display it.
+$mon ++;
 
-#Sunday will be 0.
+# Sunday will be 0.
 my @day_of_week = qw / Sun Mon Tue Wed Thu Fri Sat /;
 
-print "Currently $ year year $ mon month $ mday day $ hour hour $ min minute $ sec second.";
-print "Day of the week". $ Day_of_week [$ wday]. "Day of the week. \ N \ n";
-print "$ yday days have passed counting in one year. \ N \ n";
+print "Currently $year year $mon month $mday day $hour hour $min minute $sec second.";
+print "Day of the week". $Day_of_week [$wday]. "Day of the week.\n\n";
+print "$yday days have passed counting in one year.\n\n";
 
-if ($ isdst) {
-  print "Currently daylight saving time is applied. \ N \ n";
+if ($isdst) {
+  print "Currently daylight saving time is applied.\n\n";
 }
 else {
-  print "Currently daylight saving time does not apply. \ N \ n";
+  print "Currently daylight saving time does not apply.\n\n";
 }
 
-print "(2) Get the current date (Coordinated Universal Time) as a string. \ N";
-my $ date_str = gmtime;
-print $ date_str. "\ n";
-&lt;/ pre&gt;
+print "(2) Get the current date (Coordinated Universal Time) as a string.\n";
+my $date_str = gmtime;
+print $date_str. "\n";
+</pre>
 
   </div>
   <div class="bottom">

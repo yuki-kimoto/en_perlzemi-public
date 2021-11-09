@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> fork function --branch process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> fork function - branch process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  fork  function to  branch a process into two . One forked process is the parent process and the other is the child process.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" fork function --branch process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" fork function - branch process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  fork  function to  branch a process into two . One forked process is the parent process and the other is the child process." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20090413124032.html"> fork function --branch process </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090413124032.html"> fork function - branch process </a></h2>
 <p>
-  You can use the <b> fork </ b> function to <b> branch a process into two </ b>. One forked process is the parent process and the other is the child process.
+  You can use the <b> fork </b> function to <b> branch a process into two </b>. One forked process is the parent process and the other is the child process.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,82 +96,78 @@
 </div>
 
 
-<h3> fork function </ h3>
+<h3> fork function </h3>
 <p>
   The fork function takes no arguments. The return value will be the process ID of the branched child process if the branched process is the parent process. 0 for child processes. If fork fails, undef is returned.
 </p>
 <pre>
-my $ pid = fork;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Consider the return value of fork &lt;/ h3&gt;
-
-For the parent process, for the child process, there are three ways to think about fork failure.
-
-&lt;pre&gt;
-my $ pid = fork;
+my $pid = fork;
+</pre>
+<h3> Consider the return value of fork </h3>
+<p>
+  For the parent process, for the child process, there are three ways to think about fork failure.
+</p>
+<pre>
+my $pid = fork;
 
 If # fork fails
-die "Cannot fork: $!" unless defined $ pid;
+die "Cannot fork: $!" unless defined $pid;
 
-if ($ pid) {
-  # For parent process ($ pid is assigned the process ID of the child process)
+if ($pid) {
+  # For parent process ($pid is assigned the process ID of the child process)
 }
 else {
-  # For child processes 0 is assigned to $ pid
+  # For child processes 0 is assigned to $pid
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; What fork is doing &lt;/ h3&gt;
-
-What fork does is a copy of its process. Since it is a copy of your own process, the variables you were using up to that point can be used by both the parent and child processes. If you make changes to variables after forking, they will only be reflected in each process and will not affect each other.
-
-For interprocess communication, see "&lt;a href="/blog/20161103147817.html"&gt; Performing" interprocess communication "with Perl &lt;/a&gt;".
-
-&lt;h3&gt; How to use fork &lt;/ h3&gt;
-
-&lt;h4&gt; 1. Process in parallel &lt;/ h4&gt;
-
-If you do fork, you can process in parallel. It may be used when the performance cannot be satisfied by single tasking.
-
-&lt;h4&gt; 2. Sharing roles &lt;/ h4&gt;
-
-In some situations, it may be simpler to branch the processes and have each process specialize in it, rather than having one process take care of everything.
-
-&lt;h4&gt; 3. Manage multiple processes &lt;/ h4&gt;
-
-You can use a technique called fork-exec to replace a branched child process with a completely different process. For example, you can replace it with a process called vmstat that looks at CPU and memory usage. Since the parent process knows the process ID of the child process, it can control the child process through controlling the parent process.
-
-&lt;h3&gt; fork sample code &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<h3> What fork is doing </h3>
+<p>
+  What fork does is a copy of its process. Since it is a copy of your own process, the variables you were using up to that point can be used by both the parent and child processes. If you make changes to variables after forking, they will only be reflected in each process and will not affect each other.
+</p>
+<p>
+  For interprocess communication, see "<a href="/blog/20161103147817.html"> Performing" interprocess communication "with Perl</a>".
+</p>
+<h3> How to use fork </h3>
+<h4> 1. Process in parallel </h4>
+<p>
+  If you do fork, you can process in parallel. It may be used when the performance cannot be satisfied by single tasking.
+</p>
+<h4> 2. Sharing roles </h4>
+<p>
+  In some situations, it may be simpler to branch the processes and have each process specialize in it, rather than having one process take care of everything.
+</p>
+<h4> 3. Manage multiple processes </h4>
+<p>
+  You can use a technique called fork-exec to replace a branched child process with a completely different process. For example, you can replace it with a process called vmstat that looks at CPU and memory usage. Since the parent process knows the process ID of the child process, it can control the child process through controlling the parent process.
+</p>
+<h3> fork sample code </h3>
+<pre>
 use strict;
 use warnings;
 
-my $ pid = fork;
+my $pid = fork;
 
-die "Cannot fork: $!" unless defined $ pid;
+die "Cannot fork: $!" unless defined $pid;
 
-if ($ pid) {
-  print "parent process (child process ID: $ pid) \ n";
+if ($pid) {
+  print "parent process (child process ID: $pid)\n";
 }
 else {
-  print "child process \ n";
+  print "child process\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Execution result &lt;/ h3&gt;
-
-You can see that each branch is executing a print statement. (Confirmed by Fedora 7)
-
-&lt;pre&gt;
+</pre>
+<h3> Execution result </h3>
+<p>
+  You can see that each branch is executing a print statement. (Confirmed by Fedora 7)
+</p>
+<pre>
 Parent process (child process ID: 25229)
 Child process
-&lt;/ pre&gt;
-
-&lt;h3&gt; Notes on Windows &lt;/ h3&gt;
-
-The fork function can be executed on Windows, but the fork function on Windows is different from the real fork because it is realized by using threads.
+</pre>
+<h3> Notes on Windows </h3>
+<p>
+  The fork function can be executed on Windows, but the fork function on Windows is different from the real fork because it is realized by using threads.
+</p>
 
   </div>
   <div class="bottom">

@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> srand function-generates reproducible random numbers  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  srand function  to generate reproducible random numbers. Before calling  rand function , give an appropriate number to the srand function.">
+<meta name="description" content="You can use the  srand function  to generate reproducible random numbers. Before calling  rand function, give an appropriate number to the srand function.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" srand function-generates reproducible random numbers  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  srand function  to generate reproducible random numbers. Before calling  rand function , give an appropriate number to the srand function." />
+<meta name="twitter:description" content="You can use the  srand function  to generate reproducible random numbers. Before calling  rand function, give an appropriate number to the srand function." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080908122097.html"> srand function-generates reproducible random numbers </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080908122097.html"> srand function-generates reproducible random numbers </a></h2>
 <p>
-  You can use the <b> srand function </ b> to generate reproducible random numbers. Before calling <a href="/blog/20080906122079.html"> rand function </a>, give an appropriate number to the srand function.
+  You can use the <b> srand function </b> to generate reproducible random numbers. Before calling <a href="/blog/20080906122079.html"> rand function</a>, give an appropriate number to the srand function.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,52 +97,54 @@
 
 
 <pre>
-#Initialize random number generation algorithm
-srand $ seed;
-rand $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; What is random number generation in a computer? &lt;/ H4&gt;
-
-Computers generate random numbers by arithmetic. So this is not a random number. Computers cannot generate a random distribution like humans throw dice.
-
-All a computer can do is create a sequence of numbers using an "algorithm that produces as even a distribution as possible". This algorithm changes the distribution depending on the difference in the initial value. This is called a pseudo-random number.
-
-Changing the distribution depending on the difference in the initial values ​​means that if the initial values ​​are the same, the distribution will not change.
-
-The rand function seems to generate a different sequence of random numbers each time because it is implicitly initialized by the srand function when it is first used. A different initial value is used each time the program is run.
-
-By fixing the initial value given to srand, it is possible to generate reproducible random numbers.
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-&lt;pre&gt;
+# Initialize random number generation algorithm
+srand $seed;
+rand $num;
+</pre>
+<h4> What is random number generation in a computer? </H4>
+<p>
+  Computers generate random numbers by arithmetic. So this is not a random number. Computers cannot generate a random distribution like humans throw dice.
+</p>
+<p>
+  All a computer can do is create a sequence of numbers using an "algorithm that produces as even a distribution as possible". This algorithm changes the distribution depending on the difference in the initial value. This is called a pseudo-random number.
+</p>
+<p>
+  Changing the distribution depending on the difference in the initial values ​​means that if the initial values ​​are the same, the distribution will not change.
+</p>
+<p>
+  The rand function seems to generate a different sequence of random numbers each time because it is implicitly initialized by the srand function when it is first used. A different initial value is used each time the program is run.
+</p>
+<p>
+  By fixing the initial value given to srand, it is possible to generate reproducible random numbers.
+</p>
+<h3> Sample program </h3>
+<pre>
 use strict;
 use warnings;
 
-print "(1) Generate reproducible random numbers. \ N";
-print "Generation of random number sequence (1st time) \ n";
+print "(1) Generate reproducible random numbers.\n";
+print "Generation of random number sequence (1st time)\n";
 
 # Used to initialize random number generation algorithm (seed means seed)
-my $ seed = 12314;
+my $seed = 12314;
 
-#Initialize random number generation algorithm
-srand $ seed;
-for my $ i (1 .. 10) {
-  print "$ i times:". Int (rand 100). "\ n";
+# Initialize random number generation algorithm
+srand $seed;
+for my $i (1 .. 10) {
+  print "$i times:". Int (rand 100). "\n";
 }
-print "\ n";
+print "\n";
 
 
-print "Generate random number sequence (2nd time) \ n";
+print "Generate random number sequence (2nd time)\n";
 
-#Initialize random number generation algorithm
-srand $ seed;
-for my $ i (1 .. 10) {
-  print "$ i times:". Int (rand 100). "\ n";
+# Initialize random number generation algorithm
+srand $seed;
+for my $i (1 .. 10) {
+  print "$i times:". Int (rand 100). "\n";
 }
-print "\ n";
-&lt;/ pre&gt;
+print "\n";
+</pre>
 
   </div>
   <div class="bottom">

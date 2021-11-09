@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> while statement --Repeat processing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> while statement - Repeat processing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can write a  iterative process  using a while statement. Repeat the contents of the block while the condition is true.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" while statement --Repeat processing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" while statement - Repeat processing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can write a  iterative process  using a while statement. Repeat the contents of the block while the condition is true." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> while statement </ span>
+      <span itemprop = "name"> while statement </span>
     <meta itemprop = "position" content = "4" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20100123126425.html"> while statement --Repeat processing </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100123126425.html"> while statement - Repeat processing </a></h2>
 <p>
-  You can write a <strong> iterative process </ strong> using a while statement. Repeat the contents of the block while the condition is true.
+  You can write a <strong> iterative process </strong> using a while statement. Repeat the contents of the block while the condition is true.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,54 +101,55 @@
 while (condition) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Output numerical value from 0 to 2 &lt;/ h3&gt;
-
-This is a sample that outputs a numerical value from 0 to 2 using a while statement. The variable "$ i" is incremented at the end of the while statement. When "$ i" becomes 3, the condition becomes false, so the while exits.
-
-&lt;pre&gt;
+</pre>
+<h3> Output numerical value from 0 to 2 </h3>
+<p>
+  This is a sample that outputs a numerical value from 0 to 2 using a while statement. The variable "$i" is incremented at the end of the while statement. When "$i" becomes 3, the condition becomes false, so the while exits.
+</p>
+<pre>
 # Output numerical values ​​from 0 to 2
-my $ i = 0;
-while ($ i &lt;= 2) {
-  print "$ i \ n";
-  $ i ++;
+my $i = 0;
+while ($i &lt;= 2) {
+  print "$i\n";
+  $i++;
 }
-&lt;/ pre&gt;
-
-What is the difference between a while statement and a &lt;a href="/blog/20080327120662.html"&gt; for statement &lt;/a&gt; (or &lt;a href="/blog/20080328120673.html"&gt; foreach statement &lt;/a&gt;)? ??
-
-You can write all the iterative processing with the while statement, but if you can write it with the for statement or foreach statement, it is better to write it using the for statement or foreach statement.
-
-&lt;pre&gt;
+</pre>
+<p>
+  What is the difference between a while statement and a <a href="/blog/20080327120662.html"> for statement</a> (or <a href="/blog/20080328120673.html"> foreach statement</a>)? ??
+</p>
+<p>
+  You can write all the iterative processing with the while statement, but if you can write it with the for statement or foreach statement, it is better to write it using the for statement or foreach statement.
+</p>
+<pre>
 # for statement
-for (my $ i = 0; $ i &lt;= 2; $ i ++) {
-  print "$ i \ n";
+for (my $i = 0; $i &lt;= 2; $i++) {
+  print "$i\n";
 }
 
 # foreach statement
-foreach my $ num (@nums) {
-  print "$ num \ n";
+foreach my $num (@nums) {
+  print "$num\n";
 }
-&lt;/ pre&gt;
-
-As a side note, in Perl, the for statement and the foreach statement are exactly the same and can be rewritten to each other.
-
-&lt;h3&gt; Sample using infinite loop &lt;/ h3&gt;
-
-A frequently used example of while is the description of an infinite loop. If you write 1 in the condition, the loop will repeat forever.
-
-&lt;pre&gt;
+</pre>
+<p>
+  As a side note, in Perl, the for statement and the foreach statement are exactly the same and can be rewritten to each other.
+</p>
+<h3> Sample using infinite loop </h3>
+<p>
+  A frequently used example of while is the description of an infinite loop. If you write 1 in the condition, the loop will repeat forever.
+</p>
+<pre>
 while (1) {
   ...
 }
-&lt;/ pre&gt;
-
-To break out of the loop, use the &lt;a href="/blog/20170527149589.html"&gt; last statement &lt;/a&gt;. Note that the loop escape is not a break statement but a last statement unlike C language.
-
-In the example below, the &lt;a href="/blog/20161012147627.html"&gt; array &lt;/a&gt; elements are removed one by one with the &lt;a href="/blog/20100106126425.html"&gt; pop function &lt;/a&gt;. So, when there are no more elements in the array, it is judged by &lt;a href="/blog/20161023147731.html"&gt; if statement &lt;/a&gt;, and the while block is exited by using the last statement.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To break out of the loop, use the <a href="/blog/20170527149589.html"> last statement</a>. Note that the loop escape is not a break statement but a last statement unlike C language.
+</p>
+<p>
+  In the example below, the <a href="/blog/20161012147627.html"> array</a> elements are removed one by one with the <a href="/blog/20100106126425.html"> pop function</a>. So, when there are no more elements in the array, it is judged by <a href="/blog/20161023147731.html"> if statement</a>, and the while block is exited by using the last statement.
+</p>
+<pre>
 my @nums = (1, 2, 3);
 while (1) {
   if (@nums) {
@@ -158,62 +159,62 @@ while (1) {
     last;
   }
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Read lines in order from standard input / command line arguments &lt;/ h3&gt;
-
-As an example often used in while statements, use &lt;a href="/blog/20080722121673.html"&gt; line input operator &lt;/a&gt; to order lines from standard input or a file given as a command line argument. Let's load it into.
-
-&lt;pre&gt;
-#Read line
-while (my $ line = &lt;&gt;) {
-  #Skip only the first line
+</pre>
+<h3> Read lines in order from standard input / command line arguments </h3>
+<p>
+  As an example often used in while statements, use <a href="/blog/20080722121673.html"> line input operator</a> to order lines from standard input or a file given as a command line argument. Let's load it into.
+</p>
+<pre>
+# Read line
+while (my $line = &lt;&gt;) {
+  # Skip only the first line
   next if $. == 1;
   
   # Remove line breaks
-  chomp $ line;
+  chomp $line;
   
   # process
-  print "Line: $ line \ n";
+  print "Line: $line\n";
 }
-&lt;/ pre&gt;
-
-In this sample, &lt;a href="/blog/20080226120403.html"&gt; chomp function &lt;/a&gt; is used to remove line breaks and output with "Line:".
-
-Using &lt;a href="/blog/20161102147817.html"&gt; special variable "$." &lt;/a&gt; and &lt;a href="/blog/20080329120687.html"&gt; next statement &lt;/a&gt;, the line number is Processing is skipped only at the first line.
-
-Use this program as follows. Using the while statement and the line input operator, you can easily write a program that reads lines from a file or standard input.
-
-&lt;pre&gt;
+</pre>
+<p>
+  In this sample, <a href="/blog/20080226120403.html"> chomp function</a> is used to remove line breaks and output with "Line:".
+</p>
+<p>
+  Using <a href="/blog/20161102147817.html"> special variable "$."</a> and <a href="/blog/20080329120687.html"> next statement</a>, the line number is Processing is skipped only at the first line.
+</p>
+<p>
+  Use this program as follows. Using the while statement and the line input operator, you can easily write a program that reads lines from a file or standard input.
+</p>
+<pre>
 # When reading a file name from a command line argument
 perl script.pl file
 
-#When reading from standard input using a pipe
+# When reading from standard input using a pipe
 cat file&gt; perl script.pl
-&lt;/ pre&gt;
-
-This can be multiple files.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This can be multiple files.
+</p>
+<pre>
 # When reading a file name from a command line argument
 perl script.pl file1 file2
 
-#When reading from standard input using a pipe
+# When reading from standard input using a pipe
 cat file1 file2&gt; perl script.pl
-&lt;/ pre&gt;
-
-
-&lt;h3&gt; Related information &lt;/ h3&gt;
-
-The iterative process is explained in detail below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170521149524.html"&gt; Repeat with for statement and while statement &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-Perl also has &lt;a href="/blog/20171225151420.html"&gt; do ~ while statement &lt;/a&gt;, but since the next and last statements cannot be used as they are, it is strongly recommended to use the while statement. I recommend it.
+</pre>
+<h3> Related information </h3>
+<p>
+  The iterative process is explained in detail below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170521149524.html"> Repeat with for statement and while statement</a>
+  </li>
+</ul>
+<p>
+  Perl also has <a href="/blog/20171225151420.html"> do ~ while statement</a>, but since the next and last statements cannot be used as they are, it is strongly recommended to use the while statement. I recommend it.
+</p>
 
   </div>
   <div class="bottom">

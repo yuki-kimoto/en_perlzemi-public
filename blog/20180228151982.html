@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax / Grammar </ span> </a>
+        <span itemprop = "name"> Syntax / Grammar </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180228151982.html"> Variable expansion </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180228151982.html"> Variable expansion </a></h2>
 <p>
-  Perl has a feature called <b> variable expansion </ b> that allows you to use variables in strings. The string must be enclosed in double quotes.
+  Perl has a feature called <b> variable expansion </b> that allows you to use variables in strings. The string must be enclosed in double quotes.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,66 +97,66 @@
 
 
 <pre>
-my $ str2 = "AAA $ str1 CCC";
-&lt;/ pre&gt;
+my $str2 = "AAA $str1 CCC";
+</pre>
+<p>
+  Since you can use <a href="/blog/20161107147852.html"> variables</a> directly in <a href="/blog/20161003147558.html"> string</a>, <a href="/blog/20161003147852.html"> variables</a> It's easier than writing using the a href = "/ blog / 20080221120361.html"> string concatenation operator</a>. Let's use it positively.
+</p>
+<p>
+  Let's write a sample of variable expansion.
+</p>
+<pre>
+my $animal ='cat';
 
-Since you can use &lt;a href="/blog/20161107147852.html"&gt; variables &lt;/a&gt; directly in &lt;a href="/blog/20161003147558.html"&gt; string &lt;/a&gt;, &lt;a href="/blog/20161003147852.html"&gt; variables &lt;/a&gt; It's easier than writing using the a href = "/ blog / 20080221120361.html"&gt; string concatenation operator &lt;/a&gt;. Let's use it positively.
+my $message = "I like $animal";
+</pre>
+<p>
+  "$Animal" is interpolated and "$message" becomes "I like cat".
+</p>
+<h4> When a character string follows variable expansion </h4>
+<p>
+  When expanding a variable, if a character string follows the variable, that character string will also be recognized as part of the variable name. In such a case, use "{}" after $to enclose the variable name.
+</p>
+<pre>
+my $animal ='cat';
 
-Let's write a sample of variable expansion.
-
-&lt;pre&gt;
-my $ animal ='cat';
-
-my $ message = "I like $ animal";
-&lt;/ pre&gt;
-
-"$ Animal" is interpolated and "$ message" becomes "I like cat".
-
-&lt;h4&gt; When a character string follows variable expansion &lt;/ h4&gt;
-
-When expanding a variable, if a character string follows the variable, that character string will also be recognized as part of the variable name. In such a case, use "{}" after $ to enclose the variable name.
-
-&lt;pre&gt;
-my $ animal ='cat';
-
-my $ message = "dog $ {animal} mouse";
-&lt;/ pre&gt;
-
-It will be correctly expanded as "dog cat mouse".
-
-&lt;h4&gt; Array variable expansion &lt;/ h4&gt;
-
-&lt;a href="/blog/20161012147627.html"&gt; Array &lt;/a&gt; can also be interpolated. If the array is variable-expanded, the elements are concatenated with blanks.
-
-&lt;pre&gt;
+my $message = "dog ${animal} mouse";
+</pre>
+<p>
+  It will be correctly expanded as "dog cat mouse".
+</p>
+<h4> Array variable expansion </h4>
+<p>
+  <a href="/blog/20161012147627.html"> Array</a> can also be interpolated. If the array is variable-expanded, the elements are concatenated with blanks.
+</p>
+<pre>
 my @animals = ('dog','cat','mouse');
 
-my $ message = "I like @animals";
-&lt;/ pre&gt;
+my $message = "I like @animals";
+</pre>
+<p>
+  "$Message" expands to "I like dog cat mouse".
+</p>
+<h4> Subroutine variable expansion </h4>
+<p>
+  <a href="/blog/20101130129876.html"> Subroutine</a> is not a variable, so it cannot be interpolated. It is smart to assign to a variable and then use the variable expansion function.
+</p>
+<pre>
+my $total = sum (1, 2);
+my $message = "Number is $total";
+</pre>
+<h4> Variable expansion in here document </h4>
+<p>
+  You can also use variable interpolation in <a href="/blog/20080619121405.html"> Here Document</a>. Enclosing the terminating string in double quotes makes it easier to understand the intention of variable expansion.
+</p>
+<pre>
+my $animal ='cat';
 
-"$ Message" expands to "I like dog cat mouse".
-
-&lt;h4&gt; Subroutine variable expansion &lt;/ h4&gt;
-
-&lt;a href="/blog/20101130129876.html"&gt; Subroutine &lt;/a&gt; is not a variable, so it cannot be interpolated. It is smart to assign to a variable and then use the variable expansion function.
-
-&lt;pre&gt;
-my $ total = sum (1, 2);
-my $ message = "Number is $ total";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Variable expansion in here document &lt;/ h4&gt;
-
-You can also use variable interpolation in &lt;a href="/blog/20080619121405.html"&gt; Here Document &lt;/a&gt;. Enclosing the terminating string in double quotes makes it easier to understand the intention of variable expansion.
-
-&lt;pre&gt;
-my $ animal ='cat';
-
-my $ message = &lt;&lt; "EOS";
+my $message = &lt;&lt; "EOS";
 I love you.
-I like $ animal.
+I like $animal.
 EOS
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

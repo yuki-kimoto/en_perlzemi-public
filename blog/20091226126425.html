@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Basic grammar </ span>
+      <span itemprop = "name"> Basic grammar </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20091226126425.html"> Perl Basic Grammar Fastest Master </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20091226126425.html"> Perl Basic Grammar Fastest Master </a></h2>
 <p>
   Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages ​​and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl.
 </p>
@@ -91,822 +91,767 @@
 </div>
 
 
-<h3> Basics </ h3>
-<h4> Grammar check </ h4>
+<h3> Basics </h3>
+<h4> Grammar check </h4>
 <p>
   Be sure to write the following two lines first to make the grammar check strict.
 </p>
 <pre>
 use strict;
 use warnings;
-&lt;/ pre&gt;
-
-By adding two lines, "&lt;a href="/blog/20130912137895.html"&gt; use strict &lt;/a&gt;" and "&lt;a href="/blog/20130916137930.html"&gt; use warnings &lt;/a&gt;" Since the grammar is checked in advance, the work of writing the source code becomes faster and the quality of the code improves.
-
-&lt;h4&gt; print function &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20170404149131.html"&gt; print function &lt;/a&gt; to print the string.
-
-&lt;pre&gt;
+</pre>
+<p>
+  By adding two lines, "<a href="/blog/20130912137895.html"> use strict</a>" and "<a href="/blog/20130916137930.html"> use warnings</a>" Since the grammar is checked in advance, the work of writing the source code becomes faster and the quality of the code improves.
+</p>
+<h4> print function </h4>
+<p>
+  Use the <a href="/blog/20170404149131.html"> print function</a> to print the string.
+</p>
+<pre>
 print "Hello world";
-&lt;/ pre&gt;
-
-In Perl, you can omit the parentheses in standard or predefined functions.
-
-&lt;h4&gt; Comments &lt;/ h4&gt;
-
-Perl's &lt;a href="/blog/20130712137361.html"&gt; comment &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<p>
+  In Perl, you can omit the parentheses in standard or predefined functions.
+</p>
+<h4> Comments </h4>
+<p>
+  Perl's <a href="/blog/20130712137361.html"> comment</a>.
+</p>
+<pre>
 # comment
-&lt;/ pre&gt;
-
-&lt;h4&gt; Variable declaration &lt;/ h4&gt;
-
-Variable declaration. Perl variables are declared using &lt;b&gt; my &lt;/ b&gt;. Variables include scalar variables, array variables, and hash variables.
-
-&lt;pre&gt;
-#Scalar variable
-my $ num;
+</pre>
+<h4> Variable declaration </h4>
+<p>
+  Variable declaration. Perl variables are declared using <b> my </b>. Variables include scalar variables, array variables, and hash variables.
+</p>
+<pre>
+# Scalar variable
+my $num;
 
 # Array variables
 my @students
 
-#Hash variable
-my% month_num;
-&lt;/ pre&gt;
-
-For a detailed explanation of variables, such as variable scope and lifetime, see the following articles.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161107147852.html"&gt; Understand Perl variables &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Script execution &lt;/ h4&gt;
-
-To run the script, at the command line:
-
-&lt;pre&gt;
+# Hash variable
+my %month_num;
+</pre>
+<p>
+  For a detailed explanation of variables, such as variable scope and lifetime, see the following articles.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161107147852.html"> Understand Perl variables</a>
+  </li>
+</ul>
+<h4> Script execution </h4>
+<p>
+  To run the script, at the command line:
+</p>
+<pre>
 perl script.pl
-&lt;/ pre&gt;
-
-Use redirection to write the output to a file.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use redirection to write the output to a file.
+</p>
+<pre>
 perl script.pl&gt; file.txt
-&lt;/ pre&gt;
-
-Windows requires a command prompt to run the script. Please refer to the following article for how to use the command prompt.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080603121251.html"&gt; How to use the command prompt to run Perl &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Compile check &lt;/ h4&gt;
-
-To perform a compile check in advance, do the following on the command line.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Windows requires a command prompt to run the script. Please refer to the following article for how to use the command prompt.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080603121251.html"> How to use the command prompt to run Perl</a>
+  </li>
+</ul>
+<h4> Compile check </h4>
+<p>
+  To perform a compile check in advance, do the following on the command line.
+</p>
+<pre>
 perl -c script.pl
-&lt;/ pre&gt;
-
-&lt;h4&gt; Debugger startup &lt;/ h4&gt;
-
-Perl comes standard with a debugger. To start the debugger, do the following on the command line:
-
-&lt;pre&gt;
+</pre>
+<h4> Debugger startup </h4>
+<p>
+  Perl comes standard with a debugger. To start the debugger, do the following on the command line:
+</p>
+<pre>
 perl -d script.pl
-&lt;/ pre&gt;
+</pre>
+<p>
+  Please refer to the following for details on how to use the debugger.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100302126967.html"> Perl Debugger Guide</a>
+  </li>
+</ul>
+<h3> Numerical value </h3>
+<h4> Numerical representation </h4>
+<p>
+  You can assign a number to a scalar variable. You can assign either an integer or a decimal. If the number of digits is large, the underscore can be used as a delimiter.
+</p>
+<pre>
+my $num = 1;
+my $num = 1.234;
+my $num = 100_000_000;
+</pre>
+<p>
+  Such a numerical representation is called a numeric literal. See the following articles for more information on numerical literals.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080826121977.html"> Numeric literals - Representation of numbers in source code</a>
+  </li>
+</ul>
+<h4> Four arithmetic operations </h4>
+<p>
+  It is an arithmetic operation.
+</p>
+<pre>
+$num = 1 + 1;
+$num = 1 - 1;
+$num = 1 * 2;
+$num = 1 / 2;
+</pre>
+<p>
+  How to find a quotient. To find the quotient, perform ordinary division and then extract the integer part with the int function.
+</p>
+<pre>
+# Quotient
+$div = int(3/2);
 
-Please refer to the following for details on how to use the debugger.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100302126967.html"&gt; Perl Debugger Guide &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Numerical value &lt;/ h3&gt;
-
-&lt;h4&gt; Numerical representation &lt;/ h4&gt;
-
-You can assign a number to a scalar variable. You can assign either an integer or a decimal. If the number of digits is large, the underscore can be used as a delimiter.
-
-&lt;pre&gt;
-my $ num = 1;
-my $ num = 1.234;
-my $ num = 100_000_000;
-&lt;/ pre&gt;
-
-Such a numerical representation is called a numeric literal. See the following articles for more information on numerical literals.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080826121977.html"&gt; Numeric literals --Representation of numbers in source code &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Four arithmetic operations &lt;/ h4&gt;
-
-It is an arithmetic operation.
-
-&lt;pre&gt;
-$ num = 1 + 1;
-$ num = 1 --1;
-$ num = 1 * 2;
-$ num = 1/2;
-&lt;/ pre&gt;
-
-How to find a quotient. To find the quotient, perform ordinary division and then extract the integer part with the int function.
-
-&lt;pre&gt;
-#Quotient
-$ div = int (3/2);
-
-#Remainder
-$ mod = 3% 2;
-&lt;/ pre&gt;
-
-See the following articles for a detailed explanation of the four arithmetic operations.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080910122105.html"&gt; Operators that perform four arithmetic operations &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Increment and decrement &lt;/ h4&gt;
-
-&lt;a href="/blog/20180224151948.html"&gt; Increment &lt;/a&gt; and &lt;a href="/blog/20180226151973.html"&gt; Decrement &lt;/a&gt;.
-
-&lt;pre&gt;
+# Remainder
+$mod = 3 % 2;
+</pre>
+<p>
+  See the following articles for a detailed explanation of the four arithmetic operations.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080910122105.html"> Operators that perform four arithmetic operations</a>
+  </li>
+</ul>
+<h4> Increment and decrement </h4>
+<p>
+  <a href="/blog/20180224151948.html"> Increment</a> and <a href="/blog/20180226151973.html"> Decrement</a>.
+</p>
+<pre>
 # Increment
-$ i ++
+$i++
 
-#Decrement
-$ i--
-&lt;/ pre&gt;
+# Decrement
+$i--
+</pre>
+<h3> String </h3>
+<h4> String representation </h4>
+<p>
+  Enclose the string in single or double quotes. You can use special characters such as\t (tab) and\n (newline) in double quotes. You can also expand variables in a string enclosed in double quotes.
+</p>
+<pre>
+my $str1 ='abc';
+my $str2 = "def";
+my $str3 = "a\tbc\n";
 
-&lt;h3&gt; String &lt;/ h3&gt;
-
-&lt;h4&gt; String representation &lt;/ h4&gt;
-
-Enclose the string in single or double quotes. You can use special characters such as \ t (tab) and \ n (newline) in double quotes. You can also expand variables in a string enclosed in double quotes.
-
-&lt;pre&gt;
-my $ str1 ='abc';
-my $ str2 = "def";
-my $ str3 = "a \ tbc \ n";
-
-#Variable expansion (result is abc def)
-my $ str4 = "$ str1 def";
-&lt;/ pre&gt;
-
-&lt;h4&gt; String manipulation &lt;/ h4&gt;
-
-Various character string operations. Dot operator to concatenate strings, &lt;a href="/blog/20081007122338.html"&gt; join function &lt;/a&gt;, split string &lt;a href="/blog/20080301120434.html"&gt; split function &lt; / a&gt;, &lt;a href="/blog/20080926122245.html"&gt; length function &lt;/a&gt; to get the length, &lt;a href="/blog/20080224120386.html"&gt; substr function to replace the string &lt;a href="/blog/20080224120386.html"&gt; substr function &lt; / a&gt;, &lt;a href="/blog/20080225120395.html"&gt; index function &lt;/a&gt; for searching, etc.
-
-&lt;pre&gt;
+# Variable expansion (result is abc def)
+my $str4 = "$str1 def";
+</pre>
+<h4> String manipulation </h4>
+<p>
+  Various character string operations. Dot operator to concatenate strings, <a href="/blog/20081007122338.html"> join function</a>, split string <a href="/blog/20080301120434.html"> split function </a>, <a href="/blog/20080926122245.html"> length function</a> to get the length, <a href="/blog/20080224120386.html"> substr function to replace the string <a href="/blog/20080224120386.html"> substr function </a>, <a href="/blog/20080225120395.html"> index function</a> for searching, etc.
+</p>
+<pre>
 # Join
-my $ join1 ='aaa'.' Bbb';
+my $join1 ='aaa'.' Bbb';
 
-my $ join2 = join (',','aaa','bbb','ccc');
+my $join2 = join(',','aaa','bbb','ccc');
 
 # Split
-my @record = split (/, /,'aaa, bbb, ccc');
+my @record = split(/, /,'aaa, bbb, ccc');
 
 # length
-my $ length = length'abcdef';
+my $length = length'abcdef';
 
-#Cut out
-my $ substr = substr ('abcd', 0, 2); # ab
+# Cut out
+my $substr = substr('abcd', 0, 2); # ab
 
 # search
-my $ result = index ('abcd','cd'); # Returns its position if found, -1 if not found
-&lt;/ pre&gt;
-
-&lt;h3&gt; Array &lt;/ h3&gt;
-
-Let's take a brief look at Perl arrays.
-
-&lt;h4&gt; Array declaration and assignment &lt;/ h4&gt;
-
-Array declaration and assignment. An array is a variable to which you can assign multiple values.
-
-&lt;pre&gt;
+my $result = index('abcd','cd'); # Returns its position if found, -1 if not found
+</pre>
+<h3> Array </h3>
+<p>
+  Let's take a brief look at Perl arrays.
+</p>
+<h4> Array declaration and assignment </h4>
+<p>
+  Array declaration and assignment. An array is a variable to which you can assign multiple values.
+</p>
+<pre>
 # Array declaration
 my @array;
 
-#Assignment to array
+# Assignment to array
 @array = (1, 2, 3);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array element reference and assignment &lt;/ h4&gt;
-
-References and assignments to array elements.
-
-&lt;pre&gt;
+</pre>
+<h4> Array element reference and assignment </h4>
+<p>
+  References and assignments to array elements.
+</p>
+<pre>
 # Element reference
-$ array [0];
-$ array [1];
+$array [0];
+$array [1];
 
 # Element assignment
-$ array [0] = 1;
-$ array [1] = 2;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Number of arrays &lt;/ h4&gt;
-
-To get the number of arrays, evaluate the arrays in a scalar context. It's a slightly special grammar found only in Perl.
-
-&lt;pre&gt;
-my $ array_num = @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Array manipulation &lt;/ h4&gt;
-
-A function that manipulates arrays.
-
-&lt;pre&gt;
+$array [0] = 1;
+$array [1] = 2;
+</pre>
+<h4> Number of arrays </h4>
+<p>
+  To get the number of arrays, evaluate the arrays in a scalar context. It's a slightly special grammar found only in Perl.
+</p>
+<pre>
+my $array_num = @array;
+</pre>
+<h4> Array manipulation </h4>
+<p>
+  A function that manipulates arrays.
+</p>
+<pre>
 # Extract the first element
-my $ first = shift @array;
+my $first = shift @array;
 
 # Add element at the beginning
 unshift @array, 5;
 
 # Extract the last element
-my $ last = pop @array;
+my $last = pop @array;
 
 # Add element at the end
 push @array, 9;
-&lt;/ pre&gt;
-
-See the following articles for a detailed explanation of arrays.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161012147627.html"&gt; Let's understand Perl arrays &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Hash &lt;/ h3&gt;
-
-Let's take a brief look at Perl hashes.
-
-&lt;h4&gt; Hash declaration and assignment &lt;/ h4&gt;
-
-Hash declaration and assignment. A hash is a variable to which you can assign multiple pairs of values.
-
-&lt;pre&gt;
-my% hash;
+</pre>
+<p>
+  See the following articles for a detailed explanation of arrays.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161012147627.html"> Let's understand Perl arrays</a>
+  </li>
+</ul>
+<h3> Hash </h3>
+<p>
+  Let's take a brief look at Perl hashes.
+</p>
+<h4> Hash declaration and assignment </h4>
+<p>
+  Hash declaration and assignment. A hash is a variable to which you can assign multiple pairs of values.
+</p>
+<pre>
+my %hash;
 % hash = (a =&gt; 1, b =&gt; 2);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Hash element reference and assignment &lt;/ h4&gt;
-
-Hash element references and assignments.
-
-&lt;pre&gt;
+</pre>
+<h4> Hash element reference and assignment </h4>
+<p>
+  Hash element references and assignments.
+</p>
+<pre>
 # Element reference
-$ hash {a};
-$ hash {b};
+$hash {a};
+$hash {b};
 
 # Element assignment
-$ hash {a} = 5;
-$ hash {b} = 7;
-&lt;/ pre&gt;
+$hash {a} = 5;
+$hash {b} = 7;
+</pre>
+<p>
+  If the hash key consists of "a-zA-Z_", it does not need to be enclosed in single or double quotes.
+</p>
+<h4> Hash functions </h4>
+<pre>
+# Get key
+@keys = keys %hash;
 
-If the hash key consists of "a-zA-Z_", it does not need to be enclosed in single or double quotes.
-
-&lt;h4&gt; Hash functions &lt;/ h4&gt;
-
-&lt;pre&gt;
-#Get key
-@keys = keys% hash;
-
-#Get value
-@values ​​= values% hash;
+# Get value
+@values ​​= values %hash;
 
 # Key existence confirmation
-exists $ hash {a};
+exists $hash {a};
 
 # Delete hash key
-delete $ hash {a};
-&lt;/ pre&gt;
-
-See the following articles for more information on hashing.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161013147635.html"&gt; Master Perl hashes &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Conditional branch &lt;/ h3&gt;
-
-Describes Perl's conditional branching syntax.
-
-&lt;h4&gt; if statement &lt;/ h4&gt;
-
-If statement.
-
-&lt;pre&gt;
+delete $hash {a};
+</pre>
+<p>
+  See the following articles for more information on hashing.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161013147635.html"> Master Perl hashes</a>
+  </li>
+</ul>
+<h3> Conditional branch </h3>
+<p>
+  Describes Perl's conditional branching syntax.
+</p>
+<h4> if statement </h4>
+<p>
+  If statement.
+</p>
+<pre>
 if (condition) {
     
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; if ~ else statement &lt;/ h4&gt;
-
-If ~ else statement.
-
-&lt;pre&gt;
+</pre>
+<h4> if ~ else statement </h4>
+<p>
+  If ~ else statement.
+</p>
+<pre>
 if (condition) {
     
 }
 else {
     
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; if ~ elsif statement &lt;/ h4&gt;
-
-if ~ elsif statement.
-
-&lt;pre&gt;
+</pre>
+<h4> if ~ elsif statement </h4>
+<p>
+  if ~ elsif statement.
+</p>
+<pre>
 if (condition) {
     
 }
 elsif (condition) {
     
 }
-&lt;/ pre&gt;
-
-Note that it is elsif, not else if like other languages.
-
-&lt;h4&gt; Comparison operator &lt;/ h4&gt;
-
-A list of comparison operators. Perl makes a strict distinction between numeric and string comparisons.
-
-&lt;b&gt; [A] List of numeric comparison operators &lt;/ b&gt;
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ p == $ q
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ p and $ q are equal
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ p! = $ q
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ p and $ q are not equal
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ p &lt;$ q
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ p is less than $ q
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ p&gt; $ q
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ p is greater than $ q
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ p &lt;= $ q
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ p is less than $ q
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ p&gt; = $ q
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ p is over $ q
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-&lt;b&gt; [B] List of string comparison operators &lt;/ b&gt;
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ s eq $ t
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ s equals $ t
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ s ne $ t
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ s is not equal to $ t
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ s lt $ t
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ s is less than $ t
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ s gt $ t
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ s is greater than $ t
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ s le $ t
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ s is less than $ t
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ s ge $ t
-    &lt;/ td&gt;
-    &lt;td&gt;
-      $ s is over $ t
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-See below for a detailed explanation of Perl's conditional branching.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161023147731.html"&gt; Learn the syntax of conditional branching using if statements &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Repeat syntax &lt;/ h3&gt;
-
-Learn about Perl's iterative syntax.
-
-&lt;h4&gt; while statement &lt;/ h4&gt;
-
-&lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
-
-&lt;pre&gt;
-my $ i = 0;
-while ($ i &lt;5) {
+</pre>
+<p>
+  Note that it is elsif, not else if like other languages.
+</p>
+<h4> Comparison operator </h4>
+<p>
+  A list of comparison operators. Perl makes a strict distinction between numeric and string comparisons.
+</p>
+<p>
+  <b> [A] List of numeric comparison operators </b>
+</p>
+<table>
+  <tr>
+    <td>
+      $p == $q
+    </td>
+    <td>
+      $p and $q are equal
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $p! = $q
+    </td>
+    <td>
+      $p and $q are not equal
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $p <$q
+    </td>
+    <td>
+      $p is less than $q
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $p> $q
+    </td>
+    <td>
+      $p is greater than $q
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $p <= $q
+    </td>
+    <td>
+      $p is less than $q
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $p> = $q
+    </td>
+    <td>
+      $p is over $q
+    </td>
+  </tr>
+</table>
+<p>
+  <b> [B] List of string comparison operators </b>
+</p>
+<table>
+  <tr>
+    <td>
+      $s eq $t
+    </td>
+    <td>
+      $s equals $t
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $s ne $t
+    </td>
+    <td>
+      $s is not equal to $t
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $s lt $t
+    </td>
+    <td>
+      $s is less than $t
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $s gt $t
+    </td>
+    <td>
+      $s is greater than $t
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $s le $t
+    </td>
+    <td>
+      $s is less than $t
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $s ge $t
+    </td>
+    <td>
+      $s is over $t
+    </td>
+  </tr>
+</table>
+<p>
+  See below for a detailed explanation of Perl's conditional branching.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161023147731.html"> Learn the syntax of conditional branching using if statements</a>
+  </li>
+</ul>
+<h3> Repeat syntax </h3>
+<p>
+  Learn about Perl's iterative syntax.
+</p>
+<h4> while statement </h4>
+<p>
+  <a href="/blog/20100123126425.html"> while statement</a>.
+</p>
+<pre>
+my $i = 0;
+while ($i &lt;5) {
     
     # process
     
-    $ i ++;
+    $i++;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; for statement &lt;/ h4&gt;
-
-It is a for statement.
-
-&lt;pre&gt;
-for (my $ i = 0; $ i &lt;5; $ i ++) {
+</pre>
+<h4> for statement </h4>
+<p>
+  It is a for statement.
+</p>
+<pre>
+for (my $i = 0; $i &lt;5; $i++) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; foreach statement &lt;/ h4&gt;
-
-It is a foreach statement. You can process each element of the array. foreach is an alias for for and is essentially the same.
-
-&lt;pre&gt;
-foreach my $ field (@fields) {
+</pre>
+<h4> foreach statement </h4>
+<p>
+  It is a foreach statement. You can process each element of the array. foreach is an alias for for and is essentially the same.
+</p>
+<pre>
+foreach my $field (@fields) {
   ...
 }
-&lt;/ pre&gt;
-
-Perl's iterative syntax is explained in detail in the next article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170521149524.html"&gt; Let's learn the iterative processing using for statement and while statement &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Subroutine &lt;/ h3&gt;
-
-In Perl, a function is also called a subroutine. To create a subroutine:
-
-&lt;pre&gt;
+</pre>
+<p>
+  Perl's iterative syntax is explained in detail in the next article.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170521149524.html"> Let's learn the iterative processing using for statement and while statement</a>
+  </li>
+</ul>
+<h3> Subroutine </h3>
+<p>
+  In Perl, a function is also called a subroutine. To create a subroutine:
+</p>
+<pre>
 sub sum {
-  my ($ num1, $ num2) = @_;
+  my ($num1, $num2) = @_;
   
-  my $ total = $ num1 + $ num2;
+  my $total = $num1 + $num2;
   
-  return $ total;
+  return $total;
 }
-&lt;/ pre&gt;
+</pre>
+<p>
+  Perl doesn't require you to explicitly specify argument names like in other languages. Since the argument is contained in the array @_, use it as needed. Use return to return the return value.
+</p>
+<p>
+  The following article explains in detail how to create a subroutine.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20101130129876.html"> How to create a subroutine</a>
+  </li>
+</ul>
+<h3> File input / output </h3>
+<p>
+  File input / output.
+</p>
+<pre>
+open my $fh,'&lt;', $file
+  or die "Cannot open'$file': $!";
 
-Perl doesn't require you to explicitly specify argument names like in other languages. Since the argument is contained in the array @_, use it as needed. Use return to return the return value.
-
-The following article explains in detail how to create a subroutine.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20101130129876.html"&gt; How to create a subroutine &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; File input / output &lt;/ h3&gt;
-
-File input / output.
-
-&lt;pre&gt;
-open my $ fh,'&lt;', $ file
-  or die "Cannot open'$ file': $!";
-
-while (my $ line = &lt;$ fh&gt;) {
+while (my $line = &lt;$fh&gt;) {
   ...
 }
 
-close $ fh;
-&lt;/ pre&gt;
+close $fh;
+</pre>
+<p>
+  When you open a file with the open function, the file handle is assigned to $fh. '<' Is the read mode. When writing, use'>'. You can read a line from a file with the description <$fh>. After or, it is executed when the file open fails. die is a function that displays an error message and terminates the program. $! Is an error message from the OS when the file open fails.
+</p>
+<p>
+  Perl's file I / O is explained in detail on the following pages.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110212130370.html"> Basics of file input / output</a>
+  </li>
+</ul>
+<h3> Grammar you should know </h3>
+<p>
+  Here's a list of grammars you should know that often appear in Perl.
+</p>
+<h4> Perl truth value </h4>
+<p>
+  <a href="/blog/20080323120628.html"> Perl boolean</a> has the following definition: There are four types of values ​​that Perl determines to be false: "undef", "''", "0", and "'0'". Everything else is true.
+</p>
+<h4> Determine if a defined value is defined </h4>
+<p>
+  Use the <a href="/blog/20100219126425.html"> defined function</a> to see if a value is defined.
+</p>
+<pre>
+defined $num;
+</pre>
+<h4> Command line arguments </h4>
+<p>
+  Use the @ARGV variable to receive <a href="/blog/20080108132865.html"> command line arguments</a>.
+</p>
+<pre>
+my ($file, $options) = @ARGV;
+</pre>
+<p>
+  If you want to receive only one command line argument, you can write: Implicitly @ARGV is passed as an argument to shift.
+</p>
+<pre>
+my $file = shift;
+</pre>
+<h4> Scalar context and list context </h4>
+<p>
+  In Perl, some functions have different return values ​​depending on the context. For example, the localtime function. This is a Perl-specific grammar called <a href="/blog/20080608121292.html"> context</a>.
+</p>
+<pre>
+# Scalar context (get date / time as a character string)
+my $time_str = localtime();
 
-When you open a file with the open function, the file handle is assigned to $ fh. '&lt;' Is the read mode. When writing, use'&gt;'. You can read a line from a file with the description &lt;$ fh&gt;. After or, it is executed when the file open fails. die is a function that displays an error message and terminates the program. $! Is an error message from the OS when the file open fails.
-
-Perl's file I / O is explained in detail on the following pages.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20110212130370.html"&gt; Basics of file input / output &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Grammar you should know &lt;/ h3&gt;
-
-Here's a list of grammars you should know that often appear in Perl.
-
-&lt;h4&gt; Perl truth value &lt;/ h4&gt;
-
-&lt;a href="/blog/20080323120628.html"&gt; Perl boolean &lt;/a&gt; has the following definition: There are four types of values ​​that Perl determines to be false: "undef", "''", "0", and "'0'". Everything else is true.
-
-&lt;h4&gt; Determine if a defined value is defined &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100219126425.html"&gt; defined function &lt;/a&gt; to see if a value is defined.
-
-&lt;pre&gt;
-defined $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Command line arguments &lt;/ h4&gt;
-
-Use the @ARGV variable to receive &lt;a href="/blog/20080108132865.html"&gt; command line arguments &lt;/a&gt;.
-
-&lt;pre&gt;
-my ($ file, $ options) = @ARGV;
-&lt;/ pre&gt;
-
-If you want to receive only one command line argument, you can write: Implicitly @ARGV is passed as an argument to shift.
-
-&lt;pre&gt;
-my $ file = shift;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Scalar context and list context &lt;/ h4&gt;
-
-In Perl, some functions have different return values ​​depending on the context. For example, the localtime function. This is a Perl-specific grammar called &lt;a href="/blog/20080608121292.html"&gt; context &lt;/a&gt;.
-
-&lt;pre&gt;
-#Scalar context (get date / time as a character string)
-my $ time_str = localtime ();
-
-#List context (get each element of date and time as an array)
-my @datetime = localtime ();
-&lt;/ pre&gt;
-
-&lt;h4&gt; unless statement &lt;/ h4&gt;
-
-The &lt;a href="/blog/20100125126425.html"&gt; unless statement &lt;/a&gt; expresses the negation of the if statement.
-
-&lt;pre&gt;
+# List context (get each element of date and time as an array)
+my @datetime = localtime();
+</pre>
+<h4> unless statement </h4>
+<p>
+  The <a href="/blog/20100125126425.html"> unless statement</a> expresses the negation of the if statement.
+</p>
+<pre>
 unless (condition) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Postfix if, Postfix unless &lt;/ h4&gt;
-
-In Perl you can put if or unless after a statement.
-
-&lt;pre&gt;
+</pre>
+<h4> Postfix if, Postfix unless </h4>
+<p>
+  In Perl you can put if or unless after a statement.
+</p>
+<pre>
 # Postfix if
-print $ num if $ num&gt; 3;
+print $num if $num&gt; 3;
 
 # Postfix unless
-die "error" unless $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Postfix for &lt;/ h4&gt;
-
-In Perl you can put a for after a statement.
-
-&lt;pre&gt;
+die "error" unless $num;
+</pre>
+<h4> Postfix for </h4>
+<p>
+  In Perl you can put a for after a statement.
+</p>
+<pre>
 # Postfix for
-print $ _ for @nums;
-&lt;/ pre&gt;
-
-The values ​​are sequentially assigned to "$ _".
-
-&lt;h4&gt; Array slices and hash slices &lt;/ h4&gt;
-
-Use &lt;a href="/blog/20080216120316.html"&gt; array slice &lt;/a&gt; and &lt;a href="/blog/20080215120307.html"&gt; hash slice &lt;/a&gt; to get only the specified elements as an array I can do it.
-
-&lt;pre&gt;
+print $_ for @nums;
+</pre>
+<p>
+  The values ​​are sequentially assigned to "$_".
+</p>
+<h4> Array slices and hash slices </h4>
+<p>
+  Use <a href="/blog/20080216120316.html"> array slice</a> and <a href="/blog/20080215120307.html"> hash slice</a> to get only the specified elements as an array I can do it.
+</p>
+<pre>
 # Array slice
 @select = @array [1, 4, 5];
 
 # Hash slice
 @select = @hash {'a','b','d'};
-&lt;/ pre&gt;
-
-&lt;h4&gt; map function &lt;/ h4&gt;
-
-You can use the &lt;a href="/blog/20100118126425.html"&gt; map function &lt;/a&gt; to transform each element of the array. The elements of @array are assigned to $ _ in order.
-
-&lt;pre&gt;
-@mapped = map {$ _ * 2} @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; grep function &lt;/ h4&gt;
-
-You can use &lt;a href="/blog/20100119126425.html"&gt; grep function &lt;/a&gt; to get only the elements that match the conditions as an array. The elements of @array are assigned to $ _ in order.
-
-&lt;pre&gt;
-@select = grep {$ _ = ~'cat'} @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; List assignment &lt;/ h4&gt;
-
-&lt;a href="/blog/20100308126967.html"&gt; List &lt;/a&gt; There is an assignment method called assignment.
-
-&lt;pre&gt;
-my ($ num1, $ num2) = ($ num3, $ num4);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Range operator &lt;/ h4&gt;
-
-There is something called &lt;a href="/blog/20170520149523.html"&gt; range operator &lt;/a&gt; that represents a range of integers.
-
-&lt;pre&gt;
+</pre>
+<h4> map function </h4>
+<p>
+  You can use the <a href="/blog/20100118126425.html"> map function</a> to transform each element of the array. The elements of @array are assigned to $_ in order.
+</p>
+<pre>
+@mapped = map {$_ * 2} @array;
+</pre>
+<h4> grep function </h4>
+<p>
+  You can use <a href="/blog/20100119126425.html"> grep function</a> to get only the elements that match the conditions as an array. The elements of @array are assigned to $_ in order.
+</p>
+<pre>
+@select = grep {$_ = ~'cat'} @array;
+</pre>
+<h4> List assignment </h4>
+<p>
+  <a href="/blog/20100308126967.html"> List</a> There is an assignment method called assignment.
+</p>
+<pre>
+my ($num1, $num2) = ($num3, $num4);
+</pre>
+<h4> Range operator </h4>
+<p>
+  There is something called <a href="/blog/20170520149523.html"> range operator</a> that represents a range of integers.
+</p>
+<pre>
 my @numes = (0 .. 5);
-&lt;/ pre&gt;
-
-&lt;h4&gt; String list operator &lt;/ h4&gt;There is something called a &lt;a href="/blog/20080222120369.html"&gt; string list operator &lt;/a&gt; that makes it easy to write a list of strings.
-
-&lt;pre&gt;
+</pre>
+<h4> String list operator </h4>There is something called a <a href="/blog/20080222120369.html"> string list operator</a> that makes it easy to write a list of strings.
+<pre>
 my @strs = qw (aaa bbb ccc);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Single return &lt;/ h4&gt;
-
-If you write return in a subroutine, &lt;a href="/blog/20100220126425.html"&gt; undef &lt;/a&gt; will be returned in the case of scalar context, and an empty list () will be returned in the case of list context. .. If you want to use the return value to tell that an error has occurred in a subroutine, write return instead of return undef.
-
-&lt;pre&gt;
+</pre>
+<h4> Single return </h4>
+<p>
+  If you write return in a subroutine, <a href="/blog/20100220126425.html"> undef</a> will be returned in the case of scalar context, and an empty list () will be returned in the case of list context. .. If you want to use the return value to tell that an error has occurred in a subroutine, write return instead of return undef.
+</p>
+<pre>
 sub name {
   my @args = @_;
   
   return;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Exception handling &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100212126425.html"&gt; die function &lt;/a&gt; to throw an exception.
-
-&lt;pre&gt;
+</pre>
+<h4> Exception handling </h4>
+<p>
+  Use the <a href="/blog/20100212126425.html"> die function</a> to throw an exception.
+</p>
+<pre>
 die "Error message";
-&lt;/ pre&gt;
-
-To catch the exception, use the &lt;a href="/blog/20100312126967.html"&gt; eval block &lt;/a&gt; to determine $ @.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To catch the exception, use the <a href="/blog/20100312126967.html"> eval block</a> to determine $@.
+</p>
+<pre>
 eval {functions that die can occur, etc.};
 
-if ($ @) {
+if ($@) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Read everything from a file &lt;/ h4&gt;
-
-There is no function to read everything from a file, so read all the lines into an array and connect them with the &lt;a href="/blog/20081007122338.html"&gt; join function &lt;/a&gt;.
-
-&lt;pre&gt;
-my @lines = &lt;$ fh&gt;;
-my $ content = join ('', @lines);
-&lt;/ pre&gt;
-
-This can be written in one line.
-
-&lt;pre&gt;
-my $ content = join ('', &lt;$ fh&gt;);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Ternary operator &lt;/ h4&gt;
-
-&lt;a href="/blog/20080325120646.html"&gt; Ternary operator &lt;/a&gt;. In the sample below, 1 is assigned to $ num if $ flg is true, and 2 is assigned to $ num if it is false.
-
-&lt;pre&gt;
-my $ num = $ flg? 1: 2;
-&lt;/ pre&gt;
-
-&lt;h4&gt; || = &lt;/ h4&gt;
-
-Substitutes the rvalue if the lvalue is a false value. In the case of the sample below, 2 is assigned to $ num if $ num is a false value.
-
-&lt;pre&gt;
-$ num || = 2;
-&lt;/ pre&gt;
-
-&lt;h4&gt; // = &lt;/ h4&gt;
-
-Defined-or operator. Substitutes the rvalue if the lvalue is undefined. In the sample below, 2 is assigned to $ num if $ num is undefined.
-
-&lt;pre&gt;
-$ num // = 2;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Loading modules &lt;/ h4&gt;
-
-Use &lt;a href="/blog/20090205123287.html"&gt; use &lt;/a&gt; to load the module.
-
-&lt;pre&gt;
+</pre>
+<h4> Read everything from a file </h4>
+<p>
+  There is no function to read everything from a file, so read all the lines into an array and connect them with the <a href="/blog/20081007122338.html"> join function</a>.
+</p>
+<pre>
+my @lines = &lt;$fh&gt;;
+my $content = join('', @lines);
+</pre>
+<p>
+  This can be written in one line.
+</p>
+<pre>
+my $content = join('', &lt;$fh&gt;);
+</pre>
+<h4> Ternary operator </h4>
+<p>
+  <a href="/blog/20080325120646.html"> Ternary operator</a>. In the sample below, 1 is assigned to $num if $flg is true, and 2 is assigned to $num if it is false.
+</p>
+<pre>
+my $num = $flg? 1: 2;
+</pre>
+<h4> || = </h4>
+<p>
+  Substitutes the rvalue if the lvalue is a false value. In the case of the sample below, 2 is assigned to $num if $num is a false value.
+</p>
+<pre>
+$num || = 2;
+</pre>
+<h4> // = </h4>
+<p>
+  Defined-or operator. Substitutes the rvalue if the lvalue is undefined. In the sample below, 2 is assigned to $num if $num is undefined.
+</p>
+<pre>
+$num // = 2;
+</pre>
+<h4> Loading modules </h4>
+<p>
+  Use <a href="/blog/20090205123287.html"> use</a> to load the module.
+</p>
+<pre>
 use module name;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Write a configuration file in Perl &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20090208123289.html"&gt; do function &lt;/a&gt; to read the configuration file written in Perl.
-
-&lt;pre&gt;
-my $ conf_file = "app.conf";
-my $ conf = do $ conf_file
-  or die qq / Can't load config file "$ conf_file": $! $ @ /;
-&lt;/ pre&gt;
-
-The contents of the configuration file.
-
-&lt;pre&gt;
+</pre>
+<h4> Write a configuration file in Perl </h4>
+<p>
+  Use the <a href="/blog/20090208123289.html"> do function</a> to read the configuration file written in Perl.
+</p>
+<pre>
+my $conf_file = "app.conf";
+my $conf = do $conf_file
+  or die qq / Can't load config file "$conf_file": $! $@ /;
+</pre>
+<p>
+  The contents of the configuration file.
+</p>
+<pre>
 {
   name =&gt;'Foo',
   number =&gt; 9
 }
-&lt;/ pre&gt;
-
-If the file is not read or parsed successfully, the undefined value will be returned. If the file name does not exist, $! Will be set, and if the Perl source code fails to load, $ @ will be set to the error content.
-
-&lt;h4&gt; Multi-line comment &lt;/ h4&gt;
-
-You can comment on multiple lines by writing as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the file is not read or parsed successfully, the undefined value will be returned. If the file name does not exist, $! Will be set, and if the Perl source code fails to load, $@ will be set to the error content.
+</p>
+<h4> Multi-line comment </h4>
+<p>
+  You can comment on multiple lines by writing as follows.
+</p>
+<pre>
 = pod
 
 The text you want to comment on
 
 = cut
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

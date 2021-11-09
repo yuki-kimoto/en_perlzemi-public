@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20091203126018.html"> Install SQLite on Windows </a></ h2>
+    <h2><a href="/blog/20091203126018.html"> Install SQLite on Windows </a></h2>
 <p>
   As you get used to it, you'll want to run and experiment with different types of SQL. For that purpose, it is convenient to have an environment where SQL can be executed interactively. This time, let's create an environment for executing SQL on Windows.
 </p>
@@ -79,29 +79,29 @@
 </div>
 
 
-<h3> Download libraries and command line programs </ h3>
+<h3> Download libraries and command line programs </h3>
 <p>
   To use SQLite, you need a library to operate the database and a command line program to execute SQL. You need to get these two.
 </p>
-<h4> SQLite home page </ h4>
+<h4> SQLite home page </h4>
 <p>
   The following is the SQLite home page.
 </p>
 <blockquote>
 <p>
-  <a href="http://www.sqlite.org/"> SQLite site </a>
+  <a href="http://www.sqlite.org/"> SQLite site</a>
 </p>
-</ blockquote>
-<h4> SQLite download page </ h4>
+</blockquote>
+<h4> SQLite download page </h4>
 <p>
   There is a link that says "Download" in the middle of the top of the homepage. Here is a link to the SQLite download page.
 </p>
 <blockquote>
 <p>
-  <a href="http://www.sqlite.org/download.html"> SQLite Download Page </a>
+  <a href="http://www.sqlite.org/download.html"> SQLite Download Page</a>
 </p>
-</ blockquote>
-<h4> Find SQLite libraries and command line programs for Windows </ h4>
+</blockquote>
+<h4> Find SQLite libraries and command line programs for Windows </h4>
 <p>
   Go around the page looking for Windows-like SQLite libraries and command line programs. I think it says something like "For Windows". "Sqlite dll ~ .zip" is the SQLite library. "Sqlite ~ .zip" is a SQLite command line program. Let's download these two.
 </p>
@@ -110,16 +110,16 @@
 </p>
 <ul>
   <li>
-    <a href="http://www.sqlite.org/sqlitedll-3_6_20.zip"> sqlitedll-3_6_20.zip </a> (SQLite library)
-  </ li>
+    <a href="http://www.sqlite.org/sqlitedll-3_6_20.zip"> sqlitedll-3_6_20.zip</a> (SQLite library)
+  </li>
   <li>
-    <a href="http://www.sqlite.org/sqlite-3_6_20.zip"> sqlite-3_6_20.zip </a> (SQLite command line program)
-  </ li>
-</ ul>
+    <a href="http://www.sqlite.org/sqlite-3_6_20.zip"> sqlite-3_6_20.zip</a> (SQLite command line program)
+  </li>
+</ul>
 <p>
   Download these and unzip the zip file.
 </p>
-<h3> File placement </ h3>
+<h3> File placement </h3>
 <p>
   When you unzip the file, you will find "sqlitedll ~ .zip"
 </p>
@@ -130,7 +130,7 @@
 <p>
   sqlite3.dll
 </p>
-</ blockquote>
+</blockquote>
 <p>
   File is
 </p>
@@ -141,7 +141,7 @@
 <p>
   sqlite3.exe
 </p>
-</ blockquote>
+</blockquote>
 <p>
   I think that the file is included. sqlite3.def is needed to create a static library, so I don't need it now.
 </p>
@@ -152,7 +152,7 @@
 <p>
   sqlite3.exe
 </p>
-</ blockquote>
+</blockquote>
 <p>
   Place the file in your favorite directory. This time
 </p>
@@ -160,12 +160,12 @@
 <p>
   c: \ sqlite
 </p>
-</ blockquote>
+</blockquote>
 <p>
   I will place it in the directory called.
 </p>
-<h3> Setting the environment variable Path </ h3>
-<h4> Find the environment variable Path </ h4>
+<h3> Setting the environment variable Path </h3>
+<h4> Find the environment variable Path </h4>
 <p>
   Next, set the environment variable Path so that "sqlite3.exe" can be executed from the command prompt. Be careful when setting this path. I'm going to change the value of the environment variable Path, but if I make a mistake, there is a risk that it will not work properly. Make sure to copy the Path value and save it somewhere.
 </p>
@@ -175,7 +175,7 @@
 <p>
   When the "Environment Variables" window opens, look for the item "Path" in the "System Variables" list at the bottom.
 </p>
-<h4> Setting the environment variable Path </ h4>
+<h4> Setting the environment variable Path </h4>
 <p>
   Click on the item called Path and press the "Edit" button at the bottom right. Then you can edit the value of Path, so first copy it and save it somewhere in a text file. It is safe because it can be restored.
 </p>
@@ -186,11 +186,11 @@
 <p>
   c: \ sqlite; (value of the original environment variable Path)
 </p>
-</ blockquote>
+</blockquote>
 <p>
   Please add. Notice that there is a semicolon after "c: \ sqlite". Once set, press OK several times to close the properties.
 </p>
-<h3> Confirm that the SQLite command line program can be executed </ h3>
+<h3> Confirm that the SQLite command line program can be executed </h3>
 <p>
   Now start the command prompt
 </p>
@@ -198,7 +198,7 @@
 <p>
   sqlite3
 </p>
-</ blockquote>
+</blockquote>
 <p>
   Let's try. The environment variable settings will be reflected when the command prompt is restarted, so if it has already started, restart the command prompt.
 </p>
@@ -218,7 +218,7 @@
 <p>
   sqlite>
 </p>
-</ blockquote>
+</blockquote>
 <p>
   If you want to quit
 </p>
@@ -226,7 +226,7 @@
 <p>
   .quit
 </p>
-</ blockquote>
+</blockquote>
 <p>
   will do.
 </p>

@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20170130148603.html">
-      <span itemprop = "name"> database </ span> </a>
+      <span itemprop = "name"> database </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20091121124667.html"> Basics of database operation learned with SQLite </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20091121124667.html"> Basics of database operation learned with SQLite </a></h2>
 <p>
   Databases using Perl have been a bit of a challenge for beginners to learn. First of all, I needed to build an SQL execution environment and could not meet the demand for studying immediately.
 </p>
@@ -97,7 +97,7 @@
 
 
 <p>
-  But now this situation has changed. Now, when you download ActivePerl, a module called DBD :: SQLite for using SQLite is packaged.
+  But now this situation has changed. Now, when you download ActivePerl, a module called DBD::SQLite for using SQLite is packaged.
 </p>
 <p>
   A module called DBI, which is the interface part seen by the user for connecting to the database, is also packaged.
@@ -105,379 +105,384 @@
 <p>
   So you can just download the latest version of ActivePerl and start learning the database without building any environment.
 </p>
-<h3> Make sure DBD :: SQLite and DBI are installed </ h3>
+<h3> Make sure DBD::SQLite and DBI are installed </h3>
 <p>
-  First check if DBD :: SQLite and DBI are installed. You can check if these modules are installed with the command "perldoc" to view the Perl documentation from the command prompt.
+  First check if DBD::SQLite and DBI are installed. You can check if these modules are installed with the command "perldoc" to view the Perl documentation from the command prompt.
 </p>
 <pre>
-perldoc DBD :: SQLite
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+perldoc DBD::SQLite
+</pre>
+<pre>
 perldoc DBI
-&lt;/ pre&gt;
-
-If these modules are not installed, you can install DBD :: SQLite using a package manager for Windows called ppm. You may also want to install the latest version of ActivePerl.
-
-Here are the steps to install a new ActivePerl.
-
-&lt;a href="/blog/20080602121231.html"&gt; Install ActivePerl &lt;/a&gt;
-
-If you have the old ActivePerl installed, you will need to uninstall and then install the old ActivePerl from Control Panel&gt; Add / Remove Programs, or rename the directory where you want to install Perl.
-
-Once you have the latest ActivePerl installed, make sure you have "DBD :: SQLite" and "DBI" installed.
-
-Here are the steps to install in ppm.
-&lt;pre&gt;
+</pre>
+<p>
+  If these modules are not installed, you can install DBD::SQLite using a package manager for Windows called ppm. You may also want to install the latest version of ActivePerl.
+</p>
+<p>
+  Here are the steps to install a new ActivePerl.
+</p>
+<p>
+  <a href="/blog/20080602121231.html"> Install ActivePerl</a>
+</p>
+<p>
+  If you have the old ActivePerl installed, you will need to uninstall and then install the old ActivePerl from Control Panel> Add / Remove Programs, or rename the directory where you want to install Perl.
+</p>
+<p>
+  Once you have the latest ActivePerl installed, make sure you have "DBD::SQLite" and "DBI" installed.
+</p>
+<p>
+  Here are the steps to install in ppm.
+</p>
+<pre>
 ppm install DBD-SQLite
-&lt;/ pre&gt;
-&lt;pre&gt;
+</pre>
+<pre>
 ppm install DBI
-&lt;/ pre&gt;
-
-Anyone using Unix or Linux Just install DBD :: SQLite and DBI with the cpan command. (You may be able to install it on Windows using the cpan command, but DBD :: SQLite may fail to compile.)
-
-&lt;pre&gt;
-cpan DBD :: SQLite
-&lt;/ pre&gt;
-&lt;pre&gt;
+</pre>
+<p>
+  Anyone using Unix or Linux Just install DBD::SQLite and DBI with the cpan command. (You may be able to install it on Windows using the cpan command, but DBD::SQLite may fail to compile.)
+</p>
+<pre>
+cpan DBD::SQLite
+</pre>
+<pre>
 cpan DBI
-&lt;/ pre&gt;
-
-Now you are ready to learn the database.
-
-&lt;h3&gt; Connect to database &lt;/ h3&gt;
-
-Now let's connect to the database. Use the DBI module's connect method to connect to the database. The first argument of connect specifies the information to connect to the database called data source. The format is a bit special, but let's remember.
-
+</pre>
+<p>
+  Now you are ready to learn the database.
+</p>
+<h3> Connect to database </h3>
+<p>
+  Now let's connect to the database. Use the DBI module's connect method to connect to the database. The first argument of connect specifies the information to connect to the database called data source. The format is a bit special, but let's remember.
+</p>
  You can specify the database name to connect to in the data source. In SQLite, the database is simply created as a file, so specify any name you like as the database name. The return value is an object called the database handle that communicates with the database.
-
-&lt;pre&gt;
+<pre>
 use DBI;
-my $ database ='test.db';
-my $ data_source = "dbi: SQLite: dbname = $ database";
-my $ dbh = DBI-&gt; connect ($ data_source);
-&lt;/ pre&gt;
-
-You should now have a file called test.db in your current directory.
-
-&lt;h3&gt; Disconnect database &lt;/ h3&gt;
-
-Let's remember here the process of disconnecting the database that is paired with the database connection. Use disconnect to disconnect the database.
-
-&lt;pre&gt;
-$ dbh-&gt; disconnect;
-&lt;/ pre&gt;
-
-It is wise to disconnect when you no longer need to connect to the database.
-
-&lt;h3&gt; Execute SQL &lt;/ h3&gt;
-
-SQL is the query language used to create tables, register data in databases, and retrieve data. I will explain the basic SQL from now on. Here, we will first explain how to execute SQL.
-
-There are two ways to execute SQL.
-
-&lt;ol&gt;
-  &lt;li&gt;
+my $database ='test.db';
+my $data_source = "dbi: SQLite: dbname = $database";
+my $dbh = DBI-&gt; connect ($data_source);
+</pre>
+<p>
+  You should now have a file called test.db in your current directory.
+</p>
+<h3> Disconnect database </h3>
+<p>
+  Let's remember here the process of disconnecting the database that is paired with the database connection. Use disconnect to disconnect the database.
+</p>
+<pre>
+$dbh-&gt; disconnect;
+</pre>
+<p>
+  It is wise to disconnect when you no longer need to connect to the database.
+</p>
+<h3> Execute SQL </h3>
+<p>
+  SQL is the query language used to create tables, register data in databases, and retrieve data. I will explain the basic SQL from now on. Here, we will first explain how to execute SQL.
+</p>
+<p>
+  There are two ways to execute SQL.
+</p>
+<ol>
+  <li>
     How to execute directly using the do method
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     How to prepare a SQL statement with the prepare method and then execute it with the execute method
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-The second method is used to execute what is called a select statement in SQL. The first method is used to execute SQL other than the select statement. Remember "select is prepare and execute" and "otherwise do".
-
-&lt;h3&gt; Create a table &lt;/ h3&gt;
-
-Now let's create the simplest SQL to create a table. Use the "create table" statement to create a table. In the "create table" statement, specify the name of the table to be created and the field names to be included in the table. "In SQLite, you don't necessarily have to specify the data type of the field, so I'll omit the type here for simplicity.
-
+  </li>
+</ol>
+<p>
+  The second method is used to execute what is called a select statement in SQL. The first method is used to execute SQL other than the select statement. Remember "select is prepare and execute" and "otherwise do".
+</p>
+<h3> Create a table </h3>
+<p>
+  Now let's create the simplest SQL to create a table. Use the "create table" statement to create a table. In the "create table" statement, specify the name of the table to be created and the field names to be included in the table. "In SQLite, you don't necessarily have to specify the data type of the field, so I'll omit the type here for simplicity.
+</p>
  SQL that creates a table with the table name book and the fields title and author.
-
-&lt;pre&gt;
+<pre>
 create table book (
   title,
   author
 );
-&lt;/ pre&gt;
-
-Now let's actually create a table using the do method.
-
-&lt;pre&gt;
-my $ create_table = &lt;&lt;'EOS';
+</pre>
+<p>
+  Now let's actually create a table using the do method.
+</p>
+<pre>
+my $create_table = &lt;&lt;'EOS';
 create table book (
   title,
   author
 )
 EOS
 
-$ dbh-&gt; do ($ create_table);
-&lt;/ pre&gt;
-
-You now have a table named book.
-
-&lt;h3&gt; Drop the table &lt;/ h3&gt;
-
-Now that you've learned how to create a table, let's also learn how to delete a table, which is the opposite operation. Use the "drop table" statement to drop a table.
-
-&lt;pre&gt;
+$dbh-&gt; do($create_table);
+</pre>
+<p>
+  You now have a table named book.
+</p>
+<h3> Drop the table </h3>
+<p>
+  Now that you've learned how to create a table, let's also learn how to delete a table, which is the opposite operation. Use the "drop table" statement to drop a table.
+</p>
+<pre>
 drop table table name
-&lt;/ pre&gt;
-
-Let's drop the table using do.
-
-&lt;pre&gt;
-my $ drop_table = "drop table book";
-$ dbh-&gt; do ($ drop_table);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Add record insert &lt;/ h3&gt;
-
-Use the insert statement to insert a record into the table.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's drop the table using do.
+</p>
+<pre>
+my $drop_table = "drop table book";
+$dbh-&gt; do($drop_table);
+</pre>
+<h3> Add record insert </h3>
+<p>
+  Use the insert statement to insert a record into the table.
+</p>
+<pre>
 insert into table name (field name 1, field name 2, ..) values ​​(value 1, value 2, value 3);
-&lt;/ pre&gt;
-
-To add a record with "title" to "Perl" and "author" to "taro" to the table, the SQL would be: If the data is a string, enclose it in single quotes (although this is a very dangerous security method and a workaround will be explained later).
-
-&lt;pre&gt;
+</pre>
+<p>
+  To add a record with "title" to "Perl" and "author" to "taro" to the table, the SQL would be: If the data is a string, enclose it in single quotes (although this is a very dangerous security method and a workaround will be explained later).
+</p>
+<pre>
 insert into book (title, author) values ​​('Perl','taro');
-&lt;/ pre&gt;
-
-Let's execute an insert statement using do. Please wait until the select statement is explained a little further to confirm whether it has been inserted.
-
-&lt;pre&gt;
-my $ insert = "insert into book (title, author) values ​​('Perl','taro');";
-$ dbh-&gt; do ($ insert);
-&lt;/ pre&gt;
-
-This will add a record like the one below to the table.
-
-&lt;pre&gt;
-+ -------- + ---------- +
+</pre>
+<p>
+  Let's execute an insert statement using do. Please wait until the select statement is explained a little further to confirm whether it has been inserted.
+</p>
+<pre>
+my $insert = "insert into book (title, author) values ​​('Perl','taro');";
+$dbh-&gt; do($insert);
+</pre>
+<p>
+  This will add a record like the one below to the table.
+</p>
+<pre>
++ - -- --- + - -- -- -- +
 | title | author | # header (this can be done when you create the table)
-+ -------- + ---------- +
-| Perl | taro | # record (record added by insert statement)
-+ -------- + ---------- +
-&lt;/ pre&gt;
-
-&lt;h3&gt; Record update update &lt;/ h3&gt;
-
-Use the update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in the select statement, multiple conditions can be specified in the where section.
-
-&lt;pre&gt;
++ - -- --- + - -- -- -- +
+| Perl | taro | # record(record added by insert statement)
++ - -- --- + - -- -- -- +
+</pre>
+<h3> Record update update </h3>
+<p>
+  Use the update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in the select statement, multiple conditions can be specified in the where section.
+</p>
+<pre>
 update table name set field name 1 = value 1, feel name 2 = value 2, .. where to search field name = value
-&lt;/ pre&gt;
-
-The SQL to change the title value of a record whose "author" is "taro" to Ruby is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The SQL to change the title value of a record whose "author" is "taro" to Ruby is as follows.
+</p>
+<pre>
 update book set title ='Ruby' where author ='taro'
-&lt;/ pre&gt;
-
-Let's execute the update statement using do.
-
-&lt;pre&gt;
-my $ update = "update book set title ='Ruby' where author ='taro'";
-$ dbh-&gt; do ($ update);
-&lt;/ pre&gt;
-
-The previous record is updated and looks like this:
-
-&lt;pre&gt;
-+ -------- + ---------- +
+</pre>
+<p>
+  Let's execute the update statement using do.
+</p>
+<pre>
+my $update = "update book set title ='Ruby' where author ='taro'";
+$dbh-&gt; do($update);
+</pre>
+<p>
+  The previous record is updated and looks like this:
+</p>
+<pre>
++ - -- --- + - -- -- -- +
 | title | author | # header (this can be done when you create the table)
-+ -------- + ---------- +
-| Ruby | taro | # record (record updated by update statement)
-+ -------- + ---------- +
-&lt;/ pre&gt;
-
-&lt;h3&gt; Delete record delete &lt;/h3&gt;
-
-Use the delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
-
-&lt;pre&gt;
++ - -- --- + - -- -- -- +
+| Ruby | taro | # record(record updated by update statement)
++ - -- --- + - -- -- -- +
+</pre>
+<h3> Delete record delete </h3>
+<p>
+  Use the delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
+</p>
+<pre>
 delete from table name where field name to search = value
-&lt;/ pre&gt;
-
-The SQL to delete a record whose "author" is "taro" looks like this:
-
-&lt;pre&gt;
+</pre>
+<p>
+  The SQL to delete a record whose "author" is "taro" looks like this:
+</p>
+<pre>
 delete from book where author ='taro';
-&lt;/ pre&gt;
-
-Let's execute a delete statement using do.
-
-&lt;pre&gt;
-my $ delete = "delete from book where author ='taro';";
-$ dbh-&gt; do ($ delete);
-&lt;/ pre&gt;
-
-The record will be deleted.
-
-&lt;h3&gt; Get record select &lt;/ h3&gt;
-
-It's finally a select statement. Up to this point, you couldn't check the added record or deleted record, but you can check it by remembering the select statement. Now let's write the simplest select statement. To get all the columns in the specified table: * Means all fields.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's execute a delete statement using do.
+</p>
+<pre>
+my $delete = "delete from book where author ='taro';";
+$dbh-&gt; do($delete);
+</pre>
+<p>
+  The record will be deleted.
+</p>
+<h3> Get record select </h3>
+<p>
+  It's finally a select statement. Up to this point, you couldn't check the added record or deleted record, but you can check it by remembering the select statement. Now let's write the simplest select statement. To get all the columns in the specified table: * Means all fields.
+</p>
+<pre>
 select * from table name;
-&lt;/ pre&gt;
-
-To get all the records in book, the SQL is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To get all the records in book, the SQL is as follows.
+</p>
+<pre>
 select * from book;
-&lt;/ pre&gt;
-
-Execution of select statement cannot be done with do. To execute the select statement, you need to prepare the SQL statement with a method called prepare and then execute it with execute. The prepare method returns what is called a statement handle that contains the prepared SQL. Execute execute from this statement handle.
-
-Now let's actually execute the select statement.
-
-&lt;pre&gt;
-my $ select = "select * from book;";
-my $ sth = $ dbh-&gt; prepare ($ select);
-$ sth-&gt; execute;
-&lt;/ pre&gt;
-
-You can now execute the select statement. The next thing you need to do is actually get each row by an operation called fetch. To fetch a row and assign it to an array, use a method called fetchrow_array from the statement handle.
-
-&lt;pre&gt;
-$ sth-&gt; fetchrow_array;
-&lt;/ pre&gt;
-
-This is usually repeated using a &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; until you get all the rows.
-
-&lt;pre&gt;
-while (my @row = $ sth-&gt; fetchrow_array) {
+</pre>
+<p>
+  Execution of select statement cannot be done with do. To execute the select statement, you need to prepare the SQL statement with a method called prepare and then execute it with execute. The prepare method returns what is called a statement handle that contains the prepared SQL. Execute execute from this statement handle.
+</p>
+<p>
+  Now let's actually execute the select statement.
+</p>
+<pre>
+my $select = "select * from book;";
+my $sth = $dbh-&gt; prepare ($select);
+$sth-&gt; execute;
+</pre>
+<p>
+  You can now execute the select statement. The next thing you need to do is actually get each row by an operation called fetch. To fetch a row and assign it to an array, use a method called fetchrow_array from the statement handle.
+</p>
+<pre>
+$sth-&gt; fetchrow_array;
+</pre>
+<p>
+  This is usually repeated using a <a href="/blog/20100123126425.html"> while statement</a> until you get all the rows.
+</p>
+<pre>
+while (my @row = $sth-&gt; fetchrow_array) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; In SQLite, it is convenient to create a database in memory &lt;/ h3&gt;
-
-SQLite allows you to create a database in memory. You don't need to specify a file name, and the table will be deleted automatically when you disconnect the database, which is very convenient if you want to check the operation a little. For most of the explanations here, I will create a database in memory and explain it.
-
-To create a database in memory, specify ": ​​memory:" as the database name of the data source.
-
-&lt;pre&gt;
-my $ dbh = DBI-&gt; connect ("dbi: SQLite: dbname =: memory:");
-&lt;/ pre&gt;
-
-You can now connect to the database in memory.
-
-&lt;h3&gt; Sample code for insert, update, delete, select that can actually be run &lt;/ h3&gt;
-
-So far, I've only explained, so I think it was difficult to get an image. Here are some samples. Try running the source code and get used to working with records in the database. If you understand this, you have mastered the basics of database basics.
-
-&lt;pre&gt;
+</pre>
+<h3> In SQLite, it is convenient to create a database in memory </h3>
+<p>
+  SQLite allows you to create a database in memory. You don't need to specify a file name, and the table will be deleted automatically when you disconnect the database, which is very convenient if you want to check the operation a little. For most of the explanations here, I will create a database in memory and explain it.
+</p>
+<p>
+  To create a database in memory, specify ": ​​memory:" as the database name of the data source.
+</p>
+<pre>
+my $dbh = DBI-&gt; connect ("dbi: SQLite: dbname =: memory:");
+</pre>
+<p>
+  You can now connect to the database in memory.
+</p>
+<h3> Sample code for insert, update, delete, select that can actually be run </h3>
+<p>
+  So far, I've only explained, so I think it was difficult to get an image. Here are some samples. Try running the source code and get used to working with records in the database. If you understand this, you have mastered the basics of database basics.
+</p>
+<pre>
 use strict;
 use warnings;
 
 use DBI;
 
-#Connect to database in memory
-my $ dbh = DBI-&gt; connect ("dbi: SQLite: dbname =: memory:");
+# Connect to database in memory
+my $dbh = DBI-&gt; connect ("dbi: SQLite: dbname =: memory:");
 
-#Create table
-my $ create_table = &lt;&lt;'EOS';
+# Create table
+my $create_table = &lt;&lt;'EOS';
 create table book (
   title,
   author
 )
 EOS
 
-$ dbh-&gt; do ($ create_table);
+$dbh-&gt; do($create_table);
 
-Execution of #insert statement
-$ dbh-&gt; do ("insert into book (title, author) values ​​('Perl','taro');");
-$ dbh-&gt; do ("insert into book (title, author) values ​​('C ++','taro');");
-$ dbh-&gt; do ("insert into book (title, author) values ​​('Python','ken');");
-$ dbh-&gt; do ("insert into book (title, author) values ​​('Java','mamoru');");
+Execution of # insert statement
+$dbh-&gt; do("insert into book (title, author) values ​​('Perl','taro');");
+$dbh-&gt; do("insert into book (title, author) values ​​('C ++','taro');");
+$dbh-&gt; do("insert into book (title, author) values ​​('Python','ken');");
+$dbh-&gt; do("insert into book (title, author) values ​​('Java','mamoru');");
 
 Execution of # update statement
-$ dbh-&gt; do ("update book set title ='Ruby' where author ='mamoru'");
+$dbh-&gt; do("update book set title ='Ruby' where author ='mamoru'");
 
-Execution of #delete statement
-$ dbh-&gt; do ("delete from book where author ='ken';");
+Execution of # delete statement
+$dbh-&gt; do("delete from book where author ='ken';");
 
-Execution of #select statement
-my $ sth = $ dbh-&gt; prepare ("select * from book;");
-$ sth-&gt; execute;
+Execution of # select statement
+my $sth = $dbh-&gt; prepare ("select * from book;");
+$sth-&gt; execute;
 
 # Fetch each row
-while (my @row = $ sth-&gt; fetchrow_array) {
+while (my @row = $sth-&gt; fetchrow_array) {
   # Output each line
-  print join (',', @row), "\ n";
+  print join(',', @row), "\n";
 }
 
-#Database disconnection
-$ dbh-&gt; disconnect;
-&lt;/ pre&gt;
-
-You will get output similar to the following:
-
-&lt;pre&gt;
+# Database disconnection
+$dbh-&gt; disconnect;
+</pre>
+<p>
+  You will get output similar to the following:
+</p>
+<pre>
 Perl, taro
 C ++, taro
 Ruby, mamoru
-&lt;/ pre&gt;
-
-&lt;h3&gt; Connect by specifying the user name and password &lt;/ h3&gt;
-
-No username or password is required to connect to the database created by SQLite. However, standard databases such as MySQL, PostgreSQL, and Oracle require a username and password to be specified when connecting.
-
-To connect using DBI with a username and password: Specify the user name in the second argument and the password in the third argument.
-
-&lt;pre&gt;
-my $ dbh = DBI-&gt; connect ($ data_source, $ user, $ password);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Standard settings for DBI options &lt;/ h3&gt;
-
-In DBI, you can specify DBI options in the 4th argument of the connect method.
-
-&lt;pre&gt;
-DBI-&gt; connect ($ data_source, $ user, $ password, {opt1 =&gt; $ val1, opt2 =&gt; $ val2, ..});
-&lt;/ pre&gt;
-
-DBI's default behavior is to print a warning to standard error if an error occurs.
-
-However, I think it is better to output an error message instead of a warning and exit the program.
-
-To prevent the warning from being output, do the following.
-
-&lt;pre&gt;
+</pre>
+<h3> Connect by specifying the user name and password </h3>
+<p>
+  No username or password is required to connect to the database created by SQLite. However, standard databases such as MySQL, PostgreSQL, and Oracle require a username and password to be specified when connecting.
+</p>
+<p>
+  To connect using DBI with a username and password: Specify the user name in the second argument and the password in the third argument.
+</p>
+<pre>
+my $dbh = DBI-&gt; connect ($data_source, $user, $password);
+</pre>
+<h3> Standard settings for DBI options </h3>
+<p>
+  In DBI, you can specify DBI options in the 4th argument of the connect method.
+</p>
+<pre>
+DBI-&gt; connect ($data_source, $user, $password, {opt1 =&gt; $val1, opt2 =&gt; $val2, ..});
+</pre>
+<p>
+  DBI's default behavior is to print a warning to standard error if an error occurs.
+</p>
+<p>
+  However, I think it is better to output an error message instead of a warning and exit the program.
+</p>
+<p>
+  To prevent the warning from being output, do the following.
+</p>
+<pre>
 PrintError =&gt; 0
-&lt;/ pre&gt;
-
-To output an error message and terminate the program, do the following.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To output an error message and terminate the program, do the following.
+</p>
+<pre>
 RaiseError =&gt; 1
-&lt;/ pre&gt;
-
-DBI also has an option called AutoCommit. This is an option that decides whether or not to do something called commit automatically. The default value may differ depending on the database driver, so it is better to specify it explicitly. In my case I want it to commit automatically and set AutoCommit to 0 when a transaction is needed.
-
-Therefore, when connecting to the database based on this, it may be better to write as follows.
-&lt;pre&gt;
-my $ dbh = DBI-&gt; connect (
-  $ data_source,
-  $ user,
-  $ password,
+</pre>
+<p>
+  DBI also has an option called AutoCommit. This is an option that decides whether or not to do something called commit automatically. The default value may differ depending on the database driver, so it is better to specify it explicitly. In my case I want it to commit automatically and set AutoCommit to 0 when a transaction is needed.
+</p>
+<p>
+  Therefore, when connecting to the database based on this, it may be better to write as follows.
+</p>
+<pre>
+my $dbh = DBI-&gt; connect (
+  $data_source,
+  $user,
+  $password,
   {
     RaiseError =&gt; 1,
     PrintError =&gt; 0,
     AutoCommit =&gt; 1,
   }
 );
-&lt;/ pre&gt;
-
-If you don't need a username or password and just want to specify options, do the following:
-
-&lt;pre&gt;
-my $ dbh = DBI-&gt; connect (
-  $ data_source,
+</pre>
+<p>
+  If you don't need a username or password and just want to specify options, do the following:
+</p>
+<pre>
+my $dbh = DBI-&gt; connect (
+  $data_source,
   undef,
   undef,
   {
@@ -486,15 +491,17 @@ my $ dbh = DBI-&gt; connect (
     AutoCommit =&gt; 1,
   }
 );
-&lt;/ pre&gt;
-
-&lt;h3&gt; Install SQLite client sqlite3 &lt;/ h3&gt;
-
-If you install SQLite on Windows, you will be able to execute SQL directly from the command prompt. SQL can be executed programmatically using DBI, but it is better to have an environment where it can be executed interactively for learning SQL.
-
-How to install SQLite on Windows is explained here.
-
-&lt;a href="/blog/20091203126018.html"&gt; Install SQLite on Windows &lt;/a&gt;
+</pre>
+<h3> Install SQLite client sqlite3 </h3>
+<p>
+  If you install SQLite on Windows, you will be able to execute SQL directly from the command prompt. SQL can be executed programmatically using DBI, but it is better to have an environment where it can be executed interactively for learning SQL.
+</p>
+<p>
+  How to install SQLite on Windows is explained here.
+</p>
+<p>
+  <a href="/blog/20091203126018.html"> Install SQLite on Windows</a>
+</p>
 
   </div>
   <div class="bottom">

@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Single quote string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="A  single-quote string  is a string enclosed in single-quotes. Unlike  double quoted string ,  variable expansion  is not done and newline characters You cannot use  escape sequences for double quotes  such as "\ n".">
+<meta name="description" content="A  single-quote string  is a string enclosed in single-quotes. Unlike  double quoted string,  variable expansion is not done and newline characters You cannot use  escape sequences for double quotes such as "\n".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Single quote string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="A  single-quote string  is a string enclosed in single-quotes. Unlike  double quoted string ,  variable expansion  is not done and newline characters You cannot use  escape sequences for double quotes  such as "\ n"." />
+<meta name="twitter:description" content="A  single-quote string  is a string enclosed in single-quotes. Unlike  double quoted string,  variable expansion is not done and newline characters You cannot use  escape sequences for double quotes such as "\n"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,29 +62,29 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161003147558.html">
-        <span itemprop = "name"> string </ span> </a>
+        <span itemprop = "name"> string </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20201027075254.html"> Single quote string </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20201027075254.html"> Single quote string </a></h2>
 <p>
-  A <b> single-quote string </ b> is a string enclosed in single-quotes. Unlike <a href="/blog/20201026075254.html"> double quoted string </a>, <a href="/blog/20180228151982.html"> variable expansion </a> is not done and newline characters You cannot use <a href="/blog/20201030075254.html"> escape sequences for double quotes </a> such as "\ n".
+  A <b> single-quote string </b> is a string enclosed in single-quotes. Unlike <a href="/blog/20201026075254.html"> double quoted string</a>, <a href="/blog/20180228151982.html"> variable expansion</a> is not done and newline characters You cannot use <a href="/blog/20201030075254.html"> escape sequences for double quotes</a> such as "\n".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,44 +103,45 @@
 
 
 <pre>
-#Single quote string
-my $ name ='Perl Tutorial Book';
-&lt;/ pre&gt;
+# Single quote string
+my $name ='Perl Tutorial Book';
+</pre>
+<p>
+  Variable expansion is not performed and the newline character is displayed as it is.
+</p>
+<pre>
+my $message ='I like $book\n';
 
-Variable expansion is not performed and the newline character is displayed as it is.
-
-&lt;pre&gt;
-my $ message ='I like $ book \ n';
-
-# "I like $ book \ n" is displayed.
-print $ message;
-&lt;/ pre&gt;
-
-Single quoted strings can be used when you want to explicitly express that they are string constants that do not use variable expansion or newline characters.
-
-&lt;h3&gt; Escape sequence of single quoted strings &lt;/ h3&gt;
-
-A list of single-quote string escape sequences.
-
-&lt;table&gt;
-  &lt;tr&gt; &lt;th&gt; Escape sequence &lt;/ th&gt; &lt;th&gt; Meaning &lt;/ th&gt; &lt;/ tr&gt;
-  &lt;tr&gt; &lt;td&gt; \'&lt;/ td&gt; &lt;td&gt;'&lt;/ td&gt; &lt;/ tr&gt;
-  &lt;tr&gt; &lt;td&gt; \\ &lt;/ td&gt; &lt;td&gt; \ &lt;/ td&gt; &lt;/ tr&gt;
-&lt;/ table&gt;
-
-In single quotes, remember the "\'" that represents a single quote and the "\\" that represents the backslash itself.
-
-&lt;pre&gt;
-my $ message ='I \'m honest Perl User \\';
-&lt;/ pre&gt;
-
-The explanation page of the escape sequence of the single quote string is as follows.
-
-&lt;ul&gt;
-  &lt;li&gt; &lt;a href="/blog/20201029075254.html"&gt; Escape sequence of single quoted strings &lt;/a&gt; &lt;/ li&gt;
-&lt;/ ul&gt;
-
-If you want to copy and paste a string containing single quotes, you can also use the &lt;a href="/blog/20100304126967.html"&gt; single quote operator &lt;/a&gt;.
+# "I like $book\n" is displayed.
+print $message;
+</pre>
+<p>
+  Single quoted strings can be used when you want to explicitly express that they are string constants that do not use variable expansion or newline characters.
+</p>
+<h3> Escape sequence of single quoted strings </h3>
+<p>
+  A list of single-quote string escape sequences.
+</p>
+<table>
+  <tr> <th> Escape sequence </th> <th> Meaning </th> </tr>
+  <tr> <td> \'</td> <td>'</td> </tr>
+  <tr> <td> \\ </td> <td> \ </td> </tr>
+</table>
+<p>
+  In single quotes, remember the "\'" that represents a single quote and the "\\" that represents the backslash itself.
+</p>
+<pre>
+my $message ='I \'m honest Perl User \\';
+</pre>
+<p>
+  The explanation page of the escape sequence of the single quote string is as follows.
+</p>
+<ul>
+  <li> <a href="/blog/20201029075254.html"> Escape sequence of single quoted strings</a> </li>
+</ul>
+<p>
+  If you want to copy and paste a string containing single quotes, you can also use the <a href="/blog/20100304126967.html"> single quote operator</a>.
+</p>
 
   </div>
   <div class="bottom">

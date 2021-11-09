@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180322152172.html"> unless modifier-postfix unless </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180322152172.html"> unless modifier-postfix unless </a></h2>
 <p>
-  You can add unless with the <b> unless modifier </ b>.
+  You can add unless with the <b> unless modifier </b>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,62 +98,61 @@
 
 <pre>
 Statement unless condition;
-&lt;/ pre&gt;
-
-This is a sample using the unless modifier. If $ num is not defined, 1 is assigned to "$ num".
-
-&lt;pre&gt;
-$ num = 1 unless defined $ num;
-&lt;/ pre&gt;
-
-There is a merit to use the unless modifier when it is a simple condition that can be written in one line. "Next unless condition" and "last unless condition" are often used.
-
-&lt;h4&gt; Benefits of the unless modifier &lt;/ h4&gt;
-
-The advantage of the unless modifier is performance over the regular &lt;a href="/blog/20100125126425.html"&gt; unless statement &lt;/a&gt;. The unless statement creates a &lt;a href="/blog/20110128130016.html"&gt; scope &lt;/a&gt;, while the unless modifier does not. Therefore, the unless modifier has better performance.
-
-&lt;h4&gt; if modifier &lt;/ h4&gt;
-
-There is an if qualifier that can be followed in the same way as the unless qualifier.
-
-&lt;pre&gt;
-$ num1 = 1 if defined $ num1;
-&lt;/ pre&gt;
-
-The if modifier is explained in detail below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080324120637.html"&gt; if modifier-postfix if &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample unless modifier.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is a sample using the unless modifier. If $num is not defined, 1 is assigned to "$num".
+</p>
+<pre>
+$num = 1 unless defined $num;
+</pre>
+<p>
+  There is a merit to use the unless modifier when it is a simple condition that can be written in one line. "Next unless condition" and "last unless condition" are often used.
+</p>
+<h4> Benefits of the unless modifier </h4>
+<p>
+  The advantage of the unless modifier is performance over the regular <a href="/blog/20100125126425.html"> unless statement</a>. The unless statement creates a <a href="/blog/20110128130016.html"> scope</a>, while the unless modifier does not. Therefore, the unless modifier has better performance.
+</p>
+<h4> if modifier </h4>
+<p>
+  There is an if qualifier that can be followed in the same way as the unless qualifier.
+</p>
+<pre>
+$num1 = 1 if defined $num1;
+</pre>
+<p>
+  The if modifier is explained in detail below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080324120637.html"> if modifier-postfix if</a>
+  </li>
+</ul>
+<h3> Sample </h3>
+<p>
+  This is a sample unless modifier.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Postfix unless
-print "1: Example of postfix unless \ n";
-my $ num1;
-$ num1 = 1 unless defined $ num1;
-print "\ $ num1 = $ num1 \ n";
+print "1: Example of postfix unless\n";
+my $num1;
+$num1 = 1 unless defined $num1;
+print "\ $num1 = $num1\n";
 
-my $ num2 = 10;
-$ num2 = 2 unless defined $ num2;
-print "\ $ num2 = $ num2 \ n";
-&lt;/ pre&gt;
-
-Execution result
-
-&lt;pre&gt;
+my $num2 = 10;
+$num2 = 2 unless defined $num2;
+print "\ $num2 = $num2\n";
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 1: Example of postfix unless
-$ num1 = 1
-$ num2 = 10
-&lt;/ pre&gt;
+$num1 = 1
+$num2 = 10
+</pre>
 
   </div>
   <div class="bottom">

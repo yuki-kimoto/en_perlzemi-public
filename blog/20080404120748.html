@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100827127859.html">
-      <span itemprop = "name"> Regular expression </ span> </a>
+      <span itemprop = "name"> Regular expression </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080404120748.html"> Representing word character delimiters-\ b </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080404120748.html"> Representing word character delimiters-\ b </a></h2>
 <p>
-  Use the regular expression character <strong> \ b </ strong> to separate word characters.
+  Use the regular expression character <strong> \ b </strong> to separate word characters.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,37 +99,38 @@
 
 <pre>
 \ b
-&lt;/ pre&gt;
-
-\ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd", / \ bcd / can represent the 0 character between'' and c.
-
-Word characters are alphanumeric characters and underscores. Whitespace is the character represented by \ s, which is a space, tab, or newline.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample using word character delimiters.
-
-&lt;pre&gt;
+</pre>
+<p>
+  \ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd", / \ bcd / can represent the 0 character between'' and c.
+</p>
+<p>
+  Word characters are alphanumeric characters and underscores. Whitespace is the character represented by \ s, which is a space, tab, or newline.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample using word character delimiters.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Represents a word character delimiter. \ b
 # (A word character is a character consisting of alphanumeric characters and an underscore)
 
-my $ word_space = "ab cd ef";
-my $ word = "abcd ef";
+my $word_space = "ab cd ef";
+my $word = "abcd ef";
 
-print "1: Represents word string delimiters \ n";
-if ($ word_space = ~ / ab \ b / &amp;&amp; $ word! ~ / Ab \ b /) {
+print "1: Represents word string delimiters\n";
+if ($word_space = ~ / ab \ b / &amp;&amp; $word! ~ / Ab \ b /) {
   print "/ ab \\ b / matches'ab cd ef', but".
-    "Does not match'abcd ef'. \ N \ n";
+    "Does not match'abcd ef'.\n\n";
 }
 
-if ($ word_space = ~ / \ bcd \ b / &amp;&amp; $ word! ~ / \ Bb \ b /) {
+if ($word_space = ~ / \ bcd \ b / &amp;&amp; $word! ~ / \ Bb \ b /) {
   print "/ \\ bcd \\ b / matches'ab cd ef', but".
-    "Does not match'abcd ef'. \ N";
+    "Does not match'abcd ef'.\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

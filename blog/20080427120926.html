@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> __FILE__ --Get the script file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> __FILE__ - Get the script file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use  __FILE__  to get the file name of the script.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" __FILE__ --Get the script file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" __FILE__ - Get the script file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use  __FILE__  to get the file name of the script." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080427120926.html"> __FILE__ --Get the script file name </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080427120926.html"> __FILE__ - Get the script file name </a></h2>
 <p>
-  Use <strong> __FILE__ </ strong> to get the file name of the script.
+  Use <strong> __FILE__ </strong> to get the file name of the script.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,38 +98,36 @@
 
 <pre>
 __FILE__
-&lt;/ pre&gt;
+</pre>
+<p>
+  When you load a file as a script, the program expands into memory in the process space, but Perl remembers the filename before it was expanded.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample to get the file name of the script.
+</p>
+<pre>
+# Get file name __FILE__
+print "1: Get the file name. (__FILE__)\n";
+print "This file name is\n".
+  __FILE__. "\n".
+  ".\n\n";
 
-When you load a file as a script, the program expands into memory in the process space, but Perl remembers the filename before it was expanded.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample to get the file name of the script.
-
-&lt;pre&gt;
-#Get file name __FILE__
-print "1: Get the file name. (__FILE__) \ n";
-print "This file name is \ n".
-  __FILE__. "\ n".
-  ". \ N \ n";
-
-print "2: Get the name of the read file. \ N";
-Use #do to read another file into the memory of the process space of this program.
+print "2: Get the name of the read file.\n";
+Use # do to read another file into the memory of the process space of this program.
 do "SomeModule.pm";
 
-print "The read file name is \ n",
-  SomeModule :: this_file_name (), "\ n",
-  ". \ N \ n";
+print "The read file name is\n",
+  SomeModule::this_file_name (), "\n",
+  ".\n\n";
 
-print '3: Not the name of the script being executed ($ 0). '. "\ N";
-print "The name of the script being executed is \ n",
-  SomeModule :: this_script_name (), "\ n",
-  ". \ N";
-&lt;/ pre&gt;
-
-&lt;h4&gt; SomeModule.pm (Place it in the same directory as the sample script above) &lt;/ h4&gt;
-
-&lt;pre&gt;
+print '3: Not the name of the script being executed ($0). '. "\n";
+print "The name of the script being executed is\n",
+  SomeModule::this_script_name (), "\n",
+  ".\n";
+</pre>
+<h4> SomeModule.pm (Place it in the same directory as the sample script above) </h4>
+<pre>
 package SomeModule;
 
 use strict;
@@ -140,12 +138,12 @@ sub this_file_name {
 }
 
 sub this_script_name {
-  return $ 0;
+  return $0;
 }
 
 1;
 
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

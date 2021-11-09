@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span>
-    </a>
+      <span itemprop = "name"> Perl </span>
+</a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop = "name"> Mojolicious </ span>
-    </a>
+      <span itemprop = "name"> Mojolicious </span>
+</a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20091212126018.html"> Creating a Web application template </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20091212126018.html"> Creating a Web application template </a></h2>
 <p>
   Mojolicious will automatically generate the minimum required template. I will explain how to create a template and the template of the created Web application.
 </p>
@@ -94,31 +94,31 @@
 </div>
 
 
-<h3> Creating a Web application template </ h3>
+<h3> Creating a Web application template </h3>
 <p>
   To create a web application template, change to the directory directly under mojo and execute the following command. It seems to be a good practice to keep the application name in uppercase and the letters after it in lowercase. (Names like "TestApp" aren't very good, I think names like "Testapp" are good.)
 </p>
 <pre>
-#For Windows
+# For Windows
 perl script \ mojo generate app web application name
 
 # For Unix-like OS
 perl script / mojo generate app web application name
-&lt;/ pre&gt;
-
-Now let's create a template with the web application name named Sampleapp.
-
-&lt;pre&gt;
-#For Windows
+</pre>
+<p>
+  Now let's create a template with the web application name named Sampleapp.
+</p>
+<pre>
+# For Windows
 perl script \ mojolicious generate app Sample app
 
 # For Unix-like OS
 perl script / mojolicious generate app Sample app
-&lt;/ pre&gt;
-
-A list of created files will be output to the screen.
-
-&lt;pre&gt;
+</pre>
+<p>
+  A list of created files will be output to the screen.
+</p>
+<pre>
   [mkdir] C: \ Download \ mojo \ sampleapp \ script
   [write] C: \ Download \ mojo \ sampleapp \ script \ sampleapp
   [chmod] sampleapp / script / sampleapp 744
@@ -126,26 +126,25 @@ A list of created files will be output to the screen.
   [write] C: \ Download \ mojo \ sampleapp \ lib \ Sampleapp.pm
   [mkdir] C: \ Download \ mojo \ sampleapp \ lib \ Sampleapp
   [write] C: \ Download \ mojo \ sampleapp \ lib \ Sampleapp \ Example.pm
-  [mkdir] C: \ Download \ mojo \ sampleapp \ t
-  [write] C: \ Download \ mojo \ sampleapp \ t \ basic.t
+  [mkdir] C: \ Download \ mojo \ sampleapp\t
+  [write] C: \ Download \ mojo \ sampleapp\t \ basic.t
   [mkdir] C: \ Download \ mojo \ sampleapp \ log
   [mkdir] C: \ Download \ mojo \ sampleapp \ public
   [write] C: \ Download \ mojo \ sampleapp \ public \ index.html
-  [mkdir] C: \ Download \ mojo \ sampleapp \ templates
-  [write] C: \ Download \ mojo \ sampleapp \ templates \ not_found.html.ep
-  [exist] C: \ Download \ mojo \ sampleapp \ templates
-  [write] C: \ Download \ mojo \ sampleapp \ templates \ exception.html.ep
-  [mkdir] C: \ Download \ mojo \ sampleapp \ templates \ layouts
-  [write] C: \ Download \ mojo \ sampleapp \ templates \ layouts \ default.html.ep
-  [mkdir] C: \ Download \ mojo \ sampleapp \ templates \ example
-  [write] C: \ Download \ mojo \ sampleapp \ templates \ example \ welcome.html.ep
-&lt;/ pre&gt;
-
-&lt;h3&gt; Role of each created directory &lt;/ h3&gt;
-
-If you specify the name "Sampleapp", a directory called "sampleapp" will be created under mojo. You will create a web application by editing the files under sampleapp. I will explain the role of each directory to get an overall overview.
-
-&lt;pre&gt;
+  [mkdir] C: \ Download \ mojo \ sampleapp\templates
+  [write] C: \ Download \ mojo \ sampleapp\templates\not_found.html.ep
+  [exist] C: \ Download \ mojo \ sampleapp\templates
+  [write] C: \ Download \ mojo \ sampleapp\templates \ exception.html.ep
+  [mkdir] C: \ Download \ mojo \ sampleapp\templates \ layouts
+  [write] C: \ Download \ mojo \ sampleapp\templates \ layouts \ default.html.ep
+  [mkdir] C: \ Download \ mojo \ sampleapp\templates \ example
+  [write] C: \ Download \ mojo \ sampleapp\templates \ example \ welcome.html.ep
+</pre>
+<h3> Role of each created directory </h3>
+<p>
+  If you specify the name "Sampleapp", a directory called "sampleapp" will be created under mojo. You will create a web application by editing the files under sampleapp. I will explain the role of each directory to get an overall overview.
+</p>
+<pre>
 sampleapp-+
            | -stores the lib application
            | -log Store error and warning logs
@@ -153,64 +152,69 @@ sampleapp-+
            | -script Stores HTTP server startup scripts, etc.
            | -t Store web application exams
            | -templates Store HTML templates
-&lt;/ pre&gt;
-
-I will briefly explain the file.
-
-&lt;h4&gt; lib --directory to store applications &lt;/ h4&gt;
-
-The lib directory stores applications. An application is a module written in Perl in Mojolicious. Therefore, the .pm file will be stored under the lib directory.
-
-The default files under lib are as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  I will briefly explain the file.
+</p>
+<h4> lib - directory to store applications </h4>
+<p>
+  The lib directory stores applications. An application is a module written in Perl in Mojolicious. Therefore, the .pm file will be stored under the lib directory.
+</p>
+<p>
+  The default files under lib are as follows.
+</p>
+<pre>
 lib-+
      | -Sampleapp.pm
      | -Sampleapp /-+
                     |-Example.pm
-&lt;/ pre&gt;
-
-Sampleapp.pm is a class that represents the application itself. In this, the settings related to the application and the branching of processing for each URL are described.
-
-Classes that will be controllers are placed under the Sampleapp directory. The controller class is a class that describes the process corresponding to the URL. Remember that the controller describes the process that corresponds to the URL. (It corresponds to C of MVC which is often called)
-
-&lt;h4&gt; log --Store error and warning logs &lt;/ h4&gt;
-
-Mojolicious messages are output to a file called development.log under the log directory. If you get any error, look at this log.
-
-&lt;h4&gt; public --Store static files (HTML, CSS, JavaScript) &lt;/ h4&gt;
-
-This directory contains static files such as HTML files, CSS, and JavaScript.
-
-&lt;h4&gt; script --Stores HTTP server startup scripts, etc. &lt;/ h4&gt;
-
-Below the script, the script that starts the HTTP server is placed. Mojolicious implements an HTTP server for convenience such as testing. By starting this HTTP server, you can run the web application without an HTTP server such as Apache.
-
-&lt;h4&gt; t --Store web application exams &lt;/ h4&gt;
-
-The test of the Web application is stored under t. Testing web applications is generally a hassle, but Mojolicous has a testing framework called Test :: Mojo that makes it easy to test.
-
-&lt;h4&gt; templates --Store HTML templates &lt;/ h4&gt;
-
-Mojolicious has Mojo :: Template as a standard template engine. This corresponds to V in MVC. You can use Mojo :: Template to dynamically generate HTML on request. Unlike HTML :: Template and Template-Toolkit, Mojo :: Template is characterized by being able to use Perl syntax in templates.
-
-The Mojolicious template has a ".ep" extension. Let's take a closer look at the directory structure of templates. It is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Sampleapp.pm is a class that represents the application itself. In this, the settings related to the application and the branching of processing for each URL are described.
+</p>
+<p>
+  Classes that will be controllers are placed under the Sampleapp directory. The controller class is a class that describes the process corresponding to the URL. Remember that the controller describes the process that corresponds to the URL. (It corresponds to C of MVC which is often called)
+</p>
+<h4> log - Store error and warning logs </h4>
+<p>
+  Mojolicious messages are output to a file called development.log under the log directory. If you get any error, look at this log.
+</p>
+<h4> public - Store static files (HTML, CSS, JavaScript) </h4>
+<p>
+  This directory contains static files such as HTML files, CSS, and JavaScript.
+</p>
+<h4> script - Stores HTTP server startup scripts, etc. </h4>
+<p>
+  Below the script, the script that starts the HTTP server is placed. Mojolicious implements an HTTP server for convenience such as testing. By starting this HTTP server, you can run the web application without an HTTP server such as Apache.
+</p>
+<h4> t - Store web application exams </h4>
+<p>
+  The test of the Web application is stored under t. Testing web applications is generally a hassle, but Mojolicous has a testing framework called Test::Mojo that makes it easy to test.
+</p>
+<h4> templates - Store HTML templates </h4>
+<p>
+  Mojolicious has Mojo::Template as a standard template engine. This corresponds to V in MVC. You can use Mojo::Template to dynamically generate HTML on request. Unlike HTML::Template and Template-Toolkit, Mojo::Template is characterized by being able to use Perl syntax in templates.
+</p>
+<p>
+  The Mojolicious template has a ".ep" extension. Let's take a closer look at the directory structure of templates. It is as follows.
+</p>
+<pre>
 templates + example-+
-          | |-welcome.html.ep --Templates for HTML bodies
+          | |-welcome.html.ep - Templates for HTML bodies
           |
           + layouts-+
-          | |-default.html.ep --Templates for HTML headers
+          | |-default.html.ep - Templates for HTML headers
           |
           + exception.html.ep
           |
           + not_found.html.ep
-&lt;/ pre&gt;
-
-Notice that there is a directory called layouts. This is commonly used as a template for HTML headers. exsample / welcome.html.ep is a template corresponding to the action "welcome" of the controller "Exsample". I will explain the action later.
-
-exceptions.html.ep is a template for exceptions. Mojolicious uses this template to display error messages on the screen in an easy-to-understand manner, which makes development very easy. not_found.html.ep is a template used when a page is not found.
+</pre>
+<p>
+  Notice that there is a directory called layouts. This is commonly used as a template for HTML headers. exsample / welcome.html.ep is a template corresponding to the action "welcome" of the controller "Exsample". I will explain the action later.
+</p>
+<p>
+  exceptions.html.ep is a template for exceptions. Mojolicious uses this template to display error messages on the screen in an easy-to-understand manner, which makes development very easy. not_found.html.ep is a template used when a page is not found.
+</p>
 
   </div>
   <div class="bottom">

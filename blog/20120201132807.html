@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Encode :: UTF8Mac --Mac OS X filename encoding  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="I think Mac OS X uses UTF-8 as the file system encoding, but it's actually a little different, and it's a Mac OX X-specific specification. To handle this correctly, it is easy to use a module called Encode :: UTF8Mac.">
+<title> Encode::UTF8Mac - Mac OS X filename encoding  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I think Mac OS X uses UTF-8 as the file system encoding, but it's actually a little different, and it's a Mac OX X-specific specification. To handle this correctly, it is easy to use a module called Encode::UTF8Mac.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Encode :: UTF8Mac --Mac OS X filename encoding  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="I think Mac OS X uses UTF-8 as the file system encoding, but it's actually a little different, and it's a Mac OX X-specific specification. To handle this correctly, it is easy to use a module called Encode :: UTF8Mac." />
+<meta name="twitter:title" content=" Encode::UTF8Mac - Mac OS X filename encoding  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I think Mac OS X uses UTF-8 as the file system encoding, but it's actually a little different, and it's a Mac OX X-specific specification. To handle this correctly, it is easy to use a module called Encode::UTF8Mac." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20120201132807.html"> Encode :: UTF8Mac --Mac OS X filename encoding </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20120201132807.html"> Encode::UTF8Mac - Mac OS X filename encoding </a></h2>
 <p>
-  I think Mac OS X uses UTF-8 as the file system encoding, but it's actually a little different, and it's a Mac OX X-specific specification. To handle this correctly, it is easy to use a module called Encode :: UTF8Mac.
+  I think Mac OS X uses UTF-8 as the file system encoding, but it's actually a little different, and it's a Mac OX X-specific specification. To handle this correctly, it is easy to use a module called Encode::UTF8Mac.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,18 +98,20 @@
 
 <pre>
 use Encode qw / encode decode /;
-use Encode :: UTF8Mac;
+use Encode::UTF8Mac;
 
 # Encode
-my $ byte = encode ('utf-8-mac', $ string);
+my $byte = encode ('utf-8-mac', $string);
 
-#Decode
-my $ string = decode ('utf-8-mac', $ byte);
-&lt;/ pre&gt;
-
-If you use use to load Encode :: UTF8Mac, you will be able to use &lt;b&gt; utf-8-mac &lt;/ b&gt; as the encoding for your Encode module. This encoding allows Mac OS X filenames to be handled correctly.
-
-The Encode :: UTF8Mac method is recommended because it allows you to use standard Encode modules without using Mac OS X-specific methods such as Text :: Iconv.
+# Decode
+my $string = decode ('utf-8-mac', $byte);
+</pre>
+<p>
+  If you use use to load Encode::UTF8Mac, you will be able to use <b> utf-8-mac </b> as the encoding for your Encode module. This encoding allows Mac OS X filenames to be handled correctly.
+</p>
+<p>
+  The Encode::UTF8Mac method is recommended because it allows you to use standard Encode modules without using Mac OS X-specific methods such as Text::Iconv.
+</p>
 
   </div>
   <div class="bottom">

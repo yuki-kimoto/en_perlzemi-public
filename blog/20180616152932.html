@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20180616152932.html"> syswrite function-write to file with a specified number of bytes (no buffering) </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20180616152932.html"> syswrite function-write to file with a specified number of bytes (no buffering) </a></h2>
 <p>
-  You can use the <b> syswrite function </ b> to write a specified number of bytes to a file.
+  You can use the <b> syswrite function </b> to write a specified number of bytes to a file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,41 +97,43 @@
 
 
 <pre>
-syswrite $ fh, $ buffer, $ byte_size;
-&lt;/ pre&gt;
-
-The first argument is the file handle, the second argument is the scalar variable that is the data to write, and the third argument is the byte size.
-
-When the syswrite function is executed, the data of the specified byte size is written to the file handle specified by the first argument.
-
-The syswrite function does not buffer and writes immediately. The syswrite function is paired with the &lt;a href="/blog/20180617152932.html"&gt; sysread function &lt;/a&gt;.
-
-For a detailed explanation of the syswrite function, refer to the official documentation.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="http://perldoc.jp/func/syswrite"&gt; syswrite function --perldoc.jp &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Sample syswrite function &lt;/ h3&gt;
-
-This is a sample program of the syswrite function. The syswrite function is used to write the length of the character string.
-
-&lt;pre&gt;
+syswrite $fh, $buffer, $byte_size;
+</pre>
+<p>
+  The first argument is the file handle, the second argument is the scalar variable that is the data to write, and the third argument is the byte size.
+</p>
+<p>
+  When the syswrite function is executed, the data of the specified byte size is written to the file handle specified by the first argument.
+</p>
+<p>
+  The syswrite function does not buffer and writes immediately. The syswrite function is paired with the <a href="/blog/20180617152932.html"> sysread function</a>.
+</p>
+<p>
+  For a detailed explanation of the syswrite function, refer to the official documentation.
+</p>
+<ul>
+  <li>
+    <a href="http://perldoc.jp/func/syswrite"> syswrite function - perldoc.jp</a>
+  </li>
+</ul>
+<h3> Sample syswrite function </h3>
+<p>
+  This is a sample program of the syswrite function. The syswrite function is used to write the length of the character string.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Open the file to write
-my $ file ='data.txt';
-open my $ fh,'&gt;', $ file
-  or die "Can't open file $ file: $!";
+# Open the file to write
+my $file ='data.txt';
+open my $fh,'&gt;', $file
+  or die "Can't open file $file: $!";
 
-#syswrite function
-my $ buffer ='AGTC';
-my $ byte_size = length $ buffer;
-syswrite $ fh, $ buffer, $ byte_size;
-&lt;/ pre&gt;
+# syswrite function
+my $buffer ='AGTC';
+my $byte_size = length $buffer;
+syswrite $fh, $buffer, $byte_size;
+</pre>
 
   </div>
   <div class="bottom">

@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> JSON --Analyzing JSON data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> JSON - Analyzing JSON data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  JSON module  to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" JSON --Analyzing JSON data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" JSON - Analyzing JSON data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  JSON module  to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100427127089.html"> JSON --Analyzing JSON data </a></ ​​h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100427127089.html"> JSON - Analyzing JSON data </a></​​h2>
 <p>
-  You can use the <strong> JSON module </ strong> to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages.
+  You can use the <strong> JSON module </strong> to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,27 +97,29 @@
 
 
 <pre>
-#Loading modules and importing functions
+# Loading modules and importing functions
 use JSON qw / encode_json decode_json /;
-&lt;/ pre&gt;
+</pre>
+<p>
+  Use the <strong> decode_json function </strong> to convert JSON to a Perl data structure.
+</p>
+<pre>
+# Convert JSON to Perl data structures
+my $json_in ='[{"name": "Ken", "age": 19}, {"name": "Ken", "age": 25}]';
 
-Use the &lt;strong&gt; decode_json function &lt;/ strong&gt; to convert JSON to a Perl data structure.
-
-&lt;pre&gt;
-#Convert JSON to Perl data structures
-my $ json_in ='[{"name": "Ken", "age": 19}, {"name": "Ken", "age": 25}]';
-
-my $ data = decode_json ($ json_in);
-&lt;/ pre&gt;
-
-This translates into a Perl data structure that looks like this:
-
-&lt;pre&gt;
-#JSON
+my $data = decode_json ($json_in);
+</pre>
+<p>
+  This translates into a Perl data structure that looks like this:
+</p>
+<pre>
+# JSON
 '[{" name ":" Ken "," age ": 19}, {" name ":" Ken "," age ": 25}]'
-&lt;/ pre&gt;
-▼
-&lt;pre&gt;
+</pre>
+<p>
+  ▼
+</p>
+<pre>
 # Perl
 [
   {
@@ -129,31 +131,30 @@ This translates into a Perl data structure that looks like this:
     'age' =&gt; 25
   }
 ];;
-&lt;/ pre&gt;
-
-Conversely, use the &lt;strong&gt; encode_json function &lt;/ strong&gt; to convert Perl data structures to JSON.
-
-&lt;pre&gt;
-#Convert Perl data structures to JSON
-my $ json_out = encode_json ($ data);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Handling of Japanese in JSON module &lt;/ h3&gt;
-
-You need to be a little careful when dealing with Japanese in the JSON module. You need to remember the following:
-
-&lt;ol&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  Conversely, use the <strong> encode_json function </strong> to convert Perl data structures to JSON.
+</p>
+<pre>
+# Convert Perl data structures to JSON
+my $json_out = encode_json ($data);
+</pre>
+<h3> Handling of Japanese in JSON module </h3>
+<p>
+  You need to be a little careful when dealing with Japanese in the JSON module. You need to remember the following:
+</p>
+<ol>
+  <li>
     decode_json converts from "UTF-8 byte string-JSON" to "internal string-Perl data"
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     encode_json converts from "internal string-Perl data" to "UTF-8 byte string-JSON"
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-This relationship is illustrated below.
-
-&lt;pre&gt;
+  </li>
+</ol>
+<p>
+  This relationship is illustrated below.
+</p>
+<pre>
 UTF-8 byte string-JSON UTF-8 byte string-Perl data
                       \ \
 encode_json is \
@@ -161,64 +162,64 @@ Conversion to top left \
                          \ decode_json is the conversion to the lower right
                           \ \
 Internal string JSON Internal string-Perl data
-&lt;/ pre&gt;
-
-The conversion from top left to bottom right is done by decode_json, and the conversion from bottom right to top left is done by encode_json. There is no method to convert up / down or left / right.
-
-For example, it is easy to make a mistake, but if you write the following, it will not work. (Since Japanese is handled in the script, the utf8 pragma is enabled and the script is saved in UTF-8.)
-
-&lt;pre&gt;
-#Common mistakes when dealing with Japanese. decode_json needs to receive UTF-8 byte string
+</pre>
+<p>
+  The conversion from top left to bottom right is done by decode_json, and the conversion from bottom right to top left is done by encode_json. There is no method to convert up / down or left / right.
+</p>
+<p>
+  For example, it is easy to make a mistake, but if you write the following, it will not work. (Since Japanese is handled in the script, the utf8 pragma is enabled and the script is saved in UTF-8.)
+</p>
+<pre>
+# Common mistakes when dealing with Japanese. decode_json needs to receive UTF-8 byte string
 use utf8;
 use JSON'decode_json';
 
-my $ json ='{"name": "Masuda"}';
+my $json ='{"name": "Masuda"}';
 
-my $ data = decode_json ($ json);
-&lt;/ pre&gt;
-
-The reason this doesn't work is that $ json has already been converted to an internal string because the utf8 pragma is enabled. This doesn't work because decode_json takes a byte string as an argument. You need to convert it to a UTF-8 byte string with the encode_utf8 function of the Encode module.
-
-&lt;pre&gt;
+my $data = decode_json ($json);
+</pre>
+<p>
+  The reason this doesn't work is that $json has already been converted to an internal string because the utf8 pragma is enabled. This doesn't work because decode_json takes a byte string as an argument. You need to convert it to a UTF-8 byte string with the encode_utf8 function of the Encode module.
+</p>
+<pre>
 # Correct example when dealing with Japanese
 use utf8;
 use JSON'decode_json';
 use Encode'encode_utf8';
 
-my $ json ='{"name": "Masuda"}';
+my $json ='{"name": "Masuda"}';
 
-#Convert to UTF-8 byte string
-$ json = encode_utf8 ($ json);
+# Convert to UTF-8 byte string
+$json = encode_utf8 ($json);
 
-my $ data = decode_json ($ json);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Read the JSON written in the file &lt;/ h3&gt;
-
-Since the JSON module does not have a function to read a file, I will describe how to read from a file.
-
-&lt;pre&gt;
+my $data = decode_json ($json);
+</pre>
+<h3> Read the JSON written in the file </h3>
+<p>
+  Since the JSON module does not have a function to read a file, I will describe how to read from a file.
+</p>
+<pre>
 # Sample to read JSON from file
 use JSON'decode_json';
 
-my $ file = shift;
+my $file = shift;
 
-my $ data = decode_json (get_content ($ file));
+my $data = decode_json (get_content ($file));
 
 # Function to get the contents of a file
 sub get_content {
-  my $ file = shift;
+  my $file = shift;
 
-  open my $ fh,'&lt;', $ file
-    or die "Can't open file \" $ file \ ": $!";
+  open my $fh,'&lt;', $file
+    or die "Can't open file \" $file \ ": $!";
   
-  my $ content = do {local $ /; &lt;$ fh&gt;};
+  my $content = do {local $/; &lt;$fh&gt;};
  
-  close $ fh;
+  close $fh;
 
-  return $ content;
+  return $content;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

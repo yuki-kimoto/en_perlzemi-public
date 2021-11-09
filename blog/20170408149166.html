@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20170408149166.html"> How to write POD (Plain Old Documentation) </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20170408149166.html"> How to write POD (Plain Old Documentation) </a></h2>
 <p>
-  Perl allows you to embed documentation in your source code. This in-source document is called <b> POD </ b> and has its own description method.
+  Perl allows you to embed documentation in your source code. This in-source document is called <b> POD </b> and has its own description method.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -102,19 +102,18 @@
 <p>
   Let's think that POD can easily write HTML and is automatically converted to HTML.
 </p>
-<h3> Character code </ h3>
+<h3> Character code </h3>
 <p>
   If you want to include non-alphanumeric characters in the document, you need to set the character code. When writing in "UTF-8", write as follows at the beginning of the document.
 </p>
 <pre>
 = encoding utf8
-&lt;/ pre&gt;
-
-&lt;h3&gt; Header &lt;/ h3&gt;
-
-Corresponds to HTML h1 to h6.
-
-&lt;pre&gt;
+</pre>
+<h3> Header </h3>
+<p>
+  Corresponds to HTML h1 to h6.
+</p>
+<pre>
 = head1 Header 1
 
 = head2 Header 2
@@ -126,37 +125,37 @@ Corresponds to HTML h1 to h6.
 = head5 Header 5
 
 = head6 Header 6
-&lt;/ pre&gt;
-
-One thing to keep in mind when writing a POD is that you must insert a line break on the next line. For example, the following statement does not work.
-
-&lt;pre&gt;
+</pre>
+<p>
+  One thing to keep in mind when writing a POD is that you must insert a line break on the next line. For example, the following statement does not work.
+</p>
+<pre>
 = head1 Header 1
 = head2 Header 2
-&lt;/ pre&gt;
-
-&lt;h3&gt; Source code &lt;/ h3&gt;
-
-To write the source code, set a blank at the beginning of the source code. This corresponds to the HTML pre.
-
-&lt;pre&gt;
-  use DBIx :: Custom;
-  my $ dbi = DBIx :: Custom-&gt; connect (...);
-&lt;/ pre&gt;
-
-The space can be 1, 2, or 4, and can be any width.
-
-&lt;h3&gt; List &lt;/ h3&gt;
-
-I will explain how to write a list.
-
-&lt;h4&gt; Unordered list &lt;/ h4&gt;
-
-The unordered list is written as follows:
-
-After "= over", specify the indent width of the list. If you specify "*" after "= item", the list will be out of order. You must write "= back" at the end to indicate the end of "= over".
-
-&lt;pre&gt;
+</pre>
+<h3> Source code </h3>
+<p>
+  To write the source code, set a blank at the beginning of the source code. This corresponds to the HTML pre.
+</p>
+<pre>
+  use DBIx::Custom;
+  my $dbi = DBIx::Custom-&gt; connect (...);
+</pre>
+<p>
+  The space can be 1, 2, or 4, and can be any width.
+</p>
+<h3> List </h3>
+<p>
+  I will explain how to write a list.
+</p>
+<h4> Unordered list </h4>
+<p>
+  The unordered list is written as follows:
+</p>
+<p>
+  After "= over", specify the indent width of the list. If you specify "*" after "= item", the list will be out of order. You must write "= back" at the end to indicate the end of "= over".
+</p>
+<pre>
 = over 4
 
 = item *
@@ -172,13 +171,12 @@ Item 2
 Item 3
 
 = back
-&lt;/ pre&gt;
-
-&lt;h4&gt; Order list &lt;/ h4&gt;
-
-The sequence list is described as follows. It's almost the same as an unordered list, but if you specify a number after "= item", it becomes an ordered list.
-
-&lt;pre&gt;
+</pre>
+<h4> Order list </h4>
+<p>
+  The sequence list is described as follows. It's almost the same as an unordered list, but if you specify a number after "= item", it becomes an ordered list.
+</p>
+<pre>
 = over 4
 
 = item 1
@@ -194,96 +192,89 @@ Item 2
 Item 3
 
 = back
-&lt;/ pre&gt;
-
-&lt;h3&gt; Format &lt;/ h3&gt;
-
-How to format with POD.
-
-&lt;h4&gt; Bold &lt;/ h4&gt;
-
-To set it in bold, use the description "B &amp; lt; &amp; gt;".
-
-&lt;pre&gt;
+</pre>
+<h3> Format </h3>
+<p>
+  How to format with POD.
+</p>
+<h4> Bold </h4>
+<p>
+  To set it in bold, use the description "B & lt; & gt;".
+</p>
+<pre>
 B &lt;aiueo&gt;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Italics &lt;/ h4&gt;
-
-Use the description "I &amp; lt; &amp; gt;" to set italics.
-
-&lt;pre&gt;
+</pre>
+<h4> Italics </h4>
+<p>
+  Use the description "I & lt; & gt;" to set italics.
+</p>
+<pre>
 I &lt;aiueo&gt;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Program text &lt;/ h4&gt;
-
-You can use "C &lt;&gt;" if you want to format the function name in the text in a way that you can understand.
-
-&lt;pre&gt;
+</pre>
+<h4> Program text </h4>
+<p>
+  You can use "C <>" if you want to format the function name in the text in a way that you can understand.
+</p>
+<pre>
 C &lt;select&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Hyperlink &lt;/ h3&gt;
-
-I will explain the notation of hyperlinks.
-
-&lt;h4&gt; Other CPAN modules &lt;/ h4&gt;
-
-To write a link to another CPAN module, use "L &amp; lt; &amp; gt;" and write: It will be a link to the Object :: Simple page.
-
-&lt;pre&gt;
-L &lt;Object :: Simple&gt;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Links to general URLs &lt;/ h4&gt;
-
-A general URL is described as "L &amp; lt; text | URL &amp; gt;".
-
-&lt;pre&gt;
+</pre>
+<h3> Hyperlink </h3>
+<p>
+  I will explain the notation of hyperlinks.
+</p>
+<h4> Other CPAN modules </h4>
+<p>
+  To write a link to another CPAN module, use "L & lt; & gt;" and write: It will be a link to the Object::Simple page.
+</p>
+<pre>
+L &lt;Object::Simple&gt;
+</pre>
+<h4> Links to general URLs </h4>
+<p>
+  A general URL is described as "L & lt; text | URL & gt;".
+</p>
+<pre>
 L &lt;Perl Seminar | http://d.hatena.ne.jp/perlcodesample&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Start and end of POD &lt;/ h3&gt;
-
-The start of POD ends with "= pod" and the end of POD ends with "= cut".
-
-&lt;pre&gt;
+</pre>
+<h3> Start and end of POD </h3>
+<p>
+  The start of POD ends with "= pod" and the end of POD ends with "= cut".
+</p>
+<pre>
 = pod
 
 document
 
 = cut
-&lt;/ pre&gt;
-
-Generally, when even one description of POD such as "= head1" appears, POD starts, so it is rare to write "= pod". However, when using &lt;a href="/blog/20130712137361.html"&gt; multi-line comment &lt;/a&gt; in the source code, this description method is used.
-
-&lt;h3&gt; Character escape &lt;/ h3&gt;
-
-If you want to use the symbols used in POD, you need to escape. Escape can be done using "".
-
-&lt;pre&gt;
+</pre>
+<p>
+  Generally, when even one description of POD such as "= head1" appears, POD starts, so it is rare to write "= pod". However, when using <a href="/blog/20130712137361.html"> multi-line comment</a> in the source code, this description method is used.
+</p>
+<h3> Character escape </h3>
+<p>
+  If you want to use the symbols used in POD, you need to escape. Escape can be done using "".
+</p>
+<pre>
 E &lt;lt&gt; &lt;
 E &lt;gt &gt;&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; FAQ &lt;/ h3&gt;
-
-FAQ about POD.
-
-&lt;h4&gt; Is it possible to write a table in POD? &lt;/ h4&gt;
-
-You cannot write a table in POD.
-
-&lt;h4&gt; Is it possible to use images with POD? &lt;/ h4&gt;
-
-Images are not available in POD.
-
-&lt;h4&gt; What is the customary way to write on the CPAN module? &lt;/ H4&gt;
-
-CPAN module documentation is generally written as follows:
-
-&lt;pre&gt;
+</pre>
+<h3> FAQ </h3>
+<p>
+  FAQ about POD.
+</p>
+<h4> Is it possible to write a table in POD? </h4>
+<p>
+  You cannot write a table in POD.
+</p>
+<h4> Is it possible to use images with POD? </h4>
+<p>
+  Images are not available in POD.
+</p>
+<h4> What is the customary way to write on the CPAN module? </H4>
+<p>
+  CPAN module documentation is generally written as follows:
+</p>
+<pre>
 = head1 NAME
 
 Module name-A brief description of the module
@@ -311,17 +302,16 @@ Author name
 Copyright notice
 
 = cut
-&lt;/ pre&gt;
-
-&lt;h3&gt; Detailed POD documentation &lt;/ h3&gt;
-
-For detailed POD documentation, see Perl's POD documentation.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="http://perldoc.jp/docs/perl/5.22.1/perlpod.pod"&gt; perlpod --POD documentation &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<h3> Detailed POD documentation </h3>
+<p>
+  For detailed POD documentation, see Perl's POD documentation.
+</p>
+<ul>
+  <li>
+    <a href="http://perldoc.jp/docs/perl/5.22.1/perlpod.pod"> perlpod - POD documentation</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

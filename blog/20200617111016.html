@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200617111016.html"> Add module search path using PERL5LIB environment variable </a></ h2>
+    <h2><a href="/blog/20200617111016.html"> Add module search path using PERL5LIB environment variable </a></h2>
 <p>
   Explains how to add a module search path using the PERL5LIB environment variable.
 </p>
@@ -79,55 +79,54 @@
 </div>
 
 
-<h4> Linux bash environment variables </ h4>
+<h4> Linux bash environment variables </h4>
 <p>
-  The following is the <a href="https://linux.perlclub.net/blog/20200617103220.html"> bash environment of <a href="https://linux.perlclub.net/"> Linux </a> How to add a module search path by setting "PERL5LIB" in the variable </a>. Add this to the "<a href="https://linux.perlclub.net/blog/20200616103220.html"> .bashrc </a>" file.
+  The following is the <a href="https://linux.perlclub.net/blog/20200617103220.html"> bash environment of <a href="https://linux.perlclub.net/"> Linux</a> How to add a module search path by setting "PERL5LIB" in the variable</a>. Add this to the "<a href="https://linux.perlclub.net/blog/20200616103220.html"> .bashrc</a>" file.
 </p>
 <pre>
 export PERL5LIB = / foo / lib
-&lt;/ pre&gt;
-
-If you specify more than one, separate them with a colon.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you specify more than one, separate them with a colon.
+</p>
+<pre>
 export PERL5LIB = / foo / lib: / bar / lib
-&lt;/ pre&gt;
-
-&lt;h4&gt; csh environment variables such as commercial UNIX &lt;/ h4&gt;
-
-It is a method to add the search path of the module by setting "PERL5LIB" in the environment variable of csh in commercial UNIX such as FreeBSD. Add this to the "~ / .cshrc" file.
-
-&lt;pre&gt;
+</pre>
+<h4> csh environment variables such as commercial UNIX </h4>
+<p>
+  It is a method to add the search path of the module by setting "PERL5LIB" in the environment variable of csh in commercial UNIX such as FreeBSD. Add this to the "~ / .cshrc" file.
+</p>
+<pre>
 setenv PERL5LIB / foo / lib
-&lt;/ pre&gt;
-
-If you specify more than one, separate them with a colon.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you specify more than one, separate them with a colon.
+</p>
+<pre>
 setenv PERL5LIB / foo / lib: / bar / lib
-&lt;/ pre&gt;
-
-&lt;h4&gt; Environment variables in Windows &lt;/ h4&gt;
-
-It is a method to add the search path of the module by setting the environment variable "PERL5LIB" on Windows. The method of setting environment variables in Windows is added by GUI, so please check the method.
-
-&lt;pre&gt;
-#Value of environment variable PERL5LIB
+</pre>
+<h4> Environment variables in Windows </h4>
+<p>
+  It is a method to add the search path of the module by setting the environment variable "PERL5LIB" on Windows. The method of setting environment variables in Windows is added by GUI, so please check the method.
+</p>
+<pre>
+# Value of environment variable PERL5LIB
 / foo / lib
-&lt;/ pre&gt;
-
-If you specify more than one, separate them with a semicolon. This is a different part from Unix / Linux.
-
-&lt;pre&gt;
-#Value of environment variable PERL5LIB
+</pre>
+<p>
+  If you specify more than one, separate them with a semicolon. This is a different part from Unix / Linux.
+</p>
+<pre>
+# Value of environment variable PERL5LIB
 / foo / lib; / bar / lib
-&lt;/ pre&gt;
-
-&lt;h4&gt; Environment variable PERL5LIB is not portable &lt;/ h4&gt;
-
-The environment variable PERL5LIB is not a portable method because the way environment variables are represented differs depending on the OS.
-
-On the other hand, although it is tightly coupled with the script, the &lt;a href="/blog/20100525127859.html"&gt; lib module &lt;/a&gt; works the same in any environment.
+</pre>
+<h4> Environment variable PERL5LIB is not portable </h4>
+<p>
+  The environment variable PERL5LIB is not a portable method because the way environment variables are represented differs depending on the OS.
+</p>
+<p>
+  On the other hand, although it is tightly coupled with the script, the <a href="/blog/20100525127859.html"> lib module</a> works the same in any environment.
+</p>
 
   </div>
   <div class="bottom">

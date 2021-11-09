@@ -62,17 +62,17 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161115147930.html">
-        <span itemprop = "name"> CPAN </ span> </a>
+        <span itemprop = "name"> CPAN </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20120204132825.html"> Get module information using metaCPAN API </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20120204132825.html"> Get module information using metaCPAN API </a></h2>
 <p>
   It was very difficult with CPAN to get the file automatically by specifying the module name and version, but with the advent of metaCPAN, this situation is likely to change. It's about to change because the metaCPAN API is still in beta.
 </p>
@@ -95,21 +95,21 @@
 <p>
   Still, the metaCPAN API is still useful. The API seems to be managed for each version, so I have a feeling that backward compatibility will be maintained.
 </p>
-<h3> Get information </ h3>
+<h3> Get information </h3>
 <p>
   You can get the information as follows.
 </p>
 <ul>
   <li>
     http://api.metacpan.org/v0/release/_search?q=name:DBIx-Custom-0.2107&fields=download_url,name
-  </ li>
-</ ul>
+  </li>
+</ul>
 <p>
-  When you actually access it, the information is returned in JSON format. If you look at <b> download_url </ b>, you can see the URL of the actual location of the file.
+  When you actually access it, the information is returned in JSON format. If you look at <b> download_url </b>, you can see the URL of the actual location of the file.
 </p>
-<h3> A little commentary </ h3>
+<h3> A little commentary </h3>
 <p>
-  This is Web API and JSON format data. You can set search conditions with <b> q </ b>. <b> name </ b> is searching for DBIx-Custom-0.2107. In <b> fields </ b>, you can specify the items of the data you want to get. It seems that this can be specified separated by commas.
+  This is Web API and JSON format data. You can set search conditions with <b> q </b>. <b> name </b> is searching for DBIx-Custom-0.2107. In <b> fields </b>, you can specify the items of the data you want to get. It seems that this can be specified separated by commas.
 </p>
 <p>
   Also, the great thing is that it has only the name metaCPAN, which allows you to handle both CPAN and BackPAN information in a unified way. This means that even if your distribution is removed from CPAN, you can still access that information with metaCPAN.

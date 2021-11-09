@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> What is buffering?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="The Perl output function  print function  provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file.">
+<meta name="description" content="The Perl output function  print function provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" What is buffering?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="The Perl output function  print function  provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file." />
+<meta name="twitter:description" content="The Perl output function  print function provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </ span> </a>
+      <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080811121845.html"> What is buffering? </a></ H2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080811121845.html"> What is buffering? </a></H2>
 <p>
-  The Perl output function <a href="/blog/20170404149131.html"> print function </a> provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file.
+  The Perl output function <a href="/blog/20170404149131.html"> print function</a> provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,9 +101,9 @@
 </p>
 <ul>
   <li>
-    <a href="/blog/20080812121854.html"> Disable buffering </a>
-  </ li>
-</ ul>
+    <a href="/blog/20080812121854.html"> Disable buffering</a>
+  </li>
+</ul>
 <p>
   The following is a sample to experience buffering. You'll see that it won't be written to the file right away.
 </p>
@@ -112,71 +112,73 @@ use strict;
 use warnings;
 
 # File for writing (Note that it will be overwritten)
-my $ file = "sample20080811.txt";
+my $file = "sample20080811.txt";
 
-open (my $ fh, "&gt;", $ file)
-  or die "Cannot open $ file: $!";
+open(my $fh, "&gt;", $file)
+  or die "Cannot open $file: $!";
     
-print $ fh "delayed write \ n"; # print function call
-print "File size not yet". -S $ file. "Not written in bytes. \ N";
+print $fh "delayed write\n"; # print function call
+print "File size not yet". -S $file. "Not written in bytes.\n";
 sleep 3;
 
-Write the buffer to a file at the same time as # close (delayed write).
-close $ fh or die "Cannot close $ file";
+Write the buffer to a file at the same time as # close(delayed write).
+close $fh or die "Cannot close $file";
 
-print "Written at this point. Size is". -S $ file. "Bytes. \ N";
+print "Written at this point. Size is". -S $file. "Bytes.\n";
 sleep 3;
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20080718121643.html"&gt; open function &lt;/a&gt;, &lt;a href="/blog/20160312145776.html"&gt; close function &lt;/a&gt;
-
-&lt;h3&gt; Perl print function buffering specification &lt;/ h3&gt;
-
-&lt;h4&gt; (1) Block buffering &lt;/ h4&gt;
-
-Perl's print function does block buffering by default. (The exception is when printing to the display, which does line buffering. Perl 5.6 and later)
-
-Block buffering is a buffering method that stores data in a buffer up to a certain number of bytes. When the written contents stored in the buffer exceed a certain number of bytes, the file is actually written.
-
-The fixed number of bytes depends on the setting, but I think that it is generally about 4kB. Also, the contents of the buffer are written to the file when the file is closed.
-
-&lt;h4&gt; (2) Line buffering &lt;/ h4&gt;
-
-Line buffering is done when printing to the display. The contents to be written are accumulated in the buffer until a newline character appears, and when a newline appears, the contents of the buffer are written to a file.
-
-&lt;h3&gt; Buffering and deferred writing &lt;/ h3&gt;
-
-The print function stores the written contents in a buffer and outputs them all at once because the cost of outputting to a file is very high. Writing to a file means accessing the disc.
-
-Disk I / O is much slower than memory I / O, so reducing the number of disk accesses as much as possible will improve program performance.
-
-For this reason, Perl doesn't actually write when you call the print function, it stores up to a certain number of bytes in the write buffer and writes it to a file at once. This is called delayed writing.
-
-&lt;h3&gt; Code explanation &lt;/ h3&gt;
-
-&lt;h4&gt; (1) Block buffering is performed &lt;/ h4&gt;
-
-&lt;pre&gt;
-print $ fh "delayed write \ n"; # print function call
-print "File size not yet". -S $ file. "Not written in bytes. \ N";
+</pre>
+<p>
+  (Reference) <a href="/blog/20080718121643.html"> open function</a>, <a href="/blog/20160312145776.html"> close function</a>
+</p>
+<h3> Perl print function buffering specification </h3>
+<h4> (1) Block buffering </h4>
+<p>
+  Perl's print function does block buffering by default. (The exception is when printing to the display, which does line buffering. Perl 5.6 and later)
+</p>
+<p>
+  Block buffering is a buffering method that stores data in a buffer up to a certain number of bytes. When the written contents stored in the buffer exceed a certain number of bytes, the file is actually written.
+</p>
+<p>
+  The fixed number of bytes depends on the setting, but I think that it is generally about 4kB. Also, the contents of the buffer are written to the file when the file is closed.
+</p>
+<h4> (2) Line buffering </h4>
+<p>
+  Line buffering is done when printing to the display. The contents to be written are accumulated in the buffer until a newline character appears, and when a newline appears, the contents of the buffer are written to a file.
+</p>
+<h3> Buffering and deferred writing </h3>
+<p>
+  The print function stores the written contents in a buffer and outputs them all at once because the cost of outputting to a file is very high. Writing to a file means accessing the disc.
+</p>
+<p>
+  Disk I / O is much slower than memory I / O, so reducing the number of disk accesses as much as possible will improve program performance.
+</p>
+<p>
+  For this reason, Perl doesn't actually write when you call the print function, it stores up to a certain number of bytes in the write buffer and writes it to a file at once. This is called delayed writing.
+</p>
+<h3> Code explanation </h3>
+<h4> (1) Block buffering is performed </h4>
+<pre>
+print $fh "delayed write\n"; # print function call
+print "File size not yet". -S $file. "Not written in bytes.\n";
 sleep 3;
-&lt;/ pre&gt;
+</pre>
+<p>
+  I wrote to $fh with the print function, but at this point the content has not been written yet and the file size remains 0 bytes. The written contents are stored in the buffer.
+</p>
+<p>
+  By the way, the output to the display is line buffering, so it will be output when "\n" appears.
+</p>
+<h4> (2) Delayed writing is performed </h4>
+<pre>
+Write the buffer to a file at the same time as # close(delayed write).
+close $fh or die "Cannot close $file";
 
-I wrote to $ fh with the print function, but at this point the content has not been written yet and the file size remains 0 bytes. The written contents are stored in the buffer.
-
-By the way, the output to the display is line buffering, so it will be output when "\ n" appears.
-
-&lt;h4&gt; (2) Delayed writing is performed &lt;/ h4&gt;
-
-&lt;pre&gt;
-Write the buffer to a file at the same time as # close (delayed write).
-close $ fh or die "Cannot close $ file";
-
-print "Written at this point. Size is". -S $ file. "Bytes. \ N";
+print "Written at this point. Size is". -S $file. "Bytes.\n";
 sleep 3;
-&lt;/ pre&gt;
-
-When $ fh is closed, the contents written in the buffer are output to the file. You can see that the delayed write was done.
+</pre>
+<p>
+  When $fh is closed, the contents written in the buffer are output to the file. You can see that the delayed write was done.
+</p>
 
   </div>
   <div class="bottom">

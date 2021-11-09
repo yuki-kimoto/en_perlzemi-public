@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Double quoted string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="A  double-quoted string  is a string enclosed in double-quoted "" ".  Variable expansion  and  Double quote string escape sequences such as line breaks and tabs  The feature is that you can use a>.">
+<meta name="description" content="A  double-quoted string  is a string enclosed in double-quoted "" ".  Variable expansion and  Double quote string escape sequences such as line breaks and tabs The feature is that you can use a>.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Double quoted string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="A  double-quoted string  is a string enclosed in double-quoted "" ".  Variable expansion  and  Double quote string escape sequences such as line breaks and tabs  The feature is that you can use a>." />
+<meta name="twitter:description" content="A  double-quoted string  is a string enclosed in double-quoted "" ".  Variable expansion and  Double quote string escape sequences such as line breaks and tabs The feature is that you can use a>." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,29 +62,29 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161003147558.html">
-        <span itemprop = "name"> string </ span> </a>
+        <span itemprop = "name"> string </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20201026075254.html"> Double quoted string </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20201026075254.html"> Double quoted string </a></h2>
 <p>
-  A <b> double-quoted string </ b> is a string enclosed in double-quoted "" ". <a href="/blog/20180228151982.html"> Variable expansion </a> and <a href="/blog/20201030075254.html"> Double quote string escape sequences such as line breaks and tabs </a> The feature is that you can use a>.
+  A <b> double-quoted string </b> is a string enclosed in double-quoted "" ". <a href="/blog/20180228151982.html"> Variable expansion</a> and <a href="/blog/20201030075254.html"> Double quote string escape sequences such as line breaks and tabs</a> The feature is that you can use a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,91 +103,93 @@
 
 
 <pre>
-my $ name = "Yuki Kimoto";
+my $name = "Yuki Kimoto";
 
 # Use variable expansion and newline characters
-my $ message = "I'm $ name \ n";
+my $message = "I'm $name\n";
 
 # "I'm Yuki Kimoto" is displayed. With line breaks
-print $ message;
-&lt;/ pre&gt;
-
-&lt;h3&gt; What is variable expansion? &lt;/ H3&gt;
-
-Variable expansion is a function that allows you to expand the contents of a variable in a character string.
-
-&lt;pre&gt;
-my $ name = "Yuki Kimoto";
+print $message;
+</pre>
+<h3> What is variable expansion? </H3>
+<p>
+  Variable expansion is a function that allows you to expand the contents of a variable in a character string.
+</p>
+<pre>
+my $name = "Yuki Kimoto";
 
 # Use variable expansion and newline characters
-my $ message = "I'm $ name \ n";
-&lt;/ pre&gt;
+my $message = "I'm $name\n";
+</pre>
+<p>
+  If you want to clarify the delimiter of the variable name, you can specify it by enclosing the variable name excluding the sigil "$" with "{}".
+</p>
+<pre>
+my $name = "Yuki Kimoto";
 
-If you want to clarify the delimiter of the variable name, you can specify it by enclosing the variable name excluding the sigil "$" with "{}".
+# Specify variable name
+my $message = "I'm ${name} _foo\n";
+</pre>
+<p>
+  Details are explained in the article on variable expansion.
+</p>
+<ul>
+  <li> <a href="/blog/20180228151982.html"> Variable expansion</a> </li>
+</ul>
+<h3> Escape sequence of double quoted strings </h3>
+<p>
+  Here are the escape sequences that can be used in double-quoted strings.
+</p>
+<p>
+  Frequently used ones are line breaks "\n", tabs "\t", double quotes "\" ", and backslashes themselves" \\ ".
+</p>
+<table>
+  <tr> <th> Escape sequence </th> <th> Meaning </th> </tr>
+  <tr> <td>\n </td> <td> Line breaks </td> </tr>
+  <tr> <td>\t </td> <td> tab </td> </tr>
+  <tr> <td> \ "</td> <td>" </td> </tr>
+  <tr> <td> \\ </td> <td> \ </td> </tr>
+</table>
+<p>
+  Some escape sequences allow you to write the ASCII code itself by starting with "\ x".
+</p>
+<pre>
+# Specify ASCII code directly to express line breaks
+my $message = "Hello \ x0D \ x0A";
+print $message;
+</pre>
+<p>
+  The above example is a sample that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\ x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
+</p>
+<p>
+  You can read more about it in the Double Quote String Escape Sequence article.
+</p>
+<ul>
+  <li> <a href="/blog/20201030075254.html"> Double quote string escape sequence</a> </li>
+</ul>
+<h3> Relationship with regular expression literals </h3>
+<p>
+  Variable expansion and escape sequences of double-quoted strings can be used as they are in regular expression literals.
+</p>
+<pre>
+my $name = "Yuki Kimoto";
 
-&lt;pre&gt;
-my $ name = "Yuki Kimoto";
-
-#Specify variable name
-my $ message = "I'm $ {name} _foo \ n";
-&lt;/ pre&gt;
-
-Details are explained in the article on variable expansion.
-
-&lt;ul&gt;
-  &lt;li&gt; &lt;a href="/blog/20180228151982.html"&gt; Variable expansion &lt;/a&gt; &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Escape sequence of double quoted strings &lt;/ h3&gt;
-
-Here are the escape sequences that can be used in double-quoted strings.
-
-Frequently used ones are line breaks "\ n", tabs "\ t", double quotes "\" ", and backslashes themselves" \\ ".
-
-&lt;table&gt;
-  &lt;tr&gt; &lt;th&gt; Escape sequence &lt;/ th&gt; &lt;th&gt; Meaning &lt;/ th&gt; &lt;/ tr&gt;
-  &lt;tr&gt; &lt;td&gt; \ n &lt;/ td&gt; &lt;td&gt; Line breaks &lt;/ td&gt; &lt;/ tr&gt;
-  &lt;tr&gt; &lt;td&gt; \ t &lt;/ td&gt; &lt;td&gt; tab &lt;/ td&gt; &lt;/ tr&gt;
-  &lt;tr&gt; &lt;td&gt; \ "&lt;/ td&gt; &lt;td&gt;" &lt;/ td&gt; &lt;/ tr&gt;
-  &lt;tr&gt; &lt;td&gt; \\ &lt;/ td&gt; &lt;td&gt; \ &lt;/ td&gt; &lt;/ tr&gt;
-&lt;/ table&gt;
-
-Some escape sequences allow you to write the ASCII code itself by starting with "\ x".
-
-&lt;pre&gt;
-#Specify ASCII code directly to express line breaks
-my $ message = "Hello \ x0D \ x0A";
-print $ message;
-&lt;/ pre&gt;
-
-The above example is a sample that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\ x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
-
-You can read more about it in the Double Quote String Escape Sequence article.
-
-&lt;ul&gt;
-  &lt;li&gt; &lt;a href="/blog/20201030075254.html"&gt; Double quote string escape sequence &lt;/a&gt; &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Relationship with regular expression literals &lt;/ h3&gt;
-
-Variable expansion and escape sequences of double-quoted strings can be used as they are in regular expression literals.
-
-&lt;pre&gt;
-my $ name = "Yuki Kimoto";
-
-my $ message = "I'm Yuki Kimoto \ tHello";
+my $message = "I'm Yuki Kimoto\tHello";
 
 # You can use variable expansion and escape sequences in regular expression literals
-if ($ message = ~ / $ name \ t /) {
+if ($message = ~ / $name\t /) {
   
 }
-&lt;/ pre&gt;
-
-One of the reasons Perl's text processing is useful is that you can use double-quoted string interpolation and escape sequences as-is in regular expression literals.
-
-I don't use variable expansion very often, but I feel that the fact that regular expression literals are a natural extension of double-quoted strings is a natural experience.
-
-In Perl, &lt;a href="/blog/20100827127859.html"&gt; regular expressions &lt;/a&gt; are built in as programming language features, and regular expression literals are also implemented as one of the language features.
+</pre>
+<p>
+  One of the reasons Perl's text processing is useful is that you can use double-quoted string interpolation and escape sequences as-is in regular expression literals.
+</p>
+<p>
+  I don't use variable expansion very often, but I feel that the fact that regular expression literals are a natural extension of double-quoted strings is a natural experience.
+</p>
+<p>
+  In Perl, <a href="/blog/20100827127859.html"> regular expressions</a> are built in as programming language features, and regular expression literals are also implemented as one of the language features.
+</p>
 
   </div>
   <div class="bottom">

@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Easy way to implement XS using multiple modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule :: Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult.">
+<meta name="description" content="When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule::Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Easy way to implement XS using multiple modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule :: Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult." />
+<meta name="twitter:description" content="When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule::Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop = "name"> XS </ span> </a>
+        <span itemprop = "name"> XS </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20170207150055.html"> Easy way to implement XS using multiple modules </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20170207150055.html"> Easy way to implement XS using multiple modules </a></h2>
 <p>
-  When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule :: Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult.
+  When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule::Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,29 +101,29 @@
 </p>
 <ol>
   <li>
-    No need to modify <a href="/blog/20150725143778.html"> Makefile.PL </a>
-  </ li>
+    No need to modify <a href="/blog/20150725143778.html"> Makefile.PL</a>
+  </li>
   <li>
     No need to modify the name of the file SomeModule.xs
-  </ li>
+  </li>
   <li>
     Only one XS file called SomeModule.xs is OK
-  </ li>
+  </li>
   <li>
-    The standard tool <a href="/blog/20170209150055.html"> h2xs </a> is fine
-  </ li>
-</ ol>
-<h4> Create a module with h2xs </ h4>
+    The standard tool <a href="/blog/20170209150055.html"> h2xs</a> is fine
+  </li>
+</ol>
+<h4> Create a module with h2xs </h4>
 <p>
   First, create a module for XS with h2xs.
 </p>
 <pre>
 h2xs -A -n SomeModule
-&lt;/ pre&gt;
-
-This will create a directory called "SomeModule". The following files and directories will be created.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This will create a directory called "SomeModule". The following files and directories will be created.
+</p>
+<pre>
 Changes
 lib /
 Makefile.PL
@@ -132,43 +132,44 @@ ppport.h
 README
 SomeModule.xs
 t /
-&lt;/ pre&gt;
+</pre>
+<h4> XS file description </h4>
+<p>
+  I will create an XS file. Let's add a function called foo that displays "foo" to SomeModule, and a function called bar that displays "bar" to SomeModule::Util.
+</p>
+<p>
+  First of all, when you open the XS file, you should see something like the following.
+</p>
+<pre>
+# include "EXTERN.h"
+# include "perl.h"
+# include "XSUB.h"
 
-&lt;h4&gt; XS file description &lt;/ h4&gt;
-
-I will create an XS file. Let's add a function called foo that displays "foo" to SomeModule, and a function called bar that displays "bar" to SomeModule :: Util.
-
-First of all, when you open the XS file, you should see something like the following.
-
-&lt;pre&gt;
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-
-#include "ppport.h"
+# include "ppport.h"
 
 
 MODULE = SomeModule PACKAGE = SomeModule
-&lt;/ pre&gt;
+</pre>
+<p>
+  The first thing to remember is that the "MODULE = SomeModule PACKAGE = SomeModule" section should be at the bottom. If you do not leave this part at the end, the XS will fail to load.
+</p>
+<p>
+  Let's write it. Add "MODULE = SomeModule::Util PACKAGE = SomeModule::Util". Then define bar in XS. Also, define foo in the section "MODULE = SomeModule PACKAGE = SomeModule".
+</p>
+<pre>
+# include "EXTERN.h"
+# include "perl.h"
+# include "XSUB.h"
 
-The first thing to remember is that the "MODULE = SomeModule PACKAGE = SomeModule" section should be at the bottom. If you do not leave this part at the end, the XS will fail to load.
+# include "ppport.h"
 
-Let's write it. Add "MODULE = SomeModule :: Util PACKAGE = SomeModule :: Util". Then define bar in XS. Also, define foo in the section "MODULE = SomeModule PACKAGE = SomeModule".
-
-&lt;pre&gt;
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-
-#include "ppport.h"
-
-MODULE = SomeModule :: Util PACKAGE = SomeModule :: Util
+MODULE = SomeModule::Util PACKAGE = SomeModule::Util
 
 void
 bar (...)
   PPCODE:
 {
-  PerlIO_printf (PerlIO_stdout (), "bar \ n");
+  PerlIO_printf(PerlIO_stdout (), "bar\n");
   XSRETURN (0);
 }
 
@@ -178,76 +179,77 @@ void
 foo (...)
   PPCODE:
 {
-  PerlIO_printf (PerlIO_stdout (), "foo \ n");
+  PerlIO_printf(PerlIO_stdout (), "foo\n");
   XSRETURN (0);
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Creating a module &lt;/ h4&gt;
-
-At this point, all you have to do is create SomeModule and SomeModule :: Util.
-
-&lt;b&gt; SomeModule source code &lt;/ b&gt;
-
-You can leave the source code for SomeModule.pm as it is. I organized it a little and made it as follows.
-
-&lt;pre&gt;
+</pre>
+<h4> Creating a module </h4>
+<p>
+  At this point, all you have to do is create SomeModule and SomeModule::Util.
+</p>
+<p>
+  <b> SomeModule source code </b>
+</p>
+<p>
+  You can leave the source code for SomeModule.pm as it is. I organized it a little and made it as follows.
+</p>
+<pre>
 package SomeModule;
 
 use strict;
 use warnings;
 
-our $ VERSION = '0.01';
+our $VERSION = '0.01';
 
 require XSLoader;
-XSLoader :: load ('SomeModule', $ VERSION);
+XSLoader::load ('SomeModule', $VERSION);
 
 1;
-&lt;/ pre&gt;
-
-&lt;b&gt; SomeModule :: Util source code &lt;/ b&gt;
-
-Let's also create SomeModule :: Util :: bar. Save this in "lib / SomeModule / Util.pm". This is an almost empty file with only the package name declared.
-
-&lt;pre&gt;
-package SomeModule :: Util;
+</pre>
+<p>
+  <b> SomeModule::Util source code </b>
+</p>
+<p>
+  Let's also create SomeModule::Util::bar. Save this in "lib / SomeModule / Util.pm". This is an almost empty file with only the package name declared.
+</p>
+<pre>
+package SomeModule::Util;
 
 1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Test script &lt;/ h4&gt;
-
-Create a test script. This should be in the same directory where the XS files are located.
-
-&lt;pre&gt;
+</pre>
+<h4> Test script </h4>
+<p>
+  Create a test script. This should be in the same directory where the XS files are located.
+</p>
+<pre>
 use strict;
 use warnings;
 
 use SomeModule;
-use SomeModule :: Util;
+use SomeModule::Util;
 
-SomeModule :: foo ();
-SomeModule :: Util :: bar ();
-&lt;/ pre&gt;
-
-&lt;h4&gt; Compile and run &lt;/ h4&gt;
-
-Let's compile and run it.
-
-&lt;pre&gt;
+SomeModule::foo ();
+SomeModule::Util::bar ();
+</pre>
+<h4> Compile and run </h4>
+<p>
+  Let's compile and run it.
+</p>
+<pre>
 perl Makefile.PL
 make
 perl -Mblib test.pl
-&lt;/ pre&gt;
-
-If the output is as follows, it is successful.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the output is as follows, it is successful.
+</p>
+<pre>
 foo
 bar
-&lt;/ pre&gt;
-
-Writing XS in multiple modules doesn't seem to be that difficult.
+</pre>
+<p>
+  Writing XS in multiple modules doesn't seem to be that difficult.
+</p>
 
   </div>
   <div class="bottom">

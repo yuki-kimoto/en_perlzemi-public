@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Determine if the date exists  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To easily determine if a date exists, use the Time :: Local module.">
+<meta name="description" content="To easily determine if a date exists, use the Time::Local module.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Determine if the date exists  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To easily determine if a date exists, use the Time :: Local module." />
+<meta name="twitter:description" content="To easily determine if a date exists, use the Time::Local module." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161123147990.html">
-        <span itemprop = "name"> Date / Time </ span> </a>
+        <span itemprop = "name"> Date / Time </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20081013122391.html"> Determine if the date exists </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081013122391.html"> Determine if the date exists </a></h2>
 <p>
-  To easily determine if a date exists, use the Time :: Local module.
+  To easily determine if a date exists, use the Time::Local module.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,7 +93,7 @@
 
 
 <p>
-  The timelocal function of Time :: Local is a function that converts the specified date to the elapsed seconds from the epoch, but throws an exception if a date that does not exist is specified.
+  The timelocal function of Time::Local is a function that converts the specified date to the elapsed seconds from the epoch, but throws an exception if a date that does not exist is specified.
 </p>
 <p>
   By using this, it is possible to determine the existing date.
@@ -102,120 +102,120 @@
 use strict;
 use warnings;
 
-use Time :: Local'timelocal';
+use Time::Local'timelocal';
 
-print "(1) Check if the date exists. \ N";
+print "(1) Check if the date exists.\n";
 # Perl treats the time as the number of years since 1900
 Draw # 1900.
-my $ year = 2008 -1900;
+my $year = 2008 -1900;
 
-#The month starts from 0, so subtract 1 from the month you want to find.
-my $ mon = 10 --1;
+# The month starts from 0, so subtract 1 from the month you want to find.
+my $mon = 10 - 1;
 
 # There should be no such day.
-my $ mday = 32;
+my $mday = 32;
 
 # If you specify a day that does not exist, an exception will be thrown, so catch it with eval
 eval {
-  timelocal (0, 0, 0, $ mday, $ mon, $ year);
+  timelocal (0, 0, 0, $mday, $mon, $year);
 };
 
-#Restore
-$ year + = 1900;
-$ mon ++;
+# Restore
+$year + = 1900;
+$mon ++;
 
-# $ @ Is set when an exception occurs.
-if ($ @) {
-  print "$ year year $ mon month $ mday day does not exist. \ N \ n";
+# $@ Is set when an exception occurs.
+if ($@) {
+  print "$year year $mon month $mday day does not exist.\n\n";
 }
 else {
-  print "$ year year $ mon month $ mday day exists. \ N \ n";
+  print "$year year $mon month $mday day exists.\n\n";
 }
 
 
-print "(2) Make date judgment a function. \ N";
-if (day_exist ($ year, $ mon, $ mday)) {
-  print "$ year year $ mon month $ mday day exists. \ N";
+print "(2) Make date judgment a function.\n";
+if (day_exist ($year, $mon, $mday)) {
+  print "$year year $mon month $mday day exists.\n";
 }
 else {
-  print "$ year year $ mon month $ mday day does not exist. \ N";
+  print "$year year $mon month $mday day does not exist.\n";
 }
 
 # Function to determine if a date exists
 sub day_exist {
-  my ($ year, $ mon, $ mday) = @_;
-  $ year-= 1900;
-  $ mon-;
+  my ($year, $mon, $mday) = @_;
+  $year-= 1900;
+  $mon-;
     
-  require Time :: Local;
+  require Time::Local;
   eval {
-    Time :: Local :: timelocal (0, 0, 0, $ mday, $ mon, $ year);
+    Time::Local::timelocal (0, 0, 0, $mday, $mon, $year);
   };
-  return $ @? 0: 1;
+  return $@? 0: 1;
 }
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt;
-
-&lt;h3&gt; Check if the date exists. &lt;/ h3&gt;
-
-&lt;h4&gt; Notes on handling dates &lt;/ h4&gt;
-
-Perl's standard functions treat years as the number of years since 1900. The month starts from 0, such as 0 in January and 1 in February.
-
-You need to take this into account when passing arguments to the timelocal function of the Time :: Local module.
-
-&lt;pre&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100312126967.html"> eval</a>
+</p>
+<h3> Check if the date exists. </h3>
+<h4> Notes on handling dates </h4>
+<p>
+  Perl's standard functions treat years as the number of years since 1900. The month starts from 0, such as 0 in January and 1 in February.
+</p>
+<p>
+  You need to take this into account when passing arguments to the timelocal function of the Time::Local module.
+</p>
+<pre>
 # Perl treats the time as the number of years since 1900
 Draw # 1900.
-my $ year = 2008 -1900;
+my $year = 2008 -1900;
 
-#The month starts from 0, so subtract 1 from the month you want to find.
-my $ mon = 10 --1;
+# The month starts from 0, so subtract 1 from the month you want to find.
+my $mon = 10 - 1;
 
 # There should be no such day.
-my $ mday = 32;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Determine if the date exists &lt;/ h4&gt;
-
-Use the timelocal function of the Time :: Local module to determine the date.
-
-Since the arguments of the timelocal function must be specified in the order of "seconds, minutes, hours, days, months, and years", 0 is passed as a dummy for seconds, minutes, and hours.
-
-If the date does not exist, the timelocal function throws an exception, so catch it with eval. If an exception occurs, the content will be set in $ @, so the judgment will be made with this.
-
-&lt;pre&gt;
-use Time :: Local'timelocal';
+my $mday = 32;
+</pre>
+<h4> Determine if the date exists </h4>
+<p>
+  Use the timelocal function of the Time::Local module to determine the date.
+</p>
+<p>
+  Since the arguments of the timelocal function must be specified in the order of "seconds, minutes, hours, days, months, and years", 0 is passed as a dummy for seconds, minutes, and hours.
+</p>
+<p>
+  If the date does not exist, the timelocal function throws an exception, so catch it with eval. If an exception occurs, the content will be set in $@, so the judgment will be made with this.
+</p>
+<pre>
+use Time::Local'timelocal';
 eval {
-  timelocal (0, 0, 0, $ mday, $ mon, $ year);
+  timelocal (0, 0, 0, $mday, $mon, $year);
 };
 
-if ($ @) {
-  print "$ year year $ mon month $ mday day does not exist. \ N \ n";
+if ($@) {
+  print "$year year $mon month $mday day does not exist.\n\n";
 }
 else {
-  print "$ year year $ mon month $ mday day exists. \ N \ n";
+  print "$year year $mon month $mday day exists.\n\n";
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Create a function to determine if a date exists. &lt;/ h4&gt;
-
-Since the judgment method is quite complicated as described above, it is convenient to create a date judgment function that can specify the argument by "year / month / day".
-
-&lt;pre&gt;
+</pre>
+<h4> Create a function to determine if a date exists. </h4>
+<p>
+  Since the judgment method is quite complicated as described above, it is convenient to create a date judgment function that can specify the argument by "year / month / day".
+</p>
+<pre>
 sub day_exist {
-  my ($ year, $ mon, $ mday) = @_;
-  $ year-= 1900;
-  $ mon-;
+  my ($year, $mon, $mday) = @_;
+  $year-= 1900;
+  $mon-;
     
-  require Time :: Local;
+  require Time::Local;
   eval {
-    Time :: Local :: timelocal (0, 0, 0, $ mday, $ mon, $ year);
+    Time::Local::timelocal (0, 0, 0, $mday, $mon, $year);
   };
-  return $ @? 0: 1;
+  return $@? 0: 1;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20091206126018.html"> SQL basics learned using SQLite </a></ h2>
+    <h2><a href="/blog/20091206126018.html"> SQL basics learned using SQLite </a></h2>
 <p>
   SQL is a query language for inserting and retrieving data into a database. Since the basic writing method of SQL is standardized, you can issue a query to the database with the same description in SQLite, MySQL, Oracle, or PostgreSQL.
 </p>
@@ -79,15 +79,15 @@
 </div>
 
 
-<h3> Preparation for executing SQL </ h3>
+<h3> Preparation for executing SQL </h3>
 <p>
   The following explains how to build an environment for executing SQLite on Windows.
 </p>
 <blockquote>
 <p>
-  <a href="/blog/20091203126018.html"> Install SQLite on Windows </a>
+  <a href="/blog/20091203126018.html"> Install SQLite on Windows</a>
 </p>
-</ blockquote>
+</blockquote>
 <p>
   When you finish this work
 </p>
@@ -95,15 +95,15 @@
 <p>
   sqlite3 test.db
 </p>
-</ blockquote>
+</blockquote>
 <p>
   Let's start sqlite3 by specifying the database name. If the database does not exist, it will be created automatically.
 </p>
-<h3> Syntax other than select </ h3>
+<h3> Syntax other than select </h3>
 <p>
   The difficult part in SQL is the select statement. Other syntax is relatively simple. In preparation for executing the select statement, I will first explain the SQL that is frequently used other than the select statement.
 </p>
-<h4> create table --create table </ h4>
+<h4> create table - create table </h4>
 <p>
   Use the "create table" statement to create a table. Here, I will explain only the format of the simplest "create table" statement. (For "create table", see "Defining a table with create table (unpublished)".)
 </p>
@@ -113,135 +113,136 @@ create table table name (
   Field name 2,
   ...
 );
-&lt;/ pre&gt;
+</pre>
  SQL that creates a table named books with two fields, title and author.
-&lt;pre&gt;
+<pre>
 create table books (
   title,
   author, author,
   price
 );
-&lt;/ pre&gt;
-
-Please try it. The last semicolon in SQL is required. It's easy to forget, so don't forget it.
-
-SQLite provides a command to display the created table list. Run the following command and verify that you see a table called "books". (Note that there is a dot (.) At the beginning.)
-
-&lt;pre&gt;
+</pre>
+<p>
+  Please try it. The last semicolon in SQL is required. It's easy to forget, so don't forget it.
+</p>
+<p>
+  SQLite provides a command to display the created table list. Run the following command and verify that you see a table called "books". (Note that there is a dot (.) At the beginning.)
+</p>
+<pre>
 .table
-&lt;/ pre&gt;
-
-&lt;h3&gt; drop table --drop the table &lt;/ h3&gt;
-
-Use "drop table" to drop a table.
-
-&lt;pre&gt;
+</pre>
+<h3> drop table - drop the table </h3>
+<p>
+  Use "drop table" to drop a table.
+</p>
+<pre>
 drop table table name;
-&lt;/ pre&gt;
-
-Now let's delete the table we created earlier called "books".
-
-&lt;pre&gt;
+</pre>
+<p>
+  Now let's delete the table we created earlier called "books".
+</p>
+<pre>
 drop table books;
-&lt;/ pre&gt;
-
-Type ".table" to make sure the table has been deleted. After this, the "books" table will be used, so create it again using "create table".
-
-&lt;h3&gt; insert --add record &lt;/ h3&gt;
-
-Use the insert statement to insert a record into the table.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Type ".table" to make sure the table has been deleted. After this, the "books" table will be used, so create it again using "create table".
+</p>
+<h3> insert - add record </h3>
+<p>
+  Use the insert statement to insert a record into the table.
+</p>
+<pre>
 insert into table name (field name 1, field name 2, ..) values ​​(value 1, value 2, value 3);
-&lt;/ pre&gt;
-
-To add a record with "title" of "Good life", "author" of "Saki" and "price" of "1900" to the table, execute the following SQL. Note that if the data is a string, enclose it in single quotes.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To add a record with "title" of "Good life", "author" of "Saki" and "price" of "1900" to the table, execute the following SQL. Note that if the data is a string, enclose it in single quotes.
+</p>
+<pre>
 insert into books (title, author, price) values ​​('Good life','Saki', 1900);
-&lt;/ pre&gt;
-
-This will add a record like the one below to the table.
-
-&lt;pre&gt;
-+ -------------- + ------------ + -------- +
+</pre>
+<p>
+  This will add a record like the one below to the table.
+</p>
+<pre>
++ - -- -- -- --- + - -- -- -- - + - -- --- +
 | title | author | price | # This is the field name
 + ============= + ========== + ======== +
 | Good life | Saju | 1900 |
-+ -------------- + ------------ + -------- +
-&lt;/ pre&gt;
-
-I will explain the select statement in detail later, but let's execute the select statement to confirm that one line has been inserted.
-
-&lt;pre&gt;
++ - -- -- -- --- + - -- -- -- - + - -- --- +
+</pre>
+<p>
+  I will explain the select statement in detail later, but let's execute the select statement to confirm that one line has been inserted.
+</p>
+<pre>
 select * from books;
-&lt;/ pre&gt;
-
-If the above content is displayed, insert is successful. (The output format is slightly different. I will explain how to display it in an easy-to-read format in the select statement)
-
-Let's insert a few more records for the rest of this.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the above content is displayed, insert is successful. (The output format is slightly different. I will explain how to display it in an easy-to-read format in the select statement)
+</p>
+<p>
+  Let's insert a few more records for the rest of this.
+</p>
+<pre>
 insert into books (title, author, price) values ​​('Simple is good','Mai', 2000);
 insert into books (title, author, price) values ​​('Good morning','Kenta', 3000);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Record update update &lt;/ h3&gt;
-
-Use the update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in the select statement, multiple conditions can be specified in the where section.
-
-&lt;pre&gt;
+</pre>
+<h3> Record update update </h3>
+<p>
+  Use the update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in the select statement, multiple conditions can be specified in the where section.
+</p>
+<pre>
 update table name set field name 1 = value 1, feel name 2 = value 2, .. where to search field name = value
-&lt;/ pre&gt;
-
-The SQL to change the title value of a record whose "author" is "taro" to Ruby is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The SQL to change the title value of a record whose "author" is "taro" to Ruby is as follows.
+</p>
+<pre>
 update books set title ='Ruby' where author ='taro'
-&lt;/ pre&gt;
-
-Let's execute the update statement using do.
-
-&lt;pre&gt;
-my $ update = "update books set title ='Ruby' where author ='taro'";
-$ dbh-&gt; do ($ update);
-&lt;/ pre&gt;
-
-The previous record is updated and looks like this:
-
-&lt;pre&gt;
-+ -------- + ---------- +
+</pre>
+<p>
+  Let's execute the update statement using do.
+</p>
+<pre>
+my $update = "update books set title ='Ruby' where author ='taro'";
+$dbh-&gt; do($update);
+</pre>
+<p>
+  The previous record is updated and looks like this:
+</p>
+<pre>
++ - -- --- + - -- -- -- +
 | title | author | # header (this can be done when you create the table)
-+ -------- + ---------- +
-| Ruby | taro | # record (record updated by update statement)
-+ -------- + ---------- +
-&lt;/ pre&gt;
-
-&lt;h3&gt; Delete record delete &lt;/ h3&gt;
-
-Use the delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
-
-&lt;pre&gt;
++ - -- --- + - -- -- -- +
+| Ruby | taro | # record(record updated by update statement)
++ - -- --- + - -- -- -- +
+</pre>
+<h3> Delete record delete </h3>
+<p>
+  Use the delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
+</p>
+<pre>
 delete from table name where field name to search = value
-&lt;/ pre&gt;
-
-The SQL to delete a record whose "author" is "taro" looks like this:
-
-&lt;pre&gt;
+</pre>
+<p>
+  The SQL to delete a record whose "author" is "taro" looks like this:
+</p>
+<pre>
 delete from books where author ='taro';
-&lt;/ pre&gt;
-
-Let's execute a delete statement using do.
-
-&lt;pre&gt;
-my $ delete = "delete from books where author ='taro';";
-$ dbh-&gt; do ($ delete);
-&lt;/ pre&gt;
-
-The record will be deleted.
-
-&lt;hr&gt;
-&lt;a href="/blog/20091205126018.html"&gt; To the basics of databases learned with SQLite &lt;/a&gt;
+</pre>
+<p>
+  Let's execute a delete statement using do.
+</p>
+<pre>
+my $delete = "delete from books where author ='taro';";
+$dbh-&gt; do($delete);
+</pre>
+<p>
+  The record will be deleted.
+</p>
+<hr>
+<p>
+  <a href="/blog/20091205126018.html"> To the basics of databases learned with SQLite</a>
+</p>
 
   </div>
   <div class="bottom">

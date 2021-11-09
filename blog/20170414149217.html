@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20170414149217.html"> @INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path </a></ h2>
+    <h2><a href="/blog/20170414149217.html"> @INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path </a></h2>
 <p>
   In Perl 5.26, the current directory "." Is deleted from the beginning of @INC, which is the module search path. There is an explanation that it is for security measures, but I thought about what kind of situation there is actually danger.
 </p>
@@ -79,41 +79,48 @@
 </div>
 
 
-<h3> It is dangerous to change the directory writable by other users to the current directory </ h3>
+<h3> It is dangerous to change the directory writable by other users to the current directory </h3>
 <p>
   For example, consider the following script (test.pl).
 </p>
 <pre>
 chdir'/ tmp';
 
-require File :: Path;
-&lt;/ pre&gt;
-
-This script first changes the current directory to a directory called "/ tmp".
-
-&lt;b&gt; The important thing here is that the directory "/ tmp" can be read and written by other users. &lt;/ b&gt;
-
-Being writable by other users means that you can put a file called "Find / Path.pm". (Reference: &lt;a href="/blog/20100409127089.html"&gt; File :: Path &lt;/a&gt;)
-
-If the current directory "." Exists at the beginning of the module load path, it first tries to load the module that exists in the current directory.
-
-This script then tries to read "Find / Path.pm" which exists in the current directory "/ tmp".
-
-If the contents of "Find / Path.pm" are made into an attack program, "test.pl" will unintentionally execute "Find / Path.pm" in "/ tmp". ..
-
-This seems to be a problem of "untrustworthy search path vulnerability".
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="https://www.ipa.go.jp/security/fy21/reports/tech1-tg/a_01.html"&gt; Information Security Technology Trend Survey (1st half of 2009) "Untrusted Search Path Vulnerability" &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-Scripts other than "/ tmp" that make a directory writable by other users the current directory can be said to have this vulnerability.
-
-&lt;h3&gt; Addendum &lt;/ h3&gt;
-
-I've written many times that "." Has been added to the beginning of @INC, but it was a mistake that &lt;b&gt; "." Was added to the end &lt;/ b&gt;. I got an indication on Twitter.
+require File::Path;
+</pre>
+<p>
+  This script first changes the current directory to a directory called "/ tmp".
+</p>
+<p>
+  <b> The important thing here is that the directory "/ tmp" can be read and written by other users. </b>
+</p>
+<p>
+  Being writable by other users means that you can put a file called "Find / Path.pm". (Reference: <a href="/blog/20100409127089.html"> File::Path</a>)
+</p>
+<p>
+  If the current directory "." Exists at the beginning of the module load path, it first tries to load the module that exists in the current directory.
+</p>
+<p>
+  This script then tries to read "Find / Path.pm" which exists in the current directory "/ tmp".
+</p>
+<p>
+  If the contents of "Find / Path.pm" are made into an attack program, "test.pl" will unintentionally execute "Find / Path.pm" in "/ tmp". ..
+</p>
+<p>
+  This seems to be a problem of "untrustworthy search path vulnerability".
+</p>
+<ul>
+  <li>
+    <a href="https://www.ipa.go.jp/security/fy21/reports/tech1-tg/a_01.html"> Information Security Technology Trend Survey (1st half of 2009) "Untrusted Search Path Vulnerability"</a>
+  </li>
+</ul>
+<p>
+  Scripts other than "/ tmp" that make a directory writable by other users the current directory can be said to have this vulnerability.
+</p>
+<h3> Addendum </h3>
+<p>
+  I've written many times that "." Has been added to the beginning of @INC, but it was a mistake that <b> "." Was added to the end </b>. I got an indication on Twitter.
+</p>
 
   </div>
   <div class="bottom">

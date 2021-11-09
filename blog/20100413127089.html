@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File :: Temp --Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use  File :: Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS.">
+<title> File::Temp - Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  File::Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File :: Temp --Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use  File :: Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS." />
+<meta name="twitter:title" content=" File::Temp - Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  File::Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100413127089.html"> File :: Temp --Create a temporary file </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100413127089.html"> File::Temp - Create a temporary file </a></h2>
 <p>
-  You can use <strong> File :: Temp </ strong> to create <b> temporary files </ b> and <b> temporary directories </ b>. You can create temporary files (or temporary directories) in a secure way regardless of the OS.
+  You can use <strong> File::Temp </strong> to create <b> temporary files </b> and <b> temporary directories </b>. You can create temporary files (or temporary directories) in a secure way regardless of the OS.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,99 +97,98 @@
 
 
 <pre>
-#Loading modules and importing functions
-use File :: Temp qw / tempfile tempdir /;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; tempfile &lt;/ strong&gt; function to create a temporary file. The return value is the file handle of the temporary file in the scalar context and the file handle and filename of the temporary file in the list context.
-
-&lt;pre&gt;
+# Loading modules and importing functions
+use File::Temp qw / tempfile tempdir /;
+</pre>
+<p>
+  Use the <strong> tempfile </strong> function to create a temporary file. The return value is the file handle of the temporary file in the scalar context and the file handle and filename of the temporary file in the list context.
+</p>
+<pre>
 # Create temporary file
-$ fh = tempfile;
-($ fh, $ filename) = tempfile;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; tempdir &lt;/ strong&gt; function to create a temporary directory.
-
-&lt;pre&gt;
+$fh = tempfile;
+($fh, $filename) = tempfile;
+</pre>
+<p>
+  Use the <strong> tempdir </strong> function to create a temporary directory.
+</p>
+<pre>
 # Create temporary directory
-$ dir = tempdir;
-&lt;/ pre&gt;
-
-This is a sample that safely overwrites a file using a temporary file. (* 1)
-
-&lt;pre&gt;
+$dir = tempdir;
+</pre>
+<p>
+  This is a sample that safely overwrites a file using a temporary file. (* 1)
+</p>
+<pre>
 # Safely overwrite files
-use File :: Temp'temp file';
-use File :: Copy'move';
+use File::Temp'temp file';
+use File::Copy'move';
 
-my $ file = shift;
+my $file = shift;
 
 # Get the contents of the file
-my $ old = get_content ($ file);
+my $old = get_content ($file);
 
-#Add text
-my $ new = $ old. "Add new text";
+# Add text
+my $new = $old. "Add new text";
 
 # Write new content to file
-my ($ tempfh, $ tempfile) = tempfile;
-print $ tempfh $ new;
-close $ tempfh;
+my ($tempfh, $tempfile) = tempfile;
+print $tempfh $new;
+close $tempfh;
 
 # Overwrite new file with old file
-move $ tempfile, $ file
-  or die "Can't move \" $ tempfile \ "to \" $ file \ ": $!";
+move $tempfile, $file
+  or die "Can't move \" $tempfile \ "to \" $file \ ": $!";
 
 sub get_content {
-  my $ file = shift;
+  my $file = shift;
   
-  open my $ fh,'&lt;', $ file
-    or die "Can't open file \" $ file \ ": $!";
+  open my $fh,'&lt;', $file
+    or die "Can't open file \" $file \ ": $!";
   
-  my $ content = join ('', &lt;$ fh&gt;);
+  my $content = join('', &lt;$fh&gt;);
   
-  close $ fh;
+  close $fh;
   
-  return $ content;
+  return $content;
 }
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt;
-
-&lt;h3&gt; tempfile options &lt;/ h3&gt;
-
-You can specify options as arguments to tempfile.
-
-&lt;pre&gt;
-#tempfile options
+</pre>
+<p>
+  (Reference) <a href="/blog/20100408127089.html"> File::Copy</a>
+</p>
+<h3> tempfile options </h3>
+<p>
+  You can specify options as arguments to tempfile.
+</p>
+<pre>
+# tempfile options
 tempfile (DIR =&gt;'somedir', SUFFIX =&gt;'.dat');
-&lt;/ pre&gt;
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<table>
+  <tr>
+    <td>
       DIR
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Directory where temporary files are created
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       SUFFIX
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       Extension added to the end of the temporary file
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-If DIR is omitted, the directory for creating temporary files is automatically determined. For Unix it is / tmp.
-
-&lt;h3&gt; Note &lt;/ h3&gt;
-* 1 It is not safe to open a file in read / write mode and write to the read file. This is because if the computer crashes during writing, the data before reading will be corrupted. It is safe to write to a different file than the one you read and then overwrite with that file.
+    </td>
+  </tr>
+</table>
+<p>
+  If DIR is omitted, the directory for creating temporary files is automatically determined. For Unix it is / tmp.
+</p>
+<h3> Note </h3>
+<p>
+  * 1 It is not safe to open a file in read / write mode and write to the read file. This is because if the computer crashes during writing, the data before reading will be corrupted. It is safe to write to a different file than the one you read and then overwrite with that file.
+</p>
 
   </div>
   <div class="bottom">

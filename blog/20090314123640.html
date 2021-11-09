@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> I saw the introduction of CPAN on the Sakura Internet server as a complete procedure.  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="(The content of this article is out of date, now it should be easy to install the module locally using cpanm.  Building a local environment with cpanm  See>.)">
+<meta name="description" content="(The content of this article is out of date, now it should be easy to install the module locally using cpanm.  Building a local environment with cpanm See>.)">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" I saw the introduction of CPAN on the Sakura Internet server as a complete procedure.  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="(The content of this article is out of date, now it should be easy to install the module locally using cpanm.  Building a local environment with cpanm  See>.)" />
+<meta name="twitter:description" content="(The content of this article is out of date, now it should be easy to install the module locally using cpanm.  Building a local environment with cpanm See>.)" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,20 +62,20 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20160220145594.html">
-      <span itemprop = "name"> Environment construction </ span> </a>
+      <span itemprop = "name"> Environment construction </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090314123640.html"> I saw the introduction of CPAN on the Sakura Internet server as a complete procedure. </a></ H2>
+  </li>
+</ol>
+<h2><a href="/blog/20090314123640.html"> I saw the introduction of CPAN on the Sakura Internet server as a complete procedure. </a></H2>
 <blockquote>
 <p>
-  (The content of this article is out of date, now it should be easy to install the module locally using cpanm. <a href="/blog/20101027127859.html"> Building a local environment with cpanm </a> See>.)
+  (The content of this article is out of date, now it should be easy to install the module locally using cpanm. <a href="/blog/20101027127859.html"> Building a local environment with cpanm</a> See>.)
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,16 +93,16 @@
 </div>
 
 
-</ blockquote>
+</blockquote>
 <p>
-  otsune introduced <a href="http://www.otsune.com/bsd/tips/usercpaninstall.html"> How to use CPAN on Sakura Internet rental server </a>. However, some manual work is required, so I tried to make it a procedure so that it can be executed entirely by copying.
+  otsune introduced <a href="http://www.otsune.com/bsd/tips/usercpaninstall.html"> How to use CPAN on Sakura Internet rental server</a>. However, some manual work is required, so I tried to make it a procedure so that it can be executed entirely by copying.
 </p>
-<h3> Sakura Internet server cpan installation procedure </ h3>
+<h3> Sakura Internet server cpan installation procedure </h3>
 <pre>
-#Create a directory for the library
+# Create a directory for the library
 mkdir -p ~ / local
 
-#Create a CPAN config file
+# Create a CPAN config file
 echo no | cpan
 
 Rewrite the configuration file MyConfig.pm for the # cpan command
@@ -110,11 +110,11 @@ Rewrite the configuration file MyConfig.pm for the # cpan command
 perl-~ / .cpan / CPAN / MyConfig.pm&gt; ~ / .cpan / CPAN / MyConfig.pm.edit
 while (&lt;&gt;) {
     if (/ ^ \ s * \}; /) {
-        print q #'make_install_arg' =&gt; qq [SITEPREFIX = $ ENV {HOME} / local], #, "\ n",
-              q #'makepl_arg' =&gt; qq [INSTALLDIRS = site LIB = $ ENV {HOME} / local / lib / perl5 PREFIX = $ ENV {HOME} / local], #, "\ n",
-              q #'mbuildpl_arg' =&gt; qq [./Build --install_base $ ENV {HOME} / local], #, "\ n",
-              q #'urllist' =&gt; [q [ftp://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/], q [ftp://ftp.ring.gr.jp/pub/ lang / perl / CPAN /]], #, "\ n",
-              q #}; #, "\ n";
+        print q # 'make_install_arg' =&gt; qq [SITEPREFIX = $ENV {HOME} / local], # , "\n",
+              q # 'makepl_arg' =&gt; qq [INSTALLDIRS = site LIB = $ENV {HOME} / local / lib / perl5 PREFIX = $ENV {HOME} / local], # , "\n",
+              q # 'mbuildpl_arg' =&gt; qq [./Build - install_base $ENV {HOME} / local], # , "\n",
+              q # 'urllist' =&gt; [q [ftp://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/], q [ftp://ftp.ring.gr.jp/pub/ lang / perl / CPAN /]], # , "\n",
+              q # }; # , "\n";
     }
     elsif (! / ^ \ s *'make_install_arg' / &amp;&amp;
         ! / ^ \ s *'makepl_arg' / &amp;&amp;
@@ -132,14 +132,14 @@ __END__
 mv -f ~ / .cpan / CPAN / MyConfig.pm.edit ~ / .cpan / CPAN / MyConfig.pm
 
 # Perl library location settings
-echo'setenv PATH $ HOME / local / bin: $ PATH' &gt;&gt; ~ / .cshrc
-echo'setenv PERL5LIB $ HOME / local / lib / perl5: $ HOME / local / lib / perl5 / site_perl' &gt;&gt; ~ / .cshrc
+echo'setenv PATH $HOME / local / bin: $PATH' &gt;&gt; ~ / .cshrc
+echo'setenv PERL5LIB $HOME / local / lib / perl5: $HOME / local / lib / perl5 / site_perl' &gt;&gt; ~ / .cshrc
 
 # Avoid BSD PAN errors
-echo'setenv PKG_DBDIR $ HOME / local / var / db / pkg' &gt;&gt; ~ / .cshrc
-echo'setenv PORT_DBDIR $ HOME / local / var / db / pkg' &gt;&gt; ~ / .cshrc
+echo'setenv PKG_DBDIR $HOME / local / var / db / pkg' &gt;&gt; ~ / .cshrc
+echo'setenv PORT_DBDIR $HOME / local / var / db / pkg' &gt;&gt; ~ / .cshrc
 echo'setenv INSTALL_AS_USER &gt;&gt; ~ / .cshrc'
-echo'setenv LD_LIBRARY_PATH $ HOME / local / lib' &gt;&gt; ~ / .cshrc
+echo'setenv LD_LIBRARY_PATH $HOME / local / lib' &gt;&gt; ~ / .cshrc
 mkdir -p ~ / local / var / db / pkg
 
 
@@ -147,17 +147,23 @@ mkdir -p ~ / local / var / db / pkg
 source ~ / .cshrc
 
 Update to the latest version of # cpan
-cpan -i Bundle :: CPAN
+cpan -i Bundle::CPAN
 
-#The installation will start and you will be asked if you want to install the dependent modules as well, so press Enter. (A little long)
-&lt;/ pre&gt;
-
-You can now use cpan.
-
-&lt;h3&gt; If you want to start over for some reason &lt;/ h3&gt;
-I'm messing around with the directories ~ / local, ~ / .cpan, and the csh configuration file ~ / .cshrc.
-If you want to start over, delete the ~ / local and ~ / .cpan directories.
-Also, open ~ / .cshrc with vi and delete the items added at the end.
+# The installation will start and you will be asked if you want to install the dependent modules as well, so press Enter. (A little long)
+</pre>
+<p>
+  You can now use cpan.
+</p>
+<h3> If you want to start over for some reason </h3>
+<p>
+  I'm messing around with the directories ~ / local, ~ / .cpan, and the csh configuration file ~ / .cshrc.
+</p>
+<p>
+  If you want to start over, delete the ~ / local and ~ / .cpan directories.
+</p>
+<p>
+  Also, open ~ / .cshrc with vi and delete the items added at the end.
+</p>
 
   </div>
   <div class="bottom">

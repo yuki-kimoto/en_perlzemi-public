@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> coding rules </ span>
+      <span itemprop = "name"> coding rules </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20130225136170.html"> Perl seminar coding rules </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20130225136170.html"> Perl seminar coding rules </a></h2>
 <p>
   Perl seminars are created according to the following coding rules. Please refer to it.
 </p>
@@ -91,73 +91,57 @@
 </div>
 
 
-<h3> Style </ h3>
-<h4> Indent is 2 in space </ h4>
+<h3> Style </h3>
+<h4> Indent is 2 in space </h4>
 <pre>
 sub parse {
-  my $ str = shift;
+  my $str = shift;
   
-  my $ tree;
+  my $tree;
   ...
 
-  return $ tree;
+  return $tree;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; One line can be up to 79 characters &lt;/ h4&gt;
-
-One line is written within 79 characters.
-
-&lt;pre&gt;
+</pre>
+<h4> One line can be up to 79 characters </h4>
+<p>
+  One line is written within 79 characters.
+</p>
+<pre>
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-&lt;/ pre&gt;
-
-&lt;h3&gt; Space &lt;/ h3&gt;
-
-&lt;h4&gt; Do not put spaces inside parentheses () &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h3> Space </h3>
+<h4> Do not put spaces inside parentheses () </h4>
+<pre>
 my @nums = (2, 4, 5);
-my% ages = (kimoto =&gt; 20, ken =&gt; 25);
-my $ total = (2 + 3) + 2;
-while ($ num == 2) {...}
-for (my $ i = 4; $ i &lt;5; $ i ++) {...}
-&lt;/ pre&gt;
-
-&lt;h4&gt; Do not put a space inside the bracket [] &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ nums = [2, 4, 5];
-&lt;/ pre&gt;
-
-&lt;h4&gt; Do not put spaces inside the hash reference brace {} &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ ages = {kimoto =&gt; 20, ken =&gt; 25};
-&lt;/ pre&gt;
-
-&lt;h4&gt; When the subroutine is one line, put a space inside the brace &lt;/ h4&gt;
-
-&lt;pre&gt;
-sub ua {LWP :: UserAgent-&gt; new}
-&lt;/ pre&gt;
-
-&lt;h4&gt; When the sentence is one line, put a space inside the brace &lt;/ h4&gt;
-
-&lt;pre&gt;
-if (condition) {$ num = 1}
-else {$ num = 2}
-&lt;/ pre&gt;
-
-&lt;h4&gt; Do not put a space in front of the comma, put a space behind the comma &lt;/ h4&gt;
-
-&lt;pre&gt;
+my %ages = (kimoto =&gt; 20, ken =&gt; 25);
+my $total = (2 + 3) + 2;
+while ($num == 2) {...}
+for (my $i = 4; $i &lt;5; $i++) {...}
+</pre>
+<h4> Do not put a space inside the bracket [] </h4>
+<pre>
+my $nums = [2, 4, 5];
+</pre>
+<h4> Do not put spaces inside the hash reference brace {} </h4>
+<pre>
+my $ages = {kimoto =&gt; 20, ken =&gt; 25};
+</pre>
+<h4> When the subroutine is one line, put a space inside the brace </h4>
+<pre>
+sub ua {LWP::UserAgent-&gt; new}
+</pre>
+<h4> When the sentence is one line, put a space inside the brace </h4>
+<pre>
+if (condition) {$num = 1}
+else {$num = 2}
+</pre>
+<h4> Do not put a space in front of the comma, put a space behind the comma </h4>
+<pre>
 my @nums = (2, 4, 5);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Insert spaces to the left and right of the operator &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> Insert spaces to the left and right of the operator </h4>
+<pre>
 2 + 3
 twenty three
 twenty three
@@ -170,13 +154,12 @@ twenty three
 'a'.'b'
 'a' eq'b'
 'a' ne'b'
-&lt;/ pre&gt;
-
-&lt;h4&gt; Insert a space immediately after the if statement, unless statement, while statement, and for statement &lt;/ h4&gt;
-
-Insert a space immediately after the if statement, unless statement, &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;, for statement.
-
-&lt;pre&gt;
+</pre>
+<h4> Insert a space immediately after the if statement, unless statement, while statement, and for statement </h4>
+<p>
+  Insert a space immediately after the if statement, unless statement, <a href="/blog/20100123126425.html"> while statement</a>, for statement.
+</p>
+<pre>
 if (condition) {
 
 }
@@ -189,11 +172,9 @@ for (condition) {
 while (condition) {
 
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; If, unless, while, for opening brace {insert a space in front of &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> If, unless, while, for opening brace {insert a space in front of </h4>
+<pre>
 if (condition) {
 
 }
@@ -206,220 +187,179 @@ for (condition) {
 while (condition) {
 
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; One space is always available &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ num = 1;
-my $ title ='Perl';
-my $ author ='kimoto';
-&lt;/ pre&gt;
-It looks beautiful if you have equal (=), but it is troublesome considering the trouble of correction, so I always keep one space.
-
-&lt;h4&gt; Indent +2 when there are multiple lines &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ str ='Hello Hello Hello Hello Hello Hello Hello Hello'
+</pre>
+<h4> One space is always available </h4>
+<pre>
+my $num = 1;
+my $title ='Perl';
+my $author ='kimoto';
+</pre>
+<p>
+  It looks beautiful if you have equal (=), but it is troublesome considering the trouble of correction, so I always keep one space.
+</p>
+<h4> Indent +2 when there are multiple lines </h4>
+<pre>
+my $str ='Hello Hello Hello Hello Hello Hello Hello Hello'
   .'Hello Hello Hello Hello Hello Hello Hello Hello Hello'
-  . "Hello Hello Hello Hello Hello \ n";
-&lt;/ pre&gt;
-It is easy to see if it is aligned at the position of the character string, but since it takes time to correct the blank, I try to connect the next line to the +2 position with a blank.
-
-&lt;h3&gt; Semicolon &lt;/ h3&gt;
-
-&lt;h4&gt; Do not add a semicolon; when the subroutine is on one line &lt;/ h4&gt;
-
-&lt;pre&gt;
-sub ua {LWP :: UserAgent-&gt; new}
-&lt;/ pre&gt;
-
-&lt;h4&gt; Do not add a semicolon; when the statement is on one line &lt;/ h4&gt;
-
-&lt;pre&gt;
-if (condition) {$ num = 1}
-else {$ num = 2}
-&lt;/ pre&gt;
-
-&lt;h3&gt; String &lt;/ h3&gt;
-
-&lt;h4&gt; Use single quotes when the string does not contain variables &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ str ='Hello World!';
-&lt;/ pre&gt;
-
-&lt;h3&gt; Conditional statement / repeating statement &lt;/ h3&gt;
-
-&lt;h4&gt; Use while without using until &lt;/ h4&gt;
-
-&lt;pre&gt;
+  . "Hello Hello Hello Hello Hello\n";
+</pre>
+<p>
+  It is easy to see if it is aligned at the position of the character string, but since it takes time to correct the blank, I try to connect the next line to the +2 position with a blank.
+</p>
+<h3> Semicolon </h3>
+<h4> Do not add a semicolon; when the subroutine is on one line </h4>
+<pre>
+sub ua {LWP::UserAgent-&gt; new}
+</pre>
+<h4> Do not add a semicolon; when the statement is on one line </h4>
+<pre>
+if (condition) {$num = 1}
+else {$num = 2}
+</pre>
+<h3> String </h3>
+<h4> Use single quotes when the string does not contain variables </h4>
+<pre>
+my $str ='Hello World!';
+</pre>
+<h3> Conditional statement / repeating statement </h3>
+<h4> Use while without using until </h4>
+<pre>
 while (condition) {
 
 }
-&lt;/ pre&gt;
-
-Since all conditional statements can be written with while and it is common in other languages, while is used instead of until.
-
-&lt;h4&gt; Use while without do ~ while &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Since all conditional statements can be written with while and it is common in other languages, while is used instead of until.
+</p>
+<h4> Use while without do ~ while </h4>
+<pre>
 while (condition) {
 
 }
-&lt;/ pre&gt;
-
-All statements that can be written with do ~ while can be written with while, and there is a restriction that next and last cannot be used in do, so while is used.
-
-&lt;h4&gt; Use for instead of foreach &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  All statements that can be written with do ~ while can be written with while, and there is a restriction that next and last cannot be used in do, so while is used.
+</p>
+<h4> Use for instead of foreach </h4>
+<pre>
 for (condition) {...}
-&lt;/ pre&gt;
-
-Since foreach is another name for for, we use for which can be written short.
-
-&lt;h3&gt; Modules, Subroutines, Methods &lt;/ h3&gt;
-
-&lt;h4&gt; Do not put parentheses for functions with one argument &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ num = int 5;
-my $ class = ref $ obj;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Do not put parentheses on functions and methods that do not require arguments &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ time = time;
-my $ ua = LWP :: UserAgent-&gt; new;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Use direct object syntax &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ ua = LWP :: UserAgent-&gt; new;
-&lt;/ pre&gt;
-
-It doesn't use indirect object syntax.
-
-exception.
-
-&lt;pre&gt;
-print $ fh "Hello";
-printf $ fh "Hello% d", 3;
-&lt;/ pre&gt;
-
-Because it is a very general way of writing.
-
-&lt;h4&gt; Specify the function to import &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Since foreach is another name for for, we use for which can be written short.
+</p>
+<h3> Modules, Subroutines, Methods </h3>
+<h4> Do not put parentheses for functions with one argument </h4>
+<pre>
+my $num = int 5;
+my $class = ref $obj;
+</pre>
+<h4> Do not put parentheses on functions and methods that do not require arguments </h4>
+<pre>
+my $time = time;
+my $ua = LWP::UserAgent-&gt; new;
+</pre>
+<h4> Use direct object syntax </h4>
+<pre>
+my $ua = LWP::UserAgent-&gt; new;
+</pre>
+<p>
+  It doesn't use indirect object syntax.
+</p>
+<p>
+  exception.
+</p>
+<pre>
+print $fh "Hello";
+printf $fh "Hello% d", 3;
+</pre>
+<p>
+  Because it is a very general way of writing.
+</p>
+<h4> Specify the function to import </h4>
+<pre>
 use Encode'encode';
-&lt;/ pre&gt;
-
-exception. When it is very common not to describe the import.
-
-&lt;pre&gt;
-use Mojolicious :: Lite;
-use Time :: Piece;
-&lt;/ pre&gt;
-
-&lt;h4&gt; If there is only one function to import, enclose it in single quotes &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  exception. When it is very common not to describe the import.
+</p>
+<pre>
+use Mojolicious::Lite;
+use Time::Piece;
+</pre>
+<h4> If there is only one function to import, enclose it in single quotes </h4>
+<pre>
 use Encode'encode';
-&lt;/ pre&gt;
-
-&lt;h4&gt; Use the string list operator qw // when there are multiple functions to import &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> Use the string list operator qw // when there are multiple functions to import </h4>
+<pre>
 use Encode qw / encode decode /;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Always use use to load modules &lt;/ h4&gt;
-
-&lt;pre&gt;
-use LWP :: UserAgent;
-use XML :: Simple;
-&lt;/ pre&gt;
-
-exception. Use require if you want to load the module at runtime.
-
-&lt;pre&gt;
-if ($ use_agent) {
-  require LWP :: UserAgent;
+</pre>
+<h4> Always use use to load modules </h4>
+<pre>
+use LWP::UserAgent;
+use XML::Simple;
+</pre>
+<p>
+  exception. Use require if you want to load the module at runtime.
+</p>
+<pre>
+if ($use_agent) {
+  require LWP::UserAgent;
 }
-&lt;/ pre&gt;
-
-However, in most cases I use use because it is fast enough.
-
-&lt;h4&gt; Use "use module name ()" if you don't want to import the function &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  However, in most cases I use use because it is fast enough.
+</p>
+<h4> Use "use module name ()" if you don't want to import the function </h4>
+<pre>
 use Carp ();
-&lt;/ pre&gt;
-
-&lt;h3&gt; Comments &lt;/ h3&gt;
-
-&lt;h4&gt; The format of the comment is to write one #, followed by a space, and then the comment &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h3> Comments </h3>
+<h4> The format of the comment is to write one # , followed by a space, and then the comment </h4>
+<pre>
 # comment
-&lt;/ pre&gt;
-
-&lt;h4&gt; Comments start at the beginning of a line or just multiple spaces &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> Comments start at the beginning of a line or just multiple spaces </h4>
+<pre>
 # comment
   # comment
-&lt;/ pre&gt;
-
-&lt;h4&gt; Write comments before expressions &lt;/ h4&gt;
-&lt;pre&gt;
-#Time
-my $ time = time;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Array / hash &lt;/ h3&gt;
-
-&lt;h4&gt; If the elements of the array fit in one line, write in one line &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> Write comments before expressions </h4>
+<pre>
+# Time
+my $time = time;
+</pre>
+<h3> Array / hash </h3>
+<h4> If the elements of the array fit in one line, write in one line </h4>
+<pre>
 my @animals = ('cat','dog','mouse');
-&lt;/ pre&gt;
-
-&lt;h4&gt; If the elements of the array do not fit on one line, write each element on one line &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> If the elements of the array do not fit on one line, write each element on one line </h4>
+<pre>
 my @animals = (
   'cat',
   'dog',
   'mouse',
   ...
 );
-&lt;/ pre&gt;
-
-&lt;h4&gt; If the hash element fits on one line, write it on one line &lt;/ h4&gt;
-
-&lt;pre&gt;
-my% ages = (kimoto =&gt; 32, ken =&gt; 25, asuka =&gt; 50);
-&lt;/ pre&gt;
-
-&lt;h4&gt; If the hash elements don't fit on one line, write each element on one line &lt;/ h4&gt;
-
-&lt;pre&gt;
-my% ages = (
+</pre>
+<h4> If the hash element fits on one line, write it on one line </h4>
+<pre>
+my %ages = (kimoto =&gt; 32, ken =&gt; 25, asuka =&gt; 50);
+</pre>
+<h4> If the hash elements don't fit on one line, write each element on one line </h4>
+<pre>
+my %ages = (
   kimoto =&gt; 32,
   ken =&gt; 25,
   asuka =&gt; 50,
   ...
 );
-&lt;/ pre&gt;
-
-&lt;h3&gt; Please refer to the coding rules &lt;/ h3&gt;
-
-This is a Perl seminar coding rule. I've written Perl and feel that it's general, easy to understand, beautiful, and short. Please use it as a reference for good coding.
+</pre>
+<h3> Please refer to the coding rules </h3>
+<p>
+  This is a Perl seminar coding rule. I've written Perl and feel that it's general, easy to understand, beautiful, and short. Please use it as a reference for good coding.
+</p>
 
   </div>
   <div class="bottom">

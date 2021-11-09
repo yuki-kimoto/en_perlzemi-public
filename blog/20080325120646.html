@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080325120646.html"> Ternary operator A? B: C </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080325120646.html"> Ternary operator A? B: C </a></h2>
 <p>
-  Perl has a <b> ternary operator </ b> that allows you to change the value returned depending on the conditions.
+  Perl has a <b> ternary operator </b> that allows you to change the value returned depending on the conditions.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,130 +98,132 @@
 
 <pre>
 Condition? Value to return if true: Value to return if false
-&lt;/ pre&gt;
-
-It's a little difficult to understand just by looking at the above syntax, so let's actually write a sample.
-
-&lt;pre&gt;
-my $ flag = 1;
-my $ num = $ flag? 3: 5;
-&lt;/ pre&gt;
-
-"$ Flag" is "1", which is the true value. The ternary operator returns the value immediately after the "?" If the condition is true. So "3" is assigned to "$ num".
-
-The following is a sample when the condition is false.
-
-&lt;pre&gt;
-my $ flag = 0;
-my $ num = $ flag? 3: 5;
-&lt;/ pre&gt;
-
-"$ Flag" is "0", which is a fake value. The ternary operator returns the value immediately after the ":" if the condition is true. Therefore, "5" is substituted.
-
-The ternary operator is a bit hard to read until you get used to it. Looking only at the first half, it may seem that "$ flag" is assigned to "$ num".
-
-However, instead of substituting "$ flag", "$ flag" is the condition, and the value "immediately after?" Or "immediately after:" is returned depending on the condition.
-
-If you want to know more about Perl booleans, check out the articles below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080323120628.html"&gt; Perl truth value &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; What is the difference from writing with if? &lt;/ H4&gt;
-
-What can be written with the ternary operator can be written as it is with &lt;a href="/blog/20161023147731.html"&gt; if statement &lt;/a&gt;.
-
-&lt;pre&gt;
-my $ flag = 1;
-my $ num;
-if ($ flag) {
-  $ num = 3;
+</pre>
+<p>
+  It's a little difficult to understand just by looking at the above syntax, so let's actually write a sample.
+</p>
+<pre>
+my $flag = 1;
+my $num = $flag? 3: 5;
+</pre>
+<p>
+  "$Flag" is "1", which is the true value. The ternary operator returns the value immediately after the "?" If the condition is true. So "3" is assigned to "$num".
+</p>
+<p>
+  The following is a sample when the condition is false.
+</p>
+<pre>
+my $flag = 0;
+my $num = $flag? 3: 5;
+</pre>
+<p>
+  "$Flag" is "0", which is a fake value. The ternary operator returns the value immediately after the ":" if the condition is true. Therefore, "5" is substituted.
+</p>
+<p>
+  The ternary operator is a bit hard to read until you get used to it. Looking only at the first half, it may seem that "$flag" is assigned to "$num".
+</p>
+<p>
+  However, instead of substituting "$flag", "$flag" is the condition, and the value "immediately after?" Or "immediately after:" is returned depending on the condition.
+</p>
+<p>
+  If you want to know more about Perl booleans, check out the articles below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080323120628.html"> Perl truth value</a>
+  </li>
+</ul>
+<h4> What is the difference from writing with if? </H4>
+<p>
+  What can be written with the ternary operator can be written as it is with <a href="/blog/20161023147731.html"> if statement</a>.
+</p>
+<pre>
+my $flag = 1;
+my $num;
+if ($flag) {
+  $num = 3;
 }
 else {
-  $ num = 5;
+  $num = 5;
 }
-&lt;/ pre&gt;
-
-The difference is that the ternary operator can be &lt;b&gt; written short &lt;/ b&gt; and &lt;b&gt; can return a value &lt;/ b&gt;.
-
-Taking advantage of this, you can write it like this in &lt;a href="/blog/20140405139642.html"&gt; Mojolicious template &lt;/a&gt;, for example.
-
-&lt;pre&gt;
-&lt;% = $ flag? 3: 5%&gt;
-&lt;/ pre&gt;
-
-It can be omitted compared to writing with an if statement, and it was possible to write short and neat in one line.
-
-&lt;h4&gt; Ternary operator with consecutive conditions &lt;/ h4&gt;
-
-The ternary operator can use multiple conditions in succession. Make it readable even if it is nested.
-
-&lt;pre&gt;
-my $ flag = 1;
-my $ num
-  = $ flag == 1? 3
-  : $ flag == 2? 5
+</pre>
+<p>
+  The difference is that the ternary operator can be <b> written short </b> and <b> can return a value </b>.
+</p>
+<p>
+  Taking advantage of this, you can write it like this in <a href="/blog/20140405139642.html"> Mojolicious template</a>, for example.
+</p>
+<pre>
+&lt;% = $flag? 3: 5%&gt;
+</pre>
+<p>
+  It can be omitted compared to writing with an if statement, and it was possible to write short and neat in one line.
+</p>
+<h4> Ternary operator with consecutive conditions </h4>
+<p>
+  The ternary operator can use multiple conditions in succession. Make it readable even if it is nested.
+</p>
+<pre>
+my $flag = 1;
+my $num
+  = $flag == 1? 3
+  : $flag == 2? 5
   : 7;
-&lt;/ pre&gt;
-
-It's a little hard to read, but I'll read it exactly as I wrote it at the beginning.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    If "$ flag" is "1", "3" will be returned.
-  &lt;/ li&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  It's a little hard to read, but I'll read it exactly as I wrote it at the beginning.
+</p>
+<ul>
+  <li>
+    If "$flag" is "1", "3" will be returned.
+  </li>
+  <li>
      Otherwise, it will be executed after the ":". That is, the ternary operator that follows is executed.
-  &lt;/ li&gt;
-  &lt;li&gt;
-     If "$ flag" is "2", "5" will be returned.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
+     If "$flag" is "2", "5" will be returned.
+  </li>
+  <li>
      Otherwise, it will be executed after the ":". In other words, "7" will be returned.
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-This is a sample program of the ternary operator.
-
-&lt;pre&gt;
+  </li>
+</ul>
+<h3> Sample program </h3>
+<p>
+  This is a sample program of the ternary operator.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Ternary operator
+# Ternary operator
 
-my $ num1 = 1;
-my $ num2 = 2;
+my $num1 = 1;
+my $num2 = 2;
 
-print "1. Example of ternary operator (replace if ~ else) \ n";
-my $ max_num = $ num1&gt; $ num2? $ num1: $ num2;
-print "\ $ max_num = $ max_num \ n \ n";
+print "1. Example of ternary operator (replace if ~ else)\n";
+my $max_num = $num1&gt; $num2? $num1: $num2;
+print "\ $max_num = $max_num\n\n";
 
 # Same as the following if ~ else statement
-if ($ num1&gt; $ num2) {$ max_num = $ num1}
-else {$ max_num = $ num2}
+if ($num1&gt; $num2) {$max_num = $num1}
+else {$max_num = $num2}
 
-my $ age = 23;
-print "2. Example of ternary operator (replace if ~ elsif ~) \ n";
-my $ generation =
-  $ age &lt;20?'Child':
-  $ age &lt;60?'middle':
-  $ age &lt;80?'old':
+my $age = 23;
+print "2. Example of ternary operator (replace if ~ elsif ~)\n";
+my $generation =
+  $age &lt;20?'Child':
+  $age &lt;60?'middle':
+  $age &lt;80?'old':
   'very old';
                   
-print "\ $ generation = $ generation \ n";
+print "\ $generation = $generation\n";
 
 # Same as the following if ~ elsif statement
-if ($ age &lt;20) {$ generation ='child'}
-elsif ($ age &lt;60) {$ generation ='middle'}
-elsif ($ age &lt;80) {$ generation ='old'}
-else {$ generation ='very old'}
-&lt;/ pre&gt;
+if ($age &lt;20) {$generation ='child'}
+elsif ($age &lt;60) {$generation ='middle'}
+elsif ($age &lt;80) {$generation ='old'}
+else {$generation ='very old'}
+</pre>
 
   </div>
   <div class="bottom">

@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20101130129876.html">
-        <span itemprop = "name"> Subroutine </ span> </a>
+        <span itemprop = "name"> Subroutine </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080710121570.html"> How to create a closure </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080710121570.html"> How to create a closure </a></h2>
 <p>
   Learn how to create "closures" in Perl.
 </p>
@@ -97,7 +97,7 @@
 </div>
 
 
-<h3> Closure definition </ h3>
+<h3> Closure definition </h3>
 <p>
   I will explain the definition of closure using code.
 </p>
@@ -108,184 +108,183 @@ use warnings;
 # The simplest closure
 {
   # Variable generation
-  my $ var = 5;
+  my $var = 5;
   sub var {
-    return $ var;
+    return $var;
   }
 }
-#Because it is referenced by the var subroutine even after the scope ends
-# $ var continues to exist.
-Only the #var subroutine can see $ var.
+# Because it is referenced by the var subroutine even after the scope ends
+# $var continues to exist.
+Only the # var subroutine can see $var.
 
-print "1: The simplest closure \ n";
-print var (), "\ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Closure definition &lt;/ h4&gt;
-
-The condition for being a closure is that the subroutine references a lexical variable that is out of its scope. (In this example, var refers to $ var outside its scope.)
-
-The definition of closure is ambiguous depending on the person and the situation. The var subroutine is sometimes called a closure, and the "environment containing the variable $ var referenced by the var subroutine" is sometimes called a closure.
-
-When creating a subroutine, I wrote that I should always take a variable as an argument and not refer to an out-of-scope variable, but closures are one exception.
-
-Please refer to the following article for the scope of Perl.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20110128130016.html"&gt; Understand Perl scope &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Closure features &lt;/ h4&gt;
-
-&lt;pre&gt;
+print "1: The simplest closure\n";
+print var (), "\n";
+</pre>
+<h4> Closure definition </h4>
+<p>
+  The condition for being a closure is that the subroutine references a lexical variable that is out of its scope. (In this example, var refers to $var outside its scope.)
+</p>
+<p>
+  The definition of closure is ambiguous depending on the person and the situation. The var subroutine is sometimes called a closure, and the "environment containing the variable $var referenced by the var subroutine" is sometimes called a closure.
+</p>
+<p>
+  When creating a subroutine, I wrote that I should always take a variable as an argument and not refer to an out-of-scope variable, but closures are one exception.
+</p>
+<p>
+  Please refer to the following article for the scope of Perl.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110128130016.html"> Understand Perl scope</a>
+  </li>
+</ul>
+<h4> Closure features </h4>
+<pre>
 {
   # Variable generation
-  my $ var = 5;
+  my $var = 5;
   sub var {
-    return $ var;
+    return $var;
   }
 }
-&lt;/ pre&gt;
-
-Since $ var is referenced in the var subroutine, it is not deleted from memory when the scope ends. (Lexical variables are destroyed from memory when they are out of scope and are not referenced anywhere.)
-
-When the scope ends, $ var is no longer visible outside the scope. (The var subroutine is not affected by the scope and is visible from outside the scope.)
-
-Only the var subroutine can see $ var. After the scope is finished, the value of $ var can only be accessed through the var subroutine.
-
-&lt;h4&gt; Closure image &lt;/ h4&gt;
-
-&lt;pre&gt;
-| -------------- Scope (closure) -------------- |
+</pre>
+<p>
+  Since $var is referenced in the var subroutine, it is not deleted from memory when the scope ends. (Lexical variables are destroyed from memory when they are out of scope and are not referenced anywhere.)
+</p>
+<p>
+  When the scope ends, $var is no longer visible outside the scope. (The var subroutine is not affected by the scope and is visible from outside the scope.)
+</p>
+<p>
+  Only the var subroutine can see $var. After the scope is finished, the value of $var can only be accessed through the var subroutine.
+</p>
+<h4> Closure image </h4>
+<pre>
+| - -- -- -- --- Scope (closure) - -- -- -- --- |
 | |
-| | -------- | | -------------- | | | ------------ |
+| | - -- --- | | - -- -- -- --- | | | - -- -- -- - |
 | | | Accessible | | accessible | |
-| | Data | &lt;------------| Subroutines | &lt;------------- | Out of scope |
+| | Data | &lt;- -- -- -- -| Subroutines | &lt;- -- -- -- -- | Out of scope |
 | | | | | | | |
-| | -------- | | -------------- | | | ------------ |
+| | - -- --- | | - -- -- -- --- | | | - -- -- -- - |
 | |
-| ------------------------------------------------- |
+| - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- |
 
                    Data is inaccessible from outside the scope
-&lt;/ pre&gt;
-
-Data can only be accessed from outside the scope through subroutines. You cannot access the data directly.
-
-&lt;h3&gt; Create closures using "function generator" &lt;/ h3&gt;
-
-Let's create a closure using a function generator.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Data can only be accessed from outside the scope through subroutines. You cannot access the data directly.
+</p>
+<h3> Create closures using "function generator" </h3>
+<p>
+  Let's create a closure using a function generator.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Generate a timer.
-print "1: Generate closure with function generator (timer). \ N";
-my $ timer1 = create_timer ();
+print "1: Generate closure with function generator (timer).\n";
+my $timer1 = create_timer ();
 sleep 1;
 # Generate another timer after 1 second
-my $ timer2 = create_timer ();
+my $timer2 = create_timer ();
 
 # Stop for 1 second
 sleep 1;
 
-print'$ timer1 elapsed seconds:';
-print $ timer1-&gt; (), "\ n";
+print'$timer1 elapsed seconds:';
+print $timer1-&gt; (), "\n";
 
-print'$ timer2 elapsed seconds:';
-print $ timer2-&gt; (), "\ n \ n";
+print'$timer2 elapsed seconds:';
+print $timer2-&gt; (), "\n\n";
 
 
 # Function generator that generates closures that know the elapsed time
 sub create_timer {
-  # time () is the time when the function generator was called
-  my $ time = time ();
+  # time() is the time when the function generator was called
+  my $time = time();
   
   return sub {
-    # time () is the generated subroutine
-    # The time it was called. time ()-with $ time
+    # time() is the generated subroutine
+    # The time it was called. time()-with $time
     # You can know the elapsed time.
-    return time ()-$ time;
+    return time()-$time;
   }
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Function generator for generating closures &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> Function generator for generating closures </h4>
+<pre>
 sub create_timer {
-  # time () is the time when the function generator was called
-  my $ time = time ();
+  # time() is the time when the function generator was called
+  my $time = time();
 
-  # time () is the generated subroutine
-  # The time it was called. time ()-with $ time
+  # time() is the generated subroutine
+  # The time it was called. time()-with $time
   # You can know the elapsed time.
   return sub {
-    return time ()-$ time;
+    return time()-$time;
   }
 }
-&lt;/ pre&gt;
-
-A function generator is a subroutine that creates a suboutin. You can use the function generator to generate multiple closures.
-
-Each generated closure has its own data. In this example, the value of $ time is created in memory for each closure. The return value is a reference to the subroutine. This is because Perl does not allow the subroutine itself to be the return value.
-
-&lt;h4&gt; Call a function generator to create a closure &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ timer1 = create_timer ();
-my $ timer2 = create_timer ();
-&lt;/ pre&gt;
-
-The return value serves as a reference to the subroutine. This subroutine is a closure and has its own environment (variables referenced in the subroutine and the definition of the subroutine) in memory.
-
-&lt;h4&gt; Call closure &lt;/ h4&gt;
-
-&lt;pre&gt;
-$ timer1-&gt; ();
-&lt;/ pre&gt;
-
-Now that we have a reference to the subroutine, we dereference it and call it.
-
-&lt;h4&gt; How to use closures &lt;/ h4&gt;
-
-Closures allow you to concisely describe the changes between the "state at the time of reference" and the "state at the moment".
-
-You can do the same thing by creating a class, but if you don't want to create a class, use closures. (If you create one class, it will take more time to manage the class. If you do not want to create a class for simple description like this example, use closure.)
-
-&lt;h3&gt; "Initialize variables" referenced by closures &lt;/ h3&gt;
-
-This is a sample to initialize the variable referenced by the closure.
-
-&lt;pre&gt;
+</pre>
+<p>
+  A function generator is a subroutine that creates a suboutin. You can use the function generator to generate multiple closures.
+</p>
+<p>
+  Each generated closure has its own data. In this example, the value of $time is created in memory for each closure. The return value is a reference to the subroutine. This is because Perl does not allow the subroutine itself to be the return value.
+</p>
+<h4> Call a function generator to create a closure </h4>
+<pre>
+my $timer1 = create_timer ();
+my $timer2 = create_timer ();
+</pre>
+<p>
+  The return value serves as a reference to the subroutine. This subroutine is a closure and has its own environment (variables referenced in the subroutine and the definition of the subroutine) in memory.
+</p>
+<h4> Call closure </h4>
+<pre>
+$timer1-&gt; ();
+</pre>
+<p>
+  Now that we have a reference to the subroutine, we dereference it and call it.
+</p>
+<h4> How to use closures </h4>
+<p>
+  Closures allow you to concisely describe the changes between the "state at the time of reference" and the "state at the moment".
+</p>
+<p>
+  You can do the same thing by creating a class, but if you don't want to create a class, use closures. (If you create one class, it will take more time to manage the class. If you do not want to create a class for simple description like this example, use closure.)
+</p>
+<h3> "Initialize variables" referenced by closures </h3>
+<p>
+  This is a sample to initialize the variable referenced by the closure.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Pass it as an argument to the function generator.
-print "1: Initialize the variable referenced by the closure. \ N";
-my $ sign_inversion = create_sign_checker (1);
+print "1: Initialize the variable referenced by the closure.\n";
+my $sign_inversion = create_sign_checker (1);
 
-if ($ sign_inversion-&gt; (-2)) {
+if ($sign_inversion-&gt; (-2)) {
   # If the sign is inverted
-  print "-2 has the sign inverted when viewed from 1. \ n";
+  print "-2 has the sign inverted when viewed from 1.\n";
 }
 
 # Function generator that generates closures to see if the sign is only inverted
 sub create_sign_checker {
-  #Initialized when you create a closure.
-  my $ num1 = shift;
+  # Initialized when you create a closure.
+  my $num1 = shift;
     
   return sub {
     # Argument when calling the closure.
-    my $ num2 = shift;
+    my $num2 = shift;
     
-    if ($ num1 * $ num2&gt; 0) {
+    if ($num1 * $num2&gt; 0) {
       # If not flipped
       return 0;
     }
-    elsif ($ num1 * $ num2 &lt;0) {
+    elsif ($num1 * $num2 &lt;0) {
       # If flipped
       return 1;
     }
@@ -295,192 +294,181 @@ sub create_sign_checker {
     }
   }
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Initialize variables referenced by closures &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h4> Initialize variables referenced by closures </h4>
+<pre>
 # Generate closures. (Initialize the variable referenced by the closure with 1)
-my $ sign_inversion = create_sign_checker (1);
+my $sign_inversion = create_sign_checker (1);
 
-#Call closure
-$ sign_inversion-&gt; (-2);
+# Call closure
+$sign_inversion-&gt; (-2);
 
 # Function generator to generate closures
 sub create_sign_checker {
-  #Initialized when you create a closure.
-  my $ num1 = shif
+  # Initialized when you create a closure.
+  my $num1 = shif
 t;
     
   # Closure definition
   return sub {
     # Argument when calling the closure.
-    my $ num2 = shift;
+    my $num2 = shift;
     # ...
   }
 }
-&lt;/ pre&gt;
-
-When you create a closure, you can initialize the variables that the closure references. Pass it as an argument when creating the closure. Take it as an argument to the function generator and set it in a variable.
-
-&lt;h3&gt; Explain the concept of closures in an easy-to-understand manner in comparison with classes &lt;/ h3&gt;
-
-The concept of closures is vague and difficult to capture contours. I would like to explain it so that I can understand it as much as possible.
-
-&lt;h4&gt; What is a closure &lt;/ h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  When you create a closure, you can initialize the variables that the closure references. Pass it as an argument when creating the closure. Take it as an argument to the function generator and set it in a variable.
+</p>
+<h3> Explain the concept of closures in an easy-to-understand manner in comparison with classes </h3>
+<p>
+  The concept of closures is vague and difficult to capture contours. I would like to explain it so that I can understand it as much as possible.
+</p>
+<h4> What is a closure </h4>
+<ol>
+  <li>
     A closure is a set of data and functions that manipulate that data.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     The data is encapsulated and only the functions inside the closure can manipulate the data.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     Data can be initialized.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     You can create individual instances for each piece of data.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     The function is called from the instance.
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-Next, about classes in object orientation.
-
-&lt;h4&gt; What is a class? &lt;/ H4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
+  </li>
+</ol>
+<p>
+  Next, about classes in object orientation.
+</p>
+<h4> What is a class? </H4>
+<ol>
+  <li>
     A class is a set of data and functions that manipulate that data.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     The data is encapsulated and only the functions inside the class can manipulate the data.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     Data can be initialized.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     You can create individual instances for each piece of data.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     The function is called from the instance.
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-What you should be aware of here is that classes and closures are actually the same thing. In Perl implementations, classes and closures differ in their grammatical writing. However, they are functionally the same. Closures are easy to understand if you think of them as simple classes. (The concept of closures is a bit broader, but at first I understand it's a simple class.)
-
-&lt;h4&gt; Differences between classes and closures &lt;/ h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    Closures do not have a class name. By calling new my $ ins = Class-&gt; new ;, instead of creating an instance, create an instance in the form of my $ ins = closure_maker () ;.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+</ol>
+<p>
+  What you should be aware of here is that classes and closures are actually the same thing. In Perl implementations, classes and closures differ in their grammatical writing. However, they are functionally the same. Closures are easy to understand if you think of them as simple classes. (The concept of closures is a bit broader, but at first I understand it's a simple class.)
+</p>
+<h4> Differences between classes and closures </h4>
+<ol>
+  <li>
+    Closures do not have a class name. By calling new my $ins = Class-> new ;, instead of creating an instance, create an instance in the form of my $ins = closure_maker () ;.
+  </li>
+  <li>
     Closures cannot be inherited. It cannot be inherited like a class.
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-Let's implement a function (counter) for counting using classes and closures.
-
-&lt;h4&gt; Implement the counter in a class &lt;/ h4&gt;
-
-&lt;pre&gt;
+  </li>
+</ol>
+<p>
+  Let's implement a function (counter) for counting using classes and closures.
+</p>
+<h4> Implement the counter in a class </h4>
+<pre>
 use strict;
 use warnings;
 
 package Counter;
 sub new {
-  my $ class = shift;
-  my $ self = {};
-  $ self-&gt; {cnt} = shift;
-  bless $ self, $ class;
+  my $class = shift;
+  my $self = {};
+  $self-&gt; {cnt} = shift;
+  bless $self, $class;
 }
 
 sub add_count {
-  my $ self = shift;
-  $ self-&gt; {cnt} ++;
+  my $self = shift;
+  $self-&gt; {cnt} ++;
 }
 
 sub count {
-  my $ self = shift;
-  return $ self-&gt; {cnt};
+  my $self = shift;
+  return $self-&gt; {cnt};
 }
 
 package main;
-my $ cnt = Counter-&gt; new (10);
+my $cnt = Counter-&gt; new (10);
 
-print "1: Class-based counter implementation \ n";
-print "Before counting:", $ cnt-&gt; count, "\ n";
-$ cnt-&gt; add_count;
-print "after counting:", $ cnt-&gt; count, "\ n \ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Implement the counter with closures &lt;/ h4&gt;
-
-&lt;pre&gt;
+print "1: Class-based counter implementation\n";
+print "Before counting:", $cnt-&gt; count, "\n";
+$cnt-&gt; add_count;
+print "after counting:", $cnt-&gt; count, "\n\n";
+</pre>
+<h4> Implement the counter with closures </h4>
+<pre>
 use strict;
 use warnings;
 
 # Closure
 sub make_counter {
-  my $ self = {};
-  $ self-&gt; {cnt} = shift;
+  my $self = {};
+  $self-&gt; {cnt} = shift;
    
   # Closures implement methods using references to subroutines.
-  my $ funcs = {};
-  $ funcs-&gt; {add_count} = sub {
-    $ self-&gt; {cnt} ++;
+  my $funcs = {};
+  $funcs-&gt; {add_count} = sub {
+    $self-&gt; {cnt} ++;
   };
    
-   $ funcs-&gt; {count} = sub {
-     return $ self-&gt; {cnt};
+   $funcs-&gt; {count} = sub {
+     return $self-&gt; {cnt};
    };
-   return $ funcs;
+   return $funcs;
 }
 
-my $ cnt = make_counter (10);
+my $cnt = make_counter (10);
 
-print "2: Implementation of counters with closures \ n";
-print "Before counting:". $ Cnt-&gt; {count}-&gt; (). "\ n";
-$ cnt-&gt; {add_count}-&gt; ();
-print "after counting:". $ Cnt-&gt; {count}-&gt; (). "\ n";
-&lt;/ pre&gt;
-
-As you can see, classes and closures are very similar. Next time, I will explain the code.
-
-&lt;h4&gt; Visual image of classes and closures &lt;/ h4&gt;
-
-&lt;pre&gt;
-## class
-| ------ Class ------ |
+print "2: Implementation of counters with closures\n";
+print "Before counting:". $Cnt-&gt; {count}-&gt; (). "\n";
+$cnt-&gt; {add_count}-&gt; ();
+print "after counting:". $Cnt-&gt; {count}-&gt; (). "\n";
+</pre>
+<p>
+  As you can see, classes and closures are very similar. Next time, I will explain the code.
+</p>
+<h4> Visual image of classes and closures </h4>
+<pre>
+# # class
+| - -- - Class - -- - |
 | ・ Data |
 | ・ Data manipulation functions |
-| ------------------ |
+| - -- -- -- -- -- - |
 
 
-## Closure
-| ---- Closure ---- |
+# # Closure
+| - -- Closure - -- |
 | ・ Data |
 | ・ Data manipulation functions |
-| ------------------ |
+| - -- -- -- -- -- - |
 
-&lt;/ pre&gt;
-
-&lt;h4&gt; Correction of Dan Kogai &lt;/ h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="http://blog.livedoor.jp/dankogai/archives/51079991.html"&gt; perl --Class vs. Closure (404 Blog Not Found) &lt;/a&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
+</pre>
+<h4> Correction of Dan Kogai </h4>
+<ul>
+  <li>
+    <a href="http://blog.livedoor.jp/dankogai/archives/51079991.html"> perl - Class vs. Closure (404 Blog Not Found)</a>
+  </li>
+  <li>
     Closures can do the same thing as classes, but in Perl creating closures costs more than creating objects.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     I wrote that closures cannot be inherited, but it seems that they can be inherited. (I can't think of a way to do it for now.)
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

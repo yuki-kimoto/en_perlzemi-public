@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Imager --Easy to edit images  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Imager - Easy to edit images  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The "Imager" module makes it easy to "edit images". Here are some tips.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Imager --Easy to edit images  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Imager - Easy to edit images  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The "Imager" module makes it easy to "edit images". Here are some tips." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20110820131832.html"> Imager --Easy to edit images </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20110820131832.html"> Imager - Easy to edit images </a></h2>
 <p>
   The "Imager" module makes it easy to "edit images". Here are some tips.
 </p>
@@ -96,7 +96,7 @@
 </div>
 
 
-<h3> Draw "Japanese" </ h3>
+<h3> Draw "Japanese" </h3>
 <p>
   To draw Japanese with Imager:
 </p>
@@ -107,66 +107,68 @@ use utf8;
 
 use Imager;
 
-my $ img = Imager-&gt; new;
+my $img = Imager-&gt; new;
 
-#Load image
-$ img-&gt; read (file =&gt;'example.jpg')
-  or die $ img-&gt; errstr;
+# Load image
+$img-&gt; read(file =&gt;'example.jpg')
+  or die $img-&gt; errstr;
 
-#Font
-my $ font = Imager :: Font-&gt; new (
+# Font
+my $font = Imager::Font-&gt; new (
   file =&gt;'/usr/share/fonts/ja/TrueType/kochi-gothic-subst.ttf'
 );
 
-#Drawing a string
-$ img-&gt; string (
+# Drawing a string
+$img-&gt; string (
   x =&gt; 50,
   y =&gt; 50,
   string =&gt;'I did it',
-  font =&gt; $ font,
+  font =&gt; $font,
   size =&gt; 15,
   aa =&gt; 1,
   color =&gt;'# 000000',
-) or die $ img-&gt; errstr;
+) or die $img-&gt; errstr;
 
-#Save image
-$ img-&gt; write (file =&gt;'new_example.jpg')
-  or die $ img-&gt; errstr;
-&lt;/ pre&gt;
-
-Creating a font object with Imager :: Font, specify the path where the font actually exists. The above example is for CentOS.
-
-I'm using the string method to draw a string on top of the image. aa is an option to apply antialiasing.
-
-Save the script in UTF-8 and enable the utf8 pragma.
-
-&lt;h3&gt; Read binary data &lt;/ ​​h3&gt;
-
-Use the data option of the read method to read binary data in Perl's Imager module.
-
-&lt;pre&gt;
-$ img-&gt; read (data =&gt; $ data, type =&gt;'jpeg')
-  or die $ img-&gt; errstr;
-&lt;/ pre&gt;
-
-Please note that you also need to specify the image type.
-
-&lt;h3&gt; Preparation for using Imager on CentOS &lt;/ h3&gt;
-
-Imager is a Perl module for processing images. Install the following libraries on CentOS in advance to handle image formats and fonts such as jpeg, png, and gif.
-
-&lt;pre&gt;
+# Save image
+$img-&gt; write (file =&gt;'new_example.jpg')
+  or die $img-&gt; errstr;
+</pre>
+<p>
+  Creating a font object with Imager::Font, specify the path where the font actually exists. The above example is for CentOS.
+</p>
+<p>
+  I'm using the string method to draw a string on top of the image. aa is an option to apply antialiasing.
+</p>
+<p>
+  Save the script in UTF-8 and enable the utf8 pragma.
+</p>
+<h3> Read binary data </​​h3>
+<p>
+  Use the data option of the read method to read binary data in Perl's Imager module.
+</p>
+<pre>
+$img-&gt; read(data =&gt; $data, type =&gt;'jpeg')
+  or die $img-&gt; errstr;
+</pre>
+<p>
+  Please note that you also need to specify the image type.
+</p>
+<h3> Preparation for using Imager on CentOS </h3>
+<p>
+  Imager is a Perl module for processing images. Install the following libraries on CentOS in advance to handle image formats and fonts such as jpeg, png, and gif.
+</p>
+<pre>
 yum -y install libjpeg-devel
 yum -y install libpng-devel
 yum -y install giflib-devel
 yum -y install freetype-devel
-&lt;/ pre&gt;
-
-Then install Imager.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Then install Imager.
+</p>
+<pre>
 cpan Imager
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

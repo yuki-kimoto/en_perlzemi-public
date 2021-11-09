@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130220136137.html">
-        <span itemprop = "name"> reading material </ span> </a>
+        <span itemprop = "name"> reading material </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20131010138141.html"> Perl's garbage collection (GC) characteristics </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20131010138141.html"> Perl's garbage collection (GC) characteristics </a></h2>
 <p>
-  The mechanism that automatically releases objects (variables and values) from memory when they are no longer needed is called <strong> garbage collection </ strong>. Garbage means garbage. Collection means to collect.
+  The mechanism that automatically releases objects (variables and values) from memory when they are no longer needed is called <strong> garbage collection </strong>. Garbage means garbage. Collection means to collect.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,11 +93,11 @@
 
 
 <p>
-  <img style = "border: 1px solid #ddd" src = "https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180907/20180907084205.png">
+  <img style = "border: 1px solid # ddd" src = "https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180907/20180907084205.png">
 </p>
-<h3> Perl's garbage collection is a reference counting method </ h3>
+<h3> Perl's garbage collection is a reference counting method </h3>
 <p>
-  Perl's garbage collection is called the <strong> reference counting method </ strong>. Each time a reference to an object is created, it increments the reference count by one. Conversely, it decrements the reference count by one when the object's reference is removed. The object is released when the reference count reaches 0.
+  Perl's garbage collection is called the <strong> reference counting method </strong>. Each time a reference to an object is created, it increments the reference count by one. Conversely, it decrements the reference count by one when the object's reference is removed. The object is released when the reference count reaches 0.
 </p>
 <p>
   Generally speaking, the reference counting method is simple and fast to implement. This is a good performance characteristic of Perl. I've never heard of a garbage collection suffering from performance issues in Perl (so far).
@@ -114,37 +114,39 @@
 <p>
   The third is that it does not stop at the timing of Full GC like the generational GC. In generational GC, there is something called FullGC in which many objects are released at a specific timing. The program will stop during FullGC. But for web apps, you probably don't care too much (probably).
 </p>
-<h3> The disadvantage of the reference counting method is that cross-references cannot be resolved </ h3>
+<h3> The disadvantage of the reference counting method is that cross-references cannot be resolved </h3>
 <p>
   The obvious drawback of the reference counting method is that it cannot resolve cross-references. Objects that are referenced to each other are not released from memory. Programmers need to be careful if objects are cross-referenced or circularly referenced.
 </p>
 <pre>
 # Cross-reference
-my $ hash1 = {};
-my $ hash2 = {};
-$ hash1-&gt; {hash2} = $ hash2;
-$ hash2-&gt; {hash1} = $ hash1;
-&lt;/ pre&gt;
-
-Simply writing as above will cause a cross-reference and this object will not be released automatically. This can easily happen if the programmer is not careful. So if you're cross-referencing, you'll have to change the reference to either object to a weak reference that doesn't increase the reference count.
-
-&lt;pre&gt;
-use Scalar :: Util'weaken';
+my $hash1 = {};
+my $hash2 = {};
+$hash1-&gt; {hash2} = $hash2;
+$hash2-&gt; {hash1} = $hash1;
+</pre>
+<p>
+  Simply writing as above will cause a cross-reference and this object will not be released automatically. This can easily happen if the programmer is not careful. So if you're cross-referencing, you'll have to change the reference to either object to a weak reference that doesn't increase the reference count.
+</p>
+<pre>
+use Scalar::Util'weaken';
 
 # Cross-reference
-my $ hash1 = {};
-my $ hash2 = {};
-$ hash1-&gt; {hash2} = $ hash2;
-$ hash2-&gt; {hash1} = $ hash1;
+my $hash1 = {};
+my $hash2 = {};
+$hash1-&gt; {hash2} = $hash2;
+$hash2-&gt; {hash1} = $hash1;
 
 
 # Make one a weak reference
-weaken $ hash1-&gt; {hash2};
-&lt;/ pre&gt;
-
-This way, memory will be freed when the reference to $ hash1 or $ hash2 reaches zero.
-
-Keep in mind that in Perl, garbage collection implementations are reference-counted and rarely suffer from performance issues, but instead you have to be aware of cross-references yourself. Let's go.
+weaken $hash1-&gt; {hash2};
+</pre>
+<p>
+  This way, memory will be freed when the reference to $hash1 or $hash2 reaches zero.
+</p>
+<p>
+  Keep in mind that in Perl, garbage collection implementations are reference-counted and rarely suffer from performance issues, but instead you have to be aware of cross-references yourself. Let's go.
+</p>
 
   </div>
   <div class="bottom">

@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20170926150643.html"> Anonymous hash generator-create hash reference </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20170926150643.html"> Anonymous hash generator-create hash reference </a></h2>
 <p>
-  Perl has an operator <b> anonymous hash generator </ b> "{}". The name is a bit tricky, but in practice it's an easy way to create a hash reference.
+  Perl has an operator <b> anonymous hash generator </b> "{}". The name is a bit tricky, but in practice it's an easy way to create a hash reference.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,30 +97,35 @@
 
 
 <p>
-  With the anonymous hash generator, you can easily create a <a href="/blog/20180208151809.html"> hash reference </a> as follows:
+  With the anonymous hash generator, you can easily create a <a href="/blog/20180208151809.html"> hash reference</a> as follows:
 </p>
 <pre>
 # Anonymous hash generator
-my $ point = {x =&gt; 1, y =&gt; 2};
-&lt;/ pre&gt;
-
-If you don't want to use an anonymous hash generator, write: First create a &lt;a href="/blog/20161013147635.html"&gt; hash &lt;/a&gt; and then use the reference generator to create a hash reference.
-
-&lt;pre&gt;
+my $point = {x =&gt; 1, y =&gt; 2};
+</pre>
+<p>
+  If you don't want to use an anonymous hash generator, write: First create a <a href="/blog/20161013147635.html"> hash</a> and then use the reference generator to create a hash reference.
+</p>
+<pre>
 # If you don't use an anonymous hash generator
-my% point = (x =&gt; 1, y =&gt; 2);
-my $ point = \% point;
-&lt;/ pre&gt;
-
-If you use an anonymous hash generator, you can omit the above process and write it. When you look at {x =&gt; 1, y =&gt; 2}, it will be easier to understand if you have the feeling that the above processing is omitted.
-
-&lt;b&gt; Why is it called an "anonymous hash generator"? &lt;/ B&gt;
-
-With an anonymous hash generator, you don't have to create a hash called "% point". In other words, an "anonymous hash" that corresponds to "% point" is created internally.
-
-I'm sure it was named with a focus on this part.
-
-There is a &lt;a href="/blog/20170924150634.html"&gt; anonymous array generator &lt;/a&gt; that corresponds to the anonymous hash generator.
+my %point = (x =&gt; 1, y =&gt; 2);
+my $point = \% point;
+</pre>
+<p>
+  If you use an anonymous hash generator, you can omit the above process and write it. When you look at {x => 1, y => 2}, it will be easier to understand if you have the feeling that the above processing is omitted.
+</p>
+<p>
+  <b> Why is it called an "anonymous hash generator"? </B>
+</p>
+<p>
+  With an anonymous hash generator, you don't have to create a hash called "% point". In other words, an "anonymous hash" that corresponds to "% point" is created internally.
+</p>
+<p>
+  I'm sure it was named with a focus on this part.
+</p>
+<p>
+  There is a <a href="/blog/20170924150634.html"> anonymous array generator</a> that corresponds to the anonymous hash generator.
+</p>
 
   </div>
   <div class="bottom">

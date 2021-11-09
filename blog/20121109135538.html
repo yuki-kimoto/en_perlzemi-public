@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop = "name"> Module </ span> </a>
+        <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-        <span itemprop = "name"> PDL </ span>
+        <span itemprop = "name"> PDL </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20121109135538.html"> Handling of "matrix" in PDL </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20121109135538.html"> Handling of "matrix" in PDL </a></h2>
 <p>
   I will explain the handling of "matrix" in PDL.
 </p>
@@ -97,284 +97,275 @@
 </div>
 
 
-<h3> Creating a matrix </ h3>
+<h3> Creating a matrix </h3>
 <p>
-  Use the <b> pdl </ b> function to create a matrix.
+  Use the <b> pdl </b> function to create a matrix.
 </p>
 <pre>
 use PDL;
 
-my $ mat = mpdl [
+my $mat = mpdl [
   [1, 2],
   [3, 4]
 ];;
-&lt;/ pre&gt;
-
-The following matrix is ​​created.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The following matrix is ​​created.
+</p>
+<pre>
 [
  [1 2]
  [3 4]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Matrix addition &lt;/ h3&gt;
-
-Use the &lt;b&gt; + &lt;/ b&gt; operator to add matrices.
-
-&lt;pre&gt;
+</pre>
+<h3> Matrix addition </h3>
+<p>
+  Use the <b> + </b> operator to add matrices.
+</p>
+<pre>
 use PDL;
 
-my $ mat1 = pdl [
+my $mat1 = pdl [
   [1, 2],
   [3, 4]
 ];;
-my $ mat2 = pdl [
+my $mat2 = pdl [
   [5, 6],
   [7, 8]
 ];;
 
-my $ mat_sum = $ mat1 + $ mat2;
-&lt;/ pre&gt;
-
-Each element is added and the result is as follows.
-
-&lt;pre&gt;
+my $mat_sum = $mat1 + $mat2;
+</pre>
+<p>
+  Each element is added and the result is as follows.
+</p>
+<pre>
 [
  [6 8]
  [10 12]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Matrix subtraction &lt;/ h3&gt;
-
-Use the &lt;strong&gt;-&lt;/ strong&gt; operator to add matrices.
-
-&lt;pre&gt;
+</pre>
+<h3> Matrix subtraction </h3>
+<p>
+  Use the <strong>-</strong> operator to add matrices.
+</p>
+<pre>
 use PDL;
 
-my $ mat1 = pdl [
+my $mat1 = pdl [
   [1, 2],
   [3, 4]
 ];;
 
-my $ mat2 = pdl [
+my $mat2 = pdl [
   [5, 6],
   [7, 8]
 ];;
 
-my $ mat_sub = $ mat2- $ mat1;
-&lt;/ pre&gt;
-Each element is subtracted and the result is as follows.
-
-&lt;pre&gt;
+my $mat_sub = $mat2- $mat1;
+</pre>
+<p>
+  Each element is subtracted and the result is as follows.
+</p>
+<pre>
 [
  [4 4]
  [4 4]
 ]
-&lt;/ pre&gt;
-
-
-&lt;h3&gt; Matrix product &lt;/ h3&gt;
-
-Use the &lt;strong&gt; x &lt;/ strong&gt; operator to find the matrix product.
-
-&lt;pre&gt;
+</pre>
+<h3> Matrix product </h3>
+<p>
+  Use the <strong> x </strong> operator to find the matrix product.
+</p>
+<pre>
 use PDL;
 
-my $ mat1 = pdl [
+my $mat1 = pdl [
   [1, 2],
   [3, 4]
 ];;
-my $ mat2 = pdl [
+my $mat2 = pdl [
   [5, 6],
   [7, 8]
 ];;
 
-my $ mat_multi = $ mat1 x $ mat2;
-&lt;/ pre&gt;
-
-The calculated result is as follows.
-
-&lt;pre&gt;
+my $mat_multi = $mat1 x $mat2;
+</pre>
+<p>
+  The calculated result is as follows.
+</p>
+<pre>
 [
  [19 22]
  [43 50]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Get matrix elements &lt;/ h3&gt;
-
-Use the &lt;strong&gt; at &lt;/ strong&gt; method to get the elements of the matrix. Note that the row and column order is different from a regular matrix, and the subscripts start at 0.
-
-&lt;pre&gt;
-$ matrix-&gt; at (column, row)
-&lt;/ pre&gt;
-
-The following is a sample to get the value (3) of the 2nd row and 1st column of the 2x2 matrix.
-
-&lt;pre&gt;
+</pre>
+<h3> Get matrix elements </h3>
+<p>
+  Use the <strong> at </strong> method to get the elements of the matrix. Note that the row and column order is different from a regular matrix, and the subscripts start at 0.
+</p>
+<pre>
+$matrix-&gt; at (column, row)
+</pre>
+<p>
+  The following is a sample to get the value (3) of the 2nd row and 1st column of the 2x2 matrix.
+</p>
+<pre>
 use PDL;
 
-my $ mat = pdl [
+my $mat = pdl [
   [1, 2],
   [3, 4]
 ];;
-my $ val = $ mat-&gt; at (0, 1);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Set matrix elements &lt;/ h3&gt;
-
-To set the elements of a matrix, use the notation &lt;strong&gt; nice slice &lt;/ strong&gt;. You need to load the &lt;b&gt; PDL :: NiceSlice &lt;/ b&gt; module to use nice slice notation.
-
-&lt;pre&gt;
+my $val = $mat-&gt; at (0, 1);
+</pre>
+<h3> Set matrix elements </h3>
+<p>
+  To set the elements of a matrix, use the notation <strong> nice slice </strong>. You need to load the <b> PDL::NiceSlice </b> module to use nice slice notation.
+</p>
+<pre>
 use PDL;
-use PDL :: NiceSlice;
+use PDL::NiceSlice;
 
-$ matrix (column, row). = Value
-&lt;/ pre&gt;
-
-This notation is a bit special, with parentheses after the variable. Also, the &lt;b&gt;. = &lt;/ B&gt; string concatenation and equal combination is overloaded for value assignment.
-
-Below is a sample of a 2x2 matrix with the value in the 2nd row and 1st column set to 5. Note that the subscripts start at 0.
-
-&lt;pre&gt;
+$matrix (column, row). = Value
+</pre>
+<p>
+  This notation is a bit special, with parentheses after the variable. Also, the <b>. = </B> string concatenation and equal combination is overloaded for value assignment.
+</p>
+<p>
+  Below is a sample of a 2x2 matrix with the value in the 2nd row and 1st column set to 5. Note that the subscripts start at 0.
+</p>
+<pre>
 use PDL;
-use PDL :: NiceSlice;
+use PDL::NiceSlice;
 
-my $ mat = pdl [
+my $mat = pdl [
   [1, 2],
   [3, 4]
 ];;
-$ mat (0, 1). = 5;
-&lt;/ pre&gt;
-
-The output of this variable is as follows.
-
-&lt;pre&gt;
+$mat (0, 1). = 5;
+</pre>
+<p>
+  The output of this variable is as follows.
+</p>
+<pre>
 [
  [1 2]
  [5 4]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Create an identity matrix &lt;/ h3&gt;
-
-Let's create an identity matrix. Let's make a 3x3 identity matrix. The procedure is to create a 3x3 square matrix with all zeros in the &lt;b&gt; zeroes &lt;/ b&gt; function of &lt;strong&gt; PDL :: Core &lt;/ strong&gt;. Then slice the diagonal with the &lt;b&gt; diagonal &lt;/ b&gt; method and substitute 1. The argument (0, 1) means 1D and 2D. It means to get the diagonal of 1D and 2D.
-
-&lt;pre&gt;
+</pre>
+<h3> Create an identity matrix </h3>
+<p>
+  Let's create an identity matrix. Let's make a 3x3 identity matrix. The procedure is to create a 3x3 square matrix with all zeros in the <b> zeroes </b> function of <strong> PDL::Core </strong>. Then slice the diagonal with the <b> diagonal </b> method and substitute 1. The argument (0, 1) means 1D and 2D. It means to get the diagonal of 1D and 2D.
+</p>
+<pre>
 use PDL;
 
-my $ mat = PDL :: Core :: zeroes (3, 3);
-$ mat-&gt; diagonal (0, 1). = 1;
-&lt;/ pre&gt;
-
-The output result is as follows.
-
-&lt;pre&gt;
+my $mat = PDL::Core::zeroes (3, 3);
+$mat-&gt; diagonal (0, 1). = 1;
+</pre>
+<p>
+  The output result is as follows.
+</p>
+<pre>
 [
  [1 0 0]
  [0 1 0]
  [0 0 1]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Find the determinant &lt;/ h3&gt;
-
-Use the &lt;b&gt; det &lt;/ b&gt; method to find the determinant.
-
-&lt;pre&gt;
+</pre>
+<h3> Find the determinant </h3>
+<p>
+  Use the <b> det </b> method to find the determinant.
+</p>
+<pre>
 use PDL;
 
-my $ mat = pdl [
+my $mat = pdl [
   [1, 2],
   [3, 4]
 ];;
 
-my $ det = $ mat-&gt; det;
-&lt;/ pre&gt;
-
-The value of the determinant is as follows.
-
-&lt;pre&gt;
+my $det = $mat-&gt; det;
+</pre>
+<p>
+  The value of the determinant is as follows.
+</p>
+<pre>
 -2
-&lt;/ pre&gt;
-
-&lt;h3&gt; Find the inverse matrix &lt;/ h3&gt;
-
-Use the &lt;b&gt; inv &lt;/ b&gt; function to find the inverse matrix.
-
-&lt;pre&gt;
+</pre>
+<h3> Find the inverse matrix </h3>
+<p>
+  Use the <b> inv </b> function to find the inverse matrix.
+</p>
+<pre>
 use PDL;
 
-my $ mat = pdl [1, 2], [3, 4];
+my $mat = pdl [1, 2], [3, 4];
 
-my $ mat_inv = inv $ mat;
-&lt;/ pre&gt;
-
-The calculated result is as follows.
-
-&lt;pre&gt;
+my $mat_inv = inv $mat;
+</pre>
+<p>
+  The calculated result is as follows.
+</p>
+<pre>
 [
  [  -twenty one]
  [1.5 -0.5]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Create a vector (column vector) &lt;/ h3&gt;
-
-To create a vector (column vector):
-
-&lt;pre&gt;
+</pre>
+<h3> Create a vector (column vector) </h3>
+<p>
+  To create a vector (column vector):
+</p>
+<pre>
 use PDL;
 
-my $ vec = pdl [
+my $vec = pdl [
   [1],
   [2]
 ];;
-&lt;/ pre&gt;
-
-The output result of the data is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The output result of the data is as follows.
+</p>
+<pre>
 [
  [1]
  [2]
 ]
-&lt;/ pre&gt;
-
-&lt;h3&gt; Calculate the linear transformation &lt;/ h3&gt;
-
-
-Let's calculate the linear transformation. It is an operation of square matrix × column vector.
-
-&lt;pre&gt;
+</pre>
+<h3> Calculate the linear transformation </h3>
+<p>
+  Let's calculate the linear transformation. It is an operation of square matrix × column vector.
+</p>
+<pre>
 use PDL;
 
-my $ mat = pdl [
+my $mat = pdl [
   [1, 2],
   [3, 4]
 ];;
 
-my $ vec = pdl [
+my $vec = pdl [
   [Five],
   [6]
 ];;
 
-my $ result = $ mat x $ vec;
-&lt;/ pre&gt;
-
-The output result is as follows.
-
-&lt;pre&gt;
+my $result = $mat x $vec;
+</pre>
+<p>
+  The output result is as follows.
+</p>
+<pre>
 [
  [17]
  [39]
 ]
-&lt;/ pre&gt;
-
-t [5, 6] was converted to t [17, 39] by the 2 × 2 matrix [[1, 2], [3, 4]]. (t means transpose)
+</pre>
+<p>
+  t [5, 6] was converted to t [17, 39] by the 2 × 2 matrix [[1, 2], [3, 4]]. (t means transpose)
+</p>
 
   </div>
   <div class="bottom">

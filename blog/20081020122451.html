@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Find the time difference (including the date in the time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To find the difference when the time contains a date, use the timelocal function of the Time :: Local module to convert the time containing the date to seconds and find the difference.">
+<meta name="description" content="To find the difference when the time contains a date, use the timelocal function of the Time::Local module to convert the time containing the date to seconds and find the difference.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Find the time difference (including the date in the time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To find the difference when the time contains a date, use the timelocal function of the Time :: Local module to convert the time containing the date to seconds and find the difference." />
+<meta name="twitter:description" content="To find the difference when the time contains a date, use the timelocal function of the Time::Local module to convert the time containing the date to seconds and find the difference." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161123147990.html">
-        <span itemprop = "name"> Date / Time </ span> </a>
+        <span itemprop = "name"> Date / Time </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20081020122451.html"> Find the time difference (including the date in the time) </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081020122451.html"> Find the time difference (including the date in the time) </a></h2>
 <p>
-  To find the difference when the time contains a date, use the timelocal function of the Time :: Local module to convert the time containing the date to seconds and find the difference.
+  To find the difference when the time contains a date, use the timelocal function of the Time::Local module to convert the time containing the date to seconds and find the difference.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,174 +100,177 @@ use strict;
 use warnings;
 
 # Difference is 2 seconds Calculate this
-print "(1) Find the time difference (time includes date) \ n";
-my $ time_str1 = '30 / Sep / 2006: 23: 59: 59';
-my $ time_str2 = '01 / Oct / 2006: 00: 00: 01';
+print "(1) Find the time difference (time includes date)\n";
+my $time_str1 = '30 / Sep / 2006: 23: 59: 59';
+my $time_str2 = '01 / Oct / 2006: 00: 00: 01';
 
 
 # Converts a string representation of time into a hash of time information, including dates.
-my $ time1 = time_from_str ($ time_str1);
-my $ time2 = time_from_str ($ time_str2);
+my $time1 = time_from_str ($time_str1);
+my $time2 = time_from_str ($time_str2);
 
 # Convert time information hash to seconds to calculate elapsed seconds
-my $ sec_interval = time_to_sec ($ time2) --time_to_sec ($ time1);
+my $sec_interval = time_to_sec ($time2) - time_to_sec ($time1);
 
-print "Time difference is $ sec_interval seconds. \ N";
+print "Time difference is $sec_interval seconds.\n";
 
 
 # A function that converts a string representation of time into a hash that represents time information
 sub time_from_str {
-  my $ time_str = shift;
-  return unless $ time_str;
+  my $time_str = shift;
+  return unless $time_str;
   
-  my $ time = {};
+  my $time = {};
   
   # If it matches the format of the time including the date
-  if ($ time_str = ~ m # ^ (\ d {2}) / (\ w {3}) / (\ d {4}): (\ d {2}): (\ d {2}) :( \ d {2}) $ #) {
+  if ($time_str = ~ m # ^ (\ d {2}) / (\ w {3}) / (\ d {4}): (\ d {2}): (\ d {2}) :( \ d {2}) $# ) {
     
-    #Create hash
-    @ {$ time} {qw / mday mon year hour min sec /}
-      = ($ 1, $ 2, $ 3, $ 4, $ 5, $ 6);
+    # Create hash
+    @ {$time} {qw / mday mon year hour min sec /}
+      = ($1, $2, $3, $4, $5, $6);
     
-    #Hash corresponding to the English notation of the month and the number of the month
-    my% num_of_mon = (
+    # Hash corresponding to the English notation of the month and the number of the month
+    my %num_of_mon = (
       jan =&gt; 0, feb =&gt; 1, mar =&gt; 2, apr =&gt; 3, may =&gt; 4, jun =&gt; 5,
       jul =&gt; 6, aug =&gt; 7, sep =&gt; 8, oct =&gt; 9, nov =&gt; 10, dec =&gt; 11,
     );
 
-    #Return if the month notation is incorrect
-    $ time-&gt; {mon} = $ num_of_mon {lc ($ time-&gt; {mon})};
-    return unless defined $ time-&gt; {mon};
+    # Return if the month notation is incorrect
+    $time-&gt; {mon} = $num_of_mon {lc($time-&gt; {mon})};
+    return unless defined $time-&gt; {mon};
     
-    $ time-&gt; {year}-= 1900;
+    $time-&gt; {year}-= 1900;
     
-    return wantarray?% $ time: $ time;
+    return wantarray?% $time: $time;
   }
   return;
 }
 
 # Function to convert time to seconds
 sub time_to_sec {
-  my $ time;
-  if (ref $ _ [0] eq'HASH') {
-    $ time = shift;
+  my $time;
+  if (ref $_ [0] eq'HASH') {
+    $time = shift;
   }
   else {
-    % $ time = @_;
+    % $time = @_;
   }
   
-  return unless defined $ time-&gt; {sec};
-  return unless defined $ time-&gt; {min};
-  return unless defined $ time-&gt; {hour};
-  return unless defined $ time-&gt; {mday};
-  return unless defined $ time-&gt; {mon};
-  return unless defined $ time-&gt; {year};
+  return unless defined $time-&gt; {sec};
+  return unless defined $time-&gt; {min};
+  return unless defined $time-&gt; {hour};
+  return unless defined $time-&gt; {mday};
+  return unless defined $time-&gt; {mon};
+  return unless defined $time-&gt; {year};
   
-  Convert to seconds using the # Time :: Local module
-  require Time :: Local;
-  my $ sec = Time :: Local :: timelocal (
-    $ time-&gt; {sec},
-    $ time-&gt; {min},
-    $ time-&gt; {hour},
-    $ time-&gt; {mday},
-    $ time-&gt; {mon},
-    $ time-&gt; {year},
+  Convert to seconds using the # Time::Local module
+  require Time::Local;
+  my $sec = Time::Local::timelocal (
+    $time-&gt; {sec},
+    $time-&gt; {min},
+    $time-&gt; {hour},
+    $time-&gt; {mday},
+    $time-&gt; {mon},
+    $time-&gt; {year},
   );
   
-  return $ sec;
+  return $sec;
 }
-&lt;/ pre&gt;
-
-Execution result
-&lt;pre&gt;
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 (1) Find the time difference (time includes date)
 The time difference is 2 seconds.
-&lt;/ pre&gt;
-
-&lt;h3&gt; Explanation &lt;/ h3&gt;
-
-&lt;h4&gt; Convert time string representation to hash representing time information &lt;/ h4&gt;
-
-Converting a time containing a date such as '30 / Sep / 2006: 23: 59: 59'to a hash representing time information.
-
-The hash that represents the time information has six keys: sec, min, hour, mday, mon, and year.
-
-After cutting out the date and time with a regular expression, the English name of the month such as Sep is converted to the month number.
-
-&lt;pre&gt;
+</pre>
+<h3> Explanation </h3>
+<h4> Convert time string representation to hash representing time information </h4>
+<p>
+  Converting a time containing a date such as '30 / Sep / 2006: 23: 59: 59'to a hash representing time information.
+</p>
+<p>
+  The hash that represents the time information has six keys: sec, min, hour, mday, mon, and year.
+</p>
+<p>
+  After cutting out the date and time with a regular expression, the English name of the month such as Sep is converted to the month number.
+</p>
+<pre>
 sub time_from_str {
-  my $ time_str = shift;
-  return unless $ time_str;
+  my $time_str = shift;
+  return unless $time_str;
   
-  my $ time = {};
+  my $time = {};
   
   # If it matches the format of the time including the date
-  if ($ time_str = ~ m # ^ (\ d {2}) / (\ w {3}) / (\ d {4}): (\ d {2}): (\ d {2}) :( \ d {2}) $ #) {
+  if ($time_str = ~ m # ^ (\ d {2}) / (\ w {3}) / (\ d {4}): (\ d {2}): (\ d {2}) :( \ d {2}) $# ) {
     
-    #Create hash
-    @ {$ time} {qw / mday mon year hour min sec /}
-      = ($ 1, $ 2, $ 3, $ 4, $ 5, $ 6);
+    # Create hash
+    @ {$time} {qw / mday mon year hour min sec /}
+      = ($1, $2, $3, $4, $5, $6);
     
-    #Hash corresponding to the English notation of the month and the number of the month
-    my% num_of_mon = (
+    # Hash corresponding to the English notation of the month and the number of the month
+    my %num_of_mon = (
       jan =&gt; 0, feb =&gt; 1, mar =&gt; 2, apr =&gt; 3, may =&gt; 4, jun =&gt; 5,
       jul =&gt; 6, aug =&gt; 7, sep =&gt; 8, oct =&gt; 9, nov =&gt; 10, dec =&gt; 11,
     );
 
-    #Return if the month notation is incorrect
-    $ time-&gt; {mon} = $ num_of_mon {lc ($ time-&gt; {mon})};
-    return unless defined $ time-&gt; {mon};
+    # Return if the month notation is incorrect
+    $time-&gt; {mon} = $num_of_mon {lc($time-&gt; {mon})};
+    return unless defined $time-&gt; {mon};
     
-    $ time-&gt; {year}-= 1900;
+    $time-&gt; {year}-= 1900;
     
-    return wantarray?% $ time: $ time;
+    return wantarray?% $time: $time;
   }
   return;
 }
-&lt;/ pre&gt;
-Others are the same as "&lt;a href="/blog/20081018122442.html"&gt; Find the time difference (if it does not exceed 24 hours) &lt;/a&gt;".
-
-&lt;h4&gt; Convert time to seconds &lt;/ h4&gt;
-
-To convert a time containing a date to seconds (epoch seconds), use the timelocal function of the Time :: Local module.
-
-Others are the same as "&lt;a href="/blog/20081018122442.html"&gt; Find the time difference (if it does not exceed 24 hours) &lt;/a&gt;".
-
-&lt;pre&gt;
+</pre>
+<p>
+  Others are the same as "<a href="/blog/20081018122442.html"> Find the time difference (if it does not exceed 24 hours)</a>".
+</p>
+<h4> Convert time to seconds </h4>
+<p>
+  To convert a time containing a date to seconds (epoch seconds), use the timelocal function of the Time::Local module.
+</p>
+<p>
+  Others are the same as "<a href="/blog/20081018122442.html"> Find the time difference (if it does not exceed 24 hours)</a>".
+</p>
+<pre>
 # Convert time information hash to seconds to calculate elapsed seconds
-my $ sec_interval = time_to_sec ($ time2) --time_to_sec ($ time1);
+my $sec_interval = time_to_sec ($time2) - time_to_sec ($time1);
 
 # Function to convert time to seconds
 sub time_to_sec {
-  my $ time;
-  if (ref $ _ [0] eq'HASH') {
-    $ time = shift;
+  my $time;
+  if (ref $_ [0] eq'HASH') {
+    $time = shift;
   }
   else {
-    % $ time = @_;
+    % $time = @_;
   }
   
-  return unless defined $ time-&gt; {sec};
-  return unless defined $ time-&gt; {min};
-  return unless defined $ time-&gt; {hour};
-  return unless defined $ time-&gt; {mday};
-  return unless defined $ time-&gt; {mon};
-  return unless defined $ time-&gt; {year};
+  return unless defined $time-&gt; {sec};
+  return unless defined $time-&gt; {min};
+  return unless defined $time-&gt; {hour};
+  return unless defined $time-&gt; {mday};
+  return unless defined $time-&gt; {mon};
+  return unless defined $time-&gt; {year};
   
-  Convert to seconds using the # Time :: Local module
-  require Time :: Local;
-  my $ sec = Time :: Local :: timelocal (
-    $ time-&gt; {sec},
-    $ time-&gt; {min},
-    $ time-&gt; {hour},
-    $ time-&gt; {mday},
-    $ time-&gt; {mon},
-    $ time-&gt; {year},
+  Convert to seconds using the # Time::Local module
+  require Time::Local;
+  my $sec = Time::Local::timelocal (
+    $time-&gt; {sec},
+    $time-&gt; {min},
+    $time-&gt; {hour},
+    $time-&gt; {mday},
+    $time-&gt; {mon},
+    $time-&gt; {year},
   );
   
-  return $ sec;
+  return $sec;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Match the beginning and end of a string-^ and $  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use  ^  and  $  to represent the beginning and end of a string with a regular expression.">
+<title> Match the beginning and end of a string-^ and $ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use  ^  and  $ to represent the beginning and end of a string with a regular expression.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Match the beginning and end of a string-^ and $  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use  ^  and  $  to represent the beginning and end of a string with a regular expression." />
+<meta name="twitter:title" content=" Match the beginning and end of a string-^ and $ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use  ^  and  $ to represent the beginning and end of a string with a regular expression." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100827127859.html">
-      <span itemprop = "name"> Regular expression </ span> </a>
+      <span itemprop = "name"> Regular expression </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080403120723.html"> Match the beginning and end of a string-^ and $ </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080403120723.html"> Match the beginning and end of a string-^ and $</a></h2>
 <p>
-  Use <strong> ^ </ strong> and <strong> $ </ strong> to represent the beginning and end of a string with a regular expression.
+  Use <strong> ^ </strong> and <strong> $</strong> to represent the beginning and end of a string with a regular expression.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,45 +101,45 @@
 # ^ Represents the beginning.
 / ^ ab /
 
-# $ Represents the end
-/ cd $ /
-&lt;/ pre&gt;
-
-^ Is also used as a character class negation symbol. If it is at the beginning of [], it represents the negation of the character class, and if it is at the beginning of //, it represents the beginning of the character string.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample that matches the beginning and end of the string.
-
-&lt;pre&gt;
+# $Represents the end
+/ cd $/
+</pre>
+<p>
+  ^ Is also used as a character class negation symbol. If it is at the beginning of [], it represents the negation of the character class, and if it is at the beginning of //, it represents the beginning of the character string.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample that matches the beginning and end of the string.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Represents the beginning and end of a string. ^ And $
-my $ word = "abcd";
+# Represents the beginning and end of a string. ^ And $
+my $word = "abcd";
 
-print "1: Represent the beginning of the string. ^ \ N";
-if ($ word = ~ / ^ ab /) {
-  print "'$ word' starts with ab. \ N"
+print "1: Represent the beginning of the string. ^\n";
+if ($word = ~ / ^ ab /) {
+  print "'$word' starts with ab.\n"
 }
-if ($ word = ~ / bc /) {
-  print "includes bc, but \ n"
+if ($word = ~ / bc /) {
+  print "includes bc, but\n"
 }
-if ($ word! ~ / ^ Bc /) {
-  print "does not start with bc. \ N \ n";
+if ($word! ~ / ^ Bc /) {
+  print "does not start with bc.\n\n";
 }
 
-print "2: Show the end of the string \. ^ \ N";
-if ($ word = ~ / cd $ /) {
-  print "'$ word' ends with cd. \ N"
+print "2: Show the end of the string \. ^\n";
+if ($word = ~ / cd $/) {
+  print "'$word' ends with cd.\n"
 }
-if ($ word = ~ / bc /) {
-  print "includes bc, but \ n"
+if ($word = ~ / bc /) {
+  print "includes bc, but\n"
 }
-if ($ word! ~ / bc $ /) {
-  print "does not end with bc. \ N \ n";
+if ($word! ~ / bc $/) {
+  print "does not end with bc.\n\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Decrement operator "-"  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Using the  decrement operator , the  assigned to the  variable  You can subtract 1 from the number . Decrement operators can be added before or after a variable.">
+<meta name="description" content="Using the  decrement operator , the  assigned to the  variable You can subtract 1 from the number. Decrement operators can be added before or after a variable.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Decrement operator "-"  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Using the  decrement operator , the  assigned to the  variable  You can subtract 1 from the number . Decrement operators can be added before or after a variable." />
+<meta name="twitter:description" content="Using the  decrement operator , the  assigned to the  variable You can subtract 1 from the number. Decrement operators can be added before or after a variable." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,29 +62,29 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20080910122105.html">
-      <span itemprop = "name"> Arithmetic operator </ span> </a>
+      <span itemprop = "name"> Arithmetic operator </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180226151973.html"> Decrement operator "-" </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180226151973.html"> Decrement operator "-" </a></h2>
 <p>
-  Using the <b> decrement operator </ b>, the <a href="/blog/20161026147748.html"> assigned to the <a href="/blog/20161107147852.html"> variable </a> You can subtract 1 from the number </a>. Decrement operators can be added before or after a variable.
+  Using the <b> decrement operator </b>, the <a href="/blog/20161026147748.html"> assigned to the <a href="/blog/20161107147852.html"> variable</a> You can subtract 1 from the number</a>. Decrement operators can be added before or after a variable.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,78 +103,79 @@
 
 
 <pre>
-#Decrement (postscript)
-$ num--;
+# Decrement (postscript)
+$num- ;
 
-#Decrement (prefix)
---$ num;
-&lt;/ pre&gt;
-
-The decrement operator has the same meaning as the following description using the &lt;a href="/blog/20180220151913.html"&gt; subtraction operator &lt;/a&gt;.
-
-&lt;pre&gt;
-$ num = $ num --1;
-&lt;/ pre&gt;
-
-Decrement operators are sometimes used in &lt;a href="/blog/20161022147731.html"&gt; for statements &lt;/a&gt;.
-
-&lt;pre&gt;
-for (my $ i = 10; $ i&gt; = 0; $ i--) {
-  print "$ i \ n";
+# Decrement (prefix)
+- $num;
+</pre>
+<p>
+  The decrement operator has the same meaning as the following description using the <a href="/blog/20180220151913.html"> subtraction operator</a>.
+</p>
+<pre>
+$num = $num - 1;
+</pre>
+<p>
+  Decrement operators are sometimes used in <a href="/blog/20161022147731.html"> for statements</a>.
+</p>
+<pre>
+for (my $i = 10; $i&gt; = 0; $i- ) {
+  print "$i\n";
 }
-&lt;/ pre&gt;
-
-This sample program outputs 10 to 0.
-
-&lt;h3&gt; Difference between prefix decrement and post-decrement &lt;/ h3&gt;
-
-The prefix decrement and the suffix decrement have the same meaning when used alone, but have different meanings when the return value is used, such as when they are assigned.
-
-&lt;h4&gt; Prefix decrement &lt;/ h4&gt;
-
-For prefix decrements, the decremented value is returned.
-
-&lt;pre&gt;
-my $ num1 = 1;
-my $ num2 = --$ num;
-&lt;/ pre&gt;
-
-"$ Num1" is decremented to 0. This value of 0 is returned and assigned to "$ num2".
-
-I explained in the case of assignment, but I will also give an example of passing a value to &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt;. The fun is passed a &lt;b&gt; decremented value &lt;/ b&gt;.
-
-&lt;pre&gt;
-func (-$ i);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Postfix decrement &lt;/ h4&gt;
-
-For prefix decrements, the value before decrementing is returned.
-
-&lt;pre&gt;
-my $ num1 = 1;
-my $ num2 = $ i--;
-&lt;/ pre&gt;
-
-"$ Num1" is decremented to 0, but the value before decrementing, 1 is assigned to $ num2.
-
-The above two have different values ​​in $ k. In the first case, $ k contains 0. In the second case, $ k contains 1.
-
-I explained in the case of assignment, but I will also give an example of passing a value to a subroutine. The fun is passed &lt;b&gt; the value before it was decremented &lt;/ b&gt;.
-
-&lt;pre&gt;
-func ($ i--);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Increment operator &lt;/ h3&gt;
-
-The increment operator is the opposite of the decrement operator and is an operator that can add one. The increment operator is explained in detail below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20180224151948.html"&gt; Increment operator &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<p>
+  This sample program outputs 10 to 0.
+</p>
+<h3> Difference between prefix decrement and post-decrement </h3>
+<p>
+  The prefix decrement and the suffix decrement have the same meaning when used alone, but have different meanings when the return value is used, such as when they are assigned.
+</p>
+<h4> Prefix decrement </h4>
+<p>
+  For prefix decrements, the decremented value is returned.
+</p>
+<pre>
+my $num1 = 1;
+my $num2 = - $num;
+</pre>
+<p>
+  "$Num1" is decremented to 0. This value of 0 is returned and assigned to "$num2".
+</p>
+<p>
+  I explained in the case of assignment, but I will also give an example of passing a value to <a href="/blog/20101130129876.html"> subroutine</a>. The fun is passed a <b> decremented value </b>.
+</p>
+<pre>
+func (-$i);
+</pre>
+<h4> Postfix decrement </h4>
+<p>
+  For prefix decrements, the value before decrementing is returned.
+</p>
+<pre>
+my $num1 = 1;
+my $num2 = $i- ;
+</pre>
+<p>
+  "$Num1" is decremented to 0, but the value before decrementing, 1 is assigned to $num2.
+</p>
+<p>
+  The above two have different values ​​in $k. In the first case, $k contains 0. In the second case, $k contains 1.
+</p>
+<p>
+  I explained in the case of assignment, but I will also give an example of passing a value to a subroutine. The fun is passed <b> the value before it was decremented </b>.
+</p>
+<pre>
+func ($i- );
+</pre>
+<h3> Increment operator </h3>
+<p>
+  The increment operator is the opposite of the decrement operator and is an operator that can add one. The increment operator is explained in detail below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180224151948.html"> Increment operator</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

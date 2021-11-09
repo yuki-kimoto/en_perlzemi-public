@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Trivia </ span>
+      <span itemprop = "name"> Trivia </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20100802127859.html"> Trivia-Useful to know </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100802127859.html"> Trivia-Useful to know </a></h2>
 <p>
   We'll add a lot of things that may make Perl easier to use and read if you know it.
 </p>
@@ -91,7 +91,7 @@
 </div>
 
 
-<h3> BEGIN </ h3>
+<h3> BEGIN </h3>
 <p>
   BEGIN means that it is executed at compile time.
 </p>
@@ -99,407 +99,400 @@
 BEGIN {
   # Statement you want to execute when compiling
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; require &lt;/ h3&gt;
-
-require is similar to use, except that it loads the module at runtime and does not automatically execute the import method.
-
-&lt;pre&gt;
-use File :: Basename'basename';
+</pre>
+<h3> require </h3>
+<p>
+  require is similar to use, except that it loads the module at runtime and does not automatically execute the import method.
+</p>
+<pre>
+use File::Basename'basename';
 
 # Same meaning as above
 BEGIN {
-  require File :: Basename;
-  File :: Basename-&gt; import ('basename');
+  require File::Basename;
+  File::Basename-&gt; import ('basename');
 }
-&lt;/ pre&gt;
-
-If you want to load the module dynamically, you may use require, but for general use it will be easier to unify with use.
-
-&lt;h3&gt; local &lt;/ h3&gt;
-
-local is not meant to generate local variables. local is for temporarily changing the value and restoring it when it goes out of scope. For some reason it cannot be used for the scalar variable itself declared by my. You can use package variables and hash elements, array elements, and so on.
-
-&lt;pre&gt;
-our $ num = 1;
+</pre>
+<p>
+  If you want to load the module dynamically, you may use require, but for general use it will be easier to unify with use.
+</p>
+<h3> local </h3>
+<p>
+  local is not meant to generate local variables. local is for temporarily changing the value and restoring it when it goes out of scope. For some reason it cannot be used for the scalar variable itself declared by my. You can use package variables and hash elements, array elements, and so on.
+</p>
+<pre>
+our $num = 1;
 {
   # Temporary change
-  local $ num = 2;
+  local $num = 2;
 }
 
 Return to # 1
-print $ foo;
+print $foo;
 
-my $ scores = {math =&gt; 90, english =&gt; 100};
+my $scores = {math =&gt; 90, english =&gt; 100};
 {
   # Temporary change
-  local $ scores-&gt; {math} = 80;
+  local $scores-&gt; {math} = 80;
 }
 
 Return to # 90
-print $ scores-&gt; {math};
-&lt;/ pre&gt;
-
-However, local is not used unless it has a very special purpose. You can do it with my in almost all situations, so first seriously consider whether you can do it with my.
-
-Please refer to the following for a detailed explanation of local.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080309120507.html"&gt; local --Temporarily save and restore package variables &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Multi-line comment &lt;/ h3&gt;
-
-There is no multi-line comment syntax, so it's a bit disappointing, but the comment is only #. If you want to comment on multiple lines while debugging, you can comment out by interpreting it as a document.
-
-&lt;pre&gt;
+print $scores-&gt; {math};
+</pre>
+<p>
+  However, local is not used unless it has a very special purpose. You can do it with my in almost all situations, so first seriously consider whether you can do it with my.
+</p>
+<p>
+  Please refer to the following for a detailed explanation of local.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080309120507.html"> local - Temporarily save and restore package variables</a>
+  </li>
+</ul>
+<h3> Multi-line comment </h3>
+<p>
+  There is no multi-line comment syntax, so it's a bit disappointing, but the comment is only # . If you want to comment on multiple lines while debugging, you can comment out by interpreting it as a document.
+</p>
+<pre>
 = pod
 
-my $ str ='aaa';
-my $ foo ='foo';
+my $str ='aaa';
+my $foo ='foo';
 
 = cut
-&lt;/ pre&gt;
-
-The part enclosed as "= pod" and "= cut" is interpreted as a document and ignored.
-
-&lt;h3&gt; Different variables with different sigils &lt;/ h3&gt;
-
-Different sigils are completely different variables.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The part enclosed as "= pod" and "= cut" is interpreted as a document and ignored.
+</p>
+<h3> Different variables with different sigils </h3>
+<p>
+  Different sigils are completely different variables.
+</p>
+<pre>
 # arrangement
 my @ids;
 
-#Scalar
-my $ ids;
-&lt;/ pre&gt;
-The above variable has the name ids, but it's a completely different variable.
-
-&lt;h3&gt; Examine the meaning of special variables &lt;/ h3&gt;
-
-Special variables are very difficult to find by google search. It is also troublesome to search from the document. You can use the "-v" option of the perldoc command to find out the meaning of special variables, albeit in English.
-
-&lt;pre&gt;
+# Scalar
+my $ids;
+</pre>
+<p>
+  The above variable has the name ids, but it's a completely different variable.
+</p>
+<h3> Examine the meaning of special variables </h3>
+<p>
+  Special variables are very difficult to find by google search. It is also troublesome to search from the document. You can use the "-v" option of the perldoc command to find out the meaning of special variables, albeit in English.
+</p>
+<pre>
 perldoc -v $.
-&lt;/ pre&gt;
-
-&lt;h3&gt; Method call &lt;/ h3&gt;
-
-In Perl you can use-&gt; to make method calls.
-&lt;pre&gt;
-#Method call
+</pre>
+<h3> Method call </h3>
+<p>
+  In Perl you can use-> to make method calls.
+</p>
+<pre>
+# Method call
 SomeClass-&gt; method ('a','b');
-$ obj-&gt; method ('a','b');
-&lt;/ pre&gt;
-
-A method call differs from a function call in that the value to the left of-&gt; is passed as the first argument of the subroutine. In the above example, the first argument of method is the string SomeClass or $ obj. 'a' and'b' are the second and third arguments.
-
-The recipient describes it as follows.
-&lt;pre&gt;
+$obj-&gt; method ('a','b');
+</pre>
+<p>
+  A method call differs from a function call in that the value to the left of-> is passed as the first argument of the subroutine. In the above example, the first argument of method is the string SomeClass or $obj. 'a' and'b' are the second and third arguments.
+</p>
+<p>
+  The recipient describes it as follows.
+</p>
+<pre>
 # For class methods
 sub method {
-  my ($ class, $ arg1, $ arg2) = @_;
+  my ($class, $arg1, $arg2) = @_;
 }
 
-#For object methods
+# For object methods
 sub method {
-  my ($ self, $ arg1, $ arg2) = @_;
+  my ($self, $arg1, $arg2) = @_;
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Mini perldoc guide &lt;/ h3&gt;
-
-You can see the Perl documentation with the perldoc command.
-
-&lt;pre&gt;
+</pre>
+<h3> Mini perldoc guide </h3>
+<p>
+  You can see the Perl documentation with the perldoc command.
+</p>
+<pre>
 perldoc perlfunc
-&lt;/ pre&gt;
-
-You can also see the module documentation.
-
-&lt;pre&gt;
-perldoc File :: Basename
-&lt;/ pre&gt;
-
-If you want to see the contents of the module, specify the m option.
-
-&lt;pre&gt;
-perldoc -m File :: Basename
-&lt;/ pre&gt;
-
-If you want to know the module path, specify the l option.
-
-&lt;pre&gt;
-perldoc -l File :: Basename
-&lt;/ pre&gt;
-
-If you want to see the standard function documentation, specify the f option.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also see the module documentation.
+</p>
+<pre>
+perldoc File::Basename
+</pre>
+<p>
+  If you want to see the contents of the module, specify the m option.
+</p>
+<pre>
+perldoc -m File::Basename
+</pre>
+<p>
+  If you want to know the module path, specify the l option.
+</p>
+<pre>
+perldoc -l File::Basename
+</pre>
+<p>
+  If you want to see the standard function documentation, specify the f option.
+</p>
+<pre>
 perldoc -f substr
-&lt;/ pre&gt;
+</pre>
+<p>
+  It's easier to see if you redirect and drop it in a file.
+</p>
+<pre>
+perldoc File::Basename&gt; File-Basename.txt
+</pre>
+<h3> Anonymous subroutine </h3>
+<p>
+  In Perl you can create anonymous subroutines by using sub {}.
+</p>
+<pre>
+my $twice = sub {
+  my $num = shift;
 
-It's easier to see if you redirect and drop it in a file.
-
-&lt;pre&gt;
-perldoc File :: Basename&gt; File-Basename.txt
-&lt;/ pre&gt;
-
-&lt;h3&gt; Anonymous subroutine &lt;/ h3&gt;
-
-In Perl you can create anonymous subroutines by using sub {}.
-
-&lt;pre&gt;
-my $ twice = sub {
-  my $ num = shift;
-
-  return $ num * 2;
+  return $num * 2;
 }
-&lt;/ pre&gt;
-
-To do this:
-
-&lt;pre&gt;
-my $ result = $ twice-&gt; (5);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Omission of {} in dereference &lt;/ h3&gt;
-
-The dereference symbol {} can be omitted.
-
-&lt;pre&gt;
-my @array = @ $ array_ref;
+</pre>
+<p>
+  To do this:
+</p>
+<pre>
+my $result = $twice-&gt; (5);
+</pre>
+<h3> Omission of {} in dereference </h3>
+<p>
+  The dereference symbol {} can be omitted.
+</p>
+<pre>
+my @array = @ $array_ref;
 
 # Same meaning as below
-my @array = @ {$ array_ref};
-&lt;/ pre&gt;
-
-{} Is required if it is not a simple variable.
-
-&lt;pre&gt;
-my @array = @ {$ var-&gt; nums};
-&lt;/ pre&gt;
-
-&lt;h3&gt; How to read the document of the file operator &lt;/ h3&gt;
-
-I often use file operators such as -s and -f, but it's hard to figure out how to look at the documentation. At the command line:
-
-&lt;pre&gt;
+my @array = @ {$array_ref};
+</pre>
+<p>
+  {} Is required if it is not a simple variable.
+</p>
+<pre>
+my @array = @ {$var-&gt; nums};
+</pre>
+<h3> How to read the document of the file operator </h3>
+<p>
+  I often use file operators such as -s and -f, but it's hard to figure out how to look at the documentation. At the command line:
+</p>
+<pre>
 perldoc -f -X
-&lt;/ pre&gt;
-
-&lt;h3&gt; Character substitution tr &lt;/ h3&gt;
-
-You may sometimes see tr, but the tr operator does string substitutions. The following sentence replaces "a ⇒ 1", "b ⇒ 2", and "c ⇒ 3".
-
-&lt;pre&gt;
-$ str = ~ tr / abc / 123 /;
-&lt;/ pre&gt;
-
-&lt;h3&gt; See the settings in Perl itself &lt;/ h3&gt;
-
-With command line arguments
-
-&lt;pre&gt;
+</pre>
+<h3> Character substitution tr </h3>
+<p>
+  You may sometimes see tr, but the tr operator does string substitutions. The following sentence replaces "a ⇒ 1", "b ⇒ 2", and "c ⇒ 3".
+</p>
+<pre>
+$str = ~ tr / abc / 123 /;
+</pre>
+<h3> See the settings in Perl itself </h3>
+<p>
+  With command line arguments
+</p>
+<pre>
 perl -V
-&lt;/ pre&gt;
-
-will do.
-
-&lt;h3&gt; Hash slice of hash reference &lt;/ h3&gt;
-
-The notation of dereferencing a hash reference and hash slicing is very hard to read.
-
-&lt;pre&gt;
-my ($ key1, $ key2, $ key3) = @ {$ hash} {qw / key1 key2 key3 /};
-&lt;/ pre&gt;
-
-I think it is better to substitute one by one if possible.
-
-&lt;pre&gt;
-my $ key1 = $ hash-&gt; {key1};
-my $ key2 = $ hash-&gt; {key2};
-my $ key3 = $ hash-&gt; {key3};
-&lt;/ pre&gt;
-
-&lt;h3&gt; How to use eval &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  will do.
+</p>
+<h3> Hash slice of hash reference </h3>
+<p>
+  The notation of dereferencing a hash reference and hash slicing is very hard to read.
+</p>
+<pre>
+my ($key1, $key2, $key3) = @ {$hash} {qw / key1 key2 key3 /};
+</pre>
+<p>
+  I think it is better to substitute one by one if possible.
+</p>
+<pre>
+my $key1 = $hash-&gt; {key1};
+my $key2 = $hash-&gt; {key2};
+my $key3 = $hash-&gt; {key3};
+</pre>
+<h3> How to use eval </h3>
+<pre>
 eval {execution statement; 1;} or die "Exception";
-&lt;/ pre&gt;
-
-I often see the description, but it is a little difficult to read. The meaning of this is that &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt; returns the result of the last executable statement if the inside of {} is normal. That is, 1 is returned. In this case, the right side of or is not executed. Returns undef on failure. In this case, the right-hand side is executed. The reason for writing 1; is that if the return value of the executable statement matches 0, the right-hand side will be executed even if it succeeds.
-
-&lt;pre&gt;
+</pre>
+<p>
+  I often see the description, but it is a little difficult to read. The meaning of this is that <a href="/blog/20100312126967.html"> eval</a> returns the result of the last executable statement if the inside of {} is normal. That is, 1 is returned. In this case, the right side of or is not executed. Returns undef on failure. In this case, the right-hand side is executed. The reason for writing 1; is that if the return value of the executable statement matches 0, the right-hand side will be executed even if it succeeds.
+</p>
+<pre>
 eval {execution statement};
-die "Exception" if $ @;
-&lt;/ pre&gt;
-I prefer.
-
-&lt;h3&gt; Frequently used special variables &lt;/ h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    @_ --Subroutine arguments
-  &lt;/ li&gt;
-  &lt;li&gt;
-    @ARGV --command line arguments
-  &lt;/ li&gt;
-  &lt;li&gt;
-    $. --Line number when reading a file
-  &lt;/ li&gt;
-  &lt;li&gt;
-    $ 0-script name
-  &lt;/ li&gt;
-  &lt;li&gt;
-    $ 1-The part that matches the parentheses () in the regular expression. $ 2 and $ 3 have the same meaning
-  &lt;/ li&gt;
-  &lt;li&gt;
-    $! --OS error message
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Exception message when catching an exception with $ @ --eval
-  &lt;/ li&gt;
-  &lt;li&gt;
+die "Exception" if $@;
+</pre>
+<p>
+  I prefer.
+</p>
+<h3> Frequently used special variables </h3>
+<ul>
+  <li>
+    @_ - Subroutine arguments
+  </li>
+  <li>
+    @ARGV - command line arguments
+  </li>
+  <li>
+    $. - Line number when reading a file
+  </li>
+  <li>
+    $0-script name
+  </li>
+  <li>
+    $1-The part that matches the parentheses () in the regular expression. $2 and $3 have the same meaning
+  </li>
+  <li>
+    $! - OS error message
+  </li>
+  <li>
+    Exception message when catching an exception with $@ - eval
+  </li>
+  <li>
     $?-Child process status
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Default argument of shift function &lt;/ h3&gt;
-
-If no argument is specified in the shift function, the argument will be the command line argument (@ARGV) if it is the top level, and the subroutine argument (@_) if it is in the subroutine. A single shift is often used.
-
-&lt;pre&gt;
+  </li>
+</ul>
+<h3> Default argument of shift function </h3>
+<p>
+  If no argument is specified in the shift function, the argument will be the command line argument (@ARGV) if it is the top level, and the subroutine argument (@_) if it is in the subroutine. A single shift is often used.
+</p>
+<pre>
 # Top level
-my $ num = shift;
+my $num = shift;
 
 # Same meaning as below
-my $ num = shift @ARGV;
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+my $num = shift @ARGV;
+</pre>
+<pre>
 # In a subroutine
 sub {
-  my $ num = shift;
+  my $num = shift;
   
   # Same meaning as below
-  my $ num = shift @_;
+  my $num = shift @_;
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Exit status of external process &lt;/ h3&gt;
-
-When an external process is called with the system function etc., the exit status of the external process is in the upper 8 bits of the special variable $ ?. If the command call itself fails, $? Is set to -1. So, to check that the exit status is normal (normal if 0), do the following:vinegar.
-
-&lt;pre&gt;
-my $ command = "ls -l";
-system $ command;
+</pre>
+<h3> Exit status of external process </h3>
+<p>
+  When an external process is called with the system function etc., the exit status of the external process is in the upper 8 bits of the special variable $?. If the command call itself fails, $? Is set to -1. So, to check that the exit status is normal (normal if 0), do the following:vinegar.
+</p>
+<pre>
+my $command = "ls -l";
+system $command;
 
 if ($? == -1) {
-  die "failed to execute: $! \ N";
+  die "failed to execute: $!\n";
 }
 elsif ($? &gt;&gt; 8! = 0) {
-  die "Return error status \ n";
+  die "Return error status\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Perl's ithread implementation isn't very good &lt;/ h3&gt;
-
-Perl has a lightweight thread implementation called ithread, but it's rumored that the implementation isn't very good. Also, the CPAN module wasn't created with thread safety in mind, so you'll run into unexpected bugs. It also does not support native threads. It is safer to give up writing in Perl for the process of automatically switching threads.
-
-If you want to switch threads yourself, you can use the coroutine Coro.
-
-&lt;h3&gt; Classic Perl &lt;/ h3&gt;
-
-I don't use it when writing, but you may come across classical grammar when reading.
-
-The vars pragma has the same effect as declared in our.
-&lt;pre&gt;
-Same as # our $ VAR;
+</pre>
+<h3> Perl's ithread implementation isn't very good </h3>
+<p>
+  Perl has a lightweight thread implementation called ithread, but it's rumored that the implementation isn't very good. Also, the CPAN module wasn't created with thread safety in mind, so you'll run into unexpected bugs. It also does not support native threads. It is safer to give up writing in Perl for the process of automatically switching threads.
+</p>
+<p>
+  If you want to switch threads yourself, you can use the coroutine Coro.
+</p>
+<h3> Classic Perl </h3>
+<p>
+  I don't use it when writing, but you may come across classical grammar when reading.
+</p>
+<p>
+  The vars pragma has the same effect as declared in our.
+</p>
+<pre>
+Same as # our $VAR;
 use vars'VAR';
-&lt;/ pre&gt;
-
-&lt;h3&gt; Operators starting with q that you want to remember &lt;/ h3&gt;
-
-  Operators starting with q are difficult to remember, so I will summarize them. You can also use //, {}, ##, ||, etc. as the enclosing characters.
-
-q is a single quote operator. It is the same as single quote except that single quote can be used.
-
-&lt;pre&gt;
-my $ str = q / aaa'''bbb /;
-&lt;/ pre&gt;
-
-qq is a double quote operator. Same as double quotes except that double quotes can be used.
-
-&lt;pre&gt;
-my $ str = qq / aaa "" "$ str /;
-&lt;/ pre&gt;
-
-qw is a string list operator. You can easily write a list of strings.
-&lt;pre&gt;
+</pre>
+<h3> Operators starting with q that you want to remember </h3>
+  Operators starting with q are difficult to remember, so I will summarize them. You can also use //, {}, # #, ||, etc. as the enclosing characters.
+<p>
+  q is a single quote operator. It is the same as single quote except that single quote can be used.
+</p>
+<pre>
+my $str = q / aaa'''bbb /;
+</pre>
+<p>
+  qq is a double quote operator. Same as double quotes except that double quotes can be used.
+</p>
+<pre>
+my $str = qq / aaa "" "$str /;
+</pre>
+<p>
+  qw is a string list operator. You can easily write a list of strings.
+</p>
+<pre>
 Same as # ('foo','bar','baz')
-my $ str = qw / foo bar baz /
-&lt;/ pre&gt;
-
-qr is a regular expression reference.
-&lt;pre&gt;
-my $ regex_ref = qr / ^ aaa. * Bbb $ / ms;
-&lt;/ pre&gt;
-
-&lt;h3&gt; 1; is required at the end of the module &lt;/ h3&gt;
-
-1; is required at the end of the module. It doesn't have to be 1 but can be any true value, but usually 1; is used.
-&lt;pre&gt;
+my $str = qw / foo bar baz /
+</pre>
+<p>
+  qr is a regular expression reference.
+</p>
+<pre>
+my $regex_ref = qr / ^ aaa. * Bbb $/ ms;
+</pre>
+<h3> 1; is required at the end of the module </h3>
+<p>
+  1; is required at the end of the module. It doesn't have to be 1 but can be any true value, but usually 1; is used.
+</p>
+<pre>
 package SomeModule;
 
 # Mounting
 
 1;
-&lt;/ pre&gt;
-
-No semicolon is required at the end of the &lt;h3&gt; block. No return is required if the evaluation is final. &lt;/ h3&gt;
-
-The semicolon may or may not be present at the end of the block.
-
-&lt;pre&gt;
+</pre>
+<p>
+  No semicolon is required at the end of the <h3> block. No return is required if the evaluation is final. </h3>
+</p>
+<p>
+  The semicolon may or may not be present at the end of the block.
+</p>
+<pre>
 sub func1 {
-  my $ arg = shift;
+  my $arg = shift;
 
   # This semicolon may or may not be present.
-  return $ arg;
+  return $arg;
 }
-&lt;/ pre&gt;
-
-Also, the return value does not need a return if it is the last evaluation.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Also, the return value does not need a return if it is the last evaluation.
+</p>
+<pre>
 sub func1 {
-  my $ arg = shift;
+  my $arg = shift;
 
-  #return may or may not match.
-  $ arg;
+  # return may or may not match.
+  $arg;
 }
-&lt;/ pre&gt;
-
-Normally, it is better to add both return and semicolon. When writing a function in one line, it seems that it is often better to write it without using a semicolon or return.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Normally, it is better to add both return and semicolon. When writing a function in one line, it seems that it is often better to write it without using a semicolon or return.
+</p>
+<pre>
 # Constant etc.
 sub CONST_VALUE {3}
-&lt;/ pre&gt;
-
-&lt;h3&gt; When you want to try Perl a lot &lt;/ h3&gt;
-
-If I want to run a sample I find somewhere, I have a simple file called a.pl and I experiment there. It's also a hassle to delete, so if you want to experiment anew, use "__END__" and the script will be considered to end there.
-
-&lt;pre&gt;
+</pre>
+<h3> When you want to try Perl a lot </h3>
+<p>
+  If I want to run a sample I find somewhere, I have a simple file called a.pl and I experiment there. It's also a hassle to delete, so if you want to experiment anew, use "__END__" and the script will be considered to end there.
+</p>
+<pre>
 perl a.pl
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 use strict;
 use warnings;
 
@@ -508,234 +501,226 @@ print'aaa';
 __END__
 
 print'bbb';
-&lt;/ pre&gt;
-
-&lt;h3&gt; Do not end the program when the last line is executed in the debugger &lt;/ h3&gt;
-
-If you want to avoid the program ending when you execute the last line when using the Perl debugger, put the meaningless "1;" executable statement in the last line as follows.
-
-&lt;pre&gt;
-my $ str ='aaa';
-print $ str;
+</pre>
+<h3> Do not end the program when the last line is executed in the debugger </h3>
+<p>
+  If you want to avoid the program ending when you execute the last line when using the Perl debugger, put the meaningless "1;" executable statement in the last line as follows.
+</p>
+<pre>
+my $str ='aaa';
+print $str;
 
 1;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Shortcut for reading files &lt;/ h3&gt;
-
-If you're writing a disposable script, writing a file open can be a bit tedious. You can use the diamond operator alone to read a file line by line from command line arguments or standard input.
-
-&lt;pre&gt;
+</pre>
+<h3> Shortcut for reading files </h3>
+<p>
+  If you're writing a disposable script, writing a file open can be a bit tedious. You can use the diamond operator alone to read a file line by line from command line arguments or standard input.
+</p>
+<pre>
 # Command line
 perl script.pl file1 file2
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 # Read line by line from file
-while (my $ line = &lt;&gt;) {
+while (my $line = &lt;&gt;) {
   ...
 }
-&lt;/ pre&gt;
-
-This description is
-&lt;pre&gt;
-while (defined (my $ line = &lt;&gt;)) {
+</pre>
+<p>
+  This description is
+</p>
+<pre>
+while (defined(my $line = &lt;&gt;)) {
   ...
 }
-&lt;/ pre&gt;
-
-Since it has the same meaning as, it is safe because it correctly reads lines that contain only 0.
-
-&lt;h3&gt; Notes on variable expansion &lt;/ h3&gt;
-
-If the variable name is followed by a colon or underscore, the variable cannot be expanded correctly. In such a case, enclose it in "{}" to explicitly indicate the variable name.
-
-&lt;pre&gt;
-my $ name ='aaa';
-my $ message = "$ {name} :: aaa $ {name} _ppp";
-&lt;/ pre&gt;
-
-&lt;h3&gt; Take a peek at the symbol table &lt;/ h3&gt;
-
-A data structure in which names such as variables and subroutines are registered. The symbol for each package is stored in a variable with "::" at the end of the package name.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Since it has the same meaning as, it is safe because it correctly reads lines that contain only 0.
+</p>
+<h3> Notes on variable expansion </h3>
+<p>
+  If the variable name is followed by a colon or underscore, the variable cannot be expanded correctly. In such a case, enclose it in "{}" to explicitly indicate the variable name.
+</p>
+<pre>
+my $name ='aaa';
+my $message = "${name}::aaa ${name} _ppp";
+</pre>
+<h3> Take a peek at the symbol table </h3>
+<p>
+  A data structure in which names such as variables and subroutines are registered. The symbol for each package is stored in a variable with "::" at the end of the package name.
+</p>
+<pre>
 # Symbol table
-% main ::
-% CGI ::
-% File :: Basename ::
-&lt;/ pre&gt;
+% main::% CGI::% File::Basename::&lt;/pre&gt;
 
-&lt;h3&gt; use each function only in while &lt;/ h3&gt;
+&lt;h3&gt; use each function only in while &lt;/h3&gt;
 
 Each function has an iterator internally, so if you use it only once, the iterator will stay advanced.
 
 &lt;pre&gt;
-#Iterator stays advanced.
-my ($ key, $ value) = each% hash;
-&lt;/ pre&gt;
-Activating the keys function resets the iterator, but that's not a good idea.
-
-&lt;pre&gt;
-#Reset iterator
-keys% hash;
-&lt;/ pre&gt;
-
-Use each function only in the loop of &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
-
-&lt;pre&gt;
-while (my ($ key, $ value) = each% hash) {
+# Iterator stays advanced.
+my ($key, $value) = each %hash;
+</pre>
+<p>
+  Activating the keys function resets the iterator, but that's not a good idea.
+</p>
+<pre>
+# Reset iterator
+keys %hash;
+</pre>
+<p>
+  Use each function only in the loop of <a href="/blog/20100123126425.html"> while statement</a>.
+</p>
+<pre>
+while (my ($key, $value) = each %hash) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; The filehandle passed to the print function is not the first argument &lt;/ h3&gt;
-
-It's a strange specification. The filehandle passed to the print function is not the first argument. There is no comma behind the file handle.
-
-&lt;pre&gt;
-# $ fh is not the first argument.
-print $ fh $ output;
-&lt;/ pre&gt;
-This is called indirect object notation and has the same meaning as:
-
-&lt;pre&gt;
-$ fh-&gt; print ($ output);
-&lt;/ pre&gt;
-
-&lt;h3&gt; On Windows IO :: Poll and select only work for sockets &lt;/ h3&gt;
-
-On Windows, asynchronous IO processing can only be done on sockets. Not for files.
-
-&lt;h3&gt; On Windows, it doesn't work well if the argument of the glob function contains a space. &lt;/ H3&gt;
-
-On Windows, it doesn't work well if the argument of the glob function contains a space. To get this to work, you need to enclose it in double quotes.
-
-&lt;pre&gt;
-my @files = glob ('"C: / Documents and Settings / *. *"');
-&lt;/ pre&gt;
-
-&lt;h3&gt; If you need parentheses for the subroutine &lt;/ h3&gt;
-
-If the subroutine has already been declared, no parentheses are needed.
-
-&lt;pre&gt;
+</pre>
+<h3> The filehandle passed to the print function is not the first argument </h3>
+<p>
+  It's a strange specification. The filehandle passed to the print function is not the first argument. There is no comma behind the file handle.
+</p>
+<pre>
+# $fh is not the first argument.
+print $fh $output;
+</pre>
+<p>
+  This is called indirect object notation and has the same meaning as:
+</p>
+<pre>
+$fh-&gt; print($output);
+</pre>
+<h3> On Windows IO::Poll and select only work for sockets </h3>
+<p>
+  On Windows, asynchronous IO processing can only be done on sockets. Not for files.
+</p>
+<h3> On Windows, it doesn't work well if the argument of the glob function contains a space. </H3>
+<p>
+  On Windows, it doesn't work well if the argument of the glob function contains a space. To get this to work, you need to enclose it in double quotes.
+</p>
+<pre>
+my @files = glob('"C: / Documents and Settings / *. *"');
+</pre>
+<h3> If you need parentheses for the subroutine </h3>
+<p>
+  If the subroutine has already been declared, no parentheses are needed.
+</p>
+<pre>
 # If the subroutine has already been declared, no parentheses are needed.
-sub func1 {print $ _ [0]}
+sub func1 {print $_ [0]}
 func1'aaaa';
-&lt;/ pre&gt;
-
-The same is true when importing.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The same is true when importing.
+</p>
+<pre>
 # You don't need parentheses when you import
 use Carp'croak';
 
 croak'aaa';
-&lt;/ pre&gt;
-
-Parentheses are required if declared later.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Parentheses are required if declared later.
+</p>
+<pre>
 # Need parentheses if declared after
 func1 ('aaa');
 sub func1 {print 1}
-&lt;/ pre&gt;
-
-&lt;h3&gt; Anonymous subroutines exist from start to finish &lt;/ h3&gt;
-
-Anonymous subroutines that appear to be dynamically created are compiled at the beginning of the program and destroyed at the end of the program. The following code produces a subroutine reference, not the subroutine itself. Be careful as it can easily get mixed up.
-
-&lt;pre&gt;
+</pre>
+<h3> Anonymous subroutines exist from start to finish </h3>
+<p>
+  Anonymous subroutines that appear to be dynamically created are compiled at the beginning of the program and destroyed at the end of the program. The following code produces a subroutine reference, not the subroutine itself. Be careful as it can easily get mixed up.
+</p>
+<pre>
 {
   # What is generated is a subroutine reference, not the subroutine itself
-  my $ sub = sub {
+  my $sub = sub {
     ...
   }
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Regular expression list context &lt;/ h3&gt;
-
-If you want to get a part of the matched character using &lt;a href="/blog/20100827127859.html"&gt; regular expression &lt;/a&gt;, write as follows in combination with the if statement.
-
-&lt;pre&gt;
-if ($ str = ~ / regular expression /) {
-  my $ match1 = $ 1;
-  my $ match2 = $ 2;
+</pre>
+<h3> Regular expression list context </h3>
+<p>
+  If you want to get a part of the matched character using <a href="/blog/20100827127859.html"> regular expression</a>, write as follows in combination with the if statement.
+</p>
+<pre>
+if ($str = ~ / regular expression /) {
+  my $match1 = $1;
+  my $match2 = $2;
 }
-&lt;/ pre&gt;
-
-Another way to write it is to evaluate the regular expression in the list context to get the matched characters.
-
-&lt;pre&gt;
-my ($ match1, $ match2) = $ str = ~ / regular expression /;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Change the enclosing character of the regular expression &lt;/ h3&gt;
-
-Normally, the regular expression is written as follows.
-
-&lt;pre&gt;
-$ str = ~ / regular expression /
-&lt;/ pre&gt;
-
-There is another way of writing that has the same meaning. Using m has the same meaning as above.
-
-&lt;pre&gt;
-$ str = ~ m / regular expression /;
-&lt;/ pre&gt;
-
-The reason for this is that you can change the regex enclosing character if you find it very difficult to escape when there are a lot of "/" s in the regex. This is an example of changing the enclosing character to "#".
-
-&lt;pre&gt;
-$ str = ~ m # http://aaa.com#;
-&lt;/ pre&gt;
-
-&lt;h3&gt; ord function is an abbreviation for ordinal &lt;/ h3&gt;
-
-The ord function that returns a code point when a character string is passed is an abbreviation for ordinal. This means ordinal when translated into Japanese. By the way, the paired chr function converts it to a character when you pass a code point.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Another way to write it is to evaluate the regular expression in the list context to get the matched characters.
+</p>
+<pre>
+my ($match1, $match2) = $str = ~ / regular expression /;
+</pre>
+<h3> Change the enclosing character of the regular expression </h3>
+<p>
+  Normally, the regular expression is written as follows.
+</p>
+<pre>
+$str = ~ / regular expression /
+</pre>
+<p>
+  There is another way of writing that has the same meaning. Using m has the same meaning as above.
+</p>
+<pre>
+$str = ~ m / regular expression /;
+</pre>
+<p>
+  The reason for this is that you can change the regex enclosing character if you find it very difficult to escape when there are a lot of "/" s in the regex. This is an example of changing the enclosing character to "#".
+</p>
+<pre>
+$str = ~ m # http://aaa.com#;
+</pre>
+<h3> ord function is an abbreviation for ordinal </h3>
+<p>
+  The ord function that returns a code point when a character string is passed is an abbreviation for ordinal. This means ordinal when translated into Japanese. By the way, the paired chr function converts it to a character when you pass a code point.
+</p>
+<pre>
 ord function &lt;-&gt; chr function
-&lt;/ pre&gt;
-
-&lt;h3&gt; or is read in English as "if the left side is not true". &lt;/ h3&gt;
-
-Although or is originally a logical operator, it is often used for conditional branching without being used as a logical operator.
-
-&lt;pre&gt;
+</pre>
+<h3> or is read in English as "if the left side is not true". </h3>
+<p>
+  Although or is originally a logical operator, it is often used for conditional branching without being used as a logical operator.
+</p>
+<pre>
 A or B
-&lt;/ pre&gt;
-
-Perl's or operator has the characteristic that if the left side (A) is true, "A or B" will be true regardless of the result of the right side (B), so the right side will not be executed. This feature is used when it is used for conditional branching.
-
-That is, the left sideIf (A) is true, the right-hand side (B) is executed, and if the left-hand side (A) is false, the right-hand side (B) is executed. When read in English, it can be read as "If the left side (A) is not true, the right side (B) is effective".
-
-&lt;h3&gt; Write the configuration file in Perl &lt;/ h3&gt;
-
-It is convenient to write the configuration file in Perl. Use &lt;a href="/blog/20090208123289.html"&gt; do &lt;/a&gt; to load the configuration file.
-
-&lt;pre&gt;
-my $ conf_file = "app.conf";
-my $ conf = do $ conf_file
-  or die qq / Can't load config file "$ conf_file": $! $ @ /;
-&lt;/ pre&gt;
-
-The contents of the configuration file.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Perl's or operator has the characteristic that if the left side (A) is true, "A or B" will be true regardless of the result of the right side (B), so the right side will not be executed. This feature is used when it is used for conditional branching.
+</p>
+<p>
+  That is, the left sideIf (A) is true, the right-hand side (B) is executed, and if the left-hand side (A) is false, the right-hand side (B) is executed. When read in English, it can be read as "If the left side (A) is not true, the right side (B) is effective".
+</p>
+<h3> Write the configuration file in Perl </h3>
+<p>
+  It is convenient to write the configuration file in Perl. Use <a href="/blog/20090208123289.html"> do</a> to load the configuration file.
+</p>
+<pre>
+my $conf_file = "app.conf";
+my $conf = do $conf_file
+  or die qq / Can't load config file "$conf_file": $! $@ /;
+</pre>
+<p>
+  The contents of the configuration file.
+</p>
+<pre>
 {
   name =&gt;'Foo',
   number =&gt; 9
 }
-&lt;/ pre&gt;
-
-If the file is not read or parsed successfully, the undefined value will be returned. If the file name does not exist, $! Will be set, and if the Perl source code fails to load, $ @ will be set to the error content.
-
-For some reason, I used to write configuration files in XML or JSON, but when I think about it, it's easiest to write in Perl.
-
-Please note that you should not use do to read anything other than the configuration file you wrote yourself. Otherwise there is a risk that arbitrary scripts will be executed.
+</pre>
+<p>
+  If the file is not read or parsed successfully, the undefined value will be returned. If the file name does not exist, $! Will be set, and if the Perl source code fails to load, $@ will be set to the error content.
+</p>
+<p>
+  For some reason, I used to write configuration files in XML or JSON, but when I think about it, it's easiest to write in Perl.
+</p>
+<p>
+  Please note that you should not use do to read anything other than the configuration file you wrote yourself. Otherwise there is a risk that arbitrary scripts will be executed.
+</p>
 
   </div>
   <div class="bottom">

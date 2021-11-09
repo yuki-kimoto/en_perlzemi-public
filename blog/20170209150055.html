@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop = "name"> XS </ span> </a>
+        <span itemprop = "name"> XS </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20170209150055.html"> Create an XS module </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20170209150055.html"> Create an XS module </a></h2>
 <p>
   A C language (or C ++) function created so that it can be called from Perl is called an extension. Generally, it seems that it is often collectively called XS, so I will call it XS. I would like to write the flow from creating an XS module to creating a module to call from Perl. The work flow is as follows. Twice
 </p>
@@ -99,25 +99,25 @@
 <ol>
   <li>
     Creating an XS file
-  </ li>
+  </li>
   <li>
     Generate C language source file from XS file
-  </ li>
+  </li>
   <li>
     Generate a dynamic link library from a C language source file
-  </ li>
+  </li>
   <li>
     Creating a Perl module to call a dynamic link library
-  </ li>
-</ ol>
+  </li>
+</ol>
 <p>
   If you don't understand C language at all, we offer the following courses.
 </p>
 <ul>
-  <li> <a href="https://clanguage.perlclub.net/"> Introduction to C language for Perl XS users </a> </ li>
-</ ul>
-<h3> Flow of XS module creation </ h3>
-<h4> Create XS file </ h4>
+  <li> <a href="https://clanguage.perlclub.net/"> Introduction to C language for Perl XS users</a> </li>
+</ul>
+<h3> Flow of XS module creation </h3>
+<h4> Create XS file </h4>
 <p>
   The first is to create an XS file. The extension is (.xs). The file contains the C language source code and XSUB. XSUB is written in the XS language and is very similar to C functions. Think of it as writing a C language function in substance.
 </p>
@@ -135,185 +135,194 @@ Return value
 Function name
 Mold
 Processing (the processing part is C language)
-&lt;/ pre&gt;
-
-&lt;h4&gt; Generate C language source file from XS file &lt;/ h4&gt;
-
-Convert the XS file to a C language source file using a program called xsubpp. At this time, a definition called typemap is used to convert the types of Perl in C language to each other. The typemap is included in the ExtUtils :: MakeMaker module.
-
-&lt;pre&gt;
+</pre>
+<h4> Generate C language source file from XS file </h4>
+<p>
+  Convert the XS file to a C language source file using a program called xsubpp. At this time, a definition called typemap is used to convert the types of Perl in C language to each other. The typemap is included in the ExtUtils::MakeMaker module.
+</p>
+<pre>
                         xsubpp
-XS file + typemap ------------&gt; C language source file
-&lt;/ pre&gt;
-
-With the XS language, you often don't have to write the C and Perl type conversion process yourself. xsubpp will refer to the typemap file and automatically add the conversion process. You can also write the conversion process yourself or extend the typemap.
-
-&lt;h4&gt; Dynamic link library generation &lt;/ h4&gt;
-
-C language source files are compiled using a C compiler (such as gcc) and converted to a dynamic link library (such as * .so).
-
-&lt;pre&gt;
+XS file + typemap - -- -- -- -&gt; C language source file
+</pre>
+<p>
+  With the XS language, you often don't have to write the C and Perl type conversion process yourself. xsubpp will refer to the typemap file and automatically add the conversion process. You can also write the conversion process yourself or extend the typemap.
+</p>
+<h4> Dynamic link library generation </h4>
+<p>
+  C language source files are compiled using a C compiler (such as gcc) and converted to a dynamic link library (such as * .so).
+</p>
+<pre>
                        C compiler
-C language source file ------------------&gt; Dynamic link library
-&lt;/ pre&gt;
-
-A dynamic link library is a library that can be called dynamically. Normally, the library is created in this format.
-
-&lt;h4&gt; Creating a Perl module to call a dynamic link library &lt;/ h4&gt;
-
-Finally, create a Perl module to call the dynamic link library. A module called XSLoader allows you to load a dynamic link library and call the functions written in the dynamic link library as Perl functions.
-
-&lt;pre&gt;
+C language source file - -- -- -- -- -- -&gt; Dynamic link library
+</pre>
+<p>
+  A dynamic link library is a library that can be called dynamically. Normally, the library is created in this format.
+</p>
+<h4> Creating a Perl module to call a dynamic link library </h4>
+<p>
+  Finally, create a Perl module to call the dynamic link library. A module called XSLoader allows you to load a dynamic link library and call the functions written in the dynamic link library as Perl functions.
+</p>
+<pre>
 package Your Package;
 use XSLoader;
 
-XSLoader :: load'YourPackage', $ YourPackage :: VERSION;
-&lt;/ pre&gt;
-
-XSLoader loads the dynamic link library under the directory auto in the search path contained in @INC. The dynamic link library has the extension dll on Windows and so on Linux.
-
-&lt;h4&gt; To actually create an XS module &lt;/ h4&gt;
-
-Make sure to remember the above flow. When creating an XS module, the flow is the same no matter what you create. All the programmer needs to focus on is creating the XS file. Most of the rest of the work can be automated, so creating a simple XS module is not difficult.
-
-However, generally speaking, creating an XS module is difficult. This is because it requires a large amount of not-so-easy peripheral knowledge such as "XS language", "typemap", "Perl API", "make", "C compiler", "linker", and "ExtUtils :: MakeMaker". Therefore, it is important to first grasp the basics firmly and then acquire peripheral knowledge.
-
-&lt;h3&gt; Create XS module --h2xs command &lt;/ h3&gt;
-
-Use the command &lt;b&gt; h2xs &lt;/ b&gt; to create an XS module.
-
-&lt;pre&gt;
+XSLoader::load'YourPackage', $YourPackage::VERSION;
+</pre>
+<p>
+  XSLoader loads the dynamic link library under the directory auto in the search path contained in @INC. The dynamic link library has the extension dll on Windows and so on Linux.
+</p>
+<h4> To actually create an XS module </h4>
+<p>
+  Make sure to remember the above flow. When creating an XS module, the flow is the same no matter what you create. All the programmer needs to focus on is creating the XS file. Most of the rest of the work can be automated, so creating a simple XS module is not difficult.
+</p>
+<p>
+  However, generally speaking, creating an XS module is difficult. This is because it requires a large amount of not-so-easy peripheral knowledge such as "XS language", "typemap", "Perl API", "make", "C compiler", "linker", and "ExtUtils::MakeMaker". Therefore, it is important to first grasp the basics firmly and then acquire peripheral knowledge.
+</p>
+<h3> Create XS module - h2xs command </h3>
+<p>
+  Use the command <b> h2xs </b> to create an XS module.
+</p>
+<pre>
 # h2xs command
 h2xs [optional] C header file
-&lt;/ pre&gt;
-
-This command originally creates an XS module from a C header file.
-That's why it's named h2xs (that is, it means "C header file to XS"), but it can also be used to simply create a template for the XS module.
-
-Run h2xs with the following options to create an XS module.
-&lt;pre&gt;
-#Creating an XS module
+</pre>
+<p>
+  This command originally creates an XS module from a C header file.
+</p>
+<p>
+  That's why it's named h2xs (that is, it means "C header file to XS"), but it can also be used to simply create a template for the XS module.
+</p>
+<p>
+  Run h2xs with the following options to create an XS module.
+</p>
+<pre>
+# Creating an XS module
 h2xs -A -n SomeModule
-&lt;/ pre&gt;
-"-A" is an option that omits the auto-loading function. When creating an XS module, the autoloading function is usually omitted. Specify the name of the XS module with "-n".
-
-This command creates a directory named "SomeModule" in the current directory.
-
-&lt;h4&gt; Module configuration &lt;/ h4&gt;
-
-The created module has the following structure.
-
-&lt;pre&gt;
+</pre>
+<p>
+  "-A" is an option that omits the auto-loading function. When creating an XS module, the autoloading function is usually omitted. Specify the name of the XS module with "-n".
+</p>
+<p>
+  This command creates a directory named "SomeModule" in the current directory.
+</p>
+<h4> Module configuration </h4>
+<p>
+  The created module has the following structure.
+</p>
+<pre>
 Changes
 SomeModule.xs
-lib --SomeModule.pm
+lib - SomeModule.pm
 Makefile.PL
 MANIFEST
 ppport.h
 README
-t --SomeModule.t
-&lt;/ pre&gt;
-
-I would like to briefly explain the role of each file.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    Changes --Describes the change history of the module.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    SomeModule.xs --XS file. Write XSUB in XS language.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    lib --Contains Perl modules. This module calls a library written in C language.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Makefile.PL --A Perl script for generating makefiles for compiling C source files, installing modules, etc.
-  &lt;/ li&gt;
-  &lt;li&gt;
+t - SomeModule.t
+</pre>
+<p>
+  I would like to briefly explain the role of each file.
+</p>
+<ul>
+  <li>
+    Changes - Describes the change history of the module.
+  </li>
+  <li>
+    SomeModule.xs - XS file. Write XSUB in XS language.
+  </li>
+  <li>
+    lib - Contains Perl modules. This module calls a library written in C language.
+  </li>
+  <li>
+    Makefile.PL - A Perl script for generating makefiles for compiling C source files, installing modules, etc.
+  </li>
+  <li>
     Describes the files required when distributing the MANIFEST -XS module.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    ppport.h --C header file for compatibility with older Perl.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
+    ppport.h - C header file for compatibility with older Perl.
+  </li>
+  <li>
     README-A brief description of the module.
-  &lt;/ li&gt;
-  &lt;li&gt;
-    t --Stores test scripts.
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+  </li>
+  <li>
+    t - Stores test scripts.
+  </li>
+</ul>
+<p>
+  The most important of these is "SomeModule.xs". When writing the simplest XS, all you need to write is "SomeModule.xs". To do something a little difficult, you need to learn how to write Makefile.PL. It may be added to the Perl module file included under lib. You also need to write the Changes, MANIFEST, and README when packaging for distribution. You will also need to write a test script.
+</p>
+<p>
+  How to write Makefile.PL is explained in detail below.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20150725143778.html"> How to write Makefile.PL - Learn ExtUtil::MakeMaker</a>
+  </li>
+</ul>
+<h4> XS file template </h4>
+<p>
+  Now try opening SomeModule.xs first. The following template should be generated.
+</p>
+<pre>
+# include "EXTERN.h"
+# include "perl.h"
+# include "XSUB.h"
 
-The most important of these is "SomeModule.xs". When writing the simplest XS, all you need to write is "SomeModule.xs". To do something a little difficult, you need to learn how to write Makefile.PL. It may be added to the Perl module file included under lib. You also need to write the Changes, MANIFEST, and README when packaging for distribution. You will also need to write a test script.
-
-How to write Makefile.PL is explained in detail below.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20150725143778.html"&gt; How to write Makefile.PL --Learn ExtUtil :: MakeMaker &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; XS file template &lt;/ h4&gt;
-
-Now try opening SomeModule.xs first. The following template should be generated.
-
-&lt;pre&gt;
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-
-#include "ppport.h"
+# include "ppport.h"
 
 
 MODULE = SomeModule PACKAGE = SomeModule
-&lt;/ pre&gt;
-
-You can write C language at the beginning of the XS file. "#Include" EXTERN.h "" is a C language description. For those who have never written C language, I will explain a little. "#Include" is for including other files into the source code. In C language, instructions starting with # are called directives and are instructions for the preprocessor. A preprocessor is a program that makes changes to the source code according to the directives before compiling the source code.
-
-&lt;pre&gt;
-#include "EXTERN.h"
-&lt;/ pre&gt;
-
-The description means that the C language header file EXTERN.h is included in the source code.
-Files with the extension ".h" are C header files. A header file is a file that describes C language function declarations and macro definitions. You need to include it if you want to use the function written in the header in the C language source code.
-
-I will briefly explain the C language header file required when writing an XS file.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    EXTERN.h --Perl Global VariablesHeader file required to refer to the number
-  &lt;/ li&gt;
-  &lt;li&gt;
-    perl.h --Perl header file
-  &lt;/ li&gt;
-  &lt;li&gt;
-    XSUB.h --Header file for XSUB
-  &lt;/ li&gt;
-  &lt;li&gt;
-    ppport.h --Header file to absorb API differences between Perl versions
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-The description in XS language starts from the following description.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can write C language at the beginning of the XS file. "#Include" EXTERN.h "" is a C language description. For those who have never written C language, I will explain a little. "#Include" is for including other files into the source code. In C language, instructions starting with # are called directives and are instructions for the preprocessor. A preprocessor is a program that makes changes to the source code according to the directives before compiling the source code.
+</p>
+<pre>
+# include "EXTERN.h"
+</pre>
+<p>
+  The description means that the C language header file EXTERN.h is included in the source code.
+</p>
+<p>
+  Files with the extension ".h" are C header files. A header file is a file that describes C language function declarations and macro definitions. You need to include it if you want to use the function written in the header in the C language source code.
+</p>
+<p>
+  I will briefly explain the C language header file required when writing an XS file.
+</p>
+<ul>
+  <li>
+    EXTERN.h - Perl Global VariablesHeader file required to refer to the number
+  </li>
+  <li>
+    perl.h - Perl header file
+  </li>
+  <li>
+    XSUB.h - Header file for XSUB
+  </li>
+  <li>
+    ppport.h - Header file to absorb API differences between Perl versions
+  </li>
+</ul>
+<p>
+  The description in XS language starts from the following description.
+</p>
+<pre>
 MODULE = SomeModule PACKAGE = SomeModule
-&lt;/ pre&gt;
-
-MODULE is used to specify the beginning of the XS language and the namespace of the function to be defined. Please note that this is different from the Perl package. Originally, C language is a language that does not have a namespace. If you had defined a function with a simple name, you would be in conflict. You will define a function called XSUB in the XS file, but the XSUB function name can be simple. For example, if you have a function that doubles a number, you could name it twice. However, if you use this as it is in C language, name conflicts will occur. So this function named twice will be replaced with the name "XS_SomeModule_twice" when processed by xsubpp. MODULE is needed to provide a non-collision mechanism.
-
-PACKAGE is the Perl package name. In other words, the following correspondence can be made between Perl and C language functions by describing MODULE and PACKAGE. Creating such a correspondence so that Perl can call a C language function is called bootstrap.
-
-&lt;pre&gt;
+</pre>
+<p>
+  MODULE is used to specify the beginning of the XS language and the namespace of the function to be defined. Please note that this is different from the Perl package. Originally, C language is a language that does not have a namespace. If you had defined a function with a simple name, you would be in conflict. You will define a function called XSUB in the XS file, but the XSUB function name can be simple. For example, if you have a function that doubles a number, you could name it twice. However, if you use this as it is in C language, name conflicts will occur. So this function named twice will be replaced with the name "XS_SomeModule_twice" when processed by xsubpp. MODULE is needed to provide a non-collision mechanism.
+</p>
+<p>
+  PACKAGE is the Perl package name. In other words, the following correspondence can be made between Perl and C language functions by describing MODULE and PACKAGE. Creating such a correspondence so that Perl can call a C language function is called bootstrap.
+</p>
+<pre>
 Perl C language
-SomeModule :: twice ---&gt; XS_SomeModule_twice
-&lt;/ pre&gt;
-
-&lt;h4&gt; XSUB description &lt;/ h4&gt;
-
-From here, it is the part that describes the XS language. Let's write XSUB using the XS language. XSUB is a description of a function using the XS language, which is very similar to a function in the C language. Below is a function that doubles the received integer.
-
-&lt;pre&gt;
+SomeModule::twice - -&gt; XS_SomeModule_twice
+</pre>
+<h4> XSUB description </h4>
+<p>
+  From here, it is the part that describes the XS language. Let's write XSUB using the XS language. XSUB is a description of a function using the XS language, which is very similar to a function in the C language. Below is a function that doubles the received integer.
+</p>
+<pre>
 void
 twice (...)
   PPCODE:
@@ -334,66 +343,70 @@ twice (...)
   // Specify the number of return values ​​and return
   XSRETURN (1);
 }
-&lt;/ pre&gt;
-
-Since the number of arguments is assigned to the variable called items, it can be used for checking. You can use a function called croak to print an error message and exit the program.
-
-What you have to write in XS is the work of type conversion. Converts the Perl type received as an argument to the C language type. Then, it processes in C language and converts the C language type to Perl type again. Type conversion will be explained in detail later.
-
-Also, let's just remember the following shapes.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Since the number of arguments is assigned to the variable called items, it can be used for checking. You can use a function called croak to print an error message and exit the program.
+</p>
+<p>
+  What you have to write in XS is the work of type conversion. Converts the Perl type received as an argument to the C language type. Then, it processes in C language and converts the C language type to Perl type again. Type conversion will be explained in detail later.
+</p>
+<p>
+  Also, let's just remember the following shapes.
+</p>
+<pre>
 void
 Function name (...)
   PPCODE:
 {
   
 }
-&lt;/ pre&gt;
-
-The Perl types in XS are explained in detail below, so please refer to them.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170208150055.html"&gt; Mutual conversion between Perl type and C type in XS &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Compile and run &lt;/ h4&gt;
-
-As explained so far, in order to use it from a Perl module, it was necessary to process the XS file with xsubpp, compile the C language source file, and create a dynamic link library. However, this process can be automated by a program called make. Makefile.PL will generate a makefile that automates this task. So just run the following command:
-
-&lt;pre&gt;
-#Generate makefile
+</pre>
+<p>
+  The Perl types in XS are explained in detail below, so please refer to them.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170208150055.html"> Mutual conversion between Perl type and C type in XS</a>
+  </li>
+</ul>
+<h4> Compile and run </h4>
+<p>
+  As explained so far, in order to use it from a Perl module, it was necessary to process the XS file with xsubpp, compile the C language source file, and create a dynamic link library. However, this process can be automated by a program called make. Makefile.PL will generate a makefile that automates this task. So just run the following command:
+</p>
+<pre>
+# Generate makefile
 perl Makefile.PL
 
 # xsubpp processing and compilation
 make
-&lt;/ pre&gt;
-
-If it does not succeed, there may be a mistake in the XS language. Once this is done, a directory called blib will be created that contains the dynamic link library and Perl modules.
-
-Let's write a script that calls the module. Create a file called test.pl in the same directory where the XS file is located.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If it does not succeed, there may be a mistake in the XS language. Once this is done, a directory called blib will be created that contains the dynamic link library and Perl modules.
+</p>
+<p>
+  Let's write a script that calls the module. Create a file called test.pl in the same directory where the XS file is located.
+</p>
+<pre>
 # test.pl
 use SomeModule;
-print SomeModule :: twice (2);
-&lt;/ pre&gt;
-
-You can run this script as follows: In order to load a module for blib, you need to load a module called blib with the -M option.
-
-&lt;pre&gt;
+print SomeModule::twice (2);
+</pre>
+<p>
+  You can run this script as follows: In order to load a module for blib, you need to load a module called blib with the -M option.
+</p>
+<pre>
 # Execute a function written in C language
 perl -Mblib test.pl
-&lt;/ pre&gt;
-
-The output result is as follows.
-&lt;pre&gt;
+</pre>
+<p>
+  The output result is as follows.
+</p>
+<pre>
 Four
-&lt;/ pre&gt;
-
-This completes the basics of XS. If you arrange this, you can apply XS.
+</pre>
+<p>
+  This completes the basics of XS. If you arrange this, you can apply XS.
+</p>
 
   </div>
   <div class="bottom">

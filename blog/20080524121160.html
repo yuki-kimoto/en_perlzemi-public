@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Create a multi-level directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To create a multi-level directory, use the  mkpath  function of the  File :: Path  module.">
+<meta name="description" content="To create a multi-level directory, use the  mkpath  function of the  File::Path module.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Create a multi-level directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To create a multi-level directory, use the  mkpath  function of the  File :: Path  module." />
+<meta name="twitter:description" content="To create a multi-level directory, use the  mkpath  function of the  File::Path module." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -61,22 +61,22 @@
   <div class="middle">
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </ span> </a>
+    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161126148016.html"> <span itemprop = "name"> File operation </ span> </a>
+    <a itemprop="item" href="/blog/20161126148016.html"> <span itemprop = "name"> File operation </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080524121160.html"> Create a multi-level directory </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080524121160.html"> Create a multi-level directory </a></h2>
 <p>
-  To create a multi-level directory, use the <strong> mkpath </ strong> function of the <a href="/blog/20100409127089.html"> File :: Path </a> module.
+  To create a multi-level directory, use the <strong> mkpath </strong> function of the <a href="/blog/20100409127089.html"> File::Path</a> module.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,27 +95,27 @@
 
 
 <pre>
-use File :: Path'mkpath';
-mkpath $ dir_multi_level;
-&lt;/ pre&gt;
-
-To create a multi-level directory, use the mkpath function of the File :: Path module.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample to create a multi-level directory.
-
-&lt;pre&gt;
+use File::Path'mkpath';
+mkpath $dir_multi_level;
+</pre>
+<p>
+  To create a multi-level directory, use the mkpath function of the File::Path module.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample to create a multi-level directory.
+</p>
+<pre>
 use strict;
 use warnings;
-use File :: Path'mkpath';
+use File::Path'mkpath';
 
-#Create a multi-level directory.
-my $ dir_multi_level = "dir_20080524_ $$ / dir1";
+# Create a multi-level directory.
+my $dir_multi_level = "dir_20080524_ $$/ dir1";
 
-print "1: Create a multi-level directory. \ N";
-mkpath ($ dir_multi_level);
-&lt;/ pre&gt;
+print "1: Create a multi-level directory.\n";
+mkpath ($dir_multi_level);
+</pre>
 
   </div>
   <div class="bottom">

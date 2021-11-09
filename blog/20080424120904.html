@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080424120904.html"> caller function-get caller information </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080424120904.html"> caller function-get caller information </a></h2>
 <p>
-  You can use the <b> caller function </ b> to get the caller information.
+  You can use the <b> caller function </b> to get the caller information.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,96 +97,96 @@
 
 
 <p>
-  To get the calling package name, call the caller function in <a href="/blog/20180531152777.html"> scalar context </a>.
+  To get the calling package name, call the caller function in <a href="/blog/20180531152777.html"> scalar context</a>.
 </p>
 <p>
-  To get the calling package name, filename, and line number, call the caller function in <a href="/blog/20180530152777.html"> list context </a>.
+  To get the calling package name, filename, and line number, call the caller function in <a href="/blog/20180530152777.html"> list context</a>.
 </p>
 <pre>
 # package name
-my $ package_name = caller;
+my $package_name = caller;
 
-#Package name, file name, line number, subroutine name
-my ($ package_name, $ file_name, $ line) = caller;
-&lt;/ pre&gt;
-
-&lt;h4&gt; How to get the information of the higher hierarchy? &lt;/ H4&gt;
-
-To get the information of the higher hierarchy, give the caller function an argument indicating how many times to go up the hierarchy.
-
-&lt;pre&gt;
+# Package name, file name, line number, subroutine name
+my ($package_name, $file_name, $line) = caller;
+</pre>
+<h4> How to get the information of the higher hierarchy? </H4>
+<p>
+  To get the information of the higher hierarchy, give the caller function an argument indicating how many times to go up the hierarchy.
+</p>
+<pre>
     # 0 1 2 3 4
- my ($ package, $ filename, $ line, $ subroutine, $ hasargs,
+ my ($package, $filename, $line, $subroutine, $hasargs,
 
     # 5 6 7 8 9 10
-    $ wantarray, $ evaltext, $ is_require, $ hints, $ bitmask, $ hinthash)
-  = caller ($ i);
-&lt;/ pre&gt;
-
-You can also get additional subroutine names and so on.
-
-See &lt;a href="http://perldoc.jp/func/caller"&gt; official documentation &lt;/a&gt; for details.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample caller function.
-
-&lt;pre&gt;
+    $wantarray, $evaltext, $is_require, $hints, $bitmask, $hinthash)
+  = caller($i);
+</pre>
+<p>
+  You can also get additional subroutine names and so on.
+</p>
+<p>
+  See <a href="http://perldoc.jp/func/caller"> official documentation</a> for details.
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample caller function.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Get the name of the function you are executing
-#caller
+# caller
 
-print "1: Get the name of the function you are executing. \ N";
+print "1: Get the name of the function you are executing.\n";
 func_name ();
 
 sub func_name {
-  my $ this_func_name = (caller 0) [3];
+  my $this_func_name = (caller 0) [3];
   If you specify 0 as the argument of the # caller function
-  #You can get information about your own function.
+  # You can get information about your own function.
   # The function name is in the 4th (element number is 3).
-  print $ this_func_name, "\ n";
-  print "\ n";
+  print $this_func_name, "\n";
+  print "\n";
 }
 
-print "2: Get the function name without the package name. \ N";
+print "2: Get the function name without the package name.\n";
 func_name_none_package ();
 
 sub func_name_none_package {
-  my $ this_func_name = (caller 0) [3];
-  $ this_func_name = ~ s /. *:: //;
-  print $ this_func_name, "\ n \ n";
+  my $this_func_name = (caller 0) [3];
+  $this_func_name = ~ s /. *:: //;
+  print $this_func_name, "\n\n";
 }
 
-print "3: Make function name acquisition into a subroutine. \ N";
+print "3: Make function name acquisition into a subroutine.\n";
 test1 ();
 
 sub test1 {
-  print get_func_name (). "\ n";
+  print get_func_name (). "\n";
 }
 
 sub get_func_name {
   If 1 is specified as the argument of the # caller function
   # You can get the information of the calling function.
-  my $ this_func_name = (caller 1) [3];
-  $ this_func_name = ~ s /. *:: //;
-  return $ this_func_name;
+  my $this_func_name = (caller 1) [3];
+  $this_func_name = ~ s /. *:: //;
+  return $this_func_name;
 }
-&lt;/ pre&gt;
-
-Execution result
-
-&lt;pre&gt;
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 1: Get the name of the function you are executing.
-main :: func_name
+main::func_name
 
 2: Get the function name without the package name.
 func_name_none_package
 
 3: Make the function name acquisition a subroutine.
 test1
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

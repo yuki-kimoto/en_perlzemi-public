@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span>
-    </a>
+      <span itemprop = "name"> Perl </span>
+</a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop = "name"> Mojolicious </ span>
-    </a>
+      <span itemprop = "name"> Mojolicious </span>
+</a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20110417130624.html"> HTML basics for creating web applications </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20110417130624.html"> HTML basics for creating web applications </a></h2>
 <p>
   I will explain the basics of HTML as a prerequisite for creating a web application in Perl. With this much knowledge, I aimed for something that would allow me to write HTML freely. I will mainly explain the role of tags. Explains normal tags, form tags, tags used in the header part, etc. It also touches on how to handle Japanese and how to use CSS and JavaScript. The screen layout and colors will be explained when explaining CSS.
 </p>
@@ -94,7 +94,7 @@
 </div>
 
 
-<h3> Basic foundation </ h3>
+<h3> Basic foundation </h3>
 <p>
   HTML format.
 </p>
@@ -103,556 +103,521 @@
 &lt;html&gt;
 
  &lt;head&gt;
-  &lt;title&gt; Title &lt;/ title&gt;
- &lt;/ head&gt;
+  &lt;title&gt; Title &lt;/title&gt;
+ &lt;/head&gt;
 
  &lt;body&gt;
   Contents
- &lt;/ body&gt;
+ &lt;/body&gt;
 
-&lt;/ html&gt;
-&lt;/ pre&gt;
-In HTML, documents are described using tags surrounded by "&lt;" and "&gt;". HTML documents start with "&lt;html&gt;" and end with "&lt;/ html&gt;". Write meta information such as the title of the HTML document between "&lt;head&gt;" and "&lt;/ head&gt;". Describe the content of the document displayed on the screen between "&lt;doby&gt;" and "&lt;/ body&gt;".
-
-Remember that &lt;! DOCTYPE html&gt; is called a document type and is written at the beginning for the time being.
-
-&lt;h4&gt; Character reference &lt;/ h4&gt;
-
-Characters such as "&lt;" and "&gt;" cannot be used as they are in HTML. You can write these characters using a method called character references.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &amp; amp; quot;
-    &lt;/ td&gt;
-    &lt;td&gt;
+&lt;/html&gt;
+</pre>
+<p>
+  In HTML, documents are described using tags surrounded by "<" and ">". HTML documents start with "<html>" and end with "</html>". Write meta information such as the title of the HTML document between "<head>" and "</head>". Describe the content of the document displayed on the screen between "<doby>" and "</body>".
+</p>
+<p>
+  Remember that <! DOCTYPE html> is called a document type and is written at the beginning for the time being.
+</p>
+<h4> Character reference </h4>
+<p>
+  Characters such as "<" and ">" cannot be used as they are in HTML. You can write these characters using a method called character references.
+</p>
+<table>
+  <tr>
+    <td>
+      & amp; quot;
+    </td>
+    <td>
       "
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &amp; amp; amp;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &amp;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &amp; amp; lt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &amp; amp; gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &amp; amp; nbsp;
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      & amp; amp;
+    </td>
+    <td>
+      &
+    </td>
+  </tr>
+  <tr>
+    <td>
+      & amp; lt;
+    </td>
+    <td>
+      <
+    </td>
+  </tr>
+  <tr>
+    <td>
+      & amp; gt;
+    </td>
+    <td>
+      >
+    </td>
+  </tr>
+  <tr>
+    <td>
+      & amp; nbsp;
+    </td>
+    <td>
       space
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-In HTML, no matter how many spaces you write, they will be truncated to one space, so use "&amp; nbsp;".
-
-&lt;h3&gt; Tags used in the body part &lt;/ h3&gt;
-
-&lt;h4&gt; Comments &lt;/ h4&gt;
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<p>
+  In HTML, no matter how many spaces you write, they will be truncated to one space, so use "& nbsp;".
+</p>
+<h3> Tags used in the body part </h3>
+<h4> Comments </h4>
+<pre>
 &lt;!-Comment-&gt;
-&lt;/ pre&gt;
-
-Comments are from "&lt;!-" To "-&gt;".
-
-&lt;h4&gt; Block element div &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;div&gt; something &lt;/ div&gt;
-&lt;/ pre&gt;
-
-Describe the block element. The characteristics of block elements are that line breaks occur before and after, and that they have width and height. By default, the area is expanded to fill the left and right sides of the screen. You can also use CSS to control the position of the characters inside.
-
-&lt;pre&gt;
-#Image of block element
-+ ------------------------------------------------- --------------- +
+</pre>
+<p>
+  Comments are from "<!-" To "->".
+</p>
+<h4> Block element div </h4>
+<pre>
+&lt;div&gt; something &lt;/div&gt;
+</pre>
+<p>
+  Describe the block element. The characteristics of block elements are that line breaks occur before and after, and that they have width and height. By default, the area is expanded to fill the left and right sides of the screen. You can also use CSS to control the position of the characters inside.
+</p>
+<pre>
+# Image of block element
++ - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- - +
 | |
 | Something |
 | |
-+ ------------------------------------------------- --------------- +
-+ ------------------------------------------------- --------------- +
++ - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- - +
++ - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- - +
 | |
 | Something |
 | |
-+ ------------------------------------------------- --------------- +
-&lt;/ pre&gt;
-
-&lt;h4&gt; Inline element span &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;span&gt; something &lt;/ span&gt;
-&lt;/ pre&gt;
-
-Describe the inline element. The feature of the inline element is that it flows to the left without line breaks until it reaches the right edge of the screen.
-
-&lt;pre&gt;
++ - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- - +
+</pre>
+<h4> Inline element span </h4>
+<pre>
+&lt;span&gt; something &lt;/span&gt;
+</pre>
+<p>
+  Describe the inline element. The feature of the inline element is that it flows to the left without line breaks until it reaches the right edge of the screen.
+</p>
+<pre>
 # Image of inline element
-+ ------ + + ------ +
++ - -- - + + - -- - +
 | Something | | Something |
-+ ------ + + ------ +
-&lt;/ pre&gt;
-
-&lt;h4&gt; Heading 1 h1 &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;h1&gt; Heading 1 &lt;/ h1&gt;
-&lt;/ pre&gt;
-
-It's a headline. You can use the tags freely, but they are generally used to describe the title of the page. It will be displayed larger. h1 is a block element.
-
-&lt;h4&gt; Heading 2 h2 &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;h2&gt; Heading 2 &lt;/ h2&gt;
-&lt;/ pre&gt;
-
-It's a headline. It is displayed smaller than h1. Generally, it is used as a title when there is an individual article. h2 is a block element.
-
-&lt;h4&gt; Heading 3 h3 &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;h3&gt; Heading 3 &lt;/ h3&gt;
-&lt;/ pre&gt;
-
-It's a headline. It is displayed smaller than h2. h3 is a block element.
-
-&lt;h4&gt; Heading 4 h4 &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;h4&gt; Heading 4 &lt;/ h4&gt;
-&lt;/ pre&gt;
-
-It's a headline. It is displayed smaller than h3. h4 is a block element.
-
-&lt;h4&gt; Heading 5 h5 &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;h5&gt; Heading 5 &lt;/ h5&gt;
-&lt;/ pre&gt;
-
-It's a headline. It is displayed smaller than h4. h5 is a block element.
-
-&lt;h4&gt; Heading 6 h6 &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;h6&gt; Heading 6 &lt;/ h6&gt;
-&lt;/ pre&gt;
-
-It's a headline. It is displayed smaller than h5. h6 is a block element.
-
-&lt;h4&gt; Paragraph p &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;p&gt; Paragraph &lt;/ p&gt;
-&lt;/ pre&gt;
-
-Use the p tag to create a paragraph. p is a block element.
-
-&lt;h4&gt; Horizon hr &lt;/ h4&gt;
-
-&lt;pre&gt;
++ - -- - + + - -- - +
+</pre>
+<h4> Heading 1 h1 </h4>
+<pre>
+&lt;h1&gt; Heading 1 &lt;/h1&gt;
+</pre>
+<p>
+  It's a headline. You can use the tags freely, but they are generally used to describe the title of the page. It will be displayed larger. h1 is a block element.
+</p>
+<h4> Heading 2 h2 </h4>
+<pre>
+&lt;h2&gt; Heading 2 &lt;/h2&gt;
+</pre>
+<p>
+  It's a headline. It is displayed smaller than h1. Generally, it is used as a title when there is an individual article. h2 is a block element.
+</p>
+<h4> Heading 3 h3 </h4>
+<pre>
+&lt;h3&gt; Heading 3 &lt;/h3&gt;
+</pre>
+<p>
+  It's a headline. It is displayed smaller than h2. h3 is a block element.
+</p>
+<h4> Heading 4 h4 </h4>
+<pre>
+&lt;h4&gt; Heading 4 &lt;/h4&gt;
+</pre>
+<p>
+  It's a headline. It is displayed smaller than h3. h4 is a block element.
+</p>
+<h4> Heading 5 h5 </h4>
+<pre>
+&lt;h5&gt; Heading 5 &lt;/h5&gt;
+</pre>
+<p>
+  It's a headline. It is displayed smaller than h4. h5 is a block element.
+</p>
+<h4> Heading 6 h6 </h4>
+<pre>
+&lt;h6&gt; Heading 6 &lt;/h6&gt;
+</pre>
+<p>
+  It's a headline. It is displayed smaller than h5. h6 is a block element.
+</p>
+<h4> Paragraph p </h4>
+<pre>
+&lt;p&gt; Paragraph &lt;/p&gt;
+</pre>
+<p>
+  Use the p tag to create a paragraph. p is a block element.
+</p>
+<h4> Horizon hr </h4>
+<pre>
 &lt;hr&gt;
-&lt;/ pre&gt;
-
-Use the hr tag to draw a horizontal line. hr is a block element.
-
-&lt;h4&gt; Hyperlink a &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;a href="/other.html"&gt; Hyperlink &lt;/a&gt;
-&lt;/ pre&gt;
-
-It is a hyperlink. Specify the linked document in href. a is an inline element.
-
-If you click it, you will be taken to the hyperlinked page on the same screen. If you want to open the link on a new screen, specify "_blank" for target.
-
-&lt;pre&gt;
-&lt;a href="/other.html" target="_blank"&gt; Hyperlink &lt;/a&gt;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Emphasis strong &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;strong&gt; Highlight &lt;/ strong&gt;
-&lt;/ pre&gt;
-
-Use it for words you want to emphasize on the page. strong is an inline element.
-
-&lt;h4&gt; Image img &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the hr tag to draw a horizontal line. hr is a block element.
+</p>
+<h4> Hyperlink a </h4>
+<pre>
+&lt;a href="/other.html"&gt; Hyperlink&lt;/a&gt;
+</pre>
+<p>
+  It is a hyperlink. Specify the linked document in href. a is an inline element.
+</p>
+<p>
+  If you click it, you will be taken to the hyperlinked page on the same screen. If you want to open the link on a new screen, specify "_blank" for target.
+</p>
+<pre>
+&lt;a href="/other.html" target="_blank"&gt; Hyperlink&lt;/a&gt;
+</pre>
+<h4> Emphasis strong </h4>
+<pre>
+&lt;strong&gt; Highlight &lt;/strong&gt;
+</pre>
+<p>
+  Use it for words you want to emphasize on the page. strong is an inline element.
+</p>
+<h4> Image img </h4>
+<pre>
 &lt;img border = "0" src = "/ images / img001.gif" width = "128" height = "128" alt = "description"&gt;
-&lt;/ pre&gt;
-
-Use the img tag to display the image. Border is added by default, so specify 0 for border. Specify a link to the image in scr. Specify the width of the image in width and the height of the image in height. Describe the description of the image in alt. img is an inline element.
-
-&lt;h4&gt; Formatted text pre &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the img tag to display the image. Border is added by default, so specify 0 for border. Specify a link to the image in scr. Specify the width of the image in width and the height of the image in height. Describe the description of the image in alt. img is an inline element.
+</p>
+<h4> Formatted text pre </h4>
+<pre>
 use strict;
 use warnings;
 
 print "Hello World!";
-&lt;/ pre&gt;
-
-If you want to write formatted text, use the pre tag. Note that line breaks, spaces, etc. are displayed as they are, but "&lt;" and "&gt;" are interpreted as special characters and must be replaced with "&amp; lt;" and "&amp; gt;".
-
-&lt;h4&gt; Table table, tr, th, td &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you want to write formatted text, use the pre tag. Note that line breaks, spaces, etc. are displayed as they are, but "<" and ">" are interpreted as special characters and must be replaced with "& lt;" and "& gt;".
+</p>
+<h4> Table table, tr, th, td </h4>
+<pre>
 &lt;table border = "1" cellspacing = "0"&gt;
   &lt;tr&gt;
-    &lt;th&gt; First column header &lt;/ th&gt;
-    &lt;th&gt; Second column header &lt;/ th&gt;
-    &lt;th&gt; Third column header &lt;/ th&gt;
-  &lt;/ tr&gt;
+    &lt;th&gt; First column header &lt;/th&gt;
+    &lt;th&gt; Second column header &lt;/th&gt;
+    &lt;th&gt; Third column header &lt;/th&gt;
+  &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt; 1 row 1 column &lt;/ td&gt;
-    &lt;td&gt; 1 row 2 columns &lt;/ td&gt;
-    &lt;td&gt; 1 row 3 columns &lt;/ td&gt;
-  &lt;/ tr&gt;
+    &lt;td&gt; 1 row 1 column &lt;/td&gt;
+    &lt;td&gt; 1 row 2 columns &lt;/td&gt;
+    &lt;td&gt; 1 row 3 columns &lt;/td&gt;
+  &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt; 2 rows 1 columns &lt;/ td&gt;
-    &lt;td&gt; 2 rows 2 columns &lt;/ td&gt;
-    &lt;td&gt; 2 rows 3 columns &lt;/ td&gt;
-  &lt;/ tr&gt;
-&lt;/ table&gt;
-&lt;/ pre&gt;
-
-To create a table, use the above tags in combination. The table tag is on the outermost side. Column headers are described using the th tag. Columns are described using the tr tag. Each row in the column is described using the td tag.
-
-The border of the table tag is the thickness of the border. celspacing is a specification of the width between td. Set border to 1 and cellspacing to 0 for a typical looking table.
-
-&lt;h4&gt; Bold b &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;b&gt; Bold &lt;/ b&gt;
-&lt;/ pre&gt;
-
-Use the b tag to make the text bold. b is an inline element.
-
-&lt;h4&gt; Line break br &lt;/ h4&gt;
-
-&lt;pre&gt;
+    &lt;td&gt; 2 rows 1 columns &lt;/td&gt;
+    &lt;td&gt; 2 rows 2 columns &lt;/td&gt;
+    &lt;td&gt; 2 rows 3 columns &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<p>
+  To create a table, use the above tags in combination. The table tag is on the outermost side. Column headers are described using the th tag. Columns are described using the tr tag. Each row in the column is described using the td tag.
+</p>
+<p>
+  The border of the table tag is the thickness of the border. celspacing is a specification of the width between td. Set border to 1 and cellspacing to 0 for a typical looking table.
+</p>
+<h4> Bold b </h4>
+<pre>
+&lt;b&gt; Bold &lt;/b&gt;
+</pre>
+<p>
+  Use the b tag to make the text bold. b is an inline element.
+</p>
+<h4> Line break br </h4>
+<pre>
 &lt;br&gt;
-&lt;/ pre&gt;
-
-Use the br tag to break a line. In general, bIt is said that it is better to use div or p to start a new line than to use r.
-
-&lt;h3&gt; Ordered list ol, li &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the br tag to break a line. In general, bIt is said that it is better to use div or p to start a new line than to use r.
+</p>
+<h3> Ordered list ol, li </h3>
+<pre>
 &lt;ol&gt;
-  &lt;li&gt; Item 1 &lt;/ li&gt;
-  &lt;li&gt; Item 2 &lt;/ li&gt;
-  &lt;li&gt; Item 3 &lt;/ li&gt;
-&lt;/ ol&gt;
-&lt;/ pre&gt;
-
-Use the tags above to create an ordered list. Arrange the li tags inside the ol tags. The order is as follows.
-
-&lt;pre&gt;
+  &lt;li&gt; Item 1 &lt;/li&gt;
+  &lt;li&gt; Item 2 &lt;/li&gt;
+  &lt;li&gt; Item 3 &lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<p>
+  Use the tags above to create an ordered list. Arrange the li tags inside the ol tags. The order is as follows.
+</p>
+<pre>
 1. Item 1
 2. Item 2
 3. Item 3
-&lt;/ pre&gt;
-
-&lt;h3&gt; Unordered list ul, li &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<h3> Unordered list ul, li </h3>
+<pre>
 &lt;ul&gt;
-  &lt;li&gt; Item 1 &lt;/ li&gt;
-  &lt;li&gt; Item 2 &lt;/ li&gt;
-  &lt;li&gt; Item 3 &lt;/ li&gt;
-&lt;/ ul&gt;
-&lt;/ pre&gt;
-
-Use the above tags to create an unordered list. Arrange the li tags inside the ul tags. There is no order as shown below.
-
-&lt;pre&gt;
+  &lt;li&gt; Item 1 &lt;/li&gt;
+  &lt;li&gt; Item 2 &lt;/li&gt;
+  &lt;li&gt; Item 3 &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>
+  Use the above tags to create an unordered list. Arrange the li tags inside the ul tags. There is no order as shown below.
+</p>
+<pre>
 ・ Item 1
 ・ Item 2
 ・ Item 3
-&lt;/ pre&gt;
-
-&lt;h3&gt; Tags used in forms &lt;/ h3&gt;
-
-&lt;h4&gt; form form &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<h3> Tags used in forms </h3>
+<h4> form form </h4>
+<pre>
 &lt;form action = "/ register" method = "post"&gt;
-  &lt;div&gt; Year: &lt;input type = "text" name = "age"&gt; &lt;/ div&gt;
-  &lt;div&gt; &lt;input type = "submit" value = "submit"&gt; &lt;/ div&gt;
-&lt;/ form&gt;
-&lt;/ pre&gt;
-
-To submit a form, you need to describe the elements of the form such as input tag inside the form tag. For action, specify the URL to which the data will be sent. HTTP method is specified for method, but post is generally used when submitting from a form.
-
-&lt;h4&gt; Text box &amp; lt; input type = "text"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+  &lt;div&gt; Year: &lt;input type = "text" name = "age"&gt; &lt;/div&gt;
+  &lt;div&gt; &lt;input type = "submit" value = "submit"&gt; &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<p>
+  To submit a form, you need to describe the elements of the form such as input tag inside the form tag. For action, specify the URL to which the data will be sent. HTTP method is specified for method, but post is generally used when submitting from a form.
+</p>
+<h4> Text box & lt; input type = "text"> </h4>
+<pre>
 &lt;input type = "text" name = "age"&gt;
-&lt;/ pre&gt;
-
-The text box is a one-line text entry area. Specify "text" for type. Be sure to specify the name because it will be the name of the sent data. The input tag is an inline element.
-
-You can specify the following attributes:
-
-&lt;ul&gt;
-  &lt;li&gt;
-    value --value
-  &lt;/ li&gt;
-  &lt;li&gt;
-    size --horizontal size
-  &lt;/ li&gt;
-  &lt;li&gt;
-    maxlength --maximum number of characters
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Password input box &amp; lt; input type = "password"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  The text box is a one-line text entry area. Specify "text" for type. Be sure to specify the name because it will be the name of the sent data. The input tag is an inline element.
+</p>
+<p>
+  You can specify the following attributes:
+</p>
+<ul>
+  <li>
+    value - value
+  </li>
+  <li>
+    size - horizontal size
+  </li>
+  <li>
+    maxlength - maximum number of characters
+  </li>
+</ul>
+<h4> Password input box & lt; input type = "password"> </h4>
+<pre>
 &lt;input type = "password" name = "pass"&gt;
-&lt;/ pre&gt;
-
-This is a password entry box. Specify a name in name.
-
-The following attributes can be specified.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    value --value
-  &lt;/ li&gt;
-  &lt;li&gt;
-    size --horizontal size
-  &lt;/ li&gt;
-  &lt;li&gt;
-    maxlength --maximum number of characters
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Button &amp; lt; input type = "button"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is a password entry box. Specify a name in name.
+</p>
+<p>
+  The following attributes can be specified.
+</p>
+<ul>
+  <li>
+    value - value
+  </li>
+  <li>
+    size - horizontal size
+  </li>
+  <li>
+    maxlength - maximum number of characters
+  </li>
+</ul>
+<h4> Button & lt; input type = "button"> </h4>
+<pre>
 &lt;input type = "button" value = "press" name = "send"&gt;
-&lt;/ pre&gt;
-
-It is a button. Specify "button" for the type of input tag. Let's specify the name because it will be used to identify the button. value will be the text displayed on the button.
-
-&lt;h4&gt; Submit button &amp; lt; input type = "submit"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is a button. Specify "button" for the type of input tag. Let's specify the name because it will be used to identify the button. value will be the text displayed on the button.
+</p>
+<h4> Submit button & lt; input type = "submit"> </h4>
+<pre>
 &lt;input type = "submit" value = "submit"&gt;
-&lt;/ pre&gt;
-
-This is the send button. It is used to submit the value of the form. value will be the text displayed on the submit button.
-You can specify the following attributes:
-
-&lt;ul&gt;
-  &lt;li&gt;
-    name --name
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Reset button &amp; lt; input type = "reset"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is the send button. It is used to submit the value of the form. value will be the text displayed on the submit button.
+</p>
+<p>
+  You can specify the following attributes:
+</p>
+<ul>
+  <li>
+    name - name
+  </li>
+</ul>
+<h4> Reset button & lt; input type = "reset"> </h4>
+<pre>
 &lt;input type = "reset" value = "reset"&gt;
-&lt;/ pre&gt;
-
-It is a reset button. It is used to reset the value of the form. value will be the text displayed on the reset button.
-
-You can specify the following attributes:
-
-&lt;ul&gt;
-  &lt;li&gt;
-    name --name
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Image button &amp; lt; input type = "image"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is a reset button. It is used to reset the value of the form. value will be the text displayed on the reset button.
+</p>
+<p>
+  You can specify the following attributes:
+</p>
+<ul>
+  <li>
+    name - name
+  </li>
+</ul>
+<h4> Image button & lt; input type = "image"> </h4>
+<pre>
 &lt;input type = "image" src = "/ image / dog.png" alt = "dog"&gt;
-&lt;/ pre&gt;
-
-It is an image button. src will be the URL of the image. alt is a description of the image.
-
-You can specify the following attributes:
-
-&lt;ul&gt;
-  &lt;li&gt;
-    name --name
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Radio button &amp; lt; input type = "radio"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is an image button. src will be the URL of the image. alt is a description of the image.
+</p>
+<p>
+  You can specify the following attributes:
+</p>
+<ul>
+  <li>
+    name - name
+  </li>
+</ul>
+<h4> Radio button & lt; input type = "radio"> </h4>
+<pre>
 &lt;input type = "radio" name = "animal" value = "dog" checked = "checked"&gt;
 &lt;input type = "radio" name = "animal" value = "cat"&gt;
-&lt;/ pre&gt;
-
-Radio buttons are used to have one selected from multiple items. Specify a name in name. Those belonging to the same group should have the same name. Specify a value for value. If checked is set to "checked", that item will be selected.
-
-&lt;h4&gt; Hidden field &amp; lt; input type = "hidden"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Radio buttons are used to have one selected from multiple items. Specify a name in name. Those belonging to the same group should have the same name. Specify a value for value. If checked is set to "checked", that item will be selected.
+</p>
+<h4> Hidden field & lt; input type = "hidden"> </h4>
+<pre>
 &lt;input type = "hidden" name = "title" value = "Perl"&gt;
-&lt;/ pre&gt;
-
-It is an invisible field. It is used when there is a value that you want to send without showing it to the user on the browser. For name, specify the name. Specify a value for value.
-
-&lt;h4&gt; checkbox &amp; lt; input type = "checkbox"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is an invisible field. It is used when there is a value that you want to send without showing it to the user on the browser. For name, specify the name. Specify a value for value.
+</p>
+<h4> checkbox & lt; input type = "checkbox"> </h4>
+<pre>
 &lt;input type = "checkbox" name = "animal" value = "dog" checked = "checked"&gt;
 &lt;input type = "checkbox" name = "animal" value = "cat"&gt;
-&lt;/ pre&gt;
-
-Check boxes are used to have multiple items selected. For name, specify the name. Those belonging to the same group should have the same name. Specify a value for value. If checked is set to "checked", that item will be selected.
-&lt;h4&gt; File upload &amp; lt; input type = "file"&gt; &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Check boxes are used to have multiple items selected. For name, specify the name. Those belonging to the same group should have the same name. Specify a value for value. If checked is set to "checked", that item will be selected.
+</p>
+<h4> File upload & lt; input type = "file"> </h4>
+<pre>
 &lt;input type = "file" name = "datafile"&gt;
-&lt;/ pre&gt;
-
-It is used when you want to upload a file. Specify a name in name. This is not a file name, it is just a name to identify.
-
-The following attributes can be specified.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    size --horizontal size
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-Note that when uploading a file, you must specify "multipart / form-data" for the enctype of the form tag.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is used when you want to upload a file. Specify a name in name. This is not a file name, it is just a name to identify.
+</p>
+<p>
+  The following attributes can be specified.
+</p>
+<ul>
+  <li>
+    size - horizontal size
+  </li>
+</ul>
+<p>
+  Note that when uploading a file, you must specify "multipart / form-data" for the enctype of the form tag.
+</p>
+<pre>
 &lt;form action = "cgi-bin / abc.cgi" method = "post" enctype = "multipart / form-data"&gt;
 &lt;input type = "file" name = "datafile"&gt;
 &lt;input type = "submit" value = "submit"&gt;
-&lt;/ form&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Pull-down menu or list box select &lt;/ h3&gt;
-
-&lt;pre&gt;
+&lt;/form&gt;
+</pre>
+<h3> Pull-down menu or list box select </h3>
+<pre>
 &lt;select name = "animal"&gt;
-  &lt;option value = "dog"&gt; dog &lt;/ option&gt;
-  &lt;option value = "cat"&gt; cat &lt;/ option&gt;
-&lt;/ select&gt; &lt;
-&lt;/ pre&gt;
-
-You can create a pull-down menu using the select tag. Specify a name in name. The option tag is the element to select. Specify a value for value. Describe the items to be displayed in the text part of the option tag.
-
-If size is specified to be larger than 1, it becomes a list box.
-
-&lt;pre&gt;
+  &lt;option value = "dog"&gt; dog &lt;/option&gt;
+  &lt;option value = "cat"&gt; cat &lt;/option&gt;
+&lt;/select&gt; &lt;
+</pre>
+<p>
+  You can create a pull-down menu using the select tag. Specify a name in name. The option tag is the element to select. Specify a value for value. Describe the items to be displayed in the text part of the option tag.
+</p>
+<p>
+  If size is specified to be larger than 1, it becomes a list box.
+</p>
+<pre>
 &lt;select name = "animal" size = "4"&gt;
-  &lt;option value = "1"&gt; cat &lt;/ option&gt;
-  &lt;option value = "2"&gt; dog &lt;/ option&gt;
-  &lt;option value = "3"&gt; Turtle &lt;/ option&gt;
-  &lt;option value = "4"&gt; Lion &lt;/ option&gt;
-&lt;/ select&gt; &lt;
-&lt;/ pre&gt;
-
-Please also refer to the following explanation for the select element.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20110416130621.html"&gt; Summary of select element operations &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Tags used in the header part &lt;/ h3&gt;
-Introducing the tags used in the header part.
-
-&lt;h4&gt; Character code specification &lt;/ h4&gt;
-
-&lt;pre&gt;
+  &lt;option value = "1"&gt; cat &lt;/option&gt;
+  &lt;option value = "2"&gt; dog &lt;/option&gt;
+  &lt;option value = "3"&gt; Turtle &lt;/option&gt;
+  &lt;option value = "4"&gt; Lion &lt;/option&gt;
+&lt;/select&gt; &lt;
+</pre>
+<p>
+  Please also refer to the following explanation for the select element.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110416130621.html"> Summary of select element operations</a>
+  </li>
+</ul>
+<h3> Tags used in the header part </h3>
+<p>
+  Introducing the tags used in the header part.
+</p>
+<h4> Character code specification </h4>
+<pre>
 &lt;meta http-equiv = "Content-Type" content = "text / html; charset = UTF-8"&gt;
-&lt;/ pre&gt;
-
-Use the meta tag to specify the character code to be used in HTML. When using the meta tag, specify "Content-Type" for http-equiv and "text / html; charset = UTF-8" for content. If you do not specify this, the characters may be garbled in the browser.
-Therefore, please describe at the beginning of the head tag. If you use the http-equiv attribute, the browser will use the http-equiv information if there is no Content-Type in the HTTP response header.
-
-&lt;h4&gt; CSS (style sheet) description &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the meta tag to specify the character code to be used in HTML. When using the meta tag, specify "Content-Type" for http-equiv and "text / html; charset = UTF-8" for content. If you do not specify this, the characters may be garbled in the browser.
+</p>
+<p>
+  Therefore, please describe at the beginning of the head tag. If you use the http-equiv attribute, the browser will use the http-equiv information if there is no Content-Type in the HTTP response header.
+</p>
+<h4> CSS (style sheet) description </h4>
+<pre>
 &lt;style type = "text / css"&gt; / * &lt;! [CDATA [* /
 
 / * CSS description * /
 
-/ *]]&gt; * / &lt;/ style&gt;
-&lt;/ pre&gt;
-
-Use the style tag to write CSS. Specify "text / css" for type. It seems that the CSS code needs to be written in a section called CDATA so that it works properly even with the specification of XHTML. On the contrary, from the perspective of CSS, the CDATA section is not needed, so it is commented out with / * * /.
-
-&lt;h4&gt; Loading external CSS (style sheet) &lt;/ h4&gt;
-
-&lt;pre&gt;
+/ *]]&gt; * / &lt;/style&gt;
+</pre>
+<p>
+  Use the style tag to write CSS. Specify "text / css" for type. It seems that the CSS code needs to be written in a section called CDATA so that it works properly even with the specification of XHTML. On the contrary, from the perspective of CSS, the CDATA section is not needed, so it is commented out with / * * /.
+</p>
+<h4> Loading external CSS (style sheet) </h4>
+<pre>
 &lt;link href = "/ css / common.css" media = "screen" rel = "stylesheet" type = "text / css" /&gt;
-&lt;/ pre&gt;
-
-Use the link tag to load external CSS. Specify "screen" for media. This is to specify that it is CSS for computer screens. Specify "stylesheet" for rel. This shows the external stylesheet definition file. Specify "text / css" for type.
-
-&lt;h4&gt; JavaScript description &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the link tag to load external CSS. Specify "screen" for media. This is to specify that it is CSS for computer screens. Specify "stylesheet" for rel. This shows the external stylesheet definition file. Specify "text / css" for type.
+</p>
+<h4> JavaScript description </h4>
+<pre>
 &lt;script type = "text / javascript"&gt; // &lt;! [CDATA [
  
 // JavaScript source code
  
-//]] &lt;/ script&gt;
-&lt;/ pre&gt;
-
-Use the script tag to write JavaScript. Specify "text / javascript" for type. It seems that the JavaScript code needs to be written in a section called CDATA so that it works properly even with the specification of XHTML. On the contrary, from the viewpoint of JavaScript, the CDATA section is not needed, so it is commented out with //.
-
-&lt;h4&gt; Loading external JavaScript &lt;/ h4&gt;
-
-&lt;pre&gt;
-&lt;script src = "/ js / myapi.js" type = "text / javascript"&gt; &lt;/ script&gt;
-&lt;/ pre&gt;
-
-Use the script tag to load external JavaScript. Specify the URL of the JavaScript source in src, and specify "text / javascript" in type.
-
-&lt;h3&gt; At the end &lt;/ h3&gt;
-
-It was a rush, but I will finish the explanation of HTML.
-
-&lt;hr&gt;
-
-&lt;a href="http://px.a8.net/svt/ejp?a8mat=25TFA7+74LUIA+D8Y+C5VW1" target="_blank"&gt;
-&lt;img border = "0" width = "250" height = "250" alt = "" src = "http://www21.a8.net/svt/bgt?aid=130703263431&amp;wid=001&amp;eno=01&amp;mid=s00000001717002043000&amp;mc=1" &gt; &lt;/a&gt;
-&lt;img border = "0" width = "1" height = "1" src = "http://www18.a8.net/0.gif?a8mat=25TFA7+74LUIA+D8Y+C5VW1" alt = ""&gt;
+//]] &lt;/script&gt;
+</pre>
+<p>
+  Use the script tag to write JavaScript. Specify "text / javascript" for type. It seems that the JavaScript code needs to be written in a section called CDATA so that it works properly even with the specification of XHTML. On the contrary, from the viewpoint of JavaScript, the CDATA section is not needed, so it is commented out with //.
+</p>
+<h4> Loading external JavaScript </h4>
+<pre>
+&lt;script src = "/ js / myapi.js" type = "text / javascript"&gt; &lt;/script&gt;
+</pre>
+<p>
+  Use the script tag to load external JavaScript. Specify the URL of the JavaScript source in src, and specify "text / javascript" in type.
+</p>
+<h3> At the end </h3>
+<p>
+  It was a rush, but I will finish the explanation of HTML.
+</p>
+<hr>
+<p>
+  <a href="http://px.a8.net/svt/ejp?a8mat=25TFA7+74LUIA+D8Y+C5VW1" target="_blank">
+</p>
+<p>
+  <img border = "0" width = "250" height = "250" alt = "" src = "http://www21.a8.net/svt/bgt?aid=130703263431&wid=001&eno=01&mid=s00000001717002043000&mc=1" ></a>
+</p>
+<p>
+  <img border = "0" width = "1" height = "1" src = "http://www18.a8.net/0.gif?a8mat=25TFA7+74LUIA+D8Y+C5VW1" alt = "">
+</p>
 
   </div>
   <div class="bottom">

@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161102147817.html">
-        <span itemprop = "name"> Special variables </ span> </a>
+        <span itemprop = "name"> Special variables </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20180508152716.html"> Module search path @ INC </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20180508152716.html"> Module search path @ INC </a></h2>
 <p>
-  The <b> module search path list </ b> is assigned to the special variable "@INC".
+  The <b> module search path list </b> is assigned to the special variable "@INC".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,25 +99,26 @@
 
 <pre>
 @INC
-&lt;/ pre&gt;
-
-The module search path is the directory that Perl searches to load the module. Modules placed in directories not included in @INC cannot be loaded.
-
-&lt;h4&gt; Add module search path &lt;/ h4&gt;
-
-You can add the search path to @INC at compile time by using the &lt;a href="/blog/20100525127859.html"&gt; lib &lt;/a&gt; module.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The module search path is the directory that Perl searches to load the module. Modules placed in directories not included in @INC cannot be loaded.
+</p>
+<h4> Add module search path </h4>
+<p>
+  You can add the search path to @INC at compile time by using the <a href="/blog/20100525127859.html"> lib</a> module.
+</p>
+<pre>
 use lib'./lib';
-&lt;/ pre&gt;
-
-&lt;b&gt; Add the module search path directly to the beginning of @INC &lt;/ b&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  <b> Add the module search path directly to the beginning of @INC </b>
+</p>
+<pre>
 unshift @ INC,'./lib2';
-&lt;/ pre&gt;
-
-Add it directly to the beginning with &lt;a href="/blog/20100105126425.html"&gt; unshift function &lt;/a&gt;. It is better to use the lib module than this way. The advantage of using the lib module is that it adds a search path at compile time, makes it more readable, and adds an architectural path as well.
+</pre>
+<p>
+  Add it directly to the beginning with <a href="/blog/20100105126425.html"> unshift function</a>. It is better to use the lib module than this way. The advantage of using the lib module is that it adds a search path at compile time, makes it more readable, and adds an architectural path as well.
+</p>
 
   </div>
   <div class="bottom">

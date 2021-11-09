@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20171226151430.html"> kill function-sends a signal to the process </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20171226151430.html"> kill function-sends a signal to the process </a></h2>
 <p>
-  You can use the <b> kill function </ b> to kill the process.
+  You can use the <b> kill function </b> to kill the process.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,62 +97,67 @@
 
 
 <pre>
-kill (signal number, process ID);
-&lt;/ pre&gt;
-
-Specify the signal number in the first argument.
-
-Specify the process ID in the second argument.
-
-The return value is the number of successful kill functions.
-
-You can also specify multiple process IDs in a list, as shown below.
-
-&lt;pre&gt;
-kill (signal number, process ID1, process ID2, ...);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Get the process ID &lt;/ h3&gt;
-
-The process ID is specified in the second argument of the kill function, but in the case of Linux, this ID can be obtained by executing "ps -ef".
-
-For example, in the following, the server process is started, but the second column from the left is the process ID. The third from the left is the process ID of the parent process.
-
-&lt;pre&gt;
+kill(signal number, process ID);
+</pre>
+<p>
+  Specify the signal number in the first argument.
+</p>
+<p>
+  Specify the process ID in the second argument.
+</p>
+<p>
+  The return value is the number of successful kill functions.
+</p>
+<p>
+  You can also specify multiple process IDs in a list, as shown below.
+</p>
+<pre>
+kill(signal number, process ID1, process ID2, ...);
+</pre>
+<h3> Get the process ID </h3>
+<p>
+  The process ID is specified in the second argument of the kill function, but in the case of Linux, this ID can be obtained by executing "ps -ef".
+</p>
+<p>
+  For example, in the following, the server process is started, but the second column from the left is the process ID. The third from the left is the process ID of the parent process.
+</p>
+<pre>
 kimoto 20220 25715 0 Dec25? 00:05:35 / home / kimoto / labo / perltweet / script / perltweet
-&lt;/ pre&gt;
-
-For example, the second number from the left, "20220", is the process ID. This will be the process ID you specify for kill.
-
-&lt;h3&gt; Get signal number &lt;/ h3&gt;
-
-A list of signals can be found by loading the Config module and using "$ Config {sig_name}".
-
-&lt;pre&gt;
+</pre>
+<p>
+  For example, the second number from the left, "20220", is the process ID. This will be the process ID you specify for kill.
+</p>
+<h3> Get signal number </h3>
+<p>
+  A list of signals can be found by loading the Config module and using "$Config {sig_name}".
+</p>
+<pre>
 use Config;
 
-use Data :: Dumper;
+use Data::Dumper;
 
-print Dumper $ Config {sig_name};
-&lt;/ pre&gt;
-
-This number is the signal number because it is arranged in order from the first.
-
-&lt;h3&gt; Check if the signal can be received &lt;/ h3&gt;
-
-Signal number 0 is a special number that allows the target process to check if it can receive the signal.
-
-&lt;pre&gt;
-my $ success = kill (0, process ID);
-&lt;/ pre&gt;
-
-This can be used to check if the child process is actually alive.
-
-&lt;h3&gt; Doesn't work well for Windows fork child processes &lt;/ h3&gt;
-
-Note that the kill function works fine for Linux / Unix-based fork child processes, but not for Windows fork child processes.
-
-For details on the kill function, see &lt;a href="http://perldoc.jp/func/kill"&gt; kill function &lt;/a&gt; in the official Perl documentation.
+print Dumper $Config {sig_name};
+</pre>
+<p>
+  This number is the signal number because it is arranged in order from the first.
+</p>
+<h3> Check if the signal can be received </h3>
+<p>
+  Signal number 0 is a special number that allows the target process to check if it can receive the signal.
+</p>
+<pre>
+my $success = kill(0, process ID);
+</pre>
+<p>
+  This can be used to check if the child process is actually alive.
+</p>
+<h3> Doesn't work well for Windows fork child processes </h3>
+<p>
+  Note that the kill function works fine for Linux / Unix-based fork child processes, but not for Windows fork child processes.
+</p>
+<p>
+  For details on the kill function, see <a href="http://perldoc.jp/func/kill"> kill function</a> in the official Perl documentation.
+</p>
 
   </div>
   <div class="bottom">

@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100930127859.html">
-      <span itemprop = "name"> Reference </ span> </a>
+      <span itemprop = "name"> Reference </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180308152051.html"> Scalar variable reference </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180308152051.html"> Scalar variable reference </a></h2>
 <p>
   A scalar variable reference points to a scalar variable.
 </p>
@@ -96,61 +96,62 @@
 </div>
 
 
-<h4> Creating a reference for scalar variables </ h4>
+<h4> Creating a reference for scalar variables </h4>
 <p>
   To create a scalar variable reference:
 </p>
 <pre>
-my $ str = "Hello";
-my $ str_ref = \ $ str;
-&lt;/ pre&gt;
+my $str = "Hello";
+my $str_ref = \ $str;
+</pre>
+<h4> Dereference scalar variable reference </h4>
+<p>
+  Use "${}" to dereference the scalar variable reference.
+</p>
+<pre>
+my $str = ${$str_ref};
+</pre>
+<p>
+  Simple variables can be dereferenced by simply prefixing them with "$".
+</p>
+<pre>
+my $str = $$str_ref;
+</pre>
+<h3> Is it worth using a scalar variable reference? </H3>
+<p>
+  I used a reference when passing a large <a href="/blog/20161003147558.html"> string</a> to a <a href="/blog/20101130129876.html"> subroutine</a> I think it's faster.
+</p>
+<p>
+  However, in Perl, strings are copied using a technique called copy-on-write, so they are not copied until the strings are actually modified.
+</p>
+<p>
+  So don't worry about large strings, just pass them as subroutine arguments.
+</p>
+<h4> Getopt::Long </h4>
+<p>
+  When programming yourself, you rarely have the opportunity to use scalar variable references, but if your library uses them, you need to remember how to use them.
+</p>
+<p>
+  A frequently used module is <a href="/blog/20100514127696.html"> Getopt::Long</a>.
+</p>
+<pre>
+Handling command line argument options with # GetOptions
 
-&lt;h4&gt; Dereference scalar variable reference &lt;/ h4&gt;
-
-Use "$ {}" to dereference the scalar variable reference.
-
-&lt;pre&gt;
-my $ str = $ {$ str_ref};
-&lt;/ pre&gt;
-
-Simple variables can be dereferenced by simply prefixing them with "$".
-
-&lt;pre&gt;
-my $ str = $$ str_ref;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Is it worth using a scalar variable reference? &lt;/ H3&gt;
-
-I used a reference when passing a large &lt;a href="/blog/20161003147558.html"&gt; string &lt;/a&gt; to a &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt; I think it's faster.
-
-However, in Perl, strings are copied using a technique called copy-on-write, so they are not copied until the strings are actually modified.
-
-So don't worry about large strings, just pass them as subroutine arguments.
-
-&lt;h4&gt; Getopt :: Long &lt;/ h4&gt;
-
-When programming yourself, you rarely have the opportunity to use scalar variable references, but if your library uses them, you need to remember how to use them.
-
-A frequently used module is &lt;a href="/blog/20100514127696.html"&gt; Getopt :: Long &lt;/a&gt;.
-
-&lt;pre&gt;
-Handling command line argument options with #GetOptions
-
-#Set default value
-my $ enable_cache;
-my $ max_clients = 5;
-my $ type ='prefork';
+# Set default value
+my $enable_cache;
+my $max_clients = 5;
+my $type ='prefork';
 
 # Optional processing
 GetOptions (
-  'enable_cache' =&gt; \ $ enable_cache,
-  'max_clients = i'=&gt; \ $ max_clients,
-  'type = s'=&gt; \ $ type
+  'enable_cache' =&gt; \ $enable_cache,
+  'max_clients = i'=&gt; \ $max_clients,
+  'type = s'=&gt; \ $type
 );
 
 Receives non-option arguments
-my $ conf_file = shift;
-&lt;/ pre&gt;
+my $conf_file = shift;
+</pre>
 
   </div>
   <div class="bottom">

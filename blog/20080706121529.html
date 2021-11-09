@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Display UTF-8 characters at the command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="It seems that the characters cannot be drawn correctly with this method.  ( maeyan's article ).">
+<meta name="description" content="It seems that the characters cannot be drawn correctly with this method.  ( maeyan's article).">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Display UTF-8 characters at the command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="It seems that the characters cannot be drawn correctly with this method.  ( maeyan's article )." />
+<meta name="twitter:description" content="It seems that the characters cannot be drawn correctly with this method.  ( maeyan's article)." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161116147930.html">
-        <span itemprop = "name"> Windows </ span> </a>
+        <span itemprop = "name"> Windows </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080706121529.html"> Display UTF-8 characters at the command prompt </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080706121529.html"> Display UTF-8 characters at the command prompt </a></h2>
 <p>
-  <span style = "color: # FF0000;"> It seems that the characters cannot be drawn correctly with this method. </ span> (<a href="http://d.hatena.ne.jp/maeyan/20080915/1221420584"> maeyan's article </a>).
+  <span style = "color: # FF0000;"> It seems that the characters cannot be drawn correctly with this method. </span> (<a href="http://d.hatena.ne.jp/maeyan/20080915/1221420584"> maeyan's article</a>).
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,33 +95,32 @@
 <p>
   It didn't work in my environment either.
 </p>
-<h3> Procedure </ h3>
+<h3> Procedure </h3>
 <ol>
   <li>
     Command prompt font change
-  </ li>
+  </li>
   <li>
     Change the character code of the command prompt
-  </ li>
+  </li>
   <li>
     Automatically set the character code from the shortcut.
-  </ li>
-</ ol>
-<h3> Windows version </ h3>
+  </li>
+</ol>
+<h3> Windows version </h3>
 <p>
   It was done with Windows XP Home Edition Version 2002 Service Pack 2.
 </p>
-<h3> 1. Change command prompt font </ h3>
+<h3> 1. Change command prompt font </h3>
 <pre>
 Launch Command Prompt → Right click on title bar
 Select "MS Gothic" from → Properties → Font.
-&lt;/ pre&gt;
-
-Change the font to "MS Gothic". MS Gothic does not display all Unicode-enabled characters correctly, but it does support Unicode. Characters including Japanese and decorative characters can be displayed.
-
-&lt;h3&gt; 2. Change the character code of the command prompt &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  Change the font to "MS Gothic". MS Gothic does not display all Unicode-enabled characters correctly, but it does support Unicode. Characters including Japanese and decorative characters can be displayed.
+</p>
+<h3> 2. Change the character code of the command prompt </h3>
+<pre>
 Change to # UTF-8
 chcp 65001
 
@@ -130,22 +129,23 @@ chcp 932
 
 # When checking the character code
 chcp
-&lt;/ pre&gt;
-
-To change the character code of the command prompt to UTF-8, use chcp 65001. There seems to be a bug in this mode change, which makes it impossible to set the command prompt from the properties (MS Gothic cannot be selected).
-
-To change the command prompt settings from the properties, return to the original character code as chcp 932 and then make the changes.
-
-&lt;h3&gt; 3. Automatically set the character code from the shortcut &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  To change the character code of the command prompt to UTF-8, use chcp 65001. There seems to be a bug in this mode change, which makes it impossible to set the command prompt from the properties (MS Gothic cannot be selected).
+</p>
+<p>
+  To change the command prompt settings from the properties, return to the original character code as chcp 932 and then make the changes.
+</p>
+<h3> 3. Automatically set the character code from the shortcut </h3>
+<pre>
 Right-click the shortcut icon at the command prompt → Shortcut
 Link destination
 % SystemRoot% \ system32 \ cmd.exe /f: on / k "chcp 65001"
 Set to.
-&lt;/ pre&gt;
-
-If it is troublesome to change the character code every time, it will be automated. / k describes the command you want to execute at the command prompt and at run time. / f: on is a file completion function.
+</pre>
+<p>
+  If it is troublesome to change the character code every time, it will be automated. / k describes the command you want to execute at the command prompt and at run time. / f: on is a file completion function.
+</p>
 
   </div>
   <div class="bottom">

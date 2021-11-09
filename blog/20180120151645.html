@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Change the enclosing character of the regular expression --m //  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Change the enclosing character of the regular expression - m //  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl allows you to change the enclosing character of a regular expression.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Change the enclosing character of the regular expression --m //  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Change the enclosing character of the regular expression - m //  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl allows you to change the enclosing character of a regular expression." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180120151645.html"> Change the enclosing character of the regular expression --m // </a></ h2>
+    <h2><a href="/blog/20180120151645.html"> Change the enclosing character of the regular expression - m // </a></h2>
 <p>
   Perl allows you to change the enclosing character of a regular expression.
 </p>
@@ -80,39 +80,39 @@
 
 
 <p>
-  <a href="/blog/20100827127859.html"> Regular expression </a> could be written as follows by combining pattern matching operators.
+  <a href="/blog/20100827127859.html"> Regular expression</a> could be written as follows by combining pattern matching operators.
 </p>
 <pre>
-$ string = ~ / cat /
-&lt;/ pre&gt;
-
-But now, suppose you want to match the path of a URL, for example. You can escape the slash and write:
-
-&lt;pre&gt;
-$ string = ~ / \ / foo \ / bar \ / baz /
-&lt;/ pre&gt;
-
-Isn't it a little difficult to read? In Perl, there is a way to change the regular expression enclosing character "/" to another enclosing character. Write as follows.
-
-&lt;pre&gt;
-$ string = ~ m | / foo / bar / baz |
-&lt;/ pre&gt;
-
-Prefix it with an "m" to change the enclosing character to something else. The following combinations can be used as enclosing characters.
-
-&lt;pre&gt;
+$string = ~ / cat /
+</pre>
+<p>
+  But now, suppose you want to match the path of a URL, for example. You can escape the slash and write:
+</p>
+<pre>
+$string = ~ / \ / foo \ / bar \ / baz /
+</pre>
+<p>
+  Isn't it a little difficult to read? In Perl, there is a way to change the regular expression enclosing character "/" to another enclosing character. Write as follows.
+</p>
+<pre>
+$string = ~ m | / foo / bar / baz |
+</pre>
+<p>
+  Prefix it with an "m" to change the enclosing character to something else. The following combinations can be used as enclosing characters.
+</p>
+<pre>
 m | regular expression |
 m # regular expression #
 m! Regular expression!
-&lt;/ pre&gt;
-
-It can be used in the same way when replacing with s.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It can be used in the same way when replacing with s.
+</p>
+<pre>
 s | Regular expression | Replaced string |
-s #Regular expression #Replaced string #
+s # Regular expression # Replaced string #
 s! Regular expression! Replaced string!
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

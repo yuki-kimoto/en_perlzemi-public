@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> hash </ span>
+      <span itemprop = "name"> hash </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20161013147635.html"> Understand Perl hashes </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20161013147635.html"> Understand Perl hashes </a></h2>
 <p>
   A description of Perl's "hash". Perl hashes are "associative arrays" in other languages.
 </p>
@@ -94,240 +94,232 @@
 <p>
   In an array, you could retrieve an element by specifying a number, but in an "associative array", you can retrieve an element by specifying a character string as a key.
 </p>
-<h3> Hash basics </ h3>
+<h3> Hash basics </h3>
 <p>
   The basis of hashing. Hash declaration and initialization. Hash output and assignment. You can think of a hash as an array from which you can get a value of a string as a subscript. You can retrieve the value using a character string as a key.
 </p>
-<h4> Hash declaration and initialization </ h4>
+<h4> Hash declaration and initialization </h4>
 <p>
   Declaring and initializing the hash is done as follows.
 </p>
 <pre>
-my% fathers = ('Taro' =&gt;'Kenji','Naoko' =&gt;'Yoshio');
-#or
-my% fathers = (Taro =&gt;'Kenji', Naoko =&gt;'Yoshio');
-&lt;/ pre&gt;
-
-The variable prefix is ​​&lt;b&gt; percent sign &lt;/ b&gt; "%". (Key 1 =&gt; Value 1, Key 2 =&gt; Value 2, ...). Taro's father can be read as Kenji, Naoko's father as Yoshio
-
-&lt;h4&gt; Hash element output &lt;/ h4&gt;
-
-&lt;pre&gt;
-print $ mothers {'Taro'};
-&lt;/ pre&gt;
-
-When printing, $ instead of%. $ When dealing with a single element. Use {} to specify the key. (In the case of an array, it was []). {} Is read as a bracket. ([] Is brace. () Is parenthesis)
-
-&lt;h3&gt; Hash element assignment &lt;/ h3&gt;
-
-&lt;pre&gt;
-$ mothers {'Naoko'} ='Haruna';
-&lt;/ pre&gt;
-
-&lt;h3&gt; Processing of each element of hash &lt;/ h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080210120265.html"&gt; Get all of the hashes --keys function &lt;/a&gt; &lt;span style = "color: red"&gt; [Important] &lt;/ span&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100222126425.html"&gt; Get all values ​​of a hash --values ​​function &lt;/a&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080212120283.html"&gt; Get all keys and values ​​of a hash --each function &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Hash manipulation &lt;/ h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080213120291.html"&gt; Check for the existence of a key --exists function &lt;/a&gt; &lt;span style = "color: red"&gt; [Important] &lt;/ span&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080214120300.html"&gt; Delete hash key --delete function &lt;/a&gt; &lt;span style = "color: red"&gt; [Important] &lt;/ span&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080227120413.html"&gt; Reverse function that swaps hash keys and values ​​&lt;/a&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080215120307.html"&gt; Hash slice ... Extract multiple values ​​of hash &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Hash reference &lt;/ h3&gt;
-
-You can create a hash reference as follows:
-
-&lt;pre&gt;
-my $ math_scores_ref = \% math_scores;
-&lt;/ pre&gt;
-
-Prefix% with \ to generate a reference to the hash. Assign the generated reference to the scalar variable $ math_score_href
-
-&lt;h4&gt; Create a direct hash reference using an anonymous hash. &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ math_scores_ref2 = {
+my %fathers = ('Taro' =&gt;'Kenji','Naoko' =&gt;'Yoshio');
+# or
+my %fathers = (Taro =&gt;'Kenji', Naoko =&gt;'Yoshio');
+</pre>
+<p>
+  The variable prefix is ​​<b> percent sign </b> "%". (Key 1 => Value 1, Key 2 => Value 2, ...). Taro's father can be read as Kenji, Naoko's father as Yoshio
+</p>
+<h4> Hash element output </h4>
+<pre>
+print $mothers {'Taro'};
+</pre>
+<p>
+  When printing, $instead of%. $When dealing with a single element. Use {} to specify the key. (In the case of an array, it was []). {} Is read as a bracket. ([] Is brace. () Is parenthesis)
+</p>
+<h3> Hash element assignment </h3>
+<pre>
+$mothers {'Naoko'} ='Haruna';
+</pre>
+<h3> Processing of each element of hash </h3>
+<ul>
+  <li>
+    <a href="/blog/20080210120265.html"> Get all of the hashes - keys function</a> <span style = "color: red"> [Important] </span>
+  </li>
+  <li>
+    <a href="/blog/20100222126425.html"> Get all values ​​of a hash - values ​​function</a>
+  </li>
+  <li>
+    <a href="/blog/20080212120283.html"> Get all keys and values ​​of a hash - each function</a>
+  </li>
+</ul>
+<h3> Hash manipulation </h3>
+<ul>
+  <li>
+    <a href="/blog/20080213120291.html"> Check for the existence of a key - exists function</a> <span style = "color: red"> [Important] </span>
+  </li>
+  <li>
+    <a href="/blog/20080214120300.html"> Delete hash key - delete function</a> <span style = "color: red"> [Important] </span>
+  </li>
+  <li>
+    <a href="/blog/20080227120413.html"> Reverse function that swaps hash keys and values ​​</a>
+  </li>
+  <li>
+    <a href="/blog/20080215120307.html"> Hash slice ... Extract multiple values ​​of hash</a>
+  </li>
+</ul>
+<h3> Hash reference </h3>
+<p>
+  You can create a hash reference as follows:
+</p>
+<pre>
+my $math_scores_ref = \% math_scores;
+</pre>
+<p>
+  Prefix% with\to generate a reference to the hash. Assign the generated reference to the scalar variable $math_score_href
+</p>
+<h4> Create a direct hash reference using an anonymous hash. </h4>
+<pre>
+my $math_scores_ref2 = {
   Aiko =&gt; 89,
   Kenta =&gt; 100,
   Taro =&gt; 34,
 };
-&lt;/ pre&gt;
-
-You can use {} instead of () to create a reference to a direct hash
-
-&lt;h4&gt; Access the hash element &lt;/ h4&gt;
-
-&lt;pre&gt;
-$ math_scores_ref-&gt; {Aiko}
-&lt;/ pre&gt;
-
-&lt;h4&gt; Extract the hash from the hash reference &lt;/ h4&gt;
-
-Dereference to retrieve a hash from a hash reference.
-
-&lt;pre&gt;
-my% hash =% $ hash_ref;
-my% hash =% {$ hash_ref};
-&lt;/ pre&gt;
-
-You can also dereference a reference to a hash to retrieve the hash.
-
-&lt;pre&gt;
-my% math_scores =% $ math_scores;
-&lt;/ pre&gt;
-
-You can dereference and retrieve hashes with% $ math_scores.
-
-You can use "-&gt; {key}" if you only need one element.
-
-&lt;pre&gt;
-$ math_scores-&gt; {Taro};
-&lt;/ pre&gt;
-
-You can read more about hash references here.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20180208151809.html"&gt; Hash reference &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Multidimensional data structure using hash &lt;/ h3&gt;
-
-The multidimensional data structure using hashes is explained in detail in the following articles. You can learn about "array hash", "hash array", and "hash hash".
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100930127859.html"&gt; Manipulate "multidimensional data structure" freely with "array" and "hash" &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Column "It's Perl's fault that associative arrays are called hashes" &lt;/ h3&gt;
-
-Perl has made a great decision to incorporate associative arrays as a feature of the language. It's incredibly convenient. This was a huge success, and almost all other scripting languages ​​have been affected to incorporate associative arrays into the language itself.
-
-Perhaps the name associative array was long, Perl decided to call it a hash. This is an association from the hash function.
-
-But, surprisingly, it seems to represent the data structure exactly.
-
-&lt;h3&gt; Sample code &lt;/ h3&gt;
-
-&lt;h4&gt; Hash basics &lt;/ h4&gt;
-
-The basis of hashing. Hash declaration and initialization. This is a sample of hash output and assignment.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use {} instead of () to create a reference to a direct hash
+</p>
+<h4> Access the hash element </h4>
+<pre>
+$math_scores_ref-&gt; {Aiko}
+</pre>
+<h4> Extract the hash from the hash reference </h4>
+<p>
+  Dereference to retrieve a hash from a hash reference.
+</p>
+<pre>
+my %hash =% $hash_ref;
+my %hash =%{$hash_ref};
+</pre>
+<p>
+  You can also dereference a reference to a hash to retrieve the hash.
+</p>
+<pre>
+my %math_scores =% $math_scores;
+</pre>
+<p>
+  You can dereference and retrieve hashes with% $math_scores.
+</p>
+<p>
+  You can use "-> {key}" if you only need one element.
+</p>
+<pre>
+$math_scores-&gt; {Taro};
+</pre>
+<p>
+  You can read more about hash references here.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20180208151809.html"> Hash reference</a>
+  </li>
+</ul>
+<h3> Multidimensional data structure using hash </h3>
+<p>
+  The multidimensional data structure using hashes is explained in detail in the following articles. You can learn about "array hash", "hash array", and "hash hash".
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100930127859.html"> Manipulate "multidimensional data structure" freely with "array" and "hash"</a>
+  </li>
+</ul>
+<h3> Column "It's Perl's fault that associative arrays are called hashes" </h3>
+<p>
+  Perl has made a great decision to incorporate associative arrays as a feature of the language. It's incredibly convenient. This was a huge success, and almost all other scripting languages ​​have been affected to incorporate associative arrays into the language itself.
+</p>
+<p>
+  Perhaps the name associative array was long, Perl decided to call it a hash. This is an association from the hash function.
+</p>
+<p>
+  But, surprisingly, it seems to represent the data structure exactly.
+</p>
+<h3> Sample code </h3>
+<h4> Hash basics </h4>
+<p>
+  The basis of hashing. Hash declaration and initialization. This is a sample of hash output and assignment.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#What is a hash?
-You can think of the #string as a subscript and an array from which you can get the value.
-You can retrieve the value using the #string as a key.
+# What is a hash?
+You can think of the # string as a subscript and an array from which you can get the value.
+You can retrieve the value using the # string as a key.
 
 # Hash declaration and initialization (variable prefix is%)
 # (Key 1 =&gt; Value 1, Key 2 =&gt; Value 2, ...)
 # Taro's father reads Kenji, Naoko's father reads Yoshio
-my% fathers = ('Taro' =&gt;'Kenji','Naoko' =&gt;'Yoshio');
+my %fathers = ('Taro' =&gt;'Kenji','Naoko' =&gt;'Yoshio');
 
 # More Perl-like writing
 The'' to the left of # =&gt; can be omitted
-my% mathers = (Taro =&gt;'Tomoko', Naoko =&gt;'Shizuka');
+my %mathers = (Taro =&gt;'Tomoko', Naoko =&gt;'Shizuka');
 
 # 1: Hash element output
-print "1: Hash element output \ n";
-# When outputting, $ instead of%
+print "1: Hash element output\n";
+# When outputting, $instead of%
 # {} Use brackets
-print "\ $ mathers {'Taro'} =", $ mathers {'Taro'}, "\ n";
-print "\ n";
+print "\ $mathers {'Taro'} =", $mathers {'Taro'}, "\n";
+print "\n";
 
 # 2: Hash element assignment
-print "2: Hash element assignment \ n";
-$ mathers {'Naoko'} ='Haruna';
-print "\ $ mathers {'Naoko'} =", $ mathers {'Naoko'}. "\ n";
-&lt;/ pre&gt;
-Execution result
-&lt;pre&gt;
+print "2: Hash element assignment\n";
+$mathers {'Naoko'} ='Haruna';
+print "\ $mathers {'Naoko'} =", $mathers {'Naoko'}. "\n";
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 1: Hash element output
-$ mothers {'Taro'} = Tomoko
+$mothers {'Taro'} = Tomoko
 
 2: Assignment of hash elements
-$ mothers {'Naoko'} = Haruna
-&lt;/ pre&gt;
-
-&lt;h4&gt; Hash reference &lt;/ h4&gt;
-
-This is a sample using the hash reference.
-
-&lt;pre&gt;
+$mothers {'Naoko'} = Haruna
+</pre>
+<h4> Hash reference </h4>
+<p>
+  This is a sample using the hash reference.
+</p>
+<pre>
 use strict;
 use warnings;
-use Data :: Dumper;
+use Data::Dumper;
 
 # Student math scores
-my% math_scores = (
+my %math_scores = (
   Aiko =&gt; 89,
   Kenta =&gt; 100,
   Taro =&gt; 34,
 );
 
-# 1: Hash reference% is preceded by \ to generate a reference to the hash.
-# Assign the generated reference to the scalar variable $ math_scores_ref
-my $ math_scores_ref = \% math_scores;
-print "1: Hash reference \ n";
-print Data :: Dumper-&gt; Dump ([$ math_scores_ref], ['$ math_scores_ref']);
-print "\ n \ n";
+# 1: Hash reference% is preceded by\to generate a reference to the hash.
+# Assign the generated reference to the scalar variable $math_scores_ref
+my $math_scores_ref = \% math_scores;
+print "1: Hash reference\n";
+print Data::Dumper-&gt; Dump ([$math_scores_ref], ['$math_scores_ref']);
+print "\n\n";
 
 # 2: Make a direct hash reference using an anonymous hash ({}).
-my $ math_scores_ref2 = {
+my $math_scores_ref2 = {
   Aiko =&gt; 89,
   Kenta =&gt; 100,
   Taro =&gt; 34,
 };
 
-print "2: Anonymous hash \ n";
-print Data :: Dumper-&gt; Dump ([$ math_scores_ref2], ['$ math_scores_ref2']);
-print "\ n \ n";
+print "2: Anonymous hash\n";
+print Data::Dumper-&gt; Dump ([$math_scores_ref2], ['$math_scores_ref2']);
+print "\n\n";
 
-# 3: Access the hash element. ($ hash_ref-&gt; {key})
-print "3: Access the hash element. \ N";
-print "\ $ math_scores_ref-&gt; {Aiko} = $ math_scores_ref-&gt; {Aiko} \ n";
-print "\ $ math_scores_ref-&gt; {Kenta} = $ math_scores_ref-&gt; {Kenta} \ n";
+# 3: Access the hash element. ($hash_ref-&gt; {key})
+print "3: Access the hash element.\n";
+print "\ $math_scores_ref-&gt; {Aiko} = $math_scores_ref-&gt; {Aiko}\n";
+print "\ $math_scores_ref-&gt; {Kenta} = $math_scores_ref-&gt; {Kenta}\n";
 
-&lt;/ pre&gt;
-
-Execution result
-&lt;pre&gt;
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 1: Hash reference
-$ math_scores_ref = {'Aiko' =&gt; 89,
+$math_scores_ref = {'Aiko' =&gt; 89,
                      'Kenta' =&gt; 100,
                      'Taro' =&gt; 34
                    };
 
 
 2: Anonymous hash
-$ math_scores_ref2 = {
+$math_scores_ref2 = {
                       'Aiko' =&gt; 89,
                       'Kenta' =&gt; 100,
                       'Taro' =&gt; 34
@@ -335,52 +327,53 @@ $ math_scores_ref2 = {
 
 
 3: Access the hash element.
-$ math_scores_ref-&gt; {Aiko} = 89
-$ math_scores_ref-&gt; {Kenta} = 100
-&lt;/ pre&gt;
-
-&lt;h4&gt; Hash reference dereference &lt;/ h4&gt;
-
-This is a sample to dereference the hash reference.
-
-&lt;pre&gt;
+$math_scores_ref-&gt; {Aiko} = 89
+$math_scores_ref-&gt; {Kenta} = 100
+</pre>
+<h4> Hash reference dereference </h4>
+<p>
+  This is a sample to dereference the hash reference.
+</p>
+<pre>
 use strict;
 use warnings;
-use Data :: Dumper;
+use Data::Dumper;
 
 # Student math scores
-my $ math_scores = {
+my $math_scores = {
   Taro =&gt; 89,
   Naoko =&gt; 54,
   Kenji =&gt; 54
 };
 
 # 1: Dereference and output all elements of the hash
-print "1: Dereference and print all elements of the hash \ n";
-for my $ key (keys% $ math_scores) {
-  print "\ $ math_scores-&gt; {$ key} =". $ math_scores-&gt; {$ key}. "\ n";
+print "1: Dereference and print all elements of the hash\n";
+for my $key (keys %$math_scores) {
+  print "\ $math_scores-&gt; {$key} =". $math_scores-&gt; {$key}. "\n";
 }
-print "\ n";
+print "\n";
 
 # 2: Use the-&gt; operator to refer to an element.
-print "2: Delete one key \ n";
-delete $ math_scores-&gt; {Taro};
+print "2: Delete one key\n";
+delete $math_scores-&gt; {Taro};
 
-print Data :: Dumper-&gt; Dump ([$ math_scores], ['$ math_scores']);
-&lt;/ pre&gt;
-Execution result
-&lt;pre&gt;
+print Data::Dumper-&gt; Dump ([$math_scores], ['$math_scores']);
+</pre>
+<p>
+  Execution result
+</p>
+<pre>
 1: Dereference and output all elements of the hash
-$ math_scores-&gt; {Kenji} = 54
-$ math_scores-&gt; {Taro} = 89
-$ math_scores-&gt; {Naoko} = 54
+$math_scores-&gt; {Kenji} = 54
+$math_scores-&gt; {Taro} = 89
+$math_scores-&gt; {Naoko} = 54
 
 2: Delete one key
-$ math_scores = {
+$math_scores = {
                  'Kenji' =&gt; 54,
                  'Naoko' =&gt; 54
                };
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

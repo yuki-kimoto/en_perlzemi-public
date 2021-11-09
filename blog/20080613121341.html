@@ -60,20 +60,20 @@
   </div>
   <div class="middle">
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem"> <a itemprop="item" href="/"> <span itemprop = "name"> Perl </ span> </ a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem"> <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161130148051.html"> <span itemprop = "name"> Module creation </ span> </a>
+    <a itemprop="item" href="/blog/20161130148051.html"> <span itemprop = "name"> Module creation </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080613121341.html"> Take a peek inside the symbol table </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080613121341.html"> Take a peek inside the symbol table </a></h2>
 <p>
   Perl has a symbol table that programmers can reference and make changes to. Perl is more flexible and adaptable than other languages, but one of the features that makes it so powerful is the symbol table.
 </p>
@@ -96,71 +96,68 @@
 <p>
   The symbol table is just a hash named% main ::. From the hash% main ::, you can see all the subroutines and package variables of the script being executed. (Excluding lexical variables)
 </p>
-<h3> Take a peek at the contents of the symbol table </ h3>
+<h3> Take a peek at the contents of the symbol table </h3>
 <pre>
-#main A symbol table containing the contents of the package
-% main ::
-Another name for #% main ::
-% ::
-&lt;/ pre&gt;
+# main A symbol table containing the contents of the package
+% main::Another name for # % main::%::&lt;/pre&gt;
 
-&lt;h3&gt; Know the contents of package variables through the symbol table &lt;/ h3&gt;
+&lt;h3&gt; Know the contents of package variables through the symbol table &lt;/h3&gt;
 
 &lt;pre&gt;
-our $ num = 1;
-$ {$ main :: {num}};
-&lt;/ pre&gt;
-
-A detailed explanation is given in the explanation of typeglobs. Here, remember Perl's ability to know the contents of package variables and subroutines from the symbol table.
-
-This is a sample that outputs the contents of the symbol table.
-
-&lt;pre&gt;
+our $num = 1;
+${$main::{num}};
+</pre>
+<p>
+  A detailed explanation is given in the explanation of typeglobs. Here, remember Perl's ability to know the contents of package variables and subroutines from the symbol table.
+</p>
+<p>
+  This is a sample that outputs the contents of the symbol table.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Take a peek at the symbol table.
 # This subroutine is registered in the symbol table at compile time.
-#Package declaration is not made, so it implicitly belongs to the main package
+# Package declaration is not made, so it implicitly belongs to the main package
 # Will be.
 
-our $ num = 1;
+our $num = 1;
 
 sub func {
   return 2;
 }
 
-print "1: Take a peek at the symbol table \ n";
-require Data :: Dumper;
+print "1: Take a peek at the symbol table\n";
+require Data::Dumper;
 The print # symbol table is just a hash.
-What belongs to the #main package
-You can refer to it with the name #% main ::.
-Data :: Dumper-&gt; Dump ([\% main ::], [qw (* main ::)]), "\ n";
+What belongs to the # main package
+You can refer to it with the name # % main ::.
+Data::Dumper-&gt; Dump ([\% main ::], [qw (* main ::)]), "\n";
 
-print "2: View the contents of num and func in the main package. \ N";
-print $ main :: {num}, "\ n";
-You can also use :: as an alias for #main ::.
-print $ :: {num}, "\ n";
+print "2: View the contents of num and func in the main package.\n";
+print $main::{num}, "\n";
+You can also use::as an alias for # main ::.
+print $:: {num}, "\n";
 
-print $ main :: {func}, "\ n";
-print $ :: {func}, "\ n \ n";
+print $main::{func}, "\n";
+print $:: {func}, "\n\n";
 
-print "3: Get the contents of the variable from the symbol table. \ N";
-Extract the scalar variable from'* main :: num' with # $ {}.
-my $ num_from_symbol = $ {$ main :: {num}};
-print $ num_from_symbol;
+print "3: Get the contents of the variable from the symbol table.\n";
+Extract the scalar variable from'* main::num' with # ${}.
+my $num_from_symbol = ${$main::{num}};
+print $num_from_symbol;
 
-&lt;/ pre&gt;
-
-&lt;h3&gt; Meaning of output result &lt;/ h3&gt;
-
-&lt;pre&gt;
-print $ main :: {num};
+</pre>
+<h3> Meaning of output result </h3>
+<pre>
+print $main::{num};
 # Output result
-* main :: num
-&lt;/ pre&gt;
-
-The above output will be displayed as * main :: num. The * symbol is a symbol that represents a typeglob. The type glob will be explained next time.
+* main::num
+</pre>
+<p>
+  The above output will be displayed as * main::num. The * symbol is a symbol that represents a typeglob. The type glob will be explained next time.
+</p>
 
   </div>
   <div class="bottom">

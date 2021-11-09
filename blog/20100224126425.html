@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Object :: Simple --Generate Mojo :: Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use  Object :: Simple  to create an accessor with a default value. Object :: Simple is highly compatible with Mojolicious's Mojo :: Base.">
+<title> Object::Simple - Generate Mojo::Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use  Object::Simple  to create an accessor with a default value. Object::Simple is highly compatible with Mojolicious's Mojo::Base.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Object :: Simple --Generate Mojo :: Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use  Object :: Simple  to create an accessor with a default value. Object :: Simple is highly compatible with Mojolicious's Mojo :: Base." />
+<meta name="twitter:title" content=" Object::Simple - Generate Mojo::Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use  Object::Simple  to create an accessor with a default value. Object::Simple is highly compatible with Mojolicious's Mojo::Base." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100224126425.html"> Object :: Simple --Generate Mojo :: Base compatible accessor </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100224126425.html"> Object::Simple - Generate Mojo::Base compatible accessor </a></h2>
 <p>
-  Use <strong> Object :: Simple </ strong> to create an accessor with a default value. Object :: Simple is highly compatible with Mojolicious's Mojo :: Base.
+  Use <strong> Object::Simple </strong> to create an accessor with a default value. Object::Simple is highly compatible with Mojolicious's Mojo::Base.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,76 +98,73 @@
 
 <pre>
 package Point;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 has x =&gt; 1;
 has y =&gt; 1;
 
 package main;
 
-my $ point = Point-&gt; new;
-print $ point-&gt; x;
+my $point = Point-&gt; new;
+print $point-&gt; x;
 
 1;
-&lt;/ pre&gt;
-
-You can inherit Object :: Simple by specifying -base when using. Object :: Simple has a new method. It also imports a method called has for defining accessors. Also, strict and warnings are automatically enabled.
-
-&lt;h3&gt; General class sample &lt;/ h3&gt;
-
-This is a sample of a general class. The Point class has accessors x and y. It also has a method called clear that initializes x and y to 0.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can inherit Object::Simple by specifying -base when using. Object::Simple has a new method. It also imports a method called has for defining accessors. Also, strict and warnings are automatically enabled.
+</p>
+<h3> General class sample </h3>
+<p>
+  This is a sample of a general class. The Point class has accessors x and y. It also has a method called clear that initializes x and y to 0.
+</p>
+<pre>
 package Point;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 has x =&gt; 0;
 has y =&gt; 0;
 
 sub clear {
-  my $ self = shift;
+  my $self = shift;
     
-  $ self-&gt; x (0);
-  $ self-&gt; y (0);
+  $self-&gt; x (0);
+  $self-&gt; y (0);
 }
 
 1;
-&lt;/ pre&gt;
+</pre>
+<p>
+  Use the Point class as follows: The constructor new is inherited from Object::Simple.
+</p>
+<pre>
+my $point = Point-&gt; new (x =&gt; 4, y =&gt; 6);
 
-Use the Point class as follows: The constructor new is inherited from Object :: Simple.
+$point-&gt; x (1);
+$point-&gt; y (2);
 
-&lt;pre&gt;
-my $ point = Point-&gt; new (x =&gt; 4, y =&gt; 6);
+my $x = $point-&gt; x;
+my $y = $point-&gt; y;
 
-$ point-&gt; x (1);
-$ point-&gt; y (2);
-
-my $ x = $ point-&gt; x;
-my $ y = $ point-&gt; y;
-
-$ point-&gt; clear;
-&lt;/ pre&gt;
-
-&lt;h3&gt; How to use Object :: Simple &lt;/ h3&gt;
-
-There are several ways to define attributes.
-
-&lt;h4&gt; Define multiple attributes at once &lt;/ h4&gt;
-
-&lt;pre&gt;
-#No default value
+$point-&gt; clear;
+</pre>
+<h3> How to use Object::Simple </h3>
+<p>
+  There are several ways to define attributes.
+</p>
+<h4> Define multiple attributes at once </h4>
+<pre>
+# No default value
 has ['x','y'];
 
-#With default value
+# With default value
 has ['x','y'] =&gt; 0;
-&lt;/ pre&gt;
-
-You can define multiple accessors at once by specifying the array reference as the first argument of has.
-
-&lt;h4&gt; Specify default value &lt;/ h4&gt;
-
-&lt;pre&gt;
-#Constant
+</pre>
+<p>
+  You can define multiple accessors at once by specifying the array reference as the first argument of has.
+</p>
+<h4> Specify default value </h4>
+<pre>
+# Constant
 has foo =&gt; 1;
 
 # Array reference
@@ -177,65 +174,62 @@ has foo =&gt; sub {[]};
 has bar =&gt; sub {{}};
 
 # object
-has baz =&gt; sub {LWP :: UserAgent-&gt; new};
-&lt;/ pre&gt;
-
-When setting array references, hash references, objects, etc. to default values, you need to enclose them in sub {} for lazy evaluation.
-
-&lt;h4&gt; Define all accessors at once &lt;/ h4&gt;
-
-&lt;pre&gt;
+has baz =&gt; sub {LWP::UserAgent-&gt; new};
+</pre>
+<p>
+  When setting array references, hash references, objects, etc. to default values, you need to enclose them in sub {} for lazy evaluation.
+</p>
+<h4> Define all accessors at once </h4>
+<pre>
 has [qw / foo bar baz /],
     some =&gt; 1,
     other =&gt; sub {5};
-&lt;/ pre&gt;
-
-You can also define all accessors at once.
-
-&lt;h3&gt; Inheritance sample &lt;/ h3&gt;
-
-This is a sample to create a Point3D class that inherits the Point class.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also define all accessors at once.
+</p>
+<h3> Inheritance sample </h3>
+<p>
+  This is a sample to create a Point3D class that inherits the Point class.
+</p>
+<pre>
 package Point3D;
 use Point -base;
 
 has z =&gt; 0;
 
 sub clear {
-  my $ self = shift;
-  $ self-&gt; SUPER :: clear ();
-  $ self-&gt; z (0);
+  my $self = shift;
+  $self-&gt; SUPER::clear ();
+  $self-&gt; z (0);
 }
 
 1;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Constructor override &lt;/ h3&gt;
-
-You can override the constructor new () for object initialization and argument processing.
-
-&lt;pre&gt;
-#Override new () for object initialization
+</pre>
+<h3> Constructor override </h3>
+<p>
+  You can override the constructor new () for object initialization and argument processing.
+</p>
+<pre>
+# Override new () for object initialization
 sub new {
-  my $ self = shift-&gt; SUPER :: new (@_);
+  my $self = shift-&gt; SUPER::new (@_);
   
-  #Initialization
+  # Initialization
   
-  return $ self;
+  return $self;
 }
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 # Override new () for argument processing
 sub new {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; SUPER :: new (x =&gt; $ _ [0], y =&gt; $ _ [1]);
+  $self-&gt; SUPER::new (x =&gt; $_ [0], y =&gt; $_ [1]);
   
-  return $ self;
+  return $self;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

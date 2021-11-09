@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Math :: BigInt, Math :: BigFloat --Calculation of numbers with large digits  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perl's  number  has about 15 to 16 significant digits, and ordinary operations cannot perform larger numbers. Use  Math :: BigInt  or  Math :: BigFloat  if you want to work with large digits.">
+<title> Math::BigInt, Math::BigFloat - Calculation of numbers with large digits  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl's  number has about 15 to 16 significant digits, and ordinary operations cannot perform larger numbers. Use  Math::BigInt  or  Math::BigFloat  if you want to work with large digits.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Math :: BigInt, Math :: BigFloat --Calculation of numbers with large digits  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perl's  number  has about 15 to 16 significant digits, and ordinary operations cannot perform larger numbers. Use  Math :: BigInt  or  Math :: BigFloat  if you want to work with large digits." />
+<meta name="twitter:title" content=" Math::BigInt, Math::BigFloat - Calculation of numbers with large digits  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl's  number has about 15 to 16 significant digits, and ordinary operations cannot perform larger numbers. Use  Math::BigInt  or  Math::BigFloat  if you want to work with large digits." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080925122245.html"> Math :: BigInt, Math :: BigFloat --Calculation of numbers with large digits </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080925122245.html"> Math::BigInt, Math::BigFloat - Calculation of numbers with large digits </a></h2>
 <p>
-  Perl's <a href="/blog/20161026147748.html"> number </a> has about 15 to 16 significant digits, and ordinary operations cannot perform larger numbers. Use <strong> Math :: BigInt </ strong> or <strong> Math :: BigFloat </ strong> if you want to work with large digits.
+  Perl's <a href="/blog/20161026147748.html"> number</a> has about 15 to 16 significant digits, and ordinary operations cannot perform larger numbers. Use <strong> Math::BigInt </strong> or <strong> Math::BigFloat </strong> if you want to work with large digits.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,46 +96,44 @@
 </div>
 
 
-<h4> Large integer arithmetic </ h4>
+<h4> Large integer arithmetic </h4>
 <p>
-  To calculate a large integer, use the object created by the Math :: BigInt module.
+  To calculate a large integer, use the object created by the Math::BigInt module.
 </p>
 <pre>
-use Math :: BigInt;
-my $ big_int = Math :: BigInt-&gt; new ("11111111111111111111111111111111111111111111");
-$ big_int = $ big_int * 2;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Calculation of numbers with a large number of digits after the decimal point &lt;/ h4&gt;
-
-Calculation is performed using the object created by the Math :: BigFloat module.
-
-&lt;pre&gt;
-use Math :: BigFloat;
-my $ big_float = Math :: BigFloat-&gt; new ("0.1111111111111111111111111111111111111");
-$ big_float = $ big_float * 2;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample using Math :: BigInt and Math :: BigFloat.
-
-&lt;pre&gt;
+use Math::BigInt;
+my $big_int = Math::BigInt-&gt; new ("11111111111111111111111111111111111111111111");
+$big_int = $big_int * 2;
+</pre>
+<h4> Calculation of numbers with a large number of digits after the decimal point </h4>
+<p>
+  Calculation is performed using the object created by the Math::BigFloat module.
+</p>
+<pre>
+use Math::BigFloat;
+my $big_float = Math::BigFloat-&gt; new ("0.1111111111111111111111111111111111111");
+$big_float = $big_float * 2;
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample using Math::BigInt and Math::BigFloat.
+</p>
+<pre>
 use strict;
 use warnings;
-use Math :: BigInt;
-use Math :: BigFloat;
+use Math::BigInt;
+use Math::BigFloat;
 
-print "(1) Operation of large integers \ n";
-my $ big_int = Math :: BigInt-&gt; new ("11111111111111111111111111111111111111111111");
-$ big_int = $ big_int * 2;
-print $ big_int. "\ n \ n";
+print "(1) Operation of large integers\n";
+my $big_int = Math::BigInt-&gt; new ("11111111111111111111111111111111111111111111");
+$big_int = $big_int * 2;
+print $big_int. "\n\n";
 
-print "(2) Operations on numbers with a large number of digits after the decimal point \ n";
-my $ big_float = Math :: BigFloat-&gt; new ("0.1111111111111111111111111111111111111");
-$ big_float = $ big_float * 2;
-print $ big_float. "\ n";
-&lt;/ pre&gt;
+print "(2) Operations on numbers with a large number of digits after the decimal point\n";
+my $big_float = Math::BigFloat-&gt; new ("0.1111111111111111111111111111111111111");
+$big_float = $big_float * 2;
+print $big_float. "\n";
+</pre>
 
   </div>
   <div class="bottom">

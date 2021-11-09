@@ -62,29 +62,29 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100820127859.html">
-      <span itemprop = "name"> File test </ span> </a>
+      <span itemprop = "name"> File test </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180516152707.html"> Get the file size </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180516152707.html"> Get the file size </a></h2>
 <p>
-  To <b> get the file size </ b>, use the file test operator "-s".
+  To <b> get the file size </b>, use the file test operator "-s".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,16 +103,16 @@
 
 
 <pre>
--s $ file
-&lt;/ pre&gt;
-
-The unit of file size is bytes.
-
-&lt;h4&gt; Sample program &lt;/ h4&gt;
-
-This is a sample to get the file size using the file test operator -s.
-
-&lt;pre&gt;
+-s $file
+</pre>
+<p>
+  The unit of file size is bytes.
+</p>
+<h4> Sample program </h4>
+<p>
+  This is a sample to get the file size using the file test operator -s.
+</p>
+<pre>
 use strict;
 use warnings;
 
@@ -120,40 +120,40 @@ use warnings;
 # -s filename
 # Units are bytes.
 
-print "1: Get the size of the file. -S \ n";
-my $ file = "a.txt";
-if (-f $ file) {
-  my $ file_size = -s $ file;
-  print "The file size of $ file is $ file_size bytes. \ N \ n";
+print "1: Get the size of the file. -S\n";
+my $file = "a.txt";
+if (-f $file) {
+  my $file_size = -s $file;
+  print "The file size of $file is $file_size bytes.\n\n";
 }
-else {print "$ file did not exist. \ N \ n"}
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+else {print "$file did not exist.\n\n"}
+</pre>
+<pre>
 use strict;
 use warnings;
 
-print "2: Stop printing when the file size exceeds a certain byte. \ N";
+print "2: Stop printing when the file size exceeds a certain byte.\n";
 
-my $ file = "output_$$. txt";
-if (-e $ file) {
-  die "$ file exists. \ N";
+my $file = "output_$$. txt";
+if (-e $file) {
+  die "$file exists.\n";
 }
 
-open my $ fh, "&gt;", $ file
+open my $fh, "&gt;", $file
   or die "File open error: $!";
 
-while (-s $ file &lt;1_000_000) {
-  my $ string = ('a' x 99). "\ n";
-  print $ fh $ string;
+while (-s $file &lt;1_000_000) {
+  my $string = ('a' x 99). "\n";
+  print $fh $string;
 }
 
-print "The file size of $ file after output is". -S $ file. "Bytes. \ N";
+print "The file size of $file after output is". -S $file. "Bytes.\n";
 
-close $ fh;
-&lt;/ pre&gt;
-
-If the file size exceeds 1,000,000 bytes using &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;, it is stopped.
+close $fh;
+</pre>
+<p>
+  If the file size exceeds 1,000,000 bytes using <a href="/blog/20100123126425.html"> while statement</a>, it is stopped.
+</p>
 
   </div>
   <div class="bottom">

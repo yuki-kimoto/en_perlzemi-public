@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to use Makefile.PL --From make to archive  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Makefile.PL  is a script that automatically generates a Makefile.  Create XS module , Makefile.PL will be created automatically.">
+<title> How to use Makefile.PL - From make to archive  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Makefile.PL  is a script that automatically generates a Makefile.  Create XS module, Makefile.PL will be created automatically.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to use Makefile.PL --From make to archive  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Makefile.PL  is a script that automatically generates a Makefile.  Create XS module , Makefile.PL will be created automatically." />
+<meta name="twitter:title" content=" How to use Makefile.PL - From make to archive  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Makefile.PL  is a script that automatically generates a Makefile.  Create XS module, Makefile.PL will be created automatically." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop = "name"> XS </ span> </a>
+        <span itemprop = "name"> XS </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20150725143778.html"> How to use Makefile.PL --From make to archive </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20150725143778.html"> How to use Makefile.PL - From make to archive </a></h2>
 <p>
-  <b> Makefile.PL </ b> is a script that automatically generates a Makefile. <a href="/blog/20170209150055.html"> Create XS module </a>, Makefile.PL will be created automatically.
+  <b> Makefile.PL </b> is a script that automatically generates a Makefile. <a href="/blog/20170209150055.html"> Create XS module</a>, Makefile.PL will be created automatically.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,96 +101,96 @@
 </p>
 <ul>
   <li>
-    <a href="/blog/20170210150108.html"> ExtUtils :: MakeMaker --Customize Makefile.PL </a>
-  </ li>
-</ ul>
-<h3> Basics of Makefile.PL </ h3>
+    <a href="/blog/20170210150108.html"> ExtUtils::MakeMaker - Customize Makefile.PL</a>
+  </li>
+</ul>
+<h3> Basics of Makefile.PL </h3>
 <p>
-  Makefile.PL is for automatically generating <a href="http://www.ie.u-ryukyu.ac.jp/~e085739/c.makefile.tuts.html"> Makefile </a> This is a script. Once you have created a Mekefile, you can compile the module with the make command.
+  Makefile.PL is for automatically generating <a href="http://www.ie.u-ryukyu.ac.jp/~e085739/c.makefile.tuts.html"> Makefile</a> This is a script. Once you have created a Mekefile, you can compile the module with the make command.
 </p>
-<h4> Run Makefile.PL </ h4>
+<h4> Run Makefile.PL </h4>
 <p>
   Run Makefile.PL to generate a Makefile.
 </p>
 <pre>
 perl Makefile.PL
-&lt;/ pre&gt;
-
-You can see that the Makefile is created in the directory.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can see that the Makefile is created in the directory.
+</p>
+<pre>
 Makefile
-&lt;/ pre&gt;
-
-&lt;h4&gt; Run make &lt;/ h4&gt;
-
-Once the Makefile is generated, you can run the make command. make is used to compile C files and XS and prepare the module for installation.
-
-&lt;pre&gt;
+</pre>
+<h4> Run make </h4>
+<p>
+  Once the Makefile is generated, you can run the make command. make is used to compile C files and XS and prepare the module for installation.
+</p>
+<pre>
 make
-&lt;/ pre&gt;
-
-When you run make, a directory called "blib" is created, in which the compiled dynamic link library and Perl modules are stored.
-
-&lt;pre&gt;
+</pre>
+<p>
+  When you run make, a directory called "blib" is created, in which the compiled dynamic link library and Perl modules are stored.
+</p>
+<pre>
 blib /
-&lt;/ pre&gt;
-
-&lt;h4&gt; Run make test &lt;/ h4&gt;
-
-When make is complete, you can run "make test". "Make test" is a command that automatically executes Perl's automatic test script in the "t" directory.
-
-&lt;pre&gt;
+</pre>
+<h4> Run make test </h4>
+<p>
+  When make is complete, you can run "make test". "Make test" is a command that automatically executes Perl's automatic test script in the "t" directory.
+</p>
+<pre>
 make test
-&lt;/ pre&gt;
-
-Running "make test" will run the test script in the "t" directory.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Running "make test" will run the test script in the "t" directory.
+</p>
+<pre>
 t / basic.t
-&lt;/ pre&gt;
-
-By the way, even if you execute "make test" without doing make, make will be executed immediately before.
-
-Please refer to the following article for how to write an automated test in Perl.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20090221123410.html"&gt; Test :: More --Write a test program for automated testing &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Run make install &lt;/ h4&gt;
-
-You can use "make install" to install Perl modules.
-
-&lt;pre&gt;
+</pre>
+<p>
+  By the way, even if you execute "make test" without doing make, make will be executed immediately before.
+</p>
+<p>
+  Please refer to the following article for how to write an automated test in Perl.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20090221123410.html"> Test::More - Write a test program for automated testing</a>
+  </li>
+</ul>
+<h4> Run make install </h4>
+<p>
+  You can use "make install" to install Perl modules.
+</p>
+<pre>
 make install
-&lt;/ pre&gt;
-
-Installation is, in a nutshell, copying the required files to a location in the Perl library path.
-
-I haven't used this command recently when installing. It is easier to install the "module.tar.gz" file using &lt;a href="/blog/20101027127859.html"&gt; cpanm &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Installation is, in a nutshell, copying the required files to a location in the Perl library path.
+</p>
+<p>
+  I haven't used this command recently when installing. It is easier to install the "module.tar.gz" file using <a href="/blog/20101027127859.html"> cpanm</a>.
+</p>
+<pre>
 cpanm module .tar.gz
-&lt;/ pre&gt;
-
-How to create a "module.tar.gz" file is explained below.
-
-&lt;h4&gt; Run make manifest &lt;/ h4&gt;
-
-You may want to upload your module to &lt;a href="https://www.cpan.org/"&gt; CPAN &lt;/a&gt; for distribution. In that case, the files to be included in the distribution must be included in the MANIFEST file.
-
-You can use the "make manifest" command to automatically add the required files to the &lt;b&gt; MANIFEST &lt;/ b&gt; file.
-
-&lt;pre&gt;
+</pre>
+<p>
+  How to create a "module.tar.gz" file is explained below.
+</p>
+<h4> Run make manifest </h4>
+<p>
+  You may want to upload your module to <a href="https://www.cpan.org/"> CPAN</a> for distribution. In that case, the files to be included in the distribution must be included in the MANIFEST file.
+</p>
+<p>
+  You can use the "make manifest" command to automatically add the required files to the <b> MANIFEST </b> file.
+</p>
+<pre>
 make manifest
-&lt;/ pre&gt;
-
-Unnecessary files can be added to MANIFEST by writing them in &lt;b&gt; MANIFEST.SKIP &lt;/ b&gt;. Below is a sample of MANIFEST.SKIP. You can specify the file you want to skip with &lt;a href="/blog/20100827127859.html"&gt; Regular expression &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Unnecessary files can be added to MANIFEST by writing them in <b> MANIFEST.SKIP </b>. Below is a sample of MANIFEST.SKIP. You can specify the file you want to skip with <a href="/blog/20100827127859.html"> Regular expression</a>.
+</p>
+<pre>
 \ bRCS \ b
 \ bCVS \ b
 ^ MANIFEST \.
@@ -210,114 +210,117 @@ Unnecessary files can be added to MANIFEST by writing them in &lt;b&gt; MANIFEST
 ^ MYMETA.json $
 ^ spvm $
 ^ solo / objs /
-&lt;/ pre&gt;
-
-If you add the wrong file to MANIFEST, run "make manifest" again as "rm MANIFEST".
-
-&lt;h4&gt; Run make disttest &lt;/ h4&gt;
-
-After writing the file to be distributed to MANIFEST, it is necessary to confirm whether the test passes only with that file. If you execute "make disttest", the test will be executed using only the file specified in MANIFEST.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you add the wrong file to MANIFEST, run "make manifest" again as "rm MANIFEST".
+</p>
+<h4> Run make disttest </h4>
+<p>
+  After writing the file to be distributed to MANIFEST, it is necessary to confirm whether the test passes only with that file. If you execute "make disttest", the test will be executed using only the file specified in MANIFEST.
+</p>
+<pre>
 make disttest
-&lt;/ pre&gt;
-
-Be sure to do it before distribution.
-
-&lt;h4&gt; Run make dist &lt;/ h4&gt;
-
-Run the "make dist" command to create an archive file for distribution.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Be sure to do it before distribution.
+</p>
+<h4> Run make dist </h4>
+<p>
+  Run the "make dist" command to create an archive file for distribution.
+</p>
+<pre>
 make dist
-&lt;/ pre&gt;
-
-The archive file is tarred, gzipped and has the extension "tar.gz".
-
-&lt;pre&gt;
+</pre>
+<p>
+  The archive file is tarred, gzipped and has the extension "tar.gz".
+</p>
+<pre>
 SPVM-0.0232.tar.gz
-&lt;/ pre&gt;
-
-The archive created in this way can be uploaded to CPAN.
-
-&lt;h4&gt; Run make real clean &lt;/ h4&gt;
-
-Use the "make real clean" command to delete generated files such as blib and Makefile.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The archive created in this way can be uploaded to CPAN.
+</p>
+<h4> Run make real clean </h4>
+<p>
+  Use the "make real clean" command to delete generated files such as blib and Makefile.
+</p>
+<pre>
 make real clean
-&lt;/ pre&gt;
-
-If you want to start over, use "make real clean". You can revert to the state before you ran "perl Makefile.PL".
-
-&lt;h4&gt; Summary &lt;/ h4&gt;
-
-Remembering the above eight commands is enough to make a CPAN release. It is summarized below.
-
-&lt;ol&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  If you want to start over, use "make real clean". You can revert to the state before you ran "perl Makefile.PL".
+</p>
+<h4> Summary </h4>
+<p>
+  Remembering the above eight commands is enough to make a CPAN release. It is summarized below.
+</p>
+<ol>
+  <li>
     perl Makefile.PL
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make test
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make install
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make manifest
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make disttest
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make dist
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     make real clean
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-&lt;h3&gt; Makefile.PL technique &lt;/ h3&gt;
-
-The following explains how to write &lt;b&gt; Makefile.PL &lt;/ b&gt; using &lt;b&gt; ExtUtils :: MakeMaker &lt;/ b&gt;.
-
-&lt;h4&gt; Add files to be deleted when doing make clean, make real clean &lt;/ h4&gt;
-
-Makefile.PL automatically creates a Makefile, which defines the commands that are executed by "make clean" and "make real clean".
-
-Sometimes you may want to delete a particular file when you "make clean" or "make real clean".
-
-In such a case, you can handle it by writing the following option in the WriteMakefile function in Makefile.PL.
-
-&lt;pre&gt;
+  </li>
+</ol>
+<h3> Makefile.PL technique </h3>
+<p>
+  The following explains how to write <b> Makefile.PL </b> using <b> ExtUtils::MakeMaker </b>.
+</p>
+<h4> Add files to be deleted when doing make clean, make real clean </h4>
+<p>
+  Makefile.PL automatically creates a Makefile, which defines the commands that are executed by "make clean" and "make real clean".
+</p>
+<p>
+  Sometimes you may want to delete a particular file when you "make clean" or "make real clean".
+</p>
+<p>
+  In such a case, you can handle it by writing the following option in the WriteMakefile function in Makefile.PL.
+</p>
+<pre>
 clean =&gt; {FILES =&gt; "* .xyz foo"}
-&lt;/ pre&gt;
-
-&lt;pre&gt;
-realclean =&gt; {FILES =&gt;'$ (INST_ARCHAUTODIR) /*.xyz'}
-&lt;/ pre&gt;
-
-Please note that in FILES, it is necessary to describe the file name according to the make syntax rules.
-
-&lt;h4&gt; How to rename the XS file &lt;/ h4&gt;
-
-When you create an XS module using h2xs, if the namespace contains "::", the XS file name will be "last name.xs".
-
-For example, if you create an XS module using h2xs with the name "Some :: Module", the XS file name will be "Module.xs". This is a little unpleasant.
-
-To give a free XS file name, you need to specify the XS file name in Makefile.PL.
-
-For example, if you want to create an XS file with the name "SomeModule.xs", write as follows. Look only at the commented "XS Options" and "OBJECT" options. The other part is automatically generated.
-
-&lt;pre&gt;
-use ExtUtils :: MakeMaker;
+</pre>
+<pre>
+realclean =&gt; {FILES =&gt;'$(INST_ARCHAUTODIR) /*.xyz'}
+</pre>
+<p>
+  Please note that in FILES, it is necessary to describe the file name according to the make syntax rules.
+</p>
+<h4> How to rename the XS file </h4>
+<p>
+  When you create an XS module using h2xs, if the namespace contains "::", the XS file name will be "last name.xs".
+</p>
+<p>
+  For example, if you create an XS module using h2xs with the name "Some::Module", the XS file name will be "Module.xs". This is a little unpleasant.
+</p>
+<p>
+  To give a free XS file name, you need to specify the XS file name in Makefile.PL.
+</p>
+<p>
+  For example, if you want to create an XS file with the name "SomeModule.xs", write as follows. Look only at the commented "XS Options" and "OBJECT" options. The other part is automatically generated.
+</p>
+<pre>
+use ExtUtils::MakeMaker;
 
 WriteMakefile (
-    NAME =&gt;'Rstats :: Element',
+    NAME =&gt;'Rstats::Element',
     VERSION_FROM =&gt;'lib / Rstats / Element.pm',
     PREREQ_PM =&gt; {},
     ($]&gt; = 5.005?
@@ -329,47 +332,50 @@ WriteMakefile (
     DEFINE =&gt;'',
     INC =&gt;'-I.',
     # OBJECT option
-    OBJECT =&gt;'SomeModule $ (OBJ_EXT)'
+    OBJECT =&gt;'SomeModule $(OBJ_EXT)'
 );
-&lt;/ pre&gt;
-
-Specify that "SomeModule.xs" should be named "SomeModule.c" in the XS option. This is an instruction to xsubpp to convert the XS file to a C source file.
-
-However, this is not enough, and you also need to describe the C language file name to be compiled (this is described by the object name). Specify it with the OBJECT option. The "$ (OBJ_EXT)" part is like a special make variable and is replaced with ".o".
-
-If you write like this, "SomeModule.c" will be compiled. It's complicated.
-
-&lt;h4&gt; Specify gcc optimization options &lt;/ h4&gt;
-
-To specify gcc optimization options on XS Specify the &lt;strong&gt; OPTIMIZE &lt;/ strong&gt; option as a WriteMakefile option in Makefile.PL.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Specify that "SomeModule.xs" should be named "SomeModule.c" in the XS option. This is an instruction to xsubpp to convert the XS file to a C source file.
+</p>
+<p>
+  However, this is not enough, and you also need to describe the C language file name to be compiled (this is described by the object name). Specify it with the OBJECT option. The "$(OBJ_EXT)" part is like a special make variable and is replaced with ".o".
+</p>
+<p>
+  If you write like this, "SomeModule.c" will be compiled. It's complicated.
+</p>
+<h4> Specify gcc optimization options </h4>
+<p>
+  To specify gcc optimization options on XS Specify the <strong> OPTIMIZE </strong> option as a WriteMakefile option in Makefile.PL.
+</p>
+<pre>
 OPTIMIZE =&gt;'-O3'
-&lt;/ pre&gt;
-
-Specifying &lt;strong&gt; -O3 &lt;/ strong&gt; seems to give the strongest optimization.
-
-The following is a sample using the OPTIMIZE option.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Specifying <strong> -O3 </strong> seems to give the strongest optimization.
+</p>
+<p>
+  The following is a sample using the OPTIMIZE option.
+</p>
+<pre>
 use strict;
 use warnings;
-use ExtUtils :: MakeMaker;
+use ExtUtils::MakeMaker;
 
 WriteMakefile (
     NAME =&gt;'Rstats',
     AUTHOR =&gt;'Yuki Kimoto &lt;kimoto.yuki@gmail.com&gt;',
     VERSION_FROM =&gt;'lib / Rstats.pm',
     ABSTRACT_FROM =&gt;'lib / Rstats.pm',
-    ($ ExtUtils :: MakeMaker :: VERSION&gt; = 6.3002
+    ($ExtUtils::MakeMaker::VERSION&gt; = 6.3002
       ? ('LICENSE'=&gt;' perl')
       : ()),
     PL_FILES =&gt; {},
     PREREQ_PM =&gt; {
-        'Test :: More' =&gt; 0,
-        'Object :: Simple'=&gt; '3.10',
-        'Math :: Round'=&gt; '0.06',
-        'Text :: UnicodeTable :: Simple'=&gt; '0.09'
+        'Test::More' =&gt; 0,
+        'Object::Simple'=&gt; '3.10',
+        'Math::Round'=&gt; '0.06',
+        'Text::UnicodeTable::Simple'=&gt; '0.09'
     },
     dist =&gt; {COMPRESS =&gt;'gzip -9f', SUFFIX =&gt;'gz',},
     clean =&gt; {FILES =&gt;'Rstats-*'},
@@ -379,112 +385,115 @@ WriteMakefile (
     LIBS =&gt; [''],
     DEFINE =&gt;'',
     INC =&gt;'-I.',
-    OBJECT =&gt;'$ (O_FILES)',
+    OBJECT =&gt;'$(O_FILES)',
 );
-&lt;/ pre&gt;
-
-&lt;h4&gt; How to add a search path for a C / C ++ language header file in Makefile.PL &lt;/ h4&gt;
-
-When writing Makefile.PL, you may want to change or add the location of C / C ++ header files. For ExtUtils :: MakeMaker, you can set it with the &lt;b&gt; INC &lt;/ b&gt; and &lt;b&gt; H &lt;/ b&gt; options in the WriteMakefile.
-
-The following settings assume that you have a C / C ++ header file in "Rstats_lib / include".
-
-&lt;pre&gt;
+</pre>
+<h4> How to add a search path for a C / C ++ language header file in Makefile.PL </h4>
+<p>
+  When writing Makefile.PL, you may want to change or add the location of C / C ++ header files. For ExtUtils::MakeMaker, you can set it with the <b> INC </b> and <b> H </b> options in the WriteMakefile.
+</p>
+<p>
+  The following settings assume that you have a C / C ++ header file in "Rstats_lib / include".
+</p>
+<pre>
     INC =&gt;'-I. -I./Rstats_lib/include',
-    H =&gt; ['ppport.h', glob ('Rstats_lib / include / *. h')],
-&lt;/ pre&gt;
-
-&lt;h4&gt; Add header file include path &lt;/ h4&gt;
-
-Use the option "INC" to add the include path for the header file. By default, the current directory is set, so "./Rstats_lib/include" is added to this.
-
-&lt;pre&gt;
+    H =&gt; ['ppport.h', glob('Rstats_lib / include / *. h')],
+</pre>
+<h4> Add header file include path </h4>
+<p>
+  Use the option "INC" to add the include path for the header file. By default, the current directory is set, so "./Rstats_lib/include" is added to this.
+</p>
+<pre>
     INC =&gt;'-I. -I./Rstats_lib/include'
-&lt;/ pre&gt;
-
-Do not delete the current directory settings. Because it is needed to read the header file "ppport.h".
-
-This is an option passed to the compiler (such as gcc). Note that even if you specify multiple header file search paths, write the option "-I" multiple times instead of specifying it in the array reference.
-
-&lt;b&gt; Specify a list of header file names &lt;/ b&gt;
-
-The "H" option passes a list of header files. Specify all header files in the array reference. All header files under "Rstats_lib / include" are specified using "ppport.h" and the glob function.
-
-&lt;pre&gt;
-    H =&gt; ['ppport.h', glob ('Rstats_lib / include / *. h')],
-&lt;/ pre&gt;
-
-If this is not specified, the dependency will not be resolved correctly when make is executed, so be sure to specify it. The "INC" option alone will compile successfully for the first time, but make will not understand the dependencies correctly.
-
-&lt;h4&gt; How to add a search path for C / C ++ language source files in Makefile.PL &lt;/ h4&gt;
-
-How can I store C / C ++ language source files in a different directory when writing an XS? You can do that if you write Makefile.PL well. Write the WriteMakefile options in Makefile.PL as follows:
-
-&lt;pre&gt;
-    C =&gt; ['Rstats.c', glob ('Rstats_lib / src / *. Cpp')],
-    OBJECT =&gt;'$ (O_FILES)',
-    DEFINE =&gt;'-o $ @'
-&lt;/ pre&gt;
-
-This is the case when the module name is Rstats and the source file directory is "Rstats_lib / src". It is assumed that a file called Rstats.xs is located at the top "/". The source file type is a C ++ source file.
-
-To make the image easier, I'll show you the structure of the directory and a complete sample of Makefile.PL.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Do not delete the current directory settings. Because it is needed to read the header file "ppport.h".
+</p>
+<p>
+  This is an option passed to the compiler (such as gcc). Note that even if you specify multiple header file search paths, write the option "-I" multiple times instead of specifying it in the array reference.
+</p>
+<p>
+  <b> Specify a list of header file names </b>
+</p>
+<p>
+  The "H" option passes a list of header files. Specify all header files in the array reference. All header files under "Rstats_lib / include" are specified using "ppport.h" and the glob function.
+</p>
+<pre>
+    H =&gt; ['ppport.h', glob('Rstats_lib / include / *. h')],
+</pre>
+<p>
+  If this is not specified, the dependency will not be resolved correctly when make is executed, so be sure to specify it. The "INC" option alone will compile successfully for the first time, but make will not understand the dependencies correctly.
+</p>
+<h4> How to add a search path for C / C ++ language source files in Makefile.PL </h4>
+<p>
+  How can I store C / C ++ language source files in a different directory when writing an XS? You can do that if you write Makefile.PL well. Write the WriteMakefile options in Makefile.PL as follows:
+</p>
+<pre>
+    C =&gt; ['Rstats.c', glob('Rstats_lib / src / *. Cpp')],
+    OBJECT =&gt;'$(O_FILES)',
+    DEFINE =&gt;'-o $@'
+</pre>
+<p>
+  This is the case when the module name is Rstats and the source file directory is "Rstats_lib / src". It is assumed that a file called Rstats.xs is located at the top "/". The source file type is a C ++ source file.
+</p>
+<p>
+  To make the image easier, I'll show you the structure of the directory and a complete sample of Makefile.PL.
+</p>
+<pre>
 ..
-| --Changes
+| - Changes
 |-MANIFEST
 |-MANIFEST.SKIP
-| --Makefile.PL
+| - Makefile.PL
 |-README.md
-| --Rstats.xs
-| --Rstats_lib
+| - Rstats.xs
+| - Rstats_lib
 | |-include
-| | `--Rstats.h
-| `--src
-| | --Rstats_ElementFunc.cpp
-| | --Rstats_Func.cpp
-| | --Rstats_Main.cpp
-| | --Rstats_Util.cpp
-| | --Rstats_Vector.cpp
-| `--Rstats_VectorFunc.cpp
-| --lib
-| | --Rstats
+| | `- Rstats.h
+| `- src
+| | - Rstats_ElementFunc.cpp
+| | - Rstats_Func.cpp
+| | - Rstats_Main.cpp
+| | - Rstats_Util.cpp
+| | - Rstats_Vector.cpp
+| `- Rstats_VectorFunc.cpp
+| - lib
+| | - Rstats
 | | |-Class.pm
 | | |-Func.pm
 | | |-Object.pm
-| | `--Util.pm
-| `--Rstats.pm
+| | `- Util.pm
+| `- Rstats.pm
 |-ppport.h
-`--t
-&lt;/ pre&gt;
-
-The source code of Makefile.PL.
-
-&lt;pre&gt;
+`- t
+</pre>
+<p>
+  The source code of Makefile.PL.
+</p>
+<pre>
 use 5.010001;
 
 use strict;
 use warnings;
-use ExtUtils :: MakeMaker;
+use ExtUtils::MakeMaker;
 
 use Config;
 
 # C ++ compiler
-my $ cpp_compilers = {
+my $cpp_compilers = {
   gcc =&gt;'g ++',
   clang =&gt;'clang ++',
   CC =&gt;'CC'
 };
-my $ cc = $ cpp_compilers-&gt; {$ Config {ccname}};
-my $ ld = $ cc;
+my $cc = $cpp_compilers-&gt; {$Config {ccname}};
+my $ld = $cc;
 
 WriteMakefile (
     NAME =&gt;'Rstats',
     AUTHOR =&gt;'Yuki Kimoto &lt;kimoto.yuki@gmail.com&gt;',
     VERSION_FROM =&gt;'lib / Rstats.pm',
     ABSTRACT_FROM =&gt;'lib / Rstats.pm',
-    ($ ExtUtils :: MakeMaker :: VERSION&gt; = 6.3002
+    ($ExtUtils::MakeMaker::VERSION&gt; = 6.3002
       ? ('LICENSE'=&gt;' perl')
       : ()),
     PL_FILES =&gt; {},
@@ -497,70 +506,74 @@ WriteMakefile (
       }
     },
     PREREQ_PM =&gt; {
-        'Object :: Simple'=&gt; '3.10',
-        'Math :: Round'=&gt; '0.06',
-        'Text :: UnicodeTable :: Simple'=&gt; '0.09'
+        'Object::Simple'=&gt; '3.10',
+        'Math::Round'=&gt; '0.06',
+        'Text::UnicodeTable::Simple'=&gt; '0.09'
     },
     dist =&gt; {COMPRESS =&gt;'gzip -9f', SUFFIX =&gt;'gz',},
     clean =&gt; {FILES =&gt;'Rstats-*'},
-    CC =&gt; $ cc,
+    CC =&gt; $cc,
     OPTIMIZE =&gt;'-O3',
-    LD =&gt; $ ld,
+    LD =&gt; $ld,
     LIBS =&gt; [],
     DEFINE =&gt;'',
     INC=&gt;'-I. -I./Rstats_lib/include',
-    C =&gt; ['Rstats.c', glob ('Rstats_lib / src / *. Cpp')],
-    OBJECT =&gt;'$ (O_FILES)',
-    DEFINE =&gt;'-o $ @'
+    C =&gt; ['Rstats.c', glob('Rstats_lib / src / *. Cpp')],
+    OBJECT =&gt;'$(O_FILES)',
+    DEFINE =&gt;'-o $@'
 );
-&lt;/ pre&gt;
-
-&lt;h4&gt; C language source file description &lt;/ h4&gt;
-
-I think it is difficult to understand as it is, so I will explain the options of WriteMakefile.
-
-&lt;pre&gt;
-    C =&gt; ['Rstats.c', glob ('Rstats_lib / src / *. Cpp')],
-    OBJECT =&gt;'$ (O_FILES)',
-    DEFINE =&gt;'-o $ @'
-&lt;/ pre&gt;
-
-First, write all the source code required for compilation with the option "C". "Rstats.c" corresponds to "Rstats.xs". I am using the glog function to get the cpp file under "Rstats_lib / src". If it was C language, the options in this part would be as follows.
-
-&lt;pre&gt;
-    C =&gt; ['Rstats.c', glob ('Rstats_lib / src / *. C')],
-&lt;/ pre&gt;
-
-Internally, the file specified by the "C" option is stored in a variable called "C_FILES" in Makefile. In addition, a variable called "O_FILES" with the extension of "C_FILES" changed to ".o" is automatically created.
-
-&lt;h4&gt; Change the output location of the object file &lt;/ h4&gt;
-
-What does the "DEFINE" option describe?
-
-&lt;pre&gt;
-  DEFINE =&gt;'-o $ @'
-&lt;/ pre&gt;
-
-This is changing the output location of the object file. You can add gcc arguments using the option "DEFINE". And you can change the output destination of the object file by using the "-o" option of gcc.
-
-What is "$ @"? This is a Makefile syntax rule for variables to which the target name is automatically assigned. Since the target name is the object file name, if you write it like this, the object file will be output in the same directory as the source code file.
-
-&lt;h4&gt; Linker targeting &lt;/ h4&gt;
-
-Finally, you need to describe the targeting of the linker. You need to tell the linker the object file name, as all the object files will be merged into one and the final dynamic link library will end up with a ".so" extension.
-
-To do this, specify:
-&lt;pre&gt;
-    OBJECT =&gt;'$ (O_FILES)',
-&lt;/ pre&gt;
-
-The list of object file names was in a variable called "O_FILES". To expand "O_FILES", write "$ (O_FILES)".
-
-The "OBJECT" option will then be automatically set to an option called "LDFROM" and passed to the linker.
-
-&lt;h3&gt; How to write XS module &lt;/ h3&gt;
-
-Makefile.PL is often rewritten when writing an XS module. See &lt;a href="/blog/20100809127859.html"&gt; Introduction to C / C ++ Binding with XS &lt;/a&gt; for how to create an XS module.
+</pre>
+<h4> C language source file description </h4>
+<p>
+  I think it is difficult to understand as it is, so I will explain the options of WriteMakefile.
+</p>
+<pre>
+    C =&gt; ['Rstats.c', glob('Rstats_lib / src / *. Cpp')],
+    OBJECT =&gt;'$(O_FILES)',
+    DEFINE =&gt;'-o $@'
+</pre>
+<p>
+  First, write all the source code required for compilation with the option "C". "Rstats.c" corresponds to "Rstats.xs". I am using the glog function to get the cpp file under "Rstats_lib / src". If it was C language, the options in this part would be as follows.
+</p>
+<pre>
+    C =&gt; ['Rstats.c', glob('Rstats_lib / src / *. C')],
+</pre>
+<p>
+  Internally, the file specified by the "C" option is stored in a variable called "C_FILES" in Makefile. In addition, a variable called "O_FILES" with the extension of "C_FILES" changed to ".o" is automatically created.
+</p>
+<h4> Change the output location of the object file </h4>
+<p>
+  What does the "DEFINE" option describe?
+</p>
+<pre>
+  DEFINE =&gt;'-o $@'
+</pre>
+<p>
+  This is changing the output location of the object file. You can add gcc arguments using the option "DEFINE". And you can change the output destination of the object file by using the "-o" option of gcc.
+</p>
+<p>
+  What is "$@"? This is a Makefile syntax rule for variables to which the target name is automatically assigned. Since the target name is the object file name, if you write it like this, the object file will be output in the same directory as the source code file.
+</p>
+<h4> Linker targeting </h4>
+<p>
+  Finally, you need to describe the targeting of the linker. You need to tell the linker the object file name, as all the object files will be merged into one and the final dynamic link library will end up with a ".so" extension.
+</p>
+<p>
+  To do this, specify:
+</p>
+<pre>
+    OBJECT =&gt;'$(O_FILES)',
+</pre>
+<p>
+  The list of object file names was in a variable called "O_FILES". To expand "O_FILES", write "$(O_FILES)".
+</p>
+<p>
+  The "OBJECT" option will then be automatically set to an option called "LDFROM" and passed to the linker.
+</p>
+<h3> How to write XS module </h3>
+<p>
+  Makefile.PL is often rewritten when writing an XS module. See <a href="/blog/20100809127859.html"> Introduction to C / C ++ Binding with XS</a> for how to create an XS module.
+</p>
 
   </div>
   <div class="bottom">

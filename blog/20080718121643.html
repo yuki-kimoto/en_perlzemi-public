@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-        <span itemprop = "name"> standard function </ span> </a>
+        <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080718121643.html"> open function-opens a file </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080718121643.html"> open function-opens a file </a></h2>
 <p>
-  To open a <strong> file </ strong>, use the <strong> open function </ strong>. The first argument is a variable for assigning the acquired file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed.
+  To open a <strong> file </strong>, use the <strong> open function </strong>. The first argument is a variable for assigning the acquired file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,134 +97,125 @@
 
 
 <pre>
-$ ret = open ($ fh, $ mode, $ file);
-&lt;/ pre&gt;
-
-When opening a file, the following is a common way to write it. Learn other ways based on this.
-
-&lt;pre&gt;
-open (my $ fh, "&lt;", $ file)
-  or die "Can't open $ file: $!";
-&lt;/ pre&gt;
-
-"&lt;" Means open mode, and when reading a file, specify "&lt;".
-
-&lt;h3&gt; Commonly used open mode &lt;/ h3&gt;
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;span style = "font-weight: bold;"&gt; Open mode &lt;/ span&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;span style = "font-weight: bold;"&gt; Symbol &lt;/ span&gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+$ret = open($fh, $mode, $file);
+</pre>
+<p>
+  When opening a file, the following is a common way to write it. Learn other ways based on this.
+</p>
+<pre>
+open(my $fh, "&lt;", $file)
+  or die "Can't open $file: $!";
+</pre>
+<p>
+  "<" Means open mode, and when reading a file, specify "<".
+</p>
+<h3> Commonly used open mode </h3>
+<table>
+  <tr>
+    <td>
+      <span style = "font-weight: bold;"> Open mode </span>
+    </td>
+    <td>
+      <span style = "font-weight: bold;"> Symbol </span>
+    </td>
+  </tr>
+  <tr>
+    <td>
       Read
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+    <td>
+      <
+    </td>
+  </tr>
+  <tr>
+    <td>
       write in
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+    <td>
+      >
+    </td>
+  </tr>
+  <tr>
+    <td>
       Additional writing
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &gt;&gt; &gt;&gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-Specify in the second argument of the open function. Enclose it in double or single quotes and pass it as a string.
-
-&lt;h4&gt; Read mode &lt;&lt; / h4&gt;
-
-Read mode is a mode in which a file is opened read-only. If the file does not exist, an error will occur.
-
-&lt;h4&gt; Write mode&gt; &lt;/ h4&gt;
-
-Write mode is a mode in which a file is opened write-only. The contents of the original file are deleted the moment you open it. If the file does not exist, it will be created.
-
-&lt;h4&gt; Additional write mode &gt;&gt; &lt;/ h4&gt;
-
-The additional write mode is a mode in which a file is opened exclusively for additional write, and writing starts from the end of the current file. If the file does not exist, it will be created.
-
-&lt;h4&gt; What if you want to read a file and write to it? &lt;/ H4&gt;
-
-There is another read / write mode in the file open mode, but this mode is not used for general purposes. It's easy to think that read-write mode is used when reading a file and writing to that file, but it's different.
-
-As I will explain in detail later, this method is extremely dangerous. To do it safely, follow the steps below.
-
-&lt;ol&gt;
-  &lt;li&gt;
+    </td>
+    <td>
+      >> >>
+    </td>
+  </tr>
+</table>
+<p>
+  Specify in the second argument of the open function. Enclose it in double or single quotes and pass it as a string.
+</p>
+<h4> Read mode << / h4>
+<p>
+  Read mode is a mode in which a file is opened read-only. If the file does not exist, an error will occur.
+</p>
+<h4> Write mode> </h4>
+<p>
+  Write mode is a mode in which a file is opened write-only. The contents of the original file are deleted the moment you open it. If the file does not exist, it will be created.
+</p>
+<h4> Additional write mode >> </h4>
+<p>
+  The additional write mode is a mode in which a file is opened exclusively for additional write, and writing starts from the end of the current file. If the file does not exist, it will be created.
+</p>
+<h4> What if you want to read a file and write to it? </H4>
+<p>
+  There is another read / write mode in the file open mode, but this mode is not used for general purposes. It's easy to think that read-write mode is used when reading a file and writing to that file, but it's different.
+</p>
+<p>
+  As I will explain in detail later, this method is extremely dangerous. To do it safely, follow the steps below.
+</p>
+<ol>
+  <li>
     Read the file.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     Write all lines containing changes to a temporary file.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     Delete the original file.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     Rename the temporary file to the original file name.
-  &lt;/ li&gt;
-&lt;/ ol&gt;
-
-&lt;h3&gt; Exception handling &lt;/ h3&gt;
-
-When you open the file, you also need to handle the exception. If the file fails to open, there is no point in moving on to the subsequent processing, so use the die function to terminate the program. The cause of the file opening failure is assigned to "$!", So include that in the error message as well.
-
-&lt;pre&gt;
-open (my $ fh, "&lt;", $ file)
-  or die "Can't open $ file: $!";
-&lt;/ pre&gt;
-
-&lt;h3&gt; Open two arguments-not recommended &lt;/ h3&gt;
-
-Older source code may use a two-argument open function, but now it is recommended to use a three-argument open function.
-
-&lt;pre&gt;
+  </li>
+</ol>
+<h3> Exception handling </h3>
+<p>
+  When you open the file, you also need to handle the exception. If the file fails to open, there is no point in moving on to the subsequent processing, so use the die function to terminate the program. The cause of the file opening failure is assigned to "$!", So include that in the error message as well.
+</p>
+<pre>
+open(my $fh, "&lt;", $file)
+  or die "Can't open $file: $!";
+</pre>
+<h3> Open two arguments-not recommended </h3>
+<p>
+  Older source code may use a two-argument open function, but now it is recommended to use a three-argument open function.
+</p>
+<pre>
 # 2 Argument open function is deprecated
-open ($ fh, "&lt;$ file");
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample file open using the open function.
-
-&lt;pre&gt;
+open($fh, "&lt;$file");
+</pre>
+<h3> Sample </h3>
+<p>
+  This is a sample file open using the open function.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Pass the name of an existing file as an argument.
-my $ file = shift;
+my $file = shift;
 
-open (my $ fh2, "&lt;", $ file)
-  or die "Can't open file $ file: $!";
-&lt;/ pre&gt;
-
-&lt;h3&gt; Related articles &lt;/ h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080519121125.html"&gt; Create a file &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+open(my $fh2, "&lt;", $file)
+  or die "Can't open file $file: $!";
+</pre>
+<h3> Related articles </h3>
+<ul>
+  <li>
+    <a href="/blog/20080519121125.html"> Create a file</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

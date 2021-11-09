@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> base --inherit class  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> base - inherit class  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  base  module allows you to inherit classes.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" base --inherit class  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" base - inherit class  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  base  module allows you to inherit classes." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100425127089.html"> base --inherit class </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100425127089.html"> base - inherit class </a></h2>
 <p>
-  The <strong> base </ strong> module allows you to inherit classes.
+  The <strong> base </strong> module allows you to inherit classes.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,37 +101,43 @@
 package Your Class;
 
 use base'BaseClass';
-&lt;/ pre&gt;
-
-Inheritance allows subclasses to call methods in the base class. If a method called parse is defined in the base class BaseClass, you can also call the parse method in the subclass YourClass.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Inheritance allows subclasses to call methods in the base class. If a method called parse is defined in the base class BaseClass, you can also call the parse method in the subclass YourClass.
+</p>
+<pre>
 Base class
 ▲
 Subclass ← base class method + own method available
-&lt;/ pre&gt;
-
-&lt;h3&gt; Single inheritance and multiple inheritance &lt;/ h3&gt;
-
-Perl supports multiple inheritance, but multiple inheritance makes the inheritance relationship between modules very complicated. Therefore, it is said that limiting inheritance to single inheritance is good for keeping module relationships simple.
-
-In fact, programming with single inheritance makes the program easy to understand and read. There is nothing you can't do with single inheritance, and the design will be cleaner, so please try to create a program with single inheritance.
-
-&lt;h3&gt; FAQ about base module &lt;/ h3&gt;
-
-Q. I have seen a module called parent. How is it different from the base module?
-A. The parent module is a simplification of the base module. The roles are the same. parent has become a core module since 5.10.0. The base module is a core module from Perl 5.005. It seems that the base module is often used when inheriting in consideration of portability.
-
-Q. Please tell me the mechanism of inheritance in the base module.
-A. In Perl, you can inherit by setting a base class in a package variable called @ISA. The base module only does this at compile time. It has the same meaning as the following implementation.
-&lt;pre&gt;
+</pre>
+<h3> Single inheritance and multiple inheritance </h3>
+<p>
+  Perl supports multiple inheritance, but multiple inheritance makes the inheritance relationship between modules very complicated. Therefore, it is said that limiting inheritance to single inheritance is good for keeping module relationships simple.
+</p>
+<p>
+  In fact, programming with single inheritance makes the program easy to understand and read. There is nothing you can't do with single inheritance, and the design will be cleaner, so please try to create a program with single inheritance.
+</p>
+<h3> FAQ about base module </h3>
+<p>
+  Q. I have seen a module called parent. How is it different from the base module?
+</p>
+<p>
+  A. The parent module is a simplification of the base module. The roles are the same. parent has become a core module since 5.10.0. The base module is a core module from Perl 5.005. It seems that the base module is often used when inheriting in consideration of portability.
+</p>
+<p>
+  Q. Please tell me the mechanism of inheritance in the base module.
+</p>
+<p>
+  A. In Perl, you can inherit by setting a base class in a package variable called @ISA. The base module only does this at compile time. It has the same meaning as the following implementation.
+</p>
+<pre>
 # Inheritance mechanism
 package Your Class;
 
 BEGIN {
   our @ISA = ('BaseClass');
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

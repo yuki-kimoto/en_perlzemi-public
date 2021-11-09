@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180418152401.html"> To get infinity (Inf), infinitesimal (-Inf), non-number (NaN) </a></ h2>
+    <h2><a href="/blog/20180418152401.html"> To get infinity (Inf), infinitesimal (-Inf), non-number (NaN) </a></h2>
 <p>
   To get an infinitesimal (Inf), infinitesimal (-Inf), and non-numeric (NaN) numeric representation in Perl:
 </p>
@@ -79,32 +79,30 @@
 </div>
 
 
-<h4> Infinity Inf </ h4>
+<h4> Infinity Inf </h4>
 <p>
   You can get infinity (Inf) by doing a floating point operation that overflows in the positive direction.
 </p>
 <pre>
 9 ** 9 ** 9
-&lt;/ pre&gt;
-
-&lt;h4&gt; Infinitesimal -Inf &lt;/ h4&gt;
-
-You can get infinity (Inf) by doing a floating point operation that overflows in the negative direction.
-
-&lt;pre&gt;
+</pre>
+<h4> Infinitesimal -Inf </h4>
+<p>
+  You can get infinity (Inf) by doing a floating point operation that overflows in the negative direction.
+</p>
+<pre>
 -9 ** 9 ** 9
-&lt;/ pre&gt;
-
-&lt;h4&gt; Innumerable NaN &lt;/ h4&gt;
-
-You can get a non-number (NaN) by dividing infinity by infinity.
-
-&lt;pre&gt;
+</pre>
+<h4> Innumerable NaN </h4>
+<p>
+  You can get a non-number (NaN) by dividing infinity by infinity.
+</p>
+<pre>
 9 ** 9 ** 9/9 ** 9 ** 9
-&lt;/ pre&gt;
-
-
-(Reference) &lt;a href="http://perldoc.jp/docs/perl/5.22.1/perldata.pod#Special32floating32point:32infinity32-40Inf41-32and32not-a-number32-40NaN41"&gt; Special floating point number: Infinite ( Inf) and non-numerical (NaN) &lt;/a&gt;
+</pre>
+<p>
+  (Reference) <a href="http://perldoc.jp/docs/perl/5.22.1/perldata.pod#Special32floating32point:32infinity32-40Inf41-32and32not-a-number32-40NaN41"> Special floating point number: Infinite ( Inf) and non-numerical (NaN)</a>
+</p>
 
   </div>
   <div class="bottom">

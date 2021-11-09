@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Parameter mapping conditions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The value of can be expressed in the format  & lt; value & gt; . You can also use it to create new values ​​such as % Perl .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Parameter mapping conditions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The value of can be expressed in the format  & lt; value & gt; . You can also use it to create new values ​​such as % Perl ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -60,7 +60,7 @@
   </div>
   <div class="middle">
     <p>
-  The value of can be expressed in the format <b> & lt; value & gt; </ b>. You can also use it to create new values ​​such as <b>% Perl </ b>.
+  The value of can be expressed in the format <b> & lt; value & gt; </b>. You can also use it to create new values ​​such as <b>% Perl </b>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -87,53 +87,53 @@
   price =&gt; 1000,
   a =&gt;'% Ken%'
 }
-&lt;/ pre&gt;
-
-Keys not specified in the map method will not be mapped. The key b is not mapped in this sample.
-
-If you want to change the value a little more flexibly, you can use the subroutine reference. Since the original value can be obtained with the first argument, the new value is returned.
-
-&lt;pre&gt;
-Original key name =&gt; [new key name =&gt; sub {return'%'. $ _ [0].'%'}]
-&lt;/ pre&gt;
-
-&lt;h4&gt; Parameter mapping conditions &lt;/ h4&gt;
-
-The default mapping conditions are as follows:
-
-&lt;pre&gt;
+</pre>
+<p>
+  Keys not specified in the map method will not be mapped. The key b is not mapped in this sample.
+</p>
+<p>
+  If you want to change the value a little more flexibly, you can use the subroutine reference. Since the original value can be obtained with the first argument, the new value is returned.
+</p>
+<pre>
+Original key name =&gt; [new key name =&gt; sub {return'%'. $_ [0].'%'}]
+</pre>
+<h4><a href="/blog/20110904131900.html"> Parameter mapping conditions </a></h4>
+<p>
+  The default mapping conditions are as follows:
+</p>
+<pre>
 The value is defined and has a length
-&lt;/ pre&gt;
-
-So the following parameters are mapped.
-
-&lt;pre&gt;
+</pre>
+<p>
+  So the following parameters are mapped.
+</p>
+<pre>
 title =&gt;'Perl',
-&lt;/ pre&gt;
-
-However, anything that does not have an empty string, undefined value, or the key itself is not mapped. This is because the mapping is intended for web applications.
-
-&lt;pre&gt;
+</pre>
+<p>
+  However, anything that does not have an empty string, undefined value, or the key itself is not mapped. This is because the mapping is intended for web applications.
+</p>
+<pre>
 title =&gt;'',
 title =&gt; undef
-&lt;/ pre&gt;
-
-Use the condition attribute to change this condition. You can set the reference of any subroutine or the strings "length", "defined", and "exists" as special values.
-
-&lt;pre&gt;
-$ mapper-&gt; condition ('length'); # Same as default
-$ mapper-&gt; condition ('defined'); # value is defined
-$ mapper-&gt; condition ('exists'); # key exists
-$ mapper-&gt; condition (sub {defined $ _ [0]}); # Reference to any subroutine
-&lt;/ pre&gt;
-
-It is also possible to set each key individually as follows with the map method.
-
-&lt;pre&gt;
-$ mapper-&gt; map (
+</pre>
+<p>
+  Use the condition attribute to change this condition. You can set the reference of any subroutine or the strings "length", "defined", and "exists" as special values.
+</p>
+<pre>
+$mapper-&gt; condition ('length'); # Same as default
+$mapper-&gt; condition ('defined'); # value is defined
+$mapper-&gt; condition ('exists'); # key exists
+$mapper-&gt; condition (sub {defined $_ [0]}); # Reference to any subroutine
+</pre>
+<p>
+  It is also possible to set each key individually as follows with the map method.
+</p>
+<pre>
+$mapper-&gt; map(
   Old key =&gt; [new key =&gt; new value, {condtion =&gt;'defined'}],
 );
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

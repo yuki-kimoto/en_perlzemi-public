@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Describe image tags  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The g> tag helper makes it easy to write  hyperlinks .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Describe image tags  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The g> tag helper makes it easy to write  hyperlinks ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -60,7 +60,7 @@
   </div>
   <div class="middle">
     <p>
-  The g> tag helper makes it easy to write <strong> hyperlinks </ strong>.
+  The g> tag helper makes it easy to write <strong> hyperlinks </strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -85,109 +85,103 @@
 &lt;% end%&gt;
 &lt;% = link_to'/ path / to / file' =&gt; begin%&gt; File &lt;% end%&gt;
 &lt;% = link_to'http://mojolicio.us' =&gt; begin%&gt; Mojolicious &lt;% end%&gt;
-&lt;% = link_to url_for-&gt; query (foo =&gt; $ foo) =&gt; begin%&gt; Retry &lt;% end%&gt;
-&lt;/ pre&gt;
-
-It will be expanded to the following HTML. The first argument is the root name or path. You can also pass a Mojo :: URL object. The last argument is a block, which allows you to specify the text of the hyperlink.
-
-&lt;pre&gt;
-&lt;a href="/path/to/index"&gt; Home &lt;/a&gt;
-&lt;a class="links" href="/path/to/index/bar"&gt; Home &lt;/a&gt;
-&lt;a href="/path/to/file"&gt; File &lt;/a&gt;
-&lt;a href="http://mojolicio.us"&gt; Mojolicious &lt;/a&gt;
-&lt;a href="/current/path?foo=something"&gt; Retry &lt;/a&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Describe image tags &lt;/ h3&gt;
-
-The &lt;strong&gt; image &lt;/ strong&gt; tag helper makes it easy to write &lt;strong&gt; image tags &lt;/ strong&gt;.
-
-&lt;pre&gt;
+&lt;% = link_to url_for-&gt; query (foo =&gt; $foo) =&gt; begin%&gt; Retry &lt;% end%&gt;
+</pre>
+<p>
+  It will be expanded to the following HTML. The first argument is the root name or path. You can also pass a Mojo::URL object. The last argument is a block, which allows you to specify the text of the hyperlink.
+</p>
+<pre>
+&lt;a href="/path/to/index"&gt; Home&lt;/a&gt;
+&lt;a class="links" href="/path/to/index/bar"&gt; Home&lt;/a&gt;
+&lt;a href="/path/to/file"&gt; File&lt;/a&gt;
+&lt;a href="http://mojolicio.us"&gt; Mojolicious&lt;/a&gt;
+&lt;a href="/current/path?foo=something"&gt; Retry&lt;/a&gt;
+</pre>
+<h3><a href="/blog/20110616130993.html"> Describe image tags </a></h3>
+<p>
+  The <strong> image </strong> tag helper makes it easy to write <strong> image tags </strong>.
+</p>
+<pre>
 &lt;% = image'/images/foo.png'%&gt;
 &lt;% = image'/images/foo.png', alt =&gt;'Foo'%&gt;
-&lt;/ pre&gt;
-
-It will be expanded as follows. The first argument is the URL to the image. This URL is expanded by the url_for method. The remaining arguments are used as attributes.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It will be expanded as follows. The first argument is the URL to the image. This URL is expanded by the url_for method. The remaining arguments are used as attributes.
+</p>
+<pre>
 &lt;img src = "/ images / foo.png" /&gt;
 &lt;img alt = "Foo" src = "/ images / foo.png" /&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Style sheet (CSS) &lt;/ h3&gt;
-
-The &lt;strong&gt; stylesheet &lt;/ strong&gt; tag helper makes it easy to write external links to stylesheets and stylesheets.
-
-&lt;pre&gt;
+</pre>
+<h3> Style sheet (CSS) </h3>
+<p>
+  The <strong> stylesheet </strong> tag helper makes it easy to write external links to stylesheets and stylesheets.
+</p>
+<pre>
 &lt;% = stylesheet'/foo.css'%&gt;
 &lt;% = stylesheet begin%&gt;
   body {color: # 000}
 &lt;% end%&gt;
-&lt;/ pre&gt;
-
-When specifying a link to an external style sheet, describe the path in the first argument. If you want to describe the style sheet itself, specify the block (begin to end) as the first argument. It will be expanded to the following HTML.
-
-&lt;pre&gt;
+</pre>
+<p>
+  When specifying a link to an external style sheet, describe the path in the first argument. If you want to describe the style sheet itself, specify the block (begin to end) as the first argument. It will be expanded to the following HTML.
+</p>
+<pre>
 &lt;link href = "/ foo.css" media = "screen" rel = "stylesheet" type = "text / css" /&gt;
 &lt;style type = "text / css"&gt; &lt;! [CDATA [
   body {color: # 000}
-]]&gt; &lt;/ style&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; JavaScript source code &lt;/ h3&gt;
-
-The &lt;strong&gt; javascript &lt;/ strong&gt; tag helper makes it easy to write JavaScript source code.
-
-&lt;pre&gt;
+]]&gt; &lt;/style&gt;
+</pre>
+<h3> JavaScript source code </h3>
+<p>
+  The <strong> javascript </strong> tag helper makes it easy to write JavaScript source code.
+</p>
+<pre>
 % = javascript'/script.js';
 % = javascript begin
   var a ='b';
 % end
-&lt;/ pre&gt;
-
-The argument can be an external JavaScript path or block (begin to end). You can write the actual JavaScript source code inside the block.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The argument can be an external JavaScript path or block (begin to end). You can write the actual JavaScript source code inside the block.
+</p>
+<pre>
 &lt;script src = "/ script.js" type = "text / javascript" /&gt;
 &lt;script type = "text / javascript"&gt; &lt;! [CDATA [
   var a ='b';
-]]&gt; &lt;/ script&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Input tag &lt;/ h3&gt;
-
-The &lt;strong&gt; input_tag &lt;/ strong&gt; tag helper makes it easy to write &lt;strong&gt; input tags &lt;/ strong&gt;.
-
-&lt;pre&gt;
+]]&gt; &lt;/script&gt;
+</pre>
+<h3> Input tag </h3>
+<p>
+  The <strong> input_tag </strong> tag helper makes it easy to write <strong> input tags </strong>.
+</p>
+<pre>
 &lt;% = input_tag'first_name'%&gt;
 &lt;% = input_tag first_name =&gt;'Default name'%&gt;
 &lt;% = input_tag'employed', type =&gt;'checkbox'%&gt;
 &lt;% = input_tag'country', type =&gt;'radio', value =&gt;'germany'%&gt;
-&lt;/ pre&gt;
-
-It will be expanded as follows. The first argument is the value of name and the remaining arguments are used as attributes. Input values ​​contained in HTTP request parameters are automatically completed.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It will be expanded as follows. The first argument is the value of name and the remaining arguments are used as attributes. Input values ​​contained in HTTP request parameters are automatically completed.
+</p>
+<pre>
 &lt;input name = "first_name" /&gt;
 &lt;input name = "first_name" value = "Default name" /&gt;
 &lt;input name = "employed" type = "checkbox" /&gt;
 &lt;input name = "country" type = "radio" value = "germany" /&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Base tag &lt;/ h3&gt;
-
-
-You can easily write a base tag using the base_tag function, which is a tag helper.
-
-&lt;pre&gt;
+</pre>
+<h3> Base tag </h3>
+<p>
+  You can easily write a base tag using the base_tag function, which is a tag helper.
+</p>
+<pre>
 &lt;% = base_tag%&gt;
-&lt;/ pre&gt;
-
-It will be expanded to the following tags.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It will be expanded to the following tags.
+</p>
+<pre>
 &lt;base href = "http: //localhost/cgi-bin/myapp.pl" /&gt;
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

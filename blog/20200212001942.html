@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200212001942.html"> D module-encodes data and dumps to standard error </a></ h2>
+    <h2><a href="/blog/20200212001942.html"> D module-encodes data and dumps to standard error </a></h2>
 <p>
   The D module provides utility functions that encode data and dump it to standard error output.
 </p>
@@ -79,7 +79,7 @@
 </div>
 
 
-<h3> Usage example </ h3>
+<h3> Usage example </h3>
 <p>
   The D module is used as follows.
 </p>
@@ -90,21 +90,21 @@ use utf8;
 use D;
  
 # Prepare the data (reference) including the decoded string
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
  
 # Encode the reference data (UTF-8) and dump it to standard error output.
-du $ data;
+du $data;
 
 # Encode the reference data (cp932) and dump it to standard error output.
-dw $ data;
+dw $data;
 
-#Dump to standard error without encoding reference data.
-dn $ data;
+# Dump to standard error without encoding reference data.
+dn $data;
 
 # A handy Oneliner example.
-use D; du $ data;
-use D; dw $ data;
-use D; dn $ data;
+use D; du $data;
+use D; dw $data;
+use D; dn $data;
 
 # This is an output sample of the du function.
 [
@@ -115,111 +115,133 @@ use D; dn $ data;
     'name' =&gt;'I'
   }
 ] at test.pl line 7.
-&lt;/ pre&gt;
-
-&lt;h3&gt; Features &lt;/ h3&gt;
-&lt;ul&gt;
-&lt;li&gt; Export functions such as du, dw, dn. These function names are two characters and should not conflict with debug commands such as'p'. &lt;/ li&gt;
-The &lt;li&gt; dustr and dwstr functions encode all strings in the reference data. &lt;/ li&gt;
-&lt;li&gt; du is an abbreviation for'dump UTF-8'. &lt;/ li&gt;
-&lt;li&gt; dw is an abbreviation for'dump Windows cp932'. &lt;/ li&gt;
-&lt;li&gt; dn is an abbreviation for'dump no encoding'. &lt;/ li&gt;
-&lt;li&gt; Data :: Dump the data using Dumper's Dump function. &lt;/ li&gt;
-&lt;li&gt; Outputs the line number and file name to the standard error. &lt;/ li&gt;
-&lt;li&gt; Sort by hash key of dumped data. &lt;/ li&gt;
-&lt;li&gt; Unlike the default of Data :: Dumper, it does not output'$ VAR1 ='. &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Function &lt;/ h3&gt;
-
-&lt;h4&gt; du function &lt;/ h4&gt;
-Encodes all strings in the reference data to UTF-8 and dumps the reference data to standard error along with the filename and line number.
-Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
-This function will be exported.
-
-&lt;pre&gt;
+</pre>
+<h3> Features </h3>
+<ul>
+<li> Export functions such as du, dw, dn. These function names are two characters and should not conflict with debug commands such as'p'. </li>
+<p>
+  The <li> dustr and dwstr functions encode all strings in the reference data. </li>
+</p>
+<li> du is an abbreviation for'dump UTF-8'. </li>
+<li> dw is an abbreviation for'dump Windows cp932'. </li>
+<li> dn is an abbreviation for'dump no encoding'. </li>
+<li> Data::Dump the data using Dumper's Dump function. </li>
+<li> Outputs the line number and file name to the standard error. </li>
+<li> Sort by hash key of dumped data. </li>
+<li> Unlike the default of Data::Dumper, it does not output'$VAR1 ='. </li>
+</ul>
+<h3> Function </h3>
+<h4> du function </h4>
+<p>
+  Encodes all strings in the reference data to UTF-8 and dumps the reference data to standard error along with the filename and line number.
+</p>
+<p>
+  Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
+</p>
+<p>
+  This function will be exported.
+</p>
+<pre>
 use D;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-du $ data;
-&lt;/ pre&gt;
-
-The example below uses a one-liner. It can be used with all functions.
-
-&lt;pre&gt;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-use D; du $ data;
-&lt;/ pre&gt;
-
-&lt;h4&gt; dw function &lt;/ h4&gt;
-Encodes all strings in the reference data to cp932 and dumps the reference data along with the filename and line number to standard error output.
-Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
-This function will be exported.
-
-&lt;pre&gt;
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+du $data;
+</pre>
+<p>
+  The example below uses a one-liner. It can be used with all functions.
+</p>
+<pre>
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+use D; du $data;
+</pre>
+<h4> dw function </h4>
+<p>
+  Encodes all strings in the reference data to cp932 and dumps the reference data along with the filename and line number to standard error output.
+</p>
+<p>
+  Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
+</p>
+<p>
+  This function will be exported.
+</p>
+<pre>
 use D;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-dw $ data;
-&lt;/ pre&gt;
-
-&lt;h4&gt; dn function &lt;/ h4&gt;
-It does not encode all the strings in the reference data and dumps the reference data along with the file name and line number to the standard error output.
-Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
-This function will be exported.
-
-&lt;pre&gt;
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+dw $data;
+</pre>
+<h4> dn function </h4>
+<p>
+  It does not encode all the strings in the reference data and dumps the reference data along with the file name and line number to the standard error output.
+</p>
+<p>
+  Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
+</p>
+<p>
+  This function will be exported.
+</p>
+<pre>
 use D;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-dn $ data;
-&lt;/ pre&gt;
-
-&lt;h4&gt; duster function &lt;/ h4&gt;
-This function returns a UTF-8 encoded string.
-This function will be exported.
-
-The following example gets a UTF-8 encoded string.
-
-&lt;pre&gt;
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+dn $data;
+</pre>
+<h4> duster function </h4>
+<p>
+  This function returns a UTF-8 encoded string.
+</p>
+<p>
+  This function will be exported.
+</p>
+<p>
+  The following example gets a UTF-8 encoded string.
+</p>
+<pre>
 use D;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-my $ str = dustr $ data;
-&lt;/ pre&gt;
-
-&lt;h4&gt; dwstr function &lt;/ h4&gt;
-This function returns a cp932 encoded string.
-This function will be exported.
-
-The following example is getting a cp932 encoded string.
-
-&lt;pre&gt;
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $str = dustr $data;
+</pre>
+<h4> dwstr function </h4>
+<p>
+  This function returns a cp932 encoded string.
+</p>
+<p>
+  This function will be exported.
+</p>
+<p>
+  The following example is getting a cp932 encoded string.
+</p>
+<pre>
 use D;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-my $ str = dwstr $ data;
-&lt;/ pre&gt;
-
-&lt;h4&gt; dnstr function &lt;/ h4&gt;
-This function returns a string without encoding.
-This function will be exported.
-
-The following example is getting an unencoded string.
-
-&lt;pre&gt;
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $str = dwstr $data;
+</pre>
+<h4> dnstr function </h4>
+<p>
+  This function returns a string without encoding.
+</p>
+<p>
+  This function will be exported.
+</p>
+<p>
+  The following example is getting an unencoded string.
+</p>
+<pre>
 use D;
-my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
-my $ str = dnstr $ data;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Bug report &lt;/ h3&gt;
-&lt;a href="https://github.com/YoshiyukiItoh/D" target="_blank"&gt; https://github.com/YoshiyukiItoh/D &lt;/a&gt;
-
-&lt;h3&gt; Related items &lt;/ h3&gt;
-&lt;ul&gt;
-&lt;li&gt; &lt;a href="https://metacpan.org/pod/Data :: Dumper" target = "_ blank"&gt; Data :: Dumper &lt;/a&gt; &lt;/ li&gt;
-&lt;li&gt; &lt;a href="https://metacpan.org/pod/Carp" target="_blank"&gt; Carp &lt;/a&gt; &lt;/ li&gt;
-&lt;li&gt; &lt;a href="https://metacpan.org/pod/Data :: Recursive :: Encode" target = "_ blank"&gt; Data :: Recursive :: Encode &lt;/a&gt; &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Original page (meta :: cpan) &lt;/ h3&gt;
-&lt;a href="https://metacpan.org/pod/D" target="_blank"&gt; https://metacpan.org/pod/D &lt;/a&gt;
+my $data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $str = dnstr $data;
+</pre>
+<h3> Bug report </h3>
+<p>
+  <a href="https://github.com/YoshiyukiItoh/D" target="_blank"> https://github.com/YoshiyukiItoh/D</a>
+</p>
+<h3> Related items </h3>
+<ul>
+<li> <a href="https://metacpan.org/pod/Data::Dumper" target = "_ blank"> Data::Dumper</a> </li>
+<li> <a href="https://metacpan.org/pod/Carp" target="_blank"> Carp</a> </li>
+<li> <a href="https://metacpan.org/pod/Data::Recursive::Encode" target = "_ blank"> Data::Recursive::Encode</a> </li>
+</ul>
+<h3> Original page (meta::cpan) </h3>
+<p>
+  <a href="https://metacpan.org/pod/D" target="_blank"> https://metacpan.org/pod/D</a>
+</p>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> or operator --OR with low priority  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="or  is one of Perl's  logical operators  and represents a logical sum. It has the same meaning as ||, but or has a lower operator priority and is generally used between sentences.">
+<title> or operator - OR with low priority  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="or  is one of Perl's  logical operators and represents a logical sum. It has the same meaning as ||, but or has a lower operator priority and is generally used between sentences.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" or operator --OR with low priority  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="or  is one of Perl's  logical operators  and represents a logical sum. It has the same meaning as ||, but or has a lower operator priority and is generally used between sentences." />
+<meta name="twitter:title" content=" or operator - OR with low priority  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="or  is one of Perl's  logical operators and represents a logical sum. It has the same meaning as ||, but or has a lower operator priority and is generally used between sentences." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20180125151688.html"> or operator --OR with low priority </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20180125151688.html"> or operator - OR with low priority </a></h2>
 <p>
-  <b> or </ b> is one of Perl's <a href="/blog/20100816136168.html"> logical operators </a> and represents a logical sum. It has the same meaning as ||, but or has a lower operator priority and is generally used between sentences.
+  <b> or </b> is one of Perl's <a href="/blog/20100816136168.html"> logical operators</a> and represents a logical sum. It has the same meaning as ||, but or has a lower operator priority and is generally used between sentences.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,37 +98,41 @@
 
 <pre>
 Sentence 1 or Sentence 2
-&lt;/ pre&gt;
-
-With this description, statement 2 is executed when statement 1 returns false.
-
-Use &lt;h3&gt; or as a conditional branch &lt;/ h3&gt;
-
-Taking advantage of these properties, or is often used for conditional branching. For example, if the &lt;a href="/blog/20080718121643.html"&gt; open function &lt;/a&gt; fails, write as follows.
-
-&lt;pre&gt;
-open my $ fh,'&lt;', $ file
-  or die qq / Can't open file "$ file": $! /;
-&lt;/ pre&gt;
-
-If the open function succeeds, true is returned and the right-hand side of or is not executed. If the open function fails, undef is returned, so &lt;a href="/blog/20100212126425.html"&gt; die &lt;/a&gt; on the right side is executed and the program ends.
-
-As another example, it is also used with the system function. The system function returns 0 on success, so write:
-
-&lt;pre&gt;
-system (@cmd) == 0
+</pre>
+<p>
+  With this description, statement 2 is executed when statement 1 returns false.
+</p>
+<p>
+  Use <h3> or as a conditional branch </h3>
+</p>
+<p>
+  Taking advantage of these properties, or is often used for conditional branching. For example, if the <a href="/blog/20080718121643.html"> open function</a> fails, write as follows.
+</p>
+<pre>
+open my $fh,'&lt;', $file
+  or die qq / Can't open file "$file": $! /;
+</pre>
+<p>
+  If the open function succeeds, true is returned and the right-hand side of or is not executed. If the open function fails, undef is returned, so <a href="/blog/20100212126425.html"> die</a> on the right side is executed and the program ends.
+</p>
+<p>
+  As another example, it is also used with the system function. The system function returns 0 on success, so write:
+</p>
+<pre>
+system(@cmd) == 0
   or die "Can't execute command @cmd";
-&lt;/ pre&gt;
-
-If you want to write the main processing first and write supplementary error processing later, you can use conditional branching with or.
-
-You can use "and" for conditional branching, but "or" is recommended because it is difficult to read.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you want to write the main processing first and write supplementary error processing later, you can use conditional branching with or.
+</p>
+<p>
+  You can use "and" for conditional branching, but "or" is recommended because it is difficult to read.
+</p>
+<pre>
 Example rewritten with # and
-system (@cmd)
+system(@cmd)
   and die "Can't execute command @cmd";
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

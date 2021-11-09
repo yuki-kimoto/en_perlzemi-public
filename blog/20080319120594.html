@@ -59,7 +59,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20080319120594.html"> Logical product Logical sum denial [Page transfer] </a></ h2>
+    <h2><a href="/blog/20080319120594.html"> Logical product Logical sum denial [Page transfer] </a></h2>
 <p>
   The contents of this page have been moved to the following pages.
 </p>
@@ -81,77 +81,72 @@
 
 <blockquote>
 <p>
-  <a href="/blog/20100816136168.html"> Perl logical operators </a>
+  <a href="/blog/20100816136168.html"> Perl logical operators</a>
 </p>
-</ blockquote>
+</blockquote>
 <p>
-  The logical product is expressed as <strong> && </ strong>, the logical sum is expressed as <strong> || </ strong>, and the negation is expressed as <strong>! </ Strong>.
+  The logical product is expressed as <strong> && </strong>, the logical sum is expressed as <strong> || </strong>, and the negation is expressed as <strong>! </Strong>.
 </p>
-<h3> AND, OR, negation </ h3>
+<h3> AND, OR, negation </h3>
 <ul>
   <li>
     AND A and B: A && B
-  </ li>
+  </li>
   <li>
     OR A or B: A || B
-  </ li>
+  </li>
   <li>
     Not Negative A:! A
-  </ li>
+  </li>
   <li>
     The negation operator converts 0 to 1 and inverts non-zero numbers to 1.
-  </ li>
-</ ul>
-<h3> Logical product (A and B) </ h3>
+  </li>
+</ul>
+<h3> Logical product (A and B) </h3>
 <pre>
-if ($ num&gt; 1 &amp;&amp; $ num &lt;4) {
-  print "\ $ num is greater than 1 and less than 4 \ n \ n";
+if ($num&gt; 1 &amp;&amp; $num &lt;4) {
+  print "\ $num is greater than 1 and less than 4\n\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; OR (A or B) &lt;/ h3&gt;
-
-&lt;pre&gt;
-if ($ pet eq'dog' || $ pet eq'cat') {
-  print "\ $ pet is either'dog'or'cat'. \ N \ n";
+</pre>
+<h3> OR (A or B) </h3>
+<pre>
+if ($pet eq'dog' || $pet eq'cat') {
+  print "\ $pet is either'dog'or'cat'.\n\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Negation (not A) &lt;/ h3&gt;
-
-&lt;pre&gt;
-if (! $ num0) {
-  print "! \ $ Num is true \ n";
+</pre>
+<h3> Negation (not A) </h3>
+<pre>
+if (! $num0) {
+  print "! \ $Num is true\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample code &lt;/ h3&gt;
-
-It is a sample of logical product, logical sum, and negation.
-
-&lt;pre&gt;
+</pre>
+<h3> Sample code </h3>
+<p>
+  It is a sample of logical product, logical sum, and negation.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # AND, OR, negation
-print "1. Logical product (A and B) \ n";
-my $ num = 3;
-if ($ num&gt; 1 &amp;&amp; $ num &lt;4) {
-  print "\ $ num is greater than 1 and less than 4 \ n \ n";
+print "1. Logical product (A and B)\n";
+my $num = 3;
+if ($num&gt; 1 &amp;&amp; $num &lt;4) {
+  print "\ $num is greater than 1 and less than 4\n\n";
 }
 
-print "2. OR (A or B) \ n";
-my $ pet ='dog';
-if ($ pet eq'dog' || $ pet eq'cat') {
-  print "\ $ pet is either'dog'or'cat'. \ N \ n";
+print "2. OR (A or B)\n";
+my $pet ='dog';
+if ($pet eq'dog' || $pet eq'cat') {
+  print "\ $pet is either'dog'or'cat'.\n\n";
 }
 
-print "3. Negation (not A) \ n";
-my $ num0 = 0;
-if (! $ num0) {
-  print "! \ $ Num is true \ n";
+print "3. Negation (not A)\n";
+my $num0 = 0;
+if (! $num0) {
+  print "! \ $Num is true\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

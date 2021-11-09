@@ -62,17 +62,17 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130220136137.html">
-        <span itemprop = "name"> reading material </ span> </a>
+        <span itemprop = "name"> reading material </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20081103122562.html"> Make sure you give the variable a proper name </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081103122562.html"> Make sure you give the variable a proper name </a></h2>
 <p>
   A good name for the variable will make the program easier to read.
 </p>
@@ -98,160 +98,150 @@
 <ol>
   <li>
     Make variable names meaningful.
-  </ li>
+  </li>
   <li>
     Variable names are all lowercase and word joints use _ (underscore).
-  </ li>
+  </li>
   <li>
     How detailed the variable name should be
-  </ li>
+  </li>
   <li>
     Variable names that may be omitted
-  </ li>
+  </li>
   <li>
     How to name variables that represent boolean values
-  </ li>
+  </li>
   <li>
     Array naming method
-  </ li>
-</ ol>
-<h3> (1) Make the variable name meaningful. </ h3>
+  </li>
+</ol>
+<h3> (1) Make the variable name meaningful. </h3>
 <p>
   The hardest thing to read in programming is the intent of the person who wrote the code.
 </p>
 <p>
   Proper variable names make it easier to convey your intentions.
 </p>
-<h4> (a) When variables have meaning </ h4>
+<h4> (a) When variables have meaning </h4>
 <pre>
 # This variable stores the sum of something
-my $ total;
+my $total;
 
-#This variable represents some offset.
-my $ offset;
+# This variable represents some offset.
+my $offset;
 
 # This variable represents the maximum number of clients
-my $ max_client
-&lt;/ pre&gt;
-
-&lt;h4&gt; (b) When variables have no meaning &lt;/ h4&gt;
-
-&lt;pre&gt;
+my $max_client
+</pre>
+<h4> (b) When variables have no meaning </h4>
+<pre>
 # I don't know anything
-my $ p;
-my $ q;
-my $ k;
-&lt;/ pre&gt;
-
-The only concern for computers is whether variable names can be distinguished, but for humans it is important what the variable names mean.
-
-&lt;h3&gt; (2) Variable names are all lowercase, and word joints are _ (underscore.) &lt;/ H3&gt;
-
-Do not use uppercase letters in variable names, only lowercase letters. Use underscores at word joints.
-
-&lt;pre&gt;
-my $ user_name;
-my $ search_word;
-my $ max_database_connection;
-&lt;/ pre&gt;
-
-This is a Perl convention, not compulsory, but if you're writing code in Perl, you'll probably want to keep it. I think there is less confusion for the user.
-
-On the contrary, when programming with java, do not bring in the perl convention and write it as userName.
-
-&lt;h3&gt; (3) How detailed the variable name should be &lt;/ h3&gt;
-
-I think that how detailed the variable name should be based on whether the meaning can be distinguished within the scope.
-
-&lt;h4&gt; (a) If you can clearly understand the intention, you can use a short variable name &lt;/ h4&gt;
-
-&lt;pre&gt;
+my $p;
+my $q;
+my $k;
+</pre>
+<p>
+  The only concern for computers is whether variable names can be distinguished, but for humans it is important what the variable names mean.
+</p>
+<h3> (2) Variable names are all lowercase, and word joints are _ (underscore.) </H3>
+<p>
+  Do not use uppercase letters in variable names, only lowercase letters. Use underscores at word joints.
+</p>
+<pre>
+my $user_name;
+my $search_word;
+my $max_database_connection;
+</pre>
+<p>
+  This is a Perl convention, not compulsory, but if you're writing code in Perl, you'll probably want to keep it. I think there is less confusion for the user.
+</p>
+<p>
+  On the contrary, when programming with java, do not bring in the perl convention and write it as userName.
+</p>
+<h3> (3) How detailed the variable name should be </h3>
+<p>
+  I think that how detailed the variable name should be based on whether the meaning can be distinguished within the scope.
+</p>
+<h4> (a) If you can clearly understand the intention, you can use a short variable name </h4>
+<pre>
 sub sum {
   # Represents the total value
-  my $ total;
+  my $total;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (b) If it is necessary to distinguish, use a variable name that can distinguish the meaning depending on the situation &lt;/ h4&gt;
-
-For example, if you had a function that added odd sums and even sums, give each sum an appropriate name.
-
-&lt;pre&gt;
+</pre>
+<h4> (b) If it is necessary to distinguish, use a variable name that can distinguish the meaning depending on the situation </h4>
+<p>
+  For example, if you had a function that added odd sums and even sums, give each sum an appropriate name.
+</p>
+<pre>
 sub sum {
   # Odd sum
-  my $ odd_total;
+  my $odd_total;
   
   # Even sum
-  my $ even_total
+  my $even_total
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (c) If you can clearly understand the intention with the for statement, you can use a short variable name such as $ i &lt;/ h4&gt;
-
-&lt;pre&gt;
-for my $ i (0 .. @nums --1) {
+</pre>
+<h4> (c) If you can clearly understand the intention with the for statement, you can use a short variable name such as $i </h4>
+<pre>
+for my $i (0 .. @nums - 1) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; (d) If there is a possibility that the intention may be difficult to understand in the for statement, use a variable name that can distinguish the meaning &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ data_table = [[1, 2, 3], [2, 4, 6]];
-for my $ row_num (0 .. @ $ data_table --1) {
-  for my $ colon_num (0 .. @ {$ data_table [$ row_num]} ―― 1) {
+</pre>
+<h4> (d) If there is a possibility that the intention may be difficult to understand in the for statement, use a variable name that can distinguish the meaning </h4>
+<pre>
+my $data_table = [[1, 2, 3], [2, 4, 6]];
+for my $row_num (0 .. @ $data_table - 1) {
+  for my $colon_num (0 .. @ {$data_table [$row_num]} ―― 1) {
     ...
   }
 }
-&lt;/ pre&gt;
+</pre>
+<h3> (4) Variable names that may be omitted </h3>
+<p>
+  You may omit anything that makes sense by convention. If the variable scope is narrow, you can omit it. When omitting it, it is easy to understand to leave the first few characters.
+</p>
+<h4> Variable names that can be understood even if omitted </h4>
+<pre>
+my $num; # number
+my $len; # length;
+my $char; # charactor;
+</pre>
+<h3> (5) Naming method for variables that represent boolean values ​​</h3>
+<p>
+  Here are some examples of variable names that represent boolean values.
+</p>
+<pre>
+# Safe (is + adjective)
+my $is_safe;
 
-&lt;h3&gt; (4) Variable names that may be omitted &lt;/ h3&gt;
-
-You may omit anything that makes sense by convention. If the variable scope is narrow, you can omit it. When omitting it, it is easy to understand to leave the first few characters.
-
-&lt;h4&gt; Variable names that can be understood even if omitted &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ num; # number
-my $ len; # length;
-my $ char; # charactor;
-&lt;/ pre&gt;
-
-&lt;h3&gt; (5) Naming method for variables that represent boolean values ​​&lt;/ h3&gt;
-
-Here are some examples of variable names that represent boolean values.
-
-&lt;pre&gt;
-#Safe (is + adjective)
-my $ is_safe;
-
-#Switched on (noun + preposition)
-my $ switch_on;
+# Switched on (noun + preposition)
+my $switch_on;
 
 # Loading request (noun + present participle)
-my $ request_loading;
+my $request_loading;
 
 # Writing is complete (noun + past participle)
-my $ write_done;
+my $write_done;
 
-#Check successful (noun + noun)
-my $ check_success;
+# Check successful (noun + noun)
+my $check_success;
 
-#The state is ok. (Noun + noun)
-my $ status_ok;
-&lt;/ pre&gt;
-
-&lt;h3&gt; (6) Sequence naming method &lt;/ h3&gt;
-
-If you want to name the array, add an s at the end.
-&lt;pre&gt;
+# The state is ok. (Noun + noun)
+my $status_ok;
+</pre>
+<h3> (6) Sequence naming method </h3>
+<p>
+  If you want to name the array, add an s at the end.
+</p>
+<pre>
 How to add # s to the end
 my @members;
 
-for my $ member (@members) {
+for my $member (@members) {
   # ...
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

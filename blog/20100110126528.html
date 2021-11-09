@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> sort function --sort array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use the  sort function  to  sort the array . Pass a code block for comparison as the first argument. To sort in ascending order, write $ a before $ b, and to sort in descending order, write $ b before $ a. Use  as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order. Note that there is no comma immediately after the code block.">
+<title> sort function - sort array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the  sort function  to  sort the array . Pass a code block for comparison as the first argument. To sort in ascending order, write $a before $b, and to sort in descending order, write $b before $a. Use  as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order. Note that there is no comma immediately after the code block.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" sort function --sort array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use the  sort function  to  sort the array . Pass a code block for comparison as the first argument. To sort in ascending order, write $ a before $ b, and to sort in descending order, write $ b before $ a. Use  as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order. Note that there is no comma immediately after the code block." />
+<meta name="twitter:title" content=" sort function - sort array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the  sort function  to  sort the array . Pass a code block for comparison as the first argument. To sort in ascending order, write $a before $b, and to sort in descending order, write $b before $a. Use  as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order. Note that there is no comma immediately after the code block." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100110126528.html"> sort function --sort array </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100110126528.html"> sort function - sort array </a></h2>
 <p>
-  Use the <strong> sort function </ strong> to <strong> sort the array </ strong>. Pass a code block for comparison as the first argument. To sort in ascending order, write $ a before $ b, and to sort in descending order, write $ b before $ a. Use <=> as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order. Note that there is no comma immediately after the code block.
+  Use the <strong> sort function </strong> to <strong> sort the array </strong>. Pass a code block for comparison as the first argument. To sort in ascending order, write $a before $b, and to sort in descending order, write $b before $a. Use <=> as the comparison operator if you want to compare as a number, and use cmp if you want to compare in lexicographical order. Note that there is no comma immediately after the code block.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,111 +98,106 @@
 
 <pre>
 # Sort in ascending order
-@sorted = sort {$ a operator $ b} @array;
+@sorted = sort {$a operator $b} @array;
 
 # Sort in descending order
-@sorted = sort {$ b operator $ a} @array;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sorting sample &lt;/ h3&gt;
-
-This is a sample that sorts in ascending order of numerical values. @nums becomes (2, 3, 5, 11).
-
-&lt;pre&gt;
+@sorted = sort {$b operator $a} @array;
+</pre>
+<h3> Sorting sample </h3>
+<p>
+  This is a sample that sorts in ascending order of numerical values. @nums becomes (2, 3, 5, 11).
+</p>
+<pre>
 # Sort by numerical value in ascending order
 my @nums = (5, 11, 3, 2);
-@nums = sort {$ a &lt;=&gt; $ b} @nums;
-&lt;/ pre&gt;
-
-This is a sample that sorts the numbers in descending order. @nums becomes (11, 5, 3, 2).
-
-&lt;pre&gt;
+@nums = sort {$a &lt;=&gt; $b} @nums;
+</pre>
+<p>
+  This is a sample that sorts the numbers in descending order. @nums becomes (11, 5, 3, 2).
+</p>
+<pre>
 # Sort by numerical value in descending order
 my @nums = (5, 11, 3, 2);
-@nums = sort {$ b &lt;=&gt; $ a} @nums;
-&lt;/ pre&gt;
-
-This is a sample that sorts in ascending order in dictionary order. @nums will be (11, 2, 3, 5). When comparing 11 and 3 in dictionary order, 11 comes to bloom.
-
-&lt;pre&gt;
-#Sort in ascending dictionary order
+@nums = sort {$b &lt;=&gt; $a} @nums;
+</pre>
+<p>
+  This is a sample that sorts in ascending order in dictionary order. @nums will be (11, 2, 3, 5). When comparing 11 and 3 in dictionary order, 11 comes to bloom.
+</p>
+<pre>
+# Sort in ascending dictionary order
 my @nums = (5, 11, 3, 2);
-@nums = sort {$ a cmp $ b} @nums;
-&lt;/ pre&gt;
-
-This is a sample that sorts in descending order of dictionary order. @nums becomes (5, 3, 2, 11).
-
-&lt;pre&gt;
-#Sort in descending order of dictionary
+@nums = sort {$a cmp $b} @nums;
+</pre>
+<p>
+  This is a sample that sorts in descending order of dictionary order. @nums becomes (5, 3, 2, 11).
+</p>
+<pre>
+# Sort in descending order of dictionary
 my @nums = (5, 11, 3, 2);
-@nums = sort {$ b cmp $ a} @nums;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Omission of code block &lt;/ h3&gt;
-
-If you omit the code block, it has the same meaning as if you sort in ascending dictionary order.
-
-&lt;pre&gt;
-#The next two have the same meaning
+@nums = sort {$b cmp $a} @nums;
+</pre>
+<h3> Omission of code block </h3>
+<p>
+  If you omit the code block, it has the same meaning as if you sort in ascending dictionary order.
+</p>
+<pre>
+# The next two have the same meaning
 @nums = sort @nums;
-@nums = sort {$ a cmp $ b} @nums;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sort by multiple conditions &lt;/ h3&gt;
-
-Try to sort the strings in the order of longest, and if the lengths are the same, sort them in ascending dictionary order. Use || to specify the second condition. If the order cannot be determined in the first comparison, the next comparison will be made. @strs becomes ('aaa','bbb','aa','bb','a','b').
-
-&lt;pre&gt;
+@nums = sort {$a cmp $b} @nums;
+</pre>
+<h3> Sort by multiple conditions </h3>
+<p>
+  Try to sort the strings in the order of longest, and if the lengths are the same, sort them in ascending dictionary order. Use || to specify the second condition. If the order cannot be determined in the first comparison, the next comparison will be made. @strs becomes ('aaa','bbb','aa','bb','a','b').
+</p>
+<pre>
 my @strs = ('aaa','bbb','b','a','aa','bb');
-@strs = sort {length $ b &lt;=&gt; length $ a || $ a cmp $ b} @strs;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Hash values ​​are sorted by key and output &lt;/ h3&gt;
-
-Let's sort the hashes by key and output. The order of the keys is not guaranteed for the hash, so if you want to output in a fixed order, rearrange the keys and output.
-
-&lt;pre&gt;
-my% points = (Tom =&gt; 100, Mike =&gt; 30, Mami =&gt; 90);
-for my $ name (sort keys% points) {
-  print "$ name: $ points {$ name} \ n";
+@strs = sort {length $b &lt;=&gt; length $a || $a cmp $b} @strs;
+</pre>
+<h3> Hash values ​​are sorted by key and output </h3>
+<p>
+  Let's sort the hashes by key and output. The order of the keys is not guaranteed for the hash, so if you want to output in a fixed order, rearrange the keys and output.
+</p>
+<pre>
+my %points = (Tom =&gt; 100, Mike =&gt; 30, Mami =&gt; 90);
+for my $name (sort keys %points) {
+  print "$name: $points {$name}\n";
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sorting array references &lt;/ h3&gt;
-
-Let's sort the array references. The point is to dereference when passing it to the sort function and dereference it when receiving it.
-
-&lt;pre&gt;
-my $ nums = [5, 11, 3, 2];
-@ $ nums = sort @ $ nums;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sort the hash array &lt;/ h3&gt;
-
-Let's sort the array of hashes. The sample hash array contains information about multiple people. Let's sort this by the age of the person. (Note: We call it an array of hashes, but the exact meaning here is an array reference that contains a hash reference.)
-
-Hash references are assigned to $ a and $ b, so use $ a-&gt; {age}, $ b-&gt; {age} to get the age. Use this to make a comparison.
-
-&lt;pre&gt;
-#Person data
-my $ people = [
+</pre>
+<h3> Sorting array references </h3>
+<p>
+  Let's sort the array references. The point is to dereference when passing it to the sort function and dereference it when receiving it.
+</p>
+<pre>
+my $nums = [5, 11, 3, 2];
+@ $nums = sort @ $nums;
+</pre>
+<h3> Sort the hash array </h3>
+<p>
+  Let's sort the array of hashes. The sample hash array contains information about multiple people. Let's sort this by the age of the person. (Note: We call it an array of hashes, but the exact meaning here is an array reference that contains a hash reference.)
+</p>
+<p>
+  Hash references are assigned to $a and $b, so use $a-> {age}, $b-> {age} to get the age. Use this to make a comparison.
+</p>
+<pre>
+# Person data
+my $people = [
   {name =&gt;'Ken', age =&gt; 19},
   {name =&gt;'Taro', age =&gt; 9},
   {name =&gt;'Kaori', age =&gt; 23}
 ];;
 
-@ $ persons = sort {$ a-&gt; {age} &lt;=&gt; $ b-&gt; {age}} @ $ persons;
-&lt;/ pre&gt;
-
-$ persons is sorted in ascending order of age and the data looks like this:
-
-&lt;pre&gt;
+@ $persons = sort {$a-&gt; {age} &lt;=&gt; $b-&gt; {age}} @ $persons;
+</pre>
+<p>
+  $persons is sorted in ascending order of age and the data looks like this:
+</p>
+<pre>
 [
   {name =&gt;'Taro', age =&gt; 9},
   {name =&gt;'Ken', age =&gt; 19},
   {name =&gt;'Kaori', age =&gt; 23}
 ];;
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

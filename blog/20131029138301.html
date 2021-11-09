@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop = "name"> Module </ span> </a>
+        <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-        <span itemprop = "name"> PDL </ span>
+        <span itemprop = "name"> PDL </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20131029138301.html"> Representation of multidimensional data in PDL </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20131029138301.html"> Representation of multidimensional data in PDL </a></h2>
 <p>
-  So far, we have only dealt with one-dimensional data, but I would like to explain how to represent <strong> multidimensional data </ ​​strong> in PDL.
+  So far, we have only dealt with one-dimensional data, but I would like to explain how to represent <strong> multidimensional data </​​strong> in PDL.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,50 +97,49 @@
 </div>
 
 
-<h3> Representation of multidimensional data </ ​​h3>
+<h3> Representation of multidimensional data </​​h3>
 <p>
   To represent multidimensional data, use the pdl function as follows:
 </p>
 <pre>
 use PDL;
 
-my $ data = pdl [
+my $data = pdl [
   [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
 ];;
-&lt;/ pre&gt;
-
-First, let's learn the concepts called &lt;strong&gt; dimension &lt;/ strong&gt; and &lt;strong&gt; rank &lt;/ strong&gt;. It is easier to understand if you understand it visually, so I will show it.
-
-&lt;pre&gt;
+</pre>
+<p>
+  First, let's learn the concepts called <strong> dimension </strong> and <strong> rank </strong>. It is easier to understand if you understand it visually, so I will show it.
+</p>
+<pre>
 1D
               Rank 1 Rank 2 Rank 3
 2D rank 1 [1, 2, 3],
       Rank 2 [4, 5, 6],
       Rank 3 [7, 8, 9],
       Rank 4 [10, 11, 12]
-&lt;/ pre&gt;
-
-Think of it as the one-dimensional data you've come up with.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Think of it as the one-dimensional data you've come up with.
+</p>
+<pre>
 1D
 Rank 1 Rank 2 Rank 3
 [one two Three],
-&lt;/ pre&gt;
-
-&lt;h4&gt; Get and set elements &lt;/ h4&gt;
-
-Learn how to get and set elements of multidimensional data. Use nice slice notation to get and set elements. Specify in the order of 1D rank and 2D rank, and the subscripts start from 0.
-
-&lt;pre&gt;
+</pre>
+<h4> Get and set elements </h4>
+<p>
+  Learn how to get and set elements of multidimensional data. Use nice slice notation to get and set elements. Specify in the order of 1D rank and 2D rank, and the subscripts start from 0.
+</p>
+<pre>
 use PDL;
-use PDL :: NiceSlice;
+use PDL::NiceSlice;
 
 # data
-my $ data = pdl [
+my $data = pdl [
   [one two Three],
   [4, 5, 6],
   [7, 8, 9],
@@ -148,74 +147,72 @@ my $ data = pdl [
 ];;
 
 Get # element as PDL variable (1D 2 rank-2D 3 rank)
-my $ data_1_2 = $ data (1, 2);
+my $data_1_2 = $data (1, 2);
 
-#Get the element value itself
-my $ data_1_2_raw = $ data-&gt; at (1, 2);
+# Get the element value itself
+my $data_1_2_raw = $data-&gt; at (1, 2);
 
-#Set element.
-$ data (1, 2). = 20;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Get multiple elements, set multiple elements &lt;/ h4&gt;
-
-You can also get and set multiple elements for a PDL variable. In the following example, the 2nd to 3rd ranks of the 1st dimension and the 3rd rank of the 2nd dimension are acquired.
-
-&lt;pre&gt;
+# Set element.
+$data (1, 2). = 20;
+</pre>
+<h4> Get multiple elements, set multiple elements </h4>
+<p>
+  You can also get and set multiple elements for a PDL variable. In the following example, the 2nd to 3rd ranks of the 1st dimension and the 3rd rank of the 2nd dimension are acquired.
+</p>
+<pre>
 # Acquisition of multiple elements (1D 2-3 ranks, 2D 3 ranks)
-my $ data_sliced1 = $ data (1: 2, 2);
-&lt;/ pre&gt;
-
-To set multiple elements:
-
-&lt;pre&gt;
-#Setting of multiple elements (1D 2-3 ranks, 2D 3 ranks)
-$ data (1: 2, 2). = pdl [21, 22];
-&lt;/ pre&gt;
-
-Of course, it is possible to acquire not only the first dimension but also multiple elements in the second dimension.
-
-&lt;pre&gt;
-#Get multiple elements (1D 3 ranks, 2D 1-2 ranks)
-my $ data_sliced2 = $ data (2, 0: 1);
-&lt;/ pre&gt;
-
-To set multiple elements in the second dimension:
-
-&lt;pre&gt;
-#Setting of multiple elements (1D 3 ranks, 2D 1-2 ranks)
-$ data (2, 0: 1). = pdl [
+my $data_sliced1 = $data (1: 2, 2);
+</pre>
+<p>
+  To set multiple elements:
+</p>
+<pre>
+# Setting of multiple elements (1D 2-3 ranks, 2D 3 ranks)
+$data (1: 2, 2). = pdl [21, 22];
+</pre>
+<p>
+  Of course, it is possible to acquire not only the first dimension but also multiple elements in the second dimension.
+</p>
+<pre>
+# Get multiple elements (1D 3 ranks, 2D 1-2 ranks)
+my $data_sliced2 = $data (2, 0: 1);
+</pre>
+<p>
+  To set multiple elements in the second dimension:
+</p>
+<pre>
+# Setting of multiple elements (1D 3 ranks, 2D 1-2 ranks)
+$data (2, 0: 1). = pdl [
   [30],
   [31]
 ];;
-&lt;/ pre&gt;
+</pre>
+<p>
+  You can also acquire and set multiple ranks in multiple dimensions in the same way.
+</p>
+<pre>
+# Get multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+my $data_sliced3 = $data (1: 2, 0: 1);
 
-You can also acquire and set multiple ranks in multiple dimensions in the same way.
-
-&lt;pre&gt;
-#Get multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
-my $ data_sliced3 = $ data (1: 2, 0: 1);
-
-#Setting of multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
-$ data (1: 2, 0: 1). = pdl [
+# Setting of multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+$data (1: 2, 0: 1). = pdl [
   [40, 41],
   [42, 43]
 ];;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Sample &lt;/ h4&gt;
-
-This is a sample that can be executed.
-
-&lt;pre&gt;
+</pre>
+<h4> Sample </h4>
+<p>
+  This is a sample that can be executed.
+</p>
+<pre>
 use strict;
 use warnings;
 
 use PDL;
-use PDL :: NiceSlice;
+use PDL::NiceSlice;
 
 # data
-my $ data = pdl [
+my $data = pdl [
   [one two Three],
   [4, 5, 6],
   [7, 8, 9],
@@ -223,309 +220,289 @@ my $ data = pdl [
 ];;
 
 Get # element as PDL variable (1D 2 rank, 2D 3 rank)
-my $ data_1_2 = $ data (1, 2);
+my $data_1_2 = $data (1, 2);
 
-#Get the element value itself
-my $ data_1_2_raw = $ data-&gt; at (1, 2);
+# Get the element value itself
+my $data_1_2_raw = $data-&gt; at (1, 2);
 
-print "$ data_1_2 \ n";
-print "$ data_1_2_raw \ n";
+print "$data_1_2\n";
+print "$data_1_2_raw\n";
 
-#Set element.
-$ data (1, 2). = 20;
+# Set element.
+$data (1, 2). = 20;
 
-print "$ data \ n";
+print "$data\n";
 
-#Get multiple elements (1D 2 to 3 ranks, 2D 2 ranks)
-my $ data_sliced1 = $ data (1: 2, 1);
+# Get multiple elements (1D 2 to 3 ranks, 2D 2 ranks)
+my $data_sliced1 = $data (1: 2, 1);
 
-print "$ data_sliced1 \ n";
+print "$data_sliced1\n";
 
-#Setting of multiple elements (1D 2-3 ranks, 2D 3 ranks)
-$ data (1: 2, 2). = pdl [21, 22];
+# Setting of multiple elements (1D 2-3 ranks, 2D 3 ranks)
+$data (1: 2, 2). = pdl [21, 22];
 
-print "$ data \ n";
+print "$data\n";
 
-#Get multiple elements (1D 3 ranks, 2D 1-2 ranks)
-my $ data_sliced2 = $ data (2, 0: 1);
+# Get multiple elements (1D 3 ranks, 2D 1-2 ranks)
+my $data_sliced2 = $data (2, 0: 1);
 
-print "$ data_sliced2 \ n";
+print "$data_sliced2\n";
 
-#Setting of multiple elements (1D 3 rank, 2D 1-2 rank)
-$ data (2, 0: 1). = pdl [
+# Setting of multiple elements (1D 3 rank, 2D 1-2 rank)
+$data (2, 0: 1). = pdl [
   [30],
   [31]
 ];;
 
-print "$ data \ n";
+print "$data\n";
 
-#Get multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
-my $ data_sliced3 = $ data (1: 2, 0: 1);
+# Get multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+my $data_sliced3 = $data (1: 2, 0: 1);
 
-print "$ data_sliced3 \ n";
+print "$data_sliced3\n";
 
-#Setting of multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
-$ data (1: 2, 0: 1). = pdl [
+# Setting of multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+$data (1: 2, 0: 1). = pdl [
   [40, 41],
   [42, 43]
 ];;
 
-print "$ data";
-&lt;/ pre&gt;
-
-&lt;h3&gt; Data initialization &lt;/ h3&gt;
-
-PDL has various data initialization functions. I will show you how to initialize the data.
-
-&lt;h4&gt; Initialize with 0 &lt;/ h4&gt;
-
-Use the zeros method to specify a multidimensional rank number and initialize it with 0. zeros is defined in PDL :: Core.
-
-&lt;pre&gt;
+print "$data";
+</pre>
+<h3> Data initialization </h3>
+<p>
+  PDL has various data initialization functions. I will show you how to initialize the data.
+</p>
+<h4> Initialize with 0 </h4>
+<p>
+  Use the zeros method to specify a multidimensional rank number and initialize it with 0. zeros is defined in PDL::Core.
+</p>
+<pre>
 use PDL;
 
 Initialize with # 0 (1D has 2 ranks, 2D has 3 ranks)
-my $ data_zeros = pdl-&gt; sequence (2, 3);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Initialize with 1 &lt;/ h4&gt;
-
-Use the ones method to specify the number of ranks in multiple dimensions and initialize with 1. ones is defined in PDL :: Core.
-
-&lt;pre&gt;
+my $data_zeros = pdl-&gt; sequence (2, 3);
+</pre>
+<h4> Initialize with 1 </h4>
+<p>
+  Use the ones method to specify the number of ranks in multiple dimensions and initialize with 1. ones is defined in PDL::Core.
+</p>
+<pre>
 Initialize with # 1 (1D has 2 ranks, 2D has 3 ranks)
-my $ data_ones = pdl-&gt; ones (2, 3);
-print "$ data_ones \ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Initialize with null &lt;/ h4&gt;
-
-The PDL defines a value of null. Use the null method to initialize with null. null is defined in PDL :: Core.
-
-&lt;pre&gt;
-Initialize with #null
-my $ data_null = pdl-&gt; null;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Initialize from 1 to n &lt;/ h4&gt;
-
-Use the &lt;strong&gt; sequence &lt;/ strong&gt; method to &lt;strong&gt; initialize with a value between 0 and n-1 &lt;/ strong&gt;. sequence is defined in PDL :: Basic.
-
-&lt;pre&gt;
+my $data_ones = pdl-&gt; ones (2, 3);
+print "$data_ones\n";
+</pre>
+<h4> Initialize with null </h4>
+<p>
+  The PDL defines a value of null. Use the null method to initialize with null. null is defined in PDL::Core.
+</p>
+<pre>
+Initialize with # null
+my $data_null = pdl-&gt; null;
+</pre>
+<h4> Initialize from 1 to n </h4>
+<p>
+  Use the <strong> sequence </strong> method to <strong> initialize with a value between 0 and n-1 </strong>. sequence is defined in PDL::Basic.
+</p>
+<pre>
 Initialize with # 0-19
-my $ data_seq = pdl-&gt; sequence (20);
-&lt;/ pre&gt;
-
-You can also specify multiple dimensions.
-
-&lt;pre&gt;
+my $data_seq = pdl-&gt; sequence (20);
+</pre>
+<p>
+  You can also specify multiple dimensions.
+</p>
+<pre>
 Initialize with # 0-14 (1D 3 ranks, 2D 5 ranks)
-my $ data_seq2 = pdl-&gt; sequence (3, 5);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Sample &lt;/ h4&gt;
-
-This is a sample that can be executed.
-
-&lt;pre&gt;
+my $data_seq2 = pdl-&gt; sequence (3, 5);
+</pre>
+<h4> Sample </h4>
+<p>
+  This is a sample that can be executed.
+</p>
+<pre>
 use PDL;
 
 Initialize with # 0 (1D has 2 ranks, 2D has 3 ranks)
-my $ data_zeros = pdl-&gt; zeros (2, 3);
-print "$ data_zeros \ n";
+my $data_zeros = pdl-&gt; zeros (2, 3);
+print "$data_zeros\n";
 
 Initialize with # 1 (1D has 2 ranks, 2D has 3 ranks)
-my $ data_ones = pdl-&gt; ones (2, 3);
-print "$ data_ones \ n";
+my $data_ones = pdl-&gt; ones (2, 3);
+print "$data_ones\n";
 
-Initialize with #null
-my $ data_null = pdl-&gt; null;
-print "$ data_null \ n";
+Initialize with # null
+my $data_null = pdl-&gt; null;
+print "$data_null\n";
 
 Initialize with # 0-19
-my $ data_seq = pdl-&gt; sequence (20);
-print "$ data_seq \ n";
+my $data_seq = pdl-&gt; sequence (20);
+print "$data_seq\n";
 
 Initialize with # 0-14 (1D 3 ranks, 2D 5 ranks)
-my $ data_seq2 = pdl-&gt; sequence (3, 5);
-print "$ data_seq2 \ n";
-&lt;/ pre&gt;
-
-
-&lt;h3&gt; Calculate multiple elements at once &lt;/ h3&gt;
-
-PDL allows you to calculate multiple elements at once. See the data below.
-
-&lt;pre&gt;
+my $data_seq2 = pdl-&gt; sequence (3, 5);
+print "$data_seq2\n";
+</pre>
+<h3> Calculate multiple elements at once </h3>
+<p>
+  PDL allows you to calculate multiple elements at once. See the data below.
+</p>
+<pre>
 use PDL;
 
-my $ data = pdl [
+my $data = pdl [
   [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
 ];;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Sum calculation to reduce one-dimensional rank &lt;/ h4&gt;
-
-First, let's perform a sum operation that reduces the one-dimensional rank. The above data is an image that looks like the following.
-
-&lt;pre&gt;
+</pre>
+<h4> Sum calculation to reduce one-dimensional rank </h4>
+<p>
+  First, let's perform a sum operation that reduces the one-dimensional rank. The above data is an image that looks like the following.
+</p>
+<pre>
 [6]
 [15]
 [twenty four]
 [33]
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; sumover &lt;/ strong&gt; method to find the sum. someover is implemented in PDL :: UfuncI am.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use the <strong> sumover </strong> method to find the sum. someover is implemented in PDL::UfuncI am.
+</p>
+<pre>
 # Sum calculation to reduce one-dimensional rank
-my $ data_sumover1 = $ data-&gt; sumover;
-&lt;/ pre&gt;
-
-Use the sumover method when the contained value is an integer type. For floating point, use dsomeover instead.
-
-If you perform an operation to reduce the rank, the dimension will be reduced by one and the data will be as follows.
-
-&lt;pre&gt;
+my $data_sumover1 = $data-&gt; sumover;
+</pre>
+<p>
+  Use the sumover method when the contained value is an integer type. For floating point, use dsomeover instead.
+</p>
+<p>
+  If you perform an operation to reduce the rank, the dimension will be reduced by one and the data will be as follows.
+</p>
+<pre>
 [6, 15, 24, 33]
-&lt;/ pre&gt;
-
-&lt;h4&gt; Sum calculation to reduce 2D rank &lt;/ h4&gt;
-
-In the above example, the sum operation is performed to reduce the one-dimensional rank. Next, let's perform a sum operation that reduces the two-dimensional rank. To do this, use the &lt;strong&gt; xchg &lt;/ strong&gt; method to exchange 1D and 2D positions, and then use the someover function.
-
-&lt;pre&gt;
+</pre>
+<h4> Sum calculation to reduce 2D rank </h4>
+<p>
+  In the above example, the sum operation is performed to reduce the one-dimensional rank. Next, let's perform a sum operation that reduces the two-dimensional rank. To do this, use the <strong> xchg </strong> method to exchange 1D and 2D positions, and then use the someover function.
+</p>
+<pre>
 # Sum calculation to reduce 2D rank
-my $ data_sumover2 = $ data-&gt; xchg (0, 1)-&gt; sumover;
-&lt;/ pre&gt;
-
-You can get the following data.
-
-&lt;pre&gt;
+my $data_sumover2 = $data-&gt; xchg (0, 1)-&gt; sumover;
+</pre>
+<p>
+  You can get the following data.
+</p>
+<pre>
 [22 26 30]
-&lt;/ pre&gt;
-
-In addition to xchg, there are &lt;strong&gt; mv &lt;/ strong&gt; and &lt;strong&gt; reorder &lt;/ strong&gt; methods for moving the position of the dimension, so let's check them.
-
-&lt;h4&gt; Methods that perform other operations that reduce dimensions &lt;/ h4&gt;
-
-In addition to sumover, PDL :: Ufunc defines methods that perform the same type of operations.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;b&gt; Arithmetic &lt;/ b&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
+</pre>
+<p>
+  In addition to xchg, there are <strong> mv </strong> and <strong> reorder </strong> methods for moving the position of the dimension, so let's check them.
+</p>
+<h4> Methods that perform other operations that reduce dimensions </h4>
+<p>
+  In addition to sumover, PDL::Ufunc defines methods that perform the same type of operations.
+</p>
+<table>
+  <tr>
+    <td>
+      <b> Arithmetic </b>
+    </td>
+    <td>
       Method
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       average
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       average, daverage
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Median
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       medover, medoddover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Mode
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       modeover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       product
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       prodover, dprodover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Cumulative product
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       cumuprodover, dcumuprodover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Cumulative total
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       cumusumover, dcumusumover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       and operation
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       andover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       or operation
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       orover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Bitwise and arithmetic
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       bandover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Bitwise or operation
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       borover
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-&lt;h4&gt; Sample &lt;/ h4&gt;
-
-This is a sample that can be executed.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<h4> Sample </h4>
+<p>
+  This is a sample that can be executed.
+</p>
+<pre>
 use strict;
 use warnings;
 use PDL;
 
-my $ data = pdl [
+my $data = pdl [
   [one two Three],
   [4, 5, 6],
   [7, 8, 9],
@@ -533,13 +510,13 @@ my $ data = pdl [
 ];;
 
 # Sum calculation to reduce one-dimensional rank
-my $ data_sumover1 = $ data-&gt; sumover;
-print "$ data_sumover \ n";
+my $data_sumover1 = $data-&gt; sumover;
+print "$data_sumover\n";
 
 # Sum calculation to reduce 2D rank
-my $ data_sumover2 = $ data-&gt; xchg (0, 1)-&gt; sumover;
-print "$ data_sumover2 \ n";
-&lt;/ pre&gt;
+my $data_sumover2 = $data-&gt; xchg (0, 1)-&gt; sumover;
+print "$data_sumover2\n";
+</pre>
 
   </div>
   <div class="bottom">

@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> FindBin --Get the path to the directory where the script resides  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> FindBin - Get the path to the directory where the script resides  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  FindBin  module to get the path of the directory where the script resides.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" FindBin --Get the path to the directory where the script resides  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" FindBin - Get the path to the directory where the script resides  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  FindBin  module to get the path of the directory where the script resides." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100524127696.html"> FindBin --Get the path to the directory where the script resides </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100524127696.html"> FindBin - Get the path to the directory where the script resides </a></h2>
 <p>
-  You can use the <strong> FindBin </ strong> module to get the path of the directory where the script resides.
+  You can use the <strong> FindBin </strong> module to get the path of the directory where the script resides.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,39 +97,39 @@
 
 
 <pre>
-#Load module
+# Load module
 use FindBin;
-&lt;/ pre&gt;
-
-The path to the directory where the script resides is assigned to the &lt;strong&gt; $ FindBin :: Bin &lt;/ strong&gt; &lt;a href="/blog/20080308120495.html"&gt; package variable &lt;/a&gt;.
-
-&lt;pre&gt;
-#Get the path of the directory where the script resides
-my $ script_dir = $ FindBin :: Bin;
-&lt;/ pre&gt;
-
-FindBin is a slightly unusual module, but it's the standard way to get the path to the directory where the script resides.
-
-&lt;h4&gt; Set the module loading path &lt;/ h4&gt;
-
-The FindBin module is used together with the &lt;a href="/blog/20100525127859.html"&gt; lib &lt;/a&gt; module and often sets the module loading path.
-
-By doing the following, you can set the directory called lib in the directory where the script exists as the loading path of the module.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The path to the directory where the script resides is assigned to the <strong> $FindBin::Bin </strong> <a href="/blog/20080308120495.html"> package variable</a>.
+</p>
+<pre>
+# Get the path of the directory where the script resides
+my $script_dir = $FindBin::Bin;
+</pre>
+<p>
+  FindBin is a slightly unusual module, but it's the standard way to get the path to the directory where the script resides.
+</p>
+<h4> Set the module loading path </h4>
+<p>
+  The FindBin module is used together with the <a href="/blog/20100525127859.html"> lib</a> module and often sets the module loading path.
+</p>
+<p>
+  By doing the following, you can set the directory called lib in the directory where the script exists as the loading path of the module.
+</p>
+<pre>
 # Add the lib directory of the directory where the script exists to the search path
 use FindBin;
-use lib "$ FindBin :: Bin / lib";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Script base name &lt;/ h4&gt;
-
-You can get the base name of the script with &lt;strong&gt; $ FindBin :: Script &lt;/ strong&gt;.
-
-&lt;pre&gt;
+use lib "$FindBin::Bin / lib";
+</pre>
+<h4> Script base name </h4>
+<p>
+  You can get the base name of the script with <strong> $FindBin::Script </strong>.
+</p>
+<pre>
 use FindBin;
-$ FindBin :: Script
-&lt;/ pre&gt;
+$FindBin::Script
+</pre>
 
   </div>
   <div class="bottom">

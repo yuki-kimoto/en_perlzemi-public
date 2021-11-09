@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Inheritance mechanism </ span>
+      <span itemprop = "name"> Inheritance mechanism </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090325123747.html"> Inheritance mechanism </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090325123747.html"> Inheritance mechanism </a></h2>
 <p>
   I will explain the mechanism of inheritance in Perl.
 </p>
@@ -97,7 +97,7 @@
 </div>
 
 
-<h3> 1. Inheritance mechanism </ h3>
+<h3> 1. Inheritance mechanism </h3>
 <p>
   The inheritance mechanism is that the method is searched for the upper class. Let's take a look at the previous code again.
 </p>
@@ -105,12 +105,12 @@
 use strict;
 use warnings;
 
-#Component class
+# Component class
 package Component;
 sub x {return 5}
 
 
-#Button class
+# Button class
 package Button;
 # Inheritance description
 our @ISA = ('Component');
@@ -119,22 +119,27 @@ sub new {bless {},'Button'}
 
 package main;
 # Use button class
-my $ button = Button-&gt; new;
-print $ button-&gt; x;
-&lt;/ pre&gt;
-
-The Button class didn't have a method called x, but it was calling a method called x. I explained that this is because it inherits with the description @ISA = ('Component').
-But in reality, it's just a method search.
-
-&lt;h3&gt; 2. Method search algorithm &lt;/ h3&gt;
-
-The following is the method search algorithm.
-
-&lt;blockquote&gt;
-If your package (Button in this example) has an x ​​method, call it. If not, call the x method of the package (Component in this example) contained in @ISA.
-&lt;/ blockquote&gt;
-
-Repeat this until the top superclass. Here is the implementation of inheritance in Perl.
+my $button = Button-&gt; new;
+print $button-&gt; x;
+</pre>
+<p>
+  The Button class didn't have a method called x, but it was calling a method called x. I explained that this is because it inherits with the description @ISA = ('Component').
+</p>
+<p>
+  But in reality, it's just a method search.
+</p>
+<h3> 2. Method search algorithm </h3>
+<p>
+  The following is the method search algorithm.
+</p>
+<blockquote>
+<p>
+  If your package (Button in this example) has an x ​​method, call it. If not, call the x method of the package (Component in this example) contained in @ISA.
+</p>
+</blockquote>
+<p>
+  Repeat this until the top superclass. Here is the implementation of inheritance in Perl.
+</p>
 
   </div>
   <div class="bottom">

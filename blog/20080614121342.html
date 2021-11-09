@@ -61,16 +61,16 @@
   <div class="middle">
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </ span> </a>
+    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161130148051.html"> <span itemprop = "name"> Module creation </ span> </a>
+    <a itemprop="item" href="/blog/20161130148051.html"> <span itemprop = "name"> Module creation </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080614121342.html"> Understand typeglobs </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080614121342.html"> Understand typeglobs </a></h2>
 <p>
   The typeglob represents an entry in the symbol table.
 </p>
@@ -91,57 +91,55 @@
 
 
 <pre>
- * Main :: num # $ main :: {num} has almost the same meaning.
+ * Main::num # $main::{num} has almost the same meaning.
  * num # You can omit the package name.
-&lt;/ pre&gt;
-
-On the symbol table, $ main :: {num} is assigned the string'* main :: num', which is exactly what it is (called the symbol table entry, maybe). .. However, it's not a string, it's a typeglob.
-
-If you omit the package name, it becomes an entry in the symbol table of the current current package.
-
-&lt;h3&gt; Typeglobs and variables &lt;/ h3&gt;
-
-&lt;pre&gt;
-my $ num_from_typedglob = $ {* main :: num}; # Same as $ num
-my @num_from_typedglob = @ {* main :: num}; # Same as @num
-my% num_from_typedglob =% {* main :: num}; # Same as% num
-my $ ret_from_typedglob = &amp; {* main :: num}; # Same as &amp; num (also same as num ())
-&lt;/ pre&gt;
-
-A typeglob is a kind of hash, &lt;a href="/blog/20161107147852.html"&gt; scalar variable &lt;/a&gt;, &lt;a href="/blog/20161012147627.html"&gt; array &lt;/a&gt;, &lt; You can access a href = "/ blog / 20161013147635.html"&gt; hash &lt;/a&gt;, &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt;, and more. It looks exactly like a dereference, but it's not a dereference.
-
-&lt;h3&gt; Image of type glob &lt;/ h3&gt;
-
-&lt;pre&gt;
-| ------------- |
+</pre>
+<p>
+  On the symbol table, $main::{num} is assigned the string'* main::num', which is exactly what it is (called the symbol table entry, maybe). .. However, it's not a string, it's a typeglob.
+</p>
+<p>
+  If you omit the package name, it becomes an entry in the symbol table of the current current package.
+</p>
+<h3> Typeglobs and variables </h3>
+<pre>
+my $num_from_typedglob = ${* main::num}; # Same as $num
+my @num_from_typedglob = @ {* main::num}; # Same as @num
+my %num_from_typedglob =%{* main::num}; # Same as% num
+my $ret_from_typedglob = &amp; {* main::num}; # Same as &amp; num (also same as num ())
+</pre>
+<p>
+  A typeglob is a kind of hash, <a href="/blog/20161107147852.html"> scalar variable</a>, <a href="/blog/20161012147627.html"> array</a>, < You can access a href = "/ blog / 20161013147635.html"> hash</a>, <a href="/blog/20101130129876.html"> subroutine</a>, and more. It looks exactly like a dereference, but it's not a dereference.
+</p>
+<h3> Image of type glob </h3>
+<pre>
+| - -- -- -- -- |
 | * typedglob |-|
-| -------------- | |
-                 | | ----------------- |
-                 | -----&gt; | $ {* typedglob} |
-                 | | ----------------- |
-                 | -----&gt; | @ {* typedglob} |
-                 | | ----------------- |
-                 | -----&gt; |% {* typedglob} |
-                 | | ----------------- |
-                 | -----&gt; | &amp; {* typedglob} |
-                        | ----------------- |
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-A sample to understand typeglobs and symbol tables.
-
-&lt;pre&gt;
+| - -- -- -- --- | |
+                 | | - -- -- -- -- --- |
+                 | - -- &gt; | ${* typedglob} |
+                 | | - -- -- -- -- --- |
+                 | - -- &gt; | @ {* typedglob} |
+                 | | - -- -- -- -- --- |
+                 | - -- &gt; |%{* typedglob} |
+                 | | - -- -- -- -- --- |
+                 | - -- &gt; | &amp; {* typedglob} |
+                        | - -- -- -- -- --- |
+</pre>
+<h3> Sample </h3>
+<p>
+  A sample to understand typeglobs and symbol tables.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Type glob
+# Type glob
 # * typedglob;
-#Represents an entry in the symbol table.
+# Represents an entry in the symbol table.
 
 
 # Variables with the same name but different only in funny characters ($, @,%)
-our $ num = 11;
+our $num = 11;
 our @num = (12, 13);
 our% num = (key =&gt; 14);
 
@@ -150,39 +148,39 @@ sub num {
   return 15;
 }
 
-require Data :: Dumper;
+require Data::Dumper;
 
-print "1-1: Access variables from the symbol table. \ N";
-Enclosed in # $ {}, a scalar entry
-my $ num_from_symbol = $ {$ main :: {num}};
+print "1-1: Access variables from the symbol table.\n";
+Enclosed in # ${}, a scalar entry
+my $num_from_symbol = ${$main::{num}};
 Array entries, enclosed in # @ {}
-my @num_from_symbol = @ {$ main :: {num}};
-Hash entries, enclosed in #% {}
-my% num_from_symbol =% {$ main :: {num}};
+my @num_from_symbol = @ {$main::{num}};
+Hash entries, enclosed in # %{}
+my %num_from_symbol =%{$main::{num}};
 
-print Data :: Dumper-&gt; Dump ([$ num_from_symbol], ['* num_from_symbol']);
-print Data :: Dumper-&gt; Dump ([\ @ num_from_symbol], ['* num_from_symbol']);
-print Data :: Dumper-&gt; Dump ([\% num_from_symbol], ['* num_from_symbol']);
-print "\ n";
+print Data::Dumper-&gt; Dump ([$num_from_symbol], ['* num_from_symbol']);
+print Data::Dumper-&gt; Dump ([\ @ num_from_symbol], ['* num_from_symbol']);
+print Data::Dumper-&gt; Dump ([\% num_from_symbol], ['* num_from_symbol']);
+print "\n";
 
-print "1-2: Call a subroutine from the symbol table. \ N";
-my $ ret_from_symbol = &amp; {$ main :: {num}};
-print "\ $ ret_from_symbol = $ ret_from_symbol \ n \ n";
+print "1-2: Call a subroutine from the symbol table.\n";
+my $ret_from_symbol = &amp; {$main::{num}};
+print "\ $ret_from_symbol = $ret_from_symbol\n\n";
 
-print "2-1: Access the variable from the typeglob. \ N";
-my $ num_from_typedglob = $ {* main :: num}; Enclosed in # $ {} is a scalar entry
-my @num_from_typedglob = @ {* main :: num}; If you enclose it with # @ {}, the array entry will be
-my% num_from_typedglob =% {* main :: num}; #% {} is a hash entry
+print "2-1: Access the variable from the typeglob.\n";
+my $num_from_typedglob = ${* main::num}; Enclosed in # ${} is a scalar entry
+my @num_from_typedglob = @ {* main::num}; If you enclose it with # @ {}, the array entry will be
+my %num_from_typedglob =%{* main::num}; # %{} is a hash entry
 
-print Data :: Dumper-&gt; Dump ([$ num_from_typedglob], ['* num_from_typedglob']);
-print Data :: Dumper-&gt; Dump ([\ @ num_from_typedglob], ['* num_from_typedglob']);
-print Data :: Dumper-&gt; Dump ([\% num_from_typedglob], ['* num_from_typedglob']);
-print "\ n";
+print Data::Dumper-&gt; Dump ([$num_from_typedglob], ['* num_from_typedglob']);
+print Data::Dumper-&gt; Dump ([\ @ num_from_typedglob], ['* num_from_typedglob']);
+print Data::Dumper-&gt; Dump ([\% num_from_typedglob], ['* num_from_typedglob']);
+print "\n";
 
-print "2-2: Call a subroutine from a typeglob. \ N";
-my $ ret_from_typedglob = &amp; {* main :: num};
-print "\ $ ret_from_typedglob = $ ret_from_typedglob \ n \ n";
-&lt;/ pre&gt;
+print "2-2: Call a subroutine from a typeglob.\n";
+my $ret_from_typedglob = &amp; {* main::num};
+print "\ $ret_from_typedglob = $ret_from_typedglob\n\n";
+</pre>
 
   </div>
   <div class="bottom">

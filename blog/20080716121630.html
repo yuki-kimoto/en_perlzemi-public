@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20101130129876.html">
-        <span itemprop = "name"> Subroutine </ span> </a>
+        <span itemprop = "name"> Subroutine </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
+      <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080716121630.html"> Dynamic generation of subroutines </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080716121630.html"> Dynamic generation of subroutines </a></h2>
 <p>
   Perl also allows you to dynamically generate subroutines.
 </p>
@@ -97,307 +97,309 @@
 </div>
 
 
-<h3> Function generator </ h3>
+<h3> Function generator </h3>
 <p>
   A function generator is a subroutine that creates a subroutine. Function generators are one of the techniques used when you want to dynamically generate subroutines.
 </p>
 <p>
   It's called a function generator according to its general name, but in Perl terms it's a subroutine generator. In this discussion, functions and subroutines have the same meaning.
 </p>
-<h4> Creating and calling a function generator </ h4>
+<h4> Creating and calling a function generator </h4>
 <pre>
-#Call
-my $ func = func_generator ();
-$ func-&gt; ();
+# Call
+my $func = func_generator ();
+$func-&gt; ();
 
-#Definition
+# Definition
 sub func_generator {
 
-  my $ func = sub {
-    print "This is a subroutine generated at runtime. \ N";
+  my $func = sub {
+    print "This is a subroutine generated at runtime.\n";
   };
   # Returns a reference to the subroutine.
-  return $ func;
+  return $func;
 }
-&lt;/ pre&gt;
-
-To create a generator for it, create an anonymous subroutine and return its reference as a return value.
-
-When you call the function generator (func_generator ()), you can get a reference to the generated subroutine as a return value. Dereference ($ func-&gt; ()) the reference of the generated subroutine and call the subroutine.
-
-&lt;h4&gt; Generate multiple subroutines that are slightly different &lt;/ h4&gt;
-
-&lt;pre&gt;
-#Function generator call
-my $ create_safe_msg = message_factory ("is safe.");
-my $ create_danger_msg = message_factory ("is danger.");
+</pre>
+<p>
+  To create a generator for it, create an anonymous subroutine and return its reference as a return value.
+</p>
+<p>
+  When you call the function generator (func_generator ()), you can get a reference to the generated subroutine as a return value. Dereference ($func-> ()) the reference of the generated subroutine and call the subroutine.
+</p>
+<h4> Generate multiple subroutines that are slightly different </h4>
+<pre>
+# Function generator call
+my $create_safe_msg = message_factory ("is safe.");
+my $create_danger_msg = message_factory ("is danger.");
 
 # Call the generated subroutine
-my $ safe_msg1 = $ create_safe_msg-&gt; ("cat");
-my $ danger_msg1 = $ create_danger_msg-&gt; ("mamushi");
+my $safe_msg1 = $create_safe_msg-&gt; ("cat");
+my $danger_msg1 = $create_danger_msg-&gt; ("mamushi");
 
 # Function generator that creates a subroutine that allows you to specify the message to convey
 sub message_factory {
-  my $ message = shift;
+  my $message = shift;
   
   return sub {
-    my $ word = shift;
-    return $ word.'''. $ Message;
+    my $word = shift;
+    return $word.'''. $Message;
   }
 }
-&lt;/ pre&gt;
-
-It can be used in a subroutine that receives an argument in a function generator and generates that argument. This allows you to generate multiple subroutines that are slightly different.
-
-&lt;h3&gt; Dynamically name subroutines using typeglobs &lt;/ h3&gt;
-
-This is a sample that dynamically names a subroutine using a typeglob.
-
-&lt;h4&gt; Name an anonymous subroutine &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  It can be used in a subroutine that receives an argument in a function generator and generates that argument. This allows you to generate multiple subroutines that are slightly different.
+</p>
+<h3> Dynamically name subroutines using typeglobs </h3>
+<p>
+  This is a sample that dynamically names a subroutine using a typeglob.
+</p>
+<h4> Name an anonymous subroutine </h4>
+<pre>
  * sum = sub {
-  return $ _ [0] + $ _ [1];
+  return $_ [0] + $_ [1];
 };
-&lt;/ pre&gt;
-
-Subroutines can be aliased by using typeglobs. The left side is the type glob (* name) and the right side is the reference to the subroutine (\ &amp; subroutin).
-
-In the case of this example, the right-hand side is a reference to the anonymous subroutine, which means that the anonymous subroutine is given an alias.
-
-You might think that it's better to name the anonymous subroutine from the beginning than to name it. The advantage of naming anonymous subroutines is that you can give the subroutine a name at run time. The subroutine name can be determined dynamically.
-
-&lt;h4&gt; Dynamically name subroutines &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ word ='cat';
-my $ func_name = "$ {word} _repeat";
+</pre>
+<p>
+  Subroutines can be aliased by using typeglobs. The left side is the type glob(* name) and the right side is the reference to the subroutine (\ & subroutin).
+</p>
+<p>
+  In the case of this example, the right-hand side is a reference to the anonymous subroutine, which means that the anonymous subroutine is given an alias.
+</p>
+<p>
+  You might think that it's better to name the anonymous subroutine from the beginning than to name it. The advantage of naming anonymous subroutines is that you can give the subroutine a name at run time. The subroutine name can be determined dynamically.
+</p>
+<h4> Dynamically name subroutines </h4>
+<pre>
+my $word ='cat';
+my $func_name = "${word} _repeat";
 
 no strict'refs';
-* {$ func_name} = sub {
-  return "$ word $ word";
+* {$func_name} = sub {
+  return "$word $word";
 };
-&lt;/ pre&gt;
-
-You can use variables in the typeglob name. The subroutine name changes depending on the value entered in $ func_name.
-
-The description * {$ name} will result in an error if you use use strict ;. no strict Disables symbolic link restrictions as'refs'. (By the way, why is the description * {$ name} a symbolic reference?) In this case, the name cat_repeat is dynamically assigned.
-
-Let's write a little better.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use variables in the typeglob name. The subroutine name changes depending on the value entered in $func_name.
+</p>
+<p>
+  The description * {$name} will result in an error if you use use strict ;. no strict Disables symbolic link restrictions as'refs'. (By the way, why is the description * {$name} a symbolic reference?) In this case, the name cat_repeat is dynamically assigned.
+</p>
+<p>
+  Let's write a little better.
+</p>
+<pre>
 BEGIN {
-  my $ word ='cat';
-  my $ func_name = "$ {word} _repeat";
+  my $word ='cat';
+  my $func_name = "${word} _repeat";
 
-  my $ code = sub {
-    return "$ word $ word";
+  my $code = sub {
+    return "$word $word";
   };
     
   no strict'refs';
-  * {$ func_name} = $ code;
+  * {$func_name} = $code;
 }
-&lt;/ pre&gt;
-
-Use BEGIN to dynamically determine the subroutine name at compile time. Store the reference to the anonymous subroutine in a variable with the description my $ code = sub {} ;, and finally name it as * {$ func_name} = $ code ;. In this way, you should keep the scope of no strict'refs' as narrow as possible.
-
-&lt;h3&gt; Function template &lt;/ h3&gt;
-
-&lt;Strong&gt; Function template &lt;/ strong&gt; is a programming technique that dynamically creates multiple subroutines. Instead of naming the subroutine before the program starts, name the subroutine after the program starts.
-
-By using anonymous subroutines and typeglobs, you can dynamically generate subroutines and name them dynamically. You can use a function template to create a process according to the subroutine name.
-
-&lt;h4&gt; How to write a function template &lt;/ h4&gt;
-
-&lt;pre&gt;
-my% numbers = (
+</pre>
+<p>
+  Use BEGIN to dynamically determine the subroutine name at compile time. Store the reference to the anonymous subroutine in a variable with the description my $code = sub {} ;, and finally name it as * {$func_name} = $code ;. In this way, you should keep the scope of no strict'refs' as narrow as possible.
+</p>
+<h3> Function template </h3>
+<Strong> Function template </strong> is a programming technique that dynamically creates multiple subroutines. Instead of naming the subroutine before the program starts, name the subroutine after the program starts.
+<p>
+  By using anonymous subroutines and typeglobs, you can dynamically generate subroutines and name them dynamically. You can use a function template to create a process according to the subroutine name.
+</p>
+<h4> How to write a function template </h4>
+<pre>
+my %numbers = (
   one =&gt; 1,
   two =&gt; 2,
   three =&gt; 3,
   four =&gt; 4,
 );
 
-for my $ num (keys% numbers) {
-  #Repeat reference to anonymous subroutine
-  my $ code = sub {
+for my $num (keys %numbers) {
+  # Repeat reference to anonymous subroutine
+  my $code = sub {
     # Returns the return value corresponding to the name of the number
-    return $ numbers {$ num};
+    return $numbers {$num};
   };
   
   # Remove restrictions on symbolic references
   no strict'refs';
-  Name an anonymous subroutine using a #type glob.
-  * {$ num} = $ code;
+  Name an anonymous subroutine using a # type glob.
+  * {$num} = $code;
 }
-&lt;/ pre&gt;
-
-The point to note is that there is a relationship between "subroutine name" and "subroutine processing". If the subroutine name is one, the corresponding $ numbers {'one'}, or 1, is returned as the return value.
-
-To create a function template, first pass an array of subroutine names to the foreach statement and call it repeatedly. Next, create an anonymous subroutine and perform processing using the function name. Finally, we'll use a typeglob to name the anonymous subroutine.
-
-In actual use, it is used in the part of creating accessors in modules such as Class :: Accessor.
-
-Let's write a little better.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The point to note is that there is a relationship between "subroutine name" and "subroutine processing". If the subroutine name is one, the corresponding $numbers {'one'}, or 1, is returned as the return value.
+</p>
+<p>
+  To create a function template, first pass an array of subroutine names to the foreach statement and call it repeatedly. Next, create an anonymous subroutine and perform processing using the function name. Finally, we'll use a typeglob to name the anonymous subroutine.
+</p>
+<p>
+  In actual use, it is used in the part of creating accessors in modules such as Class::Accessor.
+</p>
+<p>
+  Let's write a little better.
+</p>
+<pre>
 BEGIN {
-  my% numbers = (
+  my %numbers = (
     one =&gt; 1,
     two =&gt; 2,
     three =&gt; 3,
     four =&gt; 4,
   );
 
-  for my $ num (keys% numbers) {
-    #Repeat reference to anonymous subroutine
-    my $ code = sub {
-      return $ numbers {$ num}; # Returns the return value corresponding to the name of the number
+  for my $num (keys %numbers) {
+    # Repeat reference to anonymous subroutine
+    my $code = sub {
+      return $numbers {$num}; # Returns the return value corresponding to the name of the number
     };
    
     # Remove restrictions on symbolic references
     no strict'refs';
-    Name an anonymous subroutine using a #type glob.
-    * {$ num} = $ code;
+    Name an anonymous subroutine using a # type glob.
+    * {$num} = $code;
   }
 }
-&lt;/ pre&gt;
-
-It is better to enclose it in a BEGIN block and dynamically create a subroutine at compile time. Otherwise, you will not be able to call the subroutine until you make this statement.
-
-A better way is to create it as a module in a separate file and use use to load it at compile time.
-
-&lt;h3&gt; Sample code &lt;/ h3&gt;
-
-&lt;h4&gt; Function generator &lt;/ h4&gt;
-
-Sample code for the function generator.
-
-I will explain the function generator using code.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is better to enclose it in a BEGIN block and dynamically create a subroutine at compile time. Otherwise, you will not be able to call the subroutine until you make this statement.
+</p>
+<p>
+  A better way is to create it as a module in a separate file and use use to load it at compile time.
+</p>
+<h3> Sample code </h3>
+<h4> Function generator </h4>
+<p>
+  Sample code for the function generator.
+</p>
+<p>
+  I will explain the function generator using code.
+</p>
+<pre>
 use strict;
 use warnings;
 
-print "1: Generate a subroutine with a function generator \ n";
+print "1: Generate a subroutine with a function generator\n";
 
-my $ func = func_generator ();
-$ func-&gt; ();
-print "\ n";
+my $func = func_generator ();
+$func-&gt; ();
+print "\n";
 
-#Function generator
+# Function generator
 sub func_generator {
 
-  my $ func = sub {
-    print "This is a subroutine generated at runtime. \ N";
+  my $func = sub {
+    print "This is a subroutine generated at runtime.\n";
   };
 
   # Returns a reference to the subroutine.
-  return $ func;
+  return $func;
 }
 
-print "2: Generate multiple subroutines with function generator. \ N";
+print "2: Generate multiple subroutines with function generator.\n";
 # A reference to the subroutine is returned
-my $ create_safe_msg = message_factory ("is safe.");
-my $ create_danger_msg = m
+my $create_safe_msg = message_factory ("is safe.");
+my $create_danger_msg = m
 essage_factory ("is danger.");
 
-print "Subroutine generated with'is safe'\ n";
-#Dereference and call
-my $ safe_msg1 = $ create_safe_msg-&gt; ("cat");
-my $ safe_msg2 = $ create_safe_msg-&gt; ("dog");
+print "Subroutine generated with'is safe'\n";
+# Dereference and call
+my $safe_msg1 = $create_safe_msg-&gt; ("cat");
+my $safe_msg2 = $create_safe_msg-&gt; ("dog");
 
-print "$ {safe_msg1} \ n $ {safe_msg2} \ n \ n";
+print "${safe_msg1}\n ${safe_msg2}\n\n";
 
-print "Subroutine generated with'is danger'\ n";
-my $ danger_msg1 = $ create_danger_msg-&gt; ("mamushi");
-my $ danger_msg2 = $ create_danger_msg-&gt; ("suzumebachi");
+print "Subroutine generated with'is danger'\n";
+my $danger_msg1 = $create_danger_msg-&gt; ("mamushi");
+my $danger_msg2 = $create_danger_msg-&gt; ("suzumebachi");
 
-print "$ {danger_msg1} \ n $ {danger_msg2} \ n \ n";
+print "${danger_msg1}\n ${danger_msg2}\n\n";
 
 # Function generator that creates a subroutine that allows you to specify the message to convey
 sub message_factory {
-  You can dynamically change the generated subroutine by the argument of #function generator.
-  my $ message = shift;
+  You can dynamically change the generated subroutine by the argument of # function generator.
+  my $message = shift;
 
   return sub {
-    my $ word = shift;
-    return $ word.'''. $ Message;
+    my $word = shift;
+    return $word.'''. $Message;
   }
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Name dynamically generated subroutines &lt;/ h4&gt;
-
-This is a sample to name a dynamically generated subroutine using a typeglob.
-
-&lt;pre&gt;
+</pre>
+<h4> Name dynamically generated subroutines </h4>
+<p>
+  This is a sample to name a dynamically generated subroutine using a typeglob.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Determine the name of the subroutine at run time.
-This can be achieved by using #type globs and anonymous subroutines.
+This can be achieved by using # type globs and anonymous subroutines.
 
-print "1: Name the anonymous subroutine. \ N";
+print "1: Name the anonymous subroutine.\n";
 * sum = sub {
   # * sum is a function called type blog, and you can create an alias.
   # Here, the unnamed subroutine is named sum.
-  return $ _ [0] + $ _ [1];
+  return $_ [0] + $_ [1];
 };
 
-print "The sum of 1 and 2 is" .sum (1, 2). ". \ N \ n";
+print "The sum of 1 and 2 is" .sum (1, 2). ".\n\n";
 
-print "2: Dynamically name the subroutine. \ N";
+print "2: Dynamically name the subroutine.\n";
 
-my $ word ='cat';
-my $ func_name = "$ {word} _repeat";
+my $word ='cat';
+my $func_name = "${word} _repeat";
 
 no strict'refs';
-* {$ func_name} = sub {
+* {$func_name} = sub {
   # When executing the cat_repeat name in an anonymous subroutine
   # Can be given.
-  return "$ word $ word";
+  return "$word $word";
 };
 
-my $ repeat_word = cat_repeat ();
-print $ repeat_word. "\ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Function template &lt;/ h4&gt;
-
-This is a sample using a function template.
-
-&lt;pre&gt;
+my $repeat_word = cat_repeat ();
+print $repeat_word. "\n";
+</pre>
+<h4> Function template </h4>
+<p>
+  This is a sample using a function template.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Function template
+# Function template
 
-print "1: Dynamically create multiple subroutines using function templates. \ N";
+print "1: Dynamically create multiple subroutines using function templates.\n";
 
 Make sure that 1 is returned when the subroutine # one is called.
 Make sure that 2 is returned when the subroutine # two is called.
-my% numbers = (
+my %numbers = (
   one =&gt; 1,
   two =&gt; 2,
   three =&gt; 3,
   four =&gt; 4,
 );
 
-for my $ num (keys% numbers) {
-  #Repeat reference to anonymous subroutine
-  my $ code = sub {
+for my $num (keys %numbers) {
+  # Repeat reference to anonymous subroutine
+  my $code = sub {
     # Returns the return value corresponding to the name of the number
-    return $ numbers {$ num};
+    return $numbers {$num};
   };
   
   # Remove restrictions on symbolic references
   no strict'refs';
-  Name an anonymous subroutine using a #type glob.
-  * {$ num} = $ code;
+  Name an anonymous subroutine using a # type glob.
+  * {$num} = $code;
 }
 
-print one (), two (), three (), four (), "\ n";
-&lt;/ pre&gt;
+print one (), two (), three (), four (), "\n";
+</pre>
 
   </div>
   <div class="bottom">

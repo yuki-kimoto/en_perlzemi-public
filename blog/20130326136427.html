@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> perltidy --Format Perl source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> perltidy - Format Perl source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="perltidy is a tool for shaping Perl source code. It formats the Perl source code so that it is easy to read.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" perltidy --Format Perl source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" perltidy - Format Perl source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="perltidy is a tool for shaping Perl source code. It formats the Perl source code so that it is easy to read." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20130326136427.html"> perltidy --Format Perl source code </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20130326136427.html"> perltidy - Format Perl source code </a></h2>
 <p>
   perltidy is a tool for shaping Perl source code. It formats the Perl source code so that it is easy to read.
 </p>
@@ -98,47 +98,48 @@
 
 <pre>
 perltidy source file
-&lt;/ pre&gt;
-
-&lt;h3&gt; Steps to run perltidy on multiple files in a directory &lt;/ h3&gt;
-
-Here are the steps to recursively process all the files in a directory using &lt;strong&gt; perltidy &lt;/ strong&gt;. At this point, perltidy itself doesn't seem to implement a way to handle directories recursively.
-
-&lt;h4&gt; Make a backup first &lt;/ h4&gt;
-
-Make a backup of your directory first. This is to return even if you make a mistake. Back up each directory in a different location.
-
-&lt;h4&gt; Find the desired file &lt;/ h4&gt;
-
-First, find the desired file using the &lt;b&gt; find2perl &lt;/ b&gt; command. I think files ending in .pm and files ending in .pl will be formatted. The target directory name is dir.
-
-&lt;pre&gt;
+</pre>
+<h3> Steps to run perltidy on multiple files in a directory </h3>
+<p>
+  Here are the steps to recursively process all the files in a directory using <strong> perltidy </strong>. At this point, perltidy itself doesn't seem to implement a way to handle directories recursively.
+</p>
+<h4> Make a backup first </h4>
+<p>
+  Make a backup of your directory first. This is to return even if you make a mistake. Back up each directory in a different location.
+</p>
+<h4> Find the desired file </h4>
+<p>
+  First, find the desired file using the <b> find2perl </b> command. I think files ending in .pm and files ending in .pl will be formatted. The target directory name is dir.
+</p>
+<pre>
 find2perl perl_lib / -name "* .p [ml]" | perl
-&lt;/ pre&gt;
-
-If the target file is correct, proceed to the next step.
-
-&lt;h4&gt; Run perltidy &lt;/ h4&gt;
-
-Now let's run perltidy on the output file.
-
-&lt;pre&gt;
-find2perl perl_lib / -name "* .p [ml]" | perl | perl -ne "system ('perltidy', $ _)"
-&lt;/ pre&gt;
-
-You now have a file with the extension &lt;b&gt; .tdy &lt;/ b&gt;. This is the formatted source file. Let's check if the output is correct.
-
-&lt;h4&gt; Overwrite the original file with a file with a .tdy extension &lt;/ h4&gt;
-
-Overwrites the original file with a file with a .tdy extension. That's it.
-
-&lt;pre&gt;
-find2perl perl_lib / -name "* .p [ml]" | perl | perl -MFile :: Copy -ne "chomp $ _; move ($ _.'. Tdy', $ _)"
-&lt;/ pre&gt;
-
-I want perltidy to have the ability to easily format multiple files in a directory.
-
-(Reference) &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt;
+</pre>
+<p>
+  If the target file is correct, proceed to the next step.
+</p>
+<h4> Run perltidy </h4>
+<p>
+  Now let's run perltidy on the output file.
+</p>
+<pre>
+find2perl perl_lib / -name "* .p [ml]" | perl | perl -ne "system('perltidy', $_)"
+</pre>
+<p>
+  You now have a file with the extension <b> .tdy </b>. This is the formatted source file. Let's check if the output is correct.
+</p>
+<h4> Overwrite the original file with a file with a .tdy extension </h4>
+<p>
+  Overwrites the original file with a file with a .tdy extension. That's it.
+</p>
+<pre>
+find2perl perl_lib / -name "* .p [ml]" | perl | perl -MFile::Copy -ne "chomp $_; move ($_.'. Tdy', $_)"
+</pre>
+<p>
+  I want perltidy to have the ability to easily format multiple files in a directory.
+</p>
+<p>
+  (Reference) <a href="/blog/20100408127089.html"> File::Copy</a>
+</p>
 
   </div>
   <div class="bottom">

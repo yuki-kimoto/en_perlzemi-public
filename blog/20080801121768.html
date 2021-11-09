@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </ span> </a>
+      <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080801121768.html"> Understand how pipes work </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080801121768.html"> Understand how pipes work </a></h2>
 <p>
   In modern operating systems, it is possible to pass "standard output of one program" to "standard input of another program". This OS function is called a pipe.
 </p>
@@ -99,52 +99,61 @@
 <p>
   The function called pipe is a very convenient function. If you create a program that receives data from standard input and outputs it to standard output, you can link multiple programs.
 </p>
-<h3> 1. Image of pipe </ h3>
+<h3> 1. Image of pipe </h3>
 <pre>
-               | ----------- | | ----------- | | ----------- |
-First input ---&gt; | Program A | ---&gt; | Program B | ---&gt; | Program C | ---&gt; Final output
-               | ----------- | | ----------- | | ----------- |
-&lt;/ pre&gt;
-
-You can use a pipe to connect the standard output of Program A to the standard input of Program B. In addition, the standard output of program B can be concatenated with the standard input of program C. By concatenating standard output and standard input in this way, data can be processed continuously without creating an intermediate file.
-
-&lt;h3&gt; 2. Use pipes &lt;/ h3&gt;
-
-&lt;pre&gt;
+               | - -- -- --- | | - -- -- --- | | - -- -- --- |
+First input - -&gt; | Program A | - -&gt; | Program B | - -&gt; | Program C | - -&gt; Final output
+               | - -- -- --- | | - -- -- --- | | - -- -- --- |
+</pre>
+<p>
+  You can use a pipe to connect the standard output of Program A to the standard input of Program B. In addition, the standard output of program B can be concatenated with the standard input of program C. By concatenating standard output and standard input in this way, data can be processed continuously without creating an intermediate file.
+</p>
+<h3> 2. Use pipes </h3>
+<pre>
 perldoc perlintro | perl -ne "print if / open /"
-&lt;/ pre&gt;
-
-| Is the pipe symbol. In this example, the standard output of perldoc perlintro is concatenated to the standard input of perl -ne "print if / open /".
-
-The perldoc command is a perl manual display command. perl -ne "print if / open /" is a one-liner for unix grep. Selects the line containing the word open and outputs it.
-
-Overall, I'm pulling out the line containing open from the perlinto man page. Pipes allow multiple programs to process data continuously.
-
-&lt;h3&gt; 3. How the pipe works &lt;/ h3&gt;
-
-Pipe is a function that connects the standard output of one program to the standard input of another program. I think that understanding will deepen if you know what the OS is actually doing internally, so I will write it down.
-
-Don't be afraid to misunderstand, a pipe is a temporary file (* 1). Program A outputs to a temporary file, and Program B reads from that temporary file. The image is as follows.
-
-&lt;pre&gt;
-| ----------- | | ----------- |
-| Program A | ---&gt; Temporary files (pipes) ---&gt; | Program B |
-| ----------- | | ----------- |
-&lt;/ pre&gt;
-
-Since the OS implicitly uses temporary files, it looks like the output of program A is directly the input of program B. This is the mechanism behind the pipe.
-
-Let me tell you another important story. Program A and Program B are talking about when to close temporary files.
-
-Program A is opening a temporary file in write mode. Program B is opening a temporary file in read mode. Program A does not need to read the temporary file, and program B does not need to write to the temporary file, so it is opened this way.
-
-Now, when do program A and program B close the temporary files? Consider multitasking when program A and program B are running at the same time.
-
-The answer for Program A is simple. Close the temporary file when the output of program A is finished. The processing of program A does not depend on program B.
-
-So when does Program B close the temporary file? The answer is that Program A closes the temporary file and reads the data in the temporary file to the end. Just reaching EOF like a normal file does not close it. This is because there is still the possibility that Program A will continue to write. So, in order for Program B to close the temporary file, Program A needs to close the temporary file.
-
-* 1 Pipe mounting differs depending on the OS. On Unix-like operating systems, pipes are created in memory. On Windows, a pipe is created as a temporary file on the disk.
+</pre>
+<p>
+  | Is the pipe symbol. In this example, the standard output of perldoc perlintro is concatenated to the standard input of perl -ne "print if / open /".
+</p>
+<p>
+  The perldoc command is a perl manual display command. perl -ne "print if / open /" is a one-liner for unix grep. Selects the line containing the word open and outputs it.
+</p>
+<p>
+  Overall, I'm pulling out the line containing open from the perlinto man page. Pipes allow multiple programs to process data continuously.
+</p>
+<h3> 3. How the pipe works </h3>
+<p>
+  Pipe is a function that connects the standard output of one program to the standard input of another program. I think that understanding will deepen if you know what the OS is actually doing internally, so I will write it down.
+</p>
+<p>
+  Don't be afraid to misunderstand, a pipe is a temporary file (* 1). Program A outputs to a temporary file, and Program B reads from that temporary file. The image is as follows.
+</p>
+<pre>
+| - -- -- --- | | - -- -- --- |
+| Program A | - -&gt; Temporary files (pipes) - -&gt; | Program B |
+| - -- -- --- | | - -- -- --- |
+</pre>
+<p>
+  Since the OS implicitly uses temporary files, it looks like the output of program A is directly the input of program B. This is the mechanism behind the pipe.
+</p>
+<p>
+  Let me tell you another important story. Program A and Program B are talking about when to close temporary files.
+</p>
+<p>
+  Program A is opening a temporary file in write mode. Program B is opening a temporary file in read mode. Program A does not need to read the temporary file, and program B does not need to write to the temporary file, so it is opened this way.
+</p>
+<p>
+  Now, when do program A and program B close the temporary files? Consider multitasking when program A and program B are running at the same time.
+</p>
+<p>
+  The answer for Program A is simple. Close the temporary file when the output of program A is finished. The processing of program A does not depend on program B.
+</p>
+<p>
+  So when does Program B close the temporary file? The answer is that Program A closes the temporary file and reads the data in the temporary file to the end. Just reaching EOF like a normal file does not close it. This is because there is still the possibility that Program A will continue to write. So, in order for Program B to close the temporary file, Program A needs to close the temporary file.
+</p>
+<p>
+  * 1 Pipe mounting differs depending on the OS. On Unix-like operating systems, pipes are created in memory. On Windows, a pipe is created as a temporary file on the disk.
+</p>
 
   </div>
   <div class="bottom">

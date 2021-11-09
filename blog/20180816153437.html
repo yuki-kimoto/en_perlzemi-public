@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> plenv --Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> plenv - Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use a tool called plenv to install Perl in your environment. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use plenv to switch between multiple versions of Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" plenv --Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" plenv - Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use a tool called plenv to install Perl in your environment. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use plenv to switch between multiple versions of Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20180816153437.html"> plenv --Install Perl in your environment </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20180816153437.html"> plenv - Install Perl in your environment </a></h2>
 <p>
   You can use a tool called plenv to install Perl in your environment. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use plenv to switch between multiple versions of Perl.
 </p>
@@ -96,7 +96,7 @@
 </div>
 
 
-<h3> Install plenv </ h3>
+<h3> Install plenv </h3>
 <p>
   Let's install plenv. As a prerequisite, please note that git must be installed to install plenv.
 </p>
@@ -106,29 +106,29 @@
 <pre>
 git clone git: //github.com/tokuhirom/plenv.git ~ / .plenv
 git clone git: //github.com/tokuhirom/Perl-Build.git ~ / .plenv / plugins / perl-build /
-&lt;/ pre&gt;
-
-Next, let's pass the path of plenv. Add the configuration file for bash provided by plenv to ".bash_profile" (for bash).
-
-Execute the following command.
-
-&lt;pre&gt;
-echo'export PATH = "$ HOME / .plenv / bin: $ PATH"' &gt;&gt; ~ / .bash_profile
-echo'eval "$ (plenv init-)"'&gt;&gt; ~ / .bash_profile
-exec $ SHELL -l
-&lt;/ pre&gt;
-
-&lt;h3&gt; Installing Perl in the user environment &lt;/ h3&gt;
-
-Let's take a look at the list of available Perls.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Next, let's pass the path of plenv. Add the configuration file for bash provided by plenv to ".bash_profile" (for bash).
+</p>
+<p>
+  Execute the following command.
+</p>
+<pre>
+echo'export PATH = "$HOME / .plenv / bin: $PATH"' &gt;&gt; ~ / .bash_profile
+echo'eval "$(plenv init-)"'&gt;&gt; ~ / .bash_profile
+exec $SHELL -l
+</pre>
+<h3> Installing Perl in the user environment </h3>
+<p>
+  Let's take a look at the list of available Perls.
+</p>
+<pre>
 plenv install -l
-&lt;/ pre&gt;
-
-If plenv is installed successfully, you will see a list of Perls you can install.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If plenv is installed successfully, you will see a list of Perls you can install.
+</p>
+<pre>
 Available versions: Available versions:
  5.29.1
  5.29.0
@@ -138,134 +138,140 @@ Available versions: Available versions:
  5.28.0-RC2
  5.28.0-RC1
  ...
-&lt;/ pre&gt;
-
-If you get an error such as 599 Internal Exception, try to fix it based on the following article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="https://qiita.com/DQNEO/items/890b99134be0ad81d174"&gt; [Remedy &lt;/a&gt; 599 Internal Exception, https://fastapi.metacpan.org/v1/release/_search]
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="https://github.com/miyagawa/HTTP-Tinyish/issues/14"&gt; want to check Mozilla :: CA &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-If all else fails, use &lt;a href="/blog/20110220130464.html"&gt; perlbrew &lt;/a&gt;.
-
-Install Perl in your environment. Let's install Perl of 5.20.3. It will take some time, so wait (about 40 minutes).
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you get an error such as 599 Internal Exception, try to fix it based on the following article.
+</p>
+<ul>
+  <li>
+    <a href="https://qiita.com/DQNEO/items/890b99134be0ad81d174"> [Remedy</a> 599 Internal Exception, https://fastapi.metacpan.org/v1/release/_search]
+  </li>
+  <li>
+    <a href="https://github.com/miyagawa/HTTP-Tinyish/issues/14"> want to check Mozilla::CA</a>
+  </li>
+</ul>
+<p>
+  If all else fails, use <a href="/blog/20110220130464.html"> perlbrew</a>.
+</p>
+<p>
+  Install Perl in your environment. Let's install Perl of 5.20.3. It will take some time, so wait(about 40 minutes).
+</p>
+<pre>
 plenv install 5.20.3
-&lt;/ pre&gt;
-
-Let's display a list of available Perls.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's display a list of available Perls.
+</p>
+<pre>
 plenv versions
-&lt;/ pre&gt;
-
-When Perl is available
-
-The available Perls are displayed as shown below. The one with the asterisk is the Perl you are currently using.
-
-&lt;pre&gt;
-* system (set by /home/kimoto2/.plenv/version)
+</pre>
+<p>
+  When Perl is available
+</p>
+<p>
+  The available Perls are displayed as shown below. The one with the asterisk is the Perl you are currently using.
+</p>
+<pre>
+* system(set by /home/kimoto2/.plenv/version)
   5.20.3
-&lt;/ pre&gt;
-
-Use plenv's global command to switch between Perls.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use plenv's global command to switch between Perls.
+</p>
+<pre>
 plenv global 5.20.3
-&lt;/ pre&gt;
-
-As an advantage of plenv, you can also switch Perl for each directory by using &lt;a href="https://papix.hatenablog.com/entry/2018/03/10/160838"&gt; local command &lt;/a&gt;. is.
-
-Let's actually check the version of Perl.
-
-&lt;pre&gt;
+</pre>
+<p>
+  As an advantage of plenv, you can also switch Perl for each directory by using <a href="https://papix.hatenablog.com/entry/2018/03/10/160838"> local command</a>. is.
+</p>
+<p>
+  Let's actually check the version of Perl.
+</p>
+<pre>
 perl -v
-&lt;/ pre&gt;
-
-The version is 5.20.3 as shown below.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The version is 5.20.3 as shown below.
+</p>
+<pre>
 This is perl 5, version 20, subversion 3 (v5.20.3) built for x86_64-linux
 (with 1 registered patch, see perl -V for more detail)
-&lt;/ pre&gt;
-
-&lt;h3&gt; Install cpanm &lt;/ h3&gt;
-
-Let's also install cpanm, which is convenient for installing modules.
-
-&lt;pre&gt;
+</pre>
+<h3> Install cpanm </h3>
+<p>
+  Let's also install cpanm, which is convenient for installing modules.
+</p>
+<pre>
 plenv install-cpanm
-&lt;/ pre&gt;
-
-Now you can install the module with the following command.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Now you can install the module with the following command.
+</p>
+<pre>
 cpanm JSON
-&lt;/ pre&gt;
-
-&lt;h3&gt; Revert to original Perl &lt;/ h3&gt;
-
-To revert to the original Perl:
-
-&lt;pre&gt;
+</pre>
+<h3> Revert to original Perl </h3>
+<p>
+  To revert to the original Perl:
+</p>
+<pre>
 plenv global system
-&lt;/ pre&gt;
-
-&lt;h3&gt; How to use Perl installed with plenv with crontab &lt;/ h3&gt;
-
-One of the main points of plenv is that Perl installed with plenv is not used by cron. This is because .bash_profile is not loaded when running from cron because the shell is not started. The setting by plenv is described in .bash_profile.
-
-The simplest solution is to rewrite PATH in crontab to the value of the environment variable PATH that the user has.
-
-First, as the user who installed plenv, display the value of the PATH environment variable.
-
-&lt;pre&gt;
+</pre>
+<h3> How to use Perl installed with plenv with crontab </h3>
+<p>
+  One of the main points of plenv is that Perl installed with plenv is not used by cron. This is because .bash_profile is not loaded when running from cron because the shell is not started. The setting by plenv is described in .bash_profile.
+</p>
+<p>
+  The simplest solution is to rewrite PATH in crontab to the value of the environment variable PATH that the user has.
+</p>
+<p>
+  First, as the user who installed plenv, display the value of the PATH environment variable.
+</p>
+<pre>
 env | grep PATH
-&lt;/ pre&gt;
-
-You will see some environment variables that include PATH, so look for something called PATH. (This is an example when the user name is admins.)
-
-&lt;pre&gt;
+</pre>
+<p>
+  You will see some environment variables that include PATH, so look for something called PATH. (This is an example when the user name is admins.)
+</p>
+<pre>
 PATH = / home / kimoto2 / .plenv / shims: /home/kimoto2/.plenv/bin:/home/kimoto2/.plenv/shims:/home/kimoto2/.plenv/bin:/usr/local/bin:/ bin: / usr / bin: / usr / local / sbin: /usr/sbin:/home/kimoto2/.local/bin:/home/kimoto2/bin:/home/kimoto2/.local/bin:/home/kimoto2 /bin:/home/kimoto2/.local/bin:/home/kimoto2/bin
-&lt;/ pre&gt;
-
-Edit crontab with the following command.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Edit crontab with the following command.
+</p>
+<pre>
 crontab -e
-&lt;/ pre&gt;
-
-Then write the above PATH value to the top of crontab.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Then write the above PATH value to the top of crontab.
+</p>
+<pre>
 PATH = / home / kimoto2 / .plenv / shims: /home/kimoto2/.plenv/bin:/home/kimoto2/.plenv/shims:/home/kimoto2/.plenv/bin:/usr/local/bin:/ bin: / usr / bin: / usr / local / sbin: /usr/sbin:/home/kimoto2/.local/bin:/home/kimoto2/bin:/home/kimoto2/.local/bin:/home/kimoto2 /bin:/home/kimoto2/.local/bin:/home/kimoto2/bin
 
 # cron settings continue ...
-&lt;/ pre&gt;
-
-Now cron will use the specified version of Perl.
-
-&lt;h4&gt; First line description of Perl script &lt;/ h4&gt;
-
-Write the first line of the Perl script using the env command as shown below.
-
-&lt;pre&gt;
-#! / usr / bin / env perl
-&lt;/ pre&gt;
-
-This will automatically detect perl from the set PATH value.
-
-As you can see, this method is completely non-portable to crontab. The user name kimoto2 is directly embedded.
-
-But I think this method is the best. The reason is that it is difficult to make it portable because there is a limitation that environment variables cannot be expanded in crontab. Portability increases the amount of description, requires additional scripts, and complicates management.
-
-Also, no matter how hard you try, crontab usually has some differences depending on the environment, so even if you keep portability, there may not be much merit.
+</pre>
+<p>
+  Now cron will use the specified version of Perl.
+</p>
+<h4> First line description of Perl script </h4>
+<p>
+  Write the first line of the Perl script using the env command as shown below.
+</p>
+<pre>
+# ! / usr / bin / env perl
+</pre>
+<p>
+  This will automatically detect perl from the set PATH value.
+</p>
+<p>
+  As you can see, this method is completely non-portable to crontab. The user name kimoto2 is directly embedded.
+</p>
+<p>
+  But I think this method is the best. The reason is that it is difficult to make it portable because there is a limitation that environment variables cannot be expanded in crontab. Portability increases the amount of description, requires additional scripts, and complicates management.
+</p>
+<p>
+  Also, no matter how hard you try, crontab usually has some differences depending on the environment, so even if you keep portability, there may not be much merit.
+</p>
 
   </div>
   <div class="bottom">

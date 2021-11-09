@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20160225145640.html">
-      <span itemprop = "name"> Version information </ span> </a>
+      <span itemprop = "name"> Version information </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
+    <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20170531149624.html"> The latest version of Perl, Perl 5.26 released. Indentable Here Documents, Unicode 9.0, Long Key Hash Performance Improvements </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20170531149624.html"> The latest version of Perl, Perl 5.26 released. Indentable Here Documents, Unicode 9.0, Long Key Hash Performance Improvements </a></h2>
 <p>
   Perl 5.26 was released on May 30, 2017! Perl was introduced in 1987, so it's finally 30 years!
 </p>
@@ -97,39 +97,39 @@
 </div>
 
 
-<h3> Addition of functions </ h3>
+<h3> Addition of functions </h3>
 <p>
   Some feature additions in Perl 5.26. I will pick up something that seems convenient.
 </p>
-<h4> Indentable here document </ h4>
+<h4> Indentable here document </h4>
 <p>
-  Indentable <a href="/blog/20080619121405.html"> Here Document </a> syntax has been added. This seems convenient.
+  Indentable <a href="/blog/20080619121405.html"> Here Document</a> syntax has been added. This seems convenient.
 </p>
 <pre>
-my $ message = &lt;&lt; ~ EOS;
+my $message = &lt;&lt; ~ EOS;
   Hello
   World
   EOS
-&lt;/ pre&gt;
-
-The position of the last character (EOS in this case) is the position on the left, and the output result is as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The position of the last character (EOS in this case) is the position on the left, and the output result is as follows.
+</p>
+<pre>
 Hello
 World
-&lt;/ pre&gt;
-
-It would be even better if you could color the source code well in the editor.
-
-&lt;h4&gt; Unicode 9.0 support &lt;/ h4&gt;
-
-Unicode 9.0 is supported. It can handle emoticons and other characters added in Unicode 9.0.
-
-&lt;h4&gt; Formal functions of lexical subroutines &lt;/ h4&gt;
-
-The functionality of the lexical &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt; is now official.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It would be even better if you could color the source code well in the editor.
+</p>
+<h4> Unicode 9.0 support </h4>
+<p>
+  Unicode 9.0 is supported. It can handle emoticons and other characters added in Unicode 9.0.
+</p>
+<h4> Formal functions of lexical subroutines </h4>
+<p>
+  The functionality of the lexical <a href="/blog/20101130129876.html"> subroutine</a> is now official.
+</p>
+<pre>
 {
   my sub foo {
     ...
@@ -138,115 +138,119 @@ The functionality of the lexical &lt;a href="/blog/20101130129876.html"&gt; subr
   # Can be called only from the current scope.
   title ();
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Regular expression named captures are easier to understand &lt;/ h4&gt;
-
-The use of named captures for &lt;a href="/blog/20100827127859.html"&gt; regular expressions &lt;/a&gt; has become easier to understand. You can retrieve the named capture from the following hash variables.
-
-&lt;pre&gt;
-% {^ CAPTURE}
-&lt;/ pre&gt;
-
-&lt;pre&gt;
-my $ foo = "I am Tom" ;;
-if ($ a = ~ m / (? &lt;name&gt;. +) $ /) {
-  my $ name = $ {^ CAPTURE} {name};
+</pre>
+<h4> Regular expression named captures are easier to understand </h4>
+<p>
+  The use of named captures for <a href="/blog/20100827127859.html"> regular expressions</a> has become easier to understand. You can retrieve the named capture from the following hash variables.
+</p>
+<pre>
+%{^ CAPTURE}
+</pre>
+<pre>
+my $foo = "I am Tom" ;;
+if ($a = ~ m / (? &lt;name&gt;. +) $/) {
+  my $name = ${^ CAPTURE} {name};
 }
-&lt;/ pre&gt;
-
-It was a little confusing to refer to with "$ + {name}", so I think this is a good addition.
-
-&lt;h3&gt; Performance improvements &lt;/ h3&gt;
-
-Pick up on performance improvements in Perl 5.26.
-
-&lt;h4&gt; Hash performance improvement in 64-bit environment &lt;/ h4&gt;
-
-Now hybrid &lt;a href="/blog/20161013147635.html"&gt; hash &lt;/a&gt; for better balance.
-
-Use the "At A Time Hard" algorithm for short keys of 16 bytes or less and the "Siphash 1-3" algorithm for long keys.
-Very long keys will significantly improve performance, short keys will have a small improvement.
-
-&lt;h4&gt; Faster line reading from file &lt;/ h4&gt;
-
-Improved performance for readline, which reads files from lines, and the "&lt;&gt;" operator. The implementation of the newline character search method is now faster.
-
-&lt;h4&gt; Faster reference assignment &lt;/ h4&gt;
-
-Assigning a reference to another variable is faster.
-
-&lt;pre&gt;
-my $ obj1 = SomeModule-&gt; new;
-my $ obj2 = $ obj1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Improved performance of split function &lt;/ h4&gt;
-
-The &lt;a href="/blog/20080301120434.html"&gt; split function &lt;/a&gt; is slightly faster.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It was a little confusing to refer to with "$+ {name}", so I think this is a good addition.
+</p>
+<h3> Performance improvements </h3>
+<p>
+  Pick up on performance improvements in Perl 5.26.
+</p>
+<h4> Hash performance improvement in 64-bit environment </h4>
+<p>
+  Now hybrid <a href="/blog/20161013147635.html"> hash</a> for better balance.
+</p>
+<p>
+  Use the "At A Time Hard" algorithm for short keys of 16 bytes or less and the "Siphash 1-3" algorithm for long keys.
+</p>
+<p>
+  Very long keys will significantly improve performance, short keys will have a small improvement.
+</p>
+<h4> Faster line reading from file </h4>
+<p>
+  Improved performance for readline, which reads files from lines, and the "<>" operator. The implementation of the newline character search method is now faster.
+</p>
+<h4> Faster reference assignment </h4>
+<p>
+  Assigning a reference to another variable is faster.
+</p>
+<pre>
+my $obj1 = SomeModule-&gt; new;
+my $obj2 = $obj1;
+</pre>
+<h4> Improved performance of split function </h4>
+<p>
+  The <a href="/blog/20080301120434.html"> split function</a> is slightly faster.
+</p>
+<pre>
 my @elements = split ...;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Improved list assignment performance &lt;/ h4&gt;
-
-&lt;a href="/blog/20100308126967.html"&gt; List &lt;/a&gt; Assignment performance is about 3x faster.
-
-&lt;pre&gt;
+</pre>
+<h4> Improved list assignment performance </h4>
+<p>
+  <a href="/blog/20100308126967.html"> List</a> Assignment performance is about 3x faster.
+</p>
+<pre>
 my @elements = (1,2,3);
-&lt;/ pre&gt;
-
-&lt;h3&gt; Backwards incompatible changes &lt;/ h3&gt;
-
-This is a backwards incompatible change.
-
-&lt;h4&gt; The "." That was added by default at the end of @INC has been removed &lt;/ h4&gt;
-
-In Perl 5.26, this is the most impactful and incompatible change. Changes have been made to remove the current directory in the module's loading path, which poses a security risk.
-
-Please see the following article for details.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170410149183.html"&gt; Address @INC issues to Perl 5.26 before upgrading &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Unescaped "{" in regular expressions is not allowed &lt;/ h4&gt;
-
-It has been deprecated since 5.16, but is no longer allowed in Perl 5.26.
-
-&lt;pre&gt;
+</pre>
+<h3> Backwards incompatible changes </h3>
+<p>
+  This is a backwards incompatible change.
+</p>
+<h4> The "." That was added by default at the end of @INC has been removed </h4>
+<p>
+  In Perl 5.26, this is the most impactful and incompatible change. Changes have been made to remove the current directory in the module's loading path, which poses a security risk.
+</p>
+<p>
+  Please see the following article for details.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170410149183.html"> Address @INC issues to Perl 5.26 before upgrading</a>
+  </li>
+</ul>
+<h4> Unescaped "{" in regular expressions is not allowed </h4>
+<p>
+  It has been deprecated since 5.16, but is no longer allowed in Perl 5.26.
+</p>
+<pre>
 # Whenever you use "{" in a regular expression, escape
 / \ {/;
-&lt;/ pre&gt;
-
-&lt;h4&gt; $ {^ ENCODING} feature removed &lt;/ h4&gt;
-
-The encoding pragma was deprecated in Perl 5.18, but with this release the encoding pragma no longer works out of the box. This is because the $ {^ ENCODING} variable, which was internally connected to the encoding pragma, has been removed.
-
-Write the source code in UTF-8 and use the utf8 pragma.
-
-If you really want to continue using the encoding pragma, you can deal with it by adding the "Filter" option as shown below.
-
-&lt;pre&gt;
+</pre>
+<h4> ${^ ENCODING} feature removed </h4>
+<p>
+  The encoding pragma was deprecated in Perl 5.18, but with this release the encoding pragma no longer works out of the box. This is because the ${^ ENCODING} variable, which was internally connected to the encoding pragma, has been removed.
+</p>
+<p>
+  Write the source code in UTF-8 and use the utf8 pragma.
+</p>
+<p>
+  If you really want to continue using the encoding pragma, you can deal with it by adding the "Filter" option as shown below.
+</p>
+<pre>
 use encoding "euc-jp", Filter =&gt; 1;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Impressions &lt;/ h3&gt;
-
-Changes that make Perl easier to understand and performance improvements are welcome. It's also great to be ready for the new Unicode soon.
-
-The removal of the "." From @INC has a significant impact on the source code, but I think it's a better decision than leaving the security issues alone.
-
-Upgrading to Perl 5.26 requires a great deal of caution. It is best to deal with it in advance. It is a good idea to set the path to read modules and files in the FindBin module with an absolute path.
-
-It was stable up to Perl 5.20, and in Perl 5.22 and Perl 5.24 there was a problem with Coro using the internal API not working. Currently the latest version of Coro seems to work with Perl 5.22, but not with Perl 5.24 or later. In Perl 5.26, the "." Is removed from @INC.
-
-The precautions for the upgrade are to make sure you are not using Coro and to take action to prevent the "." From being included in @INC.
-
-If you're using an older Perl, upgrade to Perl 5.20 first, then upgrade to the latest version, and you'll be less likely to have problems.
+</pre>
+<h3> Impressions </h3>
+<p>
+  Changes that make Perl easier to understand and performance improvements are welcome. It's also great to be ready for the new Unicode soon.
+</p>
+<p>
+  The removal of the "." From @INC has a significant impact on the source code, but I think it's a better decision than leaving the security issues alone.
+</p>
+<p>
+  Upgrading to Perl 5.26 requires a great deal of caution. It is best to deal with it in advance. It is a good idea to set the path to read modules and files in the FindBin module with an absolute path.
+</p>
+<p>
+  It was stable up to Perl 5.20, and in Perl 5.22 and Perl 5.24 there was a problem with Coro using the internal API not working. Currently the latest version of Coro seems to work with Perl 5.22, but not with Perl 5.24 or later. In Perl 5.26, the "." Is removed from @INC.
+</p>
+<p>
+  The precautions for the upgrade are to make sure you are not using Coro and to take action to prevent the "." From being included in @INC.
+</p>
+<p>
+  If you're using an older Perl, upgrade to Perl 5.20 first, then upgrade to the latest version, and you'll be less likely to have problems.
+</p>
 
   </div>
   <div class="bottom">

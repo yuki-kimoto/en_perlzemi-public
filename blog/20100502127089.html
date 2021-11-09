@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Digest :: SHA --Calculate the digest value by SHA  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  Digest :: SHA  module to find various SHA values. Use the following function to find the SHA-1 value.">
+<title> Digest::SHA - Calculate the digest value by SHA  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  Digest::SHA  module to find various SHA values. Use the following function to find the SHA-1 value.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Digest :: SHA --Calculate the digest value by SHA  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  Digest :: SHA  module to find various SHA values. Use the following function to find the SHA-1 value." />
+<meta name="twitter:title" content=" Digest::SHA - Calculate the digest value by SHA  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  Digest::SHA  module to find various SHA values. Use the following function to find the SHA-1 value." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100502127089.html"> Digest :: SHA --Calculate the digest value by SHA </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100502127089.html"> Digest::SHA - Calculate the digest value by SHA </a></h2>
 <p>
-  You can use the <strong> Digest :: SHA </ strong> module to find various SHA values. Use the following function to find the SHA-1 value.
+  You can use the <strong> Digest::SHA </strong> module to find various SHA values. Use the following function to find the SHA-1 value.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,36 +97,43 @@
 
 
 <pre>
-#Loading modules and importing functions
-use Digest :: SHA'sha1_hex';
-&lt;/ pre&gt;
-
-You can use the &lt;strong&gt; sha1_hex &lt;/ strong&gt; function to get the SHA-1 value as a 40-digit hexadecimal string.
-
-&lt;pre&gt;
+# Loading modules and importing functions
+use Digest::SHA'sha1_hex';
+</pre>
+<p>
+  You can use the <strong> sha1_hex </strong> function to get the SHA-1 value as a 40-digit hexadecimal string.
+</p>
+<pre>
 # SHA-1 Find the value
-my $ sha1_sum = sha1_hex'alkeiop2lkj39';
-&lt;/ pre&gt;
-
-The result is a 40-digit hexadecimal number like this:
-
-&lt;pre&gt;
+my $sha1_sum = sha1_hex'alkeiop2lkj39';
+</pre>
+<p>
+  The result is a 40-digit hexadecimal number like this:
+</p>
+<pre>
 # SHA-1 value (obtained as a hexadecimal string)
 20b07a8050be5dd980b1c17109fbbffaf3194498
-&lt;/ pre&gt;
-
-&lt;h4&gt; Digest :: SHA FAQ &lt;/ h4&gt;
-
-Q. Simply put, what is SHA?
-A. It is one of the functions that creates "a value that is very difficult to guess the original value" from "a certain value". It is used to check if the file is corrupted (even if the file is slightly corrupted, it can be checked by the different SHA value), or it is used for digital signatures. SHA is harder to guess than MD5, which has the same functionality. You can use the &lt;a href="/blog/20100501127089.html"&gt; Digest :: MD5 &lt;/a&gt; module to find the MD5 value.
-
-Q. Is it possible to get SHA-1 values ​​in other formats?
-A. Yes you can. You can use the sha1 function to get the SHA-1 value in binary format, and the sha1_base64 function to get the SHA-1 value in base64 format.
-
-Q. In addition to SHA-1, there are high-strength SHA-256, SHA-384, SHA-512, etc. Can I use them?
-
-A. Yes you can. It has the following functions:
-&lt;pre&gt;
+</pre>
+<h4> Digest::SHA FAQ </h4>
+<p>
+  Q. Simply put, what is SHA?
+</p>
+<p>
+  A. It is one of the functions that creates "a value that is very difficult to guess the original value" from "a certain value". It is used to check if the file is corrupted (even if the file is slightly corrupted, it can be checked by the different SHA value), or it is used for digital signatures. SHA is harder to guess than MD5, which has the same functionality. You can use the <a href="/blog/20100501127089.html"> Digest::MD5</a> module to find the MD5 value.
+</p>
+<p>
+  Q. Is it possible to get SHA-1 values ​​in other formats?
+</p>
+<p>
+  A. Yes you can. You can use the sha1 function to get the SHA-1 value in binary format, and the sha1_base64 function to get the SHA-1 value in base64 format.
+</p>
+<p>
+  Q. In addition to SHA-1, there are high-strength SHA-256, SHA-384, SHA-512, etc. Can I use them?
+</p>
+<p>
+  A. Yes you can. It has the following functions:
+</p>
+<pre>
 # Binary format
 sha1
 sha224
@@ -147,7 +154,7 @@ sha224_base64
 sha256_base64
 sha384_base64
 sha512_base64
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

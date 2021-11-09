@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> What is object-oriented programming? </ Span>
+      <span itemprop = "name"> What is object-oriented programming? </Span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090307123532.html"> What is object-oriented programming? </a></ H2>
+  </li>
+</ol>
+<h2><a href="/blog/20090307123532.html"> What is object-oriented programming? </a></H2>
 <p>
   Before describing what is object-oriented, let's use a module written in object-oriented.
 </p>
@@ -97,109 +97,106 @@
 </div>
 
 
-<h3> How to use modules written in object orientation </ h3>
+<h3> How to use modules written in object orientation </h3>
 <p>
-  To use a module written in object orientation, first load the module using <strong> use </ strong>. Let's load the CGI module.
+  To use a module written in object orientation, first load the module using <strong> use </strong>. Let's load the CGI module.
 </p>
 <pre>
 use CGI;
-&lt;/ pre&gt;
-
-To create an object, write &lt;strong&gt; module name-&gt; new &lt;/ strong&gt;. Assigning the created object to $ cgi.
-
-&lt;pre&gt;
-my $ cgi = CGI-&gt; new ();
-&lt;/ pre&gt;
-
-&lt;strong&gt; new is a method for creating objects &lt;/ strong&gt; and is called a constructor. At first, you can think of a &lt;strong&gt; method as a function that can be called from-&gt; &lt;/ strong&gt;.
-
-Let's call methods other than new.
-
-&lt;pre&gt;
-my $ str = $ cgi-&gt; h1 ('a');
-&lt;/ pre&gt;
-
-h1 method receives a string
-
-&lt;pre&gt;
-&lt;h1&gt; ... &lt;/ h1&gt;
-&lt;/ pre&gt;
-
-Will be returned.
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-The description so far is summarized in a sample.
-
-&lt;pre&gt;
+</pre>
+<p>
+  To create an object, write <strong> module name-> new </strong>. Assigning the created object to $cgi.
+</p>
+<pre>
+my $cgi = CGI-&gt; new ();
+</pre>
+<p>
+  <strong> new is a method for creating objects </strong> and is called a constructor. At first, you can think of a <strong> method as a function that can be called from-> </strong>.
+</p>
+<p>
+  Let's call methods other than new.
+</p>
+<pre>
+my $str = $cgi-&gt; h1 ('a');
+</pre>
+<p>
+  h1 method receives a string
+</p>
+<pre>
+&lt;h1&gt; ... &lt;/h1&gt;
+</pre>
+<p>
+  Will be returned.
+</p>
+<h3> Sample </h3>
+<p>
+  The description so far is summarized in a sample.
+</p>
+<pre>
 use strict;
 use warnings;
 
 use CGI;
-my $ cgi = CGI-&gt; new;
-my $ str = $ cgi-&gt; h1 ('a');
+my $cgi = CGI-&gt; new;
+my $str = $cgi-&gt; h1 ('a');
 
-# &lt;h1&gt; a &lt;/ h1&gt; is output
-print $ str;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Object-oriented features &lt;/ h3&gt;
-
-In object orientation, &lt;strong&gt; methods are called from module names or objects &lt;/ strong&gt; using-&gt;.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
+# &lt;h1&gt; a &lt;/h1&gt; is output
+print $str;
+</pre>
+<h3> Object-oriented features </h3>
+<p>
+  In object orientation, <strong> methods are called from module names or objects </strong> using->.
+</p>
+<table>
+  <tr>
+    <td>
       Description
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       How to call the method
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      CGI-&gt; new ()
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      CGI-> new ()
+    </td>
+    <td>
        Call from module name
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      $ cgi-&gt; h1
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $cgi-> h1
+    </td>
+    <td>
        Call from object
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-One of the object-oriented features is that the method is called from the module name or the object.
-
-&lt;h3&gt; How to use classes in Java &lt;/ h3&gt;
-
-You can see that the description in java is almost the same as Perl.
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<p>
+  One of the object-oriented features is that the method is called from the module name or the object.
+</p>
+<h3> How to use classes in Java </h3>
+<p>
+  You can see that the description in java is almost the same as Perl.
+</p>
+<pre>
 import java.awt.Button;
 import java.lang.Math;
 
-Call the constructor (corresponding to new) from the #Button class
+Call the constructor (corresponding to new) from the # Button class
 Button btn = new Button ();
 
 # Call the paint method to draw from the btn object
-btn.paint ();
+btn.paint();
 
-#Call the abs method that returns the absolute value from the Math class
-Math.abs (-3);
-&lt;/ pre&gt;
-
-&lt;h3&gt; What is a Perl class? &lt;/ H3&gt;
-
-Perl doesn't have a dedicated grammar for creating classes. When we talk about classes in Perl, we just mean modules written in an object-oriented way.
+# Call the abs method that returns the absolute value from the Math class
+Math.abs(-3);
+</pre>
+<h3> What is a Perl class? </H3>
+<p>
+  Perl doesn't have a dedicated grammar for creating classes. When we talk about classes in Perl, we just mean modules written in an object-oriented way.
+</p>
 
   </div>
   <div class="bottom">

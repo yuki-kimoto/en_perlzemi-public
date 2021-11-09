@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20100308126967.html"> Perl list </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20100308126967.html"> Perl list </a></h2>
 <p>
-  A <strong> list </ strong> is a representation of a sequence of multiple values.
+  A <strong> list </strong> is a representation of a sequence of multiple values.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,109 +97,110 @@
 
 
 <pre>
-#List
+# List
 ('a','b','c','d')
-&lt;/ pre&gt;
-
-Lists can be assigned to &lt;a href="/blog/20161012147627.html"&gt; arrays &lt;/a&gt; or &lt;a href="/blog/20161013147635.html"&gt; hashes &lt;/a&gt; for initialization. ..
-
-&lt;pre&gt;
-#Assignment to array
+</pre>
+<p>
+  Lists can be assigned to <a href="/blog/20161012147627.html"> arrays</a> or <a href="/blog/20161013147635.html"> hashes</a> for initialization. ..
+</p>
+<pre>
+# Assignment to array
 my @array = ('a','b','c','d');
 
-#Assignment to hash
-my% hash = ('a','b','c','d');
-&lt;/ pre&gt;
+# Assignment to hash
+my %hash = ('a','b','c','d');
+</pre>
+<h3> Difference between array and list </h3>
+<p>
+  Arrays and lists are similar, but in reality there are some differences.
+</p>
+<p>
+  The first difference is in the linguistic sense. Arrays are variables and lists are notations.
+</p>
+<p>
+  The second is that the values ​​are different when evaluated in <a href="/blog/20080608121292.html"> scalar context</a>.
+</p>
+<p>
+  Take a look at the following code. What do you think about "$num1" and "$num2"?
+</p>
+<pre>
+# Evaluate list in scalar context
+my $num1 = (5, 6, 7);
 
-&lt;h3&gt; Difference between array and list &lt;/ h3&gt;
-
-Arrays and lists are similar, but in reality there are some differences.
-
-The first difference is in the linguistic sense. Arrays are variables and lists are notations.
-
-The second is that the values ​​are different when evaluated in &lt;a href="/blog/20080608121292.html"&gt; scalar context &lt;/a&gt;.
-
-Take a look at the following code. What do you think about "$ num1" and "$ num2"?
-
-&lt;pre&gt;
-#Evaluate list in scalar context
-my $ num1 = (5, 6, 7);
-
-#Evaluate arrays in scalar context
+# Evaluate arrays in scalar context
 my @nums = (5, 6, 7);
-my $ num2 = @nums;
+my $num2 = @nums;
 
-&lt;/ pre&gt;
-
-The answer is that "$ num1" becomes "7" and $ num2 becomes "3".
-
-In a scalar context, evaluating a list returns the "last value in the list", and evaluating an array returns the "number of arrays".
-
-&lt;h3&gt; List notation for hashing &lt;/ h3&gt;
-
-A simple notation using "=&gt;" is provided to make assignments to hashes.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The answer is that "$num1" becomes "7" and $num2 becomes "3".
+</p>
+<p>
+  In a scalar context, evaluating a list returns the "last value in the list", and evaluating an array returns the "number of arrays".
+</p>
+<h3> List notation for hashing </h3>
+<p>
+  A simple notation using "=>" is provided to make assignments to hashes.
+</p>
+<pre>
 # Hash notation
-my% hash = (a =&gt;'b', c =&gt;'d');
-&lt;/ pre&gt;
+my %hash = (a =&gt;'b', c =&gt;'d');
+</pre>
+<p>
+  It has exactly the same meaning as a regular list, only the notation is different. For the string to the left of =>, single quotes can be omitted if it consists only of alphanumeric characters and underscores. The notation that omits single quotes is preferred.
+</p>
+<h3> List assignment </h3>
+<p>
+  You can assign a list by using the list on the left side. You can assign multiple values ​​to multiple variables.
+</p>
+<pre>
+my ($var1, $var2) = (3, 5);
+</pre>
+<p>
+  List by receiving <a href="/blog/20080108132865.html"> command line arguments</a> and receiving arguments in <a href="/blog/20101130129876.html"> subroutine</a> You can use assignment.
+</p>
+<pre>
+# Receiving command line arguments
+my ($var1, $var2) = @ARGV;
 
-It has exactly the same meaning as a regular list, only the notation is different. For the string to the left of =&gt;, single quotes can be omitted if it consists only of alphanumeric characters and underscores. The notation that omits single quotes is preferred.
-
-&lt;h3&gt; List assignment &lt;/ h3&gt;
-
-You can assign a list by using the list on the left side. You can assign multiple values ​​to multiple variables.
-
-&lt;pre&gt;
-my ($ var1, $ var2) = (3, 5);
-&lt;/ pre&gt;
-
-List by receiving &lt;a href="/blog/20080108132865.html"&gt; command line arguments &lt;/a&gt; and receiving arguments in &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt; You can use assignment.
-
-&lt;pre&gt;
-#Receiving command line arguments
-my ($ var1, $ var2) = @ARGV;
-
-#Receiving arguments in a subroutine
+# Receiving arguments in a subroutine
 sub foo {
-  my ($ var1, $ var2) = @_;
+  my ($var1, $var2) = @_;
   ...
 }
-&lt;/ pre&gt;
-
-This is used frequently, so be sure to remember it.
-
-&lt;h3&gt; String list operator &lt;/ h3&gt;
-
-The string list operator makes it easy to represent a list of strings.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is used frequently, so be sure to remember it.
+</p>
+<h3> String list operator </h3>
+<p>
+  The string list operator makes it easy to represent a list of strings.
+</p>
+<pre>
 qw (Cat Mouse Dog)
-&lt;/ pre&gt;
-
-Please refer to the following articles for a detailed explanation of the string list operator.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080222120369.html"&gt; String list operator &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Automatic initialization with empty list &lt;/ h3&gt;
-
-Arrays and hashes are declared and initialized with an empty list.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Please refer to the following articles for a detailed explanation of the string list operator.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080222120369.html"> String list operator</a>
+  </li>
+</ul>
+<h3> Automatic initialization with empty list </h3>
+<p>
+  Arrays and hashes are declared and initialized with an empty list.
+</p>
+<pre>
 # The following is the same
 my @nums;
 my @nums = ();
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 # The following is the same
-my% score;
-my% score = ();
-&lt;/ pre&gt;
+my %score;
+my %score = ();
+</pre>
 
   </div>
   <div class="bottom">

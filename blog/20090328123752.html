@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Behavior according to the environment </ span>
+      <span itemprop = "name"> Behavior according to the environment </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090328123752.html"> Create an object according to the environment </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090328123752.html"> Create an object according to the environment </a></h2>
 <p>
   Let's modify the class a little and change the behavior according to the OS.
 </p>
@@ -97,139 +97,143 @@
 </div>
 
 
-<h3> 1. Polymorphism that changes its behavior according to the environment </ h3>
+<h3> 1. Polymorphism that changes its behavior according to the environment </h3>
 <p>
-  If the environment is Windows, I created an object of FilePath :: Windows class, and if the environment is not, I wrote a class that creates an object of FilaPath :: Unix class.
+  If the environment is Windows, I created an object of FilePath::Windows class, and if the environment is not, I wrote a class that creates an object of FilaPath::Unix class.
 </p>
 <pre>
 use strict;
 use warnings;
 
-my $ file_path = FilePath-&gt; new;
+my $file_path = FilePath-&gt; new;
 
-my $ result = $ file_path-&gt; cat_path ('a','b');
+my $result = $file_path-&gt; cat_path ('a','b');
 
-print "Result: $ result \ n";
+print "Result: $result\n";
 
-#Class used by user
+# Class used by user
 package FilePath;
 
 sub new {
-  my $ self = shift;
-  if ($ ^ O eq'MSWin32') {
-    return FilePath :: Windows-&gt; new;
+  my $self = shift;
+  if ($^ O eq'MSWin32') {
+    return FilePath::Windows-&gt; new;
   }
   else {
-    return FilePath :: Unix-&gt; new;
+    return FilePath::Unix-&gt; new;
   }
 }
 
 # Base class for handling file paths
-package FilePath :: Base;
+package FilePath::Base;
 
 sub new {
-  my $ proto = shift;
-  my $ class = ref $ proto || $ proto;
-  my $ self = {};
-  bless $ self, $ class;
-  return $ self;
+  my $proto = shift;
+  my $class = ref $proto || $proto;
+  my $self = {};
+  bless $self, $class;
+  return $self;
 }
 
 sub cat_path {
-  my ($ self, $ str1, $ str2) = @_;
-  return $ str1. $ Self-&gt; delimiter. $ Str2;
+  my ($self, $str1, $str2) = @_;
+  return $str1. $Self-&gt; delimiter. $Str2;
 }
 
-#For Unix
-package FilePath :: Unix;
-use base'FilePath :: Base';
+# For Unix
+package FilePath::Unix;
+use base'FilePath::Base';
 
 # Unix delimiter
 sub delimiter {return'/'}
 
 
-#For Windows
-package FilePath :: Windows;
-use base'FilePath :: Base';
+# For Windows
+package FilePath::Windows;
+use base'FilePath::Base';
 
 # Delimiter for Windows
 sub delimiter {return'\\'}
-&lt;/ pre&gt;
-
-The execution result is when the environment is Windows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The execution result is when the environment is Windows.
+</p>
+<pre>
 Result: a \ b
-&lt;/ pre&gt;
-
-Otherwise,
-
-&lt;pre&gt;
+</pre>
+<p>
+  Otherwise,
+</p>
+<pre>
 Result: a / b
-&lt;/ pre&gt;
-
-It will be. If the environment is Windows, an object of the FilePath :: Windows class is created, otherwise an object of the FilePath :: Unix class is created.
-
-&lt;pre&gt;
-print ref $ file_path;
-&lt;/ pre&gt;
-
-Then you can see which class of object is created.
-
-&lt;h3&gt; 2. Change the behavior with the constructor &lt;/ h3&gt;
-
-We have prepared a class called FilePath as a class for users to use. The constructor of this class will create an object according to the environment. (Generally, it's called a factory class.)
-
-&lt;pre&gt;
+</pre>
+<p>
+  It will be. If the environment is Windows, an object of the FilePath::Windows class is created, otherwise an object of the FilePath::Unix class is created.
+</p>
+<pre>
+print ref $file_path;
+</pre>
+<p>
+  Then you can see which class of object is created.
+</p>
+<h3> 2. Change the behavior with the constructor </h3>
+<p>
+  We have prepared a class called FilePath as a class for users to use. The constructor of this class will create an object according to the environment. (Generally, it's called a factory class.)
+</p>
+<pre>
 package FilePath;
 
 sub new {
-  my $ self = shift;
-  if ($ ^ O eq'MSWin32') {
-    return FilePath :: Windows-&gt; new;
+  my $self = shift;
+  if ($^ O eq'MSWin32') {
+    return FilePath::Windows-&gt; new;
   }
   else {
-    return FilePath :: Unix-&gt; new;
+    return FilePath::Unix-&gt; new;
   }
 }
-&lt;/ pre&gt;
-
-I'm looking at $ ^ O to find out what type of OS I'm using and changing the objects I create. The constructor in this example takes no arguments, but since constructors generally take arguments.
-
-&lt;pre&gt;
+</pre>
+<p>
+  I'm looking at $^ O to find out what type of OS I'm using and changing the objects I create. The constructor in this example takes no arguments, but since constructors generally take arguments.
+</p>
+<pre>
 sub new {
-  my $ self = shift;
-  if ($ ^ O eq'MSWin32') {
-    return FilePath :: Windows-&gt; new (@_);
+  my $self = shift;
+  if ($^ O eq'MSWin32') {
+    return FilePath::Windows-&gt; new (@_);
   }
   else {
-    return FilePath :: Unix-&gt; new (@_);
+    return FilePath::Unix-&gt; new (@_);
   }
 }
-&lt;/ pre&gt;
-It is more often described as. Writing using the ternary operator makes it even cleaner.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is more often described as. Writing using the ternary operator makes it even cleaner.
+</p>
+<pre>
 sub new {
-  my $ self = shift;
-  return $ ^ O eq'MSWin32'? FilePath :: Windows-&gt; new (@_):
-                            FilePath :: Unix-&gt; new (@_);
+  my $self = shift;
+  return $^ O eq'MSWin32'? FilePath::Windows-&gt; new (@_):
+                            FilePath::Unix-&gt; new (@_);
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; 3. Convenient part of inheritance &lt;/ h3&gt;
-
-If you use inheritance well, you will find that you can clearly write a description that makes it behave according to the environment.
-
-Also, if you want to support other environments, just create a class called "FilePath :: Honyara" and modify the constructor of the FilePath class a little.
-
-In other words, when it comes to situations where inheritance is effective, there are many patterns and there is a high possibility of expansion. Twice
-
-&lt;h3&gt; 4. If you find it difficult to inherit &lt;/ h3&gt;
-
-Follow this sample with a debugger. You can understand it by observing how it moves around between classes.
-
-You can emulate Windows and Unix by changing the value of $ ^ O. Also, use the ref function to see the class to which the created object belongs.
+</pre>
+<h3> 3. Convenient part of inheritance </h3>
+<p>
+  If you use inheritance well, you will find that you can clearly write a description that makes it behave according to the environment.
+</p>
+<p>
+  Also, if you want to support other environments, just create a class called "FilePath::Honyara" and modify the constructor of the FilePath class a little.
+</p>
+<p>
+  In other words, when it comes to situations where inheritance is effective, there are many patterns and there is a high possibility of expansion. Twice
+</p>
+<h3> 4. If you find it difficult to inherit </h3>
+<p>
+  Follow this sample with a debugger. You can understand it by observing how it moves around between classes.
+</p>
+<p>
+  You can emulate Windows and Unix by changing the value of $^ O. Also, use the ref function to see the class to which the created object belongs.
+</p>
 
   </div>
   <div class="bottom">

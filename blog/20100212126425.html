@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> die function --display an error message and exit the program  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> die function - display an error message and exit the program  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  die function  to display a  error message and exit the program . The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" die function --display an error message and exit the program  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" die function - display an error message and exit the program  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  die function  to display a  error message and exit the program . The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100212126425.html"> die function --display an error message and exit the program </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100212126425.html"> die function - display an error message and exit the program </a></h2>
 <p>
-  Use the <strong> die function </ strong> to display a <strong> error message and exit the program </ strong>. The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline.
+  Use the <strong> die function </strong> to display a <strong> error message and exit the program </strong>. The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,75 +99,76 @@
 <pre>
 # Display an error message and exit the program
 
-#With line number
-die $ message;
+# With line number
+die $message;
 
-#No line number
-die "$ message \ n";
-&lt;/ pre&gt;
-
-This is a sample that displays the usage and terminates the program when the argument does not exist. $ 0 is the script name.
-
-&lt;pre&gt;
-Exit the program if the #argument does not exist
-my $ file = shift;
-die "Usage: $ 0 [file]" unless $ file;
-&lt;/ pre&gt;
-
-This is a sample to terminate the program when the file open fails.
-
-&lt;pre&gt;
+# No line number
+die "$message\n";
+</pre>
+<p>
+  This is a sample that displays the usage and terminates the program when the argument does not exist. $0 is the script name.
+</p>
+<pre>
+Exit the program if the # argument does not exist
+my $file = shift;
+die "Usage: $0 [file]" unless $file;
+</pre>
+<p>
+  This is a sample to terminate the program when the file open fails.
+</p>
+<pre>
 # Quit the program if file open fails
-my $ file ='a.txt';
-open my $ fh,'&lt;', $ file
-  or die "Can't open file \" $ file \ ": $!";
-&lt;/ pre&gt;
-
-The exit status is 0 if the program exits successfully. If you exit the program with die, the exit status will be a non-zero value. The exit status of die is determined by the following rules.
-
-&lt;pre&gt;
+my $file ='a.txt';
+open my $fh,'&lt;', $file
+  or die "Can't open file \" $file \ ": $!";
+</pre>
+<p>
+  The exit status is 0 if the program exits successfully. If you exit the program with die, the exit status will be a non-zero value. The exit status of die is determined by the following rules.
+</p>
+<pre>
 1. The value of $! Evaluated numerically. (Error notified by OS)
 2. If $! Is 0 ($? &gt;&gt; 8). (Exit status of child process)
 3. 255 if ($? &gt;&gt; 8) is 0
-&lt;/ pre&gt;
-
-&lt;h3&gt; Exception handling &lt;/ h3&gt;
-
-Languages ​​such as Java provide a mechanism called exceptions. Perl provides a concise exception handling mechanism that uses die and &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt; blocks.
-
-Use die to throw an exception. Use "eval {}" to catch the exception. Use $ @ to determine if an exception has occurred. If an exception occurs, an error message will be set in $ @.
-
-&lt;pre&gt;
+</pre>
+<h3> Exception handling </h3>
+<p>
+  Languages ​​such as Java provide a mechanism called exceptions. Perl provides a concise exception handling mechanism that uses die and <a href="/blog/20100312126967.html"> eval</a> blocks.
+</p>
+<p>
+  Use die to throw an exception. Use "eval {}" to catch the exception. Use $@ to determine if an exception has occurred. If an exception occurs, an error message will be set in $@.
+</p>
+<pre>
 # Exception handling flow
 eval {
   Processing that terminates programs that use # die
 };
 
-if ($ @) {
-  #Exception handling
+if ($@) {
+  # Exception handling
 }
-&lt;/ pre&gt;
-
-A simple sample of exception handling.
-&lt;pre&gt;
-#Exception handling
-my $ num;
+</pre>
+<p>
+  A simple sample of exception handling.
+</p>
+<pre>
+# Exception handling
+my $num;
 eval {
-  die "Number is undefined." unless defined $ num;
+  die "Number is undefined." unless defined $num;
 };
 
-if ($ @) {
-  die "Catch and throw again $ @";
+if ($@) {
+  die "Catch and throw again $@";
 }
-&lt;/ pre&gt;
-
-See below for a detailed explanation of Perl's exception handling.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20100411127089.html"&gt; Understand how Perl handles exceptions &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<p>
+  See below for a detailed explanation of Perl's exception handling.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20100411127089.html"> Understand how Perl handles exceptions</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

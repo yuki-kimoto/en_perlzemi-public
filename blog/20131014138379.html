@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Histogram graph / Statistical analysis by PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use the  histogram  method to draw a histogram graph in  PDL :: Graphics :: PLplot .">
+<meta name="description" content="Use the  histogram  method to draw a histogram graph in  PDL::Graphics::PLplot .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Histogram graph / Statistical analysis by PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use the  histogram  method to draw a histogram graph in  PDL :: Graphics :: PLplot ." />
+<meta name="twitter:description" content="Use the  histogram  method to draw a histogram graph in  PDL::Graphics::PLplot ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20131014138379.html"> Histogram graph / Statistical analysis by PDL </a></ h2>
+    <h2><a href="/blog/20131014138379.html"> Histogram graph / Statistical analysis by PDL </a></h2>
 <p>
-  Use the <strong> histogram </ strong> method to draw a histogram graph in <strong> PDL :: Graphics :: PLplot </ strong>.
+  Use the <strong> histogram </strong> method to draw a histogram graph in <strong> PDL::Graphics::PLplot </strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -87,29 +87,30 @@ use strict;
 use warnings;
 
 use PDL;
-use PDL :: Graphics :: PLplot;
+use PDL::Graphics::PLplot;
 
-#Create PLPlot object
-my $ pl = PDL :: Graphics :: PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+# Create PLPlot object
+my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
-my $ x = pdl [1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 5, 5, 5, 6, 7, 7, 7, 7, 8, 8, 10] ;
-my $ bin_count = 5;
+my $x = pdl [1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 5, 5, 5, 6, 7, 7, 7, 7, 8, 8, 10] ;
+my $bin_count = 5;
 
 # Create a histogram graph
-$ pl-&gt; histogram (
-   $ x,
-   $ bin_count,
+$pl-&gt; histogram (
+   $x,
+   $bin_count,
    BOX =&gt; [0, 10, 0, 20],
    TITLE =&gt;'histogram'
 );
 
 # Close
-$ pl-&gt; close;
-&lt;/ pre&gt;
-
-&lt;hr&gt;
-&lt;a href="/blog/20121214135538.html"&gt; Statistical analysis by PDL &lt;/a&gt;
+$pl-&gt; close;
+</pre>
+<hr>
+<p>
+  <a href="/blog/20121214135538.html"> Statistical analysis by PDL</a>
+</p>
 
   </div>
   <div class="bottom">

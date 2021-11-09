@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> wantarray function-return scalar or list depending on context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perl has the concept of  context , so you can either scalar or  list  depending on the context. You can return it.">
+<meta name="description" content="Perl has the concept of  context, so you can either scalar or  list depending on the context. You can return it.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" wantarray function-return scalar or list depending on context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perl has the concept of  context , so you can either scalar or  list  depending on the context. You can return it." />
+<meta name="twitter:description" content="Perl has the concept of  context, so you can either scalar or  list depending on the context. You can return it." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </ span> </a>
+      <span itemprop = "name"> standard function </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20080610121319.html"> wantarray function-return scalar or list depending on context </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080610121319.html"> wantarray function-return scalar or list depending on context </a></h2>
 <p>
-  Perl has the concept of <a href="/blog/20080608121292.html"> context </a>, so you can either scalar or <a href="/blog/20100308126967.html"> list </a> depending on the context. You can return it.
+  Perl has the concept of <a href="/blog/20080608121292.html"> context</a>, so you can either scalar or <a href="/blog/20100308126967.html"> list</a> depending on the context. You can return it.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,58 +101,59 @@ sub func_name {
   # process ...
   return wantarray? List: Scalar;
 }
-&lt;/ pre&gt;
-
-You can use wantarray to return the return value by distinguishing between the list context and the scalar context.
-
-The standard functions that wantarray uses are the &lt;a href="/blog/20081009122357.html"&gt; localtime function &lt;/a&gt;.
-
-&lt;h4&gt; Don't use the wantarray function &lt;/ h4&gt;
-
-We do not recommend using the wantarray function as it tends to create very hard-to-find bugs. For example, if you think that a scalar will be returned and specify it as an argument of a function, it is possible that a list is returned.
-
-&lt;pre&gt;
-I expected #scala to come back, but in reality the list comes back
-func (localtime ());
-&lt;/ pre&gt;
-
-To avoid such a bug, don't use the wantarray function and return &lt;a href="/blog/20161107147852.html"&gt; scalar variable &lt;/a&gt; or a list. ..
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-This is a sample of wantarray.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use wantarray to return the return value by distinguishing between the list context and the scalar context.
+</p>
+<p>
+  The standard functions that wantarray uses are the <a href="/blog/20081009122357.html"> localtime function</a>.
+</p>
+<h4> Don't use the wantarray function </h4>
+<p>
+  We do not recommend using the wantarray function as it tends to create very hard-to-find bugs. For example, if you think that a scalar will be returned and specify it as an argument of a function, it is possible that a list is returned.
+</p>
+<pre>
+I expected # scala to come back, but in reality the list comes back
+func (localtime());
+</pre>
+<p>
+  To avoid such a bug, don't use the wantarray function and return <a href="/blog/20161107147852.html"> scalar variable</a> or a list. ..
+</p>
+<h3> Sample </h3>
+<p>
+  This is a sample of wantarray.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Return scalar or list depending on context
+# Return scalar or list depending on context
 # wantarray? return list: return scalar
 
-print "1: Return scalar or list depending on context \ n";
+print "1: Return scalar or list depending on context\n";
 my @nums = (1, 2, 3, 4, 5);
 my @odd_nums = grep_odd_nums (@nums);
-my $ odd_nums_cnt = grep_odd_nums (@nums);
+my $odd_nums_cnt = grep_odd_nums (@nums);
 
-print "In 1-5, the odd numbers are", join (',', @odd_nums). ". \ N";
-print "The odd number is $ odd_nums_cnt. \ N \ n";
+print "In 1-5, the odd numbers are", join(',', @odd_nums). ".\n";
+print "The odd number is $odd_nums_cnt.\n\n";
 
 # Subroutine that returns an odd list
 sub grep_odd_nums {
   my @nums = @_;
   my @odd_nums;
   
-  for my $ num (@nums) {
-    if ($ num% 2 == 1) {
-      push @odd_nums, $ num;
+  for my $num (@nums) {
+    if ($num% 2 == 1) {
+      push @odd_nums, $num;
     }
   }
 
-  #If in list context, return @odd_nums
-  #If in scalar context, return the number of @odd_nums
+  # If in list context, return @odd_nums
+  # If in scalar context, return the number of @odd_nums
   return wantarray? @odd_nums: scalar @odd_nums;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

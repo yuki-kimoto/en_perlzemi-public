@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </ span> </a>
+      <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080803121776.html"> Write a filter program that can specify options </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080803121776.html"> Write a filter program that can specify options </a></h2>
 <p>
   Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options.
 </p>
@@ -97,171 +97,167 @@
 
 
 <p>
-  Use the <a href="/blog/20100123126425.html"> while statement </a> and the line input operator to read the line.
+  Use the <a href="/blog/20100123126425.html"> while statement</a> and the line input operator to read the line.
 </p>
 <pre>
 use strict;
 use warnings;
 
 # Module for handling command line options
-use Getopt :: Long'GetOptions';
+use Getopt::Long'GetOptions';
 
 # Write Unix-like filter programming.
 # This time, it is a filter program that extracts the first column of comma-separated character strings.
 
-#Default value if no command line option is specified
-my $ col = 1;
-my $ sep =',';
+# Default value if no command line option is specified
+my $col = 1;
+my $sep =',';
 
-#Receive command line options
+# Receive command line options
 GetOptions (
-  'col = i'=&gt; \ $ col,
-  'sep = s'=&gt; \ $ sep,
+  'col = i'=&gt; \ $col,
+  'sep = s'=&gt; \ $sep,
 );
 
-A character with a special meaning was specified in a regular expression such as #.
-#Escape the string to work correctly even if
-$ sep = quotemeta ($ sep);
+A character with a special meaning was specified in a regular expression such as # .
+# Escape the string to work correctly even if
+$sep = quotemeta($sep);
 
 # Special line input operator
 while (&lt;&gt;) {
-  When the argument is omitted, the # chomp function targets $ _.
+  When the argument is omitted, the # chomp function targets $_.
   chomp;
   
   The third argument of # split, -1, is when the last column is an empty string.
   # Also specified to work correctly
-  The #split function returns a list, so only the parts you need
+  The # split function returns a list, so only the parts you need
   # Get by array slice
-  my $ item = (split (/ $ sep /, $ _, -1)) [$ col -1];
-  print $ item. "\ n";
+  my $item = (split(/ $sep /, $_, -1)) [$col -1];
+  print $item. "\n";
 }
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100827127859.html"&gt; Regular expression &lt;/a&gt;
-
-The following is a file for reading.
-
-&lt;pre&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100827127859.html"> Regular expression</a>
+</p>
+<p>
+  The following is a file for reading.
+</p>
+<pre>
 masao: 10: Japan
 taro: 20: USA
 rika: 38: France
-&lt;/ pre&gt;
+</pre>
+<h3> Code explanation </h3>
+<h4> (1) How to specify command line options </h4>
+<pre>
+use Getopt::Long;
+</pre>
+<p>
+  <a href="/blog/20100514127696.html"> Getopt::Long</a> makes it easy to specify command line options. To specify command line options:
+</p>
+<p>
+  If you're not sure about command line arguments, see the following articles first.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080108132865.html"> Handle command line arguments</a>
+  </li>
+</ul>
+<pre>
+# Specification method 1 (- name val format)
+perl script name - col 1 - sep: filename
 
-&lt;h3&gt; Code explanation &lt;/ h3&gt;
+# Specification method 2 (- name = val format)
+perl script name - col = 1 - sep =: file name
 
-&lt;h4&gt; (1) How to specify command line options &lt;/ h4&gt;
-
-&lt;pre&gt;
-use Getopt :: Long;
-&lt;/ pre&gt;
-
-&lt;a href="/blog/20100514127696.html"&gt; Getopt :: Long &lt;/a&gt; makes it easy to specify command line options. To specify command line options:
-
-If you're not sure about command line arguments, see the following articles first.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080108132865.html"&gt; Handle command line arguments &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;pre&gt;
-#Specification method 1 (--name val format)
-perl script name --col 1 --sep: filename
-
-#Specification method 2 (--name = val format)
-perl script name --col = 1 --sep =: file name
-
-#Specification method 3 (abbreviated form)
+# Specification method 3 (abbreviated form)
 perl script name -c1 -s: file name
-&lt;/ pre&gt;
+</pre>
+<h3> (2) GetOptions function </h3>
+<p>
+  The GetOption function is a function that makes it easy to receive command line options. It will be imported when you use Getopt::Long.
+</p>
+<p>
+  Below is a sample of how to write.
+</p>
+<pre>
+# Default value if no command line option is specified
+my $col = 1;
+my $sep =',';
 
-&lt;h3&gt; (2) GetOptions function &lt;/ h3&gt;
-
-The GetOption function is a function that makes it easy to receive command line options. It will be imported when you use Getopt :: Long.
-
-Below is a sample of how to write.
-
-&lt;pre&gt;
-#Default value if no command line option is specified
-my $ col = 1;
-my $ sep =',';
-
-#Receive command line options
+# Receive command line options
 GetOptions (
-  'col = i'=&gt; \ $ col,
-  'sep = s'=&gt; \ $ sep,
+  'col = i'=&gt; \ $col,
+  'sep = s'=&gt; \ $sep,
 );
-&lt;/ pre&gt;
-
-First, set the default values ​​for command line options.
-Then call the GetOption function for the number of options you want to specify
-
-&lt;pre&gt;
+</pre>
+<p>
+  First, set the default values ​​for command line options.
+</p>
+<p>
+  Then call the GetOption function for the number of options you want to specify
+</p>
+<pre>
 'Option name = Value type' =&gt; Reference to variable
-&lt;/ pre&gt;
-
-I will arrange the description. The value type can be s, which represents a string, i, which represents a number, and so on.
-
-&lt;h4&gt; (3) Improvement of line reading in while loop &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  I will arrange the description. The value type can be s, which represents a string, i, which represents a number, and so on.
+</p>
+<h4> (3) Improvement of line reading in while loop </h4>
+<pre>
 while (&lt;&gt;) {
   chomp;
-  my $ item = (split (/ $ sep /, $ _, -1)) [$ col -1];
-  print $ item, "\ n";
+  my $item = (split(/ $sep /, $_, -1)) [$col -1];
+  print $item, "\n";
 }
-&lt;/ pre&gt;
-
-For more information on while loop processing, see the following article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170521149524.html"&gt; Iterative processing using for statement and while statement &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; (3) -1 Omission of $ _ &lt;/ h4&gt;
-
-&lt;pre&gt;
+</pre>
+<p>
+  For more information on while loop processing, see the following article.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170521149524.html"> Iterative processing using for statement and while statement</a>
+  </li>
+</ul>
+<h4> (3) -1 Omission of $_ </h4>
+<pre>
 chomp;
-&lt;/ pre&gt;
-
-&lt;a href="/blog/20080226120403.html"&gt; chomp function &lt;/a&gt; If you omit the argument, the target that works is &lt;a href="/blog/20161102147817.html"&gt; special variable &lt;/a&gt; "$ _ Will be. There are many other functions in Perl that act on $ _ if you omit the argument.
-
-&lt;h4&gt; (3) -Specify -1 as the third argument of the -2 split function &lt;/ h4&gt;
-
-&lt;pre&gt;
-split (/ $ sep /, $ _, -1)
-&lt;/ pre&gt;
-
-If the third argument of &lt;a href="/blog/20080301120434.html"&gt; split function &lt;/a&gt; is omitted and the end of the element is blank, the last empty string will be ignored. (It was pointed out by Mr. huta.)
-
-&lt;pre&gt;
+</pre>
+<p>
+  <a href="/blog/20080226120403.html"> chomp function</a> If you omit the argument, the target that works is <a href="/blog/20161102147817.html"> special variable</a> "$_ Will be. There are many other functions in Perl that act on $_ if you omit the argument.
+</p>
+<h4> (3) -Specify -1 as the third argument of the -2 split function </h4>
+<pre>
+split(/ $sep /, $_, -1)
+</pre>
+<p>
+  If the third argument of <a href="/blog/20080301120434.html"> split function</a> is omitted and the end of the element is blank, the last empty string will be ignored. (It was pointed out by Mr. huta.)
+</p>
+<pre>
 taro, 10,
-&lt;/ pre&gt;
-
-If you read, what you want is
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you read, what you want is
+</p>
+<pre>
 ('taro', 10,'')
-&lt;/ pre&gt;
-
-Even though it is a list
-
-&lt;pre&gt;
+</pre>
+<p>
+  Even though it is a list
+</p>
+<pre>
 ('taro', 10)
-&lt;/ pre&gt;
-
-Will be acquired. To solve this, you can make the last empty string recognized by giving -1 to the third argument of split.
-
-&lt;h4&gt; (3) -3 Get only the elements specified in the array slice &lt;/ h4&gt;
-
-&lt;pre&gt;
-my $ item = (split (/ $ sep /, $ _, -1)) [$ col -1];
-&lt;/ pre&gt;
-
-Since split returns a list, &lt;a href="/blog/20080216120316.html"&gt; array slice &lt;/a&gt; gets only the specified elements.
+</pre>
+<p>
+  Will be acquired. To solve this, you can make the last empty string recognized by giving -1 to the third argument of split.
+</p>
+<h4> (3) -3 Get only the elements specified in the array slice </h4>
+<pre>
+my $item = (split(/ $sep /, $_, -1)) [$col -1];
+</pre>
+<p>
+  Since split returns a list, <a href="/blog/20080216120316.html"> array slice</a> gets only the specified elements.
+</p>
 
   </div>
   <div class="bottom">

@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20160225145640.html">
-      <span itemprop = "name"> Version information </ span> </a>
+      <span itemprop = "name"> Version information </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
+    <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20130520136901.html"> Perl 5.18 has been released </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20130520136901.html"> Perl 5.18 has been released </a></h2>
 <p>
   Perl 5.18 has been released. Crackling crackling.
 </p>
@@ -99,160 +99,275 @@
 
 <blockquote>
 <p>
-  <a href="http://perl5.git.perl.org/perl.git/tag/refs/tags/v5.18.0"> Perl 5.18.0 </a>
+  <a href="http://perl5.git.perl.org/perl.git/tag/refs/tags/v5.18.0"> Perl 5.18.0</a>
 </p>
-</ blockquote>
-<h3> Points to note when upgrading the version </ h3>
+</blockquote>
+<h3> Points to note when upgrading the version </h3>
 <p>
   I feel that it is better to wait for a while to upgrade to Perl 5.18 this time.
 </p>
 <p>
-  First, Perl's keys, values, and each now return a different key / value order each time they are executed, which causes problems with implementations that expect the same order. It seems that JSON :: XS is now known to fail the test. So I'm a little worried as long as there are modules on CPAN that don't test well for a while.
+  First, Perl's keys, values, and each now return a different key / value order each time they are executed, which causes problems with implementations that expect the same order. It seems that JSON::XS is now known to fail the test. So I'm a little worried as long as there are modules on CPAN that don't test well for a while.
 </p>
 <p>
   This seems to be the Perl community's decision that security is more important.
 </p>
 <p>
-  Next, the given --when syntax and smart match (~~) introduced in the Perl 5.10 migration have been reverted to experimental functionality. If you are using the given --when syntax, smart match, you will get an experimental warning. You can disable the warnings with "no warnings'experimental'", but this is not recommended as the implementation and behavior of smart matches is very likely to change in the future.
+  Next, the given - when syntax and smart match (~~) introduced in the Perl 5.10 migration have been reverted to experimental functionality. If you are using the given - when syntax, smart match, you will get an experimental warning. You can disable the warnings with "no warnings'experimental'", but this is not recommended as the implementation and behavior of smart matches is very likely to change in the future.
 </p>
 <p>
-  If you are using the given --when syntax, smart match, it is recommended to rewrite it to a method that does not use it. Check for Perl files using given or smart match with the following command.
+  If you are using the given - when syntax, smart match, it is recommended to rewrite it to a method that does not use it. Check for Perl files using given or smart match with the following command.
 </p>
 <pre>
 grep -r'~~' dir | grep -e'\ .p [lm]'
 grep -re'given \ + ('dir | grep -e'\ .p [lm]'
-&lt;/ pre&gt;
-
-If you are using the smart match operator, replace it with the normal operators "eq" and "==".
-
-&lt;pre&gt;
-$ var ~~ 1-&gt; defined $ var &amp;&amp; $ var == 1
-$ var ~~ [1, 2]-&gt; (defined $ var &amp;&amp; $ var == 1) || (defined $ var &amp;&amp; $ var == 2)
-&lt;/ pre&gt;
-
-Let's rewrite given when as a normal if statement.
-
-Also, as a deleted syntax, qw (...) in the for statement can no longer be used in parentheses.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you are using the smart match operator, replace it with the normal operators "eq" and "==".
+</p>
+<pre>
+$var ~~ 1-&gt; defined $var &amp;&amp; $var == 1
+$var ~~ [1, 2]-&gt; (defined $var &amp;&amp; $var == 1) || (defined $var &amp;&amp; $var == 2)
+</pre>
+<p>
+  Let's rewrite given when as a normal if statement.
+</p>
+<p>
+  Also, as a deleted syntax, qw (...) in the for statement can no longer be used in parentheses.
+</p>
+<pre>
 # abolition
-for my $ str qw (a b) {
+for my $str qw (a b) {
   
 }
 
 # Rewrite
-for my $ str (qw (a b)) {
+for my $str (qw (a b)) {
 
 }
-&lt;/ pre&gt;
-
-As mentioned above, there are some changes that break compatibility and are not so unlikely to be used, so it seems that testing is essential this time when upgrading.
-
-&lt;h3&gt; CPAN module removed from core in next version &lt;/ h3&gt;
-
-The following modules will be deprecated in Perl 5.18 and will be removed from the Perl core in a future version. If you're using it, you can rest assured that you can install and use it from CPAN.
-
-The encoding pragma is deprecated. Encoding pragmas are deprecated and should not be used. When dealing with Japanese, use the utf8 pragma and the Encode module.
-
-CPAN PLUS is scheduled to be abolished. There is also cpan, and there is a simple and convenient cpanm, so it seems that CPANPLUS is not necessary for the core.
-
-In addition, Module :: Pluggable, Log :: Message, Object :: Accessor, etc. are deprecated.
-
-&lt;blockquote&gt;
-encoding
-Archive :: Extract
-B :: Lint
-B :: Lint :: Debug
-CPANPLUS
-CPANPLUS :: Backend
-CPANPLUS :: Backend :: RV
-CPANPLUS :: Config
-CPANPLUS :: Config :: HomeEnv
-CPANPLUS :: Configure
-CPANPLUS :: Configure :: Setup
-CPANPLUS :: Dist
-CPANPLUS :: Dist :: Autobundle
-CPANPLUS :: Dist :: Base
-CPANPLUS :: Dist :: Build
-CPANPLUS :: Dist :: Build :: Constants
-CPANPLUS :: Dist :: MM
-CPANPLUS :: Dist :: Sample
-CPANPLUS :: Error
-CPANPLUS :: Internals
-CPANPLUS :: Internals :: Constants
-CPANPLUS :: Internals :: Constants :: Report
-CPANPLUS :: Internals :: Extract
-CPANPLUS :: Internals :: Fetch
-CPANPLUS :: Internals :: Report
-CPANPLUS :: Internals :: Search
-CPANPLUS :: Internals :: Source
-CPANPLUS :: Internals :: Source :: Memory
-CPANPLUS :: Internals :: Source :: SQLite
-CPANPLUS :: Internals :: Source :: SQLite :: Tie
-CPANPLUS :: Internals :: Utils
-CPANPLUS :: Internals :: Utils :: Autoflush
-CPANPLUS :: Module
-CPANPLUS :: Module :: Author
-CPANPLUS :: Module :: Author :: Fake
-CPANPLUS :: Module :: Checksums
-CPANPLUS :: Module :: Fake
-CPANPLUS :: Module :: Signature
-CPANPLUS :: Selfupdate
-CPANPLUS :: Shell
-CPANPLUS :: Shell :: Classic
-CPANPLUS :: Shell :: Default
-CPANPLUS :: Shell :: Default :: Plugins :: CustomSource
-CPANPLUS :: Shell :: Default :: Plugins :: Remote
-CPANPLUS :: Shell :: Default :: Plugins :: Source
-Devel :: InnerPackage
-Log :: Message
-Log :: Message :: Config
-Log :: Message :: Handlers
-Log :: Message :: Item
-Log :: Message :: Simple
-Module :: Pluggable
-Module :: Pluggable :: Object
-Object :: Accessor
-Term :: UI
-Term :: UI :: History
-&lt;/ blockquote&gt;
-
-&lt;h3&gt; Addition of new functions &lt;/ h3&gt;
-
-&lt;h4&gt; Introduction of experimental pragma &lt;/ h4&gt;
-
-An experimental pragma has been introduced. The newly added function was released with an experimental warning, and at a stable stage, the experimental warning was changed to a non-existent operation.
-
-&lt;h4&gt; Lexical Subroutine &lt;/ h4&gt;
-
-As an experimental feature, the ability to define lexical subroutines has been added.
-
-&lt;pre&gt;
+</pre>
+<p>
+  As mentioned above, there are some changes that break compatibility and are not so unlikely to be used, so it seems that testing is essential this time when upgrading.
+</p>
+<h3> CPAN module removed from core in next version </h3>
+<p>
+  The following modules will be deprecated in Perl 5.18 and will be removed from the Perl core in a future version. If you're using it, you can rest assured that you can install and use it from CPAN.
+</p>
+<p>
+  The encoding pragma is deprecated. Encoding pragmas are deprecated and should not be used. When dealing with Japanese, use the utf8 pragma and the Encode module.
+</p>
+<p>
+  CPAN PLUS is scheduled to be abolished. There is also cpan, and there is a simple and convenient cpanm, so it seems that CPANPLUS is not necessary for the core.
+</p>
+<p>
+  In addition, Module::Pluggable, Log::Message, Object::Accessor, etc. are deprecated.
+</p>
+<blockquote>
+<p>
+  encoding
+</p>
+<p>
+  Archive::Extract
+</p>
+<p>
+  B::Lint
+</p>
+<p>
+  B::Lint::Debug
+</p>
+<p>
+  CPANPLUS
+</p>
+<p>
+  CPANPLUS::Backend
+</p>
+<p>
+  CPANPLUS::Backend::RV
+</p>
+<p>
+  CPANPLUS::Config
+</p>
+<p>
+  CPANPLUS::Config::HomeEnv
+</p>
+<p>
+  CPANPLUS::Configure
+</p>
+<p>
+  CPANPLUS::Configure::Setup
+</p>
+<p>
+  CPANPLUS::Dist
+</p>
+<p>
+  CPANPLUS::Dist::Autobundle
+</p>
+<p>
+  CPANPLUS::Dist::Base
+</p>
+<p>
+  CPANPLUS::Dist::Build
+</p>
+<p>
+  CPANPLUS::Dist::Build::Constants
+</p>
+<p>
+  CPANPLUS::Dist::MM
+</p>
+<p>
+  CPANPLUS::Dist::Sample
+</p>
+<p>
+  CPANPLUS::Error
+</p>
+<p>
+  CPANPLUS::Internals
+</p>
+<p>
+  CPANPLUS::Internals::Constants
+</p>
+<p>
+  CPANPLUS::Internals::Constants::Report
+</p>
+<p>
+  CPANPLUS::Internals::Extract
+</p>
+<p>
+  CPANPLUS::Internals::Fetch
+</p>
+<p>
+  CPANPLUS::Internals::Report
+</p>
+<p>
+  CPANPLUS::Internals::Search
+</p>
+<p>
+  CPANPLUS::Internals::Source
+</p>
+<p>
+  CPANPLUS::Internals::Source::Memory
+</p>
+<p>
+  CPANPLUS::Internals::Source::SQLite
+</p>
+<p>
+  CPANPLUS::Internals::Source::SQLite::Tie
+</p>
+<p>
+  CPANPLUS::Internals::Utils
+</p>
+<p>
+  CPANPLUS::Internals::Utils::Autoflush
+</p>
+<p>
+  CPANPLUS::Module
+</p>
+<p>
+  CPANPLUS::Module::Author
+</p>
+<p>
+  CPANPLUS::Module::Author::Fake
+</p>
+<p>
+  CPANPLUS::Module::Checksums
+</p>
+<p>
+  CPANPLUS::Module::Fake
+</p>
+<p>
+  CPANPLUS::Module::Signature
+</p>
+<p>
+  CPANPLUS::Selfupdate
+</p>
+<p>
+  CPANPLUS::Shell
+</p>
+<p>
+  CPANPLUS::Shell::Classic
+</p>
+<p>
+  CPANPLUS::Shell::Default
+</p>
+<p>
+  CPANPLUS::Shell::Default::Plugins::CustomSource
+</p>
+<p>
+  CPANPLUS::Shell::Default::Plugins::Remote
+</p>
+<p>
+  CPANPLUS::Shell::Default::Plugins::Source
+</p>
+<p>
+  Devel::InnerPackage
+</p>
+<p>
+  Log::Message
+</p>
+<p>
+  Log::Message::Config
+</p>
+<p>
+  Log::Message::Handlers
+</p>
+<p>
+  Log::Message::Item
+</p>
+<p>
+  Log::Message::Simple
+</p>
+<p>
+  Module::Pluggable
+</p>
+<p>
+  Module::Pluggable::Object
+</p>
+<p>
+  Object::Accessor
+</p>
+<p>
+  Term::UI
+</p>
+<p>
+  Term::UI::History
+</p>
+</blockquote>
+<h3> Addition of new functions </h3>
+<h4> Introduction of experimental pragma </h4>
+<p>
+  An experimental pragma has been introduced. The newly added function was released with an experimental warning, and at a stable stage, the experimental warning was changed to a non-existent operation.
+</p>
+<h4> Lexical Subroutine </h4>
+<p>
+  As an experimental feature, the ability to define lexical subroutines has been added.
+</p>
+<pre>
 use 5.018;
-no warnings "experimental :: lexical_subs";
+no warnings "experimental::lexical_subs";
 use feature "lexical_subs";
 {
   my sub foo {...}
 }
-&lt;/ pre&gt;
-
-All Perl subroutine definitions were global, but it looks like you'll be able to write subroutines that are valid only within scope.
-
-You can also use our, which is valid only in the package.
-
-&lt;pre&gt;
+</pre>
+<p>
+  All Perl subroutine definitions were global, but it looks like you'll be able to write subroutines that are valid only within scope.
+</p>
+<p>
+  You can also use our, which is valid only in the package.
+</p>
+<pre>
 {
   our sub foo {...}
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Support for Unicode 6.2 &lt;/ h4&gt;
-
-Perl now supports Unicode 6.2. Note that \ N {BELL} has an incompatible change that he now refers to U + 1F514 instead of U + 0007. "BELL" refers to U + 1F514 and U + 0007 is now named "ALERT".
-
-&lt;h4&gt; The kill function can now be specified as "-INT" &lt;/ h4&gt;
-
-The kill function can now be specified as "-INT" to send a signal to a group by signal name.
+</pre>
+<h4> Support for Unicode 6.2 </h4>
+<p>
+  Perl now supports Unicode 6.2. Note that\n {BELL} has an incompatible change that he now refers to U + 1F514 instead of U + 0007. "BELL" refers to U + 1F514 and U + 0007 is now named "ALERT".
+</p>
+<h4> The kill function can now be specified as "-INT" </h4>
+<p>
+  The kill function can now be specified as "-INT" to send a signal to a group by signal name.
+</p>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> MIME :: QuotedPrint --encoded to quoted-printable format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="The  MIME :: QuotedPrint  module allows you to encode data in quoted-printable format.">
+<title> MIME::QuotedPrint - encoded to quoted-printable format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  MIME::QuotedPrint  module allows you to encode data in quoted-printable format.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" MIME :: QuotedPrint --encoded to quoted-printable format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="The  MIME :: QuotedPrint  module allows you to encode data in quoted-printable format." />
+<meta name="twitter:title" content=" MIME::QuotedPrint - encoded to quoted-printable format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  MIME::QuotedPrint  module allows you to encode data in quoted-printable format." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100517127696.html"> MIME :: QuotedPrint --encoded to quoted-printable format </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100517127696.html"> MIME::QuotedPrint - encoded to quoted-printable format </a></h2>
 <p>
-  The <strong> MIME :: QuotedPrint </ strong> module allows you to encode data in quoted-printable format.
+  The <strong> MIME::QuotedPrint </strong> module allows you to encode data in quoted-printable format.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,30 +97,33 @@
 
 
 <pre>
-#Loading modules and importing functions
-use MIME :: QuotedPrint qw / encode_qp decode_qp /;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; encode_qp &lt;/ strong&gt; function to encode to quoted-printable format.
-
-&lt;pre&gt;
+# Loading modules and importing functions
+use MIME::QuotedPrint qw / encode_qp decode_qp /;
+</pre>
+<p>
+  Use the <strong> encode_qp </strong> function to encode to quoted-printable format.
+</p>
+<pre>
 # Quoted-encoded to printable format
-my $ qp_data = encode_qp $ data;
-&lt;/ pre&gt;
-
-Use the &lt;strong&gt; decode_qp &lt;/ strong&gt; function to decode quoted-printable format data.
-
-&lt;pre&gt;
+my $qp_data = encode_qp $data;
+</pre>
+<p>
+  Use the <strong> decode_qp </strong> function to decode quoted-printable format data.
+</p>
+<pre>
 Decode data in # quoted-printable format
-my $ data = decode_qp $ qp_data;
-&lt;/ pre&gt;
-
-&lt;h3&gt; FAQ about MIME :: QuotedPrint module &lt;/ h3&gt;
-
-Q. What is the quoted-printable format in a nutshell?
-A. It is a data format that uses printable characters (alphanumeric characters and equal sign "="). From a usage point of view, it is similar to the Base64 format (* 1). For example, since it is not possible to send characters other than 7-bit data by e-mail, it is converted to a character string in the ASCII range in quoted-printable format.
-
-If the input text is mostly alphanumeric, the quoted-printable format allows you to read the alphanumeric characters even after encoding, which improves size efficiency. On the contrary, when dealing with binary data and multibyte character strings, the Base64 format is more size efficient.
+my $data = decode_qp $qp_data;
+</pre>
+<h3> FAQ about MIME::QuotedPrint module </h3>
+<p>
+  Q. What is the quoted-printable format in a nutshell?
+</p>
+<p>
+  A. It is a data format that uses printable characters (alphanumeric characters and equal sign "="). From a usage point of view, it is similar to the Base64 format (* 1). For example, since it is not possible to send characters other than 7-bit data by e-mail, it is converted to a character string in the ASCII range in quoted-printable format.
+</p>
+<p>
+  If the input text is mostly alphanumeric, the quoted-printable format allows you to read the alphanumeric characters even after encoding, which improves size efficiency. On the contrary, when dealing with binary data and multibyte character strings, the Base64 format is more size efficient.
+</p>
 
   </div>
   <div class="bottom">

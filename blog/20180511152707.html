@@ -62,27 +62,27 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100820127859.html">
-      <span itemprop = "name"> File test </ span> </a>
+      <span itemprop = "name"> File test </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180511152707.html"> Get the number of days that have passed since the last access </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180511152707.html"> Get the number of days that have passed since the last access </a></h2>
 <p>
   To get the number of days that have passed since the last access, use the file test operator "-A".
 </p>
@@ -103,28 +103,27 @@
 
 
 <pre>
--A $ file
-&lt;/ pre&gt;
-
-&lt;h4&gt; Sample program &lt;/ h4&gt;
-
-This is a sample that uses the file operator -A to get the number of days that have passed since the last access.
-
-&lt;pre&gt;
+-A $file
+</pre>
+<h4> Sample program </h4>
+<p>
+  This is a sample that uses the file operator -A to get the number of days that have passed since the last access.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # Get the number of days that have passed since the last access (read).
-# -A $ file
+# -A $file
 
-print "1: Get the number of days that have passed since the last access. \ N";
-my $ file = "a.txt";
-if (-e $ file) {
-  my $ from_last_access = -A $ file;
-  print "$ from_last_access days have passed since the last access. \ N";
+print "1: Get the number of days that have passed since the last access.\n";
+my $file = "a.txt";
+if (-e $file) {
+  my $from_last_access = -A $file;
+  print "$from_last_access days have passed since the last access.\n";
 }
-else {print "$ file does not exist. \ N"}
-&lt;/ pre&gt;
+else {print "$file does not exist.\n"}
+</pre>
 
   </div>
   <div class="bottom">

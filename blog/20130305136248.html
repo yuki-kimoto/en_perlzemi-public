@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-        <span itemprop = "name"> Object Oriented </ span> </a>
+        <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Introduction </ span>
+      <span itemprop = "name"> Introduction </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20130305136248.html"> Introduction to Object Oriented </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20130305136248.html"> Introduction to Object Oriented </a></h2>
 <p>
   Many people find it difficult to do object-oriented programming in Perl, and don't intuitively know how to create classes or define instance variables.
 </p>
@@ -98,497 +98,493 @@
 
 
 <p>
-  In fact, with the help of modules, Perl's object orientation is very straightforward. This time, I will explain Perl's object orientation using a module called Object :: Simple.
+  In fact, with the help of modules, Perl's object orientation is very straightforward. This time, I will explain Perl's object orientation using a module called Object::Simple.
 </p>
-<h3> Install Object :: Simple </ h3>
+<h3> Install Object::Simple </h3>
 <p>
-  Install Object :: Simple. You can easily install modules using cpan.
+  Install Object::Simple. You can easily install modules using cpan.
 </p>
 <pre>
-cpan Object :: Simple
-&lt;/ pre&gt;
-
-Now you are ready to go.
-
-&lt;h3&gt; Class definition &lt;/ h3&gt;
-
-In Perl, classes are defined using &lt;strong&gt; package &lt;/ strong&gt;. First, use the &lt;b&gt; -base &lt;/ b&gt; flag to create a class that inherits from Object :: Simple. Remember the following description as a spell first.
-
-&lt;pre&gt;
+cpan Object::Simple
+</pre>
+<p>
+  Now you are ready to go.
+</p>
+<h3> Class definition </h3>
+<p>
+  In Perl, classes are defined using <strong> package </strong>. First, use the <b> -base </b> flag to create a class that inherits from Object::Simple. Remember the following description as a spell first.
+</p>
+<pre>
 package MyClass;
-use Object :: Simple -base;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Constructor &lt;/ h3&gt;
-
-This way you can define a class called &lt;b&gt; MyClass &lt;/ b&gt;. You can create an object from a class using the constructor &lt;b&gt; new &lt;/ b&gt;. (This new is inherited from Object :: Simple.)
-
-&lt;pre&gt;
-my $ obj = MyClass-&gt; new;
-&lt;/ pre&gt;
-
-The &lt;b&gt; new &lt;/ b&gt; method can receive a hash or a hash reference.
+use Object::Simple -base;
+</pre>
+<h3> Constructor </h3>
+<p>
+  This way you can define a class called <b> MyClass </b>. You can create an object from a class using the constructor <b> new </b>. (This new is inherited from Object::Simple.)
+</p>
+<pre>
+my $obj = MyClass-&gt; new;
+</pre>
+<p>
+  The <b> new </b> method can receive a hash or a hash reference.
+</p>
     
-&lt;pre&gt;
-my $ obj = MyClass-&gt; new (foo =&gt; 1, bar =&gt; 2);
-my $ obj = MyClass-&gt; new ({foo =&gt; 1, bar =&gt; 2});
-&lt;/ pre&gt;
-
-This is set as an attribute value.
-
-&lt;h3&gt; Accessor &lt;/ h3&gt;
-
-Next, let's define an accessor. An accessor is a method for accessing an attribute value (instance variable). You can access the attribute values ​​by defining an accessor.
-
-Use the &lt;b&gt; has &lt;/ b&gt; function to generate an accessor.
-
-&lt;pre&gt;
+<pre>
+my $obj = MyClass-&gt; new (foo =&gt; 1, bar =&gt; 2);
+my $obj = MyClass-&gt; new ({foo =&gt; 1, bar =&gt; 2});
+</pre>
+<p>
+  This is set as an attribute value.
+</p>
+<h3> Accessor </h3>
+<p>
+  Next, let's define an accessor. An accessor is a method for accessing an attribute value (instance variable). You can access the attribute values ​​by defining an accessor.
+</p>
+<p>
+  Use the <b> has </b> function to generate an accessor.
+</p>
+<pre>
 has'foo';
-&lt;/ pre&gt;
-
-You can access the attribute values ​​by defining an accessor.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can access the attribute values ​​by defining an accessor.
+</p>
+<pre>
 # Value setting
-$ obj-&gt; foo (1);
+$obj-&gt; foo (1);
 
-#Get value
-my $ foo = $ obj-&gt; foo;
-&lt;/ pre&gt;
-
-You can also specify defaults for attribute values.
-
-&lt;pre&gt;
+# Get value
+my $foo = $obj-&gt; foo;
+</pre>
+<p>
+  You can also specify defaults for attribute values.
+</p>
+<pre>
 has foo =&gt; 1;
-&lt;/ pre&gt;
-
-When the accessor is first called if the attribute value is not set
-The default value is set to the attribute value.
-
-&lt;pre&gt;
+</pre>
+<p>
+  When the accessor is first called if the attribute value is not set
+</p>
+<p>
+  The default value is set to the attribute value.
+</p>
+<pre>
 # Get the default value of 1
-my $ default = $ obj-&gt; foo;
-&lt;/ pre&gt;
-
-If you want to specify a reference or object as the default value, it must be the return value of the subroutine reference.
-
-&lt;pre&gt;
+my $default = $obj-&gt; foo;
+</pre>
+<p>
+  If you want to specify a reference or object as the default value, it must be the return value of the subroutine reference.
+</p>
+<pre>
 has foo =&gt; sub {[]};
 has foo =&gt; sub {{}};
 has foo =&gt; sub {MyClass-&gt; new};
-&lt;/ pre&gt;
-
-You can also generate multiple accessors at once.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can also generate multiple accessors at once.
+</p>
+<pre>
 has [qw / foo bar baz /];
 has [qw / foo bar baz /] =&gt; 0;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Inheritance &lt;/ h3&gt;
-
-Use &lt;b&gt; -base &lt;/ b&gt; for inheritance. Let's create a &lt;b&gt; SubClass &lt;/ b&gt; that inherits from &lt;b&gt; MyClass &lt;/ b&gt;.
-
-&lt;pre&gt;
+</pre>
+<h3> Inheritance </h3>
+<p>
+  Use <b> -base </b> for inheritance. Let's create a <b> SubClass </b> that inherits from <b> MyClass </b>.
+</p>
+<pre>
 package MyClass;
-use Object :: Simple -base;
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+use Object::Simple -base;
+</pre>
+<pre>
 package SubClass;
 use MyClass -base;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Superclass method call &lt;/ h3&gt;
-
-You can use &lt;b&gt; SUPER &lt;/ b&gt; to call superclass methods.
-
-&lt;pre&gt;
+</pre>
+<h3> Superclass method call </h3>
+<p>
+  You can use <b> SUPER </b> to call superclass methods.
+</p>
+<pre>
 package SubClass;
 use MyClass -base;
 
 sub clear {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; SUPER :: clear;
+  $self-&gt; SUPER::clear;
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Constructor override &lt;/ h3&gt;
-
-You may want to override the constructor in a subclass. To override the constructor:
-
-&lt;pre&gt;
+</pre>
+<h3> Constructor override </h3>
+<p>
+  You may want to override the constructor in a subclass. To override the constructor:
+</p>
+<pre>
 package MyClass;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 sub new {
-  my $ class = shift;
+  my $class = shift;
   
-  my $ self = $ class-&gt; SUPER :: new (@_);
+  my $self = $class-&gt; SUPER::new (@_);
   
-  return $ self;
+  return $self;
 }
-&lt;/ pre&gt;
-
-Since new is a constructor, be sure to return the object itself.
-
-&lt;h3&gt; Creating a class-Practice &lt;/ h3&gt;
-
-Oh mysteriously, Perl's object-oriented programming is almost master if you remember this much. Then, it is a practical edition. Let's create a &lt;b&gt; Point &lt;/ b&gt; class and a &lt;b&gt; Point3D &lt;/ b&gt; class.
-
-&lt;h4&gt; Point class &lt;/ h4&gt;
-
-&lt;blockquote&gt;
-&lt;ul&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  Since new is a constructor, be sure to return the object itself.
+</p>
+<h3> Creating a class-Practice </h3>
+<p>
+  Oh mysteriously, Perl's object-oriented programming is almost master if you remember this much. Then, it is a practical edition. Let's create a <b> Point </b> class and a <b> Point3D </b> class.
+</p>
+<h4> Point class </h4>
+<blockquote>
+<ul>
+  <li>
     Point is a class that represents a point.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     It has accessors x and y.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     It has a method called clear that clears the values ​​of x and y to 0.
-  &lt;/ li&gt;
-&lt;/ blockquote&gt;
-&lt;/ ul&gt;
-
-&lt;pre&gt;
+  </li>
+</blockquote>
+</ul>
+<pre>
 package Point;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 has x =&gt; 0;
 has y =&gt; 0;
 
 sub clear {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; x (0);
-  $ self-&gt; y (0);
+  $self-&gt; x (0);
+  $self-&gt; y (0);
 }
 
 1;
-&lt;/ pre&gt;
-
-(The "1;" at the end is due to the rule that the file that writes the module must end with true.)
-
-The Point class can be used as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  (The "1;" at the end is due to the rule that the file that writes the module must end with true.)
+</p>
+<p>
+  The Point class can be used as follows.
+</p>
+<pre>
 use Point;
-my $ point = Point-&gt; new (x =&gt; 3, y =&gt; 5);
-print $ point-&gt; x;
-$ point-&gt; y (9);
-$ point-&gt; clear;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Point3D class &lt;/ h4&gt;
-
-&lt;blockquote&gt;
-&lt;ul&gt;
-  &lt;li&gt;
+my $point = Point-&gt; new (x =&gt; 3, y =&gt; 5);
+print $point-&gt; x;
+$point-&gt; y (9);
+$point-&gt; clear;
+</pre>
+<h4> Point3D class </h4>
+<blockquote>
+<ul>
+  <li>
     Point3D is a class that represents a three-dimensional point.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     It has accessors x, y, z.
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     It has a method called clear that clears the values ​​of x, y, z to 0.
-  &lt;/ li&gt;
-&lt;/ blockquote&gt;
-&lt;/ ul&gt;
-
-&lt;b&gt; Point3D &lt;/ b&gt; is created by inheriting &lt;b&gt; Point &lt;/ b&gt;. The &lt;b&gt; clear &lt;/ b&gt; method has been overridden to clear the values ​​of &lt;b&gt; x &lt;/ b&gt;, &lt;b&gt; y &lt;/ b&gt; and &lt;b&gt; z &lt;/ b&gt;.
+  </li>
+</blockquote>
+</ul>
+<p>
+  <b> Point3D </b> is created by inheriting <b> Point </b>. The <b> clear </b> method has been overridden to clear the values ​​of <b> x </b>, <b> y </b> and <b> z </b>.
+</p>
     
-&lt;pre&gt;
+<pre>
 package Point3D;
 use Point -base;
 
 has z =&gt; 0;
 
 sub clear {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; SUPER :: clear;
+  $self-&gt; SUPER::clear;
   
-  $ self-&gt; z (0);
+  $self-&gt; z (0);
 }
 
 1;
-&lt;/ pre&gt;
-
-The Point3D class can be used as follows.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The Point3D class can be used as follows.
+</p>
+<pre>
 use Point3D;
-my $ point = Point-&gt; new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
-print $ point-&gt; z;
-$ point-&gt; z (9);
-$ point-&gt; clear;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Executable sample &lt;/ h3&gt;
-
-I'll write a sample that can be executed.
-
-&lt;h4&gt; lib / Point.pm &lt;/ h4&gt;
-
-Create a directory called lib and create a file called Point.pm in it.
-
-&lt;pre&gt;
+my $point = Point-&gt; new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
+print $point-&gt; z;
+$point-&gt; z (9);
+$point-&gt; clear;
+</pre>
+<h3> Executable sample </h3>
+<p>
+  I'll write a sample that can be executed.
+</p>
+<h4> lib / Point.pm </h4>
+<p>
+  Create a directory called lib and create a file called Point.pm in it.
+</p>
+<pre>
 package Point;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 has x =&gt; 0;
 has y =&gt; 0;
 
 sub clear {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; x (0);
-  $ self-&gt; y (0);
+  $self-&gt; x (0);
+  $self-&gt; y (0);
 }
 
 1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; lib / Point3D.pm &lt;/ h4&gt;
-
-Create a file called Point3D.pm in a directory called lib.
-
-&lt;pre&gt;
+</pre>
+<h4> lib / Point3D.pm </h4>
+<p>
+  Create a file called Point3D.pm in a directory called lib.
+</p>
+<pre>
 package Point3D;
 use Point -base;
 
 has z =&gt; 0;
 
 sub clear {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; SUPER :: clear;
+  $self-&gt; SUPER::clear;
   
-  $ self-&gt; z (0);
+  $self-&gt; z (0);
 }
 
 1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; test.pl &lt;/ h4&gt;
-
-This is a sample to read and use the class. You can add a module search path by using the lib module.
-
-&lt;pre&gt;
+</pre>
+<h4> test.pl </h4>
+<p>
+  This is a sample to read and use the class. You can add a module search path by using the lib module.
+</p>
+<pre>
 use strict;
 use warnings;
 use lib'lib';
 use Point3D;
 
-my $ point = Point3D-&gt; new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
+my $point = Point3D-&gt; new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
 
 # 8 is displayed
-print $ point-&gt; z. "\ n";
+print $point-&gt; z. "\n";
 
-$ point-&gt; z (9);
+$point-&gt; z (9);
 
 # 9 is displayed
-print $ point-&gt; z. "\ n";
-$ point-&gt; clear;
+print $point-&gt; z. "\n";
+$point-&gt; clear;
 
 # 0 is displayed
-print $ point-&gt; z. "\ n";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Script execution &lt;/ h4&gt;
-The directory structure is as follows.
-
-&lt;pre&gt;
+print $point-&gt; z. "\n";
+</pre>
+<h4> Script execution </h4>
+<p>
+  The directory structure is as follows.
+</p>
+<pre>
 test.pl
-lib --Point.pm
-    --Point3D.pm
-&lt;/ pre&gt;
-
-Please execute as follows.
-
-&lt;pre&gt;
+lib - Point.pm
+    - Point3D.pm
+</pre>
+<p>
+  Please execute as follows.
+</p>
+<pre>
 perl test.pl
-&lt;/ pre&gt;
-
-&lt;h3&gt; Object-oriented programming concept &lt;/ h3&gt;
-
-&lt;h4&gt; Inheritance &lt;/ h4&gt;
-
-To better understand Object :: Simple, I would like to explain object-oriented concepts.
-
-The first object-oriented concept is "inheritance". "Inheritance" means "if class Q inherits from class P, then class Q can call all the methods of class P".
-
-&lt;pre&gt;
-+ --- +
+</pre>
+<h3> Object-oriented programming concept </h3>
+<h4> Inheritance </h4>
+<p>
+  To better understand Object::Simple, I would like to explain object-oriented concepts.
+</p>
+<p>
+  The first object-oriented concept is "inheritance". "Inheritance" means "if class Q inherits from class P, then class Q can call all the methods of class P".
+</p>
+<pre>
++ - - +
 | P | Superclass
-+ --- + Define method1 and method2
++ - - + Define method1 and method2
   |
-+ --- +
++ - - +
 | Q | Subclass
-+ --- + Define method3
-&lt;/ pre&gt;
-
-Since class Q inherits from class P, class Q can call all the methods of class P in addition to the methods of class Q. In other words, class Q can call method1, method2 and method3.
-
-&lt;pre&gt;
++ - - + Define method3
+</pre>
+<p>
+  Since class Q inherits from class P, class Q can call all the methods of class P in addition to the methods of class Q. In other words, class Q can call method1, method2 and method3.
+</p>
+<pre>
 package P;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 sub method1 {...}
 sub method2 {...}
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 package Q;
 use P -base;
 
 sub method3 {...}
-&lt;/ pre&gt;
-
-Perl has useful functions and methods to help with object-oriented programming. To find out which class an object belongs to, use the ref function.
-
-&lt;pre&gt;
-my $ class = ref $ obj;
-&lt;/ pre&gt;
-
-To find out if an object inherits a particular class, use the isa method.
-
-&lt;pre&gt;
-$ obj-&gt; isa ('MyClass');
-&lt;/ pre&gt;
-
-Use the can method to find out if an object (or class) can call a particular method.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Perl has useful functions and methods to help with object-oriented programming. To find out which class an object belongs to, use the ref function.
+</p>
+<pre>
+my $class = ref $obj;
+</pre>
+<p>
+  To find out if an object inherits a particular class, use the isa method.
+</p>
+<pre>
+$obj-&gt; isa ('MyClass');
+</pre>
+<p>
+  Use the can method to find out if an object (or class) can call a particular method.
+</p>
+<pre>
 MyClass-&gt; can ('method1');
-$ obj-&gt; can ('method1');
-&lt;/ pre&gt;
-
-&lt;h4&gt; Encapsulation &lt;/ h4&gt;
-
-The second concept of object-oriented programming is encapsulation. "Encapsulation" means "no direct access to data internally". You must use the published methods described in the documentation. By following this rule, everything will be simple.
-
-In order to follow this rule, it is necessary to generate an accessor to get and set the value.
-
-&lt;pre&gt;
-my $ value = $ obj-&gt; foo;
-$ obj-&gt; foo (1);
-&lt;/ pre&gt;
-
+$obj-&gt; can ('method1');
+</pre>
+<h4> Encapsulation </h4>
+<p>
+  The second concept of object-oriented programming is encapsulation. "Encapsulation" means "no direct access to data internally". You must use the published methods described in the documentation. By following this rule, everything will be simple.
+</p>
+<p>
+  In order to follow this rule, it is necessary to generate an accessor to get and set the value.
+</p>
+<pre>
+my $value = $obj-&gt; foo;
+$obj-&gt; foo (1);
+</pre>
   Accessing data directly is a bad habit.
-
-&lt;pre&gt;
+<pre>
 # Not good
-my $ value = $ obj-&gt; {foo};
-$ obj-&gt; {foo} = 1;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Polymorphism &lt;/ h4&gt;
-
-The third concept of object-oriented programming is "polymorphism".
-"Polymorphism" becomes two concepts of "overload" and "override"
-It will be split.
-
-Perl programmers don't have to worry about overloading. Perl is a dynamic language, so subroutines can accept any value. Overloading is required for languages ​​with static types such as C ++ and Java.
-
-"Override" means "in a subclass, you can change the methods of the base class".
-
-&lt;pre&gt;
+my $value = $obj-&gt; {foo};
+$obj-&gt; {foo} = 1;
+</pre>
+<h4> Polymorphism </h4>
+<p>
+  The third concept of object-oriented programming is "polymorphism".
+</p>
+<p>
+  "Polymorphism" becomes two concepts of "overload" and "override"
+</p>
+<p>
+  It will be split.
+</p>
+<p>
+  Perl programmers don't have to worry about overloading. Perl is a dynamic language, so subroutines can accept any value. Overloading is required for languages ​​with static types such as C ++ and Java.
+</p>
+<p>
+  "Override" means "in a subclass, you can change the methods of the base class".
+</p>
+<pre>
 package P;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 sub method1 {return 1}
-&lt;/ pre&gt;
-
-&lt;pre&gt;
+</pre>
+<pre>
 package Q;
 use P -base;
 
 sub method1 {return 2}
-&lt;/ pre&gt;
-
-Method1 of class P returns a value of 1. Method1 of class Q returns a value of 2. In other words, in class Q, method1 has been overridden.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Method1 of class P returns a value of 1. Method1 of class Q returns a value of 2. In other words, in class Q, method1 has been overridden.
+</p>
+<pre>
 Returns # 1
-my $ obj_p = P-&gt; new;
-$ obj_p-&gt; method1;
+my $obj_p = P-&gt; new;
+$obj_p-&gt; method1;
 
 Returns # 2
-my $ obj_q = Q-&gt; new;
-$ obj_q-&gt; method1; #Return value is 2
-&lt;/ pre&gt;
-
-If you want to call a method of the base class from a subclass, use the SUPER pseudo-class.
-
-&lt;pre&gt;
+my $obj_q = Q-&gt; new;
+$obj_q-&gt; method1; # Return value is 2
+</pre>
+<p>
+  If you want to call a method of the base class from a subclass, use the SUPER pseudo-class.
+</p>
+<pre>
 package Q;
-use Object :: Simple -base;
+use Object::Simple -base;
 
 sub method1 {
-  my $ self = shift;
+  my $self = shift;
   
-  Call method1 of P using the #SUPER pseudo-class
-  my $ value = $ self-&gt; SUPER :: method1 (@ _);
+  Call method1 of P using the # SUPER pseudo-class
+  my $value = $self-&gt; SUPER::method1 (@ _);
   
-  return 2 + $ value;
+  return 2 + $value;
 }
-&lt;/ pre&gt;
-
-new can be overridden. For example, if you want to initialize the object, override new.
-
-&lt;pre&gt;
+</pre>
+<p>
+  new can be overridden. For example, if you want to initialize the object, override new.
+</p>
+<pre>
 sub new {
-  my $ self = shift-&gt; SUPER :: new (@_);
+  my $self = shift-&gt; SUPER::new (@_);
   
-  #Initialization process
+  # Initialization process
   
-  return $ self;
+  return $self;
 }
-&lt;/ pre&gt;
-
-If you want to change the argument of new, you can solve it by overriding new.
+</pre>
+<p>
+  If you want to change the argument of new, you can solve it by overriding new.
+</p>
     
-&lt;pre&gt;
+<pre>
 sub new {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; SUPER :: new (x =&gt; $ _ [0], y =&gt; $ _ [1]);
+  $self-&gt; SUPER::new (x =&gt; $_ [0], y =&gt; $_ [1]);
   
-  return $ self;
+  return $self;
 }
-&lt;/ pre&gt;
-
-Understanding these three concepts, "inheritance," "encapsulation," and "polymorphism," will create a powerful enough object-oriented program and make the source code readable by users in other languages.
-
-&lt;h3&gt; Package block syntax &lt;/ h3&gt;
-
-In Perl 5.14, a package block syntax has been added that allows you to write the following, eliminating the need to write a "1;" at the end of the file. If you are using Perl 5.14 or higher, you may want to try it.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Understanding these three concepts, "inheritance," "encapsulation," and "polymorphism," will create a powerful enough object-oriented program and make the source code readable by users in other languages.
+</p>
+<h3> Package block syntax </h3>
+<p>
+  In Perl 5.14, a package block syntax has been added that allows you to write the following, eliminating the need to write a "1;" at the end of the file. If you are using Perl 5.14 or higher, you may want to try it.
+</p>
+<pre>
 package Point {
-  use Object :: Simple -base;
+  use Object::Simple -base;
 
   has x =&gt; 0;
   has y =&gt; 0;
 
   sub clear {
-    my $ self = shift;
+    my $self = shift;
     
-    $ self-&gt; x (0);
-    $ self-&gt; y (0);
+    $self-&gt; x (0);
+    $self-&gt; y (0);
   }
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; Summary &lt;/ h3&gt;
-
-Perl is a flexible language. You can be completely object-oriented in the language Perl. Perl's object-orientation is sometimes ridiculed as a retrofit implementation, but it's functionally object-oriented and complete.
-
-Perl has a namespace and is object-oriented, so it can withstand large-scale development. As the scale grows, I think it's a good idea to program in an object-oriented manner.
+</pre>
+<h3> Summary </h3>
+<p>
+  Perl is a flexible language. You can be completely object-oriented in the language Perl. Perl's object-orientation is sometimes ridiculed as a retrofit implementation, but it's functionally object-oriented and complete.
+</p>
+<p>
+  Perl has a namespace and is object-oriented, so it can withstand large-scale development. As the scale grows, I think it's a good idea to program in an object-oriented manner.
+</p>
 
   </div>
   <div class="bottom">

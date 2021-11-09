@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> next statement-Jump to the beginning of the next iteration [Link transfer]  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  next statement  to jump to the beginning of the next iteration. This corresponds to the continue statement in C or Java.">
+<meta name="description" content="You can use the  next statement to jump to the beginning of the next iteration. This corresponds to the continue statement in C or Java.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" next statement-Jump to the beginning of the next iteration [Link transfer]  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  next statement  to jump to the beginning of the next iteration. This corresponds to the continue statement in C or Java." />
+<meta name="twitter:description" content="You can use the  next statement to jump to the beginning of the next iteration. This corresponds to the continue statement in C or Java." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20170513149580.html"> next statement-Jump to the beginning of the next iteration [Link transfer] </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20170513149580.html"> next statement-Jump to the beginning of the next iteration [Link transfer] </a></h2>
 <p>
-  You can use the <a href="/blog/20080329120687.html"> next statement </a> to jump to the beginning of the next iteration. This corresponds to the continue statement in C or Java.
+  You can use the <a href="/blog/20080329120687.html"> next statement</a> to jump to the beginning of the next iteration. This corresponds to the continue statement in C or Java.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,116 +98,114 @@
 
 <pre>
 next
-&lt;/ pre&gt;
-
-The next statement can be used in repetitive statements such as while statements and for statements.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The next statement can be used in repetitive statements such as while statements and for statements.
+</p>
+<pre>
 while (1) {
   if (condition) {
     next; next;
   }
 }
 
-for (my $ i = 0; $ i &lt;10; $ i ++) {
+for (my $i = 0; $i &lt;10; $i++) {
   if (condition) {
     next; next;
   }
 }
 
-foreach my $ animal (@animals) {
+foreach my $animal (@animals) {
   if (condition) {
     next; next;
   }
 }
-&lt;/ pre&gt;
-
-You can use the next statement when you want to skip the process only under specific conditions.
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-This is a sample program that uses the next statement.
-
-&lt;h4&gt; Jump to the beginning of the loop when a specific character is matched &lt;/ h4&gt;
-
-In the middle of loop processing, you can use the next statement when you want to jump to the beginning of the next loop under certain conditions.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can use the next statement when you want to skip the process only under specific conditions.
+</p>
+<h3> Sample program </h3>
+<p>
+  This is a sample program that uses the next statement.
+</p>
+<h4> Jump to the beginning of the loop when a specific character is matched </h4>
+<p>
+  In the middle of loop processing, you can use the next statement when you want to jump to the beginning of the next loop under certain conditions.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @chars = qw (z z a b c d e f);
 
-for my $ char (@chars) {
-  next if $ char eq'z';
-  print "$ char \ n";
+for my $char (@chars) {
+  next if $char eq'z';
+  print "$char\n";
 }
-&lt;/ pre&gt;
-
-This is the execution result. Only when it is "z", it jumps to the beginning of the next loop, so the following &lt;a href="/blog/20170404149131.html"&gt; print function &lt;/a&gt; is not executed.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is the execution result. Only when it is "z", it jumps to the beginning of the next loop, so the following <a href="/blog/20170404149131.html"> print function</a> is not executed.
+</p>
+<pre>
 a
 b b
 c
 d
 e
 f
-&lt;/ pre&gt;
-
-"Qw (z z a b c d e f)" is a &lt;a href="/blog/20080222120369.html"&gt; string list operator &lt;/a&gt;.
-
-The if statement, for statement, and while statement are explained in detail below, so please refer to them.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20161023147731.html"&gt; Learn the syntax of conditional branching using if statements &lt;/a&gt;
-  &lt;/ li&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170521149524.html"&gt; Let's learn the iterative processing using for statement and while statement &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Try using it with a regular expression &lt;/ h3&gt;
-
-I often combine next with regular expressions. Let's write one sample. Let's write a sample that skips the output if it doesn't contain the string "ABC". The unless statement is used for condition judgment.
-
-&lt;pre&gt;
+</pre>
+<p>
+  "Qw (z z a b c d e f)" is a <a href="/blog/20080222120369.html"> string list operator</a>.
+</p>
+<p>
+  The if statement, for statement, and while statement are explained in detail below, so please refer to them.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20161023147731.html"> Learn the syntax of conditional branching using if statements</a>
+  </li>
+  <li>
+    <a href="/blog/20170521149524.html"> Let's learn the iterative processing using for statement and while statement</a>
+  </li>
+</ul>
+<h3> Try using it with a regular expression </h3>
+<p>
+  I often combine next with regular expressions. Let's write one sample. Let's write a sample that skips the output if it doesn't contain the string "ABC". The unless statement is used for condition judgment.
+</p>
+<pre>
 use strict;
 use warnings;
 
 my @strings = ('ABC','ABCD','CDE','FGH');
 
-for my $ string (@strings) {
-  next unless $ string = ~ / ABC /;
-  print "$ string \ n";
+for my $string (@strings) {
+  next unless $string = ~ / ABC /;
+  print "$string\n";
 }
-&lt;/ pre&gt;
-
-This is the output result. Only those that include "ABC" are output.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is the output result. Only those that include "ABC" are output.
+</p>
+<pre>
 ABC
 ABCD
-&lt;/ pre&gt;
-
-&lt;h3&gt; Related information &lt;/ h3&gt;
-
-&lt;h4&gt; You can escape the loop using the last statement &lt;/ h4&gt;
-
-Similar to the next statement is the last statement. You can break out of the loop with the last statement.
-
-&lt;pre&gt;
+</pre>
+<h3> Related information </h3>
+<h4> You can escape the loop using the last statement </h4>
+<p>
+  Similar to the next statement is the last statement. You can break out of the loop with the last statement.
+</p>
+<pre>
 last
-&lt;/ pre&gt;
-
-For the last statement, refer to the following article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20170527149589.html"&gt; last sentence --get out of repetition &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<p>
+  For the last statement, refer to the following article.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20170527149589.html"> last sentence - get out of repetition</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

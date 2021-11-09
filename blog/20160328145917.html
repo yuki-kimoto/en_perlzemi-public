@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130416136637.html">
-      <span itemprop = "name"> Language implementation </ span> </a>
+      <span itemprop = "name"> Language implementation </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20160328145917.html"> opcode.h </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20160328145917.html"> opcode.h </a></h2>
 <p>
-  <strong> opcode.h </ strong> contains information about each operation. In Perl language research, "OP type" data is called an operation. Perl is converted to a syntax tree after parsing, but each of these nodes is "OP type".
+  <strong> opcode.h </strong> contains information about each operation. In Perl language research, "OP type" data is called an operation. Perl is converted to a syntax tree after parsing, but each of these nodes is "OP type".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,7 +99,7 @@
 <p>
   Operations are categorized by operation code, and each has its own information. That information is described.
 </p>
-<h3> Name of operation </ h3>
+<h3> Name of operation </h3>
 <p>
   For example, the name of the operation is described.
 </p>
@@ -114,13 +114,15 @@ EXTCONST char * const PL_op_name [] = {
   "gvsv",
   ...
 };
-&lt;/ pre&gt;
-=====
-&lt;h3&gt; Operation explanation &lt;/ h3&gt;
-
-Next, a description of the operation is described.
-
-&lt;pre&gt;
+</pre>
+<p>
+  =====
+</p>
+<h3> Operation explanation </h3>
+<p>
+  Next, a description of the operation is described.
+</p>
+<pre>
 EXTCONST char * const PL_op_desc [] = {
   "null operation",
   "stub",
@@ -132,18 +134,17 @@ EXTCONST char * const PL_op_desc [] = {
   "glob value",
   ...
 };
-&lt;/ pre&gt;
-
-&lt;h3&gt; Address of the function that the operation executes &lt;/ h3&gt;
-
-Each operation has a corresponding function, but the address to that function is described.
-
-&lt;pre&gt;
+</pre>
+<h3> Address of the function that the operation executes </h3>
+<p>
+  Each operation has a corresponding function, but the address to that function is described.
+</p>
+<pre>
 EXT Perl_ppaddr_t PL_ppaddr [] /* or perlvars.h * /
 # endif
-#endif / * PERL_GLOBAL_STRUCT * /
-#if (defined (DOINIT) &amp;&amp;! Defined (PERL_GLOBAL_STRUCT)) || defined (PERL_GLOBAL_STRUCT_INIT)
-#define PERL_PPADDR_INITED
+# endif / * PERL_GLOBAL_STRUCT * /
+# if (defined(DOINIT) &amp;&amp;! Defined (PERL_GLOBAL_STRUCT)) || defined(PERL_GLOBAL_STRUCT_INIT)
+# define PERL_PPADDR_INITED
 = {
   Perl_pp_null,
   Perl_pp_stub,
@@ -155,17 +156,17 @@ EXT Perl_ppaddr_t PL_ppaddr [] /* or perlvars.h * /
   Perl_pp_gv,
   ...
 }
-&lt;/ pre&gt;
-
-The prefix "pp" means "push pop", and the function executed is the function that manipulates the argument stack.
-
-&lt;h3&gt; Functions that optimize operations &lt;/ h3&gt;
-
-Each operation is optimized with a function prefixed with "ck". The address of the function is described. "Ck" is an abbreviation for "check".
-
-&lt;pre&gt;
-#if (defined (DOINIT) &amp;&amp;! Defined (PERL_GLOBAL_STRUCT)) || defined (PERL_GLOBAL_STRUCT_INIT)
-#define PERL_CHECK_INITED
+</pre>
+<p>
+  The prefix "pp" means "push pop", and the function executed is the function that manipulates the argument stack.
+</p>
+<h3> Functions that optimize operations </h3>
+<p>
+  Each operation is optimized with a function prefixed with "ck". The address of the function is described. "Ck" is an abbreviation for "check".
+</p>
+<pre>
+# if (defined(DOINIT) &amp;&amp;! Defined (PERL_GLOBAL_STRUCT)) || defined(PERL_GLOBAL_STRUCT_INIT)
+# define PERL_CHECK_INITED
 = {
   Perl_ck_null, / * null * /
   Perl_ck_null, / * stub * /
@@ -175,13 +176,12 @@ Each operation is optimized with a function prefixed with "ck". The address of t
   Perl_ck_svconst, / * const * /
   Perl_ck_null, / * gvsv * /
 };
-&lt;/ pre&gt;
-
-&lt;h3&gt; Function argument information &lt;/ h3&gt;
-
-The argument information of the function to be executed is described.
-
-&lt;pre&gt;
+</pre>
+<h3> Function argument information </h3>
+<p>
+  The argument information of the function to be executed is described.
+</p>
+<pre>
 EXTCONST U32 PL_opargs [] = {
   0x00000000, / * null * /
   0x00000000, / * stub * /
@@ -193,96 +193,96 @@ EXTCONST U32 PL_opargs [] = {
   0x00000644, / * gv * /
   ...
 };
-&lt;/ pre&gt;
-
-This is written numerically and I don't know what it is. It is defined in "op.h". The above value is the value of the logical sum of the bit operations of the following values.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is written numerically and I don't know what it is. It is defined in "op.h". The above value is the value of the logical sum of the bit operations of the following values.
+</p>
+<pre>
 /* op.h * /
 
 / * Lowest byte of PL_opargs * /
-#define OA_MARK 1
-#define OA_FOLDCONST 2
-#define OA_RETSCALAR 4
-#define OA_TARGET 8
-#define OA_TARGLEX 16
-#define OA_OTHERINT 32
-#define OA_DANGEROUS 64
-#define OA_DEFGV 128
+# define OA_MARK 1
+# define OA_FOLDCONST 2
+# define OA_RETSCALAR 4
+# define OA_TARGET 8
+# define OA_TARGLEX 16
+# define OA_OTHERINT 32
+# define OA_DANGEROUS 64
+# define OA_DEFGV 128
 
 / * The next 4 bits (8..11) encode op class information * /
-#define OCSHIFT 8
+# define OCSHIFT 8
 
-#define OA_CLASS_MASK (15 &lt;&lt; OCSHIFT)
+# define OA_CLASS_MASK (15 &lt;&lt; OCSHIFT)
 
-#define OA_BASEOP (0 &lt;&lt; OCSHIFT)
-#define OA_UNOP (1 &lt;&lt; OCSHIFT)
-#define OA_BINOP (2 &lt;&lt; OCSHIFT)
-#define OA_LOGOP (3 &lt;&lt; OCSHIFT)
-#define OA_LISTOP (4 &lt;&lt; OCSHIFT)
-#define OA_PMOP (5 &lt;&lt; OCSHIFT)
-#define OA_SVOP (6 &lt;&lt; OCSHIFT)
-#define OA_PADOP (7 &lt;&lt; OCSHIFT)
-#define OA_PVOP_OR_SVOP (8 &lt;&lt; OCSHIFT)
-#define OA_LOOP (9 &lt;&lt; OCSHIFT)
-#define OA_COP (10 &lt;&lt; OCSHIFT)
-#define OA_BASEOP_OR_UNOP (11 &lt;&lt; OCSHIFT)
-#define OA_FILESTATOP (12 &lt;&lt; OCSHIFT)
-#define OA_LOOPEXOP (13 &lt;&lt; OCSHIFT)
-#define OA_METHOP (14 &lt;&lt; OCSHIFT)
-#define OA_UNOP_AUX (15 &lt;&lt; OCSHIFT)
+# define OA_BASEOP (0 &lt;&lt; OCSHIFT)
+# define OA_UNOP (1 &lt;&lt; OCSHIFT)
+# define OA_BINOP (2 &lt;&lt; OCSHIFT)
+# define OA_LOGOP (3 &lt;&lt; OCSHIFT)
+# define OA_LISTOP (4 &lt;&lt; OCSHIFT)
+# define OA_PMOP (5 &lt;&lt; OCSHIFT)
+# define OA_SVOP (6 &lt;&lt; OCSHIFT)
+# define OA_PADOP (7 &lt;&lt; OCSHIFT)
+# define OA_PVOP_OR_SVOP (8 &lt;&lt; OCSHIFT)
+# define OA_LOOP (9 &lt;&lt; OCSHIFT)
+# define OA_COP (10 &lt;&lt; OCSHIFT)
+# define OA_BASEOP_OR_UNOP (11 &lt;&lt; OCSHIFT)
+# define OA_FILESTATOP (12 &lt;&lt; OCSHIFT)
+# define OA_LOOPEXOP (13 &lt;&lt; OCSHIFT)
+# define OA_METHOP (14 &lt;&lt; OCSHIFT)
+# define OA_UNOP_AUX (15 &lt;&lt; OCSHIFT)
 
 / * Each remaining nybble of PL_opargs (i.e. bits 12..15, 16..19 etc)
  * encode the type for each arg * /
-#define OASHIFT 12
+# define OASHIFT 12
 
-#define OA_SCALAR 1
-#define OA_LIST 2
-#define OA_AVREF 3
-#define OA_HVREF 4
-#define OA_CVREF 5
-#define OA_FILEREF 6
-#define OA_SCALARREF 7
-#define OA_OPTIONAL 8
-&lt;/ pre&gt;
-
-And the above doesn't explain this value, but it's in "regen / opcodes".
-
-&lt;pre&gt;
-#Other options are:
-# needs stack mark --m (OA_MARK)
-#needs constant folding --f (OA_FOLDCONST)
-# produces a scalar --s (OA_RETSCALAR)
-# produces an integer --i (unused)
-# needs a target --t (OA_TARGET)
-# target can be in a pad --T (OA_TARGET | OA_TARGLEX)
-# has a corresponding integer version --I (OA_OTHERINT)
-# make temp copy in list assignment --d (OA_DANGEROUS)
-# uses $ _ if no argument given --u (OA_DEFGV)
-&lt;/ pre&gt;
-
-&lt;h3&gt; Private flags for operations &lt;/ h3&gt;
-
-And there is private flag information about the operation. A detailed description of these can be found in "regen / op_private".
-
-&lt;pre&gt;
-#define OPpLVREF_SV 0x00
-#define OPpARG1_MASK 0x01
-#define OPpCOREARGS_DEREF1 0x01
-#define OPpENTERSUB_INARGS 0x01
-#define OPpSORT_NUMERIC 0x01
-#define OPpTRANS_FROM_UTF 0x01
-#define OPpCONST_NOVER 0x02
-#define OPpCOREARGS_DEREF2 0x02
-#define OPpEVAL_HAS_HH 0x02
-#define OPpFT_ACCESS 0x02
-#define OPpHINT_STRICT_REFS 0x02
-#define OPpITER_REVERSED 0x02
+# define OA_SCALAR 1
+# define OA_LIST 2
+# define OA_AVREF 3
+# define OA_HVREF 4
+# define OA_CVREF 5
+# define OA_FILEREF 6
+# define OA_SCALARREF 7
+# define OA_OPTIONAL 8
+</pre>
+<p>
+  And the above doesn't explain this value, but it's in "regen / opcodes".
+</p>
+<pre>
+# Other options are:
+# needs stack mark - m (OA_MARK)
+# needs constant folding - f (OA_FOLDCONST)
+# produces a scalar - s (OA_RETSCALAR)
+# produces an integer - i (unused)
+# needs a target - t (OA_TARGET)
+# target can be in a pad - T (OA_TARGET | OA_TARGLEX)
+# has a corresponding integer version - I (OA_OTHERINT)
+# make temp copy in list assignment - d (OA_DANGEROUS)
+# uses $_ if no argument given - u (OA_DEFGV)
+</pre>
+<h3> Private flags for operations </h3>
+<p>
+  And there is private flag information about the operation. A detailed description of these can be found in "regen / op_private".
+</p>
+<pre>
+# define OPpLVREF_SV 0x00
+# define OPpARG1_MASK 0x01
+# define OPpCOREARGS_DEREF1 0x01
+# define OPpENTERSUB_INARGS 0x01
+# define OPpSORT_NUMERIC 0x01
+# define OPpTRANS_FROM_UTF 0x01
+# define OPpCONST_NOVER 0x02
+# define OPpCOREARGS_DEREF2 0x02
+# define OPpEVAL_HAS_HH 0x02
+# define OPpFT_ACCESS 0x02
+# define OPpHINT_STRICT_REFS 0x02
+# define OPpITER_REVERSED 0x02
 ...
-&lt;/ pre&gt;
-
-&lt;hr&gt;
-&lt;a href="/blog/20130416136637.html "&gt; Perl Language Research &lt;/a&gt;
+</pre>
+<hr>
+<p>
+  <a href="/blog/20130416136637.html "> Perl Language Research</a>
+</p>
 
   </div>
   <div class="bottom">

@@ -62,17 +62,17 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161006147575.html">
-      <span itemprop = "name"> Character code </ span> </a>
+      <span itemprop = "name"> Character code </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20120604133938.html"> Representing square meters (m2) in Unicode </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20120604133938.html"> Representing square meters (m2) in Unicode </a></h2>
 <p>
   If you're wondering how to express a small 2 when displaying square meters (m2), find a solution. All I had to do was express it in Unicode code points.
 </p>
@@ -93,28 +93,29 @@
 
 
 <pre>
-my $ menseki = "100m \ x {00B2}"; # 100 square meters
-&lt;/ pre&gt;
-
-The code point that corresponds to the small 2 is &lt;b&gt; 00B2 &lt;/ b&gt;.
-
-This is an internal string, so you need to encode it in UTF-8 when you actually output it. Also, in the source code, let's "use utf8" so that all characters are internal strings.
-
-&lt;pre&gt;
-print encode ('UTF-8', $ menseki);
-&lt;/ pre&gt;
-
-After all, I thought that Perl that supports Unicode would be useful in such cases.
-
-&lt;h3&gt; List of superscripts and subscripts &lt;/ h3&gt;
-
-It seems that these are called superscripts. I've bookmarked a list of superscripts and subscripts, so I'll link to them.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="http://nakamura001.hatenablog.com/entry/20100620/1277035425"&gt; Superscript / Subscript &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+my $menseki = "100m \ x {00B2}"; # 100 square meters
+</pre>
+<p>
+  The code point that corresponds to the small 2 is <b> 00B2 </b>.
+</p>
+<p>
+  This is an internal string, so you need to encode it in UTF-8 when you actually output it. Also, in the source code, let's "use utf8" so that all characters are internal strings.
+</p>
+<pre>
+print encode ('UTF-8', $menseki);
+</pre>
+<p>
+  After all, I thought that Perl that supports Unicode would be useful in such cases.
+</p>
+<h3> List of superscripts and subscripts </h3>
+<p>
+  It seems that these are called superscripts. I've bookmarked a list of superscripts and subscripts, so I'll link to them.
+</p>
+<ul>
+  <li>
+    <a href="http://nakamura001.hatenablog.com/entry/20100620/1277035425"> Superscript / Subscript</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

@@ -62,29 +62,29 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </ span> </a>
+      <span itemprop = "name"> operator </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100820127859.html">
-      <span itemprop = "name"> File test </ span> </a>
+      <span itemprop = "name"> File test </span></a>
     <meta itemprop = "position" content = "3" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
-      <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20180518152707.html"> Check the existence of the file </a></ h2>
+      <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20180518152707.html"> Check the existence of the file </a></h2>
 <p>
-  To <b> check if a file exists </ b>, use the file test operator "-e".
+  To <b> check if a file exists </b>, use the file test operator "-e".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,140 +103,132 @@
 
 
 <pre>
--e $ file
-&lt;/ pre&gt;
-
-Returns a true value if the file exists, a false value if it does not exist. Directories and symbolic links are also treated as files. This is because on Unix, directories are also considered as special files and are considered as files.
-
-&lt;h4&gt; Check if the normal file exists &lt;/ h4&gt;
-
-If you want to check if a regular file that is not a directory exists, you can check it with the file test operator "-f".
-
-&lt;pre&gt;
--f $ file
-&lt;/ pre&gt;
-
-Normal Returns a true value if the file exists, a false value if it does not exist. A normal file is a file that stores data such as a text file or a binary file.
-
-&lt;h4&gt; Types of files that can be confirmed to exist &lt;/ h4&gt;
-
-There are also file test operators that can check for the existence of directories and symbolic links.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;span style = "font-weight: bold;"&gt; File type &lt;/ span&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;span style = "font-weight: bold;"&gt; Corresponding file operator &lt;/ span&gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+-e $file
+</pre>
+<p>
+  Returns a true value if the file exists, a false value if it does not exist. Directories and symbolic links are also treated as files. This is because on Unix, directories are also considered as special files and are considered as files.
+</p>
+<h4> Check if the normal file exists </h4>
+<p>
+  If you want to check if a regular file that is not a directory exists, you can check it with the file test operator "-f".
+</p>
+<pre>
+-f $file
+</pre>
+<p>
+  Normal Returns a true value if the file exists, a false value if it does not exist. A normal file is a file that stores data such as a text file or a binary file.
+</p>
+<h4> Types of files that can be confirmed to exist </h4>
+<p>
+  There are also file test operators that can check for the existence of directories and symbolic links.
+</p>
+<table>
+  <tr>
+    <td>
+      <span style = "font-weight: bold;"> File type </span>
+    </td>
+    <td>
+      <span style = "font-weight: bold;"> Corresponding file operator </span>
+    </td>
+  </tr>
+  <tr>
+    <td>
       Normal file
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
                                              -f
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Directory
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
                                             -d
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;a href="http://itpro.nikkeibp.co.jp/article/Keyword/20071025/285561/"&gt; Symbolic link &lt;/a&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://itpro.nikkeibp.co.jp/article/Keyword/20071025/285561/"> Symbolic link</a>
+    </td>
+    <td>
                                         -l
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;a href="http://e-words.jp/w/E5908DE5898DE4BB98E3818DE38391E382A4E38397.html"&gt; Named pipe &lt;/a&gt;, file handle that is a pipe
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://e-words.jp/w/E5908DE5898DE4BB98E3818DE38391E382A4E38397.html"> Named pipe</a>, file handle that is a pipe
+    </td>
+    <td>
               -p
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;a href="http://e-words.jp/w/E382BDE382B1E38383E38388.html"&gt; Socket &lt;/a&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://e-words.jp/w/E382BDE382B1E38383E38388.html"> Socket</a>
+    </td>
+    <td>
              -S
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Block special file
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
             -b
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       Character special file
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
            -c
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-I have put up a link to the explanation page of terms.
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-This is a sample to check the existence of a file using the file test operator "-e".
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<p>
+  I have put up a link to the explanation page of terms.
+</p>
+<h3> Sample program </h3>
+<p>
+  This is a sample to check the existence of a file using the file test operator "-e".
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Check for the existence of the file.
+# Check for the existence of the file.
 # -e file name
 # -e can be used for directories, files, symbolic links, etc.
-You can check if it exists without distinguishing the #.
+You can check if it exists without distinguishing the # .
 
-print "1: Check the existence of the file. -e \ n";
-my $ file_all_type ='a';
+print "1: Check the existence of the file. -e\n";
+my $file_all_type ='a';
 
-if (-e $ file_all_type) {
-  print "'$ file_all_type' exists. \ N";
+if (-e $file_all_type) {
+  print "'$file_all_type' exists.\n";
 }
-else {print "'$ file_all_type' does not exist. \ N"}
-&lt;/ pre&gt;
-
-This is a sample to check the existence of a normal file using the file operator -f.
-
-&lt;pre&gt;
+else {print "'$file_all_type' does not exist.\n"}
+</pre>
+<p>
+  This is a sample to check the existence of a normal file using the file operator -f.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#Check the existence of normal files.
+# Check the existence of normal files.
 # -f file name
 
-print "1: Check the existence of normal files. -f \ n";
-my $ file ='a.txt';
-if (-f $ file) {
-  print "'$ file' exists. \ N";
+print "1: Check the existence of normal files. -f\n";
+my $file ='a.txt';
+if (-f $file) {
+  print "'$file' exists.\n";
 }
-else {print "'$ file' does not exist. \ N"}
-&lt;/ pre&gt;
+else {print "'$file' does not exist.\n"}
+</pre>
 
   </div>
   <div class="bottom">

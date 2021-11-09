@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> List of frequently used functions / standard modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ ret. Twice">
+<meta name="description" content="This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ret. Twice">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" List of frequently used functions / standard modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ ret. Twice" />
+<meta name="twitter:description" content="This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ret. Twice" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,17 +62,17 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     Frequently used functions / modules
-  </ li>
-</ ol>
-<h2><a href="/blog/20091025125219.html"> List of frequently used functions / standard modules </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20091025125219.html"> List of frequently used functions / standard modules </a></h2>
 <p>
-  This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ ret. Twice
+  This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ret. Twice
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,249 +95,241 @@
 </p>
 <ol>
   <li>
-    <a href="#math"> math functions </a>
-  </ li>
+    <a href="#math"> math functions</a>
+  </li>
   <li>
-    <a href="#string"> String manipulation </a>
-  </ li>
+    <a href="#string"> String manipulation</a>
+  </li>
   <li>
-    <a href="#array"> Array operation </a>
-  </ li>
+    <a href="#array"> Array operation</a>
+  </li>
   <li>
-    <a href="#hash"> hash operation </a>
-  </ li>
+    <a href="#hash"> hash operation</a>
+  </li>
   <li>
-    <a href="#file-io"> File I / O </a>
-  </ li>
+    <a href="#file-io"> File I / O</a>
+  </li>
   <li>
-    <a href="#file-directory"> File directory operations </a>
-  </ li>
+    <a href="#file-directory"> File directory operations</a>
+  </li>
   <li>
-    <a href="#date-time"> Time / Time </a>
-  </ li>
+    <a href="#date-time"> Time / Time</a>
+  </li>
   <li>
-    <a href="#other"> Other important functions </a>
-  </ li>
+    <a href="#other"> Other important functions</a>
+  </li>
   <li>
-    <a href="#function-search"> How to search function and module documentation </a>
-  </ li>
+    <a href="#function-search"> How to search function and module documentation</a>
+  </li>
   <li>
-    <a href="#special-variable"> Frequently used special variables </a>
-  </ li>
+    <a href="#special-variable"> Frequently used special variables</a>
+  </li>
   <li>
-    <a href="#standard-module"> Frequently used standard modules </a>
-  </ li>
-</ ol>
-<div id = "math"> </ div>
-<h3> Mathematical functions </ h3>
-<h4> abs </ h4>
+    <a href="#standard-module"> Frequently used standard modules</a>
+  </li>
+</ol>
+<div id = "math"> </div>
+<h3> Mathematical functions </h3>
+<h4> abs </h4>
 <p>
-  Use the <a href="/blog/20080912122145.html"> abs function </a> to find the absolute value.
+  Use the <a href="/blog/20080912122145.html"> abs function</a> to find the absolute value.
 </p>
 <pre>
-$ ret = abs $ num;
-&lt;/ pre&gt;
-
-abs (-3) will be 3.
-
-&lt;h4&gt; sqrt &lt;/ h4&gt;
-
-To find the positive square root, use the &lt;a href="/blog/20080630121483.html"&gt; sqrt function &lt;/a&gt;.
-
-&lt;pre&gt;
-$ ret = sqrt $ num;
-&lt;/ pre&gt;
-
-sqrt (4) will be 2.
-
-&lt;h4&gt; int &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080923122214.html"&gt; int function &lt;/a&gt; to retrieve the integer part of a number that includes a decimal point.
-
-&lt;pre&gt;
-$ ret = int $ num;
-&lt;/ pre&gt;
-
-int (1.5) becomes 1 and int (-1.5) becomes -1.
-
-&lt;h4&gt; ceil (POSIX) &lt;/ h4&gt;
-
-To round up the decimal point, use the POSIX module's &lt;a href="/blog/20080924122227.html"&gt; ceil function &lt;/a&gt;.
-
-&lt;pre&gt;
+$ret = abs $num;
+</pre>
+<p>
+  abs(-3) will be 3.
+</p>
+<h4> sqrt </h4>
+<p>
+  To find the positive square root, use the <a href="/blog/20080630121483.html"> sqrt function</a>.
+</p>
+<pre>
+$ret = sqrt $num;
+</pre>
+<p>
+  sqrt(4) will be 2.
+</p>
+<h4> int </h4>
+<p>
+  Use the <a href="/blog/20080923122214.html"> int function</a> to retrieve the integer part of a number that includes a decimal point.
+</p>
+<pre>
+$ret = int $num;
+</pre>
+<p>
+  int(1.5) becomes 1 and int(-1.5) becomes -1.
+</p>
+<h4> ceil(POSIX) </h4>
+<p>
+  To round up the decimal point, use the POSIX module's <a href="/blog/20080924122227.html"> ceil function</a>.
+</p>
+<pre>
 use POSIX'ceil';
-$ ret = ceil $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; floor (POSIX) &lt;/ h4&gt;
-
-To round down the decimal point, use the &lt;a href="/blog/20090430122227.html"&gt; floor function &lt;/a&gt; of the POSIX module.
-
-&lt;pre&gt;
+$ret = ceil $num;
+</pre>
+<h4> floor(POSIX) </h4>
+<p>
+  To round down the decimal point, use the <a href="/blog/20090430122227.html"> floor function</a> of the POSIX module.
+</p>
+<pre>
 use POSIX'floor';
-$ ret = floor $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; rand &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080906122079.html"&gt; rand function &lt;/a&gt; to generate random numbers. A number smaller than the number specified by the argument is randomly generated.
-
-&lt;pre&gt;
-$ ret = rand $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; looks_like_number (Scalar :: Util) &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20090501124313.html"&gt; looks_like_number function &lt;/a&gt; of the Scalar :: Util module to determine if it is a number.
-
-&lt;pre&gt;
-use Scalar :: Util'looks_like_number';
-$ ret = looks_like_number $ num;
-&lt;/ pre&gt;
-
-&lt;div id = "string"&gt; &lt;/ div&gt;
-&lt;h3&gt; 2 String manipulation &lt;/ h3&gt;
-
-&lt;h4&gt; join &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20081007122338.html"&gt; join function &lt;/a&gt; to concatenate strings by specifying a delimiter.
-
-&lt;pre&gt;
-$ ret = join (',', @array);
-&lt;/ pre&gt;
-
-The first argument is the delimiter. In this example, a comma is specified as the delimiter. The character strings given in the second and subsequent arguments are concatenated with a delimiter.
-
-&lt;h4&gt; length &lt;/ h4&gt;
-
-To get the length of the string, use the &lt;a href="/blog/20080926122245.html"&gt; length function &lt;/a&gt;.
-
-&lt;pre&gt;
-$ ret = length $ str;
-&lt;/ pre&gt;
-
-&lt;h4&gt; substr &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080224120386.html"&gt; substr function &lt;/a&gt; to extract and replace the characters at the specified position.
-
-[A] Extract the character at the specified position
-
-&lt;pre&gt;
-$ ret = substr ($ str, 2, 4);
-&lt;/ pre&gt;
-
-The first argument is the target string. The second argument is the start position of the string you want to extract. The third argument is the length of the string you want to extract.
-
-[B] Replace the character string at the specified position
-
-&lt;pre&gt;
-substr ($ str, 0, 2, $ replace);
-&lt;/ pre&gt;
-
-To replace the character string at the specified position, specify the replaced character string in the 4th argument. In this example, the first two characters of $ str are replaced by $ replace.
-
-&lt;h4&gt; index &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080225120395.html"&gt; index function &lt;/a&gt; to search for a string.
-
-&lt;pre&gt;
-$ ret = index ($ str, $ search);
-&lt;/ pre&gt;
-
-In the first argument, specify the character string to be searched, and in the second argument, specify the character string you want to search. The position where the character string is found is returned as the return value. If not found, -1 will be returned.
-
-&lt;pre&gt;
-$ ret = index ($ str, $ search, $ pos);
-&lt;/ pre&gt;
-
-You can specify the search start position in the third argument.
-
-&lt;h4&gt; rindex &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100321126967.html"&gt; rindex function &lt;/a&gt; to search for a string from the end of the string.
-
-&lt;pre&gt;
-$ ret = rindex ($ str, $ search);
-&lt;/ pre&gt;
-
-&lt;h4&gt; split &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080301120434.html"&gt; split function &lt;/a&gt; to split the string by the delimiter.
-
-&lt;pre&gt;
-@ret = split (/, /, $ str);
-&lt;/ pre&gt;
-
-Specify the delimiter as a regular expression in the first argument. In the second argument, specify the character string you want to split. The return value is an array of split strings.
-
-&lt;h4&gt; reverse &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080227120413.html"&gt; reverse function &lt;/a&gt; to reverse the order of the strings.
-
-&lt;pre&gt;
-$ ret = reverse $ str;
-&lt;/ pre&gt;
-
-Also, when used on an array, the reverse function reverses the order of the array.
-
-&lt;h4&gt; uc &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080903122057.html"&gt; uc function &lt;/a&gt; to convert the string to uppercase.
-
-&lt;pre&gt;
-$ ret = uc $ str;
-&lt;/ pre&gt;
-
-&lt;h4&gt; ucfirst &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100325127089.html"&gt; ucfirst function &lt;/a&gt; to convert only the beginning of a string to uppercase.
-
-&lt;pre&gt;
-$ ret = ucfirst $ str;
-&lt;/ pre&gt;
-
-&lt;h4&gt; lc &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100326127089.html"&gt; lc function &lt;/a&gt; to convert the string to lowercase.
-
-&lt;pre&gt;
-$ ret = lc $ str;
-&lt;/ pre&gt;
-
-&lt;h4&gt; lcfirst &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100327127089.html"&gt; lcfirst function &lt;/a&gt; to convert only the beginning of a string to lowercase.
-
-&lt;pre&gt;
-$ ret = lcfirst $ str;
-&lt;/ pre&gt;
-
-&lt;h4&gt; sprintf &lt;/ h4&gt;
-
- Use the &lt;a href="/blog/20081001122296.html"&gt; sprintf function &lt;/a&gt; to create a formatted string.
-
-&lt;pre&gt;
-$ ret = sprintf ($ format, @strs);
-&lt;/ pre&gt;
-
-The first argument is a string that represents the format. The second and subsequent arguments are the character strings embedded in the format specifier part.
-
-&lt;span style = "font-weight: bold;"&gt; [A] Formatting sample &lt;/ span&gt;
-
-Interpret $ num as an integer and format it with 8 digits. Parts less than 8 digits are padded with 0s.
-
-&lt;pre&gt;
-$ ret = sprintf ("% 08d", $ num);
-&lt;/ pre&gt;
-
-Interpret $ num as a floating point and round it to two decimal places.
-
-&lt;pre&gt;
-$ ret = sprintf ("% .2f", $ num);
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; [B] List of format specifiers &lt;/ span&gt;
-&lt;pre&gt;
+$ret = floor $num;
+</pre>
+<h4> rand </h4>
+<p>
+  Use the <a href="/blog/20080906122079.html"> rand function</a> to generate random numbers. A number smaller than the number specified by the argument is randomly generated.
+</p>
+<pre>
+$ret = rand $num;
+</pre>
+<h4> looks_like_number(Scalar::Util) </h4>
+<p>
+  Use the <a href="/blog/20090501124313.html"> looks_like_number function</a> of the Scalar::Util module to determine if it is a number.
+</p>
+<pre>
+use Scalar::Util'looks_like_number';
+$ret = looks_like_number $num;
+</pre>
+<div id = "string"> </div>
+<h3> 2 String manipulation </h3>
+<h4> join </h4>
+<p>
+  Use the <a href="/blog/20081007122338.html"> join function</a> to concatenate strings by specifying a delimiter.
+</p>
+<pre>
+$ret = join(',', @array);
+</pre>
+<p>
+  The first argument is the delimiter. In this example, a comma is specified as the delimiter. The character strings given in the second and subsequent arguments are concatenated with a delimiter.
+</p>
+<h4> length </h4>
+<p>
+  To get the length of the string, use the <a href="/blog/20080926122245.html"> length function</a>.
+</p>
+<pre>
+$ret = length $str;
+</pre>
+<h4> substr </h4>
+<p>
+  Use the <a href="/blog/20080224120386.html"> substr function</a> to extract and replace the characters at the specified position.
+</p>
+<p>
+  [A] Extract the character at the specified position
+</p>
+<pre>
+$ret = substr($str, 2, 4);
+</pre>
+<p>
+  The first argument is the target string. The second argument is the start position of the string you want to extract. The third argument is the length of the string you want to extract.
+</p>
+<p>
+  [B] Replace the character string at the specified position
+</p>
+<pre>
+substr($str, 0, 2, $replace);
+</pre>
+<p>
+  To replace the character string at the specified position, specify the replaced character string in the 4th argument. In this example, the first two characters of $str are replaced by $replace.
+</p>
+<h4> index </h4>
+<p>
+  Use the <a href="/blog/20080225120395.html"> index function</a> to search for a string.
+</p>
+<pre>
+$ret = index($str, $search);
+</pre>
+<p>
+  In the first argument, specify the character string to be searched, and in the second argument, specify the character string you want to search. The position where the character string is found is returned as the return value. If not found, -1 will be returned.
+</p>
+<pre>
+$ret = index($str, $search, $pos);
+</pre>
+<p>
+  You can specify the search start position in the third argument.
+</p>
+<h4> rindex </h4>
+<p>
+  Use the <a href="/blog/20100321126967.html"> rindex function</a> to search for a string from the end of the string.
+</p>
+<pre>
+$ret = rindex($str, $search);
+</pre>
+<h4> split </h4>
+<p>
+  Use the <a href="/blog/20080301120434.html"> split function</a> to split the string by the delimiter.
+</p>
+<pre>
+@ret = split(/, /, $str);
+</pre>
+<p>
+  Specify the delimiter as a regular expression in the first argument. In the second argument, specify the character string you want to split. The return value is an array of split strings.
+</p>
+<h4> reverse </h4>
+<p>
+  Use the <a href="/blog/20080227120413.html"> reverse function</a> to reverse the order of the strings.
+</p>
+<pre>
+$ret = reverse $str;
+</pre>
+<p>
+  Also, when used on an array, the reverse function reverses the order of the array.
+</p>
+<h4> uc </h4>
+<p>
+  Use the <a href="/blog/20080903122057.html"> uc function</a> to convert the string to uppercase.
+</p>
+<pre>
+$ret = uc $str;
+</pre>
+<h4> ucfirst </h4>
+<p>
+  Use the <a href="/blog/20100325127089.html"> ucfirst function</a> to convert only the beginning of a string to uppercase.
+</p>
+<pre>
+$ret = ucfirst $str;
+</pre>
+<h4> lc </h4>
+<p>
+  Use the <a href="/blog/20100326127089.html"> lc function</a> to convert the string to lowercase.
+</p>
+<pre>
+$ret = lc $str;
+</pre>
+<h4> lcfirst </h4>
+<p>
+  Use the <a href="/blog/20100327127089.html"> lcfirst function</a> to convert only the beginning of a string to lowercase.
+</p>
+<pre>
+$ret = lcfirst $str;
+</pre>
+<h4> sprintf </h4>
+ Use the <a href="/blog/20081001122296.html"> sprintf function</a> to create a formatted string.
+<pre>
+$ret = sprintf($format, @strs);
+</pre>
+<p>
+  The first argument is a string that represents the format. The second and subsequent arguments are the character strings embedded in the format specifier part.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [A] Formatting sample </span>
+</p>
+<p>
+  Interpret $num as an integer and format it with 8 digits. Parts less than 8 digits are padded with 0s.
+</p>
+<pre>
+$ret = sprintf("% 08d", $num);
+</pre>
+<p>
+  Interpret $num as a floating point and round it to two decimal places.
+</p>
+<pre>
+$ret = sprintf("% .2f", $num);
+</pre>
+<p>
+  <span style = "font-weight: bold;"> [B] List of format specifiers </span>
+</p>
+<pre>
 % c Convert numbers to characters corresponding to ASCII code
 Interpret the% s argument as a string
 Interpret the% d argument as a signed integer
@@ -347,614 +339,594 @@ Interpret the% u argument as an unsigned integer
 % X Convert positive numbers to hexadecimal strings (uppercase)
 % b Convert positive numbers to binary strings
 Interpret the% f argument as a floating point
-Interpret% e argument as floating point (formatted in exponential notation (lowercase))
-Interpret% E argument as floating point (formatted in exponential notation (uppercase))
-Interpret% g argument as floating point (formatted in exponential notation (lowercase), trailing 0s removed)
+Interpret% e argument as floating point(formatted in exponential notation (lowercase))
+Interpret% E argument as floating point(formatted in exponential notation (uppercase))
+Interpret% g argument as floating point(formatted in exponential notation (lowercase), trailing 0s removed)
 Interpret the% G argument as a floating point number (finger)Formatted in number notation (uppercase). The trailing 0 is removed)
 Translated to the in-memory address of the variable given in the% p argument
-&lt;/ pre&gt;
-
-&lt;h4&gt; chomp &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080226120403.html"&gt; chomp function &lt;/a&gt; to remove the trailing newline.
-
-&lt;pre&gt;
-chomp $ str
-&lt;/ pre&gt;
-
-&lt;h4&gt; Quart operator "q" &lt;/ h4&gt;
-
-If you want to use single quotes without escaping them, use &lt;a href="/blog/20100304126967.html"&gt; quote operator &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<h4> chomp </h4>
+<p>
+  Use the <a href="/blog/20080226120403.html"> chomp function</a> to remove the trailing newline.
+</p>
+<pre>
+chomp $str
+</pre>
+<h4> Quart operator "q" </h4>
+<p>
+  If you want to use single quotes without escaping them, use <a href="/blog/20100304126967.html"> quote operator</a>.
+</p>
+<pre>
 q (aaa'bbb)
-&lt;/ pre&gt;
-
-The function is the same as when enclosed in single quotes. No variable expansion is done.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The function is the same as when enclosed in single quotes. No variable expansion is done.
+</p>
+<pre>
 # Same as this
 'aaa \'bbb'
-&lt;/ pre&gt;
-
-&lt;h4&gt; Double quote operator "qq" &lt;/ h4&gt;
-
-If you want to use double quotes without escaping them, use &lt;a href="/blog/20100305126967.html"&gt; double quote operator &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<h4> Double quote operator "qq" </h4>
+<p>
+  If you want to use double quotes without escaping them, use <a href="/blog/20100305126967.html"> double quote operator</a>.
+</p>
+<pre>
 qq (aaa "bbb)
-&lt;/ pre&gt;
-
-The function is the same as when enclosed in double quotes. Variable expansion is performed.
-
-&lt;pre&gt;
+</pre>
+<p>
+  The function is the same as when enclosed in double quotes. Variable expansion is performed.
+</p>
+<pre>
 # Same as this
 "aaa \" bbb "
-&lt;/ pre&gt;
-
-&lt;h4&gt; quotemeta &lt;/ ​​h4&gt;
-
-Use the &lt;a href="/blog/20100329127089.html"&gt; quotemeta function &lt;/a&gt; to escape special strings used in regular expressions.
-
-&lt;pre&gt;
-$ ret = quotemeta $ str;
-&lt;/ pre&gt;
-
-&lt;h4&gt; chr &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080928122260.html"&gt; chr function &lt;/a&gt; to convert a number to the corresponding ASCII character.
-
-&lt;pre&gt;
-$ ret = chr $ num;
-&lt;/ pre&gt;
-
-&lt;h4&gt; ord &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080929122278.html"&gt; ord function &lt;/a&gt; to convert ASCII code characters to numbers, which is an internal representation.
-
-&lt;pre&gt;
-$ ret = ord $ char;
-&lt;/ pre&gt;
-
-&lt;h4&gt; oct &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20171027150945.html"&gt; oct function &lt;/a&gt; to convert an octal string to the corresponding number.
-
-&lt;pre&gt;
-$ ret = oct $ octal;
-&lt;/ pre&gt;
-
-&lt;h4&gt; hex &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20171026150980.html"&gt; hex function &lt;/a&gt; to convert a hexadecimal string to the corresponding number.
-
-&lt;pre&gt;
-$ ret = hex $ hex;
-&lt;/ pre&gt;
-
-&lt;div id = "array"&gt; &lt;/ div&gt;
-&lt;h3&gt; 3 Array manipulation &lt;/ h3&gt;
-
-&lt;h4&gt; Get the number of arrays &lt;/ h4&gt;
-
-To get the number of arrays, evaluate the arrays in &lt;a href="/blog/20080608121292.html"&gt; scalar context &lt;/a&gt;.
-
-&lt;pre&gt;
-$ ret = @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Last element number in the array &lt;/ h4&gt;
-
-Use $ # array to get the last element number of the array.
-
-&lt;pre&gt;
-$ ret = $ #array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; shift &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100104126425.html"&gt; shift function &lt;/a&gt; to retrieve the first element of the array.
-
-&lt;pre&gt;
-$ ret = shift @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; unshift &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100105126425.html"&gt; unshift function &lt;/a&gt; to add an element to the beginning of the array.
-
-&lt;pre&gt;
-unshift (@array, @items);
-&lt;/ pre&gt;
-
-&lt;h4&gt; pop &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100107126425.html"&gt; pop function &lt;/a&gt; to retrieve the last element of the array.
-
-&lt;pre&gt;
-$ ret = pop @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; push &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100106126425.html"&gt; push function &lt;/a&gt; to add an element to the end of the array.
-
-&lt;pre&gt;
-push (@array, @items);
-&lt;/ pre&gt;
-
-&lt;h4&gt; splice &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080127120141.html"&gt; splice function &lt;/a&gt; to work with multiple elements on an array.
-
-&lt;span style = "font-weight: bold;"&gt; [A] Extract multiple elements &lt;/ span&gt;
-You can retrieve multiple elements.
-
-&lt;pre&gt;
-@ret = splice (@array, $ pos, $ size)
-&lt;/ pre&gt;
-
-Specify the target array in the first argument, the start position in the second argument, and the size you want to extract in the third argument.
-
-&lt;span style = "font-weight: bold;"&gt; [B] Replace multiple elements &lt;/ span&gt;
-You can replace multiple elements.
-
-&lt;pre&gt;
-splice (@array, $ pos, $ size, @items);
-&lt;/ pre&gt;
-
-Specify the array you want to replace with the 4th argument.
-
-&lt;h4&gt; Array slice &lt;/ h4&gt;
-
-Use &lt;a href="/blog/20080216120316.html"&gt; Array Slice &lt;/a&gt; to get multiple elements from an array.
-
-&lt;pre&gt;
+</pre>
+<h4> quotemeta </​​h4>
+<p>
+  Use the <a href="/blog/20100329127089.html"> quotemeta function</a> to escape special strings used in regular expressions.
+</p>
+<pre>
+$ret = quotemeta $str;
+</pre>
+<h4> chr </h4>
+<p>
+  Use the <a href="/blog/20080928122260.html"> chr function</a> to convert a number to the corresponding ASCII character.
+</p>
+<pre>
+$ret = chr $num;
+</pre>
+<h4> ord </h4>
+<p>
+  Use the <a href="/blog/20080929122278.html"> ord function</a> to convert ASCII code characters to numbers, which is an internal representation.
+</p>
+<pre>
+$ret = ord $char;
+</pre>
+<h4> oct </h4>
+<p>
+  Use the <a href="/blog/20171027150945.html"> oct function</a> to convert an octal string to the corresponding number.
+</p>
+<pre>
+$ret = oct $octal;
+</pre>
+<h4> hex </h4>
+<p>
+  Use the <a href="/blog/20171026150980.html"> hex function</a> to convert a hexadecimal string to the corresponding number.
+</p>
+<pre>
+$ret = hex $hex;
+</pre>
+<div id = "array"> </div>
+<h3> 3 Array manipulation </h3>
+<h4> Get the number of arrays </h4>
+<p>
+  To get the number of arrays, evaluate the arrays in <a href="/blog/20080608121292.html"> scalar context</a>.
+</p>
+<pre>
+$ret = @array;
+</pre>
+<h4> Last element number in the array </h4>
+<p>
+  Use $# array to get the last element number of the array.
+</p>
+<pre>
+$ret = $# array;
+</pre>
+<h4> shift </h4>
+<p>
+  Use the <a href="/blog/20100104126425.html"> shift function</a> to retrieve the first element of the array.
+</p>
+<pre>
+$ret = shift @array;
+</pre>
+<h4> unshift </h4>
+<p>
+  Use the <a href="/blog/20100105126425.html"> unshift function</a> to add an element to the beginning of the array.
+</p>
+<pre>
+unshift(@array, @items);
+</pre>
+<h4> pop </h4>
+<p>
+  Use the <a href="/blog/20100107126425.html"> pop function</a> to retrieve the last element of the array.
+</p>
+<pre>
+$ret = pop @array;
+</pre>
+<h4> push </h4>
+<p>
+  Use the <a href="/blog/20100106126425.html"> push function</a> to add an element to the end of the array.
+</p>
+<pre>
+push(@array, @items);
+</pre>
+<h4> splice </h4>
+<p>
+  Use the <a href="/blog/20080127120141.html"> splice function</a> to work with multiple elements on an array.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [A] Extract multiple elements </span>
+</p>
+<p>
+  You can retrieve multiple elements.
+</p>
+<pre>
+@ret = splice(@array, $pos, $size)
+</pre>
+<p>
+  Specify the target array in the first argument, the start position in the second argument, and the size you want to extract in the third argument.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [B] Replace multiple elements </span>
+</p>
+<p>
+  You can replace multiple elements.
+</p>
+<pre>
+splice(@array, $pos, $size, @items);
+</pre>
+<p>
+  Specify the array you want to replace with the 4th argument.
+</p>
+<h4> Array slice </h4>
+<p>
+  Use <a href="/blog/20080216120316.html"> Array Slice</a> to get multiple elements from an array.
+</p>
+<pre>
 @ret = @array [0, 1, 3];
-&lt;/ pre&gt;
-In this example, the 0th, 1st, and 3rd elements of @array are assigned to @ret.
-
-&lt;h4&gt; grep &lt;/ h4&gt;
-
-If you want to retrieve only the elements that match the conditions, use the &lt;a href="/blog/20100119126425.html"&gt; grep function &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<p>
+  In this example, the 0th, 1st, and 3rd elements of @array are assigned to @ret.
+</p>
+<h4> grep </h4>
+<p>
+  If you want to retrieve only the elements that match the conditions, use the <a href="/blog/20100119126425.html"> grep function</a>.
+</p>
+<pre>
 @ret = grep {condition} @array;
-&lt;/ pre&gt;
-
-This is a sample to extract a value larger than 3.
-
-&lt;pre&gt;
-@ret = grep {$ _&gt; 3} @array;
-&lt;/ pre&gt;
-
-The elements of the array are sequentially assigned to $ _. Only those that satisfy $ _&gt; 3 will be assigned to @ret.
-
-&lt;h4&gt; map &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100118126425.html"&gt; map function &lt;/a&gt; to process all the elements of the array.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is a sample to extract a value larger than 3.
+</p>
+<pre>
+@ret = grep {$_&gt; 3} @array;
+</pre>
+<p>
+  The elements of the array are sequentially assigned to $_. Only those that satisfy $_> 3 will be assigned to @ret.
+</p>
+<h4> map </h4>
+<p>
+  Use the <a href="/blog/20100118126425.html"> map function</a> to process all the elements of the array.
+</p>
+<pre>
 @ret = map {element manipulation} @array;
-&lt;/ pre&gt;
-
-This is a sample that doubles all the elements.
-
-&lt;pre&gt;
-@ret = map {$ _ * 2} @array;
-&lt;/ pre&gt;
-
-The elements of the array are sequentially assigned to $ _. The result of $ _ * 2 is assigned to @ret.
-
-&lt;h4&gt; max (List :: Util) &lt;/ h4&gt;
-
-To find the maximum value of an array element, use the max function of the &lt;a href="/blog/20080114120030.html"&gt; List :: Util module &lt;/a&gt;.
-
-&lt;pre&gt;
-use List :: Util'max';
-$ ret = max @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; min (List :: Util) &lt;/ h4&gt;
-
-To find the minimum value of an array element, use the min function of the &lt;a href="/blog/20080114120030.html"&gt; List :: Util module &lt;/a&gt;.
-
-&lt;pre&gt;
-use List :: Util'min';
-$ ret = min @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; sum (List :: Util) &lt;/ h4&gt;
-
-Use the sum function of the &lt;a href="/blog/20080114120030.html"&gt; List :: Util module &lt;/a&gt; to sum the elements of the array.
-
-&lt;pre&gt;
-use List :: Util'sum';
-$ ret = sum @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; sort &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100110126528.html"&gt; sort function &lt;/a&gt; to sort the elements of the array.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is a sample that doubles all the elements.
+</p>
+<pre>
+@ret = map {$_ * 2} @array;
+</pre>
+<p>
+  The elements of the array are sequentially assigned to $_. The result of $_ * 2 is assigned to @ret.
+</p>
+<h4> max (List::Util) </h4>
+<p>
+  To find the maximum value of an array element, use the max function of the <a href="/blog/20080114120030.html"> List::Util module</a>.
+</p>
+<pre>
+use List::Util'max';
+$ret = max @array;
+</pre>
+<h4> min (List::Util) </h4>
+<p>
+  To find the minimum value of an array element, use the min function of the <a href="/blog/20080114120030.html"> List::Util module</a>.
+</p>
+<pre>
+use List::Util'min';
+$ret = min @array;
+</pre>
+<h4> sum (List::Util) </h4>
+<p>
+  Use the sum function of the <a href="/blog/20080114120030.html"> List::Util module</a> to sum the elements of the array.
+</p>
+<pre>
+use List::Util'sum';
+$ret = sum @array;
+</pre>
+<h4> sort </h4>
+<p>
+  Use the <a href="/blog/20100110126528.html"> sort function</a> to sort the elements of the array.
+</p>
+<pre>
 @ret = sort {sorting conditions} @array;
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; [A] Compare numerically and sort in ascending order &lt;/ span&gt;
-This is a sample that compares numerically and sorts in ascending order.
-
-&lt;pre&gt;
-@ret = sort {$ a &lt;=&gt; $ b} @array;
-&lt;/ pre&gt;
-
-Use &lt;=&gt; to compare numerically. To sort in ascending order, use $ a &lt;=&gt; $ b.
-
-&lt;span style = "font-weight: bold;"&gt; [B] Compare numerically and sort in descending order &lt;/ span&gt;
-This is a sample that compares numerically and sorts in descending order.
-
-&lt;pre&gt;
-@ret = sort {$ b &lt;=&gt; $ a} @array;
-&lt;/ pre&gt;
-
-Use &lt;=&gt; to compare numerically. To sort in descending order, use $ b &lt;=&gt; $ a.
-
-&lt;span style = "font-weight: bold;"&gt; [C] Compare in dictionary order and sort in ascending order &lt;/ span&gt;
-This is a sample that compares in dictionary order and sorts in ascending order.
-
-&lt;pre&gt;
-@ret = sort {$ a cmp $ b} @array;
-&lt;/ pre&gt;
-
-Use cmp to compare in lexicographical order. If you want to sort in ascending order, use $ a cmp $ b.
-
-&lt;span style = "font-weight: bold;"&gt; [D] Compare in dictionary order and sort in descending order &lt;/ span&gt;
-This is a sample that compares in dictionary order and sorts in descending order.
-
-&lt;pre&gt;
-@ret = sort {$ b cmp $ a} @array;
-&lt;/ pre&gt;
-
-Use cmp to compare in lexicographical order. If you want to sort in descending order, use $ b cmp $ a.
-
-&lt;h4&gt; shuffle (List :: Util) &lt;/ h4&gt;
-
-To sort the array randomly, use the shuffle function of the &lt;a href="/blog/20080114120030.html"&gt; List :: Util module &lt;/a&gt;.
-
-&lt;pre&gt;
-use List :: Util'shuffle';
+</pre>
+<p>
+  <span style = "font-weight: bold;"> [A] Compare numerically and sort in ascending order </span>
+</p>
+<p>
+  This is a sample that compares numerically and sorts in ascending order.
+</p>
+<pre>
+@ret = sort {$a &lt;=&gt; $b} @array;
+</pre>
+<p>
+  Use <=> to compare numerically. To sort in ascending order, use $a <=> $b.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [B] Compare numerically and sort in descending order </span>
+</p>
+<p>
+  This is a sample that compares numerically and sorts in descending order.
+</p>
+<pre>
+@ret = sort {$b &lt;=&gt; $a} @array;
+</pre>
+<p>
+  Use <=> to compare numerically. To sort in descending order, use $b <=> $a.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [C] Compare in dictionary order and sort in ascending order </span>
+</p>
+<p>
+  This is a sample that compares in dictionary order and sorts in ascending order.
+</p>
+<pre>
+@ret = sort {$a cmp $b} @array;
+</pre>
+<p>
+  Use cmp to compare in lexicographical order. If you want to sort in ascending order, use $a cmp $b.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [D] Compare in dictionary order and sort in descending order </span>
+</p>
+<p>
+  This is a sample that compares in dictionary order and sorts in descending order.
+</p>
+<pre>
+@ret = sort {$b cmp $a} @array;
+</pre>
+<p>
+  Use cmp to compare in lexicographical order. If you want to sort in descending order, use $b cmp $a.
+</p>
+<h4> shuffle (List::Util) </h4>
+<p>
+  To sort the array randomly, use the shuffle function of the <a href="/blog/20080114120030.html"> List::Util module</a>.
+</p>
+<pre>
+use List::Util'shuffle';
 @ret = shuffle @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; reverse &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080227120413.html"&gt; reverse function &lt;/a&gt; to reverse the elements of the array.
-
-&lt;pre&gt;
+</pre>
+<h4> reverse </h4>
+<p>
+  Use the <a href="/blog/20080227120413.html"> reverse function</a> to reverse the elements of the array.
+</p>
+<pre>
 @ret = reverse @array;
-&lt;/ pre&gt;
-
-&lt;h4&gt; String list operator &lt;/ h4&gt;
-
-You can use the &lt;a href="/blog/20100303126967.html"&gt; string list operator &lt;/a&gt; to represent a list of strings without commas or quotes.
-&lt;pre&gt;
+</pre>
+<h4> String list operator </h4>
+<p>
+  You can use the <a href="/blog/20100303126967.html"> string list operator</a> to represent a list of strings without commas or quotes.
+</p>
+<pre>
 @array = qw (cat dob ​​mouse);
-&lt;/ pre&gt;
-
-&lt;div id = "hash"&gt; &lt;/ div&gt;
-&lt;h3&gt; 4 Hash operation &lt;/ h3&gt;
-
-&lt;h4&gt; keys &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080210120265.html"&gt; keys function &lt;/a&gt; to get all the keys in the hash.
-
-&lt;pre&gt;
-@ret = keys% hash;
-&lt;/ pre&gt;
-
-&lt;h4&gt; values ​​&lt;/ h4&gt;
-
-To get all the values ​​of a hashUse the &lt;a href="/blog/20100222126425.html"&gt; values ​​function &lt;/a&gt;.
-
-&lt;pre&gt;
-@ret = values% hash;
-&lt;/ pre&gt;
-
-&lt;h4&gt; each &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080212120283.html"&gt; each function &lt;/a&gt; to get the hash key / value pairs in sequence.
-
-&lt;pre&gt;
-($ key, $ value) = each% hash;
-&lt;/ pre&gt;
-
-Use the &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; to process all key / value pairs in sequence.
-
-&lt;pre&gt;
-while (my ($ key, $ value) = each% hash) {
+</pre>
+<div id = "hash"> </div>
+<h3> 4 Hash operation </h3>
+<h4> keys </h4>
+<p>
+  Use the <a href="/blog/20080210120265.html"> keys function</a> to get all the keys in the hash.
+</p>
+<pre>
+@ret = keys %hash;
+</pre>
+<h4> values ​​</h4>
+<p>
+  To get all the values ​​of a hashUse the <a href="/blog/20100222126425.html"> values ​​function</a>.
+</p>
+<pre>
+@ret = values %hash;
+</pre>
+<h4> each </h4>
+<p>
+  Use the <a href="/blog/20080212120283.html"> each function</a> to get the hash key / value pairs in sequence.
+</p>
+<pre>
+($key, $value) = each %hash;
+</pre>
+<p>
+  Use the <a href="/blog/20100123126425.html"> while statement</a> to process all key / value pairs in sequence.
+</p>
+<pre>
+while (my ($key, $value) = each %hash) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; exists &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080213120291.html"&gt; exists function &lt;/a&gt; to check for the existence of the hash key.
-
-&lt;pre&gt;
-$ ret = exists ($ hash {$ key});
-&lt;/ pre&gt;
-
-&lt;h4&gt; delete &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080214120300.html"&gt; delete function &lt;/a&gt; to delete the hash key.
-
-&lt;pre&gt;
-delete $ hash {$ key};
-&lt;/ pre&gt;
-
-&lt;h4&gt; reverse &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080227120413.html"&gt; reverse function &lt;/a&gt; to swap the hash key and value.
-
-&lt;pre&gt;
-% ret = reverse% hash;
-&lt;/ pre&gt;
-
-&lt;div id = "file-io"&gt; &lt;/ div&gt;
-&lt;h3&gt; 5 File input / output &lt;/ h3&gt;
-
-&lt;h4&gt; open &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080718121643.html"&gt; open function &lt;/a&gt; to open the file.
-
-&lt;pre&gt;
-open (my $ fh, "&lt;", $ file)
-  or die "Cannot open $ file: $!";
-&lt;/ pre&gt;
-
-If the file is opened successfully, the file handle is assigned to $ fh. (Declaring $ fh and passing it to the open function at the same time.)
-
-It is necessary to handle the error when the file open fails.
-
-&lt;span style = "font-weight: bold;"&gt; [A] Open mode &lt;/ span&gt;
-A list of commonly used open modes.
-
-&lt;pre&gt;
+</pre>
+<h4> exists </h4>
+<p>
+  Use the <a href="/blog/20080213120291.html"> exists function</a> to check for the existence of the hash key.
+</p>
+<pre>
+$ret = exists($hash {$key});
+</pre>
+<h4> delete </h4>
+<p>
+  Use the <a href="/blog/20080214120300.html"> delete function</a> to delete the hash key.
+</p>
+<pre>
+delete $hash {$key};
+</pre>
+<h4> reverse </h4>
+<p>
+  Use the <a href="/blog/20080227120413.html"> reverse function</a> to swap the hash key and value.
+</p>
+<pre>
+% ret = reverse %hash;
+</pre>
+<div id = "file-io"> </div>
+<h3> 5 File input / output </h3>
+<h4> open </h4>
+<p>
+  Use the <a href="/blog/20080718121643.html"> open function</a> to open the file.
+</p>
+<pre>
+open(my $fh, "&lt;", $file)
+  or die "Cannot open $file: $!";
+</pre>
+<p>
+  If the file is opened successfully, the file handle is assigned to $fh. (Declaring $fh and passing it to the open function at the same time.)
+</p>
+<p>
+  It is necessary to handle the error when the file open fails.
+</p>
+<p>
+  <span style = "font-weight: bold;"> [A] Open mode </span>
+</p>
+<p>
+  A list of commonly used open modes.
+</p>
+<pre>
 Read &lt;
 Write&gt;
 Additional writing &gt;&gt;
-&lt;/ pre&gt;
-
-&lt;h4&gt; close &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20160312145776.html"&gt; close function &lt;/a&gt; to close the file handle.
-
-&lt;pre&gt;
-close $ fh;
-&lt;/ pre&gt;
-
-&lt;h4&gt; File input operator &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080722121673.html"&gt; file input operator &lt;/a&gt; to read a line from a file.
-
-&lt;pre&gt;
-$ line = &lt;$ fh&gt;;
-&lt;/ pre&gt;
-
-Usually used with &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
-
-&lt;pre&gt;
-while (my $ line = &lt;$ fh&gt;) {
+</pre>
+<h4> close </h4>
+<p>
+  Use the <a href="/blog/20160312145776.html"> close function</a> to close the file handle.
+</p>
+<pre>
+close $fh;
+</pre>
+<h4> File input operator </h4>
+<p>
+  Use the <a href="/blog/20080722121673.html"> file input operator</a> to read a line from a file.
+</p>
+<pre>
+$line = &lt;$fh&gt;;
+</pre>
+<p>
+  Usually used with <a href="/blog/20100123126425.html"> while statement</a>.
+</p>
+<pre>
+while (my $line = &lt;$fh&gt;) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; [A] Read all rows into an array &lt;/ span&gt;
-Use the diamond operator in the list context to read all rows into the array.
-
-&lt;pre&gt;
-@lines = &lt;$ fh&gt;;
-&lt;/ pre&gt;
-
-&lt;h4&gt; fileno &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20160314145796.html"&gt; fileno function &lt;/a&gt; to get the file descriptor.
-
-&lt;pre&gt;
-$ ret = fileno $ fh;
-&lt;/ pre&gt;
-
-&lt;h4&gt; opendir &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20171002150691.html"&gt; opendir function &lt;/a&gt; to open the directory.
-
-&lt;pre&gt;
-opendir (my $ dh, $ dir)
-  or die "Cannot open $ dir: $!";
-&lt;/ pre&gt;
-
-The opened directory handle is assigned to $ dh. It is necessary to handle the error when the directory open fails.
-
-&lt;h4&gt; closeddir &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20171001150694.html"&gt; closedir &lt;/a&gt; function to close the directory handle.
-
-&lt;pre&gt;
-closedir $ dh;
-&lt;/ pre&gt;
-
-&lt;h4&gt; readdir &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20171003150703.html"&gt; readdir function &lt;/a&gt; to read the filenames in the directory one by one.
-
-&lt;pre&gt;
-$ file = readdir $ dh;
-&lt;/ pre&gt;
-
-Usually used with &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
-
-&lt;pre&gt;
-while (my $ file = readdir $ dh) {
+</pre>
+<p>
+  <span style = "font-weight: bold;"> [A] Read all rows into an array </span>
+</p>
+<p>
+  Use the diamond operator in the list context to read all rows into the array.
+</p>
+<pre>
+@lines = &lt;$fh&gt;;
+</pre>
+<h4> fileno </h4>
+<p>
+  Use the <a href="/blog/20160314145796.html"> fileno function</a> to get the file descriptor.
+</p>
+<pre>
+$ret = fileno $fh;
+</pre>
+<h4> opendir </h4>
+<p>
+  Use the <a href="/blog/20171002150691.html"> opendir function</a> to open the directory.
+</p>
+<pre>
+opendir(my $dh, $dir)
+  or die "Cannot open $dir: $!";
+</pre>
+<p>
+  The opened directory handle is assigned to $dh. It is necessary to handle the error when the directory open fails.
+</p>
+<h4> closeddir </h4>
+<p>
+  Use the <a href="/blog/20171001150694.html"> closedir</a> function to close the directory handle.
+</p>
+<pre>
+closedir $dh;
+</pre>
+<h4> readdir </h4>
+<p>
+  Use the <a href="/blog/20171003150703.html"> readdir function</a> to read the filenames in the directory one by one.
+</p>
+<pre>
+$file = readdir $dh;
+</pre>
+<p>
+  Usually used with <a href="/blog/20100123126425.html"> while statement</a>.
+</p>
+<pre>
+while (my $file = readdir $dh) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;div id = "file-directory"&gt; &lt;/ div&gt;
-&lt;h3&gt; 6 File / directory operations &lt;/ h3&gt;
-
-&lt;h4&gt; unlink &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080520121125.html"&gt; unlink function &lt;/a&gt; to delete the file.
-
-&lt;pre&gt;
-unlink $ file
-  or die "Cannot remove $ file: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; copy (File :: Copy) &lt;/ h4&gt;
-
-To copy a file, use the copy function of the &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt; module.
-
-&lt;pre&gt;
-use File :: Copy'copy';
-copy ($ file_from, $ file_to)
-  or die "Cannot copy $ file_from to $ file_to: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; move (File :: Copy) &lt;/ h4&gt;
-
-To move a file, use the move function of the &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt; module.
-
-&lt;pre&gt;
-use File :: Copy'copy';
-move ($ file_from, $ file_to)
-  or die "Cannot move $ file_from to $ file_to: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; chdir &lt;/ h4&gt;
-
-To change the current directory, get the &lt;a href="/blog/20080528121197.html"&gt; chdir function &lt;/a&gt;.
-
-&lt;pre&gt;
-chdir $ dir
-  or die "Cannot change directory $ dir: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; mkdir &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080523121155.html"&gt; mkdir function &lt;/a&gt; to create the directory.
-
-&lt;pre&gt;
-mkdir $ dir
-  or die "Cannot create directory $ dir: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; rmdir &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080526121181.html"&gt; rmdir function &lt;/a&gt; to delete the directory.
-
-&lt;pre&gt;
-rmdir $ dir
-  or die "Cannot remove directory $ dir: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; mkpath (File :: Path) &lt;/ h4&gt;
-
-To create a multi-level directory, use the mkpath function of the &lt;a href="/blog/20100409127089.html"&gt; File :: Path &lt;/a&gt; module.
-
-&lt;pre&gt;
-use File :: Path'mkpath';
+</pre>
+<div id = "file-directory"> </div>
+<h3> 6 File / directory operations </h3>
+<h4> unlink </h4>
+<p>
+  Use the <a href="/blog/20080520121125.html"> unlink function</a> to delete the file.
+</p>
+<pre>
+unlink $file
+  or die "Cannot remove $file: $!";
+</pre>
+<h4> copy (File::Copy) </h4>
+<p>
+  To copy a file, use the copy function of the <a href="/blog/20100408127089.html"> File::Copy</a> module.
+</p>
+<pre>
+use File::Copy'copy';
+copy ($file_from, $file_to)
+  or die "Cannot copy $file_from to $file_to: $!";
+</pre>
+<h4> move (File::Copy) </h4>
+<p>
+  To move a file, use the move function of the <a href="/blog/20100408127089.html"> File::Copy</a> module.
+</p>
+<pre>
+use File::Copy'copy';
+move ($file_from, $file_to)
+  or die "Cannot move $file_from to $file_to: $!";
+</pre>
+<h4> chdir </h4>
+<p>
+  To change the current directory, get the <a href="/blog/20080528121197.html"> chdir function</a>.
+</p>
+<pre>
+chdir $dir
+  or die "Cannot change directory $dir: $!";
+</pre>
+<h4> mkdir </h4>
+<p>
+  Use the <a href="/blog/20080523121155.html"> mkdir function</a> to create the directory.
+</p>
+<pre>
+mkdir $dir
+  or die "Cannot create directory $dir: $!";
+</pre>
+<h4> rmdir </h4>
+<p>
+  Use the <a href="/blog/20080526121181.html"> rmdir function</a> to delete the directory.
+</p>
+<pre>
+rmdir $dir
+  or die "Cannot remove directory $dir: $!";
+</pre>
+<h4> mkpath (File::Path) </h4>
+<p>
+  To create a multi-level directory, use the mkpath function of the <a href="/blog/20100409127089.html"> File::Path</a> module.
+</p>
+<pre>
+use File::Path'mkpath';
 eval {
-  mkpath $ dir
+  mkpath $dir
 };
 
-if ($ @) {
-  die "Cannot create $ dir: $ @";
+if ($@) {
+  die "Cannot create $dir: $@";
 }
-&lt;/ pre&gt;
+</pre>
+<p>
+  If mkpath fails, an exception will be thrown, so catch it with the eval block. The content of the error when an exception occurs is stored in $@.
+</p>
+<h4> rmtree (File::Path) </h4>
+<p>
+  If you want to delete the directory that contains the files inside, use the rmtree function of the <a href="/blog/20100409127089.html"> File::Path module</a>.
+</p>
+<pre>
+use File::Path'rmtree';
 
-If mkpath fails, an exception will be thrown, so catch it with the eval block. The content of the error when an exception occurs is stored in $ @.
-
-&lt;h4&gt; rmtree (File :: Path) &lt;/ h4&gt;
-
-If you want to delete the directory that contains the files inside, use the rmtree function of the &lt;a href="/blog/20100409127089.html"&gt; File :: Path module &lt;/a&gt;.
-
-&lt;pre&gt;
-use File :: Path'rmtree';
-
-rmtree ($ dir, {error =&gt; \ my $ errors});
-for my $ diag (@ $ errors) {
-  my ($ file, $ message) = each% $ diag;
-  warn "problem unlinking $ file: $ message \ n";
+rmtree ($dir, {error =&gt; \ my $errors});
+for my $diag (@ $errors) {
+  my ($file, $message) = each %$diag;
+  warn "problem unlinking $file: $message\n";
 }
-&lt;/ pre&gt;
-
-In the first argument, specify the directory you want to delete. You can specify options for the last argument. In this example, I am trying to get the content of the error.
-
-&lt;h4&gt; getcwd (Cwd) &lt;/ h4&gt;
-
-To get the current directory, use the getcwd function of the &lt;a href="/blog/20100527127859.html"&gt; Cwd module &lt;/a&gt;.
-
-&lt;pre&gt;
+</pre>
+<p>
+  In the first argument, specify the directory you want to delete. You can specify options for the last argument. In this example, I am trying to get the content of the error.
+</p>
+<h4> getcwd (Cwd) </h4>
+<p>
+  To get the current directory, use the getcwd function of the <a href="/blog/20100527127859.html"> Cwd module</a>.
+</p>
+<pre>
 use Cwd'getcwd';
-$ ret = getcwd;
-&lt;/ pre&gt;
+$ret = getcwd;
+</pre>
+<h4> chmod </h4>
+<p>
+  Use the <a href="/blog/20080821121933.html"> chmod function</a> to change the file permissions.
+</p>
+<pre>
+chmod($permission, $file)
+  or die "Cannot change permission $file: $!";
+</pre>
+<h4> basename (File::Basename) </h4>
+<p>
+  To retrieve the base name of a file, use the basename function of the <a href="/blog/20100225126425.html"> File::Basename module</a>.
+</p>
+<pre>
+use File::Basename'basename';
+$ret = basename $file;
+</pre>
+<p>
+  If the file name is /a/b/c.txt, c.txt is the base name.
+</p>
+<h4> dirname (File::Basename) </h4>
+<p>
+  To get the name of the directory that contains the file, use the dirname function of the <a href="/blog/20100225126425.html"> File::Basename module</a>.
+</p>
+<pre>
+use File::Basename'dirname';
+$ret = dirname $file;
+</pre>
+<p>
+  In the case of the file name /a/b/c.txt, / a / b corresponds to the directory name.
+</p>
+<h4> FileStrike operator </h4>
+<p>
+  You can use the <a href="/blog/20100820127859.html"> file test operator</a> to check the existence of a file or directory.
+</p>
+<pre>
+# Check the existence of normal files
+$ret = -f $file;
 
-&lt;h4&gt; chmod &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080821121933.html"&gt; chmod function &lt;/a&gt; to change the file permissions.
-
-&lt;pre&gt;
-chmod ($ permission, $ file)
-  or die "Cannot change permission $ file: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; basename (File :: Basename) &lt;/ h4&gt;
-
-To retrieve the base name of a file, use the basename function of the &lt;a href="/blog/20100225126425.html"&gt; File :: Basename module &lt;/a&gt;.
-
-&lt;pre&gt;
-use File :: Basename'basename';
-$ ret = basename $ file;
-&lt;/ pre&gt;
-
-If the file name is /a/b/c.txt, c.txt is the base name.
-
-&lt;h4&gt; dirname (File :: Basename) &lt;/ h4&gt;
-
-To get the name of the directory that contains the file, use the dirname function of the &lt;a href="/blog/20100225126425.html"&gt; File :: Basename module &lt;/a&gt;.
-
-&lt;pre&gt;
-use File :: Basename'dirname';
-$ ret = dirname $ file;
-&lt;/ pre&gt;
-
-In the case of the file name /a/b/c.txt, / a / b corresponds to the directory name.
-
-&lt;h4&gt; FileStrike operator &lt;/ h4&gt;
-
-You can use the &lt;a href="/blog/20100820127859.html"&gt; file test operator &lt;/a&gt; to check the existence of a file or directory.
-
-&lt;pre&gt;
-#Check the existence of normal files
-$ ret = -f $ file;
-
-#Check the existence of the directory
-$ ret = -d $ dir;
-&lt;/ pre&gt;
-
-Usually used with conditional statements.
-
-&lt;pre&gt;
-if (-f $ file) {
+# Check the existence of the directory
+$ret = -d $dir;
+</pre>
+<p>
+  Usually used with conditional statements.
+</p>
+<pre>
+if (-f $file) {
   ...
 }
-&lt;/ pre&gt;
-
-&lt;span style = "font-weight: bold;"&gt; [A] List of commonly used file operators &lt;/ span&gt;
-
-&lt;pre&gt;
--e Check if the file exists (including the directory)
+</pre>
+<p>
+  <span style = "font-weight: bold;"> [A] List of commonly used file operators </span>
+</p>
+<pre>
+-e Check if the file exists(including the directory)
 -f Check if the file is a regular file
 -d Check if the directory exists
 -r Check if it can be read
@@ -963,201 +935,188 @@ if (-f $ file) {
 -M Get the number of days that have passed since the last update
 -A Get the number of days that have passed since the last access
 -s Get phi size (unit is bytes)
-&lt;/ pre&gt;
-
-&lt;div id = "date-time"&gt; &lt;/ div&gt;
-&lt;h3&gt; 7 Time / Time &lt;/ h3&gt;
-
-&lt;h4&gt; time &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20081008122347.html"&gt; time function &lt;/a&gt; to get the elapsed seconds from the epoch to the present.
-
-&lt;pre&gt;
-$ ret = time;
-&lt;/ pre&gt;
-
-The epoch time is January 1, 1970.
-
-&lt;h4&gt; localtime &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20081009122357.html"&gt; localtime function &lt;/a&gt; to get the current date and time.
-
-&lt;pre&gt;
-($ sec, $ min, $ hour, $ mday, $ mon, $ year, $ wday) = localtime;
-$ year + = 1900;
-$ mon + = 1;
-&lt;/ pre&gt;
-
-From the beginning, the order is "seconds, minutes, hours, days, months, years, days of the week". The year is an elapsed year from 1900, so you need to add 1900 to the year you acquired it. Months start at 0, so you need to add 1 to get the actual month.
-
-&lt;h4&gt; timelocal (Time :: Local) &lt;/ h4&gt;
-
-To get the elapsed seconds since the epoch from the date and time information, use the &lt;a href="/blog/20081014122416.html"&gt; Time :: Local module's timelocal function &lt;/a&gt;.
-
-&lt;pre&gt;
-use Time :: Local'timelocal';
-$ ret = timelocal ($ sec, $ min, $ hour, $ mday, $ mon, $ year);
-&lt;/ pre&gt;
-
-&lt;h4&gt; sleep &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20170522149546.html"&gt; sleep function &lt;/a&gt; to sleep. The sleep time is specified in seconds.
-
-&lt;pre&gt;
-sleep $ sec;
-&lt;/ pre&gt;
-
-When it sleeps, the program will stop during that time.
-
-&lt;h4&gt; usleep (Time :: HiRes) &lt;/ h4&gt;
-
-To sleep in microseconds, use the usleep function of the &lt;a href="/blog/20180309152509.html"&gt; Time :: HiRes &lt;/a&gt; module.
-
-&lt;pre&gt;
-use Time :: HiRes'usleep';
-usleep $ microsec;
-&lt;/ pre&gt;
-
-&lt;div id = "other"&gt; &lt;/ div&gt;
-&lt;h3&gt; 8 Other important functions &lt;/ h3&gt;
-
-&lt;h4&gt; defined &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100219126425.html"&gt; defined function &lt;/a&gt; to see if the value is defined.
-
-&lt;pre&gt;
-$ ret = defined ($ val);
-&lt;/ pre&gt;
-
-&lt;h4&gt; kill &lt;/ h4&gt;
-
-Use the kill function to signal the process.
-
-&lt;pre&gt;
-kill ($ signal_number, $ child_process_id);
-&lt;/ pre&gt;
-
-&lt;h4&gt; caller &lt;/ h4&gt;
-
-Use the caller function to get information about the calling function.
-
-&lt;pre&gt;
-($ package, $ filename, $ line, $ subroutine) = caller (0);
-&lt;/ pre&gt;
-
-In the argument, specify how many layers the caller information should be acquired. The return value will be the package name, file name, line number, and subroutine name in that order.
-
-&lt;h4&gt; getpwuid &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20101222130016.html"&gt; getpwuid function &lt;/a&gt; to get the execution username.
-
-&lt;pre&gt;
-$ ret = getpwuid ($&gt;);
-&lt;/ pre&gt;
-
-Specify the user ID in the first argument. The execution user ID is stored in a special variable called $&gt;, so specify this.
-
-&lt;h4&gt; hostname (Sys :: Hostname) &lt;/ h4&gt;
-
-To get the hostname, use the hostname function in the &lt;a href="/blog/20100522127696.html"&gt; Sys :: Hostname module &lt;/a&gt;.
-
-&lt;pre&gt;
-use Sys :: Hostname'hostname';
-$ ret = hostname;
-&lt;/ pre&gt;
-
-&lt;h4&gt; die &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100212126425.html"&gt; die function &lt;/a&gt; to display an error message and exit the program.
-
-&lt;pre&gt;
-die $ message;
-&lt;/ pre&gt;
-
-&lt;h4&gt; warn &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100213126425.html"&gt; warn function &lt;/a&gt; to display the warning message.
-
-&lt;pre&gt;
-warn $ message;
-&lt;/ pre&gt;
-
-&lt;h4&gt; eval block &lt;/ h4&gt;
-
-Use the eval block to catch exceptions. (See &lt;a href="/blog/20100411127089.html"&gt; Exception Handling &lt;/a&gt;)
-
-&lt;pre&gt;
+</pre>
+<div id = "date-time"> </div>
+<h3> 7 Time / Time </h3>
+<h4> time </h4>
+<p>
+  Use the <a href="/blog/20081008122347.html"> time function</a> to get the elapsed seconds from the epoch to the present.
+</p>
+<pre>
+$ret = time;
+</pre>
+<p>
+  The epoch time is January 1, 1970.
+</p>
+<h4> localtime </h4>
+<p>
+  Use the <a href="/blog/20081009122357.html"> localtime function</a> to get the current date and time.
+</p>
+<pre>
+($sec, $min, $hour, $mday, $mon, $year, $wday) = localtime;
+$year + = 1900;
+$mon + = 1;
+</pre>
+<p>
+  From the beginning, the order is "seconds, minutes, hours, days, months, years, days of the week". The year is an elapsed year from 1900, so you need to add 1900 to the year you acquired it. Months start at 0, so you need to add 1 to get the actual month.
+</p>
+<h4> timelocal (Time::Local) </h4>
+<p>
+  To get the elapsed seconds since the epoch from the date and time information, use the <a href="/blog/20081014122416.html"> Time::Local module's timelocal function</a>.
+</p>
+<pre>
+use Time::Local'timelocal';
+$ret = timelocal ($sec, $min, $hour, $mday, $mon, $year);
+</pre>
+<h4> sleep </h4>
+<p>
+  Use the <a href="/blog/20170522149546.html"> sleep function</a> to sleep. The sleep time is specified in seconds.
+</p>
+<pre>
+sleep $sec;
+</pre>
+<p>
+  When it sleeps, the program will stop during that time.
+</p>
+<h4> usleep(Time::HiRes) </h4>
+<p>
+  To sleep in microseconds, use the usleep function of the <a href="/blog/20180309152509.html"> Time::HiRes</a> module.
+</p>
+<pre>
+use Time::HiRes'usleep';
+usleep $microsec;
+</pre>
+<div id = "other"> </div>
+<h3> 8 Other important functions </h3>
+<h4> defined </h4>
+<p>
+  Use the <a href="/blog/20100219126425.html"> defined function</a> to see if the value is defined.
+</p>
+<pre>
+$ret = defined($val);
+</pre>
+<h4> kill </h4>
+<p>
+  Use the kill function to signal the process.
+</p>
+<pre>
+kill($signal_number, $child_process_id);
+</pre>
+<h4> caller </h4>
+<p>
+  Use the caller function to get information about the calling function.
+</p>
+<pre>
+($package, $filename, $line, $subroutine) = caller(0);
+</pre>
+<p>
+  In the argument, specify how many layers the caller information should be acquired. The return value will be the package name, file name, line number, and subroutine name in that order.
+</p>
+<h4> getpwuid </h4>
+<p>
+  Use the <a href="/blog/20101222130016.html"> getpwuid function</a> to get the execution username.
+</p>
+<pre>
+$ret = getpwuid($&gt;);
+</pre>
+<p>
+  Specify the user ID in the first argument. The execution user ID is stored in a special variable called $>, so specify this.
+</p>
+<h4> hostname (Sys::Hostname) </h4>
+<p>
+  To get the hostname, use the hostname function in the <a href="/blog/20100522127696.html"> Sys::Hostname module</a>.
+</p>
+<pre>
+use Sys::Hostname'hostname';
+$ret = hostname;
+</pre>
+<h4> die </h4>
+<p>
+  Use the <a href="/blog/20100212126425.html"> die function</a> to display an error message and exit the program.
+</p>
+<pre>
+die $message;
+</pre>
+<h4> warn </h4>
+<p>
+  Use the <a href="/blog/20100213126425.html"> warn function</a> to display the warning message.
+</p>
+<pre>
+warn $message;
+</pre>
+<h4> eval block </h4>
+<p>
+  Use the eval block to catch exceptions. (See <a href="/blog/20100411127089.html"> Exception Handling</a>)
+</p>
+<pre>
 eval {
   Processing that may cause an exception
 };
 
-if ($ @) {
+if ($@) {
   What to do if an exception occurs
 }
-&lt;/ pre&gt;
-
-If an exception occurs, the content of the error is set in $ @.
-
-&lt;h4&gt; __PACKAGE__ &lt;/ h4&gt;
-
-You can get the current package name with __PACKAGE__.
-
-&lt;pre&gt;
-$ ret = __PACKAGE__;
-&lt;/ pre&gt;
-
-&lt;h4&gt; __LINE__ &lt;/ h4&gt;
-
-You can get the line number on the script with __LINE__.
-
-&lt;pre&gt;
-$ ret = __LINE__;
-&lt;/ pre&gt;
-
-&lt;h4&gt; __FILE__ &lt;/ h4&gt;
-
-You can get the script file name with __FILE__.
-
-&lt;pre&gt;
-$ ret = __FILE__;
-&lt;/ pre&gt;
-
-&lt;div id = "function-search"&gt; &lt;/ div&gt;
-&lt;h3&gt; 9 How to look up function and module documentation &lt;/ h3&gt;
-
-Function documentation
-
-&lt;pre&gt;
+</pre>
+<p>
+  If an exception occurs, the content of the error is set in $@.
+</p>
+<h4> __PACKAGE__ </h4>
+<p>
+  You can get the current package name with __PACKAGE__.
+</p>
+<pre>
+$ret = __PACKAGE__;
+</pre>
+<h4> __LINE__ </h4>
+<p>
+  You can get the line number on the script with __LINE__.
+</p>
+<pre>
+$ret = __LINE__;
+</pre>
+<h4> __FILE__ </h4>
+<p>
+  You can get the script file name with __FILE__.
+</p>
+<pre>
+$ret = __FILE__;
+</pre>
+<div id = "function-search"> </div>
+<h3> 9 How to look up function and module documentation </h3>
+<p>
+  Function documentation
+</p>
+<pre>
 perldoc -f function name
-&lt;/ pre&gt;
-
-You can see it at.
-
-The module documentation is
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can see it at.
+</p>
+<p>
+  The module documentation is
+</p>
+<pre>
 perldoc module name
-&lt;/ pre&gt;
-
-You can see it at.
-
-If you want to output the document to a file, you can use redirection.
-
-&lt;pre&gt;
+</pre>
+<p>
+  You can see it at.
+</p>
+<p>
+  If you want to output the document to a file, you can use redirection.
+</p>
+<pre>
 perldoc -f function name&gt; file name
-&lt;/ pre&gt;
-
-&lt;div id = "special-variable"&gt; &lt;/ div&gt;
-&lt;h3&gt; 10 Frequently used special variables &lt;/ h3&gt;
-
-&lt;pre&gt;
+</pre>
+<div id = "special-variable"> </div>
+<h3> 10 Frequently used special variables </h3>
+<pre>
 $. Line number of the file being read
-$$ Process ID
+$$Process ID
 $&gt; Execution user ID
 $) Execution group ID
-$ 0 Name of the program being executed
-$ ^ O OS name
-$ ^ T Time when the program started
+$0 Name of the program being executed
+$^ O OS name
+$^ T Time when the program started
 @INC module search path
 % INC Information on loaded modules
 % ENV environment variable
@@ -1165,190 +1124,183 @@ $ ^ T Time when the program started
 @ARGV command line arguments
 @_ Subroutine arguments
 $! OS error
-$ @ Eval error
-&lt;/ pre&gt;
-
-&lt;div id = "standard-module"&gt; &lt;/ div&gt;
-&lt;h3&gt; 11 Frequently used modules &lt;/ h3&gt;
-
-&lt;h4&gt; File :: Spec &lt;/ h4&gt;
-
-You can use &lt;a href="/blog/20100412127089.html"&gt; File :: Spec module &lt;/a&gt; to create a file name according to the OS.
-
-&lt;pre&gt;
-use File :: Spec;
-my $ file_name = File :: Spec-&gt; catfile ('dir','file.txt');
-&lt;/ pre&gt;
-
-On Windows operating systems, $ file_name is dir \ file.txt, and on Unix operating systems, the file name is dir / file.txt.
-
-&lt;h4&gt; FindBin &lt;/ h4&gt;
-
-You can use the &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt; module to get the name of the directory where the script you are running is located.
-
-&lt;pre&gt;
+$@ Eval error
+</pre>
+<div id = "standard-module"> </div>
+<h3> 11 Frequently used modules </h3>
+<h4> File::Spec </h4>
+<p>
+  You can use <a href="/blog/20100412127089.html"> File::Spec module</a> to create a file name according to the OS.
+</p>
+<pre>
+use File::Spec;
+my $file_name = File::Spec-&gt; catfile ('dir','file.txt');
+</pre>
+<p>
+  On Windows operating systems, $file_name is dir\file.txt, and on Unix operating systems, the file name is dir / file.txt.
+</p>
+<h4> FindBin </h4>
+<p>
+  You can use the <a href="/blog/20100524127696.html"> FindBin</a> module to get the name of the directory where the script you are running is located.
+</p>
+<pre>
 use FindBin;
-my $ script_dir = $ FindBin :: Bin;
-&lt;/ pre&gt;
-
-$ FindBin :: Bin contains the name of the directory where the script you are running is located.
-
-&lt;h4&gt; lib &lt;/ h4&gt;
-
-You can add a module search path using the &lt;a href="/blog/20100525127859.html"&gt; lib module &lt;/a&gt;.
-
-&lt;pre&gt;
+my $script_dir = $FindBin::Bin;
+</pre>
+<p>
+  $FindBin::Bin contains the name of the directory where the script you are running is located.
+</p>
+<h4> lib </h4>
+<p>
+  You can add a module search path using the <a href="/blog/20100525127859.html"> lib module</a>.
+</p>
+<pre>
 use lib qw /. lib /;
-&lt;/ pre&gt;
-
-This is an example of adding the current directory and the lib directory of the current directory to the module search path.
-
-&lt;h4&gt; Carp &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100430127089.html"&gt; Carp module &lt;/a&gt; to report an error from the caller's perspective. Use croak instead of die and carp instead of warn.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This is an example of adding the current directory and the lib directory of the current directory to the module search path.
+</p>
+<h4> Carp </h4>
+<p>
+  Use the <a href="/blog/20100430127089.html"> Carp module</a> to report an error from the caller's perspective. Use croak instead of die and carp instead of warn.
+</p>
+<pre>
 use Carp qw / croak carp /;
 
 Same as # die
-croak ($ ​​message);
+croak ($​​message);
 
 Same as # warn
-carp ($ message);
-&lt;/ pre&gt;
+carp ($message);
+</pre>
+<h4> Get::Options </h4>
+<p>
+  If you want to receive options with <a href="/blog/20080108132865.html"> command line arguments</a>, use <a href="/blog/20100514127696.html"> Get::Options module</a> To use. For example, suppose you want to receive the following options:
+</p>
+<pre>
+perl script_name - length = 100 - file = test.txt - verbose
+</pre>
+<p>
+  To receive this option, write:
+</p>
+<pre>
+use Getopt::Long'GetOptions';
 
-&lt;h4&gt; Get :: Options &lt;/ h4&gt;
+# Set default value
+my $data ='file.dat';
+my $length = 24;
+my $verbose;
 
-If you want to receive options with &lt;a href="/blog/20080108132865.html"&gt; command line arguments &lt;/a&gt;, use &lt;a href="/blog/20100514127696.html"&gt; Get :: Options module &lt;/a&gt; To use. For example, suppose you want to receive the following options:
-
-&lt;pre&gt;
-perl script_name --length = 100 --file = test.txt --verbose
-&lt;/ pre&gt;
-
-To receive this option, write:
-
-&lt;pre&gt;
-use Getopt :: Long'GetOptions';
-
-#Set default value
-my $ data ='file.dat';
-my $ length = 24;
-my $ verbose;
-
-#Receive value from command line option
+# Receive value from command line option
 # (Numeric value,String, boolean value)
 GetOptions (
-  'length = i'=&gt; \ $ length,
-  'file = s'=&gt; \ $ data,
-  'verbose' =&gt; \ $ verbose
+  'length = i'=&gt; \ $length,
+  'file = s'=&gt; \ $data,
+  'verbose' =&gt; \ $verbose
 );
-&lt;/ pre&gt;
-
-&lt;h4&gt; URI &lt;/ h4&gt;
-
-Use the URI module to handle URL operations conveniently.
-
-&lt;pre&gt;
+</pre>
+<h4> URI </h4>
+<p>
+  Use the URI module to handle URL operations conveniently.
+</p>
+<pre>
 use URI;
 
-my $ url = URI-&gt; new ('http://www.perl.com/index.html');
+my $url = URI-&gt; new ('http://www.perl.com/index.html');
 
 # URL schema name http
-my $ schema = $ url-&gt; schema;
+my $schema = $url-&gt; schema;
 
 # URL host name www.perl.com
-my $ host = $ url-&gt; host;
+my $host = $url-&gt; host;
 
 # URL path part /index.html
-my $ path = $ url-&gt; path;
+my $path = $url-&gt; path;
 
 # URL query string settings
-$ url-&gt; query_form (name =&gt;'taro', age =&gt; 13);
+$url-&gt; query_form (name =&gt;'taro', age =&gt; 13);
 
-#URL query string name = taro &amp; age = 13
-my $ query = $ url-&gt; query;
+# URL query string name = taro &amp; age = 13
+my $query = $url-&gt; query;
 
-#Get URL as a string http://www.perl.com/index.html?name=taro&amp;age=13
-my $ url_str = $ url-&gt; as_string;
-&lt;/ pre&gt;
+# Get URL as a string http://www.perl.com/index.html?name=taro&amp;age=13
+my $url_str = $url-&gt; as_string;
+</pre>
+<h4> Data::Dumper </h4>
+<p>
+  Use the <a href="/blog/20080208120248.html"> Data::Dumper module</a> to output the contents of an array or hash.
+</p>
+<pre>
+use Data::Dumper;
+my $hash = {a =&gt; 1, b =&gt; 2};
+print Data::Dumper-&gt; Dump ([$hash], ['$hash']);
+</pre>
+<h4> XML::Simple </h4>
+<p>
+  Use the <a href="/blog/20100424127089.html"> XML::Simple module</a> to convert XML to a Perl data structure.
+</p>
+<pre>
+use XML::Simple;
+my $xml = XML::Simple-&gt; new;
+my $hash = $xml-&gt; XMLin ($xml_file);
+</pre>
+<p>
+  You can parse an XML file with the XMLin method and convert it to a Perl data structure.
+</p>
+<h4> LWP::UserAgent </h4>
+<p>
+  Use the LWP::UserAgent module to get information from the internet.
+</p>
+<pre>
+use LWP::UserAgent;
+my $ua = LWP::UserAgent-&gt; new;
+my $response = $ua-&gt; get ($url);
 
-&lt;h4&gt; Data :: Dumper &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20080208120248.html"&gt; Data :: Dumper module &lt;/a&gt; to output the contents of an array or hash.
-
-&lt;pre&gt;
-use Data :: Dumper;
-my $ hash = {a =&gt; 1, b =&gt; 2};
-print Data :: Dumper-&gt; Dump ([$ hash], ['$ hash']);
-&lt;/ pre&gt;
-
-&lt;h4&gt; XML :: Simple &lt;/ h4&gt;
-
-Use the &lt;a href="/blog/20100424127089.html"&gt; XML :: Simple module &lt;/a&gt; to convert XML to a Perl data structure.
-
-&lt;pre&gt;
-use XML :: Simple;
-my $ xml = XML :: Simple-&gt; new;
-my $ hash = $ xml-&gt; XMLin ($ xml_file);
-&lt;/ pre&gt;
-
-You can parse an XML file with the XMLin method and convert it to a Perl data structure.
-
-&lt;h4&gt; LWP :: UserAgent &lt;/ h4&gt;
-
-Use the LWP :: UserAgent module to get information from the internet.
-
-&lt;pre&gt;
-use LWP :: UserAgent;
-my $ ua = LWP :: UserAgent-&gt; new;
-my $ response = $ ua-&gt; get ($ url);
-
-my $ content; # Obtained content
-if ($ response-&gt; is_success) {
-  $ content = $ response-&gt; content;
+my $content; # Obtained content
+if ($response-&gt; is_success) {
+  $content = $response-&gt; content;
 }
 else {
-  die ($ response-&gt; status_line);
+  die($response-&gt; status_line);
 }
-&lt;/ pre&gt;
+</pre>
+<p>
+  Get the URL of the page you want to get in the get method. An HTTP::Response object will be returned, so check if the is_success method succeeded. If successful, get the content of the page obtained by the content method.
+</p>
+<h4> Net::FTP </h4>
+<p>
+  If you want to do FTP, use <a href="/blog/20091115124667.html"> Net::FTP module</a>.
+</p>
+<pre>
+use Net::FTP;
 
-Get the URL of the page you want to get in the get method. An HTTP :: Response object will be returned, so check if the is_success method succeeded. If successful, get the content of the page obtained by the content method.
+# Specify the host name (or IP address) to connect to the FTP server
+my $ftp = Net::FTP-&gt; new ($host)
+  or die "Cannot connect to $host: $@";
 
-&lt;h4&gt; Net :: FTP &lt;/ h4&gt;
-
-If you want to do FTP, use &lt;a href="/blog/20091115124667.html"&gt; Net :: FTP module &lt;/a&gt;.
-
-&lt;pre&gt;
-use Net :: FTP;
-
-#Specify the host name (or IP address) to connect to the FTP server
-my $ ftp = Net :: FTP-&gt; new ($ host)
-  or die "Cannot connect to $ host: $ @";
-
-#Login by specifying user name and password
-$ ftp-&gt; login ($ user, $ password)
-  or die "Cannot login", $ ftp-&gt; message;
+# Login by specifying user name and password
+$ftp-&gt; login ($user, $password)
+  or die "Cannot login", $ftp-&gt; message;
 
 # Change current directory
-$ ftp-&gt; cwd ($ dir)
-  or die "Cannot change working directory", $ ft
+$ftp-&gt; cwd ($dir)
+  or die "Cannot change working directory", $ft
 
 # Get file
-$ ftp-&gt; get ($ file)
-  or die "get failed", $ ftp-&gt; message;
+$ftp-&gt; get ($file)
+  or die "get failed", $ftp-&gt; message;
 
 # FTP disconnection
-$ ftp-&gt; quit;
-&lt;/ pre&gt;
-
-&lt;h4&gt; Text :: Diff &lt;/ h4&gt;
-
-If you want to check the difference between files, use &lt;a href="/blog/20100414127089.html"&gt; Text :: Diff module &lt;/a&gt;.
-
-&lt;pre&gt;
-use Text :: Diff'diff';
-my $ diff = diff ($ file1, $ file2);
-&lt;/ pre&gt;
+$ftp-&gt; quit;
+</pre>
+<h4> Text::Diff </h4>
+<p>
+  If you want to check the difference between files, use <a href="/blog/20100414127089.html"> Text::Diff module</a>.
+</p>
+<pre>
+use Text::Diff'diff';
+my $diff = diff ($file1, $file2);
+</pre>
 
   </div>
   <div class="bottom">

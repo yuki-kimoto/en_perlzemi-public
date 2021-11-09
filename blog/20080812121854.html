@@ -62,21 +62,21 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </ span> </a>
+      <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </ span> </a>
+      <span itemprop = "name"> File input / output </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080812121854.html"> Disable buffering </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080812121854.html"> Disable buffering </a></h2>
 <p>
   Block buffering was very efficient in terms of performance because it stores the output in a write buffer and writes the accumulated amount all at once.
 </p>
@@ -103,76 +103,80 @@
   If block buffering is performed at this time, it may happen that you intended to send data to the other party but did not send it. It remains in its own write buffer.
 </p>
 <p>
-  One way to solve this is to change block buffering to command buffering. To enable command buffering <a href="/blog/20161102147817.html"> Special variables </a> Set "<strong> $ | </ strong>" to <b> 1 </ b> To do.
+  One way to solve this is to change block buffering to command buffering. To enable command buffering <a href="/blog/20161102147817.html"> Special variables</a> Set "<strong> $| </strong>" to <b> 1 </b> To do.
 </p>
 <pre>
-$ | = 1;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Sample &lt;/ h3&gt;
-
-Below is a sample to switch to command buffering.
-
-&lt;pre&gt;
+$| = 1;
+</pre>
+<h3> Sample </h3>
+<p>
+  Below is a sample to switch to command buffering.
+</p>
+<pre>
 use strict;
 use warnings;
 
 # File for writing (Note that it will be overwritten)
-my $ file = "sample20080812.txt";
+my $file = "sample20080812.txt";
 
-open (my $ fh, "&gt;", $ file)
-  or die "Cannot open $ file: $!";
+open(my $fh, "&gt;", $file)
+  or die "Cannot open $file: $!";
 
-#Change default output handle
-my $ oldfh = select $ fh;
+# Change default output handle
+my $oldfh = select $fh;
 
-#Enable command buffering.
-$ | = 1;
+# Enable command buffering.
+$| = 1;
 
 # Reselect to the original filehandle.
-select $ oldfh;
+select $oldfh;
 
-print $ fh "Write without delay \ n";
-print "Written at this point. Size is". -S $ file. "Bytes. \ N";
+print $fh "Write without delay\n";
+print "Written at this point. Size is". -S $file. "Bytes.\n";
 sleep 3;
 
-close $ fh or die "Cannot close $ file";
-&lt;/ pre&gt;
+close $fh or die "Cannot close $file";
+</pre>
+<p>
+  (Reference) <a href="/blog/20170522149546.html"> sleep function</a>, <a href="/blog/20080718121643.html"> open function</a>, <a href="/blog" /20160312145776.html"> close function</a>, <a href="/blog/20100212126425.html"> die function</a>
+</p>
+<h3> Command buffering </h3>
+<p>
+  Perl does not support writing without buffering at all. You don't have to write one character at a time. Instead, you can use command buffering to write when the command print is finished.
+</p>
+<p>
+  It is guaranteed that it will be written to the output before you write the print function and execute the following statement.
+</p>
+<p>
+  Command buffering is often used for interactive communication. For example, suppose you send data to someone and wait for a reply. To send data over the network, write to something called a socket (a kind of filehandle) and wait for a reply. At this time, if block buffering is enabled, it means that even if you think that you wrote it, it is actually stored in the write buffer and you are not actually writing it.
+</p>
+<p>
+  Command buffering is used to avoid this.
+</p>
+<h3> Code explanation </h3>
+<h4> (1) Enable command buffering </h4>
+<pre>
+# Change default output handle
+my $oldfh = select $fh;
 
-(Reference) &lt;a href="/blog/20170522149546.html"&gt; sleep function &lt;/a&gt;, &lt;a href="/blog/20080718121643.html"&gt; open function &lt;/a&gt;, &lt;a href="/blog" /20160312145776.html"&gt; close function &lt;/a&gt;, &lt;a href="/blog/20100212126425.html"&gt; die function &lt;/a&gt;
-
-&lt;h3&gt; Command buffering &lt;/ h3&gt;
-
-Perl does not support writing without buffering at all. You don't have to write one character at a time. Instead, you can use command buffering to write when the command print is finished.
-
-It is guaranteed that it will be written to the output before you write the print function and execute the following statement.
-
-Command buffering is often used for interactive communication. For example, suppose you send data to someone and wait for a reply. To send data over the network, write to something called a socket (a kind of filehandle) and wait for a reply. At this time, if block buffering is enabled, it means that even if you think that you wrote it, it is actually stored in the write buffer and you are not actually writing it.
-
-Command buffering is used to avoid this.
-
-&lt;h3&gt; Code explanation &lt;/ h3&gt;
-
-&lt;h4&gt; (1) Enable command buffering &lt;/ h4&gt;
-
-&lt;pre&gt;
-#Change default output handle
-my $ oldfh = select $ fh;
-
-#Enable command buffering.
-$ | = 1;
+# Enable command buffering.
+$| = 1;
 
 # Reselect to the original filehandle.
-select $ oldfh;
-&lt;/ pre&gt;
-
-Command buffering is enabled by setting the special variable $ | to 1. It should be noted here that the operation for $ | is the operation for the "default output destination".
-
-The "default output destination" is the output destination when the file handle is omitted in the print function. The default output destination is STDOUT.
-
-To enable command buffering for writes to $ fh, change the "default destination" with the select function, then set the value of $ | to 1.
-
-The select function returns the current default output destination, so save it, manipulate $ |, and then restore it.
+select $oldfh;
+</pre>
+<p>
+  Command buffering is enabled by setting the special variable $| to 1. It should be noted here that the operation for $| is the operation for the "default output destination".
+</p>
+<p>
+  The "default output destination" is the output destination when the file handle is omitted in the print function. The default output destination is STDOUT.
+</p>
+<p>
+  To enable command buffering for writes to $fh, change the "default destination" with the select function, then set the value of $| to 1.
+</p>
+<p>
+  The select function returns the current default output destination, so save it, manipulate $|, and then restore it.
+</p>
 
   </div>
   <div class="bottom">

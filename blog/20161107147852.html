@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Variables </ span>
+      <span itemprop = "name"> Variables </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20161107147852.html"> Perl variables </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20161107147852.html"> Perl variables </a></h2>
 <p>
   A description of Perl variables. Explains variable declarations and variable types.
 </p>
@@ -91,126 +91,126 @@
 </div>
 
 
-<h3> Variable declaration </ h3>
+<h3> Variable declaration </h3>
 <p>
   Describes Perl variable declarations.
 </p>
-<h4> Declaration of "lexical variable" by "my" </ h4>
+<h4> Declaration of "lexical variable" by "my" </h4>
 <p>
   You can use "my" to declare a "lexical variable".
 </p>
 <pre>
-#Declaration of scalar variables
-my $ num;
+# Declaration of scalar variables
+my $num;
 
-#Declaration of array variables
+# Declaration of array variables
 my @nums;
 
 # Hash variable declaration
-my% score;
-&lt;/ pre&gt;
+my %score;
+</pre>
+<p>
+  For a detailed explanation of "declaration of lexical variables" using "my", see the following article.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080307120491.html"> Declare lexical variables using my</a>
+  </li>
+</ul>
+<h4> Declaration of "package variable" by "our" </h4>
+<p>
+  You can use "our" to declare "package variables".
+</p>
+<p>
+  Use <strong> our </strong> to declare package variables.
+</p>
+<pre>
+# Declaration of scalar variables
+our $NUM;
 
-For a detailed explanation of "declaration of lexical variables" using "my", see the following article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080307120491.html"&gt; Declare lexical variables using my &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Declaration of "package variable" by "our" &lt;/ h4&gt;
-
-You can use "our" to declare "package variables".
-
-Use &lt;strong&gt; our &lt;/ strong&gt; to declare package variables.
-
-&lt;pre&gt;
-#Declaration of scalar variables
-our $ NUM;
-
-#Declaration of array variables
+# Declaration of array variables
 our @NUMS;
 
 # Hash variable declaration
 our% SCORE;
-&lt;/ pre&gt;
-
-See the following article for "declaring package variables" using "our".
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20080308120495.html"&gt; Declaration of package variables by our &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h4&gt; Saving and restoring values ​​with "local" &lt;/ h4&gt;
-
-You can use "local" to temporarily save a package variable and restore it at the end of scope.
-
-&lt;pre&gt;
-our $ NUM = 5;
+</pre>
+<p>
+  See the following article for "declaring package variables" using "our".
+</p>
+<ul>
+  <li>
+    <a href="/blog/20080308120495.html"> Declaration of package variables by our</a>
+  </li>
+</ul>
+<h4> Saving and restoring values ​​with "local" </h4>
+<p>
+  You can use "local" to temporarily save a package variable and restore it at the end of scope.
+</p>
+<pre>
+our $NUM = 5;
 {
-  local $ NUM = 3;
+  local $NUM = 3;
 }
-# Here, "$ NUM" returns to "5" which is the "original value"
-&lt;/ pre&gt;
-
-For "save and restore values" by "local", see the following article.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    local is explained in "&lt;a href="/blog/20080309120507.html"&gt; local --temporarily save and restore package variables &lt;/a&gt;".
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-&lt;h3&gt; Perl variable type &lt;/ h3&gt;
-
-Perl has three "variable types": "scalar variables", "array variables", and "hash variables". Please note that it does not indicate the type of a number like "int type" and "double type" like C language and Java.
-
-&lt;h4&gt; "Scalar variable"-stores one value &lt;/ h4&gt;
-
-A "scalar variable" can contain only one value within a variable. A scalar variable is represented by prefixing the variable name with "$".
-
-&lt;b&gt; Typical scalar value &lt;/ b&gt;
-
-Typical scalar values ​​are as follows.
-
-&lt;ul class = "check-list"&gt;
-&lt;ul&gt;
-  &lt;li&gt;
+# Here, "$NUM" returns to "5" which is the "original value"
+</pre>
+<p>
+  For "save and restore values" by "local", see the following article.
+</p>
+<ul>
+  <li>
+    local is explained in "<a href="/blog/20080309120507.html"> local - temporarily save and restore package variables</a>".
+  </li>
+</ul>
+<h3> Perl variable type </h3>
+<p>
+  Perl has three "variable types": "scalar variables", "array variables", and "hash variables". Please note that it does not indicate the type of a number like "int type" and "double type" like C language and Java.
+</p>
+<h4> "Scalar variable"-stores one value </h4>
+<p>
+  A "scalar variable" can contain only one value within a variable. A scalar variable is represented by prefixing the variable name with "$".
+</p>
+<p>
+  <b> Typical scalar value </b>
+</p>
+<p>
+  Typical scalar values ​​are as follows.
+</p>
+<ul class = "check-list">
+<ul>
+  <li>
     String
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     Numerical value
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
     reference
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Undefined value (&lt;a href="/blog/20100220126425.html"&gt; undef &lt;/a&gt;)
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-&lt;/ ul&gt;
-
-&lt;b&gt; Sample of assignment of scalar value to scalar variable &lt;/ b&gt;
-
-&lt;pre&gt;
-my $ scalar;
-$ scalar = "one"; #string
-$ scalar = 2; #number
-$ scalar = [3, 4, 5]; # Reference to array
-$ scalar = {x =&gt; 6}; # Reference to hash
-$ scalar = sub {return 7}; #Reference to subroutine
-$ scalar = undef; # undefined value
-&lt;/ pre&gt;
-
-&lt;h4&gt; "Array variable" --stores multiple values ​​&lt;/ h4&gt;
-
-An "array variable" can contain multiple values. Only scalar variables can be included in the "elements" of an array variable.
-
-An array variable is represented by prefixing the variable with "@". Only "list ()" can be assigned to an array variable.
-
-&lt;pre&gt;
+  </li>
+  <li>
+    Undefined value (<a href="/blog/20100220126425.html"> undef</a>)
+  </li>
+</ul>
+</ul>
+<p>
+  <b> Sample of assignment of scalar value to scalar variable </b>
+</p>
+<pre>
+my $scalar;
+$scalar = "one"; # string
+$scalar = 2; # number
+$scalar = [3, 4, 5]; # Reference to array
+$scalar = {x =&gt; 6}; # Reference to hash
+$scalar = sub {return 7}; # Reference to subroutine
+$scalar = undef; # undefined value
+</pre>
+<h4> "Array variable" - stores multiple values ​​</h4>
+<p>
+  An "array variable" can contain multiple values. Only scalar variables can be included in the "elements" of an array variable.
+</p>
+<p>
+  An array variable is represented by prefixing the variable with "@". Only "list ()" can be assigned to an array variable.
+</p>
+<pre>
 # Array variables can have scalars as elements
 my @elements = (
   "one",
@@ -220,62 +220,66 @@ my @elements = (
   sub {return 8},
   undef
 )
-&lt;/ pre&gt;
-
-&lt;b&gt; Array nesting results in array concatenation &lt;/ b&gt;
-
-In Perl, array nesting is an array concatenation.
-
-&lt;pre&gt;
+</pre>
+<p>
+  <b> Array nesting results in array concatenation </b>
+</p>
+<p>
+  In Perl, array nesting is an array concatenation.
+</p>
+<pre>
 my @list_in_list = ((1, 2), (3, 4));
 # It will be the same as this.
 my @list = (1, 2, 3, 4);
-&lt;/ pre&gt;
-
-&lt;h4&gt; "Hash variable"-stores key / value pairs &lt;/ h4&gt;
-
-The hash has the following characteristics.
-
-Includes multiple values ​​that are a set of "key and value". Only scalar variables can be included in the "elements" of a hash variable.
-
-A hash variable is represented by prefixing the variable with "%". Only "list ()" can be assigned to a hash variable.
-
-&lt;pre&gt;
-my% scores = (math =&gt; 70, engligh =&gt; 80);
-&lt;/ pre&gt;
-
-&lt;b&gt; Array-type to hash-type conversion &lt;/ b&gt;
-
-Both array variables and hash variables have a list as their content, so they can be converted to each other.
-
-&lt;pre&gt;
+</pre>
+<h4> "Hash variable"-stores key / value pairs </h4>
+<p>
+  The hash has the following characteristics.
+</p>
+<p>
+  Includes multiple values ​​that are a set of "key and value". Only scalar variables can be included in the "elements" of a hash variable.
+</p>
+<p>
+  A hash variable is represented by prefixing the variable with "%". Only "list ()" can be assigned to a hash variable.
+</p>
+<pre>
+my %scores = (math =&gt; 70, engligh =&gt; 80);
+</pre>
+<p>
+  <b> Array-type to hash-type conversion </b>
+</p>
+<p>
+  Both array variables and hash variables have a list as their content, so they can be converted to each other.
+</p>
+<pre>
 @array =% hash;
 % hash = @array;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Variables and scope &lt;/ h3&gt;
-
-Another thing to know about variables is their &lt;b&gt; scope &lt;/ b&gt; and &lt;b&gt; lifetime &lt;/ b&gt;. Scope is a term that describes where a variable is visible. Lifespan is the length of time a variable stores a value.
-
-For example, for a lexical variable declared with my, the scope is from "{" to "}".
-
-&lt;pre&gt;
+</pre>
+<h3> Variables and scope </h3>
+<p>
+  Another thing to know about variables is their <b> scope </b> and <b> lifetime </b>. Scope is a term that describes where a variable is visible. Lifespan is the length of time a variable stores a value.
+</p>
+<p>
+  For example, for a lexical variable declared with my, the scope is from "{" to "}".
+</p>
+<pre>
 {
   # Declare here
-  my $ num = 3;
+  my $num = 3;
 }
 # I can't see from here
-&lt;/ pre&gt;
-
-The value saved in "$ num" disappears from the memory when the scope by "{...}" ends, and the variable itself called $ num disappears.
-
-See the following articles for more information on variable scope and lifetime.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;a href="/blog/20110128130016.html"&gt; Understand Perl scope &lt;/a&gt;
-  &lt;/ li&gt;
-&lt;/ ul&gt;
+</pre>
+<p>
+  The value saved in "$num" disappears from the memory when the scope by "{...}" ends, and the variable itself called $num disappears.
+</p>
+<p>
+  See the following articles for more information on variable scope and lifetime.
+</p>
+<ul>
+  <li>
+    <a href="/blog/20110128130016.html"> Understand Perl scope</a>
+  </li>
+</ul>
 
   </div>
   <div class="bottom">

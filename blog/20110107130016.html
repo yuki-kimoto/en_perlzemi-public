@@ -61,16 +61,16 @@
   <div class="middle">
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </ span> </a>
+    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20140319139520.html"> <span itemprop = "name"> Mojolicious </ span> </a>
+    <a itemprop="item" href="/blog/20140319139520.html"> <span itemprop = "name"> Mojolicious </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20110107130016.html"> Script to install CPAN module with Sakura rental server light plan </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20110107130016.html"> Script to install CPAN module with Sakura rental server light plan </a></h2>
 <p>
   I wrote a web application (CGI script) to install the CPAN module with Sakura's rental server light plan (125 yen per month). With Sakura's rental server light plan, SSH and Telnet cannot be used, so installing the CPAN module is a high barrier, but with this tool it is easy to install the module from a web browser. can do. Twice
 </p>
@@ -94,52 +94,52 @@
   [f: id: perlcodesample: 20110323012954p: image]
 </p>
 <p>
-  <a href="/blog/20101221130016.html"> Start developing Mojolicious on Windows and upload it to Sakura's rental server by FTP using the same procedure as </a> please. The permissions on app.cgi should be 755.
+  <a href="/blog/20101221130016.html"> Start developing Mojolicious on Windows and upload it to Sakura's rental server by FTP using the same procedure as</a> please. The permissions on app.cgi should be 755.
 </p>
 <p>
   The directory structure is as follows.
 </p>
 <pre>
-sakuracpanm --app.cgi
-&lt;/ pre&gt;
-
-To install a module, simply enter the module name in the text box and press the install button. The first CPAN module installation is time consuming (5-10 minutes) as it requires the installation of cpanm's dependent modules. Please wait patiently. Anyone can use it, so remove this tool as soon as the installation is complete, or set permissions to 000, etc.
-
-&lt;pre&gt;
-#! / usr / bin / perl
+sakuracpanm - app.cgi
+</pre>
+<p>
+  To install a module, simply enter the module name in the text box and press the install button. The first CPAN module installation is time consuming (5-10 minutes) as it requires the installation of cpanm's dependent modules. Please wait patiently. Anyone can use it, so remove this tool as soon as the installation is complete, or set permissions to 000, etc.
+</p>
+<pre>
+# ! / usr / bin / perl
 
 use FindBin;
-use lib "$ FindBin :: Bin / lib";
+use lib "$FindBin::Bin / lib";
 
-use Mojolicious :: Lite;
-use File :: Copy'move';
-use LWP :: UserAgent;
+use Mojolicious::Lite;
+use File::Copy'move';
+use LWP::UserAgent;
 use utf8;
 
 # top page
 get'/' =&gt; sub {
-    my $ self = shift;
+    my $self = shift;
     
-    my $ module = $ self-&gt; req-&gt; param ('module');
+    my $module = $self-&gt; req-&gt; param ('module');
     
-    $ self-&gt; stash (error =&gt;'');
-    $ self-&gt; stash (output =&gt;'');
+    $self-&gt; stash (error =&gt;'');
+    $self-&gt; stash (output =&gt;'');
     
-    if ($ module &amp;&amp; $ module = ~ / ^ [: \ w] + $ /) {
-        my $ home = $ ENV {DOCUMENT_ROOT};
-        $ home = ~ s # / www $ ##;
+    if ($module &amp;&amp; $module = ~ / ^ [: \ w] + $/) {
+        my $home = $ENV {DOCUMENT_ROOT};
+        $home = ~ s # / www $# #;
         
         my @output;
         my @cpanm;
         eval {
-            chdir $ home
-              or die qq {Can't change directory "$ home": $!};
+            chdir $home
+              or die qq {Can't change directory "$home": $!};
             
-            my $ ua = LWP :: UserAgent-&gt; new;
-            my $ res = $ ua-&gt; get ('http://xrl.us/cpanm/');
-            my $ cpanm_content;
-            if ($ res-&gt; is_success) {
-                $ cpanm_content = $ res-&gt; content;
+            my $ua = LWP::UserAgent-&gt; new;
+            my $res = $ua-&gt; get ('http://xrl.us/cpanm/');
+            my $cpanm_content;
+            if ($res-&gt; is_success) {
+                $cpanm_content = $res-&gt; content;
             }
             else {
                 die qq {Can't donwlaod "cpanm"};
@@ -147,32 +147,32 @@ get'/' =&gt; sub {
             
             push @cpanm,'#! / usr / bin / perl';
             push @cpanm, "BEGIN {".
-                             "\ $ ENV {HOME} =" $ home'; ".
-                             "use lib'$ home / perl5 / lib / perl5';".
+                             "\ $ENV {HOME} =" $home'; ".
+                             "use lib'$home / perl5 / lib / perl5';".
                          "}";
-            push @cpanm, $ cpanm_content;
+            push @cpanm, $cpanm_content;
             
-            open my $ write_fh,'&gt;','cpanm'
+            open my $write_fh,'&gt;','cpanm'
               or die qq {Can't open "cpanm" for write: $!};
             
-            print $ write_fh join ("\ n", @cpanm);
+            print $write_fh join("\n", @cpanm);
             
-            close $ write_fh;
+            close $write_fh;
             
-            my $ output = `perl cpanm --local-lib = $ home / perl5 $ module 2&gt; &amp; 1`;
-            push @output, split / \ n /, $ output;
+            my $output = `perl cpanm - local-lib = $home / perl5 $module 2&gt; &amp; 1`;
+            push @output, split /\n /, $output;
         };
         
-        return $ self-&gt; render (error =&gt; $ @) if $ @;
+        return $self-&gt; render (error =&gt; $@) if $@;
         
-        $ self-&gt; render (output =&gt; \ @ output);
+        $self-&gt; render (output =&gt; \ @ output);
     }
-    elsif ($ module) {
-        $ self-&gt; stash (error =&gt;'Enter module name correctly');
-        $ self-&gt; render;
+    elsif ($module) {
+        $self-&gt; stash (error =&gt;'Enter module name correctly');
+        $self-&gt; render;
     }
     else {
-        $ self-&gt; render;
+        $self-&gt; render;
     }
 } =&gt;'index';
 
@@ -184,33 +184,34 @@ __DATA__
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta http-equiv = "Content-type" content = "text / html; charset = UTF-8"&gt;
-    &lt;title&gt; Sakura Rental Server Light CPAN Module Installation &lt;/ title&gt;
-  &lt;/ head&gt;
+    &lt;title&gt; Sakura Rental Server Light CPAN Module Installation &lt;/title&gt;
+  &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt; Sakura rental server light CPAN module installation &lt;/ h1&gt;
+    &lt;h1&gt; Sakura rental server light CPAN module installation &lt;/h1&gt;
     &lt;pre&gt;
     # If you want to use the installed module, write as follows in the script (app.cgi).
     use FindBin;
-    use lib "$ FindBin :: Bin / .. / .. / perl5 / lib / perl5";
+    use lib "$FindBin::Bin / .. / .. / perl5 / lib / perl5";
     
     # This script is available to everyone and should be removed as soon as the installation is complete.
-    &lt;/ pre&gt;
+    &lt;/pre&gt;
     &lt;form method = "get" action = "&lt;% = url_for'/'%&gt;"&gt;
-      &lt;div&gt; Module &lt;input type = "text" name = "module"&gt; &lt;input type = "submit" value = "install"&gt; &lt;/ div&gt;
-      &lt;div style = "color: red"&gt; &lt;% = $ error%&gt; &lt;/ div&gt;
+      &lt;div&gt; Module &lt;input type = "text" name = "module"&gt; &lt;input type = "submit" value = "install"&gt; &lt;/div&gt;
+      &lt;div style = "color: red"&gt; &lt;% = $error%&gt; &lt;/div&gt;
       &lt;div&gt;
-        % if ($ output) {
-          % foreach my $ line (@ $ output) {
-            &lt;p style = "margin: 0; padding: 0"&gt; &lt;% = $ line%&gt; &lt;/ p&gt;
+        % if ($output) {
+          % foreach my $line (@ $output) {
+            &lt;p style = "margin: 0; padding: 0"&gt; &lt;% = $line%&gt; &lt;/p&gt;
           %}
         %}
-      &lt;/ div&gt;
-    &lt;/ form&gt;
-  &lt;/ body&gt;
-&lt;/ html&gt;
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt;, &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100408127089.html"> File::Copy</a>, <a href="/blog/20100524127696.html"> FindBin</a>
+</p>
 
   </div>
   <div class="bottom">

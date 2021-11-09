@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> FFI :: Raw --Call C ++ functions directly from Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perl provides  XS language  as a basic and general-purpose method for calling C language. increase.">
+<title> FFI::Raw - Call C ++ functions directly from Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl provides  XS language as a basic and general-purpose method for calling C language. increase.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" FFI :: Raw --Call C ++ functions directly from Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perl provides  XS language  as a basic and general-purpose method for calling C language. increase." />
+<meta name="twitter:title" content=" FFI::Raw - Call C ++ functions directly from Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl provides  XS language as a basic and general-purpose method for calling C language. increase." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20121207135484.html"> FFI :: Raw --Call C ++ functions directly from Perl </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20121207135484.html"> FFI::Raw - Call C ++ functions directly from Perl </a></h2>
 <p>
-  Perl provides <a href="/blog/20100809127859.html"> XS language </a> as a basic and general-purpose method for calling C language. increase.
+  Perl provides <a href="/blog/20100809127859.html"> XS language</a> as a basic and general-purpose method for calling C language. increase.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,53 +100,56 @@
   But writing the XS language is a pain. It would be nice to be able to easily call a library written in C from Perl.
 </p>
 <p>
-  There is a mechanism to call a C language library called libffi from another language, and one of the Perl implementations of this is FFI :: Raw. Easy to install from CPAN.
+  There is a mechanism to call a C language library called libffi from another language, and one of the Perl implementations of this is FFI::Raw. Easy to install from CPAN.
 </p>
 <p>
-  The sample below is exactly what was written on the site, but is a sample that calls a function called <b> cos </ b> in a library called <b> m </ b>.
+  The sample below is exactly what was written on the site, but is a sample that calls a function called <b> cos </b> in a library called <b> m </b>.
 </p>
 <pre>
-use FFI :: Raw;
+use FFI::Raw;
 
-my $ cos = FFI :: Raw-&gt; new (
+my $cos = FFI::Raw-&gt; new (
   'libm.so','cos',
-  FFI :: Raw :: double, # return value
-  FFI :: Raw :: double # argument 1
+  FFI::Raw::double, # return value
+  FFI::Raw::double # argument 1
 );
 
-print $ cos-&gt; call (2.0);
-&lt;/ pre&gt;
-
-The first argument is the dynamic library name. In C language, the file name corresponding to the dynamic library &lt;b&gt; m &lt;/ b&gt; is &lt;b&gt; libm.so &lt;/ b&gt;.
-
-There is no description of the library search path in the documentation, but it seems that the ones in &lt;b&gt; / lib &lt;/ b&gt; and &lt;b&gt; / usr / lib &lt;/ b&gt; are the search targets.
-
-There seems to be "how to set the environment variable LD_LIBRARY_PATH" and "how to add it to /etc/ld.so.conf" to add the search path of the library.
-
-The second argument is the function name. The third argument is the return type, and the fourth and subsequent arguments are the argument types.
-
-&lt;h3&gt; Other Perl FFI modules &lt;/ h3&gt;
-
-Introducing other Perl FFI modules.
-
-&lt;h4&gt; FFI :: Platypus &lt;/ h4&gt;
-
-There is &lt;a href="https://metacpan.org/pod/FFI :: Platypus"&gt; FFI :: Platypus &lt;/a&gt; as a Perl module of FFI. FFI :: Platypus has a lot of FFI features and seems to be under continuous maintenance.
-
-&lt;pre&gt;
-use FFI :: Platypus 1.00;
+print $cos-&gt; call (2.0);
+</pre>
+<p>
+  The first argument is the dynamic library name. In C language, the file name corresponding to the dynamic library <b> m </b> is <b> libm.so </b>.
+</p>
+<p>
+  There is no description of the library search path in the documentation, but it seems that the ones in <b> / lib </b> and <b> / usr / lib </b> are the search targets.
+</p>
+<p>
+  There seems to be "how to set the environment variable LD_LIBRARY_PATH" and "how to add it to /etc/ld.so.conf" to add the search path of the library.
+</p>
+<p>
+  The second argument is the function name. The third argument is the return type, and the fourth and subsequent arguments are the argument types.
+</p>
+<h3> Other Perl FFI modules </h3>
+<p>
+  Introducing other Perl FFI modules.
+</p>
+<h4> FFI::Platypus </h4>
+<p>
+  There is <a href="https://metacpan.org/pod/FFI::Platypus"> FFI::Platypus</a> as a Perl module of FFI. FFI::Platypus has a lot of FFI features and seems to be under continuous maintenance.
+</p>
+<pre>
+use FFI::Platypus 1.00;
  
 # for all new code you should use api =&gt; 1
-my $ ffi = FFI :: Platypus-&gt; new (api =&gt; 1);
-$ ffi-&gt; lib (undef); # search libc
+my $ffi = FFI::Platypus-&gt; new (api =&gt; 1);
+$ffi-&gt; lib (undef); # search libc
  
 # call dynamically
-$ ffi-&gt; function (puts =&gt; ['string'] =&gt;'int')-&gt; call ("hello world");
+$ffi-&gt; function (puts =&gt; ['string'] =&gt;'int')-&gt; call ("hello world");
  
-#attach as a xsub and call (much faster)
-$ ffi-&gt; attach (puts =&gt; ['string'] =&gt;'int');
+# attach as a xsub and call (much faster)
+$ffi-&gt; attach (puts =&gt; ['string'] =&gt;'int');
 puts ("hello world");
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

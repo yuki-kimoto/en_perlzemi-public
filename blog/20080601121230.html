@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Recursively copy multi-level directories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use the  File :: Find  module to recursively copy multi-level directories.">
+<meta name="description" content="Use the  File::Find module to recursively copy multi-level directories.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Recursively copy multi-level directories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use the  File :: Find  module to recursively copy multi-level directories." />
+<meta name="twitter:description" content="Use the  File::Find module to recursively copy multi-level directories." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -61,22 +61,22 @@
   <div class="middle">
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </ span> </a>
+    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161126148016.html"> <span itemprop = "name"> File operation </ span> </a>
+    <a itemprop="item" href="/blog/20161126148016.html"> <span itemprop = "name"> File operation </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
-  </ li>
-</ ol>
-<h2><a href="/blog/20080601121230.html"> Recursively copy multi-level directories </a></ h2>
+    <span itemprop = "name"> here </span>
+  </li>
+</ol>
+<h2><a href="/blog/20080601121230.html"> Recursively copy multi-level directories </a></h2>
 <p>
-  Use the <a href="/blog/20080530121229.html"> File :: Find </a> module to recursively copy multi-level directories.
+  Use the <a href="/blog/20080530121229.html"> File::Find</a> module to recursively copy multi-level directories.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,102 +97,103 @@
 <pre>
 use strict;
 use warnings;
-use File :: Path'mkpath';
+use File::Path'mkpath';
 use Fcntl;
-use File :: Find'find';
-use File :: Copy'copy';
+use File::Find'find';
+use File::Copy'copy';
 use Cwd'getcwd';
 
-#Preparation (Creating directories and files)
-my $ top_dir = "dir_20080601_$$";
+# Preparation (Creating directories and files)
+my $top_dir = "dir_20080601_$$";
 my @dirs = (
-  "$ top_dir / dir1", "$ top_dir / dir1 / dir1_1", "$ top_dir / dir1 / dir1_2",
-  "$ top_dir / dir2",
+  "$top_dir / dir1", "$top_dir / dir1 / dir1_1", "$top_dir / dir1 / dir1_2",
+  "$top_dir / dir2",
 );
-for my $ dir (@dirs) {
-  eval {mkpath $ dir};
+for my $dir (@dirs) {
+  eval {mkpath $dir};
   if (@!) {die "@!"}
 }
 
 my @files = (
-  "$ top_dir / top.txt", "$ top_dir / dir1 / 1.txt",
-  "$ top_dir / dir1 / dir1_1 / 1_1.txt", "$ top_dir / dir1 / dir1_2 / 1_2.txt",
-  "$ top_dir / dir2 / 2.txt"
+  "$top_dir / top.txt", "$top_dir / dir1 / 1.txt",
+  "$top_dir / dir1 / dir1_1 / 1_1.txt", "$top_dir / dir1 / dir1_2 / 1_2.txt",
+  "$top_dir / dir2 / 2.txt"
 );
-for my $ file (@files) {
-  sysopen (my $ fh, $ file, O_WRONLY | O_CREAT | O_EXCL)
-    or die "Unable to create $ file .: $!";
-  close $ fh;
+for my $file (@files) {
+  sysopen(my $fh, $file, O_WRONLY | O_CREAT | O_EXCL)
+    or die "Unable to create $file .: $!";
+  close $fh;
 }
-print "Preparation: $ top_dir has been created. \ N \ n";
+print "Preparation: $top_dir has been created.\n\n";
 
 # Recursive directory copy sample
-print "1: Copy directory recursively. \ N";
+print "1: Copy directory recursively.\n";
 
-my $ cur_dir = getcwd ();
-#File :: Find internally repeats chdir, so
+my $cur_dir = getcwd ();
+# File::Find internally repeats chdir, so
 # Create a copy destination directory name with an absolute path.
-my $ dir_copy_to = "$ cur_dir / dir_20080601_ $ {$} _ cp";
+my $dir_copy_to = "$cur_dir / dir_20080601_ ${$} _ cp";
 
-find (\ &amp; recursive_copy, $ top_dir);
-print "$ top_dir has been copied to $ dir_copy_to. \ N";
-
-# Function for recursive copying
-sub recursive_copy {
-  #Copy source file or directory
-  my $ file_from = $ _;
-
-  #The top directory of the copy source
-  # In the top directory of the copy destination
-  # Replace.
-  my $ file_to = $ File :: Find :: name;
-  $ file_to = ~ s # ^ $ top_dir # $ dir_copy_to #;
-                                        
-  if (-d $ file_from) {
-    The #directory cannot be copied, so create it with the same name.
-    mkdir $ file_to
-      or die "Unable to create $ file_to. \ N";
-  }
-  else {
-    copy $ file_from, $ file_to
-      or die "Unable to copy $ file_from to $ file_to. \ N";
-  }
-}
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100409127089.html"&gt; File :: Path &lt;/a&gt;, &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt;, &lt;a href = "/ blog / 20100312126967.html"&gt; eval &lt;/a&gt;, &lt;a href="/blog/20080804121794.html"&gt; sysopen function &lt;/a&gt;, &lt;a href="/blog/20180310152509.html"&gt; Fcntl &lt;/a&gt;
-
-&lt;h3&gt; Recursively copy multi-level directories &lt;/ h3&gt;
-
-&lt;pre&gt;
-find (\ &amp; recursive_copy, $ top_dir);
+find (\ &amp; recursive_copy, $top_dir);
+print "$top_dir has been copied to $dir_copy_to.\n";
 
 # Function for recursive copying
 sub recursive_copy {
-  #Copy source file or directory
-  my $ file_from = $ _;
+  # Copy source file or directory
+  my $file_from = $_;
 
-  #The top directory of the copy source
+  # The top directory of the copy source
   # In the top directory of the copy destination
   # Replace.
-  my $ file_to = $ File :: Find :: name;
-  $ file_to = ~ s # ^ $ top_dir # $ dir_copy_to #;
+  my $file_to = $File::Find::name;
+  $file_to = ~ s # ^ $top_dir # $dir_copy_to # ;
                                         
-  if (-d $ file_from) {
-    The #directory cannot be copied, so create it with the same name.
-    mkdir $ file_to
-      or die "Unable to create $ file_to. \ N";
+  if (-d $file_from) {
+    The # directory cannot be copied, so create it with the same name.
+    mkdir $file_to
+      or die "Unable to create $file_to.\n";
   }
   else {
-    copy $ file_from, $ file_to
-      or die "Unable to copy $ file_from to $ file_to. \ N";
+    copy $file_from, $file_to
+      or die "Unable to copy $file_from to $file_to.\n";
   }
 }
-&lt;/ pre&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100409127089.html"> File::Path</a>, <a href="/blog/20100408127089.html"> File::Copy</a>, <a href = "/ blog / 20100312126967.html"> eval</a>, <a href="/blog/20080804121794.html"> sysopen function</a>, <a href="/blog/20180310152509.html"> Fcntl</a>
+</p>
+<h3> Recursively copy multi-level directories </h3>
+<pre>
+find (\ &amp; recursive_copy, $top_dir);
 
-To copy a directory recursively, use the File :: Find module to repeatedly create the directory and copy the file. Since the configuration other than the top directory is the same as the copy source, only the top directory name is replaced.
+# Function for recursive copying
+sub recursive_copy {
+  # Copy source file or directory
+  my $file_from = $_;
 
-Since the directory cannot be copied, we will create it with the name of the copy destination.
+  # The top directory of the copy source
+  # In the top directory of the copy destination
+  # Replace.
+  my $file_to = $File::Find::name;
+  $file_to = ~ s # ^ $top_dir # $dir_copy_to # ;
+                                        
+  if (-d $file_from) {
+    The # directory cannot be copied, so create it with the same name.
+    mkdir $file_to
+      or die "Unable to create $file_to.\n";
+  }
+  else {
+    copy $file_from, $file_to
+      or die "Unable to copy $file_from to $file_to.\n";
+  }
+}
+</pre>
+<p>
+  To copy a directory recursively, use the File::Find module to repeatedly create the directory and copy the file. Since the configuration other than the top directory is the same as the copy source, only the top directory name is replaced.
+</p>
+<p>
+  Since the directory cannot be copied, we will create it with the name of the copy destination.
+</p>
 
   </div>
   <div class="bottom">

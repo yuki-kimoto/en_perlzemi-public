@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop = "name"> Object Oriented </ span> </a>
+      <span itemprop = "name"> Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Object contents </ span>
+      <span itemprop = "name"> Object contents </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090318123712.html"> Play with the created objects </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090318123712.html"> Play with the created objects </a></h2>
 <p>
   Let's play with the created object.
 </p>
@@ -97,66 +97,66 @@
 </div>
 
 
-<h3> 1. Play with objects </ h3>
+<h3> 1. Play with objects </h3>
 <p>
-  First, let's create a $ book object like this. Where it says to play around here, write various things and play.
+  First, let's create a $book object like this. Where it says to play around here, write various things and play.
 </p>
 <pre>
 use strict;
 use warnings;
 
-my $ book = Book-&gt; new;
+my $book = Book-&gt; new;
 
 #
-#Play around here.
+# Play around here.
 #
 
 package Book;
 sub new {
-    my $ class = shift;
-    my $ self = {};
-    return bless $ self, $ class;
+    my $class = shift;
+    my $self = {};
+    return bless $self, $class;
 }
-&lt;/ pre&gt;
-
-&lt;h3&gt; 2. Objects are data! &lt;/ H3&gt;
-
-Let's make sure that the &lt;b&gt; object is data &lt;/ ​​b&gt;.
-
-&lt;pre&gt;
-$ book-&gt; {title} ='Good news';
-$ book-&gt; {author} ='Takeshi';
-&lt;/ pre&gt;
-
-You can see that you can set the value in the same way as a normal &lt;b&gt; hash reference &lt;/ b&gt;.
-
-&lt;pre&gt;
-print $ book-&gt; {title};
-&lt;/ pre&gt;
-
-Then, the set contents will be output.
-
-&lt;h3&gt; 3. Objects are tied to a class! &lt;/ H3&gt;
-
-Let's make sure that the object is tied to a class. To see the class association
-
-&lt;pre&gt;
+</pre>
+<h3> 2. Objects are data! </H3>
+<p>
+  Let's make sure that the <b> object is data </​​b>.
+</p>
+<pre>
+$book-&gt; {title} ='Good news';
+$book-&gt; {author} ='Takeshi';
+</pre>
+<p>
+  You can see that you can set the value in the same way as a normal <b> hash reference </b>.
+</p>
+<pre>
+print $book-&gt; {title};
+</pre>
+<p>
+  Then, the set contents will be output.
+</p>
+<h3> 3. Objects are tied to a class! </H3>
+<p>
+  Let's make sure that the object is tied to a class. To see the class association
+</p>
+<pre>
 ref
-&lt;/ pre&gt;
-
-Use a function.
-
-&lt;pre&gt;
-print ref $ book;
-&lt;/ pre&gt;
-
-Let's try.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Use a function.
+</p>
+<pre>
+print ref $book;
+</pre>
+<p>
+  Let's try.
+</p>
+<pre>
 Book
-&lt;/ pre&gt;
-
-You can see that it is output. Yes, you can use the &lt;b&gt; ref function &lt;/ b&gt; to find out which class the object is associated with.
+</pre>
+<p>
+  You can see that it is output. Yes, you can use the <b> ref function </b> to find out which class the object is associated with.
+</p>
 
   </div>
   <div class="bottom">

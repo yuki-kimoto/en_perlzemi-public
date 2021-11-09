@@ -32,11 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> AUTOLOAD --Subroutine autoload  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> AUTOLOAD - Subroutine autoload  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl allows you to define a subroutine called  AUTOLOAD  that will be called if the subroutine does not exist. This is called subroutine autoloading.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" AUTOLOAD --Subroutine autoload  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" AUTOLOAD - Subroutine autoload  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl allows you to define a subroutine called  AUTOLOAD  that will be called if the subroutine does not exist. This is called subroutine autoloading." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -62,24 +62,24 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </ span> </a>
+        <span itemprop = "name"> Syntax </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> autoload </ span>
+      <span itemprop = "name"> autoload </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20080709121562.html"> AUTOLOAD --Subroutine autoload </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20080709121562.html"> AUTOLOAD - Subroutine autoload </a></h2>
 <p>
-  Perl allows you to define a subroutine called <strong> AUTOLOAD </ strong> that will be called if the subroutine does not exist. This is called subroutine autoloading.
+  Perl allows you to define a subroutine called <strong> AUTOLOAD </strong> that will be called if the subroutine does not exist. This is called subroutine autoloading.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -102,53 +102,56 @@ package MyModule;
 
 aaaaiiiii (1, 2);
 
-our $ AUTOLOAD;
+our $AUTOLOAD;
 sub AUTOLOAD {
   # ...
 }
-&lt;/ pre&gt;
-
-If you define our $ AUROLOAD, you can get the name of the called function.
-
-&lt;h4&gt; What is autoload used for? &lt;/ H4&gt;
-
-When programming in everyday work, there is little need to use autoloading. Also, there is no reason to actively use autoload when creating modules.
-
-Calling autoloads is very slow and alternatives are often available.
-
-If you want to create an accessor, you can dynamically generate it with &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt; or &lt;a href="/blog/20080704121518.html"&gt; subroutine reference &lt; Substituting / a&gt; for &lt;a href="/blog/20080614121342.html"&gt; typeglobs &lt;/a&gt; is also better in terms of performance.
-
-Perl has the only feature that can only be achieved with autoloading. That is to give the method to the object. I don't usually use it, but if you want to achieve this functionality in a framework, it's the only way to do it.
-
-&lt;h3&gt; Sample program &lt;/ h3&gt;
-
-This is a sample of subroutine autoloading.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If you define our $AUROLOAD, you can get the name of the called function.
+</p>
+<h4> What is autoload used for? </H4>
+<p>
+  When programming in everyday work, there is little need to use autoloading. Also, there is no reason to actively use autoload when creating modules.
+</p>
+<p>
+  Calling autoloads is very slow and alternatives are often available.
+</p>
+<p>
+  If you want to create an accessor, you can dynamically generate it with <a href="/blog/20100312126967.html"> eval</a> or <a href="/blog/20080704121518.html"> subroutine reference < Substituting / a> for <a href="/blog/20080614121342.html"> typeglobs</a> is also better in terms of performance.
+</p>
+<p>
+  Perl has the only feature that can only be achieved with autoloading. That is to give the method to the object. I don't usually use it, but if you want to achieve this functionality in a framework, it's the only way to do it.
+</p>
+<h3> Sample program </h3>
+<p>
+  This is a sample of subroutine autoloading.
+</p>
+<pre>
 use strict;
 use warnings;
 
-#AUTOLOAD subroutine
+# AUTOLOAD subroutine
 # ・ If defined, it will be called when the name of the subroutine cannot be found.
 
-print "1: AUTOLOAD calls a non-existent function \ n";
+print "1: AUTOLOAD calls a non-existent function\n";
 
 # When you call a function that is not defined anywhere.
 aaaaiiiii (1, 2);
 
-#This is called.
+# This is called.
 sub AUTOLOAD {
 
-  If you define # $ AUROLOAD, you can get the name of the called function.
-  our $ AUTOLOAD;
+  If you define # $AUROLOAD, you can get the name of the called function.
+  our $AUTOLOAD;
 
   # You can receive the function name and arguments.
   my (@arg) = @_;
-  print "AUTOLOAD has been called. \ N";
-  print "The function you tried to call is $ AUTOLOAD. \ N";
-  print "The argument is" .join (',', @arg). ". \ N";
+  print "AUTOLOAD has been called.\n";
+  print "The function you tried to call is $AUTOLOAD.\n";
+  print "The argument is" .join(',', @arg). ".\n";
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

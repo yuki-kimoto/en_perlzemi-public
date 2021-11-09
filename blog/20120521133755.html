@@ -62,22 +62,22 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20160225145640.html">
-      <span itemprop = "name"> Version information </ span> </a>
+      <span itemprop = "name"> Version information </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </ span>
+    <span itemprop = "name"> here </span>
     <meta itemprop = "position" content = "3" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20120521133755.html"> The latest version of Perl, 5.16.0, has been released </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20120521133755.html"> The latest version of Perl, 5.16.0, has been released </a></h2>
 <p>
   The long-awaited latest version of Perl, Perl 5.16.0, was released on May 20, 2012.
 </p>
@@ -102,9 +102,9 @@
 </p>
 <blockquote>
 <p>
-  <a href="http://perl5.git.perl.org/perl.git/tag/refs/tags/v5.16.0"> First release of the v5.16 series! </a>
+  <a href="http://perl5.git.perl.org/perl.git/tag/refs/tags/v5.16.0"> First release of the v5.16 series!</a>
 </p>
-</ blockquote>
+</blockquote>
 <p>
   This is the third release since the policy of releasing it once a year was decided. Perl has an image of active development among scripting languages. The Perl 5 logo is a dinosaur.
 </p>
@@ -116,11 +116,11 @@
 </p>
 <blockquote>
 <p>
-  <a href="http://perldoc.jp/docs/perl/5.16.0/perl5160delta.pod"> Changes in Perl 5.16 </a>
+  <a href="http://perldoc.jp/docs/perl/5.16.0/perl5160delta.pod"> Changes in Perl 5.16</a>
 </p>
-</ blockquote>
-<h3> New features </ h3>
-<h4> __SUB__ </ h4>
+</blockquote>
+<h3> New features </h3>
+<h4> __SUB__ </h4>
 <p>
   It is now possible to write __SUB__, which is similar to __FILE__ and __PACKAGE__. This is a feature that allows you to get a reference to the subroutine you are currently executing, making it easier to write recursive subroutines. It can be used in the state of use 5.16 or use feature'current_sub'.
 </p>
@@ -129,138 +129,143 @@ sub func {
   
   __SUB__-&gt; ();
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Add enable and disable in debugger &lt;/ h4&gt;
-You can now enable and disable breakpoints.
-
-&lt;h4&gt; Specify the file name in the breakpoint setting in the debugger &lt;/ h4&gt;
-
-You can now specify the file name in addition to the line number with the b command (specify breakpoints).
-
-&lt;pre&gt;
+</pre>
+<h4> Add enable and disable in debugger </h4>
+<p>
+  You can now enable and disable breakpoints.
+</p>
+<h4> Specify the file name in the breakpoint setting in the debugger </h4>
+<p>
+  You can now specify the file name in addition to the line number with the b command (specify breakpoints).
+</p>
+<pre>
 b [file]: [line]
-&lt;/ pre&gt;
-
-This may reduce the work of moving back and forth between files.
-
-&lt;h4&gt; Many Perl keywords are now available in the CORE namespace &lt;/ h4&gt;
-Until now, CORE was not actually a namespace, but it seems that CORE has become a namespace and can be treated in the same way as a normal namespace.
-
-&lt;pre&gt;
-Core :: tie
-&lt;/ pre&gt;
-
-&lt;h4&gt; Providing a modified type map &lt;/ h4&gt;
-
-Additional typemaps such as T_AVREF_REFCOUNT_FIXED are now provided. This is a story on XS.
-
-&lt;pre&gt;
+</pre>
+<p>
+  This may reduce the work of moving back and forth between files.
+</p>
+<h4> Many Perl keywords are now available in the CORE namespace </h4>
+<p>
+  Until now, CORE was not actually a namespace, but it seems that CORE has become a namespace and can be treated in the same way as a normal namespace.
+</p>
+<pre>
+Core::tie
+</pre>
+<h4> Providing a modified type map </h4>
+<p>
+  Additional typemaps such as T_AVREF_REFCOUNT_FIXED are now provided. This is a story on XS.
+</p>
+<pre>
 HV * T_HVREF_REFCOUNT_FIXED
-&lt;/ pre&gt;
-
-&lt;h4&gt; Almost compatible with Unicode 6.1 &lt;/ h4&gt;
-Almost compatible with Unicode 6.1. Please note that Unicode 6.0 and Unicode 6.1 are not fully compatible.
-
-Speaking of Unicode6, it is characteristic that emoticons are included as characters. I wonder if it will be easier to create an application that sends emails from mobile phones.
-
-&lt;h3&gt; Minor changes &lt;/ h3&gt;
-
-&lt;h4&gt; use VERSION is now expected to work with that Perl version &lt;/ h4&gt;
-The statement "use v5.16" is now expected to work with Perl 5.16.
-&lt;pre&gt;
+</pre>
+<h4> Almost compatible with Unicode 6.1 </h4>
+<p>
+  Almost compatible with Unicode 6.1. Please note that Unicode 6.0 and Unicode 6.1 are not fully compatible.
+</p>
+<p>
+  Speaking of Unicode6, it is characteristic that emoticons are included as characters. I wonder if it will be easier to create an application that sends emails from mobile phones.
+</p>
+<h3> Minor changes </h3>
+<h4> use VERSION is now expected to work with that Perl version </h4>
+<p>
+  The statement "use v5.16" is now expected to work with Perl 5.16.
+</p>
+<pre>
 use v5.16;
-&lt;/ pre&gt;
-
-In other words, "use v5.14" expects Perl 5.14 to work, and "use v5.16" expects Perl 5.16 to work.
-
-&lt;h4&gt; $ [is no longer disabled under use v5.16. &lt;/ h4&gt;
-$ [Now is no longer valid under use v5.16.
-
-&lt;h4&gt; Fixed a memory leak in a regular expression named capture &lt;/ h4&gt;
-
-A memory leak in the following code has been fixed. This has been around since Perl 5.10.
-
-&lt;pre&gt;
+</pre>
+<p>
+  In other words, "use v5.14" expects Perl 5.14 to work, and "use v5.16" expects Perl 5.16 to work.
+</p>
+<h4> $[is no longer disabled under use v5.16. </h4>
+<p>
+  $[Now is no longer valid under use v5.16.
+</p>
+<h4> Fixed a memory leak in a regular expression named capture </h4>
+<p>
+  A memory leak in the following code has been fixed. This has been around since Perl 5.10.
+</p>
+<pre>
     for (1..10_000_000) {
         if ("foo" = ~ / (foo | (? &lt;capture&gt; bar))? /) {
-            my $ capture = $ + {capture}
+            my $capture = $+ {capture}
         }
     }
     system "ps -o rss $$"'
-&lt;/ pre&gt;
-
-I wonder if named capture is now available in the daemon process.
-
-&lt;h3&gt; Deprecated &lt;/ h3&gt;
-Unicode database files located in lib / unicore are no longer read. This is to make Perl's core smaller. Use the new Unicode :: UCD function instead.
-
-&lt;h3&gt; Deprecated modules &lt;/ h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    Version :: Requirements
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-Version :: Requirements has been deprecated. Use CPAN :: Meta :: Requirements.
-
-&lt;h3&gt; Future deprecated modules &lt;/ h3&gt;
-The following modules will be deprecated in the future. It will be removed after a while after being deprecated. However, it's still available on CPAN, so if you're using it, you'll have to spend more time installing it.
-
-&lt;ul&gt;
-  &lt;li&gt;
+</pre>
+<p>
+  I wonder if named capture is now available in the daemon process.
+</p>
+<h3> Deprecated </h3>
+<p>
+  Unicode database files located in lib / unicore are no longer read. This is to make Perl's core smaller. Use the new Unicode::UCD function instead.
+</p>
+<h3> Deprecated modules </h3>
+<ul>
+  <li>
+    Version::Requirements
+  </li>
+</ul>
+<p>
+  Version::Requirements has been deprecated. Use CPAN::Meta::Requirements.
+</p>
+<h3> Future deprecated modules </h3>
+<p>
+  The following modules will be deprecated in the future. It will be removed after a while after being deprecated. However, it's still available on CPAN, so if you're using it, you'll have to spend more time installing it.
+</p>
+<ul>
+  <li>
     CPANPLUS
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Filter :: Simple
-  &lt;/ li&gt;
-  &lt;li&gt;
-    PerlIO :: mmap
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Pod :: LaTeX
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Pod :: Parser
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
+    Filter::Simple
+  </li>
+  <li>
+    PerlIO::mmap
+  </li>
+  <li>
+    Pod::LaTeX
+  </li>
+  <li>
+    Pod::Parser
+  </li>
+  <li>
     SelfLoader
-  &lt;/ li&gt;
-  &lt;li&gt;
-    Text :: Soundex
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+  <li>
+    Text::Soundex
+  </li>
+  <li>
     Thread.pm
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-The core may get smaller little by little by removing unnecessary modules.
-
-&lt;h3&gt; Removed modules and pragmas &lt;/ h3&gt;
-
-The following modules have been removed from the core. It's on CPAN.
-
-&lt;ul&gt;
-  &lt;li&gt;
-    Devel :: DProf
-  &lt;/ li&gt;
-  &lt;li&gt;
+  </li>
+</ul>
+<p>
+  The core may get smaller little by little by removing unnecessary modules.
+</p>
+<h3> Removed modules and pragmas </h3>
+<p>
+  The following modules have been removed from the core. It's on CPAN.
+</p>
+<ul>
+  <li>
+    Devel::DProf
+  </li>
+  <li>
     Shell
-  &lt;/ li&gt;
-&lt;/ ul&gt;
-
-The following Perl4 format libraries have been removed.
-
-&lt;blockquote&gt;
+  </li>
+</ul>
+<p>
+  The following Perl4 format libraries have been removed.
+</p>
+<blockquote>
     abbrev.pl assert.pl bigfloat.pl bigint.pl bigrat.pl cacheout.pl
     complete.pl ctime.pl dotsh.pl exceptions.pl fastcwd.pl flush.pl
     getcwd.pl getopt.pl getopts.pl hostname.pl importenv.pl
     lib / find {, depth} .pl look.pl newgetopt.pl open2.pl open3.pl
     pwd.pl shellwords.pl stat.pl tainted.pl termcap.pl timelocal.pl
-&lt;/ blockquote&gt;
-
-These are on CPAN's Perl4 :: CoreLibs.
+</blockquote>
+<p>
+  These are on CPAN's Perl4::CoreLibs.
+</p>
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> MySQL :: Diff --Check the differences in the MySQL database  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="When I was looking for a tool to automatically generate commands to eliminate diffs from MySQL database diffs, I found a module called  MySQL :: Diff . This module comes with a command line tool called mysqldiff, so it's usually best to use it.">
+<title> MySQL::Diff - Check the differences in the MySQL database  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="When I was looking for a tool to automatically generate commands to eliminate diffs from MySQL database diffs, I found a module called  MySQL::Diff . This module comes with a command line tool called mysqldiff, so it's usually best to use it.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" MySQL :: Diff --Check the differences in the MySQL database  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="When I was looking for a tool to automatically generate commands to eliminate diffs from MySQL database diffs, I found a module called  MySQL :: Diff . This module comes with a command line tool called mysqldiff, so it's usually best to use it." />
+<meta name="twitter:title" content=" MySQL::Diff - Check the differences in the MySQL database  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="When I was looking for a tool to automatically generate commands to eliminate diffs from MySQL database diffs, I found a module called  MySQL::Diff . This module comes with a command line tool called mysqldiff, so it's usually best to use it." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20111101132239.html"> MySQL :: Diff --Check the differences in the MySQL database </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20111101132239.html"> MySQL::Diff - Check the differences in the MySQL database </a></h2>
 <p>
-  When I was looking for a tool to automatically generate commands to eliminate diffs from MySQL database diffs, I found a module called <strong> MySQL :: Diff </ strong>. This module comes with a command line tool called mysqldiff, so it's usually best to use it.
+  When I was looking for a tool to automatically generate commands to eliminate diffs from MySQL database diffs, I found a module called <strong> MySQL::Diff </strong>. This module comes with a command line tool called mysqldiff, so it's usually best to use it.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,46 +100,48 @@
   It doesn't show all the differences, it seems to be only the part related to the table definition, so it seems that you need to set the trigger and index yourself.
 </p>
 <p>
-  The documentation doesn't seem to explain the options, so you can check with the --help command.
+  The documentation doesn't seem to explain the options, so you can check with the - help command.
 </p>
 <pre>
-mysqldiff --help
-&lt;/ pre&gt;
-
-First, let's get the table definition of the database with mysqldump. Let's assume you're in a development environment and you're making changes to the database server in your development environment.
-
-&lt;pre&gt;
+mysqldiff - help
+</pre>
+<p>
+  First, let's get the table definition of the database with mysqldump. Let's assume you're in a development environment and you're making changes to the database server in your development environment.
+</p>
+<pre>
 mysqldump -d -uken db&gt; db_devel
-&lt;/ pre&gt;
-
-Let's assume you can connect to the production environment with ssh. Then execute the command with ssh and redirect.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Let's assume you can connect to the production environment with ssh. Then execute the command with ssh and redirect.
+</p>
+<pre>
 ssh ken @ remotehost mysqldump -d -uken db&gt; db_production
-&lt;/ pre&gt;
-
-Since mysqldiff uses the database temporarily, you need to specify the database information.
-
-&lt;pre&gt;
-mysqldiff --host = localhost --user = ken --password = ppp db_production db_devel
-&lt;/ pre&gt;
-
-Then, the command to match db_production to db_devel is output.
-&lt;pre&gt;
-## mysqldiff 0.43
-##
-## Run on Sun Nov 27 15:57:54 2011
-## Options: user = root, debug = 0
-##
-## --- file: db_production
-## +++ file: db_devel
+</pre>
+<p>
+  Since mysqldiff uses the database temporarily, you need to specify the database information.
+</p>
+<pre>
+mysqldiff - host = localhost - user = ken - password = ppp db_production db_devel
+</pre>
+<p>
+  Then, the command to match db_production to db_devel is output.
+</p>
+<pre>
+# # mysqldiff 0.43
+# #
+# # Run on Sun Nov 27 15:57:54 2011
+# # Options: user = root, debug = 0
+# #
+# # - - file: db_production
+# # +++ file: db_devel
 
 CREATE TABLE book (CREATE TABLE book)
-  id int (11) default NULL
+  id int(11) default NULL
 ) ENGINE = MyISAM DEFAULT CHARSET = latin1;
-&lt;/ pre&gt;
-
-Note that if you make a mistake in the order of db_production and db_devel, the opposite command will be generated.
+</pre>
+<p>
+  Note that if you make a mistake in the order of db_production and db_devel, the opposite command will be generated.
+</p>
 
   </div>
   <div class="bottom">

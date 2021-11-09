@@ -62,16 +62,16 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> socket </ span>
+      <span itemprop = "name"> socket </span>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20090406123890.html"> Communicate with socket </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20090406123890.html"> Communicate with socket </a></h2>
 <p>
   A description of Perl's "sockets".
 </p>
@@ -91,331 +91,338 @@
 </div>
 
 
-<h3> What is a socket? </ H3>
+<h3> What is a socket? </H3>
 <p>
-  Sockets are used when you want to <b> exchange data over a network </ b>. For example, a web server exchanges data with a browser over the network. At this time, the socket is used in the internal mounting.
+  Sockets are used when you want to <b> exchange data over a network </b>. For example, a web server exchanges data with a browser over the network. At this time, the socket is used in the internal mounting.
 </p>
 <p>
-  The Perl module has a module called LWP :: UserAgent to get the page of the website. If you look at the lowest level part of this implementation, sockets are used.
+  The Perl module has a module called LWP::UserAgent to get the page of the website. If you look at the lowest level part of this implementation, sockets are used.
 </p>
 <p>
   If you want to create an application that wants to exchange data over the network, use sockets or use wrapper classes that make sockets easy to use.
 </p>
-<h4> Socket image </ h4>
+<h4> Socket image </h4>
 <p>
-  It's easiest to think of a socket as a <b> kind of filehandle </ b>. To open a file in write mode
+  It's easiest to think of a socket as a <b> kind of filehandle </b>. To open a file in write mode
 </p>
 <pre>
-my $ fh;
-my $ file ='somefile';
-open ($ fh, "&gt;", $ file)
-&lt;/ pre&gt;
+my $fh;
+my $file ='somefile';
+open($fh, "&gt;", $file)
+</pre>
+<p>
+  To do. When opened like this
+</p>
+<pre>
+print $fh'aaa';
+</pre>
+<p>
+  You can write to a file using the print function. The case for sockets is very similar. If you create a socket and write to it, computers over the network can read it.
+</p>
+<p>
+  For the sake of simplicity, I will omit the details, but to open the socket and write, write as follows.
+</p>
+<pre>
+my $sock;
+socket ($sock, argument omitted);
 
-To do. When opened like this
-
-&lt;pre&gt;
-print $ fh'aaa';
-&lt;/ pre&gt;
-
-You can write to a file using the print function. The case for sockets is very similar. If you create a socket and write to it, computers over the network can read it.
-
-For the sake of simplicity, I will omit the details, but to open the socket and write, write as follows.
-
-&lt;pre&gt;
-my $ sock;
-socket ($ sock, argument omitted);
-
-print $ sock'aaa';
-&lt;/ pre&gt;
-
-The socket function corresponds to the open function. When writing, you can write with the print function.
-
-&lt;h3&gt; Studying sockets is difficult &lt;/ h3&gt;
-
-Studying sockets is difficult. There are several difficult causes.
-
-&lt;h4&gt; The procedure for creating a socket is complicated &lt;/ h4&gt;
-
-The procedure for creating a socket is complicated. You need to &lt;b&gt; write the source code over and over again &lt;/ b&gt; before you can memorize and use the socket.
-
-&lt;h4&gt; Two programs, client and server, are required to communicate &lt;/ h4&gt;
-
-The hard part about studying sockets is that you have to write two programs, &lt;b&gt; client and server &lt;/ b&gt;. Even if you create only a client, you cannot try the program without a communication partner. Due to these difficulties, we will first prepare the server-side program here so that we can concentrate on creating the client-side program at first.
-
-&lt;h4&gt; The status of the communication partner is uncertain &lt;/ h4&gt;
-
-Since it communicates over the network, &lt;b&gt; the status of the other party is uncertain &lt;/ b&gt;. There is no guarantee that it will almost certainly be written locally like a file. There may be sudden disconnections or delays. It means that you need to write a program to handle such errors.
-
-The simplest sample of &lt;h3&gt; sockets. Echo server &lt;/ h3&gt;
-
-Here is a sample socket program that you can run first. When the client sends the character Hello, the server adds the echo: string to the string and returns it to the client.
-
-This sample is not complete, but it is the basis for learning client-server communication. It's one of the simplest client-server programs, but it's quite difficult for a normal program. First look at the sample in action.
-
-&lt;h4&gt; Client-side program echo_client.pl &lt;/ h4&gt;
-
-A program that sends a character string to the server and outputs the received character string.
-
-&lt;pre&gt;
+print $sock'aaa';
+</pre>
+<p>
+  The socket function corresponds to the open function. When writing, you can write with the print function.
+</p>
+<h3> Studying sockets is difficult </h3>
+<p>
+  Studying sockets is difficult. There are several difficult causes.
+</p>
+<h4> The procedure for creating a socket is complicated </h4>
+<p>
+  The procedure for creating a socket is complicated. You need to <b> write the source code over and over again </b> before you can memorize and use the socket.
+</p>
+<h4> Two programs, client and server, are required to communicate </h4>
+<p>
+  The hard part about studying sockets is that you have to write two programs, <b> client and server </b>. Even if you create only a client, you cannot try the program without a communication partner. Due to these difficulties, we will first prepare the server-side program here so that we can concentrate on creating the client-side program at first.
+</p>
+<h4> The status of the communication partner is uncertain </h4>
+<p>
+  Since it communicates over the network, <b> the status of the other party is uncertain </b>. There is no guarantee that it will almost certainly be written locally like a file. There may be sudden disconnections or delays. It means that you need to write a program to handle such errors.
+</p>
+<p>
+  The simplest sample of <h3> sockets. Echo server </h3>
+</p>
+<p>
+  Here is a sample socket program that you can run first. When the client sends the character Hello, the server adds the echo: string to the string and returns it to the client.
+</p>
+<p>
+  This sample is not complete, but it is the basis for learning client-server communication. It's one of the simplest client-server programs, but it's quite difficult for a normal program. First look at the sample in action.
+</p>
+<h4> Client-side program echo_client.pl </h4>
+<p>
+  A program that sends a character string to the server and outputs the received character string.
+</p>
+<pre>
 use strict;
 use warnings;
 use Socket;
 
-#Client
+# Client
 # 1. Creating a socket
-my $ sock;
-socket ($ sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
+my $sock;
+socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   or die "Cannot create socket: $!";
 
 # 2. Creating socket information
 
 # Host name to connect to
-my $ remote_host ='localhost';
-my $ packed_remote_host = inet_aton ($ remote_host)
-  or die "Cannot pack $ remote_host: $!";
+my $remote_host ='localhost';
+my $packed_remote_host = inet_aton ($remote_host)
+  or die "Cannot pack $remote_host: $!";
 
 # Port number to connect to
-my $ remote_port = 9000;
+my $remote_port = 9000;
 
-#Pack the host name and port number
-my $ sock_addr = sockaddr_in ($ remote_port, $ packed_remote_host)
-  or die "Cannot pack $ remote_host: $ remote_port: $!";
+# Pack the host name and port number
+my $sock_addr = sockaddr_in ($remote_port, $packed_remote_host)
+  or die "Cannot pack $remote_host: $remote_port: $!";
 
 # 3. Connect using socket
-connect ($ sock, $ sock_addr)
-  or die "Cannot connect $ remote_host: $ remote_port: $!";
+connect ($sock, $sock_addr)
+  or die "Cannot connect $remote_host: $remote_port: $!";
 
 # 4. Writing data
 # Do not write buffer.
-my $ old_handle = select $ sock;
-$ | = 1;
-select $ old_handle;
+my $old_handle = select $sock;
+$| = 1;
+select $old_handle;
 
-print $ sock "Hello";
+print $sock "Hello";
 
 # Finish writing
-shutdown $ sock, 1;
+shutdown $sock, 1;
 
 # 5. Read data
-while (my $ line = &lt;$ sock&gt;) {
-  print $ line;
+while (my $line = &lt;$sock&gt;) {
+  print $line;
 }
 
 # 6. Close the socket
-close $ sock;
-&lt;/ pre&gt;
-
-&lt;h4&gt; 2. Server-side program echo_server.pl &lt;/ h4&gt;
-
-This is a server-side program. Adds the string echo: to the string received from the client and returns it to the client. &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; is used to create a state that can be accepted repeatedly.
-
-&lt;pre&gt;
+close $sock;
+</pre>
+<h4> 2. Server-side program echo_server.pl </h4>
+<p>
+  This is a server-side program. Adds the string echo: to the string received from the client and returns it to the client. <a href="/blog/20100123126425.html"> while statement</a> is used to create a state that can be accepted repeatedly.
+</p>
+<pre>
 use strict;
 use warnings;
 use Socket;
 
-#Server
+# Server
 
 # 1. Creating a reception socket
 
-my $ sock_receive;
-socket ($ sock_receive, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
+my $sock_receive;
+socket ($sock_receive, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   or die "Cannot create socket: $!";
 
 # 2. Creating reception socket information
-my $ local_port = 9000;
+my $local_port = 9000;
 
-my $ pack_addr = sockaddr_in ($ local_port, INADDR_ANY);
+my $pack_addr = sockaddr_in ($local_port, INADDR_ANY);
 
 # 3. Link reception socket and reception socket information
-bind ($ sock_receive, $ pack_addr)
+bind ($sock_receive, $pack_addr)
   or die "Cannot bind: $!";
 
 # 4. Get ready to accept connections.
-listen ($ sock_receive, SOMAXCONN)
+listen ($sock_receive, SOMAXCONN)
   or die "Cannot listen: $!";
 
 # 5. Accept and respond to the connection.
-my $ sock_client; # Socket for communication with client
+my $sock_client; # Socket for communication with client
 
-while (accept ($ sock_client, $ sock_receive)) {
-  my $ content;
+while (accept ($sock_client, $sock_receive)) {
+  my $content;
   
-  #Reading data from the client
-  while (my $ line = &lt;$ sock_client&gt;) {
-    $ content. = $ line;
+  # Reading data from the client
+  while (my $line = &lt;$sock_client&gt;) {
+    $content. = $line;
   }
   
   # Write data to client
-  print $ sock_client "echo: $ content";
-  close $ sock_client;
+  print $sock_client "echo: $content";
+  close $sock_client;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; 3. Run the sample &lt;/ h4&gt;
-
-To run this sample, first
-
-&lt;pre&gt;
+</pre>
+<h4> 3. Run the sample </h4>
+<p>
+  To run this sample, first
+</p>
+<pre>
 perl echo_server.pl
-&lt;/ pre&gt;
-
-Start the server as. The server listens for requests from clients.
-
-Next, launch another terminal to execute the client-side program. and,
-
-&lt;pre&gt;
+</pre>
+<p>
+  Start the server as. The server listens for requests from clients.
+</p>
+<p>
+  Next, launch another terminal to execute the client-side program. and,
+</p>
+<pre>
 perl echo_client.pl
-&lt;/ pre&gt;
-
-will do. Then, a response is returned from the echo server,
-
-&lt;pre&gt;
+</pre>
+<p>
+  will do. Then, a response is returned from the echo server,
+</p>
+<pre>
 echo: Hello
-&lt;/ pre&gt;
-
-It will be displayed.
-
-&lt;h3&gt; Create a socket &lt;/ h3&gt;
-
-This is an explanation of the part of creating a socket on the client side.
-
-&lt;pre&gt;
+</pre>
+<p>
+  It will be displayed.
+</p>
+<h3> Create a socket </h3>
+<p>
+  This is an explanation of the part of creating a socket on the client side.
+</p>
+<pre>
 use Socket;
 
 # 1. Creating a socket
-my $ sock;
-socket ($ sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
+my $sock;
+socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   or die "Cannot create socket: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; 1. Creating a socket &lt;/ h4&gt;
-To use socket-related functions and constants
-
-&lt;pre&gt;
+</pre>
+<h4> 1. Creating a socket </h4>
+<p>
+  To use socket-related functions and constants
+</p>
+<pre>
 use Socket;
-&lt;/ pre&gt;
-
-will do. Use the &lt;b&gt; socket &lt;/ b&gt; function to create a socket.
-
-&lt;pre&gt;
-my $ sock;
-socket ($ sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
-&lt;/ pre&gt;
-
-The socket function takes four arguments. The first argument specifies the socket you want to read or write. If the socket function succeeds by passing $ sock declared in my $ sock; as the first argument, data can be read and written over the network through $ sock.
-
-Specify the domain in the second argument. In the third argument, specify the type. Specify the protocol number in the 4th argument.
-
-&lt;h4&gt; 2. Specifying the domain &lt;/ h4&gt;
-
-The second argument of the socket function specifies the &lt;b&gt; domain &lt;/ b&gt;. It's very confusing, but it has nothing to do with domain names, which are used in a similar sense to host names. As for the feeling of words, it may be better to imagine the word &lt;b&gt; area &lt;/ b&gt;, which is a translation of the domain into Japanese. Commonly used domains include &lt;b&gt; PF_UNIX domains &lt;/ b&gt; and &lt;b&gt; PF_INET domains &lt;/ b&gt;.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-&lt;b&gt; domain &lt;/ b&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;b&gt; Range &lt;/ b&gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+</pre>
+<p>
+  will do. Use the <b> socket </b> function to create a socket.
+</p>
+<pre>
+my $sock;
+socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
+</pre>
+<p>
+  The socket function takes four arguments. The first argument specifies the socket you want to read or write. If the socket function succeeds by passing $sock declared in my $sock; as the first argument, data can be read and written over the network through $sock.
+</p>
+<p>
+  Specify the domain in the second argument. In the third argument, specify the type. Specify the protocol number in the 4th argument.
+</p>
+<h4> 2. Specifying the domain </h4>
+<p>
+  The second argument of the socket function specifies the <b> domain </b>. It's very confusing, but it has nothing to do with domain names, which are used in a similar sense to host names. As for the feeling of words, it may be better to imagine the word <b> area </b>, which is a translation of the domain into Japanese. Commonly used domains include <b> PF_UNIX domains </b> and <b> PF_INET domains </b>.
+</p>
+<table>
+  <tr>
+    <td>
+<p>
+  <b> domain </b>
+</p>
+    </td>
+    <td>
+      <b> Range </b>
+    </td>
+  </tr>
+  <tr>
+    <td>
       PF_UNIX
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       local
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       PF_INET
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       the Internet
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-The PF_UNIX domain represents an area of ​​&lt;b&gt; one local computer &lt;/ b&gt;. This means that the scope of communication is only within the local computer.
-
-The PF_INET domain represents the area covered by the &lt;b&gt; Internet &lt;/ b&gt;. This means that computers around the world are within range of communication.
-
-Since this sample is trying to communicate via the Internet, PF_INET is specified as the domain. By the way, the acronym PF is an abbreviation for the word protocol family.
-
-&lt;h4&gt; 3. Type specification &lt;/ h4&gt;
-
-Specify &lt;b&gt; type &lt;/ b&gt; for the third argument of the socket function. If you want to communicate using &lt;b&gt; TCP &lt;/ b&gt;, specify &lt;b&gt; SOCK_STREAM &lt;/ b&gt;. If you want to communicate using &lt;b&gt; UDP &lt;/ b&gt;, specify &lt;b&gt; SOCK_DGRAM &lt;/ b&gt;.
-
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;b&gt; type &lt;/ b&gt;
-    &lt;/ td&gt;
-    &lt;td&gt;
-      &lt;b&gt; Communication method &lt;/ b&gt;
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+</table>
+<p>
+  The PF_UNIX domain represents an area of ​​<b> one local computer </b>. This means that the scope of communication is only within the local computer.
+</p>
+<p>
+  The PF_INET domain represents the area covered by the <b> Internet </b>. This means that computers around the world are within range of communication.
+</p>
+<p>
+  Since this sample is trying to communicate via the Internet, PF_INET is specified as the domain. By the way, the acronym PF is an abbreviation for the word protocol family.
+</p>
+<h4> 3. Type specification </h4>
+<p>
+  Specify <b> type </b> for the third argument of the socket function. If you want to communicate using <b> TCP </b>, specify <b> SOCK_STREAM </b>. If you want to communicate using <b> UDP </b>, specify <b> SOCK_DGRAM </b>.
+</p>
+<table>
+  <tr>
+    <td>
+      <b> type </b>
+    </td>
+    <td>
+      <b> Communication method </b>
+    </td>
+  </tr>
+  <tr>
+    <td>
       SOCK_STREAM
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       TCP
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-  &lt;tr&gt;
-    &lt;td&gt;
+    </td>
+  </tr>
+  <tr>
+    <td>
       SOCK_DGRAM
-    &lt;/ td&gt;
-    &lt;td&gt;
+    </td>
+    <td>
       UDP
-    &lt;/ td&gt;
-  &lt;/ tr&gt;
-
-&lt;/ table&gt;
-
-TPC is a &lt;b&gt; reliable &lt;/ b&gt; communication method. After confirming the connection with the other party, start exchanging data. In addition, even if data is lost on the network, it is a communication method that resends and reliably delivers the data. Many applications use TCP to communicate.
-
-UPD is a &lt;b&gt; unreliable but fast &lt;/ b&gt; communication method. Send data without checking the connection with the other party. Also, even if data is lost on the network, it will not be resent. Use UDP when some data such as audio and video is lost but it is meaningful enough and speed is prioritized.
-
-When communicating a character string, it is necessary to communicate using TCP because the data becomes meaningless if a part is lost.
-
-&lt;h4&gt; 4. Specifying the protocol number &lt;/ h4&gt;
-
-Specify &lt;b&gt; protocol number &lt;/ b&gt; in the 4th argument of the socket function.
-
-&lt;pre&gt;
-socket ($ sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
-&lt;/ pre&gt;
-
-The protocol is not the application layer protocol such as HTTP or FTP, but the &lt;b&gt; transport layer protocol such as TCP or UDP is specified by number &lt;/ b&gt;.
-
-To get the protocol number from the protocol name, use the &lt;b&gt; getprotobyname &lt;/ b&gt; function. Obtain the protocol number from the protocol name by referring to the file that shows the correspondence between the protocol name and the protocol number that exist in the OS. Specify the protocol name in lowercase.
-
-In the case of Windows, the file showing the correspondence between the protocol name and the protocol number
-
-&lt;pre&gt;
+    </td>
+  </tr>
+</table>
+<p>
+  TPC is a <b> reliable </b> communication method. After confirming the connection with the other party, start exchanging data. In addition, even if data is lost on the network, it is a communication method that resends and reliably delivers the data. Many applications use TCP to communicate.
+</p>
+<p>
+  UPD is a <b> unreliable but fast </b> communication method. Send data without checking the connection with the other party. Also, even if data is lost on the network, it will not be resent. Use UDP when some data such as audio and video is lost but it is meaningful enough and speed is prioritized.
+</p>
+<p>
+  When communicating a character string, it is necessary to communicate using TCP because the data becomes meaningless if a part is lost.
+</p>
+<h4> 4. Specifying the protocol number </h4>
+<p>
+  Specify <b> protocol number </b> in the 4th argument of the socket function.
+</p>
+<pre>
+socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
+</pre>
+<p>
+  The protocol is not the application layer protocol such as HTTP or FTP, but the <b> transport layer protocol such as TCP or UDP is specified by number </b>.
+</p>
+<p>
+  To get the protocol number from the protocol name, use the <b> getprotobyname </b> function. Obtain the protocol number from the protocol name by referring to the file that shows the correspondence between the protocol name and the protocol number that exist in the OS. Specify the protocol name in lowercase.
+</p>
+<p>
+  In the case of Windows, the file showing the correspondence between the protocol name and the protocol number
+</p>
+<pre>
 C: \ WINDOWS \ system32 \ drivers \ etc \ protocol
-&lt;/ pre&gt;
-
-It is in. For Unix-like OS
-
-&lt;pre&gt;
+</pre>
+<p>
+  It is in. For Unix-like OS
+</p>
+<pre>
 / etc / protocols
-&lt;/ pre&gt;
-
-I think it is in. (Confirmed with Fedora 7)
-
-The contents of these files are
-
-&lt;pre&gt;
+</pre>
+<p>
+  I think it is in. (Confirmed with Fedora 7)
+</p>
+<p>
+  The contents of these files are
+</p>
+<pre>
 # &lt;protocol name&gt; &lt;assigned number&gt; [aliases ...] [# &lt;comment&gt;]
 ip 0 IP # Internet protocol
 icmp 1 ICMP # Internet control message protocol
@@ -428,122 +435,129 @@ hmp 20 HMP # Host monitoring protocol
 xns-idp 22 XNS-IDP # Xerox NS IDP
 rdp 27 RDP # "reliable datagram" protocol
 rvd 66 RVD # MIT remote virtual disk
-&lt;/ pre&gt;
-It looks like this.
-
-&lt;h4&gt; 5. Error handling &lt;/ h4&gt;
-
-It is safer to handle the error.
-
-&lt;pre&gt;
-socket ($ sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
+</pre>
+<p>
+  It looks like this.
+</p>
+<h4> 5. Error handling </h4>
+<p>
+  It is safer to handle the error.
+</p>
+<pre>
+socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   or die "Cannot create socket: $!";
-&lt;/ pre&gt;
-
-If the socket function fails, it returns undef and sets $! To the error content.
-
-&lt;h4&gt; 6. Tips for learning sockets &lt;/ h4&gt;
-
-It takes a lot of effort to be able to use sockets. It turns out that there are many things you need to understand just by looking at creating sockets. The trick to remembering sockets is to type them many times. I can't remember just by looking at it.
-
-&lt;h3&gt; Create information on the connection destination of the socket &lt;/ h3&gt;
-
-Explains how to create information on the connection destination of the socket. The following part of the echo server sample client-side program.
-
-&lt;pre&gt;
+</pre>
+<p>
+  If the socket function fails, it returns undef and sets $! To the error content.
+</p>
+<h4> 6. Tips for learning sockets </h4>
+<p>
+  It takes a lot of effort to be able to use sockets. It turns out that there are many things you need to understand just by looking at creating sockets. The trick to remembering sockets is to type them many times. I can't remember just by looking at it.
+</p>
+<h3> Create information on the connection destination of the socket </h3>
+<p>
+  Explains how to create information on the connection destination of the socket. The following part of the echo server sample client-side program.
+</p>
+<pre>
 # 2. Creating socket information
 
 # Host name to connect to
-my $ remote_host ='localhost';
-my $ packed_remote_host = inet_aton ($ remote_host)
-  or die "Cannot pack $ remote_host: $!";
+my $remote_host ='localhost';
+my $packed_remote_host = inet_aton ($remote_host)
+  or die "Cannot pack $remote_host: $!";
 
 # Port number to connect to
-my $ remote_port = 9000;
+my $remote_port = 9000;
 
-#Pack the host name and port number
-my $ sock_addr = sockaddr_in ($ remote_port, $ packed_remote_host)
-  or die "Cannot pack $ remote_host: $ remote_port: $!";
-&lt;/ pre&gt;
-
-
-I use a socket to connect to a server, but at that time I need &lt;b&gt; information on the server to connect to &lt;/ b&gt;.
-
-&lt;h4&gt; 1. Host name or IP address of the connection destination &lt;/ h4&gt;
-
-The first thing you need is the &lt;b&gt; hostname or IP address &lt;/ b&gt; to connect to. The Internet uses IP addresses to uniquely identify your computer. It also generally has a corresponding host name. Either the host name or the IP address can be used.
-
-&lt;pre&gt;
+# Pack the host name and port number
+my $sock_addr = sockaddr_in ($remote_port, $packed_remote_host)
+  or die "Cannot pack $remote_host: $remote_port: $!";
+</pre>
+<p>
+  I use a socket to connect to a server, but at that time I need <b> information on the server to connect to </b>.
+</p>
+<h4> 1. Host name or IP address of the connection destination </h4>
+<p>
+  The first thing you need is the <b> hostname or IP address </b> to connect to. The Internet uses IP addresses to uniquely identify your computer. It also generally has a corresponding host name. Either the host name or the IP address can be used.
+</p>
+<pre>
 # Host name to connect to
-my $ remote_host ='localhost';
-&lt;/ pre&gt;
-
-or
-
-&lt;pre&gt;
-my $ remote_host = '127.0.0.1';
-&lt;/ pre&gt;
-
-127.0.0.1 is called &lt;b&gt; loopback address &lt;/ b&gt;, and localhost is the host name that corresponds to the loopback address. A loopback address is a virtual address that points to itself.
-
-Using the loopback address has the effect of communicating with yourself over the network. I do this because I want to test the server and client in a local environment.
-
-When actually communicating over the Internet, specify the IP address or host name of the server computer.
-
-&lt;h4&gt; 2. Convert the host name of the string to binary format &lt;/ h4&gt;
-
-The host name or IP address cannot be used as a &lt;b&gt; string &lt;/ b&gt;. You need to convert it to binary format using the &lt;b&gt; inet_aton &lt;/ b&gt; function.
-
-If the string given to inet_aton is a host name, it will be converted to the corresponding IP address and then to the binary format that represents the IP address.
-
-&lt;pre&gt;
-my $ packed_remote_host = inet_aton ($ remote_host)
-  or die "Cannot pack $ remote_host: $!";
-&lt;/ pre&gt;
-
-In aton, a means ascii and n means network. To be precise, the binary format is a &lt;b&gt; 4-byte number expressed in network byte order &lt;/ b&gt;.
-
-&lt;h4&gt; 3. Port number &lt;/ h4&gt;
-
-IP addresses and host names uniquely identify a computer, while port numbers are used to identify &lt;b&gt; applications &lt;/ b&gt; running within that computer.
-
-&lt;pre&gt;
+my $remote_host ='localhost';
+</pre>
+<p>
+  or
+</p>
+<pre>
+my $remote_host = '127.0.0.1';
+</pre>
+<p>
+  127.0.0.1 is called <b> loopback address </b>, and localhost is the host name that corresponds to the loopback address. A loopback address is a virtual address that points to itself.
+</p>
+<p>
+  Using the loopback address has the effect of communicating with yourself over the network. I do this because I want to test the server and client in a local environment.
+</p>
+<p>
+  When actually communicating over the Internet, specify the IP address or host name of the server computer.
+</p>
+<h4> 2. Convert the host name of the string to binary format </h4>
+<p>
+  The host name or IP address cannot be used as a <b> string </b>. You need to convert it to binary format using the <b> inet_aton </b> function.
+</p>
+<p>
+  If the string given to inet_aton is a host name, it will be converted to the corresponding IP address and then to the binary format that represents the IP address.
+</p>
+<pre>
+my $packed_remote_host = inet_aton ($remote_host)
+  or die "Cannot pack $remote_host: $!";
+</pre>
+<p>
+  In aton, a means ascii and n means network. To be precise, the binary format is a <b> 4-byte number expressed in network byte order </b>.
+</p>
+<h4> 3. Port number </h4>
+<p>
+  IP addresses and host names uniquely identify a computer, while port numbers are used to identify <b> applications </b> running within that computer.
+</p>
+<pre>
 # Port number to connect to
-my $ remote_port = 9000;
-&lt;/ pre&gt;
-
-Port numbers can be used from 0 to 65535. However, 0 to 1023 are common port numbers, so use 1024 to 65535. Make sure to use the same port number to communicate with the client and server.
-
-&lt;h4&gt; 4. Collect port numbers and IP addresses &lt;/ h4&gt;
-
-Next, you need to group the port number and IP address together using the sockaddr_in function.
-
-&lt;pre&gt;
-#Pack the host name and port number
-my $ sock_addr = sockaddr_in ($ remote_port, $ packed_remote_host)
-  or die "Cannot pack $ remote_host: $ remote_port: $!";
-&lt;/ pre&gt;
-
-The first argument is the port number, and the second argument is the IP address converted to binary format. The $ sock_addr created in this way will be passed to the argument of the connect function for connection.
-
-&lt;h3&gt; Connect to server --connect function &lt;/ h3&gt;
-
-Use the connect function to connect to the server.
-
-&lt;pre&gt;
+my $remote_port = 9000;
+</pre>
+<p>
+  Port numbers can be used from 0 to 65535. However, 0 to 1023 are common port numbers, so use 1024 to 65535. Make sure to use the same port number to communicate with the client and server.
+</p>
+<h4> 4. Collect port numbers and IP addresses </h4>
+<p>
+  Next, you need to group the port number and IP address together using the sockaddr_in function.
+</p>
+<pre>
+# Pack the host name and port number
+my $sock_addr = sockaddr_in ($remote_port, $packed_remote_host)
+  or die "Cannot pack $remote_host: $remote_port: $!";
+</pre>
+<p>
+  The first argument is the port number, and the second argument is the IP address converted to binary format. The $sock_addr created in this way will be passed to the argument of the connect function for connection.
+</p>
+<h3> Connect to server - connect function </h3>
+<p>
+  Use the connect function to connect to the server.
+</p>
+<pre>
 # 3. Connect using socket
-connect ($ sock, $ sock_addr)
-  or die "Cannot connect $ remote_host: $ remote_port: $!";
-&lt;/ pre&gt;
-
-&lt;h4&gt; Connect to the server &lt;/ h4&gt;
-
-Use the connect function to connect to the server. The first argument is the socket created by the socket function.
-
-The second argument is "s"
-Information on the port number and IP address of the connection destination created by the "ockaddr_in" function].
-
-If you call the connect function with these two arguments, $ sock becomes a &lt;b&gt; read / write socket &lt;/ b&gt;. You can use $ sock to exchange data with the server.
+connect ($sock, $sock_addr)
+  or die "Cannot connect $remote_host: $remote_port: $!";
+</pre>
+<h4> Connect to the server </h4>
+<p>
+  Use the connect function to connect to the server. The first argument is the socket created by the socket function.
+</p>
+<p>
+  The second argument is "s"
+</p>
+<p>
+  Information on the port number and IP address of the connection destination created by the "ockaddr_in" function].
+</p>
+<p>
+  If you call the connect function with these two arguments, $sock becomes a <b> read / write socket </b>. You can use $sock to exchange data with the server.
+</p>
 
   </div>
   <div class="bottom">

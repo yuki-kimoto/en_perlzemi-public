@@ -78,45 +78,45 @@
 </div>
 
 
-  $ headers-> content_type ('text / csv; charset = UTF-8');
+  $headers-> content_type ('text / csv; charset = UTF-8');
   
-  #Render data
-  return $ self-> render (data => $ content);
+  # Render data
+  return $self-> render (data => $content);
 <p>
   };
 </p>
 <p>
   app-> start;
 </p>
-</ pre>
+</pre>
 <p>
-  Use the Text :: CSV :: Encoded module to create CSV data. The only way to convert the data of one record to a row is to use the print method, which is a method for printing to a filehandle. Therefore, Perl's scalar input / output function is used to output to scalar variables.
+  Use the Text::CSV::Encoded module to create CSV data. The only way to convert the data of one record to a row is to use the print method, which is a method for printing to a filehandle. Therefore, Perl's scalar input / output function is used to output to scalar variables.
 </p>
 <p>
   You can name the file using the Content-Disposition header. Let's also specify the Content-Type so that we can see that it is CSV data. When drawing, CSV data is binary data (not an internal string), so use the data option.
 </p>
-<h3><a href="/blog/20110408130611.html"> Specify the class that describes the template when drawing </a></ h3>
+<h3><a href="/blog/20110408130611.html"> Specify the class that describes the template when drawing </a></h3>
 <p>
-  You can specify <strong> template_class </ strong> as an argument of the render method for the class that describes the template when drawing.
+  You can specify <strong> template_class </strong> as an argument of the render method for the class that describes the template when drawing.
 </p>
 <pre>
-$ c-&gt; render (template_class =&gt; $ class);
-&lt;/ pre&gt;
-
-This is very useful if you want to write the template directly in a plugin etc. Mojolicious plugins are very flexible and allow you to write and incorporate the web application itself.
-
-&lt;pre&gt;
-package Mojolicious :: Plugin :: Viewer;
-use Mojo :: Base'Mojolicious :: Plugin';
+$c-&gt; render (template_class =&gt; $class);
+</pre>
+<p>
+  This is very useful if you want to write the template directly in a plugin etc. Mojolicious plugins are very flexible and allow you to write and incorporate the web application itself.
+</p>
+<pre>
+package Mojolicious::Plugin::Viewer;
+use Mojo::Base'Mojolicious::Plugin';
 
 sub register {
-  my ($ self, $ app, $ conf) = @_;
+  my ($self, $app, $conf) = @_;
   
-  my $ r = $ app-&gt; route;
-  $ r-&gt; get ('/ viewer', sub {
-     my $ self = shift;
-     #Specify template class
-     return $ self-&gt; render (template_class =&gt; __PACKAGE__);
+  my $r = $app-&gt; route;
+  $r-&gt; get ('/ viewer', sub {
+     my $self = shift;
+     # Specify template class
+     return $self-&gt; render (template_class =&gt; __PACKAGE__);
   });
 }
 
@@ -127,129 +127,126 @@ __DATA__
 @@ viewer.html.ep
 &lt;html&gt;
   &lt;head&gt;
-    &lt;title&gt; Viewer &lt;/ title&gt;
+    &lt;title&gt; Viewer &lt;/title&gt;
   &lt;body&gt;
      Viewer &lt;% = lc'A'%&gt;
-  &lt;/ body&gt;
-&lt;/ html&gt;
-&lt;/ pre&gt;
-
-&lt;h3&gt; Dynamically deliver large files &lt;/ h3&gt;
-
-What if you want to dynamically deliver large files in your web application? For example, if you don't know the data size and want to distribute it part by part. If you put everything on the memory, the memory may be overwhelmed, so I don't want to put everything on the memory.
-
-In such a case, use HTTP chunk encoding and distribute part by part. When viewed from the browser, it looks like a single file in the end, so there is no problem.
-
-This can be achieved by combining a method called write_chunk and a callback.
-
-&lt;pre&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h3> Dynamically deliver large files </h3>
+<p>
+  What if you want to dynamically deliver large files in your web application? For example, if you don't know the data size and want to distribute it part by part. If you put everything on the memory, the memory may be overwhelmed, so I don't want to put everything on the memory.
+</p>
+<p>
+  In such a case, use HTTP chunk encoding and distribute part by part. When viewed from the browser, it looks like a single file in the end, so there is no problem.
+</p>
+<p>
+  This can be achieved by combining a method called write_chunk and a callback.
+</p>
+<pre>
 get'/ sizeunknowndata' =&gt; sub {
-  my $ self = shift;
+  my $self = shift;
 
-  my $ file ='foo.tar.gz';
-  open my $ fh,'&lt;', $ file
+  my $file ='foo.tar.gz';
+  open my $fh,'&lt;', $file
     or die "Error";
 
-  #Write chunk
-  $ self-&gt; res-&gt; headers-&gt; content_type ('application / gzip');
-  $ self-&gt; res-&gt; headers-&gt; content_disposition (qq / attachment; filename = "$ file" /);
-  my $ cb;
-  $ cb = sub {
-    my $ c = shift;
-    my $ size = 500 * 1024;
-    my $ length = sysread ($ fh, my $ buffer, $ size);
-    unless (defined $ length) {
-      close $ fh;
-      undef $ cb;
+  # Write chunk
+  $self-&gt; res-&gt; headers-&gt; content_type ('application / gzip');
+  $self-&gt; res-&gt; headers-&gt; content_disposition (qq / attachment; filename = "$file" /);
+  my $cb;
+  $cb = sub {
+    my $c = shift;
+    my $size = 500 * 1024;
+    my $length = sysread($fh, my $buffer, $size);
+    unless (defined $length) {
+      close $fh;
+      undef $cb;
       return;
     }
-    $ c-&gt; write_chunk ($ buffer, $ cb);
+    $c-&gt; write_chunk ($buffer, $cb);
   };
-  $ self-&gt; $ cb;
+  $self-&gt; $cb;
 };
-&lt;/ pre&gt;
-
-When there is no more data to read, close the filehandle, undefine $ cb and remove the reference.
-
-&lt;h4&gt; Addendum &lt;/ h4&gt;
-
-The title "Deliver a large file" was misleading. Changed the title to "Deliver large files dynamically".
-
-Large static files can usually be delivered under "public" without straining memory. Also, Mojolicious is an asynchronous I / O, so processing will not be blocked.
-
-
-&lt;h3&gt; Draw a 404 Not Found page &lt;/ h3&gt;
-
-Use &lt;strong&gt; reply-&gt; not_found &lt;/ strong&gt; to draw a 404 Not found page (the page to display when the page is not found). Twice
-
-&lt;pre&gt;
+</pre>
+<p>
+  When there is no more data to read, close the filehandle, undefine $cb and remove the reference.
+</p>
+<h4> Addendum </h4>
+<p>
+  The title "Deliver a large file" was misleading. Changed the title to "Deliver large files dynamically".
+</p>
+<p>
+  Large static files can usually be delivered under "public" without straining memory. Also, Mojolicious is an asynchronous I / O, so processing will not be blocked.
+</p>
+<h3> Draw a 404 Not Found page </h3>
+<p>
+  Use <strong> reply-> not_found </strong> to draw a 404 Not found page (the page to display when the page is not found). Twice
+</p>
+<pre>
 get'/' =&gt; sub {
-  my $ sefl = shift;
+  my $sefl = shift;
   
   If you want to draw a page with # 404 not found
   if (...) {
-    return $ self-&gt; reply-&gt; not_found;
+    return $self-&gt; reply-&gt; not_found;
   }
 
-  $ self-&gt; render;
+  $self-&gt; render;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Changes in Mojolicious 6 &lt;/ h4&gt;
-
-The rendering of the 404 Not Found page has changed from render_not_found to reply-&gt; not_found.
-
-
-&lt;h3&gt; Draw exception (error) page &lt;/ h3&gt;
-
-You may want to show the error page to the user if something goes wrong with unintended processing. Use &lt;strong&gt; reply-&gt; exception &lt;/ strong&gt; to draw such a page. Twice
-
-&lt;pre&gt;
+</pre>
+<h4> Changes in Mojolicious 6 </h4>
+<p>
+  The rendering of the 404 Not Found page has changed from render_not_found to reply-> not_found.
+</p>
+<h3> Draw exception (error) page </h3>
+<p>
+  You may want to show the error page to the user if something goes wrong with unintended processing. Use <strong> reply-> exception </strong> to draw such a page. Twice
+</p>
+<pre>
 get'/' =&gt; sub {
-  my $ sefl = shift;
+  my $sefl = shift;
   
-  #Draw exception (error) page
+  # Draw exception (error) page
   if (...) {
-    return $ self-&gt; reply-&gt; exception;
+    return $self-&gt; reply-&gt; exception;
   }
 
-  $ self-&gt; render;
+  $self-&gt; render;
 }
-&lt;/ pre&gt;
-
-&lt;h4&gt; Changes in Mojolicious 6 &lt;/ h4&gt;
-
-The render_exception method for rendering exception pages has been changed to reply-&gt; exception.
-
-
-&lt;h3&gt; How to use JSON :: XS to draw JSON &lt;/ h3&gt;
-
-Mojolicious has its own module that draws JSON called Mojo :: JSON, which is written in pure Perl. If you want to use JSON :: XS to draw JSON fast, I think it's a good idea to replace the handler for JSON as follows.
-
-&lt;pre&gt;
-use Mojolicious :: Lite;
-use Mojo :: JSON :: XS;
+</pre>
+<h4> Changes in Mojolicious 6 </h4>
+<p>
+  The render_exception method for rendering exception pages has been changed to reply-> exception.
+</p>
+<h3> How to use JSON::XS to draw JSON </h3>
+<p>
+  Mojolicious has its own module that draws JSON called Mojo::JSON, which is written in pure Perl. If you want to use JSON::XS to draw JSON fast, I think it's a good idea to replace the handler for JSON as follows.
+</p>
+<pre>
+use Mojolicious::Lite;
+use Mojo::JSON::XS;
 
 Replace handler for drawing # json
 app-&gt; renderer-&gt; add_handler (json =&gt; sub {
-  my ($ self, $ c, $ output, $ options) = @_;
-  $$ output = Mojo :: JSON :: XS-&gt; new-&gt; encode ($ options-&gt; {json});
+  my ($self, $c, $output, $options) = @_;
+  $$output = Mojo::JSON::XS-&gt; new-&gt; encode ($options-&gt; {json});
 });
 
 get'/' =&gt; sub {
-  my $ self = shift;
+  my $self = shift;
   
-  $ self-&gt; render (json =&gt; {name =&gt;'kimoto'});
+  $self-&gt; render (json =&gt; {name =&gt;'kimoto'});
 };
 
 app-&gt; start;
-&lt;/ pre&gt;
-
-Mojo :: JSON :: XS is a module that has the same interface as Mojo :: JSON and uses JSON :: XS internally. It's included in a package called Mojo :: JSON :: Any, so install it when you use it.
-
-&lt;pre&gt;
-cpan Mojo :: JSON :: Any
-&lt;/ pre&gt;
+</pre>
+<p>
+  Mojo::JSON::XS is a module that has the same interface as Mojo::JSON and uses JSON::XS internally. It's included in a package called Mojo::JSON::Any, so install it when you use it.
+</p>
+<pre>
+cpan Mojo::JSON::Any
+</pre>
 
   </div>
   <div class="bottom">

@@ -33,11 +33,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Get the last day of the month  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is a sample function to get the last day of the month. The timelocal function of the Time :: Local module is used to check the existing date.">
+<meta name="description" content="This is a sample function to get the last day of the month. The timelocal function of the Time::Local module is used to check the existing date.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Get the last day of the month  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is a sample function to get the last day of the month. The timelocal function of the Time :: Local module is used to check the existing date." />
+<meta name="twitter:description" content="This is a sample function to get the last day of the month. The timelocal function of the Time::Local module is used to check the existing date." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,19 +62,19 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161123147990.html">
-        <span itemprop = "name"> Date / Time </ span> </a>
+        <span itemprop = "name"> Date / Time </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-</ ol>
-<h2><a href="/blog/20081016122425.html"> Get the last day of the month </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20081016122425.html"> Get the last day of the month </a></h2>
 <p>
-  This is a sample function to get the last day of the month. The timelocal function of the Time :: Local module is used to check the existing date.
+  This is a sample function to get the last day of the month. The timelocal function of the Time::Local module is used to check the existing date.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,71 +96,70 @@
 use strict;
 use warnings;
 
-print "(1) Get the last day of the month. \ N";
-my $ end_of_month_200802 = end_of_month (2008, 2);
-print "The last day of February 2008 is $ end_of_month_200802. \ N";
+print "(1) Get the last day of the month.\n";
+my $end_of_month_200802 = end_of_month (2008, 2);
+print "The last day of February 2008 is $end_of_month_200802.\n";
 
 # A function that finds the last day of the month.
 sub end_of_month {
-  my ($ year, $ month) = @_;
-  return if! $ year ||! $ month;
+  my ($year, $month) = @_;
+  return if! $year ||! $month;
 
-  # Time :: Local :: timelocal function takes an elapsed year from 1900 as an argument
-  Since it is taken to #, subtract 1900.
-  $ year-= 1900;
+  # Time::Local::timelocal function takes an elapsed year from 1900 as an argument
+  Since it is taken to # , subtract 1900.
+  $year-= 1900;
 
-  # Time :: Local :: timelocal function starts from 0 like 0 in January and 1 in February
+  # Time::Local::timelocal function starts from 0 like 0 in January and 1 in February
   # Takes the month that starts as an argument, so subtract 1.
-  $ month-;
+  $month-;
 
   # These four candidates for the end of the month
   my @days = (31, 30, 29, 28);
     
   # Used for checking the existence of dates.
-  require Time :: Local;
+  require Time::Local;
   
-  for my $ day (@days) {
+  for my $day (@days) {
     eval {
       # If you specify a non-existent day, an exception will be thrown.
-      Time :: Local :: timelocal (0, 0, 0, $ day, $ month, $ year);
+      Time::Local::timelocal (0, 0, 0, $day, $month, $year);
     };
     # Date that exists if no exception occurs.
-    return $ day unless $ @;
+    return $day unless $@;
   }
   return;
 }
-&lt;/ pre&gt;
-
-(Reference) &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt;
-
-&lt;h3&gt; Code explanation &lt;/ h3&gt;
-
-&lt;h4&gt; Candidate date for the last day of the month &lt;/ h4&gt;
-
-The last day of the month is 28th, 29th, 30th, or 31st. If the date is checked in order from the 31st and exists, it is the last day of the month.
-
-&lt;pre&gt;
+</pre>
+<p>
+  (Reference) <a href="/blog/20100312126967.html"> eval</a>
+</p>
+<h3> Code explanation </h3>
+<h4> Candidate date for the last day of the month </h4>
+<p>
+  The last day of the month is 28th, 29th, 30th, or 31st. If the date is checked in order from the 31st and exists, it is the last day of the month.
+</p>
+<pre>
 my @days = (31, 30, 29, 28);
-&lt;/ pre&gt;
-
-&lt;h4&gt; Check existing dates &lt;/ h4&gt;
-
-Check the date with the timelocal function of the Time :: Local module, as explained in "Determining if a date exists."
-
-We will check from the 31st to the 28th. If you specify a date that does not exist, an exception will be thrown, so if no exception is raised, it is the last day of the month.
-
-&lt;pre&gt;
-require Time :: Local;
+</pre>
+<h4> Check existing dates </h4>
+<p>
+  Check the date with the timelocal function of the Time::Local module, as explained in "Determining if a date exists."
+</p>
+<p>
+  We will check from the 31st to the 28th. If you specify a date that does not exist, an exception will be thrown, so if no exception is raised, it is the last day of the month.
+</p>
+<pre>
+require Time::Local;
   
-for my $ day (@days) {
+for my $day (@days) {
   eval {
     # If you specify a non-existent day, an exception will be thrown.
-    Time :: Local :: timelocal (0, 0, 0, $ day, $ month, $ year);
+    Time::Local::timelocal (0, 0, 0, $day, $month, $year);
   };
   # Date that exists if no exception occurs.
-  return $ day unless $ @;
+  return $day unless $@;
 }
-&lt;/ pre&gt;
+</pre>
 
   </div>
   <div class="bottom">

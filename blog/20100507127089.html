@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Devel :: NYTProf --Easy-to-read profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Devel :: NYTProf  is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file.">
+<title> Devel::NYTProf - Easy-to-read profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Devel::NYTProf  is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Devel :: NYTProf --Easy-to-read profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Devel :: NYTProf  is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file." />
+<meta name="twitter:title" content=" Devel::NYTProf - Easy-to-read profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Devel::NYTProf  is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -62,23 +62,23 @@
     <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </ span> </a>
+        <span itemprop = "name"> Perl </span></a>
     <meta itemprop = "position" content = "1" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </ span> </a>
+      <span itemprop = "name"> Module </span></a>
     <meta itemprop = "position" content = "2" />
-  </ li>
-  & # 8250;
+  </li>
+  &#8250;
   <li>
     here
-  </ li>
-</ ol>
-<h2><a href="/blog/20100507127089.html"> Devel :: NYTProf --Easy-to-read profiler </a></ h2>
+  </li>
+</ol>
+<h2><a href="/blog/20100507127089.html"> Devel::NYTProf - Easy-to-read profiler </a></h2>
 <p>
-  <strong> Devel :: NYTProf </ strong> is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file.
+  <strong> Devel::NYTProf </strong> is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,24 +100,26 @@
   Creating a profile is easy. When the following command is executed, a file that outputs the profile information "nytprof.out" is created in the current directory.
 </p>
 <pre>
-#Create profile information
+# Create profile information
 perl -d: NYTProf target.pl
-&lt;/ pre&gt;
-
-To convert "nytprof.out" to an HTML file, run the nytprof html command.
-
-&lt;pre&gt;
-#Convert profile information to HTML file
+</pre>
+<p>
+  To convert "nytprof.out" to an HTML file, run the nytprof html command.
+</p>
+<pre>
+# Convert profile information to HTML file
 nytprofhtml
-&lt;/ pre&gt;
-
-An HTML file will be created in the "nytprof /" directory of the current directory. You can see the profile information by opening "nytprof / index.html".
-
-[f: id: perlcodesample: 20100612223218p: image]
-
-The above result is the result in my environment when I run the script.
-
-&lt;pre&gt;
+</pre>
+<p>
+  An HTML file will be created in the "nytprof /" directory of the current directory. You can see the profile information by opening "nytprof / index.html".
+</p>
+<p>
+  [f: id: perlcodesample: 20100612223218p: image]
+</p>
+<p>
+  The above result is the result in my environment when I run the script.
+</p>
+<pre>
 use strict;
 use warnings;
 
@@ -126,21 +128,22 @@ func2 ();
 func2 ();
 
 sub func1 {
-  my $ i = 0;
-  while ($ i &lt;1000000) {
-    $ i ++;
+  my $i = 0;
+  while ($i &lt;1000000) {
+    $i++;
   }
 }
 
 sub func2 {
-  my $ i = 0;
-  while ($ i &lt;2000000) {
-    $ i ++;
+  my $i = 0;
+  while ($i &lt;2000000) {
+    $i++;
   }
 }
-&lt;/ pre&gt;
-
-The number is incremented using &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
+</pre>
+<p>
+  The number is incremented using <a href="/blog/20100123126425.html"> while statement</a>.
+</p>
 
   </div>
   <div class="bottom">

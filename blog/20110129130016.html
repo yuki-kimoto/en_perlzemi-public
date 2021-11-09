@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="th-> execute ($ i, $ title);">
+<title> Speed ​​up with bulk insert  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="th-> execute ($i, $title);">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="th-> execute ($ i, $ title);" />
+<meta name="twitter:title" content=" Speed ​​up with bulk insert  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="th-> execute ($i, $title);" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -60,7 +60,7 @@
   </div>
   <div class="middle">
     <p>
-  th-> execute ($ i, $ title);
+  th-> execute ($i, $title);
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -84,100 +84,101 @@
   });
 </p>
 <p>
-  cmpthese ($ result);
+  cmpthese ($result);
 </p>
-</ pre>
+</pre>
 <p>
   Benchmark results are slightly lower than those using raw DBI. Compared to using a normal insert, there is a difference of nearly 10 times, so I think it is better to use it when performing a large number of inserts at the same time.
 </p>
 <pre>
            Rate normal multiple raw
-normal 22.3 / s --- 90% -92%
-multiple 213 / s 855% ---23%
+normal 22.3 / s - - 90% -92%
+multiple 213 / s 855% - -23%
 raw 278 / s 1147% 31% -
-&lt;/ pre&gt;
-
-&lt;h4&gt; Speed ​​up with bulk insert &lt;/ h4&gt;
-
-If your database supports bulk inserts, you can do bulk inserts. Currently available for MySQL and PostgreSQL. You can use the database function to insert multiple data at once, so you can expect even higher speeds.
-
-&lt;pre&gt;
-$ dbi-&gt; insert ($ params, table =&gt;'book', bulk_insert =&gt; 1);
-&lt;/ pre&gt;
-
-&lt;b&gt; Benchmark with bulk_insert in MySQL &lt;/ b&gt;
-
-Below is the benchmark script.
-
-&lt;pre&gt;
+</pre>
+<h4><a href="/blog/20110129130016.html"> Speed ​​up with bulk insert </a></h4>
+<p>
+  If your database supports bulk inserts, you can do bulk inserts. Currently available for MySQL and PostgreSQL. You can use the database function to insert multiple data at once, so you can expect even higher speeds.
+</p>
+<pre>
+$dbi-&gt; insert ($params, table =&gt;'book', bulk_insert =&gt; 1);
+</pre>
+<p>
+  <b> Benchmark with bulk_insert in MySQL </b>
+</p>
+<p>
+  Below is the benchmark script.
+</p>
+<pre>
 use strict;
 use warnings;
 use Benchmark qw / timethese cmpthese /;
 
-use DBIx :: Custom;
+use DBIx::Custom;
 
-my $ dbi = DBIx :: Custom-&gt; connect (dsn =&gt;'dbi: mysql: database = usertest',
+my $dbi = DBIx::Custom-&gt; connect (dsn =&gt;'dbi: mysql: database = usertest',
 user =&gt;'root', connector =&gt; 1);
 
 # Performance comparison
-my $ result = timethese (100, {
+my $result = timethese (100, {
   normal =&gt; sub {
-    $ dbi-&gt; connector-&gt; txn (sub {
-      $ dbi-&gt; delete_all (table =&gt;'book');
-      for my $ i (1 .. 100) {
-        my $ param = {id =&gt; $ i, title =&gt;'Perl'};
-        $ dbi-&gt; insert ($ param, table =&gt;'book');
+    $dbi-&gt; connector-&gt; txn (sub {
+      $dbi-&gt; delete_all (table =&gt;'book');
+      for my $i (1 .. 100) {
+        my $param = {id =&gt; $i, title =&gt;'Perl'};
+        $dbi-&gt; insert ($param, table =&gt;'book');
       }
     });
   },
   multiple =&gt; sub {
-    $ dbi-&gt; connector-&gt; txn (sub {
-      $ dbi-&gt; delete_all (table =&gt;'book');
+    $dbi-&gt; connector-&gt; txn (sub {
+      $dbi-&gt; delete_all (table =&gt;'book');
       my @params;
-      for my $ i (1 .. 100) {
-        push @params, {id =&gt; $ i, title =&gt;'Perl'};
+      for my $i (1 .. 100) {
+        push @params, {id =&gt; $i, title =&gt;'Perl'};
       }
-      $ dbi-&gt; insert (\ @ params, table =&gt;'book');
+      $dbi-&gt; insert (\ @ params, table =&gt;'book');
     });
   },
   bulk_insert =&gt; sub {
-    $ dbi-&gt; connector-&gt; txn (sub {
-      $ dbi-&gt; delete_all (table =&gt;'book');
+    $dbi-&gt; connector-&gt; txn (sub {
+      $dbi-&gt; delete_all (table =&gt;'book');
       my @params;
-      for my $ i (1 .. 100) {
-        push @params, {id =&gt; $ i, title =&gt;'Perl'};
+      for my $i (1 .. 100) {
+        push @params, {id =&gt; $i, title =&gt;'Perl'};
       }
-      $ dbi-&gt; insert (\ @ params, table =&gt;'book', bulk_insert =&gt; 1);
+      $dbi-&gt; insert (\ @ params, table =&gt;'book', bulk_insert =&gt; 1);
     });
   },
   raw =&gt; sub {
-    $ dbi-&gt; connector-&gt; txn (sub {
-      $ dbi-&gt; delete_all (table =&gt;'book');
-      my $ sth;
-      for my $ i (1 .. 100) {
-        $ sth || = $ dbi-&gt; dbh-&gt; prepare ('insert into book (id, title) values ​​(?,?)');
-        my $ id = $ i;
-        my $ title ='Perl';
-        $ sth-&gt; execute ($ i, $ title);
+    $dbi-&gt; connector-&gt; txn (sub {
+      $dbi-&gt; delete_all (table =&gt;'book');
+      my $sth;
+      for my $i (1 .. 100) {
+        $sth || = $dbi-&gt; dbh-&gt; prepare ('insert into book (id, title) values ​​(?,?)');
+        my $id = $i;
+        my $title ='Perl';
+        $sth-&gt; execute ($i, $title);
       }
     });
   }
 });
 
-cmpthese ($ result);
-&lt;/ pre&gt;
-
-Benchmark results show that using bulk_insert gives about 5 times the normal performance of a normal insert.
-
-&lt;pre&gt;
+cmpthese ($result);
+</pre>
+<p>
+  Benchmark results show that using bulk_insert gives about 5 times the normal performance of a normal insert.
+</p>
+<pre>
               Rate normal multiple raw bulk_insert
-normal 24.0 / s --- 72% -76% -83%
-multiple 86.2 / s 259% ---16% -40%
-raw 102 / s 326% 18% --- 29%
+normal 24.0 / s - - 72% -76% -83%
+multiple 86.2 / s 259% - -16% -40%
+raw 102 / s 326% 18% - - 29%
 bulk_insert 143 / s 496% 66% 40% -
-&lt;/ pre&gt;
-
-If bulk inserts are not performing well, check once to see if there is enough memory space for database inserts. If this memory area is insufficient, swap-in / swap-out will occur, which will be very slow.
+</pre>
+<p>
+  If bulk inserts are not performing well, check once to see if there is enough memory space for database inserts. If this memory area is insufficient, swap-in / swap-out will occur, which will be very slow.
+</p>
 
   </div>
   <div class="bottom">
