@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ワード文字の区切りを表現する - \b - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ワード文字の区切りは\bという正規表現文字をを使います。">
+<title> Representing word character delimiters-\ b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the regular expression character  \ b  to separate word characters.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ワード文字の区切りを表現する - \b - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ワード文字の区切りは\bという正規表現文字をを使います。" />
+<meta name="twitter:title" content=" Representing word character delimiters-\ b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the regular expression character  \ b  to separate word characters." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100827127859.html">
-      <span itemprop="name">正規表現</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20080404120748.html">ワード文字の区切りを表現する - \b</a></h2>
+      <span itemprop = "name"> Regular expression </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20080404120748.html"> Representing word character delimiters-\ b </a></ h2>
 <p>
-  ワード文字の区切りは<strong>\b</strong>という正規表現文字をを使います。
+  Use the regular expression character <strong> \ b </ strong> to separate word characters.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,39 +98,38 @@
 
 
 <pre>
-\b
-</pre>
-<p>
-  \bは区切り文字を表現します。区切り文字とは、ワード文字と空白文字の境界です。"ab cd" であれば、/\bcd/ で、 ' 'とcの間の0文字を表現できます。
-</p>
-<p>
-  ワード文字とは、英数字とアンダーバーのことです。空白文字とは、\s で表される文字のことで、スペース、タブ、改行です。
-</p>
-<h3>サンプル</h3>
-<p>
-  ワード文字の区切りを使ったサンプルです。
-</p>
-<pre>
+\ b
+&lt;/ pre&gt;
+
+\ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd", / \ bcd / can represent the 0 character between'' and c.
+
+Word characters are alphanumeric characters and underscores. Whitespace is the character represented by \ s, which is a space, tab, or newline.
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample using word character delimiters.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ワード文字の区切りを表現する。 \b
-# ( ワード文字とは、英数字とアンダーバーからなる文字のこと )
+# Represents a word character delimiter. \ b
+# (A word character is a character consisting of alphanumeric characters and an underscore)
 
-my $word_space = "ab cd ef";
-my $word = "abcd ef";
+my $ word_space = "ab cd ef";
+my $ word = "abcd ef";
 
-print "1: ワード文字列の区切りを表\現する\n";
-if ($word_space =~ /ab\b/ &amp;&amp; $word !~ /ab\b/) {
-  print "/ab\\b/ は、 'ab cd ef' にマッチしますが、" .
-    "'abcd ef'にはマッチしません。\n\n";
+print "1: Represents word string delimiters \ n";
+if ($ word_space = ~ / ab \ b / &amp;&amp; $ word! ~ / Ab \ b /) {
+  print "/ ab \\ b / matches'ab cd ef', but".
+    "Does not match'abcd ef'. \ N \ n";
 }
 
-if ($word_space =~ /\bcd\b/ &amp;&amp; $word !~ /\bab\b/) {
-  print "/\\bcd\\b/ は、 'ab cd ef' にマッチしますが、" .
-    " 'abcd ef'にはマッチしません。\n";
+if ($ word_space = ~ / \ bcd \ b / &amp;&amp; $ word! ~ / \ Bb \ b /) {
+  print "/ \\ bcd \\ b / matches'ab cd ef', but".
+    "Does not match'abcd ef'. \ N";
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>変数に適切な名前をつけるようにしよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="変数をよい名前にするとプログラムが読みやすくなります。">
+<title> Make sure you give the variable a proper name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="A good name for the variable will make the program easier to read.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="変数に適切な名前をつけるようにしよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="変数をよい名前にするとプログラムが読みやすくなります。" />
+<meta name="twitter:title" content=" Make sure you give the variable a proper name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="A good name for the variable will make the program easier to read." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,22 +59,22 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130220136137.html">
-        <span itemprop="name">読み物</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20081103122562.html">変数に適切な名前をつけるようにしよう</a></h2>
+        <span itemprop = "name"> reading material </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20081103122562.html"> Make sure you give the variable a proper name </a></ h2>
 <p>
-  変数をよい名前にするとプログラムが読みやすくなります。
+  A good name for the variable will make the program easier to read.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,155 +93,165 @@
 
 
 <p>
-  個人的な意見になりますが、変数名のつけ方について自分の考えていることを書いておきます。
+  This is my personal opinion, but I would like to write down what I think about how to name variables.
 </p>
 <ol>
   <li>
-    変数名は意味のあるものにする。
-  </li>
+    Make variable names meaningful.
+  </ li>
   <li>
-    変数名はすべて小文字で、単語のつなぎ目は _ (アンダーバー)を使用する。
-  </li>
+    Variable names are all lowercase and word joints use _ (underscore).
+  </ li>
   <li>
-    変数名をどの程度詳細にするか
-  </li>
+    How detailed the variable name should be
+  </ li>
   <li>
-    省略してもよい変数名
-  </li>
+    Variable names that may be omitted
+  </ li>
   <li>
-    真偽値を表す変数の命名方法
-  </li>
+    How to name variables that represent boolean values
+  </ li>
   <li>
-    配列の命名方法
-  </li>
-</ol>
-<h3>(1)変数名は意味のあるものにする。</h3>
+    Array naming method
+  </ li>
+</ ol>
+<h3> (1) Make the variable name meaningful. </ h3>
 <p>
-  プログラミングで一番読み取りにくいのはコードを書いた人の意図です。
+  The hardest thing to read in programming is the intent of the person who wrote the code.
 </p>
 <p>
-  適切な変数名をつけることによって意図が伝わりやすくなります。
+  Proper variable names make it easier to convey your intentions.
 </p>
-<h4>(a)変数に意味を持たせた場合</h4>
+<h4> (a) When variables have meaning </ h4>
 <pre>
-# この変数は何かの合計を格納するものだ
-my $total;
+# This variable stores the sum of something
+my $ total;
 
-# この変数は何らかのオフセットを表すものだ。
-my $offset;
+#This variable represents some offset.
+my $ offset;
 
-# この変数はクライアント数の最大値を表すものだ
-my $max_client 
-</pre>
-<h4>(b)変数に意味を持たせない場合</h4>
-<pre>
-# 何かわからない
-my $p;
-my $q;
-my $k;
-</pre>
-<p>
-  コンピュータにとっての関心ごとは変数名が区別できるかということだけですが、人間にとっては変数名が何を意図しているかということが重要です。
-</p>
-<h3>(2)変数名はすべて小文字で、単語のつなぎ目は _ ( アンダーバーにする。 )</h3>
-<p>
-  変数名には大文字は使用せずに、小文字だけにします。単語のつなぎ目にはアンダーバーを使用します。
-</p>
-<pre>
-my $user_name;
-my $search_word;
-my $max_database_connection;
-</pre>
-<p>
-  これはPerlの慣習であって、強制ではないですが、Perlでコードを書くなら守っておいたほうがよいと思われます。使う人にとって混乱が少ないと思うからです。
-</p>
-<p>
-  逆にjavaでプログラミングするときは、perlの慣習を持ち込まないで、userNameのように書きましょう。
-</p>
-<h3>(3)変数名をどの程度詳細にするか</h3>
-<p>
-  変数名をどの程度詳細にするかは、そのスコープの中で意味の区別がつくかを基準にするとよいと思います。
-</p>
-<h4>(a) 意図がはっきりとわかるなら短い変数名でOK</h4>
-<pre>
+# This variable represents the maximum number of clients
+my $ max_client
+&lt;/ pre&gt;
+
+&lt;h4&gt; (b) When variables have no meaning &lt;/ h4&gt;
+
+&lt;pre&gt;
+# I don't know anything
+my $ p;
+my $ q;
+my $ k;
+&lt;/ pre&gt;
+
+The only concern for computers is whether variable names can be distinguished, but for humans it is important what the variable names mean.
+
+&lt;h3&gt; (2) Variable names are all lowercase, and word joints are _ (underscore.) &lt;/ H3&gt;
+
+Do not use uppercase letters in variable names, only lowercase letters. Use underscores at word joints.
+
+&lt;pre&gt;
+my $ user_name;
+my $ search_word;
+my $ max_database_connection;
+&lt;/ pre&gt;
+
+This is a Perl convention, not compulsory, but if you're writing code in Perl, you'll probably want to keep it. I think there is less confusion for the user.
+
+On the contrary, when programming with java, do not bring in the perl convention and write it as userName.
+
+&lt;h3&gt; (3) How detailed the variable name should be &lt;/ h3&gt;
+
+I think that how detailed the variable name should be based on whether the meaning can be distinguished within the scope.
+
+&lt;h4&gt; (a) If you can clearly understand the intention, you can use a short variable name &lt;/ h4&gt;
+
+&lt;pre&gt;
 sub sum {
-  # 合計値を表す
-  my $total;
+  # Represents the total value
+  my $ total;
 }
-</pre>
-<h4>(b)区別する必要がある場合は状況に応じて意味を区別できる変数名にする</h4>
-<p>
-  たとえば、奇数の合計と偶数の合計を足し合わせる関数があったとするならば、それぞれの合計に適切な名前をつけます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; (b) If it is necessary to distinguish, use a variable name that can distinguish the meaning depending on the situation &lt;/ h4&gt;
+
+For example, if you had a function that added odd sums and even sums, give each sum an appropriate name.
+
+&lt;pre&gt;
 sub sum {
-  # 奇数の合計
-  my $odd_total;
+  # Odd sum
+  my $ odd_total;
   
-  # 偶数の合計
-  my $even_total 
+  # Even sum
+  my $ even_total
 }
-</pre>
-<h4>(c) for文で意図がはっきりわかる場合は $i のように短い変数名でOK</h4>
-<pre>
-for my $i (0 .. @nums - 1) {
+&lt;/ pre&gt;
+
+&lt;h4&gt; (c) If you can clearly understand the intention with the for statement, you can use a short variable name such as $ i &lt;/ h4&gt;
+
+&lt;pre&gt;
+for my $ i (0 .. @nums --1) {
   ...
 }
-</pre>
-<h4>(d) for文で意図がわかりにくくなる可能性がある場合は意味を区別できる変数名にする</h4>
-<pre>
-my $data_table = [[ 1, 2, 3 ], [ 2, 4, 6 ]];
-for my $row_num (0 .. @$data_table - 1){
-  for my $colum_num (0 .. @{$data_table[$row_num]} - 1) {
+&lt;/ pre&gt;
+
+&lt;h4&gt; (d) If there is a possibility that the intention may be difficult to understand in the for statement, use a variable name that can distinguish the meaning &lt;/ h4&gt;
+
+&lt;pre&gt;
+my $ data_table = [[1, 2, 3], [2, 4, 6]];
+for my $ row_num (0 .. @ $ data_table --1) {
+  for my $ colon_num (0 .. @ {$ data_table [$ row_num]} ―― 1) {
     ...
   }
 }
-</pre>
-<h3>(4)省略してもよい変数名</h3>
-<p>
-  慣習的に意味が通じるものは省略してもよいかもしれません。また変数スコープの範囲が狭い場合は、省略することも可能でしょう。省略するときは、先頭の何文字かを残すのがわかりやすいと思います。
-</p>
-<h4>省略しても理解できると考えられる変数名</h4>
-<pre>
-my $num; # number
-my $len; # length;
-my $char; # charactor;
-</pre>
-<h3>(5)真偽値を表す変数の命名方法</h3>
-<p>
-  真偽値を表す変数名の例をいくつか書いておきます。
-</p>
-<pre>
-# 安全である (is ＋ 形容詞)
-my $is_safe;
+&lt;/ pre&gt;
 
-# スイッチが入っている (名詞 + 前置詞)
-my $switch_on;
+&lt;h3&gt; (4) Variable names that may be omitted &lt;/ h3&gt;
 
-# リクエストをロード中 (名詞 + 現在分詞)
-my $request_loading;
+You may omit anything that makes sense by convention. If the variable scope is narrow, you can omit it. When omitting it, it is easy to understand to leave the first few characters.
 
-# 書き込みが終了している(名詞 + 過去分詞) 
-my $write_done;
+&lt;h4&gt; Variable names that can be understood even if omitted &lt;/ h4&gt;
 
-# チェックが成功している(名詞 + 名詞)
-my $check_success;
+&lt;pre&gt;
+my $ num; # number
+my $ len; # length;
+my $ char; # charactor;
+&lt;/ pre&gt;
 
-# 状態はokである。(名詞 + 名詞)
-my $status_ok;   
-</pre>
-<h3>(6)配列の命名方法</h3>
-<p>
-  配列に名前をつける場合は、末尾にs をつけます。
-</p>
-<pre>
-# sを末尾につける方法
-my @members; 
+&lt;h3&gt; (5) Naming method for variables that represent boolean values ​​&lt;/ h3&gt;
 
-for my $member (@members) {
+Here are some examples of variable names that represent boolean values.
+
+&lt;pre&gt;
+#Safe (is + adjective)
+my $ is_safe;
+
+#Switched on (noun + preposition)
+my $ switch_on;
+
+# Loading request (noun + present participle)
+my $ request_loading;
+
+# Writing is complete (noun + past participle)
+my $ write_done;
+
+#Check successful (noun + noun)
+my $ check_success;
+
+#The state is ok. (Noun + noun)
+my $ status_ok;
+&lt;/ pre&gt;
+
+&lt;h3&gt; (6) Sequence naming method &lt;/ h3&gt;
+
+If you want to name the array, add an s at the end.
+&lt;pre&gt;
+How to add # s to the end
+my @members;
+
+for my $ member (@members) {
   # ...
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ヒアドキュメント - 複数行の文字列を簡単に作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ヒアドキュメントを用いれば複数の文字列をわかりやすく記述することができます。">
+<title> Here-Document-Easily create multi-line strings  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  here document  to describe multiple  strings  in an easy-to-understand manner.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ヒアドキュメント - 複数行の文字列を簡単に作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ヒアドキュメントを用いれば複数の文字列をわかりやすく記述することができます。" />
+<meta name="twitter:title" content=" Here-Document-Easily create multi-line strings  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  here document  to describe multiple  strings  in an easy-to-understand manner." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> operator </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080619121405.html">ヒアドキュメント - 複数行の文字列を簡単に作成</a></h2>
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080619121405.html"> Here-Document-Easily create multi-line strings </a></ h2>
 <p>
-  <strong>ヒアドキュメント</strong>を用いれば複数の<a href="/blog/20161003147558.html">文字列</a>をわかりやすく記述することができます。
+  You can use <strong> here document </ strong> to describe multiple <a href="/blog/20161003147558.html"> strings </a> in an easy-to-understand manner.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,73 +97,74 @@
 
 
 <pre>
-my $text = &lt;&lt;'EOS';
+my $ text = &lt;&lt;'EOS';
 aaaa
 iiii
 uuuu
 EOS
-</pre>
-<p>
-  ヒアドキュメントを用いれば、<<'EOS' と EOS にはさまれた行にある文字列を、改行を維持して文字列に代入することができます。
-</p>
-<p>
-  セミコロンの位置に注意しましょう。最後のEOSのあとには、セミコロンはなくて、 最初の行の最後にセミコロンがあります。 
-</p>
-<p>
-  EOSという部分は任意の文字列で構いません。このサンプルでは「End Of String」という意味でEOSを使っています。
-</p>
-<h4>ヒアドキュメントの中で変数展開する</h4>
-<<'EOS' を <<"EOS" に変更すれば、ヒアドキュメントの中で、<a href="/blog/20180228151982.html">変数展開</a>が可能になります。
-<pre>
-my $message = 'Hello';
+&lt;/ pre&gt;
 
-# 変数展開可能なヒアドキュメント
-my $text = &lt;&lt;"EOS";
+Here-documents allow you to assign a string on a line between &lt;&lt;'EOS' and EOS to the string, preserving line breaks.
+
+Pay attention to the position of the semicolon. After the last EOS, there is no semicolon, there is a semicolon at the end of the first line.
+
+The part called EOS can be any character string. This sample uses EOS to mean "End Of String".
+
+&lt;h4&gt; Expand variables in here documents &lt;/ h4&gt;
+
+If you change &lt;&lt;'EOS' to &lt;&lt; "EOS", you can &lt;a href="/blog/20180228151982.html"&gt; variable expansion &lt;/a&gt; in the here document.
+
+&lt;pre&gt;
+my $ message ='Hello';
+
+#Variable expandable here document
+my $ text = &lt;&lt; "EOS";
 aaaa
-$message
+$ message
 iiii
 uuuu
 EOS
-</pre>
-<p>
-  次のようにダブルクォートを省略しても変数展開がされるヒアドキュメントになりますが、明示的に意味がわかるように、ダブルクォートで囲むのがお勧めです。
-</p>
-<pre>
-my $text = &lt;&lt;EOS;
+&lt;/ pre&gt;
+
+Even if you omit the double quotes as shown below, the variable will be expanded, but it is recommended to enclose it in double quotes so that you can clearly understand the meaning.
+
+&lt;pre&gt;
+my $ text = &lt;&lt; EOS;
 aaaa
-$message
+$ message
 iiii
 uuuu
 EOS
-</pre>
-<h3>サンプルプログラム</h3>
-<p>
-  ヒアドキュメントのサンプルです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+Here-document sample.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ヒアドキュメント
+# Here document
 
-print "1: ヒアドキュメントを使用する。( 変数展開なし )\n";
-my $text_no_expand = &lt;&lt;'EOS';
+print "1: Use here document. (No variable expansion) \ n";
+my $ text_no_expand = &lt;&lt;'EOS';
 aaaa
 iiii
 uuuu
 EOS
 
-print "$text_no_expand\n";
+print "$ text_no_expand \ n";
 
-print "2: ヒアドキュメントを使用する。( 変数展開あり )\n";
-my $str = "eeee";
-my $text_expand = &lt;&lt;"EOS";
-$str
+print "2: Use here document. (With variable expansion) \ n";
+my $ str = "eeee";
+my $ text_expand = &lt;&lt; "EOS";
+$ str
 oooo
 EOS
 
-print "$text_expand\n";
-</pre>
+print "$ text_expand \ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>汎用的なコンストラクタの雛形 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="汎用的なコンストラクタの雛形を提示しておきます。汎用的なコンストラクタの雛形はちょっと難しいです。">
+<title> General-purpose constructor template  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I will present a template of a general-purpose constructor. A general-purpose constructor template is a little difficult.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="汎用的なコンストラクタの雛形 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="汎用的なコンストラクタの雛形を提示しておきます。汎用的なコンストラクタの雛形はちょっと難しいです。" />
+<meta name="twitter:title" content=" General-purpose constructor template  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I will present a template of a general-purpose constructor. A general-purpose constructor template is a little difficult." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop="name">オブジェクト指向</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">汎用的なコンストラクタ</span>
-    <meta itemprop="position" content="4" />
-  </li>
-</ol>
-<h2><a href="/blog/20090320123713.html">汎用的なコンストラクタの雛形</a></h2>
+      <span itemprop = "name"> Object Oriented </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Generic constructor </ span>
+    <meta itemprop = "position" content = "4" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20090320123713.html"> General-purpose constructor template </a></ h2>
 <p>
-  汎用的なコンストラクタの雛形を提示しておきます。汎用的なコンストラクタの雛形はちょっと難しいです。
+  I will present a template of a general-purpose constructor. A general-purpose constructor template is a little difficult.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,81 +97,74 @@
 </div>
 
 
-<h3>1. 汎用的なコンストラクタの指針</h3>
+<h3> 1. General-purpose constructor guidelines </ h3>
 <p>
-  汎用的なコンストラクタは、クラスから呼ばれたときだけではなくて、<b>オブジェクトから呼び出された場合も考慮に入れる</b>必要があります。
+  A generic constructor should take into account not only when it is called from a class, but also when it is called from a <b> object </ b>.
 </p>
 <p>
-  クラスから呼ばれた場合と
-</p>
-<pre>
-my $book = Book-&gt;new;
-</pre>
-<p>
-  オブジェクトから呼ばれた場合の
+  When called by the class
 </p>
 <pre>
-my $book2 = $book-&gt;new
-</pre>
-<p>
-  の両方に対応する。
-</p>
-<p>
-  またもうひとつの指針として、コンストラクタと初期化処理は分離するということが挙げられます。<b>初期化用のinitメソッド</b>を作成してあげます。
-</p>
-<h3>2. 汎用的なコンストラクタの作成</h3>
-<p>
-  以下が汎用的なコンストラクタの雛形です。
-</p>
-<pre>
+my $ book = Book-&gt; new;
+&lt;/ pre&gt;
+
+When called from an object
+
+&lt;pre&gt;
+my $ book2 = $ book-&gt; new
+&lt;/ pre&gt;
+
+Corresponds to both.
+
+Another guideline is to separate the constructor and initialization process. I will create a &lt;b&gt; init method for initialization &lt;/ b&gt;.
+
+&lt;h3&gt; 2. Creating a generic constructor &lt;/ h3&gt;
+The following is a general-purpose constructor template.
+&lt;pre&gt;
 sub new {
-  my $proto = shift;
-  my $class = ref $proto || $proto;
-  my $self = {};
-  bless $self, $class;
+  my $ proto = shift;
+  my $ class = ref $ proto || $ proto;
+  my $ self = {};
+  bless $ self, $ class;
   
-  $self-&gt;init(@_);
-  return $self;
+  $ self-&gt; init (@ _);
+  return $ self;
 }
 
 sub init {
-  my ($self, @args) = @_;
-  # 追加で行いたい処理
+  my ($ self, @args) = @_;
+  #Additional processing
 }
-</pre>
-<h3>3. オブジェクトからクラス名を取り出す処理</h3>
-<p>
-  この部分がわかりにくいと思います。
-</p>
-<pre>
-  my $proto = shift;
-  my $class = ref $proto || $proto;　
-</pre>
-<p>
-  これは何をやっているかというと、$proto がオブジェクトだった場合には、<a href="/blog/20090318123712.html">ref関数</a>を使って関連付けられているクラス名を取り出します。
-</p>
-<p>
-  そうでない場合は、クラス名をそのまま使用するということをやっています。<a href="/blog/20090318123712.html">ref関数</a>に文字列(クラス名)が渡された場合は、偽値が返るので、|| の右側が実行されます。
-</p>
-<p>
-  そういうわけで、クラス名から呼ばれても、オブジェクトから呼ばれても、$classにはクラス名が入ることになります。
-</p>
-<h3>4. 初期化処理を分離する</h3>
-<p>
-  初期化処理を分離しているのが以下の部分です。初期化を行う場合は、bless 関数で先にオブジェクトを作成しておいてあげます。そしてそのオブジェクトから、initメソッドを呼び出します。
-</p>
-<p>
-  ちょっとわかりにくいですが、慣れましょう。同じクラスのメソッドを呼び出すには、オブジェクトつまり、bless された $self から呼び出す必要があるのです。
-</p>
-<pre>
-  my $self = {};
-  bless $self, $class;
-  $self-&gt;init(@_);
-</pre>
-<h3>5. なぜこのように作成する必要があるのか?</h3>
-<p>
-  それはきちんとはまだいいません。継承のところで取り上げることにします。このようにオブジェクトを作成しておかないと、継承をしようとしたときに面倒な問題が発生するとだけいっておきます。
-</p>
+&lt;/ pre&gt;
+
+&lt;h3&gt; 3. Processing to extract the class name from the object &lt;/ h3&gt;
+
+I think this part is difficult to understand.
+&lt;pre&gt;
+  my $ proto = shift;
+  my $ class = ref $ proto || $ proto;
+&lt;/ pre&gt;
+What this does is that if $ proto is an object, use the &lt;a href="/blog/20090318123712.html"&gt; ref function &lt;/a&gt; to retrieve the associated class name. increase.
+
+If not, I'm trying to just use the class name. If a string (class name) is passed to the &lt;a href="/blog/20090318123712.html"&gt; ref function &lt;/a&gt;, a false value will be returned and the right side of || will be executed.
+
+That's why $ class will contain the class name, whether it's called by the class name or by an object.
+
+&lt;h3&gt; 4. Separate initialization process &lt;/ h3&gt;
+
+The following part separates the initialization process. If you want to initialize, create the object first with the bless function. Then call the init method from that object.
+
+It's a little confusing, but let's get used to it. To call a method of the same class, you need to call it from an object, the blessed $ self.
+
+&lt;pre&gt;
+  my $ self = {};
+  bless $ self, $ class;
+  $ self-&gt; init (@ _);
+&lt;/ pre&gt;
+
+&lt;h3&gt; 5. Why do you need to create it this way? &lt;/ H3&gt;
+
+It's not good yet. I'll cover it in inheritance. I'll just say that if you don't create the object this way, you'll run into trouble when trying to inherit.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ファイルロックとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ひとつのファイルに対して複数人で同時に書き込みを行うとファイルは破損します。複数のプロセスがひとつのファイルに対して並行して書き込み行う場合は、それぞれのプロセスが順番を守る必要があります。ファイルロック機構を使用すれば、複数のプロセスが順番を守ってファイルに安全にアクセスすることができます。">
+<title> What is file locking?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="If multiple people write to one file at the same time, the file will be damaged. If multiple processes write to a file in parallel, each process must be in order. The file locking mechanism allows multiple processes to securely access files in order.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ファイルロックとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ひとつのファイルに対して複数人で同時に書き込みを行うとファイルは破損します。複数のプロセスがひとつのファイルに対して並行して書き込み行う場合は、それぞれのプロセスが順番を守る必要があります。ファイルロック機構を使用すれば、複数のプロセスが順番を守ってファイルに安全にアクセスすることができます。" />
+<meta name="twitter:title" content=" What is file locking?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="If multiple people write to one file at the same time, the file will be damaged. If multiple processes write to a file in parallel, each process must be in order. The file locking mechanism allows multiple processes to securely access files in order." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop="name">ファイル入出力</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080813121863.html">ファイルロックとは</a></h2>
+      <span itemprop = "name"> File input / output </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080813121863.html"> What is file locking? </a></ H2>
 <p>
-  ひとつのファイルに対して複数人で同時に書き込みを行うとファイルは破損します。複数のプロセスがひとつのファイルに対して並行して書き込み行う場合は、それぞれのプロセスが順番を守る必要があります。ファイルロック機構を使用すれば、複数のプロセスが順番を守ってファイルに安全にアクセスすることができます。
+  If multiple people write to one file at the same time, the file will be damaged. If multiple processes write to a file in parallel, each process must be in order. The file locking mechanism allows multiple processes to securely access files in order.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,80 +97,81 @@
 
 
 <p>
-  ファイルロックは、排他制御とも呼ばれ、複数のプロセスが順番を守ってファイルを利用する仕組みです。Perlには、<a href="/blog/20080814121872.html">flock関数</a>というファイルロックを行うための仕組みがあります。( Window98などflockが利用できないOSが一部あります。)
+  File locking, also called exclusive control, is a mechanism in which multiple processes use files in order. Perl has a mechanism for locking files called <a href="/blog/20080814121872.html"> flock function </a>. (Some OSs such as Window98 cannot use flock.)
 </p>
-<h3>順番を守る必要がある場合</h3>
+<h3> If you need to keep the order </ h3>
 <p>
-  ひとつのファイルに対して読み込みを並列で行う場合は、順番を守る必要がありません。読み込むだけなので、ファイルの破損やデータの不整合を心配する必要がないからです。
-</p>
-<p>
-  順番を守る必要があるのは、複数のプロセスがひとつのファイルに書き込みを行う場合です。順番イ書き込みが行われず、平行してファイルに書き込みを行った場合ファイルが破損します。
+  If you want to read one file in parallel, you don't have to keep the order. It just reads, so you don't have to worry about file corruption or data inconsistencies.
 </p>
 <p>
-  またひとつのファイルへ読み書きを行う複数のプロセスがいる場合データの不整合が発生します。アクセスカウンターを考えましょう。ファイルには、0と書かれているとします。この数字に1を加えて書き戻すプログラムはがあるとします。この場合に並列にアクセスした場合に起こる問題を考えます。
+  You need to keep the order when multiple processes write to a single file. If the files are written in parallel without being written in order, the file will be damaged.
+</p>
+<p>
+  Also, if there are multiple processes that read and write to one file, data inconsistency will occur. Consider an access counter. Suppose the file says 0. Suppose you have a program that adds 1 to this number and writes it back. Consider the problem that arises when accessing in parallel in this case.
 </p>
 <pre>
-プロセスA      読み込み---------------------------&gt;書き込み
-                  0                                   1
+Process A Read ---------------------------&gt; Write
+                  0 1
 
-プロセスB                     読み込み-------------------------------&gt;書き込み
-                                 0                                       1
+Process B Read -------------------------------&gt; Write
+                                 0 1
 
-ファイル内容   0                                      1                  1
-</pre>
-<p>
-  アクセスカウンタの場合は上記の流れが期待した動きでないことは明らかです。わたしたちは、二つのプロセスが処理を終えたとき、最初の0から2加算されることを期待します。データの整合性を保つには、プロセスBはプロセスAがファイルに1を書き込むまで、待つ必要があります。
-</p>
-<h3>アドバイザリーロック</h3>
-<p>
-  Perlでは、ファイルをロックする場合flock関数を使用しますが、この関数はファイルを強制的にロックするものではありません。実際flock関数でロックを掛けたファイルに対して、他のプロセスは書き込むことができます。
-</p>
- ファイルロックが正常に機能させるためには、ファイルにアクセスしようとするプロセスは必ず、flock関数を使ってファイルロックを行う必要があります。この約束を守らないプロセスがあれば、ファイルを順番に利用することはできません。
-<p>
-  このようなロックをアドバイザリーロックと呼びます。「順番を守りましょう。ファイルを使用したいときは、ファイルに対してflockを行ってください。だれも利用していないなら、あなたがファイルの使用権を取得できます。だれかが使用しているなら、今は使用できない旨が通知されますので待ってくださいい。」
-</p>
-<h3>排他ロックと共有ロック</h3>
-<p>
-  ロックの種類には、排他ロックと共有ロックがあります。排他ロックは書き込むときに使用され、共有ロックは読み込むときに使用されます。
-</p>
-<table>
-  <tr>
-    <td>
-      　
-    </td>
-    <td>
-      <span style="font-weight:bold;">使用機会</span>
-    </td>
-    <td>
-      <span style="font-weight:bold;">他のプロセスがロックを掛けようとした場合</span>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <span style="font-weight:bold;">共有ロック</span>
-    </td>
-    <td>
-      読み込む場合
-    </td>
-    <td>
-      共有ロックは許可するが排他ロックを許可しない
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <span style="font-weight:bold;">排他ロック</span>
-    </td>
-    <td>
-      書き込む場合
-    </td>
-    <td>
-      共有ロックも排他ロックも許可しない
-    </td>
-  </tr>
-</table>
-<p>
-  ちょっとややこしいですが簡単にいうと、「読み込む場合は複数人で読み込んでもかまいませんが、書き込む場合は必ずひとりで書き込んでください」ということです。
-</p>
+File contents 0 1 1
+&lt;/ pre&gt;
+
+In the case of access counters, it is clear that the above flow is not what you expected. We expect the first 0 to 2 to be added when the two processes have finished processing. To keep the data consistent, process B must wait for process A to write 1 to the file.
+
+&lt;h3&gt; Advisory Lock &lt;/ h3&gt;
+
+Perl uses the flock function to lock a file, but this function does not force a file to be locked. In fact, other processes can write to the file locked by the flock function.
+ For file locking to work properly, every process that attempts to access a file must use the flock function to lock the file. If there is a process that does not keep this promise, the files cannot be used in sequence.
+
+Such locks are called advisory locks. "Keep the order. If you want to use the file, flock it. If no one is using it, you can get the right to use the file. Someone is using it. If so, please wait as you will be notified that it cannot be used now. "
+
+&lt;h3&gt; Exclusive and shared locks &lt;/ h3&gt;
+
+Lock types include exclusive locks and shared locks. Exclusive locks are used when writing and shared locks are used when reading.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      Twice
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;span style = "font-weight: bold;"&gt; Opportunity to use &lt;/ span&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;span style = "font-weight: bold;"&gt; When another process tries to lock &lt;/ span&gt;
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;span style = "font-weight: bold;"&gt; Shared lock &lt;/ span&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      When reading
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Allow shared locks but not exclusive locks
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;span style = "font-weight: bold;"&gt; Exclusive lock &lt;/ span&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      When writing
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Do not allow shared or exclusive locks
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+It's a little confusing, but the simple answer is, "If you want to read it, you can read it by multiple people, but if you want to write it, be sure to write it by yourself."
 
   </div>
   <div class="bottom">

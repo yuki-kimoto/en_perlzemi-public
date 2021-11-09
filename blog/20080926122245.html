@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>length関数 - 文字列の長さを取得 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="length関数を使用すると文字列の長さを取得するすることができます。">
+<title> length function-get the length of a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  length function  to get the length of the  string .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="length関数 - 文字列の長さを取得 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="length関数を使用すると文字列の長さを取得するすることができます。" />
+<meta name="twitter:title" content=" length function-get the length of a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  length function  to get the length of the  string ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080926122245.html">length関数 - 文字列の長さを取得</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080926122245.html"> length function-get the length of a string </a></ h2>
 <p>
-  <strong>length関数</strong>を使用すると<a href="/blog/20161003147558.html">文字列</a>の長さを取得するすることができます。
+  You can use the <strong> length function </ strong> to get the length of the <a href="/blog/20161003147558.html"> string </a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,96 +97,94 @@
 
 
 <pre>
-$ret = length $str;
-</pre>
-<p>
-  たとえば「abcde」という文字列の長さは5になります。
-</p>
-<pre>
-# 文字列の長さは5
-my $length = length 'abcde';
-</pre>
-<h4>日本語の文字列の長さを正しく取得する</h4>
-<p>
-  length関数は文字列の長さを返却しますが、日本語の文字列の長さを正しく取得するためには、覚えておかなければならないことがひとつあります。
-</p>
-<p>
-  それは、内部文字列に対して、length関数を使う必要があるということです。内部文字列というのはEncodeモジュールのdecode関数でデコードされた文字列のことです。
-</p>
-<p>
-  内部文字列については、以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20091118124667.html">Encodeモジュール - 日本語などのマルチバイト文字列を適切に処理する</a>
-  </li>
-</ul>
-<p>
-  以下にサンプルプログラムを載せておきます。
-</p>
-<p>
-  日本語のようなマルチバイトで表現される文字の場合は、Encodeモジュールのdecode関数で内部文字列に変換してから、length関数を使用すると、正しい結果が得られます。全角日本語を処理する場合も同じ考え方です。
-</p>
-<pre>
+$ ret = length $ str;
+&lt;/ pre&gt;
+
+For example, the string "abcde" has a length of 5.
+
+&lt;pre&gt;
+#String length is 5
+my $ length = length'abcde';
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get the correct length of a Japanese string &lt;/ h4&gt;
+
+The length function returns the length of a string, but there is one thing to remember in order to get the correct length of a Japanese string.
+
+That is, you need to use the length function on the internal string. The internal string is the string decoded by the decode function of the Encode module.
+
+For the internal character string, refer to the following article.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20091118124667.html"&gt; Encode module-Properly handles multi-byte character strings such as Japanese &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+Below is a sample program.
+
+For multibyte characters such as Japanese, convert them to internal strings with the Encode module's decode function and then use the length function to get the correct results. The same idea applies when processing full-width Japanese.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-use Encode 'decode';
+use Encode'decode';
 
-# 引数からUTF-8でエンコードされている文字列を取得
-my $bytes = shift;
+Get UTF-8 encoded string from #argument
+my $ bytes = shift;
 
-# 文字列の長さを取得
-my $string = decode('UTF-8', $bytes);
-my $length = length $string;
-</pre>
-<h4>lengthでは配列の長さは取得できない</h4>
-<p>
-  Perlのlength関数は文字列の長さを取得する関数で<a href="/blog/20161012147627.html">配列</a>の長さを取得する関数ではないので注意してください。
-</p>
-<p>
-  配列の長さを取得するには、配列をスカラコンテキストで評価する必要があります。たとえば以下のようにします。
-</p>
-<pre>
-# 配列の個数
-my $count = @nums;
-</pre>
-<p>
-  スカラコンテキストについての詳しい解説は以下の記事をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080608121292.html">Perlのコンテキストについて理解する</a>
-  </li>
-</ul>
-<h4>Perl 5.10未満のlengthは未定義値を渡したときに警告を発生させる</h4>
-<p>
-  Perl 5.10未満のlengthは未定義値を渡したときに警告を発生させます。なので、汎用的なモジュールでlengthを書きたい場合は次のように書くと警告が出ないようになります。
-</p>
-<pre>
-my $has_length = defined $foo &amp;&amp; length $foo;
-</pre>
-<p>
-  定義されているかどうかを確認してからlength関数に渡すようにする。
-</p>
-<p>
-  反対にPerl 5.12以上であれば、定義されていてかつ長さを持っているということがlength関数ひとつでかけるようになったとうことです。
-</p>
-<pre>
-my $has_length = length $foo;
-</pre>
-<p>
-  業務アプリケーションで最新のPerlを使っている場合は、上記のように書くと簡潔です。
-</p>
-<h3>サンプルプログラム</h3>
-<p>
-  length関数を使って、文字列の長さを取得するサンプルです。
-</p>
-<pre>
-# 文字列の長さを取得
-my $message = "I like peace";
-my $length = length $message;
-</pre>
+#Get the length of the string
+my $ string = decode ('UTF-8', $ bytes);
+my $ length = length $ string;
+&lt;/ pre&gt;
+
+&lt;h4&gt; length cannot get the length of the array &lt;/ h4&gt;
+
+Note that Perl's length function is a function that gets the length of a string, not a function that gets the length of a &lt;a href="/blog/20161012147627.html"&gt; array &lt;/a&gt;.
+
+To get the length of the array, you need to evaluate the array in scalar context. For example:
+
+&lt;pre&gt;
+# Number of arrays
+my $ count = @nums;
+&lt;/ pre&gt;
+
+For a detailed explanation of the scalar context, see the following articles.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080608121292.html"&gt; Understand Perl context &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; length less than Perl 5.10 raises a warning when passing an undefined value &lt;/ h4&gt;
+
+Lengths less than Perl 5.10 will warn you when you pass an undefined value. So, if you want to write length in a general-purpose module, write as follows and the warning will not appear.
+
+&lt;pre&gt;
+my $ has_length = defined $ foo &amp;&amp; length $ foo;
+&lt;/ pre&gt;
+
+Make sure it is defined before passing it to the length function.
+
+On the other hand, if it is Perl 5.12 or higher, it means that it is defined and has a length, so it can be multiplied by one length function.
+
+&lt;pre&gt;
+my $ has_length = length $ foo;
+&lt;/ pre&gt;
+
+If you're using the latest Perl in your business application, it's simple to write as above.
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample to get the length of a string using the length function.
+
+&lt;pre&gt;
+#Get the length of the string
+my $ message = "I like peace";
+my $ length = length $ message;
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

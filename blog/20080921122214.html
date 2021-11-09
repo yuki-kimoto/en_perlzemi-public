@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>浮動小数点を比較する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="コンピュータは内部的には2進数を使って演算しているので、2進数で表現できない小数については計算の過程で誤差が生まれます。2進数の演算の過程で発生した誤差の影響を無視するためには、ある有効桁で数値を丸めて比較する必要があります。">
+<title> Compare floating point  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Since computers use binary numbers internally, errors occur in the calculation process for decimal numbers that cannot be expressed in binary numbers. In order to ignore the effect of errors that occur in the process of binary arithmetic, it is necessary to round the numbers to a certain significant digit and compare them.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="浮動小数点を比較する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="コンピュータは内部的には2進数を使って演算しているので、2進数で表現できない小数については計算の過程で誤差が生まれます。2進数の演算の過程で発生した誤差の影響を無視するためには、ある有効桁で数値を丸めて比較する必要があります。" />
+<meta name="twitter:title" content=" Compare floating point  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Since computers use binary numbers internally, errors occur in the calculation process for decimal numbers that cannot be expressed in binary numbers. In order to ignore the effect of errors that occur in the process of binary arithmetic, it is necessary to round the numbers to a certain significant digit and compare them." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161026147748.html">
-      <span itemprop="name">数値</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">浮動小数点の比較</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20080921122214.html">浮動小数点を比較する</a></h2>
+      <span itemprop = "name"> Numerical value </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Floating point comparison </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20080921122214.html"> Compare floating point </a></ h2>
 <p>
-  コンピュータは内部的には2進数を使って演算しているので、2進数で表現できない小数については計算の過程で誤差が生まれます。2進数の演算の過程で発生した誤差の影響を無視するためには、ある有効桁で数値を丸めて比較する必要があります。
+  Since computers use binary numbers internally, errors occur in the calculation process for decimal numbers that cannot be expressed in binary numbers. In order to ignore the effect of errors that occur in the process of binary arithmetic, it is necessary to round the numbers to a certain significant digit and compare them.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,42 +98,42 @@
 
 
 <p>
-  桁を丸めるには<a href="/blog/20081001122296.html">sprintf関数</a>を使用します。
+  Use the <a href="/blog/20081001122296.html"> sprintf function </a> to round the digits.
 </p>
 <pre>
-sprintf("%.5g", $num1);
-</pre>
-<p>
-  "%.5g" は浮動小数点を有効桁5桁に丸めるという書式指定です。
-</p>
-<h3>サンプルプログラム</h3>
-<p>
-  浮動小数点を比較するサンプルです。
-</p>
-<pre>
+sprintf ("% .5g", $ num1);
+&lt;/ pre&gt;
+
+"% .5g" is a format specification that rounds a floating point number to 5 significant digits.
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample to compare floating point numbers.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-my $num1 = 1;
-my $num2;
+my $ num1 = 1;
+my $ num2;
 
-# 0.1を10回加算
-for my $i (1 .. 10){
-  $num2 += 0.1;
+Add # 0.1 10 times
+for my $ i (1 .. 10) {
+  $ num2 + = 0.1;
 }
 
-print "(1)誤差が生まれる。\n";
-if ($num1 != $num2) {
-  print '$num1と$num2は等しくない' . "\n\n";
+print "(1) There is an error. \ N";
+if ($ num1! = $ num2) {
+  print'$ num1 and $ num2 are not equal'. "\ n \ n";
 }
 
-print "(2)-1 浮動少数点を有効桁5桁で丸めて比較(等しい)。\n";
-my $num1_cut5 = sprintf("%.5g", $num1);
-my $num2_cut5 = sprintf("%.5g", $num2);
+print "(2) -1 Floating point rounded to 5 decimal places and compared (equal). \ N";
+my $ num1_cut5 = sprintf ("% .5g", $ num1);
+my $ num2_cut5 = sprintf ("% .5g", $ num2);
 
-print $num1_cut5 . "\n";
-print $num2_cut5 . "\n";
-</pre>
+print $ num1_cut5. "\ n";
+print $ num2_cut5. "\ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

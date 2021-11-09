@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ファイルを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ファイルを作成する。書き込みモードでファイルをオープンします。Perl には、ファイルを作成するためだけの、関数がありません。ファイルを作成するには、open関数の書き込みモードを使います。">
+<title> Create a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Create a file. Open the file in write mode. Perl doesn't have a function just to create a file. To create the file, use the write mode of the  open function .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ファイルを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ファイルを作成する。書き込みモードでファイルをオープンします。Perl には、ファイルを作成するためだけの、関数がありません。ファイルを作成するには、open関数の書き込みモードを使います。" />
+<meta name="twitter:title" content=" Create a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Create a file. Open the file in write mode. Perl doesn't have a function just to create a file. To create the file, use the write mode of the  open function ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,24 +59,24 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <a itemprop="item" href="/"><span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161126148016.html"><span itemprop="name">ファイル操作</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080519121125.html">ファイルを作成する</a></h2>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161126148016.html"> <span itemprop = "name"> File operation </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080519121125.html"> Create a file </a></ h2>
 <p>
-  ファイルを作成する。書き込みモードでファイルをオープンします。Perl には、ファイルを作成するためだけの、関数がありません。ファイルを作成するには、<a href="/blog/20080718121643.html">open関数</a>の書き込みモードを使います。
+  Create a file. Open the file in write mode. Perl doesn't have a function just to create a file. To create the file, use the write mode of the <a href="/blog/20080718121643.html"> open function </a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,30 +95,31 @@
 
 
 <pre>
-open my $fh, "&gt;", $file;
-</pre>
-<h3>サンプル</h3>
-<p>
-  ファイルを作成するサンプルです。
-</p>
-<pre>
+open my $ fh, "&gt;", $ file;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample to create a file.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ファイルを作成する。open my $fh, "&gt;", $file
+#Create a file. open my $ fh, "&gt;", $ file
 
-print "1: ファイルを作成する。";
-my $file = "sample_20080519_$$.txt"; # $$ はプロセスID
+print "1: Create a file.";
+my $ file = "sample_20080519_ $$. txt"; # $$ is the process ID
 
-if (-e $file) {
-  die "$file は、すでに存在します。";
+if (-e $ file) {
+  die "$ file already exists.";
 }
 else {
-  open my $fh, "&gt;", $file
-    or die "$file を書き込みモードでオープンすることができません。: $!";
-  close $fh;
+  open my $ fh, "&gt;", $ file
+    or die "Unable to open $ file in write mode .: $!";
+  close $ fh;
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

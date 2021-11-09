@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>標準入出力とリダイレクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="リダイレクトとは、標準入力の入力元、標準出力、標準エラー出力の出力先を切り替えるOSの機能のことです。現代的なOSは基本的なリダイレクトの機能を備えています。">
+<title> Standard I / O and redirection  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Redirection is an OS function that switches the input source of standard input, standard output, and output destination of standard error output. Modern operating systems have basic redirection capabilities.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="標準入出力とリダイレクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="リダイレクトとは、標準入力の入力元、標準出力、標準エラー出力の出力先を切り替えるOSの機能のことです。現代的なOSは基本的なリダイレクトの機能を備えています。" />
+<meta name="twitter:title" content=" Standard I / O and redirection  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Redirection is an OS function that switches the input source of standard input, standard output, and output destination of standard error output. Modern operating systems have basic redirection capabilities." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop="name">ファイル入出力</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080731121760.html">標準入出力とリダイレクト</a></h2>
+      <span itemprop = "name"> File input / output </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080731121760.html"> Standard I / O and redirection </a></ h2>
 <p>
-  リダイレクトとは、標準入力の入力元、標準出力、標準エラー出力の出力先を切り替えるOSの機能のことです。現代的なOSは基本的なリダイレクトの機能を備えています。
+  Redirection is an OS function that switches the input source of standard input, standard output, and output destination of standard error output. Modern operating systems have basic redirection capabilities.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,109 +97,112 @@
 
 
 <p>
-  リダイレクトの中でも覚えておかなければならないのは、標準入力の入力元をファイルに切り替えるリダイレクト、標準出力の出力先をファイルに切り替えるリダイレクト、標準エラー出力の出力先をファイルに切り替えるリダイレクトの3つです。
+  There are three redirects to keep in mind: a redirect that switches the input source of standard input to a file, a redirect that switches the output destination of standard output to a file, and a redirect that switches the output destination of standard error output to a file.
 </p>
-<h3>1.準備</h3>
+<h3> 1. Preparation </ h3>
 <p>
-  リダイレクトの動きを見るためのサンプルを作っておきます。
-</p>
-<p>
-  標準入力から1行読みこんで、標準出力に書き込みます。また標準エラー出力に"error\n"という文字列を出力します。
+  I will make a sample to see the redirect movement.
 </p>
 <p>
-  このスクリプトを好きな名前で保存してください。ここでは、sample_20080731.plという名前とします。
+  Reads one line from standard input and writes to standard output. It also outputs the character string "error \ n" to the standard error output.
 </p>
 <p>
-  リダイレクトでファイルに出力する場合は、ファイルの上書き確認がされませんので、十分注意してください。
+  Save this script with a name of your choice. Here, the name is sample_20080731.pl.
+</p>
+<p>
+  When outputting to a file by redirection, please note that the overwrite confirmation of the file is not performed.
 </p>
 <pre>
 use strict;
 use warnings;
 
-my $line = &lt;STDIN&gt;; # 標準入力から1行読み込む
+my $ line = &lt;STDIN&gt;; # Read one line from standard input
 
-print $line; # 標準出力に出力
-print STDERR "error\n"; # 標準エラー出力に出力
-</pre>
-<h3>2.通常の動きを確認する</h3>
-<pre>
+print $ line; # Output to standard output
+print STDERR "error \ n"; # Output to standard error output
+&lt;/ pre&gt;
+
+&lt;h3&gt; 2. Check normal movement &lt;/ h3&gt;
+
+&lt;pre&gt;
 perl sample_20080731.pl
-</pre>
-<p>
-  上記を実行して
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Do the above
+
+&lt;pre&gt;
 aaa
-</pre>
-<p>
-  とキーボードから打つと
-</p>
-<pre>
+&lt;/ pre&gt;
+
+And hit from the keyboard
+
+&lt;pre&gt;
 aaa
 error
-</pre>
-<p>
-  と出力されます。標準入力はキーボード、標準出力と標準エラー出力はディスプレイになっています。
-</p>
-<h3>3.標準入力の入力元をファイルに切り替える</h3>
-<p>
-  入力元をキーボードからファイルに切り替えるので、準備としてinput_20080731.txt というファイルを作って、内容を
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Is output. The standard input is the keyboard, and the standard output and standard error output are the display.
+
+&lt;h3&gt; 3. Switch the input source of standard input to a file &lt;/ h3&gt;
+
+Since the input source is switched from the keyboard to the file, create a file called input_20080731.txt as a preparation and add the contents
+
+&lt;pre&gt;
 line
-</pre>
-<p>
-  とします。
-</p>
-<pre>
-perl sample_20080731.pl &lt; input_20080731.txt
-</pre>
-<p>
-  とコマンドラインで打つと
-</p>
-<pre>
+&lt;/ pre&gt;
+
+will do.
+
+&lt;pre&gt;
+perl sample_20080731.pl &lt;input_20080731.txt
+&lt;/ pre&gt;
+
+And hit on the command line
+
+&lt;pre&gt;
 line
 error
-</pre>
-<p>
-  とディスプレイに表示されます。< 記号が、標準入力の入力元をファイルに切り替えるリダイレクト記号です。読み込む内容を標準入力から受け取るようにプログラムを作成すれば、リダイレクトを利用して入力元をユーザが選択することができます。
-</p>
-<h3>4.標準出力の出力先をファイルに切り替える</h3>
-<pre>
-perl sample_20080731.pl &gt; output_20080731.txt
-</pre>
-<p>
-  とコマンドラインで入力して
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Is displayed on the display. The &lt;symbol is the redirect symbol that switches the source of standard input to a file. If you write a program to receive the contents to be read from the standard input, the user can select the input source using redirection.
+
+&lt;h3&gt; 4. Switch the output destination of standard output to a file &lt;/ h3&gt;
+
+&lt;pre&gt;
+perl sample_20080731.pl&gt; output_20080731.txt
+&lt;/ pre&gt;
+
+At the command line
+
+&lt;pre&gt;
 aaa
-</pre>
-<p>
-  と打ち込むとoutput_20080731.txtには、aaaという内容が書き込まれ、ディスプレイには、errorと表示されます。> という記号は、標準出力の出力先をファイルに切り替えるリダイレクト記号です。出力内容を標準出力に出力するようにプログラムを作成していれば、リダイレクトを利用して出力先をユーザが選択することができます。
-</p>
-<h3>5.標準エラー出力の出力先をファイルに切り替える</h3>
-<pre>
+&lt;/ pre&gt;
+
+When you type, the content aaa is written in output_20080731.txt, and error is displayed on the display. The&gt; symbol is a redirect symbol that switches the output destination of standard output to a file. If the program is written to output the output contents to the standard output, the user can select the output destination by using the redirect.
+
+&lt;h3&gt; 5. Switch the output destination of standard error output to a file &lt;/ h3&gt;
+
+&lt;pre&gt;
 perl sample_20080731.pl 2&gt; error_20080731.txt
-</pre>
-<p>
-  とコマンドラインで入力して
-</p>
-<pre>
+&lt;/ pre&gt;
+
+At the command line
+
+&lt;pre&gt;
 aaa
-</pre>
-<p>
-  と打つと、error_20080731.txt にerror、ディスプレイにaaaと表示されます。2> という記号は、標準エラー出力の出力先をファイルに切り替えるリダイレクト記号です。この切り替えを使うのは、エラーをファイルに出力したい場合です。
-</p>
-<h3>6.リダイレクトを組み合わせて使う</h3>
-<p>
-  リダイレクトは組み合わせて使うことができます。
-</p>
-<pre>
-perl sample_20080731.pl &lt; input_20080731.txt &gt; output_20080731.txt 2&gt; error_20080731.txt
-</pre>
-<p>
-  と打ち込むと、output_20080731.txtにはlineと書き込まれ、error_20080731.txtには、errorと書き込まれます。output_20080731.txtに書き込まれたlineは、input_20080731.txtの1行目に書かれていたものです。このように、リダイレクト記号は組み合わせて使うことができます。
-</p>
+&lt;/ pre&gt;
+
+If you type, error_20080731.txt will show error and the display will show aaa. The 2&gt; symbol is a redirect symbol that switches the output destination of standard error output to a file. Use this switch if you want to output the error to a file.
+
+&lt;h3&gt; 6. Use redirects in combination &lt;/ h3&gt;
+
+Redirects can be used in combination.
+
+&lt;pre&gt;
+perl sample_20080731.pl &lt;input_20080731.txt&gt; output_20080731.txt 2&gt; error_20080731.txt
+&lt;/ pre&gt;
+
+Will be written as line in output_20080731.txt and error in error_20080731.txt. The line written in output_20080731.txt is the one written in the first line of input_20080731.txt. In this way, redirect symbols can be used in combination.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Tera TermのDeleteキーを有効にする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Tera Termはデフォルトでは、deleteキーを含むいくつかのキーボードの挙動がおかしいです。これを直すには、Tera Termのキーボード設定ファイルを修正する必要があります。">
+<title> Enable Delete key of Tera Term  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="By default, Tera Term behaves strangely on some keyboards, including the delete key. To fix this, you need to modify the keyboard configuration file of Tera Term.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Tera TermのDeleteキーを有効にする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Tera Termはデフォルトでは、deleteキーを含むいくつかのキーボードの挙動がおかしいです。これを直すには、Tera Termのキーボード設定ファイルを修正する必要があります。" />
+<meta name="twitter:title" content=" Enable Delete key of Tera Term  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="By default, Tera Term behaves strangely on some keyboards, including the delete key. To fix this, you need to modify the keyboard configuration file of Tera Term." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20090114123103.html">Tera TermのDeleteキーを有効にする</a></h2>
+    <h2><a href="/blog/20090114123103.html"> Enable Delete key of Tera Term </a></ h2>
 <p>
-  Tera Termはデフォルトでは、deleteキーを含むいくつかのキーボードの挙動がおかしいです。これを直すには、Tera Termのキーボード設定ファイルを修正する必要があります。
+  By default, Tera Term behaves strangely on some keyboards, including the delete key. To fix this, you need to modify the keyboard configuration file of Tera Term.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -79,9 +79,9 @@
 </div>
 
 
-<h4>修正する必要のあるキー</h4>
+<h4> Keys that need to be modified </ h4>
 <p>
-  以下の６つのキーの配置が入れ違いになっているかと思われます。
+  It seems that the arrangement of the following 6 keys is misplaced.
 </p>
 <pre>
 Delete
@@ -90,62 +90,58 @@ Home
 End
 PageUp
 PageDown
-</pre>
-<h4>キーボード設定ファイルの修正</h4>
-<p>
-  キーボード設定ファイルを修正します。キーボードの実体のファイルは、KEYBOARD.cnf なのですが、よくわからないことに、そのファイルは、短縮ダイアルのショートカットになっています。
-</p>
-<p>
-  [f:id:perlcodesample:20090104113504p:image]
-</p>
-<p>
-  そのままでは開けないので、メモ帳なんかを開いて、このアイコンをそこにドラッグ＆ドロップします。すると開けます。元のファイルは、どこかにコピーして保存しておきましょう。以下の箇所を次のように修正します。
-</p>
-<pre>
-;Insert key
-Find=338
-;Home key
-Insert=327
-;PageUp key
-Remove=329
-;Delete key
-Select=339
-;End key
-Prev=335
-;PageDown key
-Next=337
-</pre>
-<p>
-  ↓
-</p>
-<pre>
-;Insert key
-Insert=338
-;Home key
-Find=327
-;PageUp key
-Prev=329
-;Delete key
-Remove=339
-;End key
-Select=335
-;PageDown key
-Next=337
-</pre>
-<h3>忘れてはいけない設定</h3>
-<p>
-  もうひとつする作業があります。Tera Termを再起動して、メニューバーから
-</p>
-<pre>
-setup -&gt; keyboard
-</pre>
-<p>
-  にいって、Transmit DEL by の「BackSpace key」と「Del key」のチェックをはずします。これで、いつもどおりdelキーが使えるはずです。
-</p>
-<hr>
-<p>
-  <a href="/blog/20090820124848.html">CentOSメモ</a>
-</p>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Modify keyboard configuration file &lt;/ h4&gt;
+
+Modify the keyboard configuration file. The actual keyboard file is KEYBOARD.cnf, but I'm not sure that file is a shortcut for the abbreviated dial.
+
+[f: id: perlcodesample: 20090104113504p: image]
+
+You can't open it as it is, so open Notepad and drag and drop this icon there. Then you can open it. Copy the original file somewhere and save it. Modify the following parts as follows.
+
+&lt;pre&gt;
+; Insert key
+Find = 338
+Home key
+Insert = 327
+; PageUp key
+Remove = 329
+; Delete key
+Select = 339
+; End key
+Prev = 335
+; PageDown key
+Next = 337
+&lt;/ pre&gt;
+↓
+&lt;pre&gt;
+; Insert key
+Insert = 338
+Home key
+Find = 327
+; PageUp key
+Prev = 329
+; Delete key
+Remove = 339
+; End key
+Select = 335
+; PageDown key
+Next = 337
+&lt;/ pre&gt;
+
+&lt;h3&gt; Settings that should not be forgotten &lt;/ h3&gt;
+
+There is one more task. Restart Tera Term and from the menu bar
+
+&lt;pre&gt;
+setup-&gt; keyboard
+&lt;/ pre&gt;
+
+Go to and uncheck "BackSpace key" and "Del key" in Transmit DEL by. You should now be able to use the del key as usual.
+
+&lt;hr&gt;
+&lt;a href="/blog/20090820124848.html"&gt; CentOS memo &lt;/a&gt;
 
   </div>
   <div class="bottom">

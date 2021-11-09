@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Time::Piece - 日付・時刻を扱う新しい方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlの5.10からTime::Pieceと呼ばれる時刻を便利に扱うためのモジュールが標準モジュールに加わりました。Perlの5.10以上を使用している場合はTime::Pieceモジュールを日付と時刻を扱いたい場合に利用すると便利です。">
+<title> Time :: Piece --A new way to handle dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Starting with Perl 5.10, a module called Time :: Piece has been added to the standard module to handle time conveniently. If you're using Perl 5.10 or higher, the Time :: Piece module is useful if you want to work with dates and times.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Time::Piece - 日付・時刻を扱う新しい方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlの5.10からTime::Pieceと呼ばれる時刻を便利に扱うためのモジュールが標準モジュールに加わりました。Perlの5.10以上を使用している場合はTime::Pieceモジュールを日付と時刻を扱いたい場合に利用すると便利です。" />
+<meta name="twitter:title" content=" Time :: Piece --A new way to handle dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Starting with Perl 5.10, a module called Time :: Piece has been added to the standard module to handle time conveniently. If you're using Perl 5.10 or higher, the Time :: Piece module is useful if you want to work with dates and times." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20091105124627.html">Time::Piece - 日付・時刻を扱う新しい方法</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20091105124627.html"> Time :: Piece --A new way to handle dates and times </a></ h2>
 <p>
-  Perlの5.10からTime::Pieceと呼ばれる時刻を便利に扱うためのモジュールが標準モジュールに加わりました。Perlの5.10以上を使用している場合はTime::Pieceモジュールを日付と時刻を扱いたい場合に利用すると便利です。
+  Starting with Perl 5.10, a module called Time :: Piece has been added to the standard module to handle time conveniently. If you're using Perl 5.10 or higher, the Time :: Piece module is useful if you want to work with dates and times.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,520 +97,563 @@
 
 
 <p>
-  従来のPerlでは日付や時刻を直感的に扱う手段が標準モジュールにはありませんでした。日付や時刻を扱うためには少し面倒な作業が必要でした。Time::Pieceは日付と時刻の直感的な操作を提供します。また日付・時刻の書式化の機能や解析する機能も備えます。
+  In traditional Perl, standard modules didn't have an intuitive way to handle dates and times. It took a little tedious work to handle dates and times. Time :: Piece provides intuitive manipulation of dates and times. It also has a date / time formatting function and an analysis function.
 </p>
 <p>
-  Perlには実質的に日付を扱うモジュールのスタンダードといえるDateTimeというモジュールがあります。ただしこのモジュールは標準モジュールではなくCPANからインストールする必要があります。また巨大なモジュールですのでモジュールを読み込む時間が非常にかかります。mod_perlなどメモリ上にモジュールを展開しておくことのできる環境以外では実行速度に少し不満がでるかもしれません。
+  Perl has a module called DateTime, which is essentially the standard for date-handling modules. However, this module must be installed from CPAN, not the standard module. Also, since it is a huge module, it takes a lot of time to load the module. You may be a little dissatisfied with the execution speed except in an environment where modules can be expanded in memory such as mod_perl.
 </p>
 <p>
-  Time::Pieceはある程度の機能を備えた高速・軽量なモジュールだと考えてください。
+  Think of Time :: Piece as a fast, lightweight module with some functionality.
 </p>
 <p>
-  日付・時刻に関する一般的な情報は、以下を参考にしてください。
+  For general information on dates and times, please refer to the following.
 </p>
 <ul>
   <li>
-    <a href="/blog/20161123147990.html">Perlで日付・時刻を扱う</a>
-  </li>
-</ul>
-<h3>時刻・日付の情報の取得</h3>
+    <a href="/blog/20161123147990.html"> Handling dates and times in Perl </a>
+  </ li>
+</ ul>
+<h3> Acquisition of time / date information </ h3>
 <p>
-  Time::Pieceモジュールは次のように使用します。useをするとTime::Pieceモジュールはコアのlocaltimeとgmtimeを上書きます。
+  Use the Time :: Piece module as follows: When used, the Time :: Piece module overwrites the core localtime and gmtime.
 </p>
 <pre>
-use Time::Piece;
+use Time :: Piece;
 
-# Time::Pieceオブジェクトの取得
-my $t = localtime;
+Get # Time :: Piece object
+my $ t = localtime;
 
-# 日付や時刻の情報の取得
-my $year   = $t-&gt;year;
-my $month  = $t-&gt;mon;
-my $mday   = $t-&gt;mday;
+# Get date and time information
+my $ year = $ t-&gt; year;
+my $ month = $ t-&gt; mon;
+my $ mday = $ t-&gt; mday;
 
-my $hour   = $t-&gt;hour;
-my $minute = $t-&gt;minute;
-my $second = $t-&gt;sec;
-</pre>
-<p>
-  localtimeを呼び出すとTime::Pieceオブジェクトを取得することができこれから日付や時刻の情報を取得することができます。
-</p>
-<p>
-  標準関数のlocaltimeで時刻情報を取得した場合を比較のために記しておきます。
-</p>
-<pre>
-# 標準関数のlocaltimeで時刻情報を取得した場合
-my ($second, $minute, $hour, $mday, $month, $year) = localtime;
+my $ hour = $ t-&gt; hour;
+my $ minute = $ t-&gt; minute;
+my $ second = $ t-&gt; sec;
+&lt;/ pre&gt;
 
-# 月は0から始まるので1を加算
-$month += 1;
+You can get the Time :: Piece object by calling localtime, and you can get the date and time information from now on.
 
-# 年は1900を引いた値で取得されるので1900を加算
-$year  += 1900;
-</pre>
-<p>
-  Time::Pieceのlocaltimeを使用したほうが直感的に日付や時刻の情報を扱うことができます。
-</p>
-<h3>Time::Pieceで取得できる情報一覧</h3>
-<p>
-  Time::Pieceで取得できる情報の一覧です。
-</p>
-<table>
-  <tr>
-    <td>
-      $t->year                
-    </td>
-    <td>
-       年
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->_year               
-    </td>
-    <td>
-       年 - 1900 (標準関数のlocaltimeと同じ) = "aaa"
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->yy                  
-    </td>
-    <td>
-       年の下2桁
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->mon                 
-    </td>
-    <td>
-       月(1から始まる)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->_mon                
-    </td>
-    <td>
-       月(0から始まる。標準関数のlocaltimeと同じ)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->monname             
-    </td>
-    <td>
-       月名の短縮名(Febなど)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->month               
-    </td>
-    <td>
-       $t->monnameと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->fullmonth           
-    </td>
-    <td>
-       月名(Februaryなど)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->mday                
-    </td>
-    <td>
-       日
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->day_of_month        
-    </td>
-    <td>
-       $t->mdayと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->hour                
-    </td>
-    <td>
+The case where the time information is acquired by the standard function localtime is described for comparison.
+
+&lt;pre&gt;
+# When time information is acquired by localtime of standard function
+my ($ second, $ minute, $ hour, $ mday, $ month, $ year) = localtime;
+
+#Month starts from 0, so add 1
+$ month + = 1;
+
+# Year is obtained by subtracting 1900, so add 1900
+$ year + = 1900;
+&lt;/ pre&gt;
+
+It is more intuitive to use localtime of Time :: Piece to handle date and time information.
+
+&lt;h3&gt; List of information that can be obtained with Time :: Piece &lt;/ h3&gt;
+
+A list of information that can be obtained with Time :: Piece.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; year
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Year
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; _ year
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Year-1900 (same as localtime for standard function) = "aaa"
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; yy
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Last two digits of the year
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; mon
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Month (starting from 1)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; _mon
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Month (starting at 0, same as the standard function localtime)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; monname
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Abbreviated name of month (Feb, etc.)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; month
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; monname
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; fullmonth
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Month name (February, etc.)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; mday
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Day
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; day_of_month
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; mday
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; hour
+    &lt;/ td&gt;
+    &lt;td&gt;
        24 hour
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->min                 
-    </td>
-    <td>
-       分
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->minute              
-    </td>
-    <td>
-       $t->minと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->sec                 
-    </td>
-    <td>
-       秒
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->second              
-    </td>
-    <td>
-       $t->secと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->wday                
-    </td>
-    <td>
-       週番号(1が日曜日)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->_wday               
-    </td>
-    <td>
-       週番号(0が日曜日)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->day_of_week         
-    </td>
-    <td>
-       $t->_wday
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->wdayname            
-    </td>
-    <td>
-       週名の短縮名(Tueなど)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->day                 
-    </td>
-    <td>
-       $t->wdayname
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->fullday             
-    </td>
-    <td>
-       週名(Tuesdayなど)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->yday                
-    </td>
-    <td>
-       年の中で何日目か
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->day_of_year         
-    </td>
-    <td>
-       $t->ydayと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->isdst               
-    </td>
-    <td>
-       夏時間かどうか
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->daylight_savings    
-    </td>
-    <td>
-       $t->isdstと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->epoch               
-    </td>
-    <td>
-       エポックからの秒数
-    </td>
-  </tr>
-</table>
-<h3>日付の判定</h3>
-<p>
-  Time::Pieceを使用すればうるう年かどうかの判定と月末日かどうかの判定を行うことができます。
-</p>
-<pre>
-# うるう年かどうか
-$t-&gt;is_leap_year
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
 
-# 月末日の取得(28-31の数値を返す)
-$t-&gt;month_last_day
-</pre>
-<h3>日付・時刻を書式化する</h3>
-<p>
-  日付・時刻を書式化して出力したい場合があります。Time::Pieceでは決まった書式がいくつか用意されています。またstrftimeメソッドを使用すれば自由に書式化することができます。
-</p>
-<h4>[A]デフォルトで用意されているフォーマット</h4>
-<p>
-  デフォルトで用意されているフォーマットは以下になります。
-</p>
-<table>
-  <tr>
-    <td>
-      $t->hms                 
-    </td>
-    <td>
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; min
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Minutes
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; minute
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; min
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; sec
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Seconds
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; second
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; sec
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; wday
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Week number (1 is Sunday)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; _wday
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Week number (0 is Sunday)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; day_of_week
+    &lt;/ td&gt;
+    &lt;td&gt;
+       $ t-&gt; _wday
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; wdayname
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Weekly abbreviation (Tue, etc.)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; day
+    &lt;/ td&gt;
+    &lt;td&gt;
+       $ t-&gt; wdayname
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; fullday
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Week name (Tuesday, etc.)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; yday
+    &lt;/ td&gt;
+    &lt;td&gt;
+       How many days in the year
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; day_of_year
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; yday
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; isdst
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Whether it is daylight saving time
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; daylight_savings
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; isdst
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; epoch
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Seconds from epoch
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h3&gt; Judgment of date &lt;/ h3&gt;
+
+You can use Time :: Piece to determine if it is a leap year and if it is the last day of the month.
+
+&lt;pre&gt;
+# Is it a leap year?
+$ t-&gt; is_leap_year
+
+# Get the last day of the month (return the number 28-31)
+$ t-&gt; month_last_day
+&lt;/ pre&gt;
+
+&lt;h3&gt; Format date / time &lt;/ h3&gt;
+
+You may want to format the date / time and output it. Time :: Piece provides several fixed formats. You can also format it freely using the strftime method.
+
+&lt;h4&gt; [A] Formats provided by default &lt;/ h4&gt;
+
+The formats provided by default are as follows.&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; hms
+    &lt;/ td&gt;
+    &lt;td&gt;
        12:34:56
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->hms(".")            
-    </td>
-    <td>
-       12.34.56
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->time                
-    </td>
-    <td>
-       $t->hmsと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->ymd                 
-    </td>
-    <td>
-       2000-02-29
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->date                
-    </td>
-    <td>
-       $t->ymdと同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->mdy                 
-    </td>
-    <td>
-       02-29-2000
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->mdy("/")            
-    </td>
-    <td>
-       02/29/2000
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->dmy                 
-    </td>
-    <td>
-       29-02-2000
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->dmy(".")            
-    </td>
-    <td>
-       29.02.2000
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->datetime            
-    </td>
-    <td>
-       2000-02-29T12:34:56 (ISO 8601)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $t->cdate               
-    </td>
-    <td>
-       Tue Feb 29 12:34:56 2000
-    </td>
-  </tr>
-  <tr>
-    <td>
-      "$t"                    
-    </td>
-    <td>
-       $t->cdateと同じ
-    </td>
-  </tr>
-</table>
-<h4>[B]フォーマットのカスタマイズ</h4>
-<p>
-  フォーマットを自由にカスタマイズしたい場合はstrftimeメソッドを使用します。$formatには時刻の表現を指定します。
-</p>
-<pre>
-$t-&gt;strftime($format)
-</pre>
-<p>
-  日付と時刻をフォーマット化したサンプルです。
-</p>
-<pre>
-$t-&gt;strftime('%Y-%m-%d %H:%M:%S'); # 2009-11-34 12:14:15
-</pre>
-<p>
-  strftimeで使用できるフォーマットの一覧です。
-</p>
-<pre>
-%a : 曜日の省略名
-%A : 曜日名
-%b : 月の省略名
-%B : 月名
-%c : デフォルトのフォーマット
-%C : 年の最初の2桁
-%d : 日( 01 から 31 )
-%D : %m/%d/%y と同じ。月日年
-%e : 日( 1 から 31 )
-%F : %Y-%m-%d と同じ( 2008-11-31 など )
-%G : 年4桁。ISO 8608形式の年週が前年・翌年になる場合はその年。
-%g : 年の下2桁。ISO 8608形式の年週が前年・翌年になる場合はその年。
-%h : %b と同じ。月の省略名
-%H : 時( 00 から 23 )
-%I : 時( 01 から 12 ) 12時間表記での時刻
-%j : 年の最初から初めて何日目か。( 001 から 366 )
-%k : 時( 0 から 23 ) 1桁の数字( 0～ 9 )の２桁目はスペースになる。
-%l : 時( 1 から 12 ) 12時間表記での時刻 1桁の数字( 0～ 9 )の２桁目はスペースになる。
-%m : 月の番号( 01 から 12 )
-%M : 分( 00 から 59 ) 
-%n : 改行文字 
-%N : ミリ秒( %3N と書くとミリ秒を3桁で、 %6Nと書くとミリ秒を6桁で表示 ) 
-%p : am か pm 
-%P : AM か PM 
-%r : %I:%M:%S %p と同じ。( 11:55:23 PM など) 
-%R : 時分( 15:16 など ) 
-%s : エポックからの秒数 
-%S : 秒( 00 から 61 ) 
-%t : タブ文字 
-%T : %H:%M:%S と同じ。時分秒( 23:14:03 など ) 
-%u : 曜日の番号( 1 から 7。 月曜日が1 ) 
-%U : 年の最初から数えて何週目か。( 00 から 53 ) 年の最初の日曜日を週の最初として数える。最初の日曜日の週が01。その前の週が00。 
-%V : 年の最初から数えて何週目か。( 01 から 53 ) 少なくとも4日を持つ週を年の最初の週とする。月曜日を週の最初として数える。ISO 8608形式の年週。 
-%w : 曜日の番号( 0 から 6。 日曜日が0 ) 
-%W : 年の最初から数えて何週目か( 00 から 53 )  年の最初の月曜日を週の最初として数える。最初の月曜日の週が01。その前の週が00。 
-%x : 日付のデフォルトのフォーマット 
-%X : 時刻のデフォルトのフォーマット 
-%y : 年の下の2桁 
-%Y : 年 
-%z : UTC(協定世界時)からのタイムゾーンの時刻のずれ) 
-%Z : タイムゾーン名 
-%% : % 
-</pre>
-<h4>日本語を扱うときの注意</h4>
-<p>
-  Time::Pieceのstrftimeメソッドは、入力がバイト文字列であっても、内部文字列であっても、常にバイト文字列を返却することに注意しましょう。
-</p>
-<pre>
-# 常にバイト文字列が返却される
-my $bytes = $tp-&gt;strftime("%Y年%m月");
-</pre>
-<h3>日付・時刻を表現する文字列を解析する</h3>
-<p>
-  日付や時刻の表現を解析してTime::Pieceオブジェクトを作成することができます。日付や時刻の解析するにはstrptimeメソッドを使用します。
-</p>
-<pre>
-my $t = Time::Piece-&gt;strptime(日付・時刻を表現する文字列, フォーマット);
-</pre>
-<p>
-  サンプルとしてMySQLの日付の表現を解析してTime::Pieceオブジェクトを作成してみます。フォーマットには上記のstrftimeのフォーマットを使用します。
-</p>
-<pre>
-my $datetime_mysql = '2009-12-31 23:59:59';
-my $t = Time::Piece-&gt;strptime($datetime_mysql, '%Y-%m-%d %H:%M:%S');
-</pre>
-<h3>ローカライゼーション</h3>
-<p>
-  デフォルトの状態では月の名前や週の名前は英語です。日本語の週名を取得したい場合は週名を取得するメソッドに曜日名の配列を渡します。
-</p>
-<pre>
-my @week_names = ('日', '月', '火', '水', '木', '金', '土');
-my $t = Time::Piece::localtime;
-# 日本語で週名を取得
-my $wday = $t-&gt;wdayname(@week_names);
-</pre>
-<h3>日付・時刻情報の計算</h3>
-<h4>Timpe::Pieceオブジェクトの引き算</h4>
-<p>
-  Time::Pieceでは日付や時刻の計算を行うこともできます。Time::Pieceオブジェクトどうしの引き算を行った場合は、戻り値はTime::Secondsオブジェクトになります。このオブジェクトは文字列として評価した場合は秒数になります。
-</p>
-<pre>
-my $sec = $t2 - $t1;
-</pre>
-<p>
-  またTime::Socondsオブジェクトを日や年に変換することもできます。
-</p>
-<pre>
-$sec-&gt;seconds;
-$sec-&gt;minutes;
-$sec-&gt;hours;
-$sec-&gt;days;
-$sec-&gt;weeks;
-$sec-&gt;months;
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
 
-# 30日
-$sec-&gt;financial_months;
-</pre>
-<p>
-  日や年への変換は次の規則によってなされます。１日は24時間と換算されます。1週間は7日と換算されます。１年は365.24225日と換算されます。１年は12ヶ月と換算されます。
-</p>
-<h4>Time::Pieceオブジェクトの足し算</h4>
-<p>
-  Time::Pieceオブジェクトどうしの足し算はすることができません。Timpe::Pieceオブジェクトには秒数あるいはかTime::Secondsオブジェクトを足すことができます。
-</p>
-<pre>
-$t + 533;
-$t + Time::Seconds-&gt;new(300);
-</pre>
-<p>
-  またTime::SecondsにはTime::Pieceオブジェクトに足すことのできる定数も用意されています。
-</p>
-<pre>
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; hms (".")
+    &lt;/ td&gt;
+    &lt;td&gt;
+       12.34.56
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; time
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; hms
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; ymd
+    &lt;/ td&gt;
+    &lt;td&gt;
+       2000-02-29
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; date
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; ymd
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; mdy
+    &lt;/ td&gt;
+    &lt;td&gt;
+       02-29-2000
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; mdy ("/")
+    &lt;/ td&gt;
+    &lt;td&gt;
+       02/29/2000
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; dmy
+    &lt;/ td&gt;
+    &lt;td&gt;
+       29-02-2000
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; dmy (".")
+    &lt;/ td&gt;
+    &lt;td&gt;
+       29.02.2000
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; datetime
+    &lt;/ td&gt;
+    &lt;td&gt;
+       2000-02-29T12: 34: 56 (ISO 8601)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ t-&gt; cdate
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Tue Feb 29 12:34:56 2000
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      "$ t"
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Same as $ t-&gt; cdate
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h4&gt; [B] Format customization &lt;/ h4&gt;
+
+If you want to customize the format freely, use the strftime method. Specify the time representation in $ format.
+
+&lt;pre&gt;
+$ t-&gt; strftime ($ format)
+&lt;/ pre&gt;
+
+This is a sample format of date and time.
+
+&lt;pre&gt;
+$ t-&gt; strftime ('% Y-% m-% d% H:% M:% S'); # 2009-11-34 12:14:15
+&lt;/ pre&gt;
+
+A list of formats that can be used with strftime.
+
+&lt;pre&gt;
+% a: Abbreviated name of the day of the week
+% A: Day of the week name
+% b: month abbreviation
+% B: Month name
+% c: Default format
+% C: First two digits of the year
+% d: days (01 to 31)
+% D: Same as% m /% d /% y. Month day year
+% e: day (1 to 31)
+% F: Same as% Y-% m-% d (for example, 2008-11-31)
+% G: 4 digits per year. If the year and week of ISO 8608 format is the previous year or the next year, that year.
+% g: Last two digits of the year. If the year and week of ISO 8608 format is the previous year or the next year, that year.
+% h: Same as% b. Month abbreviation
+% H: Hour (00 to 23)
+% I: Hour (01 to 12) Time in 12-hour notation
+% j: What day is it for the first time from the beginning of the year? (001 to 366)
+% k: Hour (0 to 23) The second digit of the one-digit number (0 to 9) is a space.
+% l: Hour (1 to 12) Time in 12-hour notation The second digit of the one-digit number (0 to 9) is a space.
+% m: Month number (01-12)
+% M: Minutes (00 to 59)
+% n: Newline character
+% N: Milliseconds (Write% 3N displays milliseconds in 3 digits,% 6N displays milliseconds in 6 digits)
+% p: am or pm
+% P: AM or PM
+Same as% r:% I:% M:% S% p. (11:55:23 PM etc.)
+% R: hour and minute (for example, 15:16)
+% s: Seconds from epoch
+% S: seconds (00 to 61)
+% t: tab character
+Same as% T:% H:% M:% S. Hours, minutes and seconds (such as 23:14:03)
+% u: Day of the week number (1 to 7. Monday is 1)
+% U: How many weeks from the beginning of the year? Count the first Sunday of the year (00-53) as the beginning of the week. The first Sunday week is 01. The week before that was 00.
+% V: How many weeks from the beginning of the year? (01-53) A week with at least 4 days is the first week of the year. Count Monday as the beginning of the week. Year and week in ISO 8608 format.
+% w: Day of the week number (0 to 6. Sunday is 0)
+% W: Weeks counting from the beginning of the year (00 to 53) Count the first Monday of the year as the beginning of the week. The first Monday week is 01. The week before that was 00.
+% x: Default format for dates
+% X: Default format for time
+% y: last two digits of the year
+% Y: year
+% z: Time zone time shift from UTC (Coordinated Universal Time))
+% Z: Timezone name
+%%:%
+&lt;/ pre&gt;
+
+&lt;h4&gt; Precautions when handling Japanese &lt;/ h4&gt;
+
+Note that Time :: Piece's strftime method always returns a byte string, whether the input is a byte string or an internal string.
+
+&lt;pre&gt;
+# Byte string is always returned
+my $ bytes = $ tp-&gt; strftime ("% Y year% m month");
+&lt;/ pre&gt;
+
+&lt;h3&gt; Parse the character string that expresses the date / time &lt;/ h3&gt;
+
+You can parse date and time representations to create Time :: Piece objects. Use the strptime method to parse dates and times.
+
+&lt;pre&gt;
+my $ t = Time :: Piece-&gt; strptime (character string representing date / time, format);
+&lt;/ pre&gt;
+
+As a sample, let's parse the MySQL date representation and create a Time :: Piece object. Use the above strftime format for the format.
+
+&lt;pre&gt;
+my $ datetime_mysql = '2009-12-31 23:59:59';
+my $ t = Time :: Piece-&gt; strptime ($ datetime_mysql,'% Y-% m-% d% H:% M:% S');
+&lt;/ pre&gt;
+
+&lt;h3&gt; Localization &lt;/ h3&gt;
+
+By default, month and week names are in English. If you want to get the Japanese week name, pass an array of day names to the method to get the week name.
+
+&lt;pre&gt;
+my @week_names = ('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+my $ t = Time :: Piece :: localtime;
+# Get week name in Japanese
+my $ wday = $ t-&gt; wdayname (@week_names);
+&lt;/ pre&gt;
+
+&lt;h3&gt; Calculation of date / time information &lt;/ h3&gt;
+
+&lt;h4&gt; Tempe :: Piece object subtraction &lt;/ h4&gt;
+
+Time :: Piece can also calculate dates and times. If you subtract between Time :: Piece objects, the return value will be a Time :: Seconds object. This object is in seconds when evaluated as a string.
+
+&lt;pre&gt;
+my $ sec = $ t2- $ t1;
+&lt;/ pre&gt;
+
+You can also convert Time :: Soconds objects to days and years.
+
+&lt;pre&gt;
+$ sec-&gt; seconds;
+$ sec-&gt; minutes;
+$ sec-&gt; hours;
+$ sec-&gt; days;
+$ sec-&gt; weeks;
+$ sec-&gt; months;
+
+# 30 days
+$ sec-&gt; financial_months;
+&lt;/ pre&gt;
+
+The conversion to days and years is done according to the following rules. One day is converted to 24 hours. One week is converted to 7 days. One year is converted to 365.24225 days. One year is converted to 12 months.
+
+&lt;h4&gt; Addition of Time :: Piece objects &lt;/ h4&gt;
+
+Time :: Piece objects cannot be added to each other. You can add seconds or a Time :: Seconds object to the Timpe :: Piece object.
+
+&lt;pre&gt;
+$ t + 533;
+$ t + Time :: Seconds-&gt; new (300);
+&lt;/ pre&gt;
+
+Time :: Seconds also provides constants that can be added to the Time :: Piece object.
+
+&lt;pre&gt;
 ONE_DAY
 ONE_WEEK
 ONE_HOUR
@@ -620,96 +663,45 @@ ONE_YEAR
 ONE_FINANCIAL_MONTH
 LEAP_YEAR
 NON_LEAP_YEAR
-</pre>
-<p>
-  ５日を足すには次のようにします。これらの定数を利用するにはTime::Secondsモジュールを読み込んでおく必要があります。
-</p>
-<pre>
-use Time::Seconds;
-$t + ONE_DAY * 5
-</pre>
-<h3>日付の比較</h3>
-<p>
-  日付の比較に比較演算子を使用することができます。"<", ">","<=", ">=", "<=>", "==" and "!="が使用できます。
-</p>
-<pre>
-$t1 &lt; $t2
-</pre>
-<h3>Time::Pieceオブジェクトの生成</h3>
-<p>
-  任意の日付・時刻でTime::Pieceオブジェクトを生成するにはドキュメントを読む限りではstrptimeメソッドを使用するしかないようです。
-</p>
-<pre>
-my $t = Time::Piece-&gt;strptime('2009-12-31 23:59:59', '%Y-%m-%d %H:%M:%S');
-</pre>
-<p>
-  (ソースコードを読むとparseメソッドというものがあるのですが試してみたところ壊れているみたい...。ドキュメントには無いので非公開のようですし。)
-</p>
-<h3>今日の日付をあらわすオブジェクトを取得する</h3>
-<p>
-  <strong>Time::Piece</strong>モジュールを使用して、今日を表すオブジェクトを取得するには次のようにします。
-</p>
-<pre>
-use Time::Piece;
+&lt;/ pre&gt;
 
-my $today = today();
+To add 5 days: The Time :: Seconds module must be loaded to take advantage of these constants.
+
+&lt;pre&gt;
+use Time :: Seconds;
+$ t + ONE_DAY * 5
+&lt;/ pre&gt;
+
+&lt;h3&gt; Date comparison &lt;/ h3&gt;
+
+You can use comparison operators to compare dates. You can use "&lt;", "&gt;", "&lt;=", "&gt; =", "&lt;=&gt;", "==" and "! =".
+
+&lt;pre&gt;
+$ t1 &lt;$ t2
+&lt;/ pre&gt;
+
+&lt;h3&gt; Create Time :: Piece object &lt;/ h3&gt;
+
+As far as I read the document, it seems that there is no choice but to use the strptime method to create a Time :: Piece object at any date and time.
+
+&lt;pre&gt;
+my $ t = Time :: Piece-&gt; strptime ('2009-12-31 23:59:59','% Y-% m-% d% H:% M:% S');
+&lt;/ pre&gt;
+
+(When I read the source code, there is a parse method, but when I tried it, it seems to be broken ... It seems that it is private because it is not in the document.)
+
+&lt;h3&gt; Get an object that represents today's date &lt;/ h3&gt;
+
+To use the &lt;strong&gt; Time :: Piece &lt;/ strong&gt; module to get an object that represents today:
+
+&lt;pre&gt;
+use Time :: Piece;
+
+my $ today = today ();
 
 sub today {
-  # Today (YYYY-mm-dd HH:MM:SS)
-  my $today_datetime = localtime;
-   
-  # Today (YYYY-mm-dd 00:00:00)
-  my $today = Time::Piece-&gt;strptime($today_datetime-&gt;ymd, "%Y-%m-%d");
-    
-  # Localize
-  $today = localtime($today);
-    
-  return $today;
-}
-</pre>
-<p>
-  なぜこれほど複雑なのかといえば、Time::Pieceモジュールはstrptime以外の方法で直接、日付や時間の項目を設定する仕組みを持っていないことと、strptimeはUTCを返すので、自力でローカルタイム化を行う必要があるからです。
-</p>
-<h3>今月の最初の日を表すTime::Pieceオブジェクトを取得する</h3>
-<p>
-  <strong>Time::Piece</strong>を使って、今月の最初の月を取得するには、以下のようなロジックを書きます。
-</p>
-<pre>
-use strict;
-use warnings;
-use Time::Piece;
-
-# 今月の最初の日のTime::Pieceオブジェクトを取得
-my $today_tp = localtime;
-my $today_ym = $today_tp-&gt;strftime('%Y-%m');
-my $this_month_first_day_tp
-  = localtime Time::Piece-&gt;strptime("$today_ym-01", '%Y-%m-%d');
-</pre>
-<p>
-  これは少しややこしいですね。Time::Pieceを使って日付や時間をごにょごにょするためには、少しコツがいります。
-</p>
-<p>
-  まず最初に今日を表すTime::Pieceオブジェクトを取得します。
-</p>
-<pre>
-my $today_tp = localtime;
-</pre>
-<p>
-  次に今日の年と月の情報を<b>strftime</b>を使って「2012-09」のようなフォーマットで取得します。
-</p>
-<pre>
-my $today_ym = $today_tp-&gt;strftime('%Y-%m');
-</pre>
-<p>
-  最後に「2012-09-01」のような日付のフォーマットを持つ文字列をstrptimeで解析して、今日を表すTime::Pieceオブジェクトを取得します。
-</p>
-<pre>
-my $this_month_first_day_tp
-  = localtime Time::Piece-&gt;strptime("$today_ym-01", '%Y-%m-%d');
-</pre>
-<p>
-  strptimeはロケール情報を持たないので、localtime関数を使ってローカルタイム化しています。
-</p>
+  # Today (YYYY-mm-dd HH: MM: SS)
+  my $ today_
 
   </div>
   <div class="bottom">

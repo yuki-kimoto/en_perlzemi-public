@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>バッファリングとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlの出力関数であるprint関数は、バッファリングを行います。バッファリングとは「データを貯めておく」という意味です。Perlのprint関数は実際に呼び出されても、即座にファイルに内容を書き出しません。書き込み内容をバッファリングしておいて、バッファがある容量をこえると実際にファイルに書き出します。">
+<title> What is buffering?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The Perl output function  print function  provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="バッファリングとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlの出力関数であるprint関数は、バッファリングを行います。バッファリングとは「データを貯めておく」という意味です。Perlのprint関数は実際に呼び出されても、即座にファイルに内容を書き出しません。書き込み内容をバッファリングしておいて、バッファがある容量をこえると実際にファイルに書き出します。" />
+<meta name="twitter:title" content=" What is buffering?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The Perl output function  print function  provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop="name">ファイル入出力</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080811121845.html">バッファリングとは</a></h2>
+      <span itemprop = "name"> File input / output </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080811121845.html"> What is buffering? </a></ H2>
 <p>
-  Perlの出力関数である<a href="/blog/20170404149131.html">print関数</a>は、バッファリングを行います。バッファリングとは「データを貯めておく」という意味です。Perlのprint関数は実際に呼び出されても、即座にファイルに内容を書き出しません。書き込み内容をバッファリングしておいて、バッファがある容量をこえると実際にファイルに書き出します。
+  The Perl output function <a href="/blog/20170404149131.html"> print function </a> provides buffering. Buffering means "to store data". Perl's print function does not immediately write its contents to a file when it is actually called. The contents to be written are buffered, and when the buffer exceeds the capacity, it is actually written to a file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,88 +97,86 @@
 
 
 <p>
-  バッファリングを無効にしたいという場合は、以下の記事をご覧ください。
+  If you want to disable buffering, see the following articles.
 </p>
 <ul>
   <li>
-    <a href="/blog/20080812121854.html">バッファリングを無効にする</a>
-  </li>
-</ul>
+    <a href="/blog/20080812121854.html"> Disable buffering </a>
+  </ li>
+</ ul>
 <p>
-  以下はバッファリングを実感するサンプルです。すぐにはファイルに書き込まれないことがわかると思います。
+  The following is a sample to experience buffering. You'll see that it won't be written to the file right away.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# 書き込み用のファイル( 上書きするので注意 )
-my $file = "sample20080811.txt";
+# File for writing (Note that it will be overwritten)
+my $ file = "sample20080811.txt";
 
-open(my $fh, "&gt;", $file)
-  or die "Cannot open $file: $!";
+open (my $ fh, "&gt;", $ file)
+  or die "Cannot open $ file: $!";
     
-print $fh "遅延書き込み\n"; # print関数呼び出し
-print "ファイルサイズはまだ" . -s $file . "バイトで書き込まれていません。\n";
+print $ fh "delayed write \ n"; # print function call
+print "File size not yet". -S $ file. "Not written in bytes. \ N";
 sleep 3;
 
-# closeと同時にバッファをファイルに書き出す(遅延書き込み)。
-close $fh or die "Cannot close $file"; 
+Write the buffer to a file at the same time as # close (delayed write).
+close $ fh or die "Cannot close $ file";
 
-print "この時点で書き込まれました。サイズは" . -s $file . "バイトです。\n";
+print "Written at this point. Size is". -S $ file. "Bytes. \ N";
 sleep 3;
-</pre>
-<p>
-  (参考)<a href="/blog/20080718121643.html">open関数</a>、<a href="/blog/20160312145776.html">close関数</a>
-</p>
-<h3>Perlのprint関数のバッファリングの仕様</h3>
-<h4>(1)ブロックバッファリング</h4>
-<p>
-  Perlのprint関数は標準でブロックバッファリングを行います。(例外はディスプレイに出力する場合で、行バッファリングを行います。Perl 5.6以降 )
-</p>
-<p>
-  ブロックバッファリングとは、一定のバイト数までバッファにデータを蓄積するバッファリング方式のことです。バッファに蓄積された書き込み内容が一定のバイト数をこえると、実際にファイルに書き込みが行われれます。
-</p>
-<p>
-  一定のバイト数というのは、設定によりますが一般的に4kBくらいだと思います。また、ファイルがクローズするタイミングでも、バッファの内容がファイルに書き出されます。
-</p>
-<h4>(2)行バッファリング</h4>
-<p>
-  ディスプレイに出力するときは、行バッファリングが行われます。改行文字がでてくるまで、バッファに書き込み内容が蓄積され、改行が出現したときに、バッファの内容がファイルに書き出されます。
-</p>
-<h3>バッファリングと遅延書き込み</h3>
-<p>
-  print関数が、書き込み内容をバッファに貯めて一度に出力するのは、ファイルへの出力のコストが非常に高いからです。ファイルに書き込むということはディスクにアクセスするということです。
-</p>
-<p>
-  ディスクI/Oというのは、メモリI/Oに比べて非常に速度が遅いので、ディスクアクセスへの回数をできるだけ減らすことがプログラムの性能向上につながります。
-</p>
-<p>
-  こういう理由で、Perlはprint関数を呼び出したときに実際に書き込みを行わず、書き込みバッファに一定バイトまでデータを蓄積して一度にファイルに書き出します。これを遅延書き込みと呼びます。
-</p>
-<h3>コード解説</h3>
-<h4>(1)ブロックバッファリングが行われる</h4>
-<pre>
-print $fh "遅延書き込み\n"; # print関数呼び出し
-print "ファイルサイズはまだ" . -s $file . "バイトで書き込まれていません。\n";
-sleep 3;
-</pre>
-<p>
-  print 関数で$fhに書き込みましたが、この時点ではまだ内容が書き出されず、ファイルのサイズは0バイトのままです。書き込み内容が、バッファに蓄積されている状態です。
-</p>
-<p>
-  ちなみに、ディスプレイへの出力は、行バッファリングですので、"\n"が出現した時点で出力されます。
-</p>
-<h4>(2)遅延書き込みが行われる</h4>
-<pre>
-# closeと同時にバッファをファイルに書き出す(遅延書き込み)。
-close $fh or die "Cannot close $file"; 
+&lt;/ pre&gt;
 
-print "この時点で書き込まれました。サイズは" . -s $file . "バイトです。\n";
+(Reference) &lt;a href="/blog/20080718121643.html"&gt; open function &lt;/a&gt;, &lt;a href="/blog/20160312145776.html"&gt; close function &lt;/a&gt;
+
+&lt;h3&gt; Perl print function buffering specification &lt;/ h3&gt;
+
+&lt;h4&gt; (1) Block buffering &lt;/ h4&gt;
+
+Perl's print function does block buffering by default. (The exception is when printing to the display, which does line buffering. Perl 5.6 and later)
+
+Block buffering is a buffering method that stores data in a buffer up to a certain number of bytes. When the written contents stored in the buffer exceed a certain number of bytes, the file is actually written.
+
+The fixed number of bytes depends on the setting, but I think that it is generally about 4kB. Also, the contents of the buffer are written to the file when the file is closed.
+
+&lt;h4&gt; (2) Line buffering &lt;/ h4&gt;
+
+Line buffering is done when printing to the display. The contents to be written are accumulated in the buffer until a newline character appears, and when a newline appears, the contents of the buffer are written to a file.
+
+&lt;h3&gt; Buffering and deferred writing &lt;/ h3&gt;
+
+The print function stores the written contents in a buffer and outputs them all at once because the cost of outputting to a file is very high. Writing to a file means accessing the disc.
+
+Disk I / O is much slower than memory I / O, so reducing the number of disk accesses as much as possible will improve program performance.
+
+For this reason, Perl doesn't actually write when you call the print function, it stores up to a certain number of bytes in the write buffer and writes it to a file at once. This is called delayed writing.
+
+&lt;h3&gt; Code explanation &lt;/ h3&gt;
+
+&lt;h4&gt; (1) Block buffering is performed &lt;/ h4&gt;
+
+&lt;pre&gt;
+print $ fh "delayed write \ n"; # print function call
+print "File size not yet". -S $ file. "Not written in bytes. \ N";
 sleep 3;
-</pre>
-<p>
-  $fh をクローズした時点で、バッファにある書き込み内容がファイルに出力されます。遅延書き込みが行われたことがわかると思います。
-</p>
+&lt;/ pre&gt;
+
+I wrote to $ fh with the print function, but at this point the content has not been written yet and the file size remains 0 bytes. The written contents are stored in the buffer.
+
+By the way, the output to the display is line buffering, so it will be output when "\ n" appears.
+
+&lt;h4&gt; (2) Delayed writing is performed &lt;/ h4&gt;
+
+&lt;pre&gt;
+Write the buffer to a file at the same time as # close (delayed write).
+close $ fh or die "Cannot close $ file";
+
+print "Written at this point. Size is". -S $ file. "Bytes. \ N";
+sleep 3;
+&lt;/ pre&gt;
+
+When $ fh is closed, the contents written in the buffer are output to the file. You can see that the delayed write was done.
 
   </div>
   <div class="bottom">

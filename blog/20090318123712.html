@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>生成したオブジェクトをいじって遊ぶ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="作成したオブジェクトをいじって遊んでみましょう。">
+<title> Play with the created objects  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Let's play with the created object.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="生成したオブジェクトをいじって遊ぶ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="作成したオブジェクトをいじって遊んでみましょう。" />
+<meta name="twitter:title" content=" Play with the created objects  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Let's play with the created object." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop="name">オブジェクト指向</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">オブジェクトの中身</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20090318123712.html">生成したオブジェクトをいじって遊ぶ</a></h2>
+      <span itemprop = "name"> Object Oriented </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Object contents </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20090318123712.html"> Play with the created objects </a></ h2>
 <p>
-  作成したオブジェクトをいじって遊んでみましょう。
+  Let's play with the created object.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,66 +97,66 @@
 </div>
 
 
-<h3>1. オブジェクトをいじって遊ぶ</h3>
+<h3> 1. Play with objects </ h3>
 <p>
-  まずこんな感じで、$book オブジェクトを作成してみます。ここら辺で遊ぶと書いてあるところに、いろいろ記述して遊びます。
+  First, let's create a $ book object like this. Where it says to play around here, write various things and play.
 </p>
 <pre>
 use strict;
 use warnings;
 
-my $book = Book-&gt;new;
+my $ book = Book-&gt; new;
 
 #
-# ここら辺で遊ぶ。
+#Play around here.
 #
 
 package Book;
 sub new {
-    my $class = shift;
-    my $self = {};
-    return bless $self, $class;
+    my $ class = shift;
+    my $ self = {};
+    return bless $ self, $ class;
 }
-</pre>
-<h3>2. オブジェクトはデータだ!</h3>
-<p>
-  <b>オブジェクトはデータ</b>だということを確認してみましょう。
-</p>
-<pre>
-$book-&gt;{title} = 'Good news';
-$book-&gt;{author} = 'Takeshi';
-</pre>
-<p>
-  と書くと、普通の<b>ハッシュリファレンスと同じように値の設定ができる</b>ことがわかると思います。
-</p>
-<pre>
-print $book-&gt;{title};
-</pre>
-<p>
-  とすると、設定した内容が出力されます。
-</p>
-<h3>3. オブジェクトはクラスに結びつけられている!</h3>
-<p>
-  オブジェクトはクラスに結び付けられているということを確認してみましょう。クラスの紐付けを見るには
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; 2. Objects are data! &lt;/ H3&gt;
+
+Let's make sure that the &lt;b&gt; object is data &lt;/ ​​b&gt;.
+
+&lt;pre&gt;
+$ book-&gt; {title} ='Good news';
+$ book-&gt; {author} ='Takeshi';
+&lt;/ pre&gt;
+
+You can see that you can set the value in the same way as a normal &lt;b&gt; hash reference &lt;/ b&gt;.
+
+&lt;pre&gt;
+print $ book-&gt; {title};
+&lt;/ pre&gt;
+
+Then, the set contents will be output.
+
+&lt;h3&gt; 3. Objects are tied to a class! &lt;/ H3&gt;
+
+Let's make sure that the object is tied to a class. To see the class association
+
+&lt;pre&gt;
 ref
-</pre>
-<p>
-  関数を使用します。
-</p>
-<pre>
-print ref $book;
-</pre>
-<p>
-  としてみましょう。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Use a function.
+
+&lt;pre&gt;
+print ref $ book;
+&lt;/ pre&gt;
+
+Let's try.
+
+&lt;pre&gt;
 Book
-</pre>
-<p>
-  と出力されるのがわかると思います。そうです、<b>ref関数</b>を使用すれば、そのオブジェクトがどのクラスに紐付いているかがわかるのです。
-</p>
+&lt;/ pre&gt;
+
+You can see that it is output. Yes, you can use the &lt;b&gt; ref function &lt;/ b&gt; to find out which class the object is associated with.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>サブルーチンの定義はスコープの影響を受けない - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="サブルーチンの定義は、スコープの影響を受けません。">
+<title> Subroutine definitions are not affected by scope  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Subroutine definitions are not affected by  scope .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="サブルーチンの定義はスコープの影響を受けない - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="サブルーチンの定義は、スコープの影響を受けません。" />
+<meta name="twitter:title" content=" Subroutine definitions are not affected by scope  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Subroutine definitions are not affected by  scope ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20101130129876.html">
-        <span itemprop="name">サブルーチン</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20080612121341.html">サブルーチンの定義はスコープの影響を受けない</a></h2>
+        <span itemprop = "name"> Subroutine </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20080612121341.html"> Subroutine definitions are not affected by scope </a></ h2>
 <p>
-  サブルーチンの定義は、<a href="/blog/20110128130016.html">スコープ</a>の影響を受けません。
+  Subroutine definitions are not affected by <a href="/blog/20110128130016.html"> scope </a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,40 +98,39 @@
 
 
 <pre>
-{ 
+{
   sub func {
     return 2;
   }
 }
-my $ret = func();
-</pre>
-<p>
-  サブルーチンは、スコープの影響を受けません。一見すると、funcは、スコープの外では、見えないものと思ってしまいがちですが、そうなりません。
-</p>
-<p>
-  サブルーチンの定義は、コンパイル時に、<a href="/blog/20080613121341.html">シンボルテーブル</a>というものに登録されます。シンボルテーブルは、プログラムのどこからでも参照することができるため、サブルーチンも、プログラムのどこからでも参照できます。
-</p>
-<h3>サンプル</h3>
-<p>
-  サブルーチンの定義はスコープの影響を受けないことを理解するサンプルです。
-</p>
-<pre>
+my $ ret = func ();
+&lt;/ pre&gt;
+
+Subroutines are not affected by scope. At first glance, it's easy to think that func is invisible outside the scope, but that's not the case.
+
+The subroutine definition is registered in the &lt;a href="/blog/20080613121341.html"&gt; symbol table &lt;/a&gt; at compile time. Since the symbol table can be referenced from anywhere in the program, subroutines can also be referenced from anywhere in the program.
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+The subroutine definition is a sample to understand that it is not affected by scope.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# サブルーチンの定義とスコープ
-# サブルーチンは、スコープの影響を受けない。
+# Subroutine definition and scope
+#Subroutines are not affected by scope.
 
-{ 
+{
   sub func {
     return 2;
   }
 }
 
-print "1: サブルーチンの定義は、スコープの影響を受けない。\n";
-my $ret = func();
-print "\$ret は、$ret です。\n";
-</pre>
+print "1: Subroutine definition is not affected by scope. \ N";
+my $ ret = func ();
+print "\ $ ret is $ ret. \ N";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Pod::Usage - PODドキュメントの出力 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Pod::UsageはPODドキュメントの出力するためのモジュールです。ドキュメントを表示してプログラムを終了させるpod2usageという関数を使用することができます。">
+<title> Pod :: Usage --POD document output  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Pod :: Usage  is a module for outputting POD documents. You can use a function called  pod2usage  that displays the documentation and terminates the program.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Pod::Usage - PODドキュメントの出力 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Pod::UsageはPODドキュメントの出力するためのモジュールです。ドキュメントを表示してプログラムを終了させるpod2usageという関数を使用することができます。" />
+<meta name="twitter:title" content=" Pod :: Usage --POD document output  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Pod :: Usage  is a module for outputting POD documents. You can use a function called  pod2usage  that displays the documentation and terminates the program." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100226126425.html">Pod::Usage - PODドキュメントの出力</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100226126425.html"> Pod :: Usage --POD document output </a></ h2>
 <p>
-  <strong>Pod::Usage</strong>はPODドキュメントの出力するためのモジュールです。ドキュメントを表示してプログラムを終了させる<strong>pod2usage</strong>という関数を使用することができます。
+  <strong> Pod :: Usage </ strong> is a module for outputting POD documents. You can use a function called <strong> pod2usage </ strong> that displays the documentation and terminates the program.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,61 +97,60 @@
 
 
 <p>
-  関数を使用する場合は明示的にインポートするのがよいでしょう。
+  If you use a function, it's a good idea to import it explicitly.
 </p>
 <pre>
-# 関数のインポート
-use Pod::Usage 'pod2usage';
-</pre>
-<p>
-  pod2usageのもっとも基本的な使い方のサンプルです。ドキュメントの中の「SYNOPSIS」という項目を表示してプログラムを終了します。
-</p>
-<pre>
-# Pod::Usageのもっとも基本的な使い方
+#Import function
+use Pod :: Usage'pod2usage';
+&lt;/ pre&gt;
 
-=head1 SYNOPSIS
+This is the most basic usage sample of pod2 usage. Exit the program by displaying the item "SYNOPSIS" in the document.
+
+&lt;pre&gt;
+The most basic usage of #Pod :: Usage
+
+= head1 SYNOPSIS
 
 script.pl FILE
 
-=cut
+= cut
 
-use Pod::Usage 'pod2usage';
+use Pod :: Usage'pod2usage';
 
-# コマンドライン引数
-my $file = shift;
+# Command line arguments
+my $ file = shift;
 
-# 引数がない場合はSYNOPSISを表示してプログラムを終了
-pod2usage() unless $file;
-</pre>
-<p>
-  <a href="/blog/20080108132865.html">コマンドライン引数</a>がなかった場合は次のように表示されプログラムは終了します。
-</p>
-<pre>
+# If there is no argument, display SYNOPSIS and exit the program
+pod2usage () unless $ file;
+&lt;/ pre&gt;
+
+If there is no &lt;a href="/blog/20080108132865.html"&gt; command line argument &lt;/a&gt;, the following will be displayed and the program will terminate.
+
+&lt;pre&gt;
 Usage:
     script.pl FILE
-</pre>
-<p>
-  Pod::UsageとGetopt::Longを組み合わせたサンプルです。
-</p>
-<pre>
-# Pod::UsageとGetopt::Longを組み合わせる
+&lt;/ pre&gt;
 
-=head1 SYNOPSIS
+This is a sample that combines Pod :: Usage and Getopt :: Long.
+&lt;pre&gt;
+Combine #Pod :: Usage and Getopt :: Long
+
+= head1 SYNOPSIS
 
 script.pl [--force] FILE
 
-=cut
+= cut
 
-use Pod::Usage 'pod2usage';
-use Getopt::Long 'GetOptions';
+use Pod :: Usage'pod2usage';
+use Getopt :: Long'GetOptions';
 
-# コマンドラインオプションの解析
-my $force;
-GetOptions('force' =&gt; \$force) or pod2usage;
+#Analysis of command line options
+my $ force;
+GetOptions ('force' =&gt; \ $ force) or pod2usage;
 
-my $file = shift;
-pod2usage unless $file;
-</pre>
+my $ file = shift;
+pod2usage unless $ file;
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

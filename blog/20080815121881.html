@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ロック用のファイルを使ってファイルロックする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ロック用のファイルを作ってそれにロックを掛けることもできます。ファイルロック用のファイルを作って排他制御を行う利点は、更新対象のファイルを削除したり、リネームしたりできることです。">
+<title> Lock the file using the lock file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can also create a lock file and lock it. The advantage of creating a file for file locking and performing exclusive control is that the file to be updated can be deleted or renamed.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ロック用のファイルを使ってファイルロックする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ロック用のファイルを作ってそれにロックを掛けることもできます。ファイルロック用のファイルを作って排他制御を行う利点は、更新対象のファイルを削除したり、リネームしたりできることです。" />
+<meta name="twitter:title" content=" Lock the file using the lock file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can also create a lock file and lock it. The advantage of creating a file for file locking and performing exclusive control is that the file to be updated can be deleted or renamed." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop="name">ファイル入出力</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080815121881.html">ロック用のファイルを使ってファイルロックする</a></h2>
+      <span itemprop = "name"> File input / output </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080815121881.html"> Lock the file using the lock file </a></ h2>
 <p>
-  ロック用のファイルを作ってそれにロックを掛けることもできます。ファイルロック用のファイルを作って排他制御を行う利点は、更新対象のファイルを削除したり、リネームしたりできることです。
+  You can also create a lock file and lock it. The advantage of creating a file for file locking and performing exclusive control is that the file to be updated can be deleted or renamed.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,118 +97,118 @@
 
 
 <p>
-  以下のサンプルは前回のサンプルをロック用のファイルを使うように修正したものです。ループ用のスクリプトは前回とまったく同じです。ロックするためのスクリプトはsample_20080815.pl、ループ用のスクリプトは、data_20080815.txtで保存してください。
+  The following sample is a modification of the previous sample to use a lock file. The script for the loop is exactly the same as last time. Save the locking script as sample_20080815.pl and the loop script as data_20080815.txt.
 </p>
 <p>
-  実行方法は、前回のサンプルを参照してください。
+  Please refer to the previous sample for the execution method.
 </p>
 <pre>
 use strict;
 use warnings;
-use Fcntl qw/:DEFAULT :flock :seek/;
+use Fcntl qw /: DEFAULT: flock: seek /;
 
-# ロック用のファイル(なければ作成)
-my $lock_file = "lock";  
-sysopen(my $lock_fh, $lock_file, O_RDONLY | O_CREAT)
-  or die "Cannot open $lock_file: $!";
+#File for lock (create if not)
+my $ lock_file = "lock";
+sysopen (my $ lock_fh, $ lock_file, O_RDONLY | O_CREAT)
+  or die "Cannot open $ lock_file: $!";
 
-# ロック用のファイルを排他ロック(読み込んで書き込むので排他ロック)
-flock($lock_fh, LOCK_EX)
-  or die "Cannot lock $lock_file: $!";
+#Exclusive lock for lock file (exclusive lock because it is read and written)
+flock ($ lock_fh, LOCK_EX)
+  or die "Cannot lock $ lock_file: $!";
 
-#上書きするので注意
-my $file = "data_20080815.txt";
+#Be careful as it will be overwritten
+my $ file = "data_20080815.txt";
 
-# 読み書きモードでオープン(あまり安全でない)
-# O_CREATでファイルがなければ作成する。
-sysopen(my $fh, $file, O_RDWR | O_CREAT)
-  or die "Cannot open $file: $!";
+#Open in read / write mode (not very secure)
+If there is no file with # O_CREAT, create it.
+sysopen (my $ fh, $ file, O_RDWR | O_CREAT)
+  or die "Cannot open $ file: $!";
 
-my $cnt;
-$cnt = &lt;$fh&gt;;
-if (!defined $cnt &amp;&amp; $!){ die "Cannot read $file: $!"; }
+my $ cnt;
+$ cnt = &lt;$ fh&gt;;
+if (! Defined $ cnt &amp;&amp; $!) {Die "Cannot read $ file: $!";}
 
-$cnt++;
+$ cnt ++;
 
-# ファイルポインタを先頭に移動
-seek($fh, 0, SEEK_SET)
-  or die "Cannot seek $file: $!";
+#Move the file pointer to the beginning
+seek ($ fh, 0, SEEK_SET)
+  or die "Cannot seek $ file: $!";
 
-# 書き込み。
-print { $fh } $cnt
-  or die "Cannot Write $file: $!";
+# write in.
+print {$ fh} $ cnt
+  or die "Cannot Write $ file: $!";
 
-# 書き込みサイズにファイルを切り詰める
-truncate($fh, length $cnt);
+# Truncate the file to write size
+truncate ($ fh, length $ cnt);
 
-close $fh
-  or die "Cannot close $file: $!";
+close $ fh
+  or die "Cannot close $ file: $!";
 
-# closeの際にファイルロックは解除される。
-close $lock_fh
-  or die "Cannot close $lock_file: $!";
+The file lock is released at the time of # close.
+close $ lock_fh
+  or die "Cannot close $ lock_file: $!";
 
-print "現在のカウント: $cnt\n";
-</pre>
-<p>
-  (参考)<a href="/blog/20080804121794.html">sysopen関数</a>、<a href="/blog/20080814121872.html">flock関数</a>、<a href="/blog/20180310152509.html">Fcntl</a>
-</p>
-<p>
-  ループスクリプト
-</p>
-<pre>
+print "Current count: $ cnt \ n";
+&lt;/ pre&gt;
+
+(Reference) &lt;a href="/blog/20080804121794.html"&gt; sysopen function &lt;/a&gt;, &lt;a href="/blog/20080814121872.html"&gt; flock function &lt;/a&gt;, &lt;a href="/blog" /20180310152509.html"&gt; Fcntl &lt;/a&gt;
+
+Loop script
+
+&lt;pre&gt;
 use strict;
 use warnings;
 use FindBin;
 
-my $script = "$FindBin::Bin/sample_20080815.pl";
+my $ script = "$ FindBin :: Bin / sample_20080815.pl";
 
 while (1) {
-  system("perl $script");
+  system ("perl $ script");
   
-  # 1より小さいランダムな数
-  my $random = rand 1; 
-  sleep $random;
+  Random number less than # 1
+  my $ random = rand 1;
+  sleep $ random;
 }
-</pre>
-<p>
-  <a href="/blog/20100123126425.html">while文</a>を使って、スクリプトを繰り返し実行しています。
-</p>
-<p>
-  (参考)<a href="/blog/20100524127696.html">FindBin</a>、<a href="/blog/20080906122079.html">rand関数</a>
-</p>
-<h3>コード解説</h3>
-<h4>(1)ロック用のファイルを作成する</h4>
-<pre>
-# ロック用のファイル(上書きするので注意)
-my $lock_file = "lock";  
-sysopen(my $lock_fh, $lock_file, O_RDONLY | O_CREAT)
-  or die "Cannot open $lock_file: $!";
-</pre>
-<p>
-  ロック用のファイルを作成します。
-</p>
-<h4>(2)flock関数を使ってロック用ファイルをロックする</h4>
-<p>
-  <a href="/blog/20080814121872.html">flock関数</a>を使ってロック用ファイルをロックしています。
-</p>
-<pre>
-# ロック用のファイルを排他ロック(読み込んで書き込むので排他ロック)
-flock($lock_fh, LOCK_EX)
-  or die "Cannot lock $lock_file: $!";
-</pre>
-<p>
-  このファイルをロックできたプロセスだけが、更新対象のファイルにアクセスを行うようにします。このロックに続いて、更新対象のファイルをオープンしてファイルを更新します。
-</p>
-<h4>(3)ロックの解除</h4>
-<pre>
-# closeの際にファイルロックは解除される。
-close $lock_fh
-  or die "Cannot close $lock_file: $!";
-</pre>
-<p>
-  ロック用ファイルをクローズすることで、ロックが解除されます。
-</p>
+&lt;/ pre&gt;
+
+The script is repeatedly executed using the &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
+
+(Reference) &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt;, &lt;a href="/blog/20080906122079.html"&gt; rand function &lt;/a&gt;
+
+&lt;h3&gt; Code explanation &lt;/ h3&gt;
+
+&lt;h4&gt; (1) Create a lock file &lt;/ h4&gt;
+
+&lt;pre&gt;
+#Lock file (Note that it will be overwritten)
+my $ lock_file = "lock";
+sysopen (my $ lock_fh, $ lock_file, O_RDONLY | O_CREAT)
+  or die "Cannot open $ lock_file: $!";
+&lt;/ pre&gt;
+
+Create a file for the lock.
+
+&lt;h4&gt; (2) Lock the lock file using the flock function &lt;/ h4&gt;
+
+The lock file is locked using the &lt;a href="/blog/20080814121872.html"&gt; flock function &lt;/a&gt;.
+
+&lt;pre&gt;
+#Exclusive lock for lock file (exclusive lock because it is read and written)
+flock ($ lock_fh, LOCK_EX)
+  or die "Cannot lock $ lock_file: $!";
+&lt;/ pre&gt;
+
+Only the process that can lock this file should access the file to be updated. Following this lock, open the file to be updated and update the file.
+
+&lt;h4&gt; (3) Unlock &lt;/ h4&gt;
+
+&lt;pre&gt;
+The file lock is released at the time of # close.
+close $ lock_fh
+  or die "Cannot close $ lock_file: $!";
+&lt;/ pre&gt;
+
+The lock is released by closing the lock file.
 
   </div>
   <div class="bottom">

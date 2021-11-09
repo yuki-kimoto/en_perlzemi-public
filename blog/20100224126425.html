@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Object::Simple - Mojo::Base互換のアクセサを生成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="デフォルト値つきのアクセサを作成するにはObject::Simpleを使用します。Object::SimpleはMojoliciousのMojo::Baseと高いレベルで互換性があります。">
+<title> Object :: Simple --Generate Mojo :: Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use  Object :: Simple  to create an accessor with a default value. Object :: Simple is highly compatible with Mojolicious's Mojo :: Base.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Object::Simple - Mojo::Base互換のアクセサを生成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="デフォルト値つきのアクセサを作成するにはObject::Simpleを使用します。Object::SimpleはMojoliciousのMojo::Baseと高いレベルで互換性があります。" />
+<meta name="twitter:title" content=" Object :: Simple --Generate Mojo :: Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use  Object :: Simple  to create an accessor with a default value. Object :: Simple is highly compatible with Mojolicious's Mojo :: Base." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100224126425.html">Object::Simple - Mojo::Base互換のアクセサを生成</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100224126425.html"> Object :: Simple --Generate Mojo :: Base compatible accessor </a></ h2>
 <p>
-  デフォルト値つきのアクセサを作成するには<strong>Object::Simple</strong>を使用します。Object::SimpleはMojoliciousのMojo::Baseと高いレベルで互換性があります。
+  Use <strong> Object :: Simple </ strong> to create an accessor with a default value. Object :: Simple is highly compatible with Mojolicious's Mojo :: Base.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,138 +98,144 @@
 
 <pre>
 package Point;
-use Object::Simple -base;
+use Object :: Simple -base;
 
 has x =&gt; 1;
 has y =&gt; 1;
 
 package main;
 
-my $point = Point-&gt;new;
-print $point-&gt;x;
+my $ point = Point-&gt; new;
+print $ point-&gt; x;
 
 1;
-</pre>
-<p>
-  useするときに-baseを指定すると、Object::Simpleを継承することができます。Object::Simpleはnewメソッドを持ちます。またアクセッサを定義するためのhasというメソッドがインポートされます。またstrictとwarningsが自動的に有効になります。
-</p>
-<h3>一般的なクラスのサンプル</h3>
-<p>
-  一般的なクラスのサンプルです。Pointクラスはxとyというアクセッサを持ちます。またclearというxとyを0に初期化するメソッドを持ちます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You can inherit Object :: Simple by specifying -base when using. Object :: Simple has a new method. It also imports a method called has for defining accessors. Also, strict and warnings are automatically enabled.
+
+&lt;h3&gt; General class sample &lt;/ h3&gt;
+
+This is a sample of a general class. The Point class has accessors x and y. It also has a method called clear that initializes x and y to 0.
+
+&lt;pre&gt;
 package Point;
-use Object::Simple -base;
+use Object :: Simple -base;
 
 has x =&gt; 0;
 has y =&gt; 0;
 
 sub clear {
-  my $self = shift;
+  my $ self = shift;
     
-  $self-&gt;x(0);
-  $self-&gt;y(0);
+  $ self-&gt; x (0);
+  $ self-&gt; y (0);
 }
 
 1;
-</pre>
-<p>
-  Pointクラスは次のように使用します。コンストラクタnewはObject::Simpleから継承したものです。
-</p>
-<pre>
-my $point = Point-&gt;new(x =&gt; 4, y =&gt; 6);
+&lt;/ pre&gt;
 
-$point-&gt;x(1);
-$point-&gt;y(2);
+Use the Point class as follows: The constructor new is inherited from Object :: Simple.
 
-my $x = $point-&gt;x;
-my $y = $point-&gt;y;
+&lt;pre&gt;
+my $ point = Point-&gt; new (x =&gt; 4, y =&gt; 6);
 
-$point-&gt;clear;
-</pre>
-<h3>Object::Simpleの使い方</h3>
-<p>
-  属性を定義する方法がいくつかあります。
-</p>
-<h4>複数の属性を一度に定義</h4>
-<pre>
-# デフォルト値なし
-has ['x', 'y'];
+$ point-&gt; x (1);
+$ point-&gt; y (2);
 
-# デフォルト値あり
-has ['x', 'y'] =&gt; 0;
-</pre>
-<p>
-  配列のリファレンスをhasの第一引数に指定すると複数のアクセッサを一度に定義できます。
-</p>
-<h4>デフォルト値の指定</h4>
-<pre>
-# 定数
+my $ x = $ point-&gt; x;
+my $ y = $ point-&gt; y;
+
+$ point-&gt; clear;
+&lt;/ pre&gt;
+
+&lt;h3&gt; How to use Object :: Simple &lt;/ h3&gt;
+
+There are several ways to define attributes.
+
+&lt;h4&gt; Define multiple attributes at once &lt;/ h4&gt;
+
+&lt;pre&gt;
+#No default value
+has ['x','y'];
+
+#With default value
+has ['x','y'] =&gt; 0;
+&lt;/ pre&gt;
+
+You can define multiple accessors at once by specifying the array reference as the first argument of has.
+
+&lt;h4&gt; Specify default value &lt;/ h4&gt;
+
+&lt;pre&gt;
+#Constant
 has foo =&gt; 1;
 
-# 配列のリファレンス
-has foo =&gt; sub { [] };
+# Array reference
+has foo =&gt; sub {[]};
 
-# ハッシュのリファレンス
-has bar =&gt; sub { {} };
+# Hash reference
+has bar =&gt; sub {{}};
 
-# オブジェクト
-has baz =&gt; sub { LWP::UserAgent-&gt;new };
-</pre>
-<p>
-  配列のリファレンス、ハッシュのリファレンス、オブジェクトなどをデフォルト値に設定するときはsub { }で囲んで遅延評価する必要があります。
-</p>
-<h4>すべてのアクセサを一度に定義</h4>
-<pre>
-has [qw/foo bar baz/],
+# object
+has baz =&gt; sub {LWP :: UserAgent-&gt; new};
+&lt;/ pre&gt;
+
+When setting array references, hash references, objects, etc. to default values, you need to enclose them in sub {} for lazy evaluation.
+
+&lt;h4&gt; Define all accessors at once &lt;/ h4&gt;
+
+&lt;pre&gt;
+has [qw / foo bar baz /],
     some =&gt; 1,
-    other =&gt; sub { 5 };
-</pre>
-<p>
-  すべてのアクセサの定義を一度に行うこともできます。
-</p>
-<h3>継承のサンプル</h3>
-<p>
-  Pointクラスを継承したPoint3Dクラスを作成するサンプルです。
-</p>
-<pre>
+    other =&gt; sub {5};
+&lt;/ pre&gt;
+
+You can also define all accessors at once.
+
+&lt;h3&gt; Inheritance sample &lt;/ h3&gt;
+
+This is a sample to create a Point3D class that inherits the Point class.
+
+&lt;pre&gt;
 package Point3D;
 use Point -base;
 
 has z =&gt; 0;
 
 sub clear {
-  my $self = shift;
-  $self-&gt;SUPER::clear();
-  $self-&gt;z(0);
+  my $ self = shift;
+  $ self-&gt; SUPER :: clear ();
+  $ self-&gt; z (0);
 }
 
 1;
-</pre>
-<h3>コンストラクタのオーバーライド</h3>
-<p>
-  コンストラクタnew()をオブジェクトの初期化や引数の加工のためにオーバーライドすることができます。
-</p>
-<pre>
-# オブジェクトの初期化のためのnew()のオーバーライド
+&lt;/ pre&gt;
+
+&lt;h3&gt; Constructor override &lt;/ h3&gt;
+
+You can override the constructor new () for object initialization and argument processing.
+
+&lt;pre&gt;
+#Override new () for object initialization
 sub new {
-  my $self = shift-&gt;SUPER::new(@_);
+  my $ self = shift-&gt; SUPER :: new (@_);
   
-  # Initialization
+  #Initialization
   
-  return $self;
+  return $ self;
 }
-</pre>
-<pre>
-# 引数の加工のためのnew()のオーバーライド
+&lt;/ pre&gt;
+
+&lt;pre&gt;
+# Override new () for argument processing
 sub new {
-  my $self = shift;
+  my $ self = shift;
   
-  $self-&gt;SUPER::new(x =&gt; $_[0], y =&gt; $_[1]);
+  $ self-&gt; SUPER :: new (x =&gt; $ _ [0], y =&gt; $ _ [1]);
   
-  return $self;
+  return $ self;
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

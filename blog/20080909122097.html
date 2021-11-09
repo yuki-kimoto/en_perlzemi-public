@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Math::Random::MT - 自然乱数に近い擬似乱数を発生 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="擬似乱数を発生させるよいアルゴリズムにメルセンヌ・ツイスタ法というものがあります。">
+<title> Math :: Random :: MT --Generates pseudo-random numbers close to natural random numbers  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="A good algorithm for generating pseudo-random numbers is the  Mersenne Twister method .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Math::Random::MT - 自然乱数に近い擬似乱数を発生 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="擬似乱数を発生させるよいアルゴリズムにメルセンヌ・ツイスタ法というものがあります。" />
+<meta name="twitter:title" content=" Math :: Random :: MT --Generates pseudo-random numbers close to natural random numbers  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="A good algorithm for generating pseudo-random numbers is the  Mersenne Twister method ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20080909122097.html">Math::Random::MT - 自然乱数に近い擬似乱数を発生</a></h2>
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20080909122097.html"> Math :: Random :: MT --Generates pseudo-random numbers close to natural random numbers </a></ h2>
 <p>
-  擬似乱数を発生させるよいアルゴリズムに<strong>メルセンヌ・ツイスタ法</strong>というものがあります。
+  A good algorithm for generating pseudo-random numbers is the <strong> Mersenne Twister method </ strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,38 +98,37 @@
 
 
 <p>
-  メルセンヌ・ツイスタ法によって擬似乱数を求めるモジュールが<strong>Math::Random::MT</strong>というモジュールです。CAPNから取得することができます。
+  The module that finds pseudo-random numbers by the Mersenne Twister method is <strong> Math :: Random :: MT </ strong>. You can get it from CAPN.
 </p>
 <pre>
-use Math::Random::MT qw/rand srand/;
+use Math :: Random :: MT qw / rand srand /;
 
-srand time^$$;
-my $num = rand 100
-</pre>
-<p>
-  Perlの標準モジュールである<a href="/blog/20080906122079.html">rand関数</a>や<a href="/blog/20080908122097.html">srand関数</a>と同じように使用することができます。Math::Randam::MTを使用するときは、srand関数を明示的に呼び出すようにします。
-</p>
-<p>
-  <a href="/blog/20081008122347.html">time関数</a>は時刻、$$は<a href="/blog/20180520152690.html">プロセスID</a>で、srandに与える初期値がなるべくランダムになるようにしています。
-</p>
-<h3>サンプル</h3>
-<p>
-  Math::Randam::MTを使ったサンプルです。
-</p>
-<pre>
+srand time ^ $$;
+my $ num = rand 100
+&lt;/ pre&gt;
+
+Used in the same way as the standard Perl modules &lt;a href="/blog/20080906122079.html"&gt; rand function &lt;/a&gt; and &lt;a href="/blog/20080908122097.html"&gt; srand function &lt;/a&gt; can. When using Math :: Randam :: MT, make sure to call the srand function explicitly.
+
+The &lt;a href="/blog/20081008122347.html"&gt; time function &lt;/a&gt; is the time, and $$ is the &lt;a href="/blog/20180520152690.html"&gt; process ID &lt;/a&gt;, which is the initial value given to srand. I try to make the values ​​as random as possible.
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample using Math :: Randam :: MT.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-use Math::Random::MT qw/rand srand/;
+use Math :: Random :: MT qw / rand srand /;
 
-print "(1)よりランダムな乱数を発生させる。\n";
-# できるだけランダムな初期値を与える。
-srand time^$$;
-for my $i (1 .. 20) {
-  print "$i回目: " . int(rand 100) . "\n";
+print "(1) Generates a random random number. \ N";
+# Give as random an initial value as possible.
+srand time ^ $$;
+for my $ i (1 .. 20) {
+  print "$ i times:". Int (rand 100). "\ n";
 }
-print "\n";
-</pre>
+print "\ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

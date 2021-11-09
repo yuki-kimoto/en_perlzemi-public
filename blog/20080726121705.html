@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>標準出力をリダイレクトしてファイルに書き込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ファイルに出力する最も簡単で頻繁に使われる方法があります。リダイレクトというOSの機能を使って、print関数で行っているディスプレイへの出力を、ファイルに変更します。">
+<title> Redirect standard output and write to a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="There is the easiest and most frequently used method to output to a file. Use the OS function called redirection to change the output to the display performed by the print function to a file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="標準出力をリダイレクトしてファイルに書き込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ファイルに出力する最も簡単で頻繁に使われる方法があります。リダイレクトというOSの機能を使って、print関数で行っているディスプレイへの出力を、ファイルに変更します。" />
+<meta name="twitter:title" content=" Redirect standard output and write to a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="There is the easiest and most frequently used method to output to a file. Use the OS function called redirection to change the output to the display performed by the print function to a file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,24 +59,24 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span>
+      <span itemprop = "name"> Perl </ span>
     </a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161124147999.html">
-      <span itemprop="name">ファイル入出力</span>
+      <span itemprop = "name"> File I / O </ span>
     </a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20080726121705.html">標準出力をリダイレクトしてファイルに書き込む</a></h2>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20080726121705.html"> Redirect standard output and write to a file </a></ h2>
 <p>
-  ファイルに出力する最も簡単で頻繁に使われる方法があります。リダイレクトというOSの機能を使って、print関数で行っているディスプレイへの出力を、ファイルに変更します。
+  There is the easiest and most frequently used method to output to a file. Use the OS function called redirection to change the output to the display performed by the print function to a file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,45 +95,46 @@
 
 
 <p>
-  以下は、ディスプレイに文字列を表示するサンプルです。
+  The following is a sample that displays a character string on the display.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# ファイルへの書き込み
-print "writed to file\n";
-</pre>
-<p>
-  上記のファイルを、sample20080726.pl という名前で保存して、コマンドプロンプトかシェルで
-</p>
-<pre>
-perl sample20080726.pl &gt; 出力するファイル名
-</pre>
-<p>
-  と入力してください。( ディスプレイへの出力が、指定したファイルへの出力に変更されます。)
-</p>
-<h3>コード解説</h3>
-<h3>(1)標準出力とは</h3>
-<p>
-  「標準出力」とはディスプレイのことです。print 関数は、デフォルトで標準出力であるディスプレイに出力を行います。以下のように明示的に標準出力を意味するSTDOUTを指定することもできます。
-</p>
-<pre>
-print "writed to file\n";
+# Write to file
+print "writed to file \ n";
+&lt;/ pre&gt;
 
-# 以下と同じ
-print STDOUT "writed to file\n"+
-</pre>
-<h3>(2)リダイレクトで、標準出力を切り替える</h3>
-<pre>
-perl sample20080726.pl &gt; 出力するファイル名
-</pre>
-<p>
-  > 記号で、標準出力をファイルに切り替えることができます。この機能をリダイレクトと呼びます。ディスプレイに表示されるはずの内容が、ファイルに書き込まれます。
-</p>
-<p>
-  print関数で標準出力に出力しておけば、ディスプレイに出力することもファイルに出力することもできます。
-</p>
+Save the above file as sample20080726.pl and at the command prompt or shell
+
+&lt;pre&gt;
+perl sample20080726.pl&gt; Output file name
+&lt;/ pre&gt;
+
+Please enter. (The output to the display is changed to the output to the specified file.)
+
+&lt;h3&gt; Code explanation &lt;/ h3&gt;
+
+&lt;h3&gt; (1) What is standard output? &lt;/ H3&gt;
+
+"Standard output" is the display. The print function prints to the display, which is the standard output by default. You can also explicitly specify STDOUT, which means standard output, as shown below.
+
+&lt;pre&gt;
+print "writed to file \ n";
+
+# Same as below
+print STDOUT "writed to file \ n" +
+&lt;/ pre&gt;
+
+&lt;h3&gt; (2) Switch standard output by redirecting &lt;/ h3&gt;
+
+&lt;pre&gt;
+perl sample20080726.pl&gt; Output file name
+&lt;/ pre&gt;
+
+You can switch the standard output to a file with the&gt; symbol. This feature is called a redirect. What you should see on the display is written to the file.
+
+If you output to the standard output with the print function, you can output to the display or to a file.
 
   </div>
   <div class="bottom">

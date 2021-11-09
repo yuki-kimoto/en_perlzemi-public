@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Hash::Util - ハッシュのキーの追加を禁止する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Hash::Utilモジュールを使ってハッシュのキーの追加を禁止することができます。">
+<title> Hash :: Util --Prohibit the addition of hash keys  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the Hash :: Util module to prevent the addition of  hash  keys.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Hash::Util - ハッシュのキーの追加を禁止する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Hash::Utilモジュールを使ってハッシュのキーの追加を禁止することができます。" />
+<meta name="twitter:title" content=" Hash :: Util --Prohibit the addition of hash keys  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the Hash :: Util module to prevent the addition of  hash  keys." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080703121510.html">Hash::Util - ハッシュのキーの追加を禁止する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080703121510.html"> Hash :: Util --Prohibit the addition of hash keys </a></ h2>
 <p>
-  Hash::Utilモジュールを使って<a href="/blog/20161013147635.html">ハッシュ</a>のキーの追加を禁止することができます。
+  You can use the Hash :: Util module to prevent the addition of <a href="/blog/20161013147635.html"> hash </a> keys.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,116 +97,114 @@
 
 
 <pre>
-use Hash::Util;
-# 制限
-Hash::Util::lock_keys(%hash); 
+use Hash :: Util;
+# limit
+Hash :: Util :: lock_keys (% hash);
 
-# 解除
-Hash::Util::unlock_keys(%hash);
-</pre>
-<p>
-  Hash::Util::lock_keysを使えば、ハッシュのキーを制限することができます。引数にハッシュのみを指定した場合は、現在のキー以外のキーの追加が禁止されます。
-</p>
-<pre>
-%hash = ();
-# key1 と key2に制限。
-@restrict_keys = qw/key1 key2/;
-Hash::Util::lock_keys(%hash, @restrict_keys);
-# 制限を解除。
-Hash::Util::unlock_keys(%hash);
-</pre>
-<p>
-  第2引数にキーを指定すると、そのキー以外のキーの追加を禁止することができます。
-</p>
-<p>
-  Hash::Util::lock_keys 関数は、deleteによるキーの削除を禁止しません。あくまで、キーの追加だけを禁止します。
-</p>
-<h3>ハッシュの値の変更とキーの追加、削除を禁止する</h3>
-<pre>
-Hash::Util::lock_hash(%hash);
+# lift
+Hash :: Util :: unlock_keys (% hash);
+&lt;/ pre&gt;
 
-# ハッシュの変更の禁止を解除
-Hash::Util::lock_hash(%hash);
-</pre>
-<p>
-  Hash::Util::lock_hash 関数を使えば、キーの追加、削除と値の変更を禁止することができます。キーとそれに対応する値を読み込み専用のものとして扱うことができます。
-</p>
-<p>
-  ハッシュを完全な読み込み専用にするには、Hash::Util::lock_hash_recurse を使います。ハッシュの値にリファレンスが含まれていた場合に、リファレンスが指す値の変更まで禁止することができます。
-</p>
-<h3>サンプル</h3>
-<p>
-  Hash::Utilを使って、ハッシュのキーと値の変更を制限するサンプルです。
-</p>
-<pre>
+You can use Hash :: Util :: lock_keys to limit the keys in a hash. If you specify only a hash as an argument, the addition of keys other than the current key is prohibited.
+
+&lt;pre&gt;
+% hash = ();
+Limited to # key1 and key2.
+@ restrict_keys = qw / key1 key2 /;
+Hash :: Util :: lock_keys (% hash, @restrict_keys);
+# Remove restrictions.
+Hash :: Util :: unlock_keys (% hash);
+&lt;/ pre&gt;
+
+If you specify a key as the second argument, you can prohibit the addition of keys other than that key.
+
+The Hash :: Util :: lock_keys function does not prohibit delete keys from being deleted. Only the addition of keys is prohibited.
+
+&lt;h3&gt; Prohibit changing hash value and adding / deleting keys &lt;/ h3&gt;
+
+&lt;pre&gt;
+Hash :: Util :: lock_hash (% hash);
+
+# Lift the prohibition on hash changes
+Hash :: Util :: lock_hash (% hash);
+&lt;/ pre&gt;
+
+You can use the Hash :: Util :: lock_hash function to prevent key additions, deletions and value changes. You can treat the key and its corresponding value as read-only.
+
+To make the hash completely read-only, use Hash :: Util :: lock_hash_recurse. If the hash value contains a reference, you can prevent the reference from changing the value it points to.
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample that uses Hash :: Util to limit the change of hash key and value.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ハッシュのキーと値の変更を制限する。
-use Hash::Util;
+# Restrict changes to hash keys and values.
+use Hash :: Util;
 
-my %hash;
+my% hash;
 my @restrict_keys;
 
-# key1 と key2 に制限される。
-print "1-1: ハッシュのキーの追加を禁止する。\n";
-%hash = (key1 =&gt; 1, key2 =&gt; 2);
-Hash::Util::lock_keys(%hash); 
+Limited to # key1 and key2.
+print "1-1: Prohibit the addition of hash keys. \ N";
+% hash = (key1 =&gt; 1, key2 =&gt; 2);
+Hash :: Util :: lock_keys (% hash);
 
-# key3 を追加。
-# die してしまうので、サンプル用にevalで捕獲。
-eval{ $hash{key3} = 3 };
-print "$@\n";
+Added # key3.
+#Die, so capture it with eval for a sample.
+eval {$ hash {key3} = 3};
+print "$ @ \ n";
 
-# キーの追加、削除の禁止を解除。
-Hash::Util::unlock_keys(%hash);
+# Remove the prohibition on adding and deleting keys.
+Hash :: Util :: unlock_keys (% hash);
 
-# key1 と key2に制限。
-print "1-2: 指定したキー以外のキーの追加を禁止する。\n";
-%hash = ();
-@restrict_keys = qw/key1 key2/; 
+Limited to # key1 and key2.
+print "1-2: Prohibit the addition of keys other than the specified key. \ N";
+% hash = ();
+@ restrict_keys = qw / key1 key2 /;
 
-# key3 を追加しようとするとdieする。
-Hash::Util::lock_keys(%hash, @restrict_keys);
-eval{ $hash{key3} = 3 }; 
-print "$@\n";
+Die when trying to add # key3.
+Hash :: Util :: lock_keys (% hash, @restrict_keys);
+eval {$ hash {key3} = 3};
+print "$ @ \ n";
 
-# キーの制限を解除。
-Hash::Util::unlock_keys(%hash); 
+Remove the # key restriction.
+Hash :: Util :: unlock_keys (% hash);
 
-print "2: ハッシュの値の変更とキーの追加、削除を禁止する。\n";
-%hash = (key1 =&gt; 1, key2 =&gt; 2);
+print "2: Prohibit changing hash value and adding / deleting keys. \ N";
+% hash = (key1 =&gt; 1, key2 =&gt; 2);
 
-# 値を変更しようとするとdieする。
-Hash::Util::lock_hash(%hash);
-eval{ $hash{key1} = 3 };
-print "$@\n";
+# Die when trying to change the value.
+Hash :: Util :: lock_hash (% hash);
+eval {$ hash {key1} = 3};
+print "$ @ \ n";
 
-# キーの追加しようとするとdieする。
-eval{ $hash{key3} = 1 };
-print "$@\n";
+Die when trying to add a # key.
+eval {$ hash {key3} = 1};
+print "$ @ \ n";
 
-# ハッシュの変更の禁止を解除
-Hash::Util::lock_hash(%hash); 
-</pre>
-<p>
-  (参考)<a href="/blog/20100312126967.html">eval</a>
-</p>
-<p>
-  実行結果
-</p>
-<pre>
-1-1: ハッシュのキーの追加を禁止する。
-Attempt to access disallowed key 'key3' in a restricted hash at - line 17.
+# Lift the prohibition on hash changes
+Hash :: Util :: lock_hash (% hash);
+&lt;/ pre&gt;
 
-1-2: 指定したキー以外のキーの追加を禁止する。
-Attempt to access disallowed key 'key3' in a restricted hash at - line 28.
+(Reference) &lt;a href="/blog/20100312126967.html"&gt; eval &lt;/a&gt;
 
-2: ハッシュの値の変更とキーの追加、削除を禁止する。
-Modification of a read-only value attempted at - line 37.
+Execution result
 
-Attempt to access disallowed key 'key3' in a restricted hash at - line 40.
-</pre>
+&lt;pre&gt;
+1-1: Prohibit the addition of hash keys.
+Attempt to access disallowed key'key3' in a restricted hash at --line 17.
+
+1-2: Prohibit the addition of keys other than the specified key.
+Attempt to access disallowed key'key3' in a restricted hash at --line 28.
+
+2: Prohibit changing hash value and adding / deleting keys.
+Modification of a read-only value attempted at --line 37.
+
+Attempt to access disallowed key'key3' in a restricted hash at --line 40.
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

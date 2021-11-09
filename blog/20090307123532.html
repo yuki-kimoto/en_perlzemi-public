@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>オブジェクト指向プログラミングとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="オブジェクト指向とはなんぞやという難しいことを記述する前に、オブジェクト指向で書かれたモジュールを使ってみましょう。">
+<title> What is object-oriented programming?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Before describing what is object-oriented, let's use a module written in object-oriented.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="オブジェクト指向プログラミングとは - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="オブジェクト指向とはなんぞやという難しいことを記述する前に、オブジェクト指向で書かれたモジュールを使ってみましょう。" />
+<meta name="twitter:title" content=" What is object-oriented programming?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Before describing what is object-oriented, let's use a module written in object-oriented." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop="name">オブジェクト指向</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">オブジェクト指向プログラミングとは</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20090307123532.html">オブジェクト指向プログラミングとは</a></h2>
+      <span itemprop = "name"> Object Oriented </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> What is object-oriented programming? </ Span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20090307123532.html"> What is object-oriented programming? </a></ H2>
 <p>
-  オブジェクト指向とはなんぞやという難しいことを記述する前に、オブジェクト指向で書かれたモジュールを使ってみましょう。
+  Before describing what is object-oriented, let's use a module written in object-oriented.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,106 +97,109 @@
 </div>
 
 
-<h3>オブジェクト指向で書かれたモジュールの使用方法</h3>
+<h3> How to use modules written in object orientation </ h3>
 <p>
-  オブジェクト指向で書かれたモジュールを使用するには、まずモジュールを<strong>useを使用して読み込み</strong>ます。CGIモジュールを読み込んでみます。
+  To use a module written in object orientation, first load the module using <strong> use </ strong>. Let's load the CGI module.
 </p>
 <pre>
 use CGI;
-</pre>
-<p>
-  オブジェクトを作成するには、<strong>モジュール名->new</strong> のように記述します。作成されたオブジェクトを$cgiに代入しています。
-</p>
-<pre>
-my $cgi = CGI-&gt;new();
-</pre>
-<p>
-  <strong>newはオブジェクトを作成するためのメソッド</strong>でコンストラクタと呼ばれます。<strong>メソッドとは、-> から呼び出せる関数</strong>だと最初は考えればよいです。
-</p>
-<p>
-  new以外のメソッドも呼び出してみましょう。
-</p>
-<pre>
-my $str = $cgi-&gt;h1( 'a' );
-</pre>
-<p>
-  h1 メソッドは文字列を受け取って
-</p>
-<pre>
-&lt;h1&gt;...&lt;/h1&gt;
-</pre>
-<p>
-  という文字列を返却します。
-</p>
-<h3>サンプル</h3>
-<p>
-  ここまでの記述をサンプルにまとめておきます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+To create an object, write &lt;strong&gt; module name-&gt; new &lt;/ strong&gt;. Assigning the created object to $ cgi.
+
+&lt;pre&gt;
+my $ cgi = CGI-&gt; new ();
+&lt;/ pre&gt;
+
+&lt;strong&gt; new is a method for creating objects &lt;/ strong&gt; and is called a constructor. At first, you can think of a &lt;strong&gt; method as a function that can be called from-&gt; &lt;/ strong&gt;.
+
+Let's call methods other than new.
+
+&lt;pre&gt;
+my $ str = $ cgi-&gt; h1 ('a');
+&lt;/ pre&gt;
+
+h1 method receives a string
+
+&lt;pre&gt;
+&lt;h1&gt; ... &lt;/ h1&gt;
+&lt;/ pre&gt;
+
+Will be returned.
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+The description so far is summarized in a sample.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
 use CGI;
-my $cgi = CGI-&gt;new;
-my $str = $cgi-&gt;h1('a');
+my $ cgi = CGI-&gt; new;
+my $ str = $ cgi-&gt; h1 ('a');
 
-# &lt;h1&gt;a&lt;/h1&gt; と出力される
-print $str; 
-</pre>
-<h3>オブジェクト指向の特徴</h3>
-<p>
-  オブジェクト指向では、<strong>メソッドは->を使ってモジュール名かオブジェクトから</strong>呼び出されます。
-</p>
-<table>
-  <tr>
-    <td>
-      記述
-    </td>
-    <td>
-      メソッドの呼び出し方法
-    </td>
-  </tr>
-  <tr>
-    <td>
-      CGI->new()
-    </td>
-    <td>
-       モジュール名からの呼び出し
-    </td>
-  </tr>
-  <tr>
-    <td>
-      $cgi->h1
-    </td>
-    <td>
-       オブジェクトからの呼び出し
-    </td>
-  </tr>
-</table>
-<p>
-  メソッドがモジュール名かオブジェクトから呼び出されるというのがオブジェクト指向のひとつの特徴です。
-</p>
-<h3>Javaでのクラスの使い方</h3>
-<p>
-  javaをでの記述もPerlとほぼ同じになることがわかると思います。
-</p>
-<pre>
+# &lt;h1&gt; a &lt;/ h1&gt; is output
+print $ str;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Object-oriented features &lt;/ h3&gt;
+
+In object orientation, &lt;strong&gt; methods are called from module names or objects &lt;/ strong&gt; using-&gt;.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      Description
+    &lt;/ td&gt;
+    &lt;td&gt;
+      How to call the method
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      CGI-&gt; new ()
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Call from module name
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      $ cgi-&gt; h1
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Call from object
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+One of the object-oriented features is that the method is called from the module name or the object.
+
+&lt;h3&gt; How to use classes in Java &lt;/ h3&gt;
+
+You can see that the description in java is almost the same as Perl.
+
+&lt;pre&gt;
 import java.awt.Button;
 import java.lang.Math;
 
-# Buttonクラスからコンストラクタ(new に該当)を呼び出す
-Button btn = new Button();
+Call the constructor (corresponding to new) from the #Button class
+Button btn = new Button ();
 
-# btnオブジェクトから描画を行うpaintメソッドを呼び出す
-btn.paint();
+# Call the paint method to draw from the btn object
+btn.paint ();
 
-# Math クラスから絶対値を返すabsメソッドを呼び出す
-Math.abs(-3);
-</pre>
-<h3>Perlでのクラスとは</h3>
-<p>
-  Perlにはクラスを作る専用の文法はありません。Perlでクラスといった場合には、単にオブジェクト指向で書かれたモジュールのことを指します。
-</p>
+#Call the abs method that returns the absolute value from the Math class
+Math.abs (-3);
+&lt;/ pre&gt;
+
+&lt;h3&gt; What is a Perl class? &lt;/ H3&gt;
+
+Perl doesn't have a dedicated grammar for creating classes. When we talk about classes in Perl, we just mean modules written in an object-oriented way.
 
   </div>
   <div class="bottom">

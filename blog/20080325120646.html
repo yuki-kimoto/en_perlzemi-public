@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>三項演算子 A ? B : C - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlには、条件によって、返却する値を変えることができる三項演算子というものがあります。">
+<title> Ternary operator A? B: C  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl has a  ternary operator  that allows you to change the value returned depending on the conditions.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="三項演算子 A ? B : C - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlには、条件によって、返却する値を変えることができる三項演算子というものがあります。" />
+<meta name="twitter:title" content=" Ternary operator A? B: C  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl has a  ternary operator  that allows you to change the value returned depending on the conditions." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080325120646.html">三項演算子 A ? B : C</a></h2>
+      <span itemprop = "name"> operator </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080325120646.html"> Ternary operator A? B: C </a></ h2>
 <p>
-  Perlには、条件によって、返却する値を変えることができる<b>三項演算子</b>というものがあります。
+  Perl has a <b> ternary operator </ b> that allows you to change the value returned depending on the conditions.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,133 +97,131 @@
 
 
 <pre>
-条件 ? 真の場合に返す値 : 偽の場合に返す値
-</pre>
-<p>
-  上の構文だけ見ると少しわかりにくいので、実際にサンプルを書いてみます。
-</p>
-<pre>
-my $flag = 1;
-my $num = $flag ? 3 : 5;
-</pre>
-<p>
-  「$flag」が「1」で真の値です。三項演算子は条件が真の場合には「?」の直後の値を返却します。ですので「3」が「$num」に代入されます。
-</p>
-<p>
-  次は、条件が偽の場合のサンプルです。
-</p>
-<pre>
-my $flag = 0;
-my $num = $flag ? 3 : 5;
-</pre>
-<p>
-  「$flag」が「0」で偽の値です。三項演算子は条件が真の場合には「:」の直後の値を返却します。ですので「5」が代入されます。
-</p>
-<p>
-  三項演算子は慣れるまでは少し読みにくい構文です。前半だけを見ると「$num」に「$flag」が代入されているように思えるかもしれません。
-</p>
-<p>
-  でも「$flag」が代入されるのではなく、「$flag」が条件になっていて、条件に応じて「?の直後」あるいは「:の直後」の値が返却されます。
-</p>
-<p>
-  Perlの真偽値について詳しく知りたい場合は、以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080323120628.html">Perlの真偽値</a>
-  </li>
-</ul>
-<h4>ifで書くのとの違いは?</h4>
-<p>
-  三項演算子で書けることは<a href="/blog/20161023147731.html">if文</a>でもそのまま書けます。
-</p>
-<pre>
-my $flag = 1;
-my $num;
-if ($flag) {
-  $num = 3;
+Condition? Value to return if true: Value to return if false
+&lt;/ pre&gt;
+
+It's a little difficult to understand just by looking at the above syntax, so let's actually write a sample.
+
+&lt;pre&gt;
+my $ flag = 1;
+my $ num = $ flag? 3: 5;
+&lt;/ pre&gt;
+
+"$ Flag" is "1", which is the true value. The ternary operator returns the value immediately after the "?" If the condition is true. So "3" is assigned to "$ num".
+
+The following is a sample when the condition is false.
+
+&lt;pre&gt;
+my $ flag = 0;
+my $ num = $ flag? 3: 5;
+&lt;/ pre&gt;
+
+"$ Flag" is "0", which is a fake value. The ternary operator returns the value immediately after the ":" if the condition is true. Therefore, "5" is substituted.
+
+The ternary operator is a bit hard to read until you get used to it. Looking only at the first half, it may seem that "$ flag" is assigned to "$ num".
+
+However, instead of substituting "$ flag", "$ flag" is the condition, and the value "immediately after?" Or "immediately after:" is returned depending on the condition.
+
+If you want to know more about Perl booleans, check out the articles below.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080323120628.html"&gt; Perl truth value &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; What is the difference from writing with if? &lt;/ H4&gt;
+
+What can be written with the ternary operator can be written as it is with &lt;a href="/blog/20161023147731.html"&gt; if statement &lt;/a&gt;.
+
+&lt;pre&gt;
+my $ flag = 1;
+my $ num;
+if ($ flag) {
+  $ num = 3;
 }
 else {
-  $num = 5;
+  $ num = 5;
 }
-</pre>
-<p>
-  違いは、三項演算子は<b>短く書ける</b>ということと<b>値を返せる</b>ということです。
-</p>
-<p>
-  この利点を生かすと、たとえば<a href="/blog/20140405139642.html">Mojoliciousのテンプレート</a>の中で、こんな風に書けます。
-</p>
-<pre>
-&lt;%= $flag ? 3 : 5 %&gt;
-</pre>
-<p>
-  if文で書くより省略でき、1行で短くスッキリ書けましたね。
-</p>
-<h4>複数の条件が連続する三項演算子</h4>
-<p>
-  三項演算子は、複数の条件を連続させて使用することができます。ネストされている場合も読めるようにしておきましょう。
-</p>
-<pre>
-my $flag = 1;
-my $num
-  = $flag == 1 ? 3
-  : $flag == 2 ? 5
+&lt;/ pre&gt;
+
+The difference is that the ternary operator can be &lt;b&gt; written short &lt;/ b&gt; and &lt;b&gt; can return a value &lt;/ b&gt;.
+
+Taking advantage of this, you can write it like this in &lt;a href="/blog/20140405139642.html"&gt; Mojolicious template &lt;/a&gt;, for example.
+
+&lt;pre&gt;
+&lt;% = $ flag? 3: 5%&gt;
+&lt;/ pre&gt;
+
+It can be omitted compared to writing with an if statement, and it was possible to write short and neat in one line.
+
+&lt;h4&gt; Ternary operator with consecutive conditions &lt;/ h4&gt;
+
+The ternary operator can use multiple conditions in succession. Make it readable even if it is nested.
+
+&lt;pre&gt;
+my $ flag = 1;
+my $ num
+  = $ flag == 1? 3
+  : $ flag == 2? 5
   : 7;
-</pre>
-<p>
-  少し読みにくいですが、最初に書いたとおり読んでいきます。
-</p>
-<ul>
-  <li>
-    「$flag」が「1」の場合は「3」が返却されます。
-  </li>
-  <li>
-     そうでない場合は「:」の後ろが実行されます。つまり、その後に続く三項演算子が実行されます。
-  </li>
-  <li>
-     「$flag」が「2」の場合は「5」が返却されます。
-  </li>
-  <li>
-     そうでない場合は「:」の後ろが実行されます。つまり「7」が返却されます。
-  </li>
-</ul>
-<h3>サンプルプログラム</h3>
-<p>
-  三項演算子のサンプルプログラムです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+It's a little hard to read, but I'll read it exactly as I wrote it at the beginning.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    If "$ flag" is "1", "3" will be returned.
+  &lt;/ li&gt;
+  &lt;li&gt;
+     Otherwise, it will be executed after the ":". That is, the ternary operator that follows is executed.
+  &lt;/ li&gt;
+  &lt;li&gt;
+     If "$ flag" is "2", "5" will be returned.
+  &lt;/ li&gt;
+  &lt;li&gt;
+     Otherwise, it will be executed after the ":". In other words, "7" will be returned.
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample program of the ternary operator.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 三項演算子 
+#Ternary operator
 
-my $num1 = 1;
-my $num2 = 2;
+my $ num1 = 1;
+my $ num2 = 2;
 
-print "1. 三項演算子の例( if ～ else を置き換える )\n";
-my $max_num = $num1 &gt; $num2 ? $num1 : $num2;
-print "\$max_num = $max_num\n\n";
+print "1. Example of ternary operator (replace if ~ else) \ n";
+my $ max_num = $ num1&gt; $ num2? $ num1: $ num2;
+print "\ $ max_num = $ max_num \ n \ n";
 
-#以下のif ～ else 文と同じ
-if ($num1 &gt; $num2) { $max_num = $num1 }
-else { $max_num = $num2 }
+# Same as the following if ~ else statement
+if ($ num1&gt; $ num2) {$ max_num = $ num1}
+else {$ max_num = $ num2}
 
-my $age = 23;
-print "2. 三項演算子の例(if ～ elsif ～ を置き換える)\n";
-my $generation =
-  $age &lt; 20 ? 'child' :
-  $age &lt; 60 ? 'middle' :
-  $age &lt; 80 ? 'old' :
+my $ age = 23;
+print "2. Example of ternary operator (replace if ~ elsif ~) \ n";
+my $ generation =
+  $ age &lt;20?'Child':
+  $ age &lt;60?'middle':
+  $ age &lt;80?'old':
   'very old';
                   
-print "\$generation = $generation\n";
+print "\ $ generation = $ generation \ n";
 
-#以下のif ～ elsif文と同じ
-if ($age &lt; 20) { $generation = 'child' }
-elsif ($age &lt; 60) { $generation = 'middle' }
-elsif ($age &lt; 80) { $generation = 'old' }
-else { $generation = 'very old' }
-</pre>
+# Same as the following if ~ elsif statement
+if ($ age &lt;20) {$ generation ='child'}
+elsif ($ age &lt;60) {$ generation ='middle'}
+elsif ($ age &lt;80) {$ generation ='old'}
+else {$ generation ='very old'}
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

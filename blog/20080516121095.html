@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>OSに依存しないファイル名の作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="OSに依存しないファイル名を作成するにはFile::Specモジュールのcatfileメソッドを使用します。">
+<title> OS-independent file name creation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="To create an OS-independent filename, use the  catfile  method of the  File :: Spec  module.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="OSに依存しないファイル名の作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="OSに依存しないファイル名を作成するにはFile::Specモジュールのcatfileメソッドを使用します。" />
+<meta name="twitter:title" content=" OS-independent file name creation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="To create an OS-independent filename, use the  catfile  method of the  File :: Spec  module." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161126148016.html">
-      <span itemprop="name">ファイル操作</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080516121095.html">OSに依存しないファイル名の作成</a></h2>
+      <span itemprop = "name"> File operations </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080516121095.html"> OS-independent file name creation </a></ h2>
 <p>
-  OSに依存しないファイル名を作成するには<a href="/blog/20100412127089.html">File::Spec</a>モジュールの<strong>catfile</strong>メソッドを使用します。
+  To create an OS-independent filename, use the <strong> catfile </ strong> method of the <a href="/blog/20100412127089.html"> File :: Spec </a> module.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,51 +97,49 @@
 
 
 <pre>
-use File::Spec;
-my $file_name = File::Spec-&gt;catfile('t', 'test1.t');
-</pre>
-<p>
-  ファイル名の規則は、OSによって異なります。/ や \ を使ってファイル名を構成してしまうと、OS間での移植性が損なわれます。File::Specモジュールを使えば、実行しているOSに応じたファイル名の規則にしたがって、ファイル名が作成されるので、異なるOSに移植しても、手直しが発生しません。
-</p>
-<p>
-  <strong>updir</strong>メソッドを使用するとOSに依存しない「1階層上のディレクトリ」を表現することができます。
-</p>
-<pre>
-File::Spec-&gt;updir
-</pre>
-<p>
-  UnixでもWindowでも、１階層上のディレクトリの表現は、 .. ですが、もしかしたら、他のOSでは、表現が異なるかもしれません。
-</p>
-<h3>サンプル</h3>
-<p>
-  OSに依存しないファイル名を作成するサンプルです。
-</p>
-<pre>
+use File :: Spec;
+my $ file_name = File :: Spec-&gt; catfile ('t','test1.t');
+&lt;/ pre&gt;
+
+File name rules vary by OS. If you use / or \ to configure filenames, portability between operating systems is compromised. If you use the File :: Spec module, the file name will be created according to the file name rules according to the OS you are running, so even if you port it to a different OS, no rework will occur.
+
+You can use the &lt;strong&gt; updir &lt;/ strong&gt; method to represent an OS-independent "directory one level up".
+
+&lt;pre&gt;
+File :: Spec-&gt; updir
+&lt;/ pre&gt;
+
+In both Unix and Window, the representation of the directory one level above is .., but the representation may be different on other OS.
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample to create an OS-independent file name.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# OSに依存しないファイル名を作成する
+#Create an OS-independent file name
 
-use File::Spec;
+use File :: Spec;
 
-print "1: OSに依存しないファイル名を作成する。\n";
-# Unix では  、lib/test1.t となり、
-# Windowsでは、lib\test1.t となる。
-my $file_name = File::Spec-&gt;catfile( 't', 'test1.t' );
-print "\$file_name = $file_name\n\n";
+print "1: Create an OS-independent file name. \ N";
+# On Unix, it becomes lib / test1.t,
+# On Windows, it is lib \ test1.t.
+my $ file_name = File :: Spec-&gt; catfile ('t','test1.t');
+print "\ $ file_name = $ file_name \ n \ n";
 
-print "2: OSに依存しない「1階層上のディレクトリ」を表\現する。\n";
-my $up_dir = File::Spec-&gt;updir;
-print "\$up_dir = $up_dir\n\n";
+print "2: Shows an OS-independent" directory one level higher ". \ n ";
+my $ up_dir = File :: Spec-&gt; updir;
+print "\ $ up_dir = $ up_dir \ n \ n";
 
-print "3: このスクリプトの、1階層上の、lib というディレクトリ名を作成する。\n";
+print "3: Create a directory named lib, one level above this script. \ N";
 use FindBin;
-my $lib_dir = File::Spec-&gt;catfile($FindBin::Bin, File::Spec-&gt;updir, 'lib');
-print "\$lib_dir = $lib_dir\n\n";
-</pre>
-<p>
-  (参考)<a href="/blog/20100524127696.html">FindBin</a>
-</p>
+my $ lib_dir = File :: Spec-&gt; catfile ($ FindBin :: Bin, File :: Spec-&gt; updir,'lib');
+print "\ $ lib_dir = $ lib_dir \ n \ n";
+&lt;/ pre&gt;
+
+(Reference) &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt;
 
   </div>
   <div class="bottom">

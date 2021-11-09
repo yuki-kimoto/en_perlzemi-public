@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>「もの型」オブジェクトと「ひと型」オブジェクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="オブジェクト指向プログラミングにおいてオブジェクトは「もの」ではありません。　オブジェクトには、「もの」型オブジェクトと、「ひと」型オブジェクトの2種類があります。">
+<title> "Monotype" object and "Human type" object  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="In object-oriented programming,  objects are not "things". There are two types of  objects:  "things"  type objects and  "people"  type objects.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="「もの型」オブジェクトと「ひと型」オブジェクト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="オブジェクト指向プログラミングにおいてオブジェクトは「もの」ではありません。　オブジェクトには、「もの」型オブジェクトと、「ひと」型オブジェクトの2種類があります。" />
+<meta name="twitter:title" content=" "Monotype" object and "Human type" object  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="In object-oriented programming,  objects are not "things". There are two types of  objects:  "things"  type objects and  "people"  type objects." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop="name">オブジェクト指向</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">「もの型」と「ひと型」</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20090308123557.html">「もの型」オブジェクトと「ひと型」オブジェクト</a></h2>
+      <span itemprop = "name"> Object Oriented </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> "Monotype" and "Human type" </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20090308123557.html"> "Monotype" object and "Human type" object </a></ h2>
 <p>
-  オブジェクト指向プログラミングにおいて<strong>オブジェクトは「もの」ではありません。</strong>　オブジェクトには、<strong>「もの」</strong>型オブジェクトと、<strong>「ひと」</strong>型オブジェクトの2種類があります。
+  In object-oriented programming, <strong> objects are not "things". There are two types of </ strong> objects: <strong> "things" </ strong> type objects and <strong> "people" </ strong> type objects.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,52 +97,52 @@
 </div>
 
 
-<h3>1.「もの」型オブジェクト</h3>
+<h3> 1. "Things" type object </ h3>
 <p>
-  「もの」型オブジェクトとは、<strong>「もの」</strong>を表現したオブジェクトです。以下は、本オブジェクトですが、属性としてtitle( タイトル )とprice( 価格 )を持ちます。
+  A "thing" type object is an object that represents a <strong> "thing" </ strong>. The following is this object, but it has title and price as attributes.
 </p>
 <pre>
-my $book = Book-&gt;new(title =&gt; 'a', price =&gt; 2300);
-</pre>
-<p>
-  このような「もの」型オブジェクトはコンストラクタで、<strong>タイトルや価格などの本の性質</strong>を設定します。「もの」型オブジェクトは、<strong>ハッシュに非常に近い</strong>ものだと考えればよいと思います。もの型オブジェクトは構造化されたデータを表現します。
-</p>
-<pre>
-my $book = {title =&gt; 'a', price =&gt; 2300};
-</pre>
-<h3>2.「ひと」型オブジェクト</h3>
-<p>
-  「ひと」型オブジェクトとは、<strong>「ひと」</strong>を表現したオブジェクトです。以下は、ファイルを解析するオブジェクトです。属性として、encoding( 円コーディング方法 )とerr_raise( 解析に失敗した場合に例外を発生させる )を持ちます。
-</p>
-<p>
-  その後に、parseというファイルを解析するメソッドが呼ばれることが予定されています。
-</p>
-<pre>
-my $file_parser = FileParser-&gt;new(encoding =&gt; 'utf8', err_raise =&gt; 1);
-$file_parser-&gt;parse($file);
-</pre>
-<p>
-  このような「ひと」型オブジェクトは、コンストラクタで、その後に使用する<strong>メソッドが使用するオプション</strong>を指定することが多いです。「ひと」型オブジェクトは、<strong>関数に非常に近い</strong>ものだと考えればよいと思います。
-</p>
-<pre>
-my $opt = {encoding =&gt; 'utf8', err_raise =&gt; 1};
-parse_file($file, $opt);
-</pre>
-<h3>3. クラスの設計の指針</h3>
-<ol>
-  <li>
-    まず作りたいものが「もの」型オブジェクトなのか「ひと」型オブジェクトなのかを意識すること。
-  </li>
-  <li>
-    データを表現したい場合は「もの」型クラスを作る
-  </li>
-  <li>
-    オプションを指定してメソッドを呼び出したい場合は「ひと」型クラスを作る
-  </li>
-  <li>
-    利便性が勝る場合は、「もの」型が「ひと」型と混在するハイブリッドクラスになる場合もある。
-  </li>
-</ol>
+my $ book = Book-&gt; new (title =&gt;'a', price =&gt; 2300);
+&lt;/ pre&gt;
+
+Such "things" type objects are constructors that set &lt;strong&gt; book properties such as titles and prices &lt;/ strong&gt;. You can think of a "thing" type object as something very close to a &lt;strong&gt; hash &lt;/ strong&gt;. Monotype objects represent structured data.
+
+&lt;pre&gt;
+my $ book = {title =&gt;'a', price =&gt; 2300};
+&lt;/ pre&gt;
+
+&lt;h3&gt; 2. "Human" type object &lt;/ h3&gt;
+
+A "human" type object is an object that represents &lt;strong&gt; "human" &lt;/ strong&gt;. Below are the objects that parse the file. It has encoding (circular coding method) and err_raise (raises an exception if parsing fails) as attributes.
+
+After that, a method called parse that parses the file will be called.
+&lt;pre&gt;
+my $ file_parser = FileParser-&gt; new (encoding =&gt;'utf8', err_raise =&gt; 1);
+$ file_parser-&gt; parse ($ file);
+&lt;/ pre&gt;
+
+Such "human" objects often specify in the constructor the options used by subsequent &lt;strong&gt; methods &lt;/ strong&gt;. Think of a "human" object as something very close to a &lt;strong&gt; function &lt;/ strong&gt;.
+
+&lt;pre&gt;
+my $ opt = {encoding =&gt;'utf8', err_raise =&gt; 1};
+parse_file ($ file, $ opt);
+&lt;/ pre&gt;
+
+&lt;h3&gt; 3. Class design guidelines &lt;/ h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    First, be aware of whether you want to create a "thing" type object or a "human" type object.
+  &lt;/ li&gt;
+  &lt;li&gt;
+    If you want to represent data, create a "thing" typeclass
+  &lt;/ li&gt;
+  &lt;li&gt;
+    If you want to call a method with options, create a "human" typeclass
+  &lt;/ li&gt;
+  &lt;li&gt;
+    If convenience is superior, it may be a hybrid class in which the "thing" type is mixed with the "human" type.
+  &lt;/ li&gt;
+&lt;/ ol&gt;
 
   </div>
   <div class="bottom">

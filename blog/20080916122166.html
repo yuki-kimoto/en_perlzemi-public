@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>三角関数を利用する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="三角関数を利用するための関数やモジュールを紹介します。">
+<title> Use trigonometric functions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Introducing functions and modules for using trigonometric functions.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="三角関数を利用する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="三角関数を利用するための関数やモジュールを紹介します。" />
+<meta name="twitter:title" content=" Use trigonometric functions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Introducing functions and modules for using trigonometric functions." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161026147748.html">
-      <span itemprop="name">数値</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Numerical value </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080916122166.html">三角関数を利用する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080916122166.html"> Use trigonometric functions </a></ h2>
 <p>
-  三角関数を利用するための関数やモジュールを紹介します。
+  Introducing functions and modules for using trigonometric functions.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,154 +96,160 @@
 </div>
 
 
-<h4>サイン</h4>
+<h4> Sign </ h4>
 <p>
-  <strong>サイン</strong>を求めるには、<a href="/blog/20180514122166.html">sin関数</a>を角度はπ(pi関数)を使って、弧度法で指定するのが簡単です。
+  To find the <strong> sine </ strong>, specify the <a href="/blog/20180514122166.html"> sin function </a> in radians with an angle of π (pi function). Is easy.
 </p>
 <pre>
-use Math::Trig 'pi';
+use Math :: Trig'pi';
 
-sin(pi/2);
-cos(pi/3);
-</pre>
-<p>
-  (参考)<a href="/blog/20080918122175.html">Math::Trig</a>
-</p>
-<h4>コサイン</h4>
-<p>
-  <strong>コサイン</strong>を求めるには<a href="/blog/20180513122166.html">cos関数</a>を使います。
-</p>
-<pre>
-use Math::Trig 'pi';
+sin (pi / 2);
+cos (pi / 3);
+&lt;/ pre&gt;
 
-cos(pi/3);
-</pre>
-<h3>さまざまな三角関数</h3>
-<p>
-  三角関数関連の関数は標準関数としては、cos関数とsin関数しかありませんが、標準モジュールに<a href="/blog/20080918122175.html">Math::Trig</a>という三角関数関連のモジュールがあります。簡単に内容を紹介します。
-</p>
-<h4>タンジェント</h4>
-<p>
-  <strong>タンジェント</strong>を求めるには<strong>Math::Trig</strong>モジュールの<strong>tan関数</strong>を使います。
-</p>
-<pre>
-use Math::Trig qw/tan pi/;
-tan(pi/4);
-</pre>
-<h4>三角関数の逆数</h4>
-<p>
-  逆数とは、分母と分子を入れ替えた数のことです。逆関数とは意味がことなるので注意しましょう。sin,cos,tanの逆数をそれぞれ、cosec( コセカント ), sec( セカント ), cot( コタンジェント )と呼びます。
-</p>
-<p>
-  Math::Trigモジュールで、cosec関数、sec関数、cot関数を使用することができます。
-</p>
-<table>
-  <tr>
-    <td>
-      　
-    </td>
-    <td>
-      意味
-    </td>
-  </tr>
-  <tr>
-    <td>
+(Reference) &lt;a href="/blog/20080918122175.html"&gt; Math :: Trig &lt;/a&gt;
+
+&lt;h4&gt; Cosine &lt;/ h4&gt;
+
+Use the &lt;a href="/blog/20180513122166.html"&gt; cos function &lt;/a&gt; to find the &lt;strong&gt; cosine &lt;/ strong&gt;.
+
+&lt;pre&gt;
+use Math :: Trig'pi';
+
+cos (pi / 3);
+&lt;/ pre&gt;
+
+&lt;h3&gt; Various trigonometric functions &lt;/ h3&gt;
+
+The only standard functions related to trigonometric functions are the cos function and the sin function, but the standard module has a trigonometric function-related module called &lt;a href="/blog/20080918122175.html"&gt; Math :: Trig &lt;/a&gt;. there is. I will briefly introduce the contents.
+
+&lt;h4&gt; Tangent &lt;/ h4&gt;
+
+To find the &lt;strong&gt; tangent &lt;/ strong&gt;, use the &lt;strong&gt; tan function &lt;/ strong&gt; of the &lt;strong&gt; Math :: Trig &lt;/ strong&gt; module.
+
+&lt;pre&gt;
+use Math :: Trig qw / tan pi /;
+tan (pi / 4);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Reciprocal of trigonometric function &lt;/ h4&gt;
+
+The reciprocal is the number with the denominator and numerator swapped. Note that the inverse function has a different meaning. The reciprocals of sin, cos, and tan are called cosec, sec, and cot, respectively.
+
+You can use the cosec, sec, and cot functions in the Math :: Trig module.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      Twice
+    &lt;/ td&gt;
+    &lt;td&gt;
+      meaning
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       cosec
-    </td>
-    <td>
-      1/sin
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      1 / sin
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       sec
-    </td>
-    <td>
-      1/cos
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      1 / cos
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       cot
-    </td>
-    <td>
-      1/tan
-    </td>
-  </tr>
-</table>
-<h4>三角関数の逆関数</h4>
-<p>
-  逆関数とは、y = f( x ) という関係が成り立つときに、x = g( y ) を満たすような g のことです。y = f( x ) は、x に対して f を作用させると yになると読みます。 x = g( y ) は、y に g を作用させると x になると読みます。
-</p>
-<p>
-  つまり、 x にfを作用させて、さらにgを作用させたときに x に戻るような g を f の逆関数と呼びます。記号で書くと
-</p>
-<blockquote>
-<p>
-  x = g( f( x ) ) 
-</p>
-</blockquote>
-<p>
-  を満たすような g が存在するとき g を f の逆関数と呼びます。
-</p>
-<p>
-  sin,cos,tanの逆関数をそれぞれ、asin(アークサイン), acos(アークコサイン), atan(アークタンジェント)と呼びます。
-</p>
-<p>
-  Math::Trigモジュールの、asin関数、acos関数、atan関数を使用することができます。
-</p>
-<table>
-  <tr>
-    <td>
-      　
-    </td>
-    <td>
-      意味
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      1 / tan
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h4&gt; Inverse function of trigonometric function &lt;/ h4&gt;
+
+The inverse function is g that satisfies x = g (y) when the relation y = f (x) holds. We read that y = f (x) becomes y when we act on x with f. We read that x = g (y) becomes x when we act on y with g.
+
+In other words, g that causes x to act on f and then returns to x when g is applied is called the inverse function of f. If you write with a symbol
+
+&lt;blockquote&gt;
+x = g (f (x))
+&lt;/ blockquote&gt;
+
+When g exists that satisfies, g is called the inverse function of f.
+
+The inverse functions of sin, cos, and tan are called asin (arc sine), acos (arc cosine), and atan (arc tangent), respectively.
+
+You can use the asin function, acos function, and atan function of the Math :: Trig module.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      Twice
+    &lt;/ td&gt;
+    &lt;td&gt;
+      meaning
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       asin
-    </td>
-    <td>
-      sinの逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of sin
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       acos
-    </td>
-    <td>
-      cosの逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of cos
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       atan
-    </td>
-    <td>
-      tanの逆関数
-    </td>
-  </tr>
-</table>
-<h3>サンプル</h3>
-<p>
-  sin,cos,tanを求めるサンプルです。
-</p>
-<pre>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of tan
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample to find sin, cos, and tan.
+
+&lt;pre&gt;
 use strict;
 use warnings;
-use Math::Trig qw/tan pi/;
+use Math :: Trig qw / tan pi /;
 
-# sin(90°) = 1;
-print "sin(π/2) = " . sin(pi/2) . "\n";
+# sin (90 °) = 1;
+print "sin (π / 2) =". Sin (pi / 2). "\ n";
 
-# cos(60°) = 1/2;
-print "cos(π/3) = " . cos(pi/3) . "\n";
+# cos (60 °) = 1/2;
+print "cos (π / 3) =". Cos (pi / 3). "\ n";
 
-# tan(45°) = 1;
-print "tan(π/4) = " . tan(pi/4) . "\n";
-</pre>
+# tan (45 °) = 1;
+print "tan (π / 4) =". tan (pi / 4). "\ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

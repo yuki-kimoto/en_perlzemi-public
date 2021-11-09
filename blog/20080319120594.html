@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>論理積 論理和 否定【ページ移転】 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="このページの内容は以下のページに移転しました。">
+<title> Logical product Logical sum denial [Page transfer]  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The contents of this page have been moved to the following pages.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="論理積 論理和 否定【ページ移転】 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="このページの内容は以下のページに移転しました。" />
+<meta name="twitter:title" content=" Logical product Logical sum denial [Page transfer]  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The contents of this page have been moved to the following pages." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20080319120594.html">論理積 論理和 否定【ページ移転】</a></h2>
+    <h2><a href="/blog/20080319120594.html"> Logical product Logical sum denial [Page transfer] </a></ h2>
 <p>
-  このページの内容は以下のページに移転しました。
+  The contents of this page have been moved to the following pages.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -81,72 +81,77 @@
 
 <blockquote>
 <p>
-  <a href="/blog/20100816136168.html">Perlの論理演算子</a>
+  <a href="/blog/20100816136168.html"> Perl logical operators </a>
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  論理積は<strong>&&</strong>、論理和は<strong>||</strong>、否定は<strong>!</strong>で表現します。
+  The logical product is expressed as <strong> && </ strong>, the logical sum is expressed as <strong> || </ strong>, and the negation is expressed as <strong>! </ Strong>.
 </p>
-<h3>論理積、論理和、否定</h3>
+<h3> AND, OR, negation </ h3>
 <ul>
   <li>
-    論理積 A かつ B   :  A && B
-  </li>
+    AND A and B: A && B
+  </ li>
   <li>
-    論理和 A または B :  A || B
-  </li>
+    OR A or B: A || B
+  </ li>
   <li>
-    否定   Aでない    :  !A
-  </li>
+    Not Negative A:! A
+  </ li>
   <li>
-    否定演算子は、0を1に変換し, 0でない数字を、1に反転させる。
-  </li>
-</ul>
-<h3>論理積(A かつ B)</h3>
+    The negation operator converts 0 to 1 and inverts non-zero numbers to 1.
+  </ li>
+</ ul>
+<h3> Logical product (A and B) </ h3>
 <pre>
-if ($num &gt; 1 &amp;&amp; $num &lt; 4) {
-  print "\$numは、1より大きく、4より小さい\n\n";
+if ($ num&gt; 1 &amp;&amp; $ num &lt;4) {
+  print "\ $ num is greater than 1 and less than 4 \ n \ n";
 }
-</pre>
-<h3>論理和(A または B)</h3>
-<pre>
-if ($pet eq 'dog' || $pet eq 'cat') {
-  print "\$pet は、'dog' あるいは、'cat' のどちらかである。\n\n";
+&lt;/ pre&gt;
+
+&lt;h3&gt; OR (A or B) &lt;/ h3&gt;
+
+&lt;pre&gt;
+if ($ pet eq'dog' || $ pet eq'cat') {
+  print "\ $ pet is either'dog'or'cat'. \ N \ n";
 }
-</pre>
-<h3>否定(Aでない)</h3>
-<pre>
-if (!$num0) {
-  print "!\$num は、真\n";
+&lt;/ pre&gt;
+
+&lt;h3&gt; Negation (not A) &lt;/ h3&gt;
+
+&lt;pre&gt;
+if (! $ num0) {
+  print "! \ $ Num is true \ n";
 }
-</pre>
-<h3>サンプルコード</h3>
-<p>
-  論理積、論理和、否定のサンプルです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample code &lt;/ h3&gt;
+
+It is a sample of logical product, logical sum, and negation.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 論理積、論理和、否定
-print "1. 論理積( A かつ B )\n";
-my $num = 3;
-if ($num &gt; 1 &amp;&amp; $num &lt; 4) {
-  print "\$numは、1より大きく、4より小さい\n\n";
+# AND, OR, negation
+print "1. Logical product (A and B) \ n";
+my $ num = 3;
+if ($ num&gt; 1 &amp;&amp; $ num &lt;4) {
+  print "\ $ num is greater than 1 and less than 4 \ n \ n";
 }
 
-print "2. 論理和( A または B )\n";
-my $pet = 'dog';
-if ($pet eq 'dog' || $pet eq 'cat') {
-  print "\$pet は、'dog' あるいは、'cat' のどちらかである。\n\n";
+print "2. OR (A or B) \ n";
+my $ pet ='dog';
+if ($ pet eq'dog' || $ pet eq'cat') {
+  print "\ $ pet is either'dog'or'cat'. \ N \ n";
 }
 
-print "3. 否定( Aでない )\n";
-my $num0 = 0;
-if (!$num0) {
-  print "!\$num は、真\n";
+print "3. Negation (not A) \ n";
+my $ num0 = 0;
+if (! $ num0) {
+  print "! \ $ Num is true \ n";
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

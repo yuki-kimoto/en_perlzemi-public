@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Math::Trig - さまざまな三角関数 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="三角関数関連の関数は標準関数としては、cos関数とsin関数しかありませんが、標準モジュールにMath::Trigという三角関数関連のモジュールがあります。簡単に内容を紹介します。">
+<title> Math :: Trig --Various trigonometric functions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The standard functions related to trigonometric functions are  cos function  and  sin function . There is only one, but there is a trigonometric function related module called Math :: Trig in the standard module. I will briefly introduce the contents.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Math::Trig - さまざまな三角関数 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="三角関数関連の関数は標準関数としては、cos関数とsin関数しかありませんが、標準モジュールにMath::Trigという三角関数関連のモジュールがあります。簡単に内容を紹介します。" />
+<meta name="twitter:title" content=" Math :: Trig --Various trigonometric functions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The standard functions related to trigonometric functions are  cos function  and  sin function . There is only one, but there is a trigonometric function related module called Math :: Trig in the standard module. I will briefly introduce the contents." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080918122175.html">Math::Trig - さまざまな三角関数</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080918122175.html"> Math :: Trig --Various trigonometric functions </a></ h2>
 <p>
-  三角関数関連の関数は標準関数としては、<a href="/blog/20180513122166.html">cos関数</a>と<a href="/blog/20180514122166.html">sin関数</a>しかありませんが、標準モジュールにMath::Trigという三角関数関連のモジュールがあります。簡単に内容を紹介します。
+  The standard functions related to trigonometric functions are <a href="/blog/20180513122166.html"> cos function </a> and <a href="/blog/20180514122166.html"> sin function </a>. There is only one, but there is a trigonometric function related module called Math :: Trig in the standard module. I will briefly introduce the contents.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,102 +96,102 @@
 </div>
 
 
-<h3>三角関数の逆数</h3>
+<h3> Reciprocal of trigonometric function </ h3>
 <p>
-  逆数とは、分母と分子を入れ替えた数のことです。逆関数とは意味がことなるので注意しましょう。sin,cos,tanの逆数をそれぞれ、cosec( コセカント ), sec( セカント ), cot( コタンジェント )と呼びます。
+  The reciprocal is the number with the denominator and numerator swapped. Note that the inverse function has a different meaning. The reciprocals of sin, cos, and tan are called cosec, sec, and cot, respectively.
 </p>
 <p>
-  Math::Trigモジュールで、cosec関数、sec関数、cot関数を使用することができます。
+  You can use the cosec, sec, and cot functions in the Math :: Trig module.
 </p>
 <table>
   <tr>
     <td>
-      　
-    </td>
+      Twice
+    </ td>
     <td>
-      意味
-    </td>
-  </tr>
+      meaning
+    </ td>
+  </ tr>
   <tr>
     <td>
       cosec
-    </td>
+    </ td>
     <td>
-      1/sin
-    </td>
-  </tr>
+      1 / sin
+    </ td>
+  </ tr>
   <tr>
     <td>
       sec
-    </td>
+    </ td>
     <td>
-      1/cos
-    </td>
-  </tr>
+      1 / cos
+    </ td>
+  </ tr>
   <tr>
     <td>
       cot
-    </td>
+    </ td>
     <td>
-      1/tan
-    </td>
-  </tr>
-</table>
-<h3>三角関数の逆関数</h3>
+      1 / tan
+    </ td>
+  </ tr>
+</ table>
+<h3> Inverse function of trigonometric function </ h3>
 <p>
-  逆関数とは、y = f( x ) という関係が成り立つときに、x = g( y ) を満たすような g のことです。y = f( x ) は、x に対して f を作用させると yになると読みます。 x = g( y ) は、y に g を作用させると x になると読みます。
+  The inverse function is g that satisfies x = g (y) when the relation y = f (x) holds. We read that y = f (x) becomes y when we act on x with f. We read that x = g (y) becomes x when we act on y with g.
 </p>
 <p>
-  つまり、 x にfを作用させて、さらにgを作用させたときに x に戻るような g を f の逆関数と呼びます。記号で書くと
+  In other words, g that causes x to act on f and then returns to x when g is applied is called the inverse function of f. If you write with a symbol
 </p>
 <blockquote>
 <p>
-  x = g( f( x ) ) 
+  x = g (f (x))
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  を満たすような g が存在するとき g を f の逆関数と呼びます。
-</p>
-<p>
-  sin,cos,tanの逆関数をそれぞれ、asin(アークサイン), acos(アークコサイン), atan(アークタンジェント)と呼びます。
+  When g exists that satisfies, g is called the inverse function of f.
 </p>
 <p>
-  Math::Trigモジュールの、asin関数、acos関数、atan関数を使用することができます。
+  The inverse functions of sin, cos, and tan are called asin (arc sine), acos (arc cosine), and atan (arc tangent), respectively.
+</p>
+<p>
+  You can use the asin function, acos function, and atan function of the Math :: Trig module.
 </p>
 <table>
   <tr>
     <td>
-      　
-    </td>
+      Twice
+    </ td>
     <td>
-      意味
-    </td>
-  </tr>
+      meaning
+    </ td>
+  </ tr>
   <tr>
     <td>
       asin
-    </td>
+    </ td>
     <td>
-      sinの逆関数
-    </td>
-  </tr>
+      Inverse function of sin
+    </ td>
+  </ tr>
   <tr>
     <td>
       acos
-    </td>
+    </ td>
     <td>
-      cosの逆関数
-    </td>
-  </tr>
+      Inverse function of cos
+    </ td>
+  </ tr>
   <tr>
     <td>
       atan
-    </td>
+    </ td>
     <td>
-      tanの逆関数
-    </td>
-  </tr>
-</table>
+      Inverse function of tan
+    </ td>
+  </ tr>
+</ table>
 
   </div>
   <div class="bottom">

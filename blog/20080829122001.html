@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>数値と文字列の自動変換 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlでは、文字列と数値の自動変換が暗黙的に行われます。C言語やJavaのように明示的に文字列と数値の変換を行う必要がないので、スクリプトの記述が非常に楽です。">
+<title> Automatic conversion of numbers and strings  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl implicitly automatically converts  strings  and numbers. It is very easy to write a script because there is no need to explicitly convert strings and numbers as in C and Java.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="数値と文字列の自動変換 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlでは、文字列と数値の自動変換が暗黙的に行われます。C言語やJavaのように明示的に文字列と数値の変換を行う必要がないので、スクリプトの記述が非常に楽です。" />
+<meta name="twitter:title" content=" Automatic conversion of numbers and strings  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl implicitly automatically converts  strings  and numbers. It is very easy to write a script because there is no need to explicitly convert strings and numbers as in C and Java." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161026147748.html">
-      <span itemprop="name">数値</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">数値と文字列の自動変換</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20080829122001.html">数値と文字列の自動変換</a></h2>
+      <span itemprop = "name"> Numerical value </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Automatic conversion of numbers and strings </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20080829122001.html"> Automatic conversion of numbers and strings </a></ h2>
 <p>
-  Perlでは、<a href="/blog/20161003147558.html">文字列</a>と数値の自動変換が暗黙的に行われます。C言語やJavaのように明示的に文字列と数値の変換を行う必要がないので、スクリプトの記述が非常に楽です。
+  Perl implicitly automatically converts <a href="/blog/20161003147558.html"> strings </a> and numbers. It is very easy to write a script because there is no need to explicitly convert strings and numbers as in C and Java.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,58 +98,55 @@
 
 
 <pre>
-my $num1_str = "100";
-my $num1 = 100;
+my $ num1_str = "100";
+my $ num1 = 100;
 
-my $num1_total = $num1_str + $num1;
-</pre>
-<p>
-  文字列である"100"は数値として使用されると100に自動変換されて計算されます。
-</p>
-<p>
-  Perlがどのように文字列を数値として解釈するかを解説します。
-</p>
-<pre>
-my $num2_str = "34A11";
-</pre>
-<p>
-  "34A11"は数値として使用されると34に変換されます。先頭から続く数値の部分が数値に変換されます。
-</p>
-<p>
-  use warnings; を記述しておくと数値だけで構成されない文字列を数値として使用しようとすると警告が行われます。
-</p>
-<p>
-  空文字列"" は、0として計算されます(この場合も数値ではないので警告が行われます)。
-</p>
-<h3>サンプル</h3>
-<p>
-  数値と文字列の自動変換を確認するサンプルです。
-</p>
-<pre>
+my $ num1_total = $ num1_str + $ num1;
+&lt;/ pre&gt;
+
+When the character string "100" is used as a numerical value, it is automatically converted to 100 and calculated.
+
+Learn how Perl interprets strings as numbers.
+
+&lt;pre&gt;
+my $ num2_str = "34A11";
+&lt;/ pre&gt;
+
+"34A11" is converted to 34 when used as a number. The part of the number that continues from the beginning is converted to a number.
+
+If you write use warnings ;, you will be warned if you try to use a string that does not consist only of numbers as a number.
+
+The empty string "" is calculated as 0 (again, it is not a number, so a warning is given).
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample to check the automatic conversion of numbers and strings.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-my $num1_str = "100";
-my $num1 = 100;
+my $ num1_str = "100";
+my $ num1 = 100;
 
-my $num1_total = $num1_str + $num1;
+my $ num1_total = $ num1_str + $ num1;
 
-print "(1)文字列から数値への自動変換\n";
-print "\$num1_total = $num1_total\n\n";
+print "(1) Automatic conversion from string to number \ n";
+print "\ $ num1_total = $ num1_total \ n \ n";
 
-# この文字列が数値として使用される場合は、34と
-# として扱われる。
-# use warningsを有効にしていれば数値として
-# 使おうとすると警告になる。
-my $num2_str = "34A11"; 
+# If this string is used as a number, then 34
+Treated as #.
+As a number if # use warnings are enabled
+# If you try to use it, you will be warned.
+my $ num2_str = "34A11";
 
-my $num2 = 3;
+my $ num2 = 3;
 
-my $num2_total = $num2_str + $num2;
+my $ num2_total = $ num2_str + $ num2;
 
-print "(2)先頭から続く数字を使って計算される。\n";
-print "\$num2_total = $num2_total\n";
-</pre>
+print "(2) Calculated using the numbers that continue from the beginning. \ N";
+print "\ $ num2_total = $ num2_total \ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

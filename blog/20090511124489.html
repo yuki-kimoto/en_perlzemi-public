@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>文字列の先頭にマッチさせる - \A - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="正規表現で文字列の先頭を表現するには\Aを使用します。">
+<title> Match to the beginning of the string-\ A  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use  \ A  to represent the beginning of a string with a regular expression.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="文字列の先頭にマッチさせる - \A - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="正規表現で文字列の先頭を表現するには\Aを使用します。" />
+<meta name="twitter:title" content=" Match to the beginning of the string-\ A  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use  \ A  to represent the beginning of a string with a regular expression." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100827127859.html">
-      <span itemprop="name">正規表現</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span></a>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20090511124489.html">文字列の先頭にマッチさせる - \A</a></h2>
+      <span itemprop = "name"> Regular expression </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span> </a>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20090511124489.html"> Match to the beginning of the string-\ A </a></ h2>
 <p>
-  正規表現で文字列の先頭を表現するには<strong>\A</strong>を使用します。
+  Use <strong> \ A </ strong> to represent the beginning of a string with a regular expression.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,18 +98,18 @@
 
 
 <pre>
-# 文字列の先頭
-\A
-</pre>
-<p>
-  「^」と異なるのは、mオプションを使用した場合でも意味が変わらないということです。mオプションを使用した場合は「^」は文字列の先頭ではなく、行の先頭を表現するようになります。
-</p>
-<pre>
-my $str = "abc\ndef";
-if ($str =~ /\Acat/m) {
-  # 文字列の先頭にマッチ
+#Beginning of string
+\ A
+&lt;/ pre&gt;
+
+The difference from "^" is that the meaning does not change even when the m option is used. When the m option is used, "^" will represent the beginning of the line instead of the beginning of the string.
+
+&lt;pre&gt;
+my $ str = "abc \ ndef";
+if ($ str = ~ / \ Acat / m) {
+  # Match to the beginning of the string
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

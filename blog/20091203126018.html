@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>WindowsへSQLiteをインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="慣れてくるとさまざまな種類のSQLを実行して実験したくなると思います。そのためには対話的にSQLを実行できる環境があったほうが便利です。今回はWindows上でSQLを実行するための環境を作成してみます。">
+<title> Install SQLite on Windows  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="As you get used to it, you'll want to run and experiment with different types of SQL. For that purpose, it is convenient to have an environment where SQL can be executed interactively. This time, let's create an environment for executing SQL on Windows.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="WindowsへSQLiteをインストールする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="慣れてくるとさまざまな種類のSQLを実行して実験したくなると思います。そのためには対話的にSQLを実行できる環境があったほうが便利です。今回はWindows上でSQLを実行するための環境を作成してみます。" />
+<meta name="twitter:title" content=" Install SQLite on Windows  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="As you get used to it, you'll want to run and experiment with different types of SQL. For that purpose, it is convenient to have an environment where SQL can be executed interactively. This time, let's create an environment for executing SQL on Windows." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20091203126018.html">WindowsへSQLiteをインストールする</a></h2>
+    <h2><a href="/blog/20091203126018.html"> Install SQLite on Windows </a></ h2>
 <p>
-  慣れてくるとさまざまな種類のSQLを実行して実験したくなると思います。そのためには対話的にSQLを実行できる環境があったほうが便利です。今回はWindows上でSQLを実行するための環境を作成してみます。
+  As you get used to it, you'll want to run and experiment with different types of SQL. For that purpose, it is convenient to have an environment where SQL can be executed interactively. This time, let's create an environment for executing SQL on Windows.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -79,49 +79,49 @@
 </div>
 
 
-<h3>ライブラリとコマンドラインプログラムのダウンロード</h3>
+<h3> Download libraries and command line programs </ h3>
 <p>
-  SQLiteを利用するためにはデータベースを操作するためのライブラリとSQLを実行するためのコマンドラインプログラムが必要になります。このふたつを入手する必要があります。
+  To use SQLite, you need a library to operate the database and a command line program to execute SQL. You need to get these two.
 </p>
-<h4>SQLiteのホームページ</h4>
+<h4> SQLite home page </ h4>
 <p>
-  以下がSQLiteのホームページになります。
-</p>
-<blockquote>
-<p>
-  <a href="http://www.sqlite.org/">SQLiteのサイト</a>
-</p>
-</blockquote>
-<h4>SQLiteのダウンロードページ</h4>
-<p>
-  ホームページの上段の真ん中あたりに「Download」と書かれたリンクがあります。これがSQLiteのダウンロードのページへのリンクです。
+  The following is the SQLite home page.
 </p>
 <blockquote>
 <p>
-  <a href="http://www.sqlite.org/download.html">SQLite Download Page</a>
+  <a href="http://www.sqlite.org/"> SQLite site </a>
 </p>
-</blockquote>
-<h4>Windows用のSQLiteのライブラリとコマンドラインプログラムを探す</h4>
+</ blockquote>
+<h4> SQLite download page </ h4>
 <p>
-  くるくるとページをたどってWindowsようのSQLiteのライブラリとコマンドラインプログラムを探します。「For Windows」などと書かれていると思います。「sqlitedll～.zip」というのがSQLiteのライブラリです。「sqlite～.zip」というのがSQLiteのコマンドラインプログラムです。この2つをダウンロードしましょう。
+  There is a link that says "Download" in the middle of the top of the homepage. Here is a link to the SQLite download page.
+</p>
+<blockquote>
+<p>
+  <a href="http://www.sqlite.org/download.html"> SQLite Download Page </a>
+</p>
+</ blockquote>
+<h4> Find SQLite libraries and command line programs for Windows </ h4>
+<p>
+  Go around the page looking for Windows-like SQLite libraries and command line programs. I think it says something like "For Windows". "Sqlite dll ~ .zip" is the SQLite library. "Sqlite ~ .zip" is a SQLite command line program. Let's download these two.
 </p>
 <p>
-  2009年12月07日現在で最新版のものにリンクを張っておきます。
+  I will link to the latest version as of December 07, 2009.
 </p>
 <ul>
   <li>
-    <a href="http://www.sqlite.org/sqlitedll-3_6_20.zip">sqlitedll-3_6_20.zip</a>(SQLiteのライブラリ)
-  </li>
+    <a href="http://www.sqlite.org/sqlitedll-3_6_20.zip"> sqlitedll-3_6_20.zip </a> (SQLite library)
+  </ li>
   <li>
-    <a href="http://www.sqlite.org/sqlite-3_6_20.zip">sqlite-3_6_20.zip</a>(SQLiteのコマンドラインプログラム)
-  </li>
-</ul>
+    <a href="http://www.sqlite.org/sqlite-3_6_20.zip"> sqlite-3_6_20.zip </a> (SQLite command line program)
+  </ li>
+</ ul>
 <p>
-  これらをダウンロードしてzipファイルを展開してください。
+  Download these and unzip the zip file.
 </p>
-<h3>ファイルの配置</h3>
+<h3> File placement </ h3>
 <p>
-  ファイルを展開すると「sqlitedll～.zip」の中には
+  When you unzip the file, you will find "sqlitedll ~ .zip"
 </p>
 <blockquote>
 <p>
@@ -130,20 +130,20 @@
 <p>
   sqlite3.dll
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  というファイルが、
+  File is
 </p>
 <p>
-  「sqlite～.zip」の中には
+  In "sqlite ～ .zip"
 </p>
 <blockquote>
 <p>
   sqlite3.exe
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  というファイルが入っていると思います。sqlite3.defというのは静的なライブラリを作成するために必要なものですので、今は必要ありません。
+  I think that the file is included. sqlite3.def is needed to create a static library, so I don't need it now.
 </p>
 <blockquote>
 <p>
@@ -152,58 +152,58 @@
 <p>
   sqlite3.exe
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  というファイルを自分の好きなディレクトリに配置してください。今回は
+  Place the file in your favorite directory. This time
 </p>
 <blockquote>
 <p>
-  c:\sqlite
+  c: \ sqlite
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  というディレクトリに配置することにします。
+  I will place it in the directory called.
 </p>
-<h3>環境変数Pathの設定</h3>
-<h4>環境変数Pathを探す</h4>
+<h3> Setting the environment variable Path </ h3>
+<h4> Find the environment variable Path </ h4>
 <p>
-  次にコマンドプロンプトから「sqlite3.exe」を実行できるように環境変数Pathというものを設定します。このパスの設定の操作は十分注意してください。これから環境変数Pathの値に変更を加えるのですが、間違ってしまうと正しく動かなくなる危険があります。Pathの値はコピーしてどこかに保存しておくようにしてください。
-</p>
-<p>
-  まず「マイコンピュータ」を右クリックしてポップアップメニューにある「プロパティ」をクリックしてください。すると上のほうに「詳細設定」というタブがあるのでそれをクリックします。「詳細設定」タブの下のほうに「環境変数」というボタンがあると思います。これをクリックしてください。
+  Next, set the environment variable Path so that "sqlite3.exe" can be executed from the command prompt. Be careful when setting this path. I'm going to change the value of the environment variable Path, but if I make a mistake, there is a risk that it will not work properly. Make sure to copy the Path value and save it somewhere.
 </p>
 <p>
-  「環境変数」のウインドウが開いたら下部の「システム環境変数」のリストの中からPathという項目を探してください。
-</p>
-<h4>環境変数Pathの設定</h4>
-<p>
-  Pathという項目をクリックして、右下にある「編集」というボタンを押しましょう。そうしたらPathの値を編集できますので、まず最初にそれをコピーしてどこかテキストファイルに保存しておきましょう。元に戻すことができるので安心です。
+  First, right-click on "My Computer" and click "Properties" in the pop-up menu. Then there is a tab called "Detailed Settings" at the top, so click on it. At the bottom of the "Advanced" tab, you'll see a button called "Environment Variables". Please click this.
 </p>
 <p>
-  その作業を終えたら、環境変数Pathの先頭に
+  When the "Environment Variables" window opens, look for the item "Path" in the "System Variables" list at the bottom.
+</p>
+<h4> Setting the environment variable Path </ h4>
+<p>
+  Click on the item called Path and press the "Edit" button at the bottom right. Then you can edit the value of Path, so first copy it and save it somewhere in a text file. It is safe because it can be restored.
+</p>
+<p>
+  When you're done, put the environment variable Path at the beginning
 </p>
 <blockquote>
 <p>
-  c:\sqlite;(元の環境変数Pathの値)
+  c: \ sqlite; (value of the original environment variable Path)
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  を追加してください。「c:\sqlite」の後ろにセミコロンがあることに注意してください。設定できたらOKを何回か押してプロパティを閉じましょう。
+  Please add. Notice that there is a semicolon after "c: \ sqlite". Once set, press OK several times to close the properties.
 </p>
-<h3>SQLiteのコマンドラインプログラムが実行できることの確認</h3>
+<h3> Confirm that the SQLite command line program can be executed </ h3>
 <p>
-  ではコマンドプロンプトを起動して
+  Now start the command prompt
 </p>
 <blockquote>
 <p>
   sqlite3
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  としてみましょう。環境変数の設定はコマンドプロンプトを再起動したときに反映されますので、すでに立ち上がっている場合はコマンドプロンプトを立ち上げなおしましょう。
+  Let's try. The environment variable settings will be reflected when the command prompt is restarted, so if it has already started, restart the command prompt.
 </p>
 <p>
-  下記のようにsqlite3が実行できれば正常にインストールできています。
+  If you can execute sqlite3 as shown below, you have successfully installed it.
 </p>
 <blockquote>
 <p>
@@ -218,20 +218,20 @@
 <p>
   sqlite>
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  終了する場合は
+  If you want to quit
 </p>
 <blockquote>
 <p>
   .quit
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  とします。
+  will do.
 </p>
 <p>
-  これで対話的にSQLを実行できる環境が整いました。
+  Now you have an environment where you can execute SQL interactively.
 </p>
 
   </div>

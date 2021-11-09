@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>数値リテラル - ソースコード上での数値の表現 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ソースコード上での数値の表現を数値リテラルといいます。数値リテラルは次の表記が可能です。">
+<title> Numeric literals-Representation of numbers in source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The representation of numbers in the source code is called  number literals . Numeric literals can be written as follows.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="数値リテラル - ソースコード上での数値の表現 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ソースコード上での数値の表現を数値リテラルといいます。数値リテラルは次の表記が可能です。" />
+<meta name="twitter:title" content=" Numeric literals-Representation of numbers in source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The representation of numbers in the source code is called  number literals . Numeric literals can be written as follows." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop="name">構文</span></a>
-    <meta itemprop="position" content="3" />
-  </li>
-  &#8250;
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080826121977.html">数値リテラル - ソースコード上での数値の表現</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080826121977.html"> Numeric literals-Representation of numbers in source code </a></ h2>
 <p>
-  ソースコード上での数値の表現を<strong>数値リテラル</strong>といいます。数値リテラルは次の表記が可能です。
+  The representation of numbers in the source code is called <strong> number literals </ strong>. Numeric literals can be written as follows.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,105 +96,113 @@
 </div>
 
 
-<h4>整数</h4>
+<h4> integer </ h4>
 <p>
-  クオートやダブルクオートで囲まれていない数字は、Perlによって数値リテラルとして解釈されます。
+  Numbers that are not enclosed in quotes or double quotes are interpreted by Perl as numeric literals.
 </p>
 <pre>
-my $num1 = 1;
+my $ num1 = 1;
 
-# 負の数
-my $num2 = -1;
-</pre>
-<h4>桁区切りの表現</h4>
-<p>
-  数値リテラル中でアンダーバーが含まれていた場合は無視されます。1_000_000 と 1000000 という表記は等価です。アンダーバーは、大きな数値を読みやすくするために使用することができます。
-</p>
-<pre>
-# _ を桁区切りとして利用できる。
-my $num3 = 1_000_000;
-</pre>
-<h4>小数(浮動小数点)</h4>
-<p>
-  .(ドット)が含まれると、小数として解釈されます。数学での表記と同じです。Perlの少数は倍精度浮動小数点です。
-</p>
-<pre>
-# 小数点
-my $num4 = 1.33;
-</pre>
-<h4>少数の指数表記</h4>
-<p>
-  少数の数値の表現として指数表記を使うことができます。1.3E3 は、1300 と等価です。1.3E-3 は、0.0013 と等価です。
-</p>
-<pre>
-# 1.3 × 10の3乗
-my $num5 = 1.3E3;
+# Negative number
+my $ num2 = -1;
+&lt;/ pre&gt;
 
-# 1.3 × 10の-3乗
-my $num6 = 1.3E-3;
-</pre>
-<h4>2進数</h4>
-<p>
-  0b を先頭につけると2進数で数値を指定できます。
-</p>
-<pre>
-my $num_bin = 0b1111;
-</pre>
-<h4>8進数</h4>
-<p>
-  0を先頭につけると8進数で数値を指定できる。
-</p>
-<pre>
-my $num_oct = 0777;
-</pre>
-<h4>16進数</h4>
-<p>
-  0x を先頭につけると16進数で数値を指定できる。
-</p>
-<pre>
-my $num_hex = 0xFFFF;
-</pre>
-<h4>Perlにおける数値とは?</h4>
-<p>
-  Perlにおける数値については以下で詳しく解説しています。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20161026147748.html">Perlにおける数値の扱い</a>
-  </li>
-</ul>
-<h3>サンプルプログラム</h3>
-<p>
-  数値リテラルを使ったサンプルプログラムです。
-</p>
-<pre>
+&lt;h4&gt; Digit separator expression &lt;/ h4&gt;
+
+If an underscore is included in a numeric literal, it will be ignored. The notations 1_000_000 and 1000000 are equivalent. Underscores can be used to make large numbers easier to read.
+
+&lt;pre&gt;
+You can use # _ as a digit separator.
+my $ num3 = 1_000_000;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Decimal (floating point) &lt;/ h4&gt;
+
+If it contains a. (Dot), it is interpreted as a decimal. It is the same as the notation in mathematics. A few Perls are double precision floating point.
+
+&lt;pre&gt;
+# Decimal point
+my $ num4 = 1.33;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Minority exponential notation &lt;/ h4&gt;
+
+You can use exponential notation to represent a small number of numbers. 1.3E3 is equivalent to 1300. 1.3E-3 is equivalent to 0.0013.
+
+&lt;pre&gt;
+# 1.3 x 10 cubed
+my $ num5 = 1.3E3;
+
+# 1.3 x 10 to the -3rd power
+my $ num6 = 1.3E-3;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Binary number &lt;/ h4&gt;
+
+You can specify a numerical value in binary by prefixing it with 0b.
+
+&lt;pre&gt;
+my $ num_bin = 0b1111;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Octal number &lt;/ h4&gt;
+
+If you add 0 to the beginning, you can specify a numerical value in octal.
+
+&lt;pre&gt;
+my $ num_oct = 0777;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Hexadecimal &lt;/ h4&gt;
+
+You can specify a number in hexadecimal by prefixing it with 0x.
+
+&lt;pre&gt;
+my $ num_hex = 0xFFFF;
+&lt;/ pre&gt;
+
+&lt;h4&gt; What are the numbers in Perl? &lt;/ H4&gt;
+
+The numbers in Perl are explained in detail below.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20161026147748.html"&gt; Handling of numbers in Perl &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample program that uses numerical literals.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-my $num1 = 1;
+my $ num1 = 1;
 
-# 負の数
-my $num2 = -1;
+# Negative number
+my $ num2 = -1;
 
-# _ を桁区切りとして利用できる。
-my $num3 = 1_000_000;
+You can use # _ as a digit separator.
+my $ num3 = 1_000_000;
 
-# 小数
-my $num4 = 1.33;
+# Decimal
+my $ num4 = 1.33;
 
-# 少数の指数表記 1.3 × 10の3乗
-my $num5 = 1.3E3;
+# Minority exponential notation 1.3 x 10 cubed
+my $ num5 = 1.3E3;
 
-# 1.3 × 10の-3乗
-my $num6 = 1.3E-3;
+# 1.3 x 10 to the -3rd power
+my $ num6 = 1.3E-3;
 
-print "\$num1 = $num1\n";
-print "\$num2 = $num2\n";
-print "\$num3 = $num3\n";
-print "\$num4 = $num4\n";
-print "\$num5 = $num5\n";
-print "\$num6 = $num6\n";
-</pre>
+print "\ $ num1 = $ num1 \ n";
+print "\ $ num2 = $ num2 \ n";
+print "\ $ num3 = $ num3 \ n";
+print "\ $ num4 = $ num4 \ n";
+print "\ $ num5 = $ num5 \ n";
+print "\ $ num6 = $ num6 \ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

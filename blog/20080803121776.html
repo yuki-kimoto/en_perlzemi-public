@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>オプションを指定できるフィルタプログラムを書く - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="コマンドライン引数で、オプションを指定できるフィルタプログラムを書いてみます。オプションに指定できるのは、切り出す列の位置と区切り文字です。">
+<title> Write a filter program that can specify options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="オプションを指定できるフィルタプログラムを書く - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="コマンドライン引数で、オプションを指定できるフィルタプログラムを書いてみます。オプションに指定できるのは、切り出す列の位置と区切り文字です。" />
+<meta name="twitter:title" content=" Write a filter program that can specify options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop="name">ファイル入出力</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080803121776.html">オプションを指定できるフィルタプログラムを書く</a></h2>
+      <span itemprop = "name"> File input / output </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080803121776.html"> Write a filter program that can specify options </a></ h2>
 <p>
-  コマンドライン引数で、オプションを指定できるフィルタプログラムを書いてみます。オプションに指定できるのは、切り出す列の位置と区切り文字です。
+  Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,167 +97,171 @@
 
 
 <p>
-  <a href="/blog/20100123126425.html">while文</a>と行入力演算子を使って、行を読み込んでいきます。
+  Use the <a href="/blog/20100123126425.html"> while statement </a> and the line input operator to read the line.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# コマンドラインオプションを扱うためのモジュール
-use Getopt::Long 'GetOptions';
+# Module for handling command line options
+use Getopt :: Long'GetOptions';
 
-# Unix風のフィルタプログラミングを記述する。
-# 今回はカンマ区切りの文字列の一列目を取り出すフィルタプログラムです。
+# Write Unix-like filter programming.
+# This time, it is a filter program that extracts the first column of comma-separated character strings.
 
-# コマンドラインオプションが指定されなかった場合のデフォルト値
-my $col = 1;
-my $sep = ',';
+#Default value if no command line option is specified
+my $ col = 1;
+my $ sep =',';
 
-# コマンドラインオプションを受け取る
-GetOptions(
-  'col=i' =&gt; \$col,
-  'sep=s' =&gt; \$sep,
+#Receive command line options
+GetOptions (
+  'col = i'=&gt; \ $ col,
+  'sep = s'=&gt; \ $ sep,
 );
 
-# . など正規表現で特別な意味を持つ文字が指定された
-# 場合でも正しく動くように文字列をエスケープ
-$sep = quotemeta($sep); 
+A character with a special meaning was specified in a regular expression such as #.
+#Escape the string to work correctly even if
+$ sep = quotemeta ($ sep);
 
-# 特殊な行入力演算子
-while (&lt;&gt;) { 
-  # chomp関数は引数を省略したときは、$_が対象とされる。
+# Special line input operator
+while (&lt;&gt;) {
+  When the argument is omitted, the # chomp function targets $ _.
   chomp;
   
-  # splitの第３引数の-1は、最終列が空文字であった場合に
-  # も正しく動くようにするために指定
-  # split関数がリストを返すので、必要な部分だけ
-  # 配列スライスで取得
-  my $item = (split( /$sep/, $_, -1))[$col - 1];
-  print $item . "\n";
+  The third argument of # split, -1, is when the last column is an empty string.
+  # Also specified to work correctly
+  The #split function returns a list, so only the parts you need
+  # Get by array slice
+  my $ item = (split (/ $ sep /, $ _, -1)) [$ col -1];
+  print $ item. "\ n";
 }
-</pre>
-<p>
-  (参考)<a href="/blog/20100827127859.html">正規表現</a>
-</p>
-<p>
-  以下は、読み込み用のファイルです。
-</p>
-<pre>
-masao:10:Japan
-taro:20:USA
-rika:38:France
-</pre>
-<h3>コード解説</h3>
-<h4>(1)コマンドラインオプションの指定方法</h4>
-<pre>
-use Getopt::Long;
-</pre>
-<p>
-  <a href="/blog/20100514127696.html">Getopt::Long</a>を使うと、コマンドラインオプションを簡単に指定できます。コマンドラインオプションを指定する場合は以下のようにします。
-</p>
-<p>
-  コマンドライン引数についてわからない場合は、先に次の記事をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080108132865.html">コマンドライン引数を処理する</a>
-  </li>
-</ul>
-<pre>
-# 指定方法1( --name val 形式)
-perl スクリプト名 --col 1 --sep : ファイル名
+&lt;/ pre&gt;
 
-# 指定方法2( --name=val 形式)
-perl スクリプト名 --col=1 --sep=: ファイル名
+(Reference) &lt;a href="/blog/20100827127859.html"&gt; Regular expression &lt;/a&gt;
 
-# 指定方法3( 省略形式 )
-perl スクリプト名 -c1 -s: ファイル名
-</pre>
-<h3>(2)GetOptions関数</h3>
-<p>
-  GetOption関数は、コマンドラインオプションの受け取りを簡単にするための関数です。use Getopt::Long したときに、インポートされます。
-</p>
-<p>
-  以下は書き方のサンプルです。
-</p>
-<pre>
-# コマンドラインオプションが指定されなかった場合のデフォルト値
-my $col = 1;
-my $sep = ',';
+The following is a file for reading.
 
-# コマンドラインオプションを受け取る
-GetOptions(
-  'col=i' =&gt; \$col,
-  'sep=s' =&gt; \$sep,
+&lt;pre&gt;
+masao: 10: Japan
+taro: 20: USA
+rika: 38: France
+&lt;/ pre&gt;
+
+&lt;h3&gt; Code explanation &lt;/ h3&gt;
+
+&lt;h4&gt; (1) How to specify command line options &lt;/ h4&gt;
+
+&lt;pre&gt;
+use Getopt :: Long;
+&lt;/ pre&gt;
+
+&lt;a href="/blog/20100514127696.html"&gt; Getopt :: Long &lt;/a&gt; makes it easy to specify command line options. To specify command line options:
+
+If you're not sure about command line arguments, see the following articles first.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080108132865.html"&gt; Handle command line arguments &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;pre&gt;
+#Specification method 1 (--name val format)
+perl script name --col 1 --sep: filename
+
+#Specification method 2 (--name = val format)
+perl script name --col = 1 --sep =: file name
+
+#Specification method 3 (abbreviated form)
+perl script name -c1 -s: file name
+&lt;/ pre&gt;
+
+&lt;h3&gt; (2) GetOptions function &lt;/ h3&gt;
+
+The GetOption function is a function that makes it easy to receive command line options. It will be imported when you use Getopt :: Long.
+
+Below is a sample of how to write.
+
+&lt;pre&gt;
+#Default value if no command line option is specified
+my $ col = 1;
+my $ sep =',';
+
+#Receive command line options
+GetOptions (
+  'col = i'=&gt; \ $ col,
+  'sep = s'=&gt; \ $ sep,
 );
-</pre>
-<p>
-  まず、コマンドラインオプションのデフォルト値を設定します。
-</p>
-<p>
-  次にGetOption関数を呼び出して指定したいオプションの数だけ
-</p>
-<pre>
-'オプション名=値の種類' =&gt; 変数へのリファレンス
-</pre>
-<p>
-  という記述を並べます。値の種類には、文字列を表す s 数値を表す i などを指定できます。
-</p>
-<h4>(3) whileループでの行読み込みの改良</h4>
-<pre>
+&lt;/ pre&gt;
+
+First, set the default values ​​for command line options.
+Then call the GetOption function for the number of options you want to specify
+
+&lt;pre&gt;
+'Option name = Value type' =&gt; Reference to variable
+&lt;/ pre&gt;
+
+I will arrange the description. The value type can be s, which represents a string, i, which represents a number, and so on.
+
+&lt;h4&gt; (3) Improvement of line reading in while loop &lt;/ h4&gt;
+
+&lt;pre&gt;
 while (&lt;&gt;) {
   chomp;
-  my $item = (split(/$sep/, $_, -1))[$col - 1];
-  print $item,"\n";
+  my $ item = (split (/ $ sep /, $ _, -1)) [$ col -1];
+  print $ item, "\ n";
 }
-</pre>
-<p>
-  whileでのループ処理については、次の記事をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20170521149524.html">for文、while文を使った繰り返し処理</a>
-  </li>
-</ul>
-<h4>(3)-1 $_の省略</h4>
-<pre>
+&lt;/ pre&gt;
+
+For more information on while loop processing, see the following article.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20170521149524.html"&gt; Iterative processing using for statement and while statement &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; (3) -1 Omission of $ _ &lt;/ h4&gt;
+
+&lt;pre&gt;
 chomp;
-</pre>
-<p>
-  <a href="/blog/20080226120403.html">chomp関数</a>で引数を省略すると作用する対象は<a href="/blog/20161102147817.html">特殊変数</a>「$_」になります。Perlには、引数を省略すると$_に作用する関数が他にもたくさんあります。
-</p>
-<h4>(3)-2 split関数の第３引数に-1を指定</h4>
-<pre>
-split(/$sep/, $_, -1)
-</pre>
-<p>
-  <a href="/blog/20080301120434.html">split関数</a>の第３引数を省略すると要素の最後が空白の場合は、最後の空文字が無視されてしまいます。(hutaさんに指摘されました。)
-</p>
-<pre>
-taro,10,
-</pre>
-<p>
-  を読み込んだ場合、ほしいのは
-</p>
-<pre>
-('taro', 10, '')
-</pre>
-<p>
-  というリストであるのに
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;a href="/blog/20080226120403.html"&gt; chomp function &lt;/a&gt; If you omit the argument, the target that works is &lt;a href="/blog/20161102147817.html"&gt; special variable &lt;/a&gt; "$ _ Will be. There are many other functions in Perl that act on $ _ if you omit the argument.
+
+&lt;h4&gt; (3) -Specify -1 as the third argument of the -2 split function &lt;/ h4&gt;
+
+&lt;pre&gt;
+split (/ $ sep /, $ _, -1)
+&lt;/ pre&gt;
+
+If the third argument of &lt;a href="/blog/20080301120434.html"&gt; split function &lt;/a&gt; is omitted and the end of the element is blank, the last empty string will be ignored. (It was pointed out by Mr. huta.)
+
+&lt;pre&gt;
+taro, 10,
+&lt;/ pre&gt;
+
+If you read, what you want is
+
+&lt;pre&gt;
+('taro', 10,'')
+&lt;/ pre&gt;
+
+Even though it is a list
+
+&lt;pre&gt;
 ('taro', 10)
-</pre>
-<p>
-  を取得してしまいます。これを解決するために、splitの第３引数に、-1を与えることで最後の空文字を認識させることができます。
-</p>
-<h4>(3)-3 配列スライスで指定した要素だけを取得</h4>
-<pre>
-my $item = (split(/$sep/, $_, -1))[$col - 1];
-</pre>
-<p>
-  splitは、リストを返すので<a href="/blog/20080216120316.html">配列スライス</a>で、指定した要素だけを取得しています。
-</p>
+&lt;/ pre&gt;
+
+Will be acquired. To solve this, you can make the last empty string recognized by giving -1 to the third argument of split.
+
+&lt;h4&gt; (3) -3 Get only the elements specified in the array slice &lt;/ h4&gt;
+
+&lt;pre&gt;
+my $ item = (split (/ $ sep /, $ _, -1)) [$ col -1];
+&lt;/ pre&gt;
+
+Since split returns a list, &lt;a href="/blog/20080216120316.html"&gt; array slice &lt;/a&gt; gets only the specified elements.
 
   </div>
   <div class="bottom">

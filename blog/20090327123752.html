@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>継承を使ったポリモーフィズム - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="オブジェクト指向のひとつの特徴にポリモーフィズム(多態性)があります。ポリモーフィズムは、同じように見える記述の振る舞いが異なるという意味で捉えておけばよいでしょう。">
+<title> Polymorphism with inheritance  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="One of the characteristics of object orientation is polymorphism. Polymorphism can be understood in the sense that  similar descriptions behave differently .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="継承を使ったポリモーフィズム - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="オブジェクト指向のひとつの特徴にポリモーフィズム(多態性)があります。ポリモーフィズムは、同じように見える記述の振る舞いが異なるという意味で捉えておけばよいでしょう。" />
+<meta name="twitter:title" content=" Polymorphism with inheritance  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="One of the characteristics of object orientation is polymorphism. Polymorphism can be understood in the sense that  similar descriptions behave differently ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161030147778.html">
-      <span itemprop="name">オブジェクト指向</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">ポリモーフィズム</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20090327123752.html">継承を使ったポリモーフィズム</a></h2>
+      <span itemprop = "name"> Object Oriented </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Polymorphism </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20090327123752.html"> Polymorphism with inheritance </a></ h2>
 <p>
-  オブジェクト指向のひとつの特徴にポリモーフィズム(多態性)があります。ポリモーフィズムは、<b>同じように見える記述の振る舞いが異なる</b>という意味で捉えておけばよいでしょう。
+  One of the characteristics of object orientation is polymorphism. Polymorphism can be understood in the sense that <b> similar descriptions behave differently </ b>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,153 +97,145 @@
 </div>
 
 
-<h3>1. クラスによって異なる振る舞いをさせる</h3>
+<h3> 1. Make different behaviors depending on the class </ h3>
 <p>
-  では、自分の属するクラスによって異なった動きをするサンプルを書いてみます。簡単な例として、特定の記号で文字列を連結するということをします。Unixの区切り文字と、Windowsの区切り文字をサンプルとして扱います。
+  Now, let's write a sample that behaves differently depending on the class to which you belong. A simple example is to concatenate strings with specific symbols. The Unix delimiter and the Windows delimiter are treated as samples.
 </p>
 <pre>
 use strict;
 use warnings;
 
-my $file_path_unix = FilePath::Unix-&gt;new;
-my $file_path_win = FilePath::Windows-&gt;new;
+my $ file_path_unix = FilePath :: Unix-&gt; new;
+my $ file_path_win = FilePath :: Windows-&gt; new;
 
-my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
-my $win_result = $file_path_win-&gt;cat_path('a', 'b');
+my $ unix_result = $ file_path_unix-&gt; cat_path ('a','b');
+my $ win_result = $ file_path_win-&gt; cat_path ('a','b');
 
-print "unix: $unix_result\n";
-print "win: $win_result\n";
+print "unix: $ unix_result \ n";
+print "win: $ win_result \ n";
 
-# ファイルパスを扱うための基底クラス
-package FilePath::Base;
+# Base class for handling file paths
+package FilePath :: Base;
 sub new {
-  my $proto = shift;
-  my $class = ref $proto || $proto;
-  my $self = {};
-  bless $self, $class;
-  return $self;
+  my $ proto = shift;
+  my $ class = ref $ proto || $ proto;
+  my $ self = {};
+  bless $ self, $ class;
+  return $ self;
 }
 
 sub cat_path {
-  my ($self, $str1, $str2) = @_;
-  return $str1 . $self-&gt;delimiter . $str2;
+  my ($ self, $ str1, $ str2) = @_;
+  return $ str1. $ Self-&gt; delimiter. $ Str2;
 }
 
 
-# Unix 用
-package FilePath::Unix;
-use base 'FilePath::Base';
+#For Unix
+package FilePath :: Unix;
+use base'FilePath :: Base';
 
-# Unixの場合の区切り文字
-sub delimiter { return '/' }
+# Unix delimiter
+sub delimiter {return'/'}
 
-# Windows用
-package FilePath::Windows;
-use base 'FilePath::Base';
+#For Windows
+package FilePath :: Windows;
+use base'FilePath :: Base';
 
-# Windowsの場合の区切り文字
-sub delimiter { return '\\' }
-</pre>
-<p>
-  このサンプルを実行すると
-</p>
-<pre>
-unix: a/b
-win: a\b
-</pre>
-<p>
-  と表示されます。
-</p>
-<h3>2. cat_pathの振る舞いに注目</h3>
-<p>
-  まずこのサンプルで特徴的なことは、cat_pathというメソッドがふたつの意味を持つということです。
-</p>
-<pre>
-package FilePath::Base;
-sub new { ... }
+# Delimiter for Windows
+sub delimiter {return'\\'}
+&lt;/ pre&gt;
+When you run this sample
+
+&lt;pre&gt;
+unix: a / b
+win: a \ b
+&lt;/ pre&gt;
+
+It will be displayed.
+
+&lt;h3&gt; 2. Pay attention to the behavior of cat_path &lt;/ h3&gt;
+
+First of all, the characteristic of this sample is that the method called cat_path has two meanings.
+
+&lt;pre&gt;
+package FilePath :: Base;
+sub new {...}
 
 sub cat_path {
-  my ($self, $str1, $str2) = @_;
-  return $str1 . $self-&gt;delimiter . $str2;
+  my ($ self, $ str1, $ str2) = @_;
+  return $ str1. $ Self-&gt; delimiter. $ Str2;
 }
-</pre>
-<p>
-  FilePath::Base というクラスを見ると、cat_path というメソッドがあります。ところで、cat_pathを呼び出している部分を見ると、File::Pathクラスのオブジェクトが生成されているわけではありません。
-</p>
-<pre>
-my $file_path_unix = FilePath::Unix-&gt;new;
-my $file_path_win = FilePath::Windows-&gt;new;
+&lt;/ pre&gt;
 
-my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
-my $win_result = $file_path_win-&gt;cat_path('a', 'b');
-</pre>
-<p>
-  それぞれ、FilePath::Unixクラス と FilePath::Windowsクラスのオブジェクトが生成されています。
-</p>
-<p>
-  これは<a href="/blog/20090324123747.html">継承のところ</a>で解説したように、FilePath::Unix と FilePath::Windows が FilePath::Base を継承しているので、FilePath::Baseクラスが持つメソッド、cat_path を呼び出すことができるのでした。
-</p>
-<p>
-  次に注目してほしいところは、cat_pathの中で、$self->delimiter という記述の部分です。
-</p>
-<h3>3. スーバークラスでサブクラスのメソッドを呼び出す。</h3>
-<p>
-  cat_pathの中に注目してみましょう。
-</p>
-<pre>
+If you look at the class FilePath :: Base, there is a method called cat_path. By the way, if you look at the part that calls cat_path, the object of File :: Path class is not created.
+
+&lt;pre&gt;
+my $ file_path_unix = FilePath :: Unix-&gt; new;
+my $ file_path_win = FilePath :: Windows-&gt; new;
+
+my $ unix_result = $ file_path_unix-&gt; cat_path ('a','b');
+my $ win_result = $ file_path_win-&gt; cat_path ('a','b');
+&lt;/ pre&gt;
+
+Objects of the FilePath :: Unix class and FilePath :: Windows class have been created, respectively.
+
+This is because FilePath :: Unix and FilePath :: Windows inherits his FilePath :: Base, as explained in &lt;a href="/blog/20090324123747.html"&gt; Inheritance &lt;/a&gt;. , FilePath :: I was able to call the method of the Base class, cat_path.
+
+The next thing to pay attention to is the description of $ self-&gt; delimiter in cat_path.
+
+&lt;h3&gt; 3. Call a subclass method in the superclass. &lt;/ h3&gt;
+
+Let's pay attention to the inside of cat_path.
+
+&lt;pre&gt;
 sub cat_path {
-  my ($self, $str1, $str2) = @_;
-  return $str1 . $self-&gt;delimiter . $str2;
+  my ($ self, $ str1, $ str2) = @_;
+  return $ str1. $ Self-&gt; delimiter. $ Str2;
 }
-</pre>
-<p>
-  cat_pathの中で、delimiterメソッドが呼ばれています。けれども、FilePath::Baseは、delimiterというメソッドをもっていません。自分が持っていないメソッドを呼び出すことができるのでしょうか?
-</p>
-<p>
-  実はこの $self の部分に秘密があります。
-</p>
-<pre>
-my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
-</pre>
-<p>
-  のようにcat_pathメソッドを呼び出したときに、$self に代入されるのは、FilePath::Unix クラスのオブジェクとになります。
-</p>
-<p>
-  FilePath::Unixクラスは delimiter メソッドを持っているので、cat_path メソッドの中から、delimiter メソッドを呼び出すことができます。
-</p>
-<h3>4. FilePath::Base クラスは継承されることを予定した不完全なクラスである。</h3>
-<p>
-  FilePath::Base クラスのオブジェクトを作成しても、cat_file は内部でdelimiter メソッドを呼び出そうとしても失敗します。
-</p>
-<pre>
-my $file_path_base = FilePath::Base-&gt;new;
-$file_path_base-&gt;cat_file( 'a', 'b' ); # 失敗!
-</pre>
-<p>
-  FilePath::Base クラスを継承したdelimiterメソッドを実装したクラスが作って意味を持つものになります。
-</p>
-<p>
-  このようなクラスを、<b>継承予定クラス</b>と名づけたい。( Perlの本を読んでもこのようなクラスを適切に命名した名前が発見できなかったので、<b>継承予定クラス</b>と呼ぶことにします。オブジェクトを生成できるのでJavaの抽象クラスというわけでもないので)
-</p>
-<h3>5. サブクラスでのメソッドの定義</h3>
-<p>
-  そしてポリモーフィズムを実現するために、FilePath::UnixクラスとFilePath::Windows クラスで、delimiterメソッドの実装が異なっていることに注目してください。
-</p>
-<pre>
-# FilePath::Unixクラスの場合
-sub delimiter{ return '/' }
-</pre>
-<pre>
-# FilePath::Windowsクラスの場合
-sub delimiter{ return '\\' }
-</pre>
-<p>
-  この記述が、出力結果の振る舞いを実質的に変えている部分です。
-</p>
-<pre>
-unix: a/b
-win: a\b
-</pre>
+&lt;/ pre&gt;
+In cat_path, the delimiter method is called. However, FilePath :: Base does not have a method called delimiter. Can I call a method I don't have?
+
+Actually, there is a secret in this $ self part.
+
+&lt;pre&gt;
+my $ unix_result = $ file_path_unix-&gt; cat_path ('a','b');
+&lt;/ pre&gt;
+
+When you call the cat_path method like this, the object assigned to $ self is the FilePath :: Unix class object.
+
+The FilePath :: Unix class has a delimiter method, so you can call the delimiter method from within the cat_path method.
+
+&lt;h3&gt; 4. The FilePath :: Base class is an incomplete class that is intended to be inherited. &lt;/ h3&gt;
+
+If you create an object of the FilePath :: Base class, cat_file will fail if you try to call the delimiter method internally.
+
+&lt;pre&gt;
+my $ file_path_base = FilePath :: Base-&gt; new;
+$ file_path_base-&gt; cat_file ('a','b'); #Failure!
+&lt;/ pre&gt;
+
+A class that implements the delimiter method that inherits the FilePath :: Base class will be created and meaningful.
+
+I would like to name such a class &lt;b&gt; inherited class &lt;/ b&gt;. (I couldn't find a proper name for such a class in a Perl book, so I'll call it a &lt;b&gt; inherited class &lt;/ b&gt;. It's called a Java abstract class because it can create objects. Not really)
+
+&lt;h3&gt; 5. Defining methods in subclasses &lt;/ h3&gt;
+
+And notice that the FilePath :: Unix class and the FilePath :: Windows class have different implementations of the delimiter method to achieve polymorphism.
+
+&lt;pre&gt;
+# FilePath :: Unix class
+sub delimiter {return'/'}
+&lt;/ pre&gt;
+
+&lt;pre&gt;
+# FilePath :: For Windows class
+sub delimiter {return'\\'}
+&lt;/ pre&gt;
+This description is the part that substantially changes the behavior of the output result.
+&lt;pre&gt;
+unix: a / b
+win: a \ b
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

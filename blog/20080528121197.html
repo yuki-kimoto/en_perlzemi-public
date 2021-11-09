@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>chdir関数 - カレントディレクトリを変更する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="カレントディレクトリを変更するにはchdir関数を使用します。Perlのプログラムの中でカレントディレクトリが変更されるだけでシェルやコマンドプロンプトのカレントディレクトリは影響を受けません。">
+<title> chdir function --change current directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the  chdir function  to  change the current directory . The current directory of the shell or command prompt is not affected, only the current directory is changed in the Perl program.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="chdir関数 - カレントディレクトリを変更する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="カレントディレクトリを変更するにはchdir関数を使用します。Perlのプログラムの中でカレントディレクトリが変更されるだけでシェルやコマンドプロンプトのカレントディレクトリは影響を受けません。" />
+<meta name="twitter:title" content=" chdir function --change current directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the  chdir function  to  change the current directory . The current directory of the shell or command prompt is not affected, only the current directory is changed in the Perl program." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080528121197.html">chdir関数 - カレントディレクトリを変更する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080528121197.html"> chdir function --change current directory </a></ h2>
 <p>
-  <strong>カレントディレクトリを変更</strong>するには<strong>chdir関数</strong>を使用します。Perlのプログラムの中でカレントディレクトリが変更されるだけでシェルやコマンドプロンプトのカレントディレクトリは影響を受けません。
+  Use the <strong> chdir function </ strong> to <strong> change the current directory </ strong>. The current directory of the shell or command prompt is not affected, only the current directory is changed in the Perl program.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,39 +97,40 @@
 
 
 <pre>
-chdir $dir;
-</pre>
-<p>
-  カレントディレクトリを変更するサンプルです。ディレクトリが存在しない場合を考慮して必ずエラー処理を行います。失敗した場合は、$! にエラーの内容が、格納されます。
-</p>
-<pre>
-my $dir = '/etc';
-chdir $dir
-  or die "Cannot change working directory $dir: $!";
-</pre>
-<h3>サンプル</h3>
-<p>
-  カレントディレクトリを変更するサンプルです。
-</p>
-<pre>
+chdir $ dir;
+&lt;/ pre&gt;
+
+This is a sample to change the current directory. Be sure to handle the error in consideration of the case where the directory does not exist. If it fails, the content of the error is stored in $ !.
+
+&lt;pre&gt;
+my $ dir ='/ etc';
+chdir $ dir
+  or die "Cannot change working directory $ dir: $!";
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample to change the current directory.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# カレントディレクトリを変更する。
-# chdir $dir;
+# Change the current directory.
+# chdir $ dir;
 
-# 準備(ディレクトリの作成)
-my $dir = "dir_20080528_$$";
-mkdir $dir
-  or die "$dir を作成することができません。 : $!";
-print "準備: $dir が作成されました。\n\n";
+#Preparation (creating a directory)
+my $ dir = "dir_20080528_ $$";
+mkdir $ dir
+  or die "Unable to create $ dir.: $!";
+print "Preparation: $ dir has been created. \ N \ n";
 
-print "1: カレントディレクトリを変更する。\n";
-chdir $dir
-  or die "カレントディレクトリを $dir に変更することができません。: $!";
+print "1: Change the current directory. \ N";
+chdir $ dir
+  or die "Unable to change current directory to $ dir .: $!";
 
-print "カレントディレクトリが、$dir に変更されました。";
-</pre>
+print "The current directory has changed to $ dir.";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

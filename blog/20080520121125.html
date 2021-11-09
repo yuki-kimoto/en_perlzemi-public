@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>unlink関数 - ファイルを削除する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="unlink関数を使用すると、ファイルを削除することができます。戻り値には、削除したファイルの個数が返ってきます。">
+<title> unlink function-delete file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  unlink  function to delete a file. The return value is the number of deleted files.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="unlink関数 - ファイルを削除する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="unlink関数を使用すると、ファイルを削除することができます。戻り値には、削除したファイルの個数が返ってきます。" />
+<meta name="twitter:title" content=" unlink function-delete file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  unlink  function to delete a file. The return value is the number of deleted files." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20080520121125.html">unlink関数 - ファイルを削除する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080520121125.html"> unlink function-delete file </a></ h2>
 <p>
-  <strong>unlink</strong>関数を使用すると、ファイルを削除することができます。戻り値には、削除したファイルの個数が返ってきます。
+  You can use the <strong> unlink </ strong> function to delete a file. The return value is the number of deleted files.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,38 +97,38 @@
 
 
 <pre>
-unlink $file;
-</pre>
-<h3>unlink関数のプログラミングのサンプル</h3>
-<p>
-  unlink関数でファイルを削除するプログラミングのサンプルです。
-</p>
-<pre>
+unlink $ file;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Unlink function programming sample &lt;/ h3&gt;
+
+This is a programming sample that deletes a file with the unlink function.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 use Fcntl;
 
-# ファイルを削除する。 
+#Delete the file.
 
-# 準備のためにファイル作成。
-my $file = "sample_20080520_$$.txt";
+# Create a file for preparation.
+my $ file = "sample_20080520_$$. txt";
 
-sysopen(my $fh, $file, O_CREAT | O_WRONLY | O_EXCL)
-  or die "$file を作成することができません。: $!";
-close( $fh );
-print "準備: '$file'が作成されました。\n\n";
+sysopen (my $ fh, $ file, O_CREAT | O_WRONLY | O_EXCL)
+  or die "Unable to create $ file .: $!";
+close ($ fh);
+print "Preparation:'$ file' has been created. \ N \ n";
 
-print "1: ファイルを削除する。\n";
-if (unlink $file) {
-  print "'$file'は削除されました。\n";
+print "1: Delete the file. \ N";
+if (unlink $ file) {
+  print "'$ file' has been deleted. \ N";
 }
 else {
-  print "'$file'は削除できませんでした。\n";
+  print "'$ file' could not be deleted. \ N";
 }
-</pre>
-<p>
-  (参考)<a href="/blog/20080804121794.html">sysopen関数</a>、<a href="/blog/20180310152509.html">Fcntl</a>
-</p>
+&lt;/ pre&gt;
+
+(Reference) &lt;a href="/blog/20080804121794.html"&gt; sysopen function &lt;/a&gt;, &lt;a href="/blog/20180310152509.html"&gt; Fcntl &lt;/a&gt;
 
   </div>
   <div class="bottom">

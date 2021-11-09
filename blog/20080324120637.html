@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>if修飾子 - 後置のif - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="if修飾子を使うとifを後置することができます。">
+<title> if modifier-postfix if  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can add if after the if modifier.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="if修飾子 - 後置のif - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="if修飾子を使うとifを後置することができます。" />
+<meta name="twitter:title" content=" if modifier-postfix if  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can add if after the if modifier." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop="name">構文</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20080324120637.html">if修飾子 - 後置のif</a></h2>
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20080324120637.html"> if modifier-postfix if </a></ h2>
 <p>
-  if修飾子を使うとifを後置することができます。
+  You can add if after the if modifier.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,68 +97,69 @@
 
 
 <pre>
-文 if 条件;
-</pre>
-<p>
-  if修飾子を使ったサンプルです。<a href="/blog/20100827127859.html">正規表現</a>を使って、先頭が「#」ならば次の行に移動という処理を行っています。
-</p>
-<pre>
-for my $line (@lines) {
-  next if $line =~ /^#/;
+Statement if condition;
+&lt;/ pre&gt;
+
+This is a sample using the if modifier. &lt;a href="/blog/20100827127859.html"&gt; Regular expression &lt;/a&gt; is used to move to the next line if the beginning is "#".
+
+&lt;pre&gt;
+for my $ line (@lines) {
+  next if $ line = ~ / ^ # /;
 }
-</pre>
-<p>
-  一行で書ける簡単な条件のときはif修飾子を使うメリットがあります。<a href="/blog/20080329120687.html">next</a>やlastと組み合わせて 「next if 条件」「last if 条件」などがよく利用されます。
-</p>
-<h4>if修飾子のメリット</h4>
-<p>
-  通常の<a href="/blog/20161023147731.html">if文</a>と比べてif修飾子のメリットはパフォーマンスです。if文は<a href="/blog/20110128130016.html">スコープ</a>を作るのに対して、if修飾子はスコープを作りません。そのためif修飾子の方がパフォーマンスがよいです。
-</p>
-<h4>unless修飾子</h4>
-<p>
-  if修飾子と同じように後置することができるunless修飾子というものがあります。
-</p>
-<pre>
-$num1 = 1 unless defined $num1;
-</pre>
-<p>
-  unless修飾子については以下で詳しく解説しています。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20180322152172.html">unless修飾子 - 後置のunless</a>
-  </li>
-</ul>
-<h3>サンプルコード</h3>
-<p>
-  if修飾子のサンプルです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+There is a merit to use the if modifier when it is a simple condition that can be written in one line. In combination with &lt;a href="/blog/20080329120687.html"&gt; next &lt;/a&gt; and last, "next if condition" and "last if condition" are often used.
+
+&lt;h4&gt; Benefits of the if modifier &lt;/ h4&gt;
+
+The advantage of the if modifier over the normal &lt;a href="/blog/20161023147731.html"&gt; if statement &lt;/a&gt; is performance. The if statement creates a &lt;a href="/blog/20110128130016.html"&gt; scope &lt;/a&gt;, while the if modifier does not. Therefore, the if modifier has better performance.
+
+&lt;h4&gt; unless modifier &lt;/ h4&gt;
+
+There is an unless modifier that can be followed in the same way as the if modifier.
+
+&lt;pre&gt;
+$ num1 = 1 unless defined $ num1;
+&lt;/ pre&gt;
+
+The unless modifier is explained in detail below.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20180322152172.html"&gt; unless modifier --postfix unless &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Sample code &lt;/ h3&gt;
+
+This is a sample if modifier.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 後置のif
-print "1-2 : 後置のifの例(next if)\n";
+# Postfix if
+print "1-2: Example of postfix if (next if) \ n";
 my @lines = (
-  '#コメント',
-  '1行目',
-  '2行目'
+  '#comment',
+  'The first line',
+  '2nd line'
 );
 
-for my $line (@lines) {
-  # 先頭が、#ならば、次の行へ
-  next if $line =~ /^#/;
-  print $line, "\n";
+for my $ line (@lines) {
+  If # starts with #, go to the next line
+  next if $ line = ~ / ^ # /;
+  print $ line, "\ n";
 }
-print "\n";
-</pre>
-<p>
-  実行結果
-</p>
-<pre>
-1行目
-2行目
-</pre>
+print "\ n";
+&lt;/ pre&gt;
+
+Execution result
+
+&lt;pre&gt;
+The first line
+2nd line
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

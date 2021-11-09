@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Module::Starter - 配布形式のモジュールを作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="モジュールを配布したい場合には、配布形式を自動で作成してくれるモジュールがあると便利です。たとえばCPANに作成したモジュールをアップロードしたい場合は、定められた配布形式にしなければなりません。その雛形を作成してくれるモジュールのひとつがModule::Starterです。">
+<title> Module :: Starter --Create a distribution module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="If you want to distribute a module, it is convenient to have a module that automatically creates the distribution format. For example, if you want to upload a module you created to CPAN, you must have a defined distribution format. One of the modules that creates the template is  Module :: Starter .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Module::Starter - 配布形式のモジュールを作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="モジュールを配布したい場合には、配布形式を自動で作成してくれるモジュールがあると便利です。たとえばCPANに作成したモジュールをアップロードしたい場合は、定められた配布形式にしなければなりません。その雛形を作成してくれるモジュールのひとつがModule::Starterです。" />
+<meta name="twitter:title" content=" Module :: Starter --Create a distribution module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="If you want to distribute a module, it is convenient to have a module that automatically creates the distribution format. For example, if you want to upload a module you created to CPAN, you must have a defined distribution format. One of the modules that creates the template is  Module :: Starter ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20090513124489.html">Module::Starter - 配布形式のモジュールを作成</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20090513124489.html"> Module :: Starter --Create a distribution module </a></ h2>
 <p>
-  モジュールを配布したい場合には、配布形式を自動で作成してくれるモジュールがあると便利です。たとえばCPANに作成したモジュールをアップロードしたい場合は、定められた配布形式にしなければなりません。その雛形を作成してくれるモジュールのひとつが<strong>Module::Starter</strong>です。
+  If you want to distribute a module, it is convenient to have a module that automatically creates the distribution format. For example, if you want to upload a module you created to CPAN, you must have a defined distribution format. One of the modules that creates the template is <strong> Module :: Starter </ strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,79 +96,76 @@
 </div>
 
 
-<h3>module-starterコマンドで雛形を作成する</h3>
+<h3> Create a template with the module-starter command </ h3>
 <p>
-  Module::Starterをインストールすると<strong>module-starter</strong>コマンドも一緒にインストールされます。このコマンドを使用してモジュールを作成します。　実行するとSomo-Moduleというディレクトリが作成されているのを確認することができます。
+  When you install Module :: Starter, the <strong> module-starter </ strong> command is also installed. Create a module using this command. When you execute it, you can confirm that a directory called Somo-Module has been created.
 </p>
 <pre>
-module-starter --module=Some::Module --author="Yuki Kimoto" --email=kimoto.yuki@gmail.com
-</pre>
-<h4>モジュール名の指定</h4>
-<p>
-  <strong>--module</strong>でモジュール名を指定します。
-</p>
-<h4>ビルド方法の指定</h4>
-<p>
-  --builderでビルド方法を指定します。Unix系OSでの標準的なビルド方式であるmakeを使用する「ExtUtils::MakeMaker」と純正Perlで書かれたBuildを使用する「Module::Build」のどちらかを指定することができます。デフォルトで「ExtUtils::MakeMaker」が使用されます。ここでは「Module::Build」を使用しています。
-</p>
-<p>
-  特に必要がなければ、古いバージョンのPerlでも対応しているExtUtils::MakeMakerを使うのが無難です。
-</p>
-<h4>あなたの名前</h4>
-<p>
-  <strong>--author</strong>であなたの名前を指定します。
-</p>
-<h4>あなたのメールアドレス</h4>
-<p>
-  <strong>--email</strong>であなたのメールアドレスを指定します。
-</p>
-<h3>ディレクトリ構成</h3>
-<p>
-  雛形を作成した直後は以下のようなディレクトリ構成になっています。
-</p>
-<pre>
--rw-r--r-- 1 root root  457 2009-06-14 12:40 Makefile.PL
--rw-r--r-- 1 root root  111 2009-06-14 12:40 Changes
+module-starter --module = Some :: Module --author = "Yuki Kimoto" --email = kimoto.yuki@gmail.com
+&lt;/ pre&gt;
+
+&lt;h4&gt; Specifying the module name &lt;/ h4&gt;
+
+Specify the module name with &lt;strong&gt;-module &lt;/ strong&gt;.
+
+&lt;h4&gt; Specify build method &lt;/ h4&gt;
+
+Specify the build method with --builder. You can specify either "ExtUtils :: MakeMaker" that uses make, which is the standard build method for Unix-like OS, or "Module :: Build" that uses Build written in genuine Perl. By default, "ExtUtils :: MakeMaker" is used. Here, "Module :: Build" is used.
+
+Unless you have a specific need, it's safe to use ExtUtils :: MakeMaker, which is compatible with older versions of Perl.
+
+&lt;h4&gt; Your name &lt;/ h4&gt;
+
+Specify your name with &lt;strong&gt; --author &lt;/ strong&gt;.
+
+&lt;h4&gt; Your email address &lt;/ h4&gt;
+
+Specify your email address with &lt;strong&gt; --email &lt;/ strong&gt;.
+
+&lt;h3&gt; Directory structure &lt;/ h3&gt;
+
+Immediately after creating the template, the directory structure is as follows.
+
+&lt;pre&gt;
+-rw-r--r-- 1 root root 457 2009-06-14 12:40 Makefile.PL
+-rw-r--r-- 1 root root 111 2009-06-14 12:40 Changes
 drwxr-xr-x 3 root root 4096 2009-06-14 12:40 lib
--rw-r--r-- 1 root root   89 2009-06-14 12:40 MANIFEST
+-rw-r--r-- 1 root root 89 2009-06-14 12:40 MANIFEST
 -rw-r--r-- 1 root root 1398 2009-06-14 12:40 README
 drwxr-xr-x 2 root root 4096 2009-06-14 12:40 t
-</pre>
-<p>
-  役割を簡単にひとつづつ解説します。
-</p>
-<h4>Makefile.PL</h4>
-<p>
-  Makefile.PLはMakefileというスクリプトを作成するためのPerlで書かれたスクリプトです。Makefileというスクリプトは、モジュールを構築して、試験をして、インストールするためのスクリプトです。
-</p>
-<p>
-  なぜ最初からMakefileというスクリプトを用意していないかといえば、OSの違いなどの環境によってMakefileスクリプトの内容が異なってくるからです。
-</p>
-<p>
-  環境の差異を吸収して、モジュールの構築からインストールまでの処理を行うために、Makefile.PLを実行してMakefileスクリプトを作成します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+I will briefly explain the roles one by one.
+
+&lt;h4&gt; Makefile.PL &lt;/ h4&gt;
+
+Makefile.PL is a script written in Perl for creating a script called Makefile. A script called Makefile is a script for building, testing, and installing modules.
+
+The reason why the script called Makefile is not prepared from the beginning is that the contents of the Makefile script differ depending on the environment such as the difference in OS.
+
+Execute Makefile.PL to create a Makefile script in order to absorb the differences in the environment and perform the process from module construction to installation.
+
+&lt;pre&gt;
 perl Makefile.PL
-</pre>
-<p>
-  とするとMakefileというスクリプトが作成されます。
-</p>
-<h4>Changes</h4>
-<p>
-  Changesはモジュールをバージョンアップをしたときの履歴を書くためのものです。モジュールをバージョンアップした場合に書き忘れることが多いので注意しましょう。
-</p>
-<h3>lib</h3>
-<p>
-  libはモジュールが格納されるディレクトリです。この中にモジュールの本体であるスクリプトが格納されます。
-</p>
-<h3>MANIFEST</h3>
-<p>
-  MANIFESTには、モジュールを配布するときに格納するファイルを記述します。MANIFESTファイルは直接編集することもできますが、自動で作成することもできます。
-</p>
-<h4>t</h4>
-<p>
-  モジュールの自動試験を格納するディレクトリです。
-</p>
+&lt;/ pre&gt;
+
+Will create a script called Makefile.
+
+&lt;h4&gt; Changes &lt;/ h4&gt;
+
+Changes is for writing the history when the module is upgraded. Please note that you often forget to write when you upgrade the module.
+
+&lt;h3&gt; lib &lt;/ h3&gt;
+
+lib is the directory where the modules are stored. The script that is the main body of the module is stored in this.
+
+&lt;h3&gt; MANIFEST &lt;/ h3&gt;
+
+In MANIFEST, describe the file to be stored when the module is distributed. You can edit the MANIFEST file directly, but you can also create it automatically.
+
+&lt;h4&gt; t &lt;/ h4&gt;
+
+The directory that stores the module's automated tests.
 
   </div>
   <div class="bottom">
