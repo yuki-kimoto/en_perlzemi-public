@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Perlの正規表現をマスターしよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlの正規表現の解説です。この記事を読めば、日常で利用する正規表現のすべてを短時間でマスターすることができます。正規表現を使えば、文字列の集合を表現することができ、正規表現にマッチする文字列を検索したり、置換したりすることができます。">
+<title> Let's master Perl regular expressions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="A description of Perl's  regular expressions . After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Perlの正規表現をマスターしよう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlの正規表現の解説です。この記事を読めば、日常で利用する正規表現のすべてを短時間でマスターすることができます。正規表現を使えば、文字列の集合を表現することができ、正規表現にマッチする文字列を検索したり、置換したりすることができます。" />
+<meta name="twitter:title" content=" Let's master Perl regular expressions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="A description of Perl's  regular expressions . After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,21 +59,21 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">正規表現</span>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20100827127859.html">Perlの正規表現をマスターしよう</a></h2>
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Regular expression </ span>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20100827127859.html"> Let's master Perl regular expressions </a></ h2>
 <p>
-  Perlの<strong>正規表現</strong>の解説です。この記事を読めば、日常で利用する正規表現のすべてを短時間でマスターすることができます。正規表現を使えば、文字列の集合を表現することができ、正規表現にマッチする文字列を検索したり、置換したりすることができます。 　
+  A description of Perl's <strong> regular expressions </ strong>. After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -92,773 +92,818 @@
 
 
 <p>
-  正規表現を使って文字列の集合を表現できます。たとえば「a」「aa」「aaa」という三つの文字列を正規表現で表現してみましょう。連続する文字の個数を表現する正規表現「{}」を使って次のように書くことができます。
+  You can use regular expressions to represent a set of strings. For example, let's express the three character strings "a", "aa", and "aaa" with regular expressions. You can write the following using the regular expression "{}" that expresses the number of consecutive characters.
 </p>
 <pre>
-a{1,3}
-</pre>
-<p>
-  「a」「aa」「aaa」という文字列の集合をひとつの正規表現「a{1,3}」で表しています。{}は量指定子と呼ばれるもので、連続した文字を表現することができます。
-</p>
-<pre>
+a {1,3}
+&lt;/ pre&gt;
+
+The set of character strings "a", "aa", and "aaa" is represented by one regular expression "a {1,3}". {} Is called a quantifier and can represent consecutive characters.
+
+&lt;pre&gt;
 a
-aa     -&gt;    a{1,3}
+aa-&gt; a {1,3}
 aaa
-</pre>
-<p>
-  正規表現の例をもう一つみてみましょう。「p1」「q1」「r1」という文字列の集合をひとつの正規表現「[pqr]1」で表すことができます。[]は<a href="/blog/20200114103559.html">文字クラス</a>と呼ばれるもので、複数の文字の集合を表現することができます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Let's look at another example of a regular expression. A set of character strings "p1", "q1", and "r1" can be represented by one regular expression "[pqr] 1". [] Is called &lt;a href="/blog/20200114103559.html"&gt; character class &lt;/a&gt; and can represent a set of multiple characters.
+
+&lt;pre&gt;
 p1
-q1    -&gt;    [pqr]1
+q1-&gt; [pqr] 1
 r1
-</pre>
-<p>
-  このように複数の文字列をひとつの正規表現で書くことができます。
-</p>
-<h3>パターンマッチ</h3>
-<p>
-  パターンマッチとは正規表現で表した文字の集合が対象の文字列に含まれているかを調べる操作のことをいいます。パターンマッチを行うにはパターンマッチ演算子を使用します。
-</p>
-<pre>
-# パターンマッチ
-$str =~ /正規表現/
-</pre>
-<p>
-  パターンマッチ演算子は「=~」です。正規表現はスラッシュ「/」で囲む必要があります。マッチした場合は真を、マッチしなかった場合は偽を返します。パターンマッチはif文と組み合わせて利用されることがほとんどです。
-</p>
-<pre>
-if ($str =~ /正規表現/) {
-  # マッチした場合の処理
-}
-</pre>
-<p>
-  「a{1,3}」という正規表現が「This string is aa.」という文字列にパターンマッチするかを確認してみましょう。
-</p>
-<pre>
-文字列: 「This string is aa.」
+&lt;/ pre&gt;
 
-正規表現:  「a{1,3}」
-</pre>
-<p>
-  スクリプトは以下になります。
-</p>
-<pre>
-my $str = 'This string is aa.';
+In this way, you can write multiple strings with one regular expression.
 
-if ($str =~ /a{1,3}/) {
-  print "Match\n";
-}
-</pre>
-<p>
-  「Match!」と出力されます。
-</p>
-<p>
-  反対にパターンマッチしないということを表す演算子「!~」もあります。
-</p>
-<pre>
-$str !~ /正規表現/
-</pre>
-<h4>マッチした文字列を取得する</h4>
-<p>
-  パターンマッチを使って、マッチした文字列を取得することができます。マッチした文字列を取得するには取得したい部分を「()」で囲みます。「This string is aar1」という文字列の中の「aa」と「r1」を取得してみましょう。
-</p>
-<pre>
-文字列: 「This string is aar1」
+&lt;h3&gt; Pattern matching &lt;/ h3&gt;
 
-正規表現:  (a{1,3})([pqr]1)
-</pre>
-<p>
-  スクリプトは次のようになります。<a href="/blog/20161102147817.html">特殊変数</a>「$1」と「$2」には括弧で囲んだ部分が順番に代入されます。
-</p>
-<pre>
-my $str = 'This string is aar1';
-if ($str =~ /(a{1,3})([pqr]1)/) {
-  print "Get $1 and $2";
+Pattern matching is an operation to check whether a set of characters represented by a regular expression is included in the target character string. Use the pattern matching operator to do pattern matching.
+
+&lt;pre&gt;
+#Pattern matching
+$ str = ~ / regular expression /
+&lt;/ pre&gt;
+
+The pattern matching operator is "= ~". Regular expressions must be enclosed in slashes "/". Returns true if there is a match, false if there is no match. Pattern matching is often used in combination with if statements.
+
+&lt;pre&gt;
+if ($ str = ~ / regular expression /) {
+  # What to do if there is a match
 }
-</pre>
-<p>
-  次のように出力されます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Let's check if the regular expression "a {1,3}" pattern matches the string "This string is aa.".
+
+&lt;pre&gt;
+String: "This string is aa."
+
+Regular expression: "a {1,3}"
+&lt;/ pre&gt;
+
+The script is as follows.
+
+&lt;pre&gt;
+my $ str ='This string is aa.';
+
+if ($ str = ~ / a {1,3} /) {
+  print "Match \ n";
+}
+&lt;/ pre&gt;
+
+"Match!" Is output.
+
+On the other hand, there is also an operator "! ~" That means that the pattern does not match.
+
+&lt;pre&gt;
+$ str! ~ / Regular expression /
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get the matched string &lt;/ h4&gt;
+
+You can use pattern matching to get the matched string. To get the matched character string, enclose the part you want to get in "()". Let's get "aa" and "r1" in the string "This string is aar1".
+
+&lt;pre&gt;
+String: "This string is aar 1"
+
+Regular expression: (a {1,3}) ([pqr] 1)
+&lt;/ pre&gt;
+
+The script looks like this: &lt;a href="/blog/20161102147817.html"&gt; Special variables &lt;/a&gt; The parts enclosed in parentheses are assigned to "$ 1" and "$ 2" in order.
+
+&lt;pre&gt;
+my $ str ='This string is aar1';
+if ($ str = ~ / (a ​​{1,3}) ([pqr] 1) /) {
+  print "Get $ 1 and $ 2";
+}
+&lt;/ pre&gt;
+
+The output is as follows.
+&lt;pre&gt;
 Get aa and r1
-</pre>
-<p>
-  また文字列を「This string is aaap1」に変更してみましょう。次のように出力されます。
-</p>
-<pre>
-Get aaa and p1
-</pre>
-<h3>置換</h3>
-<p>
-  正規表現を使ってマッチした文字列を置換することができます。置換の構文は次のようになります。
-</p>
-<pre>
-対象文字列 =~ s/正規表現/置換後の文字列/;
-</pre>
-<p>
-  では「This string is aa」という文字列を「This string is bb」という文字列に置換してみましょう。このサンプルではaaにマッチする正規表現「a{1,3}」を使用します。
-</p>
-<pre>
-正規表現                      置換後の文字列
-a{1,3}                ---&gt;    bb
+&lt;/ pre&gt;
 
-対象文字列                    
-This string is aa     ---&gt;    This string is bb
-</pre>
-<p>
-  スクリプトは次のようになります。
-</p>
-<pre>
-my $str = 'This string is aa';
-$str =~ s/a{1,3}/bb/;
-</pre>
-<p>
-  置換されるのはひとつだけです。たとえば「This string is aa aaa」という文字列があれば、上記の置換では「This string is bb aaa」となり、マッチした最初の文字列だけが置換されます。
-</p>
-<p>
-  すべてのマッチ文字列を置換するには正規表現オプション「g」を使用します。正規表現のオプションは末尾に指定します。
-</p>
-<pre>
-# マッチしたすべての文字列を置換
-対象文字列 =~ s/正規表現/置換後の文字列/g;
-</pre>
-<p>
-  すべてのマッチした文字列を置換するスクリプトは次のようになります。
-</p>
-<pre>
-my $str = 'This string is aa aaa';
-$str =~ s/a{1,3}/bb/g;
-</pre>
-<p>
-  置換後の文字列を出力すると次のようになります。
-</p>
-<pre>
+Let's change the string to "This string is aaap1". The output is as follows.
+
+&lt;pre&gt;
+Get aaa and p1
+&lt;/ pre&gt;
+
+&lt;h3&gt; Replacement &lt;/ h3&gt;
+
+You can use a regular expression to replace the matched string. The replacement syntax is as follows:
+
+&lt;pre&gt;
+Target string = ~ s / regular expression / replacement string /;
+&lt;/ pre&gt;
+
+Now let's replace the string "This string is aa" with the string "This string is bb". This sample uses the regular expression "a {1,3}" that matches aa.
+
+&lt;pre&gt;
+Regular expression Replaced string
+a {1,3} ---&gt; bb
+
+Target character string
+This string is aa ---&gt; This string is bb
+&lt;/ pre&gt;
+
+The script looks like this:
+
+&lt;pre&gt;
+my $ str ='This string is aa';
+$ str = ~ s / a {1,3} / bb /;
+&lt;/ pre&gt;
+
+Only one is replaced. For example, if you have the string "This string is aa aaa", the above replacement will result in "This string is bb aaa" and only the first matching string will be replaced.
+
+Use the regular expression option "g" to replace all match strings. Regular expression options are specified at the end.
+
+&lt;pre&gt;
+#Replace all matched strings
+Target string = ~ s / regular expression / replaced string / g;
+&lt;/ pre&gt;
+
+The script that replaces all the matched strings looks like this:
+
+&lt;pre&gt;
+my $ str ='This string is aa aaa';
+$ str = ~ s / a {1,3} / bb / g;
+&lt;/ pre&gt;
+
+The output of the replaced character string is as follows.
+
+&lt;pre&gt;
 This string is bb bb
-</pre>
-<p>
-  ではここからさまざまな正規表現を見ていきましょう。
-</p>
-<h3>正規表現文字</h3>
-<p>
-  文字の集合を表す正規表現には次のようなものがあります。
-</p>
-<table>
-  <tr>
-    <td>
-      .
-    </td>
-    <td>
-      改行を除くすべての文字
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \d
-    </td>
-    <td>
-      数字
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \D
-    </td>
-    <td>
-      数字以外の文字
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \w
-    </td>
-    <td>
-      ワード文字(「a～z」「A～Z」「0～9」 アンダーバー「_」)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \W
-    </td>
-    <td>
-      ワード文字以外の文字
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \s
-    </td>
-    <td>
-      空白文字( スペース「 」、タブ文字「\t」、改行文字「\n, \r」など)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \S
-    </td>
-    <td>
-      空白文字以外の文字
-    </td>
-  </tr>
-  <tr>
-    <td>
-      ^
-    </td>
-    <td>
-      文字列の先頭
-    </td>
-  </tr>
-  <tr>
-    <td>
+&lt;/ pre&gt;
+
+Now let's look at various regular expressions.
+
+&lt;h3&gt; Regular expression character &lt;/ h3&gt;
+
+Regular expressions that represent a set of characters include:
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      ..
+    &lt;/ td&gt;
+    &lt;td&gt;
+      All characters except line breaks
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ d
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Numbers
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ D
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Characters other than numbers
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ w
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Word letters ("a-z" "A-Z" "0-9" underscore "_")
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ W
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Characters other than word characters
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ s
+    &lt;/ td&gt;
+    &lt;td&gt;
+      White space (space "", tab character "\ t", newline character "\ n, \ r", etc.)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ S
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Characters other than whitespace
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      ^ ^
+    &lt;/ td&gt;
+    &lt;td&gt;
+      The beginning of the string
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       $
-    </td>
-    <td>
-      文字列の末尾
-    </td>
-  </tr>
-  <tr>
-    <td>
-      \b
-    </td>
-    <td>
-      ワード文字の境界
-    </td>
-  </tr>
-</table>
-<h4>改行を除く任意の一文字「.」</h4>
-<p>
-  改行を除く任意の一文字を表現するには「.」を使用します。
-</p>
-<pre>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      End of string
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      \ b
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Word character boundaries
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h4&gt; Any single character "." Except for line breaks &lt;/ h4&gt;
+
+Use "." To represent any single character except line breaks.
+
+&lt;pre&gt;
 a
-b
-c    -&gt;    .
+b b
+c-&gt;.
 )
 @
-</pre>
-<p>
-  「.」を改行を含む任意の文字にマッチさせることもできます。「.」を改行にマッチさせたい場合は、正規表現オプション「s」を使用します。
-</p>
-<pre>
-# .を改行を含む任意の文字にマッチさせる
-$str =~ /./s;
-</pre>
-<h4>数字「\d」</h4>
-<p>
-  数字を表現するには「\d」を使用します。0～9にマッチします。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You can also match the "." To any character, including newlines. If you want the "." To match a newline, use the regular expression option "s".
+
+&lt;pre&gt;
+Match #. To any character, including newlines
+$ str = ~ /./s;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Number "\ d" &lt;/ h4&gt;
+
+Use "\ d" to represent numbers. Matches 0-9.
+
+&lt;pre&gt;
 0
 1
-2    -&gt;    \d
+2-&gt; \ d
 8
 9
-</pre>
-<h4>数字以外「\D」</h4>
-<p>
-  数字以外の文字を表現するには「\D」を使用します。これは「\d」と対になるものです。
-</p>
-<pre>
-数字「\d」以外    -&gt;    \D
-</pre>
-<h4>空白文字「\s」</h4>
-<p>
-  空白文字とはスペース、タブ、改ページ、キャリッジリターン、ラインフィードのことです。空白文字を表現するには「\s」を使用します。
-</p>
-<pre>
-スペース 「 」
-タブ 「\t」
-改ページ 「\f」           -&gt;    \s
-キャリッジリターン「\n」
-ラインフィード「\r」
-</pre>
-<h4>空白文字以外「\S」</h4>
-<p>
-  空白文字以外の文字を表現するには「\S」を使用します。これは「\s」と対になるものです。
-</p>
-<pre>
-空白文字「\s」以外    -&gt;    \S
-</pre>
-<h4>ワード文字「\w」</h4>
-<p>
-  ワード文字とは「アルファベットと数字とアンダーバー」の集合のことを指します。ワード文字を表現するには「\w」を使用します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Other than numbers "\ D" &lt;/ h4&gt;
+
+Use "\ D" to represent non-numeric characters. This is a companion to "\ d".
+
+&lt;pre&gt;
+Other than the number "\ d"-&gt; \ D
+&lt;/ pre&gt;
+
+&lt;h4&gt; White space "\ s" &lt;/ h4&gt;
+
+Whitespace is spaces, tabs, page breaks, carriage returns, and line feeds. Use "\ s" to represent whitespace.
+
+&lt;pre&gt;
+space " "
+Tab "\ t"
+Page break "\ f"-&gt; \ s
+Carriage return "\ n"
+Line feed "\ r"
+&lt;/ pre&gt;
+
+&lt;h4&gt; "\ S" other than white space &lt;/ h4&gt;
+
+Use "\ S" to represent non-whitespace characters. This is a companion to "\ s".
+
+&lt;pre&gt;
+Other than the space character "\ s"-&gt; \ S
+&lt;/ pre&gt;
+
+&lt;h4&gt; Word character "\ w" &lt;/ h4&gt;
+
+A word character is a set of "alphabets, numbers, and underscores". Use "\ w" to represent word characters.
+
+&lt;pre&gt;
 A-Z
 a-z
-       -&gt;    \w
+       -&gt; \ w
 0-9
 _
-</pre>
-<h4>ワード文字以外「\W」</h4>
-<p>
-  ワード文字以外の文字を表現するには「\W」を使用します。
-</p>
-<pre>
-ワード文字「\w」以外    -&gt;    \W
-</pre>
-<h4>文字列の先頭「^」</h4>
-<p>
-  正規表現文字には文字の先頭を表現できるものがあります。文字の先頭を表現するには「^」を使用します。
-</p>
-<pre>
-文字列の先頭    -&gt;    ^
-</pre>
-<p>
-  この正規表現文字は文字の長さを持ちません。他の文字と組み合わせて利用します。たとえば「^abc」という正規表現は先頭が「abc」で始まる文字列にマッチします。「abc」が含まれていても先頭が「abc」でなければマッチしません。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Non-word characters "\ W" &lt;/ h4&gt;
+
+Use "\ W" to represent non-word characters.
+
+&lt;pre&gt;
+Other than the word character "\ w"-&gt; \ W
+&lt;/ pre&gt;
+
+&lt;h4&gt; The beginning of the character string "^" &lt;/ h4&gt;
+
+Some regular expression characters can represent the beginning of a character. Use "^" to represent the beginning of a character.
+
+&lt;pre&gt;
+Beginning of string-&gt; ^
+&lt;/ pre&gt;This regular expression character has no character length. Use in combination with other characters. For example, the regular expression "^ abc" matches strings that start with "abc". Even if "abc" is included, it will not match unless it starts with "abc".
+
+&lt;pre&gt;
 abcppp
-abcqqq    -&gt;    ^abc
+abcqqq-&gt; ^ abc
 abcrrr
-</pre>
-<p>
-  ^はmオプションと組み合わせた場合は行の先頭という意味に変わります。mオプションを使用した場合に文字列の先頭を表現したい場合は「\A」を使用します。「\A」はオプションの存在にかかわらず常に文字列の先頭を表現します。
-</p>
-<h4>文字列の末尾「$」</h4>
-<p>
-  文字列の末尾を表現するには「$」を使用します。たとえば「abc$」という正規表現は末尾が「abc」で終わる文字列にマッチします。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+When combined with the m option, ^ changes to mean the beginning of a line. Use "\ A" if you want to represent the beginning of a string when using the m option. "\ A" always represents the beginning of the string regardless of the existence of the option.
+
+&lt;h4&gt; End of string "$" &lt;/ h4&gt;
+
+Use "$" to represent the end of a string. For example, the regular expression "abc $" matches strings ending in "abc".
+
+&lt;pre&gt;
 pppabc
-qqqabc    -&gt;    abc$
+qqqabc-&gt; abc $
 rrrabc
-</pre>
-<p>
-  $はmオプションと組み合わせた場合は行の末尾という意味に変わります。mオプションを使用した場合に文字列の末尾を表現したい場合は「\z」を使用します。「\z」はオプションの存在にかかわらず常に文字列の末尾を表現します。
-</p>
-<h4>ワード文字の境界</h4>
-<p>
-  ワード文字の境界を表現するには「\b」を使用します。ワード文字の境界とはワード文字からそれ以外の文字へと変わっている部分のことを指します。たとえば「abc\b」という正規表現は「abcd」にはマッチしませんが「abc/」や「abc@」や「abc 」にはマッチします。
-</p>
-<pre>
-abc/
-abc@    -&gt;    abc\b
-abc 
-</pre>
-<h3>文字クラス</h3>
-<p>
-  複数の文字の集合を表現するには<a href="/blog/20200114103559.html">文字クラス</a>を使用します。
-</p>
-<pre>
-[文字の集合]
-</pre>
-<p>
-  たとえば「a」か「b」か「c」という文字を表現したい場合は[abc]と書きます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+When combined with the m option, $ changes to mean the end of a line. Use "\ z" if you want to represent the end of a string when using the m option. "\ Z" always represents the end of the string regardless of the existence of the option.
+
+&lt;h4&gt; Word character boundaries &lt;/ h4&gt;
+
+Use "\ b" to represent word character boundaries. The boundary of a word character is the part that changes from a word character to another character. For example, the regular expression "abc \ b" does not match "abcd" but does match "abc /", "abc @", and "abc".
+
+&lt;pre&gt;
+abc /
+abc @-&gt; abc \ b
+abc
+&lt;/ pre&gt;
+
+&lt;h3&gt; Character class &lt;/ h3&gt;
+
+Use &lt;a href="/blog/20200114103559.html"&gt; character class &lt;/a&gt; to represent a set of multiple characters.
+
+&lt;pre&gt;
+[Character set]
+&lt;/ pre&gt;
+
+For example, if you want to express the letters "a", "b", or "c", write [abc].
+
+&lt;pre&gt;
 a
-b    -&gt;    [abc]
+b-&gt; [abc]
 c
-</pre>
-<p>
-  アルファベットの範囲や数値の範囲を指定するのにハイフン「-」記号を使用することができます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You can use the hyphen "-" symbol to specify a range of letters or numbers.
+
+&lt;pre&gt;
 a
-b
-c    -&gt;    [a-e]
+b b
+c-&gt; [a-e]
 d
 e
-</pre>
-<pre>
+&lt;/ pre&gt;
+
+&lt;pre&gt;
 0
 1
-2    -&gt;    [0-4]
+2-&gt; [0-4]
 3
-4
-</pre>
-<p>
-  アルファベットと数値のいずれかを表現したい場合は[a-zA-Z0-9]と書きます。
-</p>
-<pre>
-アルファベットと数字    -&gt;    [a-zA-Z0-9]
-</pre>
-<p>
-  文字クラスを使って特定の文字以外を表現することもできます。特定の文字以外を表現するには「^」を使用します。文字クラス[]の先頭で「^」が使用されると「それ以外」という意味になり、「文字の先頭」という意味にはならないので注意してください。
-</p>
-<p>
-  たとえば「a」「b」「c」以外の文字を表現するには次のようにします。
-</p>
-<pre>
-「a」「b」「c」以外の文字    -&gt;    [^abc]
-</pre>
-<h3>量指定子</h3>
-<p>
-  ある文字が連続していくつ続くかを量指定子を使って指定することができます。量指定子には次のものがあります。
-</p>
-<table>
-  <tr>
-    <td>
-      ?
-    </td>
-    <td>
-      直前の文字が0個か1個
-    </td>
-  </tr>
-  <tr>
-    <td>
+Four
+&lt;/ pre&gt;
+
+If you want to express either an alphabet or a numerical value, write [a-zA-Z0-9].
+
+&lt;pre&gt;
+Alphabets and numbers-&gt; [a-zA-Z0-9]
+&lt;/ pre&gt;
+
+You can also use character classes to represent non-specific characters. Use "^" to represent something other than a specific character. Note that if "^" is used at the beginning of the character class [], it means "other than that", not "the beginning of the character".
+
+For example, to represent a character other than "a", "b", and "c":
+
+&lt;pre&gt;
+Characters other than "a", "b" and "c"-&gt; [^ abc]
+&lt;/ pre&gt;
+
+&lt;h3&gt; Quantifier &lt;/ h3&gt;
+
+You can use the quantifier to specify how many consecutive characters will continue. The quantifiers are:
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      ??
+    &lt;/ td&gt;
+    &lt;td&gt;
+      0 or 1 character immediately before
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
        *
-    </td>
-    <td>
-      直前の文字が0個以上
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      0 or more characters immediately before
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       +
-    </td>
-    <td>
-      直前の文字が1個以上
-    </td>
-  </tr>
-  <tr>
-    <td>
-      {m,n}
-    </td>
-    <td>
-      直前の文字がm個以上n個以下
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      One or more characters immediately before
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      {m, n}
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Immediately before m or more and n or less
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       {m,}
-    </td>
-    <td>
-      直前の文字がm個以上
-    </td>
-  </tr>
-  <tr>
-    <td>
-      {0,n}
-    </td>
-    <td>
-      直前の文字がn個以下
-    </td>
-  </tr>
-</table>
-<h4>? 直前の文字が0個か1個</h4>
-<p>
-  ?は直前の文字が0個か1個ということを表現する量指定子です。わかりやすく言い換えれば「直前の文字があってもなくてもよい」ということです。
-</p>
-<pre>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Last character is m or more
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      {0, n}
+    &lt;/ td&gt;
+    &lt;td&gt;
+      N or less characters immediately before
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h4&gt;? 0 or 1 character immediately before &lt;/ h4&gt;
+
+? Is a quantity specifier that expresses that the previous character is 0 or 1. In other words, it may or may not have the previous character.
+
+&lt;pre&gt;
 aaap
-        -&gt;    aaap?
+        -&gt; aaap?
 aaa
-</pre>
-<p>
-  量指定子はもちろん正規表現文字と組み合わせて使用することもできます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+It can be used in combination with regular expression characters as well as quantifiers.
+
+&lt;pre&gt;
 aaa
 aaap
-        -&gt;    aaa[pqr]?
+        -&gt; aaa [pqr]?
 aaaq
 aaar
-</pre>
-<h4> * 直前の文字が0個以上</h4>
-<p>
-  *は直前の文字が0個以上ということを表現する量指定子です。
-</p>
-<pre>
-aaa
-aaap     -&gt;    aaap*
-aaapp
-</pre>
-<h4>+ 直前の文字が1個以上</h4>
-<p>
-  +は直前の文字が1個以上ということを表現する量指定子です。
-</p>
-<pre>
-aaap
-aaapp     -&gt;    aaap+
-aaappp
-</pre>
-<h4>{m,n} 直前の文字がm個以上n個以下</h4>
-<p>
-  {m,n}は直前の文字がm個以上n個以下ということを表現する量指定子です。
-</p>
-<pre>
-aaap
-aaapp     -&gt;    aaap{1,3}
-aaappp
-</pre>
-<h4>{m,}</h4>
-<p>
-  {m,}は直前の文字がm個以上ということを表現する量指定子です。
-</p>
-<pre>
-aaapp
-aaappp     -&gt;    aaap{2,}
-aaapppp
-</pre>
-<h4>{0,n}</h4>
-<p>
-  {0,n}は直前の文字がn個以下ということを表現する量指定子です。
-</p>
-<pre>
-aaappp
-aaapppp     -&gt;    aaap{0,5}
-aaappppp
-</pre>
-<h3>文字列の集合</h3>
-<p>
-  文字列の集合を表現するには「|」を使用します。通常は括弧「()」と組み合わせて使用します。
-</p>
-<pre>
-a123b
-a456b    -&gt;    a(123|456|789)b
-a789b
-</pre>
-<h3>正規表現文字のエスケープ</h3>
-<p>
-  正規表現文字を普通の文字として意味させるには直前に\をつける必要があります。たとえば「.」という文字自体を表現するには「\.」とする必要があります。
-</p>
-<pre>
-.txt    -&gt;    \.txt
-</pre>
-<p>
-  <a href="/blog/20100329127089.html">quotemeta関数</a>を使用すると文字列全体に対してエスケープを自動で行ってくれます。
-</p>
-<pre>
-my $regex = quotemeta('.txt');
-</pre>
-<p>
-  エスケープのための\Qという特殊な正規表現文字を使うこともできます。\Qから\Eまでがエスケープされる文字になります。\Eがない場合は正規表現の終わりまでが対象になります。
-</p>
-<pre>
-/\Q.txt\E/
-</pre>
-<h3>正規表現のテクニック</h3>
-<h4>(?:) キャプチャしない括弧</h4>
-<p>
-  正規表現の括弧「()」にはキャプチャを行うためと「(A|B)」といういうように「または」ということを意味したい場合に利用されます。()を単なる「または」のために使うためには「()」の代わりに「(?:)」を使うことができます。
-</p>
-<pre>
-(?:A|B)
-</pre>
-<h4>正規表現の囲み文字の変更</h4>
-<p>
-  正規表現の中でスラッシュがたくさん出てくる場合は、\でエスケープしなければいけないのでとても面倒です。そのような場合はmを直前に置いて正規表現の囲み文字を変更することができます。
-</p>
-<pre>
-/\/aaa\/bbb/
+&lt;/ pre&gt;
 
-# 上記と意味
-m#/aaa/bbb#
-m{/aaa/bbb}
-</pre>
-<p>
-  置換の場合も囲み文字を変更することができます。
-</p>
-<pre>
-s#aaa#bbb#
-s|aaa|bbb|
-</pre>
-<h4>正規表現のリファレンス</h4>
-<p>
-  正規表現は<a href="/blog/20080419120860.html">qr演算子</a>を使ってリファレンスにすることができます。正規表現のリファレンスにすれば、正規表現オプションを含めて変数に代入することができます。
-</p>
-<pre>
-my $regex = qr/(\d+)/sm;
-</pre>
-<p>
-  これは通常のパタンマッチでも利用することができます。
-</p>
-<pre>
-my $num = 34;
-if ($num =~ /$regex/) {
+&lt;h4&gt; * 0 or more previous characters &lt;/ h4&gt;
+
+* Is a quantity specifier that expresses that the immediately preceding character is 0 or more.
+
+&lt;pre&gt;
+aaa
+aaap-&gt; aaap *
+aaapp
+&lt;/ pre&gt;
+
+&lt;h4&gt; + One or more characters immediately before &lt;/ h4&gt;
+
++ Is a quantity specifier that expresses that there is at least one character immediately before.
+
+&lt;pre&gt;
+aaap
+aaapp-&gt; aaap +
+aaappp
+&lt;/ pre&gt;
+
+&lt;h4&gt; {m, n} The previous character is m or more and n or less &lt;/ h4&gt;
+
+{m, n} is a quantity specifier that expresses that the previous character is m or more and n or less.
+
+&lt;pre&gt;
+aaap
+aaapp-&gt; aaap {1,3}
+aaappp
+&lt;/ pre&gt;
+
+&lt;h4&gt; {m,} &lt;/ h4&gt;
+
+{m,} is a quantity specifier that expresses that the previous character is m or more.
+
+&lt;pre&gt;
+aaapp
+aaappp-&gt; aaap {2,}
+aaapppp
+&lt;/ pre&gt;
+
+&lt;h4&gt; {0, n} &lt;/ h4&gt;
+
+{0, n} is a quantifier that expresses that the previous character is n or less.
+
+&lt;pre&gt;
+aaappp
+aaapppp-&gt; aaap {0,5}
+aaappppp
+&lt;/ pre&gt;
+
+&lt;h3&gt; A set of strings &lt;/ h3&gt;
+
+Use "|" to represent a set of strings. Usually used in combination with parentheses "()".
+
+&lt;pre&gt;
+a123b
+a456b-&gt; a (123 | 456 | 789) b
+a789b
+&lt;/ pre&gt;
+
+&lt;h3&gt; Escape regular expression characters &lt;/ h3&gt;
+
+To make a regular expression character mean a normal character, you need to add a \ immediately before it. For example, to represent the character "." Itself, you need to use "\.".
+
+&lt;pre&gt;
+.txt-&gt; \ .txt
+&lt;/ pre&gt;
+
+If you use &lt;a href="/blog/20100329127089.html"&gt; quotemeta function &lt;/a&gt;, it will automatically escape the entire string.
+
+&lt;pre&gt;
+my $ regex = quotemeta ('.txt');
+&lt;/ pre&gt;
+
+You can also use the special regular expression character \ Q for escaping. The characters from \ Q to \ E are escaped. If there is no \ E, the target is up to the end of the regular expression.
+
+&lt;pre&gt;
+/\Q.txt\E/
+&lt;/ pre&gt;
+
+&lt;h3&gt; Regular expression technique &lt;/ h3&gt;
+
+&lt;h4&gt; (? :) Uncaptured parentheses &lt;/ h4&gt;
+
+The regular expression parentheses "()" are used for capture and when you want to mean "or" like "(A | B)". You can use "(? :)" instead of "()" to use () just for "or".
+
+&lt;pre&gt;
+(?: A | B)
+&lt;/ pre&gt;
+
+&lt;h4&gt; Change the enclosing character of the regular expression &lt;/ h4&gt;
+
+If you see a lot of slashes in your regular expression, it's very annoying because you have to escape with \. In such cases, you can put m immediately before to change the enclosing character of the regular expression.
+
+&lt;pre&gt;
+/ \ / aaa \ / bbb /
+
+# Above and meaning
+m # / aaa / bbb #
+m {/ aaa / bbb}
+&lt;/ pre&gt;
+
+You can also change the enclosing character for replacement.
+
+&lt;pre&gt;
+s # aaa # bbb #
+s | aaa | bbb |
+&lt;/ pre&gt;
+
+&lt;h4&gt; Regular expression reference &lt;/ h4&gt;
+
+Regular expressions can be referenced using the &lt;a href="/blog/20080419120860.html"&gt; qr operator &lt;/a&gt;. You can use it as a regular expression reference and assign it to a variable, including regular expression options.
+
+&lt;pre&gt;
+my $ regex = qr / (\ d +) / sm;
+&lt;/ pre&gt;
+
+This can also be used in regular pattern matching.
+
+&lt;pre&gt;
+my $ num = 34;
+if ($ num = ~ / $ regex /) {
    
 }
-</pre>
-<h3>正規表現のオプション</h3>
-<p>
-  正規表現には必要に応じてオプションを指定することができます。
-</p>
-<table>
-  <tr>
-    <td>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Regular expression options &lt;/ h3&gt;
+
+You can specify options for the regular expression as needed.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
       g
-    </td>
-    <td>
-      パターンマッチを繰り返す
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Repeat pattern matching
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       s
-    </td>
-    <td>
-      「.」を改行にマッチさせる
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Match "." To line breaks
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       m
-    </td>
-    <td>
-      「^」と「$」を行の先頭と末尾にマッチさせる
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Match "^" and "$" to the beginning and end of a line
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       i
-    </td>
-    <td>
-      大文字と小文字を区別しないでマッチさせる
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Match case insensitively
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       e
-    </td>
-    <td>
-      置換に式を利用する
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Use an expression for permutation
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       x
-    </td>
-    <td>
-      正規表現内のスペースを無視する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      o
-    </td>
-    <td>
-      変数展開を一度だけ行う
-    </td>
-  </tr>
-</table>
-<p>
-  正規表現のオプションは正規表現の末尾で指定します。複数のオプションを組み合わせることも可能です。
-</p>
-<pre>
-/正規表現/sm
-</pre>
-<h4>g マッチしたすべての文字列を置換する</h4>
-<p>
-  gオプションを指定することで、マッチしたすべてのものを置換することができます。
-</p>
-<blockquote>
-<p>
-  $message2 =~ s/yah/yes/g;
-</p>
-</blockquote>
-<p>
-  mとsとgについてはすでに解説したので残りのオプションを解説します。
-</p>
-<h4>m「^」と「$」を行の先頭と末尾にマッチさせる</h4>
-<p>
-  「<strong>m</strong>」オプションを使用すれば、「^」と「$」を行の先頭と末尾にマッチさせることができます。
-</p>
-<pre>
-$message =~ /^i/m
-</pre>
-<h4>s 「.」を改行にマッチさせる sオプション</h4>
-<p>
-  「<strong>s</strong>」オプションを使用すれば、「改行」を「.」にマッチさせることができます。
-</p>
-<pre>
-$message =~ /^i/s
-</pre>
-<h4>i 大文字と小文字を区別しないでマッチさせる</h4>
-<p>
-  iオプションを使用すると大文字と小文字を区別しないでマッチさせることができます。
-</p>
-<pre>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Ignore spaces in regular expressions
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      o o
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Perform variable expansion only once
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+Regular expression options are specified at the end of the regular expression. It is also possible to combine multiple options.
+
+&lt;pre&gt;
+/ Regular expression / sm
+&lt;/ pre&gt;
+
+&lt;h4&gt; g Replace all matched strings &lt;/ h4&gt;
+
+You can replace everything that matches by specifying the g option.
+
+&lt;blockquote&gt;
+$ message2 = ~ s / yah / yes / g;
+&lt;/ blockquote&gt;
+
+We've already covered m, s, and g, so we'll cover the remaining options.
+
+&lt;h4&gt; m Match "^" and "$" to the beginning and end of a line &lt;/ h4&gt;
+
+You can use the &lt;strong&gt; m &lt;/ strong&gt; option to match "^" and "$" to the beginning and end of a line.
+
+&lt;pre&gt;
+$ message = ~ / ^ i / m
+&lt;/ pre&gt;
+
+&lt;h4&gt; s Match "." To line breaks s option &lt;/ h4&gt;
+
+You can use the &lt;strong&gt; s &lt;/ strong&gt; option to match a "line break" to a ".".
+
+&lt;pre&gt;
+$ message = ~ / ^ i / s
+&lt;/ pre&gt;
+
+&lt;h4&gt; i Case sensitiveMatch without &lt;/ h4&gt;
+
+You can use the i option to match case insensitively.
+
+&lt;pre&gt;
 abc
-Abc    -&gt;    /abc/i
+Abc-&gt; / abc / i
 ABC
-</pre>
-<h4>e 置換に式を利用する</h4>
-<p>
-  eオプションを使用すると置換の結果に式を使用することができます。
-</p>
-<p>
-  次のサンプルはマッチした数値を2倍するサンプルです。
-</p>
-<pre>
-s/(\d+)/$1 * 2/e;
-</pre>
-<h4>x 正規表現内の空白を無視する</h4>
-<p>
-  xオプションを使うと正規表現内の空白を無視することができます。またコメントを記述することができるようになります。スペースであることが重要でない場合は、xオプションを使うと正規表現を見やすく記述することができます。
-</p>
-<pre>
-my $time = '03:02:56';
-my $regex = qr/
-  (\d{2}) # 時
-  :
-  (\d{2}) # 分
-  :
-  (\d{2}) # 秒
-/x;
+&lt;/ pre&gt;
 
-if ($time =~ /$regex/) {
-  my $hour   = $1;
-  my $minute = $2;
-  my $second = $3;
+&lt;h4&gt; e Use an expression for permutation &lt;/ h4&gt;
+
+The e option allows you to use an expression as the result of the replacement.
+
+The following sample is a sample that doubles the matched number.
+
+&lt;pre&gt;
+s / (\ d +) / $ 1 * 2 / e;
+&lt;/ pre&gt;
+
+&lt;h4&gt; x Ignore whitespace in regular expressions &lt;/ h4&gt;
+
+You can use the x option to ignore whitespace in regular expressions. You will also be able to write comments. If space is not important, you can use the x option to write the regular expression more clearly.
+
+&lt;pre&gt;
+my $ time = '03: 02: 56';
+my $ regex = qr /
+  (\ d {2}) # hour
+  ::
+  (\ d {2}) # min
+  ::
+  (\ d {2}) #seconds
+/ x;
+
+if ($ time = ~ / $ regex /) {
+  my $ hour = $ 1;
+  my $ minute = $ 2;
+  my $ second = $ 3;
 }
-</pre>
-<p>
-  空白自体を使用したい場合は「\ 」のように空白をエスケープします。
-</p>
-<h4>o 変数展開を一度だけ行う</h4>
-<p>
-  正規表現オプション「o」を使えば、変数展開を一度だけ行うようになります。これは、正規表現の再評価が行われないので、パフォーマンスが増しますが、バグの原因にもなりやすいので、必要に応じて利用しましょう。
-</p>
-<pre>
-my $regex = "a pen";
+&lt;/ pre&gt;
+
+If you want to use the blank itself, escape the blank like "\".
+
+&lt;h4&gt; o Variable expansion only once &lt;/ h4&gt;
+
+The regular expression option "o" allows variable expansion to be done only once. This will improve performance because it doesn't re-evaluate the regular expression, but it's also prone to bugs, so use it as needed.
+
+&lt;pre&gt;
+my $ regex = "a pen";
 for (1 .. 10) {
-  $message =~ /$regex/o;
+  $ message = ~ / $ regex / o;
 }
-</pre>
-<p>
-  o オプションを使うと、変数展開が、最初の一度だけ行われます。つまり、ループの2回目からは、 /$regex/ → /a pen/ という変数展開が行われずに、 /a pen/ が、そのまま使われるということです。
-</p>
-<h3>最短マッチ</h3>
-<p>
-  Perlの正規表現にはひとつの癖があります。それは量指定子が一番長い位置でマッチするということです。たとえば次の正規表現と文字列が与えられたときどの部分にマッチするでしょうか。
-</p>
-<pre>
-# 正規表現
-.+\s
+&lt;/ pre&gt;
 
-# 文字列
+With the o option, variable expansion is done only the first time. In other words, from the second time of the loop, / a pen / is used as it is without the variable expansion of / $ regex / → / a pen /.
+
+&lt;h3&gt; Shortest match &lt;/ h3&gt;
+
+Perl regular expressions have one quirk. That is, the quantifier matches at the longest position. For example, which part would match given the following regular expression and string?
+
+&lt;pre&gt;
+# Regular expressions
+. + \ S
+
+#String
 aaa bbb ccc
-</pre>
-<p>
-  .+\sという正規表現の意味は「改行以外の文字がひとつ以上で空白」という意味です。上のサンプルでは複数の候補があります。「aaa 」と「aaa bbb 」というふたつの候補です。Perlのデフォルトの動作では一番長い位置にマッチし「aaa bbb 」にマッチします。
-</p>
-<pre>
-# マッチする文字列
-「aaa bbb 」
-</pre>
-<p>
-  これを「aaa 」にマッチさせることは可能です。このテクニックを最短マッチといいます。最短マッチを行うには量指定子の後ろに?を付けます。正規表現を (.+?\s) にすれば、「aaa 」にマッチするようになります。
-</p>
-<pre>
-# 最短マッチを行う正規表現
-.+?\s
-</pre>
-<p>
-  これで「aaa 」に正規表現がマッチするようになります。
-</p>
-<pre>
-「aaa 」
-</pre>
-<h3>日本語と正規表現</h3>
-<p>
-  正規表現の中で日本語を使うためには正規表現も対象の文字列も内部文字列に変換しておく必要があります。内部文字列への変換は<a href="/blog/20091118124667.html">Encodeモジュールの使い方</a>で解説していますので参考にしてください。
-</p>
-<h3>終わりに</h3>
-<p>
-  この解説で学んだことさえ覚えておけば実務で困ることはないでしょう。正規表現を使えば必要な行だけを抜き出したり、簡単に置換することができるます。Perlの醍醐味である正規表現をぜひ楽しんでみてください。
-</p>
+&lt;/ pre&gt;
+
+The regular expression .+ \ s means "one or more characters other than newline and blank". There are multiple candidates in the sample above. There are two candidates, "aaa" and "aaa bbb". Perl's default behavior is to match the longest position and match "aaa bbb".
+
+&lt;pre&gt;
+# Matching string
+"Aaaa bbb"
+&lt;/ pre&gt;
+
+It is possible to match this with "aaa". This technique is called the shortest match. Add? After the quantifier for the shortest match. If you change the regular expression to (. +? \ S), it will match "aaa".
+
+&lt;pre&gt;
+# Regular expression with the shortest match
+. +? \ S
+&lt;/ pre&gt;
+
+The regular expression will now match "aaa".
+
+&lt;pre&gt;
+"Aaaa"
+&lt;/ pre&gt;
+
+&lt;h3&gt; Japanese and regular expressions &lt;/ h3&gt;
+
+In order to use Japanese in a regular expression, both the regular expression and the target character string must be converted to an internal character string. Please refer to &lt;a href="/blog/20091118124667.html"&gt; How to use the Encode module &lt;/a&gt; for the conversion to an internal character string.
+
+&lt;h3&gt; At the end &lt;/ h3&gt;
+
+As long as you remember what you learned in this commentary, you will not have any problems in practice. Regular expressions allow you to extract or easily replace only the lines you need. Please enjoy the regular expressions that are the real pleasure of Perl.
 
   </div>
   <div class="bottom">

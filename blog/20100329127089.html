@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>quotemeta関数 - 正規表現文字のエスケープ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="quotemeta関数を使用すると、正規表現で利用される文字列を通常の文字として扱うことができます。ワード文字以外のすべての文字の直前に\がつけられます。">
+<title> quotemeta function-regular expression character escaping  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  quotemeta function  to treat strings used in  regular expressions  as normal characters. All characters except word characters are preceded by \.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="quotemeta関数 - 正規表現文字のエスケープ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="quotemeta関数を使用すると、正規表現で利用される文字列を通常の文字として扱うことができます。ワード文字以外のすべての文字の直前に\がつけられます。" />
+<meta name="twitter:title" content=" quotemeta function-regular expression character escaping  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  quotemeta function  to treat strings used in  regular expressions  as normal characters. All characters except word characters are preceded by \." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100329127089.html">quotemeta関数 - 正規表現文字のエスケープ</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100329127089.html"> quotemeta function-regular expression character escaping </a></ h2>
 <p>
-  <strong>quotemeta関数</strong>を使用すると、<a href="/blog/20100827127859.html">正規表現</a>で利用される文字列を通常の文字として扱うことができます。ワード文字以外のすべての文字の直前に\がつけられます。
+  You can use the <strong> quotemeta function </ strong> to treat strings used in <a href="/blog/20100827127859.html"> regular expressions </a> as normal characters. All characters except word characters are preceded by \.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,33 +97,32 @@
 
 
 <pre>
-# 正規表現文字列を通常の文字として扱う
-$ret = quotemeta $str;
-</pre>
-<p>
-  正規表現文字を含んだ文字列を通常の文字列としてパターンマッチさせるサンプルです。
-</p>
-<pre>
-# 正規表現文字を含んだ文字列を通常の文字列としてパターンマッチ
-my $message = 'This message contains a{2}';
+# Treat regular expression strings as normal characters
+$ ret = quotemeta $ str;
+&lt;/ pre&gt;
 
-my $match = "a{2}";
-$match = quotemeta $match;
+This is a sample that pattern matches a character string containing regular expression characters as a normal character string.
 
-if ($message =~ /$match/) {
-  print "Match!\n";
+&lt;pre&gt;
+# Pattern matching using a character string containing regular expression characters as a normal character string
+my $ message ='This message contains a {2}';
+
+my $ match = "a {2}";
+$ match = quotemeta $ match;
+
+if ($ message = ~ / $ match /) {
+  print "Match! \ N";
 }
-</pre>
-<p>
-  quotemetaは正規表現の特殊文字である\Qと同じ意味を持ちます。上記のquotemetaは以下の記述と同じ意味にないます。
-</p>
-<pre>
-# \Qを使ってquotemetaと同じ意味を表現
-my $match = "\Qa{2}";
-</pre>
-<p>
-  正規表現については<a href="/blog/20100827127859.html">実践で役立つPerl正規表現 完全解説</a>をご覧ください。
-</p>
+&lt;/ pre&gt;
+
+quotemeta has the same meaning as the regular expression special character \ Q. The above quotemeta does not have the same meaning as the following description.
+
+&lt;pre&gt;
+Express the same meaning as quotemeta using # \ Q
+my $ match = "\ Qa {2}";
+&lt;/ pre&gt;
+
+For more information on regular expressions, see &lt;a href="/blog/20100827127859.html"&gt; Practical Perl Regular Expressions Complete Explanation &lt;/a&gt;.
 
   </div>
   <div class="bottom">

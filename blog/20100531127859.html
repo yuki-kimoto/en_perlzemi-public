@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>なぜPerlで例外処理のfinallyが特に必要と感じないかを考えてみた - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlでは例外を発生させるにはdieを使います。これはJava言語でいうthrowにあたります。例外をキャッチするにはevalを使用します。これはJava言語でいうcatchにあたります。例外が発生したかどうかは$@にメッセージが設定されたかで判定できます。">
+<title> I thought about why Perl doesn't really need exception handling finally  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl uses die to raise an exception. This corresponds to throw in the Java language. Use  eval  to catch the exception. This is equivalent to catch in the Java language. Whether or not an exception has occurred can be determined by whether a message is set in $ @.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="なぜPerlで例外処理のfinallyが特に必要と感じないかを考えてみた - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlでは例外を発生させるにはdieを使います。これはJava言語でいうthrowにあたります。例外をキャッチするにはevalを使用します。これはJava言語でいうcatchにあたります。例外が発生したかどうかは$@にメッセージが設定されたかで判定できます。" />
+<meta name="twitter:title" content=" I thought about why Perl doesn't really need exception handling finally  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl uses die to raise an exception. This corresponds to throw in the Java language. Use  eval  to catch the exception. This is equivalent to catch in the Java language. Whether or not an exception has occurred can be determined by whether a message is set in $ @." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,22 +59,22 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130220136137.html">
-        <span itemprop="name">読み物</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20100531127859.html">なぜPerlで例外処理のfinallyが特に必要と感じないかを考えてみた</a></h2>
+        <span itemprop = "name"> reading material </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20100531127859.html"> I thought about why Perl doesn't really need exception handling finally </a></ h2>
 <p>
-  Perlでは例外を発生させるにはdieを使います。これはJava言語でいうthrowにあたります。例外をキャッチするには<a href="/blog/20100312126967.html">eval</a>を使用します。これはJava言語でいうcatchにあたります。例外が発生したかどうかは$@にメッセージが設定されたかで判定できます。
+  Perl uses die to raise an exception. This corresponds to throw in the Java language. Use <a href="/blog/20100312126967.html"> eval </a> to catch the exception. This is equivalent to catch in the Java language. Whether or not an exception has occurred can be determined by whether a message is set in $ @.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,31 +93,26 @@
 
 
 <pre>
-# Perlの例外処理
+# Perl exception handling
 
 eval {
-  # 例外を発生させる処理
+  # Exception-raising process
 }
 
-if ($@) {
+if ($ @) {
   
 }
-</pre>
-<p>
-  Perlには知ってのとおりfinally文がありません。でも特に困るというような話を聞きません。なぜでしょうか。finally文で実行される処理は、ほとんどの場合、外部リソースの解放です。ファイルを閉じたり、一時ファイルを削除したり、DBへの接続を解放したりする処理です。このような処理をfinally文で実行したいという要望があります。
-</p>
-<p>
-  なぜJavaではfinally文は必須なのでしょうか。JavaではGCが「世代別GC」という仕組みを利用しているために、オブジェクトの解放のタイミングをプログラマが把握することができないからです。Javaではファイナライザでリソースの解放を行ってはいけません。ですからfinnaly文は必須のものになっています。
-</p>
-<p>
-  PerlのGCは単純な参照カウント方式を利用していますから、オブジェクトが解放されたタイミングでデストラクタを確実に実行することができます。この位置にリソースの解放のロジックを記述することができるため、finally文は必須の機能とはされていないと感じます。
-</p>
-<p>
-  またrubyはGCがマークアンドスイープなので、「デストラクタは利用しないように設計すべき」です。ですのでfinally文(Rubyではeusure文)はぜひとも必要な機能になります。
-</p>
-<p>
-  Perlにfinally文がないからといって、大きな不便があるかというとないというのが実感です。ですからPerlの例外処理は駄目で、finallyを実装している例外処理はすばらしいという考え方は妥当な評価ではないと思われます。
-</p>
+&lt;/ pre&gt;
+
+As you know, Perl doesn't have a finally statement. But I don't hear stories that are particularly troublesome. Why. In most cases, the processing performed by the finally statement is the release of external resources. It is the process of closing a file, deleting a temporary file, and releasing the connection to the DB. There is a desire to execute such processing with a finally statement.
+
+Why is the finally statement required in Java? This is because in Java, GC uses a mechanism called "generational GC", so the programmer cannot know when to release an object. In Java, the finalizer should not release resources. So the finaly statement is mandatory.
+
+Perl's GC uses a simple reference counting method to ensure that the destructor is executed when the object is released. I feel that the finally statement is not a required feature because I can write the logic for releasing resources in this position.
+
+Also, ruby ​​has a GC mark-and-sweep, so it should be designed so that destructors are not used. Therefore, the finally statement (eusure statement in Ruby) is a necessary function.
+
+I realize that just because Perl doesn't have a finally statement doesn't mean there's a big inconvenience. So Perl's exception handling is useless, and the idea that exception handling that implements finally is great doesn't seem to be a valid evaluation.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>File::Spec - OSに依存しないファイル名を作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="File::Specモジュールを使用すると、ファイル名に対して移植性のある処理を行うことができます。たとえばOS固有のファイル名の区切り文字を使ってファイル名を作成したりすることができます。">
+<title> File :: Spec --Create OS-independent file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  File :: Spec  module allows you to do portable processing on filenames. For example, you can create a file name using an OS-specific file name delimiter.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="File::Spec - OSに依存しないファイル名を作成 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="File::Specモジュールを使用すると、ファイル名に対して移植性のある処理を行うことができます。たとえばOS固有のファイル名の区切り文字を使ってファイル名を作成したりすることができます。" />
+<meta name="twitter:title" content=" File :: Spec --Create OS-independent file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  File :: Spec  module allows you to do portable processing on filenames. For example, you can create a file name using an OS-specific file name delimiter." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100412127089.html">File::Spec - OSに依存しないファイル名を作成</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100412127089.html"> File :: Spec --Create OS-independent file name </a></ h2>
 <p>
-  <strong>File::Spec</strong>モジュールを使用すると、ファイル名に対して移植性のある処理を行うことができます。たとえばOS固有のファイル名の区切り文字を使ってファイル名を作成したりすることができます。
+  The <strong> File :: Spec </ strong> module allows you to do portable processing on filenames. For example, you can create a file name using an OS-specific file name delimiter.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,62 +97,68 @@
 
 
 <pre>
-# モジュールの読み込み
-use File::Spec;
-</pre>
-<p>
-  File::Specのメソッドはクラスメソッドとして実装されており次の形式で呼び出します。
-</p>
-<pre>
-# クラスメソッド呼び出し
-File::Spec-&gt;$method;
-</pre>
-<h3>メソッド</h3>
-<h4>catfile</h4>
-<p>
-  個々のパーツからファイル名を作成するにはcatfileを使用します。$fileはWindowsの場合は「xxx\yyy\zzz」、Unixの場合は「xxx/yyy/zzz」になります。OS固有の区切り文字がファイル名の作成に使用されます。
-</p>
-<pre>
-# ファイル名の作成
-my $file = File::Spec-&gt;catfile('xxx', 'yyy', 'zzz');
-</pre>
-<p>
-  またディレクトリ名とファイル名を連結するのに利用できます。ディレクトリ名の末尾に「/」や「\」などの区切り文字が存在しているかどうかを意識する必要がありません。
-</p>
-<pre>
-# ディレクトリ名とファイル名を連結
-my $dir = 'xxx/yyy/';
-my $file = 'zzz';
+#Load module
+use File :: Spec;
+&lt;/ pre&gt;
 
-my $file_abs = File::Spec-&gt;catfile($dir, $file);
-</pre>
-<h4>splitdir</h4>
-<p>
-  ファイル名を個々のパーツに分解するにはsplitdirを使用します。@partsは('xxx', 'yyy', 'zzz')になります。
-</p>
-<pre>
-# ファイル名を分解
-my @parts = File::Spec-&gt;splitdir('xxx/yyy/zzz');
-</pre>
-<h4>File::Specのテクニック</h4>
-<p>
-  Windows上でも区切り文字「/」でファイル名を作成したい場合があります。これを実現するにはFile::Spec::UnixをFile::Specの代わりに使用します。
-</p>
-<pre>
-# ファイル名を「/」で連結
-use File::Spec::Unix;
-my $file = File::Spec::Unix-&gt;catfile('xxx', 'yyy', 'zzz');
-</pre>
-<h3>補足</h3>
-<p>
-  標準関数のopen関数等はUnixの区切り文字「/」でも、Windowsの区切り文字「\」でも正しく動作します。ですので単にファイルオープンをすることが目的であればUnixの区切り文字をWindowsの区切り文字に変換する必要はありません。
-</p>
-<h3>関連記事</h3>
-<ul>
-  <li>
-    <a href="/blog/20080516121095.html">OSに依存しないファイル名を作成する</a>
-  </li>
-</ul>
+The File :: Spec method is implemented as a class method and is called in the following format.
+
+&lt;pre&gt;
+#Class method call
+File :: Spec-&gt; $ method;
+&lt;/ pre&gt;
+
+&lt;h3&gt; method &lt;/ h3&gt;
+
+&lt;h4&gt; catfile &lt;/ h4&gt;
+
+Use catfile to create filenames from individual parts. $ file is "xxx \ yyy \ zzz" for Windows and "xxx / yyy / zzz" for Unix. OS-specific delimiters are used to create filenames.
+
+&lt;pre&gt;
+#Create file name
+my $ file = File :: Spec-&gt; catfile ('xxx','yyy','zzz');
+&lt;/ pre&gt;
+
+It can also be used to concatenate directory names and file names. You do not need to be aware of the presence of delimiters such as "/" and "\" at the end of the directory name.
+
+&lt;pre&gt;
+#Concatenate directory name and file name
+my $ dir ='xxx / yyy /';
+my $ file ='zzz';
+
+my $ file_abs = File :: Spec-&gt; catfile ($ dir, $ file);
+&lt;/ pre&gt;
+
+&lt;h4&gt; splitdir &lt;/ h4&gt;
+
+Use splitdir to split the filename into individual parts. @parts becomes ('xxx','yyy','zzz').
+
+&lt;pre&gt;
+# Decompose file name
+my @parts = File :: Spec-&gt; splitdir ('xxx / yyy / zzz');
+&lt;/ pre&gt;
+
+&lt;h4&gt; File :: Spec Technique &lt;/ h4&gt;
+
+You may want to create a file name with the delimiter "/" even on Windows. To achieve this, use File :: Spec :: Unix instead of File :: Spec.
+
+&lt;pre&gt;
+# Concatenate file names with "/"
+use File :: Spec :: Unix;
+my $ file = File :: Spec :: Unix-&gt; catfile ('xxx','yyy','zzz');
+&lt;/ pre&gt;
+
+&lt;h3&gt; Supplement &lt;/ h3&gt;
+
+The standard open function etc. works correctly with both the Unix delimiter "/" and the Windows delimiter "\". So if you just want to open a file, you don't need to convert Unix delimiters to Windows delimiters.
+
+&lt;h3&gt; Related articles &lt;/ h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080516121095.html"&gt; Create an OS-independent file name &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
   </div>
   <div class="bottom">

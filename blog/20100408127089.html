@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>File::Copy - ファイルの移動とコピー - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="File::Copyモジュールを使用すると、ファイルを移動したり、コピーしたりすることができます。">
+<title> File :: Copy --Move and copy files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  File :: Copy  module allows you to move and copy files.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="File::Copy - ファイルの移動とコピー - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="File::Copyモジュールを使用すると、ファイルを移動したり、コピーしたりすることができます。" />
+<meta name="twitter:title" content=" File :: Copy --Move and copy files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  File :: Copy  module allows you to move and copy files." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100408127089.html">File::Copy - ファイルの移動とコピー</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100408127089.html"> File :: Copy --Move and copy files </a></ h2>
 <p>
-  <strong>File::Copy</strong>モジュールを使用すると、ファイルを移動したり、コピーしたりすることができます。
+  The <strong> File :: Copy </ strong> module allows you to move and copy files.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,53 +97,54 @@
 
 
 <pre>
-# モジュールの読み込みと関数のインポート
-use File::Copy qw/copy move/;
-</pre>
-<p>
-  copy関数でファイルをコピー、move関数でファイルを移動することができます。rename関数というファイルを移動する標準関数がありますが、ファイルシステムを隔てた移動に対応していません。ファイルを移動する場合はFile::Copyのmoveを使用するのがよいでしょう。またmoveはディレクトリを移動するときも利用することができます。
-</p>
-<pre>
-# ファイルのコピー
-copy($from, $to);
+#Loading modules and importing functions
+use File :: Copy qw / copy move /;
+&lt;/ pre&gt;
 
-# ファイルの移動
-move($from, $to)
-</pre>
-<p>
-  ファイルをコピーするサンプルです。ファイルのコピーに失敗(※1)したときのためにエラー処理を行います。エラーメッセージにはOSのエラーメッセージ「$!」を含めるようにします。
-</p>
-<pre>
-# ファイルのコピー
-my $from = 'xxx';
-my $to   = 'yyy';
+You can copy the file with the copy function and move the file with the move function. There is a standard function to move files called the rename function, but it does not support moving across file systems. If you want to move files, it's a good idea to use File :: Copy's move. Move can also be used when moving directories.
 
-copy($from, $to)
-  or die "Can't copy \"$from\" to \"$to\": $!";
-</pre>
-<p>
-  ファイルを移動するサンプルです。ファイルの移動に失敗したときのためにエラー処理を行います。エラーメッセージにはOSのエラーメッセージ「$!」を含めるようにします。
-</p>
-<pre>
-# ファイルの移動
-my $from = 'xxx';
-my $to   = 'yyy';
+&lt;pre&gt;
+#File copy
+copy ($ from, $ to);
 
-move($from, $to)
-  or die "Can't move \"$from\" to \"$to\": $!";
-</pre>
-<p>
-  ファイルが存在しなかった場合や、送り先のディレクトリにパーミッションの書き込み権限がない場合などにファイルコピーは失敗します。
-</p>
-<h3>関連記事</h3>
-<ul>
-  <li>
-    <a href="/blog/20080521121142.html">ファイルをコピーする</a>
-  </li>
-  <li>
-    <a href="/blog/20080522121142.html">ファイルを移動する(ファイル名を変更する)</a>
-  </li>
-</ul>
+#Move file
+move ($ from, $ to)
+&lt;/ pre&gt;
+
+This is a sample to copy a file. Error processing is performed in case the file copy fails (* 1). Make sure to include the OS error message "$!" In the error message.
+
+&lt;pre&gt;
+#File copy
+my $ from ='xxx';
+my $ to ='yyy';
+
+copy ($ from, $ to)
+  or die "Can't copy \" $ from \ "to \" $ to \ ": $!";
+&lt;/ pre&gt;
+
+This is a sample to move files. Performs error handling in case the file move fails. Make sure to include the OS error message "$!" In the error message.
+
+&lt;pre&gt;
+#Move file
+my $ from ='xxx';
+my $ to ='yyy';
+
+move ($ from, $ to)
+  or die "Can't move \" $ from \ "to \" $ to \ ": $!";
+&lt;/ pre&gt;
+
+The file copy will fail if the file does not exist, or if the destination directory does not have write permissions.
+
+&lt;h3&gt; Related articles &lt;/ h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080521121142.html"&gt; Copy the file &lt;/a&gt;
+  &lt;/ li&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080522121142.html"&gt; Move the file (rename the file) &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
   </div>
   <div class="bottom">

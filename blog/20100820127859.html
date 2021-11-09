@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ファイルテスト演算子 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ファイルテスト演算子を使ってファイルのさまざまな情報を調べることができます。">
+<title> File test operator  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  file test operator  to look up various information about a file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ファイルテスト演算子 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ファイルテスト演算子を使ってファイルのさまざまな情報を調べることができます。" />
+<meta name="twitter:title" content=" File test operator  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  file test operator  to look up various information about a file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> operator </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20100820127859.html">ファイルテスト演算子</a></h2>
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100820127859.html"> File test operator </a></ h2>
 <p>
-  <strong>ファイルテスト演算子</strong>を使ってファイルのさまざまな情報を調べることができます。
+  You can use the <strong> file test operator </ strong> to look up various information about a file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,263 +99,269 @@
 <table>
   <tr>
     <td>
-      *ファイルテスト演算子
-    </td>
+      * File test operator
+    </ td>
     <td>
-      *機能
-    </td>
-  </tr>
+      *function
+    </ td>
+  </ tr>
   <tr>
     <td>
       -e
-    </td>
+    </ td>
     <td>
-      <a href="/blog/20180518152707.html">ファイルが存在するかどうかの確認</a>
-    </td>
-  </tr>
+      <a href="/blog/20180518152707.html"> Check if the file exists </a>
+    </ td>
+  </ tr>
   <tr>
     <td>
       -f
-    </td>
+    </ td>
     <td>
-      <a href="/blog/20180518152707.html">通常ファイルが存在するかどうかの確認</a>
-    </td>
-  </tr>
+      <a href="/blog/20180518152707.html"> Check if the normal file exists </a>
+    </ td>
+  </ tr>
   <tr>
     <td>
       -d
-    </td>
+    </ td>
     <td>
-      <a href="/blog/20180517152707.html">ディレクトリが存在するかどうかの確認</a>
-    </td>
-  </tr>
+      <a href="/blog/20180517152707.html"> Check if the directory exists </a>
+    </ td>
+  </ tr>
   <tr>
     <td>
       -s
-    </td>
+    </ td>
     <td>
-      <a href="/blog/20180516152707.html">ファイルのサイズの取得</a>
-    </td>
-  </tr>
+      <a href="/blog/20180516152707.html"> Get file size </a>
+    </ td>
+  </ tr>
   <tr>
     <td>
       -M
-    </td>
+    </ td>
     <td>
-      <a href="/blog/20180512152707.html">最終更新から経過した日数の取得</a>
-    </td>
-  </tr>
+      <a href="/blog/20180512152707.html"> Get the number of days that have passed since the last update </a>
+    </ td>
+  </ tr>
   <tr>
     <td>
       -A
-    </td>
+    </ td>
     <td>
-      <a href="/blog/20180511152707.html">最終アクセスから経過した日数の取得</a>
-    </td>
-  </tr>
-</table>
-<h4>-e ファイルが存在するかどうかの確認</h4>
+      <a href="/blog/20180511152707.html"> Get the number of days that have passed since the last access </a>
+    </ td>
+  </ tr>
+</ table>
+<h4> -e Check if the file exists </ h4>
 <p>
-  「-e」でファイルが存在するかどうかを確認することができます。
+  You can check if the file exists with "-e".
 </p>
 <pre>
--e $file
-</pre>
-<p>
-  ファイルが存在すると真値を、存在しないと偽値を返します。ディレクトリやシンボリックリンクなどもファイルとして扱われます。Unixではディレクトリも特別なファイルとみなしファイルという概念でとらえるからです。
-</p>
-<p>
-  用語の解説のページにリンクを張っておきました。
-</p>
-<h4>-f 通常ファイルが存在するかどうかの確認</h4>
-<p>
-  「-f」で通常ファイルが存在するかどうかを確認することができます。
-</p>
-<pre>
--f $file
-</pre>
-<p>
-  通常ファイルが存在すると真値を、存在しないと偽値を返します。通常ファイルとはテキストファイルやバイナリファイルなどのデータを格納しているファイルのことです。
-</p>
-<h4>-d ディレクトリが存在するかどうか確認</h4>
-<p>
-  「-d」でディレクトリが存在するかどうかを確認することができます。
-</p>
-<pre>
--d $file
-</pre>
-<p>
-  ディレクトリが存在すると真値を、存在しないと偽値を返します。
-</p>
-<h4>-s ファイルサイズの取得</h4>
-<p>
-  「-s」でファイルサイズを取得できます。
-</p>
-<pre>
--s $file
-</pre>
-<p>
-  単位はバイトです。
-</p>
-<h4>-M 最終更新から経過した日数の取得</h4>
-<p>
-  「-M」で最終更新から経過した日数を取得することができます。
-</p>
-<pre>
--M $file
-</pre>
-<h4>-A 最終アクセスから経過した日数の取得</h4>
-<p>
-  「-A」で最終アクセスから経過した日数を取得することができます。
-</p>
-<pre>
--A $file
-</pre>
-<h3>サンプルプログラム</h3>
-<p>
-  ファイルテスト演算子のサンプルです。
-</p>
-<h4>通常ファイルの存在確認</h4>
-<p>
-  ファイル演算子 -f を使って通常ファイルの存在を確認するサンプルです。
-</p>
-<pre>
+-e $ file
+&lt;/ pre&gt;
+
+Returns a true value if the file exists, a false value if it does not exist. Directories and symbolic links are also treated as files. This is because on Unix, directories are also considered as special files and are considered as files.
+
+I have put up a link to the explanation page of terms.
+
+&lt;h4&gt; -f Check if the normal file exists &lt;/ h4&gt;
+
+You can check if the normal file exists with "-f".
+
+&lt;pre&gt;
+-f $ file
+&lt;/ pre&gt;
+
+Normal Returns a true value if the file exists, a false value if it does not exist. A normal file is a file that stores data such as a text file or a binary file.
+
+&lt;h4&gt; -d Check if directory exists &lt;/ h4&gt;
+
+You can check if the directory exists with "-d".
+
+&lt;pre&gt;
+-d $ file
+&lt;/ pre&gt;
+
+Returns a true value if the directory exists, a false value if it does not exist.
+
+&lt;h4&gt; -s Get file size &lt;/ h4&gt;
+
+You can get the file size with "-s".
+
+&lt;pre&gt;
+-s $ file
+&lt;/ pre&gt;
+
+The unit is bytes.
+
+&lt;h4&gt; -M Get the number of days that have passed since the last update &lt;/ h4&gt;
+
+You can get the number of days that have passed since the last update with "-M".
+
+&lt;pre&gt;
+-M $ file
+&lt;/ pre&gt;
+
+&lt;h4&gt; -A Get the number of days that have passed since the last access &lt;/ h4&gt;
+
+You can get the number of days that have passed since the last access with "-A".
+
+&lt;pre&gt;
+-A $ file
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample file test operator.
+
+&lt;h4&gt; Confirmation of existence of normal file &lt;/ h4&gt;
+
+This is a sample to check the existence of a normal file using the file operator -f.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 通常ファイルの存在を確認する。
-# -f ファイル名
+#Check the existence of normal files.
+# -f file name
 
-print "1: 通常ファイルの存在を確認する。 -f \n";
-my $file = 'a.txt';
-if (-f $file) {
-  print "'$file' は、存在します。\n";
+print "1: Check the existence of normal files. -f \ n";
+my $ file ='a.txt';
+if (-f $ file) {
+  print "'$ file' exists. \ N";
 }
-else { print "'$file' は、存在しません。\n" }
-</pre>
-<h4>ディレクトリの存在確認</h4>
-<p>
-  ファイル演算子 -d を使ってディレクトリの存在を確認するサンプルです。
-</p>
-<pre>
+else {print "'$ file' does not exist. \ N"}
+&lt;/ pre&gt;
+
+&lt;h4&gt; Directory existence confirmation &lt;/ h4&gt;
+
+This is a sample to check the existence of a directory using the file operator -d.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ディレクトリの存在を確認する。
-# -d ディレクトリ名
+#Check for the existence of the directory.
+# -d directory name
 
-print "1: ディレクトリの存在を確認する。 -d \n";
-my $dir = 'd';
-if (-d $dir) { 
-  print "'$dir' は、存在します。\n";
+print "1: Check the existence of the directory. -D \ n";
+my $ dir ='d';
+if (-d $ dir) {
+  print "'$ dir' exists. \ n";
 }
-else { print "'$dir' は、存在しません。\n" }
-</pre>
-<h4>ファイルの存在確認</h4>
-<p>
-  ファイルテスト演算子「-e」を使ってファイルの存在を確認するサンプルです。
-</p>
-<pre>
+else {print "'$ dir' does not exist. \ N"}
+&lt;/ pre&gt;
+
+&lt;h4&gt; File existence check &lt;/ h4&gt;
+
+This is a sample to check the existence of a file using the file test operator "-e".
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ファイルの存在を確認する。
-# -e ファイル名
-# -e を使えば、ディレクトリやファイルやシンボリックリンクなど
-# を区別せずに、それが、存在するかどうかを確認できます。
+#Check for the existence of the file.
+# -e file name
+# -e can be used for directories, files, symbolic links, etc.
+You can check if it exists without distinguishing the #.
 
-print "1: ファイルの存在を確認する。 -e \n";
-my $file_all_type = 'a';
+print "1: Check the existence of the file. -e \ n";
+my $ file_all_type ='a';
 
-if (-e $file_all_type) {
-  print "'$file_all_type' は、存在します。\n";
+if (-e $ file_all_type) {
+  print "'$ file_all_type' exists. \ N";
 }
-else { print "'$file_all_type' は、存在しません。\n" }
-</pre>
-<h4>ファイルサイズの取得</h4>
-<p>
-  ファイル演算子 -s を使ってファイルサイズを取得するサンプルです。
-</p>
-<pre>
+else {print "'$ file_all_type' does not exist. \ N"}
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get file size &lt;/ h4&gt;
+
+This is a sample to get the file size using the file operator -s.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ファイルのサイズを取得する。
-# -s ファイル名
-# 単位は、バイトです。
+# Get the size of the file.
+# -s filename
+# Units are bytes.
 
-print "1: ファイルのサイズを取得する。 -s\n";
-my $file = "a.txt";
-if (-f $file) {
-  my $file_size = -s $file;
-  print "$file のファイルサイズは、$file_size バイトです。\n\n";
+print "1: Get the size of the file. -S \ n";
+my $ file = "a.txt";
+if (-f $ file) {
+  my $ file_size = -s $ file;
+  print "The file size of $ file is $ file_size bytes. \ N \ n";
 }
-else { print "$file は、存在しませんでした。\n\n" }
-</pre>
-<pre>
+else {print "$ file did not exist. \ N \ n"}
+&lt;/ pre&gt;
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-print "2: ファイルサイズがあるバイトを超えたら出力をとめる。\n";
+print "2: Stop printing when the file size exceeds a certain byte. \ N";
 
-my $file = "output_$$.txt";
-if (-e $file) {
-  die "$file は存在します。\n";
+my $ file = "output_$$. txt";
+if (-e $ file) {
+  die "$ file exists. \ N";
 }
 
-open my $fh, "&gt;", $file
-  or die "File open error : $!";
+open my $ fh, "&gt;", $ file
+  or die "File open error: $!";
 
-while (-s $file &lt; 1_000_000) {
-  my $string = ('a' x 99) . "\n";
-  print $fh $string;
+while (-s $ file &lt;1_000_000) {
+  my $ string = ('a' x 99). "\ n";
+  print $ fh $ string;
 }
 
-print "出力後の $file のファイルサイズは、" . -s $file . "バイトです。\n";
+print "The file size of $ file after output is". -S $ file. "Bytes. \ N";
 
-close $fh;
-</pre>
-<p>
-  <a href="/blog/20100123126425.html">while文</a>を使って、ファイルのサイズが1,000,000バイトになるまで出力しています。
-</p>
-<h4>最終更新から経過した日数を取得</h4>
-<p>
-  ファイル演算子 -M を使って最終更新から経過した日数を取得するサンプルです。
-</p>
-<pre>
+close $ fh;
+&lt;/ pre&gt;
+
+I am using &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; to output until the file size is 1,000,000 bytes.
+
+&lt;h4&gt; Get the number of days that have passed since the last update &lt;/ h4&gt;
+
+This is a sample that uses the file operator -M to get the number of days that have passed since the last update.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 最終更新から経過した日数を取得する。
-# -M $file
+#Get the number of days that have passed since the last update.
+# -M $ file
 
-print "1: 最終更新から経過した日数を取得する。\n";
-my $file = "a.txt";
-if (-e $file) {
-  my $from_last_modify = -M $file;
-  print "最終更新から $from_last_modify 日経過しています。\n";
+print "1: Get the number of days that have passed since the last update. \ N";
+my $ file = "a.txt";
+if (-e $ file) {
+  my $ from_last_modify = -M $ file;
+  print "$ from_last_modify days have passed since the last update. \ N";
 }
-else { print "$file は存在しません。\n" }
-</pre>
-<h4>最終アクセスから経過した日数を取得</h4>
-<p>
-  ファイル演算子 -A を使って最終アクセスから経過した日数を取得するサンプルです。
-</p>
-<pre>
+else {print "$ file does not exist. \ N"}
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get the number of days that have passed since the last access &lt;/ h4&gt;
+
+This is a sample that uses the file operator -A to get the number of days that have passed since the last access.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 最終アクセス(読み取り)から経過した日数を取得する。
-# -A $file
+# Get the number of days that have passed since the last access (read).
+# -A $ file
 
-print "1: 最終アクセスから経過した日数を取得する。\n";
-my $file = "a.txt";
-if (-e $file) {
-  my $from_last_access = -A $file;
-  print "最終アクセスから $from_last_access 日経過しています。\n";
+print "1: Get the number of days that have passed since the last access. \ N";
+my $ file = "a.txt";
+if (-e $ file) {
+  my $ from_last_access = -A $ file;
+  print "$ from_last_access days have passed since the last access. \ N";
 }
-else { print "$file は存在しません。\n" }
-</pre>
+else {print "$ file does not exist. \ N"}
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

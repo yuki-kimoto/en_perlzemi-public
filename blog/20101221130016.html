@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Windows上でMojoliciousの開発を始めて、さくらのレンタルサーバーで公開するまでの手順 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Windows上でMojoliciousというWebフレームワークを使ってWebアプリケーションの開発を行い、さくらのレンタルサーバーのライトプランで公開するまでの手順を書きたいと思います。ライトプランは１ヶ月あたり125円なので気軽にWebフレームワークを試してみることができます。現代的なWebフレームワークを使って、気軽にWebアプリケーションを作成できるのはPerlの良いところですね。">
+<title> Steps from starting Mojolicious development on Windows to publishing it on Sakura's rental server  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Develop a web application using a web framework called Mojolicious on Windows,  Sakura Rental Server Lite I would like to write the procedure until it is published in the plan . The light plan is 125 yen per month, so you can feel free to try out the web framework. The nice thing about Perl is that you can easily create web applications using modern web frameworks.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Windows上でMojoliciousの開発を始めて、さくらのレンタルサーバーで公開するまでの手順 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Windows上でMojoliciousというWebフレームワークを使ってWebアプリケーションの開発を行い、さくらのレンタルサーバーのライトプランで公開するまでの手順を書きたいと思います。ライトプランは１ヶ月あたり125円なので気軽にWebフレームワークを試してみることができます。現代的なWebフレームワークを使って、気軽にWebアプリケーションを作成できるのはPerlの良いところですね。" />
+<meta name="twitter:title" content=" Steps from starting Mojolicious development on Windows to publishing it on Sakura's rental server  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Develop a web application using a web framework called Mojolicious on Windows,  Sakura Rental Server Lite I would like to write the procedure until it is published in the plan . The light plan is 125 yen per month, so you can feel free to try out the web framework. The nice thing about Perl is that you can easily create web applications using modern web frameworks." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,23 +59,23 @@
     
   </div>
   <div class="middle">
-    <script>location.href="https://mojolicious.perlzemi.com/blog/20101221130016.html";</script>
-<ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <script> location.href = "https://mojolicious.perlzemi.com/blog/20101221130016.html"; </ script>
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop="name">Mojolicious</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20101221130016.html">Windows上でMojoliciousの開発を始めて、さくらのレンタルサーバーで公開するまでの手順</a></h2>
+      <span itemprop = "name"> Mojolicious </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20101221130016.html"> Steps from starting Mojolicious development on Windows to publishing it on Sakura's rental server </a></ h2>
 <p>
-  Windows上でMojoliciousというWebフレームワークを使ってWebアプリケーションの開発を行い、<a href="http://www.sakura.ne.jp/rentalserver/lite/index.html">さくらのレンタルサーバーのライトプラン</a>で公開するまでの手順を書きたいと思います。ライトプランは１ヶ月あたり125円なので気軽にWebフレームワークを試してみることができます。現代的なWebフレームワークを使って、気軽にWebアプリケーションを作成できるのはPerlの良いところですね。
+  Develop a web application using a web framework called Mojolicious on Windows, <a href="http://www.sakura.ne.jp/rentalserver/lite/index.html"> Sakura Rental Server Lite I would like to write the procedure until it is published in the plan </a>. The light plan is 125 yen per month, so you can feel free to try out the web framework. The nice thing about Perl is that you can easily create web applications using modern web frameworks.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -94,189 +94,184 @@
 
 
 <p>
-  またSQLiteというデータベースも使ってみましょう。
+  Let's also use a database called SQLite.
 </p>
-<h3>環境構築</h3>
+<h3> Environment construction </ h3>
 <p>
-  ActivePerlにはDBD::SQLiteとDBIが含まれていますから、データベース関連のモジュールをインストールする必要はありません。またさくらのレンタルサーバーでもSQLiteが最初から利用できますので、こちらも何の準備もする必要はありません。
-</p>
-<p>
-  行うことはMojoliciousをダウンロードすることだけです。今回は1.47のバージョンで試してみることにします。
+  ActivePerl includes DBD :: SQLite and DBI, so you don't need to install any database related modules. Also, SQLite can be used from the beginning on Sakura's rental server, so you do not need to make any preparations here either.
 </p>
 <p>
-  以下のページからMojoliciousをダウンロードしてください。
+  All you have to do is download Mojolicious. This time I will try it with the 1.47 version.
+</p>
+<p>
+  Download Mojolicious from the following page.
 </p>
 <blockquote>
 <p>
-  <a href="https://github.com/kraih/mojo/commits/v1.47">Mojolicious-1.47</a>
+  <a href="https://github.com/kraih/mojo/commits/v1.47"> Mojolicious-1.47 </a>
 </p>
 <p>
-  <a href="https://github.com/kraih/mojo/zipball/v1.47">Download</a>
+  <a href="https://github.com/kraih/mojo/zipball/v1.47"> Download </a>
 </p>
-</blockquote>
+</ blockquote>
 <p>
-  ダウンロードしたファイルは圧縮されていますので、開発を行うディレクトリに移動して展開してください。今回は「C:\labo」に移動して展開してみましょう。「右クリック」→「すべて展開」で展開することができます。
+  The downloaded file is compressed, so move it to the development directory and extract it. This time, let's move to "C: \ labo" and expand it. You can expand it by right-clicking → Expand All.
 </p>
 <p>
-  「C:\labo\kraih-mojo-v1.47-コミット番号」というディレクトリ以下に以下のファイルがあるはずです。
+  You should find the following files under the directory "C: \ labo \ kraih-mojo-v1.47-commit number".
 </p>
 <pre>
-kraih-mojo-コミット番号
-</pre>
-<p>
-  このディレクトリ名を今から作成するアプリケーション名に変更しましょう。myappとします。このディレクトリの中にはMojoliciousのすべての機能が含まれており、利用することができます。
-</p>
-<pre>
+kraih-mojo-commit number
+&lt;/ pre&gt;
+
+Let's change this directory name to the name of the application we are about to create. Let's say myapp. This directory contains all the features of Mojolicious and is available to you.
+
+&lt;pre&gt;
 myapp
-</pre>
-<h3>スクリプトの作成</h3>
-<p>
-  このディレクトリに中に入って「app.cgi」というファイルを作成してください。
-</p>
-<pre>
-myapp - app.cgi
-</pre>
-<p>
-  次のスクリプトを作成してみましょう。ひとこと掲示板です。Mojoliciousのフレームワークの中のMojolicious::Liteというモジュールを使って、掲示板を作成しています。このスクリプトはUTF-8で保存してください。
-</p>
-<pre>
-#!/usr/bin/perl
+&lt;/ pre&gt;
 
-# Mojoliciousを読み込むためのライブラリのパスの設定
+&lt;h3&gt; Script creation &lt;/ h3&gt;
+
+Go inside this directory and create a file called "app.cgi".
+
+&lt;pre&gt;
+myapp --app.cgi
+&lt;/ pre&gt;
+
+Let's create the following script. A word is a bulletin board. I am creating a bulletin board using a module called Mojolicious :: Lite in the Mojolicious framework. Save this script in UTF-8.
+
+&lt;pre&gt;
+#! / usr / bin / perl
+
+Setting the library path to load #Mojolicious
 use FindBin;
-use lib "$FindBin::Bin/lib";
+use lib "$ FindBin :: Bin / lib";
 
-# Mojolicious::Liteの利用
-use Mojolicious::Lite;
+Using #Mojolicious :: Lite
+use Mojolicious :: Lite;
 
 use utf8;
 
-use DBD::SQLite;
-my $sqlite_unicode
-  = $DBD::SQLite::VERSION &gt; 1.26
-  ? 'sqlite_unicode'
-  : 'unicode';
+use DBD :: SQLite;
+my $ sqlite_unicode
+  = $ DBD :: SQLite :: VERSION&gt; 1.26
+  ?'sqlite_unicode'
+  :'unicode';
 
-# データベースのためのモジュール
+#Module for database
 use DBI;
 
-# データベースへの接続
-my $database = app-&gt;home-&gt;rel_file('app.db');
-my $dbh = DBI-&gt;connect(
-  "dbi:SQLite:dbname=$database",
+#Connect to database
+my $ database = app-&gt; home-&gt; rel_file ('app.db');
+my $ dbh = DBI-&gt; connect (
+  "dbi: SQLite: dbname = $ database",
   undef,
   undef,
   {RaiseError =&gt; 1, PrintError =&gt; 0, AutoCommit =&gt; 1,
-   $sqlite_unicode =&gt; 1}
+   $ sqlite_unicode =&gt; 1}
 );
 
-# テーブルの作成
-$dbh-&gt;do(&lt;&lt;"EOS");
-create table if not exists entry(
+#Create table
+$ dbh-&gt; do (&lt;&lt; "EOS");
+create table if not exists entry (
   id INTEGER PRIMARY KEY,
   message
 );
 EOS
 
-# トップページ
-get '/' =&gt; sub {
-  my $self = shift;
+# top page
+get'/' =&gt; sub {
+  my $ self = shift;
   
-  my $sth = $dbh-&gt;prepare(&lt;&lt;"EOS");
+  my $ sth = $ dbh-&gt; prepare (&lt;&lt; "EOS");
 select message from entry order by id desc;
 EOS
 
-  $sth-&gt;execute;
+  $ sth-&gt; execute;
   
-  my $rows = [];
-  while (my $row = $sth-&gt;fetchrow_hashref) {
-    push @$rows, $row;
+  my $ rows = [];
+  while (my $ row = $ sth-&gt; fetchrow_hashref) {
+    push @ $ rows, $ row;
   }
     
-  $self-&gt;render(rows =&gt; $rows);
-} =&gt; 'index';
+  $ self-&gt; render (rows =&gt; $ rows);
+} =&gt;'index';
 
-# データの登録
-post '/register' =&gt; sub {
-  my $self = shift;
+#Data registration
+post'/ register' =&gt; sub {
+  my $ self = shift;
   
-  my $param = $self-&gt;req-&gt;params-&gt;to_hash;
-  my $message = $param-&gt;{message} || '';
+  my $ param = $ self-&gt; req-&gt; params-&gt; to_hash;
+  my $ message = $ param-&gt; {message} ||'';
   
-  if ($message) {
-    my $sth = $dbh-&gt;prepare(&lt;&lt;"EOS");
-insert into entry (message) values (?);
+  if ($ message) {
+    my $ sth = $ dbh-&gt; prepare (&lt;&lt; "EOS");
+insert into entry (message) values ​​(?);
 EOS
-    $sth-&gt;execute($message);
+    $ sth-&gt; execute ($ message);
   }
     
-    $self-&gt;redirect_to('/');
+    $ self-&gt; redirect_to ('/');
 };
 
-# アプリケーションの開始
-app-&gt;start;
+#Start application
+app-&gt; start;
 
 __DATA__
 
 @@ index.html.ep
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta http-equiv="Content-type" content="text/html; charset=UTF-8"&gt;
-    &lt;title&gt;ひとことだけメッセージ掲示板&lt;/title&gt;
-  &lt;/head&gt;
+    &lt;meta http-equiv = "Content-type" content = "text / html; charset = UTF-8"&gt;
+    &lt;title&gt; Message board with just one word &lt;/ title&gt;
+  &lt;/ head&gt;
   
-  &lt;h1&gt;ひとことだけメッセージ掲示板&lt;/h1&gt;
+  &lt;h1&gt; Just one word message board &lt;/ h1&gt;
   &lt;body&gt;
-    &lt;form method="post" action="&lt;%= url_for '/register' %&gt;" &gt;
-      &lt;div&gt;メッセージ &lt;input type="text" name="message"&gt;&lt;/div&gt;
-      &lt;div&gt;&lt;input type="submit" value="送信" &gt;&lt;/div&gt;
-    &lt;/form&gt;
+    &lt;form method = "post" action = "&lt;% = url_for'/ register'%&gt;"&gt;
+      &lt;div&gt; message &lt;input type = "text" name = "message"&gt; &lt;/ div&gt;
+      &lt;div&gt; &lt;input type = "submit" value = "submit"&gt; &lt;/ div&gt;
+    &lt;/ form&gt;
     &lt;div&gt;
-      % foreach my $row (@$rows) {
-        &lt;div&gt;&lt;%= $row-&gt;{message} %&gt;&lt;/div&gt;
+      % foreach my $ row (@ $ rows) {
+        &lt;div&gt; &lt;% = $ row-&gt; {message}%&gt; &lt;/ div&gt;
         &lt;hr&gt;
-      % }
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
-<p>
-  (参考)<a href="/blog/20100524127696.html">FindBin</a>
-</p>
-<p>
-  DBD::SQLiteのバージョンによって推奨されるUNICODEのオプションが異なるので選択的に使い分けています。
-</p>
-<h3>ファイルのアップロード</h3>
-<p>
-  FFFTPの使いかたについては以下を参考にしてください。
-</p>
-<blockquote>
-<p>
-  <a href="http://support.sakura.ad.jp/support/manual/rs/set_f_winffftp.shtml">FFFTP(さくらインターネット)</a>
-</p>
-</blockquote>
-<p>
-  myappディレクトリ以下をそのまま以下のディレクトリにアップロードします。
-</p>
-<pre>
-/home/ユーザー名/www
-</pre>
-<p>
-  注意点として「app.cgi」はアスキーモードで転送する必要があるということです。FFFTPのデフォルトでは「.cgi」で終わるファイルはアスキーモードで転送されると思うのでおそらくだいじょうでしょう。
-</p>
-<p>
-  次に「app.cgi」だけパーミッションを変更する必要があります。「右クリック」→「属性」から755にパーミッションを変更してください。
-</p>
-<h3>Webからのアクセス</h3>
-<p>
-  これで以下のURLからブラウザで見ることができるはずです。
-</p>
-<pre>
-http://ユーザー名.sakura.ne.jp/myapp/app.cgi
-</pre>
-<p>
-  お疲れ様でした。
-</p>
+      %}
+    &lt;/ div&gt;
+  &lt;/ body&gt;
+&lt;/ html&gt;
+&lt;/ pre&gt;
+
+(Reference) &lt;a href="/blog/20100524127696.html"&gt; FindBin &lt;/a&gt;
+
+Since the recommended UNICODE option differs depending on the version of DBD :: SQLite, it is selected and used properly.
+
+&lt;h3&gt; File upload &lt;/ h3&gt;
+
+Please refer to the following for how to use FFFTP.
+
+&lt;blockquote&gt;
+&lt;a href="http://support.sakura.ad.jp/support/manual/rs/set_f_winffftp.shtml"&gt; FFFTP (Sakura Internet) &lt;/a&gt;
+&lt;/ blockquote&gt;
+
+Upload the files under the myapp directory to the following directories as they are.
+
+&lt;pre&gt;
+/ home / username / www
+&lt;/ pre&gt;
+
+Please note that "app.cgi" needs to be transferred in ASCII mode. By default, FFFTP will transfer files ending in ".cgi" in ASCII mode, so it's probably okay.
+
+Next, you need to change the permissions only for "app.cgi". Change the permission from "Right click"-&gt; "Attributes" to 755.
+
+&lt;h3&gt; Access from the Web &lt;/ h3&gt;
+
+You should now be able to see it in your browser from the URL below.
+&lt;pre&gt;
+http://username.sakura.ne.jp/myapp/app.cgi
+&lt;/ pre&gt;
+
+good job for today.
 
   </div>
   <div class="bottom">

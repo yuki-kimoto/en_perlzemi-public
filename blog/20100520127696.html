@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Net::Ping::External - OSに依存しない形でpingコマンドを実行する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Net::Ping::ExternalモジュールはOSに依存しない形でpingコマンドを実行するためのモジュールです。">
+<title> Net :: Ping :: External --Execute the ping command in an OS-independent manner  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  Net :: Ping :: External  module is a module for executing ping commands in an OS-independent manner.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Net::Ping::External - OSに依存しない形でpingコマンドを実行する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Net::Ping::ExternalモジュールはOSに依存しない形でpingコマンドを実行するためのモジュールです。" />
+<meta name="twitter:title" content=" Net :: Ping :: External --Execute the ping command in an OS-independent manner  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  Net :: Ping :: External  module is a module for executing ping commands in an OS-independent manner." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100520127696.html">Net::Ping::External - OSに依存しない形でpingコマンドを実行する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100520127696.html"> Net :: Ping :: External --Execute the ping command in an OS-independent manner </a></ h2>
 <p>
-  <strong>Net::Ping::External</strong>モジュールはOSに依存しない形でpingコマンドを実行するためのモジュールです。
+  The <strong> Net :: Ping :: External </ strong> module is a module for executing ping commands in an OS-independent manner.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,30 +97,29 @@
 
 
 <pre>
-# モジュールの読み込みと関数のインポート
-use Net::Ping::External 'ping';
-</pre>
-<p>
-  pingコマンドを実行するには<strong>ping</strong>関数を使用します。hostにはホスト名(ドメイン名)のほかIPアドレスを指定することもできます。
-</p>
-<pre>
-# pingコマンドを実行
-my $alive = ping(host =&gt; 'localhost');
-</pre>
-<p>
-  タイムアウト値(秒)を指定することもできます。
-</p>
-<pre>
-# タイムアウト値の指定
-my $alive = ping(host =&gt; 'localhost', timeout =&gt; 3);
-</pre>
-<h3>Net::Ping::Externalに関するFAQ</h3>
-<p>
-  Q. Net::Ping::Externalの<a href="/blog/20100519127696.html">Net::Ping</a>モジュールに対する利点は何ですか。
-</p>
-<p>
-  A. Net::Pingモジュールのnewの引数にicmpを指定すれば、pingコマンドと同じようにICMPを利用してリモートホストの生存確認を行うことができます。けれども、これにはroot権限が必要になります。これが不便に感じる場合はNet::Ping::Externalモジュールを使用するのがよいと思います。
-</p>
+#Loading modules and importing functions
+use Net :: Ping :: External'ping';
+&lt;/ pre&gt;
+
+Use the &lt;strong&gt; ping &lt;/ strong&gt; function to execute the ping command. In addition to the host name (domain name), you can also specify an IP address for host.
+
+&lt;pre&gt;
+Execute #ping command
+my $ alive = ping (host =&gt;'localhost');
+&lt;/ pre&gt;
+
+You can also specify a timeout value (seconds).
+
+&lt;pre&gt;
+# Specify timeout value
+my $ alive = ping (host =&gt;'localhost', timeout =&gt; 3);
+&lt;/ pre&gt;
+
+&lt;h3&gt; FAQ about Net :: Ping :: External &lt;/ h3&gt;
+
+Q. What are the benefits of the Net :: Ping :: External &lt;a href="/blog/20100519127696.html"&gt; Net :: Ping &lt;/a&gt; module?
+
+A. If you specify icmp as the new argument of the Net :: Ping module, you can check the existence of the remote host using ICMP in the same way as the ping command. However, this requires root privileges. If this feels inconvenient, you may want to use the Net :: Ping :: External module.
 
   </div>
   <div class="bottom">

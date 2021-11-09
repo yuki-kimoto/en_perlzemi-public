@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Devel::NYTProf - 見やすいプロファイラ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Devel::NYTProfはプログラムの中のどの処理に時間がかかっているかを調べるツールです。このようなツールをでプロファイラといいます。解析結果をHTMLファイルに変換してくれるので、とても見やすいです。">
+<title> Devel :: NYTProf --Easy-to-read profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Devel :: NYTProf  is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Devel::NYTProf - 見やすいプロファイラ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Devel::NYTProfはプログラムの中のどの処理に時間がかかっているかを調べるツールです。このようなツールをでプロファイラといいます。解析結果をHTMLファイルに変換してくれるので、とても見やすいです。" />
+<meta name="twitter:title" content=" Devel :: NYTProf --Easy-to-read profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Devel :: NYTProf  is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100507127089.html">Devel::NYTProf - 見やすいプロファイラ</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100507127089.html"> Devel :: NYTProf --Easy-to-read profiler </a></ h2>
 <p>
-  <strong>Devel::NYTProf</strong>はプログラムの中のどの処理に時間がかかっているかを調べるツールです。このようなツールをでプロファイラといいます。解析結果をHTMLファイルに変換してくれるので、とても見やすいです。
+  <strong> Devel :: NYTProf </ strong> is a tool to find out which process in your program is taking a long time. Such a tool is called a profiler. It is very easy to see because it converts the analysis result into an HTML file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,53 +97,50 @@
 
 
 <p>
-  プロファイルを作成するのは簡単です。次のコマンドを実行するとカレントディレクトリに「nytprof.out」というプロファイルを情報を出力したファイルが作成されます。
+  Creating a profile is easy. When the following command is executed, a file that outputs the profile information "nytprof.out" is created in the current directory.
 </p>
 <pre>
-# プロファイル情報の作成
-perl -d:NYTProf target.pl
-</pre>
-<p>
-  「nytprof.out」をHTMLファイルに変換するにはnytprofhtmlコマンドを実行します。
-</p>
-<pre>
-# プロファイル情報をHTMLファイルに変換する
+#Create profile information
+perl -d: NYTProf target.pl
+&lt;/ pre&gt;
+
+To convert "nytprof.out" to an HTML file, run the nytprof html command.
+
+&lt;pre&gt;
+#Convert profile information to HTML file
 nytprofhtml
-</pre>
-<p>
-  カレントディレクトリの「nytprof/」ディレクトリの中にHTMLファイルが作成されます。「nytprof/index.html」を開くとプロファイル情報を見ることができます。
-</p>
-<p>
-  [f:id:perlcodesample:20100612223218p:image]
-</p>
-<p>
-  上記の結果はスクリプトを実行した場合の私の環境での結果です。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+An HTML file will be created in the "nytprof /" directory of the current directory. You can see the profile information by opening "nytprof / index.html".
+
+[f: id: perlcodesample: 20100612223218p: image]
+
+The above result is the result in my environment when I run the script.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-func1();
-func2();
-func2();
+func1 ();
+func2 ();
+func2 ();
 
 sub func1 {
-  my $i = 0;
-  while ($i &lt; 1000000) {
-    $i++;
+  my $ i = 0;
+  while ($ i &lt;1000000) {
+    $ i ++;
   }
 }
 
 sub func2 {
-  my $i = 0;
-  while ($i &lt; 2000000) {
-    $i++;
+  my $ i = 0;
+  while ($ i &lt;2000000) {
+    $ i ++;
   }
 }
-</pre>
-<p>
-  <a href="/blog/20100123126425.html">while文</a>を使って数値をインクリメントしています。
-</p>
+&lt;/ pre&gt;
+
+The number is incremented using &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
 
   </div>
   <div class="bottom">

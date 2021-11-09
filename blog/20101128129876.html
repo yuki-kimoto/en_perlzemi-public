@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Mojoliciousで自由に「URL」を生成するテクニック - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="url_forを使うと、URLを指定することができます。MojoliciousはCGIや組み込みWebサーバーなどの複数の環境で実行することができますがurl_forメソッドでURLを記述すると、どの環境でも実行できるURLを記述することができます。">
+<title> Technique to freely generate "URL" with Mojolicious  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can specify the URL using  url_for . Mojolicious can be executed in multiple environments such as CGI and embedded web server, but if you describe the URL with the url_for method, you can describe the URL that can be executed in any environment.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Mojoliciousで自由に「URL」を生成するテクニック - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="url_forを使うと、URLを指定することができます。MojoliciousはCGIや組み込みWebサーバーなどの複数の環境で実行することができますがurl_forメソッドでURLを記述すると、どの環境でも実行できるURLを記述することができます。" />
+<meta name="twitter:title" content=" Technique to freely generate "URL" with Mojolicious  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can specify the URL using  url_for . Mojolicious can be executed in multiple environments such as CGI and embedded web server, but if you describe the URL with the url_for method, you can describe the URL that can be executed in any environment." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <script>location.href="https://mojolicious.perlzemi.com/blog/20101128129876.html";</script>
-<ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <script> location.href = "https://mojolicious.perlzemi.com/blog/20101128129876.html"; </ script>
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span>
+      <span itemprop = "name"> Perl </ span>
     </a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop="name">Mojolicious</span>
+      <span itemprop = "name"> Mojolicious </ span>
     </a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20101128129876.html">Mojoliciousで自由に「URL」を生成するテクニック</a></h2>
-<h3>URLを作成するための基本</h3>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20101128129876.html"> Technique to freely generate "URL" with Mojolicious </a></ h2>
+<h3> Basics for creating URLs </ h3>
 <p>
-  <strong>url_for</strong>を使うと、URLを指定することができます。MojoliciousはCGIや組み込みWebサーバーなどの複数の環境で実行することができますがurl_forメソッドでURLを記述すると、どの環境でも実行できるURLを記述することができます。
+  You can specify the URL using <strong> url_for </ strong>. Mojolicious can be executed in multiple environments such as CGI and embedded web server, but if you describe the URL with the url_for method, you can describe the URL that can be executed in any environment.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,270 +97,272 @@
 
 
 <pre>
-url_for('/user/register');
-</pre>
-<p>
-  またルート名を渡すと何ができるかというと、URLに含まれるパラメータを復元できます。す。
-</p>
-<pre>
-get '/foo/bar/:id'; 
+url_for ('/ user / register');
+&lt;/ pre&gt;
 
-url_for('foobarid', id =&gt; 3); 
-</pre>
-<h3>Mojoliciousでクエリ文字列を含むURLを生成する</h3>
-<p>
-  Mojoliciousでクエリ文字列を含むURLを生成するには<strong>query</strong>メソッドを使用します。
-</p>
-<pre>
-&lt;%= url_for('/path')-&gt;query(foo =&gt; 'a', bar =&gt; 'b') %&gt;;
-</pre>
-<h3>リクエストURLを復元する</h3>
-<p>
-  リクエストURLを復元するにはurl_forメソッドの引数に何も指定しないか、<strong>current</strong>を指定します。
-</p>
-<pre>
-% my $url = url_for;
-% my $url = url_for('current');
-</pre>
-<p>
-  「:id」などの記述でキャプチャされたURLも正しく復元されます。
-</p>
-<pre>
-/entry/:id
-</pre>
-<p>
-  ただしクエリ文字列の部分は自動的に復元されないので、復元したい場合は<strong>url_with</strong>を使う必要があります。
-</p>
-<pre>
-% my $url = url_with;
-</pre>
-<pre>
-% $url-&gt;query([name =&gt; 'Ken', age =&gt; '19']);
-</pre>
-<p>
-  このようにすると、検索条件に対して、さらに絞り込んだ検索を簡単に記述することができます。
-</p>
-<p>
-  またqueryメソッドが値を設定する場合は、自身のMojo::URLオブジェクトを返却することを覚えておけば、次のように一行で記述することもできます。
-</p>
-<pre>
-%= url_with-&gt;query([name =&gt; 'Ken', age =&gt; '19']);
-</pre>
-<h3>クエリ文字列の取り扱い</h3>
-<p>
-  クエリ文字列を解析したい場合はMojo::Parametersのparseメソッドを使用します。
-</p>
-<pre>
-$params-&gt;parse('foo=b%3Bar&amp;baz=23');
-</pre>
-<p>
-  一般的な利用方法としてはurl_forメソッドでMojo::URLオブジェクトを生成した後に、Mojo::URLのqueryメソッドでMojo::Parametersオブジェクトを取得してからparseメソッドを使うことが多いでしょう。
-</p>
-<p>
-  次のようにするとURLにクエリ文字列を設定することができます。
-</p>
-<pre>
-# テンプレートの中
-% my $url = url_for('/search');
-% $url-&gt;query-&gt;parse('title=perl&amp;name=ken');
-</pre>
-<h4>クエリ文字列を置き換える</h4>
-<p>
-  クエリ文字列を置き換えるには次のようにリスト形式で渡します。
-</p>
-<pre>
-$url-&gt;query(name =&gt; 'taro', price =&gt; 1900);
-</pre>
-<p>
-  上記の例の場合は以下のように置き換わります。
-</p>
-<pre>
-# 前
-title=perl&amp;name=ken
+Also, what you can do by passing the root name is that you can restore the parameters contained in the URL. vinegar.
 
-# 後
-name=taro&amp;price=1900
-</pre>
-<h4>クエリ文字列のマージ</h4>
-<p>
-  クエリ文字列をマージするには配列のリファレンスとして渡します。
-</p>
-<pre>
-$url-&gt;query([name =&gt; 'taro', price =&gt; 1900]);
-</pre>
-<p>
-  次のようにマージされます。値が同じものは置き換えられます。
-</p>
-<pre>
-# 前
-title=perl&amp;name=ken
+&lt;pre&gt;
+get'/ foo / bar /: id';
 
-# 後
-title=perl&amp;name=taro&amp;price=1900
-</pre>
-<h4>クエリ文字列の追加</h4>
-<p>
-  クエリ文字列を追加するにはハッシュのリファレンスとして渡します。
-</p>
-<pre>
-$url-&gt;query({name =&gt; 'taro', price =&gt; 1900});
-</pre>
-<p>
-  次のように追加されます。
-</p>
-<pre>
-# 前
-title=perl&amp;name=ken
+url_for ('foobarid', id =&gt; 3);
+&lt;/ pre&gt;
 
-# 後
-title=perl&amp;name=ken&amp;name=taro&amp;price=1900
-</pre>
-<h3>リクエストのクエリ文字列を受け継いだURLを生成する - url_with</h3>
-<p>
-  たとえば、検索条件は変更せずにページ番号だけを変更したいと思うときがよくあると思います。クエリ文字列の部分はそのまま使いたいのだけれど、一部の条件は変更したいという場合です。
-</p>
-<p>
-  このような場合は<strong>>url_with</strong>ヘルパーを使います。クエリ文字列を受け継ぐほかはurl_forと使い方は同じです。
-</p>
-<pre>
-%= url_with '/foo'
-</pre>
-<p>
-  次のように記述すると、ページ番号だけ変更できます。
-</p>
-<pre>
-%= url_with-&gt;query([page =&gt; 2])
-</pre>
-<h3>リバースプロキシを利用したときにホスト名、ポート番号、パスが正しく認識されるようにする</h3>
-<p>
-  ApacheなどのWebサーバーをリバースプロキシにして、Mojoliciousアプリケーションにディスパッチするときに、そのままの設定では絶対URLを出力するredirecto_toで正しくURLが出力されません。たとえば以下のような設定を行ったとします。
-</p>
-<pre>
-  &lt;VirtualHost *:80&gt;
+&lt;h3&gt; Mojolicious generates a URL containing a query string &lt;/ h3&gt;
+
+Use the &lt;strong&gt; query &lt;/ strong&gt; method to generate a URL containing a query string in Mojolicious.
+
+&lt;pre&gt;
+&lt;% = url_for ('/ path')-&gt; query (foo =&gt;'a', bar =&gt;'b')%&gt;;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Restore request URL &lt;/ h3&gt;
+
+To restore the request URL, specify nothing in the argument of the url_for method or specify &lt;strong&gt; current &lt;/ strong&gt;.
+
+&lt;pre&gt;
+% my $ url = url_for;
+% my $ url = url_for ('current');
+&lt;/ pre&gt;
+
+URLs captured with a description such as ": id" will also be restored correctly.
+
+&lt;pre&gt;
+/ entry /: id
+&lt;/ pre&gt;
+
+However, the part of the query string is not automatically restored, so if you want to restore it, you need to use &lt;strong&gt; url_with &lt;/ strong&gt;.
+
+&lt;pre&gt;
+% my $ url = url_with;
+&lt;/ pre&gt;
+
+&lt;pre&gt;
+% $ url-&gt; query ([name =&gt;'Ken', age =&gt; '19']);
+&lt;/ pre&gt;
+
+In this way, you can easily describe a narrower search for the search conditions.
+
+Also, if the query method sets the value, you can write it in one line as follows, remembering that it returns its own Mojo :: URL object.
+
+&lt;pre&gt;
+% = url_with-&gt; query ([name =&gt;'Ken', age =&gt; '19']);
+&lt;/ pre&gt;
+
+&lt;h3&gt; Handling query strings &lt;/ h3&gt;
+
+If you want to parse the query string, use the parse method of Mojo :: Parameters.
+
+&lt;pre&gt;
+$ params-&gt; parse ('foo = b% 3Bar &amp; baz = 23');
+&lt;/ pre&gt;
+
+As a general usage, after creating a Mojo :: URL object with the url_for method, you will often use the parse method after getting the Mojo :: Parameters object with the query method of the Mojo :: URL.
+
+You can set the query string in the URL as follows.
+
+&lt;pre&gt;
+#In the template
+% my $ url = url_for ('/ search');
+% $ url-&gt; query-&gt; parse ('title = perl &amp; name = ken');
+&lt;/ pre&gt;
+
+&lt;h4&gt; Replace query string &lt;/ h4&gt;
+
+To replace the query string, pass it in list format as follows:
+
+&lt;pre&gt;
+$ url-&gt; query (name =&gt;'taro', price =&gt; 1900);
+&lt;/ pre&gt;
+
+In the case of the above example, it is replaced as follows.
+
+&lt;pre&gt;
+# Previous
+title = perl &amp; name = ken
+
+# After
+name = taro &amp; price = 1900
+&lt;/ pre&gt;
+
+&lt;h4&gt; Merge query strings &lt;/ h4&gt;
+
+To merge the query strings, pass it as an array reference.
+&lt;pre&gt;
+$ url-&gt; query ([name =&gt;'taro', price =&gt; 1900]);
+&lt;/ pre&gt;
+
+It will be merged as follows: Those with the same value will be replaced.
+
+&lt;pre&gt;
+# Previous
+title = perl &amp; name = ken
+
+# After
+title = perl &amp; name = taro &amp; price = 1900
+&lt;/ pre&gt;
+
+&lt;h4&gt; Add query string &lt;/ h4&gt;
+
+Pass it as a hash reference to add the query string.
+&lt;pre&gt;
+$ url-&gt; query ({name =&gt;'taro', price =&gt; 1900});
+&lt;/ pre&gt;
+
+It will be added as follows.
+
+&lt;pre&gt;
+# Previous
+title = perl &amp; name = ken
+
+# After
+title = perl &amp; name = ken &amp; name = taro &amp; price = 1900
+&lt;/ pre&gt;
+
+&lt;h3&gt; Generate a URL that inherits the query string of the request --url_with &lt;/ h3&gt;
+
+For example, you often want to change only the page number without changing the search criteria. You want to use the query string part as it is, but you want to change some conditions.
+
+In such cases, use the &lt;strong &gt;&gt; url_with &lt;/ strong&gt; helper. The usage is the same as url_for except that it inherits the query string.
+
+&lt;pre&gt;
+% = url_with'/ foo'
+&lt;/ pre&gt;
+
+You can change only the page number by writing as follows.
+
+&lt;pre&gt;
+% = url_with-&gt; query ([page =&gt; 2])
+&lt;/ pre&gt;
+
+&lt;h3&gt; Make sure that the host name, port number, and path are correctly recognized when using a reverse proxy &lt;/ h3&gt;
+
+When using a web server such as Apache as a reverse proxy and dispatching it to a Mojolicious application, redirecto_to, which outputs an absolute URL with the same settings, does not output the URL correctly. For example, suppose you make the following settings.
+
+&lt;pre&gt;
+  &lt;VirtualHost *: 80&gt;
     ServerName perlcodesample.com
     &lt;Proxy *&gt;
-      Order deny,allow
+      Order deny, allow
       Allow from all
-    &lt;/Proxy&gt;
+    &lt;/ Proxy&gt;
     ProxyRequests Off
     ProxyPreserveHost On
 
-    ProxyPass /gitweblite http://localhost:10010/gitweblite keepalive=On
-    ProxyPassReverse /gitweblite http://localhost:10010/gitweblite
+    ProxyPass / gitweblite http: // localhost: 10010 / gitweblite keepalive = On
+    ProxyPassReverse / gitweblite http: // localhost: 10010 / gitweblite
 
     RequestHeader set X-Forwarded-Proto "https"
-  &lt;/VirtualHost&gt;
-</pre>
-<p>
-  注意点として、最近のLinuxはselinuxが有効になっているのですが、これが有効になっていると「Service Temporarily Unavailable」となって、Apacheからアプリケーションに接続ができません。設定を変えるかselinuxを無効にします。
-</p>
-<pre>
-# /etc/selinux/config
-SELINUX=disabled
-</pre>
-<h4>正しく認識させる方法</h4>
-<p>
-  以下のような記述を追加しましょう。
-</p>
-<pre>
-# アプリケーションクラス
+  &lt;/ VirtualHost&gt;
+&lt;/ pre&gt;
+
+Please note that recent Linux has selinux enabled, but when this is enabled it becomes "Service Temporarily Unavailable" and Apache cannot connect to the application. Change the setting or disable selinux.
+
+&lt;pre&gt;
+# / etc / selinux / config
+SELINUX = disabled
+&lt;/ pre&gt;
+
+&lt;h4&gt; How to recognize correctly &lt;/ h4&gt;
+
+Let's add the following description.
+
+&lt;pre&gt;
+#Application class
 sub starup {
-  my $self = shift;
+  my $ self = shift;
   
-  # Reverse proxy support
-  $ENV{MOJO_REVERSE_PROXY} = 1;
-  $self-&gt;hook('before_dispatch' =&gt; sub {
-    my $self = shift;
+  #Reverse proxy support
+  $ ENV {MOJO_REVERSE_PROXY} = 1;
+  $ self-&gt; hook ('before_dispatch' =&gt; sub {
+    my $ self = shift;
     
-    if ( $self-&gt;req-&gt;headers-&gt;header('X-Forwarded-Host')) {
-      my $prefix = shift @{$self-&gt;req-&gt;url-&gt;path-&gt;parts};
-      push @{$self-&gt;req-&gt;url-&gt;base-&gt;path-&gt;parts}, $prefix;
+    if ($ self-&gt; req-&gt; headers-&gt; header ('X-Forwarded-Host')) {
+      my $ prefix = shift @ {$ self-&gt; req-&gt; url-&gt; path-&gt; parts};
+      push @ {$ self-&gt; req-&gt; url-&gt; base-&gt; path-&gt; parts}, $ prefix;
     }
   });
 }
-</pre>
-<h4>MOJO_REVERSE_PROXYの設定</h4>
-<p>
-  環境変数のMOJO_REVERSE_PROXYを1に設定する必要があります。Mojolicious 5.0からは、X-Forwarded-Protoがあれば、自動的に認識されるようになっています。
-</p>
-<pre>
-$ENV{MOJO_REVERSE_PROXY} = 1;
-</pre>
-<p>
-  (これを設定しても、元のアプリには何の影響もでません。)
-</p>
-<h4>フックを使ってリバースプロキシ経由のときのベースパスを書き換える</h4>
-<p>
-  正しくディスパッチするために、/gitwebliteの部分が、ベースパスだということを教えてあげないといけません。
-</p>
-<pre>
-$self-&gt;hook('before_dispatch' =&gt; sub {
-  my $self = shift;
+&lt;/ pre&gt;
+
+&lt;h4&gt; MOJO_REVERSE_PROXY settings &lt;/ h4&gt;
+
+The environment variable MOJO_REVERSE_PROXY must be set to 1. Starting with Mojolicious 5.0, X-Forwarded-Proto will be automatically recognized.
+
+&lt;pre&gt;
+$ ENV {MOJO_REVERSE_PROXY} = 1;
+&lt;/ pre&gt;
+
+(Setting this has no effect on the original app.)
+
+&lt;h4&gt; Use hook to rewrite base path via reverse proxy &lt;/ h4&gt;
+
+In order to dispatch correctly, I have to tell you that the / gitweblite part is the base path.
+
+&lt;pre&gt;
+$ self-&gt; hook ('before_dispatch' =&gt; sub {
+  my $ self = shift;
   
-  if ( $self-&gt;req-&gt;headers-&gt;header('X-Forwarded-Host')) {
-    my $prefix = shift @{$self-&gt;req-&gt;url-&gt;path-&gt;parts};
-    push @{$self-&gt;req-&gt;url-&gt;base-&gt;path-&gt;parts}, $prefix;
+  if ($ self-&gt; req-&gt; headers-&gt; header ('X-Forwarded-Host')) {
+    my $ prefix = shift @ {$ self-&gt; req-&gt; url-&gt; path-&gt; parts};
+    push @ {$ self-&gt; req-&gt; url-&gt; base-&gt; path-&gt; parts}, $ prefix;
   }
 }
-</pre>
-<p>
-  これでホスト名とポート番号が正しくurl_forやredirect_toで出力されるようになります。この記述を行っても試験環境でスタンドアロンでアプリケーションを実行するときでも、特に悪影響はありません。
-</p>
-<h3>SSLのページでHTTPページへのリンクを作成したい場合</h3>
-<p>
-  httpsでアクセスした場合に、そのページの中にルート相対パス(/app1)でURLを指定した場合は、次のようなURLだと解釈されてしまいます。https://yourhost.com/app1
-</p>
-<p>
-  SSLのページでHTTPのページへのリンクを張りたい場合は次のようにするとよいです。
-</p>
-<pre>
-URL: &lt;a href="&lt;%= url_for('/foo')-&gt;to_abs-&gt;scheme('http') %&gt;"&gt;Foo&lt;/a&gt;
-</pre>
-<p>
-  url_forはMojo::URLオブジェクトを返却するので、絶対URLに変換してから、スキーマをhttpに変換します。
-</p>
-<pre>
-url_for('/foo')-&gt;to_abs-&gt;scheme('http')
-</pre>
-<p>
-  このようにすることでSSLのページから簡単にhttpへのリンクを張ることができます。
-</p>
-<h3>HTTPページでSSLのページへのリンクを作成したい場合</h3>
-<p>
-  HTTPページでSSLのページへのリンクを作成したい場合は次のようにするとよいです。
-</p>
-<pre>
-URL: &lt;a href="&lt;%= url_for('/foo')-&gt;to_abs-&gt;scheme('https') %&gt;"&gt;Foo&lt;/a&gt;
-</pre>
-<p>
-  url_forはMojo::URLオブジェクトを返却するので、絶対URLに変換してから、スキーマをhttpsに変換します。
-</p>
-<pre>
-url_for('/foo')-&gt;to_abs-&gt;scheme('https')
-</pre>
-<p>
-  このようにすることでSSLのページへのリンクを張ることができます。
-</p>
-<h3>url_forメソッドでSSHのURLを生成する</h3>
-<p>
-  url_forメソッドはHTTPのURLだけではなくて、URLの構造を持つものであれば、何でも作ることができます。
-</p>
-<p>
-  では次のようなSSHのURLを作ってみましょう。
-</p>
-<pre>
-ssh://kimoto@somehost.com:20000/foo/bar.git
-</pre>
-<p>
-  次のようにします。
-</p>
-<pre>
-my $url = url_for('/foo/bar.git')-&gt;to_abs-&gt;scheme('ssh')
-  -&gt;userinfo('kimoto')-&gt;host('somehost.com')-&gt;port(20000);
-</pre>
-<p>
-  まずto_absメソッドで絶対URLに変換してから、schemeメソッドでプロトコルを、userinfoメソッドでユーザー名を、hostメソッドでホスト名、portメソッドでポート番号を設定します。
-</p>
+&lt;/ pre&gt;
+
+Now the host name and port number will be output correctly with url_for and redirect_to. This statement does not have any adverse effects when running the application standalone in a test environment.
+
+&lt;h3&gt; If you want to create a link to an HTTP page on an SSL page &lt;/ h3&gt;
+
+Accessed with httpsIn that case, if you specify the URL with the root relative path (/ app1) in the page, it will be interpreted as the following URL. https://yourhost.com/app1
+
+If you want to link to the HTTP page on the SSL page, you can do as follows.
+
+&lt;pre&gt;
+URL: &lt;a href="&lt;%=url_for('/ ​​foo')-&gt; to_abs-&gt; scheme ('http')%&gt; "&gt; Foo &lt;/a&gt;
+&lt;/ pre&gt;
+
+url_for returns a Mojo :: URL object, so convert it to an absolute URL and then convert the schema to http.
+
+&lt;pre&gt;
+url_for ('/ foo')-&gt; to_abs-&gt; scheme ('http')
+&lt;/ pre&gt;
+
+By doing this, you can easily link to http from the SSL page.
+
+&lt;h3&gt; If you want to create a link to an SSL page on an HTTP page &lt;/ h3&gt;
+
+If you want to create a link to an SSL page on an HTTP page, you can do the following:
+
+&lt;pre&gt;
+URL: &lt;a href="&lt;%=url_for('/ ​​foo')-&gt; to_abs-&gt; scheme ('https')%&gt; "&gt; Foo &lt;/a&gt;
+&lt;/ pre&gt;
+
+url_for returns a Mojo :: URL object, so convert it to an absolute URL and then convert the schema to https.
+
+&lt;pre&gt;
+url_for ('/ foo')-&gt; to_abs-&gt; schema ('https')
+&lt;/ pre&gt;
+
+By doing this, you can create a link to the SSL page.
+
+&lt;h3&gt; Generate SSH URL with url_for method &lt;/ h3&gt;
+
+The url_for method can be created not only for HTTP URLs, but for anything that has a URL structure.
+
+Let's create the following SSH URL.
+
+&lt;pre&gt;
+ssh: //kimoto@somehost.com: 20000 / foo / bar.git
+&lt;/ pre&gt;
+
+Do the following:
+&lt;pre&gt;
+my $ url = url_for ('/foo/bar.git')-&gt; to_abs-&gt; scheme ('ssh')
+  -&gt; userinfo ('kimoto')-&gt; host ('somehost.com')-&gt; port (20000);
+&lt;/ pre&gt;
+
+First, convert it to an absolute URL with the to_abs method, then set the protocol with the schema method, the user name with the userinfo method, the host name with the host method, and the port number with the port method.
 
   </div>
   <div class="bottom">

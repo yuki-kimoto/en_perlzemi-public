@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Text::Diff - テキストの差分を確認する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="テキストの差分を確認するにはText::Diffモジュールを使用します。UnixのdiffプログラムをPerlで実装したものです。">
+<title> Text :: Diff --Check text differences  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the  Text :: Diff  module to see the diffs in the text. A Perl implementation of the Unix diff program.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Text::Diff - テキストの差分を確認する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="テキストの差分を確認するにはText::Diffモジュールを使用します。UnixのdiffプログラムをPerlで実装したものです。" />
+<meta name="twitter:title" content=" Text :: Diff --Check text differences  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the  Text :: Diff  module to see the diffs in the text. A Perl implementation of the Unix diff program." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">Text::Diff</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20100414127089.html">Text::Diff - テキストの差分を確認する</a></h2>
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Text :: Diff </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20100414127089.html"> Text :: Diff --Check text differences </a></ h2>
 <p>
-  テキストの差分を確認するには<strong>Text::Diff</strong>モジュールを使用します。UnixのdiffプログラムをPerlで実装したものです。
+  Use the <strong> Text :: Diff </ strong> module to see the diffs in the text. A Perl implementation of the Unix diff program.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,109 +98,112 @@
 
 
 <pre>
-# モジュールの読み込みと関数のインポート
-use Text::Diff 'diff';
-</pre>
-<p>
-  テキストの差分を確認するには<strong>diff</strong>関数を使用します。引数にはファイル名や文字列を指定することができます。
-</p>
-<pre>
-# ファイルの差分を確認
-$diff = diff($filename1, $filename2);
-$diff = diff(\$string1, $string2);
-</pre>
-<p>
-  ファイル間のテキストの差分を出力するサンプルです。
-</p>
-<pre>
-# ファイル間の差分を確認
-use Text::Diff 'diff';
+#Loading modules and importing functions
+use Text :: Diff'diff';
+&lt;/ pre&gt;
+
+Use the &lt;strong&gt; diff &lt;/ strong&gt; function to see the diffs in the text. You can specify a file name or a character string as an argument.
+
+&lt;pre&gt;
+#Check file differences
+$ diff = diff ($ filename1, $ filename2);
+$ diff = diff (\ $ string1, $ string2);
+&lt;/ pre&gt;
+
+This is a sample that outputs the difference in text between files.
+
+&lt;pre&gt;
+#Check the difference between files
+use Text :: Diff'diff';
 
 my @files = @ARGV;
 
-my $diff = diff($files[0], $files[1]);
+my $ diff = diff ($ files [0], $ files [1]);
 
-print $diff;
-</pre>
-<h3>差分結果のスタイル</h3>
-<p>
-  オプションで差分結果のスタイルを指定することができます。スタイルには次のものがあります。
-</p>
-<h4>Unified</h4>
-<p>
-  <strong>Unified</strong>スタイルは以下のような差分表示方法です。
-</p>
-<pre>
---- A   Mon Nov 12 23:49:30 2001
-+++ B   Mon Nov 12 23:49:30 2001
+print $ diff;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Difference result style &lt;/ h3&gt;
+
+You can optionally specify the style of the diff result. The styles are:
+
+&lt;h4&gt; Unified &lt;/ h4&gt;
+
+The &lt;strong&gt; Unified &lt;/ strong&gt; style is the following difference display method.
+
+&lt;pre&gt;
+--- A Mon Nov 12 23:49:30 2001
++++ B Mon Nov 12 23:49:30 2001
 @@ -2,13 +2,13 @@
  2
  3
- 4
+ Four
 -5d
-+5a
++ 5a
  6
  7
  8
  9
-+9a
- 10
++ 9a
+ Ten
  11
 -11d
  12
  13
-</pre>
-<h4>Context</h4>
-<p>
-  <strong>Context</strong>は以下のような差分表示方法です。
-</p>
-<pre>
-*** A   Mon Nov 12 23:49:30 2001
---- B   Mon Nov 12 23:49:30 2001
+&lt;/ pre&gt;
+
+&lt;h4&gt; Context &lt;/ h4&gt;
+
+&lt;strong&gt; Context &lt;/ strong&gt; is the following difference display method.
+
+&lt;pre&gt;
+*** A Mon Nov 12 23:49:30 2001
+--- B Mon Nov 12 23:49:30 2001
 ***************
 *** 2,14 ****
   2
   3
-  4
+  Four
 ! 5d
   6
   7
   8
   9
-  10
+  Ten
   11
-- 11d
+--11d
   12
   13
 --- 2,14 ----
   2
   3
-  4
+  Four
 ! 5a
   6
   7
   8
   9
 + 9a
-  10
+  Ten
   11
   12
   13
-</pre>
-<h4>OldStyle</h4>
-<p>
-  <strong>OldStyle</strong>は以下のような差分表示方法です。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; OldStyle &lt;/ h4&gt;
+
+&lt;strong&gt; OldStyle &lt;/ strong&gt; is the following difference display method.
+
+&lt;pre&gt;
 5c5
-&lt; 5d
+&lt;5d
 ---
 &gt; 5a
 9a10
 &gt; 9a
 12d12
-&lt; 11d
-</pre>
+&lt;11d
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

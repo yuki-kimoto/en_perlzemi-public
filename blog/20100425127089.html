@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>base - クラスを継承する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="baseモジュールを使用すると、クラスを継承することができます。">
+<title> base --inherit class  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  base  module allows you to inherit classes.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="base - クラスを継承する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="baseモジュールを使用すると、クラスを継承することができます。" />
+<meta name="twitter:title" content=" base --inherit class  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  base  module allows you to inherit classes." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100425127089.html">base - クラスを継承する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100425127089.html"> base --inherit class </a></ h2>
 <p>
-  <strong>base</strong>モジュールを使用すると、クラスを継承することができます。
+  The <strong> base </ strong> module allows you to inherit classes.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,47 +97,41 @@
 
 
 <pre>
-# クラスの継承
-package YourClass;
+# Class inheritance
+package Your Class;
 
-use base 'BaseClass';
-</pre>
-<p>
-  継承を行うと基底クラスにあるメソッドをサブクラスで呼び出すことができるようになります。基底クラスのBaseClassでparseというメソッドが定義されていた場合はサブクラスのYourClassでもparseメソッドを呼び出すことができます。
-</p>
-<pre>
-基底クラス
-　▲
-サブクラス ← 基底クラスのメソッド + 自身のメソッドを利用できる
-</pre>
-<h3>単一継承と多重継承</h3>
-<p>
-  Perlは多重継承をサポートしますが、多重継承はモジュール間の継承関係をとても複雑にしてしまいます。ですから、継承は単一継承に限るのがモジュールの関係をシンプルに保つ上でよいとされています。
-</p>
-<p>
-  実際、単一継承でプログラムを組むと、わかりやすく可読性の高いプログラムになります。単一継承でできないことはありませんし、設計もきれいになりますので、ぜひ単一継承でプログラムを作成してみてください。
-</p>
-<h3>baseモジュールに関するFAQ</h3>
-<p>
-  Q. parentというモジュールを見たことがあるのですが、baseモジュールと何が異なりますか。
-</p>
-<p>
-  A. parentモジュールはbaseモジュールを簡素にしたものです。役割としては同じものです。parentは5.10.0からコアモジュールになりました。baseモジュールはPerl5.005からコアモジュールです。ポータビリティを考慮して継承を行うときはbaseモジュールが利用されていることが多いと思われます。
-</p>
-<p>
-  Q. baseモジュールで継承する仕組みを教えてください。
-</p>
-<p>
-  A. Perlでは@ISAというパッケージ変数に基底クラスを設定すると継承を行うことができます。baseモジュールはこれをコンパイル時に行っているだけです。次のような実装と同じ意味になります。
-</p>
-<pre>
-# 継承の仕組み
-package YourClass;
+use base'BaseClass';
+&lt;/ pre&gt;
+
+Inheritance allows subclasses to call methods in the base class. If a method called parse is defined in the base class BaseClass, you can also call the parse method in the subclass YourClass.
+
+&lt;pre&gt;
+Base class
+▲
+Subclass ← base class method + own method available
+&lt;/ pre&gt;
+
+&lt;h3&gt; Single inheritance and multiple inheritance &lt;/ h3&gt;
+
+Perl supports multiple inheritance, but multiple inheritance makes the inheritance relationship between modules very complicated. Therefore, it is said that limiting inheritance to single inheritance is good for keeping module relationships simple.
+
+In fact, programming with single inheritance makes the program easy to understand and read. There is nothing you can't do with single inheritance, and the design will be cleaner, so please try to create a program with single inheritance.
+
+&lt;h3&gt; FAQ about base module &lt;/ h3&gt;
+
+Q. I have seen a module called parent. How is it different from the base module?
+A. The parent module is a simplification of the base module. The roles are the same. parent has become a core module since 5.10.0. The base module is a core module from Perl 5.005. It seems that the base module is often used when inheriting in consideration of portability.
+
+Q. Please tell me the mechanism of inheritance in the base module.
+A. In Perl, you can inherit by setting a base class in a package variable called @ISA. The base module only does this at compile time. It has the same meaning as the following implementation.
+&lt;pre&gt;
+# Inheritance mechanism
+package Your Class;
 
 BEGIN {
   our @ISA = ('BaseClass');
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

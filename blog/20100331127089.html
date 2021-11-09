@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>リアルタイム時計 / Mojoliciousサンプル - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Mojolicious::Liteで作ったリアルタイム時計です。WebSocketを利用しています。ネイティブでWebSocketをサポートしているChromeで実行することができます。">
+<title> Real-time clock / Mojolicious sample  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="A real-time clock made with Mojolicious :: Lite. I am using WebSocket. It can be run on Chrome that natively supports WebSockets.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="リアルタイム時計 / Mojoliciousサンプル - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Mojolicious::Liteで作ったリアルタイム時計です。WebSocketを利用しています。ネイティブでWebSocketをサポートしているChromeで実行することができます。" />
+<meta name="twitter:title" content=" Real-time clock / Mojolicious sample  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="A real-time clock made with Mojolicious :: Lite. I am using WebSocket. It can be run on Chrome that natively supports WebSockets." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,25 +59,25 @@
     
   </div>
   <div class="middle">
-    <script>location.href="https://mojolicious.perlzemi.com/blog/20100331127089.html";</script>
-<ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <script> location.href = "https://mojolicious.perlzemi.com/blog/20100331127089.html"; </ script>
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span>
+      <span itemprop = "name"> Perl </ span>
     </a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop="name">Mojolicious</span>
+      <span itemprop = "name"> Mojolicious </ span>
     </a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20100331127089.html">リアルタイム時計 / Mojoliciousサンプル</a></h2>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20100331127089.html"> Real-time clock / Mojolicious sample </a></ h2>
 <p>
-  Mojolicious::Liteで作ったリアルタイム時計です。WebSocketを利用しています。ネイティブでWebSocketをサポートしているChromeで実行することができます。
+  A real-time clock made with Mojolicious :: Lite. I am using WebSocket. It can be run on Chrome that natively supports WebSockets.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,140 +95,140 @@
 </div>
 
 
-<h3>リアルタイム時計</h3>
+<h3> Real-time clock </ h3>
 <p>
-  リアルタイム時計です。
+  It is a real-time clock.
 </p>
 <p>
-  [f:id:perlcodesample:20100415220535p:image]
+  [f: id: perlcodesample: 20100415220535p: image]
 </p>
-<h3>ソースコード</h3>
+<h3> Source code </ h3>
 <p>
-  リアルタイム時計のソースコードです。
+  The source code of the real-time clock.
 </p>
 <pre>
-use Mojolicious::Lite;
-use Mojo::IOLoop;
+use Mojolicious :: Lite;
+use Mojo :: IOLoop;
 
-my $clients = {};
-my $loop = Mojo::IOLoop-&gt;singleton;
+my $ clients = {};
+my $ loop = Mojo :: IOLoop-&gt; singleton;
 
-websocket '/' =&gt; sub {
-  my $self = shift;
+websocket'/' =&gt; sub {
+  my $ self = shift;
 
-  # Client id
-  my $cid = "$self";
+  #Client id
+  my $ cid = "$ self";
   
-  # Controller
-  my $controller = $self;
+  #Controller
+  my $ controller = $ self;
   
   # Send date and time
-  my $datetime = localtime;
-  $self-&gt;send($datetime);
+  my $ datetime = localtime;
+  $ self-&gt; send ($ datetime);
   
-  # Receive message;
-  $self-&gt;on('message' =&gt; sub {
-    my ($self, $message) = @_;
+  #Receive message;
+  $ self-&gt; on ('message' =&gt; sub {
+    my ($ self, $ message) = @_;
     
     # Start clock
-    if ($message eq 'Start') {
+    if ($ message eq'Start') {
       
-      # Shortcut
-      return if $clients-&gt;{$cid}{running};
+      #Shortcut
+      return if $ clients-&gt; {$ cid} {running};
       
       # Start
-      $clients-&gt;{$cid}{running} = 1;
+      $ clients-&gt; {$ cid} {running} = 1;
       
       # Subroutine for sending date and time
-      my $send_datetime;
-      $send_datetime = sub {
+      my $ send_datetime;
+      $ send_datetime = sub {
 
         # Send date and time
-        my $datetime = localtime;
-        $controller-&gt;send($datetime);
+        my $ datetime = localtime;
+        $ controller-&gt; send ($ datetime);
         
-        # Timer
-        $loop-&gt;timer(1, $send_datetime) if $clients-&gt;{$cid}{running};
+        #Timer
+        $ loop-&gt; timer (1, $ send_datetime) if $ clients-&gt; {$ cid} {running};
       };
       
-      # Send
-      $send_datetime-&gt;();
+      #Send
+      $ send_datetime-&gt; ();
     }
     
-    # Stop clock
-    else { $clients-&gt;{$cid}{running} = 0 }
+    #Stop clock
+    else {$ clients-&gt; {$ cid} {running} = 0}
   });
   
   # on_finish
-  $self-&gt;on('finish' =&gt; sub {
+  $ self-&gt; on ('finish' =&gt; sub {
     # Remove client
-    delete $clients-&gt;{$cid};
+    delete $ clients-&gt; {$ cid};
   });
 };
 
-get '/' =&gt; 'index';
+get'/' =&gt;'index';
 
-app-&gt;start;
+app-&gt; start;
 
 __DATA__
 
 @@ index.html.ep
-% my $url = $self-&gt;req-&gt;url-&gt;to_abs-&gt;scheme( $self-&gt;req-&gt;is_secure ? 'wss' : 'ws' )-&gt;path( '/' );
-&lt;!doctype html&gt;
+% my $ url = $ self-&gt; req-&gt; url-&gt; to_abs-&gt; scheme ($ self-&gt; req-&gt; is_secure?'Wss':'ws')-&gt; path ('/');
+&lt;! doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
-  &lt;title&gt;Mojo Websocket Demo&lt;/title&gt;
+  &lt;title&gt; Mojo Websocket Demo &lt;/ title&gt;
 
-  &lt;script type="text/javascript"&gt;
+  &lt;script type = "text / javascript"&gt;
     // only load the flash fallback when needed
-    if ( !( 'WebSocket' in window ) ) {
-      document.write([
-        '&lt;scr'+'ipt type="text/javascript" src="web-socket-js/swfobject.js"&gt;&lt;/scr'+'ipt&gt;',
-        '&lt;scr'+'ipt type="text/javascript" src="web-socket-js/FABridge.js"&gt;&lt;/scr'+'ipt&gt;',
-        '&lt;scr'+'ipt type="text/javascript" src="web-socket-js/web_socket.js"&gt;&lt;/scr'+'ipt&gt;'
-      ].join(''));
+    if (! ('WebSocket' in window)) {
+      document.write ([[
+        '&lt;scr' +'ipt type = "text / javascript" src = "web-socket-js / swfobject.js"&gt; &lt;/ scr'+' ipt&gt;',
+        '&lt;scr' +'ipt type = "text / javascript" src = "web-socket-js / FABridge.js"&gt; &lt;/ scr'+'ipt&gt;',
+        '&lt;scr' +'ipt type = "text / javascript" src = "web-socket-js / web_socket.js"&gt; &lt;/ scr'+' ipt&gt;'
+      ] .join (''));
     }
-  &lt;/script&gt;
-  &lt;script type="text/javascript"&gt;
+  &lt;/ script&gt;
+  &lt;script type = "text / javascript"&gt;
     if (WebSocket.__initialize) {
         // Set URL of your WebSocketMain.swf here:
-        WebSocket.__swfLocation = 'web-socket-js/WebSocketMain.swf';
+        WebSocket.__swfLocation ='web-socket-js / WebSocketMain.swf';
     }
 
-    // example copied from web-socket-js/sample.html
+    // example copied from web-socket-js / sample.html
     var ws, input, clock;
 
-    function init() {
+    function init () {
       
       // Connect to Web Socket.
-      ws = new WebSocket('&lt;%= $url %&gt;');
+      ws = new WebSocket ('&lt;% = $ url%&gt;');
       
       // Receive message
-      ws.onmessage = function(e) {
+      ws.onmessage = function (e) {
         // Update clock
-        clock = document.getElementById('clock');
+        clock = document.getElementById ('clock');
         clock.innerHTML = e.data;
       };
     }
 
-    function onClockStart() {
+    function onClockStart () {
       // Start clock
-      ws.send('Start');
+      ws.send ('Start');
     }
 
-    function onClockStop() {
+    function onClockStop () {
       // Stop clock
-      ws.send('Stop');
+      ws.send ('Stop');
     }
     
     window.onload = init;
-  &lt;/script&gt;
-&lt;/head&gt;
-  &lt;span id="clock"&gt;&lt;/span&gt;
-  &lt;button onclick="onClockStart(); return false;"&gt;Start&lt;/button&gt;
-  &lt;button onclick="onClockStop(); return false;"&gt;Stop&lt;/button&gt;
-&lt;/html&gt;
-</pre>
+  &lt;/ script&gt;
+&lt;/ head&gt;
+  &lt;span id = "clock"&gt; &lt;/ span&gt;
+  &lt;button onclick = "onClockStart (); return false;"&gt; Start &lt;/ button&gt;
+  &lt;button onclick = "onClockStop (); return false;"&gt; Stop &lt;/ button&gt;
+&lt;/ html&gt;
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

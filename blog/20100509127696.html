@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Benchmark - ベンチマーク(性能比較)を行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Benchmarkモジュールを使用すると、ベンチマーク(性能比較)を行うことができます。">
+<title> Benchmark --Benchmark (performance comparison)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  Benchmark  module allows you to benchmark (performance comparison).">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Benchmark - ベンチマーク(性能比較)を行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Benchmarkモジュールを使用すると、ベンチマーク(性能比較)を行うことができます。" />
+<meta name="twitter:title" content=" Benchmark --Benchmark (performance comparison)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  Benchmark  module allows you to benchmark (performance comparison)." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100509127696.html">Benchmark - ベンチマーク(性能比較)を行う</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100509127696.html"> Benchmark --Benchmark (performance comparison) </a></ h2>
 <p>
-  <strong>Benchmark</strong>モジュールを使用すると、ベンチマーク(性能比較)を行うことができます。
+  The <strong> Benchmark </ strong> module allows you to benchmark (performance comparison).
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,86 +97,81 @@
 
 
 <pre>
-# モジュールの読み込みと関数のインポート
-use Benchmark qw/timethese cmpthese/;
-</pre>
-<p>
-  <strong>timethese</strong>関数を実行すると各関数の性能情報を取得できます。これを<strong>compthese</strong>関数の引数に指定すると、標準出力に比較結果が表示されます。
-</p>
-<pre>
-# 性能の比較
-my $result = timethese($count, {
+#Loading modules and importing functions
+use Benchmark qw / timethese cmpthese /;
+&lt;/ pre&gt;
+
+You can get the performance information of each function by executing the &lt;strong&gt; timethese &lt;/ strong&gt; function. If you specify this as an argument to the &lt;strong&gt; compthese &lt;/ strong&gt; function, the standard output will display the comparison result.
+
+&lt;pre&gt;
+# Performance comparison
+my $ result = timethese ($ count, {
   name1 =&gt; sub {
-    # 実行したい処理1
+    #Process you want to execute 1
   },
   name2 =&gt; sub {
-    # 実行したい処理2
+    #Process you want to execute 2
   },
   name3 =&gt; sub {
-    # 実行したい処理3
+    #Process you want to execute 3
   },
 });
 
-cmpthese $result;
-</pre>
-<p>
-  ベンチマークを行うサンプルです。精度を上げるために実行回数をある程度増やす必要があります。このサンプルでは10000回実行しています。
-</p>
-<pre>
-# ベンチマークのサンプル
-my $result = timethese(10000, {
+cmpthese $ result;
+&lt;/ pre&gt;
+
+This is a sample for benchmarking. It is necessary to increase the number of executions to some extent to improve accuracy. This sample has been run 10000 times.
+
+&lt;pre&gt;
+# Benchmark sample
+my $ result = timethese (10000, {
   loop1 =&gt; sub {
-    my $i = 0;
-    while ($i &lt; 1500) {
-      $i++;
+    my $ i = 0;
+    while ($ i &lt;1500) {
+      $ i ++;
     }
   },
   loop2 =&gt; sub {
-    my $i = 0;
-    while ($i &lt; 1000) {
-      $i++;
+    my $ i = 0;
+    while ($ i &lt;1000) {
+      $ i ++;
     }
   },
   loop3 =&gt; sub {
-    my $i = 0;
-    while ($i &lt; 500) {
-      $i++;
+    my $ i = 0;
+    while ($ i &lt;500) {
+      $ i ++;
     }
   },
 });
 
-cmpthese $result;
-</pre>
-<p>
-  下記の出力結果になります。loop3はloop1と比較して3倍近く速いことが確認できます。
-</p>
-<pre>
-# ベンチマークの出力結果
-Benchmark: timing 10000 iterations of loop1, loop2, loop3...
-     loop1:  4 wallclock secs ( 2.98 usr +  0.00 sys =  2.98 CPU) @ 3351.21/s (n=10000)
-     loop2:  2 wallclock secs ( 1.75 usr +  0.00 sys =  1.75 CPU) @ 5714.29/s (n=10000)
-     loop3:  1 wallclock secs ( 1.03 usr +  0.00 sys =  1.03 CPU) @ 9699.32/s (n=10000)
+cmpthese $ result;
+&lt;/ pre&gt;
+
+The output result is as follows. It can be confirmed that loop3 is nearly 3 times faster than loop1.
+
+&lt;pre&gt;
+# Benchmark output result
+Benchmark: timing 10000 iterations of loop1, loop2, loop3 ...
+     loop1: 4 wallclock secs (2.98 usr + 0.00 sys = 2.98 CPU) @ 3351.21 / s (n = 10000)
+     loop2: 2 wallclock secs (1.75 usr + 0.00 sys = 1.75 CPU) @ 5714.29 / s (n = 10000)
+     loop3: 1 wallclock secs (1.03 usr + 0.00 sys = 1.03 CPU) @ 9699.32 / s (n = 10000)
         Rate loop1 loop2 loop3
-loop1 3351/s    --  -41%  -65%
-loop2 5714/s   71%    --  -41%
-loop3 9699/s  189%   70%    --
-</pre>
-<h3>Benchmarkモジュールに関するFAQ</h3>
-<p>
-  Q. Benchmarkモジュールは実際の処理時間を計算していますか。
-</p>
-<p>
-  A. wallclockで表示される時間は実際にかかった時間です。@ の後ろの値は「試行回数/CPU時間」で計算されます。
-</p>
-<p>
-  @ の後ろに掲載される値は「試行回数/CPU時間」という計算式で計算されます。CPU時間はそのプロセスが使用したCPUの時間なので、データベースアクセスなどのI/O待ちや子プロセスを実行される時間などは含まれません。また<a href="/blog/20170522149546.html">sleep関数</a>を実行している場合もCPUを使用していないので実行時間に含まれません。
-</p>
-<p>
-  つまりI/Oや子プロセスを呼び出しを含むベンチマークをとる場合には @ の後ろの値を参考にすることはできないということです。cmptheseで比較される値も「試行回数/CPU時間」ですので、表示される値をそのまま評価に利用することはできません。
-</p>
-<p>
-  I/Oや子プロセスの実行を行っている場合はwallclockに表示されている値を見る必要があります。ですが、ほとんどの場合はプログラムのアルゴリズムの評価を行う目的でBenchmarkモジュールを利用すると思いますので、cmptheseで比較される値を目安にしてよいでしょう。
-</p>
+loop1 3351 / s --- 41% -65%
+loop2 5714 / s 71% --- 41%
+loop3 9699 / s 189% 70% -
+&lt;/ pre&gt;
+
+&lt;h3&gt; FAQ about Benchmark module &lt;/ h3&gt;
+
+Q. Does the Benchmark module calculate the actual processing time?
+A. The time displayed by wallclock is the actual time taken. The value after @ is calculated as "number of trials / CPU time".
+
+The value after @ is calculated by the formula "number of trials / CPU time". CPU time is the time of the CPU used by the process, so it does not include I / O waits such as database access or time to execute child processes. Also, when the &lt;a href="/blog/20170522149546.html"&gt; sleep function &lt;/a&gt; is executed, it is not included in the execution time because it does not use the CPU.
+
+This means that the value after @ cannot be used as a reference when benchmarking I / O or calling child processes. The value compared by cmpthese is also "number of trials / CPU time", so the displayed value cannot be used for evaluation as it is.
+
+If you are doing I / O or running a child process, you need to look at the value displayed on the wallclock. However, in most cases, you will use the Benchmark module for the purpose of evaluating the algorithm of the program, so you can use the value compared by cmpthese as a guide.
 
   </div>
   <div class="bottom">

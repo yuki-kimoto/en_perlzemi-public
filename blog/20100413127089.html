@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>File::Temp - 一時ファイルを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="File::Tempを使用すると、一時ファイルや一時ディレクトリを作成することができます。OSに依存せず安全な方法で一時ファイル(あるいは一時ディレクトリ)を作成することができます。">
+<title> File :: Temp --Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  File :: Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="File::Temp - 一時ファイルを作成する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="File::Tempを使用すると、一時ファイルや一時ディレクトリを作成することができます。OSに依存せず安全な方法で一時ファイル(あるいは一時ディレクトリ)を作成することができます。" />
+<meta name="twitter:title" content=" File :: Temp --Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  File :: Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100413127089.html">File::Temp - 一時ファイルを作成する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100413127089.html"> File :: Temp --Create a temporary file </a></ h2>
 <p>
-  <strong>File::Temp</strong>を使用すると、<b>一時ファイル</b>や<b>一時ディレクトリ</b>を作成することができます。OSに依存せず安全な方法で一時ファイル(あるいは一時ディレクトリ)を作成することができます。
+  You can use <strong> File :: Temp </ strong> to create <b> temporary files </ b> and <b> temporary directories </ b>. You can create temporary files (or temporary directories) in a secure way regardless of the OS.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,98 +97,99 @@
 
 
 <pre>
-# モジュールの読み込みと関数のインポート
-use File::Temp qw/tempfile tempdir/;
-</pre>
-<p>
-  一時ファイルを作成するには<strong>tempfile</strong>関数を使用します。戻り値はスカラコンテキストの場合は一時ファイルのファイルハンドル、リストコンテキストの場合は一時ファイルのファイルハンドルとファイル名になります。
-</p>
-<pre>
-# 一時ファイルの作成
-$fh              = tempfile;
-($fh, $filename) = tempfile;
-</pre>
-<p>
-  一時ディレクトリを作成するには<strong>tempdir</strong>関数を使用します。
-</p>
-<pre>
-# 一時ディレクトリの作成
-$dir = tempdir;
-</pre>
-<p>
-  一時ファイルを利用してファイルを安全に上書きするサンプルです。(※1)
-</p>
-<pre>
-# ファイルの安全な上書き
-use File::Temp 'tempfile';
-use File::Copy 'move';
+#Loading modules and importing functions
+use File :: Temp qw / tempfile tempdir /;
+&lt;/ pre&gt;
 
-my $file = shift;
+Use the &lt;strong&gt; tempfile &lt;/ strong&gt; function to create a temporary file. The return value is the file handle of the temporary file in the scalar context and the file handle and filename of the temporary file in the list context.
 
-# ファイルの内容の取得
-my $old = get_content($file);
+&lt;pre&gt;
+# Create temporary file
+$ fh = tempfile;
+($ fh, $ filename) = tempfile;
+&lt;/ pre&gt;
 
-# テキストを追加
-my $new = $old . "Add new text";
+Use the &lt;strong&gt; tempdir &lt;/ strong&gt; function to create a temporary directory.
 
-# 新しい内容をファイルに書き込み
-my ($tempfh, $tempfile) = tempfile;
-print $tempfh $new;
-close $tempfh;
+&lt;pre&gt;
+# Create temporary directory
+$ dir = tempdir;
+&lt;/ pre&gt;
 
-# 新しいファイルを古いファイルに上書き
-move $tempfile, $file
-  or die "Can't move \"$tempfile\" to \"$file\": $!";
+This is a sample that safely overwrites a file using a temporary file. (* 1)
+
+&lt;pre&gt;
+# Safely overwrite files
+use File :: Temp'temp file';
+use File :: Copy'move';
+
+my $ file = shift;
+
+# Get the contents of the file
+my $ old = get_content ($ file);
+
+#Add text
+my $ new = $ old. "Add new text";
+
+# Write new content to file
+my ($ tempfh, $ tempfile) = tempfile;
+print $ tempfh $ new;
+close $ tempfh;
+
+# Overwrite new file with old file
+move $ tempfile, $ file
+  or die "Can't move \" $ tempfile \ "to \" $ file \ ": $!";
 
 sub get_content {
-  my $file = shift;
+  my $ file = shift;
   
-  open my $fh, '&lt;', $file
-    or die "Can't open file \"$file\": $!";
+  open my $ fh,'&lt;', $ file
+    or die "Can't open file \" $ file \ ": $!";
   
-  my $content = join('', &lt;$fh&gt;);
+  my $ content = join ('', &lt;$ fh&gt;);
   
-  close $fh;
+  close $ fh;
   
-  return $content;
+  return $ content;
 }
-</pre>
-<p>
-  (参考)<a href="/blog/20100408127089.html">File::Copy</a>
-</p>
-<h3>tempfileのオプション</h3>
-<p>
-  tempfileの引数としてオプションを指定することができます。
-</p>
-<pre>
-# tempfileのオプション
-tempfile(DIR =&gt; 'somedir', SUFFIX =&gt; '.dat');
-</pre>
-<table>
-  <tr>
-    <td>
+&lt;/ pre&gt;
+
+(Reference) &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt;
+
+&lt;h3&gt; tempfile options &lt;/ h3&gt;
+
+You can specify options as arguments to tempfile.
+
+&lt;pre&gt;
+#tempfile options
+tempfile (DIR =&gt;'somedir', SUFFIX =&gt;'.dat');
+&lt;/ pre&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
       DIR
-    </td>
-    <td>
-      一時ファイルが作成されるディレクトリ
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Directory where temporary files are created
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       SUFFIX
-    </td>
-    <td>
-      一時ファイルの末尾に付加する拡張子
-    </td>
-  </tr>
-</table>
-<p>
-  DIRが省略された場合は一時ファイルを作成するディレクトリは自動的に決められます。Unixの場合は/tmpになります。
-</p>
-<h3>注</h3>
-<p>
-  ※1 ファイルを読み書きモードでオープンして、読み込んだファイルに書き込むのは安全性に欠けます。書き込み途中でコンピュータがクラッシュした場合、読み込む前のデータが破損してしまうからです。読み込んだファイルとは別のファイルに書き込んでから、そのファイルで上書きするのが安全です。
-</p>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Extension added to the end of the temporary file
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+If DIR is omitted, the directory for creating temporary files is automatically determined. For Unix it is / tmp.
+
+&lt;h3&gt; Note &lt;/ h3&gt;
+* 1 It is not safe to open a file in read / write mode and write to the read file. This is because if the computer crashes during writing, the data before reading will be corrupted. It is safe to write to a different file than the one you read and then overwrite with that file.
 
   </div>
   <div class="bottom">

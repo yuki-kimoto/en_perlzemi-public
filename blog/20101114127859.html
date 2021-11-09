@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Mojolicious::LiteからMojoliciousに移行する場合に考えておきたいこと - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="仕事でMojolicious::Liteでプロトタイピングをはじめて、Mojoliciousに移行させたのですけれど、そのときにこんな風にMojolicious::Liteを記述しておいたほうが移行が楽だったなぁということを書いておきます。ほとんとどの手順はMojolicious::Guides::Growingを見れば大丈夫です。移行してみるとやはりメンテナンス性があがりますね。">
+<title> Things to think about when migrating from Mojolicious :: Lite to Mojolicious  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I started prototyping with Mojolicious :: Lite at work and migrated to Mojolicious, but at that time I wrote that it was easier to describe Mojolicious :: Lite like this. increase. Most of the steps are fine by looking at  Mojolicious :: Guides :: Growing . After all, the maintainability will improve when you try to migrate.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Mojolicious::LiteからMojoliciousに移行する場合に考えておきたいこと - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="仕事でMojolicious::Liteでプロトタイピングをはじめて、Mojoliciousに移行させたのですけれど、そのときにこんな風にMojolicious::Liteを記述しておいたほうが移行が楽だったなぁということを書いておきます。ほとんとどの手順はMojolicious::Guides::Growingを見れば大丈夫です。移行してみるとやはりメンテナンス性があがりますね。" />
+<meta name="twitter:title" content=" Things to think about when migrating from Mojolicious :: Lite to Mojolicious  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I started prototyping with Mojolicious :: Lite at work and migrated to Mojolicious, but at that time I wrote that it was easier to describe Mojolicious :: Lite like this. increase. Most of the steps are fine by looking at  Mojolicious :: Guides :: Growing . After all, the maintainability will improve when you try to migrate." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,25 +59,25 @@
     
   </div>
   <div class="middle">
-    <script>location.href="https://mojolicious.perlzemi.com/blog/20101114127859.html";</script>
-<ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <script> location.href = "https://mojolicious.perlzemi.com/blog/20101114127859.html"; </ script>
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-      <span itemprop="name">Perl</span>
+      <span itemprop = "name"> Perl </ span>
     </a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20140319139520.html">
-      <span itemprop="name">Mojolicious</span>
+      <span itemprop = "name"> Mojolicious </ span>
     </a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20101114127859.html">Mojolicious::LiteからMojoliciousに移行する場合に考えておきたいこと</a></h2>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20101114127859.html"> Things to think about when migrating from Mojolicious :: Lite to Mojolicious </a></ h2>
 <p>
-  仕事でMojolicious::Liteでプロトタイピングをはじめて、Mojoliciousに移行させたのですけれど、そのときにこんな風にMojolicious::Liteを記述しておいたほうが移行が楽だったなぁということを書いておきます。ほとんとどの手順は<a href="http://wiki.livedoor.jp/mojolicious/d/Mojolicious::Guides::Growing">Mojolicious::Guides::Growing</a>を見れば大丈夫です。移行してみるとやはりメンテナンス性があがりますね。
+  I started prototyping with Mojolicious :: Lite at work and migrated to Mojolicious, but at that time I wrote that it was easier to describe Mojolicious :: Lite like this. increase. Most of the steps are fine by looking at <a href="http://wiki.livedoor.jp/mojolicious/d/Mojolicious :: Guides :: Growing"> Mojolicious :: Guides :: Growing </a>. After all, the maintainability will improve when you try to migrate.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,63 +95,63 @@
 </div>
 
 
-<h4>URLをコントローラとアクションのふたつの組にしておく</h4>
+<h4> Keep the URL in two pairs, controller and action </ h4>
 <p>
-  Mojoliciousへの移行を考えている場合は、次のように定義しておくとよいです。ルート名は自動でも設定されますが、ハイフン区切りにしておくと見やすいでしょう。
+  If you're thinking of migrating to Mojolicious, it's a good idea to define it as follows: The route name is set automatically, but it will be easier to see if it is separated by a hyphen.
 </p>
 <pre>
-# Mojolicious::Lite
-get '/foo/bar' =&gt; sub { ... } =&gt; 'foo-bar';
+#Mojolicious :: Lite
+get'/ foo / bar'=&gt; sub {...} =&gt;'foo-bar';
 
-# Mojolicious
-$r-&gt;get('/foo/bar')-&gt;to('foo#bar')-&gt;name('foo-bar');
-</pre>
-<p>
-  URLにパラメーターを含めるのはもちろんかまいません。アクションとコントローラには影響がありません。
-</p>
-<pre>
-# Mojolicious::Lite
-get '/foo/bar/:id' =&gt; sub { ... } =&gt; 'foo-bar';
+#Mojolicious
+$ r-&gt; get ('/ foo / bar')-&gt; to ('foo # bar')-&gt; name ('foo-bar');
+&lt;/ pre&gt;
 
-# Mojolicious
-$r-&gt;get('/foo/bar/:id')-&gt;to('foo#bar')-&gt;name('foo-bar');
-</pre>
-<p>
-  以下のように3つにしてしまったりするとMojoliciousへの移行が大変になります。
-</p>
-<pre>
-# Mojolicious::Lite
-get '/foo/bar/baz' =&gt; sub { ... } =&gt; 'foo-bar-baz';
-</pre>
-<p>
-  反対にアクション名がない場合はindexというアクションに対応させるとよいでしょう。
-</p>
-<pre>
-# Mojolicious::Lite
-get '/foo' =&gt; sub { ... } =&gt; 'foo';
+Of course, you can include the parameters in the URL. It has no effect on actions and controllers.
 
-# Mojolicious
-$r-&gt;get('/foo')-&gt;to('foo#index')-&gt;name('foo');
-</pre>
-<h3>埋め込まれているテンプレートファイルは自動的にファイルに出力できる</h3>
-<p>
-  埋め込まれているテンプレートファイルは自動的にファイルに出力できます。自分で記述する必要はありません。
-</p>
-<pre>
+&lt;pre&gt;
+#Mojolicious :: Lite
+get'/ foo / bar /: id'=&gt; sub {...} =&gt;'foo-bar';
+
+#Mojolicious
+$ r-&gt; get ('/ foo / bar /: id')-&gt; to ('foo # bar')-&gt; name ('foo-bar');
+&lt;/ pre&gt;
+
+If you set it to three as shown below, it will be difficult to migrate to Mojolicious.
+
+&lt;pre&gt;
+#Mojolicious :: Lite
+get'/ foo / bar / baz' =&gt; sub {...} =&gt;'foo-bar-baz';
+&lt;/ pre&gt;
+
+On the other hand, if there is no action name, it is better to correspond to the action called index.
+
+&lt;pre&gt;
+#Mojolicious :: Lite
+get'/ foo' =&gt; sub {...} =&gt;'foo';
+
+#Mojolicious
+$ r-&gt; get ('/ foo')-&gt; to ('foo # index')-&gt; name ('foo');
+&lt;/ pre&gt;
+
+&lt;h3&gt; Embedded template files can be automatically output to a file &lt;/ h3&gt;
+
+The embedded template file can be automatically output to a file. You don't have to write it yourself.
+
+&lt;pre&gt;
 __DATA__
 
 @@ foo-bar.html.ep
-&lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;
-</pre>
-<p>
-  inflateコマンドを使用します。
-</p>
-<pre>
+&lt;html&gt; &lt;body&gt; Hello &lt;/ body&gt; &lt;/ html&gt;
+&lt;/ pre&gt;
+
+Use the inflate command.
+
+&lt;pre&gt;
 perl myapp.pl inflate
-</pre>
-<p>
-  出力されたファイルは「foo-bar.html.ep」のようにハイフン区切りになっていますので、「foo/bar.html.ep」のようにコントローラー名を持つディレクトリを作ってその中にアクション名のファイルをいれます。
-</p>
+&lt;/ pre&gt;
+
+The output file is separated by hyphens like "foo-bar.html.ep", so create a directory with the controller name like "foo / bar.html.ep" and the action name in it. Put the file of.
 
   </div>
   <div class="bottom">

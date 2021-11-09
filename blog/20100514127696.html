@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Getopt::Long - コマンドラインオプションを処理する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Getopt::Longを使用するとコマンドライン引数のオプションを処理することができます。">
+<title> Getopt :: Long --Handle command line options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  Getopt :: Long  to handle options for  command line arguments .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Getopt::Long - コマンドラインオプションを処理する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Getopt::Longを使用するとコマンドライン引数のオプションを処理することができます。" />
+<meta name="twitter:title" content=" Getopt :: Long --Handle command line options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  Getopt :: Long  to handle options for  command line arguments ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100514127696.html">Getopt::Long - コマンドラインオプションを処理する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100514127696.html"> Getopt :: Long --Handle command line options </a></ h2>
 <p>
-  <strong>Getopt::Long</strong>を使用すると<a href="/blog/20080108132865.html">コマンドライン引数</a>のオプションを処理することができます。
+  You can use <strong> Getopt :: Long </ strong> to handle options for <a href="/blog/20080108132865.html"> command line arguments </a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,87 +97,87 @@
 
 
 <pre>
-# モジュールの読み込みと関数のインポート
-use Getopt::Long 'GetOptions';
-</pre>
-<p>
-  コマンドライン引数で次のようなオプションを指定する場合を考えてみましょう。
-</p>
-<pre>
-# コマンドライン引数でオプションを指定。
-perl script.pl --enable_cache --max_clients=5 --type=single config.init
-</pre>
-<p>
-  <strong>GetOptions関数</strong>を使用すればこのようなコマンドラインオプションを簡単に処理することができます。
-</p>
-<pre>
-# GetOptionsによるコマンドライン引数のオプションの処理
+#Loading modules and importing functions
+use Getopt :: Long'GetOptions';
+&lt;/ pre&gt;
 
-# デフォルト値の設定
-my $enable_cache;
-my $max_clients = 5;
-my $type = 'prefork';
+Consider specifying the following options with command line arguments:
 
-# オプションの処理
-GetOptions(
-  'enable_cache'  =&gt; \$enable_cache,
-  'max_clients=i' =&gt; \$max_clients,
-  'type=s'        =&gt; \$type
+&lt;pre&gt;
+Specify the option with the # command line argument.
+perl script.pl --enable_cache --max_clients = 5 --type = single config.init
+&lt;/ pre&gt;
+
+You can easily handle such command line options using the &lt;strong&gt; GetOptions function &lt;/ strong&gt;.
+
+&lt;pre&gt;
+Handling command line argument options with #GetOptions
+
+#Set default value
+my $ enable_cache;
+my $ max_clients = 5;
+my $ type ='prefork';
+
+# Optional processing
+GetOptions (
+  'enable_cache' =&gt; \ $ enable_cache,
+  'max_clients = i'=&gt; \ $ max_clients,
+  'type = s'=&gt; \ $ type
 );
 
-# オプション以外の引数を受け取る 
-my $conf_file = shift;
-</pre>
-<p>
-  GetOptions関数の使い方です。
-</p>
-<pre>
-# GetOptionsの引数
-GetOptions(
-  'オプション名=値の種類' =&gt; '保存するための変数',
-  'オプション名=値の種類' =&gt; '保存するための変数',
+Receives non-option arguments
+my $ conf_file = shift;
+&lt;/ pre&gt;
+
+How to use the GetOptions function.
+
+&lt;pre&gt;
+Arguments of # GetOptions
+GetOptions (
+  'Option name = Value type' =&gt;'Variable to save',
+  'Option name = Value type' =&gt;'Variable to save',
   ...
 );
-</pre>
-<p>
-  「オプション名=種類」にはオプション名と値の種類を指定します。オプション名が真偽値である場合は値の種類は省略します。オプション名が整数のときは値の種類にiを指定します。オプション名が文字列の場合は値の種類にsを指定します。
-</p>
-<pre>
-# 真偽値
-'enable_cache'  =&gt; \$enable_cache
+&lt;/ pre&gt;
 
-# 整数
-'max_clients=i' =&gt; \$max_clients
+For "Option name = Type", specify the option name and value type. If the option name is a boolean value, the value type is omitted. If the option name is an integer, specify i as the value type. If the option name is a string, specify s as the value type.
 
-# 文字列
-'type=s'        =&gt; \$type
-</pre>
-<p>
-  「保存するための変数」にはスカラ変数のリファレンスを指定します。デフォルト値の設定を最初に行っておき、GetOptionsの引数にリファレンスで渡します。
-</p>
-<pre>
-# デフォルト値の設定
-my $max_clients = 5;
+&lt;pre&gt;
+# Authenticity value
+'enable_cache' =&gt; \ $ enable_cache
 
-# 引数にスカラ変数のリファレンスを指定
-GetOptions(
-  'max_clients=i' =&gt; \$max_clients,
+# Integer
+'max_clients = i'=&gt; \ $ max_clients
+
+#String
+'type = s'=&gt; \ $ type
+&lt;/ pre&gt;
+
+For "Variables to save", specify a reference for scalar variables. Set the default value first and pass it as a reference to the GetOptions argument.
+
+&lt;pre&gt;
+#Set default value
+my $ max_clients = 5;
+
+#Specify a scalar variable reference in the argument
+GetOptions (
+  'max_clients = i'=&gt; \ $ max_clients,
 );
-</pre>
-<p>
-  コマンドラインオプションは短縮名で指定することも可能です。オプション名の頭文字が短縮名になります。
-</p>
-<pre>
-# 短縮名でコマンドライン引数のオプションを指定
-perl script.pl -e -m=5 -t=single config.init
-</pre>
-<p>
-  =は省略することもできます。
-</p>
-<pre>
-# イコールを省略
+&lt;/ pre&gt;
+
+Command line options can also be specified by abbreviated names. The initial letter of the option name is the abbreviated name.
+
+&lt;pre&gt;
+# Specify command line argument options with abbreviated name
+perl script.pl -e -m = 5 -t = single config.init
+&lt;/ pre&gt;
+
+= Can be omitted.
+
+&lt;pre&gt;
+# Omit equal
 perl script.pl --enable_cache --max_clients 5 --type single config.init
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

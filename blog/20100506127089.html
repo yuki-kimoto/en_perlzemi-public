@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Devel::DProf - シンプルなプロファイラ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="プログラムを実行しても必要なパフォーマンスが得られないことがあります。どの部分がボトルネックになっているのかを調べるのは簡単なことではありません。プロファイラと呼ばれるツールを利用すればプログラムの中のどの処理で時間がかかっているかを調べることができます。(現在であればDevel::NYTProfを利用するのがよいでしょう。)">
+<title> Devel :: DProf --Simple Profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You may not get the performance you want when you run the program. Finding out which part is the bottleneck is not easy. You can use a tool called a profiler to find out which process in your program is taking a long time. (Currently, it is better to use Devel :: NYTProf.)">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Devel::DProf - シンプルなプロファイラ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="プログラムを実行しても必要なパフォーマンスが得られないことがあります。どの部分がボトルネックになっているのかを調べるのは簡単なことではありません。プロファイラと呼ばれるツールを利用すればプログラムの中のどの処理で時間がかかっているかを調べることができます。(現在であればDevel::NYTProfを利用するのがよいでしょう。)" />
+<meta name="twitter:title" content=" Devel :: DProf --Simple Profiler  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You may not get the performance you want when you run the program. Finding out which part is the bottleneck is not easy. You can use a tool called a profiler to find out which process in your program is taking a long time. (Currently, it is better to use Devel :: NYTProf.)" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20100506127089.html">Devel::DProf - シンプルなプロファイラ</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20100506127089.html"> Devel :: DProf --Simple Profiler </a></ h2>
 <p>
-  プログラムを実行しても必要なパフォーマンスが得られないことがあります。どの部分がボトルネックになっているのかを調べるのは簡単なことではありません。プロファイラと呼ばれるツールを利用すればプログラムの中のどの処理で時間がかかっているかを調べることができます。(現在であればDevel::NYTProfを利用するのがよいでしょう。)
+  You may not get the performance you want when you run the program. Finding out which part is the bottleneck is not easy. You can use a tool called a profiler to find out which process in your program is taking a long time. (Currently, it is better to use Devel :: NYTProf.)
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,127 +97,130 @@
 
 
 <p>
-  標準モジュールにシンプルなプロファイラである<strong>Devel::DProfモジュール</strong>があるのでこれを利用することができます。
+  The standard module has a simple profiler, the <strong> Devel :: DProf module </ strong>, which you can take advantage of.
 </p>
 <p>
-  プロファイルを作成するのは簡単です。次のコマンドを実行するとカレントディレクトリに「tmon.out」というプロファイルを情報を出力したファイルが作成されます。
+  Creating a profile is easy. When the following command is executed, a file that outputs the profile information "tmon.out" is created in the current directory.
 </p>
 <pre>
-# プロファイル情報の作成
-perl -d:DProf target.pl
-</pre>
-<p>
-  「tmon.out」を見やすいフォーマットで表示するにはdprofppコマンドを実行します。
-</p>
-<pre>
-# プロファイルを見やすいフォーマットで表示
+#Create profile information
+perl -d: DProf target.pl
+&lt;/ pre&gt;
+
+To display "tmon.out" in an easy-to-read format, execute the dprofpp command.
+&lt;pre&gt;
+#Display profile in easy-to-read format
 dprofpp
-</pre>
-<p>
-  すると次のような見やすいフォーマットで出力されます。
-</p>
-<pre>
-# プロファイル
+&lt;/ pre&gt;
+
+Then, it will be output in the following easy-to-read format.
+&lt;pre&gt;
+#Profile
 Total Elapsed Time = 1.171916 Seconds
-  User+System Time = 1.171916 Seconds
+  User + System Time = 1.171916 Seconds
 Exclusive Times
-%Time ExclSec CumulS #Calls sec/call Csec/c  Name
- 78.6   0.922  0.922      2   0.4610 0.4610  main::func2
- 18.6   0.218  0.218      1   0.2180 0.2180  main::func1
- 1.37   0.016  0.016      5   0.0032 0.0032  main::BEGIN
- 0.00       - -0.000      1        -      -  strict::bits
- 0.00       - -0.000      2        -      -  strict::import
- 0.00       - -0.000      2        -      -  warnings::import
-</pre>
-<p>
-  各項目の意味は次のようになっています。時間がかかった順に上位から表示されます。
-</p>
-<table>
-  <tr>
-    <td>
-      %Time
-    </td>
-    <td>
-      サブルーチンの実行時間の全体に対する割合
-    </td>
-  </tr>
-  <tr>
-    <td>
+% Time ExclSec CumulS #Calls sec / call Csec / c Name
+ 78.6 0.922 0.922 2 0.4610 0.4610 main :: func2
+ 18.6 0.218 0.218 1 0.2180 0.2180 main :: func1
+ 1.37 0.016 0.016 5 0.0032 0.0032 main :: BEGIN
+ 0.00 --- 0.000 1 ---- strict :: bits
+ 0.00 --- 0.000 2 ---- strict :: import
+ 0.00 --- 0.000 2 ---- warnings :: import
+&lt;/ pre&gt;
+
+The meaning of each item is as follows. It is displayed from the top in the order of time.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      % Time
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Percentage of subroutine execution time to total
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       ExclSec
-    </td>
-    <td>
-      サブルーチンの実行時間(サブルーチンの呼び出しを含まない)
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Subroutine execution time (not including subroutine calls)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       CumulS
-    </td>
-    <td>
-      サブルーチンの実行時間(サブルーチンの呼び出しを含む)
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Subroutine execution time (including subroutine call)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       #Calls
-    </td>
-    <td>
-      ルーチン呼び出し回数
-    </td>
-  </tr>
-  <tr>
-    <td>
-      sec/call
-    </td>
-    <td>
-      1回あたりのサブルーチンの実行時間(サブルーチンの呼び出しを含まない)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Csec/c
-    </td>
-    <td>
-      1回あたりのサブルーチンの実行時間(サブルーチンの呼び出しを含む)
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Routine call count
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      sec / call
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Subroutine execution time per subroutine (excluding subroutine calls)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Csec / c
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Subroutine execution time per subroutine (including subroutine call)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       Name
-    </td>
-    <td>
-      サブルーチン名
-    </td>
-  </tr>
-</table>
-<p>
-  上記の結果はスクリプトを実行した場合の私の環境での結果です。
-</p>
-<pre>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Subroutine name
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+The above result is the result in my environment when I run the script.
+&lt;pre&gt;
 use strict;
 use warnings;
 
-func1();
-func2();
-func2();
+func1 ();
+func2 ();
+func2 ();
 
 sub func1 {
-  my $i = 0;
-  while ($i &lt; 1000000) {
-    $i++;
+  my $ i = 0;
+  while ($ i &lt;1000000) {
+    $ i ++;
   }
 }
 
 sub func2 {
-  my $i = 0;
-  while ($i &lt; 2000000) {
-    $i++;
+  my $ i = 0;
+  while ($ i &lt;2000000) {
+    $ i ++;
   }
 }
-</pre>
-<p>
-  <a href="/blog/20100123126425.html">while文</a>を使って数値をインクリメントしています。
-</p>
+&lt;/ pre&gt;
+
+The number is incremented using &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt;.
 
   </div>
   <div class="bottom">

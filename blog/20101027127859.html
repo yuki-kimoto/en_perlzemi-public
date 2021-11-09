@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>cpanmによるPerlのローカル環境構築 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="cpanmを使ってローカル環境を構築する手順です。迷わない一直線の手順です。">
+<title> Building a local Perl environment with cpanm  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="This is the procedure to build a local environment using cpanm. It is a straightforward procedure without hesitation.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="cpanmによるPerlのローカル環境構築 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="cpanmを使ってローカル環境を構築する手順です。迷わない一直線の手順です。" />
+<meta name="twitter:title" content=" Building a local Perl environment with cpanm  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="This is the procedure to build a local environment using cpanm. It is a straightforward procedure without hesitation." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20101027127859.html">cpanmによるPerlのローカル環境構築</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20101027127859.html"> Building a local Perl environment with cpanm </a></ h2>
 <p>
-  cpanmを使ってローカル環境を構築する手順です。迷わない一直線の手順です。 
+  This is the procedure to build a local environment using cpanm. It is a straightforward procedure without hesitation.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,180 +96,186 @@
 </div>
 
 
-<h3>cpanmのインストール</h3>
+<h3> Install cpanm </ h3>
 <p>
-  以下のコマンドを個人ユーザで実行してください。
+  Execute the following command as an individual user.
 </p>
 <pre>
-# cpanmのインストール
+# installation of cpanm
 curl -L -O http://xrl.us/cpanm
-perl cpanm App::cpanminus
-</pre>
-<p>
-  cpanmを使うと簡単にローカル環境にCPANモジュールをインストールできるようになります。root権限がない場合はユーザのホームディレクトリ以下のperl5というディレクトリ以下にCPANモジュールがインストールされます。インストールには時間がかかるかもしれませんが、しばらく待ちます。
-</p>
-<h3>モジュールやコマンドを利用するための設定</h3>
-<p>
-  インストールしたモジュールやコマンドを利用するには次の設定を「.bashrc」というbashの設定ファイルに追加する必要があります。
-</p>
-<pre>
-export PERL_CPANM_OPT="--local-lib=~/perl5"
-export PATH=$HOME/perl5/bin:$PATH;
-export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB;
-</pre>
-<p>
-  PERL_CPANM_OPTはcpanmの設定を行うための環境変数です。モジュールをインストールするディレクトリを指定しています。デフォルトで「~/perl5」以下にインストールされるのですが、警告が発生するので明示的に指定します。PATHはインストールされたコマンドを利用するための設定です。たとえばcpanmコマンドが利用できるようになります。PERL5LIBでモジュールのインクルードパスを追加できます。この設定を行うとスクリプトからインストールしたモジュールが利用できるようになります。
-</p>
-<p>
-  次のように「.bashrc」を編集して、上記の記述を追加しましょう。
-</p>
-<pre>
-vi ~/.bashrc
-</pre>
-<p>
-  次にこの設定を反映させます。
-</p>
-<pre>
-source ~/.bashrc
-</pre>
-<h3>モジュールのインストール</h3>
-<p>
-  ためしにMojoliciousというモジュールをインストールしてみましょう。
-</p>
-<pre>
+perl cpanm App :: cpanminus
+&lt;/ pre&gt;
+
+cpanm makes it easy to install CPAN modules in your local environment. If you don't have root privileges, the CPAN module will be installed under the directory perl5 under your home directory. The installation may take some time, but wait for a while.
+
+&lt;h3&gt; Settings for using modules and commands &lt;/ h3&gt;
+
+To use the installed modules and commands, you need to add the following settings to the bash configuration file called ".bashrc".
+
+&lt;pre&gt;
+export PERL_CPANM_OPT = "--local-lib = ~ / perl5"
+export PATH = $ HOME / perl5 / bin: $ PATH;
+export PERL5LIB = $ HOME / perl5 / lib / perl5: $ PERL5LIB;
+&lt;/ pre&gt;
+
+PERL_CPANM_OPT is an environment variable for setting cpanm. Specifies the directory where the module will be installed. By default, it is installed under "~ / perl5", but a warning will occur, so specify it explicitly. PATH is a setting for using installed commands. For example, the cpanm command will be available. You can add a module include path with PERL5LIB. With this setting, the modules installed from the script will be available.
+
+Edit ".bashrc" as follows and add the above description.
+
+&lt;pre&gt;
+vi ~ / .bashrc
+&lt;/ pre&gt;
+
+Then reflect this setting.
+
+&lt;pre&gt;
+source ~ / .bashrc
+&lt;/ pre&gt;
+
+&lt;h3&gt; Module installation &lt;/ h3&gt;
+
+Let's try installing a module called Mojolicious.
+
+&lt;pre&gt;
 cpanm Mojolicious
-</pre>
-<p>
-  lsコマンドを使って「~/perl5/lib/perl5」というディレクトリにMojoliciousがインストールされていることを確認できます。
-</p>
-<pre>
-ls ~/perl5/lib/perl5
-</pre>
-<p>
-  またモジュールを実際に利用できるかどうかを試してみましょう。コマンドラインから次のコマンドを実行してエラーが出なかったら成功です。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You can use the ls command to verify that Mojolicious is installed in the directory "~ / perl5 / lib / perl5".
+
+&lt;pre&gt;
+ls ~ / perl5 / lib / perl5
+&lt;/ pre&gt;
+
+Also try to see if the module is actually available. If you execute the following command from the command line and no error occurs, it is successful.
+
+&lt;pre&gt;
 perl -MMojolicious -e 1
-</pre>
-<p>
-  これでローカル環境にモジュールをどんどんインストールすることができます。他のサーバにモジュールを配置したい場合は、アーキテクチャがまったく同じであれば、「~/perl5」をまるまるコピーするだけです。もちろん「.bashrc」の記述も忘れずに行います。Perlでのデプロイ作業はとても簡単ですね。
-</p>
-<h3>cpanmを使って指定したディレクトリにCPANモジュールをインストールする</h3>
-<p>
-  cpanmを使って指定したディレクトrにCPANモジュールをインストールするには<b>-L</b>オプションを使用します。
-</p>
-<pre>
-cpanm -L extlib DBIx::Custom
-</pre>
-<p>
-  カレントディレクトリの<b>extlib</b>というディレクトリにDBIx::Customがインストールされます。
-</p>
-<h3>cpanmとcpanfileでバージョンを指定してモジュールをインストールする</h3>
-<p>
-  <strong>cpanm</strong>と<strong>cpanfile</strong>を使うと、バージョンを指定してモジュールをインストールすることができます。
-</p>
-<h4>cpanfileの記述</h4>
-<p>
-  cpanfileを記述します。cpanfileはモジュールのバージョンを指定するためのファイルです。cpanfileという名前のファイルを作成してください。以下のような記述を行います。
-</p>
-<pre>
-requires 'DBI', '== 1.619';
-requires 'DBD::SQLite', '== 1.36_04';
-requires 'DBIx::Custom', '== 0.25';
-</pre>
-<p>
-  次のフォーマットで記述します。
-</p>
-<pre>
-requires モジュール名 バージョン
-</pre>
-<p>
-  バージョンには次の表記を使うことができます。
-</p>
-<table>
-  <tr>
-    <td>
-      <b>意味</b>
-    </td>
-    <td>
-      <b>書式</b>
-    </td>
-    <td>
-      <b>サンプル</b>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      指定したバージョン
-    </td>
-    <td>
-      == バージョン
-    </td>
-    <td>
+&lt;/ pre&gt;
+
+Now you can install more and more modules in your local environment. If you want to put the module on another server, just copy "~ / perl5" entirely if the architecture is exactly the same. Of course, don't forget to write ".bashrc". Deploying in Perl is very easy, isn't it?
+
+&lt;h3&gt; Install the CPAN module in the directory you specified using cpanm &lt;/ h3&gt;
+
+Use the &lt;b&gt; -L &lt;/ b&gt; option to install the CPAN module on the directory specified using cpanm.
+
+&lt;pre&gt;
+cpanm -L extlib DBIx :: Custom
+&lt;/ pre&gt;
+
+DBIx :: Custom will be installed in the current directory &lt;b&gt; extlib &lt;/ b&gt;.
+
+&lt;h3&gt; Install the module by specifying the version with cpanm and cpanfile &lt;/ h3&gt;
+
+&lt;strong&gt; cpanm &lt;/ strong&gt; and &lt;strong&gt; cpanfile &lt;/ strong&gt; allow you to specify the version to install the module.
+
+&lt;h4&gt; Cpanfile description &lt;/ h4&gt;
+
+Write a cpanfile. cpanfile is a file for specifying the module version. Create a file named cpanfile. Make the following description.
+
+&lt;pre&gt;
+requires'DBI','== 1.619';
+requires'DBD :: SQLite','== 1.36_04';
+requires'DBIx :: Custom','== 0.25';
+&lt;/ pre&gt;
+
+Describe in the following format.
+
+&lt;pre&gt;
+requires module name version
+&lt;/ pre&gt;
+
+You can use the following notation for the version:
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;b&gt; Meaning &lt;/ b&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;b&gt; Format &lt;/ b&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;b&gt; Sample &lt;/ b&gt;
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Specified version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      == Version
+    &lt;/ td&gt;
+    &lt;td&gt;
       == 0.03
-    </td>
-  </tr>
-  <tr>
-    <td>
-      指定したバージョン以上
-    </td>
-    <td>
-      バージョンのみ あるいは >= バージョン
-    </td>
-    <td>
-      0.03 あるいは >= 0.03
-    </td>
-  </tr>
-  <tr>
-    <td>
-      指定したバージョン以下
-    </td>
-    <td>
-      <=
-    </td>
-    <td>
-      <= 0.03
-    </td>
-  </tr>
-  <tr>
-    <td>
-      指定したバージョンより大きい
-    </td>
-    <td>
-      > バージョン
-    </td>
-    <td>
-      > 0.03
-    </td>
-  </tr>
-  <tr>
-    <td>
-      指定したバージョンより小さい
-    </td>
-    <td>
-      < バージョン
-    </td>
-    <td>
-      < 0.03
-    </td>
-  </tr>
-</table>
-<h4>モジュールのインストール</h4>
-<p>
-  cpanmの<strong>--installdeps</strong>オプションを使うと、cpanfileの記述を調べて、モジュールをインストールしてくれます。(ドットがオプションの後ろに続くことに注意)
-</p>
-<pre>
-perl cpanm --installdeps .
-</pre>
-<p>
-  <strong>-L</strong>オプションを使えば、指定したディレクトリにモジュールをインストールすることもできます。
-</p>
-<pre>
-perl cpanm -L extlib --installdeps .
-</pre>
-<p>
-  自分の作成したPerlのアプリケーションが、CPANに存在するモジュールに依存しているときは、cpanmとcpanfileを一緒に含めておくと、ユーザーに簡単に利用してもらうことができます。
-</p>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Specified version or higher
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Version only or&gt; = version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      0.03 or&gt; = 0.03
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Below the specified version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;=
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;= 0.03
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Greater than the specified version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &gt; Version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &gt; 0.03
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Less than the specified version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;Version
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;0.03
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h4&gt; Module installation &lt;/ h4&gt;
+
+The cpanm &lt;strong&gt; --installdeps &lt;/ strong&gt; option will look up the description in the cpanfile and install the module for you. (Note that the dot follows the option)
+
+&lt;pre&gt;
+perl cpanm --installdeps.
+&lt;/ pre&gt;
+
+You can also use the &lt;strong&gt; -L &lt;/ strong&gt; option to install the module in a specified directory.
+
+&lt;pre&gt;
+perl cpanm -L extlib --installdeps.
+&lt;/ pre&gt;
+
+If your Perl application depends on a module that exists on CPAN, you can include cpanm and cpanfile together to make it easier for your users to use.
 
   </div>
   <div class="bottom">
