@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Imagerで画像の幅と高さとを取得する getwidth, getheight - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlの画像操作モジュールImagerで、幅と高さとを取得するには、getwidthメソッドとgetheightメソッドを使用します。">
+<title> Get width and height of the image with Imager getwidth, getheight  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="In Perl's image manipulation module Imager, use the  getwidth  and  getheight  methods to get the width and height.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Imagerで画像の幅と高さとを取得する getwidth, getheight - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlの画像操作モジュールImagerで、幅と高さとを取得するには、getwidthメソッドとgetheightメソッドを使用します。" />
+<meta name="twitter:title" content=" Get width and height of the image with Imager getwidth, getheight  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="In Perl's image manipulation module Imager, use the  getwidth  and  getheight  methods to get the width and height." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20150925144316.html">Imagerで画像の幅と高さとを取得する getwidth, getheight</a></h2>
+    <h2><a href="/blog/20150925144316.html"> Get width and height of the image with Imager getwidth, getheight </a></ h2>
 <p>
-  Perlの画像操作モジュールImagerで、幅と高さとを取得するには、<b>getwidth</b>メソッドと<b>getheight</b>メソッドを使用します。
+  In Perl's image manipulation module Imager, use the <b> getwidth </ b> and <b> getheight </ b> methods to get the width and height.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,24 +80,25 @@
 
 
 <pre>
-# 幅の取得
-$imager-&gt;getwidth
+# Get width
+$ imager-&gt; getwidth
 
-# 高さの取得
-$imager-&gt;getheight;
-</pre>
-<h3>サンプル</h3>
-<p>
-  getwidthとgetheightを使用したサンプルです。
-</p>
-<pre>
+#Get height
+$ imager-&gt; getheight;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample &lt;/ h3&gt;
+
+This is a sample using getwidth and gettheight.
+
+&lt;pre&gt;
 use Imager;
-my $imager = Imager-&gt;new;
-my $image_file = 'image.png';
-$imager-&gt;read(file =&gt; $image_file);
-my $width = $imager-&gt;getwidth;
-my $height = $imager-&gt;getheight;
-</pre>
+my $ imager = Imager-&gt; new;
+my $ image_file ='image.png';
+$ imager-&gt; read (file =&gt; $ image_file);
+my $ width = $ imager-&gt; getwidth;
+my $ height = $ imager-&gt; getheight;
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

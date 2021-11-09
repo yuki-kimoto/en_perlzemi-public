@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>WindowsのコマンドプロンプトでUTF-8を表示する方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="WindowsのコマンドプロンプトでUTF-8を表示する方法を紹介します。2021年9月3日にWindows 10で確認したものです。">
+<title> How to display UTF-8 at the Windows command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I will show you how to display UTF-8 at the Windows command prompt. It was confirmed on Windows 10 on September 3, 2021.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="WindowsのコマンドプロンプトでUTF-8を表示する方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="WindowsのコマンドプロンプトでUTF-8を表示する方法を紹介します。2021年9月3日にWindows 10で確認したものです。" />
+<meta name="twitter:title" content=" How to display UTF-8 at the Windows command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I will show you how to display UTF-8 at the Windows command prompt. It was confirmed on Windows 10 on September 3, 2021." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20210903122616.html">WindowsのコマンドプロンプトでUTF-8を表示する方法</a></h2>
+    <h2><a href="/blog/20210903122616.html"> How to display UTF-8 at the Windows command prompt </a></ h2>
 <p>
-  WindowsのコマンドプロンプトでUTF-8を表示する方法を紹介します。2021年9月3日にWindows 10で確認したものです。
+  I will show you how to display UTF-8 at the Windows command prompt. It was confirmed on Windows 10 on September 3, 2021.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,23 +80,19 @@
 
 
 <p>
-  コマンドプロンプトのショートカットを作成します。右クリックで、プロパティを表示。リンク先を以下のようにします。65001というコードがUTF-8のコードです。
+  Create a command prompt shortcut. Right-click to display properties. The link destination is as follows. The code 65001 is the UTF-8 code.
 </p>
 <pre>
-%windir%\system32\cmd.exe /k "chcp 65001"
-</pre>
-<p>
-  <img src="/images/commandprompt/win_command_utf8.png">
-</p>
-<p>
-  Perlのプログラムは、UTF-8でソースコードを記述するのが、現在推奨される方法なので、UTF-8をコマンドプロンプトで表示できるのはありがたいですね。
-</p>
-<p>
-  以下の情報を参考にしました。
-</p>
-<p>
-  <a href="https://qiita.com/s4i/items/75c19c9feb10b54c1ce9">PowerShell起動時、文字コードをUTF-8に変える方法 - Qiita</a>
-</p>
+% windir% \ system32 \ cmd.exe / k "chcp 65001"
+&lt;/ pre&gt;
+
+&lt;img src = "/ images / command prompt / win_command_utf8.png"&gt;
+
+For Perl programs, writing the source code in UTF-8 is currently the recommended method, so it's nice to be able to view UTF-8 at the command prompt.
+
+I referred to the following information.
+
+&lt;a href="https://qiita.com/s4i/items/75c19c9feb10b54c1ce9"&gt; How to change the character code to UTF-8 when PowerShell starts --Qiita &lt;/a&gt;
 
   </div>
   <div class="bottom">

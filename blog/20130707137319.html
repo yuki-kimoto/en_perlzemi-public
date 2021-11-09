@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ハッシュベースのオブジェクト指向を見直そう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="僕自身はハッシュベースのオブジェクト指向が好きです。mopは簡単なことをするには複雑すぎると感じます。mopをコアに導入するか、いつできるかで、何年も何年もかかるなら、先にハッシュベースのオブジェクト指向モジュールをひとつコアに入れてほしい。これができたら、Perlユーザーの利便性はものすごく上がると思う。">
+<title> Let's review hash-based object orientation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I personally like hash-based object orientation. mop feels too complicated to do simple things. If it takes years or years depending on when or when you can put mop in the core, put one hash-based object-oriented module in the core first. If this can be done, the convenience of Perl users will be greatly improved.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ハッシュベースのオブジェクト指向を見直そう - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="僕自身はハッシュベースのオブジェクト指向が好きです。mopは簡単なことをするには複雑すぎると感じます。mopをコアに導入するか、いつできるかで、何年も何年もかかるなら、先にハッシュベースのオブジェクト指向モジュールをひとつコアに入れてほしい。これができたら、Perlユーザーの利便性はものすごく上がると思う。" />
+<meta name="twitter:title" content=" Let's review hash-based object orientation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I personally like hash-based object orientation. mop feels too complicated to do simple things. If it takes years or years depending on when or when you can put mop in the core, put one hash-based object-oriented module in the core first. If this can be done, the convenience of Perl users will be greatly improved." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,22 +59,22 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130220136137.html">
-        <span itemprop="name">読み物</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20130707137319.html">ハッシュベースのオブジェクト指向を見直そう</a></h2>
+        <span itemprop = "name"> reading material </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20130707137319.html"> Let's review hash-based object orientation </a></ h2>
 <p>
-  僕自身はハッシュベースのオブジェクト指向が好きです。mopは簡単なことをするには複雑すぎると感じます。mopをコアに導入するか、いつできるかで、何年も何年もかかるなら、先にハッシュベースのオブジェクト指向モジュールをひとつコアに入れてほしい。これができたら、Perlユーザーの利便性はものすごく上がると思う。
+  I personally like hash-based object orientation. mop feels too complicated to do simple things. If it takes years or years depending on when or when you can put mop in the core, put one hash-based object-oriented module in the core first. If this can be done, the convenience of Perl users will be greatly improved.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,100 +93,95 @@
 
 
 <p>
-  僕自身はmopにはあんまり期待していない。なぜならハッシュベースのオブジェクト指向で十分すぎるクラスが作れるからだ。ハッシュベースのオブジェクト指向は、簡潔なのに、機能としては必要十分なクラスを作成することができる。
+  I don't expect much from mop myself. Because hash-based object-oriented can create more than enough classes. Hash-based object-oriented programming is simple, but it is possible to create a class that is functionally necessary and sufficient.
 </p>
 <p>
-  ハッシュベースのオブジェクト指向の利点を書いていく。
+  We will write about the advantages of hash-based object-oriented programming.
 </p>
-<h3>コンストラクタのパフォーマンス</h3>
+<h3> Constructor performance </ h3>
 <p>
-  ハッシュベースのオブジェクト指向のほうがコンストラクタの生成のパフォーマンスはだいぶといい。
+  Hash-based object-oriented programming has much better performance in constructor generation.
 </p>
 <pre>
-my $obj = SomeClass-&gt;new;
-</pre>
-<p>
-  これは、受け取った値を単純にハッシュに格納してblessしているからだ。パフォーマンスなんてと思うかもしれないけれど、実は大きなフレームワークにもなってくると、コンストラクタ生成処理がものすごく多い回数を使っていて、ここの部分で遅くなっているということもある。
-</p>
-<p>
-  そんなことで悩むんだったら、最初からハッシュベースのオブジェクト思考で書いて、パフォーマンスが速いほうがよいと思う。
-</p>
-<h3>アクセッサのパフォーマンス</h3>
-<p>
-  アクセッサというのは、頻繁に呼ばれる。もしアクセッサを大量に呼ぶ部分で、モジュールのパフォーマンスネックが発生していたらどうすればいいだろう。こんなときも、ハッシュベースのオブジェクト指向なら簡単に解決する。
-</p>
-<p>
-  それは、アクセッサの呼び出しをハッシュへのアクセスに変更すればよいだけだからだ。これで20～30倍くらいは速くなる。
-</p>
-<pre>
-# メソッド呼び出し
-$self-&gt;title;
+my $ obj = SomeClass-&gt; new;
+&lt;/ pre&gt;
 
-# ハッシュアクセス
-$self-&gt;{title}
-</pre>
-<p>
-  もしmopで書いていたとしたら、こんなことはできないはず。
-</p>
-<h3>シンプル イズ ベスト</h3>
-<p>
-  たくさんの機能はなくても、シンプルなオブジェクト指向モジュールで、きれいに実装された大きなフレームワークを実装することができる。これはMojoliciousなんかのフレームワークをみてみると、簡潔なオブジェクト指向モジュールで、よく整理されたクラスがきちんとできることがわかる。
-</p>
-<pre>
+This is because the received value is simply stored in a hash and blessed. You might think of performance, but when it comes to large frameworks, the constructor generation process uses an extremely large number of times, and it is sometimes slowed down here.
+
+If you're worried about that, I think it's better to write with hash-based object thinking from the beginning and have faster performance.
+
+&lt;h3&gt; Accessor performance &lt;/ h3&gt;
+
+Accessors are often called. What if there is a module performance bottleneck in the part that calls a lot of accessors? Even in such a case, hash-based object-oriented programming can easily solve the problem.
+
+That's because all you have to do is change the accessor call to access to the hash. This will be 20 to 30 times faster.
+
+&lt;pre&gt;
+#Method call
+$ self-&gt; title;
+
+# Hash access
+$ self-&gt; {title}
+&lt;/ pre&gt;
+
+If you were writing in mop, you wouldn't be able to do this.
+
+&lt;h3&gt; Simple is Best &lt;/ h3&gt;
+
+You can implement a large, nicely implemented framework with a simple object-oriented module without a lot of features. If you look at a framework like Mojolicious, you'll see that it's a concise object-oriented module that creates well-organized classes.
+
+&lt;pre&gt;
 package SomeClass;
-use Mojo::Base -base;
+use Mojo :: Base -base;
 
 has x =&gt; 0;
 has y =&gt; 0;
-</pre>
-<p>
-  アクセッサの生成と、デフォルト値が設定できれば、十分なことがほとんどだ。複雑だと、何かと負担は多くなる。
-</p>
-<h3>クラス設計には単一継承と委譲を使うのがわかりやすい</h3>
-<p>
-  クラスを設計するときは、単一継承と委譲というテクニックを使うのがよいと感じます。この方針でクラスを設計するとクラスはわかりやすくなります。多重継承を使う必然性はなくて、クラスの構成を複雑にしがちになると思います。
-</p>
-<p>
-  たとえば単一継承で間に合わなくなった場合は委譲を使います。Rを継承して、クラスQの機能をクラスPに追加したい場合を考えましょう。このような場合は、オブジェクトQを生成して、オブジェクトPに持たせます。これが委譲というテクニックです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+It's usually enough to generate accessors and set default values. If it is complicated, it will be a heavy burden.
+
+&lt;h3&gt; It's easy to use single inheritance and delegation for class design &lt;/ h3&gt;
+
+When designing a class, I find it best to use the techniques of single inheritance and delegation. Designing a class with this policy makes the class easier to understand. There is no need to use multiple inheritance, and I think it tends to complicate the structure of the class.
+
+For example, if a single inheritance doesn't make it in time, use delegation. Suppose you want to inherit R and add the functionality of class Q to class P. In such a case, create object Q and give it to object P. This is a technique called delegation.
+
+&lt;pre&gt;
 package P;
-use Mojo::Base 'R';
+use Mojo :: Base'R';
 
 use Q;
 
-has q =&gt; sub { Q-&gt;new };
-</pre>
-<p>
-  このようにすればクラスQの機能を利用できるクラスPができますね。もちろんRを単一継承していますから、Rの機能は直接Pから利用できます。
-</p>
-<h3>オーバーライドが直感的</h3>
-<p>
-  たとえばサブクラスでコンストラクタをオーバーライドしたいとしますね。ハッシュベースのオブジェクト指向であれば、その操作は直感的で、他の言語でもなじみがある書き方になります。
-</p>
-<pre>
+has q =&gt; sub {Q-&gt; new};
+&lt;/ pre&gt;
+
+By doing this, you can create class P that can use the functions of class Q. Of course, since it inherits a single R, the functions of R can be used directly from P.
+
+&lt;h3&gt; Intuitive override &lt;/ h3&gt;
+
+For example, suppose you want to override a constructor in a subclass. Hash-based object-oriented programming is intuitive and familiar to other languages.
+
+&lt;pre&gt;
 sub new {
-  my $self = shift-&gt;SUERP::new(@_);
+  my $ self = shift-&gt; SUERP :: new (@_);
 
-  # ゴニョゴニョ
+  # Gonyo Gonyo
 
-  return $self;
+  return $ self;
 }
-</pre>
-<p>
-  mopのBUILDとかBUILDARGSというのは、わかりにくいです。
-</p>
-<h3>デストラクタはDESTROY</h3>
-<p>
-  デストラクタはPerlの習慣どおりDESTROYです。わざわざmopのDEMOLISHを覚える必要もないです。
-</p>
-<h3>ハッシュベースのオブジェクト指向モジュールをお勧めします</h3>
-<p>
-  メタオブジェクトプロトコルベースのオブジェクト指向よりも、ハッシュベースのオブジェクト指向を僕はお勧めします。コアにも、ハッシュベースのオブジェクト指向モジュールがひとつ入ってほしいです。
-</p>
-<p>
-  メタオブジェクトプロトコルベースのオブジェクト指向は、一時あおられまくって、すごいものだと思われていたけれど、僕はそれには賛同しません。
-</p>
+&lt;/ pre&gt;
+
+BUILD and BUILDARGS of mop are difficult to understand.
+
+&lt;h3&gt; The destructor is DESTROY &lt;/ h3&gt;
+
+The destructor is DESTROY as per Perl's custom. You don't have to bother to remember mop's DEMOLISH.
+
+&lt;h3&gt; Hash-based object-oriented modules are recommended &lt;/ h3&gt;
+
+I recommend hash-based object-oriented over meta-object protocol-based object-oriented. I also want the core to contain one hash-based object-oriented module.
+
+The meta-object protocol-based object-orientation was once crazy and thought to be awesome, but I don't agree with it.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>perltidy - Perlのソースコードを整形 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="perltidyはPerlのソースコードを成形するためのツールです。読みやすいPerlのソースコードに整形してくれます。">
+<title> perltidy --Format Perl source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="perltidy is a tool for shaping Perl source code. It formats the Perl source code so that it is easy to read.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="perltidy - Perlのソースコードを整形 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="perltidyはPerlのソースコードを成形するためのツールです。読みやすいPerlのソースコードに整形してくれます。" />
+<meta name="twitter:title" content=" perltidy --Format Perl source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="perltidy is a tool for shaping Perl source code. It formats the Perl source code so that it is easy to read." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20130326136427.html">perltidy - Perlのソースコードを整形</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20130326136427.html"> perltidy --Format Perl source code </a></ h2>
 <p>
-  perltidyはPerlのソースコードを成形するためのツールです。読みやすいPerlのソースコードに整形してくれます。
+  perltidy is a tool for shaping Perl source code. It formats the Perl source code so that it is easy to read.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,49 +97,48 @@
 
 
 <pre>
-perltidy ソースファイル
-</pre>
-<h3>perltidyをディレクトリに含まれる複数のファイルに実行する手順</h3>
-<p>
-  <strong>perltidy</strong>を使ってディレクトリに含まれるすべてのファイルを再帰的に処理する手順を書いておきます。現時点では、perltidy本体には、ディレクトリを再帰的に処理する方法が実装されていないようです。
-</p>
-<h4>まずはバックアップを取っておく</h4>
-<p>
-  最初にディレクトリのバックアップをとっておきましょう。間違っても戻すためです。ディレクトリごと違うところにバックアップしておいてください。
-</p>
-<h4>目的のファイルを探す</h4>
-<p>
-  まず目的のファイルを<b>find2perl</b>コマンドを使って探します。.pmで終わるファイルと.plで終わるファイルが整形の対象になると思います。対象のディレクトリ名はdirです。
-</p>
-<pre>
-find2perl perl_lib/ -name "*.p[ml]" | perl
-</pre>
-<p>
-  対象のファイルが正しい場合は次の手順に進みましょう。
-</p>
-<h4>perltidyの実行</h4>
-<p>
-  さて出力されたファイルに対してperltidyを実行しましょう。
-</p>
-<pre>
-find2perl perl_lib/ -name "*.p[ml]" | perl | perl -ne "system('perltidy', $_)"
-</pre>
-<p>
-  拡張子が<b>.tdy</b>となっているファイルができています。これが整形後のソースファイルです。出力が正しいかどうかを確認しましょう。
-</p>
-<h4>拡張子が.tdyのファイルで元のファイルを上書き</h4>
-<p>
-  拡張子が.tdyのファイルで元のファイルを上書きします。これで完了です。
-</p>
-<pre>
-find2perl perl_lib/ -name "*.p[ml]" | perl | perl -MFile::Copy -ne "chomp $_;move($_ . '.tdy', $_)"
-</pre>
-<p>
-  ディレクトリの中の複数のファイルを簡単に整形する機能がperltidyにほしいですね。
-</p>
-<p>
-  (参考)<a href="/blog/20100408127089.html">File::Copy</a>
-</p>
+perltidy source file
+&lt;/ pre&gt;
+
+&lt;h3&gt; Steps to run perltidy on multiple files in a directory &lt;/ h3&gt;
+
+Here are the steps to recursively process all the files in a directory using &lt;strong&gt; perltidy &lt;/ strong&gt;. At this point, perltidy itself doesn't seem to implement a way to handle directories recursively.
+
+&lt;h4&gt; Make a backup first &lt;/ h4&gt;
+
+Make a backup of your directory first. This is to return even if you make a mistake. Back up each directory in a different location.
+
+&lt;h4&gt; Find the desired file &lt;/ h4&gt;
+
+First, find the desired file using the &lt;b&gt; find2perl &lt;/ b&gt; command. I think files ending in .pm and files ending in .pl will be formatted. The target directory name is dir.
+
+&lt;pre&gt;
+find2perl perl_lib / -name "* .p [ml]" | perl
+&lt;/ pre&gt;
+
+If the target file is correct, proceed to the next step.
+
+&lt;h4&gt; Run perltidy &lt;/ h4&gt;
+
+Now let's run perltidy on the output file.
+
+&lt;pre&gt;
+find2perl perl_lib / -name "* .p [ml]" | perl | perl -ne "system ('perltidy', $ _)"
+&lt;/ pre&gt;
+
+You now have a file with the extension &lt;b&gt; .tdy &lt;/ b&gt;. This is the formatted source file. Let's check if the output is correct.
+
+&lt;h4&gt; Overwrite the original file with a file with a .tdy extension &lt;/ h4&gt;
+
+Overwrites the original file with a file with a .tdy extension. That's it.
+
+&lt;pre&gt;
+find2perl perl_lib / -name "* .p [ml]" | perl | perl -MFile :: Copy -ne "chomp $ _; move ($ _.'. Tdy', $ _)"
+&lt;/ pre&gt;
+
+I want perltidy to have the ability to easily format multiple files in a directory.
+
+(Reference) &lt;a href="/blog/20100408127089.html"&gt; File :: Copy &lt;/a&gt;
 
   </div>
   <div class="bottom">

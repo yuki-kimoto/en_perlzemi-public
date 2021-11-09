@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>sleep関数 - 指定した時間スリープする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="sleep関数を使うと、指定した時間スリープすることができます。スリープとはCPU資源を使わずに、プログラムを停止することをいいます。">
+<title> sleep function-sleeps for a specified amount of time  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  sleep function  to sleep for a specified amount of time. Sleep means stopping a program without using CPU resources.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="sleep関数 - 指定した時間スリープする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="sleep関数を使うと、指定した時間スリープすることができます。スリープとはCPU資源を使わずに、プログラムを停止することをいいます。" />
+<meta name="twitter:title" content=" sleep function-sleeps for a specified amount of time  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  sleep function  to sleep for a specified amount of time. Sleep means stopping a program without using CPU resources." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20170522149546.html">sleep関数 - 指定した時間スリープする</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20170522149546.html"> sleep function-sleeps for a specified amount of time </a></ h2>
 <p>
-  <b>sleep関数</b>を使うと、指定した時間スリープすることができます。スリープとはCPU資源を使わずに、プログラムを停止することをいいます。
+  You can use the <b> sleep function </ b> to sleep for a specified amount of time. Sleep means stopping a program without using CPU resources.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,31 +97,33 @@
 
 
 <pre>
-# 10秒間スリープする
+# Sleep for 10 seconds
 sleep 10;
-</pre>
-<h3>マイクロ秒単位でsleepする</h3>
-<p>
-  sleep関数は秒単位でしかスリープすることができません。それ以下の秒単位でsleepするには<a href="/blog/20180309152509.html">Time::Hires</a>モジュールの<b>usleep</b>関数を使用します。指定する秒は、マイクロ秒です。マイクロ秒は1秒の「1000分の1」の「1000分の1」です。
-</p>
-<pre>
-use Time::HiRes 'usleep';
+&lt;/ pre&gt;
 
-# 300マイクロ秒スリープする
-usleep(300);
-</pre>
-<h3>サンプルプログラム</h3>
-<p>
-  sleep関数のサンプルプログラムです。「Hello」と表示した後に3秒スリープし、「World」と表示します。
-</p>
-<pre>
+&lt;h3&gt; Sleep in microseconds &lt;/ h3&gt;
+
+The sleep function can only sleep in seconds. To sleep in seconds less than that, use the &lt;b&gt; usleep &lt;/ b&gt; function of the &lt;a href="/blog/20180309152509.html"&gt; Time :: Hires &lt;/a&gt; module. The seconds you specify are microseconds. Microseconds are "1/1000" of "1/1000" of 1 second.
+
+&lt;pre&gt;
+use Time :: HiRes'usleep';
+
+# 300 microseconds sleep
+usleep (300);
+&lt;/ pre&gt;
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample program of the sleep function. After displaying "Hello", sleep for 3 seconds and display "World".
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-print "Hello\n";
-sleep(3);
-print "World\n";
-</pre>
+print "Hello \ n";
+sleep (3);
+print "World \ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

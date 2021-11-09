@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>kill関数 - プロセスにシグナルを送信する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="kill関数を使用すると、プロセスを終了させることができます。">
+<title> kill function-sends a signal to the process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  kill function  to kill the process.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="kill関数 - プロセスにシグナルを送信する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="kill関数を使用すると、プロセスを終了させることができます。" />
+<meta name="twitter:title" content=" kill function-sends a signal to the process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  kill function  to kill the process." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20171226151430.html">kill関数 - プロセスにシグナルを送信する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20171226151430.html"> kill function-sends a signal to the process </a></ h2>
 <p>
-  <b>kill関数</b>を使用すると、プロセスを終了させることができます。
+  You can use the <b> kill function </ b> to kill the process.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,67 +97,62 @@
 
 
 <pre>
-kill(シグナル番号, プロセスID);
-</pre>
-<p>
-  第一引数には、シグナル番号を指定します。
-</p>
-<p>
-  第二引数には、プロセスIDを指定します。
-</p>
-<p>
-  戻り値は、kill関数が成功した数が返ってきます。
-</p>
-<p>
-  以下のように、リストにして、複数のプロセスIDを指定することもできます。
-</p>
-<pre>
-kill(シグナル番号, プロセスID1, プロセスID2, ...);
-</pre>
-<h3>プロセスIDを取得する</h3>
-<p>
-  kill関数の第二引数には、プロセスIDを指定しますが、このIDは、Linuxの場合であれば「ps -ef」を実行すれば、取得することができます。
-</p>
-<p>
-  たとえば、以下ではサーバープロセスが立ち上がっているのですが、左から2列目が、プロセスIDです。左から3番目は、親プロセスのプロセスIDです。
-</p>
-<pre>
-kimoto   20220 25715  0 Dec25 ?        00:05:35 /home/kimoto/labo/perltweet/script/perltweet
-</pre>
-<p>
-  たとえば、左から2番目の「20220」という番号が、プロセスIDです。これがkillに指定するプロセスIDになります。
-</p>
-<h3>シグナルの番号を取得する</h3>
-<p>
-  シグナルの一覧は、Configモジュールを読み込んで「$Config{sig_name}」で見ることができます。
-</p>
-<pre>
+kill (signal number, process ID);
+&lt;/ pre&gt;
+
+Specify the signal number in the first argument.
+
+Specify the process ID in the second argument.
+
+The return value is the number of successful kill functions.
+
+You can also specify multiple process IDs in a list, as shown below.
+
+&lt;pre&gt;
+kill (signal number, process ID1, process ID2, ...);
+&lt;/ pre&gt;
+
+&lt;h3&gt; Get the process ID &lt;/ h3&gt;
+
+The process ID is specified in the second argument of the kill function, but in the case of Linux, this ID can be obtained by executing "ps -ef".
+
+For example, in the following, the server process is started, but the second column from the left is the process ID. The third from the left is the process ID of the parent process.
+
+&lt;pre&gt;
+kimoto 20220 25715 0 Dec25? 00:05:35 / home / kimoto / labo / perltweet / script / perltweet
+&lt;/ pre&gt;
+
+For example, the second number from the left, "20220", is the process ID. This will be the process ID you specify for kill.
+
+&lt;h3&gt; Get signal number &lt;/ h3&gt;
+
+A list of signals can be found by loading the Config module and using "$ Config {sig_name}".
+
+&lt;pre&gt;
 use Config;
 
-use Data::Dumper;
+use Data :: Dumper;
 
-print Dumper $Config{sig_name};
-</pre>
-<p>
-  1番目から順番に並んでいるので、この番号がシグナル番号になります。
-</p>
-<h3>シグナルが受信可能かどうかをチェックする</h3>
-<p>
-  シグナル番号0は、特殊な番号で、対象のプロセスが、シグナルを受信可能かどうかをチェックすることができます。
-</p>
-<pre>
-my $success = kill(0, プロセスID);
-</pre>
-<p>
-  これは、子プロセスが、実際に生存しているかをチェックしているのに利用することができます。
-</p>
-<h3>Windowsのforkの子プロセスに対してはうまく動かない</h3>
-<p>
-  kill関数は、Linux/Unixベースのforkの子プロセスに対しては、うまく動きますが、Windowsのforkの子プロセスに対しては、正しく動かないことに注意してください。
-</p>
-<p>
-  kill関数の詳細についてはPerl公式ドキュメントの<a href="http://perldoc.jp/func/kill">kill関数</a>をご覧ください。
-</p>
+print Dumper $ Config {sig_name};
+&lt;/ pre&gt;
+
+This number is the signal number because it is arranged in order from the first.
+
+&lt;h3&gt; Check if the signal can be received &lt;/ h3&gt;
+
+Signal number 0 is a special number that allows the target process to check if it can receive the signal.
+
+&lt;pre&gt;
+my $ success = kill (0, process ID);
+&lt;/ pre&gt;
+
+This can be used to check if the child process is actually alive.
+
+&lt;h3&gt; Doesn't work well for Windows fork child processes &lt;/ h3&gt;
+
+Note that the kill function works fine for Linux / Unix-based fork child processes, but not for Windows fork child processes.
+
+For details on the kill function, see &lt;a href="http://perldoc.jp/func/kill"&gt; kill function &lt;/a&gt; in the official Perl documentation.
 
   </div>
   <div class="bottom">

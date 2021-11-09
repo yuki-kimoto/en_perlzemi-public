@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>複数モジュールを使うXSの簡単な実装方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="XSを使ってモジュールを作ろうとしたときに、複数のモジュールに分割するときにふと困りました。たとえば、SomeModuleとSomeModule::Utilの両方でXSの実装を行いたい場合です。方法を調べていたのですが、実装方法が結構煩雑で難しいなと感じました。">
+<title> Easy way to implement XS using multiple modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule :: Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="複数モジュールを使うXSの簡単な実装方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="XSを使ってモジュールを作ろうとしたときに、複数のモジュールに分割するときにふと困りました。たとえば、SomeModuleとSomeModule::Utilの両方でXSの実装を行いたい場合です。方法を調べていたのですが、実装方法が結構煩雑で難しいなと感じました。" />
+<meta name="twitter:title" content=" Easy way to implement XS using multiple modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule :: Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop="name">XS</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+        <span itemprop = "name"> XS </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20170207150055.html">複数モジュールを使うXSの簡単な実装方法</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20170207150055.html"> Easy way to implement XS using multiple modules </a></ h2>
 <p>
-  XSを使ってモジュールを作ろうとしたときに、複数のモジュールに分割するときにふと困りました。たとえば、SomeModuleとSomeModule::Utilの両方でXSの実装を行いたい場合です。方法を調べていたのですが、実装方法が結構煩雑で難しいなと感じました。
+  When I tried to make a module using XS, I suddenly had a problem when dividing it into multiple modules. For example, if you want to implement XS with both SomeModule and SomeModule :: Util. I was investigating the method, but I found the implementation method to be quite complicated and difficult.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,50 +97,50 @@
 
 
 <p>
-  いろいろと試していたのですが、次の方法が簡単なように思えたので紹介しておきます。この方法の利点は、次のとおりです。
+  I tried various things, but the next method seemed to be easy, so I will introduce it. The advantages of this method are:
 </p>
 <ol>
   <li>
-    <a href="/blog/20150725143778.html">Makefile.PL</a>を修正する必要がない
-  </li>
+    No need to modify <a href="/blog/20150725143778.html"> Makefile.PL </a>
+  </ li>
   <li>
-    SomeModule.xsというファイルの名前を修正する必要がない
-  </li>
+    No need to modify the name of the file SomeModule.xs
+  </ li>
   <li>
-    SomeModule.xsという一枚のXSファイルだけでOK
-  </li>
+    Only one XS file called SomeModule.xs is OK
+  </ li>
   <li>
-    標準ツールの<a href="/blog/20170209150055.html">h2xs</a>でも大丈夫
-  </li>
-</ol>
-<h4>h2xsでモジュールを作成</h4>
+    The standard tool <a href="/blog/20170209150055.html"> h2xs </a> is fine
+  </ li>
+</ ol>
+<h4> Create a module with h2xs </ h4>
 <p>
-  最初にh2xsでXS用のモジュールを作成します。
+  First, create a module for XS with h2xs.
 </p>
 <pre>
 h2xs -A -n SomeModule
-</pre>
-<p>
-  こうすると「SomeModule」というディレクトリが作成されます。次のようなファイルとディレクトリが作成されます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+This will create a directory called "SomeModule". The following files and directories will be created.
+
+&lt;pre&gt;
 Changes
-lib/
+lib /
 Makefile.PL
 MANIFEST
 ppport.h
 README
 SomeModule.xs
-t/
-</pre>
-<h4>XSファイルの記述</h4>
-<p>
-  XSファイルを作成していきます。「foo」と表示するfooという関数をSomeModuleに追加、「bar」と表示するbarという関数をSomeModule::Utilに追加してみます。
-</p>
-<p>
-  まず最初にXSファイルを開くと次のようになっていると思います。
-</p>
-<pre>
+t /
+&lt;/ pre&gt;
+
+&lt;h4&gt; XS file description &lt;/ h4&gt;
+
+I will create an XS file. Let's add a function called foo that displays "foo" to SomeModule, and a function called bar that displays "bar" to SomeModule :: Util.
+
+First of all, when you open the XS file, you should see something like the following.
+
+&lt;pre&gt;
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
@@ -148,108 +148,106 @@ t/
 #include "ppport.h"
 
 
-MODULE = SomeModule		PACKAGE = SomeModule		
-</pre>
-<p>
-  まず覚えてほしいことは、「MODULE = SomeModule		PACKAGE = SomeModule」のセクションは一番下側に置く必要があるということです。この部分を最後においておかないとXSのロードに失敗してしまいます。
-</p>
-<p>
-  では記述しましょう。「MODULE = SomeModule::Util PACKAGE = SomeModule::Util」を追加します。そしてXSでbarを定義します。また「MODULE = SomeModule		PACKAGE = SomeModule」のセクションに、fooを定義します。
-</p>
-<pre>
+MODULE = SomeModule PACKAGE = SomeModule
+&lt;/ pre&gt;
+
+The first thing to remember is that the "MODULE = SomeModule PACKAGE = SomeModule" section should be at the bottom. If you do not leave this part at the end, the XS will fail to load.
+
+Let's write it. Add "MODULE = SomeModule :: Util PACKAGE = SomeModule :: Util". Then define bar in XS. Also, define foo in the section "MODULE = SomeModule PACKAGE = SomeModule".
+
+&lt;pre&gt;
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
 
 #include "ppport.h"
 
-MODULE = SomeModule::Util PACKAGE = SomeModule::Util
+MODULE = SomeModule :: Util PACKAGE = SomeModule :: Util
 
 void
-bar(...)
+bar (...)
   PPCODE:
 {
-  PerlIO_printf(PerlIO_stdout(), "bar\n");
-  XSRETURN(0);
+  PerlIO_printf (PerlIO_stdout (), "bar \ n");
+  XSRETURN (0);
 }
 
-MODULE = SomeModule		PACKAGE = SomeModule		
+MODULE = SomeModule PACKAGE = SomeModule
 
 void
-foo(...)
+foo (...)
   PPCODE:
 {
-  PerlIO_printf(PerlIO_stdout(), "foo\n");
-  XSRETURN(0);
-}	
-</pre>
-<h4>モジュールの作成</h4>
-<p>
-  ここまでできれば、SomeModuleとSomeModule::Utilを作成するだけです。
-</p>
-<p>
-  <b>SomeModuleのソースコード</b>
-</p>
-<p>
-  SomeModule.pmのソースコードは最初のままでもかまいません。少し整理して以下のようにしました。
-</p>
-<pre>
+  PerlIO_printf (PerlIO_stdout (), "foo \ n");
+  XSRETURN (0);
+}
+&lt;/ pre&gt;
+
+&lt;h4&gt; Creating a module &lt;/ h4&gt;
+
+At this point, all you have to do is create SomeModule and SomeModule :: Util.
+
+&lt;b&gt; SomeModule source code &lt;/ b&gt;
+
+You can leave the source code for SomeModule.pm as it is. I organized it a little and made it as follows.
+
+&lt;pre&gt;
 package SomeModule;
 
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $ VERSION = '0.01';
 
 require XSLoader;
-XSLoader::load('SomeModule', $VERSION);
+XSLoader :: load ('SomeModule', $ VERSION);
 
 1;
-</pre>
-<p>
-  <b>SomeModule::Utilのソースコード</b>
-</p>
-<p>
-  SomeModule::Util::barも作ってみましょう。これは「lib/SomeModule/Util.pm」に保存してください。これはパッケージ名だけが宣言されたほとんど空のファイルです。
-</p>
-<pre>
-package SomeModule::Util;
+&lt;/ pre&gt;
+
+&lt;b&gt; SomeModule :: Util source code &lt;/ b&gt;
+
+Let's also create SomeModule :: Util :: bar. Save this in "lib / SomeModule / Util.pm". This is an almost empty file with only the package name declared.
+
+&lt;pre&gt;
+package SomeModule :: Util;
 
 1;
-</pre>
-<h4>テストスクリプト</h4>
-<p>
-  テストスクリプトを作成します。これは、XSファイルがあるディレクトリと同じディレクトリにおいてください。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Test script &lt;/ h4&gt;
+
+Create a test script. This should be in the same directory where the XS files are located.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
 use SomeModule;
-use SomeModule::Util;
+use SomeModule :: Util;
 
-SomeModule::foo();
-SomeModule::Util::bar();
-</pre>
-<h4>コンパイルして実行</h4>
-<p>
-  コンパイルして実行してみましょう。
-</p>
-<pre>
+SomeModule :: foo ();
+SomeModule :: Util :: bar ();
+&lt;/ pre&gt;
+
+&lt;h4&gt; Compile and run &lt;/ h4&gt;
+
+Let's compile and run it.
+
+&lt;pre&gt;
 perl Makefile.PL
 make
 perl -Mblib test.pl
-</pre>
-<p>
-  次のように出力されれば成功です。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+If the output is as follows, it is successful.
+
+&lt;pre&gt;
 foo
 bar
-</pre>
-<p>
-  XSを複数モジュールで記述するのは、それほど難しくなさそうですね。
-</p>
+&lt;/ pre&gt;
+
+Writing XS in multiple modules doesn't seem to be that difficult.
 
   </div>
   <div class="bottom">

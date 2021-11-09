@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>文字列に日本語が含まれているかどうかを調べる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="文字列に日本語が含まれているかどうかを調べるには、正規表現を利用することができます。次のメタ文字を使って、漢字かひらがなかカタカナが含まれていることをチェックします。文字列は、内部文字列になっている必要があります。">
+<title> Check if the string contains Japanese  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  regular expression  to find out if the string contains Japanese. Use the following metacharacters to check for Kanji, Hiragana, and Katakana. The string must be an internal string.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="文字列に日本語が含まれているかどうかを調べる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="文字列に日本語が含まれているかどうかを調べるには、正規表現を利用することができます。次のメタ文字を使って、漢字かひらがなかカタカナが含まれていることをチェックします。文字列は、内部文字列になっている必要があります。" />
+<meta name="twitter:title" content=" Check if the string contains Japanese  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  regular expression  to find out if the string contains Japanese. Use the following metacharacters to check for Kanji, Hiragana, and Katakana. The string must be an internal string." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20150508143106.html">文字列に日本語が含まれているかどうかを調べる</a></h2>
+    <h2><a href="/blog/20150508143106.html"> Check if the string contains Japanese </a></ h2>
 <p>
-  文字列に日本語が含まれているかどうかを調べるには、<a href="/blog/20100827127859.html">正規表現</a>を利用することができます。次のメタ文字を使って、漢字かひらがなかカタカナが含まれていることをチェックします。文字列は、内部文字列になっている必要があります。
+  You can use <a href="/blog/20100827127859.html"> regular expression </a> to find out if the string contains Japanese. Use the following metacharacters to check for Kanji, Hiragana, and Katakana. The string must be an internal string.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,49 +80,49 @@
 
 
 <table>
-  <tr>
-    <td>
-      文字種
-    </td>
-    <td>
-      メタ文字
-    </td>
-  </tr>
-  <tr>
-    <td>
-      漢字
-    </td>
-    <td>
-      \p{Han}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      ひらがな
-    </td>
-    <td>
-      \p{Hiragana}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      カナカナ
-    </td>
-    <td>
-      \p{Katakana}
-    </td>
-  </tr>
-</table>
+   <tr>
+     <td>
+       Character type
+     </ td>
+     <td>
+       Metacharacters
+     </ td>
+   </ tr>
+   <tr>
+     <td>
+       Chinese characters
+     </ td>
+     <td>
+       \ p {Han}
+     </ td>
+   </ tr>
+   <tr>
+     <td>
+       Hiragana
+     </ td>
+     <td>
+       \ p {Hiragana}
+     </ td>
+   </ tr>
+   <tr>
+     <td>
+       Kanakana
+     </ td>
+     <td>
+       \ p {Katakana}
+     </ td>
+   </ tr>
+</ table>
 <pre>
 use strict;
 use warnings;
 use utf8;
 
-my $str = 'あいウエ三';
-if ($str =~ /[\p{Han}\p{Hiragana}\p{Katakana}]/) {
-  # 日本語を含んでいる
+my $ str ='Ai Uesan';
+if ($ str = ~ / [\ p {Han} \ p {Hiragana} \ p {Katakana}] /) {
+   # Contains Japanese
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>モジュールの検索パス @INC - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="モジュールの検索パスの一覧は特殊変数「@INC」に代入されています。">
+<title> Module search path @ INC  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  module search path list  is assigned to the special variable "@INC".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="モジュールの検索パス @INC - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="モジュールの検索パスの一覧は特殊変数「@INC」に代入されています。" />
+<meta name="twitter:title" content=" Module search path @ INC  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  module search path list  is assigned to the special variable "@INC"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161102147817.html">
-        <span itemprop="name">特殊変数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20180508152716.html">モジュールの検索パス @INC</a></h2>
+        <span itemprop = "name"> Special variables </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20180508152716.html"> Module search path @ INC </a></ h2>
 <p>
-  <b>モジュールの検索パスの一覧</b>は特殊変数「@INC」に代入されています。
+  The <b> module search path list </ b> is assigned to the special variable "@INC".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -99,26 +99,25 @@
 
 <pre>
 @INC
-</pre>
-<p>
-  モジュールの検索パスとは、Perlが、モジュールを読み込むために、検索するディレクトリのことです。@INC に、含まれないディレクトリに置かれたモジュールは、読み込むことができません。
-</p>
-<h4>モジュールの検索パスを追加する</h4>
-<p>
-  <a href="/blog/20100525127859.html">lib</a>モジュールを使うことで、コンパイル時に、@INC に、検索パスを追加できます。
-</p>
-<pre>
-use lib './lib';
-</pre>
-<p>
-  <b>@INC の先頭に直接、モジュールの検索パスを追加する</b>
-</p>
-<pre>
-unshift @INC, './lib2';
-</pre>
-<p>
-  <a href="/blog/20100105126425.html">unshift関数</a>で、直接先頭に追加します。このやり方より、libモジュールを用いるほうがよいです。libモジュールを使う利点は、コンパイル時に、検索パスが追加されることと、可読性が高まること、アーキテクチャに応じたパスも追加されることです。
-</p>
+&lt;/ pre&gt;
+
+The module search path is the directory that Perl searches to load the module. Modules placed in directories not included in @INC cannot be loaded.
+
+&lt;h4&gt; Add module search path &lt;/ h4&gt;
+
+You can add the search path to @INC at compile time by using the &lt;a href="/blog/20100525127859.html"&gt; lib &lt;/a&gt; module.
+
+&lt;pre&gt;
+use lib'./lib';
+&lt;/ pre&gt;
+
+&lt;b&gt; Add the module search path directly to the beginning of @INC &lt;/ b&gt;
+
+&lt;pre&gt;
+unshift @ INC,'./lib2';
+&lt;/ pre&gt;
+
+Add it directly to the beginning with &lt;a href="/blog/20100105126425.html"&gt; unshift function &lt;/a&gt;. It is better to use the lib module than this way. The advantage of using the lib module is that it adds a search path at compile time, makes it more readable, and adds an architectural path as well.
 
   </div>
   <div class="bottom">

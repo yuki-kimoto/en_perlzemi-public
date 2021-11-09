@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>スカラコンテキスト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlにはコンテキストと呼ばれる概念があり、スカラとして評価される文脈をスカラコンテキストといいます。">
+<title> Scalar context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl has a concept called context, and the context that is evaluated as a scalar is called a  scalar context .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="スカラコンテキスト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlにはコンテキストと呼ばれる概念があり、スカラとして評価される文脈をスカラコンテキストといいます。" />
+<meta name="twitter:title" content=" Scalar context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl has a concept called context, and the context that is evaluated as a scalar is called a  scalar context ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,33 +59,33 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop="name">構文</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20080608121292.html">
-        <span itemprop="name">コンテキスト</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20180531152777.html">スカラコンテキスト</a></h2>
+        <span itemprop = "name"> context </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20180531152777.html"> Scalar context </a></ h2>
 <p>
-  Perlにはコンテキストと呼ばれる概念があり、スカラとして評価される文脈を<b>スカラコンテキスト</b>といいます。
+  Perl has a concept called context, and the context that is evaluated as a scalar is called a <b> scalar context </ b>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,38 +103,40 @@
 </div>
 
 
-<h4>スカラ変数への代入</h4>
+<h4> Assignment to scalar variable </ h4>
 <p>
-  <a href="/blog/20161107147852.html">スカラ変数</a>への代入はスカラコンテキストです。<a href="/blog/20161012147627.html">配列</a>はスカラコンテキストで評価すると、配列の長さを返します。
+  Assignment to <a href="/blog/20161107147852.html"> scalar variable </a> is a scalar context. <a href="/blog/20161012147627.html"> Array </a> returns the length of the array when evaluated in a scalar context.
 </p>
 <pre>
-my $num = @values;
-</pre>
-<h4>比較演算子の項</h4>
-<p>
-  <a href="/blog/20080318120585.html">比較演算子</a>の左右の項はスカラコンテキストです。
-</p>
-<pre>
-$x &lt; @values
-$x == @values
-</pre>
-<p>
-  <a href="/blog/20170521149524.html">for文</a>のループで頻繁に目にします。
-</p>
-<pre>
-for (my $i = 0; $i &lt; @nums; $i++) {
+my $ num = @values;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Comparison operator term &lt;/ h4&gt;
+
+The left and right terms of &lt;a href="/blog/20080318120585.html"&gt; comparison operator &lt;/a&gt; are scalar contexts.
+
+&lt;pre&gt;
+$ x &lt;@values
+$ x == @values
+&lt;/ pre&gt;
+
+I often see it in the loop of &lt;a href="/blog/20170521149524.html"&gt; for statement &lt;/a&gt;.
+
+&lt;pre&gt;
+for (my $ i = 0; $ i &lt;@nums; $ i ++) {
   ...
 }
-</pre>
-<h4>ifの条件部</h4>
-<p>
-  <a href="/blog/20161023147731.html">if</a>の条件部はスカラコンテキストです。以下では@valuesはスカラコンテキストで評価されるので、配列の個数を返します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; if condition part &lt;/ h4&gt;
+
+The conditional part of &lt;a href="/blog/20161023147731.html"&gt; if &lt;/a&gt; is the scalar context. In the following, @values ​​is evaluated in scalar context, so it returns the number of arrays.
+
+&lt;pre&gt;
 if (@values) {
   ...
 }
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

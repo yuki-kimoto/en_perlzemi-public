@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>unpack関数 - パックされたデータを復元する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="unpack関数を使用するとpack関数でバイナリ形式にパックしたデータを復元することができます。">
+<title> unpack function-restore packed data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the unpack function to restore the data packed in binary format with the  pack function .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="unpack関数 - パックされたデータを復元する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="unpack関数を使用するとpack関数でバイナリ形式にパックしたデータを復元することができます。" />
+<meta name="twitter:title" content=" unpack function-restore packed data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the unpack function to restore the data packed in binary format with the  pack function ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20171222151394.html">unpack関数 - パックされたデータを復元する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20171222151394.html"> unpack function-restore packed data </a></ ​​h2>
 <p>
-  unpack関数を使用すると<a href="/blog/20171218151360.html">pack関数</a>でバイナリ形式にパックしたデータを復元することができます。
+  You can use the unpack function to restore the data packed in binary format with the <a href="/blog/20171218151360.html"> pack function </a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,50 +97,48 @@
 
 
 <pre>
-my @values = unpack($format, $packed);
-</pre>
-<p>
-  第一引数は、フォーマットです。
-</p>
-<p>
-  第二引数はパックされたデータ。
-</p>
-<p>
-  戻り値は、復元されたデータが配列で返されます。
-</p>
-<h4>符号付32bitのバイナリ形式にパックされたデータを復元</h4>
-<p>
-  三つの整数が符号付32bitのバイナリ形式にパックされている場合、復元するにはunpack関数を使って以下のようにします。
-</p>
-<pre>
-my $packed = pack("l3", 7, 8, 9);
+my @values ​​= unpack ($ format, $ packed);
+&lt;/ pre&gt;
 
-my @values = unpack("l3", $packed);
-</pre>
-<p>
-  @valuesは(7, 8, 9)という<a href="/blog/20161012147627.html">配列</a>になります。
-</p>
-<h4>浮動小数点を符号付doubleのバイナリ形式にパックされたデータを復元</h4>
-<p>
-  三つの浮動小数点が倍精度浮動小数点doubleのバイナリ形式にパックされている場合は、以下のようにして復元します。
-</p>
-<pre>
-my $packed = pack("d3", 0.5, 1.2, 5.4);
+The first argument is the format.
 
-my @values = unpack("d3", $packed);
-</pre>
-<h4>エンディアンの変換</h4>
-<p>
-  エンディアンの変換については<a href="/blog/20171218151360.html">pack関数</a>で説明しています。
-</p>
-<h3>unpack関数で利用できるフォーマットの一覧。</h3>
-<p>
-  unpack関数で利用できるフォーマットの一覧については<a href="/blog/20171218151360.html">pack関数</a>のフォーマット一覧を参考にしてください。
-</p>
-<h3>さらに詳しく</h3>
-<p>
-  pack関数についての詳細な情報は公式ドキュメントである<a href="http://perldoc.jp/docs/perl/5.8.8/perlpacktut.pod">packとunpackの入門</a>と<a href="http://perldoc.jp/func/unpack">unpack関数</a>を参考にしてください。
-</p>
+The second argument is the packed data.
+
+As for the return value, the restored data is returned as an array.
+
+&lt;h4&gt; Restore data packed in signed 32-bit binary format &lt;/ h4&gt;
+
+If the three integers are packed in a signed 32-bit binary format, use the unpack function to restore them as follows:
+
+&lt;pre&gt;
+my $ packed = pack ("l3", 7, 8, 9);
+
+my @values ​​= unpack ("l3", $ packed);
+&lt;/ pre&gt;
+
+@values ​​will be a &lt;a href="/blog/20161012147627.html"&gt; array &lt;/a&gt; called (7, 8, 9).
+
+&lt;h4&gt; Restore floating point packed data in signed double binary format &lt;/ h4&gt;
+
+If the three floating point numbers are packed in a double precision floating point double binary format, restore them as follows:
+
+&lt;pre&gt;
+my $ packed = pack ("d3", 0.5, 1.2, 5.4);
+
+my @values ​​= unpack ("d3", $ packed);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Endian conversion &lt;/ h4&gt;
+
+Endian conversion is explained in &lt;a href="/blog/20171218151360.html"&gt; pack function &lt;/a&gt;.
+
+&lt;h3&gt; A list of formats that can be used with the unpack function. &lt;/ h3&gt;
+
+For a list of formats that can be used with the unpack function, refer to the format list of &lt;a href="/blog/20171218151360.html"&gt; pack function &lt;/a&gt;.
+
+&lt;h3&gt; More details &lt;/ h3&gt;
+
+For more information about the pack function, see the official documentation &lt;a href="http://perldoc.jp/docs/perl/5.8.8/perlpacktut.pod"&gt; Introduction to pack and unpack &lt;/a&gt; and &lt;a Please refer to href = "http://perldoc.jp/func/unpack"&gt; unpack function &lt;/a&gt;.
 
   </div>
   <div class="bottom">

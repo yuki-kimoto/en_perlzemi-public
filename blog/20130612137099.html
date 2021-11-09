@@ -32,12 +32,11 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ユニコード文字をコードポイントで表現する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ユニコード文字には、すべての文字にコードポイントが割り当てられています。Perlでは、ユニコード文字をコードポイントを使って表現することができます。">
+<title> Expressing Unicode characters with code points  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ユニコード文字をコードポイントで表現する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ユニコード文字には、すべての文字にコードポイントが割り当てられています。Perlでは、ユニコード文字をコードポイントを使って表現することができます。" />
+<meta name="twitter:title" content=" Expressing Unicode characters with code points  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,63 +58,42 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161006147575.html">
-      <span itemprop="name">文字コード</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">Unicode</span>
-    <meta itemprop="position" content="3" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">コードポイント</span>
-    <meta itemprop="position" content="4" />
-  </li>
-</ol>
-<h2><a href="/blog/20130612137099.html">ユニコード文字をコードポイントで表現する</a></h2>
-<p>
-  <strong>ユニコード文字</strong>には、すべての文字に<strong>コードポイント</strong>が割り当てられています。Perlでは、ユニコード文字をコードポイントを使って表現することができます。
-</p>
-<div style="width:calc(100% - 30px);margin:10px auto;">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
-       crossorigin="anonymous"></script>
-  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4525414114581084"
-       data-ad-slot="2828858335"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
-
+      <span itemprop = "name"> Character code </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> Unicode </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> code point </ span>
+    <meta itemprop = "position" content = "4" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20130612137099.html"> Expressing Unicode characters with code points </a></ h2>
+<Strong> Unicode characters </ strong> have <strong> code points </ strong> assigned to all characters. In Perl, Unicode characters can be represented using code points.
 <pre>
-# あ
-my $str = "\x{3042}";
-</pre>
-<p>
-  コードポイントで表現されたユニコード文字を含む文字列は、utf8プラグマのあるなしにかかわらず、常に内部文字列として扱われるので注意してください。つまりすでにデコードされた状態だということですね。出力するには以下のようにエンコードします。
-</p>
-<pre>
-use Encode 'encode';
-print encode('UTF-8', $str);
-</pre>
-<p>
-  windowsの場合はcp932を文字コードとして指定してみてください。
-</p>
+# a
+my $ str = "\ x {3042}";
+&lt;/ pre&gt;
+Note that strings containing Unicode characters represented by code points are always treated as internal strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.
+
+&lt;pre&gt;
+use Encode'encode';
+print encode ('UTF-8', $ str);
+&lt;/ pre&gt;
+For windows, try specifying cp932 as the character code.
 
   </div>
   <div class="bottom">

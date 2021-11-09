@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>metaCPAN APIを利用してモジュールの情報を取得する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="モジュール名とバージョンを指定して、ファイルを自動的に取得するということは、今までのCPANだととても困難だったですが、metaCPANの登場によってこの状況は変わりそうです。変わりそうというのは、まだmetaCPANのAPIがベータバージョンだからですね。">
+<title> Get module information using metaCPAN API  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="It was very difficult with CPAN to get the file automatically by specifying the module name and version, but with the advent of metaCPAN, this situation is likely to change. It's about to change because the metaCPAN API is still in beta.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="metaCPAN APIを利用してモジュールの情報を取得する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="モジュール名とバージョンを指定して、ファイルを自動的に取得するということは、今までのCPANだととても困難だったですが、metaCPANの登場によってこの状況は変わりそうです。変わりそうというのは、まだmetaCPANのAPIがベータバージョンだからですね。" />
+<meta name="twitter:title" content=" Get module information using metaCPAN API  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="It was very difficult with CPAN to get the file automatically by specifying the module name and version, but with the advent of metaCPAN, this situation is likely to change. It's about to change because the metaCPAN API is still in beta." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,22 +59,22 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161115147930.html">
-        <span itemprop="name">CPAN</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20120204132825.html">metaCPAN APIを利用してモジュールの情報を取得する</a></h2>
+        <span itemprop = "name"> CPAN </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20120204132825.html"> Get module information using metaCPAN API </a></ h2>
 <p>
-  モジュール名とバージョンを指定して、ファイルを自動的に取得するということは、今までのCPANだととても困難だったですが、metaCPANの登場によってこの状況は変わりそうです。変わりそうというのは、まだmetaCPANのAPIがベータバージョンだからですね。
+  It was very difficult with CPAN to get the file automatically by specifying the module name and version, but with the advent of metaCPAN, this situation is likely to change. It's about to change because the metaCPAN API is still in beta.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,29 +93,29 @@
 
 
 <p>
-  それでも、metaCPANのAPIは今でも便利です。APIはバージョンごとに管理されるようなので、後方互換性も保たれるような予感です。
+  Still, the metaCPAN API is still useful. The API seems to be managed for each version, so I have a feeling that backward compatibility will be maintained.
 </p>
-<h3>情報の取得</h3>
+<h3> Get information </ h3>
 <p>
-  以下のようにして情報を取得できます。
+  You can get the information as follows.
 </p>
 <ul>
   <li>
     http://api.metacpan.org/v0/release/_search?q=name:DBIx-Custom-0.2107&fields=download_url,name
-  </li>
-</ul>
+  </ li>
+</ ul>
 <p>
-  実際にアクセスしてみると、JSON形式で情報が返されます。<b>download_url</b>を見てみると、実際にファイルのある場所のURLがわかります。
+  When you actually access it, the information is returned in JSON format. If you look at <b> download_url </ b>, you can see the URL of the actual location of the file.
 </p>
-<h3>少しだけ解説</h3>
+<h3> A little commentary </ h3>
 <p>
-  これはWebAPIでJSON形式のデータです。<b>q</b>で検索条件を設定できます。<b>name</b>がDBIx-Custom-0.2107のものを検索しています。<b>fields</b>で、取得したいデータの項目を指定することができます。これはカンマ区切りで指定することができるようです。
-</p>
-<p>
-  またすばらしいことにmetaCPANという名前だけあって、CPANとBackPANにある両方の情報を統一的に扱うことができます。つまり、たとえCPANからディストリビューションが削除されたとしても、metaCPANを使えば、その情報にアクセスすることができます。
+  This is Web API and JSON format data. You can set search conditions with <b> q </ b>. <b> name </ b> is searching for DBIx-Custom-0.2107. In <b> fields </ b>, you can specify the items of the data you want to get. It seems that this can be specified separated by commas.
 </p>
 <p>
-  metaCPANでCPANがさらに便利になる。最近ますます便利になってきているPerlですね。
+  Also, the great thing is that it has only the name metaCPAN, which allows you to handle both CPAN and BackPAN information in a unified way. This means that even if your distribution is removed from CPAN, you can still access that information with metaCPAN.
+</p>
+<p>
+  metaCPAN makes CPAN even more convenient. Perl is becoming more and more convenient these days.
 </p>
 
   </div>

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Dモジュール - データをエンコードし標準エラー出力へダンプ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Dモジュールは、データをエンコードし標準エラー出力へダンプするユーティリティ関数を提供します。">
+<title> D module-encodes data and dumps to standard error  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The D module provides utility functions that encode data and dump it to standard error output.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Dモジュール - データをエンコードし標準エラー出力へダンプ - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Dモジュールは、データをエンコードし標準エラー出力へダンプするユーティリティ関数を提供します。" />
+<meta name="twitter:title" content=" D module-encodes data and dumps to standard error  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The D module provides utility functions that encode data and dump it to standard error output." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200212001942.html">Dモジュール - データをエンコードし標準エラー出力へダンプ</a></h2>
+    <h2><a href="/blog/20200212001942.html"> D module-encodes data and dumps to standard error </a></ h2>
 <p>
-  Dモジュールは、データをエンコードし標準エラー出力へダンプするユーティリティ関数を提供します。
+  The D module provides utility functions that encode data and dump it to standard error output.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -79,167 +79,147 @@
 </div>
 
 
-<h3>利用例</h3>
+<h3> Usage example </ h3>
 <p>
-  Dモジュールは、以下のように利用します。
+  The D module is used as follows.
 </p>
 <pre>
 use utf8;
  
-# du, dw, dn, dustr, dwstr, dnstr関数をexportします
+# export the du, dw, dn, dustr, dwstr, dnstr functions
 use D;
  
-# デコードされた文字列を含むデータ(リファレンス)を準備します
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
+# Prepare the data (reference) including the decoded string
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
  
-# リファレンスデータをエンコード(UTF-8)し、標準エラー出力へダンプします。
-du $data;
+# Encode the reference data (UTF-8) and dump it to standard error output.
+du $ data;
 
-# リファレンスデータをエンコード(cp932)し、標準エラー出力へダンプします。
-dw $data;
+# Encode the reference data (cp932) and dump it to standard error output.
+dw $ data;
 
-# リファレンスデータをエンコードせず、標準エラー出力へダンプします。
-dn $data;
+#Dump to standard error without encoding reference data.
+dn $ data;
 
-# 便利なOnelinerの例です。
-use D;du $data;
-use D;dw $data;
-use D;dn $data;
+# A handy Oneliner example.
+use D; du $ data;
+use D; dw $ data;
+use D; dn $ data;
 
-# du関数の出力サンプルです。
+# This is an output sample of the du function.
 [
   {
-    'name' =&gt; 'あ'
+    'name' =&gt;'ah'
   },
   {
-    'name' =&gt; 'い'
+    'name' =&gt;'I'
   }
 ] at test.pl line 7.
-</pre>
-<h3>特徴</h3>
-<ul>
-<li>du, dw, dnなどの関数をエクスポートします。これらの関数名は、2文字のため'p' などのデバックコマンドと競合しないでください。</li>
-<li>dustr, dwstr関数はリファレンスデータの全ての文字列をエンコードします。</li>
-<li>duは'dump UTF-8'の短縮名です。</li>
-<li>dwは'dump Windows cp932'の短縮名です。</li>
-<li>dnは'dump no encoding'の短縮名です。</li>
-<li>Data::DumperのDump関数を使用してデータをダンプします。</li>
-<li>行番号とファイル名を標準エラーへ出力します。</li>
-<li>ダンプされたデータのハッシュのキーでソートします。</li>
-<li>Data::Dumperのデフォルトとは異なり、'$VAR1 ='を出力しません。</li>
-</ul>
-<h3>関数</h3>
-<h4>du関数</h4>
-<p>
-  リファレンスデータ内のすべての文字列をUTF-8にエンコードし、リファレンスデータをファイル名, 行番号とともに標準エラー出力へダンプします。
-</p>
-<p>
-  引数が文字列などの参照データでない場合も、リファレンスデータと同じ方法でダンプされます。
-</p>
-<p>
-  この関数はexportされます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Features &lt;/ h3&gt;
+&lt;ul&gt;
+&lt;li&gt; Export functions such as du, dw, dn. These function names are two characters and should not conflict with debug commands such as'p'. &lt;/ li&gt;
+The &lt;li&gt; dustr and dwstr functions encode all strings in the reference data. &lt;/ li&gt;
+&lt;li&gt; du is an abbreviation for'dump UTF-8'. &lt;/ li&gt;
+&lt;li&gt; dw is an abbreviation for'dump Windows cp932'. &lt;/ li&gt;
+&lt;li&gt; dn is an abbreviation for'dump no encoding'. &lt;/ li&gt;
+&lt;li&gt; Data :: Dump the data using Dumper's Dump function. &lt;/ li&gt;
+&lt;li&gt; Outputs the line number and file name to the standard error. &lt;/ li&gt;
+&lt;li&gt; Sort by hash key of dumped data. &lt;/ li&gt;
+&lt;li&gt; Unlike the default of Data :: Dumper, it does not output'$ VAR1 ='. &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Function &lt;/ h3&gt;
+
+&lt;h4&gt; du function &lt;/ h4&gt;
+Encodes all strings in the reference data to UTF-8 and dumps the reference data to standard error along with the filename and line number.
+Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
+This function will be exported.
+
+&lt;pre&gt;
 use D;
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-du $data;
-</pre>
-<p>
-  以下の例ではワンライナーを使用しています。全ての関数で利用できます。
-</p>
-<pre>
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-use D;du $data;
-</pre>
-<h4>dw関数</h4>
-<p>
-  リファレンスデータ内のすべての文字列をcp932にエンコードし、リファレンスデータをファイル名, 行番号とともに標準エラー出力へダンプします。
-</p>
-<p>
-  引数が文字列などの参照データでない場合も、リファレンスデータと同じ方法でダンプされます。
-</p>
-<p>
-  この関数はexportされます。
-</p>
-<pre>
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+du $ data;
+&lt;/ pre&gt;
+
+The example below uses a one-liner. It can be used with all functions.
+
+&lt;pre&gt;
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+use D; du $ data;
+&lt;/ pre&gt;
+
+&lt;h4&gt; dw function &lt;/ h4&gt;
+Encodes all strings in the reference data to cp932 and dumps the reference data along with the filename and line number to standard error output.
+Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
+This function will be exported.
+
+&lt;pre&gt;
 use D;
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-dw $data;
-</pre>
-<h4>dn関数</h4>
-<p>
-  リファレンスデータ内のすべての文字列をエンコードせず、リファレンスデータをファイル名, 行番号とともに標準エラー出力へダンプします。
-</p>
-<p>
-  引数が文字列などの参照データでない場合も、リファレンスデータと同じ方法でダンプされます。
-</p>
-<p>
-  この関数はexportされます。
-</p>
-<pre>
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+dw $ data;
+&lt;/ pre&gt;
+
+&lt;h4&gt; dn function &lt;/ h4&gt;
+It does not encode all the strings in the reference data and dumps the reference data along with the file name and line number to the standard error output.
+Even if the argument is not reference data such as a string, it is dumped in the same way as reference data.
+This function will be exported.
+
+&lt;pre&gt;
 use D;
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-dn $data;
-</pre>
-<h4>dustr関数</h4>
-<p>
-  この関数はUTF-8でエンコードされた文字列を返します。
-</p>
-<p>
-  この関数はexportされます。
-</p>
-<p>
-  以下の例は、UTF-8でエンコードされた文字列を取得しています。
-</p>
-<pre>
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+dn $ data;
+&lt;/ pre&gt;
+
+&lt;h4&gt; duster function &lt;/ h4&gt;
+This function returns a UTF-8 encoded string.
+This function will be exported.
+
+The following example gets a UTF-8 encoded string.
+
+&lt;pre&gt;
 use D;
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-my $str = dustr $data;
-</pre>
-<h4>dwstr関数</h4>
-<p>
-  この関数はcp932でエンコードされた文字列を返します。
-</p>
-<p>
-  この関数はexportされます。
-</p>
-<p>
-  以下の例は、cp932でエンコードされた文字列を取得しています。
-</p>
-<pre>
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $ str = dustr $ data;
+&lt;/ pre&gt;
+
+&lt;h4&gt; dwstr function &lt;/ h4&gt;
+This function returns a cp932 encoded string.
+This function will be exported.
+
+The following example is getting a cp932 encoded string.
+
+&lt;pre&gt;
 use D;
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-my $str = dwstr $data;
-</pre>
-<h4>dnstr関数</h4>
-<p>
-  この関数はエンコードせずに文字列を返します。
-</p>
-<p>
-  この関数はexportされます。
-</p>
-<p>
-  以下の例は、エンコードされない文字列を取得しています。
-</p>
-<pre>
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $ str = dwstr $ data;
+&lt;/ pre&gt;
+
+&lt;h4&gt; dnstr function &lt;/ h4&gt;
+This function returns a string without encoding.
+This function will be exported.
+
+The following example is getting an unencoded string.
+
+&lt;pre&gt;
 use D;
-my $data = [{name =&gt; 'あ'}, {name =&gt; 'い'}];
-my $str = dnstr $data;
-</pre>
-<h3>バグレポート</h3>
-<p>
-  <a href="https://github.com/YoshiyukiItoh/D" target="_blank">https://github.com/YoshiyukiItoh/D</a>
-</p>
-<h3>関連項目</h3>
-<ul>
-<li><a href="https://metacpan.org/pod/Data::Dumper" target="_blank">Data::Dumper</a></li>
-<li><a href="https://metacpan.org/pod/Carp" target="_blank">Carp</a></li>
-<li><a href="https://metacpan.org/pod/Data::Recursive::Encode" target="_blank">Data::Recursive::Encode</a></li>
-</ul>
-<h3>元ページ(meta::cpan)</h3>
-<p>
-  <a href="https://metacpan.org/pod/D" target="_blank">https://metacpan.org/pod/D</a>
-</p>
+my $ data = [{name =&gt;'a'}, {name =&gt;'i'}];
+my $ str = dnstr $ data;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Bug report &lt;/ h3&gt;
+&lt;a href="https://github.com/YoshiyukiItoh/D" target="_blank"&gt; https://github.com/YoshiyukiItoh/D &lt;/a&gt;
+
+&lt;h3&gt; Related items &lt;/ h3&gt;
+&lt;ul&gt;
+&lt;li&gt; &lt;a href="https://metacpan.org/pod/Data :: Dumper" target = "_ blank"&gt; Data :: Dumper &lt;/a&gt; &lt;/ li&gt;
+&lt;li&gt; &lt;a href="https://metacpan.org/pod/Carp" target="_blank"&gt; Carp &lt;/a&gt; &lt;/ li&gt;
+&lt;li&gt; &lt;a href="https://metacpan.org/pod/Data :: Recursive :: Encode" target = "_ blank"&gt; Data :: Recursive :: Encode &lt;/a&gt; &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Original page (meta :: cpan) &lt;/ h3&gt;
+&lt;a href="https://metacpan.org/pod/D" target="_blank"&gt; https://metacpan.org/pod/D &lt;/a&gt;
 
   </div>
   <div class="bottom">

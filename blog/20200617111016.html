@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>PERL5LIB環境変数を使ってモジュールの検索パスを追加する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="PERL5LIB環境変数を使ってモジュールの検索パスを追加する方法の解説です。">
+<title> Add module search path using PERL5LIB environment variable  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Explains how to add a module search path using the PERL5LIB environment variable.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="PERL5LIB環境変数を使ってモジュールの検索パスを追加する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="PERL5LIB環境変数を使ってモジュールの検索パスを追加する方法の解説です。" />
+<meta name="twitter:title" content=" Add module search path using PERL5LIB environment variable  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Explains how to add a module search path using the PERL5LIB environment variable." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200617111016.html">PERL5LIB環境変数を使ってモジュールの検索パスを追加する</a></h2>
+    <h2><a href="/blog/20200617111016.html"> Add module search path using PERL5LIB environment variable </a></ h2>
 <p>
-  PERL5LIB環境変数を使ってモジュールの検索パスを追加する方法の解説です。
+  Explains how to add a module search path using the PERL5LIB environment variable.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -79,54 +79,55 @@
 </div>
 
 
-<h4>Linuxのbashの環境変数</h4>
+<h4> Linux bash environment variables </ h4>
 <p>
-  以下は<a href="https://linux.perlclub.net/">Linux</a>の<a href="https://linux.perlclub.net/blog/20200617103220.html">bashの環境変数</a>で「PERL5LIB」を設定して、モジュールの検索パスを追加する方法です。これを「<a href="https://linux.perlclub.net/blog/20200616103220.html">.bashrc</a>」ファイルに追記してください。
+  The following is the <a href="https://linux.perlclub.net/blog/20200617103220.html"> bash environment of <a href="https://linux.perlclub.net/"> Linux </a> How to add a module search path by setting "PERL5LIB" in the variable </a>. Add this to the "<a href="https://linux.perlclub.net/blog/20200616103220.html"> .bashrc </a>" file.
 </p>
 <pre>
-export PERL5LIB=/foo/lib
-</pre>
-<p>
-  複数指定する場合はコロンで区切ります。
-</p>
-<pre>
-export PERL5LIB=/foo/lib:/bar/lib
-</pre>
-<h4>商用UNIXなどのcshの環境変数</h4>
-<p>
-  FreeBSDなど商用UNIXにおけるcshの環境変数で「PERL5LIB」を設定して、モジュールの検索パスを追加する方法です。これを「~/.cshrc」ファイルに追記してください。
-</p>
-<pre>
-setenv PERL5LIB /foo/lib
-</pre>
-<p>
-  複数指定する場合はコロンで区切ります。
-</p>
-<pre>
-setenv PERL5LIB /foo/lib:/bar/lib
-</pre>
-<h4>Windowsにおける環境変数</h4>
-<p>
-  Windowsで環境変数「PERL5LIB」を設定して、モジュールの検索パスを追加する方法です。Windowsの環境変数の設定方法は、GUIで追加するので、方法については調べてみてください。
-</p>
-<pre>
-# 環境変数PERL5LIBの値
-/foo/lib
-</pre>
-<p>
-  複数指定する場合はセミコロンで区切ります。ここはUnix/Linuxと異なる部分です。
-</p>
-<pre>
-# 環境変数PERL5LIBの値
-/foo/lib;/bar/lib
-</pre>
-<h4>環境変数PERL5LIBはポータブルではない</h4>
-<p>
-  OSによって環境変数の表現方法が異なるため、環境変数PERL5LIBはポータブルな方法ではありません。
-</p>
-<p>
-  一方、スクリプトと密結合してしまいますが、<a href="/blog/20100525127859.html">libモジュール</a>はどのような環境でも同じように動きます。
-</p>
+export PERL5LIB = / foo / lib
+&lt;/ pre&gt;
+
+If you specify more than one, separate them with a colon.
+
+&lt;pre&gt;
+export PERL5LIB = / foo / lib: / bar / lib
+&lt;/ pre&gt;
+
+&lt;h4&gt; csh environment variables such as commercial UNIX &lt;/ h4&gt;
+
+It is a method to add the search path of the module by setting "PERL5LIB" in the environment variable of csh in commercial UNIX such as FreeBSD. Add this to the "~ / .cshrc" file.
+
+&lt;pre&gt;
+setenv PERL5LIB / foo / lib
+&lt;/ pre&gt;
+
+If you specify more than one, separate them with a colon.
+
+&lt;pre&gt;
+setenv PERL5LIB / foo / lib: / bar / lib
+&lt;/ pre&gt;
+
+&lt;h4&gt; Environment variables in Windows &lt;/ h4&gt;
+
+It is a method to add the search path of the module by setting the environment variable "PERL5LIB" on Windows. The method of setting environment variables in Windows is added by GUI, so please check the method.
+
+&lt;pre&gt;
+#Value of environment variable PERL5LIB
+/ foo / lib
+&lt;/ pre&gt;
+
+If you specify more than one, separate them with a semicolon. This is a different part from Unix / Linux.
+
+&lt;pre&gt;
+#Value of environment variable PERL5LIB
+/ foo / lib; / bar / lib
+&lt;/ pre&gt;
+
+&lt;h4&gt; Environment variable PERL5LIB is not portable &lt;/ h4&gt;
+
+The environment variable PERL5LIB is not a portable method because the way environment variables are represented differs depending on the OS.
+
+On the other hand, although it is tightly coupled with the script, the &lt;a href="/blog/20100525127859.html"&gt; lib module &lt;/a&gt; works the same in any environment.
 
   </div>
   <div class="bottom">

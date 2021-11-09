@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>無限大(Inf)、無限小(-Inf)、非数(NaN)を得るには - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlで無限大(Inf)、無限小(-Inf)、非数(NaN)の数値表現を得るには以下のようにします。">
+<title> To get infinity (Inf), infinitesimal (-Inf), non-number (NaN)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="To get an infinitesimal (Inf), infinitesimal (-Inf), and non-numeric (NaN) numeric representation in Perl:">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="無限大(Inf)、無限小(-Inf)、非数(NaN)を得るには - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlで無限大(Inf)、無限小(-Inf)、非数(NaN)の数値表現を得るには以下のようにします。" />
+<meta name="twitter:title" content=" To get infinity (Inf), infinitesimal (-Inf), non-number (NaN)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="To get an infinitesimal (Inf), infinitesimal (-Inf), and non-numeric (NaN) numeric representation in Perl:" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180418152401.html">無限大(Inf)、無限小(-Inf)、非数(NaN)を得るには</a></h2>
+    <h2><a href="/blog/20180418152401.html"> To get infinity (Inf), infinitesimal (-Inf), non-number (NaN) </a></ h2>
 <p>
-  Perlで無限大(Inf)、無限小(-Inf)、非数(NaN)の数値表現を得るには以下のようにします。
+  To get an infinitesimal (Inf), infinitesimal (-Inf), and non-numeric (NaN) numeric representation in Perl:
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -79,30 +79,32 @@
 </div>
 
 
-<h4>無限大 Inf</h4>
+<h4> Infinity Inf </ h4>
 <p>
-  正の方向でオーバーフローする浮動小数点演算を行うと無限大(Inf)を得ることができます。
+  You can get infinity (Inf) by doing a floating point operation that overflows in the positive direction.
 </p>
 <pre>
-9**9**9
-</pre>
-<h4>無限小 -Inf</h4>
-<p>
-  負の方向でオーバーフローする浮動小数点演算を行うと無限大(Inf)を得ることができます。
-</p>
-<pre>
--9**9**9
-</pre>
-<h4>非数 NaN</h4>
-<p>
-  無限大を無限大で除算すると非数(NaN)を得ることができます。
-</p>
-<pre>
-9**9**9 / 9**9**9
-</pre>
-<p>
-  (参考)<a href="http://perldoc.jp/docs/perl/5.22.1/perldata.pod#Special32floating32point:32infinity32-40Inf41-32and32not-a-number32-40NaN41">特殊浮動小数点数: 無限 (Inf) と非数 (NaN)</a>
-</p>
+9 ** 9 ** 9
+&lt;/ pre&gt;
+
+&lt;h4&gt; Infinitesimal -Inf &lt;/ h4&gt;
+
+You can get infinity (Inf) by doing a floating point operation that overflows in the negative direction.
+
+&lt;pre&gt;
+-9 ** 9 ** 9
+&lt;/ pre&gt;
+
+&lt;h4&gt; Innumerable NaN &lt;/ h4&gt;
+
+You can get a non-number (NaN) by dividing infinity by infinity.
+
+&lt;pre&gt;
+9 ** 9 ** 9/9 ** 9 ** 9
+&lt;/ pre&gt;
+
+
+(Reference) &lt;a href="http://perldoc.jp/docs/perl/5.22.1/perldata.pod#Special32floating32point:32infinity32-40Inf41-32and32not-a-number32-40NaN41"&gt; Special floating point number: Infinite ( Inf) and non-numerical (NaN) &lt;/a&gt;
 
   </div>
   <div class="bottom">

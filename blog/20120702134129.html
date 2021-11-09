@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Defined-or演算子「//」  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perl5.10からは、とても便利なDefined-or演算子「//」が導入されました。スラッシュが二つ続く演算子です。とっても検索しにくいので、早めに覚えておくのがいいと思います。近年の機能追加では、僕的には一番お勧めの機能ですね。">
+<title> Defined-or operator "//"  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Starting with Perl 5.10, the very useful  Defined-or operator  " // " has been introduced. An operator followed by two slashes. It's very difficult to search, so it's a good idea to remember it early. In recent years, it's the most recommended function for me.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Defined-or演算子「//」  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perl5.10からは、とても便利なDefined-or演算子「//」が導入されました。スラッシュが二つ続く演算子です。とっても検索しにくいので、早めに覚えておくのがいいと思います。近年の機能追加では、僕的には一番お勧めの機能ですね。" />
+<meta name="twitter:title" content=" Defined-or operator "//"  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Starting with Perl 5.10, the very useful  Defined-or operator  " // " has been introduced. An operator followed by two slashes. It's very difficult to search, so it's a good idea to remember it early. In recent years, it's the most recommended function for me." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-        <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+        <span itemprop = "name"> operator </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20120702134129.html">Defined-or演算子「//」 </a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20120702134129.html"> Defined-or operator "//" </a></ h2>
 <p>
-  Perl5.10からは、とても便利な<strong>Defined-or演算子</strong>「<b>//</b>」が導入されました。スラッシュが二つ続く演算子です。とっても検索しにくいので、早めに覚えておくのがいいと思います。近年の機能追加では、僕的には一番お勧めの機能ですね。
+  Starting with Perl 5.10, the very useful <strong> Defined-or operator </ strong> "<b> // </ b>" has been introduced. An operator followed by two slashes. It's very difficult to search, so it's a good idea to remember it early. In recent years, it's the most recommended function for me.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,55 +97,53 @@
 
 
 <pre>
-# Defined-or演算子
-//
-</pre>
-<p>
-  Defined-or演算子は、左辺が定義されている場合は、左辺値を返却し、未定義の場合は右辺値を返すという動作をします。
-</p>
-<pre>
-# 右辺が代入される
-my $value = undef // 'default'; # 'default'
+# Defined-or operator
+// //
+&lt;/ pre&gt;
 
-# 左辺が代入される
-my $value = 0 // 'default';     # 0
-my $value = '' // 'default';    # ''
-my $value = 'foo' // 'default'; # 'foo'
-</pre>
-<p>
-  これは、値が与えられなかった場合のデフォルト値を定義するのにとても便利です。
-</p>
-<pre>
-my $name = $opts{name} // 'Ken';
-</pre>
-<p>
-  また<b>//=</b>という書き方も可能です。
-</p>
-<pre>
-$value //= 'default';
-</pre>
-<p>
-  $valueが未定義だった場合だけ、$valueに'default'が代入されます。
-</p>
-<h3>Perl5.10以前はどうしていたか</h3>
-<p>
-  以前はこの書き方を行うためには、<a href="/blog/20100219126425.html">defined関数</a>を使って次のように書く必要がありました。
-</p>
-<pre>
-$value = 'default' unless defined $value;
-</pre>
-<p>
-  またこの書き方は、冗長なので、<b>||</b>演算子を使って次のように書く人も多くいました。
-</p>
-<pre>
-$value ||= 'default';
-</pre>
-<p>
-  でもこの書き方は、$valueが0や空文字列だった場合にも'default'が代入されてしまうために、潜在的なバグをアプリケーションにもたらしていました。
-</p>
-<p>
-  Defined-or演算子が導入されたので、上記の二つの間の記述で悩まなくてよくなったのがうれしいですね。
-</p>
+The Defined-or operator returns the lvalue if the lvalue is defined, and returns the rvalue if it is undefined.
+
+&lt;pre&gt;
+#The right side is substituted
+my $ value = undef //'default'; #'default'
+
+#The left side is substituted
+my $ value = 0 //'default'; # 0
+my $ value ='' //'default'; #''''
+my $ value ='foo' //'default'; #'foo'
+&lt;/ pre&gt;
+
+This is very useful for defining a default value if no value is given.
+
+&lt;pre&gt;
+my $ name = $ opts {name} //'Ken';
+&lt;/ pre&gt;
+
+You can also write &lt;b&gt; // = &lt;/ b&gt;.
+
+&lt;pre&gt;
+$ value // ='default';
+&lt;/ pre&gt;
+
+Only if $ value is undefined will $ value be assigned'default'.
+
+&lt;h3&gt; What did you do before Perl 5.10 &lt;/ h3&gt;
+
+Previously, in order to do this, you had to use the &lt;a href="/blog/20100219126425.html"&gt; defined function &lt;/a&gt; to write:
+
+&lt;pre&gt;
+$ value ='default' unless defined $ value;
+&lt;/ pre&gt;
+
+Also, since this writing method is verbose, many people used the &lt;b&gt; || &lt;/ b&gt; operator to write as follows.
+
+&lt;pre&gt;
+$ value || ='default';
+&lt;/ pre&gt;
+
+However, this way of writing introduced a potential bug to the application because'default' was assigned even if $ value was 0 or an empty string.
+
+With the introduction of the Defined-or operator, I'm happy that I don't have to worry about the description between the above two.
 
   </div>
   <div class="bottom">

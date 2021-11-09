@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>msys2をWindowsにインストールしてPerlを使う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="msys2をWindowsにインストールしてPerlを使う方法を解説します。">
+<title> Install msys2 on Windows and use Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Learn how to install msys2 on Windows and use Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="msys2をWindowsにインストールしてPerlを使う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="msys2をWindowsにインストールしてPerlを使う方法を解説します。" />
+<meta name="twitter:title" content=" Install msys2 on Windows and use Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Learn how to install msys2 on Windows and use Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,21 +59,21 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name"><a href="/blog/20180820153471.html">インストール</a></span>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20180806153350.html">msys2をWindowsにインストールしてPerlを使う</a></h2>
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> <a href="/blog/20180820153471.html"> Installation </a> </ span>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20180806153350.html"> Install msys2 on Windows and use Perl </a></ h2>
 <p>
-  msys2をWindowsにインストールしてPerlを使う方法を解説します。
+  Learn how to install msys2 on Windows and use Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -92,231 +92,218 @@
 
 
 <p>
-  <a href="https://www.msys2.org">msys2</a>(エムシスツー)は、<b>Windows上でLinux風のシェル環境を提供</b>するツールです。Linux風の環境でPerlを使って開発ができます。
+  <a href="https://www.msys2.org"> msys2 </a> is a tool that <b> provides a Linux-like shell environment on Windows </ b>. You can develop using Perl in a Linux-like environment.
 </p>
 <p>
-  <b>msys2の画面</b>
+  <b> msys2 screen </ b>
 </p>
 <div>
-  <img src="/images/msys2.png">
-</div>
+  <img src = "/ images / msys2.png">
+</ div>
 <p>
-  msys2なら、ls、cat、tar、gitといったLinuxコマンドを利用することができますし、UTF-8も正しく表示できます。
+  With msys2, you can use Linux commands such as ls, cat, tar, and git, and UTF-8 can be displayed correctly.
 </p>
 <p>
-  POSIX互換レイヤーがありますので、Linuxでの起動を前提とした、<a href="/blog/20140319139520.html">Mojolicious</a>の開発サーバーも正しく動きます。
+  Since there is a POSIX compatibility layer, the development server of <a href="/blog/20140319139520.html"> Mojolicious </a> will work properly, assuming booting on Linux.
 </p>
-<h3>msys2のインストール 10分</h3>
+<h3> 10 minutes to install msys2 </ h3>
 <p>
-  msys2をダウンロードしてインストールしましょう。
+  Download and install msys2.
 </p>
-<h4>msys2のダウンロード</h4>
+<h4> Download msys2 </ h4>
 <p>
-  msys2をインストールしましょう。64bit版Windowsの場合は64bit版のmsys2を、32bit版のWindowsの場合は32bit版のmsys2を利用しましょう。
+  Let's install msys2. Use the 64-bit version of msys2 for 64-bit Windows, and use the 32-bit version of msys2 for 32-bit Windows.
 </p>
 <p>
-  現在(2021年3月8日)では、たいていのWindowsは64bit版かと思われますので、普通は64bit版で大丈夫なはず。以下の解説は64bit版を前提に行います。
+  Currently (March 8, 2021), most Windows seems to be a 64-bit version, so normally a 64-bit version should be fine. The following explanation is based on the 64-bit version.
 </p>
 <ul>
   <li>
-    <a href="https://www.msys2.org/">トップページ - 「1. Download the installer: msys2-x86_64-日付.exe」をクリック</a>
-  </li>
-</ul>
+    <a href="https://www.msys2.org/"> Top page-Click "1. Download the installer: msys2-x86_64-Date.exe" </a>
+  </ li>
+</ ul>
 <p>
-  クリックして、msys2をデスクトップに、ダウンロードしましょう。
+  Click to download msys2 to your desktop.
 </p>
-<h4>ユーザー名の確認</h4>
+<h4> Confirm user name </ h4>
 <p>
-  Windowsの「C:\Users」(日本語表示は C:\ユーザー)以下にあるユーザーディレクトリが、以下のように英語になっていることを確認してください。
+  Make sure that the user directory under "C: \ Users" (Japanese display is C: \ users) in Windows is in English as shown below.
 </p>
 <pre>
 kimot
-</pre>
-<p>
-  もし、以下のように日本語になっている場合は、追加の設定が必要になります。
-</p>
-<pre>
-木本
-</pre>
-<p>
-  日本語になっていた場合は、msys2をインストールする前に、環境変数の設定で、変数名に「HOME」を、変数値に「C:\msys64\home\msys2user」のように設定してください。
-</p>
-<ul>
-  <li><a href="http://www.wannko.net/windows10/etc/kankyo.html">環境変数の追加</a>
-</ul>
-<p>
-  msys2のホームディレクトリに上記のディレクトリが設定されます。
-</p>
-<h4>msys2のインストール</h4>
-<p>
-  デスクトップにあるmsys2のアイコンをダブルクリックします。
-</p>
-<p>
-  次へを押していくと、インストールが始まります。3分くらいかかりますので、待ちましょう。
-</p>
-<p>
-  完了を押すとmsys2が起動しますが、いったん右上のバツを押して終了させましょう。
-</p>
-<h4>msys2の二回目以降の起動</h4>
-<p>
-  msys2を一度閉じると、次は、どこから起動したらいいんだろうと迷いますね。
-</p>
-<p>
-  Windowsのスタート－メニューのアプリケーションの一覧からmの目次を探すと「MSYS2 64bit」のディレクトリがあります。
-</p>
-<p>
-  その中に
-</p>
-<ul>
-  <li>
+&lt;/ pre&gt;
+
+If it is in Japanese as shown below, additional settings are required.
+
+&lt;pre&gt;
+Kimoto
+&lt;/ pre&gt;
+
+If it is in Japanese, before installing msys2, set the variable name to "HOME" and the variable value to "C: \ msys64 \ home \ msys2user" in the environment variable settings. ..
+
+&lt;ul&gt;
+  &lt;li&gt; &lt;a href="http://www.wannko.net/windows10/etc/kankyo.html"&gt; Add environment variables &lt;/a&gt;
+&lt;/ ul&gt;
+
+The above directory is set as the home directory of msys2.
+
+&lt;h4&gt; Install msys2 &lt;/ h4&gt;
+
+Double-click the msys2 icon on your desktop.
+
+Press Next to start the installation. It will take about 3 minutes, so let's wait.
+
+When you press Finish, msys2 will start, but let's press the cross on the upper right to end it.
+
+&lt;h4&gt; Second and subsequent startups of msys2 &lt;/ h4&gt;
+
+Once you close msys2, you're wondering where to start next.
+
+If you look for the table of contents of m from the list of applications in the Windows Start-menu, you will find the directory "MSYS2 64bit".
+
+In it
+
+&lt;ul&gt;
+  &lt;li&gt;
     MSYS2 MinGW 64bit
-  </li>
-  <li>
+  &lt;/ li&gt;
+  &lt;li&gt;
     MSYS2 MINGW 32bit
-  </li>
-  <li>
-    <b>MSYS2 MSYS</b>
-  </li>
-</ul>
-<p>
-  がありますが、<b>「MSYS2 MSYS」</b>を起動しましょう。msys2には、3種類の起動スクリプトがありますが、<b>Perlを正しく動かす場合は、Linuxの再現性が最も高い「MSYS2 MSYS」を選択</b>します。
-</p>
-<p>
-  これを間違うと正しくPerlの環境が整えられないので、注意してください。
-</p>
-<p>
-  他の二つは、Windowsネイティブアプリを開発する場合に利用するようです。
-</p>
-<p>
-  デスクトップにショートカットを作成しておくと起動が便利です。その場合は「右クリック」「その他」「ファイルの場所を開く」から「MSYS2 MSYS」を「右クリック」「コピー」して、デスクトップで「貼り付け」です。
-</p>
-<h3>Perl環境構築 20分</h3>
-<p>
-  msys2でPerlを利用できるようにします。PerlとPerlで必要となる開発環境の一覧をまとめてインストールしましょう。
-</p>
-<p>
-  pacmanはmsys2のパッケージマネージャーです。
-</p>
-<pre>
+  &lt;/ li&gt;
+  &lt;li&gt;
+    &lt;b&gt; MSYS2 MSYS &lt;/ b&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+However, let's start &lt;b&gt; "MSYS2 MSYS" &lt;/ b&gt;. There are three types of startup scripts in msys2, but &lt;b&gt; for Perl to work properly, select "MSYS2 MSYS", which has the highest Linux reproducibility &lt;/ b&gt;.
+
+Please note that if you make a mistake, the Perl environment will not be set up correctly.
+
+The other two seem to be used when developing Windows native apps.
+
+It is convenient to start by creating a shortcut on the desktop. In that case, select "Right click", "Other", "Open file location", "Right click" and "Copy" "MSYS2 MSYS", and then "Paste" on the desktop.
+
+&lt;h3&gt; Perl environment construction 20 minutes &lt;/ h3&gt;
+
+Make Perl available on msys2. Let's install Perl and the list of development environments required for Perl together.
+
+pacman is a package manager for msys2.
+
+&lt;pre&gt;
 pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
-</pre>
-<p>
-  上記をコピーして、msys2で「右クリック」→「Paste」するとペーストされます。Enterを押して、上記のコマンドを実行しましょう。
-</p>
-<p>
-  インストールするか聞かれるので「Enter」を押して進めましょう。何を聞かれても「Enter」で大丈夫。
-</p>
-<p>
-  以下がインストールされます。これが、Perlを正しく動かすために必要な最小限の環境です。Perlは<a href="https://clanguage.perlclub.net/">C言語</a>で書かれており、PerlのモジュールのコンパイルにC言語コンパイラ<a href="https://linux.perlclub.net/blog/20201216103956.html">gcc</a>が必要です。
-</p>
-<ul>
-  <li>
+&lt;/ pre&gt;
+
+Copy the above and select "Right click"-&gt; "Paste" in msys2 to paste it. Press Enter to execute the above command.
+
+You will be asked if you want to install it, so press "Enter" to proceed. No matter what you ask, just press "Enter".
+
+The following will be installed. This is the minimum environment required for Perl to work properly. Perl is written in &lt;a href="https://clanguage.perlclub.net/"&gt; C language &lt;/a&gt; and is a C language compiler &lt;a href="https://linux" for compiling Perl modules. .perlclub.net/blog/20201216103956.html "&gt; gcc &lt;/a&gt; is required.
+
+&lt;ul&gt;
+  &lt;li&gt;
     perl (perl)
-  </li>
-  <li>
+  &lt;/ li&gt;
+  &lt;li&gt;
     cpan (perl-CPAN)
-  </li>
-  <li>
+  &lt;/ li&gt;
+  &lt;li&gt;
     gcc (msys2-devel)
-  </li>
-  <li>
+  &lt;/ li&gt;
+  &lt;li&gt;
     make (make)
-  </li>
-  <li>
+  &lt;/ li&gt;
+  &lt;li&gt;
     crypt.h (libcrypt-devel)
-  </li>
-</ul>
-<p>
-  <b>ここで一度右上のバツを押して、ターミナルを閉じて、「MSYS2 MSYS」再起動してください。これを行わないと、PATHの設定が正しくされず、cpanコマンドが正しく動きません。</b>
-</p>
-<p>
-  Perlがインストールされているか確認しましょう。
-</p>
-<pre>
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;b&gt; Now press the cross on the upper right once to close the terminal and restart "MSYS2 MSYS". If you don't do this, your PATH settings will be incorrect and the cpan command will not work properly. &lt;/ b&gt;
+
+Make sure you have Perl installed.
+
+&lt;pre&gt;
 perl -v
-</pre>
-<p>
-  以下のように表示されれば、インストールされています。バージョンは、新しい場合もあります。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+If you see the following, it is installed. The version may be new.
+
+&lt;pre&gt;
 This is perl 5, version 24, subversion 4 (v5.24.4) built for x86_64-msys-thread-multi
-</pre>
-<h4>Perlスクリプトを実行</h4>
-<p>
-  msys2のユーザーディレクトリは以下の場所になっています。ユーザーディレクトリの下にPerlスクリプトを配置しましょう。
-</p>
-<pre>
-C:\msys64\home\ユーザー名
-</pre>
-<p>
-  カレントディレクトリを移動。
-</p>
-<pre>
-cd C:\msys64\home\ユーザー名
-</pre>
-<p>
-  ここに「test.pl」というファイルを作成。以下を記述しましょう。
-</p>
-<pre>
-print "Hello, World!\n";
-</pre>
-<p>
-  Perlスクリプトを実行してみましょう。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Run Perl script &lt;/ h4&gt;
+
+The user directory of msys2 is in the following location. Place your Perl script under your user directory.
+
+&lt;pre&gt;
+C: \ msys64 \ home \ username
+&lt;/ pre&gt;
+
+Move the current directory.
+
+&lt;pre&gt;
+cd C: \ msys64 \ home \ username
+&lt;/ pre&gt;
+
+Create a file called "test.pl" here. Let's write the following.
+
+&lt;pre&gt;
+print "Hello, World! \ N";
+&lt;/ pre&gt;
+
+Let's run a Perl script.
+
+&lt;pre&gt;
 perl test.pl
-</pre>
-<p>
-  以下のように表示されれば、Perlはうまくインストールされて、プログラムが実行できています。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+If you see something like the following, Perl is successfully installed and the program is running.
+
+&lt;pre&gt;
 Hello, World!
-</pre>
-<h4>CPANモジュールのインストール</h4>
-<p>
-  Perlの環境が正しく構築されているかを確認するために、ピュアPerlで動くMojoliciousとXSで書かれているJSON::XSをインストールしてみましょう。
-</p>
-<p>
-  CPANモジュールの中には、Unix/Linux環境で動くことが想定されているものもあります。以下の設定で、シンボリックリンクが、msys2で正しく動くようにしてください。
-</p>
-<pre>
-export MSYS=winsymlinks
-</pre>
-<p>
-  初回はcpanを自動設定するか聞かれるので「Enter」で進めましょう。何を聞かれても「Enter」で大丈夫です。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Install CPAN module &lt;/ h4&gt;
+
+To make sure your Perl environment is built correctly, install Mojolicious running pure Perl and JSON :: XS written in XS.
+
+Some CPAN modules are expected to work in Unix / Linux environments. Make sure the symlink works properly on msys2 with the following settings.
+
+&lt;pre&gt;
+export MSYS = winsymlinks
+&lt;/ pre&gt;
+
+At the first time, you will be asked if you want to set cpan automatically, so press "Enter" to proceed. No matter what you ask, just press "Enter".
+
+&lt;pre&gt;
 cpan Mojolicious
-cpan JSON::XS
-</pre>
-<p>
-  このインストールが確認できると作業は終了です。お疲れさまでした。
-</p>
-<h3>トラブルシューティング</h3>
-<p>
-  msys2のインストール、Perlのインストール手順が失敗する場合に、ウイルスチェッカー(Avast、マカフィー、ノートン、etc)が、msys2をウイルスソフトだと誤検知する場合がありました。
-</p>
-<p>
-  また、ウイルスチェッカーによって管理者権限で、実行できない場合がありました。
-</p>
-<p>
-  この問題が起こった場合は、msys2のインストーラーを起動する前に、ウイルスチェッカーを一時的に停止して、右クリック「管理者権限として実行」を行ってください。
-</p>
-<p>
-  Windows 10である場合は、デフォルトのウイルスソフトであるWindows Defenderを使えば、問題なくインストールできるようです。
-</p>
-<h3>よく使うLinuxコマンド</h3>
-<p>
-  <a href="https://git.perlclub.net/">git</a>やrsyncなどの、よく使う<a href="https://linux.perlclub.net/blog/20200211081227.html">Linuxコマンド</a>も一緒にインストールしておくと、よいでしょう。
-</p>
-<pre>
+cpan JSON :: XS
+&lt;/ pre&gt;
+
+If you can confirm this installation, the work is finished. Thank you for your hard work.
+
+&lt;h3&gt; Troubleshooting &lt;/ h3&gt;
+
+When the msys2 installation and Perl installation procedures fail, virus checkers (Avast, McAfee, Norton, etc.) may falsely detect msys2 as virus software.
+
+Also, depending on the virus checker, it may not be possible to execute with administrator privileges.
+
+If you encounter this issue, temporarily stop the virus checker and right-click "Run as administrator" before launching the msys2 installer.
+
+If you are using Windows 10, it seems that you can install it without any problem by using the default virus software, Windows Defender.
+
+&lt;h3&gt; Frequently used Linux commands &lt;/ h3&gt;
+
+Frequently used &lt;a href="https://linux.perlclub.net/blog/20200211081227.html" such as &lt;a href="https://git.perlclub.net/"&gt; git &lt;/a&gt; and rsync It's a good idea to have the&gt; Linux commands &lt;/a&gt; installed as well.
+
+&lt;pre&gt;
 pacman -S git
 pacman -S rsync
-</pre>
-<h3>お願い</h3>
-<p>
-  msys2は定期的にアップデートされて、パッケージ名やアップデートコマンドが変わったりするので、この手順でうまくいかない場合は、<a href="https://github.com/yuki-kimoto/perlzemitut">リポジトリ</a>かTwitterにてお知らせください。
-</p>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Please &lt;/ h3&gt;
+
+msys2 is updated regularly and the package name and update command change, so if this procedure doesn't work, &lt;a href="https://github.com/yuki-kimoto/perlzemitut"&gt; repository &lt;/ strong&gt; Please let us know on a&gt; or Twitter.
 
   </div>
   <div class="bottom">

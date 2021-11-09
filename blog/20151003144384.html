@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>簡単な計算を行おう | Rstats入門(統計解析・科学技術計算) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="簡単な計算を行ってみましょう。Rstatsでは、以下の演算子を使って、計算が行えます。">
+<title> Let's do simple calculations | Introduction to Rstats (statistical analysis / scientific calculation)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Let's do a simple calculation. Rstats can be calculated using the following operators.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="簡単な計算を行おう | Rstats入門(統計解析・科学技術計算) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="簡単な計算を行ってみましょう。Rstatsでは、以下の演算子を使って、計算が行えます。" />
+<meta name="twitter:title" content=" Let's do simple calculations | Introduction to Rstats (statistical analysis / scientific calculation)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Let's do a simple calculation. Rstats can be calculated using the following operators." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20151003144384.html">簡単な計算を行おう | Rstats入門(統計解析・科学技術計算)</a></h2>
+    <h2><a href="/blog/20151003144384.html"> Let's do simple calculations | Introduction to Rstats (statistical analysis / scientific calculation) </a></ h2>
 <p>
-  簡単な計算を行ってみましょう。Rstatsでは、以下の演算子を使って、計算が行えます。
+  Let's do a simple calculation. Rstats can be calculated using the following operators.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -79,380 +79,407 @@
 </div>
 
 
-<h3>四則演算</h3>
+<h3> Four arithmetic operations </ h3>
 <table>
   <tr>
     <td>
-      記号
-    </td>
+      symbol
+    </ td>
     <td>
-      意味
-    </td>
-  </tr>
+      meaning
+    </ td>
+  </ tr>
   <tr>
     <td>
       +
-    </td>
+    </ td>
     <td>
-      足し算
-    </td>
-  </tr>
+      addition
+    </ td>
+  </ tr>
   <tr>
     <td>
-      -
-    </td>
+      ---
+    </ td>
     <td>
-      引き算
-    </td>
-  </tr>
+      subtraction
+    </ td>
+  </ tr>
   <tr>
     <td>
       *
-    </td>
+    </ td>
     <td>
-      掛け算
-    </td>
-  </tr>
+      multiplication
+    </ td>
+  </ tr>
   <tr>
     <td>
       /
-    </td>
+    </ td>
     <td>
-      割り算
-    </td>
-  </tr>
-</table>
+      division
+    </ td>
+  </ tr>
+</ table>
 <p>
-  足し算、引き算、掛け算、割り算の記号は、R言語と同じです。
+  The symbols for addition, subtraction, multiplication, and division are the same as in R language.
 </p>
-<h3>累乗</h3>
+<h3> Exponentiation </ h3>
 <p>
-  累乗はPerlの演算規則に従って「**」を使って行います。R言語の「^」とは異なるので注意してください。
-</p>
-<table>
-  <tr>
-    <td>
-      記号
-    </td>
-    <td>
-      意味
-    </td>
-  </tr>
-  <tr>
-    <td>
-      **
-    </td>
-    <td>
-      累乗
-    </td>
-  </tr>
-</table>
-<h3>剰余</h3>
-<p>
-  剰余はPerlの演算規則に従って「%」を使って行います。R言語の「%%」とは異なるので注意してください。
+  Exponentiation is done using "**" according to Perl's arithmetic rules. Please note that it is different from "^" in R language.
 </p>
 <table>
   <tr>
     <td>
-      記号
-    </td>
+      symbol
+    </ td>
     <td>
-      意味
-    </td>
-  </tr>
+      meaning
+    </ td>
+  </ tr>
   <tr>
     <td>
-      %
-    </td>
+      ** **
+    </ td>
     <td>
-      剰余
-    </td>
-  </tr>
-</table>
-<h3>整数商</h3>
+      Exponentiation
+    </ td>
+  </ tr>
+</ table>
+<h3> Remaining </ h3>
 <p>
-  Rstatsでは整数商を計算するための演算子は用意されていません。R言語の「%/%」は利用できないので注意してください。整数商を求める場合は、tranc関数を使って行います。割り算を行った後に、整数部を取り出します。
+  The remainder is done using "%" according to Perl's arithmetic rules. Please note that it is different from "%%" in R language.
+</p>
+<table>
+  <tr>
+    <td>
+      symbol
+    </ td>
+    <td>
+      meaning
+    </ td>
+  </ tr>
+  <tr>
+    <td>
+      %%
+    </ td>
+    <td>
+      Surplus
+    </ td>
+  </ tr>
+</ table>
+<h3> Integer quotient </ h3>
+<p>
+  Rstats does not provide operators for calculating integer quotients. Please note that the R language "% /%" is not available. To find the integer quotient, use the trunc function. After performing the division, the integer part is taken out.
 </p>
 <pre>
-r-&gt;tranc($x1 / $x2)
-</pre>
-<p>
-  計算の例を示します。Rstatsでは、ベクトルを使った計算が基礎になるので、c_関数を使って作成します。c_関数はベクトルを作成するための関数です。ひとつの数値であっても、ひとつの要素を持つベクトルとして計算します。
-</p>
-<pre>
+r-&gt; trunc ($ x1 / $ x2)
+&lt;/ pre&gt;
+
+Here is an example of the calculation. In Rstats, the calculation using vectors is the basis, so we will create it using the c_ function. The c_ function is a function for creating a vector. Even if it is one numerical value, it is calculated as a vector with one element.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 use Rstats;
 
-my $x = (c_(1) + c_(2) - c_(3) * c_(4)) / c_(5) ** c_(6);
-print $x;
-</pre>
-<p>
-  出力結果です。計算結果が出力されます。
-</p>
-<pre>
+my $ x = (c_ (1) + c_ (2) --c_ (3) * c_ (4)) / c_ (5) ** c_ (6);
+print $ x;
+&lt;/ pre&gt;
+
+This is the output result. The calculation result is output.
+
+&lt;pre&gt;
 [1] -0.000576
-</pre>
-<p>
-  c_()をいつでも使うのは多少面倒に感じるかもしれませんが、Perlの上にR言語を実装しているために必要です。Rstatsで計算をするときは、いつでもベクトルを使って計算をするということを覚えてください。
-</p>
-<p>
-  今後のサンプルでは簡便のための、上記の「use Rstats」の下の行から書いていきますので、必要に応じて補ってください。
-</p>
-<p>
-  ルートの計算、対数の計算を行う場合には、Rstatsにはたくさんの関数が用意されています。たとえば、ルートの計算を行うためには、「sqrt関数」を使用します。
-</p>
-<pre>
-my $x = r-&gt;sqrt(c_(2));
-print $x;
-</pre>
-<p>
-  出力結果。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Using c_ () at any time can be a bit annoying, but it's necessary because you're implementing the R language on top of Perl. Remember that when you do calculations in Rstats, you always use vectors to do the calculations.
+
+For future samples, I will write from the line under "use Rstats" above for convenience, so please supplement if necessary.
+
+Rstats provides many functions for route calculation and logarithmic calculation. For example, to calculate the route, use the "sqrt function".
+
+&lt;pre&gt;
+my $ x = r-&gt; sqrt (c_ (2));
+print $ x;
+&lt;/ pre&gt;
+
+Output result.
+
+&lt;pre&gt;
 [1] 1.4142135623731
-</pre>
-<p>
-  以下にRstatsで用意されている数学関数を紹介します。
-</p>
-<table>
-  <tr>
-    <td>
-      記号
-    </td>
-    <td>
-      意味
-    </td>
-  </tr>
-  <tr>
-    <td>
+&lt;/ pre&gt;
+
+The mathematical functions provided by Rstats are introduced below.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      symbol
+    &lt;/ td&gt;
+    &lt;td&gt;
+      meaning
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       sqrt
-    </td>
-    <td>
-      √ の計算
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Calculation of √
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       abs
-    </td>
-    <td>
-      絶対値
-    </td>
-  </tr>
-  <tr>
-    <td>
-      exp
-    </td>
-    <td>
-      自然対数の底
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Absolute value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      exp exp
+    &lt;/ td&gt;
+    &lt;td&gt;
+      The bottom of the natural logarithm
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       expm1
-    </td>
-    <td>
-      x の絶対値 が1よりかなり小さい時に exp(x)-1 をより正確に計算
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Calculate exp (x) -1 more accurately when the absolute value of x is much less than 1
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       log
-    </td>
-    <td>
-      自然対数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Natural logarithm
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       log10
-    </td>
-    <td>
-      常用対数 （底が10の対数）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Common logarithm (base 10 logarithm)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       log2
-    </td>
-    <td>
-      底が2の対数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Logarithm with base 2
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       sin
-    </td>
-    <td>
-      サイン・正弦関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Sine / sine function
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       cos
-    </td>
-    <td>
-      コサイン ・ 余弦関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Cosine / cosine function
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       tan
-    </td>
-    <td>
-      タンジェント ・ 正接関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Tangent tangent function
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       asin
-    </td>
-    <td>
-      sin の逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of sin
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       acos
-    </td>
-    <td>
-      cos の逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of cos
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       atan
-    </td>
-    <td>
-      tan の逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of tan
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       sinh
-    </td>
-    <td>
-      ハイパボリックサイン
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Hyperbolic sign
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       cosh
-    </td>
-    <td>
-      ハイパボリックコサイン
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Hyperbolic cosine
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       tanh
-    </td>
-    <td>
-      ハイパボリックタンジェント
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Hyperbolic tangent
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       asinh
-    </td>
-    <td>
-      sinh の逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of sinh
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       acosh
-    </td>
-    <td>
-      cosh の逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of cosh
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       atanh
-    </td>
-    <td>
-      tanh の逆関数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Inverse function of tanh
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       logb
-    </td>
-    <td>
-      log と同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
-      log1px(実装未)
-    </td>
-    <td>
-      x の絶対値が1より(かなり)小さい時，log(1+x) をより正確に計算
-    </td>
-  </tr>
-  <tr>
-    <td>
-      gamma(実装未)
-    </td>
-    <td>
-      ガンマ関数
-    </td>
-  </tr>
-  <tr>
-    <td>
-      lgamma(実装未)
-    </td>
-    <td>
-      log(gamma(x)) と同じ
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Same as log
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      log1px (not implemented)
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Calculate log (1 + x) more accurately when the absolute value of x is (much) less than 1
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      gamma (not implemented)
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Gamma function
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      lgamma (not implemented)
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Same as log (gamma (x))
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       ceiling
-    </td>
-    <td>
-      引数以上の最小整数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Minimum integer greater than or equal to the argument
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       floor
-    </td>
-    <td>
-      引数以下の最大整数：いわゆるガウス記号
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Maximum integer less than or equal to the argument: the so-called Gaussian symbol
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       trunc
-    </td>
-    <td>
-      整数部分を求める
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Find the integer part
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       round
-    </td>
-    <td>
-      四捨五入
-    </td>
-  </tr>
-  <tr>
-    <td>
-      signif(x,a) 実装未
-    </td>
-    <td>
-      x を 有効桁で a 桁まで丸める(正・0・負を判定するsignとは異なる)
-    </td>
-  </tr>
-</table>
-<hr>
-<p>
-  <a href="/blog/20151002144374.html">Rstats入門(統計解析・科学技術計算) </a>
-</p>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Rounding
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      signif (x, a) not implemented yet
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Round x to a digit with a valid digit (unlike sign that determines positive / 0 / negative)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;hr&gt;
+
+&lt;a href="/blog/20151002144374.html"&gt; Introduction to Rstats (statistical analysis / scientific calculation) &lt;/a&gt;
 
   </div>
   <div class="bottom">

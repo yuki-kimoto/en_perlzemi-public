@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>POD(Plain Old Documentation)の書き方 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlはソースコードの中にドキュメントを埋め込むことができます。このソース内ドキュメントのことをPODといい独自の記述方法があります。">
+<title> How to write POD (Plain Old Documentation)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl allows you to embed documentation in your source code. This in-source document is called  POD  and has its own description method.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="POD(Plain Old Documentation)の書き方 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlはソースコードの中にドキュメントを埋め込むことができます。このソース内ドキュメントのことをPODといい独自の記述方法があります。" />
+<meta name="twitter:title" content=" How to write POD (Plain Old Documentation)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl allows you to embed documentation in your source code. This in-source document is called  POD  and has its own description method." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop="name">構文</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20170408149166.html">POD(Plain Old Documentation)の書き方</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20170408149166.html"> How to write POD (Plain Old Documentation) </a></ h2>
 <p>
-  Perlはソースコードの中にドキュメントを埋め込むことができます。このソース内ドキュメントのことを<b>POD</b>といい独自の記述方法があります。
+  Perl allows you to embed documentation in your source code. This in-source document is called <b> POD </ b> and has its own description method.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,221 +97,231 @@
 
 
 <p>
-  Perlにはモジュールを公開できるCPANというサイトがありますが、CPANに公開されるモジュールのドキュメントはすべてPODで書かれています。
+  Perl has a site called CPAN where you can publish modules, but all module documentation published on CPAN is written in POD.
 </p>
 <p>
-  感覚的にはPODはHTMLを簡易に記述できて、自動的にHTMLに変換されると考えましょう。
+  Let's think that POD can easily write HTML and is automatically converted to HTML.
 </p>
-<h3>文字コード</h3>
+<h3> Character code </ h3>
 <p>
-  英数字以外をドキュメントに含める場合は文字コードを設定する必要があります。「UTF-8」で記述する場合はドキュメントの先頭に以下のように書きます。
+  If you want to include non-alphanumeric characters in the document, you need to set the character code. When writing in "UTF-8", write as follows at the beginning of the document.
 </p>
 <pre>
-=encoding utf8
-</pre>
-<h3>ヘッダ</h3>
-<p>
-  HTMLのh1からh6に対応します。
-</p>
-<pre>
-=head1 ヘッダ1
+= encoding utf8
+&lt;/ pre&gt;
 
-=head2 ヘッダ2
+&lt;h3&gt; Header &lt;/ h3&gt;
 
-=head3 ヘッダ3
+Corresponds to HTML h1 to h6.
 
-=head4 ヘッダ4
+&lt;pre&gt;
+= head1 Header 1
 
-=head5 ヘッダ5
+= head2 Header 2
 
-=head6 ヘッダ6
-</pre>
-<p>
-  PODを書くときの注意点ですが、必ず次の行には改行を入れる必要があります。たとえば次の記述はうまくいきません。
-</p>
-<pre>
-=head1 ヘッダ1
-=head2 ヘッダ2
-</pre>
-<h3>ソースコード</h3>
-<p>
-  ソースコードを記述するにはソースコードに対して、先頭に空白を設定します。これはHTMLのpreに該当します。
-</p>
-<pre>
-  use DBIx::Custom;
-  my $dbi = DBIx::Custom-&gt;connect(...);
-</pre>
-<p>
-  空白は1でも2でも4でも、自由な幅でかまいません。
-</p>
-<h3>リスト</h3>
-<p>
-  リストの記述方法を解説します。
-</p>
-<h4>順序なしリスト</h4>
-<p>
-  順序なしリストは次のように記述します。
-</p>
-<p>
-  「=over」の後ろにはリストのインデント幅を指定します。「=item」の後ろに「*」を指定すると順序なしリストになります。「=over」の終わりを示すために最後に「=back」と書く必要があります。
-</p>
-<pre>
-=over 4
+= head3 header 3
 
-=item *
+= head4 Header 4
 
-項目1
+= head5 Header 5
 
-=item *
+= head6 Header 6
+&lt;/ pre&gt;
 
-項目2
+One thing to keep in mind when writing a POD is that you must insert a line break on the next line. For example, the following statement does not work.
 
-=item *
+&lt;pre&gt;
+= head1 Header 1
+= head2 Header 2
+&lt;/ pre&gt;
 
-項目3
+&lt;h3&gt; Source code &lt;/ h3&gt;
 
-=back
-</pre>
-<h4>順序リスト</h4>
-<p>
-  順序リストは次のように記述します。順序なしリストとほとんど同じですが、「=item」の後ろに数字を指定すると順序リストになります。
-</p>
-<pre>
-=over 4
+To write the source code, set a blank at the beginning of the source code. This corresponds to the HTML pre.
 
-=item 1
+&lt;pre&gt;
+  use DBIx :: Custom;
+  my $ dbi = DBIx :: Custom-&gt; connect (...);
+&lt;/ pre&gt;
 
-項目1
+The space can be 1, 2, or 4, and can be any width.
 
-=item 2
+&lt;h3&gt; List &lt;/ h3&gt;
 
-項目2
+I will explain how to write a list.
 
-=item 3
+&lt;h4&gt; Unordered list &lt;/ h4&gt;
 
-項目3
+The unordered list is written as follows:
 
-=back
-</pre>
-<h3>書式</h3>
-<p>
-  PODで書式を設定する方法です。
-</p>
-<h4>太字</h4>
-<p>
-  太字を設定するには「B&lt;&gt;」という記述を使います。
-</p>
-<pre>
-B&lt;あいうえお&gt;
-</pre>
-<h4>斜体</h4>
-<p>
-  斜体を設定するには「I&lt;&gt;」という記述を使います。
-</p>
-<pre>
-I&lt;あいうえお&gt;
-</pre>
-<h4>プログラムテキスト</h4>
-<p>
-  テキストの中の関数名などをそれとわかる形でフォーマットしたい場合は「C<>」が使えます。
-</p>
-<pre>
-C&lt;select&gt;
-</pre>
-<h3>ハイパーリンク</h3>
-<p>
-  ハイパーリンクの記法を解説します。
-</p>
-<h4>他のCPANモジュール</h4>
-<p>
-  他のCPANモジュールへのリンクを記述するには「L&lt;&gt;」を使って以下のように書きます。Object::Simpleのページへのリンクになります。
-</p>
-<pre>
-L&lt;Object::Simple&gt;
-</pre>
-<h4>一般のURLへのリンク</h4>
-<p>
-  一般のURLは「L&lt;テキスト|URL&gt;」のように記述します。
-</p>
-<pre>
-L&lt;Perlゼミ|http://d.hatena.ne.jp/perlcodesample&gt;
-</pre>
-<h3>PODの開始と終わり</h3>
-<p>
-  PODの開始は「=pod」でPODの終わりは「=cut」で終わります。
-</p>
-<pre>
-=pod
+After "= over", specify the indent width of the list. If you specify "*" after "= item", the list will be out of order. You must write "= back" at the end to indicate the end of "= over".
 
-ドキュメント
+&lt;pre&gt;
+= over 4
 
-=cut
-</pre>
-<p>
-  一般的には「=head1」などのPODの記述が一つでも出現するとPODが開始されるので「=pod」と書くことはあまりありません。ただしソースコードの中で<a href="/blog/20130712137361.html">複数行コメント</a>を使うときは、この記述方法が利用されます。
-</p>
-<h3>文字エスケープ</h3>
-<p>
-  PODで利用される記号を使いたい場合はエスケープする必要があります。エスケープは「」を使って行うことができます。
-</p>
-<pre>
-E&lt;lt&gt; &lt;
-E&lt;gt&gt; &gt;
-</pre>
-<h3>FAQ</h3>
-<p>
-  PODに関するFAQです。
-</p>
-<h4>PODでテーブルを記述することはできますか。</h4>
-<p>
-  PODでテーブルを記述することはできません。
-</p>
-<h4>PODで画像を利用することはできますか。</h4>
-<p>
-  PODで画像を利用することはできません。
-</p>
-<h4>CPANモジュールにおける慣習的な書き方を教えてください</h4>
-<p>
-  CPANモジュールのドキュメントは一般的に次のような書き方になっています。
-</p>
-<pre>
-=head1 NAME
+= item *
 
-モジュール名 - モジュールの簡単な解説
+Item 1
 
-=head1 SYNOPSIS
+= item *
 
-  ソースコードのサンプル
+Item 2
+
+= item *
+
+Item 3
+
+= back
+&lt;/ pre&gt;
+
+&lt;h4&gt; Order list &lt;/ h4&gt;
+
+The sequence list is described as follows. It's almost the same as an unordered list, but if you specify a number after "= item", it becomes an ordered list.
+
+&lt;pre&gt;
+= over 4
+
+= item 1
+
+Item 1
+
+= item 2
+
+Item 2
+
+= item 3
+
+Item 3
+
+= back
+&lt;/ pre&gt;
+
+&lt;h3&gt; Format &lt;/ h3&gt;
+
+How to format with POD.
+
+&lt;h4&gt; Bold &lt;/ h4&gt;
+
+To set it in bold, use the description "B &amp; lt; &amp; gt;".
+
+&lt;pre&gt;
+B &lt;aiueo&gt;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Italics &lt;/ h4&gt;
+
+Use the description "I &amp; lt; &amp; gt;" to set italics.
+
+&lt;pre&gt;
+I &lt;aiueo&gt;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Program text &lt;/ h4&gt;
+
+You can use "C &lt;&gt;" if you want to format the function name in the text in a way that you can understand.
+
+&lt;pre&gt;
+C &lt;select&gt;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Hyperlink &lt;/ h3&gt;
+
+I will explain the notation of hyperlinks.
+
+&lt;h4&gt; Other CPAN modules &lt;/ h4&gt;
+
+To write a link to another CPAN module, use "L &amp; lt; &amp; gt;" and write: It will be a link to the Object :: Simple page.
+
+&lt;pre&gt;
+L &lt;Object :: Simple&gt;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Links to general URLs &lt;/ h4&gt;
+
+A general URL is described as "L &amp; lt; text | URL &amp; gt;".
+
+&lt;pre&gt;
+L &lt;Perl Seminar | http://d.hatena.ne.jp/perlcodesample&gt;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Start and end of POD &lt;/ h3&gt;
+
+The start of POD ends with "= pod" and the end of POD ends with "= cut".
+
+&lt;pre&gt;
+= pod
+
+document
+
+= cut
+&lt;/ pre&gt;
+
+Generally, when even one description of POD such as "= head1" appears, POD starts, so it is rare to write "= pod". However, when using &lt;a href="/blog/20130712137361.html"&gt; multi-line comment &lt;/a&gt; in the source code, this description method is used.
+
+&lt;h3&gt; Character escape &lt;/ h3&gt;
+
+If you want to use the symbols used in POD, you need to escape. Escape can be done using "".
+
+&lt;pre&gt;
+E &lt;lt&gt; &lt;
+E &lt;gt &gt;&gt;
+&lt;/ pre&gt;
+
+&lt;h3&gt; FAQ &lt;/ h3&gt;
+
+FAQ about POD.
+
+&lt;h4&gt; Is it possible to write a table in POD? &lt;/ h4&gt;
+
+You cannot write a table in POD.
+
+&lt;h4&gt; Is it possible to use images with POD? &lt;/ h4&gt;
+
+Images are not available in POD.
+
+&lt;h4&gt; What is the customary way to write on the CPAN module? &lt;/ H4&gt;
+
+CPAN module documentation is generally written as follows:
+
+&lt;pre&gt;
+= head1 NAME
+
+Module name-A brief description of the module
+
+= head1 SYNOPSIS
+
+  Source code sample
   
-=head1 DESCRIPTION
+= head1 DESCRIPTION
 
-モジュールの解説
+Module description
 
-=head1 METHODS
+= head1 METHODS
 
-=head2 メソッド1
+= head2 method 1
 
-=head2 メソッド2
+= head2 method 2
 
-=head1 AUTHOR
+= head1 AUTHOR
 
-著者名
+Author name
 
-=head1 COPYRIGHT &amp; LICENSE
+= head1 COPYRIGHT &amp; LICENSE
 
-著作権表示
+Copyright notice
 
-=cut
-</pre>
-<h3>PODの詳細なドキュメント</h3>
-<p>
-  PODの詳細なドキュメントについては、PerlのPODに関するドキュメントを見てください。
-</p>
-<ul>
-  <li>
-    <a href="http://perldoc.jp/docs/perl/5.22.1/perlpod.pod">perlpod - PODのドキュメント</a>
-  </li>
-</ul>
+= cut
+&lt;/ pre&gt;
+
+&lt;h3&gt; Detailed POD documentation &lt;/ h3&gt;
+
+For detailed POD documentation, see Perl's POD documentation.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="http://perldoc.jp/docs/perl/5.22.1/perlpod.pod"&gt; perlpod --POD documentation &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
   </div>
   <div class="bottom">

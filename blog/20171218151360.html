@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>pack関数 - データをバイナリ形式にパックする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="pack関数は、データをさまざまなバイナリ形式にパックします。">
+<title> pack function-packs data into binary format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  pack function  packs the data into various binary formats.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="pack関数 - データをバイナリ形式にパックする - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="pack関数は、データをさまざまなバイナリ形式にパックします。" />
+<meta name="twitter:title" content=" pack function-packs data into binary format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  pack function  packs the data into various binary formats." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20171218151360.html">pack関数 - データをバイナリ形式にパックする</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20171218151360.html"> pack function-packs data into binary format </a></ h2>
 <p>
-  <b>pack関数</b>は、データをさまざまなバイナリ形式にパックします。
+  The <b> pack function </ b> packs the data into various binary formats.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,356 +97,382 @@
 
 
 <pre>
-my $packed = pack($format, @values);
-</pre>
-<p>
-  第一引数はバイナリ形式のデータフォーマットを指定します。
-</p>
-<p>
-  第二引数以降は、値の<a href="/blog/20100308126967.html">リスト</a>を指定します。
-</p>
-<p>
-  戻り値は、パックされたデータです。
-</p>
-<h4>符号付32bitのバイナリ形式にパック</h4>
-<p>
-  一つの例として、三つの整数を符号付32bitのバイナリ形式にパックするには次のようにします。
-</p>
-<pre>
-my $packed = pack("l3", 7, 8, 9);
-</pre>
-<p>
-  まず、7, 8, 9というのは、Perlのデータです。これを符号付32bitのバイナリ形式にパックします。
-</p>
-<p>
-  「l」という記号が「符号付32bit整数」ということを表現しています。
-</p>
-<p>
-  その後に続く3というのが「3つの値」ということを表現しています。
-</p>
-<p>
-  フォーマットは「バイナリ形式を表す記号」と「長さ」によって構成されています。
-</p>
-<p>
-  全体では、7, 8, 9という数値を、符号付32bit整数が3つ続くバイナリ形式でパックするという意味になります。
-</p>
-<p>
-  今回の例では引数にリストを渡していますが<a href="/blog/20161012147627.html">配列</a>を渡すこともできます。
-</p>
-<pre>
-my @values = (7, 8, 9);
-my $packed = pack("l3", @values);
-</pre>
-<h4>浮動小数点を符号付doubleのバイナリ形式にパック</h4>
-<p>
-  三つの浮動小数点を倍精度浮動小数点doubleのバイナリ形式にパックしてみましょう。
-</p>
-<pre>
-my $packed = pack("d3", 0.5, 1.2, 5.4);
-</pre>
-<p>
-  倍精度浮動小数点は「d」という記号でパックすることができます。
-</p>
-<h4>バイナリデータを書き込むには</h4>
-<p>
-  バイナリデータを書き込むにはファイルハンドルを<a href="/blog/20100204126425.html">binmode関数</a>を使ってバイナリモードにして、<a href="/blog/20170404149131.html">print関数</a>を使用します。
-</p>
-<pre>
-# パックされたバイナリデータ
-my $packed = pack("l3", 7, 8, 9);
+my $ packed = pack ($ format, @values);
+&lt;/ pre&gt;
 
-# ファイルをオープン
-open my $fh, '&lt;', $file
-  or die "Can't open $file:$!";
+The first argument specifies the binary data format.
 
-# バイナリモードに変更
-binmode $fh;
+After the second argument, specify the &lt;a href="/blog/20100308126967.html"&gt; list &lt;/a&gt; of the values.
 
-# バイナリデータを書き込み
-print $fh $data;
+The return value is the packed data.
 
-# ファイルをクローズ
-close $fh;
-</pre>
-<h4>エンディアンを変更するには</h4>
-<p>
-  ビッグエンディアンからリトルエンディアンの変換は「N」と「V」を使って行うことができます。以下の例は符号なし32bit整数の例です。
-</p>
-<pre>
-# ビッグエンディアンの値をPerlの値に
-my $value = unpack('N1', $value_big);
+&lt;h4&gt; Packed in signed 32-bit binary format &lt;/ h4&gt;
 
-# Perlの値をリトルエンディアンに
-my $value_litte = pack('V1', $value);
-</pre>
-<h4>パックされたデータを元に戻すには</h4>
-<p>
-  パックされたデータを復元するにはunpack関数を使用します。
-</p>
-<h3>フォーマットの一覧</h3>
-<p>
-  pack関数のフォーマットの一覧。
-</p>
-<table>
-  <tr>
-    <td>
+As an example, to pack three integers into a signed 32-bit binary format:
+
+&lt;pre&gt;
+my $ packed = pack ("l3", 7, 8, 9);
+&lt;/ pre&gt;
+
+First, 7, 8 and 9 are Perl data. Pack this into a signed 32-bit binary format.
+
+The symbol "l" means "signed 32-bit integer".
+
+The 3 that follows it means "three values".
+
+The format consists of "symbols representing binary format" and "length".
+
+Overall, it means packing the numbers 7, 8 and 9 in binary format with three signed 32-bit integers in a row.
+
+In this example, we are passing a list as an argument, but you can also pass a &lt;a href="/blog/20161012147627.html"&gt; array &lt;/a&gt;.
+
+&lt;pre&gt;
+my @values ​​= (7, 8, 9);
+my $ packed = pack ("l3", @values);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Pack floating point into signed double binary format &lt;/ h4&gt;
+
+Let's pack the three floating point numbers into a double precision floating point double binary format.
+
+&lt;pre&gt;
+my $ packed = pack ("d3", 0.5, 1.2, 5.4);
+&lt;/ pre&gt;
+
+Double-precision floating point numbers can be packed with the symbol "d".
+
+&lt;h4&gt; To write binary data &lt;/ ​​h4&gt;
+
+To write binary data, set the filehandle to binary mode using the &lt;a href="/blog/20100204126425.html"&gt; binmode function &lt;/a&gt; and &lt;a href="/blog/20170404149131.html"&gt; print Use the function &lt;/a&gt;.
+
+&lt;pre&gt;
+# Packed binary data
+my $ packed = pack ("l3", 7, 8, 9);
+
+#Open file
+open my $ fh,'&lt;', $ file
+  or die "Can't open $ file: $!";
+
+# Change to binary mode
+binmode $ fh;
+
+# Write binary data
+print $ fh $ data;
+
+#Close file
+close $ fh;
+&lt;/ pre&gt;
+
+&lt;h4&gt; To change endianness &lt;/ h4&gt;
+
+The conversion from big endian to little endian can be done using "N" and "V". The following example is an example of an unsigned 32-bit integer.
+
+&lt;pre&gt;
+# Big endian value to Perl value
+my $ value = unpack ('N1', $ value_big);
+
+#Perl value to little endian
+my $ value_litte = pack ('V1', $ value);
+&lt;/ pre&gt;
+
+&lt;h4&gt; How to restore packed data &lt;/ ​​h4&gt;
+
+Use the unpack function to restore the packed data.
+
+&lt;h3&gt; List of formats &lt;/ h3&gt;
+
+List of formats for the pack function.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
       a
-    </td>
-    <td>
-      任意のバイナリデータを含む文字列。ヌルパディングされます。
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      A string containing arbitrary binary data. It will be null padded.
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       A
-    </td>
-    <td>
-      テキスト（ASCII）文字列。スペースで埋められます。
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Text (ASCII) string. It will be filled with spaces.
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       Z
-    </td>
-    <td>
-      ヌルで終了する（ASCIZ）文字列。ヌルで埋められます。
-    </td>
-  </tr>
-  <tr>
-    <td>
-      b
-    </td>
-    <td>
-      ビットストリング（vec関数のような各バイト内で昇順のビット順序）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      A null-terminated (ASCIZ) string. Filled with nulls.
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      b b
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Bit string (ascending bit order within each byte, such as the vec function)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       B
-    </td>
-    <td>
-      ビットストリング（各バイト内の降順ビット順序）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Bit string (descending bit order within each byte)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       h
-    </td>
-    <td>
-      16進文字列（低いニブルが最初）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Hexadecimal string (low nibbles first)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       H
-    </td>
-    <td>
-      16進文字列（高いニブルが最初）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Hexadecimal string (high nibbles first)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       c
-    </td>
-    <td>
-      符号付きchar（8ビット）値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Signed char (8-bit) value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       C
-    </td>
-    <td>
-      符号なしchar（オクテット）値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned char (octet) value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       W
-    </td>
-    <td>
-      符号なしのchar値（255を超える可能性があります）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned char value (may exceed 255)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       s
-    </td>
-    <td>
-      符号付きshort（16ビット）値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Signed short (16-bit) value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       S
-    </td>
-    <td>
-      符号なしのshort値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned short value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       l
-    </td>
-    <td>
-      符号付きlong（32ビット）値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Signed long (32-bit) value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       L
-    </td>
-    <td>
-      符号なしのlong値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned long value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       q
-    </td>
-    <td>
-      符号付きクォード（64ビット）値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Signed quad (64-bit) value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       Q
-    </td>
-    <td>
-      符号なし4倍の値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned 4x value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       i
-    </td>
-    <td>
-      符号付き整数値(少なくとも32ビット。C言語のint)
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Signed integer value (at least 32 bits, C int)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       I
-    </td>
-    <td>
-      符号なし整数値
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned integer value
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       n
-    </td>
-    <td>
-       ネットワーク（ビッグエンディアン）順の符号なしshort（16ビット）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Unsigned short (16 bits) in network (big endian) order
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       N
-    </td>
-    <td>
-       ネットワーク（ビッグエンディアン）順序で符号なしlong（32ビット）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Unsigned long (32 bits) in network (big endian) order
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       v
-    </td>
-    <td>
-      「VAX」（リトル・エンディアン）順序の符号なしshort（16ビット）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Unsigned short (16 bits) in "VAX" (little endian) order
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       V
-    </td>
-    <td>
-       VAX（リトルエンディアン）順序で符号なしlong（32ビット）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Unsigned long (32 bits) in VAX (little endian) order
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       j
-    </td>
-    <td>
-       Perlの内部符号付き整数値（IV）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+       Perl's internally signed integer value (IV)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       J
-    </td>
-    <td>
-       A Perlの内部符号なし整数値（UV）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+       A Perl's internal unsigned integer value (UV)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       f
-    </td>
-    <td>
-      ネイティブ形式の単精度浮動小数点数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Native format single precision floating point number
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       d
-    </td>
-    <td>
-      ネイティブフォーマットの倍精度浮動小数点数
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Native format double precision floating point number
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       F
-    </td>
-    <td>
-      ネイティブ形式のPerl内部浮動小数点値（NV）
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Native Perl Internal Floating Point Values ​​(NV)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       D
-    </td>
-    <td>
-      ネイティブフォーマットのlong-double精度のfloat型
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Native format long-double precision float type
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       p
-    </td>
-    <td>
-      ヌル終了文字列へのポインタ
-    </td>
-  </tr>
-  <tr>
-    <td>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Pointer to null-terminated string
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
       P
-    </td>
-    <td>
-      構造体へのポインタ（固定長文字列）
-    </td>
-  </tr>
-</table>
-<h3>バイナリ形式の利点</h3>
-<p>
-  <b>バイナリ形式の利点は、サイズが小さくなるということです。</b>Perlの数値は、内部的にはSVという構造体で表現されており、サイズは、構造体のフィールドが存在する分だけ大きいです。
-</p>
-<p>
-  もう一つの利点は、<b>連続した領域に配置される</b>ということです。32bitというのは、4バイトのことですから、4バイトが3つ連続して、12バイトで、整数3つを表現できます。
-</p>
-<h4>C言語とのデータのやり取り</h4>
-<p>
-  C言語の配列はちょうどパックされたバイナリ形式と対応しています。以下の宣言は、パックされたバイナリ形式とちょうど同じデータ構造を持っています。
-</p>
-<pre>
-int32_t values[3];
-</pre>
-<h3>さらに詳しく</h3>
-<p>
-  pack関数についての詳細な情報は公式ドキュメントである<a href="http://perldoc.jp/docs/perl/5.8.8/perlpacktut.pod">pack入門</a>と<a href="http://perldoc.jp/func/pack">pack関数</a>を参考にしてください。
-</p>
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Pointer to structure (fixed length string)
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h3&gt; Advantages of binary format &lt;/ h3&gt;
+
+The advantage of the &lt;b&gt; binary format is that it is smaller in size. &lt;/ b&gt; Perl numbers are internally a structure called SVIt is represented by, and the size is larger by the existence of the field of the structure.
+
+Another advantage is that it is &lt;b&gt; placed in a contiguous area &lt;/ b&gt;. Since 32bit is 4 bytes, 3 4 bytes are consecutive and 12 bytes can express 3 integers.
+
+&lt;h4&gt; Data exchange with C language &lt;/ h4&gt;
+
+C language arrays correspond to just the packed binary format. The following declaration has exactly the same data structure as the packed binary format.
+
+&lt;pre&gt;
+int32_t values [3];
+&lt;/ pre&gt;
+
+&lt;h3&gt; More details &lt;/ h3&gt;
+
+For more information about the pack function, see the official documentation &lt;a href="http://perldoc.jp/docs/perl/5.8.8/perlpacktut.pod"&gt; Introduction to pack &lt;/a&gt; and &lt;a href=" Please refer to http://perldoc.jp/func/pack "&gt; pack function &lt;/a&gt;.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>スカラ変数のリファレンス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="スカラ変数のリファレンスは、スカラ変数を指し示すものです。">
+<title> Scalar variable reference  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="A scalar variable reference points to a scalar variable.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="スカラ変数のリファレンス - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="スカラ変数のリファレンスは、スカラ変数を指し示すものです。" />
+<meta name="twitter:title" content=" Scalar variable reference  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="A scalar variable reference points to a scalar variable." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100930127859.html">
-      <span itemprop="name">リファレンス</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20180308152051.html">スカラ変数のリファレンス</a></h2>
+      <span itemprop = "name"> Reference </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20180308152051.html"> Scalar variable reference </a></ h2>
 <p>
-  スカラ変数のリファレンスは、スカラ変数を指し示すものです。
+  A scalar variable reference points to a scalar variable.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,62 +96,61 @@
 </div>
 
 
-<h4>スカラ変数のリファレンスの作成</h4>
+<h4> Creating a reference for scalar variables </ h4>
 <p>
-  スカラ変数のリファレンスを作成するには次のようにします。
+  To create a scalar variable reference:
 </p>
 <pre>
-my $str = "Hello";
-my $str_ref = \$str;
-</pre>
-<h4>スカラ変数のリファレンスをデリファレンス</h4>
-<p>
-  スカラ変数のリファレンスをデリファレンスするには「${}」とします。
-</p>
-<pre>
-my $str = ${$str_ref};
-</pre>
-<p>
-  単純な変数であれば先頭に「$」を付けるだけでデリファレンスできます。
-</p>
-<pre>
-my $str = $$str_ref;
-</pre>
-<h3>スカラ変数のリファレンスを使う意義はありますか?</h3>
-<p>
-  大きなサイズの<a href="/blog/20161003147558.html">文字列</a>を<a href="/blog/20101130129876.html">サブルーチン</a>に渡す場合は、リファレンスを使ったほうが、速い気がしますね。
-</p>
-<p>
-  でも、Perlでは、文字列はコピーオンライトと呼ばれる手法を使ってコピーされるので、実際に文字列に変更が加えられるまでは、コピーが行われません。
-</p>
-<p>
-  ですから、大きなサイズの文字列でも、気にしないで、サブルーチンの引数に渡してください。
-</p>
-<h4>Getopt::Long</h4>
-<p>
-  自分でプログラミングをするときは、スカラ変数のリファレンスを利用する機会はほぼありませんが、ライブラリが使っている場合は、使い方を覚えておく必要があります。
-</p>
-<p>
-  よく利用するモジュールとしては<a href="/blog/20100514127696.html">Getopt::Long</a>があります。
-</p>
-<pre>
-# GetOptionsによるコマンドライン引数のオプションの処理
+my $ str = "Hello";
+my $ str_ref = \ $ str;
+&lt;/ pre&gt;
 
-# デフォルト値の設定
-my $enable_cache;
-my $max_clients = 5;
-my $type = 'prefork';
+&lt;h4&gt; Dereference scalar variable reference &lt;/ h4&gt;
 
-# オプションの処理
-GetOptions(
-  'enable_cache'  =&gt; \$enable_cache,
-  'max_clients=i' =&gt; \$max_clients,
-  'type=s'        =&gt; \$type
+Use "$ {}" to dereference the scalar variable reference.
+
+&lt;pre&gt;
+my $ str = $ {$ str_ref};
+&lt;/ pre&gt;
+
+Simple variables can be dereferenced by simply prefixing them with "$".
+
+&lt;pre&gt;
+my $ str = $$ str_ref;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Is it worth using a scalar variable reference? &lt;/ H3&gt;
+
+I used a reference when passing a large &lt;a href="/blog/20161003147558.html"&gt; string &lt;/a&gt; to a &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt; I think it's faster.
+
+However, in Perl, strings are copied using a technique called copy-on-write, so they are not copied until the strings are actually modified.
+
+So don't worry about large strings, just pass them as subroutine arguments.
+
+&lt;h4&gt; Getopt :: Long &lt;/ h4&gt;
+
+When programming yourself, you rarely have the opportunity to use scalar variable references, but if your library uses them, you need to remember how to use them.
+
+A frequently used module is &lt;a href="/blog/20100514127696.html"&gt; Getopt :: Long &lt;/a&gt;.
+
+&lt;pre&gt;
+Handling command line argument options with #GetOptions
+
+#Set default value
+my $ enable_cache;
+my $ max_clients = 5;
+my $ type ='prefork';
+
+# Optional processing
+GetOptions (
+  'enable_cache' =&gt; \ $ enable_cache,
+  'max_clients = i'=&gt; \ $ max_clients,
+  'type = s'=&gt; \ $ type
 );
 
-# オプション以外の引数を受け取る 
-my $conf_file = shift;
-</pre>
+Receives non-option arguments
+my $ conf_file = shift;
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

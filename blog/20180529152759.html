@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>読み込まれているモジュールを調べる %INC - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="読み込まれているモジュールを調べるには%INCという特殊変数を使います。">
+<title> Examine the loaded module% INC  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use a special variable called % INC  to find out which modules are loaded.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="読み込まれているモジュールを調べる %INC - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="読み込まれているモジュールを調べるには%INCという特殊変数を使います。" />
+<meta name="twitter:title" content=" Examine the loaded module% INC  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use a special variable called % INC  to find out which modules are loaded." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161102147817.html">
-        <span itemprop="name">特殊変数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20180529152759.html">読み込まれているモジュールを調べる %INC</a></h2>
+        <span itemprop = "name"> Special variables </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20180529152759.html"> Examine the loaded module% INC </a></ h2>
 <p>
-  読み込まれているモジュールを調べるには<strong>%INC</strong>という特殊変数を使います。
+  Use a special variable called <strong>% INC </ strong> to find out which modules are loaded.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,28 +98,27 @@
 
 
 <pre>
-%INC
-</pre>
-<p>
-  %INC ハッシュは、モジュール名とモジュールのファイル名の組み合わせが、代入されています。モジュール名と、実際にどのファイルをインポートしたのかがわかります。<a href="/blog/20080208120248.html">Data::Dumper</a>で出力した結果は以下のようになっています。
-</p>
-<pre>
-$VAR1 = {
-          'Data/Dumper.pm' =&gt; 'C:/Strawberry/perl/lib/Data/Dumper.pm',
-          'XSLoader.pm' =&gt; 'C:/Strawberry/perl/lib/XSLoader.pm',
-          'feature.pm' =&gt; 'C:/Strawberry/perl/lib/feature.pm',
-          'Carp.pm' =&gt; 'C:/Strawberry/perl/lib/Carp.pm',
-          'warnings.pm' =&gt; 'C:/Strawberry/perl/lib/warnings.pm',
-          'bytes.pm' =&gt; 'C:/Strawberry/perl/lib/bytes.pm',
-          'strict.pm' =&gt; 'C:/Strawberry/perl/lib/strict.pm',
-          'Exporter.pm' =&gt; 'C:/Strawberry/perl/lib/Exporter.pm',
-          'warnings/register.pm' =&gt; 'C:/Strawberry/perl/lib/warnings/register.pm',
-          'constant.pm' =&gt; 'C:/Strawberry/perl/lib/constant.pm'
+% INC
+&lt;/ pre&gt;
+
+The% INC hash is assigned a combination of module name and module file name. You can see the module name and which file you actually imported. The result output by &lt;a href="/blog/20080208120248.html"&gt; Data :: Dumper &lt;/a&gt; is as follows.
+
+&lt;pre&gt;
+$ VAR1 = {
+          'Data / Dumper.pm' =&gt;' C: /Strawberry/perl/lib/Data/Dumper.pm',
+          'XSLoader.pm' =&gt;' C: /Strawberry/perl/lib/XSLoader.pm',
+          'feature.pm' =&gt;' C: /Strawberry/perl/lib/feature.pm',
+          'Carp.pm' =&gt;' C: /Strawberry/perl/lib/Carp.pm',
+          'warnings.pm' =&gt;' C: /Strawberry/perl/lib/warnings.pm',
+          'bytes.pm' =&gt;' C: /Strawberry/perl/lib/bytes.pm',
+          'strict.pm' =&gt;' C: /Strawberry/perl/lib/strict.pm',
+          'Exporter.pm' =&gt;' C: /Strawberry/perl/lib/Exporter.pm',
+          'warnings / register.pm' =&gt;' C: /Strawberry/perl/lib/warnings/register.pm',
+          'constant.pm' =&gt;' C: /Strawberry/perl/lib/constant.pm'
         };
-</pre>
-<p>
-  %INCは<a href="/blog/20180508152716.html">モジュールの検索パス</a>が格納されている、 @INC とは何の関係もありません。@INC と %INC はまったく別の変数です。モジュール名だけを知りたい場合は、<a href="/blog/20080210120265.html">keys関数</a>で、キーだけを取り出してあげます。
-</p>
+&lt;/ pre&gt;
+
+% INC has nothing to do with @INC, which contains the &lt;a href="/blog/20180508152716.html"&gt; module search path &lt;/a&gt;. @INC and% INC are completely different variables. If you want to know only the module name, use the &lt;a href="/blog/20080210120265.html"&gt; keys function &lt;/a&gt; to retrieve only the keys.
 
   </div>
   <div class="bottom">

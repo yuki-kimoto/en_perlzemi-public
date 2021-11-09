@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>last文 - 繰り返しから抜ける - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="last文を使うと次の繰り返しから抜けることができます。これは、C言語やJavaのbreak文に該当します。">
+<title> last statement-get out of repetition  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  last statement  to get out of the next iteration. This corresponds to a C or Java break statement.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="last文 - 繰り返しから抜ける - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="last文を使うと次の繰り返しから抜けることができます。これは、C言語やJavaのbreak文に該当します。" />
+<meta name="twitter:title" content=" last statement-get out of repetition  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  last statement  to get out of the next iteration. This corresponds to a C or Java break statement." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop="name">構文</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20170527149589.html">last文 - 繰り返しから抜ける</a></h2>
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20170527149589.html"> last statement-get out of repetition </a></ h2>
 <p>
-  <strong>last文</strong>を使うと次の繰り返しから抜けることができます。これは、C言語やJavaのbreak文に該当します。
+  You can use the <strong> last statement </ strong> to get out of the next iteration. This corresponds to a C or Java break statement.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,120 +98,120 @@
 
 <pre>
 last
-</pre>
-<p>
-  last文は<a href="/blog/20100123126425.html">while文</a>やfor文などの繰り返し文の中で使うことができます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+The last statement can be used in repetitive statements such as &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; and for statements.
+
+&lt;pre&gt;
 while (1) {
-  if (条件) {
+  if (condition) {
     last;
   }
 }
 
-for (my $i = 0; $i &lt; 10; $i++) {
-  if (条件) {
+for (my $ i = 0; $ i &lt;10; $ i ++) {
+  if (condition) {
     last;
   }
 }
 
-foreach my $animal (@animals) {
-  if (条件) {  
+foreach my $ animal (@animals) {
+  if (condition) {
     last;
   }
 }
-</pre>
-<p>
-  特定の条件の時だけ、ループを脱出したい場合にlast文を利用することができます。
-</p>
-<h3>サンプルプログラム</h3>
-<p>
-  last文を使ったサンプルプログラムです。
-</p>
-<h4>特定の文字にマッチしたときループを抜ける</h4>
-<p>
-  ループ処理の途中で、ある条件の場合に、ループを抜けたい場合にlast文を利用できます。文字の<a href="/blog/20161012147627.html">配列</a>を準備して、特定の文字の場合にループを抜けるサンプルです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You can use the last statement when you want to break out of the loop only under certain conditions.
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample program that uses the last statement.
+
+&lt;h4&gt; Exit the loop when a specific character is matched &lt;/ h4&gt;
+
+In the middle of loop processing, you can use the last statement when you want to exit the loop under certain conditions. This is a sample that prepares a &lt;a href="/blog/20161012147627.html"&gt; array &lt;/a&gt; of characters and exits the loop for a specific character.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-my @chars = qw(z z a b c d e f);
+my @chars = qw (z z a b c d e f);
 
-for my $char (@chars){
-  last if $char eq 'c';
-  print "$char\n";
+for my $ char (@chars) {
+  last if $ char eq'c';
+  print "$ char \ n";
 }
-</pre>
-<p>
-  実行結果です。「c」のときにループを抜けるので、出力結果は「c」の前にある文字だけになります。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+This is the execution result. Since the loop is exited at "c", the output result is only the character before "c".
+
+&lt;pre&gt;
 z
 z
 a
-b
-</pre>
-<p>
-  「qw(z z a b c d e f)」は<a href="/blog/20080222120369.html">文字列リスト演算子</a>です。
-</p>
-<p>
-  if文、for文、while文については、以下で詳しく解説していますので、参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20161023147731.html">if文を使った条件分岐の構文を覚えよう</a>
-  </li>
-  <li>
-    <a href="/blog/20170521149524.html">for文、while文を使った繰り返しの処理を覚えよう</a>
-  </li>
-</ul>
-<h4>多重ループから抜ける方法</h4>
-<p>
-  lastを使うとループから脱出できますが、脱出できるのは直近のループブロックだけです。多重ループから抜け出すには少し工夫が必要です。フラグと条件分岐をうまく使うことで多重ループを脱出できます。
-</p>
-<p>
-  無限ループを、フラグとふたつのlastを使って脱出するプログラムです。
-</p>
-<pre>
-my $num = 0;
+b b
+&lt;/ pre&gt;
 
-# 多重ループから脱出する
+"Qw (z z a b c d e f)" is a &lt;a href="/blog/20080222120369.html"&gt; string list operator &lt;/a&gt;.
+
+The if statement, for statement, and while statement are explained in detail below, so please refer to them.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20161023147731.html"&gt; Learn the syntax of conditional branching using if statements &lt;/a&gt;
+  &lt;/ li&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20170521149524.html"&gt; Let's learn the iterative processing using for statement and while statement &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; How to get out of multiple loops &lt;/ h4&gt;
+
+You can use last to escape from a loop, but only the most recent loop block can escape. It takes some ingenuity to get out of multiple loops. You can get out of multiple loops by making good use of flags and conditionals.
+
+A program that escapes an infinite loop using a flag and two lasts.
+
+&lt;pre&gt;
+my $ num = 0;
+
+# Escape from multiple loops
 while (1) {
-  # フラグをひとつ作成する
-  my $finish;
+  #Create one flag
+  my $ finish;
   while (1) {
-    if ($num == 10) {
-      $finish = 1;
+    if ($ num == 10) {
+      $ finish = 1;
       last;
     }
-    $num++;
+    $ num ++;
   }
-  if ($finish) {
+  if ($ finish) {
     last;
   }
 }
 
-</pre>
-<p>
-  ラベルを外側のループの上に書いて、「last ラベル」として多重ループを抜ける方法もありますが、個人的には、お勧めしません。上記のようにうまくフラグを作って、多重ループを脱出したほうが、ソースコードの見通しがよくなります。
-</p>
-<h3>関連情報</h3>
-<h4>next文を使うとループの先頭にジャンプできる</h4>
-<p>
-  last文と似たものにnext文があります。next文を使うと、次のループの先頭に移動することができます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You could write the label on top of the outer loop and exit the multiple loop as a "last label", but I personally don't recommend it. The source code will be better visible if you flag it well as described above and break out of multiple loops.
+
+&lt;h3&gt; Related information &lt;/ h3&gt;
+
+&lt;h4&gt; You can jump to the beginning of the loop using the next statement &lt;/ h4&gt;
+
+Similar to the last statement is the next statement. You can use the next statement to move to the beginning of the next loop.
+
+&lt;pre&gt;
 next
-</pre>
-<p>
-  next文については、以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080329120687.html">next文 - 次の繰り返しの先頭にジャンプする</a>
-  </li>
-</ul>
+&lt;/ pre&gt;
+
+For the next statement, refer to the following article.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080329120687.html"&gt; next statement-jumps to the beginning of the next iteration &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
   </div>
   <div class="bottom">

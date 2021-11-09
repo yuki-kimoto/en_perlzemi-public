@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ファイルの存在を確認する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="ファイルが存在するかどうかを確認するには、ファイルテスト演算子「-e」を使用します。">
+<title> Check the existence of the file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="To  check if a file exists , use the file test operator "-e".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ファイルの存在を確認する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="ファイルが存在するかどうかを確認するには、ファイルテスト演算子「-e」を使用します。" />
+<meta name="twitter:title" content=" Check the existence of the file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="To  check if a file exists , use the file test operator "-e"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,32 +59,32 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop="name">演算子</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> operator </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20100820127859.html">
-      <span itemprop="name">ファイルテスト</span></a>
-    <meta itemprop="position" content="3" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> File test </ span> </a>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+  & # 8250;
   <li>
-      <span itemprop="name">here</span>
-  </li>
-</ol>
-<h2><a href="/blog/20180518152707.html">ファイルの存在を確認する</a></h2>
+      <span itemprop = "name"> here </ span>
+  </ li>
+</ ol>
+<h2><a href="/blog/20180518152707.html"> Check the existence of the file </a></ h2>
 <p>
-  <b>ファイルが存在するかどうかを確認</b>するには、ファイルテスト演算子「-e」を使用します。
+  To <b> check if a file exists </ b>, use the file test operator "-e".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,132 +103,140 @@
 
 
 <pre>
--e $file
-</pre>
-<p>
-  ファイルが存在すると真値を、存在しないと偽値を返します。ディレクトリやシンボリックリンクなどもファイルとして扱われます。Unixではディレクトリも特別なファイルとみなしファイルという概念でとらえるからです。
-</p>
-<h4>通常ファイルが存在するかどうかを確認</h4>
-<p>
-  ディレクトリではない通常のファイルが存在するかどうかを確認したい場合は、ファイルテスト演算子「-f」で確認できます。
-</p>
-<pre>
--f $file
-</pre>
-<p>
-  通常ファイルが存在すると真値を、存在しないと偽値を返します。通常ファイルとはテキストファイルやバイナリファイルなどのデータを格納しているファイルのことです。
-</p>
-<h4>存在を確認できるファイルの種類</h4>
-<p>
-  その他に、ディレクトリの存在やシンボリックリンクの存在を確認できるファイルテスト演算子もあります。
-</p>
-<table>
-  <tr>
-    <td>
-      <span style="font-weight:bold;">ファイルの種類</span>
-    </td>
-    <td>
-      <span style="font-weight:bold;">対応するファイル演算子</span>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      通常ファイル 
-    </td>
-    <td>
-                                             -f	
-    </td>
-  </tr>
-  <tr>
-    <td>
-      ディレクトリ  
-    </td>
-    <td>
-                                            -d	
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="http://itpro.nikkeibp.co.jp/article/Keyword/20071025/285561/">シンボリックリンク</a>
-    </td>
-    <td>
-                                        -l	
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="http://e-words.jp/w/E5908DE5898DE4BB98E3818DE38391E382A4E38397.html">名前つきパイプ</a>、パイプであるファイルハンドル
-    </td>
-    <td>
-              -p	
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="http://e-words.jp/w/E382BDE382B1E38383E38388.html">ソケット</a>                                     
-    </td>
-    <td>
-             -S	
-    </td>
-  </tr>
-  <tr>
-    <td>
-      ブロックスペシャルファイル                    
-    </td>
-    <td>
-            -b	
-    </td>
-  </tr>
-  <tr>
-    <td>
-      キャラクタースペシャルファイル                 
-    </td>
-    <td>
-           -c	
-    </td>
-  </tr>
-</table>
-<p>
-  用語の解説のページにリンクを張っておきました。
-</p>
-<h3>サンプルプログラム</h3>
-<p>
-  ファイルテスト演算子「-e」を使ってファイルの存在を確認するサンプルです。
-</p>
-<pre>
+-e $ file
+&lt;/ pre&gt;
+
+Returns a true value if the file exists, a false value if it does not exist. Directories and symbolic links are also treated as files. This is because on Unix, directories are also considered as special files and are considered as files.
+
+&lt;h4&gt; Check if the normal file exists &lt;/ h4&gt;
+
+If you want to check if a regular file that is not a directory exists, you can check it with the file test operator "-f".
+
+&lt;pre&gt;
+-f $ file
+&lt;/ pre&gt;
+
+Normal Returns a true value if the file exists, a false value if it does not exist. A normal file is a file that stores data such as a text file or a binary file.
+
+&lt;h4&gt; Types of files that can be confirmed to exist &lt;/ h4&gt;
+
+There are also file test operators that can check for the existence of directories and symbolic links.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;span style = "font-weight: bold;"&gt; File type &lt;/ span&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      &lt;span style = "font-weight: bold;"&gt; Corresponding file operator &lt;/ span&gt;
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Normal file
+    &lt;/ td&gt;
+    &lt;td&gt;
+                                             -f
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Directory
+    &lt;/ td&gt;
+    &lt;td&gt;
+                                            -d
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="http://itpro.nikkeibp.co.jp/article/Keyword/20071025/285561/"&gt; Symbolic link &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+                                        -l
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="http://e-words.jp/w/E5908DE5898DE4BB98E3818DE38391E382A4E38397.html"&gt; Named pipe &lt;/a&gt;, file handle that is a pipe
+    &lt;/ td&gt;
+    &lt;td&gt;
+              -p
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="http://e-words.jp/w/E382BDE382B1E38383E38388.html"&gt; Socket &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+             -S
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Block special file
+    &lt;/ td&gt;
+    &lt;td&gt;
+            -b
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Character special file
+    &lt;/ td&gt;
+    &lt;td&gt;
+           -c
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+I have put up a link to the explanation page of terms.
+
+&lt;h3&gt; Sample program &lt;/ h3&gt;
+
+This is a sample to check the existence of a file using the file test operator "-e".
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# ファイルの存在を確認する。
-# -e ファイル名
-# -e を使えば、ディレクトリやファイルやシンボリックリンクなど
-# を区別せずに、それが、存在するかどうかを確認できます。
+#Check for the existence of the file.
+# -e file name
+# -e can be used for directories, files, symbolic links, etc.
+You can check if it exists without distinguishing the #.
 
-print "1: ファイルの存在を確認する。 -e \n";
-my $file_all_type = 'a';
+print "1: Check the existence of the file. -e \ n";
+my $ file_all_type ='a';
 
-if (-e $file_all_type) {
-  print "'$file_all_type' は、存在します。\n";
+if (-e $ file_all_type) {
+  print "'$ file_all_type' exists. \ N";
 }
-else { print "'$file_all_type' は、存在しません。\n" }
-</pre>
-<p>
-  ファイル演算子 -f を使って通常ファイルの存在を確認するサンプルです。
-</p>
-<pre>
+else {print "'$ file_all_type' does not exist. \ N"}
+&lt;/ pre&gt;
+
+This is a sample to check the existence of a normal file using the file operator -f.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
-# 通常ファイルの存在を確認する。
-# -f ファイル名
+#Check the existence of normal files.
+# -f file name
 
-print "1: 通常ファイルの存在を確認する。 -f \n";
-my $file = 'a.txt';
-if (-f $file) {
-  print "'$file' は、存在します。\n";
+print "1: Check the existence of normal files. -f \ n";
+my $ file ='a.txt';
+if (-f $ file) {
+  print "'$ file' exists. \ N";
 }
-else { print "'$file' は、存在しません。\n" }
-</pre>
+else {print "'$ file' does not exist. \ N"}
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

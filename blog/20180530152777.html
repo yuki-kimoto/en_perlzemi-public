@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>リストコンテキスト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlにはコンテキストと呼ばれる概念があり、リストとして評価される文脈をリストコンテキストといいます。">
+<title> List context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Perl has a concept called context, and the context that evaluates as a list is called the  list context .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="リストコンテキスト - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlにはコンテキストと呼ばれる概念があり、リストとして評価される文脈をリストコンテキストといいます。" />
+<meta name="twitter:title" content=" List context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Perl has a concept called context, and the context that evaluates as a list is called the  list context ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,33 +59,33 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop="name">構文</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20080608121292.html">
-        <span itemprop="name">コンテキスト</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span itemprop="name">here</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20180530152777.html">リストコンテキスト</a></h2>
+        <span itemprop = "name"> context </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+      <span itemprop = "name"> here </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20180530152777.html"> List context </a></ h2>
 <p>
-  Perlにはコンテキストと呼ばれる概念があり、リストとして評価される文脈を<b>リストコンテキスト</b>といいます。
+  Perl has a concept called context, and the context that evaluates as a list is called the <b> list context </ b>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -103,47 +103,49 @@
 </div>
 
 
-<h4>配列への代入</h4>
+<h4> Assignment to array </ h4>
 <p>
-  <a href="/blog/20161012147627.html">配列</a>への代入はリストコンテキストです。
+  Assignment to <a href="/blog/20161012147627.html"> array </a> is a list context.
 </p>
 <pre>
-my @values2 = @values;
-</pre>
-<h4>リスト</h4>
-<p>
-  <a href="/blog/20100308126967.html">リスト</a>の内側はリストコンテキストです。
-</p>
-<pre>
+my @ values2 = @values;
+&lt;/ pre&gt;
+
+&lt;h4&gt; List &lt;/ h4&gt;
+
+Inside the &lt;a href="/blog/20100308126967.html"&gt; list &lt;/a&gt; is the list context.
+
+&lt;pre&gt;
 (@values);
-</pre>
-<h4>無名配列生成子</h4>
-<p>
-  無名配列生成子の内側はリストコンテキストです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Anonymous array generator &lt;/ h4&gt;
+
+Inside the anonymous array generator is the list context.
+
+&lt;pre&gt;
 [@values];
-</pre>
-<h4>無名ハッシュ生成子</h4>
-<p>
-  無名ハッシュ生成子の内側はリストコンテキストです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Anonymous hash generator &lt;/ h4&gt;
+
+Inside the anonymous hash generator is the list context.
+
+&lt;pre&gt;
 {@values};
-</pre>
-<p>
-  自動的に展開されて、気が付きにくい場所ですので、注意してください。
-</p>
-<h4>サブルーチンの引数</h4>
-<p>
-  <a href="/blog/20101130129876.html">サブルーチン</a>の引数は、リストコンテキストです。
-</p>
-<pre>
-func(@values);
-</pre>
-<p>
-  自動的に展開されて、気が付きにくい場所ですので、注意してください。
-</p>
+&lt;/ pre&gt;
+
+Please note that it is a place that is automatically expanded and difficult to notice.
+
+&lt;h4&gt; Subroutine arguments &lt;/ h4&gt;
+
+The argument of &lt;a href="/blog/20101130129876.html"&gt; subroutine &lt;/a&gt; is the list context.
+
+&lt;pre&gt;
+func (@values);
+&lt;/ pre&gt;
+
+Please note that it is a place that is automatically expanded and difficult to notice.
 
   </div>
   <div class="bottom">

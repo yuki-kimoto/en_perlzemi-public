@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>処理にかかっている時間を調べる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="バッチ処理のプログラムなどを作っているときに、処理の開始から処理の終了まで、どれくらいかかったのかということを知りたい場合などがよくあります。">
+<title> Check the processing time  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="When creating a batch processing program, it is often the case that you want to know how long it took from the start of processing to the end of processing.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="処理にかかっている時間を調べる - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="バッチ処理のプログラムなどを作っているときに、処理の開始から処理の終了まで、どれくらいかかったのかということを知りたい場合などがよくあります。" />
+<meta name="twitter:title" content=" Check the processing time  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="When creating a batch processing program, it is often the case that you want to know how long it took from the start of processing to the end of processing." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180519152690.html">処理にかかっている時間を調べる</a></h2>
+    <h2><a href="/blog/20180519152690.html"> Check the processing time </a></ h2>
 <p>
-  バッチ処理のプログラムなどを作っているときに、処理の開始から処理の終了まで、どれくらいかかったのかということを知りたい場合などがよくあります。
+  When creating a batch processing program, it is often the case that you want to know how long it took from the start of processing to the end of processing.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,29 +80,28 @@
 
 
 <p>
-  大きなzipファイルをダウンロードしたり、大量のデータをデータベースなどに挿入している場合は、どれくらいかかっているのかということを知りたいですね。
+  I would like to know how long it takes if I download a large zip file or insert a large amount of data into a database or the like.
 </p>
 <p>
-  このような場合は、処理の開始時間と狩猟時間を<a href="/blog/20081008122347.html">time関数</a>を使って取得して、処理にかかった時間を計算します。
+  In such a case, use the <a href="/blog/20081008122347.html"> time function </a> to get the processing start time and hunting time to calculate the processing time.
 </p>
 <pre>
-# 開始時間
-my $start_time = time;
+# Start time
+my $ start_time = time;
 
-# 処理
+# process
 ...
 
-# 終了時間
-my $end_time = time;
+# ending time
+my $ end_time = time;
 
-# 経過秒数
-my $process_time = $end_time - $start_time;
+#Elapsed seconds
+my $ process_time = $ end_time-$ start_time;
 
-print "$process_time\n";
-</pre>
-<p>
-  終了時間から開始時間を引き算すると、処理にかかった時間を計算できます。
-</p>
+print "$ process_time \ n";
+&lt;/ pre&gt;
+
+You can calculate how long it took to process by subtracting the start time from the end time.
 
   </div>
   <div class="bottom">

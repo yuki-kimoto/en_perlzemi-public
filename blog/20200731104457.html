@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Perlにおけるお勧めのシェバンの書き方 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlにおける、お勧めのシェバンの書き方。「#!/usr/bin/env perl」。">
+<title> Recommended way to write a shebang in Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Recommended way to write a shebang in Perl. "#! / Usr / bin / env perl".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Perlにおけるお勧めのシェバンの書き方 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlにおける、お勧めのシェバンの書き方。「#!/usr/bin/env perl」。" />
+<meta name="twitter:title" content=" Recommended way to write a shebang in Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Recommended way to write a shebang in Perl. "#! / Usr / bin / env perl"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200731104457.html">Perlにおけるお勧めのシェバンの書き方</a></h2>
+    <h2><a href="/blog/20200731104457.html"> Recommended way to write a shebang in Perl </a></ h2>
 <p>
-  Perlにおける、お勧めのシェバンの書き方。「#!/usr/bin/env perl」。
+  Recommended way to write a shebang in Perl. "#! / Usr / bin / env perl".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,65 +80,54 @@
 
 
 <pre>
-#!/usr/bin/env perl
-</pre>
-<p>
-  Unix/Linuxには、シェバンと呼ばれる機能があり、シェバンに書かれたコマンドで、ファイルに書かれた内容を実行してくれます。
-</p>
-<p>
-  シェバンは「#!」で始まります。
-</p>
-<p>
-  「#!/usr/bin/env perl」がお勧めな理由は、ほとんどの<a href="https://linux.perlclub.net/">Linux</a>/Unix環境で動くからです。
-</p>
-<p>
-  <a href="https://perlzemi.com/blog/20110220130464.html">perlbrew</a>や<a href="https://perlzemi.com/blog/20180816153437.html">plenv</a>でユーザー環境にPerlをインストールした場合でも正しく動きます。
-</p>
-<p>
-  envコマンドは、環境変数PATHのディレクトリを検索して最初に見つかったperlで実行してくれます。
-</p>
-<h3>envを使うことのデメリット</h3>
-<p>
-  envを使うことのデメリットは、どのPerlを使うかが確定されないということです。envという名前のとおり、PATH環境変数という、環境に依存します。
-</p>
-<p>
-  Perlスクリプトのポータビリティを高めるか、指定したPerlでプログラムを実行するのと、どちらがメリットがあるかという選択になります。
-</p>
-<h3>シェバン行は必須ですか?</h3>
-<p>
-  シェバン行は必須ではないです。
-</p>
-<p>
-  perlコマンドを実行すれば、シェバンに関係なく、perlで実行できるからです。
-</p>
-<pre>
+#! / usr / bin / env perl
+&lt;/ pre&gt;
+
+Unix / Linux has a function called a shebang, which executes the contents written in the file with the command written in the shebang.
+
+Shebangs start with "#!".
+
+"#! / Usr / bin / env perl" is recommended because it works on most &lt;a href="https://linux.perlclub.net/"&gt; Linux &lt;/a&gt; / Unix environments.
+
+&lt;a href="https://perlzemi.com/blog/20110220130464.html"&gt; perlbrew &lt;/a&gt; and &lt;a href="https://perlzemi.com/blog/20180816153437.html"&gt; plenv &lt;/a&gt; Even if Perl is installed in the user environment with&gt;, it works correctly.
+
+The env command searches the directory in the environment variable PATH and executes it with the first perl found.
+
+&lt;h3&gt; Disadvantages of using env &lt;/ h3&gt;
+
+The disadvantage of using env is that it is uncertain which Perl to use. As the name env suggests, it depends on the environment, called the PATH environment variable.
+
+You have the choice of increasing the portability of your Perl scripts or running your program in a specified Perl.
+
+&lt;h3&gt; Is the Shebang line required? &lt;/ H3&gt;
+
+Shebang line is not mandatory.
+
+If you run the perl command, you can run it in perl, regardless of shebang.
+
+&lt;pre&gt;
 perl script.pl
-</pre>
-<p>
-  Windows環境であれば、シェバンを書かずに、直接Perlで実行するということも多いでしょう。
-</p>
-<p>
-  サーバー運用の現場で作るプログラムでは、perlスクリプトは、シェバンを書いて、拡張子をなしにして、実行ファイルのように扱うという規約や慣例があれば、それに従ってください。
-</p>
-<p>
-  Perlを中心に開発している現場では、Perlのプログラムは、拡張子をplにして、perlで実行するという選択もよいでしょう。
-</p>
-<p>
-  CGIスクリプトにおいては、シェバンは必須です。CGIというプロトコルは、実行権限のあるファイルをそのまま実行し、perlというコマンドで実行してくれるわけではないからです。ApacheなどのWebサーバーでは、シェバンを書かないと「Internal Server Error」になります。
-</p>
-<h3>CPANモジュールに含むスクリプトは「#!perl」がお勧め</h3>
-<p>
-  CPANモジュールを配布する場合に含むスクリプトは「#!perl」がお勧めです。
-</p>
-<pre>
-#!perl
-</pre>
-<p>
-  <a href="https://mojolicious.perlzemi.com/">Mojolicious</a>の本番サーバー起動コマンドの<a href="https://mojolicious.perlzemi.com/blog/20110122130016.html">hypnotoad</a>も「#!perl」を使っています。CPANクライアントは、インストール先の、Unix/Linux/Windowsで、スクリプトを実行できるように、この行を、自動的に書き換えてくれます。
-</p>
-<p>
-  <a href="https://github.com/mojolicious/mojo/blob/master/script/hypnotoad">hypnotoadで「#!perl」をシェバンとして使っている例</a>
-</p>
+&lt;/ pre&gt;
+
+In a Windows environment, you will often run it directly in Perl without writing a shebang.
+
+For programs created in the field of server operation, follow any conventions or conventions that perl scripts should write shebangs, remove extensions, and treat them like executable files.
+
+In the field of Perl-centered development, you may choose to run Perl programs with perl with the extension pl.
+
+Shebangs are required in CGI scripts. This is because the CGI protocol does not execute a file that you have permission to execute as it is, and execute it with a command called perl. On a web server such as Apache, if you do not write a shebang, you will get an "Internal Server Error".
+
+&lt;h3&gt; "#! Perl" is recommended for scripts included in the CPAN module &lt;/ h3&gt;
+
+We recommend "#! Perl" as the script to include when distributing the CPAN module.
+
+&lt;pre&gt;
+#! perl
+&lt;/ pre&gt;
+
+&lt;a href="https://mojolicious.perlzemi.com/"&gt; Mojolicious &lt;/a&gt; production server startup command &lt;a href="https://mojolicious.perlzemi.com/blog/20110122130016.html"&gt; hypnotoad &lt;/a&gt; also uses "#! perl". The CPAN client will automatically rewrite this line so that you can run the script on your Unix / Linux / Windows installation.
+
+&lt;a href="https://github.com/mojolicious/mojo/blob/master/script/hypnotoad"&gt; Example of using "#! perl" as a shebang in hypnotoad &lt;/a&gt;
 
   </div>
   <div class="bottom">

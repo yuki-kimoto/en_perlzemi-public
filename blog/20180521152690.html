@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>ファイルの内容をすべて読み込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlでファイルの内容を一括して読み込むには、どうすればよいでしょうか。慣例的に、次のような記述によって、ファイルの内容を一度に読み込むことが多いです。">
+<title> Read the entire contents of the file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="How can I read the contents of a file in bulk with Perl? By convention, the contents of a file are often read at once, with the following description:">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="ファイルの内容をすべて読み込む - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlでファイルの内容を一括して読み込むには、どうすればよいでしょうか。慣例的に、次のような記述によって、ファイルの内容を一度に読み込むことが多いです。" />
+<meta name="twitter:title" content=" Read the entire contents of the file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="How can I read the contents of a file in bulk with Perl? By convention, the contents of a file are often read at once, with the following description:" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180521152690.html">ファイルの内容をすべて読み込む</a></h2>
+    <h2><a href="/blog/20180521152690.html"> Read the entire contents of the file </a></ h2>
 <p>
-  Perlでファイルの内容を一括して読み込むには、どうすればよいでしょうか。慣例的に、次のような記述によって、ファイルの内容を一度に読み込むことが多いです。
+  How can I read the contents of a file in bulk with Perl? By convention, the contents of a file are often read at once, with the following description:
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,28 +80,23 @@
 
 
 <pre>
-my $file = 'a.txt';
-open my $fh, '&lt;', $file
-  or die "Can't open $file: $!";
+my $ file ='a.txt';
+open my $ fh,'&lt;', $ file
+  or die "Can't open $ file: $!";
 
-# ファイルの内容を一度に読み込む
-my $content = do { local $/; &lt;$fh&gt; };
-</pre>
-<p>
-  <a href="/blog/20090208123289.html">doブロック</a>は最後に評価された値を返すものです。
-</p>
-<p>
-  localによって、ファイルの中での改行を表す<a href="/blog/20161102147817.html">特殊変数</a>「$/」を未定義にしています。
-</p>
-<p>
-  これによって<a href="/blog/20080722121673.html">ファイル入力演算子</a>「<$fh>」が、ファイル全体の内容を返すようにしています。
-</p>
-<p>
-  そして、スコープが終わると「$/」は元の状態に戻ります。
-</p>
-<p>
-  ファイルを一度に読むこむ関数を標準で持たないPerlでは、このようにしてファイル全体の内容を読み込むことがあるということを覚えておきましょう。
-</p>
+# Read the contents of the file at once
+my $ content = do {local $ /; &lt;$ fh&gt;};
+&lt;/ pre&gt;
+
+The &lt;a href="/blog/20090208123289.html"&gt; do block &lt;/a&gt; returns the last evaluated value.
+
+local undefined the &lt;a href="/blog/20161102147817.html"&gt; special variable &lt;/a&gt; "$ /" that represents a line break in the file.
+
+This causes the &lt;a href="/blog/20080722121673.html"&gt; file input operator &lt;/a&gt; "&lt;$ fh&gt;" to return the contents of the entire file.
+
+And when the scope ends, "$ /" returns to its original state.
+
+Keep in mind that Perl, which doesn't have a standard function to read a file at once, may read the entire contents of the file in this way.
 
   </div>
   <div class="bottom">

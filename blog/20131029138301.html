@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>PDLにおける多次元データの表現 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="これまでは1次元のデータだけを扱ってきましたが、PDLで多次元データを表現する方法を解説したいと思います。">
+<title> Representation of multidimensional data in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="So far, we have only dealt with one-dimensional data, but I would like to explain how to represent  multidimensional data  in PDL.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="PDLにおける多次元データの表現 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="これまでは1次元のデータだけを扱ってきましたが、PDLで多次元データを表現する方法を解説したいと思います。" />
+<meta name="twitter:title" content=" Representation of multidimensional data in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="So far, we have only dealt with one-dimensional data, but I would like to explain how to represent  multidimensional data  in PDL." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemprop="name">PDL</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20131029138301.html">PDLにおける多次元データの表現</a></h2>
+        <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <span itemprop = "name"> PDL </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20131029138301.html"> Representation of multidimensional data in PDL </a></ h2>
 <p>
-  これまでは1次元のデータだけを扱ってきましたが、PDLで<strong>多次元データ</strong>を表現する方法を解説したいと思います。
+  So far, we have only dealt with one-dimensional data, but I would like to explain how to represent <strong> multidimensional data </ ​​strong> in PDL.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,426 +97,449 @@
 </div>
 
 
-<h3>多次元データの表現</h3>
+<h3> Representation of multidimensional data </ ​​h3>
 <p>
-  多次元データを表現するには、pdl関数を使って次のようにします。
+  To represent multidimensional data, use the pdl function as follows:
 </p>
 <pre>
 use PDL;
 
-my $data = pdl [
-  [1, 2, 3],
+my $ data = pdl [
+  [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
-];
-</pre>
-<p>
-  最初に<strong>次元</strong>と<strong>ランク</strong>と呼ばれる概念を覚えましょう。視覚的に理解したほうがわかりやすいので図示します。
-</p>
-<pre>
-　　    　  1次元
-              ランク1  ランク2  ランク3
-2次元 ランク1 [1,       2,       3],
-      ランク2 [4,       5,       6],
-      ランク3 [7,       8,       9],
-      ランク4 [10,      11,      12]
-</pre>
-<p>
-  これまでやってきた1次元データだと考えましょう。
-</p>
-<pre>
-1次元
-ランク1  ランク2  ランク3
-[1,       2,       3],
-</pre>
-<h4>要素の取得と設定</h4>
-<p>
-  多次元データの要素の取得方法と設定方法を覚えましょう。要素の取得と設定にはナイススライス記法を使います。1次元目のランク,2次元目のランクの順で指定して、添え字は0から始まります。
-</p>
-<pre>
+];;
+&lt;/ pre&gt;
+
+First, let's learn the concepts called &lt;strong&gt; dimension &lt;/ strong&gt; and &lt;strong&gt; rank &lt;/ strong&gt;. It is easier to understand if you understand it visually, so I will show it.
+
+&lt;pre&gt;
+1D
+              Rank 1 Rank 2 Rank 3
+2D rank 1 [1, 2, 3],
+      Rank 2 [4, 5, 6],
+      Rank 3 [7, 8, 9],
+      Rank 4 [10, 11, 12]
+&lt;/ pre&gt;
+
+Think of it as the one-dimensional data you've come up with.
+
+&lt;pre&gt;
+1D
+Rank 1 Rank 2 Rank 3
+[one two Three],
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get and set elements &lt;/ h4&gt;
+
+Learn how to get and set elements of multidimensional data. Use nice slice notation to get and set elements. Specify in the order of 1D rank and 2D rank, and the subscripts start from 0.
+
+&lt;pre&gt;
 use PDL;
-use PDL::NiceSlice;
+use PDL :: NiceSlice;
 
-# データ
-my $data = pdl [
-  [1, 2, 3],
+# data
+my $ data = pdl [
+  [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
-];
+];;
 
-# 要素をPDL変数として取得(1次元2ランク-2次元3ランク)
-my $data_1_2 = $data(1, 2);
+Get # element as PDL variable (1D 2 rank-2D 3 rank)
+my $ data_1_2 = $ data (1, 2);
 
-# 要素の値そのものを取得
-my $data_1_2_raw = $data-&gt;at(1, 2);
+#Get the element value itself
+my $ data_1_2_raw = $ data-&gt; at (1, 2);
 
-# 要素を設定。
-$data(1, 2) .= 20;
-</pre>
-<h4>複数の要素の取得、複数の要素の設定</h4>
-<p>
-  PDL変数に対して複数の要素を取得したり、設定することもできます。以下の例では1次元目の2ランクから3ランク, 2次元の3ランクを取得します。
-</p>
-<pre>
-# 複数の要素の取得(1次元2～3ランク, 2次元3ランク)
-my $data_sliced1 = $data(1:2, 2);
-</pre>
-<p>
-  複数の要素を設定するには次のようにします。
-</p>
-<pre>
-# 複数の要素の設定(1次元2～3ランク, 2次元3ランク)
-$data(1:2, 2) .= pdl [21, 22];
-</pre>
-<p>
-  もちろん1次元目だけでなく、2次元目の複数の要素を取得を行うこともできます。
-</p>
-<pre>
-# 複数の要素の取得(1次元3ランク, 2次元1-2ランク)
-my $data_sliced2 = $data(2, 0:1);
-</pre>
-<p>
-  2次元目の複数の要素を設定するには次のようにします。
-</p>
-<pre>
-# 複数の要素の設定(1次元3ランク, 2次元1～2ランク)
-$data(2, 0:1) .= pdl [
+#Set element.
+$ data (1, 2). = 20;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get multiple elements, set multiple elements &lt;/ h4&gt;
+
+You can also get and set multiple elements for a PDL variable. In the following example, the 2nd to 3rd ranks of the 1st dimension and the 3rd rank of the 2nd dimension are acquired.
+
+&lt;pre&gt;
+# Acquisition of multiple elements (1D 2-3 ranks, 2D 3 ranks)
+my $ data_sliced1 = $ data (1: 2, 2);
+&lt;/ pre&gt;
+
+To set multiple elements:
+
+&lt;pre&gt;
+#Setting of multiple elements (1D 2-3 ranks, 2D 3 ranks)
+$ data (1: 2, 2). = pdl [21, 22];
+&lt;/ pre&gt;
+
+Of course, it is possible to acquire not only the first dimension but also multiple elements in the second dimension.
+
+&lt;pre&gt;
+#Get multiple elements (1D 3 ranks, 2D 1-2 ranks)
+my $ data_sliced2 = $ data (2, 0: 1);
+&lt;/ pre&gt;
+
+To set multiple elements in the second dimension:
+
+&lt;pre&gt;
+#Setting of multiple elements (1D 3 ranks, 2D 1-2 ranks)
+$ data (2, 0: 1). = pdl [
   [30],
   [31]
-];
-</pre>
-<p>
-  複数次元の複数ランクの取得・設定も同じようにして行うことができます。
-</p>
-<pre>
-# 複数の要素の取得(1次元2～3ランク, 2次元1～2ランク)
-my $data_sliced3 = $data(1:2, 0:1);
+];;
+&lt;/ pre&gt;
 
-# 複数の要素の設定(1次元2～3ランク, 2次元1～2ランク)
-$data(1:2, 0:1) .= pdl [
+You can also acquire and set multiple ranks in multiple dimensions in the same way.
+
+&lt;pre&gt;
+#Get multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+my $ data_sliced3 = $ data (1: 2, 0: 1);
+
+#Setting of multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+$ data (1: 2, 0: 1). = pdl [
   [40, 41],
   [42, 43]
-];
-</pre>
-<h4>サンプル</h4>
-<p>
-  実行できるサンプルです。
-</p>
-<pre>
+];;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Sample &lt;/ h4&gt;
+
+This is a sample that can be executed.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 
 use PDL;
-use PDL::NiceSlice;
+use PDL :: NiceSlice;
 
-# データ
-my $data = pdl [
-  [1, 2, 3],
+# data
+my $ data = pdl [
+  [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
-];
+];;
 
-# 要素をPDL変数として取得(1次元2ランク,2次元3ランク)
-my $data_1_2 = $data(1, 2);
+Get # element as PDL variable (1D 2 rank, 2D 3 rank)
+my $ data_1_2 = $ data (1, 2);
 
-# 要素の値そのものを取得
-my $data_1_2_raw = $data-&gt;at(1, 2);
+#Get the element value itself
+my $ data_1_2_raw = $ data-&gt; at (1, 2);
 
-print "$data_1_2\n";
-print "$data_1_2_raw\n";
+print "$ data_1_2 \ n";
+print "$ data_1_2_raw \ n";
 
-# 要素を設定。
-$data(1, 2) .= 20;
+#Set element.
+$ data (1, 2). = 20;
 
-print "$data\n";
+print "$ data \ n";
 
-# 複数の要素の取得(1次元2から3ランク,2次元2ランク)
-my $data_sliced1 = $data(1:2, 1);
+#Get multiple elements (1D 2 to 3 ranks, 2D 2 ranks)
+my $ data_sliced1 = $ data (1: 2, 1);
 
-print "$data_sliced1\n";
+print "$ data_sliced1 \ n";
 
-# 複数の要素の設定(1次元2～3ランク,2次元3ランク)
-$data(1:2, 2) .= pdl [21, 22];
+#Setting of multiple elements (1D 2-3 ranks, 2D 3 ranks)
+$ data (1: 2, 2). = pdl [21, 22];
 
-print "$data\n";
+print "$ data \ n";
 
-# 複数の要素の取得(1次元3ランク, 2次元1-2ランク)
-my $data_sliced2 = $data(2, 0:1);
+#Get multiple elements (1D 3 ranks, 2D 1-2 ranks)
+my $ data_sliced2 = $ data (2, 0: 1);
 
-print "$data_sliced2\n";
+print "$ data_sliced2 \ n";
 
-# 複数の要素の設定(1次元3ランク, 2次元1-2ランク)
-$data(2, 0:1) .= pdl [
+#Setting of multiple elements (1D 3 rank, 2D 1-2 rank)
+$ data (2, 0: 1). = pdl [
   [30],
   [31]
-];
+];;
 
-print "$data\n";
+print "$ data \ n";
 
-# 複数の要素の取得(1次元2～3ランク, 2次元1～2ランク)
-my $data_sliced3 = $data(1:2, 0:1);
+#Get multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+my $ data_sliced3 = $ data (1: 2, 0: 1);
 
-print "$data_sliced3\n";
+print "$ data_sliced3 \ n";
 
-# 複数の要素の設定(1次元2～3ランク, 2次元1～2ランク)
-$data(1:2, 0:1) .= pdl [
+#Setting of multiple elements (1D 2-3 ranks, 2D 1-2 ranks)
+$ data (1: 2, 0: 1). = pdl [
   [40, 41],
   [42, 43]
-];
+];;
 
-print "$data";
-</pre>
-<h3>データの初期化</h3>
-<p>
-  PDLはさまざまなデータの初期化の機能を持っています。データを初期化する方法を紹介します。
-</p>
-<h4>0で初期化</h4>
-<p>
-  複数次元のランク数を指定して0で初期化するにはzerosメソッドを使用します。zerosはPDL::Coreで定義されています。
-</p>
-<pre>
+print "$ data";
+&lt;/ pre&gt;
+
+&lt;h3&gt; Data initialization &lt;/ h3&gt;
+
+PDL has various data initialization functions. I will show you how to initialize the data.
+
+&lt;h4&gt; Initialize with 0 &lt;/ h4&gt;
+
+Use the zeros method to specify a multidimensional rank number and initialize it with 0. zeros is defined in PDL :: Core.
+
+&lt;pre&gt;
 use PDL;
 
-# 0で初期化(1次元は2ランク, 2次元は3ランク)
-my $data_zeros = pdl-&gt;sequence(2, 3);
-</pre>
-<h4>1で初期化</h4>
-<p>
-  複数次元のランク数を指定して1で初期化するにはonesメソッドを使用します。onesはPDL::Coreで定義されています。
-</p>
-<pre>
-# 1で初期化(1次元は2ランク, 2次元は3ランク)
-my $data_ones = pdl-&gt;ones(2, 3);
-print "$data_ones\n";
-</pre>
-<h4>nullで初期化</h4>
-<p>
-  PDLではnullという値が定義されています。nullで初期化するにはnullメソッドを使用します。nullははPDL::Coreで定義されています。
-</p>
-<pre>
-# nullで初期化
-my $data_null = pdl-&gt;null;
-</pre>
-<h4>1～nまでで初期化</h4>
-<p>
-  <strong>0～n-1までの値で初期化</strong>するには<strong>sequence</strong>メソッドを使用します。sequenceはPDL::Basicで定義されています。
-</p>
-<pre>
-# 0～19で初期化
-my $data_seq = pdl-&gt;sequence(20);
-</pre>
-<p>
-  複数の次元を指定することもできます。
-</p>
-<pre>
-# 0～14で初期化(1次元3ランク, 2次元5ランク)
-my $data_seq2 = pdl-&gt;sequence(3, 5);
-</pre>
-<h4>サンプル</h4>
-<p>
-  実行できるサンプルです。
-</p>
-<pre>
+Initialize with # 0 (1D has 2 ranks, 2D has 3 ranks)
+my $ data_zeros = pdl-&gt; sequence (2, 3);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Initialize with 1 &lt;/ h4&gt;
+
+Use the ones method to specify the number of ranks in multiple dimensions and initialize with 1. ones is defined in PDL :: Core.
+
+&lt;pre&gt;
+Initialize with # 1 (1D has 2 ranks, 2D has 3 ranks)
+my $ data_ones = pdl-&gt; ones (2, 3);
+print "$ data_ones \ n";
+&lt;/ pre&gt;
+
+&lt;h4&gt; Initialize with null &lt;/ h4&gt;
+
+The PDL defines a value of null. Use the null method to initialize with null. null is defined in PDL :: Core.
+
+&lt;pre&gt;
+Initialize with #null
+my $ data_null = pdl-&gt; null;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Initialize from 1 to n &lt;/ h4&gt;
+
+Use the &lt;strong&gt; sequence &lt;/ strong&gt; method to &lt;strong&gt; initialize with a value between 0 and n-1 &lt;/ strong&gt;. sequence is defined in PDL :: Basic.
+
+&lt;pre&gt;
+Initialize with # 0-19
+my $ data_seq = pdl-&gt; sequence (20);
+&lt;/ pre&gt;
+
+You can also specify multiple dimensions.
+
+&lt;pre&gt;
+Initialize with # 0-14 (1D 3 ranks, 2D 5 ranks)
+my $ data_seq2 = pdl-&gt; sequence (3, 5);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Sample &lt;/ h4&gt;
+
+This is a sample that can be executed.
+
+&lt;pre&gt;
 use PDL;
 
-# 0で初期化(1次元は2ランク, 2次元は3ランク)
-my $data_zeros = pdl-&gt;zeros(2, 3);
-print "$data_zeros\n";
+Initialize with # 0 (1D has 2 ranks, 2D has 3 ranks)
+my $ data_zeros = pdl-&gt; zeros (2, 3);
+print "$ data_zeros \ n";
 
-# 1で初期化(1次元は2ランク, 2次元は3ランク)
-my $data_ones = pdl-&gt;ones(2, 3);
-print "$data_ones\n";
+Initialize with # 1 (1D has 2 ranks, 2D has 3 ranks)
+my $ data_ones = pdl-&gt; ones (2, 3);
+print "$ data_ones \ n";
 
-# nullで初期化
-my $data_null = pdl-&gt;null;
-print "$data_null\n";
+Initialize with #null
+my $ data_null = pdl-&gt; null;
+print "$ data_null \ n";
 
-# 0～19で初期化
-my $data_seq = pdl-&gt;sequence(20);
-print "$data_seq\n";
+Initialize with # 0-19
+my $ data_seq = pdl-&gt; sequence (20);
+print "$ data_seq \ n";
 
-# 0～14で初期化(1次元3ランク, 2次元5ランク)
-my $data_seq2 = pdl-&gt;sequence(3, 5);
-print "$data_seq2\n";
-</pre>
-<h3>複数要素をまとめて演算する</h3>
-<p>
-  PDLでは複数の要素をまとめて演算することができます。以下のデータを見てください。
-</p>
-<pre>
+Initialize with # 0-14 (1D 3 ranks, 2D 5 ranks)
+my $ data_seq2 = pdl-&gt; sequence (3, 5);
+print "$ data_seq2 \ n";
+&lt;/ pre&gt;
+
+
+&lt;h3&gt; Calculate multiple elements at once &lt;/ h3&gt;
+
+PDL allows you to calculate multiple elements at once. See the data below.
+
+&lt;pre&gt;
 use PDL;
 
-my $data = pdl [
-  [1, 2, 3],
+my $ data = pdl [
+  [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
-];
-</pre>
-<h4>1次元のランクを減らす和の演算</h4>
-<p>
-  まず1次元のランクを減らす和の演算を行ってみましょう。上記のデータが次のようになるイメージです。
-</p>
-<pre>
+];;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Sum calculation to reduce one-dimensional rank &lt;/ h4&gt;
+
+First, let's perform a sum operation that reduces the one-dimensional rank. The above data is an image that looks like the following.
+
+&lt;pre&gt;
 [6]
 [15]
-[24]
+[twenty four]
 [33]
-</pre>
-<p>
-  和を求めるには<strong>sumover</strong>メソッドを使用します。someoverはPDL::Ufuncにおいて実装されています。
-</p>
-<pre>
-# 1次元のランクを減らす和の演算
-my $data_sumover1 = $data-&gt;sumover;
-</pre>
-<p>
-  sumoverメソッドは含まれる値が整数型の時に利用してください。浮動小数点の場合は代わりにdsomeoverを使ってください。
-</p>
-<p>
-  ランクを減らす演算を行うと、次元はひとつ減り次のようなデータになります。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Use the &lt;strong&gt; sumover &lt;/ strong&gt; method to find the sum. someover is implemented in PDL :: UfuncI am.
+
+&lt;pre&gt;
+# Sum calculation to reduce one-dimensional rank
+my $ data_sumover1 = $ data-&gt; sumover;
+&lt;/ pre&gt;
+
+Use the sumover method when the contained value is an integer type. For floating point, use dsomeover instead.
+
+If you perform an operation to reduce the rank, the dimension will be reduced by one and the data will be as follows.
+
+&lt;pre&gt;
 [6, 15, 24, 33]
-</pre>
-<h4>2次元のランクを減らす和の演算</h4>
-<p>
-  上記の例では1次元のランクを減らす和の演算を行いました。次は2次元のランクを減らす和の演算を行ってみましょう。この演算を行うには、<strong>xchg</strong>メソッドで1次元と2次元の位置の交換を行ってから、someover関数を使用します。
-</p>
-<pre>
-# 2次元のランクを減らす和の演算
-my $data_sumover2 = $data-&gt;xchg(0, 1)-&gt;sumover;
-</pre>
-<p>
-  次のようなデータを取得できます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h4&gt; Sum calculation to reduce 2D rank &lt;/ h4&gt;
+
+In the above example, the sum operation is performed to reduce the one-dimensional rank. Next, let's perform a sum operation that reduces the two-dimensional rank. To do this, use the &lt;strong&gt; xchg &lt;/ strong&gt; method to exchange 1D and 2D positions, and then use the someover function.
+
+&lt;pre&gt;
+# Sum calculation to reduce 2D rank
+my $ data_sumover2 = $ data-&gt; xchg (0, 1)-&gt; sumover;
+&lt;/ pre&gt;
+
+You can get the following data.
+
+&lt;pre&gt;
 [22 26 30]
-</pre>
-<p>
-  また次元の位置を移動させるメソッドにはxchgの他に<strong>mv</strong>, <strong>reorder</strong>があるので調べてみましょう。
-</p>
-<h4>次元を減らす他の演算を行うメソッド</h4>
-<p>
-  sumover以外にもPDL::Ufuncでは、同じタイプの演算を行うメソッドが定義されています。
-</p>
-<table>
-  <tr>
-    <td>
-      <b>演算</b>
-    </td>
-    <td>
-      メソッド
-    </td>
-  </tr>
-  <tr>
-    <td>
-      平均
-    </td>
-    <td>
+&lt;/ pre&gt;
+
+In addition to xchg, there are &lt;strong&gt; mv &lt;/ strong&gt; and &lt;strong&gt; reorder &lt;/ strong&gt; methods for moving the position of the dimension, so let's check them.
+
+&lt;h4&gt; Methods that perform other operations that reduce dimensions &lt;/ h4&gt;
+
+In addition to sumover, PDL :: Ufunc defines methods that perform the same type of operations.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;b&gt; Arithmetic &lt;/ b&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Method
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      average
+    &lt;/ td&gt;
+    &lt;td&gt;
       average, daverage
-    </td>
-  </tr>
-  <tr>
-    <td>
-      中央値
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Median
+    &lt;/ td&gt;
+    &lt;td&gt;
       medover, medoddover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      最頻値
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Mode
+    &lt;/ td&gt;
+    &lt;td&gt;
       modeover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      積
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      product
+    &lt;/ td&gt;
+    &lt;td&gt;
       prodover, dprodover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      積の累積
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Cumulative product
+    &lt;/ td&gt;
+    &lt;td&gt;
       cumuprodover, dcumuprodover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      合計の累積
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Cumulative total
+    &lt;/ td&gt;
+    &lt;td&gt;
       cumusumover, dcumusumover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      and演算
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      and operation
+    &lt;/ td&gt;
+    &lt;td&gt;
       andover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      or演算
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      or operation
+    &lt;/ td&gt;
+    &lt;td&gt;
       orover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      ビットワイズアンド演算
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Bitwise and arithmetic
+    &lt;/ td&gt;
+    &lt;td&gt;
       bandover
-    </td>
-  </tr>
-  <tr>
-    <td>
-      ビットワイズオアー演算
-    </td>
-    <td>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Bitwise or operation
+    &lt;/ td&gt;
+    &lt;td&gt;
       borover
-    </td>
-  </tr>
-</table>
-<h4>サンプル</h4>
-<p>
-  実行できるサンプルです。
-</p>
-<pre>
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+
+&lt;/ table&gt;
+
+&lt;h4&gt; Sample &lt;/ h4&gt;
+
+This is a sample that can be executed.
+
+&lt;pre&gt;
 use strict;
 use warnings;
 use PDL;
 
-my $data = pdl [
-  [1, 2, 3],
+my $ data = pdl [
+  [one two Three],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12]
-];
+];;
 
-# 1次元のランクを減らす和の演算
-my $data_sumover1 = $data-&gt;sumover;
-print "$data_sumover\n";
+# Sum calculation to reduce one-dimensional rank
+my $ data_sumover1 = $ data-&gt; sumover;
+print "$ data_sumover \ n";
 
-# 2次元のランクを減らす和の演算
-my $data_sumover2 = $data-&gt;xchg(0, 1)-&gt;sumover;
-print "$data_sumover2\n";
-</pre>
+# Sum calculation to reduce 2D rank
+my $ data_sumover2 = $ data-&gt; xchg (0, 1)-&gt; sumover;
+print "$ data_sumover2 \ n";
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

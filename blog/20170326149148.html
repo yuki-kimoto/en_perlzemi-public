@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>printf関数 - 書式付き文字列出力 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="書式(フォーマット)を設定して文字列を出力するにはprintf関数を使用します。">
+<title> printf function --formatted string output  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the  printf function  to set the format and print the string.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="printf関数 - 書式付き文字列出力 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="書式(フォーマット)を設定して文字列を出力するにはprintf関数を使用します。" />
+<meta name="twitter:title" content=" printf function --formatted string output  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the  printf function  to set the format and print the string." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     here
-  </li>
-</ol>
-<h2><a href="/blog/20170326149148.html">printf関数 - 書式付き文字列出力</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20170326149148.html"> printf function --formatted string output </a></ h2>
 <p>
-  書式(フォーマット)を設定して文字列を出力するには<b>printf関数</b>を使用します。
+  Use the <b> printf function </ b> to set the format and print the string.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,59 +97,60 @@
 
 
 <pre>
-printf "Number %03d %.3f\n", 3, 3.14567;
-</pre>
-<p>
-  上記の出力結果は次のようになります。「3」という整数は3桁になるように左に0が埋められています。「3.14567」という小数点は「3.146」の小数点3桁に丸められています。
-</p>
-<pre>
-Number 003 3.146
-</pre>
-<p>
-  「%03d」や「%.3f」は書式指定子と呼ばれます。書式指定子の詳細については<a href="/blog/20081001122296.html">sprintf関数</a>の解説をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20081001122296.html">sprintf関数 - 文字列の書式指定</a>
-  </li>
-</ul>
-<h3>ファイルへの出力</h3>
-<p>
-  fprintf関数でも、<a href="/blog/20170404149131.html">print関数</a>と同じように、間接オブジェクト記法を使って、ファイルハンドルを指定して、出力することができます。
-</p>
-<pre>
-# 標準エラー出力へ出力
-printf STDERR "Number %03d %.3f\n", 3, 3.14567;
+printf "Number% 03d% .3f \ n", 3, 3.14567;
+&lt;/ pre&gt;
 
-# ファイルハンドルを使ってファイルへ出力
-printf $fh "Number %03d %.3f\n", 3, 3.14567;
-</pre>
-<p>
-  ファイルハンドル後ろにはカンマがないことに注意してください。
-</p>
-<p>
-  出力する方法の詳細については<a href="/blog/20170404149131.html">print関数</a>の解説をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20170404149131.html">print関数 - 文字列の出力</a>
-  </li>
-</ul>
-<h3>書式指定した文字列を変数に書き出す</h3>
-<p>
-  printf関数は出力を行う関数ですが<a href="/blog/20081001122296.html">sprintf関数</a>を使うと、書式指定した文字列を変数に書き出すことができます。
-</p>
-<pre>
-my $string = sprintf "Number %03d %.3f\n", 3, 3.14567;
-</pre>
-<p>
-  sprintf関数の詳細については以下をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20081001122296.html">sprintf関数 - 文字列の書式指定</a>
-  </li>
-</ul>
+The above output result is as follows. The integer "3" is padded with 0s to the left so that it has 3 digits. The decimal point "3.14567" is rounded to three decimal places of "3.146".
+
+&lt;pre&gt;
+Number 003 3.146
+&lt;/ pre&gt;
+
+"% 03d" and "% .3f" are called format specifiers. See the &lt;a href="/blog/20081001122296.html"&gt; sprintf function &lt;/a&gt; description for more information on format specifiers.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20081001122296.html"&gt; sprintf function --String formatting &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Output to file &lt;/ h3&gt;
+
+Like the &lt;a href="/blog/20170404149131.html"&gt; print function &lt;/a&gt;, the fprintf function can also be output by specifying a filehandle using indirect object notation.
+
+&lt;pre&gt;
+# Output to standard error output
+printf STDERR "Number% 03d% .3f \ n", 3, 3.14567;
+
+# Output to file using file handle
+printf $ fh "Number% 03d% .3f \ n", 3, 3.14567;
+&lt;/ pre&gt;
+
+Note that there are no commas behind the filehandle.
+
+For details on how to output, see the explanation of &lt;a href="/blog/20170404149131.html"&gt; print function &lt;/a&gt;.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20170404149131.html"&gt; print function --string output &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Export the formatted string to a variable &lt;/ h3&gt;
+
+The printf function is a function that outputs, but you can use the &lt;a href="/blog/20081001122296.html"&gt; sprintf function &lt;/a&gt; to write a formatted string to a variable.
+
+&lt;pre&gt;
+my $ string = sprintf "Number% 03d% .3f \ n", 3, 3.14567;
+&lt;/ pre&gt;
+
+See below for more information on the sprintf function.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20081001122296.html"&gt; sprintf function --String formatting &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
   </div>
   <div class="bottom">

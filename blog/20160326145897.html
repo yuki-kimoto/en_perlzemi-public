@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>opnames.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="opnames.hには、オペレーションコードが記述されています。">
+<title> opnames.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The operation code is written in  opnames.h .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="opnames.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="opnames.hには、オペレーションコードが記述されています。" />
+<meta name="twitter:title" content=" opnames.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The operation code is written in  opnames.h ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130416136637.html">
-      <span itemprop="name">言語実装</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Language implementation </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20160326145897.html">opnames.h</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20160326145897.html"> opnames.h </a></ h2>
 <p>
-  <strong>opnames.h</strong>には、オペレーションコードが記述されています。
+  The operation code is written in <strong> opnames.h </ strong>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,30 +97,28 @@
 
 
 <pre>
-/* opname.h */
+/* opname.h * /
 typedef enum opcode {
-  OP_NULL    = 0,
-  OP_STUB    = 1,
-  OP_SCALAR  = 2,
-  OP_PUSHMARK  = 3,
-  OP_WANTARRAY   = 4,
-  OP_CONST   = 5,
-  OP_GVSV    = 6,
+  OP_NULL = 0,
+  OP_STUB = 1,
+  OP_SCALAR = 2,
+  OP_PUSHMARK = 3,
+  OP_WANTARRAY = 4,
+  OP_CONST = 5,
+  OP_GVSV = 6,
   ...
 };
-</pre>
-<p>
-  Perlは、構文解析が行われた後に、コードが、構文木として表現されるのですが、構文木のひとつひとつのノードは、オペレーションと呼ばれます。これは「OP型」として表現されます。たとえば「pushする」とか「ハッシュのキーの存在を確かめる」とか「サブルーチンを実行する」とか「スカラを表現する」とか、そういうPerlのプログラミング上での操作が、オペレーションによって表現されます。
-</p>
-<p>
-  オペレーションの種類を表すのが、オペレーションコードです。これは、列挙型です。
-</p>
-<p>
-  「opnames.h」には、オペレーションコードが書かれていますが、それが、何を表すのかという解説がありません。解説を見たい場合は、「opcode.h」の「PL_op_desc」を参照するのがよいでしょう。
-</p>
-<pre>
-/* opcode.h */
-EXTCONST char* const PL_op_desc[] = {
+&lt;/ pre&gt;
+
+In Perl, the code is represented as a syntax tree after it has been parsed, but each node in the syntax tree is called an operation. This is expressed as "OP type". For example, Perl programming operations such as "push", "verify the existence of a hash key", "execute a subroutine", and "express a scalar" are expressed by operations.
+
+The operation code represents the type of operation. This is an enumeration.
+
+The operation code is written in "opnames.h", but there is no explanation of what it represents. If you want to see the explanation, it is better to refer to "PL_op_desc" in "opcode.h".
+
+&lt;pre&gt;
+/* opcode.h * /
+EXTCONST char * const PL_op_desc [] = {
   "null operation",
   "stub",
   "scalar",
@@ -130,11 +128,10 @@ EXTCONST char* const PL_op_desc[] = {
   "glob value",
   ...
 };
-</pre>
-<hr>
-<p>
-  <a href="/blog/20130416136637.html">Perl言語研究</a>
-</p>
+&lt;/ pre&gt;
+
+&lt;hr&gt;
+&lt;a href="/blog/20130416136637.html"&gt; Perl Language Research &lt;/a&gt;
 
   </div>
   <div class="bottom">

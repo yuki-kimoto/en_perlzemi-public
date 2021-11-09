@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Selenium::FirefoxでJavaScript対応のWebスクレイピングを行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Selenium::FirefoxでJavaScript対応のWebスクレイピングを行ってみます。Selenium::Firefoxは、Firefox用にカスタマイズされたSelenium::Remote::Driverです。">
+<title> Selenium :: Firefox for JavaScript-enabled web scraping  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Let's do JavaScript-enabled web scraping with Selenium :: Firefox. Selenium :: Firefox is a  Selenium :: Remote :: Driver  customized for Firefox.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Selenium::FirefoxでJavaScript対応のWebスクレイピングを行う - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Selenium::FirefoxでJavaScript対応のWebスクレイピングを行ってみます。Selenium::Firefoxは、Firefox用にカスタマイズされたSelenium::Remote::Driverです。" />
+<meta name="twitter:title" content=" Selenium :: Firefox for JavaScript-enabled web scraping  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Let's do JavaScript-enabled web scraping with Selenium :: Firefox. Selenium :: Firefox is a  Selenium :: Remote :: Driver  customized for Firefox." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20210106145700.html">Selenium::FirefoxでJavaScript対応のWebスクレイピングを行う</a></h2>
+    <h2><a href="/blog/20210106145700.html"> Selenium :: Firefox for JavaScript-enabled web scraping </a></ h2>
 <p>
-  Selenium::FirefoxでJavaScript対応のWebスクレイピングを行ってみます。Selenium::Firefoxは、Firefox用にカスタマイズされた<a href="/blog/20210105145700.html">Selenium::Remote::Driver</a>です。
+  Let's do JavaScript-enabled web scraping with Selenium :: Firefox. Selenium :: Firefox is a <a href="/blog/20210105145700.html"> Selenium :: Remote :: Driver </a> customized for Firefox.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,24 +80,25 @@
 
 
 <pre>
-# ドライバを生成。以下の二つは同じですが、Firefox 48+でのみ動作します。
-my $driver = Selenium::Firefox-&gt;new;
-$driver = Selenium::Firefox-&gt;new( marionette_enabled =&gt; 1 );
+#Generate driver. The following two are the same, but only work with Firefox 48+.
+my $ driver = Selenium :: Firefox-&gt; new;
+$ driver = Selenium :: Firefox-&gt; new (marionette_enabled =&gt; 1);
  
-# 何かを行う
+# Do something
 
-# ドライバをシャットダウンする
-$driver-&gt;shutdown_binary;
+#Shut down the driver
+$ driver-&gt; shutdown_binary;
 
-# For Firefox 47とそれりも古い場合。マリオネットは無効になっています。
-$driver = Selenium::Firefox-&gt;new( marionette_enabled =&gt; 0 );
-$driver-&gt;shutdown_binary;&lt;/pre&gt;
-</pre>
-<h3>実行環境の準備</h3>
-<h4>Macの場合</h4>
-<p>
-  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Perl から Selenium を使う</a>の環境構築手順が参考になります。
-</p>
+# For Firefox 47 and if it's too old. Marionettes are disabled.
+$ driver = Selenium :: Firefox-&gt; new (marionette_enabled =&gt; 0);
+$ driver-&gt; shutdown_binary; &lt;/ pre&gt;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Preparation of execution environment &lt;/ h3&gt;
+
+&lt;h4&gt; For Mac &lt;/ h4&gt;
+
+&lt;a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455"&gt; Using Selenium from Perl &lt;/a&gt; The environment construction procedure will be helpful.
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Perlの文字列処理の基礎 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perlの文字列処理についての解説です。Perlはテキスト処理が得意な言語です。文字列の出力、ヒアドキュメント、検索、置換、書式指定などをわかりやすく解説します。また日本語を扱うための方法についても解説します。">
+<title> Perl string processing basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="This is a description of Perl's string processing. Perl is a language that is good at text processing. It explains the output of character strings, here documents, search, replace, format specification, etc. in an easy-to-understand manner. It also explains how to handle Japanese.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Perlの文字列処理の基礎 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perlの文字列処理についての解説です。Perlはテキスト処理が得意な言語です。文字列の出力、ヒアドキュメント、検索、置換、書式指定などをわかりやすく解説します。また日本語を扱うための方法についても解説します。" />
+<meta name="twitter:title" content=" Perl string processing basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="This is a description of Perl's string processing. Perl is a language that is good at text processing. It explains the output of character strings, here documents, search, replace, format specification, etc. in an easy-to-understand manner. It also explains how to handle Japanese." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,20 +59,20 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20161003147558.html">Perlの文字列処理の基礎</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20161003147558.html"> Perl string processing basics </a></ h2>
 <p>
-  Perlの文字列処理についての解説です。Perlはテキスト処理が得意な言語です。文字列の出力、ヒアドキュメント、検索、置換、書式指定などをわかりやすく解説します。また日本語を扱うための方法についても解説します。
+  This is a description of Perl's string processing. Perl is a language that is good at text processing. It explains the output of character strings, here documents, search, replace, format specification, etc. in an easy-to-understand manner. It also explains how to handle Japanese.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -90,727 +90,697 @@
 </div>
 
 
-<h3>文字列の基礎</h3>
+<h3> Basics of strings </ h3>
 <p>
-  まずは最初に文字列の基礎を解説します。
+  First of all, I will explain the basics of character strings.
 </p>
-<h4>文字列の作り方</h4>
+<h4> How to make a character string </ h4>
 <p>
-  最初に文字列を作成してみましょう。文字列を作成するには<b>シングルクォート</b>あるいは<b>ダブルクォート</b>を使用します。
+  Let's create a string first. Use <b> single quotes </ b> or <b> double quotes </ b> to create the string.
 </p>
 <pre>
-# シングルクォートで文字列を作成
-my $str1 = 'Hello';
+#Create a string with single quotes
+my $ str1 ='Hello';
 
-# ダブルクォートで文字列を作成
-my $str2 = "Hello";
-</pre>
-<h4>ダブルクォートで囲った場合</h4>
-<p>
-  文字列を作成するときはシングルクォートで囲むか、ダブルクォートで囲みますが、ダブルクォート演算子で囲った場合は、<a href="/blog/20201030075254.html">ダブルクォート文字列のエスケープシーケンス</a>と<a href="/blog/20180228151982.html">変数展開</a>を使うことできます。
-</p>
-<ul>
-  <li>
-    <b>ダブルクォート文字列のエスケープシーケンスが使える</b>
-  </li>
-  <li>
-    <b>変数展開が使える</b>
-  </li>
-</ul>
-<h4>エスケープシーケンス</h4>
-<p>
-  <a href="/blog/20201028075254.html">エスケープシーケンス</a>とは、<a href="/blog/20201027075254.html">シングルクォートで囲った文字列</a>や<a href="/blog/20201026075254.html">ダブルクォート文字列</a>で使える特殊文字のことです。
-</p>
-<p>
-  たとえば<b>改行「\n」</b>や<b>タブ「\t」</b>を使うことができます。改行やタブは目には見えない文字ですが、エスケープシーケンスを使って表現することができます。
-</p>
-<p>
-  これは<a href="/blog/20201030075254.html">ダブルクォート文字列のエスケープシーケンス</a>です。
-</p>
-<pre>
-# 改行
-my $str1 = "Hello\n";
+#Create a string with double quotes
+my $ str2 = "Hello";
+&lt;/ pre&gt;
 
-# タブ文字
-my $str2 = "Cat\tDog";
-</pre>
-<p>
-  よく使うエスケープシーケンスは改行とタブなので、この二つは必ず覚えておきましょう。
-</p>
-<p>
-  「\」という記号はエスケープのために利用されます。「\」という記号自体を表現したい場合は「\\」とします。
-</p>
-<pre>
-# 「\」を表現 - 「\\」とする
-my $str1 = "Hello \\ World"
-</pre>
-<p>
-  <b>シングルクォートやダブルクォートを使いたい場合</b>
-</p>
-<p>
-  シングルクォートで囲った文字列の中で、シングルクォートを使いたい場合は、<a href="/blog/20201029075254.html">シングルクォート文字列のエスケープシーケンス</a>を使用します。
-</p>
-<pre>
-# シングルクォートを使う
-my $str1 = 'Kimoto\'s cat';
-</pre>
-<p>
-  ダブルクォートで囲った文字列の中で、ダブルクォートを使いたい場合も、エスケープシーケンスを使います。
-</p>
-<pre>
-# ダブルクォートを使う
-my $str2 = "Can't open \"foo.txt\".";
-</pre>
-<h4>変数展開</h4>
-<p>
-  <b>変数展開</b>とは、変数をダブルクォートの中で囲まれた文字列の中で使用できる機能のことです。変数に含まれている文字列が展開されます。
-</p>
-<pre>
-my $str1 = "Dog";
+&lt;h4&gt; When enclosed in double quotes &lt;/ h4&gt;
 
-# 変数展開 - 「I have Dog」と変数が展開される
-my $str2 = "I have $str1";
-</pre>
-<p>
-  変数展開はPerlのとても便利な機能なので、どんどん使いましょう。
-</p>
-<p>
-  <b>変数展開が失敗する場合</b>
-</p>
-<p>
-  変数展開を使っていると、ときどき変数展開が失敗して、コンパイルエラーになることがあると思います。それは、後ろに続く文字列も変数の一部だと解釈されてしまう場合です。
-</p>
-<p>
-  たとえば、変数の後ろに「アンダーバー」が続く場合や「日本語」が続く場合などです。
-</p>
-<pre>
-my $str1 = "Dog";
+When creating a string, enclose it in single quotes or double quotes, but if you enclose it in double quote operators, &lt;a href="/blog/20201030075254.html"&gt; double quote string escape sequences &lt;/a&gt; And &lt;a href="/blog/20180228151982.html"&gt; variable expansion &lt;/a&gt; can be used.
 
-# $str1を展開したいが変数名が「$str1_Foo」と解釈されてしまう
-my $str2 = "I have $str1_Foo";
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;b&gt; Double quote string escape sequences can be used &lt;/ b&gt;
+  &lt;/ li&gt;
+  &lt;li&gt;
+    &lt;b&gt; Variable expansion can be used &lt;/ b&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
-# $str1を展開したいが変数名が「$str1あいうえお」と解釈されてしまう
-my $str3 = "I have $str1あいうえお";
-</pre>
-<p>
-  このような場合は変数名を明示するために「${変数名}」という記法を使うことができます。
-</p>
-<pre>
-${変数名}
-</pre>
-<p>
-  先ほどの例であれば、次のように書くとうまくいきます。
-</p>
-<pre>
-my $str1 = "Dog";
+&lt;h4&gt; Escape sequence &lt;/ h4&gt;
 
-my $str2 = "I have ${str1}_Foo";
+&lt;a href="/blog/20201028075254.html"&gt; Escape sequence &lt;/a&gt; is &lt;a href="/blog/20201027075254.html"&gt; string enclosed in single quotes &lt;/a&gt; and &lt;a href= "/blog/20201026075254.html"&gt; Double quoted strings &lt;/a&gt; are special characters that can be used.
 
-my $str3 = "I have ${str1}あいうえお";
-</pre>
-<h4>文字列の連結</h4>
-<p>
-  次に文字列を連結してみましょう。文字列を連結するには<a href="/blog/20080221120361.html">文字列連結演算子「.」</a>を使用します。
-</p>
-<pre>
-my $str1 = 'I have a' . 'pen';
-</pre>
-<p>
-  上記の例はクォートで囲まれた文字列を連結していますが、変数を使うこともできます。
-</p>
-<pre>
-my $str3 = $str1 . $str2;
-</pre>
-<p>
-  文字列連結演算子は代入演算子と組み合わせて次のように使うこともできます。
-</p>
-<pre>
-$str1 .= $str2;
-</pre>
-<p>
-  これは次の書き方と同じになります。「$str1」の後ろに「$str2」を連結して「$str1」に代入するという意味です。よく利用する書き方なので覚えておきましょう。
-</p>
-<pre>
-$str1 = $str1 . $str2;
-</pre>
-<h4>文字列の出力</h4>
-<p>
-  文字列を画面に出力するには<a href="/blog/20170404149131.html">print関数</a>を使用します。
-</p>
-<pre>
-my $message = 'Hello';
-print $message;
-</pre>
-<h3>文字列処理の小技</h3>
-<p>
-  ときどき使われる文字列処理の小技をいくつか紹介しておきます。
-</p>
-<h4>文字列リスト演算子</h4>
-<p>
-  Perlでは、文字列のリストを簡単に作るための<b>文字列リスト演算子</b>があります。
-</p>
-<p>
-  文字列リスト演算子を使うと、クォートとカンマを省略して文字列のリストを作成することができます。
-</p>
-<pre>
-# 通常の方法
-my @strs1 = ('Cat', 'Dog', 'Mouse');
+For example, you can use the &lt;b&gt; line break "\ n" &lt;/ b&gt; or the &lt;b&gt; tab "\ t" &lt;/ b&gt;. Line breaks and tabs are invisible characters, but they can be represented using escape sequences.
 
-# 文字列リスト演算子を使う方法
-my @strs2 = qw(Cat Dog Mouse);
-</pre>
-<p>
-  この演算子が特に便利なのは、利用したい単語が、テキストファイルに何行も続いている場合です。
-</p>
-<pre>
+This is a &lt;a href="/blog/20201030075254.html"&gt; double quote string escape sequence &lt;/a&gt;.
+
+&lt;pre&gt;
+# new line
+my $ str1 = "Hello \ n";
+
+# Tab character
+my $ str2 = "Cat \ tDog";
+&lt;/ pre&gt;
+
+Frequently used escape sequences are line breaks and tabs, so be sure to remember these two.
+
+The "\" symbol is used for escaping. If you want to express the symbol "\" itself, use "\\".
+
+&lt;pre&gt;
+# Express "\"-let it be "\\"
+my $ str1 = "Hello \\ World"
+&lt;/ pre&gt;
+
+&lt;b&gt; If you want to use single quotes or double quotes &lt;/ b&gt;
+
+If you want to use single quotes in a string enclosed in single quotes, use &lt;a href="/blog/20201029075254.html"&gt; single quote string escape sequences &lt;/a&gt;.
+
+&lt;pre&gt;
+# Use single quotes
+my $ str1 ='Kimoto \'s cat';
+&lt;/ pre&gt;
+
+If you want to use double quotes in a string enclosed in double quotes, use escape sequences.
+
+&lt;pre&gt;
+#Use double quotes
+my $ str2 = "Can't open \" foo.txt \ ".";
+&lt;/ pre&gt;
+
+&lt;h4&gt; Variable expansion &lt;/ h4&gt;
+
+&lt;b&gt; Variable expansion &lt;/ b&gt; is a function that allows variables to be used in a string enclosed in double quotes. The string contained in the variable is expanded.
+
+&lt;pre&gt;
+my $ str1 = "Dog";
+
+#Variable expansion-Variables are expanded as "I have Dog"
+my $ str2 = "I have $ str1";
+&lt;/ pre&gt;
+
+Variable expansion is a very useful feature of Perl, so let's use it more and more.
+
+&lt;b&gt; If variable expansion fails &lt;/ b&gt;
+
+When using variable expansion, I think that sometimes variable expansion fails, resulting in a compilation error. That is when the string that follows is also interpreted as part of the variable.
+
+For example, a variable may be followed by an "underscore" or "Japanese".
+
+&lt;pre&gt;
+my $ str1 = "Dog";
+
+# I want to expand $ str1, but the variable name is interpreted as "$ str1_Foo"
+my $ str2 = "I have $ str1_Foo";
+
+# I want to expand $ str1, but the variable name is interpreted as "$ str1 aiueo"
+my $ str3 = "I have $ str1 AIUEO";
+&lt;/ pre&gt;
+
+In such cases, you can use the notation "$ {variable name}" to specify the variable name.
+
+&lt;pre&gt;
+$ {Variable name}
+&lt;/ pre&gt;
+
+In the previous example, writing the following would work.
+
+&lt;pre&gt;
+my $ str1 = "Dog";
+
+my $ str2 = "I have $ {str1} _Foo";
+
+my $ str3 = "I have $ {str1} AIUEO";
+&lt;/ pre&gt;
+
+&lt;h4&gt; Concatenation of strings &lt;/ h4&gt;
+
+Next, let's concatenate the strings. Use the &lt;a href="/blog/20080221120361.html"&gt; string concatenation operator "." &lt;/a&gt; to concatenate strings.
+
+&lt;pre&gt;
+my $ str1 ='I have a'.'pen';
+&lt;/ pre&gt;
+
+The above example concatenates strings enclosed in quotes, but you can also use variables.
+
+&lt;pre&gt;
+my $ str3 = $ str1. $ Str2;
+&lt;/ pre&gt;
+
+The string concatenation operator can also be used in combination with the assignment operator as follows:
+
+&lt;pre&gt;
+$ str1. = $ str2;
+&lt;/ pre&gt;
+
+This is the same as the following writing. It means that "$ str2" is concatenated after "$ str1" and assigned to "$ str1". It's a common writing style, so keep it in mind.
+
+&lt;pre&gt;
+$ str1 = $ str1. $ Str2;
+&lt;/ pre&gt;
+
+&lt;h4&gt; String output &lt;/ h4&gt;
+
+Use the &lt;a href="/blog/20170404149131.html"&gt; print function &lt;/a&gt; to print the string to the screen.
+
+&lt;pre&gt;
+my $ message ='Hello';
+print $ message;
+&lt;/ pre&gt;
+
+&lt;h3&gt; String processing tricks &lt;/ h3&gt;
+
+Here are some of the string processing tricks that are sometimes used.
+
+&lt;h4&gt; String list operator &lt;/ h4&gt;
+
+In Perl, there is a &lt;b&gt; string list operator &lt;/ b&gt; that makes it easy to create a list of strings.
+
+You can use the string list operator to create a list of strings without quotes and commas.
+
+&lt;pre&gt;
+#Normal method
+my @ strs1 = ('Cat','Dog','Mouse');
+
+#How to use the string list operator
+my @ strs2 = qw (Cat Dog Mouse);
+&lt;/ pre&gt;
+
+This operator is especially useful when the word you want to use follows many lines in a text file.
+
+&lt;pre&gt;
 Cat
 Dog
 Mouse
-</pre>
-<p>
-  文字列リスト演算子を使うとコピペするだけで、Perlスクリプトの中で使うことができます。
-</p>
-<pre>
-my @strs = qw(
+&lt;/ pre&gt;
+
+You can use the string list operator in your Perl script by simply copying and pasting it.
+
+&lt;pre&gt;
+my @strs = qw (
   Cat
   Dog
   Mouse
 );
-</pre>
-<p>
-  文字列リスト演算子の詳しい解説は以下を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080222120369.html">文字列リスト演算子</a>
-  </li>
-</ul>
-<h4>改行を取り除く</h4>
-<p>
-  テキストファイルを読み込んだ時に<b>末尾の改行を取り除きたい</b>場合があります。
-</p>
-<p>
-  Perlでは改行を取り除くための<a href="/blog/20080226120403.html">chomp関数</a>があるのですが、この関数は環境依存です。
-</p>
-<p>
-  Windows系OSで実行した場合はWindowsの改行である「CR+LF」を取り除き、Unix/Linux/Macで実行した場合は「LF」を取り除きます。
-</p>
-<p>
-  確実に改行を取り除くためには、以下の<a href="/blog/20100827127859.html">正規表現</a>を使うのがよいでしょう。
-</p>
-<pre>
-$str =~ s/\x0D?\x0A?$//;
-</pre>
-<p>
-  正規表現についてはこの後で簡単に解説します。
-</p>
-<h4>指定した文字で配列の要素を連結する</h4>
-<p>
-  文字列処理ではCSVデータ(カンマで区切られたデータ)を作成したり、TSVデータ(タブで区切られたデータ)を作成することが頻繁にあります。
-</p>
-<p>
-  このような場合は、配列にデータを準備して、それを特定の文字(カンマやタブ)で連結するということを行います。
-</p>
-<p>
-  <b>join関数</b>を使うとこれが簡単にできます。
-</p>
-<pre>
-my @animals = ('Cat', 'Dog', 'Mouse');
+&lt;/ pre&gt;
 
-# CSVデータ「Cat,Dog,Mouse」を作成
-my $csv = join(',', @animals);
+Please refer to the following for a detailed explanation of the string list operator.
 
-# TSVデータ「Cat  Dog  Mouse」を作成
-my $tsv = join("\t", @animals);
-</pre>
-<p>
-  join関数については以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20081007122338.html">join関数 - 区切り文字を指定して文字列を連結する</a>
-  </li>
-</ul>
-<h4>指定した文字で文字列を分割する</h4>
-<p>
-  上記では、CSVデータとTSVデータの作成方法を解説しましたが、その反対に、CSVデータやTSVデータを配列にしたい場合があると思います。
-</p>
-<p>
-  このような場合は<b>split関数</b>を使用すると、特定の文字を区切り文字に指定して配列を作成することができます。
-</p>
-<pre>
-my $csv = 'Cat,Dog,Mouse';
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080222120369.html"&gt; String list operator &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
-# カンマを指定して配列を作成。('Cat', 'Dog', 'Mouse')という配列になる
-my @animals = split(/,/, $csv);
-</pre>
-<p>
-  TSVデータの場合のサンプルも載せておきます。
-</p>
-<pre>
-my $tsv = "Cat\tDog\tMouse";
-my @animals = split(/\t/, $csv);
-</pre>
-<p>
-  split関数の第一引数には、正規表現が直接指定できます。たとえば「一つ以上の空白」という正規表現を使うことができます。
-</p>
-<pre>
-# ひとつ以上の空白で区切られたデータを配列にする
-my $data = "Cat    Dog  Mouse";
-my @animals = split(/ +/, $csv);
-</pre>
-<p>
-  正規表現については、この後に簡単に解説します。
-</p>
-<p>
-  split関数の詳しい解説については以下の記事をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080301120434.html">split関数 - 指定した文字で文字列を分割する</a>
-  </li>
-</ul>
-<h4>文字列の長さを取得する</h4>
-<p>
-  文字列の長さを取得するには<b>length関数</b>を使用します。
-</p>
-<pre>
-# 文字列の長さを取得
-my $length = length "ABCDE";
-</pre>
-<p>
-  length関数の詳細な解説については以下をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080926122245.html">length関数 - 文字列の長さを取得する</a>
-  </li>
-</ul>
-<h4>文字列の書式指定</h4>
-<p>
-  小数点の桁数の指定や、左を0で埋めるような書式指定を行いたい場合は<b>sprintf関数</b>を利用できます。
-</p>
-<pre>
-# 3桁で左を0埋め「Code is 013」となる
-my $str1 = sprintf("Code is %03d", 13);
+&lt;h4&gt; Remove line breaks &lt;/ h4&gt;
 
-# 小数点第3位まで表示「Number is 0.146」となる
-my $str2 = sprintf("Number is %.3f", 0.145677);
-</pre>
-<p>
-  書式指定の詳細な解説については以下をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20081001122296.html">sprintf関数 - 書式指定した文字列を作成する</a>
-  </li>
-</ul>
-<h3>ヒアドキュメント</h3>
-<p>
-  Perlには複数行の文字列を簡単に作成するための<b>ヒアドキュメント</b>という構文があります。
-</p>
-<pre>
-# ヒアドキュメント
-my $message = &lt;&lt;EOS;
+You may want to &lt;b&gt; remove trailing line breaks &lt;/ b&gt; when reading a text file.
+
+Perl has a &lt;a href="/blog/20080226120403.html"&gt; chomp function &lt;/a&gt; for removing line breaks, but this function is environment dependent.
+
+When running on a Windows OS, remove the "CR + LF" which is a line break in Windows, and when running on Unix / Linux / Mac, remove "LF".
+
+To ensure that line breaks are removed, it's a good idea to use the following &lt;a href="/blog/20100827127859.html"&gt; regular expression &lt;/a&gt;.
+
+&lt;pre&gt;
+$ str = ~ s / \ x0D? \ X0A? $ //;
+&lt;/ pre&gt;
+
+I'll talk more about regular expressions later.
+
+&lt;h4&gt; Concatenate array elements with the specified characters &lt;/ h4&gt;
+
+In string processing, CSV data (data separated by commas) and TSV data (data separated by tabs) are often created.
+
+In such cases, prepare the data in an array and concatenate it with specific characters (commas and tabs).
+
+You can easily do this with the &lt;b&gt; join function &lt;/ b&gt;.
+
+&lt;pre&gt;
+my @animals = ('Cat','Dog','Mouse');
+
+#Create CSV data "Cat, Dog, Mouse"
+my $ csv = join (',', @animals);
+
+#Create TSV data "Cat Dog Mouse"
+my $ tsv = join ("\ t", @animals);
+&lt;/ pre&gt;
+
+Please refer to the following article for the join function.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20081007122338.html"&gt; join function --Concatenate strings by specifying a delimiter &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; Split the string with the specified characters &lt;/ h4&gt;
+
+In the above, I explained how to create CSV data and TSV data, but on the contrary, you may want to make CSV data or TSV data into an array.
+
+In such cases, you can use the &lt;b&gt; split function &lt;/ b&gt; to create an array with specific characters as delimiters.
+
+&lt;pre&gt;
+my $ csv ='Cat, Dog, Mouse';
+
+Create an array by specifying #comma. ('Cat','Dog','Mouse')
+my @animals = split (/, /, $ csv);
+&lt;/ pre&gt;
+
+A sample for TSV data is also included.
+
+&lt;pre&gt;
+my $ tsv = "Cat \ tDog \ tMouse";
+my @animals = split (/ \ t /, $ csv);
+&lt;/ pre&gt;
+
+A regular expression can be specified directly as the first argument of the split function. For example, use the regular expression "one or more blanks"You can
+
+&lt;pre&gt;
+# Make an array of data separated by one or more spaces
+my $ data = "Cat Dog Mouse";
+my @animals = split (/ +/, $ csv);
+&lt;/ pre&gt;
+
+I'll talk more about regular expressions later.
+
+See the following article for a detailed explanation of the split function.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080301120434.html"&gt; split function-splits a string with the specified characters &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; Get the length of the string &lt;/ h4&gt;
+
+Use the &lt;b&gt; length function &lt;/ b&gt; to get the length of the string.
+
+&lt;pre&gt;
+#Get the length of the string
+my $ length = length "ABCDE";
+&lt;/ pre&gt;
+
+See below for a detailed explanation of the length function.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080926122245.html"&gt; length function-get the length of a string &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h4&gt; String format specification &lt;/ h4&gt;
+
+You can use the &lt;b&gt; sprintf function &lt;/ b&gt; if you want to specify the number of decimal places or specify a format that fills the left with 0s.
+
+&lt;pre&gt;
+# Fill the left with 0 with 3 digits and it becomes "Code is 013"
+my $ str1 = sprintf ("Code is% 03d", 13);
+
+# Display up to 3 decimal places "Number is 0.146"
+my $ str2 = sprintf ("Number is% .3f", 0.145677);
+&lt;/ pre&gt;
+
+See below for a detailed explanation of formatting.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20081001122296.html"&gt; sprintf function-creates a formatted string &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Here document &lt;/ h3&gt;
+
+Perl has a syntax called &lt;b&gt; here-document &lt;/ b&gt; that makes it easy to create multi-line strings.
+
+&lt;pre&gt;
+# Here document
+my $ message = &lt;&lt; EOS;
 If you want to write
 multiple lines,
 you can use here document
 EOS
-</pre>
-<p>
-  ヒアドキュメントの構文の説明をします。ヒアドキュメントは「<<」という記号で始まります。その語に文字列の末尾を指定する文字列を指定します。
-</p>
-<p>
-  これは任意の文字列でよいのですが、僕は「End of String」の略で「EOS」という記号を使っています。
-</p>
-<p>
-  この後にセミコロン「;」を書くことに注意してください。
-</p>
-<p>
-  そしてこの次の行から文字列を開始します。
-</p>
-<p>
-  文字列を終わりたいときは、最後の行に「EOS」と記述します。EOSの前には、空白を置くことができないので注意してください。
-</p>
-<p>
-  もし、インデントされてい位置からヒアドキュメントを書きたい場合は次のように書きます。
-</p>
-<pre>
-        # ヒアドキュメント
-        my $message = &lt;&lt;EOS;
+&lt;/ pre&gt;
+
+I will explain the syntax of here documents. Here documents begin with the symbol "&lt;&lt;". Specifies a string that specifies the end of the string for that word.
+
+This can be any string, but I use the symbol "EOS" for "End of String".
+
+Note that we write a semicolon ";" after this.
+
+Then start the string from this next line.
+
+If you want to end the string, write "EOS" on the last line. Please note that you cannot put a blank in front of EOS.
+
+If you want to write a here document from the indented position, write as follows.
+
+&lt;pre&gt;
+        # Here document
+        my $ message = &lt;&lt; EOS;
 If you want to write
 multiple lines,
 you can use here document
 EOS
-</pre>
-<h4>ダブルクォートあるいはシングルクォートで囲った文字列と同じ意味にする</h4>
-<p>
-  ヒアドキュメントを次のように書いた場合は、ダブルクォートで囲った場合と同じで、エスケープシーケンスと特殊文字を使うことができます。
-</p>
-<pre>
-my $message = &lt;&lt;EOS;
-...
-EOS
-</pre>
-<p>
-  あるいは
-</p>
-<pre>
-my $message = &lt;&lt;"EOS";
-...
-EOS
-</pre>
-<p>
-  下の例は、EOSをダブルクォートで囲っていることに注意してください。ダブルクォートで囲まない場合はデフォルト、ダブルクォートで囲ったのと同じ意味になります。
-</p>
-<p>
-  シングルクォートで囲った場合と同じようにするには次のように書きます。
-</p>
-<pre>
-my $message = &lt;&lt;'EOS';
-...
-EOS
-</pre>
-<p>
-  ヒアドキュメントの詳しい解説については以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080619121405.html">ヒアドキュメント - 複数行の文字列を簡単に作成</a>
-  </li>
-</ul>
-<h3>正規表現</h3>
-<p>
-  Perlには文字列の検索と置換を行うための<b>正規表現</b>という機能が言語に組み込まれています。
-</p>
-<h4>パターンマッチを使って検索を行う</h4>
-<p>
-  たとえば、文字列の中に「dog」という文字列が含まれていることを知りたい場合は次のように書けます。
-</p>
-<pre>
-my $message = "It is my dog\n";
+&lt;/ pre&gt;
 
-if ($message =~ /dog/) {
+&lt;h4&gt; Make it the same as a string enclosed in double quotes or single quotes &lt;/ h4&gt;
+
+If you write your here document as follows, you can use escape sequences and special characters as if you were enclosing it in double quotes.
+
+&lt;pre&gt;
+my $ message = &lt;&lt; EOS;
+...
+EOS
+&lt;/ pre&gt;
+
+or
+
+&lt;pre&gt;
+my $ message = &lt;&lt; "EOS";
+...
+EOS
+&lt;/ pre&gt;
+
+Note that the example below encloses the EOS in double quotes. If you do not enclose it in double quotes, it has the same meaning as enclosing it in double quotes by default.
+
+To do the same as if you enclose it in single quotes, write:
+
+&lt;pre&gt;
+my $ message = &lt;&lt;'EOS';
+...
+EOS
+&lt;/ pre&gt;
+
+Please refer to the following articles for detailed explanations of here documents.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080619121405.html"&gt; Here-Document-Easily create multi-line strings &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Regular expression &lt;/ h3&gt;
+
+Perl has a built-in &lt;b&gt; regular expression &lt;/ b&gt; feature in the language for searching and replacing strings.
+
+&lt;h4&gt; Search using pattern matching &lt;/ h4&gt;
+
+For example, if you want to know that the string contains the string "dog", you can write:
+
+&lt;pre&gt;
+my $ message = "It is my dog ​​\ n";
+
+if ($ message = ~ / dog /) {
   ...
 }
-</pre>
-<p>
-  <b>=~</b>はパターンマッチ演算子と呼ばれ正規表現のパターンマッチを実行するための演算子です。
-</p>
-<p>
-  正規表現は「//」という記号で囲む必要があります。
-</p>
-<h4>置換を行う</h4>
-<p>
-  正規表現を使うと置換を行うこともできます。「dog」を「cat」に書き換えた場合は次のように書きます。
-</p>
-<pre>
-my $message = "It is my dog\n";
+&lt;/ pre&gt;
 
-$message =~ s/dog/cat/;
-</pre>
-<p>
-  <b>「s/置換する文字列/置換後の文字列/」</b>という構文で置換を行うことができます。
-</p>
-<p>
-  正規表現の詳しい解説については以下の記事をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20100827127859.html">実戦で役立つ正規表現</a>
-  </li>
-</ul>
-<h3>Perlで正しく日本語を扱う</h3>
-<p>
-  ここまで文字列のサンプルはすべて英語でした。でも実際の文字列処理は、日本語を扱うことが大半だと思います。
-</p>
-<p>
-  初級者の方は、Perlで日本語処理を正しく行うにはどうしたらいいのかということを感じると思います。
-</p>
-<p>
-  たとえば、length関数や正規表現は、内部的な文字列に変換してから実行しないと、正しい結果を返しません。
-</p>
-<p>
-  「日本語で正規表現がうまく動かないなぁ」というときは、Perlで日本語を正しく扱えていない可能性があります。
-</p>
-<p>
-  でも少しのことを覚えれば、Perlの文字列処理は決して難しくありませんので安心してください。
-</p>
-<p>
-  Perlで正しく日本語処理を行うためには、次の三つのことを覚えましょう。
-</p>
-<ol>
-  <li>
-    ソースコードはUTF-8で記述し、utf8プラグマを指定する。
-  </li>
-  <li>
-    外部から受け取った文字列は必ずデコードする
-  </li>
-  <li>
-    外部へ出力する文字列は、エンコードする
-  </li>
-</ol>
-<h4>ソースコードはUTF-8で記述し、utf8プラグマを指定する。</h4>
-<p>
-  ソースコードはWindowsでも、Macでも、LinuxでもUTF-8で保存しましょう。そして<b>utf8</b>プラグマを指定しましょう。
-</p>
-<pre>
-# utf8プラグマを指定
+&lt;b&gt; = ~ &lt;/ b&gt; is called the pattern matching operator and is an operator for performing regular expression pattern matching.
+
+Regular expressions must be enclosed in the symbol "//".
+
+&lt;h4&gt; Replace &lt;/ h4&gt;
+
+You can also use regular expressions to make substitutions. If you rewrite "dog" to "cat", write as follows.
+
+&lt;pre&gt;
+my $ message = "It is my dog ​​\ n";
+
+$ message = ~ s / dog / cat /;
+&lt;/ pre&gt;
+
+You can replace with the syntax &lt;b&gt; "s / string to replace / string after replacement /" &lt;/ b&gt;.
+
+See the following articles for a detailed explanation of regular expressions.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20100827127859.html"&gt; Regular expressions useful in actual battles &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Perl handles Japanese correctly &lt;/ h3&gt;
+
+So far, all the string samples have been in English. However, I think that most of the actual character string processing deals with Japanese.
+
+If you are a beginner, you will feel how to do Japanese processing correctly in Perl.
+
+For example, the length function or regular expression must be converted to an internal string and then executed before it returns the correct result.
+
+If you say "Regular expressions don't work well in Japanese", it's possible that Perl doesn't handle Japanese correctly.
+
+But if you remember a little bit, don't worry, Perl's string processing isn't difficult at all.
+
+In order to process Japanese correctly in Perl, remember the following three things.
+
+&lt;ol&gt;
+  &lt;li&gt;
+    The source code is written in UTF-8 and the utf8 pragma is specified.
+  &lt;/ li&gt;
+  &lt;li&gt;
+    Be sure to decode the character string received from the outside
+  &lt;/ li&gt;
+  &lt;li&gt;
+    Encode the character string to be output to the outside
+  &lt;/ li&gt;
+&lt;/ ol&gt;
+
+&lt;h4&gt; Write the source code in UTF-8 and specify the utf8 pragma. &lt;/ h4&gt;
+
+Save the source code in UTF-8 on Windows, Mac or Linux. Then specify the &lt;b&gt; utf8 &lt;/ b&gt; pragma.
+
+&lt;pre&gt;
+# utf8 Specify pragma
 use utf8;
 
-my $message = 'こんにちは';
-</pre>
-<p>
-  まずこれを約束事として覚えてください。
-</p>
-<p>
-  これでソースコードに書かれた文字列に対して、length関数や正規表現が正しく動くようになります。
-</p>
-<pre>
-# utf8プラグマを指定
+my $ message ='Hello';
+&lt;/ pre&gt;
+
+Remember this as a convention first.
+
+Now the length function and regular expressions will work correctly for the strings written in the source code.
+
+&lt;pre&gt;
+# utf8 Specify pragma
 use utf8;
 
-my $message = 'こんにちは';
+my $ message ='Hello';
 
-# length関数が正しく動く。5が返る。
-my $length = length $message;
+The # length function works correctly. 5 is returned.
+my $ length = length $ message;
 
-# 正規表現が正しく動く
-if ($message =~ /にち/) {
+#Regular expressions work correctly
+if ($ message = ~ / day /) {
   ...;
 }
-</pre>
-<p>
-  utf8プラグマは、ソースコード内に書かれた「UTF-8バイト文字列」を「内部文字列」に変換します。
-</p>
-<p>
-  内部文字列に変換することによって、正しく文字列処理を行うことができるようになります。
-</p>
-<p>
-  「バイト文字列」と「内部文字列」についてはこの後で解説します。
-</p>
-<h4>外部から受け取った文字列は必ずデコードする</h4>
-<p>
-  <b>デコード</b>というのは「特定の文字コードで書かれた文字列」を「Perlの内部的な文字列」に変換することを言います。
-</p>
-<p>
-  「Perlの内部的な文字列」のことを<b>内部文字列</b>と便宜的に呼ぶことにし、「特定の文字コードで書かれた文字列」のことを<b>バイト文字列</b>と呼ぶことにします。
-</p>
-<p>
-  たとえば「UTF-8」という文字コードで書かれている文字列を「UTF-8バイト文字列」と呼び、「EUC-jp」という文字コードで書かれている文字列を「EUC-jpバイト文字列」と呼びます。
-</p>
-<p>
-  もしJavaで文字列の扱いを知っているなら「文字列ストリーム」と「バイトストリーム」という対応で考えるとわかりやすいです。
-</p>
-<p>
-  デコードを行うためには<a href="/blog/20091118124667.html">Encodeモジュール</a>のdecode関数を使用します。
-</p>
-<p>
-  <b>Windowsで「cp932」という文字コードを書かれたファイルを読み込む</b>
-</p>
-<p>
-  Windowsで「cp932」という文字コードを書かれたファイルを読み込むサンプルを書いてみます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+The utf8 pragma converts the "UTF-8 byte string" written in the source code to the "internal string".
+
+By converting to an internal character string, you will be able to perform character string processing correctly.
+
+"Byte string" and "internal string" will be explained later.
+
+&lt;h4&gt; Be sure to decode the character string received from the outside &lt;/ h4&gt;
+
+&lt;b&gt; Decoding &lt;/ b&gt; means converting a "character string written in a specific character code" into a "Perl internal character string".
+
+For the sake of convenience, "Perl's internal string" is called &lt;b&gt; internal string &lt;/ b&gt;, and "string written in a specific character code" is a &lt;b&gt; byte character. Let's call it a column &lt;/ b&gt;.
+
+For example, a character string written with the character code "UTF-8" is called "UTF-8 byte character string", and a character string written with the character code "EUC-jp" is called "EUC-jp byte character". It is called "column".
+
+If you know how to handle strings in Java, it is easy to understand by considering the correspondence between "string stream" and "byte stream".
+
+Use the decode function of the &lt;a href="/blog/20091118124667.html"&gt; Encode module &lt;/a&gt; to decode.
+
+&lt;b&gt; Read a file with the character code "cp932" written on Windows &lt;/ b&gt;
+
+Let's write a sample to read a file with the character code "cp932" written on Windows.
+
+&lt;pre&gt;
 # decode.pl
 use strict;
 use warnings;
 use utf8;
-use Encode 'decode';
+use Encode'decode';
 
-# ファイルの読み込み
-while (my $line = &lt;&gt;) {
-  $line = decode('cp932', $line);
+#Read file
+while (my $ line = &lt;&gt;) {
+  $ line = decode ('cp932', $ line);
   
-  if ($line =~ /田中/) {
+  if ($ line = ~ / Tanaka /) {
     print "OK";
   }
 }
-</pre>
-<p>
-  <a href="/blog/20100123126425.html">while文</a>を使って、コマンドラインの引数で指定されたファイルから1行づつ読みだしています。
-</p>
-<p>
-  ファイル「name.txt」のサンプルは以下のようになっています。cp932で保存してください。
-</p>
-<pre>
-田中
-鈴木
-山田
-</pre>
-<p>
-  次のようにコマンドを実行すると一度だけOKと表示され正規表現が正しく動くことがわかります。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+The &lt;a href="/blog/20100123126425.html"&gt; while statement &lt;/a&gt; is used to read line by line from the file specified by the command line arguments.
+
+The sample of the file "name.txt" is as follows. Save it with cp932.
+
+&lt;pre&gt;
+Tanaka
+Suzuki
+Yamada
+&lt;/ pre&gt;
+
+If you execute the command as follows, OK will be displayed only once and you can see that the regular expression works correctly.
+
+&lt;pre&gt;
 perl decode.pl name.txt
-</pre>
-<p>
-  <b>Windowsでコマンドライン引数の文字列を読み込む</b>
-</p>
-<p>
-  外部から受け取った文字列というのは、ファイルだけではなく、コマンドライン引数や環境変数など、プログラムの外から読み込まれるものはすべて外部です。
-</p>
-<p>
-  ですから、コマンドライン引数で日本語を受け取った場合も、必ずデコードします。
-</p>
-<pre>
-my $name = $ARGV[0];
-$name = decode('cp932', $name);
-</pre>
-<h4>外部へ出力する文字列は、エンコードする</h4>
-<p>
-  外部から受け取った文字列はデコードするのに対し、外部へ出力する文字は必ずエンコードします。
-</p>
-<p>
-  エンコードとは「内部文字列」を「バイト文字列」に変換することを言います。
-</p>
-<p>
-  エンコードを行うには<a href="/blog/20091118124667.html">Encodeモジュール</a>のencode関数を使用します。
-</p>
-<p>
-  たとえば、UTF-8で出力したい場合は次のように書きます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;b&gt; Read command line argument strings on Windows &lt;/ b&gt;
+
+Strings received from outside are not just files, but anything that is read from outside the program, such as command line arguments and environment variables, is external.
+
+Therefore, even if Japanese is received as a command line argument, it will always be decoded.
+
+&lt;pre&gt;
+my $ name = $ ARGV [0];
+$ name = decode ('cp932', $ name);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Encode the character string to be output to the outside &lt;/ h4&gt;
+
+While the character string received from the outside is decoded, the character output to the outside is always encoded.
+
+Encoding means converting an "internal string" to a "byte string".
+
+To encode, use the encode function of the &lt;a href="/blog/20091118124667.html"&gt; Encode module &lt;/a&gt;.
+
+For example, if you want to output in UTF-8, write as follows.&lt;pre&gt;
 use utf8;
-use Encode 'encode';
+use Encode'encode';
 
-my $message = 'あいうえお';
+my $ message ='aiueo';
 
-# 出力する前にエンコード
-print encode('UTF-8', $message);
-</pre>
-<p>
-  <b>ファイル名を指定する場合</b>
-</p>
-<p>
-  もうひとつ覚えておいてほしいのは、open関数などでファイル名を指定する場合は、OSで利用されている文字コードにエンコードする必要があります。
-</p>
-<p>
-  日本語の名前を持つファイルを開くには次のようにします。エラーメッセージに日本語ファイル名を持つ場合は、その部分もエンコードしましょう。
-</p>
-<pre>
+#Encode before output
+print encode ('UTF-8', $ message);
+&lt;/ pre&gt;
+
+&lt;b&gt; When specifying a file name &lt;/ b&gt;
+
+Another thing to keep in mind is that if you specify a file name with the open function etc., you need to encode it to the character code used by the OS.
+
+To open a file with a Japanese name: If the error message has a Japanese file name, encode that part as well.
+
+&lt;pre&gt;
 use utf8;
-use Encode 'encode';
+use Encode'encode';
 
-my $file = 'テスト.txt';
+my $ file ='test.txt';
 
-# 日本語名のファイルをopenする
-open my $fh, '&lt;', encode('cp932', $file)
-  or die encode('cp932', "Can't open file \"$file\": $!");
-</pre>
-<p>
-  これは少し面倒だと感じると思います。よく使う場合は、サブルーチンやモジュール化しておくのも、楽にする方法のひとつかなと思います。
-</p>
-<p>
-  Perlで日本語を扱う詳細な解説についてはEncodeモジュールの解説で行っていますので、以下の記事をご覧ください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20091118124667.html">Encodeモジュール - 日本語などのマルチバイト文字列を適切に処理する</a>
-  </li>
-</ul>
-<h3>文字列にかかわる演算子</h3>
-<p>
-  文字列処理のために時々使う演算をここに掲載しておきます。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20100304126967.html">クォート演算子「q」 - クォートの代替表現</a>
-  </li>
-  <li>
-    <a href="/blog/20100305126967.html">ダブルクォート演算子「qq」 - ダブルクォートの代替表現</a>
-  </li>
-</ul>
-<h3>文字列処理のための関数</h3>
-<p>
-  文字列処理のためにときどき使う関数を掲載しておきます。
-</p>
-<table>
-  <tr>
-    <td>
-      <a href="/blog/20080224120386.html">substr関数</a>
-    </td>
-    <td>
-      指定した位置の文字を抽出,置換する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20080225120395.html">index関数</a>
-    </td>
-    <td>
-      文字列を検索する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20100321126967.html">rindex関数</a>
-    </td>
-    <td>
-      文字列を末尾から検索する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20080930122278.html">reverse関数</a>
-    </td>
-    <td>
-      文字列の順序を反転させる
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20100325127089.html">ucfirst関数</a>
-    </td>
-    <td>
-      文字列の先頭の文字を大文字に変換する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20100327127089.html">lcfirst関数</a>
-    </td>
-    <td>
-      文字列の先頭の文字を小文字に変換する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20080903122057.html">uc関数</a>
-    </td>
-    <td>
-      小文字を大文字に変換する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20100326127089.html">lc関数</a>
-    </td>
-    <td>
-      大文字を小文字に変換する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20080928122260.html">chr関数</a>
-    </td>
-    <td>
-      数値をASCIIコード対応する文字に変換する
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="/blog/20080929122278.html">ord関数</a>
-    </td>
-    <td>
-      ASCIIコードの文字を内部表現である数値に変換する
-    </td>
-  </tr>
-</table>
-<h3>まとめ</h3>
-<p>
-  これだけ覚えておけば、日本語を含んだ文字列処理の9割くらいは行えるようになるんじゃないかと思います。
-</p>
+#Open a file with a Japanese name
+open my $ fh,'&lt;', encode ('cp932', $ file)
+  or die encode ('cp932', "Can't open file \" $ file \ ": $!");
+&lt;/ pre&gt;
+
+I think this is a little annoying. If you use it often, I think that subroutines and modularization are one of the ways to make it easier.
+
+For a detailed explanation of handling Japanese in Perl, see the following article, as it is explained in the explanation of the Encode module.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20091118124667.html"&gt; Encode module-Properly handles multi-byte character strings such as Japanese &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Operators related to strings &lt;/ h3&gt;
+
+Here are the operations that are sometimes used for string processing.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20100304126967.html"&gt; Quart operator "q" --Alternative representation of quotes &lt;/a&gt;
+  &lt;/ li&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20100305126967.html"&gt; Double quote operator "qq" --Alternative representation of double quote &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Function for string processing &lt;/ h3&gt;
+
+Here are some functions that I sometimes use for string processing.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20080224120386.html"&gt; substr function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Extracts and replaces the character at the specified position
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20080225120395.html"&gt; index function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Search for strings
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20100321126967.html"&gt; rindex function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Search for a string from the end
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20080930122278.html"&gt; reverse function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Invert the order of strings
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20100325127089.html"&gt; ucfirst function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Convert the first character of a string to uppercase
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20100327127089.html"&gt; lcfirst function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Convert the first character of a string to lowercase
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20080903122057.html"&gt; uc function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Convert lowercase letters to uppercase
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20100326127089.html"&gt; lc function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Convert uppercase to lowercase
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20080928122260.html"&gt; chr function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Convert numbers to ASCII code-corresponding characters
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;a href="/blog/20080929122278.html"&gt; ord function &lt;/a&gt;
+    &lt;/ td&gt;
+    &lt;td&gt;
+      Convert ASCII code characters to numbers, which is an internal representation
+    &lt;/ td&gt;
+  &lt;/ tr&gt;
+&lt;/ table&gt;
+
+&lt;h3&gt; Summary &lt;/ h3&gt;
+
+If you remember this much, I think that you will be able to perform about 90% of character string processing including Japanese.
 
   </div>
   <div class="bottom">

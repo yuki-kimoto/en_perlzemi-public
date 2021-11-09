@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Data::Page::Navigation - ページナビゲーションの実装 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Data::Page::NavigationモジュールはData::Pageに機能を追加するモジュールで、ページナビゲーション用のデータを簡単に作成することができます。">
+<title> Data :: Page :: Navigation --Implementation of page navigation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="The  Data :: Page :: Navigation  module is a module that adds functionality to  Data :: Page  and is data for page navigation. Can be easily created.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Data::Page::Navigation - ページナビゲーションの実装 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Data::Page::NavigationモジュールはData::Pageに機能を追加するモジュールで、ページナビゲーション用のデータを簡単に作成することができます。" />
+<meta name="twitter:title" content=" Data :: Page :: Navigation --Implementation of page navigation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="The  Data :: Page :: Navigation  module is a module that adds functionality to  Data :: Page  and is data for page navigation. Can be easily created." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20131118138474.html">Data::Page::Navigation - ページナビゲーションの実装</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20131118138474.html"> Data :: Page :: Navigation --Implementation of page navigation </a></ h2>
 <p>
-  <strong>Data::Page::Navigation</strong>モジュールは<a href="/blog/20110527130888.html">Data::Page</a>に機能を追加するモジュールで、ページナビゲーション用のデータを簡単に作成することができます。
+  The <strong> Data :: Page :: Navigation </ strong> module is a module that adds functionality to <a href="/blog/20110527130888.html"> Data :: Page </a> and is data for page navigation. Can be easily created.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,61 +100,66 @@
 use strict;
 use warnings;
 
-use Data::Page;
-use Data::Page::Navigation;
+use Data :: Page;
+use Data :: Page :: Navigation;
 
-my $total_entries = 180;
-my $entries_per_page = 10;
-my $current_page = 1;
-my $pager = Data::Page-&gt;new($total_entries, $entries_per_page, $current_page);
+my $ total_entries = 180;
+my $ entries_per_page = 10;
+my $ current_page = 1;
+my $ pager = Data :: Page-&gt; new ($ total_entries, $ entries_per_page, $ current_page);
 
-# ページナビゲーションの個数を設定
-$pager-&gt;pages_per_navigation(10);
+#Set the number of page navigation
+$ pager-&gt; pages_per_navigation (10);
 
-# ページナビゲーション用のデータを取得
-my @pages = $pager-&gt;pages_in_navigation;
+#Get data for page navigation
+my @pages = $ pagesr-&gt; pages_in_navigation;
 
 # 1 2 3 4 5 6 7 8 9 10
-print "@pages\n";
+print "@ pages \ n";
 
-# 現在のページを変更
-$pager-&gt;current_page(9);
-my @pages2 = $pager-&gt;pages_in_navigation;
+# Change current page
+$ pager-&gt; current_page (9);
+my @ pages2 = $ pagesr-&gt; pages_in_navigation;
 
 # 5 6 7 8 9 10 11 12 13 14
-print "@pages2\n";
-</pre>
-<h3>メソッド</h3>
-<h4>pages_per_navigation</h4>
-<p>
-  ひとつのページに表示されるページの数を設定します。デフォルトは10です。
-</p>
-<pre>
-my $pages_per_navigation = $pager-&gt;pages_per_navigation;
-$pager-&gt;pages_per_navigation(15);
-</pre>
-<h4>pages_in_navigation</h4>
-<p>
-  このメソッドは、ページナンバーのリストを返却します。
-</p>
-<pre>
-my @pages = $pager-&gt;pages_in_navigation;
-my $pages = $pager-&gt;pages_in_navigation;
-</pre>
-<h4>first_navigation_page</h4>
-<p>
-  最初のナビゲーションページを返します。
-</p>
-<pre>
-my $first_page = $pager-&gt;first_navigation_page;
-</pre>
-<h4>last_navigation_page</h4>
-<p>
-  最後のナビゲーションページを返します。
-</p>
-<pre>
-my $last_page = $pager-&gt;last_navigation_page;
-</pre>
+print "@ pages2 \ n";
+&lt;/ pre&gt;
+
+&lt;h3&gt; method &lt;/ h3&gt;
+
+&lt;h4&gt; pages_per_navigation &lt;/ h4&gt;
+
+Sets the number of pages displayed on one page. The default is 10.
+
+&lt;pre&gt;
+my $ pages_per_navigation = $ pagesr-&gt; pages_per_navigation;
+$ pager-&gt; pages_per_navigation (15);
+&lt;/ pre&gt;
+
+&lt;h4&gt; pages_in_navigation &lt;/ h4&gt;
+
+This method returns a list of page numbers.
+
+&lt;pre&gt;
+my @pages = $ pagesr-&gt; pages_in_navigation;
+my $ pages = $ pagesr-&gt; pages_in_navigation;
+&lt;/ pre&gt;
+
+&lt;h4&gt; first_navigation_page &lt;/ h4&gt;
+
+Returns the first navigation page.
+
+&lt;pre&gt;
+my $ first_page = $ pager-&gt; first_navigation_page;
+&lt;/ pre&gt;
+
+&lt;h4&gt; last_navigation_page &lt;/ h4&gt;
+
+Returns the last navigation page.
+
+&lt;pre&gt;
+my $ last_page = $ pager-&gt; last_navigation_page;
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Perl自体をソースコードからコンパイルする方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perl自体をソースコードからコンパイルする方法。まず「git clone」でPerlのソースコードをとってくる。">
+<title> How to compile Perl itself from source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="How to compile Perl itself from source code. First, fetch the Perl source code with "git clone".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Perl自体をソースコードからコンパイルする方法 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perl自体をソースコードからコンパイルする方法。まず「git clone」でPerlのソースコードをとってくる。" />
+<meta name="twitter:title" content=" How to compile Perl itself from source code  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="How to compile Perl itself from source code. First, fetch the Perl source code with "git clone"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,9 +59,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20141219141897.html">Perl自体をソースコードからコンパイルする方法</a></h2>
+    <h2><a href="/blog/20141219141897.html"> How to compile Perl itself from source code </a></ h2>
 <p>
-  Perl自体をソースコードからコンパイルする方法。まず「git clone」でPerlのソースコードをとってくる。
+  How to compile Perl itself from source code. First, fetch the Perl source code with "git clone".
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -81,58 +81,55 @@
 
 <pre>
 git clone http://perl5.git.perl.org/perl.git
-</pre>
-<p>
-  これは、現在の開発版の最新のブランチです。
-</p>
-<p>
-  次にREADMEの中に掲載されている次のコマンドを実行します。
-</p>
-<pre>
-./Configure -des -Dprefix=$HOME/localperl
-</pre>
-<p>
-  リリース版だとこのコマンドでMakefileが生成されますが、開発版だと失敗するので次のコマンドを実行します。
-</p>
-<pre>
-./Configure -des -Dusedevel -Dprefix=$HOME/localperl
-</pre>
-<p>
-  次にコンパイルです。makeコマンドを実行します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+This is the latest branch of the current development version.
+
+Then execute the following command listed in the README.
+
+&lt;pre&gt;
+./Configure -des -Dprefix = $ HOME / localperl
+&lt;/ pre&gt;
+
+In the release version, this command will generate a Makefile, but in the development version it will fail, so execute the following command.
+
+&lt;pre&gt;
+./Configure -des -Dusedevel -Dprefix = $ HOME / localperl
+&lt;/ pre&gt;
+
+Next is compilation. Execute the make command.
+
+&lt;pre&gt;
 make
-</pre>
-<p>
-  次にテストです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Next is the test.
+
+&lt;pre&gt;
 make test
-</pre>
-<p>
-  最後にインストール。「$HOME/localperl」にインストールされます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+Finally installed. It will be installed in "$ HOME / localperl".
+
+&lt;pre&gt;
 make install
-</pre>
-<p>
-  最近僕は、Perlのソースコードをちょっとさわったりするのですが、変更を加えた後に、makeとmake testを走らせるというのは、ちょっと現実的ではない。これは、モジュールの試験も含めて全部やってしまう。
-</p>
-<p>
-  そこで、最小限のPerlをコンパイルしたり、最小限のテストを実行する方法が用意されています。
-</p>
-<p>
-  次のコマンドで、miniperlと呼ばれる小さなPerlをコンパイルできます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+I've been touching the Perl source code a bit lately, but running make and make test after making changes is a bit unrealistic. This does everything, including testing the module.
+
+So there is a way to compile a minimal amount of Perl or run a minimal amount of testing.
+
+You can compile a small Perl called miniperl with the following command:
+
+&lt;pre&gt;
 make miniperl
-</pre>
-<p>
-  次のコマンドで、小さなテストを走らせることができます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+You can run a small test with the following command:
+
+&lt;pre&gt;
 make minitest
-</pre>
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

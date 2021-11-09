@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>複素数を表現する / PDLによる統計解析 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="複素数はPDL::Complexを読むと使えるようになる虚数単位を表すi関数を使って表現します。">
+<title> Representing complex numbers / Statistical analysis by PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Complex numbers are represented using the  i  function, which represents the imaginary unit that becomes available when you read  PDL :: Complex .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="複素数を表現する / PDLによる統計解析 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="複素数はPDL::Complexを読むと使えるようになる虚数単位を表すi関数を使って表現します。" />
+<meta name="twitter:title" content=" Representing complex numbers / Statistical analysis by PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Complex numbers are represented using the  i  function, which represents the imaginary unit that becomes available when you read  PDL :: Complex ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,29 +59,29 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="3" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20121214135538.html">
-      <span itemprop="name">PDL</span>
+      <span itemprop = "name"> PDL </ span>
     </a>
-    <meta itemprop="position" content="4" />
-  </li>
-</ol>
-<h2><a href="/blog/20121123135520.html">複素数を表現する / PDLによる統計解析</a></h2>
+    <meta itemprop = "position" content = "4" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20121123135520.html"> Representing complex numbers / Statistical analysis by PDL </a></ h2>
 <p>
-  複素数は<b>PDL::Complex</b>を読むと使えるようになる虚数単位を表す<b>i</b>関数を使って表現します。
+  Complex numbers are represented using the <b> i </ b> function, which represents the imaginary unit that becomes available when you read <b> PDL :: Complex </ b>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,115 +100,126 @@
 
 
 <p>
-  たとえば<b>3 + 2i</b>という複素数を表現するには次のようにします。
+  For example, to represent the complex number <b> 3 + 2i </ b>:
 </p>
 <pre>
 use PDL;
-use PDL::Complex;
+use PDL :: Complex;
 
-my $num = 3 + 2*i;
-</pre>
-<p>
-  この複素数を出力すると以下のように表示されます。
-</p>
-<pre>
-3 +2i
-</pre>
-<h3>虚数単位iを使用する</h3>
-<p>
-  PDLでは虚数を扱うことができます。虚数を扱うためには、<b>PDL::PDL::Complex</b>を読み込みましょう。
-</p>
-<pre>
-use PDL::Complex;
-</pre>
-<p>
-  すると虚数単位を表す<b>i</b>関数がインポートされます。
-</p>
-<pre>
+my $ num = 3 + 2 * i;
+&lt;/ pre&gt;
+
+When this complex number is output, it will be displayed as follows.
+
+&lt;pre&gt;
+3 + 2i
+&lt;/ pre&gt;
+
+&lt;h3&gt; Use the imaginary unit i &lt;/ h3&gt;
+
+PDL can handle imaginary numbers. To handle imaginary numbers, load &lt;b&gt; PDL :: PDL :: Complex &lt;/ b&gt;.
+
+&lt;pre&gt;
+use PDL :: Complex;
+&lt;/ pre&gt;
+
+Then the &lt;b&gt; i &lt;/ b&gt; function that represents the imaginary unit is imported.
+
+&lt;pre&gt;
 i
-</pre>
-<p>
-  虚数単位を出力すると以下のように出力されます。
-</p>
-<pre>
-0 +1i
-</pre>
-<p>
-  虚数単位iというのは二乗して-1になる数のことでした。二乗してみましょう。
-</p>
-<pre>
-my $ret = i * i;
-</pre>
-<p>
-  これを出力すると以下のように表示されます。
-</p>
-<pre>
--1 +0i
-</pre>
-<h3>複素数の四則演算</h3>
-<p>
-  複素数の四則演算は通常の演算と同じく<b>+</b>, <b>-</b>, <b>*</b>, <b>/</b>を使って行うことができます。
-</p>
-<pre>
-use PDL;
-use PDL::Complex;
+&lt;/ pre&gt;
 
-my $num1 = 1 + 2*i;
-my $num2 = 3 + 4*i;
-</pre>
-<h4>和</h4>
-<pre>
-# 4 +6i
-my $sum = $num1 + $num2;
-</pre>
-<h4>差</h4>
-<pre>
-# 2 +2i
-my $sub = $num2 - $num1;
-</pre>
-<h4>積</h4>
-<pre>
-# -5 +10i
-my $multi = $num1 * $num2;
-</pre>
-<h4>商</h4>
-<pre>
-# 0.44 +0.08i
-my $div = $num1 / $num2;
-</pre>
-<h3>n乗根を計算する</h3>
-<p>
-  n乗根を計算するには<b>Croots</b>関数を使用します。
-</p>
-<pre>
-use PDL;
-use PDL::Complex;
+When the imaginary unit is output, it is output as follows.
 
-# 5の3乗根
-my $nums = Croots(5, 3);
-</pre>
-<p>
-  計算結果の出力は以下のようになります。
-</p>
-<pre>
-[1.85398 +0.496773i  -1.35721 +1.35721i  -0.496773 -1.85398i]
-</pre>
-<h3>実数を複素数に変換する</h3>
-<p>
-  実数を複素数に変換するには<b>r2C</b>関数を使用します。
-</p>
-<pre>
-use PDL;
-use PDL::Complex;
+&lt;pre&gt;
+0 + 1i
+&lt;/ pre&gt;
 
-my $num = r2C 5;
-</pre>
-<p>
-  出力結果は以下のようになります。
-</p>
-<pre>
-5 +0i
-</pre>
+The imaginary unit i was a number that squared to -1. Let's square it.
+
+&lt;pre&gt;
+my $ ret = i * i;
+&lt;/ pre&gt;
+
+When this is output, it will be displayed as follows.
+
+&lt;pre&gt;
+-1 + 0i
+&lt;/ pre&gt;
+
+&lt;h3&gt; Four arithmetic operations on complex numbers &lt;/ h3&gt;
+
+Perform four arithmetic operations on complex numbers using &lt;b&gt; + &lt;/ b&gt;, &lt;b&gt;-&lt;/ b&gt;, &lt;b&gt; * &lt;/ b&gt;, &lt;b&gt; / &lt;/ b&gt; as in normal operations. I can.
+
+&lt;pre&gt;
+use PDL;
+use PDL :: Complex;
+
+my $ num1 = 1 + 2 * i;
+my $ num2 = 3 + 4 * i;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Japanese &lt;/ h4&gt;
+&lt;pre&gt;
+# 4 + 6i
+my $ sum = $ num1 + $ num2;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Difference &lt;/ h4&gt;
+
+&lt;pre&gt;
+# 2 + 2i
+my $ sub = $ num2- $ num1;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Product &lt;/ h4&gt;
+
+&lt;pre&gt;
+# -5 + 10i
+my $ multi = $ num1 * $ num2;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Commerce &lt;/ h4&gt;
+
+&lt;pre&gt;
+# 0.44 + 0.08i
+my $ div = $ num1 / $ num2;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Calculate the nth root &lt;/ h3&gt;
+
+Use the &lt;b&gt; Croots &lt;/ b&gt; function to calculate the nth root.
+
+&lt;pre&gt;
+use PDL;
+use PDL :: Complex;
+
+# 5 cube root
+my $ nums = Croots (5, 3);
+&lt;/ pre&gt;
+
+The output of the calculation result is as follows.
+
+&lt;pre&gt;
+[1.85398 + 0.496773i -1.35721 + 1.35721i -0.496773 -1.85398i]
+&lt;/ pre&gt;
+
+&lt;h3&gt; Convert real numbers to complex numbers &lt;/ h3&gt;
+
+Use the &lt;b&gt; r2C &lt;/ b&gt; function to convert a real number to a complex number.
+
+&lt;pre&gt;
+use PDL;
+use PDL :: Complex;
+
+my $ num = r2C 5;
+&lt;/ pre&gt;
+
+The output result is as follows.
+
+&lt;pre&gt;
+5 + 0i
+&lt;/ pre&gt;
 
   </div>
   <div class="bottom">

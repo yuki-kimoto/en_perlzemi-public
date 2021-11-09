@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>print関数 - 文字列を出力する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="文字列を出力するにはprint関数を使用します。">
+<title> print function-prints a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Use the  print function  to print the string.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="print関数 - 文字列を出力する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="文字列を出力するにはprint関数を使用します。" />
+<meta name="twitter:title" content=" print function-prints a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Use the  print function  to print the string." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop="name">標準関数</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> standard function </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20170404149131.html">print関数 - 文字列を出力する</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20170404149131.html"> print function-prints a string </a></ h2>
 <p>
-  文字列を出力するには<b>print関数</b>を使用します。
+  Use the <b> print function </ b> to print the string.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,125 +98,126 @@
 
 <pre>
 print "Hello World!";
-</pre>
-<p>
-  文字列を変数に代入してからprint関数に渡すこともできます。実際にプログラムを書く場合は、この方法をお勧めします。ひとつの文字列を作成してからprint関数に渡す方法です。
-</p>
-<pre>
-my $message = "Hello World!";
-print $message;
-</pre>
-<p>
-  print関数には<a href="/blog/20100308126967.html">リスト</a>や配列を渡すこともできます。文字列は連結されて出力されます。実際にプログラムを書く場合は、この方法よりも、上記の方法がお勧めです。
-</p>
-<pre>
-# リスト
+&lt;/ pre&gt;
+
+You can also assign a string to a variable and then pass it to the print function. This method is recommended when actually writing a program. It is a method to create one character string and then pass it to the print function.
+
+&lt;pre&gt;
+my $ message = "Hello World!";
+print $ message;
+&lt;/ pre&gt;
+
+You can also pass a &lt;a href="/blog/20100308126967.html"&gt; list &lt;/a&gt; or an array to the print function. The character strings are concatenated and output. When actually writing a program, the above method is recommended over this method.
+
+&lt;pre&gt;
+#List
 print "Hello", "World", "!";
 
-# 配列
+# arrangement
 my @strings = ("Hello", "World", "!");
 print @strings;
-</pre>
-<h3>配列を一つの文字列に連結してから出力する方法</h3>
-<p>
-  よく使うテクニックに、配列の文字列をカンマで連結して、最後に改行をつけて出力するというのがあります。
-</p>
-<p>
-  これはprint関数と<a href="/blog/20081007122338.html">join関数</a>、<a href="/blog/20080221120361.html">文字列連結演算子</a>を使ってきれいに書くことができます。
-</p>
-<pre>
-my @animals = ('Dog', 'Cat', 'Mouse');
-print join(',', @animals) . "\n";
-</pre>
-<h3>print関数のデフォルトの出力先は標準出力</h3>
-<p>
-  print関数のデフォルトの出力先は、画面、すなわち<b>標準出力</b>です。標準出力については詳しい解説は以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080730121743.html">標準入力 標準出力 標準エラー出力</a>
-  </li>
-</ul>
-<p>
-  print関数のデフォルトの出力先は、標準出力であり次の二つの書き方の意味は同じです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; How to output after concatenating an array into one character string &lt;/ h3&gt;
+
+A common technique is to concatenate array strings with commas and output with a newline at the end.
+
+This is done using the print function and the &lt;a href="/blog/20081007122338.html"&gt; join function &lt;/a&gt;, &lt;a href="/blog/20080221120361.html"&gt; string concatenation operator &lt;/a&gt; You can write beautifully.
+
+&lt;pre&gt;
+my @animals = ('Dog','Cat','Mouse');
+print join (',', @animals). "\ n";
+&lt;/ pre&gt;
+
+&lt;h3&gt; The default output destination of the print function is standard output &lt;/ h3&gt;
+
+The default output destination for the print function is the screen, or &lt;b&gt; standard output &lt;/ b&gt;. Please refer to the following article for a detailed explanation of standard output.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080730121743.html"&gt; Standard input Standard output Standard error output &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+The default output destination of the print function is standard output, and the following two writing styles have the same meaning.
+
+&lt;pre&gt;
 print "Hello";
 print STDOUT "Hello";
-</pre>
-<p>
-  STDOUTの後ろにカンマがないことに注意してください。これは「間接オブジェクト構文」と呼ばれ次の記法と同じ意味を持ちます。
-</p>
-<pre>
-STDOUT-&gt;print("Hello");
-</pre>
-<p>
-  print関数で出力先を指定する場合は、間接オブジェクト構文を使うことがPerlの慣習となっています。
-</p>
-<h3>標準エラー出力を指定する</h3>
-<p>
-  出力先として<b>標準エラー出力</b>を指定することができます。出力先に<b>STDERR</b>を指定してください。
-</p>
-<pre>
-print STDERR "Hello";
-</pre>
-<p>
-  標準エラー出力はエラー用の出力です。標準エラー出力の詳しい解説は、以下の記事を参考にしてください。
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080730121743.html">標準入力 標準出力 標準エラー出力</a>
-  </li>
-</ul>
-<h3>ファイルハンドルを指定する</h3>
-<p>
-  print関数の出力先をファイルに変えることもできます。その場合は<a href="/blog/20080718121643.html">open関数</a>でファイルを開いて、ファイルハンドルを作成し、そのファイルハンドルをprint関数で指定します。
-</p>
-<pre>
-my $file = "output.txt";
-open my $fh, '&gt;', $file
-  or die "Can't open \"$file\": $!";
-print $fh "Hello";
-</pre>
-<p>
-  「output.txt」というファイルに「Hello」が出力されます。
-</p>
-<h3>シェルでいうecho関数と同じ</h3>
-<p>
-  bashを使っていれば出力のためにechoを使うと思いますが、これはPerlのprint関数の機能に該当します。
-</p>
-<h3>書式を設定したい場合はprintf関数かsprintf関数</h3>
-<p>
-  C言語のprintf関数のような書式指定を行いたい場合は<a href="/blog/20170326149148.html">printf関数</a>を使うか、<a href="/blog/20081001122296.html">sprintf関数</a>で書式設定した文字列を作成して、print関数に渡しましょう。
-</p>
-<pre>
-# printf関数
-printf "Number %d", 3;
+&lt;/ pre&gt;
 
-# sprintf関数
-my $string = sprintf("Number %d", 3);
-print $string;
-</pre>
-<h3>リダイレクトでファイルへ出力するテクニック</h3>
-<p>
-  よく使うテクニックとして、標準出力をリダイレクトしてファイルに出力するというものがあります。このテクニックを使うとopen関数を使うことなしに、ファイルに出力することができます。
-</p>
-<p>
-  まずは普通にprint関数を書く。
-</p>
-<pre>
+Note that there is no comma after STDOUT. This is called "indirect object syntax" and has the same meaning as the following notation.
+
+&lt;pre&gt;
+STDOUT-&gt; print ("Hello");
+&lt;/ pre&gt;
+
+It is Perl's convention to use indirect object syntax when specifying the output destination in the print function.
+
+&lt;h3&gt; Specify standard error output &lt;/ h3&gt;
+
+You can specify &lt;b&gt; standard error output &lt;/ b&gt; as the output destination. Specify &lt;b&gt; STDERR &lt;/ b&gt; as the output destination.
+
+&lt;pre&gt;
+print STDERR "Hello";
+&lt;/ pre&gt;
+
+Standard error output is for errors. For a detailed explanation of standard error output, refer to the following article.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="/blog/20080730121743.html"&gt; Standard input Standard output Standard error output &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
+
+&lt;h3&gt; Specify file handle &lt;/ h3&gt;
+
+You can also change the output destination of the print function to a file. In that case, open the file with &lt;a href="/blog/20080718121643.html"&gt; open function &lt;/a&gt;, create a file handle, and specify the file handle with the print function.
+
+&lt;pre&gt;
+my $ file = "output.txt";
+open my $ fh,'&gt;', $ file
+  or die "Can't open \" $ file \ ": $!";
+print $ fh "Hello";
+&lt;/ pre&gt;
+
+"Hello" is output to a file called "output.txt".
+
+&lt;h3&gt; Same as the echo function in the shell &lt;/ h3&gt;
+
+If you're using bash, you'd probably use echo for output, which is a feature of Perl's print function.
+
+&lt;h3&gt; If you want to format it, printf function or sprintf function &lt;/ h3&gt;
+
+If you want to specify the format like the C language printf function, use &lt;a href="/blog/20170326149148.html"&gt; printf function &lt;/a&gt; or &lt;a href="/blog/20081001122296.html" Create a string formatted with the&gt; sprintf function &lt;/a&gt; and pass it to the print function.
+
+&lt;pre&gt;
+# printf function
+printf "Number% d", 3;
+
+# sprintf function
+my $ string = sprintf ("Number% d", 3);
+print $ string;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Technique to output to a file by redirect &lt;/ h3&gt;
+
+A common technique is to redirect standard output to a file. This technique allows you to output to a file without using the open function.
+
+First, write the print function normally.
+
+&lt;pre&gt;
 # hello.pl
 print "Hello";
-</pre>
-<p>
-  次にリダイレクトを使って、ファイルに出力。以下のようにコマンドを実行します。
-</p>
-<pre>
-perl hello.pl &gt; output.txt
-</pre>
-<p>
-  「output.txt」というファイルに「Hello」が出力されます。
-</p>
+&lt;/ pre&gt;
+
+Then use redirect to output to a file. Execute the command as follows.
+
+&lt;pre&gt;
+perl hello.pl&gt; output.txt
+&lt;/ pre&gt;
+
+"Hello" is output to a file called "output.txt".
 
   </div>
   <div class="bottom">

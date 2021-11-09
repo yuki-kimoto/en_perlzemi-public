@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>PDLにおける「行列」の扱い - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="PDLにおける「行列」の扱いを解説します。">
+<title> Handling of "matrix" in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="I will explain the handling of "matrix" in PDL.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="PDLにおける「行列」の扱い - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="PDLにおける「行列」の扱いを解説します。" />
+<meta name="twitter:title" content=" Handling of "matrix" in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="I will explain the handling of "matrix" in PDL." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,27 +59,27 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemprop="name">PDL</span>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-<h2><a href="/blog/20121109135538.html">PDLにおける「行列」の扱い</a></h2>
+        <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+        <span itemprop = "name"> PDL </ span>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20121109135538.html"> Handling of "matrix" in PDL </a></ h2>
 <p>
-  PDLにおける「行列」の扱いを解説します。
+  I will explain the handling of "matrix" in PDL.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,275 +97,284 @@
 </div>
 
 
-<h3>行列の作成</h3>
+<h3> Creating a matrix </ h3>
 <p>
-  行列を作成するには<b>pdl</b>関数を使用します。
+  Use the <b> pdl </ b> function to create a matrix.
 </p>
 <pre>
 use PDL;
 
-my $mat = mpdl [
+my $ mat = mpdl [
   [1, 2],
   [3, 4]
-];
-</pre>
-<p>
-  以下のような行列が作成されます。
-</p>
-<pre>
+];;
+&lt;/ pre&gt;
+
+The following matrix is ​​created.
+
+&lt;pre&gt;
 [
  [1 2]
  [3 4]
 ]
-</pre>
-<h3>行列の足し算</h3>
-<p>
-  行列の足し算を行うには<b>+</b>演算子を使用します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Matrix addition &lt;/ h3&gt;
+
+Use the &lt;b&gt; + &lt;/ b&gt; operator to add matrices.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat1 = pdl [
+my $ mat1 = pdl [
   [1, 2],
   [3, 4]
-];
-my $mat2 = pdl [
+];;
+my $ mat2 = pdl [
   [5, 6],
   [7, 8]
-];
+];;
 
-my $mat_sum = $mat1 + $mat2;
-</pre>
-<p>
-  各要素が足されて以下のような結果になります。
-</p>
-<pre>
+my $ mat_sum = $ mat1 + $ mat2;
+&lt;/ pre&gt;
+
+Each element is added and the result is as follows.
+
+&lt;pre&gt;
 [
- [ 6  8]
+ [6 8]
  [10 12]
 ]
-</pre>
-<h3>行列の引き算</h3>
-<p>
-  行列の足し算を行うには<strong>-</strong>演算子を使用します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Matrix subtraction &lt;/ h3&gt;
+
+Use the &lt;strong&gt;-&lt;/ strong&gt; operator to add matrices.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat1 = pdl [
+my $ mat1 = pdl [
   [1, 2],
   [3, 4]
-];
+];;
 
-my $mat2 = pdl [
+my $ mat2 = pdl [
   [5, 6],
   [7, 8]
-];
+];;
 
-my $mat_sub = $mat2 - $mat1;
-</pre>
-<p>
-  各要素が引かれて以下のような結果になります。
-</p>
-<pre>
+my $ mat_sub = $ mat2- $ mat1;
+&lt;/ pre&gt;
+Each element is subtracted and the result is as follows.
+
+&lt;pre&gt;
 [
  [4 4]
  [4 4]
 ]
-</pre>
-<h3>行列の積</h3>
-<p>
-  行列の積を求めるには<strong>x</strong>演算子を使用します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+
+&lt;h3&gt; Matrix product &lt;/ h3&gt;
+
+Use the &lt;strong&gt; x &lt;/ strong&gt; operator to find the matrix product.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat1 = pdl [
+my $ mat1 = pdl [
   [1, 2],
   [3, 4]
-];
-my $mat2 = pdl [
+];;
+my $ mat2 = pdl [
   [5, 6],
   [7, 8]
-];
+];;
 
-my $mat_multi = $mat1 x $mat2;
-</pre>
-<p>
-  計算された結果は以下のようになります。
-</p>
-<pre>
+my $ mat_multi = $ mat1 x $ mat2;
+&lt;/ pre&gt;
+
+The calculated result is as follows.
+
+&lt;pre&gt;
 [
  [19 22]
  [43 50]
 ]
-</pre>
-<h3>行列の要素を取得する</h3>
-<p>
-  行列の要素を取得するには<strong>at</strong>メソッドを使用します。行と列の順番が、通常の行列と異なること、添え字は0から始まることに注意しましょう。
-</p>
-<pre>
-$matrix-&gt;at(列, 行)
-</pre>
-<p>
-  以下は2×2行列の、2行1列目の値(3)を取得するサンプルです。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Get matrix elements &lt;/ h3&gt;
+
+Use the &lt;strong&gt; at &lt;/ strong&gt; method to get the elements of the matrix. Note that the row and column order is different from a regular matrix, and the subscripts start at 0.
+
+&lt;pre&gt;
+$ matrix-&gt; at (column, row)
+&lt;/ pre&gt;
+
+The following is a sample to get the value (3) of the 2nd row and 1st column of the 2x2 matrix.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat = pdl [
+my $ mat = pdl [
   [1, 2],
   [3, 4]
-];
-my $val = $mat-&gt;at(0, 1);
-</pre>
-<h3>行列の要素を設定する</h3>
-<p>
-  行列の要素を設定するには<strong>ナイススライス</strong>という記法を利用します。ナイススライス記法を使うためには<b>PDL::NiceSlice</b>モジュールを読み込む必要があります。
-</p>
-<pre>
-use PDL;
-use PDL::NiceSlice;
+];;
+my $ val = $ mat-&gt; at (0, 1);
+&lt;/ pre&gt;
 
-$matrix(列, 行) .= 値
-</pre>
-<p>
-  この記法は変数の後ろに括弧が付くという少し特殊な用法です。また<b>.=</b>文字列連結演算とイコールの組み合わせは、値の代入のためにオーバーロードされています。
-</p>
-<p>
-  以下は2×2行列の、2行1列目の値を5に設定するサンプルです。添え字は0から始まることに注意してください。
-</p>
-<pre>
-use PDL;
-use PDL::NiceSlice;
+&lt;h3&gt; Set matrix elements &lt;/ h3&gt;
 
-my $mat = pdl [
+To set the elements of a matrix, use the notation &lt;strong&gt; nice slice &lt;/ strong&gt;. You need to load the &lt;b&gt; PDL :: NiceSlice &lt;/ b&gt; module to use nice slice notation.
+
+&lt;pre&gt;
+use PDL;
+use PDL :: NiceSlice;
+
+$ matrix (column, row). = Value
+&lt;/ pre&gt;
+
+This notation is a bit special, with parentheses after the variable. Also, the &lt;b&gt;. = &lt;/ B&gt; string concatenation and equal combination is overloaded for value assignment.
+
+Below is a sample of a 2x2 matrix with the value in the 2nd row and 1st column set to 5. Note that the subscripts start at 0.
+
+&lt;pre&gt;
+use PDL;
+use PDL :: NiceSlice;
+
+my $ mat = pdl [
   [1, 2],
   [3, 4]
-];
-$mat(0, 1) .= 5;
-</pre>
-<p>
-  この変数の出力結果は以下のようになります。
-</p>
-<pre>
+];;
+$ mat (0, 1). = 5;
+&lt;/ pre&gt;
+
+The output of this variable is as follows.
+
+&lt;pre&gt;
 [
  [1 2]
  [5 4]
 ]
-</pre>
-<h3>単位行列を作成する</h3>
-<p>
-  単位行列を作成してみましょう。3×3の単位行列にしてみます。手順は<strong>PDL::Core</strong>の<b>zeroes</b>関数ですべての要素が0の3×3の正方行列を作成します。それから、<b>diagonal</b>メソッドで対角をスライスして1を代入します。引数の(0, 1)は、1次元と2次元という意味です。1次元と2次元の対角を取得という意味になります。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Create an identity matrix &lt;/ h3&gt;
+
+Let's create an identity matrix. Let's make a 3x3 identity matrix. The procedure is to create a 3x3 square matrix with all zeros in the &lt;b&gt; zeroes &lt;/ b&gt; function of &lt;strong&gt; PDL :: Core &lt;/ strong&gt;. Then slice the diagonal with the &lt;b&gt; diagonal &lt;/ b&gt; method and substitute 1. The argument (0, 1) means 1D and 2D. It means to get the diagonal of 1D and 2D.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat = PDL::Core::zeroes(3, 3);
-$mat-&gt;diagonal(0, 1) .= 1;
-</pre>
-<p>
-  出力結果は以下のようになります。
-</p>
-<pre>
+my $ mat = PDL :: Core :: zeroes (3, 3);
+$ mat-&gt; diagonal (0, 1). = 1;
+&lt;/ pre&gt;
+
+The output result is as follows.
+
+&lt;pre&gt;
 [
  [1 0 0]
  [0 1 0]
  [0 0 1]
 ]
-</pre>
-<h3>行列式を求める</h3>
-<p>
-  行列式を求めるには<b>det</b>メソッドを使用します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Find the determinant &lt;/ h3&gt;
+
+Use the &lt;b&gt; det &lt;/ b&gt; method to find the determinant.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat = pdl [
+my $ mat = pdl [
   [1, 2],
   [3, 4]
-];
+];;
 
-my $det = $mat-&gt;det;
-</pre>
-<p>
-  行列式の値は以下のようになります。
-</p>
-<pre>
+my $ det = $ mat-&gt; det;
+&lt;/ pre&gt;
+
+The value of the determinant is as follows.
+
+&lt;pre&gt;
 -2
-</pre>
-<h3>逆行列を求める</h3>
-<p>
-  逆行列を求めるには<b>inv</b>関数を使用します。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Find the inverse matrix &lt;/ h3&gt;
+
+Use the &lt;b&gt; inv &lt;/ b&gt; function to find the inverse matrix.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat = pdl [1, 2], [3, 4];
+my $ mat = pdl [1, 2], [3, 4];
 
-my $mat_inv = inv $mat;
-</pre>
-<p>
-  計算された結果は以下のようになります。
-</p>
-<pre>
+my $ mat_inv = inv $ mat;
+&lt;/ pre&gt;
+
+The calculated result is as follows.
+
+&lt;pre&gt;
 [
- [  -2    1]
- [ 1.5 -0.5]
+ [  -twenty one]
+ [1.5 -0.5]
 ]
-</pre>
-<h3>ベクトル(列ベクトル)を作成する</h3>
-<p>
-  ベクトル(列ベクトル)を作成するには次のようにします。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Create a vector (column vector) &lt;/ h3&gt;
+
+To create a vector (column vector):
+
+&lt;pre&gt;
 use PDL;
 
-my $vec = pdl [
+my $ vec = pdl [
   [1],
   [2]
-];
-</pre>
-<p>
-  データの出力結果は以下のようになります。
-</p>
-<pre>
+];;
+&lt;/ pre&gt;
+
+The output result of the data is as follows.
+
+&lt;pre&gt;
 [
  [1]
  [2]
 ]
-</pre>
-<h3>一次変換を計算する</h3>
-<p>
-  一次変換を計算してみましょう。正方行列 × 列ベクトルの演算です。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+&lt;h3&gt; Calculate the linear transformation &lt;/ h3&gt;
+
+
+Let's calculate the linear transformation. It is an operation of square matrix × column vector.
+
+&lt;pre&gt;
 use PDL;
 
-my $mat = pdl [
+my $ mat = pdl [
   [1, 2],
   [3, 4]
-];
+];;
 
-my $vec = pdl [
-  [5],
+my $ vec = pdl [
+  [Five],
   [6]
-];
+];;
 
-my $result = $mat x $vec;
-</pre>
-<p>
-  結果の出力結果は以下のようになります。
-</p>
-<pre>
+my $ result = $ mat x $ vec;
+&lt;/ pre&gt;
+
+The output result is as follows.
+
+&lt;pre&gt;
 [
  [17]
  [39]
 ]
-</pre>
-<p>
-  t[5, 6]は[ [1, 2], [3,4] ]という2×2行列によってt[17, 39]に変換されました。(tは転置という意味)
-</p>
+&lt;/ pre&gt;
+
+t [5, 6] was converted to t [17, 39] by the 2 × 2 matrix [[1, 2], [3, 4]]. (t means transpose)
 
   </div>
   <div class="bottom">

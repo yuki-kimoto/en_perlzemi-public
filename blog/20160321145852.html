@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>interpvar.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="interpvar.hには、インタープリタ変数の定義が記述されています。インタープリタ変数とは、Perlのインタープリタごとに、定義される変数のことです。">
+<title> interpvar.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="interpretvar.h  contains the definitions of interpreted variables. Interpreter variables are variables that are defined for each Perl interpreter.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="interpvar.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="interpvar.hには、インタープリタ変数の定義が記述されています。インタープリタ変数とは、Perlのインタープリタごとに、定義される変数のことです。" />
+<meta name="twitter:title" content=" interpvar.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="interpretvar.h  contains the definitions of interpreted variables. Interpreter variables are variables that are defined for each Perl interpreter." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,26 +59,26 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20130416136637.html">
-      <span itemprop="name">言語実装</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Language implementation </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20160321145852.html">interpvar.h</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20160321145852.html"> interpvar.h </a></ h2>
 <p>
-  <strong>interpvar.h</strong>には、インタープリタ変数の定義が記述されています。インタープリタ変数とは、Perlのインタープリタごとに、定義される変数のことです。
+  <strong> interpretvar.h </ strong> contains the definitions of interpreted variables. Interpreter variables are variables that are defined for each Perl interpreter.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -96,141 +96,135 @@
 </div>
 
 
-<h3>インタープリタとは</h3>
+<h3> What is an interpreter? </ H3>
 <p>
-  Perlは、複数のインタープリタを持つことができます。Perlは、インタープリタを生成して、ソースコードの解釈を始めます。通常は、インタープリタはひとつで十分ですが、C言語のプログラムの中で、複数保持したい場合は、複数生成することが可能です。
+  Perl can have multiple interpreters. Perl will generate an interpreter and begin interpreting the source code. Normally, one interpreter is enough, but if you want to keep multiple interpreters in a C language program, you can generate multiple interpreters.
 </p>
 <pre>
-# 複数のインタープリタ
-Perl - インタープリタ1
+#Multiple interpreters
+Perl-Interpreter 1
      |
-     - インタープリタ2
+     --Interpreter 2
      |
-     - インタープリタ3
-</pre>
-<p>
-  ただし、Perlがインタープリタを複数持つことができるのは「MULTIPLICITY」というマクロが有効になっているときだけです。これは、コンパイルオプションとして設定できます。自分の環境の場合は、CentOSのデフォルトのPerlであれば、有効で、perlbrewでインストールしたものは、無効になっていました。パフォーマンスは「MULTIPLICITY」が有効になっていないもののほうが、速いようです。
-</p>
-<p>
-  もし「MULTIPLICITY」が有効でなければ、Perlの構造は次のようになります。
-</p>
-<pre>
-Perl - (インタープリタなし)
-</pre>
-<p>
-  =====
-</p>
-<h3>インタープリタ変数</h3>
-<p>
-  インタープリタ変数は、インタープリタごとに持つ変数です。Perlのソースコードを読むときは、非常に頻繁に、interpvar.hを開くことになります。ここで、定義されている変数が、Perlのソースコードのあちらこちらで利用されているからです。
-</p>
-<p>
-  たとえば、サブルーチンのコールスタック情報、現在実行されている構文木のノード、レキシカル変数の情報、ローカル変数の情報、制御情報、SVのメモリ確保にかかわる変数、プログラムの実行の開始位置などです。
-</p>
-<p>
-  インタープリタ変数は、特殊なマクロを使って、定義されています。それは、PERLVARというマクロです。
-</p>
-<pre>
-PERLVAR(I, stack_sp,	SV **)		/* top of the stack */
-PERLVAR(I, op,		OP *)		/* currently executing op */
-PERLVAR(I, curpad,	SV **)		/* active pad (lexicals+tmps) */
-</pre>
-<p>
-  PERLVARマクロを見てみましょう。「perl.h」に定義があります。
-</p>
-<pre>
-/* perl.h */
-#  define PERLVAR(prefix,var,type) type prefix##var;
-</pre>
-<p>
-  C言語のdefine定義を使ったことがある人も「##」という記号を見た人は、少ないんじゃないでしょうか。「##」を使うと文字列が結合できます。
-</p>
-<p>
-  つまり、PERLVARマクロによって、次のように展開されます。
-</p>
-<pre>
+     --Interpreter 3
+&lt;/ pre&gt;
+
+However, Perl can have multiple interpreters only when the macro "MULTIPLICITY" is enabled. This can be set as a compile option. In my environment, the default Perl on CentOS was valid, and the one installed by perlbrew was disabled. Performance seems to be faster if "MULTIPLICITY" is not enabled.
+
+If "MULTIPLICITY" is not enabled, Perl's structure looks like this:
+
+&lt;pre&gt;
+Perl-(no interpreter)
+&lt;/ pre&gt;
+
+=====
+
+&lt;h3&gt; Interpreter variable &lt;/ h3&gt;
+
+Interpreter variables are variables that each interpreter has. When reading Perl source code, you will open interpvar.h very often. This is because the variables defined here are used throughout the Perl source code.
+
+For example, subroutine call stack information, currently executing syntax tree nodes, lexical variable information, local variable information, control information, variables related to SV memory allocation, program execution start position, and so on.
+
+Interpreter variables are defined using special macros. It's a macro called PERLVAR.
+
+&lt;pre&gt;
+PERLVAR (I, stack_sp, SV **) / * top of the stack * /
+PERLVAR (I, op, OP *) / * currently executing op * /
+PERLVAR (I, curpad, SV **) / * active pad (lexicals + tmps) * /
+&lt;/ pre&gt;
+
+Let's take a look at the PERLVAR macro. There is a definition in "perl.h".
+
+&lt;pre&gt;
+/*perl.h */
+#define PERLVAR (prefix, var, type) type prefix ## var;
+&lt;/ pre&gt;
+
+I think that few people who have used the C language define definition have seen the symbol "##". You can combine strings using "##".
+
+That is, the PERLVAR macro expands as follows:
+
+&lt;pre&gt;
 SV ** Istack_sp;
 OP * Iop;
 SV ** Icurpad;
-</pre>
-<p>
-  でも、この変数は、Perlのソースコード上ではほとんど使われていません。多くの場合は「PL_stacksp」という変数名でアクセスされます。これは「embedvar.h」で定義されています。
-</p>
-<pre>
-#define PL_stack_sp		(vTHX-&gt;Istack_sp)
-</pre>
-<p>
-  ソースコードを実際に読み込んでいく上では、「PL_stack_sp」という変数名を見たなら、これは、インタープリタ変数だなとまず推測します。そして、「interpvar.h」を開いて「PERLVAR(I, stack_sp,	SV **)」のような定義があるかどうかを確認します。
-</p>
-<h3>インタープリタ変数は「MULTIPLICITY」が有効でないときは、グローバル変数として定義される</h3>
-<p>
-  インタープリタ変数は「MULTIPLICITY」が有効でないときは、インタープリタ変数は、グローバル変数として定義されます。その記述は「perl.h」にあります。
-</p>
-<pre>
-#if !defined(MULTIPLICITY)
+&lt;/ pre&gt;
+
+However, this variable is rarely used in Perl source code. It is often accessed with the variable name "PL_stacksp". It is defined in "embedvar.h".
+
+&lt;pre&gt;
+#define PL_stack_sp (vTHX-&gt; Istack_sp)
+&lt;/ pre&gt;
+
+When actually reading the source code, if you see the variable name "PL_stack_sp", you first guess that this is an interpreter variable. Then open "interpvar.h" and check if there is a definition like "PERLVAR (I, stack_sp, SV **)".
+
+&lt;h3&gt; Interpreter variables are defined as global variables when "MULTIPLICITY" is not enabled &lt;/ h3&gt;
+
+Interpreter variables are defined as global variables when "MULTIPLICITY" is not enabled. The description is in "perl.h".
+
+&lt;pre&gt;
+#if! defined (MULTIPLICITY)
 START_EXTERN_C
-#  include "intrpvar.h"
+# include "intrpvar.h"
 END_EXTERN_C
 #endif
-</pre>
-<h3>vTHXは現在のインタープリタのこと</h3>
-<p>
-  vTHXは、ひとつのインタープリタです。「MULTIPLICITY」の下では、「vTHX」は「aTHX」と「PERL_GET_INTERP」に展開されますが、一般的なPerlでは、「PERL_IMPLICIT_CONTEXT」が定義されているとして読みましょう。つまり「aTHX」に展開されると考えましょう。
-</p>
-<pre>
-#if defined(MULTIPLICITY)
-/* cases 2 and 3 above */
+&lt;/ pre&gt;
 
-#  if defined(PERL_IMPLICIT_CONTEXT)
-#    define vTHX	aTHX
-#  else
-#    define vTHX	PERL_GET_INTERP
-#  endif
-</pre>
-<p>
-  さらに「perl.h」の中で「aTXH」は「my_perl」に展開されます。
-</p>
-<pre>
-/* perl.h */
-#  define aTHX	my_perl
-</pre>
-<p>
-  「my_perl」は、現在のインタープリタを表す変数で「perl_main.c」の中で定義されています。
-</p>
-<pre>
-/* perl.h */
-static PerlInterpreter *my_perl;
-</pre>
-<p>
-  PerlInterpreterは「perl.h」の中で「interpreter構造体」の別名として定義されています。
-</p>
-<pre>
-/* perl.h */
+&lt;h3&gt; vTHX is the current interpreter &lt;/ h3&gt;
+
+vTHX is an interpreter. Under "MULTIPLICITY", "vTHX" expands to "aTHX" and "PERL_GET_INTERP", but in general Perl, read as "PERL_IMPLICIT_CONTEXT" is defined. In other words, let's think that it will be expanded to "aTHX".
+
+&lt;pre&gt;
+#if defined (MULTIPLICITY)
+/ * cases 2 and 3 above * /
+
+#if defined (PERL_IMPLICIT_CONTEXT)
+#define vTHX aTHX
+# else
+#define vTHX PERL_GET_INTERP
+# endif
+&lt;/ pre&gt;
+
+Furthermore, in "perl.h", "aTXH" is expanded to "my_perl".
+
+&lt;pre&gt;
+/*perl.h */
+#define aTHX my_perl
+&lt;/ pre&gt;
+
+"My_perl" is a variable that represents the current interpreter and is defined in "perl_main.c".
+
+&lt;pre&gt;
+/*perl.h */
+static PerlInterpreter * my_perl;
+&lt;/ pre&gt;
+
+Perl Interpreter is defined in "perl.h" as an alias for the "interpreter structure".
+
+&lt;pre&gt;
+/*perl.h */
 typedef struct interpreter PerlInterpreter;
-</pre>
-<p>
-  そして最後に「interpreter構造体」は次のように定義されています。「interpvar.h」のインタープリタ変数の定義が、構造体のメンバとして記述されています。
-</p>
-<pre>
-/* perl.h */
+&lt;/ pre&gt;
+
+And finally, the "interpreter structure" is defined as follows: The definition of the interpreter variable in "interpvar.h" is written as a member of the structure.
+
+&lt;pre&gt;
+/*perl.h */
 struct interpreter {
-#  include "intrpvar.h"
+# include "intrpvar.h"
 };
-</pre>
-<p>
-  「PL_stack_sp」は「my_perl->Istack_sp」に展開されるということがわかります。これは、現在のインタープリタの「Istack_sp」というメンバ変数にアクセスするということです。
-</p>
-<h3>まとめ</h3>
-<p>
-  覚えておいてほしいことは、「PL_stack_sp」は「my_perl->Istack_sp」に展開されるということ。それに加えて、「MULTIPLICITY」が有効でない場合は、グローバル変数として「Istack_sp」が直接利用できるということです。「PL_stack_sp」を使うことで、複数のインタープリタを持つ場合と、持たない場合で、それを意識しないで、アクセスできます。
-</p>
-<p>
-  Perlのマクロ定義は、階層が深すぎますが、とことん深くもぐっていくと、着地点があります。
-</p>
-<hr>
-<p>
-  <a href="/blog/20130416136637.html">Perl言語研究</a>
-</p>
+&lt;/ pre&gt;
+
+You can see that "PL_stack_sp" is expanded to "my_perl-&gt; Istack_sp". This means accessing a member variable called "Istack_sp" in the current interpreter.
+
+&lt;h3&gt; Summary &lt;/ h3&gt;
+
+Keep in mind that "PL_stack_sp" will be expanded to "my_perl-&gt; Istack_sp". In addition, if "MULTIPLICITY" is not enabled, "Istack_sp" is directly available as a global variable. By using "PL_stack_sp", you can access with or without multiple interpreters without being aware of it.
+
+Perl macro definitions are too deep in the hierarchy, but if you go deeper, you'll find a landing point.
+
+&lt;hr&gt;
+&lt;a href="/blog/20130416136637.html"&gt; Perl Language Research &lt;/a&gt;
 
   </div>
   <div class="bottom">

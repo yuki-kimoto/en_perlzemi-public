@@ -32,12 +32,12 @@
     var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Unicodeで平方メートル(m2)を表現する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="平方メートル(m2)を表示するときに、小さな2はどうやって表現したらよいのかなぁと悩んでいたら、解決方法を発見。Unicodeのコードポイントで、表現したらよいだけだった。">
+<title> Representing square meters (m2) in Unicode  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="If you're wondering how to express a small 2 when displaying square meters (m2), find a solution. All I had to do was express it in Unicode code points.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Unicodeで平方メートル(m2)を表現する - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="平方メートル(m2)を表示するときに、小さな2はどうやって表現したらよいのかなぁと悩んでいたら、解決方法を発見。Unicodeのコードポイントで、表現したらよいだけだった。" />
+<meta name="twitter:title" content=" Representing square meters (m2) in Unicode  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="If you're wondering how to express a small 2 when displaying square meters (m2), find a solution. All I had to do was express it in Unicode code points." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -59,22 +59,22 @@
     
   </div>
   <div class="middle">
-    <ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20161006147575.html">
-      <span itemprop="name">文字コード</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-</ol>
-<h2><a href="/blog/20120604133938.html">Unicodeで平方メートル(m2)を表現する</a></h2>
+      <span itemprop = "name"> Character code </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+</ ol>
+<h2><a href="/blog/20120604133938.html"> Representing square meters (m2) in Unicode </a></ h2>
 <p>
-  平方メートル(m2)を表示するときに、小さな2はどうやって表現したらよいのかなぁと悩んでいたら、解決方法を発見。Unicodeのコードポイントで、表現したらよいだけだった。
+  If you're wondering how to express a small 2 when displaying square meters (m2), find a solution. All I had to do was express it in Unicode code points.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,29 +93,28 @@
 
 
 <pre>
-my $menseki = "100m\x{00B2}"; # 100平方メートル
-</pre>
-<p>
-  小さな2にあたるコードポイントが<b>00B2</b>になります。
-</p>
-<p>
-  これは内部文字列なので、実際に出力するときは、UTF-8でエンコードする必要があります。またソースコード中で、全部の文字が内部文字列になるように「use utf8」しておきましょう。
-</p>
-<pre>
-print encode('UTF-8', $menseki);
-</pre>
-<p>
-  やっぱりこういうときには、Unicodeに対応しているPerlは便利だなぁと思いました。
-</p>
-<h3>上付き文字と下付き文字の一覧</h3>
-<p>
-  こういうのは上付き文字と呼ぶらしいですね。上付き文字と下付き文字の一覧をブックマークで紹介していただいたのでリンクしておきます。
-</p>
-<ul>
-  <li>
-    <a href="http://nakamura001.hatenablog.com/entry/20100620/1277035425">上付き文字・下付き文字</a>
-  </li>
-</ul>
+my $ menseki = "100m \ x {00B2}"; # 100 square meters
+&lt;/ pre&gt;
+
+The code point that corresponds to the small 2 is &lt;b&gt; 00B2 &lt;/ b&gt;.
+
+This is an internal string, so you need to encode it in UTF-8 when you actually output it. Also, in the source code, let's "use utf8" so that all characters are internal strings.
+
+&lt;pre&gt;
+print encode ('UTF-8', $ menseki);
+&lt;/ pre&gt;
+
+After all, I thought that Perl that supports Unicode would be useful in such cases.
+
+&lt;h3&gt; List of superscripts and subscripts &lt;/ h3&gt;
+
+It seems that these are called superscripts. I've bookmarked a list of superscripts and subscripts, so I'll link to them.
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href="http://nakamura001.hatenablog.com/entry/20100620/1277035425"&gt; Superscript / Subscript &lt;/a&gt;
+  &lt;/ li&gt;
+&lt;/ ul&gt;
 
   </div>
   <div class="bottom">

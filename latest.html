@@ -51,121 +51,114 @@
   </div>
   <div class="middle">
     <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/21</div>
-<h2><a href="/blog/20210921094146.html">保守性の高いPerl7の計画</a></h2>
+<h2><a href="/blog/20210921094146.html"> Maintainable Perl 7 plan </a></ h2>
 <p>
-  2021年現在、保守性の高いPerl7が計画されています。Perl7は、Perlの保守性を上げ、初級者のミスを減らし、現行バージョンのPerl5との高い後方互換性を維持した、新しいバージョンのPerlです。
+  As of 2021, Perl 7 with high maintainability is planned. Perl7 is a new version of Perl that improves the maintainability of Perl, reduces beginner mistakes, and maintains high backward compatibility with the current version of Perl5.
 </p>
 <p>
-  以下の記述で、Perl7の機能が使えるようになる計画です。リリース時期は未定です。
+  With the following description, it is planned to be able to use the functions of Perl7. The release date is undecided.
 </p>
 <pre>
 use v7;
-</pre>
-<p>
-  「use v7」の記述で、Perlの文法を厳密にする「use strict;」、警告を出力する「use warnings;」が有効になり、一行の記述で、保守性の高いPerlが書けます。
-</p>
-<p>
-  say関数などのPerl5の機能として使えるようになっていた関数を使うことができます。
-</p>
-<pre>
+&lt;/ pre&gt;
+
+In the description of "use v7", "use strict;" which makes Perl grammar strict and "use warnings;" which outputs warnings are enabled, and you can write Perl with high maintainability in one line description.
+
+You can use functions that were available as Perl 5 features, such as the say function.
+
+&lt;pre&gt;
 use v7;
 
-say 'Hello';
-</pre>
-<h3>Perl 7の発表内容はどうなったの?</h3>
-<p>
-  2020年6月にPerl.comで<a href="https://www.perl.com/article/announcing-perl-7/">Perl 7のアナウンス</a>がありましたが、アナウンスされた内容は、現在では更新されています。
-</p>
-<h3>Perl6はどうなったの?</h3>
-<p>
-  Perl5の後継としてかつて開発されていた<a href="/blog/20210605102758.html">Perl6</a>はRakuという名称に変わりました。2021年現在、情報が更新されないままPerl6のまま言及されているサイトもありますが、Perl6は、Rakuへ名称変更されたというのが、正しい情報です。
-</p>
-<h3>Perl 7、Perl 6、Perl 5の関係</h3>
-<p>
-  Perl 7、Perl 6、Perl 5について、世間ではとても多くの誤解と混乱が生じています。これは、Perl側の責任だと僕は感じており、Perl 7が正式にリリースされて、数年がたつと、状況は良くなると感じます。
-</p>
-<p>
-  誤解と混乱の軽減を目的に、2021年度版 Perl 7、Perl 6、Perl 5について書きます。
-</p>
-<h4>Perlの最新版はPerl 5.34</h4>
-<p>
-  2021年におけるPerlの最新バージョンは、Perl 5.34です。Perl 5の最新バージョンが、Perlの最新バージョンです。
-</p>
-<h4>Perl 6はRakuに改名</h4>
-<p>
-  Perlの次期バージョンになる予定だったPerl 6は、現在は、異なるプログラミング言語と定義され、名称がRakuに変更されました。
-</p>
-<h4>次期PerlがPerl 7になることは決定、Perl 7のリリース日は未定</h4>
-<p>
-  次期Perlが、現在のPerl 5と非常に高い互換性を持つ状態で、Perl 7としてリリースされることは、決定されています。
-</p>
-<pre>
+say'Hello';
+&lt;/ pre&gt;
+
+&lt;h3&gt; What happened to Perl 7's announcement? &lt;/ H3&gt;
+
+There was a &lt;a href="https://www.perl.com/article/announcing-perl-7/"&gt; Perl 7 announcement &lt;/a&gt; on Perl.com in June 2020, but it was announced. The content is now updated.
+
+&lt;h3&gt; What happened to Perl6? &lt;/ H3&gt;
+
+&lt;a href="/blog/20210605102758.html"&gt; Perl6 &lt;/a&gt;, which was once developed as a successor to Perl5, has been renamed to Raku. As of 2021, some sites mention Perl 6 as it is without updating the information, but the correct information is that Perl 6 has been renamed to Raku.
+
+&lt;h3&gt; Relationship between Perl 7, Perl 6, and Perl 5 &lt;/ h3&gt;
+
+There is so much misunderstanding and confusion about Perl 7, Perl 6, and Perl 5. I feel this is the responsibility of Perl, and I feel that things will get better a few years after Perl 7 is officially released.
+
+To reduce misunderstandings and confusion, I'll write about the 2021 versions of Perl 7, Perl 6, and Perl 5.
+
+&lt;h4&gt; The latest version of Perl is Perl 5.34 &lt;/ h4&gt;
+
+The latest version of Perl in 2021 is Perl 5.34. The latest version of Perl 5 is the latest version of Perl.
+
+&lt;h4&gt; Perl 6 renamed to Raku &lt;/ h4&gt;
+
+Perl 6, which was supposed to be the next version of Perl, is now defined as a different programming language and has been renamed to Raku.
+
+&lt;h4&gt; The next Perl will be Perl 7, the release date of Perl 7 is undecided &lt;/ h4&gt;
+
+It has been decided that the next Perl will be released as Perl 7 with very high compatibility with the current Perl 5.
+
+&lt;pre&gt;
 use v7;
-</pre>
-<p>
-  という記述で、Perl 7の機能が利用できるようになります。
-</p>
-<p>
-  Perl 7のリリース時期は、2021年9月現在、未定です。
-</p>
+&lt;/ pre&gt;
+
+With the description, you can use the functions of Perl 7.
+
+The release date for Perl 7 is undecided as of September 2021.
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/03</div>
-<h2><a href="/blog/20210903122616.html">WindowsのコマンドプロンプトでUTF-8を表示する方法</a></h2>
+<h2><a href="/blog/20210903122616.html"> How to display UTF-8 at the Windows command prompt </a></ h2>
 <p>
-  WindowsのコマンドプロンプトでUTF-8を表示する方法を紹介します。2021年9月3日にWindows 10で確認したものです。
+  I will show you how to display UTF-8 at the Windows command prompt. It was confirmed on Windows 10 on September 3, 2021.
 </p>
 <p>
-  コマンドプロンプトのショートカットを作成します。右クリックで、プロパティを表示。リンク先を以下のようにします。65001というコードがUTF-8のコードです。
+  Create a command prompt shortcut. Right-click to display properties. The link destination is as follows. The code 65001 is the UTF-8 code.
 </p>
 <pre>
-%windir%\system32\cmd.exe /k "chcp 65001"
-</pre>
-<p>
-  <img src="/images/commandprompt/win_command_utf8.png">
-</p>
-<p>
-  Perlのプログラムは、UTF-8でソースコードを記述するのが、現在推奨される方法なので、UTF-8をコマンドプロンプトで表示できるのはありがたいですね。
-</p>
-<p>
-  以下の情報を参考にしました。
-</p>
-<p>
-  <a href="https://qiita.com/s4i/items/75c19c9feb10b54c1ce9">PowerShell起動時、文字コードをUTF-8に変える方法 - Qiita</a>
-</p>
+% windir% \ system32 \ cmd.exe / k "chcp 65001"
+&lt;/ pre&gt;
+
+&lt;img src = "/ images / command prompt / win_command_utf8.png"&gt;
+
+For Perl programs, writing the source code in UTF-8 is currently the recommended method, so it's nice to be able to view UTF-8 at the command prompt.
+
+I referred to the following information.
+
+&lt;a href="https://qiita.com/s4i/items/75c19c9feb10b54c1ce9"&gt; How to change the character code to UTF-8 when PowerShell starts --Qiita &lt;/a&gt;
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/07/26</div>
-<h2><a href="/blog/20210726104613.html">PerlでWebブラウザ自動操作ロボット作成方法のまとめ - 実用的なRPAをPerlで作ってみよう(書き始め)</a></h2>
+<h2><a href="/blog/20210726104613.html"> Summary of how to create a web browser automatic operation robot with Perl --Let's make a practical RPA with Perl (start writing) </a></ h2>
 <p>
-  PerlでWebブラウザ自動操作ロボット作成方法をここにまとめていきます。Windowsのユーザーが対象です。
+  Here is a summary of how to create a web browser automatic operation robot in Perl. For Windows users.
 </p>
-<h3>Strawberry PerlをWindowsにインストールする</h3>
+<h3> Install Strawberry Perl on Windows </ h3>
 <p>
-  Webブラウザ自動操作ロボットを作成するためには、Windows用にセッティングされたPerlが必要です。
-</p>
-<p>
-  Active PerlとStrawberry Perlという選択枝がありますが、ここでは、Strawberry Perlを使います。
+  To create a web browser auto-operation robot, you need Perl set up for Windows.
 </p>
 <p>
-  Strawberry Perlには、Webブラウザ自動操作ロボットを作成するための、GUI操作のモジュールがインストールされています。マウス位置指定、クリック、キーボード操作、クリップボード操作などです。
+  There is a choice between Active Perl and Strawberry Perl, but here we will use Strawberry Perl.
 </p>
 <p>
-  <a href="https://perlzemi.com/blog/20180808153368.html">Strawberry Perlのインストール</a>
+  Strawberry Perl has a GUI operation module installed to create a web browser automatic operation robot. Mouse position specification, click, keyboard operation, clipboard operation, etc.
 </p>
-<h3>Webブラウザ自動操作ロボット作成に使うPerlモジュール</h3>
 <p>
-  Webブラウザ自動操作ロボット作成に使うPerlモジュールは、以下が中心です。
+  <a href="https://perlzemi.com/blog/20180808153368.html"> Installing Strawberry Perl </a>
+</p>
+<h3> Perl module used to create a web browser automatic operation robot </ h3>
+<p>
+  Web browser automatic operation Perl modules used to create robots are mainly as follows.
 </p>
 <ul>
-  <li>Win32::GuiTest - マウス位置指定、キーボード操作</li>
-  <li>Win32::Clipboard - クリップボード操作</li>
-</ul>
-<h3>ウィンドウ操作</h3>
+  <li> Win32 :: GuiTest --Mouse position specification, keyboard operation </ li>
+  <li> Win32 :: Clipboard --Clipboard operation </ li>
+</ ul>
+<h3> Window operation </ h3>
 <p>
-  Windowsで、ウィンドウの取得、マウス位置指定、クリック、キーボード操作を行うにはWin32::GuiTestを使います。必要な関数を読み込んでいます。
+  On Windows, use Win32 :: GuiTest to get windows, position the mouse, click, and operate the keyboard. Loading the required function.
 </p>
 <pre>
-use Win32::GuiTest (
-  'UnicodeSemantics',
+use Win32 :: GuiTest (
+  'Unicode Semantics',
   'GetDesktopWindow',
   'GetParent',
   'GetWindowText',
@@ -175,319 +168,413 @@ use Win32::GuiTest (
   'MouseMoveAbsPix',
   'SendLButtonUp',
   'SendLButtonDown',
-  'SendKeys',
+  'Send Keys',
 );
-</pre>
-<h4>ユニコードセマンティクスを有効にする</h4>
-<p>
-  まず最初に、PerlはPerl 5.8以降で、ユニコード対応されていますので、Win32::GuiTestの方も、ユニコードに対応したセマンティクスが使えるようにします。Perlのソースコードは、UTF-8で記述し「use utf8;」を記述していることが前提です。
-</p>
-<pre>
-# ユニコードセマンティクスを有効にする
-UnicodeSemantics(1);
-</pre>
-<h4>デスクトップウィンドウの取得</h4>
-<p>
-  デスクトップウィンドウを取得するには、GetDesktopWindow関数を使用します。デスクトップウィンドウとは、デスクトップ全体を示すウィンドウのことです。
-</p>
-<pre>
-# デスクトップウィンドウの取得
-my $desktop_win = GetDesktopWindow();
-</pre>
-<h4>子ウィンドウの一覧を取得</h4>
-<p>
-  Webブラウザ自動操作を行うためには、ブラウザのウィンドウを取得する必要がありますが、そのためには、まずデスクトップウィンドウの下で管理されている子ウィンドウの一覧を取得する必要があります。子ウィンドウの一覧を取得するには、GetChildWindowsを使用します。
-</p>
-<pre>
-# 子ウィンドウの一覧を取得
-my @windows = GetChildWindows($desktop_win);
+&lt;/ pre&gt;
 
-# 子ウィンドウをループ
-for my $window (@windows) {
+&lt;h4&gt; Enable Unicode semantics &lt;/ h4&gt;
+
+First of all, Perl is Unicode-enabled since Perl 5.8, so Win32 :: GuiTest will also be able to use Unicode-enabled semantics. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written.
+
+&lt;pre&gt;
+# Enable unicode semantics
+Unicode Semantics (1);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get desktop window &lt;/ h4&gt;
+
+To get the desktop window, use the GetDesktopWindow function. A desktop window is a window that shows the entire desktop.
+
+&lt;pre&gt;
+#Get desktop window
+my $ desktop_win = GetDesktopWindow ();
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get a list of child windows &lt;/ h4&gt;
+
+In order to perform automatic operation of the web browser, it is necessary to get the window of the browser, but in order to do so, it is necessary to first get the list of child windows managed under the desktop window. Use GetChildWindows to get a list of child windows.
+
+&lt;pre&gt;
+# Get a list of child windows
+my @windows = GetChildWindows ($ desktop_win);
+
+# Loop child window
+for my $ window (@windows) {
   
 }
-</pre>
-<h4>ウィンドウのテキストを取得</h4>
-<p>
-  ウィンドウのテキストを取得するにはGetWindowText関数を使います。
-</p>
-<pre>
-# ウィンドウのテキストを取得
-my $win_text = GetWindowText($win);
-</pre>
-<p>
-  ウィンドウのテキストは、ブラウザの種類によって、異なる可能性があります。Google Chromeで確認したものでは、以下のように「ウィンドウのタイトル - アプリケーション名」になっていました。
-</p>
-<pre>
-Perlクラブ - Google Chrome
-</pre>
-<h4>対象ウィンドウの取得</h4>
-<p>
-  Webブラウザ自動操作ロボットを作る場合は、子ウィンドウの一覧から、対象のウィンドウを取得する必要があります。対象のウィンドウを取得するサンプルを記述します。確実に、対象のWebブラウザの対象のページが、一つ立ち上がっていることをチェックします。
-</p>
-<pre>
-# 対象のウィンドウを取得(Perlクラブ - Google Chrome)
-my $win;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get the text of the window &lt;/ h4&gt;
+
+Use the GetWindowText function to get the text of the window.
+
+&lt;pre&gt;
+# Get the text of the window
+my $ win_text = GetWindowText ($ win);
+&lt;/ pre&gt;
+
+The text in the window can vary depending on the browser type. In what I checked with Google Chrome, it was "Window title-Application name" as shown below.
+
+&lt;pre&gt;
+Perl Club-Google Chrome
+&lt;/ pre&gt;
+
+&lt;h4&gt; Get the target window &lt;/ h4&gt;
+
+If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write a sample to get the target window. Make sure that the target page of the target web browser is launched.
+
+&lt;pre&gt;
+# Get the target window (Perl Club-Google Chrome)
+my $ win;
 {
-  my $desktop_win = GetDesktopWindow();
-  die "Oops!" if GetParent($desktop_win) != 0;
+  my $ desktop_win = GetDesktopWindow ();
+  die "Oops!" if GetParent ($ desktop_win)! = 0;
 
   my @browser_wins;
-  my $browser_name = 'Chrome';
-  for my $win (GetChildWindows($desktop_win)) {
+  my $ browser_name ='Chrome';
+  for my $ win (GetChildWindows ($ desktop_win)) {
 
-    # ウィンドウの名前
-    my $win_text    = GetWindowText($win);
+    #Window name
+    my $ win_text = GetWindowText ($ win);
 
-    # ブラウザ名
-    if ($win_text =~ /\b$browser_name\b/) {
-      if ($win_text =~ /Perlクラブ/) {
-        push @browser_wins, $win;
+    #Browser name
+    if ($ win_text = ~ / \ b $ browser_name \ b /) {
+      if ($ win_text = ~ / Perl Club /) {
+        push @browser_wins, $ win;
       }
     }
   }
 
-  my $browser_wins_count = @browser_wins;
-  unless ($browser_wins_count == 1) {
+  my $ browser_wins_count = @browser_wins;
+  unless ($ browser_wins_count == 1) {
     die "Must be open one window");
   }
-  $win = $browser_wins[0];
+  $ win = $ browser_wins [0];
 }
-</pre>
-<!--
-<h4>キーボード入力</h4>
-    # Consoleタブへ移動
-    SendKeys('^]');
-    # Elementsタブへ移動
-    SendKeys('^[');
-    
-    # 下のタグに移動
-    SendKeys('{DOWN}');
-    # 上のタグに移動(bodyを選択できる
-    SendKeys('{UP}');
-<p>
-  SendKeys('^c');
-</p>
-  SendKeys('^l');
-  SendKeys('^v');
-  SendKeys('{ENTER}');
-  SendKeys('{TAB}' x $baibai_bukken_search_button_tab_press_count);
-  SendKeys('^v');
-    SendKeys('{LEFT}');
-  SendKeys('{RIGHT}' x $bukken_search_results_pagenation_forword_right_count_max);
-  SendKeys('{F12}');
-    SendKeys('^]');
-    SendKeys('^[');
-    SendKeys('{DOWN}');
-    SendKeys('{UP}');
-  SendKeys('^c');
-  SendKeys('{F12}');
-<p>
-  -->
-</p>
-<h3>クリップボード</h3>
-<p>
-  Windowsのクリップボードを扱うには、Win32::Clipboardモジュールを使用します。
-</p>
-<pre>
-use Win32::Clipboard;
-</pre>
-<h4>クリップボードオブジェクトの生成</h4>
-<p>
-  クリップボードオブジェクトをまず作成します。
-</p>
-<pre>
-# クリップボードオブジェクトの作成
-my $clip = Win32::Clipboard-&gt;new;
-</pre>
-<h4>クリップボードにPerl文字列を保存する</h4>
-<p>
-  Setメソッドで、Perlの文字列を保存します。Perlのソースコードは、UTF-8で記述し「use utf8;」を記述していることが前提です。Windowsのクリップボードに、Perl側から文字列を保存するときは、cp932にエンコードして渡します。Windowsのクリップボードのテキストの文字コードが、cp932だからです。
-</p>
-<pre>
-# 文字列をクリップボードに保存
-$clip-&gt;Set(encode('cp932', $string));
-</pre>
-<h4>クリップボードからPerl文字列を取り出す</h4>
-<p>
-  GetAsメソッドの引数に「CF_UNICODETEXT」を指定することで、「UTF16-LE」というユニコードのひとつの符号化形式で取得することができます。これを、PerlのEncode関数のdecode関数を使って、Perlの文字列に変換します。Windowsのクリップボードの内容をPerlの文字列として取得することができます。たんなるGetText関数では、正しく取得できないので、注意しましょう。
-</p>
-<pre>
-# クリップボードからPerl文字列を取り出す
-my $string = $CLIP-&gt;GetAs(CF_UNICODETEXT);
-$text = Encode::decode("UTF16-LE",  $string);
-</pre>
-<h4>クリップボードの内容をフォーム部品に貼り付ける</h4>
-<p>
-  クリップボードの内容を、テキストフィールドや、テキストエリアなどのフォーム部品に貼り付けるには「Ctrl + c」を送信します。「^」は「Ctrl」という意味です。
-</p>
-<pre>
-# クリップボードの内容をフォーム部品に貼り付ける
-SendKeys('^c');
-</pre>
-<h3>RPAロボット作成のポイント</h3>
-<h4>ブラウザの応答を待つ</h4>
-<p>
-  ブラウザの応答を待ちたい場合は、sleep関数を使います。ブラウザの応答が返ってくるなるべく安心な秒を設定しましょう。といっても、ネットワークの状況などに依存しますから、返ってこなくて、次の操作が始まって、動作が変になるということが、発生します。
-</p>
-<pre>
-# 3秒待つ
-sleep 3;
-</pre>
-<h3>RPAロボットの注意点</h3>
-<p>
-  処理自動化・業務効率化において、RPAは、課題点が多い手法です。RPAロボットは、見た瞬間に、その動きに感銘を受けますが、処理速度、プログラムのメンテナンス性、自動化の信頼性が低いということに注意しましょう。
-</p>
-<p>
-  「WindowsのアップグレードでGUI画面が変わってしまったら?」「Webの利用サービスの更新でボタンの位置やテキストの表示が変わってしまったら?」「Webの応答が5秒間返ってこなかったら?」「毎日だれが、そのプログラムをスタートさせるの? 忘れたらどうなるの?」「Linux上などで動いている他のプログラムとの連携はどうするの?」
-</p>
-<p>
-  処理自動化・作業効率化の最初に取りうる基本的で、実際に効果が高い手法は、テキスト化、コマンド化、Web化、バッチ化、RDBMS化です。
-</p>
-<p>
-  この五つの基本的な手段も含めて、まずは検討してみませんか? 限られた部分に対して、RPAは効果を発揮するでしょう。
-</p>
-<p>
-  (まだ続く)
-</p>
+&lt;/ pre&gt;
 
-<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/07/02</div>
-<h2><a href="/blog/20210702173243.html">Perlテキスト処理のエッセンスが発売されました</a></h2>
-<p>
-  Perlゼミを運営する、Perl総合研究所から「Perlテキスト処理のエッセンス」が発売されました。Perlテキスト処理と正規表現の基礎が学べます。
-</p>
-<div style="text-align:center;">
-  <a href="https://perlclub.net/book/perl_text_essense" rel="nofollow"><img src="/images/book/perl_text_essence.jpg" style="width:260px;margin:0 auto;"></a><a href="https://perlclub.net/book/perl_text_essense" rel="nofollow" style="font-size:20px;">Perlテキスト処理のエッセンス発売中</a>
-</div>
-<p>
-  <a href="https://perlclub.net/account/create">Perlクラブへの会員登録</a>で、サンプルコードがダウンロードできます。<a href="https://perlgenki.hatenadiary.com/">Perlテキスト処理のエッセンスの活用ブログ</a>もあり。
-</p>
+&lt;!-
+
+&lt;h4&gt; Keyboard input &lt;/ h4&gt;
+    #Go to Console tab
+    SendKeys ('^]');
+
+    Go to #Elements tab
+    SendKeys ('^ [');
+    
+    # Move to the tag below
+    SendKeys ('{DOWN}');
+
+    #Move to the tag above (body can be selected
+    SendKeys ('{UP}');
+
+SendKeys ('^ c');
+  SendKeys ('^ l');
+  SendKeys ('^ v');
+  SendKeys ('{ENTER}');
+  SendKeys ('{TAB}' x $ baibai_bukken_search_button_tab_press_count);
+  SendKeys ('^ v');
+    SendKeys ('{LEFT}');
+  SendKeys ('{RIGHT}' x $ bukken_search_results_pagenation_forword_right_count_max);
+  SendKeys ('{F12}');
+    SendKeys ('^]');
+    SendKeys ('^ [');
+    SendKeys ('{DOWN}');
+    SendKeys ('{UP}');
+  SendKeys ('^ c');
+  SendKeys ('{F12}');
+-&gt;
+
+
+&lt;h3&gt; Clipboard &lt;/ h3&gt;
+
+Use the Win32 :: Clipboard module to work with the Windows clipboard.
+
+&lt;pre&gt;
+use Win32 :: Clipboard;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Clipboard object generation &lt;/ h4&gt;
+
+First create a clipboard object.
+
+&lt;pre&gt;
+#Clipboard object creation
+my $ clip = Win32 :: Clipboard-&gt; new;
+&lt;/ pre&gt;
+
+&lt;h4&gt; Save Perl string to clipboard &lt;/ h4&gt;
+
+Save the Perl string with the Set method. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written. When saving a character string from the Perl side to the Windows clipboard, encode it in cp932 and pass it. This is because the character code of the text on the Windows clipboard is cp932.
+
+&lt;pre&gt;
+#Save string to clipboard
+$ clip-&gt; Set (encode ('cp932', $ string));
+&lt;/ pre&gt;
+
+&lt;h4&gt; Extract Perl string from clipboard &lt;/ h4&gt;
+
+By specifying "CF_UNICODETEXT" in the argument of the GetAs method, it can be obtained in one Unicode encoding format called "UTF16-LE". Convert this to a Perl string using the Perl Encode function decode function. You can get the contents of the Windows clipboard as a Perl string. Please note that you cannot get it correctly with just the GetText function.
+
+&lt;pre&gt;
+# Fetch a Perl string from the clipboard
+my $ string = $ CLIP-&gt; GetAs (CF_UNICODETEXT);
+$ text = Encode :: decode ("UTF16-LE", $ string);
+&lt;/ pre&gt;
+
+&lt;h4&gt; Paste the contents of the clipboard to the form part &lt;/ h4&gt;
+
+Send "Ctrl + c" to paste the contents of the clipboard into a text field or form part such as a text area. "^" Means "Ctrl".
+
+&lt;pre&gt;
+# Paste the contents of the clipboard into a form part
+SendKeys ('^ c');
+&lt;/ pre&gt;
+
+&lt;h3&gt; Points for creating RPA robots &lt;/ h3&gt;
+
+&lt;h4&gt; Wait for browser response &lt;/ h4&gt;
+
+If you want to wait for the browser response, use the sleep function. Set the seconds as safe as possible when the browser response is returned. However, it depends on the network conditions, so it may happen that the next operation starts and the operation changes without returning.
+
+&lt;pre&gt;
+# Wait 3 seconds
+sleep 3;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Notes on RPA robots &lt;/ h3&gt;
+
+RPA is a method with many problems in processing automation and operational efficiency. RPA robots are impressed with their movement the moment they see them, but keep in mind that processing speed, program maintainability, and automation are unreliable.
+
+"What if the GUI screen changes due to a Windows upgrade?" "What if the button position or text display changes due to an update of the Web service?" "What if the Web response does not come back for 5 seconds?" " Who starts the program every day? What if I forget it? "" How do you work with other programs running on Linux? "
+
+The first basic and effective methods that can be taken to automate processing and improve work efficiency are text conversion, command conversion, Web conversion, batching, and RDBMS conversion.
+
+Why not consider these five basic measures first? RPA will be effective for a limited area.
+
+
+(Still continuing)
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/06/05</div>
-<h2><a href="/blog/20210605102758.html">Perl 6はRakuに名称変更され、Perl 5の後継のPerl 7が計画されている</a></h2>
+<h2><a href="/blog/20210605102758.html"> Perl 6 has been renamed to Raku, and Perl 7 is planned to succeed Perl 5 </a></ h2>
 <p>
-  Perl 5の後継としてかつて開発されていたPerl 6はRakuという名称に変わりました。
+  Perl 6, which was once developed as the successor to Perl 5, has been renamed to Raku.
 </p>
-<h4>Perlはどうなるの?</h4>
+<h4> What happens to Perl? </ H4>
 <p>
-  現在Perlは、Perlの新しいバージョンである<b>Perl 7</b>が将来のリリースに向けて計画されています。Perl6では「6」は言語名に含まれましたが、Perl 7の「7」は言語名の一部ではなく、メジャーバージョン番号となります。
+  Perl is currently planning a new version of Perl, <b> Perl 7 </ b>, for future releases. In Perl 6, "6" is included in the language name, but in Perl 7, "7" is not part of the language name, but a major version number.
 </p>
 <ul>
-  <li><a href="/blog/20210921094146.html">保守性の高いPerl 7の計画</a></li>
-</ul>
+   <li> <a href="/blog/20210921094146.html"> Maintainable Perl 7 plan </a> </ li>
+</ ul>
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/01/07</div>
-<ol class="bread" itemscope itemtype="http://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/">
-        <span itemprop="name">Perl</span></a>
-    <meta itemprop="position" content="1" />
-  </li>
-  &#8250;
-  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
     <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop="name">モジュール</span></a>
-    <meta itemprop="position" content="2" />
-  </li>
-  &#8250;
+      <span itemprop = "name"> Module </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
   <li>
     here
-  </li>
-</ol>
-<h2><a href="/blog/20210107090920.html">Selenium::Chrome - Chromeを使ったJavaScript対応のWebスクレイピング</a></h2>
+  </ li>
+</ ol>
+<h2><a href="/blog/20210107090920.html"> Selenium :: Chrome --JavaScript-enabled web scraping using Chrome </a></ h2>
 <p>
-  Selenium::Chromeを使うと、Chromeを使ったJavaScript対応のWebスクレイピングができます。Selenium::Chromeは<a href="/blog/20210105145700.html">Selenium::Remote::Driver</a>をChrome用に拡張したものです。Selenium::Remote::Driverをインストールすると利用できるようになります。
+  Selenium :: Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium :: Chrome is an extension of <a href="/blog/20210105145700.html"> Selenium :: Remote :: Driver </a> for Chrome. You can use it by installing Selenium :: Remote :: Driver.
 </p>
-<h4>Windows, Macで実行する場合</h4>
+<h4> When running on Windows, Mac </ h4>
 <pre>
-# Windows, Macで実行する場合
-use Selenium::Chrome;
-my $driver = Selenium::Chrome-&gt;new;
-$driver-&gt;get('http://www.google.com');
-print $driver-&gt;get_title();
-$driver-&gt;shutdown_binary();
-</pre>
-<h4>Unix/LinuxなどGUI画面がない場合に、ヘッドレス実行する場合</h4>
-<p>
-  GUI環境がない場合にCUI画面で実行する場合は以下のようにヘッドレス実行します。
-</p>
-<pre>
-# Unix/LinuxなどGUI画面がない場合に、ヘッドレス実行する場合
-use Selenium::Chrome;
-my $driver = Selenium::Chrome-&gt;new(
+# When running on Windows, Mac
+use Selenium :: Chrome;
+my $ driver = Selenium :: Chrome-&gt; new;
+$ driver-&gt; get ('http://www.google.com');
+print $ driver-&gt; get_title ();
+$ driver-&gt; shutdown_binary ();
+&lt;/ pre&gt;
+
+&lt;h4&gt; When executing headless when there is no GUI screen such as Unix / Linux &lt;/ h4&gt;
+
+If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
+
+&lt;pre&gt;
+When executing headless when there is no GUI screen such as # Unix / Linux
+use Selenium :: Chrome;
+my $ driver = Selenium :: Chrome-&gt; new (
   extra_capabilities =&gt; {
-    'goog:chromeOptions' =&gt; {
-      args =&gt; ['headless', 'disable-gpu', 'window-size=1920,1080', 'no-sandbox' ]
+    'goog: chromeOptions' =&gt; {
+      args =&gt; ['headless','disable-gpu','window-size = 1920,1080','no-sandbox']
     }
   }
 );
-$driver-&gt;get('http://www.google.com');
-print $driver-&gt;get_title();
-$driver-&gt;shutdown_binary();
-</pre>
-<p>
-  以下のようなエラーが発生した場合は、上記のオプションをつけてヘッドレス実行してください。
-</p>
-<blockquote>
-<p>
-  Could not create new session: unknown error: Chrome failed to start: exited abnormally.
-</p>
+$ driver-&gt; get ('http://www.google.com');
+print $ driver-&gt; get_title ();
+$ driver-&gt; shutdown_binary ();
+&lt;/ pre&gt;
+
+If the following error occurs, please execute headless with the above option.
+
+&lt;blockquote&gt;
+Could not create new session: unknown error: Chrome failed to start: exited abnormally.
   (unknown error: DevToolsActivePort file doesn't exist)
-  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) at access.pl line 79.
-</blockquote>
-<h3>実行環境の準備</h3>
-<p>
-  Selenium::Chromeを使ったJavaScript対応のWebスクレイピングの実行環境として、Chromeブラウザ本体とChromeDriverが必要になります。ChromeDriverはChrome本体を操作するためのソフトウェアです。環境構築手順はOSによって異なります、以下を参考にしてください。
-</p>
-<p>
-  バイナリ互換性の問題が発生しないように、Chromeブラウザ本体とChromeDriverのバージョンはできる限り合わせるのが良いです。
-</p>
-<h4>Unix/Linuxの場合</h4>
-<p>
-  <a href="https://centos.perlclub.net/blog/20210103090837.html">ChromeDriverをインストールする - Cent OS 7</a>
-</p>
-<p>
-  <a href="https://centos.perlclub.net/blog/20210104090837.html">Google Chromeをインストールする - CentOS 7</a>
-</p>
-<p>
-  Ubuntu、Debian、FreeBSDなどの他の<a href="https://linux.perlclub.net/">UNIX/Linux</a>の場合は、Chromeブラウザ本体とChromeDriverのインストール方法を検索してみましょう。
-</p>
-<h4>Windows</h4>
-<p>
-  <a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27">SPAサイトにおいて、Selenium::Remote::DriverでGUIテストを行う</a>の環境構築手順が参考になります。
-</p>
-<p>
-  <a href="https://perlzemi.com/blog/20080602121231.html">Active Perl</a>でも<a href="https://perlzemi.com/blog/20180808153368.html">Strawberry Perl</a>でも大丈夫かと思います。
-</p>
-<h4>Macの場合</h4>
-<p>
-  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Perl から Selenium を使う</a>の環境構築手順が参考になります。
-</p>
+  (The process started from chrome location / usr / bin / google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) At access.pl line 79.
+&lt;/ blockquote&gt;
+
+&lt;h3&gt; Preparation of execution environment &lt;/ h3&gt;
+
+Chrome browser and Chrome Driver are required as an execution environment for JavaScript-compatible web scraping using Selenium :: Chrome. Chrome Driver is software for operating Chrome itself. The environment construction procedure differs depending on the OS, refer to the following.
+
+It's a good idea to match Chrome browser and Chrome Driver versions as much as possible to avoid binary compatibility issues.
+
+&lt;h4&gt; For Unix / Linux &lt;/ h4&gt;
+
+&lt;a href="https://centos.perlclub.net/blog/20210103090837.html"&gt; Install Chrome Driver --Cent OS 7 &lt;/a&gt;
+
+&lt;a href="https://centos.perlclub.net/blog/20210104090837.html"&gt; Install Google Chrome --CentOS 7 &lt;/a&gt;
+
+For other &lt;a href="https://linux.perlclub.net/"&gt; UNIX / Linux &lt;/a&gt; such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
+
+&lt;h4&gt; Windows &lt;/ h4&gt;
+
+&lt;a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27"&gt; On the SPA site, the environment construction procedure of performing GUI test with Selenium :: Remote :: Driver &lt;/a&gt; will be helpful.
+
+&lt;a href="https://perlzemi.com/blog/20080602121231.html"&gt; Active Perl &lt;/a&gt; but &lt;a href="https://perlzemi.com/blog/20180808153368.html"&gt; Strawberry Perl &lt; / a&gt; I think it's okay.
+
+&lt;h4&gt; For Mac &lt;/ h4&gt;
+
+&lt;a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455"&gt; Using Selenium from Perl &lt;/a&gt; The environment construction procedure will be helpful.
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/01/06</div>
-<h2><a href="/blog/20210106145700.html">Selenium::FirefoxでJavaScript対応のWebスクレイピングを行う</a></h2>
+<h2><a href="/blog/20210106145700.html"> Selenium :: Firefox for JavaScript-enabled web scraping </a></ h2>
 <p>
-  Selenium::FirefoxでJavaScript対応のWebスクレイピングを行ってみます。Selenium::Firefoxは、Firefox用にカスタマイズされた<a href="/blog/20210105145700.html">Selenium::Remote::Driver</a>です。
+  Let's do JavaScript-enabled web scraping with Selenium :: Firefox. Selenium :: Firefox is a <a href="/blog/20210105145700.html"> Selenium :: Remote :: Driver </a> customized for Firefox.
 </p>
 <pre>
-# ドライバを生成。以下の二つは同じですが、Firefox 48+でのみ動作します。
-my $driver = Selenium::Firefox-&gt;new;
-$driver = Selenium::Firefox-&gt;new( marionette_enabled =&gt; 1 );
+#Generate driver. The following two are the same, but only work with Firefox 48+.
+my $ driver = Selenium :: Firefox-&gt; new;
+$ driver = Selenium :: Firefox-&gt; new (marionette_enabled =&gt; 1);
  
-# 何かを行う
+# Do something
 
-# ドライバをシャットダウンする
-$driver-&gt;shutdown_binary;
+#Shut down the driver
+$ driver-&gt; shutdown_binary;
 
-# For Firefox 47とそれりも古い場合。マリオネットは無効になっています。
-$driver = Selenium::Firefox-&gt;new( marionette_enabled =&gt; 0 );
-$driver-&gt;shutdown_binary;&lt;/pre&gt;
-</pre>
-<h3>実行環境の準備</h3>
-<h4>Macの場合</h4>
+# For Firefox 47 and if it's too old. Marionettes are disabled.
+$ driver = Selenium :: Firefox-&gt; new (marionette_enabled =&gt; 0);
+$ driver-&gt; shutdown_binary; &lt;/ pre&gt;
+&lt;/ pre&gt;
+
+&lt;h3&gt; Preparation of execution environment &lt;/ h3&gt;
+
+&lt;h4&gt; For Mac &lt;/ h4&gt;
+
+&lt;a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455"&gt; Using Selenium from Perl &lt;/a&gt; The environment construction procedure will be helpful.
+
+<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2020/10/30</div>
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <a itemprop="item" href="/">
+        <span itemprop = "name"> Perl </ span> </a>
+    <meta itemprop = "position" content = "1" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161022147731.html">
+        <span itemprop = "name"> Syntax </ span> </a>
+    <meta itemprop = "position" content = "2" />
+  </ li>
+  & # 8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
+    <a itemprop="item" href="/blog/20161003147558.html">
+        <span itemprop = "name"> string </ span> </a>
+    <meta itemprop = "position" content = "3" />
+  </ li>
+  & # 8250;
+  <li>
+    here
+  </ li>
+</ ol>
+<h2><a href="/blog/20201030075254.html"> Escape sequence of double quoted strings </a></ h2>
 <p>
-  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Perl から Selenium を使う</a>の環境構築手順が参考になります。
+  Here are the escape sequences that can be used in double-quoted strings.
 </p>
+<h3> Escape sequence corresponding to ASCII code </ h3>
+<p>
+  Frequently used ones are line breaks "\ n" and tabs "\ t".
+</p>
+<table>
+  <tr> <th> Escape <br> Sequence </ th> <th> Code <br> Point <br> Decimal </ th> <th> Code <br> Point <br> Hexadecimal </ th> < th> ASCII </ th> <th> meaning </ th> </ tr>
+  <tr> <td> \ a </ td> <td> 7 </ td> <td> 07 </ td> <td> BEL </ td> <td> Alarm or Bell </ td> </ tr>
+  <tr> <td> \ b </ td> <td> 8 </ td> <td> 08 </ td> <td> BS </ td> <td> Backspace </ td> </ tr>
+  <tr> <td> \ e </ td> <td> 27 </ td> <td> 1B </ td> <td> ESC </ td> <td> Escape Sequence </ td> </ tr>
+  <tr> <td> \ f </ td> <td> 12 </ td> <td> 0C </ td> <td> FF </ td> <td> form feed </ td> </ tr>
+  <tr> <td> \ n </ td> <td> 10 </ td> <td> 0A </ td> <td> LF </ td> <td> Line feed </ td> </ tr>
+  <tr> <td> \ r </ td> <td> 13 </ td> <td> 0D </ td> <td> CR </ td> <td> Carriage return </ td> </ tr>
+  <tr> <td> \ t </ td> <td> 9 </ td> <td> 09 </ td> <td> TAB </ td> <td> Tab </ td> </ tr>
+</ table>
+<p>
+  This is a sample using the escape sequence of tabs and line breaks.
+</p>
+<pre>
+# Use tabs and line breaks
+my $ line = "ID \ tName \ tPrice \ n";
+&lt;/ pre&gt;
+
+&lt;h3&gt; Occasional escape sequences &lt;/ h3&gt;
+
+I also sometimes use escape sequences that represent double quotes "\" "and backslashes themselves" \\ ".
+
+&lt;table&gt;
+  &lt;tr&gt; &lt;th&gt; Escape &lt;br&gt; Sequence &lt;/ th&gt; &lt;th&gt; Meaning &lt;/ th&gt; &lt;/ tr&gt;
+  &lt;tr&gt; &lt;td&gt; \ "&lt;/ td&gt; &lt;td&gt;" &lt;/ td&gt; &lt;/ tr&gt;
+  &lt;tr&gt; &lt;td&gt; \\ &lt;/ td&gt; &lt;td&gt; \ &lt;/ td&gt; &lt;/ tr&gt;
+&lt;/ table&gt;
+
+&lt;h3&gt; Notes on line break "\ n" &lt;/ h3&gt;
+
+There is one caveat regarding line breaks "\ n".
+
+In the source code of the program, "\ n" is a single character and represents "LF" in ASCII code and "0A" in hexadecimal. This matches the Linx / Unix line feed code.
+
+One thing to keep in mind is that Perl's I / O layer automatically converts to OS line feed code when outputting to standard output or files.
+
+"\ N" is converted to a two-character line feed code "0D 0A" on Windows. On Unix / Linux / macOS, it is "0A" without conversion.
+
+&lt;pre&gt;
+# "0D 0A" on Windows, "0A" on Unix / Linux / Mac
+print "Hello \ n";
+&lt;/ pre&gt;
+
+To avoid this conversion, use escape sequences that directly specify the ASCII code. How to specify the ASCII code directly is explained below.
+
+&lt;h3&gt; Escape sequence that directly describes ASCII code &lt;/ h3&gt;
+ 
+There are also escape sequences that allow you to write the ASCII code itself in hexadecimal by starting with "\ x".
+
+&lt;pre&gt;
+#Specify ASCII code directly in hexadecimal to represent HTTP protocol line breaks
+my $ message = "Hello \ x0D \ x0A";
+print $ message;
+&lt;/ pre&gt;
+
+The above example is a sample that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\ x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
+
+&lt;h3&gt; Document with all escape sequences &lt;/ h3&gt;
+
+Below is the Perl documentation with all the escape sequences.
+
+&lt;ul&gt;
+  &lt;li&gt; &lt;a href="https://perldoc.jp/docs/perl/5.10.1/perlrebackslash.pod"&gt; perlrebackslash --Perl regular expression reverse slash sequence and escape --perldoc.jp &lt;/a&gt; &lt;/ li &gt;
+&lt;/ ul&gt;
+
+Although it covers all the escape sequences of regular expressions, the escape sequences of double-quoted strings are included in the escape sequences of regular expressions, so let's refer only to the escape sequences of the part related to double-quoted strings.
 
 
   </div>
