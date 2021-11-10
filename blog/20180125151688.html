@@ -99,7 +99,7 @@ Sentence 1 or Sentence 2
 </p>
 <pre>
 open my $fh, '&lt;', $file
-  or die qq/Can't open file "$file": $!/;
+  or die qq/Can't open file "$file":$!/;
 </pre>
 <p>
   If the open function succeeds, true is returned and the right-hand side of or is not executed. If the open function fails, undef is returned, so <a href="/blog/20100212126425.html">die</a> on the right side is executed and the program ends.
@@ -118,7 +118,7 @@ system(@cmd) == 0
   You can use "and" for conditional branching, but "or" is recommended because it is difficult to read.
 </p>
 <pre>
-Example rewritten with # and
+# Example rewritten with and
 system(@cmd)
   and die "Can't execute command @cmd";
 </pre>

@@ -125,7 +125,7 @@ $dirname = dirname $file;
 <pre>
 # Get base name and directory name
 use File::Basename qw/basename dirname/;
-my $file ='dir/a.txt';
+my $file = 'dir/a.txt';
 my $basename = basename $file;
 my $dirname = dirname $file;
 </pre>
@@ -150,7 +150,7 @@ my $dirname = dirname $file;
 <pre>
 # Extract extension
 use File::Basename 'fileparse';
-my $file ='dir/a.txt';
+my $file = 'dir/a.txt';
 my ($basename, $dirname, $ext) = fileparse ($file, qr/\ .. * $/);
 </pre>
 <p>

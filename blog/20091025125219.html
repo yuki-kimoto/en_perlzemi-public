@@ -251,7 +251,7 @@ $ret = rindex($str, $search);
   Use the <a href="/blog/20080301120434.html">split function</a> to split the string by the delimiter.
 </p>
 <pre>
-@ret = split(/, /, $str);
+@ret = split(/,/, $str);
 </pre>
 <p>
   Specify the delimiter as a regular expression in the first argument. In the second argument, specify the character string you want to split. The return value is an array of split strings.
@@ -371,7 +371,7 @@ qq (aaa "bbb)
 # Same as this
 "aaa \" bbb "
 </pre>
-<h4> quotemeta </​​h4>
+<h4> quotemeta </h4>
 <p>
   Use the <a href="/blog/20100329127089.html">quotemeta function</a> to escape special strings used in regular expressions.
 </p>
@@ -483,7 +483,7 @@ splice(@array, $pos, $size, @items);
   Use <a href="/blog/20080216120316.html">Array Slice</a> to get multiple elements from an array.
 </p>
 <pre>
-@ret = @array [0, 1, 3];
+@ret = @array[0, 1, 3];
 </pre>
 <p>
   In this example, the 0th, 1st, and 3rd elements of @array are assigned to @ret.
@@ -499,10 +499,10 @@ splice(@array, $pos, $size, @items);
   This is a sample to extract a value larger than 3.
 </p>
 <pre>
-@ret = grep {$_&gt; 3} @array;
+@ret = grep {$_ &gt; 3} @array;
 </pre>
 <p>
-  The elements of the array are sequentially assigned to $_. Only those that satisfy $_> 3 will be assigned to @ret.
+  The elements of the array are sequentially assigned to $_. Only those that satisfy $_ > 3 will be assigned to @ret.
 </p>
 <h4> map </h4>
 <p>
@@ -619,7 +619,7 @@ use List::Util 'shuffle';
   You can use the <a href="/blog/20100303126967.html">string list operator</a> to represent a list of strings without commas or quotes.
 </p>
 <pre>
-@array = qw (cat dob ​​mouse);
+@array = qw(cat dob mouse);
 </pre>
 <div id = "hash"></div>
 <h3> 4 Hash operation </h3>
@@ -630,9 +630,9 @@ use List::Util 'shuffle';
 <pre>
 @ret = keys %hash;
 </pre>
-<h4> values ​​</h4>
+<h4> values </h4>
 <p>
-  To get all the values ​​of a hashUse the <a href="/blog/20100222126425.html">values ​​function</a>.
+  To get all the values of a hashUse the <a href="/blog/20100222126425.html">values function</a>.
 </p>
 <pre>
 @ret = values %hash;
@@ -681,7 +681,7 @@ delete $hash{$key};
 </p>
 <pre>
 open(my $fh, "&lt;", $file)
-  or die "Cannot open $file: $!";
+  or die "Cannot open $file:$!";
 </pre>
 <p>
   If the file is opened successfully, the file handle is assigned to $fh. (Declaring $fh and passing it to the open function at the same time.)
@@ -744,7 +744,7 @@ $ret = fileno $fh;
 </p>
 <pre>
 opendir(my $dh, $dir)
-  or die "Cannot open $dir: $!";
+  or die "Cannot open $dir:$!";
 </pre>
 <p>
   The opened directory handle is assigned to $dh. It is necessary to handle the error when the directory open fails.
@@ -779,7 +779,7 @@ while (my $file = readdir $dh) {
 </p>
 <pre>
 unlink $file
-  or die "Cannot remove $file: $!";
+  or die "Cannot remove $file:$!";
 </pre>
 <h4> copy (File::Copy) </h4>
 <p>
@@ -788,7 +788,7 @@ unlink $file
 <pre>
 use File::Copy 'copy';
 copy ($file_from, $file_to)
-  or die "Cannot copy $file_from to $file_to: $!";
+  or die "Cannot copy $file_from to $file_to:$!";
 </pre>
 <h4> move (File::Copy) </h4>
 <p>
@@ -797,7 +797,7 @@ copy ($file_from, $file_to)
 <pre>
 use File::Copy 'copy';
 move ($file_from, $file_to)
-  or die "Cannot move $file_from to $file_to: $!";
+  or die "Cannot move $file_from to $file_to:$!";
 </pre>
 <h4> chdir </h4>
 <p>
@@ -805,7 +805,7 @@ move ($file_from, $file_to)
 </p>
 <pre>
 chdir $dir
-  or die "Cannot change directory $dir: $!";
+  or die "Cannot change directory $dir:$!";
 </pre>
 <h4> mkdir </h4>
 <p>
@@ -813,7 +813,7 @@ chdir $dir
 </p>
 <pre>
 mkdir $dir
-  or die "Cannot create directory $dir: $!";
+  or die "Cannot create directory $dir:$!";
 </pre>
 <h4> rmdir </h4>
 <p>
@@ -821,9 +821,9 @@ mkdir $dir
 </p>
 <pre>
 rmdir $dir
-  or die "Cannot remove directory $dir: $!";
+  or die "Cannot remove directory $dir:$!";
 </pre>
-<h4> mkpath (File::Path) </h4>
+<h4> mkpath(File::Path) </h4>
 <p>
   To create a multi-level directory, use the mkpath function of the <a href="/blog/20100409127089.html">File::Path</a> module.
 </p>
@@ -840,14 +840,14 @@ if ($@) {
 <p>
   If mkpath fails, an exception will be thrown, so catch it with the eval block. The content of the error when an exception occurs is stored in $@.
 </p>
-<h4> rmtree (File::Path) </h4>
+<h4> rmtree(File::Path) </h4>
 <p>
   If you want to delete the directory that contains the files inside, use the rmtree function of the <a href="/blog/20100409127089.html">File::Path module</a>.
 </p>
 <pre>
 use File::Path 'rmtree';
 
-rmtree ($dir, {error =&gt; \ my $errors});
+rmtree($dir, {error =&gt;\my $errors});
 for my $diag (@$errors) {
   my ($file, $message) = each %$diag;
   warn "problem unlinking $file: $message\n";
@@ -870,9 +870,9 @@ $ret = getcwd;
 </p>
 <pre>
 chmod($permission, $file)
-  or die "Cannot change permission $file: $!";
+  or die "Cannot change permission $file:$!";
 </pre>
-<h4> basename (File::Basename) </h4>
+<h4> basename(File::Basename) </h4>
 <p>
   To retrieve the base name of a file, use the basename function of the <a href="/blog/20100225126425.html">File::Basename module</a>.
 </p>
@@ -883,7 +883,7 @@ $ret = basename $file;
 <p>
   If the file name is /a/b/c.txt, c.txt is the base name.
 </p>
-<h4> dirname (File::Basename) </h4>
+<h4> dirname(File::Basename) </h4>
 <p>
   To get the name of the directory that contains the file, use the dirname function of the <a href="/blog/20100225126425.html">File::Basename module</a>.
 </p>
@@ -1125,7 +1125,7 @@ $@Eval error
 </p>
 <pre>
 use File::Spec;
-my $file_name = File::Spec-&gt;catfile ('dir', 'file.txt');
+my $file_name = File::Spec-&gt;catfile('dir', 'file.txt');
 </pre>
 <p>
   On Windows operating systems, $file_name is dir\file.txt, and on Unix operating systems, the file name is dir/file.txt.
@@ -1158,10 +1158,10 @@ use lib qw /. lib/;
 <pre>
 use Carp qw/croak carp/;
 
-Same as # die
-croak ($​​message);
+# Same as die
+croak ($message);
 
-Same as # warn
+# Same as warn
 carp ($message);
 </pre>
 <h4> Get::Options </h4>
@@ -1178,13 +1178,13 @@ perl script_name - length = 100 - file = test.txt - verbose
 use Getopt::Long 'GetOptions';
 
 # Set default value
-my $data ='file.dat';
+my $data = 'file.dat';
 my $length = 24;
 my $verbose;
 
 # Receive value from command line option
 # (Numeric value,String, boolean value)
-GetOptions (
+GetOptions(
   'length = i'=&gt; \$length,
   'file = s'=&gt; \$data,
   'verbose' =&gt; \$verbose
@@ -1209,7 +1209,7 @@ my $host = $url-&gt;host;
 my $path = $url-&gt;path;
 
 # URL query string settings
-$url-&gt;query_form (name =&gt;'taro', age =&gt; 13);
+$url-&gt;query_form(name =&gt;'taro', age =&gt; 13);
 
 # URL query string name = taro &amp; age = 13
 my $query = $url-&gt;query;
@@ -1224,7 +1224,7 @@ my $url_str = $url-&gt;as_string;
 <pre>
 use Data::Dumper;
 my $hash = {a =&gt; 1, b =&gt; 2};
-print Data::Dumper-&gt;Dump ([$hash], ['$hash']);
+print Data::Dumper-&gt;Dump([$hash], ['$hash']);
 </pre>
 <h4> XML::Simple </h4>
 <p>
@@ -1233,7 +1233,7 @@ print Data::Dumper-&gt;Dump ([$hash], ['$hash']);
 <pre>
 use XML::Simple;
 my $xml = XML::Simple-&gt;new;
-my $hash = $xml-&gt;XMLin ($xml_file);
+my $hash = $xml-&gt;XMLin($xml_file);
 </pre>
 <p>
   You can parse an XML file with the XMLin method and convert it to a Perl data structure.
@@ -1245,7 +1245,7 @@ my $hash = $xml-&gt;XMLin ($xml_file);
 <pre>
 use LWP::UserAgent;
 my $ua = LWP::UserAgent-&gt;new;
-my $response = $ua-&gt;get ($url);
+my $response = $ua-&gt;get($url);
 
 my $content; # Obtained content
 if ($response-&gt;is_success) {
@@ -1270,15 +1270,15 @@ my $ftp = Net::FTP-&gt;new($host)
   or die "Cannot connect to $host: $@";
 
 # Login by specifying user name and password
-$ftp-&gt;login ($user, $password)
+$ftp-&gt;login($user, $password)
   or die "Cannot login", $ftp-&gt;message;
 
 # Change current directory
-$ftp-&gt;cwd ($dir)
+$ftp-&gt;cwd($dir)
   or die "Cannot change working directory", $ft
 
 # Get file
-$ftp-&gt;get ($file)
+$ftp-&gt;get($file)
   or die "get failed", $ftp-&gt;message;
 
 # FTP disconnection

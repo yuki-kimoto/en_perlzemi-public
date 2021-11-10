@@ -65,7 +65,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100427127089.html"> JSON - Analyzing JSON data </a></​​h2>
+<h2><a href="/blog/20100427127089.html"> JSON - Analyzing JSON data </a></h2>
 <p>
   You can use the <strong> JSON module </strong> to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages.
 </p>
@@ -94,7 +94,7 @@ use JSON qw/encode_json decode_json/;
 </p>
 <pre>
 # Convert JSON to Perl data structures
-my $json_in ='[{"name": "Ken", "age": 19}, {"name": "Ken", "age": 25}]';
+my $json_in = '[{"name": "Ken", "age": 19}, {"name": "Ken", "age": 25}]';
 
 my $data = decode_json ($json_in);
 </pre>
@@ -145,11 +145,9 @@ my $json_out = encode_json ($data);
 </p>
 <pre>
 UTF-8 byte string-JSON UTF-8 byte string-Perl data
-                      \ \
-encode_json is \
-Conversion to top left \
-                         \ decode_json is the conversion to the lower right
-                          \ \
+\\
+encode_json is\Conversion to top left\\decode_json is the conversion to the lower right
+\\
 Internal string JSON Internal string-Perl data
 </pre>
 <p>
@@ -163,7 +161,7 @@ Internal string JSON Internal string-Perl data
 use utf8;
 use JSON 'decode_json';
 
-my $json ='{"name": "Masuda"}';
+my $json = '{"name": "Masuda"}';
 
 my $data = decode_json ($json);
 </pre>
@@ -176,7 +174,7 @@ use utf8;
 use JSON 'decode_json';
 use Encode 'encode_utf8';
 
-my $json ='{"name": "Masuda"}';
+my $json = '{"name": "Masuda"}';
 
 # Convert to UTF-8 byte string
 $json = encode_utf8 ($json);
@@ -200,7 +198,7 @@ sub get_content {
   my $file = shift;
 
   open my $fh, '&lt;', $file
-    or die "Can't open file \" $file \ ": $!";
+    or die "Can't open file \" $file\":$!";
   
   my $content = do {local $/; &lt;$fh&gt;};
  

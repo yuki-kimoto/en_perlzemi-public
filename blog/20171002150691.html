@@ -92,11 +92,11 @@ opendir directory handle directory name
 </p>
 <pre>
 # Directory name
-my $dir ='study';
+my $dir = 'study';
 
 # Open directory
 opendir my $dh, $dir
-  or die "Can't open directory $dir: $!"
+  or die "Can't open directory $dir:$!"
 </pre>
 <p>
   An undefined variable is specified in the first argument, but <a href="/blog/20161107147852.html">variable declaration by my</a> is performed at the same time. The second argument specifies the directory name.
@@ -126,11 +126,11 @@ opendir my $dh, $dir
 <pre>
 {
   # Directory name
-  my $dir ='study';
+  my $dir = 'study';
 
   # Open directory
   opendir my $dh, $dir
-    or die "Can't open directory $dir: $!"
+    or die "Can't open directory $dir:$!"
 }
 
 # The directory handle is automatically closed when the scope ends

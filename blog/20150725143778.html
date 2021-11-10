@@ -180,8 +180,8 @@ make manifest
   Unnecessary files can be added to MANIFEST by writing them in <b> MANIFEST.SKIP </b>. Below is a sample of MANIFEST.SKIP. You can specify the file you want to skip with <a href="/blog/20100827127859.html">Regular expression</a>.
 </p>
 <pre>
-\ bRCS \ b
-\ bCVS \ b
+\ bRCS\b
+\ bCVS\b
 ^ MANIFEST \.
 ^ Makefile $
 ^ Build $
@@ -191,7 +191,7 @@ make manifest
 ^ blib/^ pm_to_blib
 \ .cvsignore
 \ .gz $
-^ \ .git
+^\.git
 ^ cover_db/^ MYMETA.yml $
 ^ MYMETA.json $
 ^ spvm $
@@ -308,7 +308,7 @@ WriteMakefile (
     NAME =&gt;'Rstats::Element',
     VERSION_FROM =&gt;'lib/Rstats/Element.pm',
     PREREQ_PM =&gt; {},
-    ($]&gt; = 5.005?
+    ($] &gt;= 5.005?
       (ABSTRACT_FROM =&gt;'lib/Rstats/Element.pm',
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;'): ()),
     LIBS =&gt; [''],
@@ -352,7 +352,7 @@ WriteMakefile (
     AUTHOR =&gt;'Yuki Kimoto &lt;kimoto.yuki@gmail.com&gt;',
     VERSION_FROM =&gt;'lib/Rstats.pm',
     ABSTRACT_FROM =&gt;'lib/Rstats.pm',
-    ($ExtUtils::MakeMaker::VERSION&gt; = 6.3002
+    ($ExtUtils::MakeMaker::VERSION &gt;= 6.3002
       ? ('LICENSE'=&gt;' perl')
       : ()),
     PL_FILES =&gt; {},
@@ -478,7 +478,7 @@ WriteMakefile (
     AUTHOR =&gt;'Yuki Kimoto &lt;kimoto.yuki@gmail.com&gt;',
     VERSION_FROM =&gt;'lib/Rstats.pm',
     ABSTRACT_FROM =&gt;'lib/Rstats.pm',
-    ($ExtUtils::MakeMaker::VERSION&gt; = 6.3002
+    ($ExtUtils::MakeMaker::VERSION &gt;= 6.3002
       ? ('LICENSE'=&gt;' perl')
       : ()),
     PL_FILES =&gt; {},

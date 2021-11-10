@@ -98,7 +98,7 @@
 </ul>
 <h3> Logical product (A and B) </h3>
 <pre>
-if ($num&gt; 1 &amp;&amp; $num &lt;4) {
+if ($num &gt; 1 &amp;&amp; $num &lt; 4) {
   print "\$num is greater than 1 and less than 4\n\n";
 }
 </pre>
@@ -110,7 +110,7 @@ if ($pet eq 'dog' || $pet eq 'cat') {
 </pre>
 <h3> Negation (not A) </h3>
 <pre>
-if (! $num0) {
+if (!$num0) {
   print "! \$Num is true\n";
 }
 </pre>
@@ -125,19 +125,19 @@ use warnings;
 # AND, OR, negation
 print "1. Logical product (A and B)\n";
 my $num = 3;
-if ($num&gt; 1 &amp;&amp; $num &lt;4) {
+if ($num &gt; 1 &amp;&amp; $num &lt; 4) {
   print "\$num is greater than 1 and less than 4\n\n";
 }
 
 print "2. OR (A or B)\n";
-my $pet ='dog';
+my $pet = 'dog';
 if ($pet eq 'dog' || $pet eq 'cat') {
   print "\$pet is either'dog'or'cat'.\n\n";
 }
 
 print "3. Negation (not A)\n";
 my $num0 = 0;
-if (! $num0) {
+if (!$num0) {
   print "! \$Num is true\n";
 }
 </pre>

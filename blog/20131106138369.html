@@ -101,7 +101,7 @@ ppm install http://www.sisyphusion.tk/ppm/PDL-Graphics-PLplot.ppd - force
 </p>
 <pre>
   In order to utilise the built in plplot capability set your
-  PLPLOT_LIB environment variable to C: \ Perl \ site \ lib \ PDL \ plplot_supp
+  PLPLOT_LIB environment variable to C:\Perl\site\lib\PDL\plplot_supp
 </pre>
 <p>
   Versions that support png
@@ -120,10 +120,10 @@ Running PDL-Graphics-PLplot-0.62 install script ...
   In order to utilise the built in plplot capability set your
 
   PLPLOT_LIB environment variable to:
-   C: \ Perl64 \ site \ lib \ PDL \ plplot_supp
+   C:\Perl64\site\lib\PDL\plplot_supp
 
   And set your PLPLOT_DRV_DIR environment variable to:
-   C: \ Perl64 \ site \ bin
+   C:\Perl64\site\bin
 </pre>
 <h3> Creating a simple graph </h3>
 <p>
@@ -141,13 +141,13 @@ use PDL::Graphics::PLplot;
 my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # Create a PDL variable that represents 0 to 99 as the value of x
-my $x = pdl-&gt;sequence (100);
+my $x = pdl-&gt;sequence(100);
 
 # y = 2x
 my $y = 2 * $x;
 
 # Create a graph
-$pl-&gt;xyplot ($x, $y);
+$pl-&gt;xyplot($x, $y);
 
 # Close
 $pl-&gt;close;
@@ -185,7 +185,7 @@ PAGESIZE =&gt; [500, 400]
   This option is specified when drawing the graph.
 </p>
 <pre>
-$pl-&gt;xyplot ($x, $y, XLAB =&gt;'x', YLAB =&gt;'y');
+$pl-&gt;xyplot($x, $y, XLAB =&gt;'x', YLAB =&gt;'y');
 </pre>
 <p>
   <b> x-axis label </b>
@@ -266,7 +266,7 @@ VIEWPORT =&gt; [0.1, 0.5, 0.1, 0.5]
   <b> Draw x-axis </b>
 </p>
 <p>
-  Specify <strong> bcnsta </​​strong> for <strong> XBOX </strong> to draw the x-axis. This value defaults to <strong> bcnst </strong> and you can add <strong> a </strong> to draw the x-axis.
+  Specify <strong> bcnsta </strong> for <strong> XBOX </strong> to draw the x-axis. This value defaults to <strong> bcnst </strong> and you can add <strong> a </strong> to draw the x-axis.
 </p>
 <pre>
 XBOX =&gt;'bcnsta',
@@ -275,7 +275,7 @@ XBOX =&gt;'bcnsta',
   <b> Draw x-axis </b>
 </p>
 <p>
-  Specify <strong> bcnsta </​​strong> for <strong> YBOX </strong> to draw the y-axis. This value defaults to <strong> bcnst </strong> and you can add <strong> a </strong> to draw the y-axis.
+  Specify <strong> bcnsta </strong> for <strong> YBOX </strong> to draw the y-axis. This value defaults to <strong> bcnst </strong> and you can add <strong> a </strong> to draw the y-axis.
 </p>
 <pre>
 YBOX =&gt;'bcnsta',
@@ -324,13 +324,13 @@ my $pl = PDL::Graphics::PLplot-&gt;new(
 );
 
 # Create a PDL variable that represents 0 to 99 as the value of x
-my $x = pdl-&gt;sequence (100)- 50;
+my $x = pdl-&gt;sequence(100)- 50;
 
 # y = 2x
 my $y = (1/2) * $x + 10;
 
 # Create a graph
-$pl-&gt;xyplot (
+$pl-&gt;xyplot(
   $x,
   $y,
   XLAB =&gt;'x',
@@ -363,13 +363,13 @@ use PDL::Graphics::PLplot;
 my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value (0 to 4 in 0.1 increments)
-my $x = pdl-&gt;sequence (40) * 0.1;
+my $x = pdl-&gt;sequence(40) * 0.1;
 
 # y = x ^ 3 - 6x ^ 2 + 11x -6
 my $y = ($x ** 3) -6 * ($x ** 2) + (11 * $x) -6;
 
 # Create a graph
-$pl-&gt;xyplot ($x, $y);
+$pl-&gt;xyplot($x, $y);
 
 # Close
 $pl-&gt;close;
@@ -392,13 +392,13 @@ use PDL::Graphics::PLplot;
 my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
-my $x = pdl-&gt;sequence (200) * 0.1;
+my $x = pdl-&gt;sequence(200) * 0.1;
 
 # y = sin(x)
 my $y = $x-&gt;sin;
 
 # Create a graph
-$pl-&gt;xyplot ($x, $y);
+$pl-&gt;xyplot($x, $y);
 
 # Close
 $pl-&gt;close;
@@ -424,13 +424,13 @@ my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 my $e = pdl [exp(1)];
 
 # x value
-my $x = pdl-&gt;sequence (60) * 0.1 - 3;
+my $x = pdl-&gt;sequence(60) * 0.1 - 3;
 
 # y = e ^ x
 my $y = $e ** $x;
 
 # Create a graph
-$pl-&gt;xyplot ($x, $y);
+$pl-&gt;xyplot($x, $y);
 
 # Close
 $pl-&gt;close;
@@ -454,13 +454,13 @@ use PDL::Graphics::PLplot;
 my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
-my $x = pdl-&gt;sequence (100) * 0.1 + 0.1;
+my $x = pdl-&gt;sequence(100) * 0.1 + 0.1;
 
 # y = log(x)
 my $y = $x-&gt;log;
 
 # Create a graph
-$pl-&gt;xyplot ($x, $y);
+$pl-&gt;xyplot($x, $y);
 
 # Close
 $pl-&gt;close;
@@ -483,16 +483,16 @@ use PDL::Graphics::PLplot;
 my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # data
-my $x = pdl-&gt;sequence (20);
+my $x = pdl-&gt;sequence(20);
 my $pi = 4 * atan2 (1,1);
 my $y1 = $x ** 2;
 my $y2 = sqrt $x;
 my $y3 = $x ** 3;
 my $y4 = sin(($x/20) * 2 * $pi);
-my $ys = $y1-&gt;cat ($y2, $y3, $y4);
+my $ys = $y1-&gt;cat($y2, $y3, $y4);
 
 # Strip plot
-$pl-&gt;stripplots (
+$pl-&gt;stripplots(
   $x,
   $ys,
   PLOTTYPE =&gt;'LINE',

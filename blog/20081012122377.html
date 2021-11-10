@@ -106,12 +106,12 @@ for my $year (@years) {
 sub is_leap_year {
   my $year = shift;
 
-  If it is not divisible by # 4, it is not a leap year.
+  # If it is not divisible by 4, it is not a leap year.
   return if $year % 4;
 
   # If it is not divisible by 100 and not divisible by 400
   # Not a leap year.
-  return if! ($year % 100) &amp;&amp; ($year % 400);
+  return if !($year % 100) &amp;&amp; ($year % 400);
 
   # Other than that, it is a leap year.
   return 1;
@@ -134,7 +134,7 @@ return if $year % 4;
   Next, make a judgment that "it is divisible by 100 and not divisible by 400". Those that meet this condition are not leap years. The 1900 meets this requirement.
 </p>
 <pre>
-return if! ($year % 100) &amp;&amp; ($year % 400);
+return if !($year % 100) &amp;&amp; ($year % 400);
 </pre>
 <p>
   With the above judgment, (2000, 2004) remains. These are leap years.

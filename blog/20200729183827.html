@@ -92,24 +92,24 @@ use Amazon::S3::Thin;
 my $s3client = Amazon::S3::Thin-&gt;new({{
       aws_access_key_id =&gt; $aws_access_key_id,
       aws_secret_access_key =&gt; $aws_secret_access_key,
-      aws_session_token =&gt; $aws_session_token, # optional
-      region =&gt; $region, # e.g.'ap-northeast-1'
+      # aws_session_token =&gt; $aws_session_token, optional
+      # region =&gt; $region, e.g.'ap-northeast-1'
     });
  
 my $bucket = "mybucket";
 my $key = "dir/file.txt";
 my $response;
  
-$response = $s3client-&gt;put_bucket ($bucket);
+$response = $s3client-&gt;put_bucket($bucket);
  
-$response = $s3client-&gt;put_object ($bucket, $key, "hello world");
+$response = $s3client-&gt;put_object($bucket, $key, "hello world");
  
-$response = $s3client-&gt;get_object ($bucket, $key);
+$response = $s3client-&gt;get_object($bucket, $key);
 print $response-&gt;content; # =&gt; "hello world"
  
-$response = $s3client-&gt;delete_object ($bucket, $key);
+$response = $s3client-&gt;delete_object($bucket, $key);
  
-$response = $s3client-&gt;list_objects (
+$response = $s3client-&gt;list_objects(
                             $bucket,
                             {prefix =&gt; "foo", delimiter =&gt; "/"}
                            );
@@ -183,13 +183,13 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
   <li> aws_secret_access_key (<b> Required </b>)-The secret access key for your credentials. </li>
   <li> region-(<b> required </b>) Region of bucket to access (currently only used if signature version is 4) </li>
   <li> secure- Whether to use https. The default is 0 (http). </li>
-  <li> ua-User agent object compatible with LWP::UserAgent. The default is an instance of LWP::user agent. </li> <li> signature_version-Her AWS signature version to use. The supported values ​​are 2 and 4. The default is 4. </li>
+  <li> ua-User agent object compatible with LWP::UserAgent. The default is an instance of LWP::user agent. </li> <li> signature_version-Her AWS signature version to use. The supported values are 2 and 4. The default is 4. </li>
   <li> debug- Debug options. The default is 0 (false). If the setting value is 1, the contents of HTTP requests and responses are displayed in stderr. </li>
   <li> virtual_host-Whether to use a virtual host type request format. The default is 0 (path style). </li>
 </ul>
 <h3> Accessor </h3>
 <p>
-  The following accessors are provided: You can use these to get/set the attributes of an object.
+  The following accessors are provided:You can use these to get/set the attributes of an object.
 </p>
 <h4> secure </h4>
 <p>
@@ -239,10 +239,10 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
   3. Header (optional)-Hash reference with extra header information
 </p>
 <p>
-  <b> Return: </b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the content () method on the returned object to read its contents.
+  <b> Return:</b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the content () method on the returned object to read its contents.
 </p>
 <pre>
-my $res = $s3-&gt;get_object ('my.bucket', 'my/key.ext');
+my $res = $s3-&gt;get_object('my.bucket', 'my/key.ext');
  
 if ($res-&gt;is_success) {
     my $content = $res-&gt;content;
@@ -265,13 +265,13 @@ if ($res-&gt;is_success) {
   2. Key-A string with a key
 </p>
 <p>
-  <b> Return: </b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the header () method on the returned object to read the metadata.
+  <b> Return:</b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the header () method on the returned object to read the metadata.
 </p>
 <pre>
-my $res = $s3-&gt;head_object ('my.bucket', 'my/key.ext');
+my $res = $s3-&gt;head_object('my.bucket', 'my/key.ext');
  
 if ($res-&gt;is_success) {
-    my $etag = $res-&gt;header ('etag'); # =&gt; `" fba9dede5f27731c9771645a39863328 "`
+    my $etag = $res-&gt;header('etag'); # =&gt; `" fba9dede5f27731c9771645a39863328 "`
 }
 </pre>
 <p>
@@ -362,7 +362,7 @@ if ($res-&gt;is_success) {
   <li> max-keys(string) -Sets the maximum number of keys returned in the response body. If you want to get fewer keys than the default 1000 keys, you can add this to your request. </li>
 </ul>
 <p>
-  <b> Return: </b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the content () method on the returned object to read its contents.
+  <b> Return:</b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the content () method on the returned object to read its contents.
 </p>
 <p>
   This method returns some or all of the objects in the bucket (up to 1000). Note that the response may contain fewer keys, but no more. If a key that meets the search criteria is not returned because it exceeds the limit (1000 or max-key), the response will return an additional key, see "marker" above.
@@ -390,7 +390,7 @@ if ($res-&gt;is_success) {
   5. expires_in (number)-the number of seconds since the current time before the signed URL expired
 </p>
 <p>
-  <b> Return value: </b> Returns a hash reference with two elements, "url" and "fields". "Url" is the posted URL. "Fields" are the fields of the form and their respective values ​​that were used when submitting POST. Is an array reference with the form fields to use when submitting the post and their respective values. (You must follow the order of fields.)
+  <b> Return value:</b> Returns a hash reference with two elements, "url" and "fields". "Url" is the posted URL. "Fields" are the fields of the form and their respective values that were used when submitting POST. Is an array reference with the form fields to use when submitting the post and their respective values. (You must follow the order of fields.)
 </p>
 <p>
   This method uses HTTP POST to generate a signed URL for uploading a file to Amazon S3. The original implementation from boto3 is <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.generate_presigned_post">S3Client.generate_presigned_post ( )</a> was referenced and ported.
@@ -402,7 +402,7 @@ if ($res-&gt;is_success) {
   This is an example of generating a signed URL and uploading the file "test.txt". In this case, you can set the object metadata "x-amz-meta-foo" with any value and the upload size is limited to 1MB.
 </p>
 <pre>
-my $presigned = $s3-&gt;generate_presigned_post ('my.bucket', 'my/key.ext', [
+my $presigned = $s3-&gt;generate_presigned_post('my.bucket', 'my/key.ext', [
     'x-amz-meta-foo' =&gt;'bar',
 ], [
     ['starts-with' =&gt;'$x-amz-meta-foo', ''],
@@ -410,7 +410,7 @@ my $presigned = $s3-&gt;generate_presigned_post ('my.bucket', 'my/key.ext', [
 ], 24 * 60 * 60);
  
 my $ua = LWP::UserAgent-&gt;new;
-my $res = $ua-&gt;post (
+my $res = $ua-&gt;post(
     $signed-&gt;{url},
     Content_Type =&gt;'multipart/form-data',
     Content =&gt; [

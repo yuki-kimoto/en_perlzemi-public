@@ -99,7 +99,7 @@ sub is_int {
   my $num = shift;
   
   # Throw an exception if the value is not a positive integer
-  die "\" $num \ "must be number" unless $num =~ /^ \ d + $/;
+  die "\" $num\"must be number" unless $num =~ /^\d +$/;
 }
 </pre>
 <h3> Catch exceptions </h3>
@@ -136,7 +136,7 @@ sub is_int {
   my $num = shift;
   
   # Throw an exception if the value is not a positive integer
-  die "\" $num \ "must be number." unless $num =~ /^ \ d + $/;
+  die "\" $num\"must be number." unless $num =~ /^\d +$/;
 }
 </pre>
 <h3> When raising an exception in a module </h3>

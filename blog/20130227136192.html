@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Think about the benefits of having no type in a variable  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="For scripting languages ​​such as PHP, Perl, Ruby, and Python, some people may think that variables have no type. Especially for those who have used static languages ​​such as C and Java, I think that the lack of types is often seen as anxiety. Twice">
+<meta name="description" content="For scripting languages such as PHP, Perl, Ruby, and Python, some people may think that variables have no type. Especially for those who have used static languages such as C and Java, I think that the lack of types is often seen as anxiety. Twice">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Think about the benefits of having no type in a variable  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="For scripting languages ​​such as PHP, Perl, Ruby, and Python, some people may think that variables have no type. Especially for those who have used static languages ​​such as C and Java, I think that the lack of types is often seen as anxiety. Twice" />
+<meta name="twitter:description" content="For scripting languages such as PHP, Perl, Ruby, and Python, some people may think that variables have no type. Especially for those who have used static languages such as C and Java, I think that the lack of types is often seen as anxiety. Twice" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -63,7 +63,7 @@
 </ol>
 <h2><a href="/blog/20130227136192.html"> Think about the benefits of having no type in a variable </a></h2>
 <p>
-  For scripting languages ​​such as PHP, Perl, Ruby, and Python, some people may think that variables have no type. Especially for those who have used static languages ​​such as C and Java, I think that the lack of types is often seen as anxiety. Twice
+  For scripting languages such as PHP, Perl, Ruby, and Python, some people may think that variables have no type. Especially for those who have used static languages such as C and Java, I think that the lack of types is often seen as anxiety. Twice
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -89,7 +89,7 @@
   First and foremost, you can assign a value of any type as long as the variable has no type. In other words, when you receive it, you don't have to be aware of what type of value you receive.
 </p>
 <pre>
-my $str ='Hello';
+my $str = 'Hello';
 my $num = 1;
 my $nums = [1, 2, 3];
 my $person = {age =&gt; 2, name =&gt;'taro'};
@@ -124,7 +124,7 @@ my $ua = $c-&gt;client;
 </pre>
 <h3> No need to overload functions </h3>
 <p>
-  Languages ​​that have variable types have different types, but if you want to perform the same processing, you need to use a function called overloading. If you don't have a variable type, you don't need the overload function, you just have to branch with an if statement, which is very easy.
+  Languages that have variable types have different types, but if you want to perform the same processing, you need to use a function called overloading. If you don't have a variable type, you don't need the overload function, you just have to branch with an if statement, which is very easy.
 </p>
 <pre>
 sub sum {
@@ -157,10 +157,10 @@ sub sum {
 </p>
 <h3> Answer the criticism that you don't know what type of value is assigned to a variable if it doesn't have a type. </H3>
 <p>
-  I think there is a criticism that if a variable has no type, it is not possible to know what type of value is assigned. It's a readability issue. But I've never felt that untyped languages ​​aren't readable. I think that's because it's read differently than when reading a static language in the first place.
+  I think there is a criticism that if a variable has no type, it is not possible to know what type of value is assigned. It's a readability issue. But I've never felt that untyped languages aren't readable. I think that's because it's read differently than when reading a static language in the first place.
 </p>
 <p>
-  When reading a scripting language, it's usually easy to see what values ​​it contains by reading contextually. For example, suppose a variable is used as follows.
+  When reading a scripting language, it's usually easy to see what values it contains by reading contextually. For example, suppose a variable is used as follows.
 </p>
 <pre>
 $nums-&gt;[3];
@@ -195,7 +195,7 @@ my $ua = $c-&gt;ua;
   The advantage of having no type in a variable is that the source code has less duplication. The fact that you don't have to be aware of the type of a variable means that you don't have to be aware of the type when you use the classes, functions, and methods that use it. This is very useful when writing maintainable programs with few duplicates.
 </p>
 <p>
-  Scripting languages ​​are said to be less maintainable, but I don't think there is any basis in the first place. Static languages ​​are difficult to modify or change because you have to implement interfaces and classes each time. In that respect, maintainability is low.
+  Scripting languages are said to be less maintainable, but I don't think there is any basis in the first place. Static languages are difficult to modify or change because you have to implement interfaces and classes each time. In that respect, maintainability is low.
 </p>
 <p>
   It's sometimes commented that the untyped language is over, and it's time for a hybrid language, but I don't think that person understands the benefits of having no type. Maybe that person only understands how it looks in the source code.
@@ -261,7 +261,7 @@ my $ua = $c-&gt;ua;
 </p>
 </blockquote>
 <p>
-  I think that the idea that maintenance becomes impossible when the scale becomes large is a mistake in the first place. Cookpad, Github, mixi, Hatena, faccbook, amazon, all use scripting languages ​​with dynamic types to create large sites. I think that's a matter of belief or project management.
+  I think that the idea that maintenance becomes impossible when the scale becomes large is a mistake in the first place. Cookpad, Github, mixi, Hatena, faccbook, amazon, all use scripting languages with dynamic types to create large sites. I think that's a matter of belief or project management.
 </p>
 <blockquote>
 <p>

@@ -124,8 +124,8 @@ my $nums = pdl [2, 4, 7];
   The data created by the pdl function is called a PDL variable. Let's get the elements of a one-dimensional PDL variable. Use the <strong> at </strong> method to get the data.
 </p>
 <pre>
-my $first = $nums-&gt;at (0);
-my $second = $nums-&gt;at (1);
+my $first = $nums-&gt;at(0);
+my $second = $nums-&gt;at(1);
 </pre>
 <p>
   In the above example, we got the value of the element contained in the PDL variable, but we can also get it as a PDL variable.
@@ -140,7 +140,7 @@ use PDL::NiceSlice;
   To get an element as a PDL variable, use the notation <strong> $variable name (element number) </strong>.
 </p>
 <pre>
-Get # element as PDL variable
+# Get element as PDL variable
 my $pdl_first = $nums (0);
 my $pdl_second = $nums (1);
 </pre>
@@ -148,8 +148,8 @@ my $pdl_second = $nums (1);
   These are PDL variables, so if you want to get the element value itself, you can retrieve it with the <strong> at </strong> method.
 </p>
 <pre>
-my $first = $pdl_first-&gt;at (0);
-my $second = $pdl_second-&gt;at (0);
+my $first = $pdl_first-&gt;at(0);
+my $second = $pdl_second-&gt;at(0);
 </pre>
 <p>
   If you want to change the value of an element, use nice slice notation as well. Use the <strong>. = </Strong> operator. . = Is overridden for assignment, not string concatenation.
@@ -165,7 +165,7 @@ $nums (0). = 5;
 my $pdl_parts = $nums (1: 2);
 </pre>
 <p>
-  You can also assign values ​​to all the elements of the extracted PDL variable.
+  You can also assign values to all the elements of the extracted PDL variable.
 </p>
 <pre>
 $nums (1: 2). = 8;
@@ -194,8 +194,8 @@ use PDL::NiceSlice;
 my $nums = pdl [2, 4, 7];
 
 # Element output
-print $nums-&gt;at (0) . "\n";
-print $nums-&gt;at (1) . "\n";
+print $nums-&gt;at(0) . "\n";
+print $nums-&gt;at(1) . "\n";
 
 # Retrieving PDL variables
 my $pdl_first = $nums (0);
@@ -214,7 +214,7 @@ print $nums . "\n";
 </pre>
 <h3> Four arithmetic operations of constants </h3>
 <p>
-  Use the <strong> + </strong> operator to add the same value to all values ​​of a <strong> PDL variable </strong>.
+  Use the <strong> + </strong> operator to add the same value to all values of a <strong> PDL variable </strong>.
 </p>
 <pre>
 use PDL;
@@ -243,7 +243,7 @@ my $pdl_pow = $pdl + 3;
 <p>
   Multiplication and division correspond to constant multiples of the vector. Keep in mind that you are doing operations between PDL variables and ordinary values, not operations between PDL variables.
 </p>
-<h3> Extract unique values ​​</h3>
+<h3> Extract unique values </h3>
 <p>
   Use the <strong> uniq method </strong> to retrieve the <strong> unique value </strong>.
 </p>
@@ -274,7 +274,7 @@ my $pdl_product = $pdl1 * $pdl2;
 my $pdl_div = $pdl1/$pdl2;
 
 # Quotient
-my $pdl_quotient = $pdl1 % $pdl2;
+my $pdl_quotient = $pdl1 %$pdl2;
 
 # Exponentiation
 my $pdl_pow = $pdl1 + $pdl2;
@@ -351,7 +351,7 @@ my $pdl_product = $pdl1 * $pdl2;
 my $pdl_div = $pdl1/$pdl2;
 
 # Quotient
-my $pdl_quotient = $pdl1 % $pdl2;
+my $pdl_quotient = $pdl1 %$pdl2;
 
 # Exponentiation
 my $pdl_pow = $pdl1 + $pdl2;

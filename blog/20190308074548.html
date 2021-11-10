@@ -112,7 +112,7 @@ use warnings;
 # Change comma to tab
 while (my $line = &lt;DATA&gt;) {
   chomp $line;
-  my @items = split(/, /, $line);
+  my @items = split(/,/, $line);
   
   print join("\t", @items) . "\n";
 }

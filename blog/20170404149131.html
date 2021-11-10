@@ -164,7 +164,7 @@ print STDERR "Hello";
 <pre>
 my $file = "output.txt";
 open my $fh, '&gt;', $file
-  or die "Can't open \" $file \ ": $!";
+  or die "Can't open \" $file\":$!";
 print $fh "Hello";
 </pre>
 <p>
@@ -201,7 +201,7 @@ print "Hello";
   Then use redirect to output to a file. Execute the command as follows.
 </p>
 <pre>
-perl hello.pl&gt; output.txt
+perl hello.pl &gt; output.txt
 </pre>
 <p>
   "Hello" is output to a file called "output.txt".

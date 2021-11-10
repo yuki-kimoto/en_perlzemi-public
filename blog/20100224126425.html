@@ -116,8 +116,8 @@ has y =&gt; 0;
 sub clear {
   my $self = shift;
     
-  $self-&gt;x (0);
-  $self-&gt;y (0);
+  $self-&gt;x(0);
+  $self-&gt;y(0);
 }
 
 1;
@@ -128,8 +128,8 @@ sub clear {
 <pre>
 my $point = Point-&gt;new(x =&gt; 4, y =&gt; 6);
 
-$point-&gt;x (1);
-$point-&gt;y (2);
+$point-&gt;x(1);
+$point-&gt;y(2);
 
 my $x = $point-&gt;x;
 my $y = $point-&gt;y;
@@ -190,7 +190,7 @@ has z =&gt; 0;
 sub clear {
   my $self = shift;
   $self-&gt;SUPER::clear ();
-  $self-&gt;z (0);
+  $self-&gt;z(0);
 }
 
 1;

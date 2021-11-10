@@ -91,7 +91,7 @@ LOCAL_VARIABLE_NAME = value;
 <p>
   If no value is specified, <a href="/blog/20100220126425.html">undefined value</a> will be set.
 </p>
-<h3> Saving and restoring values ​​</h3>
+<h3> Saving and restoring values </h3>
 <p>
   Assigning a value using local restores the previous value at the end of the <a href="/blog/20110128130016.html">scope</a>.
 </p>
@@ -120,7 +120,7 @@ my $num;
 local $num;
 </pre>
 <p>
-  However, no exception occurs for <a href="/blog/20161012147627.html">array</a> values ​​and <a href="/blog/20161013147635.html">hash</a> values.
+  However, no exception occurs for <a href="/blog/20161012147627.html">array</a> values and <a href="/blog/20161013147635.html">hash</a> values.
 </p>
 <pre>
 my @nums = (1, 2, 3);
@@ -157,7 +157,7 @@ my $num;
   local is not a variable declaration, contrary to the expectation of the name. It has a dynamic scope.
 </p>
 <p>
-  Local variables in other languages ​​are lexical variables using my in Perl.
+  Local variables in other languages are lexical variables using my in Perl.
 </p>
 <table>
   <tr>
@@ -201,9 +201,9 @@ my $num;
   Let's describe the process of reading the contents of a file at once.
 </p>
 <pre>
-my $file ='a.txt';
+my $file = 'a.txt';
 open my $fh, '&lt;', $file
-  or die "Can't open $file: $!";
+  or die "Can't open $file:$!";
 
 # Read the contents of the file at once
 my $content = do {local $/; &lt;$fh&gt;};

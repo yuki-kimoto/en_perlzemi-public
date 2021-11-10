@@ -88,7 +88,7 @@
 <pre>
 # Convert a string written in UTF-8 in the source code to an internal string
 use utf8;
-my $message ='aiueo';
+my $message = 'aiueo';
 </pre>
 <p>
   Save the source code in UTF-8. The string'aiueo'is automatically converted to an internal string.
@@ -101,9 +101,9 @@ my $message ='aiueo';
   A. Yes. Think of it as doing the following:
 </p>
 <pre>
-Write the same process using the # Encode module
-my $str ='aiueo';
-$str = decode ('UTF-8', $str);
+# Write the same process using the Encode module
+my $str = 'aiueo';
+$str = decode('UTF-8', $str);
 </pre>
 <p>
   Q. I've heard about the UTF-8 flag, but can I think that the utf8 pragma does the process of setting the UTF-8 flag?
@@ -121,7 +121,7 @@ $str = decode ('UTF-8', $str);
   A. Yes, basically forget about it. But there is one thing that is useful to remember, so let me tell you. That is, "If the UTF-8 flag is set, it can be said that it is an internal string." The opposite is not true. There is a <strong> utf8::is_utf8 </strong> function as a function to check if the UTF-8 flag is set. If you use this function to verify that the UTF-8 flag is set, you can say that it is an internal string.
 </p>
 <pre>
-Internal string if # UTF-8 flag is set
+# Internal string if UTF-8 flag is set
 my $utf8_flagged = utf8::is_utf8 ($str);
 
 if ($utf8_flagged) {

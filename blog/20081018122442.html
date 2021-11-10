@@ -110,9 +110,9 @@ sub time_from_str {
   return unless $time_str;
   
   my $time = {};
-  if ($time_str =~ /^ (\d{2}): (\d{2}) :(\d{2}) $/) {
+  if ($time_str =~ /^ (\d{2}): (\d{2}) :(\d{2})$/) {
     @{$time}{qw/hour min sec /} = ($1, $2, $3);
-    return wantarray?% $time: $time;
+    return wantarray?%$time: $time;
   }
   return;
 }
@@ -124,7 +124,7 @@ sub str_from_time {
     $time = shift;
   }
   else {
-    % $time = @_;
+    %$time = @_;
   }
     
   return unless defined $time-&gt;{hour};
@@ -143,7 +143,7 @@ sub time_to_sec {
     $time = shift;
   }
   else {
-    % $time = @_;
+    %$time = @_;
   }
     
   return unless defined $time-&gt;{hour};
@@ -170,7 +170,7 @@ sub sec_to_time {
   
   $time-&gt;{sec} = $sec;
   
-  return wantarray?% $time: $time;
+  return wantarray?%$time: $time;
 }
 </pre>
 <p>
@@ -199,9 +199,9 @@ sub time_from_str {
   return unless $time_str;
   
   my $time = {};
-  if ($time_str =~ /^ (\d{2}): (\d{2}) :(\d{2}) $/) {
+  if ($time_str =~ /^ (\d{2}): (\d{2}) :(\d{2})$/) {
     @{$time}{qw/hour min sec /} = ($1, $2, $3);
-    return wantarray?% $time: $time;
+    return wantarray?%$time: $time;
   }
   return;
 }
@@ -216,7 +216,7 @@ sub time_from_str {
   The return value allows you to select a list and a scalar.
 </p>
 <pre>
-return wantarray?% $time: $time;
+return wantarray?%$time: $time;
 </pre>
 <h4> Convert the hash of time information to seconds and calculate the elapsed seconds </h4>
 <p>
@@ -232,7 +232,7 @@ sub time_to_sec {
     $time = shift;
   }
   else {
-    % $time = @_;
+    %$time = @_;
   }
     
   return unless defined $time-&gt;{hour};
@@ -269,7 +269,7 @@ sub sec_to_time {
   
   $time-&gt;{sec} = $sec;
   
-  return wantarray?% $time: $time;
+  return wantarray?%$time: $time;
 }
 </pre>
 <h4> Convert time representation hash to time string representation </h4>
@@ -286,7 +286,7 @@ sub str_from_time {
     $time = shift;
   }
   else {
-    % $time = @_;
+    %$time = @_;
   }
     
   return unless defined $time-&gt;{hour};

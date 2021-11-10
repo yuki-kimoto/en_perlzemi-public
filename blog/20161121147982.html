@@ -103,10 +103,10 @@ perl -ne "print if (/ search /)" inputfile.txt&gt; outputfile.txt
 </p>
 <h4> 1: grep.pl </h4>
 <pre>
-Each line of the file given by the # argument is passed to &lt;&gt;.
-Each line received by # &lt;&gt; is passed to $_ in a loop.
-$_ Is implicitly used for # regular expression //
-$_ Is implicitly used as the argument of # print.
+# Each line of the file given by the argument is passed to &lt;&gt;.
+# Each line received by &lt;&gt; is passed to $_ in a loop.
+# $_ Is implicitly used for regular expression //
+# $_ Is implicitly used as the argument of print.
 while (&lt;&gt;) {
   print if/search/;
 }

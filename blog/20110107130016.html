@@ -111,12 +111,12 @@ use utf8;
 get'/' =&gt; sub {
     my $self = shift;
     
-    my $module = $self-&gt;req-&gt;param ('module');
+    my $module = $self-&gt;req-&gt;param('module');
     
-    $self-&gt;stash (error =&gt;'');
-    $self-&gt;stash (output =&gt;'');
+    $self-&gt;stash(error =&gt;'');
+    $self-&gt;stash(output =&gt;'');
     
-    if ($module &amp;&amp; $module =~ /^ [: \ w] + $/) {
+    if ($module &amp;&amp; $module =~ /^ [:\w] +$/) {
         my $home = $ENV{DOCUMENT_ROOT};
         $home =~ s #/www $# #;
         
@@ -124,10 +124,10 @@ get'/' =&gt; sub {
         my @cpanm;
         eval {
             chdir $home
-              or die qq {Can't change directory "$home": $!};
+              or die qq {Can't change directory "$home":$!};
             
             my $ua = LWP::UserAgent-&gt;new;
-            my $res = $ua-&gt;get ('http://xrl.us/cpanm/');
+            my $res = $ua-&gt;get('http://xrl.us/cpanm/');
             my $cpanm_content;
             if ($res-&gt;is_success) {
                 $cpanm_content = $res-&gt;content;
@@ -144,7 +144,7 @@ get'/' =&gt; sub {
             push @cpanm, $cpanm_content;
             
             open my $write_fh, '&gt;', 'cpanm'
-              or die qq {Can't open "cpanm" for write: $!};
+              or die qq {Can't open "cpanm" for write:$!};
             
             print $write_fh join("\n", @cpanm);
             
@@ -154,12 +154,12 @@ get'/' =&gt; sub {
             push @output, split /\n /, $output;
         };
         
-        return $self-&gt;render (error =&gt; $@) if $@;
+        return $self-&gt;render(error =&gt; $@) if $@;
         
-        $self-&gt;render (output =&gt; \@output);
+        $self-&gt;render(output =&gt; \@output);
     }
     elsif ($module) {
-        $self-&gt;stash (error =&gt;'Enter module name correctly');
+        $self-&gt;stash(error =&gt;'Enter module name correctly');
         $self-&gt;render;
     }
     else {

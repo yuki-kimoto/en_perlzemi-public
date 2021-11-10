@@ -90,16 +90,16 @@
 # When running on Windows, Mac
 use Selenium::Chrome;
 my $driver = Selenium::Chrome-&gt;new;
-$driver-&gt;get ('http://www.google.com');
-print $driver-&gt;get_title ();
-$driver-&gt;shutdown_binary ();
+$driver-&gt;get('http://www.google.com');
+print $driver-&gt;get_title();
+$driver-&gt;shutdown_binary();
 </pre>
 <h4> When executing headless when there is no GUI screen such as Unix/Linux </h4>
 <p>
   If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
 </p>
 <pre>
-When executing headless when there is no GUI screen such as # Unix/Linux
+# When executing headless when there is no GUI screen such as Unix/Linux
 use Selenium::Chrome;
 my $driver = Selenium::Chrome-&gt;new(
   extra_capabilities =&gt; {
@@ -108,9 +108,9 @@ my $driver = Selenium::Chrome-&gt;new(
     }
   }
 );
-$driver-&gt;get ('http://www.google.com');
-print $driver-&gt;get_title ();
-$driver-&gt;shutdown_binary ();
+$driver-&gt;get('http://www.google.com');
+print $driver-&gt;get_title();
+$driver-&gt;shutdown_binary();
 </pre>
 <p>
   If the following error occurs, please execute headless with the above option.

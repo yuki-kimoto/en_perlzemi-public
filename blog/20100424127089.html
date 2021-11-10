@@ -98,7 +98,7 @@ my $xml = XML::Simple-&gt;new;
 </p>
 <pre>
 # XML file parsing
-my $data = $xml-&gt;XMLin ('conf.xml');
+my $data = $xml-&gt;XMLin('conf.xml');
 </pre>
 <p>
   This is a sample XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
@@ -107,7 +107,7 @@ my $data = $xml-&gt;XMLin ('conf.xml');
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
 &lt;conf&gt;
   &lt;!-Version 1.01-&gt;
-  &lt;!-Application home directory-&gt;  &lt;app-home-dir&gt; c: \ apphome &lt;/app-home-dir&gt;
+  &lt;!-Application home directory-&gt;  &lt;app-home-dir&gt; c:\apphome &lt;/app-home-dir&gt;
 
   &lt;!-Library directory-&gt;  &lt;lib-dir&gt; lib &lt;/lib-dir&gt;
 
@@ -169,8 +169,8 @@ $conf = {
 <pre>
 # When outputting, convert from internal character string to byte character string
 use Encode 'encode';
-my $conf = $xml-&gt;XMLin ('japanese.xml');
-print encode ('UTF-8', $conf-&gt;{name});
+my $conf = $xml-&gt;XMLin('japanese.xml');
+print encode('UTF-8', $conf-&gt;{name});
 </pre>
 <h3> XML::Simple options </h3>
 <p>

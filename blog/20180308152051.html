@@ -123,15 +123,15 @@ my $str = $$str_ref;
   A frequently used module is <a href="/blog/20100514127696.html">Getopt::Long</a>.
 </p>
 <pre>
-Handling command line argument options with # GetOptions
+# Handling command line argument options with GetOptions
 
 # Set default value
 my $enable_cache;
 my $max_clients = 5;
-my $type ='prefork';
+my $type = 'prefork';
 
 # Optional processing
-GetOptions (
+GetOptions(
   'enable_cache' =&gt; \$enable_cache,
   'max_clients = i'=&gt; \$max_clients,
   'type = s'=&gt; \$type

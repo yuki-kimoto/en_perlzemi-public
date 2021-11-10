@@ -972,11 +972,11 @@ main (int argc, char ** argv, char ** env)
   There are EXTERN.h and INTERN.h in Perl, but for the purpose, EXTERN.h is used when referencing Perl itself from an extension module. You need to load EXTERN.h to make the global variables that Perl itself has visible to the extension module.
 </p>
 <p>
-  INTERN.h, on the other hand, is used when compiling Perl itself. The values ​​of global variables are set.
+  INTERN.h, on the other hand, is used when compiling Perl itself. The values of global variables are set.
 </p>
 <h3> SVp_IOK indicates that you have a valid integer that is not exposed. </h3>
 <p>
-  SVp_IOK indicates that it has a valid integer that is not exposed. SVf_IOK, on ​​the other hand, indicates that it has a valid public integer.
+  SVp_IOK indicates that it has a valid integer that is not exposed. SVf_IOK, on the other hand, indicates that it has a valid public integer.
 </p>
 <p>
   What does it mean to be public?
@@ -994,9 +994,7 @@ main (int argc, char ** argv, char ** env)
 # define new_XPVNV () new_body_allocated (SVt_PVNV)
 
 // sv.c
-# define new_body_allocated (sv_type) \
-    (void *) ((char *) S_new_body (aTHX_ sv_type) \
-- body_by_type [sv_type] .offset)
+# define new_body_allocated (sv_type)\    (void *) ((char *) S_new_body (aTHX_ sv_type)\- body_by_type [sv_type] .offset)
 
 // sv.c
 STATIC void *
@@ -1008,15 +1006,8 @@ S_new_body (pTHX_ const svtype sv_type)
 }
 
 // sv.c
-# define new_body_inline (xpv, sv_type) \
-    STMT_START {\
-void ** const r3wt = &amp; PL_body_roots [sv_type]; \
-xpv = (PTR_TBL_ENT_t *) (* ((void **) (r3wt)) \
-? * ((void **) (r3wt)): Perl_more_bodies (aTHX_ sv_type, \
-bodies_by_type [sv_type] .body_size, \
-bodies_by_type [sv_type] .arena_size)); \
-* (r3wt) = * (void **) (xpv); \
-    } STMT_END
+# define new_body_inline (xpv, sv_type)\    STMT_START {\
+void ** const r3wt = &amp; PL_body_roots [sv_type];\xpv = (PTR_TBL_ENT_t *) (* ((void **) (r3wt))\? * ((void **) (r3wt)): Perl_more_bodies (aTHX_ sv_type,\bodies_by_type [sv_type] .body_size,\bodies_by_type [sv_type] .arena_size));\* (r3wt) = * (void **) (xpv);\    } STMT_END
 
 // sv.c
 / *
@@ -1047,25 +1038,14 @@ struct STRUCT_SV {/ * struct sv {*/    _SV_HEAD (void *);
 };
 
 // sv.h
-/ * start with 2 sv-head building blocks */# define _SV_HEAD (ptrtype) \
-    ptrtype sv_any;/* pointer to body */\
+/ * start with 2 sv-head building blocks */# define _SV_HEAD (ptrtype)\    ptrtype sv_any;/* pointer to body */\
     U32 sv_refcnt;/* how many references to us */\
     U32 sv_flags/* what we are */
 // sv.h
-# define _SV_HEAD_UNION \
-    union {\
+# define _SV_HEAD_UNION\    union {\
 char * svu_pv;/* pointer to malloced string */\
-IV svu_iv; \
-UV svu_uv; \
-_NV_BODYLESS_UNION \
-SV * svu_rv;/* pointer to another SV */\
-struct regexp * svu_rx; \
-SV ** svu_array; \
-HE ** svu_hash; \
-GP * svu_gp; \
-PerlIO * svu_fp; \
-    } sv_u \
-    _SV_HEAD_DEBUG
+IV svu_iv;\UV svu_uv;\_NV_BODYLESS_UNION\SV * svu_rv;/* pointer to another SV */\
+struct regexp * svu_rx;\SV ** svu_array;\HE ** svu_hash;\GP * svu_gp;\PerlIO * svu_fp;\    } sv_u\    _SV_HEAD_DEBUG
 </pre>
 <p>
   sv_any is a pointer to a structure that stores the actual value held by the SV. sv_refcnt is a reference count, sv_flag is a type and flag related to SV, for example, the type is an integer, the flag is read-only, and so on. I'm not sure how sv_u is used.
@@ -1141,10 +1121,10 @@ Perl-Perl Interpreter 1 (current interpreter)
     Helper-like functions are often found in util.c
   </li>
   <li>
-    Since there are many special customizations in # ifdef, skip it for the time being
+    # Since there are many special customizations in ifdef, skip it for the time being
   </li>
   <li>
-    Read inside # ifndef, read after # else in # ifdef ~ # else ~
+    # Read inside ifndef, read after # else in # ifdef ~ # else ~
   </li>
   <li>
     Forget the thread description in your code
@@ -1198,21 +1178,7 @@ struct op {
 # ifdef BASEOP_DEFINITION
 # define BASEOP BASEOP_DEFINITION
 # else
-# define BASEOP \
-    OP * op_next; \
-    OP * _OP_SIBPARENT_FIELDNAME; \
-    OP * (* op_ppaddr) (pTHX); \
-    PADOFFSET op_targ; \
-    PERL_BITFIELD16 op_type: 9; \
-    PERL_BITFIELD16 op_opt: 1; \
-    PERL_BITFIELD16 op_slabbed: 1; \
-    PERL_BITFIELD16 op_savefree: 1; \
-    PERL_BITFIELD16 op_static: 1; \
-    PERL_BITFIELD16 op_folded: 1; \
-    PERL_BITFIELD16 op_moresib: 1; \
-    PERL_BITFIELD16 op_spare: 1; \
-    U8 op_flags; \
-    U8 op_private;
+# define BASEOP\    OP * op_next;\    OP * _OP_SIBPARENT_FIELDNAME;\    OP * (* op_ppaddr) (pTHX);\    PADOFFSET op_targ;\    PERL_BITFIELD16 op_type: 9;\    PERL_BITFIELD16 op_opt: 1;\    PERL_BITFIELD16 op_slabbed: 1;\    PERL_BITFIELD16 op_savefree: 1;\    PERL_BITFIELD16 op_static: 1;\    PERL_BITFIELD16 op_folded: 1;\    PERL_BITFIELD16 op_moresib: 1;\    PERL_BITFIELD16 op_spare: 1;\    U8 op_flags;\    U8 op_private;
 # endif
 
 / *
@@ -1304,7 +1270,7 @@ to the next */    char * oldbufptr;/* in yylex, beginning of current token */   
 
     COP * saved_curcop;/* the previous PL_curcop */    char tokenbuf [256];
     line_t herelines;/* number of lines in here-doc */    line_t preambling;/* line # when processing $ENV{PERL5DB} */    U8 lex_fakeeof;/* precedence at which to fake EOF */    U8 lex_flags;
-    PERL_BITFIELD16 in_pod: 1;/* lexer is within a = pod section */    PERL_BITFIELD16 filtered: 1;/* source filters in evalbytes */    PERL_BITFIELD16 saw_infix_sigil: 1;/* saw &amp; or * or%operator */    PERL_BITFIELD16 parsed_sub: 1;/* last thing parsed was a sub */} yy_parser;
+    PERL_BITFIELD16 in_pod: 1;/* lexer is within a =pod section */    PERL_BITFIELD16 filtered: 1;/* source filters in evalbytes */    PERL_BITFIELD16 saw_infix_sigil: 1;/* saw &amp; or * or%operator */    PERL_BITFIELD16 parsed_sub: 1;/* last thing parsed was a sub */} yy_parser;
 </pre>
 <h3> PADLIST </h3>
 <p>
@@ -1343,19 +1309,8 @@ struct padnamelist {
 typedef struct padname PADNAME;
 
 // //
-# define _PADNAME_BASE \
-    char * xpadn_pv; \
-    HV * xpadn_ourstash; \
-    union {\
-HV * xpadn_typestash; \
-CV * xpadn_protocv; \
-    } xpadn_type_u; \
-    U32 xpadn_low; \
-    U32 xpadn_high; \
-    U32 xpadn_refcnt; \
-    int xpadn_gen; \
-    U8 xpadn_len; \
-    U8 xpadn_flags
+# define _PADNAME_BASE\    char * xpadn_pv;\    HV * xpadn_ourstash;\    union {\
+HV * xpadn_typestash;\CV * xpadn_protocv;\    } xpadn_type_u;\    U32 xpadn_low;\    U32 xpadn_high;\    U32 xpadn_refcnt;\    int xpadn_gen;\    U8 xpadn_len;\    U8 xpadn_flags
 
 struct padname {
     _PADNAME_BASE;
@@ -1397,12 +1352,8 @@ PERLVAR (I, markstack_max, I32 *)
 <pre>
 // A mechanism for safely executing a macro by wrapping the body of the macro in a do-while loop.
 
-# define SWAP (x, y) \
-  do {\
-    tmp = x; \
-    x = y; \
-    y = tmp;} \
-  while (0)
+# define SWAP (x, y)\  do {\
+    tmp = x;\    x = y;\    y = tmp;}\  while (0)
 </pre>
 <h3> PoisonNew is filled with one pattern </h3>
 <p>
@@ -1419,10 +1370,8 @@ PERLVAR (I, markstack_max, I32 *)
 </p>
 <pre>
 // handy.h
-# define Renew(v, n, t) \
-(v = (MEM_WRAP_CHECK_ (n, t) (t *) MEM_LOG_REALLOC (n, t, v, saferealloc ((Malloc_t) (v), (MEM_SIZE) ((n) * sizeof (t)))))
-# define Renewc (v, n, t, c) \
-(v = (MEM_WRAP_CHECK_ (n, t) (c *) MEM_LOG_REALLOC (n, t, v, saferealloc ((Malloc_t) (v), (MEM_SIZE) ((n) * sizeof (t)))))
+# define Renew(v, n, t)\(v = (MEM_WRAP_CHECK_ (n, t) (t *) MEM_LOG_REALLOC (n, t, v, saferealloc ((Malloc_t) (v), (MEM_SIZE) ((n) * sizeof (t)))))
+# define Renewc (v, n, t, c)\(v = (MEM_WRAP_CHECK_ (n, t) (c *) MEM_LOG_REALLOC (n, t, v, saferealloc ((Malloc_t) (v), (MEM_SIZE) ((n) * sizeof (t)))))
 
 </pre>
 <p>

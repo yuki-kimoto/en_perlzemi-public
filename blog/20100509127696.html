@@ -116,19 +116,19 @@ cmpthese $result;
 my $result = timethese (10000, {
   loop1 =&gt; sub {
     my $i = 0;
-    while ($i &lt;1500) {
+    while ($i &lt; 1500) {
       $i++;
     }
   },
   loop2 =&gt; sub {
     my $i = 0;
-    while ($i &lt;1000) {
+    while ($i &lt; 1000) {
       $i++;
     }
   },
   loop3 =&gt; sub {
     my $i = 0;
-    while ($i &lt;500) {
+    while ($i &lt; 500) {
       $i++;
     }
   },

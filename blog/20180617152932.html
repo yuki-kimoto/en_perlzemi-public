@@ -114,9 +114,9 @@ use strict;
 use warnings;
 
 # Open the file to read
-my $file ='data.txt';
+my $file = 'data.txt';
 open my $fh, '&lt;', $file
-  or die "Can't open file $file: $!";
+  or die "Can't open file $file:$!";
 
 # sysread function
 my $buffer;

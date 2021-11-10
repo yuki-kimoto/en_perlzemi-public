@@ -97,7 +97,7 @@ die "$message\n";
   This is a sample that displays the usage and terminates the program when the argument does not exist. $0 is the script name.
 </p>
 <pre>
-Exit the program if the # argument does not exist
+# Exit the program if the argument does not exist
 my $file = shift;
 die "Usage: $0[file]" unless $file;
 </pre>
@@ -106,9 +106,9 @@ die "Usage: $0[file]" unless $file;
 </p>
 <pre>
 # Quit the program if file open fails
-my $file ='a.txt';
+my $file = 'a.txt';
 open my $fh, '&lt;', $file
-  or die "Can't open file \" $file \ ": $!";
+  or die "Can't open file \" $file\":$!";
 </pre>
 <p>
   The exit status is 0 if the program exits successfully. If you exit the program with die, the exit status will be a non-zero value. The exit status of die is determined by the following rules.
@@ -120,7 +120,7 @@ open my $fh, '&lt;', $file
 </pre>
 <h3> Exception handling </h3>
 <p>
-  Languages ​​such as Java provide a mechanism called exceptions. Perl provides a concise exception handling mechanism that uses die and <a href="/blog/20100312126967.html">eval</a> blocks.
+  Languages such as Java provide a mechanism called exceptions. Perl provides a concise exception handling mechanism that uses die and <a href="/blog/20100312126967.html">eval</a> blocks.
 </p>
 <p>
   Use die to throw an exception. Use "eval {}" to catch the exception. Use $@to determine if an exception has occurred. If an exception occurs, an error message will be set in $@.
@@ -128,7 +128,7 @@ open my $fh, '&lt;', $file
 <pre>
 # Exception handling flow
 eval {
-  Processing that terminates programs that use # die
+  # Processing that terminates programs that use die
 };
 
 if ($@) {

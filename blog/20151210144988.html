@@ -78,19 +78,19 @@
 <pre>
   my $validation = $vc-&gt;validation;
   
-  $validation-&gt;add_failed (title =&gt;'title is invalid');
-  $validation-&gt;add_failed (name =&gt;'name is invalid');
+  $validation-&gt;add_failed(title =&gt;'title is invalid');
+  $validation-&gt;add_failed(name =&gt;'name is invalid');
   
   # Is it correct
   my $is_valid = $validation-&gt;is_valid;
-  my $title_is_valid = $validation-&gt;is_valid ('title');
+  my $title_is_valid = $validation-&gt;is_valid('title');
   
   # Name of failed parameter
   my $failed = $validation-&gt;failed;
   
   # message
   my $messages = $validation-&gt;messages;
-  my $title_message = $validation-&gt;message ('title');
+  my $title_message = $validation-&gt;message('title');
   my $messages_h = $validation-&gt;messages_to_hash;
 </pre>
 <p>
@@ -116,15 +116,15 @@
 <h4> is_valid </h4>
 <pre>
   my $is_valid = $validation-&gt;is_valid;
-  my $is_valid = $validation-&gt;is_valid ('title');
+  my $is_valid = $validation-&gt;is_valid('title');
 </pre>
 <p>
   Check if the validation result is correct. If given a name, it checks if the parameters corresponding to that name are correct.
 </p>
 <h4> add_failed </h4>
 <pre>
-  $validation-&gt;add_failed ('title' =&gt;'title is invalid value');
-  $validation-&gt;add_failed ('title');
+  $validation-&gt;add_failed('title' =&gt;'title is invalid value');
+  $validation-&gt;add_failed('title');
 </pre>
 <p>
   Add the name and message of the failed parameter. If the message is omitted, the default message will be set automatically.
@@ -138,7 +138,7 @@
 </p>
 <h4> message </h4>
 <pre>
-  my $message = $validation-&gt;message ('title');
+  my $message = $validation-&gt;message('title');
 </pre>
 <p>
   Gets the failure message that corresponds to the name.

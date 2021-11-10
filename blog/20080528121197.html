@@ -91,9 +91,9 @@ chdir $dir;
   This is a sample to change the current directory. Be sure to handle the error in consideration of the case where the directory does not exist. If it fails, the content of the error is stored in $!.
 </p>
 <pre>
-my $dir ='/ etc';
+my $dir = '/ etc';
 chdir $dir
-  or die "Cannot change working directory $dir: $!";
+  or die "Cannot change working directory $dir:$!";
 </pre>
 <h3> Sample </h3>
 <p>
@@ -109,12 +109,12 @@ use warnings;
 # Preparation (creating a directory)
 my $dir = "dir_20080528_ $$";
 mkdir $dir
-  or die "Unable to create $dir.: $!";
+  or die "Unable to create $dir.:$!";
 print "Preparation: $dir has been created.\n\n";
 
 print "1: Change the current directory.\n";
 chdir $dir
-  or die "Unable to change current directory to $dir .: $!";
+  or die "Unable to change current directory to $dir .:$!";
 
 print "The current directory has changed to $dir.";
 </pre>

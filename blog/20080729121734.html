@@ -98,7 +98,7 @@ unless ($file) {
     die "Usage: $0 file"; # If there is no argument, indicate the usage and exit.
 }
 
-Create a key for each column of # csv
+# Create a key for each column of csv
 my $headers = ['name', 'age', 'country'];
 
 # Parse the file and convert the csv format data to an array of arrays.
@@ -116,7 +116,7 @@ sub parse_file {
   my ($file, $headers) = @_;
   
   open(my $fh, "&lt;", $file)
-    or die "Cannot open $file for read: $!";
+    or die "Cannot open $file for read:$!";
   
   # Prepare a reference to an array that stores multiple records
   my $recs = [];
@@ -130,7 +130,7 @@ sub parse_file {
       my $items = {};
       @{$items}{@$headers} = split(',', $line);
 
-      Since the first argument of the # push function is an array, dereference it with @$recs.
+      # Since the first argument of the push function is an array, dereference it with @$recs.
       push @$recs, $items;
     }
     close $fh;
@@ -196,7 +196,7 @@ for my $items (@recs) {
   It looks like this.
 </p>
 <p>
-  I usually use% $items to dereference, but I want to dereference it so that hash slices can be used.
+  I usually use%$items to dereference, but I want to dereference it so that hash slices can be used.
 </p>
 <pre>
 @{$items}{list of hash keys}
@@ -258,7 +258,7 @@ while (my $line = &lt;$fh&gt;) {
   Assign to the key corresponding to #
   @{$items}{@$headers} = split(',', $line);
 
-  The first argument of the # push function is an array, so @$recs
+  # The first argument of the push function is an array, so @$recs
   # And dereference.
   push @$recs, $items;
 }

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Numerical values ​​and errors  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Numerical values and errors  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Error is a problem when expressing decimal numbers on a computer. Decimal numbers that cannot be expressed in binary will have an error.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Numerical values ​​and errors  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Numerical values and errors  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Error is a problem when expressing decimal numbers on a computer. Decimal numbers that cannot be expressed in binary will have an error." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -65,7 +65,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20080828121992.html"> Numerical values ​​and errors </a></h2>
+<h2><a href="/blog/20080828121992.html"> Numerical values and errors </a></h2>
 <p>
   Error is a problem when expressing decimal numbers on a computer. Decimal numbers that cannot be expressed in binary will have an error.
 </p>
@@ -129,18 +129,18 @@ my $num2 = 0.625;
 # In binary, it can only be expressed as an approximate value.
 my $num3 = 0.3;
 
-print "(1) Binary numbers that cannot be represented \ are approximate values.\n";
-printf("\$num1 =%.60f\n", $num1);
-printf("\$num2 =%.60f\n", $num2);
+print "(1) Binary numbers that cannot be represented\are approximate values.\n";
+printf("\$num1 = %.60f\n", $num1);
+printf("\$num2 = %.60f\n", $num2);
 
-It does not become # 0.3.
-printf("\$num3 =%.60f\n", $num3);
+# It does not become 0.3.
+printf("\$num3 = %.60f\n", $num3);
 print "\n";
 
 my $num4 = 1;
 my $num5;
 
-If you add # 0.1 10 times, you should get 1, but that's not the case.
+# If you add 0.1 10 times, you should get 1, but that's not the case.
 for my $i (1 .. 10) {
   $num5 += 0.1;
 }
@@ -151,8 +151,8 @@ if ($num4 == $num5) {
 }
 else {
   print "\$num4 and \$num5 are not equal.\n";
-  printf("\$num4 =%.60f\n", $num4);
-  printf("\$num5 =%.60f\n", $num5);
+  printf("\$num4 = %.60f\n", $num4);
+  printf("\$num5 = %.60f\n", $num5);
 }
 </pre>
 <p>

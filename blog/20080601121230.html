@@ -111,7 +111,7 @@ my @files = (
 );
 for my $file (@files) {
   sysopen(my $fh, $file, O_WRONLY | O_CREAT | O_EXCL)
-    or die "Unable to create $file .: $!";
+    or die "Unable to create $file .:$!";
   close $fh;
 }
 print "Preparation: $top_dir has been created.\n\n";
@@ -124,7 +124,7 @@ my $cur_dir = getcwd ();
 # Create a copy destination directory name with an absolute path.
 my $dir_copy_to = "$cur_dir/dir_20080601_ ${$} _ cp";
 
-find (\ &amp; recursive_copy, $top_dir);
+find(\&amp;recursive_copy, $top_dir);
 print "$top_dir has been copied to $dir_copy_to.\n";
 
 # Function for recursive copying
@@ -139,7 +139,7 @@ sub recursive_copy {
   $file_to =~ s # ^ $top_dir # $dir_copy_to # ;
                                         
   if (-d $file_from) {
-    The # directory cannot be copied, so create it with the same name.
+    # The directory cannot be copied, so create it with the same name.
     mkdir $file_to
       or die "Unable to create $file_to.\n";
   }
@@ -150,11 +150,11 @@ sub recursive_copy {
 }
 </pre>
 <p>
-  (Reference) <a href="/blog/20100409127089.html">File::Path</a>, <a href="/blog/20100408127089.html">File::Copy</a>, <a href = "/ blog/20100312126967.html">eval</a>, <a href="/blog/20080804121794.html">sysopen function</a>, <a href="/blog/20180310152509.html">Fcntl</a>
+  (Reference) <a href="/blog/20100409127089.html">File::Path</a>, <a href="/blog/20100408127089.html">File::Copy</a>, <a href="/blog/20100312126967.html">eval</a>, <a href="/blog/20080804121794.html">sysopen function</a>, <a href="/blog/20180310152509.html">Fcntl</a>
 </p>
 <h3> Recursively copy multi-level directories </h3>
 <pre>
-find (\ &amp; recursive_copy, $top_dir);
+find(\&amp;recursive_copy, $top_dir);
 
 # Function for recursive copying
 sub recursive_copy {
@@ -168,7 +168,7 @@ sub recursive_copy {
   $file_to =~ s # ^ $top_dir # $dir_copy_to # ;
                                         
   if (-d $file_from) {
-    The # directory cannot be copied, so create it with the same name.
+    # The directory cannot be copied, so create it with the same name.
     mkdir $file_to
       or die "Unable to create $file_to.\n";
   }

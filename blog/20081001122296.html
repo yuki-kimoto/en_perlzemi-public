@@ -206,7 +206,7 @@ my $str = sprintf("aiueo%08daiueo%.2f", $num1, $num2);
 </p>
 <h3> Format binary, octal, and hexadecimal numbers in base notation </h3>
 <p>
-  When expressing binary, octal, and hexadecimal numbers as numeric literals, they are expressed with 0b, 0, and 0X. Use the # symbol to format binary, octal, and hexadecimal numbers into this representation.
+  # When expressing binary, octal, and hexadecimal numbers as numeric literals, they are expressed with 0b, 0, and 0X. Use the symbol to format binary, octal, and hexadecimal numbers into this representation.
 </p>
 <pre>
 sprintf("1:% # o", 8);
@@ -215,7 +215,7 @@ sprintf("3:% # X", 255);
 sprintf("4:% # b", 4);
 </pre>
 <p>
-  Use # to format in base notation.
+  # Use to format in base notation.
 </p>
 <p>
   It can also be combined with other formats.
@@ -232,8 +232,8 @@ $formatted[5] = sprintf("1: &lt;%-# 5o&gt;", 8);
 </p>
 <pre>
 "%-# 5o" # OK
-"% # -5o" # OK
-"% 5- # o" # No
+# "% -5o" # OK
+# "% 5- o" # No
 </pre>
 <h3> Specify the precision with the number of digits after the decimal point </h3>
 <p>
@@ -391,10 +391,10 @@ $formatted[3] = sprintf("3:%05s", 1);
 # Ignored if the specified character length is exceeded
 $formatted[4] = sprintf("4:%5d", 123456);
 
-Other than # %s is OK.
+# Other than %s is OK.
 $formatted[5] = sprintf("5:%5d", 1);
 
-Other than # %s is OK.
+# Other than %s is OK.
 $formatted[6] = sprintf("6:%5g", 1.23);
 
 for my $i (1 .. 6) {

@@ -172,17 +172,11 @@ void MyClass::print_static () {
 # include "MyClass.h"
 
 # define XS_OBJ_TO_PTR (x, type) (INT2PTR (type, SvROK (x)? SvIV (SvRV (x)): SvIV (x)))
-# define XS_PTR_TO_OBJ (x, class) \
-  sv_bless(\
+# define XS_PTR_TO_OBJ (x, class)\  sv_bless(\
     sv_2mortal (\
       newRV_inc (\
         sv_2mortal (\
-          newSViv (PTR2IV (x)) \
-        ) \
-      ) \
-    ), \
-    gv_stashpv (class, 1) \
-  );
+          newSViv (PTR2IV (x))\        )\      )\    ),\    gv_stashpv (class, 1)\  );
 
 MODULE = MyClass PACKAGE = MyClass
 
@@ -231,17 +225,11 @@ void DESTORY (...)
 </p>
 <pre>
 # define XS_OBJ_TO_PTR (x, type) (INT2PTR (type, SvROK (x)? SvIV (SvRV (x)): SvIV (x)))
-# define XS_PTR_TO_OBJ (x, class) \
-  sv_bless(\
+# define XS_PTR_TO_OBJ (x, class)\  sv_bless(\
     sv_2mortal (\
       newRV_inc (\
         sv_2mortal (\
-          newSViv (PTR2IV (x)) \
-        ) \
-      ) \
-    ), \
-    gv_stashpv (class, 1) \
-  );
+          newSViv (PTR2IV (x))\        )\      )\    ),\    gv_stashpv (class, 1)\  );
 </pre>
 <p>
   <b> Constructor </b>
@@ -327,15 +315,15 @@ use warnings;
 
 WriteMakefile (
     NAME =&gt;'MyClass',
-    VERSION_FROM =&gt;'lib/MyClass.pm', # finds $VERSION
-    PREREQ_PM =&gt; {}, # e.g., Module::Name =&gt; 1.1
-    ($]&gt; = 5.005? # # Add these new keywords supported since 5.005
-      (ABSTRACT_FROM =&gt;'lib/MyClass.pm', # retrieve abstract from module
+    # VERSION_FROM =&gt;'lib/MyClass.pm', finds $VERSION
+    # PREREQ_PM =&gt; {}, e.g., Module::Name =&gt; 1.1
+    # ($] &gt;= 5.005? # Add these new keywords supported since 5.005
+      # (ABSTRACT_FROM =&gt;'lib/MyClass.pm', retrieve abstract from module
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') :()),
-    LIBS =&gt; [''], # e.g., '-lm'
-     DEFINE =&gt;'', # e.g., '-DHAVE_SOMETHING'
-     INC =&gt;'-I.', # e.g., '-I. -I/usr/include/other'
-     OBJECT =&gt;'$(O_FILES)', # link all the C files too
+    # LIBS =&gt; [''], e.g., '-lm'
+     # DEFINE =&gt;'', e.g., '-DHAVE_SOMETHING'
+     # INC =&gt;'-I.', e.g., '-I. -I/usr/include/other'
+     # OBJECT =&gt;'$(O_FILES)', link all the C files too
      CC =&gt;'g ++',
      LD =&gt;'g ++',
 );

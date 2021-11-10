@@ -105,7 +105,7 @@ if (-e $file) {
 }
 else {
   open my $fh, "&gt;", $file
-    or die "Unable to open $file in write mode .: $!";
+    or die "Unable to open $file in write mode .:$!";
   close $fh;
 }
 </pre>

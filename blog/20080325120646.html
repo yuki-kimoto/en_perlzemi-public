@@ -154,8 +154,8 @@ else {
 <pre>
 my $flag = 1;
 my $num
-  = $flag == 1? 3
-  : $flag == 2? 5
+  = $flag == 1 ? 3
+  : $flag == 2 ? 5
   : 7;
 </pre>
 <p>
@@ -189,28 +189,28 @@ my $num1 = 1;
 my $num2 = 2;
 
 print "1. Example of ternary operator (replace if ~ else)\n";
-my $max_num = $num1&gt; $num2 ? $num1: $num2;
+my $max_num = $num1 &gt; $num2 ? $num1: $num2;
 print "\$max_num = $max_num\n\n";
 
 # Same as the following if ~ else statement
-if ($num1&gt; $num2) {$max_num = $num1}
+if ($num1 &gt; $num2) {$max_num = $num1}
 else {$max_num = $num2}
 
 my $age = 23;
 print "2. Example of ternary operator (replace if ~ elsif ~)\n";
 my $generation =
-  $age &lt;20?'Child':
-  $age &lt;60?'middle':
-  $age &lt;80?'old':
+  $age &lt; 20?'Child':
+  $age &lt; 60?'middle':
+  $age &lt; 80?'old':
   'very old';
                   
 print "\$generation = $generation\n";
 
 # Same as the following if ~ elsif statement
-if ($age &lt;20) {$generation ='child'}
-elsif ($age &lt;60) {$generation ='middle'}
-elsif ($age &lt;80) {$generation ='old'}
-else {$generation ='very old'}
+if ($age &lt; 20) {$generation = 'child'}
+elsif ($age &lt; 60) {$generation = 'middle'}
+elsif ($age &lt; 80) {$generation = 'old'}
+else {$generation = 'very old'}
 </pre>
 
   </div>

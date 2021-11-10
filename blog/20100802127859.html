@@ -100,7 +100,7 @@ use File::Basename 'basename';
 # Same meaning as above
 BEGIN {
   require File::Basename;
-  File::Basename-&gt;import ('basename');
+  File::Basename-&gt;import('basename');
 }
 </pre>
 <p>
@@ -117,7 +117,7 @@ our $num = 1;
   local $num = 2;
 }
 
-Return to # 1
+# Return to 1
 print $foo;
 
 my $scores = {math =&gt; 90, english =&gt; 100};
@@ -126,7 +126,7 @@ my $scores = {math =&gt; 90, english =&gt; 100};
   local $scores-&gt;{math} = 80;
 }
 
-Return to # 90
+# Return to 90
 print $scores-&gt;{math};
 </pre>
 <p>
@@ -142,18 +142,18 @@ print $scores-&gt;{math};
 </ul>
 <h3> Multi-line comment </h3>
 <p>
-  There is no multi-line comment syntax, so it's a bit disappointing, but the comment is only # . If you want to comment on multiple lines while debugging, you can comment out by interpreting it as a document.
+  # There is no multi-line comment syntax, so it's a bit disappointing, but the comment is only . If you want to comment on multiple lines while debugging, you can comment out by interpreting it as a document.
 </p>
 <pre>
-= pod
+=pod
 
-my $str ='aaa';
-my $foo ='foo';
+my $str = 'aaa';
+my $foo = 'foo';
 
-= cut
+=cut
 </pre>
 <p>
-  The part enclosed as "= pod" and "= cut" is interpreted as a document and ignored.
+  The part enclosed as "=pod" and "=cut" is interpreted as a document and ignored.
 </p>
 <h3> Different variables with different sigils </h3>
 <p>
@@ -182,8 +182,8 @@ perldoc -v $.
 </p>
 <pre>
 # Method call
-SomeClass-&gt;method ('a', 'b');
-$obj-&gt;method ('a', 'b');
+SomeClass-&gt;method('a', 'b');
+$obj-&gt;method('a', 'b');
 </pre>
 <p>
   A method call differs from a function call in that the value to the left of->is passed as the first argument of the subroutine. In the above example, the first argument of method is the string SomeClass or $obj. 'a' and'b' are the second and third arguments.
@@ -381,7 +381,7 @@ my $command = "ls -l";
 system $command;
 
 if ($? == -1) {
-  die "failed to execute: $!\n";
+  die "failed to execute:$!\n";
 }
 elsif ($? &gt;&gt; 8 != 0) {
   die "Return error status\n";
@@ -406,7 +406,7 @@ Same as # our $VAR;
 use vars 'VAR';
 </pre>
 <h3> Operators starting with q that you want to remember </h3>
-  Operators starting with q are difficult to remember, so I will summarize them. You can also use //, {}, # #, ||, etc. as the enclosing characters.
+  # Operators starting with q are difficult to remember, so I will summarize them. You can also use //, {}, #, ||, etc. as the enclosing characters.
 <p>
   q is a single quote operator. It is the same as single quote except that single quote can be used.
 </p>
@@ -423,7 +423,7 @@ my $str = qq/aaa "" "$str/;
   qw is a string list operator. You can easily write a list of strings.
 </p>
 <pre>
-Same as # ('foo', 'bar', 'baz')
+# Same as ('foo', 'bar', 'baz')
 my $str = qw/foo bar baz/&lt;/pre&gt;
 
 qr is a regular expression reference.
@@ -495,7 +495,7 @@ print'bbb';
   If you want to avoid the program ending when you execute the last line when using the Perl debugger, put the meaningless "1;" executable statement in the last line as follows.
 </p>
 <pre>
-my $str ='aaa';
+my $str = 'aaa';
 print $str;
 
 1;
@@ -530,7 +530,7 @@ while (defined(my $line = &lt;&gt;)) {
   If the variable name is followed by a colon or underscore, the variable cannot be expanded correctly. In such a case, enclose it in "{}" to explicitly indicate the variable name.
 </p>
 <pre>
-my $name ='aaa';
+my $name = 'aaa';
 my $message = "${name}::aaa ${name} _ppp";
 </pre>
 <h3> Take a peek at the symbol table </h3>
@@ -632,7 +632,7 @@ sub func1 {print 1}
   If you want to get a part of the matched character using <a href="/blog/20100827127859.html">regular expression</a>, write as follows in combination with the if statement.
 </p>
 <pre>
-if ($str =~ /regular expression /) {
+if ($str =~ /regular expression/) {
   my $match1 = $1;
   my $match2 = $2;
 }
@@ -688,7 +688,7 @@ A or B
 <pre>
 my $conf_file = "app.conf";
 my $conf = do $conf_file
-  or die qq/Can't load config file "$conf_file": $! $@/;
+  or die qq/Can't load config file "$conf_file":$! $@/;
 </pre>
 <p>
   The contents of the configuration file.

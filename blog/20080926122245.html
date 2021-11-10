@@ -122,11 +122,11 @@ use warnings;
 
 use Encode 'decode';
 
-Get UTF-8 encoded string from # argument
+# Get UTF-8 encoded string from argument
 my $bytes = shift;
 
 # Get the length of the string
-my $string = decode ('UTF-8', $bytes);
+my $string = decode('UTF-8', $bytes);
 my $length = length $string;
 </pre>
 <h4> length cannot get the length of the array </h4>

@@ -109,7 +109,7 @@
 <pre>
 use Time::Piece;
 
-Get # Time::Piece object
+# Get Time::Piece object
 my $t = localtime;
 
 # Get date and time information
@@ -383,7 +383,7 @@ $t-&gt;month_last_day
   </tr>
   <tr>
     <td>
-      $t->hms (".")
+      $t->hms(".")
     </td>
     <td>
        12.34.56
@@ -423,7 +423,7 @@ $t-&gt;month_last_day
   </tr>
   <tr>
     <td>
-      $t->mdy ("/")
+      $t->mdy("/")
     </td>
     <td>
        02/29/2000
@@ -439,7 +439,7 @@ $t-&gt;month_last_day
   </tr>
   <tr>
     <td>
-      $t->dmy (".")
+      $t->dmy(".")
     </td>
     <td>
        29.02.2000
@@ -560,7 +560,7 @@ my $t = Time::Piece-&gt;strptime($datetime_mysql, '%Y-%m-%d%H:%M:%S');
 my @week_names = ('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
 my $t = Time::Piece::localtime;
 # Get week name in Japanese
-my $wday = $t-&gt;wdayname (@week_names);
+my $wday = $t-&gt;wdayname(@week_names);
 </pre>
 <h3> Calculation of date/time information </h3>
 <h4> Tempe::Piece object subtraction </h4>
@@ -618,10 +618,10 @@ $t + ONE_DAY * 5
 </pre>
 <h3> Date comparison </h3>
 <p>
-  You can use comparison operators to compare dates. You can use "<", ">", "<=", ">=", "<=>", "==" and " != " .
+  You can use comparison operators to compare dates. You can use "<", ">", "<=", " >= ", "<=>", "==" and " != " .
 </p>
 <pre>
-$t1 &lt;$t2
+$t1 &lt; $t2
 </pre>
 <h3> Create Time::Piece object </h3>
 <p>

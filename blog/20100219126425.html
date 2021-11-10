@@ -104,14 +104,14 @@ my $value;
   When you assign a value, the value is defined.
 </p>
 <pre>
-Since the # value is assigned, it will be in the defined state.
+# Since the value is assigned, it will be in the defined state.
 $value = 5;
 </pre>
 <p>
   If an undefined value is assigned using the <a href="/blog/20100220126425.html">undef function</a>, the value becomes undefined.
 </p>
 <pre>
-Substituting # undef makes it undefined
+# Substituting undef makes it undefined
 $value = undef;
 </pre>
 <h3> What is the difference from the boolean value? </H3>
@@ -144,7 +144,7 @@ $scores{math} = undef;
 </pre>
 <h3> Define functions for arrays and hashes are deprecated </h3>
 <p>
-  Arrays and hashes are not undefined values ​​when declared, but are assigned an empty list.
+  Arrays and hashes are not undefined values when declared, but are assigned an empty list.
 </p>
 <pre>
 my @nums;

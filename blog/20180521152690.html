@@ -74,9 +74,9 @@
 
 
 <pre>
-my $file ='a.txt';
+my $file = 'a.txt';
 open my $fh, '&lt;', $file
-  or die "Can't open $file: $!";
+  or die "Can't open $file:$!";
 
 # Read the contents of the file at once
 my $content = do {local $/; &lt;$fh&gt;};

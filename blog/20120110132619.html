@@ -89,23 +89,23 @@ my $data = {
 };
 
 # Create rules
-my $rule = $vc-&gt;create_rule ($data, $rule);
-$rule-&gt;require ('price')-&gt;check ('int')-&gt;message ('price must be number');
+my $rule = $vc-&gt;create_rule($data, $rule);
+$rule-&gt;require('price')-&gt;check('int')-&gt;message('price must be number');
 
-$rule-&gt;optional ('name')
-  -&gt;check ('not_blank')-&gt;message ('name is empty')
-  -&gt;check ({length =&gt; [0, 20])-&gt;message ('name is too long');
+$rule-&gt;optional('name')
+  -&gt;check('not_blank')-&gt;message('name is empty')
+  -&gt;check({length =&gt; [0, 20])-&gt;message('name is too long');
 
-$rule-&gt;require ('password')
-  -&gt;check ('not_blank')-&gt;message ('password is empty')
-  -&gt;check ('ascii')-&gt;message ('password contains invalid caharcters');
+$rule-&gt;require('password')
+  -&gt;check('not_blank')-&gt;message('password is empty')
+  -&gt;check('ascii')-&gt;message('password contains invalid caharcters');
 
-$rule-&gt;require (['password', 'password2'])-&gt;name ('password_check')
-  -&gt;check ('duplication')-&gt;message ('Two password not match')
-  -&gt;copy (0);
+$rule-&gt;require(['password', 'password2'])-&gt;name('password_check')
+  -&gt;check('duplication')-&gt;message('Two password not match')
+  -&gt;copy(0);
 
 # Validation
-my $vresult = $vc-&gt;validate ($data, $rule);
+my $vresult = $vc-&gt;validate($data, $rule);
 
 # Check the result
 if ($vresult-&gt;is_ok) {
@@ -178,16 +178,16 @@ my $data = {price =&gt; 1200};
 
 # Create rules
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ('int');
+$rule-&gt;require('price')-&gt;check('int');
 
 # Validation
-my $vresult = $vc-&gt;validate ($data, $rule);
+my $vresult = $vc-&gt;validate($data, $rule);
 
 # Check the result
 if ($vresult-&gt;is_ok) {print "OK\n"}
 else {print "Not OK\n"}
 </pre>
-<h4> Data </​​h4>
+<h4> Data </h4>
 <p>
   The data to be validated must be a hash reference.
 </p>
@@ -202,7 +202,7 @@ my $data = {price =&gt; 1200};
 <pre>
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ('int');
+$rule-&gt;require('price')-&gt;check('int');
 </pre>
 <p>
   First, create a Validator::Custom::Rule object using the <b> create_rule </b> method.
@@ -214,25 +214,25 @@ my $rule = $vc-&gt;create_rule;
   Then use the <b> require </b> method to describe the name of the key that must exist.
 </p>
 <pre>
-$rule-&gt;require ('price')
+$rule-&gt;require('price')
 </pre>
 <p>
   You can also use <b> optional </b> instead of <b> require </b> if the key is arbitrary.
 </p>
 <pre>
-$rule-&gt;optional ('price')
+$rule-&gt;optional('price')
 </pre>
 <p>
   Next, describe the constraints.
 </p>
 <pre>
-$rule-&gt;require ('price')-&gt;check ('int');
+$rule-&gt;require('price')-&gt;check('int');
 </pre>
 <p>
   This time we only check one key, but if you want to check multiple values, you can continue to write.
 </p>
 <pre>
-$rule-&gt;require ('name')-&gt;check ('string');
+$rule-&gt;require('name')-&gt;check('string');
 </pre>
 <h4> Validation </h4>
 <p>
@@ -240,7 +240,7 @@ $rule-&gt;require ('name')-&gt;check ('string');
 </p>
 <pre>
 # Validation
-my $vresult = $vc-&gt;validate ($data, $rule);
+my $vresult = $vc-&gt;validate($data, $rule);
 </pre>
 <p>
   The return value is a Validator::Custom::Result object.
@@ -255,7 +255,7 @@ my $ok = $vresult-&gt;is_ok;
 <p>
   You can check if the validation result is correct with the is_ok method.
 </p>
-<h3> Validation of multiple values ​​</h3>
+<h3> Validation of multiple values </h3>
 <p>
   Let's create a rule for validating multiple values.
 </p>
@@ -265,16 +265,16 @@ my $data = {price =&gt; 1200, title =&gt;'Perl'};
 
 # Rules for validating multiple values
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ('int');
-$rule-&gt;require ('title')-&gt;check ('ascii');
+$rule-&gt;require('price')-&gt;check('int');
+$rule-&gt;require('title')-&gt;check('ascii');
 </pre>
 <p>
   To validate multiple values, just write <b> require </b> multiple times as follows: The contents of the rule are as follows.
 </p>
 <pre>
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ('int');
-$rule-&gt;require ('title')-&gt;check ('ascii');
+$rule-&gt;require('price')-&gt;check('int');
+$rule-&gt;require('title')-&gt;check('ascii');
 </pre>
 <h3> Register user-defined constraints - register_constraint </h3>
 <p>
@@ -291,7 +291,7 @@ $vc-&gt;register_constraint(
     
     # Returns 1 if correct, 0 if incorrect
     return 0 unless defined $value;
-    return $value =~ /^. + @. + $/? 1: 0;
+    return $value =~ /^. + @. +$/? 1: 0;
   }
 );
 </pre>
@@ -332,7 +332,7 @@ sub constraint name {
 <pre>
 # Validation of multiple valuesRules for doing
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('admin_email')-&gt;check ('email');
+$rule-&gt;require('admin_email')-&gt;check('email');
 my $data = {admin_email =&gt;'foo@my.com'};
 </pre>
 <h3> Register constraint function </h3>
@@ -343,7 +343,7 @@ my $data = {admin_email =&gt;'foo@my.com'};
 $vc-&gt;register_constraint(
   tel_num =&gt; sub {
     my $value = shift;
-    $value =~ /^ [\ d-] + $/? 1: 0;
+    $value =~ /^ [\d-] +$/? 1: 0;
   }
 );
 </pre>
@@ -354,7 +354,7 @@ $vc-&gt;register_constraint(
   The constraint function registered in this way can be used in the rule.
 </p>
 <pre>
-$rule-&gt;require ('tel')-&gt;check ('tel_num');
+$rule-&gt;require('tel')-&gt;check('tel_num');
 </pre>
 <p>
   Multiple constraint functions can be registered at the same time.
@@ -363,7 +363,7 @@ $rule-&gt;require ('tel')-&gt;check ('tel_num');
 $vc-&gt;register_constraint(
   tel_num =&gt; sub {
      my $value = shift;
-     $value =~ /^ [\ d-] + $/? 1: 0;
+     $value =~ /^ [\d-] +$/? 1: 0;
   },
   hiragana =&gt; sub {...}
 );
@@ -374,27 +374,27 @@ $vc-&gt;register_constraint(
 </p>
 <pre>
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;optional ('name')-&gt;check ('int');
+$rule-&gt;optional('name')-&gt;check('int');
 </pre>
 <p>
   The above rule states that name may or may not exist, and if it does, it must be an int.
 </p>
 <h3> At least one item contains a value </h3>
 <p>
-  You may want to enter multiple text boxes and check that at least one of them contains a value. In such a case, a little ingenuity is required. It's a good idea to merge the values ​​in the textbox and then check that it's not empty.
+  You may want to enter multiple text boxes and check that at least one of them contains a value. In such a case, a little ingenuity is required. It's a good idea to merge the values in the textbox and then check that it's not empty.
 </p>
 <pre>
 # At least one item contains a value
 my $vc = Validator::Custom-&gt;new;
 $data = {name1 =&gt;'Ken', name2 =&gt;'', name3 =&gt;'Taro'};
 $rule = [
-  {key =&gt; qr/^ name \ d + $/} =&gt; [
+  {key =&gt; qr/^ name\d + $/} =&gt; [
     'merge',
     'trim',
     'not_blank'
   ],,
 ];;
-my $result = $vc-&gt;validate ($data, $rule);
+my $result = $vc-&gt;validate($data, $rule);
 </pre>
 <h3> and rules using conditions </h3>
 <p>
@@ -410,11 +410,11 @@ my $result = $vc-&gt;validate ($data, $rule);
 # data
 my $data = {price =&gt; 1200};
 
-Rules using # and conditions
+# Rules using and conditions
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')
-  -&gt;check ({greater_than =&gt; 1000})
-  -&gt;check ({less_than =&gt; 2000});
+$rule-&gt;require('price')
+  -&gt;check({greater_than =&gt; 1000})
+  -&gt;check({less_than =&gt; 2000});
 </pre>
 <h3> or rules using conditions </h3>
 <p>
@@ -429,16 +429,16 @@ my $data = {price =&gt; 1200};
 
 # or rules using conditions
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check_or ('blank', 'int');
+$rule-&gt;require('price')-&gt;check_or('blank', 'int');
 </pre>
 <h4> and use condition and or condition at the same time </h4>
 <p>
   You can also use the and condition and the or condition at the same time.
 </p>
 <pre>
-$rule-&gt;require ('price')
-  -&gt;check_or ('blank', 'int')
-  -&gt;check ({greater_than =&gt; 1000});
+$rule-&gt;require('price')
+  -&gt;check_or('blank', 'int')
+  -&gt;check({greater_than =&gt; 1000});
 </pre>
 <h3> Specifying arguments in constraints </h3>
 <p>
@@ -455,8 +455,8 @@ $rule-&gt;require ('price')
 </p>
 <pre>
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ({'equal_to' =&gt; 1000});
-$rule-&gt;require ('age')-&gt;check ({between =&gt; [1, 20]});
+$rule-&gt;require('price')-&gt;check({'equal_to' =&gt; 1000});
+$rule-&gt;require('age')-&gt;check({between =&gt; [1, 20]});
 my $data = {price =&gt; 1000, age =&gt; 19};
 </pre>
 <p>
@@ -468,24 +468,24 @@ my $data = {price =&gt; 1000, age =&gt; 19};
 </p>
 <pre>
 # data
-my $data = {languages ​​=&gt;'Japanese'};
+my $data = {languages =&gt;'Japanese'};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('languages')-&gt;filter ('to_array');
+$rule-&gt;require('languages')-&gt;filter('to_array');
 
-my $vresult = $vc-&gt;validate ($data, $rule);
+my $vresult = $vc-&gt;validate($data, $rule);
 print $vresult-&gt;data-&gt;{languages}; # ['Japanese']
 </pre>
 <p>
   to_array converts data that is not an array reference to an array reference. If it was originally an array reference, it does nothing.
 </p>
 <p>
-  This is useful for converting to an array reference when you don't know if one value will come or multiple values ​​will come, such as checkboxes.
+  This is useful for converting to an array reference when you don't know if one value will come or multiple values will come, such as checkboxes.
 </p>
 <h3> in_array (constraint function)-Check if the value is contained in the array value </h3>
 <p>
-  When checking an HTML form, you may not want to allow values ​​other than a certain value. In such cases, use the <strong> in_array </strong> constraint function.
+  When checking an HTML form, you may not want to allow values other than a certain value. In such cases, use the <strong> in_array </strong> constraint function.
 </p>
 <pre>
 # data
@@ -493,7 +493,7 @@ my $data = {food =&gt;'sushi'};
 
 # rule
 my $rule = $rule-&gt;create_rule;
-$rule-&gt;require ('food')-&gt;check ({'in_array' =&gt; [qw/sushi bread apple /]});
+$rule-&gt;require('food')-&gt;check({'in_array' =&gt; [qw/sushi bread apple /]});
 </pre>
 <p>
   The argument of the in_array constraint function specifies an array reference that contains the allowed values.
@@ -501,9 +501,9 @@ $rule-&gt;require ('food')-&gt;check ({'in_array' =&gt; [qw/sushi bread apple /]
 <pre>
 {'in_array' =&gt; [qw/sushi bread apple /]}
 </pre>
-<h4> Apply to multiple values ​​such as checkboxes </h4>
+<h4> Apply to multiple values such as checkboxes </h4>
 <p>
-  There are multiple check box values. If you want all of the multiple values ​​to be included in a certain value, write as follows.
+  There are multiple check box values. If you want all of the multiple values to be included in a certain value, write as follows.
 </p>
 <pre>
 # Multiple values
@@ -511,10 +511,10 @@ my $data = {food =&gt; ['sushi', 'cake']};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('food')
-  -&gt;each(1)-&gt;check ({'in_array' =&gt; [qw/sushi bread apple /]);
+$rule-&gt;require('food')
+  -&gt;each(1)-&gt;check({'in_array' =&gt; [qw/sushi bread apple /]);
 
-my $is_valid = $vc-&gt;validate ($data, $rule);
+my $is_valid = $vc-&gt;validate($data, $rule);
 </pre>
 <p>
   By using the <b> each </b> method, you can verify each value of the element.
@@ -524,15 +524,15 @@ my $is_valid = $vc-&gt;validate ($data, $rule);
 </p>
 <h4> Application </h4>
 <p>
-  For example, a rule that at least one is checked and all its values ​​are 001 or 002 is applied as follows:
+  For example, a rule that at least one is checked and all its values are 001 or 002 is applied as follows:
 </p>
 <pre>
 # rule
-$rule-&gt;require ('food')
-  -&gt;filter ('to_array')
-  -&gt;check ('selected_at_least')
+$rule-&gt;require('food')
+  -&gt;filter('to_array')
+  -&gt;check('selected_at_least')
   -&gt;each(1)
-  -&gt;check ({'in_array' =&gt; [qw/001 002 /]});
+  -&gt;check({'in_array' =&gt; [qw/001 002 /]});
 </pre>
 <p>
   Validator::Custom makes it easy to validate HTML forms.
@@ -547,7 +547,7 @@ my $data = {hobby =&gt; ['music', 'movie']};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('hobby')-&gt;check ({selected_at_least =&gt; 1});
+$rule-&gt;require('hobby')-&gt;check({selected_at_least =&gt; 1});
 </pre>
 <p>
   The selected_at_least constraint function can specify at least how many must be selected in the argument. In this sample, 1 is specified, which means at least one.
@@ -569,7 +569,7 @@ $vc-&gt;register_constraint(
     
     my $is_int = $vc-&gt;constraints-&gt;{'int'}-&gt;($value);
     
-    my $is_valid = $is_int &amp;&amp; $value &lt;1000;
+    my $is_valid = $is_int &amp;&amp; $value &lt; 1000;
     
     return $is_valid;
   }
@@ -594,9 +594,9 @@ my $data = {age =&gt; 19};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('age')-&gt;check ('uint');
+$rule-&gt;require('age')-&gt;check('uint');
 
-my $is_valid = $vc-&gt;validate ($data, $rule);
+my $is_valid = $vc-&gt;validate($data, $rule);
 </pre>
 <p>
   Internally, the regular expression "^ [0-9] + $" is used.
@@ -611,11 +611,11 @@ my $data = {mail1 =&gt;'a@somehost.com', mail2 =&gt;'a@somehost.com'};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require (['mail1', 'mail2'])-&gt;name ('mail_check')
-  -&gt;check ('duplication');
+$rule-&gt;require(['mail1', 'mail2'])-&gt;name('mail_check')
+  -&gt;check('duplication');
 </pre>
 <p>
-  Note that validation will fail if neither of the two values ​​is undefined.
+  Note that validation will fail if neither of the two values is undefined.
 </p>
 <h3> length(constraint function) - Check string length </h3>
 <p>
@@ -628,15 +628,15 @@ my $data = {value1 =&gt;'aaa', value2 =&gt;'bbbbb'};
 # rule
 my $rule = $vc-&gt;create_rule;
 # Length is 3
-$rule-&gt;require ('value1')-&gt;check ({'length' =&gt; 3});
+$rule-&gt;require('value1')-&gt;check({'length' =&gt; 3});
 # Length 2 or more and 5 or less
-$rule-&gt;require ('value2')-&gt;check ({'length' =&gt; [2, 5]});
+$rule-&gt;require('value2')-&gt;check({'length' =&gt; [2, 5]});
 # Length 2 or more
-$rule-&gt;require ('value3')-&gt;check ({'length' =&gt; {min =&gt; 2, max =&gt; 5}});
+$rule-&gt;require('value3')-&gt;check({'length' =&gt; {min =&gt; 2, max =&gt; 5}});
 # Length 2 or more
-$rule-&gt;require ('value4')-&gt;check ({'length' =&gt; {min =&gt; 2, max =&gt; 5}});
+$rule-&gt;require('value4')-&gt;check({'length' =&gt; {min =&gt; 2, max =&gt; 5}});
 # Length is 5 or less
-$rule-&gt;require ('value4')-&gt;check ({'length' =&gt; {max =&gt; 5}});
+$rule-&gt;require('value4')-&gt;check({'length' =&gt; {max =&gt; 5}});
 </pre>
 <p>
   You can check the length. If the string is an internal string, you can check the length of the string. If the string is a byte string, check the number of bytes.
@@ -648,7 +648,7 @@ $rule-&gt;require ('value4')-&gt;check ({'length' =&gt; {max =&gt; 5}});
 <pre>
 my $data =&gt; {name =&gt;'Ken'};
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('name')-&gt;check ('defined');
+$rule-&gt;require('name')-&gt;check('defined');
 </pre>
 <p>
   In the case of HTML form, you can use not_blank instead of define because you only need to be able to check if it is an empty string.
@@ -663,8 +663,8 @@ $rule-&gt;require ('name')-&gt;check ('defined');
 <pre>
 my $data = {num1 =&gt; '123', num2 =&gt; '1.45'};
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('num1')-&gt;check ({'decimal' =&gt; 3});
-$rule-&gt;require ('num2')-&gt;check ({'decimal' =&gt; [1, 2]});
+$rule-&gt;require('num1')-&gt;check({'decimal' =&gt; 3});
+$rule-&gt;require('num2')-&gt;check({'decimal' =&gt; [1, 2]});
 </pre>
 <h3> blank (constraint function) - empty string </h3>
 <p>
@@ -673,7 +673,7 @@ $rule-&gt;require ('num2')-&gt;check ({'decimal' =&gt; [1, 2]});
 <pre>
 my $data = {name =&gt;''};
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('name')-&gt;check ('blank');
+$rule-&gt;require('name')-&gt;check('blank');
 </pre>
 <p>
   I don't think there is any particular opportunity to use it in HTML form validation.
@@ -685,7 +685,7 @@ $rule-&gt;require ('name')-&gt;check ('blank');
 <pre>
 my $data = {age =&gt; 19};
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('age')-&gt;check ({between =&gt; [1, 20]});
+$rule-&gt;require('age')-&gt;check({between =&gt; [1, 20]});
 </pre>
 <p>
   It does not consider whether between is an integer. If you want to apply an integer constraint, please also use the int constraint function.
@@ -697,14 +697,14 @@ $rule-&gt;require ('age')-&gt;check ({between =&gt; [1, 20]});
 <pre>
 my $data = {password =&gt;'ajf &amp; $# -'};
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('password')-&gt;check ('ascii');
+$rule-&gt;require('password')-&gt;check('ascii');
 </pre>
 <p>
   Since it is a range of graphic characters, not the entire ASCII code, validation will fail if tabs, spaces, etc. are included.
 </p>
-<h3> duplication (constraint function) - Check that two values ​​are the same </h3>
+<h3> duplication (constraint function) - Check that two values are the same </h3>
 <p>
-  If you want to check that <strong> two values ​​match </strong>, use the C <duplication> constraint function. Validation will always fail if either value is undefined.
+  If you want to check that <strong> two values match </strong>, use the C <duplication> constraint function. Validation will always fail if either value is undefined.
 </p>
 <p>
   Multiple values
@@ -712,8 +712,8 @@ $rule-&gt;require ('password')-&gt;check ('ascii');
 <pre>
 my $data = {password1 =&gt;'secret', password2 =&gt;'secret'};
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require (['passwrod1', 'password2'])-&gt;name ('password_check')
-  -&gt;check ('duplication');
+$rule-&gt;require(['passwrod1', 'password2'])-&gt;name('password_check')
+  -&gt;check('duplication');
 </pre>
 <p>
   If you want to check multiple values, you can pass an array reference to the require method. In this case, add the name method to the key value.
@@ -726,11 +726,11 @@ $rule-&gt;require (['passwrod1', 'password2'])-&gt;name ('password_check')
   The rules are as follows.
 </p>
 <pre>
-$rule-&gt;require ('password')
-  -&gt;check ('not_blank')-&gt;message ('password is empty')
-  -&gt;check ('ascii')-&gt;message ('password contains invalid character');
-$rule-&gt;require (['password1', 'password2'])-&gt;name ('password_check')
-  -&gt;check ('duplication')-&gt;message ('Two password is not matched')
+$rule-&gt;require('password')
+  -&gt;check('not_blank')-&gt;message('password is empty')
+  -&gt;check('ascii')-&gt;message('password contains invalid character');
+$rule-&gt;require(['password1', 'password2'])-&gt;name('password_check')
+  -&gt;check('duplication')-&gt;message('Two password is not matched')
 </pre>
 <h3> regex (constraint function) - matches regular expression </h3>
 <p>
@@ -742,7 +742,7 @@ my $data = {num =&gt; '123'};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('num')-&gt;check ({'regex' =&gt; qr/\d{0,3} /});
+$rule-&gt;require('num')-&gt;check({'regex' =&gt; qr/\d{0,3} /});
 </pre>
 <h3> not_space (constraint function)-not whitespace </h3>
 <p>
@@ -754,7 +754,7 @@ my $data = {name =&gt;'Ken'};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('name')-&gt;check ('not_space');
+$rule-&gt;require('name')-&gt;check('not_space');
 </pre>
 <h3> not_defined(constraint function)-value not defined </h3>
 <p>
@@ -766,7 +766,7 @@ my $data = {name =&gt;'Ken'};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('name')-&gt;check ('not_defined');
+$rule-&gt;require('name')-&gt;check('not_defined');
 </pre>
 <h3> less_than (constraint function)-a number is less than a certain number </h3>
 <p>
@@ -778,7 +778,7 @@ my $data = {num =&gt; 20};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('num')-&gt;check ({'less_than' =&gt; 25});
+$rule-&gt;require('num')-&gt;check({'less_than' =&gt; 25});
 </pre>
 <h3> int(constraint function)-integer </h3>
 <p>
@@ -790,7 +790,7 @@ my $data = {age =&gt; 19};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('age')-&gt;check ('int');
+$rule-&gt;require('age')-&gt;check('int');
 </pre>
 <h3> http_url (constraint function) - HTTP or HTTPS URL </h3>
 <p>
@@ -802,7 +802,7 @@ my $data = {url =&gt;'http://somehost.com'};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('url')-&gt;check ('http_url');
+$rule-&gt;require('url')-&gt;check('http_url');
 </pre>
 <h3> greater_than (constraint function)-greater than a certain number </h3>
 <p>
@@ -814,7 +814,7 @@ my $data = {price =&gt; 1000};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ({'greater_than' =&gt; 900});
+$rule-&gt;require('price')-&gt;check({'greater_than' =&gt; 900});
 </pre>
 <h3> equal_to (constraint function) - equal numbers </h3>
 <p>
@@ -826,7 +826,7 @@ my $data = {price =&gt; 1000};
 
 # rule
 my $rule = $vc-&gt;create_rule;
-$rule-&gt;require ('price')-&gt;check ({'equal_to' =&gt; 1000});
+$rule-&gt;require('price')-&gt;check({'equal_to' =&gt; 1000});
 </pre>
 
   </div>

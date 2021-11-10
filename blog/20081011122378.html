@@ -85,7 +85,7 @@
   In this sample, we will get the data of Japanese holidays provided by Google with Google Calendar Data API.
 </p>
 <p>
-  It is not absolutely reliable because it is the data of Japanese holidays examined by Google. <span style = "color: # FF0000;">If Google is wrong, it will get the wrong holiday data, so please do not use it as it is for applications where the wrong date causes damage. </span> Make sure you are correct by other means.
+  It is not absolutely reliable because it is the data of Japanese holidays examined by Google. <span style = "color:# FF0000;">If Google is wrong, it will get the wrong holiday data, so please do not use it as it is for applications where the wrong date causes damage. </span> Make sure you are correct by other means.
 </p>
 <pre>
 use strict;
@@ -99,7 +99,7 @@ use XML::Simple;
 
 # Google Calendar Data API URL (URL to get Japanese holidays)
 my $feed_base
-  ='http://www.google.com/calendar/feeds/japanese@holiday.calendar.google.com/public/full';
+  = 'http://www.google.com/calendar/feeds/japanese@holiday.calendar.google.com/public/full';
 
 # Start date including this date
 my $start_date = '2007-01-01';
@@ -116,7 +116,7 @@ my $feed_url = $feed_base.'?'. $Query;
 
 # Get XML from the web
 my $http_client = LWP::UserAgent-&gt;new;
-my $response = $http_client-&gt;get ($feed_url);
+my $response = $http_client-&gt;get($feed_url);
 
 my $holidays_xml;
 if ($response-&gt;is_success) {
@@ -129,8 +129,8 @@ else {
 # Parse XML
 my $xml_parser = XML::Simple-&gt;new;
 # XML::Change parser for those who don't have SAX
-$XML::Simple::PREFERRED_PARSER ='XML::Parser';
-my $holidays_data = $xml_parser-&gt;XMLin ($holidays_xml);
+$XML::Simple::PREFERRED_PARSER = 'XML::Parser';
+my $holidays_data = $xml_parser-&gt;XMLin($holidays_xml);
 
 my $holidays = [];
 for my $key (keys %{$holidays_data-&gt;{'entry'}}) {
@@ -143,21 +143,21 @@ for my $key (keys %{$holidays_data-&gt;{'entry'}}) {
 use Encode;
 my $encode_to;
 if ($^O eq 'MSWin32') {
-  $encode_to ='shift-jis';
+  $encode_to = 'shift-jis';
 }
 else {
-  $encode_to ='utf8';
+  $encode_to = 'utf8';
 }
 
 # Encode all data
 for my $holiday (@$holidays) {
   for my $key (keys %$holiday) {
-    $holiday-&gt;{$key} = encode ($encode_to, $holiday-&gt;{$key});
+    $holiday-&gt;{$key} = encode($encode_to, $holiday-&gt;{$key});
   }
 }
 
 use Data::Dumper;
-print Data::Dumper-&gt;Dump ([$holidays], ['* holidays']);
+print Data::Dumper-&gt;Dump([$holidays], ['* holidays']);
 </pre>
 <h3> Holiday issues </h3>
 <p>
@@ -174,7 +174,7 @@ print Data::Dumper-&gt;Dump ([$holidays], ['* holidays']);
 </p>
 <pre>
 my $feed_base
-  ='http://www.google.com/calendar/feeds/japanese@holiday.calendar.google.com/public/full';
+  = 'http://www.google.com/calendar/feeds/japanese@holiday.calendar.google.com/public/full';
 </pre>
 <h4> Create query string </h4>
 <p>
@@ -209,7 +209,7 @@ my $feed_url = $feed_base.'?'. $Query;
 <pre>
 use LWP::UserAgent;
 my $http_client = LWP::UserAgent-&gt;new;
-my $response = $http_client-&gt;get ($feed_url);
+my $response = $http_client-&gt;get($feed_url);
 
 my $holidays_xml;
 if ($response-&gt;is_success) {
@@ -228,8 +228,8 @@ use XML::Simple;
 
 # Parse XML
 my $xml_parser = XML::Simple-&gt;new();
-$XML::Simple::PREFERRED_PARSER ='XML::Parser';
-my $holidays_data = $xml_parser-&gt;XMLin ($holidays_xml);
+$XML::Simple::PREFERRED_PARSER = 'XML::Parser';
+my $holidays_data = $xml_parser-&gt;XMLin($holidays_xml);
 
 my $holidays = [];
 for my $key (keys %{$holidays_data-&gt;{'entry'}}) {
@@ -262,16 +262,16 @@ $holidays_data-&gt;{entry}{URL as an identifier}{title}{content};
 use Encode;
 my $encode_to;
 if ($^O eq 'MSWin32') {
-  $encode_to ='shift-jis';
+  $encode_to = 'shift-jis';
 }
 else {
-   $encode_to ='utf8';
+   $encode_to = 'utf8';
 }
 
 # Encode all data
 for my $holiday (@$holidays) {
    for my $key (keys %$holiday) {
-     $holiday-&gt;{$key} = encode ($encode_to, $holiday-&gt;{$key});
+     $holiday-&gt;{$key} = encode($encode_to, $holiday-&gt;{$key});
    }
 }
 </pre>

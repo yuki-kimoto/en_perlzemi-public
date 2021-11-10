@@ -101,8 +101,8 @@ system $cmd;
   I am using the or operator and the <a href="/blog/20100212126425.html">die function</a> for error checking.
 </p>
 <pre>
-my $cmd ='ls';
-system($cmd) == 0 or die "Can't execute $cmd: $!";
+my $cmd = 'ls';
+system($cmd) == 0 or die "Can't execute $cmd:$!";
 </pre>
 <p>
   A list of current directories is displayed as shown below.
@@ -118,7 +118,7 @@ crontab.txt imager-japanese-translation.wiki mojo-examples
 </p>
 <pre>
 my @cmd = ('ls', '-a', 'tmp');
-system(@cmd) == 0 or die "Can't execute @cmd: $!";
+system(@cmd) == 0 or die "Can't execute @cmd:$!";
 </pre>
 <h3> System function security </h3>
 <p>

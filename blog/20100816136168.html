@@ -147,13 +147,13 @@
 
 <pre>
 # Greater than 1 and less than 4
-if ($num&gt; 1 &amp;&amp; $num &lt;4) {
+if ($num &gt; 1 &amp;&amp; $num &lt; 4) {
   ...
 }
 </pre>
 <h4> || OR (A or B) </h4>
 <p>
-  Use <b> &#x7c; &#x7c; </b> to represent the conjunction "A or B". True if at least one of the values ​​is true.
+  Use <b> &#x7c; &#x7c; </b> to represent the conjunction "A or B". True if at least one of the values is true.
 </p>
 <pre>
 # 'dog' or'cat'
@@ -167,7 +167,7 @@ if ($pet eq 'dog' || $pet eq 'cat') {
 </p>
 <pre>
 # $num is not true
-if (! $num) {
+if (!$num) {
   ...
 }
 </pre>
@@ -177,7 +177,7 @@ if (! $num) {
 </p>
 <pre>
 # Greater than 1 and less than 4
-if ($num&gt; 1 and $num &lt;4) {
+if ($num &gt; 1 and $num &lt; 4) {
   ...
 }
 </pre>
@@ -243,7 +243,7 @@ $var1 || $var2
 </p>
 <pre>
 open my $fh, '&lt;', $file
-  or die qq/Can't open file "$file": $!/;
+  or die qq/Can't open file "$file":$!/;
 </pre>
 <p>
   If the open function succeeds, true is returned and the right-hand side of or is not executed. If the open function fails, undef is returned, so <a href="/blog/20100212126425.html">die</a> on the right side is executed and the program ends.
@@ -262,7 +262,7 @@ system(@cmd) == 0
   You can use "and" for conditional branching, but "or" is recommended because it is difficult to read.
 </p>
 <pre>
-Example rewritten with # and
+# Example rewritten with and
 system(@cmd)
   and die "Can't execute command @cmd";
 </pre>
@@ -277,19 +277,19 @@ use warnings;
 # AND, OR, negation
 print "1. Logical product (A and B)\n";
 my $num = 3;
-if ($num&gt; 1 &amp;&amp; $num &lt;4) {
+if ($num &gt; 1 &amp;&amp; $num &lt; 4) {
   print "\$num is greater than 1 and less than 4\n\n";
 }
 
 print "2. OR (A or B)\n";
-my $pet ='dog';
+my $pet = 'dog';
 if ($pet eq 'dog' || $pet eq 'cat') {
   print "\$pet is either'dog'or'cat'.\n\n";
 }
 
 print "3. Negation (not A)\n";
 my $num0 = 0;
-if (! $num0) {
+if (!$num0) {
   print "! \$Num is true\n";
 }
 </pre>

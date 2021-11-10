@@ -108,13 +108,13 @@ my $msg = MIME::Lite-&gt;new(
 );
 
 # Add text
-$msg-&gt;attach (
+$msg-&gt;attach(
   Type =&gt;'TEXT',
   Data =&gt; "Here's the GIF file you wanted"
 );
 
 # Add image
-$msg-&gt;attach (
+$msg-&gt;attach(
   Type =&gt;'image/gif',
   Path =&gt;'aaa000123.gif',
   Filename =&gt;'logo.gif',
@@ -169,18 +169,18 @@ my $msg = MIME::Lite-&gt;new(
   From =&gt;'me@myhost.com',
   To =&gt;'you@yourhost.com',
   Cc =&gt;'some@other.com, some@more.com',
-  Subject =&gt; encode ('MIME-Header-ISO_2022_JP', 'mail title'),
+  Subject =&gt; encode('MIME-Header-ISO_2022_JP', 'mail title'),
   Type =&gt;'multipart/mixed'
 );
 
 # Add text
-$msg-&gt;attach (
+$msg-&gt;attach(
   Type =&gt;'TEXT',
-  Data =&gt; encode ('ISO-2022-JP', 'text of email body'),
+  Data =&gt; encode('ISO-2022-JP', 'text of email body'),
 );
 
 # Add image
-$msg-&gt;attach (
+$msg-&gt;attach(
   Type =&gt;'image/gif',
   Path =&gt;'aaa000123.gif',
   Filename =&gt;'logo.gif',
@@ -204,18 +204,18 @@ my $msg = MIME::Lite-&gt;new(
   From =&gt;'me@myhost.com',
   To =&gt;'you@yourhost.com',
   Cc =&gt;'some@other.com, some@more.com',
-  Subject =&gt; encode ('MIME-Header', 'mail title'),
+  Subject =&gt; encode('MIME-Header', 'mail title'),
   Type =&gt;'multipart/mixed'
 );
 
 # Add text
-$msg-&gt;attach (
+$msg-&gt;attach(
   Type =&gt;'TEXT',
-  Data =&gt; encode ('UTF-8', 'text of email body'),
+  Data =&gt; encode('UTF-8', 'text of email body'),
 );
 
 # Add image
-$msg-&gt;attach (
+$msg-&gt;attach(
   Type =&gt;'image/gif',
   Path =&gt;'aaa000123.gif',
   Filename =&gt;'logo.gif',

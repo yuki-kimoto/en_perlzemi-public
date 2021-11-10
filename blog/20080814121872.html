@@ -90,40 +90,40 @@
 <pre>
 use strict;
 use warnings;
-use Fcntl qw /: DEFAULT: flock: seek/;
+use Fcntl qw /:DEFAULT :flock :seek/;
 
 # Be careful as it will be overwritten
 my $file = "data_20080814.txt";
 
 # Open in read/write mode (not very secure)
-If there is no file with # O_CREAT, create it.
+# If there is no file with O_CREAT, create it.
 sysopen(my $fh, $file, O_RDWR | O_CREAT)
-  or die "Cannot open $file: $!";
+  or die "Cannot open $file:$!";
 
 # Exclusive lock (exclusive lock because it reads and writes)
 flock($fh, LOCK_EX)
-  or die "Cannot lock $file: $!";
+  or die "Cannot lock $file:$!";
 
 my $cnt;
 $cnt = &lt;$fh&gt;;
-if (! Defined $cnt &amp;&amp; $!) {Die "Cannot read $file: $!";}
+if (! Defined $cnt &amp;&amp; $!) {Die "Cannot read $file:$!";}
 
 $cnt ++;
 
 # Move the file pointer to the beginning
 seek ($fh, 0, SEEK_SET)
-  or die "Cannot seek $file: $!";
+  or die "Cannot seek $file:$!";
 
 # write in.
 print {$fh} $cnt
-  or die "Cannot Write $file: $!";
+  or die "Cannot Write $file:$!";
 
 # Truncate the file to write size
 truncate ($fh, length $cnt);
 
-The file lock is released at the time of # close.
+# The file lock is released at the time of close.
 close $fh
-  or die "Cannot close $file: $!";
+  or die "Cannot close $file:$!";
 
 print "Current count: $cnt\n";
 </pre>
@@ -168,10 +168,10 @@ while (1) {
   The <a href="/blog/20180310152509.html">Fcntl</a> module allows you to use the file locking constants used by flock.
 </p>
 <pre>
-use Fcntl qw /: DEFAULT: flock: seek/;
+use Fcntl qw /:DEFAULT :flock :seek/;
 </pre>
 <p>
-  Use use Fcntl qw (: flock) to read the constants used by flock. There are three constants read by the: flock tag: LOCK_SH, LOCK_EX, and LOCK_UN.
+  Use use Fcntl qw(:flock) to read the constants used by flock. There are three constants read by the:flock tag:LOCK_SH, LOCK_EX, and LOCK_UN.
 </p>
 <table>
   <tr>
@@ -203,14 +203,14 @@ use Fcntl qw /: DEFAULT: flock: seek/;
   LOCK_NB is used with LOCK_SH LOCK_EX to return control to the program without waiting for the lock to be released if the lock has already been applied.
 </p>
 <p>
-  As a side note: DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the <a href="/blog/20080804121794.html">sysopen function</a>. Therefore, it is specified.
+  As a side note:DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the <a href="/blog/20080804121794.html">sysopen function</a>. Therefore, it is specified.
 </p>
 <h4> (2) If the file does not exist, create it and open it in read/write mode </h4>
 <pre>
 # Open in read/write mode (not very secure)
-If there is no file with # O_CREAT, create it.
+# If there is no file with O_CREAT, create it.
 sysopen(my $fh, $file, O_RDWR | O_CREAT)
-  or die "Cannot open $file: $!";
+  or die "Cannot open $file:$!";
 </pre>
 <p>
   In sysopen, specify O_RDWR and O_CREAT for the open flags.
@@ -219,7 +219,7 @@ sysopen(my $fh, $file, O_RDWR | O_CREAT)
 <pre>
 # Exclusive lock (exclusive lock because it reads and writes)
 flock($fh, LOCK_EX)
-  or die "Cannot lock $file: $!";
+  or die "Cannot lock $file:$!";
 </pre>
 <p>
   This time, we will use an exclusive lock (write lock) because we will read the data, count it up, and write it back. To perform an exclusive lock, specify LOCK_EX in the second argument of the flock function. If you just want to read, specify LOCK_SH.
@@ -231,17 +231,17 @@ flock($fh, LOCK_EX)
 <pre>
 my $cnt;
 $cnt = &lt;$fh&gt;;
-if (! Defined $cnt &amp;&amp; $!) {Die "Cannot read $file: $!";}
+if (! Defined $cnt &amp;&amp; $!) {Die "Cannot read $file:$!";}
 
 $cnt ++;
 
 # Move the file pointer to the beginning
 seek ($fh, 0, SEEK_SET)
-  or die "Cannot seek $file: $!";
+  or die "Cannot seek $file:$!";
 
 # write in.
 print {$fh} $cnt
-  or die "Cannot Write $file: $!";
+  or die "Cannot Write $file:$!";
 
 # Truncate the file to write size
 truncate ($fh, length $cnt);
@@ -251,9 +251,9 @@ truncate ($fh, length $cnt);
 </p>
 <h4> (5) Unlock </h4>
 <pre>
-The file lock is released at the time of # close.
+# The file lock is released at the time of close.
 close $fh
-  or die "Cannot close $file: $!";
+  or die "Cannot close $file:$!";
 </pre>
 <p>
   Calling the close function unlocks the file.

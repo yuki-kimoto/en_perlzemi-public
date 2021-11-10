@@ -146,20 +146,20 @@ drop table books;
   Use the insert statement to insert a record into the table.
 </p>
 <pre>
-insert into table name (field name 1, field name 2, ..) values ​​(value 1, value 2, value 3);
+insert into table name (field name 1, field name 2, ..) values (value 1, value 2, value 3);
 </pre>
 <p>
   To add a record with "title" of "Good life", "author" of "Saki" and "price" of "1900" to the table, execute the following SQL. Note that if the data is a string, enclose it in single quotes.
 </p>
 <pre>
-insert into books (title, author, price) values ​​('Good life', 'Saki', 1900);
+insert into books (title, author, price) values ('Good life', 'Saki', 1900);
 </pre>
 <p>
   This will add a record like the one below to the table.
 </p>
 <pre>
 + - -- -- -- --- + - -- -- -- - + - -- --- +
-| title | author | price | # This is the field name
+# | title | author | price | This is the field name
 +============= +========== +======== +
 | Good life | Saju | 1900 |
 + - -- -- -- --- + - -- -- -- - + - -- --- +
@@ -177,8 +177,8 @@ select * from books;
   Let's insert a few more records for the rest of this.
 </p>
 <pre>
-insert into books (title, author, price) values ​​('Simple is good', 'Mai', 2000);
-insert into books (title, author, price) values ​​('Good morning', 'Kenta', 3000);
+insert into books (title, author, price) values ('Simple is good', 'Mai', 2000);
+insert into books (title, author, price) values ('Good morning', 'Kenta', 3000);
 </pre>
 <h3> Record update update </h3>
 <p>
@@ -191,13 +191,13 @@ update table name set field name 1 = value 1, feel name 2 = value 2, .. where to
   The SQL to change the title value of a record whose "author" is "taro" to Ruby is as follows.
 </p>
 <pre>
-update books set title ='Ruby' where author ='taro'
+update books set title = 'Ruby' where author = 'taro'
 </pre>
 <p>
   Let's execute the update statement using do.
 </p>
 <pre>
-my $update = "update books set title ='Ruby' where author ='taro'";
+my $update = "update books set title = 'Ruby' where author = 'taro'";
 $dbh-&gt;do($update);
 </pre>
 <p>
@@ -205,9 +205,9 @@ $dbh-&gt;do($update);
 </p>
 <pre>
 + - -- --- + - -- -- -- +
-| title | author | # header (this can be done when you create the table)
+# | title | author | header (this can be done when you create the table)
 + - -- --- + - -- -- -- +
-| Ruby | taro | # record(record updated by update statement)
+# | Ruby | taro | record(record updated by update statement)
 + - -- --- + - -- -- -- +
 </pre>
 <h3> Delete record delete </h3>
@@ -221,13 +221,13 @@ delete from table name where field name to search = value
   The SQL to delete a record whose "author" is "taro" looks like this:
 </p>
 <pre>
-delete from books where author ='taro';
+delete from books where author = 'taro';
 </pre>
 <p>
   Let's execute a delete statement using do.
 </p>
 <pre>
-my $delete = "delete from books where author ='taro';";
+my $delete = "delete from books where author = 'taro';";
 $dbh-&gt;do($delete);
 </pre>
 <p>

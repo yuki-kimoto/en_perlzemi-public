@@ -89,7 +89,7 @@ use File::Basename 'fileparse';
 my ($base_name, $dir) = fileparse $file;
 </pre>
 <p>
-  You can use the fileparse function of the File::Basename module to separate the file name from the directory name and the base name. Note that the 0th in the list of return values ​​is the base name and the 1st is the directory name, which is the reverse of the original order.
+  You can use the fileparse function of the File::Basename module to separate the file name from the directory name and the base name. Note that the 0th in the list of return values is the base name and the 1st is the directory name, which is the reverse of the original order.
 </p>
 <p>
   File::Basename is created to be OS independent. On Unix, Windows, and MacOS, the file delimiters are different, but they can be used without problems.
@@ -104,8 +104,8 @@ use warnings;
 
 use File::Basename 'fileparse';
 
-my $file_unix ='dir1/dir2/base_name.txt';
-my $file_win ='dir1 \\ dir2 \\ base_name.txt';
+my $file_unix = 'dir1/dir2/base_name.txt';
+my $file_win = 'dir1 \\ dir2 \\ base_name.txt';
                                
 print "1: Extract the directory name and base name from the file name.\n";
 my ($base_name, $dir) = fileparse $file_unix;
@@ -132,8 +132,7 @@ For Unix
 $dir = dir1/dir2/$base_name = base_name.txt
 
 For Windows
-$dir = dir1 \ dir2 \
-$base_name = base_name.txt
+$dir = dir1\dir2\$base_name = base_name.txt
 
 2: Extract only the base name.
 $base_name_only = base_name.txt

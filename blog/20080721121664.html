@@ -116,8 +116,8 @@ open(FH, "&lt;", $file) or die "$!";
 # 2. Type glob * FH
 open(* FH, "&lt;", $file) or die "$!";
 
-# 3. Reference to typeglobs \ * FH
-my $fh = \ * FH;
+# 3. Reference to typeglobs\* FH
+my $fh =\* FH;
 open($fh, "&lt;", $file) or die "$!";
 
 # 4. IO::Handle object
@@ -136,13 +136,13 @@ open($fh, "&lt;", $file) or die "$!";
 </p>
 <pre>
 open(my $fh, "&lt;", $file)
-  or die "Can't open file $file: $!";
+  or die "Can't open file $file:$!";
 </pre>
 <p>
   is.
 </p>
 <p>
-  When an undefined scalar variable is passed as the first argument to the open function, a reference to the anonymous glob is automatically generated. With the same description as "3. Reference to typeglob(\ * FH)", only the part of my $fh = \ * FH; is automatically performed. (This is a modern implementation of Perl, which may in the future automatically generate objects to IO::Handle.)
+  When an undefined scalar variable is passed as the first argument to the open function, a reference to the anonymous glob is automatically generated. With the same description as "3. Reference to typeglob(\ * FH)", only the part of my $fh =\* FH; is automatically performed. (This is a modern implementation of Perl, which may in the future automatically generate objects to IO::Handle.)
 </p>
 
   </div>

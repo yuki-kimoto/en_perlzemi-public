@@ -92,10 +92,10 @@ binmode $fh;
 </p>
 <pre>
 # Read image file
-my $file ='picture.png';
+my $file = 'picture.png';
 
 open my $fh, '&lt;', $file
-  or die "Cannot open'$file': $!";
+  or die "Cannot open'$file':$!";
 
 binmode $fh;
 
@@ -103,7 +103,7 @@ my $size = -s $file;
 
 my $read = read($fh, my $buffer, $size, 0);
 
-die "Cannot read'$file': $!" unless defined $read;
+die "Cannot read'$file':$!" unless defined $read;
 
 close $fh;
 </pre>

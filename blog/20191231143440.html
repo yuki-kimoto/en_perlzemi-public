@@ -104,8 +104,8 @@
 </p>
 <pre>
 # Generate a resource object that represents a JPEG image
-my $image_file ='/path/image.jpeg';
-my $image_object = $pdf-&gt;image_jpeg ($image_file);
+my $image_file = '/path/image.jpeg';
+my $image_object = $pdf-&gt;image_jpeg($image_file);
 </pre>
 <p>
   <b> Reading PNG files </b>
@@ -115,8 +115,8 @@ my $image_object = $pdf-&gt;image_jpeg ($image_file);
 </p>
 <pre>
 # Create a resource object that represents a PNG image
-my $image_file ='/path/image.png';
-my $image_object = $pdf-&gt;image_png ($image_file);
+my $image_file = '/path/image.png';
+my $image_object = $pdf-&gt;image_png($image_file);
 </pre>
 <p>
   If you get the error "Unsupported Interlace", you need to turn off the PNG interlacing feature.
@@ -129,8 +129,8 @@ my $image_object = $pdf-&gt;image_png ($image_file);
 </p>
 <pre>
 # Create a resource object that represents a GIF image
-my $image_file ='/path/image.gif';
-my $image_object = $pdf-&gt;image_gif ($image_file);
+my $image_file = '/path/image.gif';
+my $image_object = $pdf-&gt;image_gif($image_file);
 </pre>
 <h4> Generation of image content object </h4>
 <p>
@@ -146,13 +146,13 @@ my $gfx = $page-&gt;gfx;
 </p>
 <pre>
 # Insert image at specified position
-$gfx-&gt;image ($image_object, $x, $y);
+$gfx-&gt;image($image_object, $x, $y);
 
 # Insert image at the specified position. Specify width and height
-$gfx-&gt;image ($image_object, $x, $y, $width, $height);
+$gfx-&gt;image($image_object, $x, $y, $width, $height);
 
 # Insert image at the specified position. Specify scale (1.5x, etc.)
-$gfx-&gt;image ($image_object, $x, $y, $scale);
+$gfx-&gt;image($image_object, $x, $y, $scale);
 </pre>
 <p>
   The image will be inserted at the specified position.
@@ -176,7 +176,7 @@ my $page = $pdf-&gt;page;
 
 # Create a resource object that represents a PNG image
 my $image_file = "$FindBin::Bin/rokkaku.png";
-my $image_object = $pdf-&gt;image_png ($image_file);
+my $image_object = $pdf-&gt;image_png($image_file);
 
 # Content object needed to insert an image
 my $gfx = $page-&gt;gfx;
@@ -184,10 +184,10 @@ my $gfx = $page-&gt;gfx;
 # Insert image at specified position
 my $x = 50;
 my $y = 500;
-$gfx-&gt;image ($image_object, $x, $y);
+$gfx-&gt;image($image_object, $x, $y);
 
-my $pdf_file ='image_png.pdf';
-$pdf-&gt;saveas ($pdf_file);
+my $pdf_file = 'image_png.pdf';
+$pdf-&gt;saveas($pdf_file);
 </pre>
 <p>
   <a href="/examples/pdf/image_png.pdf">Output result PNG image insertion</a>

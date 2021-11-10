@@ -136,7 +136,7 @@ World
 </pre>
 <pre>
 my $foo = "I am Tom" ;;
-if ($a =~ m/(? &lt;name&gt;. +) $/) {
+if ($a =~ m/(? &lt;name&gt;. +)$/) {
   my $name = ${^CAPTURE}{name};
 }
 </pre>
@@ -205,7 +205,7 @@ my @elements = (1,2,3);
 </p>
 <pre>
 # Whenever you use "{" in a regular expression, escape
-/ \ {/;
+/\{/;
 </pre>
 <h4> ${^ENCODING} feature removed </h4>
 <p>

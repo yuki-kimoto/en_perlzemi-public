@@ -97,41 +97,41 @@
  
 use strict;
 use warnings;
-use AI::MXNet qw (mx);
-use AI::MXNet::TestUtils qw (GetMNIST_ubyte);
+use AI::MXNet qw(mx);
+use AI::MXNet::TestUtils qw(GetMNIST_ubyte);
 use Test::More tests =&gt; 1;
  
 # symbol net
 my $batch_size = 100;
  
 # ## model
-my $data = mx-&gt;symbol-&gt;Variable ('data');
-my $conv1 = mx-&gt;symbol-&gt;Convolution (data =&gt; $data, name =&gt;'conv1', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
-my $bn1 = mx-&gt;symbol-&gt;BatchNorm (data =&gt; $conv1, name =&gt; "bn1");
-my $act1 = mx-&gt;symbol-&gt;Activation (data =&gt; $bn1, name =&gt;'relu1', act_type =&gt; "relu");
-my $mp1 = mx-&gt;symbol-&gt;Pooling (data =&gt; $act1, name =&gt;'mp1', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
+my $data = mx-&gt;symbol-&gt;Variable('data');
+my $conv1 = mx-&gt;symbol-&gt;Convolution(data =&gt; $data, name =&gt;'conv1', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
+my $bn1 = mx-&gt;symbol-&gt;BatchNorm(data =&gt; $conv1, name =&gt; "bn1");
+my $act1 = mx-&gt;symbol-&gt;Activation(data =&gt; $bn1, name =&gt;'relu1', act_type =&gt; "relu");
+my $mp1 = mx-&gt;symbol-&gt;Pooling(data =&gt; $act1, name =&gt;'mp1', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
  
-my $conv2 = mx-&gt;symbol-&gt;Convolution (data =&gt; $mp1, name =&gt;'conv2', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
-my $bn2 = mx-&gt;symbol-&gt;BatchNorm (data =&gt; $conv2, name =&gt; "bn2");
-my $act2 = mx-&gt;symbol-&gt;Activation (data =&gt; $bn2, name =&gt;'relu2', act_type =&gt; "relu");
-my $mp2 = mx-&gt;symbol-&gt;Pooling (data =&gt; $act2, name =&gt;'mp2', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
+my $conv2 = mx-&gt;symbol-&gt;Convolution(data =&gt; $mp1, name =&gt;'conv2', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
+my $bn2 = mx-&gt;symbol-&gt;BatchNorm(data =&gt; $conv2, name =&gt; "bn2");
+my $act2 = mx-&gt;symbol-&gt;Activation(data =&gt; $bn2, name =&gt;'relu2', act_type =&gt; "relu");
+my $mp2 = mx-&gt;symbol-&gt;Pooling(data =&gt; $act2, name =&gt;'mp2', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
  
  
-my $fl = mx-&gt;symbol-&gt;Flatten (data =&gt; $mp2, name =&gt; "flatten");
-my $fc1 = mx-&gt;symbol-&gt;FullyConnected (data =&gt; $fl, name =&gt; "fc1", num_hidden =&gt; 30);
-my $act3 = mx-&gt;symbol-&gt;Activation (data =&gt; $fc1, name =&gt;'relu3', act_type =&gt; "relu");
-my $fc2 = mx-&gt;symbol-&gt;FullyConnected (data =&gt; $act3, name =&gt;'fc2', num_hidden =&gt; 10);
-my $softmax = mx-&gt;symbol-&gt;SoftmaxOutput (data =&gt; $fc2, name =&gt;'softmax');
+my $fl = mx-&gt;symbol-&gt;Flatten(data =&gt; $mp2, name =&gt; "flatten");
+my $fc1 = mx-&gt;symbol-&gt;FullyConnected(data =&gt; $fl, name =&gt; "fc1", num_hidden =&gt; 30);
+my $act3 = mx-&gt;symbol-&gt;Activation(data =&gt; $fc1, name =&gt;'relu3', act_type =&gt; "relu");
+my $fc2 = mx-&gt;symbol-&gt;FullyConnected(data =&gt; $act3, name =&gt;'fc2', num_hidden =&gt; 10);
+my $softmax = mx-&gt;symbol-&gt;SoftmaxOutput(data =&gt; $fc2, name =&gt;'softmax');
  
 # check data
 GetMNIST_ubyte ();
  
-my $train_dataiter = mx-&gt;io-&gt;MNISTIter ({{
+my $train_dataiter = mx-&gt;io-&gt;MNISTIter({{
     image =&gt; "data/train-images-idx3-ubyte",
     label =&gt; "data/train-labels-idx1-ubyte",
     data_shape =&gt; [1, 28, 28],
     batch_size =&gt; $batch_size, shuffle =&gt; 1, flat =&gt; 0, silent =&gt; 0, seed =&gt; 10});
-my $val_dataiter = mx-&gt;io-&gt;MNISTIter ({{
+my $val_dataiter = mx-&gt;io-&gt;MNISTIter({{
     image =&gt; "data/t10k-images-idx3-ubyte",
     label =&gt; "data/t10k-labels-idx1-ubyte",
     data_shape =&gt; [1, 28, 28],
@@ -139,13 +139,13 @@ my $val_dataiter = mx-&gt;io-&gt;MNISTIter ({{
  
 my $n_epoch = 1;
 my $mod = mx-&gt;mod-&gt;new(symbol =&gt; $softmax);
-$mod-&gt;fit (
+$mod-&gt;fit(
     $train_dataiter,
     eval_data =&gt; $val_dataiter,
     optimizer_params =&gt; {learning_rate =&gt; 0.01, momentum =&gt; 0.9},
     num_epoch =&gt; $n_epoch
 );
-my $res = $mod-&gt;score ($val_dataiter, mx-&gt;metric-&gt;create ('acc'));
+my $res = $mod-&gt;score($val_dataiter, mx-&gt;metric-&gt;create('acc'));
 ok ($res-&gt;{accuracy}&gt; 0.8);
 </pre>
 <h3> Reference article </h3>

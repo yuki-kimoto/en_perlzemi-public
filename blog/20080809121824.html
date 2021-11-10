@@ -106,11 +106,11 @@ my $infile = shift;
 my $tmpfile = "tmp $$";
 
 open(my $infh, "&lt;", $infile)
-  or die "Cannot open $infile: $!";
+  or die "Cannot open $infile:$!";
 
 # Open a temporary file for export.
 open(my $tmpfh, "&gt;", $tmpfile)
-  or die "Cannot open $tmpfile: $!";
+  or die "Cannot open $tmpfile:$!";
     
 while (1) {
     my $line;
@@ -121,7 +121,7 @@ while (1) {
     unless (defined($line = &lt;$infh&gt;)) {
       if ($!) {
         # In case of error
-        die "Error read $infh: $!";
+        die "Error read $infh:$!";
       }
       else {
         # For EOF
@@ -136,12 +136,12 @@ while (1) {
     
     # Make sure to avoid write errors
     print $tmpfh $line
-      or die "Error Writing $tmpfile: $!";
+      or die "Error Writing $tmpfile:$!";
 }
 
 close $infh;
 
-Surely avoid # close errors
+# Surely avoid close errors
 close $tmpfh
   or die "Error closing $tmpfile";
 
@@ -187,10 +187,10 @@ my $tmpfile = "tmp $$";
 <h3> (2) Open both read file and temporary write file </h3>
 <pre>
 open(my $infh, "&lt;", $infile)
-  or die "Cannot open $infile: $!";
+  or die "Cannot open $infile:$!";
 
 open(my $tmpfh, "&gt;", $tmpfile)
-  or die "Cannot open $tmpfile: $!";
+  or die "Cannot open $tmpfile:$!";
 </pre>
 <p>
   The input file is opened in read mode ("<") and the temporary file for writing is opened in write mode (">").
@@ -199,7 +199,7 @@ open(my $tmpfh, "&gt;", $tmpfile)
 <pre>
     unless (defined($line = &lt;$infh&gt;)) {
       if ($!) {
-        die "Error read $infh: $!";
+        die "Error read $infh:$!";
       }
       else {
          last;
@@ -212,7 +212,7 @@ open(my $tmpfh, "&gt;", $tmpfile)
 <h3> (4) Error checking when writing a file </h3>
 <pre>
     print $tmpfh $line
-      or die "Error Writing $tmpfile: $!";
+      or die "Error Writing $tmpfile:$!";
 </pre>
 <p>
   If an error occurs during aile writing, the original file may be overwritten with incorrect content. To prevent this from happening, you need to code to make sure you avoid write errors.
@@ -221,7 +221,7 @@ open(my $tmpfh, "&gt;", $tmpfile)
 <pre>
 close $infh;
 
-Surely avoid # close error
+# Surely avoid close error
 close $tmpfh
   or die "Error closing $tmpfile";
 </pre>

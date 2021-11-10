@@ -94,10 +94,10 @@
 </p>
 <h4> From SV * type to IV type </h4>
 <p>
-  In Perl, the values ​​passed to functions are mostly scalar. The scalar type is the "SV * type" in the world of XS. If a C function requires type IV, then SV * type must be converted to type IV.
+  In Perl, the values passed to functions are mostly scalar. The scalar type is the "SV * type" in the world of XS. If a C function requires type IV, then SV * type must be converted to type IV.
 </p>
 <p>
-  SV * type values ​​have integer type values ​​in the area called IV. In other words, in order to convert to type IV, the value of IV contained in SV * type should be taken out.
+  SV * type values have integer type values in the area called IV. In other words, in order to convert to type IV, the value of IV contained in SV * type should be taken out.
 </p>
 <p>
   Use <b> "SvIV (sv)" </b> to retrieve the value of IV owned by a value of type SV *.
@@ -106,7 +106,7 @@
   In the world of XS, the integer type is mapped to the type IV, so assign it to the IV type. Type IV is defined as large enough to store integers and pointers. In Perl, where 64-bit integers are supported, there is enough size to store 64-bit integers.
 </p>
 <pre>
-From # SV * type to IV type
+# From SV * type to IV type
 void
 foo (...)
   PPCODE:
@@ -138,7 +138,7 @@ foo (...)
 </pre>
 <h4> From SV * type to UV type </h4>
 <p>
-  SV * type values ​​have an unsigned integer value called UV. In other words, in order to convert to UV type, it is sufficient to extract the UV value owned by the SV * type value.
+  SV * type values have an unsigned integer value called UV. In other words, in order to convert to UV type, it is sufficient to extract the UV value owned by the SV * type value.
 </p>
 <p>
   Use <b> "SvUV (sv)" </b> to retrieve the UV value owned by an SV * type value.
@@ -147,7 +147,7 @@ foo (...)
   In the XS world, unsigned integers are mapped to a type called UV, so substitute them for the UV type. UV and unsigned int are compatible.
 </p>
 <pre>
-From # SV * type to UV type
+# From SV * type to UV type
 void
 foo (...)
   PPCODE:
@@ -182,7 +182,7 @@ foo (...)
   Use <b> "SvNV (sv)" </b> to retrieve the value of NV owned by a value of type SV *.
 </p>
 <pre>
-From # SV * type to double type
+# From SV * type to double type
 void
 foo (...)
   PPCODE:
@@ -242,7 +242,7 @@ foo (...)
   By the way, there is also an API called newSVpv, but this has a function that strlen is called when the length of the character string is 0, and it is easy to cause bugs, so it is better to use newSVpvn. It seems to be recommended. (<a href="http://xsubtut.github.io/">Reference</a>).
 </p>
 <pre>
-From # char * type to SV * type
+# From char * type to SV * type
 void
 foo (...)
   PPCODE:
@@ -255,7 +255,7 @@ foo (...)
 </pre>
 <h4> From SV * type to std::string type </h4>
 <pre>
-From # SV * type to std::string type
+# From SV * type to std::string type
 void
 foo (...)
   PPCODE:

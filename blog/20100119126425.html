@@ -95,20 +95,20 @@
 <pre>
 # Get only the elements that match the regular expression
 my @nums = (1.23, 123, 43);
-my @matched = grep {/ ^ \ d + $/} @nums;
+my @matched = grep {/ ^\d + $/} @nums;
 </pre>
 <p>
   If the pattern matching operator (=~ ) is omitted in the regular expression, the default variable $_ will be the target of pattern matching. The sample above has the same meaning as:
 </p>
 <pre>
 # Explicitly specify the default variable $_
-my @matched = grep {$_ =~ /^ \ d + $/} @nums;
+my @matched = grep {$_ =~ /^\d +$/} @nums;
 </pre>
 <p>
   This is a sample to get only multiples of 2. If @nums is (1, 2, 3, 4) then @even is (2, 4).
 </p>
 <pre>
-Get only multiples of # 2
+# Get only multiples of 2
 my @nums = (1, 2, 3, 4);
 my @even = grep {$_ % 2 == 0} @nums;
 </pre>
@@ -120,7 +120,7 @@ my @even = grep {$_ % 2 == 0} @nums;
 my @nums = (1.23, 123, 43);
 my @matched;
 for my $num (@nums) {
-  push @matched, $num if $num =~ /^ \ d + $/;
+  push @matched, $num if $num =~ /^\d +$/;
 }
 </pre>
 <h3> Reference "Array of Perl" </h3>

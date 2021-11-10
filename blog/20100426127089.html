@@ -89,7 +89,7 @@
 # Package declaration
 package Your Module;
 
-Inherit # Exporter
+# Inherit Exporter
 use Exporter 'import';
 
 # Write the function to export
@@ -111,7 +111,7 @@ sub func4 {...}
   If you execute use in the form of "use module name;", the functions included in @EXPORT will be imported.
 </p>
 <pre>
-The functions (func1 and func2) included in # @EXPORT are imported.
+# The functions (func1 and func2) included in @EXPORT are imported.
 use Your Module;
 </pre>
 <p>
@@ -136,7 +136,7 @@ use YourModule qw/func2 func3 func4/;
 </p>
 <pre>
 sub import {
-  First argument of # use (YourModule in this example)
+  # First argument of use (YourModule in this example)
   my $class = shift;
 
   # Caller's package (main in this example)
@@ -145,7 +145,7 @@ sub import {
   # Export function
   no strict'refs';
   foreach my $func (@{"${class}::EXPORT"}) {
-      * {"${caller}::$func"} = \ &amp; {"${class}::$func"};
+      * {"${caller}::$func"} = \&amp;{"${class}::$func"};
   }
 }
 </pre>

@@ -94,10 +94,10 @@
 </p>
 <pre>
 {
-  The reference count for # $str is 1.
-  my $str ='Hello';
+  # The reference count for $str is 1.
+  my $str = 'Hello';
   
-  The reference count for # $str is 2. $str_ref reference count is 1
+  # The reference count for $str is 2. $str_ref reference count is 1
   my $str_ref = \$str;
 }
 </pre>
@@ -109,16 +109,16 @@
 </p>
 <pre>
 {
-  The reference count for # $str is 1.
-  my $str ='Hello';
+  # The reference count for $str is 1.
+  my $str = 'Hello';
   
-  The reference count for # $str is 2. $str_ref reference count is 1
+  # The reference count for $str is 2. $str_ref reference count is 1
   my $str_ref = \$str;
 }
-The reference count of # $str_ref is decremented by 1 to 0.
+# The reference count of $str_ref is decremented by 1 to 0.
 # $str_ref is freed because the reference count of $str_ref is now 0.
-Now that # $str_ref has been released, the reference count for $str has gone from 2 to 1.
-The reference count of # $str is decremented by 1 to 0.
+# Now that $str_ref has been released, the reference count for $str has gone from 2 to 1.
+# The reference count of $str is decremented by 1 to 0.
 # $str is freed because the reference count of $str is 0.
 # ('Hello' is contained inside $str, which is also released)
 </pre>
@@ -311,7 +311,7 @@ DESTORY (...)
     If you create a new Perl variable, use sv_2mortal to make the variable mortal.
   </li>
   <li>
-    When storing values ​​in arrays and hashes, use SvREFCNT_inc to manually increase the reference count.
+    When storing values in arrays and hashes, use SvREFCNT_inc to manually increase the reference count.
   </li>
   <li>
     When saving to a member of a structure, use SvREFCNT_inc to increase the reference count when storing, and use SvREFCNT_dec to decrease the reference count by 1 in the destructor.

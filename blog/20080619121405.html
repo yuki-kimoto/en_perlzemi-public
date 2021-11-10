@@ -106,7 +106,7 @@ EOS
   If you change <<'EOS' to << "EOS", you can <a href="/blog/20180228151982.html">variable expansion</a> in the here document.
 </p>
 <pre>
-my $message ='Hello';
+my $message = 'Hello';
 
 # Variable expandable here document
 my $text = &lt;&lt; "EOS";
@@ -120,7 +120,7 @@ EOS
   Even if you omit the double quotes as shown below, the variable will be expanded, but it is recommended to enclose it in double quotes so that you can clearly understand the meaning.
 </p>
 <pre>
-my $text = &lt;&lt; EOS;
+my $text = &lt;&lt;EOS;
 aaaa
 $message
 iiii

@@ -168,15 +168,15 @@ my $win;
   die "Oops!" if GetParent ($desktop_win) != 0;
 
   my @browser_wins;
-  my $browser_name ='Chrome';
+  my $browser_name = 'Chrome';
   for my $win (GetChildWindows ($desktop_win)) {
 
     # Window name
     my $win_text = GetWindowText ($win);
 
     # Browser name
-    if ($win_text =~ /\ b $browser_name \ b /) {
-      if ($win_text =~ /Perl Club /) {
+    if ($win_text =~ /\b $browser_name\b/) {
+      if ($win_text =~ /Perl Club/) {
         push @browser_wins, $win;
       }
     }
@@ -193,7 +193,7 @@ my $win;
 <h4> Keyboard input </h4>
     # Go to Console tab
     SendKeys ('^]');
-    Go to # Elements tab
+    # Go to Elements tab
     SendKeys ('^ [');
     
     # Move to the tag below
@@ -241,7 +241,7 @@ my $clip = Win32::Clipboard-&gt;new;
 </p>
 <pre>
 # Save string to clipboard
-$clip-&gt;Set (encode ('cp932', $string));
+$clip-&gt;Set(encode('cp932', $string));
 </pre>
 <h4> Extract Perl string from clipboard </h4>
 <p>
@@ -249,8 +249,8 @@ $clip-&gt;Set (encode ('cp932', $string));
 </p>
 <pre>
 # Fetch a Perl string from the clipboard
-my $string = $CLIP-&gt;GetAs (CF_UNICODETEXT);
-$text = Encode::decode ("UTF16-LE", $string);
+my $string = $CLIP-&gt;GetAs(CF_UNICODETEXT);
+$text = Encode::decode("UTF16-LE", $string);
 </pre>
 <h4> Paste the contents of the clipboard to the form part </h4>
 <p>

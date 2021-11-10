@@ -102,24 +102,24 @@
   Corresponds to HTML h1 to h6.
 </p>
 <pre>
-= head1 Header 1
+=head1 Header 1
 
-= head2 Header 2
+=head2 Header 2
 
-= head3 header 3
+=head3 header 3
 
-= head4 Header 4
+=head4 Header 4
 
-= head5 Header 5
+=head5 Header 5
 
-= head6 Header 6
+=head6 Header 6
 </pre>
 <p>
   One thing to keep in mind when writing a POD is that you must insert a line break on the next line. For example, the following statement does not work.
 </p>
 <pre>
-= head1 Header 1
-= head2 Header 2
+=head1 Header 1
+=head2 Header 2
 </pre>
 <h3> Source code </h3>
 <p>
@@ -127,7 +127,7 @@
 </p>
 <pre>
   use DBIx::Custom;
-  my $dbi = DBIx::Custom-&gt;connect (...);
+  my $dbi = DBIx::Custom-&gt;connect(...);
 </pre>
 <p>
   The space can be 1, 2, or 4, and can be any width.
@@ -212,7 +212,7 @@ C &lt;select&gt;
 </p>
 <h4> Other CPAN modules </h4>
 <p>
-  To write a link to another CPAN module, use "L & lt; & gt;" and write: It will be a link to the Object::Simple page.
+  To write a link to another CPAN module, use "L & lt; & gt;" and write:It will be a link to the Object::Simple page.
 </p>
 <pre>
 L &lt;Object::Simple&gt;
@@ -226,17 +226,17 @@ L &lt;Perl Seminar | http://d.hatena.ne.jp/perlcodesample&gt;
 </pre>
 <h3> Start and end of POD </h3>
 <p>
-  The start of POD ends with "= pod" and the end of POD ends with "= cut".
+  The start of POD ends with "=pod" and the end of POD ends with "=cut".
 </p>
 <pre>
-= pod
+=pod
 
 document
 
-= cut
+=cut
 </pre>
 <p>
-  Generally, when even one description of POD such as "= head1" appears, POD starts, so it is rare to write "= pod". However, when using <a href="/blog/20130712137361.html">multi-line comment</a> in the source code, this description method is used.
+  Generally, when even one description of POD such as "=head1" appears, POD starts, so it is rare to write "=pod". However, when using <a href="/blog/20130712137361.html">multi-line comment</a> in the source code, this description method is used.
 </p>
 <h3> Character escape </h3>
 <p>
@@ -263,33 +263,33 @@ E &lt;gt &gt;&gt;
   CPAN module documentation is generally written as follows:
 </p>
 <pre>
-= head1 NAME
+=head1 NAME
 
 Module name-A brief description of the module
 
-= head1 SYNOPSIS
+=head1 SYNOPSIS
 
   Source code sample
   
-= head1 DESCRIPTION
+=head1 DESCRIPTION
 
 Module description
 
-= head1 METHODS
+=head1 METHODS
 
-= head2 method 1
+=head2 method 1
 
-= head2 method 2
+=head2 method 2
 
-= head1 AUTHOR
+=head1 AUTHOR
 
 Author name
 
-= head1 COPYRIGHT &amp; LICENSE
+=head1 COPYRIGHT &amp; LICENSE
 
 Copyright notice
 
-= cut
+=cut
 </pre>
 <h3> Detailed POD documentation </h3>
 <p>

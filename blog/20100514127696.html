@@ -93,22 +93,22 @@ use Getopt::Long 'GetOptions';
   Consider specifying the following options with command line arguments:
 </p>
 <pre>
-Specify the option with the # command line argument.
+# Specify the option with the command line argument.
 perl script.pl - enable_cache - max_clients = 5 - type = single config.init
 </pre>
 <p>
   You can easily handle such command line options using the <strong> GetOptions function </strong>.
 </p>
 <pre>
-Handling command line argument options with # GetOptions
+# Handling command line argument options with GetOptions
 
 # Set default value
 my $enable_cache;
 my $max_clients = 5;
-my $type ='prefork';
+my $type = 'prefork';
 
 # Optional processing
-GetOptions (
+GetOptions(
   'enable_cache' =&gt; \$enable_cache,
   'max_clients = i'=&gt; \$max_clients,
   'type = s'=&gt; \$type
@@ -121,8 +121,8 @@ my $conf_file = shift;
   How to use the GetOptions function.
 </p>
 <pre>
-Arguments of # GetOptions
-GetOptions (
+# Arguments of GetOptions
+GetOptions(
   'Option name = Value type' =&gt;'Variable to save',
   'Option name = Value type' =&gt;'Variable to save',
   ...
@@ -149,7 +149,7 @@ GetOptions (
 my $max_clients = 5;
 
 # Specify a scalar variable reference in the argument
-GetOptions (
+GetOptions(
   'max_clients = i'=&gt; \$max_clients,
 );
 </pre>

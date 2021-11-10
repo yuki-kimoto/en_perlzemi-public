@@ -108,7 +108,7 @@
 </p>
 <pre>
 grep -r'~~' dir | grep -e'\ .p [lm]'
-grep -re'given \ + ('dir | grep -e'\ .p [lm]'
+grep -re'given\+ ('dir | grep -e'\ .p [lm]'
 </pre>
 <p>
   If you are using the smart match operator, replace it with the normal operators "eq" and "==" .
@@ -121,16 +121,16 @@ $var ~~ [1, 2]-&gt;(defined $var &amp;&amp; $var == 1) || (defined $var &amp;&am
   Let's rewrite given when as a normal if statement.
 </p>
 <p>
-  Also, as a deleted syntax, qw (...) in the for statement can no longer be used in parentheses.
+  Also, as a deleted syntax, qw(...) in the for statement can no longer be used in parentheses.
 </p>
 <pre>
 # abolition
-for my $str qw (a b) {
+for my $str qw(a b) {
   
 }
 
 # Rewrite
-for my $str (qw (a b)) {
+for my $str (qw(a b)) {
 
 }
 </pre>

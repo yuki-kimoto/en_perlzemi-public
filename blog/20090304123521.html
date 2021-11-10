@@ -136,7 +136,7 @@ my @stdout = $capture-&gt;read;
 <pre>
 my $stdout;
 
-Start capturing # STDOUT
+# Start capturing STDOUT
 open my $temp, '&gt; &amp;', STDOUT;
 close STDOUT;
 open STDOUT, '&gt;', \$stdout;

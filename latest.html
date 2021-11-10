@@ -112,10 +112,10 @@ use v7;
   Create a command prompt shortcut. Right-click to display properties. The link destination is as follows. The code 65001 is the UTF-8 code.
 </p>
 <pre>
-%windir% \ system32 \ cmd.exe/k "chcp 65001"
+%windir%\system32\cmd.exe/k "chcp 65001"
 </pre>
 <p>
-  <img src = "/ images/command prompt/win_command_utf8.png">
+  <img src="/images/command prompt/win_command_utf8.png">
 </p>
 <p>
   For Perl programs, writing the source code in UTF-8 is currently the recommended method, so it's nice to be able to view UTF-8 at the command prompt.
@@ -227,15 +227,15 @@ my $win;
   die "Oops!" if GetParent ($desktop_win) != 0;
 
   my @browser_wins;
-  my $browser_name ='Chrome';
+  my $browser_name = 'Chrome';
   for my $win (GetChildWindows ($desktop_win)) {
 
     # Window name
     my $win_text = GetWindowText ($win);
 
     # Browser name
-    if ($win_text =~ /\ b $browser_name \ b /) {
-      if ($win_text =~ /Perl Club /) {
+    if ($win_text =~ /\b $browser_name\b/) {
+      if ($win_text =~ /Perl Club/) {
         push @browser_wins, $win;
       }
     }
@@ -252,7 +252,7 @@ my $win;
 <h4> Keyboard input </h4>
     # Go to Console tab
     SendKeys ('^]');
-    Go to # Elements tab
+    # Go to Elements tab
     SendKeys ('^ [');
     
     # Move to the tag below
@@ -300,7 +300,7 @@ my $clip = Win32::Clipboard-&gt;new;
 </p>
 <pre>
 # Save string to clipboard
-$clip-&gt;Set (encode ('cp932', $string));
+$clip-&gt;Set(encode('cp932', $string));
 </pre>
 <h4> Extract Perl string from clipboard </h4>
 <p>
@@ -308,8 +308,8 @@ $clip-&gt;Set (encode ('cp932', $string));
 </p>
 <pre>
 # Fetch a Perl string from the clipboard
-my $string = $CLIP-&gt;GetAs (CF_UNICODETEXT);
-$text = Encode::decode ("UTF16-LE", $string);
+my $string = $CLIP-&gt;GetAs(CF_UNICODETEXT);
+$text = Encode::decode("UTF16-LE", $string);
 </pre>
 <h4> Paste the contents of the clipboard to the form part </h4>
 <p>
@@ -380,16 +380,16 @@ sleep 3;
 # When running on Windows, Mac
 use Selenium::Chrome;
 my $driver = Selenium::Chrome-&gt;new;
-$driver-&gt;get ('http://www.google.com');
-print $driver-&gt;get_title ();
-$driver-&gt;shutdown_binary ();
+$driver-&gt;get('http://www.google.com');
+print $driver-&gt;get_title();
+$driver-&gt;shutdown_binary();
 </pre>
 <h4> When executing headless when there is no GUI screen such as Unix/Linux </h4>
 <p>
   If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
 </p>
 <pre>
-When executing headless when there is no GUI screen such as # Unix/Linux
+# When executing headless when there is no GUI screen such as Unix/Linux
 use Selenium::Chrome;
 my $driver = Selenium::Chrome-&gt;new(
   extra_capabilities =&gt; {
@@ -398,9 +398,9 @@ my $driver = Selenium::Chrome-&gt;new(
     }
   }
 );
-$driver-&gt;get ('http://www.google.com');
-print $driver-&gt;get_title ();
-$driver-&gt;shutdown_binary ();
+$driver-&gt;get('http://www.google.com');
+print $driver-&gt;get_title();
+$driver-&gt;shutdown_binary();
 </pre>
 <p>
   If the following error occurs, please execute headless with the above option.
@@ -493,9 +493,9 @@ $driver-&gt;shutdown_binary; &lt;/pre&gt;
 </p>
 <table>
   <tr> <th> Escape <br> Sequence </th> <th> Code <br> Point <br> Decimal </th> <th> Code <br> Point <br> Hexadecimal </th> < th> ASCII </th> <th> meaning </th> </tr>
-  <tr> <td> \ a </td> <td> 7 </td> <td> 07 </td> <td> BEL </td> <td> Alarm or Bell </td> </tr>
-  <tr> <td> \ b </td> <td> 8 </td> <td> 08 </td> <td> BS </td> <td> Backspace </td> </tr>
-  <tr> <td> \ e </td> <td> 27 </td> <td> 1B </td> <td> ESC </td> <td> Escape Sequence </td> </tr>
+  <tr> <td>\a </td> <td> 7 </td> <td> 07 </td> <td> BEL </td> <td> Alarm or Bell </td> </tr>
+  <tr> <td>\b </td> <td> 8 </td> <td> 08 </td> <td> BS </td> <td> Backspace </td> </tr>
+  <tr> <td>\e </td> <td> 27 </td> <td> 1B </td> <td> ESC </td> <td> Escape Sequence </td> </tr>
   <tr> <td>\f </td> <td> 12 </td> <td> 0C </td> <td> FF </td> <td> form feed </td> </tr>
   <tr> <td>\n </td> <td> 10 </td> <td> 0A </td> <td> LF </td> <td> Line feed </td> </tr>
   <tr> <td>\r </td> <td> 13 </td> <td> 0D </td> <td> CR </td> <td> Carriage return </td> </tr>
@@ -514,8 +514,8 @@ my $line = "ID\tName\tPrice\n";
 </p>
 <table>
   <tr> <th> Escape <br> Sequence </th> <th> Meaning </th> </tr>
-  <tr> <td> \ "</td> <td>" </td> </tr>
-  <tr> <td> \\ </td> <td> \ </td> </tr>
+  <tr> <td>\"</td> <td>" </td> </tr>
+  <tr> <td> \\ </td> <td>\</td> </tr>
 </table>
 <h3> Notes on line break "\n" </h3>
 <p>
@@ -544,7 +544,7 @@ print "Hello\n";
 </p>
 <pre>
 # Specify ASCII code directly in hexadecimal to represent HTTP protocol line breaks
-my $message = "Hello \ x0D \ x0A";
+my $message = "Hello\x0D\x0A";
 print $message;
 </pre>
 <p>

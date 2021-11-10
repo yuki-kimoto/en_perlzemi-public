@@ -96,8 +96,8 @@ use warnings;
 my $file_path_unix = FilePath::Unix-&gt;new;
 my $file_path_win = FilePath::Windows-&gt;new;
 
-my $unix_result = $file_path_unix-&gt;cat_path ('a', 'b');
-my $win_result = $file_path_win-&gt;cat_path ('a', 'b');
+my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
+my $win_result = $file_path_win-&gt;cat_path('a', 'b');
 
 print "unix: $unix_result\n";
 print "win: $win_result\n";
@@ -137,7 +137,7 @@ sub delimiter {return'\\'}
 </p>
 <pre>
 unix: a/b
-win: a \ b
+win: a\b
 </pre>
 <p>
   It will be displayed.
@@ -162,8 +162,8 @@ sub cat_path {
 my $file_path_unix = FilePath::Unix-&gt;new;
 my $file_path_win = FilePath::Windows-&gt;new;
 
-my $unix_result = $file_path_unix-&gt;cat_path ('a', 'b');
-my $win_result = $file_path_win-&gt;cat_path ('a', 'b');
+my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
+my $win_result = $file_path_win-&gt;cat_path('a', 'b');
 </pre>
 <p>
   Objects of the FilePath::Unix class and FilePath::Windows class have been created, respectively.
@@ -191,7 +191,7 @@ sub cat_path {
   Actually, there is a secret in this $self part.
 </p>
 <pre>
-my $unix_result = $file_path_unix-&gt;cat_path ('a', 'b');
+my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
 </pre>
 <p>
   When you call the cat_path method like this, the object assigned to $self is the FilePath::Unix class object.
@@ -205,7 +205,7 @@ my $unix_result = $file_path_unix-&gt;cat_path ('a', 'b');
 </p>
 <pre>
 my $file_path_base = FilePath::Base-&gt;new;
-$file_path_base-&gt;cat_file ('a', 'b'); # Failure!
+$file_path_base-&gt;cat_file('a', 'b'); # Failure!
 </pre>
 <p>
   A class that implements the delimiter method that inherits the FilePath::Base class will be created and meaningful.
@@ -230,7 +230,7 @@ sub delimiter {return'\\'}
 </p>
 <pre>
 unix: a/b
-win: a \ b
+win: a\b
 </pre>
 
   </div>

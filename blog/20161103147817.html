@@ -162,7 +162,7 @@ my $pid = wait;
 </p>
 <h3> $? - Child process exit status </h3>
 <p>
-  If wait waits for the child process to terminate, the special variable "$?" Stores multiple values ​​including the exit status of the child process. $? Is also set when a child process is executed using the system function.
+  If wait waits for the child process to terminate, the special variable "$?" Stores multiple values including the exit status of the child process. $? Is also set when a child process is executed using the system function.
 </p>
 <h4> Exit status of child process *** </h4>
 <p>
@@ -256,7 +256,7 @@ while (waitpid (-1, WNOHANG)&gt; 0) {Resource release process}
   If you don't need to release a specific resource and just want to release a zombie, you can set "IGNORE" without calling waitpid from the signal hands and it will do it automatically.
 </p>
 <pre>
-$SIG{CHLD} ='IGNORE' ；
+$SIG{CHLD} = 'IGNORE' ；
 </pre>
 <h3> Read the output of other commands using a pipe </h3>
 <p>
@@ -268,7 +268,7 @@ use warnings;
 
 # (1) Open a pipe to read the output of other commands
 open my $pipe, '-|', 'dir'
-  or die qq/Can't open pipe: $!/;
+  or die qq/Can't open pipe:$!/;
 
 # (2) Read from pipe
 while (my $line = &lt;$pipe&gt;) {
@@ -280,7 +280,7 @@ close $pipe;
 <h4> (1) Open a pipe to read the output of other commands </h4>
 <pre>
 open my $pipe, '-|', 'dir'
-  or die qq/Can't open pipe: $!/;
+  or die qq/Can't open pipe:$!/;
 </pre>
 <p>
   The open function has special uses. To open a pipe that receives the output of other commands, specify "-|" in the second argument and the command in the third argument. This time, "dir", which is a command to output the contents of the directory, is specified.
@@ -310,7 +310,7 @@ use warnings;
 
 # (1) Open a pipe to send output to other commands
 open my $pipe, '|-', 'more'
-  or die qq/Can't open pipe: $!/;
+  or die qq/Can't open pipe:$!/;
 
 # (2) Write to pipe
 print $pipe "Hello world";
@@ -320,7 +320,7 @@ close $pipe;
 <h4> (1) Open a pipe to send output to other commands </h4>
 <pre>
 open my $pipe, '|-', 'more'
-  or die qq/Can't open pipe: $!/;
+  or die qq/Can't open pipe:$!/;
 </pre>
 <p>
   The open function has special uses. To open a pipe that receives the output of other commands, specify "|-" in the second argument and the command in the third argument. This time, "more", which is a command to output the contents of the file, is specified.

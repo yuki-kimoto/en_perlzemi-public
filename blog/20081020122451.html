@@ -112,7 +112,7 @@ sub time_from_str {
   my $time = {};
   
   # If it matches the format of the time including the date
-  if ($time_str =~ m # ^ (\d{2})/(\w{3})/(\d{4}): (\d{2}): (\d{2}) :(\d{2}) $# ) {
+  # if ($time_str =~ m ^ (\d{2})/(\w{3})/(\d{4}): (\d{2}): (\d{2}) :(\d{2}) $# ) {
     
     # Create hash
     @{$time}{qw/mday mon year hour min sec /}
@@ -130,7 +130,7 @@ sub time_from_str {
     
     $time-&gt;{year}-= 1900;
     
-    return wantarray?% $time: $time;
+    return wantarray?%$time: $time;
   }
   return;
 }
@@ -142,7 +142,7 @@ sub time_to_sec {
     $time = shift;
   }
   else {
-    % $time = @_;
+    %$time = @_;
   }
   
   return unless defined $time-&gt;{sec};
@@ -152,7 +152,7 @@ sub time_to_sec {
   return unless defined $time-&gt;{mon};
   return unless defined $time-&gt;{year};
   
-  Convert to seconds using the # Time::Local module
+  # Convert to seconds using the Time::Local module
   require Time::Local;
   my $sec = Time::Local::timelocal (
     $time-&gt;{sec},
@@ -192,7 +192,7 @@ sub time_from_str {
   my $time = {};
   
   # If it matches the format of the time including the date
-  if ($time_str =~ m # ^ (\d{2})/(\w{3})/(\d{4}): (\d{2}): (\d{2}) :(\d{2}) $# ) {
+  # if ($time_str =~ m ^ (\d{2})/(\w{3})/(\d{4}): (\d{2}): (\d{2}) :(\d{2}) $# ) {
     
     # Create hash
     @{$time}{qw/mday mon year hour min sec /}
@@ -210,7 +210,7 @@ sub time_from_str {
     
     $time-&gt;{year}-= 1900;
     
-    return wantarray?% $time: $time;
+    return wantarray?%$time: $time;
   }
   return;
 }
@@ -236,7 +236,7 @@ sub time_to_sec {
     $time = shift;
   }
   else {
-    % $time = @_;
+    %$time = @_;
   }
   
   return unless defined $time-&gt;{sec};
@@ -246,7 +246,7 @@ sub time_to_sec {
   return unless defined $time-&gt;{mon};
   return unless defined $time-&gt;{year};
   
-  Convert to seconds using the # Time::Local module
+  # Convert to seconds using the Time::Local module
   require Time::Local;
   my $sec = Time::Local::timelocal (
     $time-&gt;{sec},

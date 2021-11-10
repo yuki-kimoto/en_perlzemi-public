@@ -136,14 +136,14 @@ DBI |
 </p>
 <pre>
 use DBI;
-my $dbh = DBI-&gt;connect ("DBI: mysql: $database", $user, $password);
+my $dbh = DBI-&gt;connect("DBI: mysql: $database", $user, $password);
 </pre>
 <p>
   To connect to a remote MySQL server, specify the host name
 </p>
 <pre>
 use DBI;
-my $dbh = DBI-&gt;connect (
+my $dbh = DBI-&gt;connect(
   "DBI: mysql: $database: $hostname",
   $user,
   $password
@@ -157,7 +157,7 @@ my $dbh = DBI-&gt;connect (
 </p>
 <pre>
 use DBI;
-my $dbh = DBI-&gt;connect (
+my $dbh = DBI-&gt;connect(
   "DBI: mysql: $database: $hostname: $port",
   $user,
   $password
@@ -185,7 +185,7 @@ $DBI::errstr;
 </p>
 <pre>
 use DBI;
-my $dbh = DBI-&gt;connect (
+my $dbh = DBI-&gt;connect(
   "DBI: mysql: $database: $hostname",
   $user,
   $password

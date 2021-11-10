@@ -114,7 +114,7 @@ my @numbers;
 </pre>
 <h4> Array initialization </h4>
 <p>
-  You can assign data representing multiple values ​​called <a href="/blog/20100308126967.html">list</a> to the array. The list is
+  You can assign data representing multiple values called <a href="/blog/20100308126967.html">list</a> to the array. The list is
 </p>
 <pre>
 (Value 1, Value 2, Value 3)
@@ -184,7 +184,7 @@ my $cnt = @nums;
   Let's output the elements of the array in order with the for statement.
 </p>
 <pre>
-for (my $i = 0; $i &lt;@nums; $i++) {
+for (my $i = 0; $i &lt; @nums; $i++) {
   print $nums[$i], "\n";
 }
 </pre>
@@ -372,7 +372,7 @@ $numbers_ref-&gt;[0]
 my @array = ('a', 'b', 'c', 'd');
 </pre>
 <p>
-  RiSee <a href="/blog/20100308126967.html">List-A list of multiple values ​​</a> for more information on strikes.
+  RiSee <a href="/blog/20100308126967.html">List-A list of multiple values </a> for more information on strikes.
 </p>
 <h3> Functions/syntax/operators related to arrays </h3>
 <h4> splice function </h4>
@@ -422,7 +422,7 @@ splice @array, $pos, $length, @replace;
   There is an operator called the <strong> string list operator </strong> to concisely describe a list of strings. You can use the string list operator to represent a list of strings without writing single quotes or commas.
 </p>
 <pre>
-qw (string 1 string 2 string 3)
+qw(string 1 string 2 string 3)
 </pre>
 <p>
   This is an example of actually using the string list operator.
@@ -447,7 +447,7 @@ my @strings = ('cat', 'dog', 'mouse');
 </p>
 <pre>
 # Array slice
-my @values ​​= @array ['m', 'n', ...]
+my @values = @array['m', 'n', ...]
 </pre>
 <ul>
   <li>
@@ -482,7 +482,7 @@ my @numbers = (1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8);
 print'array: @numbers = ('. join(',', @numbers). ")\n\n";
 
 # 1: Check if the array contains the specified element.
-Apply # grep.
+# Apply grep.
 my $saerch_number = 3;
 if (grep {$_ == $saerch_number} @numbers) {
   # If the element to be searched is found, the inside of the if statement will be true.
@@ -490,7 +490,7 @@ if (grep {$_ == $saerch_number} @numbers) {
 }
 
 # 2: Remove duplicates from array (order is not guaranteed)
-The # hash key has the property of not allowing duplication.
+# The hash key has the property of not allowing duplication.
 my %no_duplicate_hash;
 for my $number (@numbers) {
   $no_duplicate_hash{$number} ++;
@@ -517,10 +517,10 @@ use warnings;
 my @numbers = (1, 2, 3, 4, 5, 6, 7, 8);
 print "array: \@numbers =", join(',', @numbers). ")\n\n";
 
-# 1: Array reference If you put \ before @, it becomes an array reference.
+# 1: Array reference If you put\before @, it becomes an array reference.
 my $numbers_ref1 = \@numbers;
 
-You can revert to the original array by prefixing the # array reference with @.
+# You can revert to the original array by prefixing the array reference with @.
 # This is called a dereference.
 print "array: \@\$numbers_ref1 =" .join(',', @$numbers_ref1), ")\n";
 
@@ -594,7 +594,7 @@ print "\@numbers = (", join(',', @numbers), ")\n";
 # Array reference (dereference and pass to function)
 push @$numbers_ref, 4;
 
-The # sort function returns an array, so use an anonymous array []
+# The sort function returns an array, so use an anonymous array []
 # Recreating an array reference.
 $numbers_ref = [sort {$b &lt;=&gt; $a} @$numbers_ref];
 print "\@\$numbers_ref =", join(',', @$numbers_ref), ")\n\n";

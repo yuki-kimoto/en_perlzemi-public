@@ -108,7 +108,7 @@ my $font = Imager::Font-&gt;new(
 );
 
 # Drawing a string
-$img-&gt;string (
+$img-&gt;string(
   x =&gt; 50,
   y =&gt; 50,
   string =&gt;'I did it',
@@ -119,7 +119,7 @@ $img-&gt;string (
 ) or die $img-&gt;errstr;
 
 # Save image
-$img-&gt;write (file =&gt;'new_example.jpg')
+$img-&gt;write(file =&gt;'new_example.jpg')
   or die $img-&gt;errstr;
 </pre>
 <p>
@@ -131,7 +131,7 @@ $img-&gt;write (file =&gt;'new_example.jpg')
 <p>
   Save the script in UTF-8 and enable the utf8 pragma.
 </p>
-<h3> Read binary data </​​h3>
+<h3> Read binary data </h3>
 <p>
   Use the data option of the read method to read binary data in Perl's Imager module.
 </p>

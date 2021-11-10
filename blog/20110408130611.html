@@ -72,10 +72,10 @@
 </div>
 
 
-  $headers->content_type ('text/csv; charset = UTF-8');
+  $headers->content_type('text/csv; charset = UTF-8');
   
   # Render data
-  return $self->render (data => $content);
+  return $self->render(data => $content);
 <p>
   };
 </p>
@@ -94,7 +94,7 @@
   You can specify <strong> template_class </strong> as an argument of the render method for the class that describes the template when drawing.
 </p>
 <pre>
-$c-&gt;render (template_class =&gt; $class);
+$c-&gt;render(template_class =&gt; $class);
 </pre>
 <p>
   This is very useful if you want to write the template directly in a plugin etc. Mojolicious plugins are very flexible and allow you to write and incorporate the web application itself.
@@ -107,10 +107,10 @@ sub register {
   my ($self, $app, $conf) = @_;
   
   my $r = $app-&gt;route;
-  $r-&gt;get ('/ viewer', sub {
+  $r-&gt;get('/ viewer', sub {
      my $self = shift;
      # Specify template class
-     return $self-&gt;render (template_class =&gt; __PACKAGE__);
+     return $self-&gt;render(template_class =&gt; __PACKAGE__);
   });
 }
 
@@ -141,13 +141,13 @@ __DATA__
 get'/ sizeunknowndata' =&gt; sub {
   my $self = shift;
 
-  my $file ='foo.tar.gz';
+  my $file = 'foo.tar.gz';
   open my $fh, '&lt;', $file
     or die "Error";
 
   # Write chunk
-  $self-&gt;res-&gt;headers-&gt;content_type ('application/gzip');
-  $self-&gt;res-&gt;headers-&gt;content_disposition (qq/attachment; filename = "$file" /);
+  $self-&gt;res-&gt;headers-&gt;content_type('application/gzip');
+  $self-&gt;res-&gt;headers-&gt;content_disposition(qq/attachment; filename = "$file" /);
   my $cb;
   $cb = sub {
     my $c = shift;
@@ -158,7 +158,7 @@ get'/ sizeunknowndata' =&gt; sub {
       undef $cb;
       return;
     }
-    $c-&gt;write_chunk ($buffer, $cb);
+    $c-&gt;write_chunk($buffer, $cb);
   };
   $self-&gt;$cb;
 };
@@ -181,7 +181,7 @@ get'/ sizeunknowndata' =&gt; sub {
 get'/' =&gt; sub {
   my $sefl = shift;
   
-  If you want to draw a page with # 404 not found
+  # If you want to draw a page with 404 not found
   if (...) {
     return $self-&gt;reply-&gt;not_found;
   }
@@ -221,16 +221,16 @@ get'/' =&gt; sub {
 use Mojolicious::Lite;
 use Mojo::JSON::XS;
 
-Replace handler for drawing # json
-app-&gt;renderer-&gt;add_handler (json =&gt; sub {
+# Replace handler for drawing json
+app-&gt;renderer-&gt;add_handler(json =&gt; sub {
   my ($self, $c, $output, $options) = @_;
-  $$output = Mojo::JSON::XS-&gt;new-&gt;encode ($options-&gt;{json});
+  $$output = Mojo::JSON::XS-&gt;new-&gt;encode($options-&gt;{json});
 });
 
 get'/' =&gt; sub {
   my $self = shift;
   
-  $self-&gt;render (json =&gt; {name =&gt;'kimoto'});
+  $self-&gt;render(json =&gt; {name =&gt;'kimoto'});
 };
 
 app-&gt;start;

@@ -127,9 +127,9 @@ if (-e $file) {
 }
 
 open my $fh, "&gt;", $file
-  or die "File open error: $!";
+  or die "File open error:$!";
 
-while (-s $file &lt;1_000_000) {
+while (-s $file &lt; 1_000_000) {
   my $string = ('a' x 99) . "\n";
   print $fh $string;
 }

@@ -88,8 +88,8 @@
 use strict;
 use warnings;
 
-Used to use the option to specify the position of # seek
-use Fcntl qw (: seek);
+# Used to use the option to specify the position of seek
+use Fcntl qw(:seek);
 
 # Rewrite the file contents by random access.
 my $file = "data_20080810.txt";
@@ -119,9 +119,9 @@ my $pos_peko_age = 1 * $len_rec + $pos_age;
 
 # Move the position of the file pointer to the position of Peco's age
 seek ($fh, $pos_peko_age, SEEK_SET)
-  or die "Cannnot seek: $file: $!";
+  or die "Cannnot seek: $file:$!";
 
-Load peko's age into # $age
+# Load peko's age into $age
 my $age;
 
 # Number of bytes read
@@ -129,7 +129,7 @@ my $len_read;
 $len_read = read($fh, $age, $len_age);
 
 if (! defined $len_read) {
-  die "Cannot read $file: $!";
+  die "Cannot read $file:$!";
 }
 elsif ($len_read != $len_age) {
   die "Read only $len_read bytes";
@@ -139,17 +139,17 @@ elsif ($len_read != $len_age) {
 # Add 1 to age
 $age ++;
 
-When # read, the file pointer advances by the amount read, so return it to the original position.
+# When read, the file pointer advances by the amount read, so return it to the original position.
 seek ($fh, $pos_peko_age, SEEK_SET)
-  or die "Cannnot seek: $file: $!";
+  or die "Cannnot seek: $file:$!";
 
 # Write to file
 printf $fh "%08s", $age
-  or die "Cannot print: $file: $!";
+  or die "Cannot print: $file:$!";
 
 # Close file
 close $fh
-  or die "Cannot close $file: $!";
+  or die "Cannot close $file:$!";
 </pre>
 <p>
   The following is the data to read. It is the data that three records (name 8 bytes, age 8 bytes) are lined up. Save it as data_20080810.txt.
@@ -160,7 +160,7 @@ taro 00000023peko 00000018akira 00000023
 <h3> Code explanation </h3>
 <h4> (1) Preparing to use the symbols used in the seek function </h4>
 <pre>
-use Fcntl qw (: seek);
+use Fcntl qw(:seek);
 </pre>
 <p>
   Import the symbols associated with the seek function from the Fcntl module. Three constants, SEEK_SET, SEEK_CUR and SEEK_END, are imported.
@@ -194,7 +194,7 @@ my $pos_peko_age = 1 * $len_rec + $pos_age;
 # Move the position of the file pointer to the position of Peco's age
 
 seek ($fh, $pos_peko_age, SEEK_SET)
-  or die "Cannnot seek: $file: $!";
+  or die "Cannnot seek: $file:$!";
 </pre>
 <p>
   You can use the seek function to move the file pointer to the specified byte position. Think of a file pointer as a variable that remembers the byte position of the current file.
@@ -247,7 +247,7 @@ seek ($fh, $pos_peko_age, SEEK_SET)
 </p>
 <h4> (4) Read the data with the read function </h4>
 <pre>
-Load peko's age into # $age
+# Load peko's age into $age
 my $age;
 
 # Number of bytes read
@@ -255,7 +255,7 @@ my $len_read;
 $len_read = read($fh, $age, $len_age);
 
 if (! defined $len_read) {
-  die "Cannot read $file: $!";
+  die "Cannot read $file:$!";
 }
 elsif ($len_read != $len_age) {
   die "Read only $len_read bytes";
@@ -272,9 +272,9 @@ elsif ($len_read != $len_age) {
 </p>
 <h4> (5) Move to the write position with the seek function </h4>
 <pre>
-When # read, the file pointer advances by the amount read, so return it to the original position.
+# When read, the file pointer advances by the amount read, so return it to the original position.
 seek ($fh, $pos_peko_age, SEEK_SET)
-  or die "Cannnot seek: $file: $!";
+  or die "Cannnot seek: $file:$!";
 </pre>
 <p>
   The read function advances the position of the file pointer by the amount read. To write to the same position again, call the seek function again.
@@ -282,7 +282,7 @@ seek ($fh, $pos_peko_age, SEEK_SET)
 <h4> (6) Write to a file </h4>
 <pre>
 printf $fh "%08s", $age
-  or die "Cannot print: $file: $!";
+  or die "Cannot print: $file:$!";
 </pre>
 <p>
   Writing is done by specifying the format with the <a href="/blog/20170326149148.html">printf function</a>. By specifying%08s, it means that "in an 8-digit character string, the part less than 8 digits is filled with 0".

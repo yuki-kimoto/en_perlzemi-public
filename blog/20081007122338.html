@@ -121,7 +121,7 @@ my $line = join("\t", @names) . "\n";
   You can use the <a href="/blog/20080301120434.html">split function</a> to split into an array by doing the opposite of the join function, that is, by specifying a delimiter.
 </p>
 <pre>
-my @names = split(/, /, "Yuki, Taro, Kato");
+my @names = split(/,/, "Yuki, Taro, Kato");
 </pre>
 <h4> Push function to add data to the array to join </h4>
 <p>
@@ -139,11 +139,11 @@ use strict;
 use warnings;
 
 # Concatenate multiple strings with tabs
-my @animals = qw (cat dog sheep);
+my @animals = qw(cat dog sheep);
 my $line = join("\t", @animals);
 </pre>
 <p>
-  Reference: <a href="/blog/20080221120361.html">qw () String concatenation operator</a>
+  Reference: <a href="/blog/20080221120361.html">qw() String concatenation operator</a>
 </p>
 
   </div>

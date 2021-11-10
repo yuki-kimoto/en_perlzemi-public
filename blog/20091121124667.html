@@ -147,9 +147,9 @@ cpan DBI
  You can specify the database name to connect to in the data source. In SQLite, the database is simply created as a file, so specify any name you like as the database name. The return value is an object called the database handle that communicates with the database.
 <pre>
 use DBI;
-my $database ='test.db';
+my $database = 'test.db';
 my $data_source = "dbi: SQLite: dbname = $database";
-my $dbh = DBI-&gt;connect ($data_source);
+my $dbh = DBI-&gt;connect($data_source);
 </pre>
 <p>
   You should now have a file called test.db in your current directory.
@@ -228,19 +228,19 @@ $dbh-&gt;do($drop_table);
   Use the insert statement to insert a record into the table.
 </p>
 <pre>
-insert into table name (field name 1, field name 2, ..) values ​​(value 1, value 2, value 3);
+insert into table name (field name 1, field name 2, ..) values (value 1, value 2, value 3);
 </pre>
 <p>
   To add a record with "title" to "Perl" and "author" to "taro" to the table, the SQL would be: If the data is a string, enclose it in single quotes (although this is a very dangerous security method and a workaround will be explained later).
 </p>
 <pre>
-insert into book (title, author) values ​​('Perl', 'taro');
+insert into book (title, author) values ('Perl', 'taro');
 </pre>
 <p>
   Let's execute an insert statement using do. Please wait until the select statement is explained a little further to confirm whether it has been inserted.
 </p>
 <pre>
-my $insert = "insert into book (title, author) values ​​('Perl', 'taro');";
+my $insert = "insert into book (title, author) values ('Perl', 'taro');";
 $dbh-&gt;do($insert);
 </pre>
 <p>
@@ -248,9 +248,9 @@ $dbh-&gt;do($insert);
 </p>
 <pre>
 + - -- --- + - -- -- -- +
-| title | author | # header (this can be done when you create the table)
+# | title | author | header (this can be done when you create the table)
 + - -- --- + - -- -- -- +
-| Perl | taro | # record(record added by insert statement)
+# | Perl | taro | record(record added by insert statement)
 + - -- --- + - -- -- -- +
 </pre>
 <h3> Record update update </h3>
@@ -264,13 +264,13 @@ update table name set field name 1 = value 1, feel name 2 = value 2, .. where to
   The SQL to change the title value of a record whose "author" is "taro" to Ruby is as follows.
 </p>
 <pre>
-update book set title ='Ruby' where author ='taro'
+update book set title = 'Ruby' where author = 'taro'
 </pre>
 <p>
   Let's execute the update statement using do.
 </p>
 <pre>
-my $update = "update book set title ='Ruby' where author ='taro'";
+my $update = "update book set title = 'Ruby' where author = 'taro'";
 $dbh-&gt;do($update);
 </pre>
 <p>
@@ -278,9 +278,9 @@ $dbh-&gt;do($update);
 </p>
 <pre>
 + - -- --- + - -- -- -- +
-| title | author | # header (this can be done when you create the table)
+# | title | author | header (this can be done when you create the table)
 + - -- --- + - -- -- -- +
-| Ruby | taro | # record(record updated by update statement)
+# | Ruby | taro | record(record updated by update statement)
 + - -- --- + - -- -- -- +
 </pre>
 <h3> Delete record delete </h3>
@@ -294,13 +294,13 @@ delete from table name where field name to search = value
   The SQL to delete a record whose "author" is "taro" looks like this:
 </p>
 <pre>
-delete from book where author ='taro';
+delete from book where author = 'taro';
 </pre>
 <p>
   Let's execute a delete statement using do.
 </p>
 <pre>
-my $delete = "delete from book where author ='taro';";
+my $delete = "delete from book where author = 'taro';";
 $dbh-&gt;do($delete);
 </pre>
 <p>
@@ -327,7 +327,7 @@ select * from book;
 </p>
 <pre>
 my $select = "select * from book;";
-my $sth = $dbh-&gt;prepare ($select);
+my $sth = $dbh-&gt;prepare($select);
 $sth-&gt;execute;
 </pre>
 <p>
@@ -349,10 +349,10 @@ while (my @row = $sth-&gt;fetchrow_array) {
   SQLite allows you to create a database in memory. You don't need to specify a file name, and the table will be deleted automatically when you disconnect the database, which is very convenient if you want to check the operation a little. For most of the explanations here, I will create a database in memory and explain it.
 </p>
 <p>
-  To create a database in memory, specify ": ​​memory:" as the database name of the data source.
+  To create a database in memory, specify ": memory:" as the database name of the data source.
 </p>
 <pre>
-my $dbh = DBI-&gt;connect ("dbi: SQLite: dbname =: memory:");
+my $dbh = DBI-&gt;connect("dbi: SQLite: dbname =: memory:");
 </pre>
 <p>
   You can now connect to the database in memory.
@@ -368,7 +368,7 @@ use warnings;
 use DBI;
 
 # Connect to database in memory
-my $dbh = DBI-&gt;connect ("dbi: SQLite: dbname =: memory:");
+my $dbh = DBI-&gt;connect("dbi: SQLite: dbname =: memory:");
 
 # Create table
 my $create_table = &lt;&lt;'EOS';
@@ -380,20 +380,20 @@ EOS
 
 $dbh-&gt;do($create_table);
 
-Execution of # insert statement
-$dbh-&gt;do("insert into book (title, author) values ​​('Perl', 'taro');");
-$dbh-&gt;do("insert into book (title, author) values ​​('C ++', 'taro');");
-$dbh-&gt;do("insert into book (title, author) values ​​('Python', 'ken');");
-$dbh-&gt;do("insert into book (title, author) values ​​('Java', 'mamoru');");
+# Execution of insert statement
+$dbh-&gt;do("insert into book (title, author) values ('Perl', 'taro');");
+$dbh-&gt;do("insert into book (title, author) values ('C ++', 'taro');");
+$dbh-&gt;do("insert into book (title, author) values ('Python', 'ken');");
+$dbh-&gt;do("insert into book (title, author) values ('Java', 'mamoru');");
 
-Execution of # update statement
-$dbh-&gt;do("update book set title ='Ruby' where author ='mamoru'");
+# Execution of update statement
+$dbh-&gt;do("update book set title = 'Ruby' where author = 'mamoru'");
 
-Execution of # delete statement
-$dbh-&gt;do("delete from book where author ='ken';");
+# Execution of delete statement
+$dbh-&gt;do("delete from book where author = 'ken';");
 
-Execution of # select statement
-my $sth = $dbh-&gt;prepare ("select * from book;");
+# Execution of select statement
+my $sth = $dbh-&gt;prepare("select * from book;");
 $sth-&gt;execute;
 
 # Fetch each row
@@ -421,14 +421,14 @@ Ruby, mamoru
   To connect using DBI with a username and password: Specify the user name in the second argument and the password in the third argument.
 </p>
 <pre>
-my $dbh = DBI-&gt;connect ($data_source, $user, $password);
+my $dbh = DBI-&gt;connect($data_source, $user, $password);
 </pre>
 <h3> Standard settings for DBI options </h3>
 <p>
   In DBI, you can specify DBI options in the 4th argument of the connect method.
 </p>
 <pre>
-DBI-&gt;connect ($data_source, $user, $password, {opt1 =&gt; $val1, opt2 =&gt; $val2, ..});
+DBI-&gt;connect($data_source, $user, $password, {opt1 =&gt; $val1, opt2 =&gt; $val2, ..});
 </pre>
 <p>
   DBI's default behavior is to print a warning to standard error if an error occurs.
@@ -455,7 +455,7 @@ RaiseError =&gt; 1
   Therefore, when connecting to the database based on this, it may be better to write as follows.
 </p>
 <pre>
-my $dbh = DBI-&gt;connect (
+my $dbh = DBI-&gt;connect(
   $data_source,
   $user,
   $password,
@@ -470,7 +470,7 @@ my $dbh = DBI-&gt;connect (
   If you don't need a username or password and just want to specify options, do the following:
 </p>
 <pre>
-my $dbh = DBI-&gt;connect (
+my $dbh = DBI-&gt;connect(
   $data_source,
   undef,
   undef,

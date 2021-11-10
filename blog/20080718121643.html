@@ -92,7 +92,7 @@ $ret = open($fh, $mode, $file);
 </p>
 <pre>
 open(my $fh, "&lt;", $file)
-  or die "Can't open $file: $!";
+  or die "Can't open $file:$!";
 </pre>
 <p>
   "<" Means open mode, and when reading a file, specify "<".
@@ -174,7 +174,7 @@ open(my $fh, "&lt;", $file)
 </p>
 <pre>
 open(my $fh, "&lt;", $file)
-  or die "Can't open $file: $!";
+  or die "Can't open $file:$!";
 </pre>
 <h3> Open two arguments-not recommended </h3>
 <p>
@@ -196,7 +196,7 @@ use warnings;
 my $file = shift;
 
 open(my $fh2, "&lt;", $file)
-  or die "Can't open file $file: $!";
+  or die "Can't open file $file:$!";
 </pre>
 <h3> Related articles </h3>
 <ul>

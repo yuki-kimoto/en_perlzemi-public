@@ -89,10 +89,10 @@ my ($x, $y) = $bezier-&gt;point(0.5);
 my $xy = $bezier-&gt;point(0.5);
  
 # Returns the (x, y) points divided into 20 along the curve.
-my @curve = $bezier-&gt;curve (20);
+my @curve = $bezier-&gt;curve(20);
  
 # Receive in reference
-my $curve = $bezier-&gt;curve (20);
+my $curve = $bezier-&gt;curve(20);
 </pre>
 <h3> A sample that draws a 3D Bezier curve and divides it into 100 points </h3>
 <p>
@@ -116,9 +116,9 @@ use Math::Bezier;
 # List of control points (x, y)
 my $bezier = Math::Bezier-&gt;new(0, 0, 10, 10, 20, 40);
 
-my $curve_points = $bezier-&gt;curve (100);
+my $curve_points = $bezier-&gt;curve(100);
 
-for (my $i = 0; $i &lt;@$curve_points; $i += 2) {
+for (my $i = 0; $i &lt; @$curve_points; $i += 2) {
   my $x = $curve_points-&gt;[$i];
   my $y = $curve_points-&gt;[$i + 1];
   
@@ -178,7 +178,7 @@ for (my $i = 0; $i &lt;@$curve_points; $i += 2) {
 (9.29292929292929, 13.6108560350985)
 (9.49494949494949, 14.0026527905316)
 (9.6969696969697, 14.3985307621671)
-(9.8989898989899, ​​14.7984899500051)
+(9.8989898989899, 14.7984899500051)
 (10.1010101010101, 15.2025303540455)
 (10.3030303030303, 15.6106519742883)
 (10.5050505050505, 16.0228548107336)
@@ -223,7 +223,7 @@ for (my $i = 0; $i &lt;@$curve_points; $i += 2) {
 (18.3838383838384, 35.2821140699929)
 (18.5858585858586, 35.8575655545352)
 (18.7878787878788, 36.4370982552801)
-(18.989898989899, ​​37.0207121722273)
+(18.989898989899, 37.0207121722273)
 (19.1919191919192, 37.608407305377)
 (19.3939393939394, 38.2001836547291)
 (19.5959595959596, 38.7960412202836)

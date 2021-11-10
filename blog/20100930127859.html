@@ -173,7 +173,7 @@ my $second = $nums[1];
 </ul>
 <h3> Two-dimensional array </h3>
 <p>
-  Let's create a two-dimensional array in Perl. A characteristic of Perl arrays is that they can only have scalar values ​​as elements. So you can't have an array as an element of an array like this:
+  Let's create a two-dimensional array in Perl. A characteristic of Perl arrays is that they can only have scalar values as elements. So you can't have an array as an element of an array like this:
 </p>
 <pre>
 # Wrong example of a two-dimensional array
@@ -186,7 +186,7 @@ my @persons = (@person1, @person2);
   @persons becomes a one-dimensional array of ('Ken', 'Japan', 19, 'Taro', 'USA', 45).
 </p>
 <p>
-  Only scalar values ​​can be in the elements of the array. The array reference is a scalar value. So you can have an array reference as an element of the array. Use "\" to create an array reference.
+  Only scalar values can be in the elements of the array. The array reference is a scalar value. So you can have an array reference as an element of the array. Use "\" to create an array reference.
 </p>
 <pre>
 my @person1 = ('Ken', 'Japan', 19);
@@ -285,7 +285,7 @@ Ken, Japan, 19
 Taro, USA, 45
 </pre>
 <p>
-  We'll use the open function to read the file, but this time let's use a single diamond operator to simplify the reading: In combination with <a href="/blog/20100123126425.html">while statement</a>, you can read each line of the file received as an argument.
+  We'll use the open function to read the file, but this time let's use a single diamond operator to simplify the reading:In combination with <a href="/blog/20100123126425.html">while statement</a>, you can read each line of the file received as an argument.
 </p>
 <pre>
 while (my $line = &lt;&gt;) {
@@ -388,13 +388,13 @@ my $person = {name =&gt;'Ken', age =&gt; 19};
   To retrieve a hash from a hash reference, you need to do something called dereference. Use "%{}" for hash dereference.
 </p>
 <pre>
-my %person =%{$person};
+my %person = %{$person};
 </pre>
 <p>
   You can also omit the parentheses as follows:
 </p>
 <pre>
-my %person =% $person;
+my %person = %$person;
 </pre>
 <p>
   You can dereference and then get the hash element, but that's a bit inconvenient. Perl provides a way to get an element from a hash reference. Use the arrow operator "->" to retrieve an element from a hash reference.
@@ -423,7 +423,7 @@ my $age = $person{age};
 </ul>
 <h3> Hash array </h3>
 <p>
-  Let's create an array of hashes in Perl. As explained in Array Array, you can only have scalar values ​​as elements of an array. So you need to specify the hash reference as an element of the array.
+  Let's create an array of hashes in Perl. As explained in Array Array, you can only have scalar values as elements of an array. So you need to specify the hash reference as an element of the array.
 </p>
 <pre>
 my %person1 = (name =&gt;'Ken', country =&gt;'Japan', age =&gt; 19);
@@ -679,7 +679,7 @@ while (my $line = &lt;&gt;) {
 
   # (5) Maximum response time
   $infos-&gt;{$time}[2] = $res_time
-    if! defined $infos-&gt;{$time}[2] || $res_time&gt; $infos-&gt;{$time}[2];
+    if !defined $infos-&gt;{$time}[2] || $res_time &gt; $infos-&gt;{$time}[2];
 }
 </pre>
 <p>
@@ -830,8 +830,8 @@ while (my $line = &lt;&gt;) {
 
   # (5) Maximum response time
   $infos-&gt;{$time}{max_time} = $res_time
-    if! defined $infos-&gt;{$time}{max_time}
-      || $res_time&gt; $infos-&gt;{$time}{max_time};
+    if !defined $infos-&gt;{$time}{max_time}
+      || $res_time &gt; $infos-&gt;{$time}{max_time};
 }
 </pre>
 <p>

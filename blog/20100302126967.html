@@ -87,7 +87,7 @@
   I have prepared a simple script for debugging. Save it as debug.pl. We will use this script to explain the debugger.
 </p>
 <pre>
-my $message ='Hello';
+my $message = 'Hello';
 my @nums = (1, 2, 3);
 my %scores = (math =&gt; 80, english =&gt; 77);
 
@@ -120,7 +120,7 @@ perl -d debug.pl
   When you start the debugger, it stops at the first line.
 </p>
 <pre>
-main::(a.pl: 4): my $message ='Hello';
+main::(a.pl: 4): my $message = 'Hello';
 </pre>
 <p>
   Use "q" to exit the debugger.
@@ -233,7 +233,7 @@ p $message
   <strong> "x" can be used to display the internal structure of data in an easy-to-understand manner. Note that you must pass a reference to the </strong> "x" argument.
 </p>
 <p>
-  For example, to display the contents of%scores: \ Is for getting a reference.
+  For example, to display the contents of%scores:\Is for getting a reference.
 </p>
 <pre>
 x \%scores
@@ -263,10 +263,10 @@ v
   If you execute "v" on the 4th line, the surrounding lines will be displayed as shown below.
 </p>
 <pre>
-1: use strict;
-2: use warnings;
+1:use strict;
+2:use warnings;
 3
-4 ==&gt; my $message ='Hello';
+4 ==&gt; my $message = 'Hello';
 5: my @nums = (1, 2, 3);
 6: my %scores = (math =&gt; 80, english =&gt; 77);
 </pre>

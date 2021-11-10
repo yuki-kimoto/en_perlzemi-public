@@ -99,26 +99,26 @@ use Getopt::Long 'GetOptions';
 
 # Default value if no command line option is specified
 my $col = 1;
-my $sep =',';
+my $sep = ',';
 
 # Receive command line options
-GetOptions (
+GetOptions(
   'col = i'=&gt; \$col,
   'sep = s'=&gt; \$sep,
 );
 
-A character with a special meaning was specified in a regular expression such as # .
+# A character with a special meaning was specified in a regular expression such as .
 # Escape the string to work correctly even if
 $sep = quotemeta($sep);
 
 # Special line input operator
 while (&lt;&gt;) {
-  When the argument is omitted, the # chomp function targets $_.
+  # When the argument is omitted, the chomp function targets $_.
   chomp;
   
-  The third argument of # split, -1, is when the last column is an empty string.
+  # The third argument of split, -1, is when the last column is an empty string.
   # Also specified to work correctly
-  The # split function returns a list, so only the parts you need
+  # The split function returns a list, so only the parts you need
   # Get by array slice
   my $item = (split(/ $sep /, $_, -1)) [$col -1];
   print $item . "\n";
@@ -171,16 +171,16 @@ perl script name -c1 -s: file name
 <pre>
 # Default value if no command line option is specified
 my $col = 1;
-my $sep =',';
+my $sep = ',';
 
 # Receive command line options
-GetOptions (
+GetOptions(
   'col = i'=&gt; \$col,
   'sep = s'=&gt; \$sep,
 );
 </pre>
 <p>
-  First, set the default values ​​for command line options.
+  First, set the default values for command line options.
 </p>
 <p>
   Then call the GetOption function for the number of options you want to specify

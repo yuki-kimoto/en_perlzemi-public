@@ -103,7 +103,7 @@ my $file = shift;
 
 # Open file
 open(my $fh, '&lt;', 'file)
-  or die "Can't open file $file: $!";
+  or die "Can't open file $file:$!";
 
 # Get file descriptor
 my $fileno = fileno $fh;

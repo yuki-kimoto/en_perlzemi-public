@@ -93,11 +93,11 @@ closedir directory handle
 </p>
 <pre>
 # Directory name
-my $dir ='study';
+my $dir = 'study';
 
 # Open directory
 opendir my $dh, $dir
-  or die "Can't open directory $dir: $!"
+  or die "Can't open directory $dir:$!"
 
 # Close directory handle
 closedir $dh;

@@ -103,13 +103,13 @@ use warnings;
 my $file = "sample20080811.txt";
 
 open(my $fh, "&gt;", $file)
-  or die "Cannot open $file: $!";
+  or die "Cannot open $file:$!";
     
 print $fh "delayed write\n"; # print function call
 print "File size not yet". -S $file. "Not written in bytes.\n";
 sleep 3;
 
-Write the buffer to a file at the same time as # close(delayed write).
+# Write the buffer to a file at the same time as close(delayed write).
 close $fh or die "Cannot close $file";
 
 print "Written at this point. Size is". -S $file. "Bytes.\n";
@@ -158,7 +158,7 @@ sleep 3;
 </p>
 <h4> (2) Delayed writing is performed </h4>
 <pre>
-Write the buffer to a file at the same time as # close(delayed write).
+# Write the buffer to a file at the same time as close(delayed write).
 close $fh or die "Cannot close $file";
 
 print "Written at this point. Size is". -S $file. "Bytes.\n";

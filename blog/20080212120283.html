@@ -92,7 +92,7 @@ my ($key, $value) = each %hash;
   You can get all (key, value) pairs in order by using each in succession. The order of the (key, value) pairs to get is indefinite.
 </p>
 <pre>
-Get # (key, value) pairs in order
+# Get (key, value) pairs in order
 my %age = (Ken =&gt; 19, Mike =&gt; 34);
 while (my ($name, $age) = each %age) {
   ...
@@ -105,7 +105,7 @@ while (my ($name, $age) = each %age) {
   I think it's rare to use each function in practice. The same process can be done using the <a href="/blog/20080210120265.html">keys function</a>, which is more flexible. In Perl today, the keys function is optimized, so in terms of performance, the keys function is not slower than the each function.
 </p>
 <p>
-  You can also use the <a href="/blog/20100222126425.html">values ​​function</a> to get only all the values ​​of the hash.
+  You can also use the <a href="/blog/20100222126425.html">values function</a> to get only all the values of the hash.
 </p>
 <h3> Sample program </h3>
 <p>

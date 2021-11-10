@@ -98,7 +98,7 @@ my $current_page = 1;
 my $pager = Data::Page-&gt;new($total_entries, $entries_per_page, $current_page);
 
 # Set the number of page navigation
-$pager-&gt;pages_per_navigation (10);
+$pager-&gt;pages_per_navigation(10);
 
 # Get data for page navigation
 my @pages = $pagesr-&gt;pages_in_navigation;
@@ -107,7 +107,7 @@ my @pages = $pagesr-&gt;pages_in_navigation;
 print "@pages\n";
 
 # Change current page
-$pager-&gt;current_page (9);
+$pager-&gt;current_page(9);
 my @pages2 = $pagesr-&gt;pages_in_navigation;
 
 # 5 6 7 8 9 10 11 12 13 14
@@ -120,7 +120,7 @@ print "@pages2\n";
 </p>
 <pre>
 my $pages_per_navigation = $pagesr-&gt;pages_per_navigation;
-$pager-&gt;pages_per_navigation (15);
+$pager-&gt;pages_per_navigation(15);
 </pre>
 <h4> pages_in_navigation </h4>
 <p>

@@ -117,7 +117,7 @@ $score_ref - -- --&gt;(math =&gt; 68, english =&gt; 90)
 <pre>
 # Hash is the value copied
 my %score1 = (math =&gt; 68, english =&gt; 90);
-my %score2 =%score1;
+my %score2 = %score1;
 
 # Hash reference does not copy value
 my %score1 = (math =&gt; 68, english =&gt; 90);
@@ -172,7 +172,7 @@ my $score = {math =&gt; 68, english =&gt; 90};
 my $score_ref = {math =&gt; 68, english =&gt; 90};
 
 # Dereference
-my %score =%{$score_ref};
+my %score = %{$score_ref};
 </pre>
 <p>
   Dereferences can be made using the notation "%{hash reference}".
@@ -181,11 +181,11 @@ my %score =%{$score_ref};
   If the hash reference is a scalar variable, you can omit the "{}".
 </p>
 <pre>
-my %score =% $score_ref;
+my %score = %$score_ref;
 </pre>
 <h4> Pass as an argument to a standard function </h4>
 <p>
-  <a href="/blog/20080210120265.html">keys function</a>, <a href="/blog/20100222126425.html">values ​​function</a>, <a href="/blog/20080212120283. Hash-related functions such as the html">each function</a> take a hash as an argument. So be aware that if you want to pass a hash reference, you need to dereference it.
+  <a href="/blog/20080210120265.html">keys function</a>, <a href="/blog/20100222126425.html">values function</a>, <a href="/blog/20080212120283. Hash-related functions such as the html">each function</a> take a hash as an argument. So be aware that if you want to pass a hash reference, you need to dereference it.
 </p>
 <pre>
 # Dereference and pass to standard function

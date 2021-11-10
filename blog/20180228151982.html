@@ -88,13 +88,13 @@
 my $str2 = "AAA $str1 CCC";
 </pre>
 <p>
-  Since you can use <a href="/blog/20161107147852.html">variables</a> directly in <a href="/blog/20161003147558.html">string</a>, <a href="/blog/20161003147852.html">variables</a> It's easier than writing using the a href = "/ blog/20080221120361.html">string concatenation operator</a>. Let's use it positively.
+  Since you can use <a href="/blog/20161107147852.html">variables</a> directly in <a href="/blog/20161003147558.html">string</a>, <a href="/blog/20161003147852.html">variables</a> It's easier than writing using the a href="/blog/20080221120361.html">string concatenation operator</a>. Let's use it positively.
 </p>
 <p>
   Let's write a sample of variable expansion.
 </p>
 <pre>
-my $animal ='cat';
+my $animal = 'cat';
 
 my $message = "I like $animal";
 </pre>
@@ -106,7 +106,7 @@ my $message = "I like $animal";
   When expanding a variable, if a character string follows the variable, that character string will also be recognized as part of the variable name. In such a case, use "{}" after $to enclose the variable name.
 </p>
 <pre>
-my $animal ='cat';
+my $animal = 'cat';
 
 my $message = "dog ${animal} mouse";
 </pre>
@@ -138,7 +138,7 @@ my $message = "Number is $total";
   You can also use variable interpolation in <a href="/blog/20080619121405.html">Here Document</a>. Enclosing the terminating string in double quotes makes it easier to understand the intention of variable expansion.
 </p>
 <pre>
-my $animal ='cat';
+my $animal = 'cat';
 
 my $message = &lt;&lt; "EOS";
 I love you.

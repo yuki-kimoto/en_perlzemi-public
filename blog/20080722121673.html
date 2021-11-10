@@ -187,15 +187,15 @@ use warnings;
 my $file = shift;
 
 open(my $fh, "&lt;", $file)
-  or die "Cannot open $file: $!";
+  or die "Cannot open $file:$!";
 
 print "1: General description of file read\n";
-Read one line with the # readline function.
+# Read one line with the readline function.
 while (my $line = readline $fh) {
-    Remove line breaks with # chomp function
+    # Remove line breaks with chomp function
     chomp $line;
     
-    Something to do with # $line.
+    # Something to do with $line.
     # Export to standard output.
     print $line, "\n";
 

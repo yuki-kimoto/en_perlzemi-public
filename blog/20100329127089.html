@@ -94,20 +94,20 @@ $ret = quotemeta $str;
 </p>
 <pre>
 # Pattern matching using a character string containing regular expression characters as a normal character string
-my $message ='This message contains a {2}';
+my $message = 'This message contains a {2}';
 
 my $match = "a {2}";
 $match = quotemeta $match;
 
-if ($message =~ /$match /) {
+if ($message =~ /$match/) {
   print "Match!\n";
 }
 </pre>
 <p>
-  quotemeta has the same meaning as the regular expression special character \ Q. The above quotemeta does not have the same meaning as the following description.
+  quotemeta has the same meaning as the regular expression special character\Q. The above quotemeta does not have the same meaning as the following description.
 </p>
 <pre>
-Express the same meaning as quotemeta using # \ Q
+Express the same meaning as quotemeta using #\Q
 my $match = "\ Qa {2}";
 </pre>
 <p>

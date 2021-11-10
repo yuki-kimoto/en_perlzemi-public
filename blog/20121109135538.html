@@ -98,7 +98,7 @@ my $mat = mpdl [
 ];;
 </pre>
 <p>
-  The following matrix is ​​created.
+  The following matrix is created.
 </p>
 <pre>
 [
@@ -193,7 +193,7 @@ my $mat_multi = $mat1 x $mat2;
   Use the <strong> at </strong> method to get the elements of the matrix. Note that the row and column order is different from a regular matrix, and the subscripts start at 0.
 </p>
 <pre>
-$matrix-&gt;at (column, row)
+$matrix-&gt;at(column, row)
 </pre>
 <p>
   The following is a sample to get the value (3) of the 2nd row and 1st column of the 2x2 matrix.
@@ -205,7 +205,7 @@ my $mat = pdl [
   [1, 2],
   [3, 4]
 ];;
-my $val = $mat-&gt;at (0, 1);
+my $val = $mat-&gt;at(0, 1);
 </pre>
 <h3> Set matrix elements </h3>
 <p>
@@ -250,7 +250,7 @@ $mat (0, 1). = 5;
 use PDL;
 
 my $mat = PDL::Core::zeroes (3, 3);
-$mat-&gt;diagonal (0, 1). = 1;
+$mat-&gt;diagonal(0, 1). = 1;
 </pre>
 <p>
   The output result is as follows.

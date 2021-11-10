@@ -95,7 +95,7 @@ my $p = Net::Ping-&gt;new;
 </p>
 <pre>
 # Check the existence of the remote host
-my $alive = $p-&gt;ping ('localhost');
+my $alive = $p-&gt;ping('localhost');
 </pre>
 <p>
   One thing to note is that the Net::Ping ping method is not an alternative to the ping command. Ping command Although it uses a protocol called ICMP, Net::Ping uses the TCP protocol by default to check for survival on the echo port (port number 7). For example, even if you can connect to a remote host via HTTP (port 80), if you close the echo port for security reasons, you will get a judgment that it is not alive.
@@ -106,22 +106,22 @@ my $alive = $p-&gt;ping ('localhost');
 <pre>
 # Survival confirmation using ICMP
 my $p = Net::Ping-&gt;new('icmp');
-my $alive = $p-&gt;ping ('somehost');
+my $alive = $p-&gt;ping('somehost');
 </pre>
 <p>
   If you want to check the existence by HTTP, use the <strong> port_number </strong> method and specify 80 as the port number. (v5.10.0 or later)
 </p>
 <pre>
 # Survival confirmation using HTTP
-$p-&gt;port_number (80);
-my $alive = $p-&gt;ping ('www.google.co.jp');
+$p-&gt;port_number(80);
+my $alive = $p-&gt;ping('www.google.co.jp');
 </pre>
 <p>
   You can specify the timeout value (seconds) in the second argument of the ping method.
 </p>
 <pre>
 # Specify timeout value
-my $alive = $p-&gt;ping ('www.google.co.jp', 2);
+my $alive = $p-&gt;ping('www.google.co.jp', 2);
 </pre>
 <h3> Documents </h3>
 <ul>

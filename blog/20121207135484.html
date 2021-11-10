@@ -99,11 +99,11 @@ use FFI::Raw;
 
 my $cos = FFI::Raw-&gt;new(
   'libm.so', 'cos',
-  FFI::Raw::double, # return value
-  FFI::Raw::double # argument 1
+  # FFI::Raw::double, return value
+  # FFI::Raw::double argument 1
 );
 
-print $cos-&gt;call (2.0);
+print $cos-&gt;call(2.0);
 </pre>
 <p>
   The first argument is the dynamic library name. In C language, the file name corresponding to the dynamic library <b> m </b> is <b> libm.so </b>.
@@ -130,13 +130,13 @@ use FFI::Platypus 1.00;
  
 # for all new code you should use api =&gt; 1
 my $ffi = FFI::Platypus-&gt;new(api =&gt; 1);
-$ffi-&gt;lib (undef); # search libc
+$ffi-&gt;lib(undef); # search libc
  
 # call dynamically
-$ffi-&gt;function (puts =&gt; ['string'] =&gt;'int')-&gt;call ("hello world");
+$ffi-&gt;function(puts =&gt; ['string'] =&gt;'int')-&gt;call("hello world");
  
 # attach as a xsub and call (much faster)
-$ffi-&gt;attach (puts =&gt; ['string'] =&gt;'int');
+$ffi-&gt;attach(puts =&gt; ['string'] =&gt;'int');
 puts ("hello world");
 </pre>
 

@@ -113,7 +113,7 @@ sub new {
   
   my $self = {};
   open my $fh, '&lt;', $file
-    or croak "Can't open $file: $!";
+    or croak "Can't open $file:$!";
   $self-&gt;{fh} = $fh;
   
   return bless $self, $class;

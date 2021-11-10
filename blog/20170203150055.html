@@ -167,15 +167,15 @@ use warnings;
 
 WriteMakefile (
     NAME =&gt;'SomeModule',
-    VERSION_FROM =&gt;'lib/SomeModule.pm', # finds $VERSION
-    PREREQ_PM =&gt; {}, # e.g., Module::Name =&gt; 1.1
-    ($]&gt; = 5.005? # # Add these new keywords supported since 5.005
-      (ABSTRACT_FROM =&gt;'lib/SomeModule.pm', # retrieve abstract from module
+    # VERSION_FROM =&gt;'lib/SomeModule.pm', finds $VERSION
+    # PREREQ_PM =&gt; {}, e.g., Module::Name =&gt; 1.1
+    # ($] &gt;= 5.005? # Add these new keywords supported since 5.005
+      # (ABSTRACT_FROM =&gt;'lib/SomeModule.pm', retrieve abstract from module
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') :()),
-    LIBS =&gt; [''], # e.g., '-lm'
-    DEFINE =&gt;'', # e.g., '-DHAVE_SOMETHING'
-    INC =&gt;'-I.', # e.g., '-I. -I/usr/include/other'
-    OBJECT =&gt;'$(O_FILES)', # link all the C files too
+    # LIBS =&gt; [''], e.g., '-lm'
+    # DEFINE =&gt;'', e.g., '-DHAVE_SOMETHING'
+    # INC =&gt;'-I.', e.g., '-I. -I/usr/include/other'
+    # OBJECT =&gt;'$(O_FILES)', link all the C files too
     CC =&gt;'g ++',
     LD =&gt;'g ++',
 );

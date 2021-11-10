@@ -107,7 +107,7 @@ my @nums = (2, 4, 5);
 my %ages = (kimoto =&gt; 20, ken =&gt; 25);
 my $total = (2 + 3) + 2;
 while ($num == 2) {...}
-for (my $i = 4; $i &lt;5; $i++) {...}
+for (my $i = 4; $i &lt; 5; $i++) {...}
 </pre>
 <h4> Do not put a space inside the bracket [] </h4>
 <pre>
@@ -181,15 +181,15 @@ while (condition) {
 <h4> One space is always available </h4>
 <pre>
 my $num = 1;
-my $title ='Perl';
-my $author ='kimoto';
+my $title = 'Perl';
+my $author = 'kimoto';
 </pre>
 <p>
   It looks beautiful if you have equal (=), but it is troublesome considering the trouble of correction, so I always keep one space.
 </p>
 <h4> Indent +2 when there are multiple lines </h4>
 <pre>
-my $str ='Hello Hello Hello Hello Hello Hello Hello Hello'
+my $str = 'Hello Hello Hello Hello Hello Hello Hello Hello'
   .'Hello Hello Hello Hello Hello Hello Hello Hello Hello'
   . "Hello Hello Hello Hello Hello\n";
 </pre>
@@ -209,7 +209,7 @@ else {$num = 2}
 <h3> String </h3>
 <h4> Use single quotes when the string does not contain variables </h4>
 <pre>
-my $str ='Hello World!';
+my $str = 'Hello World!';
 </pre>
 <h3> Conditional statement/repeating statement </h3>
 <h4> Use while without using until </h4>
@@ -305,7 +305,9 @@ if ($use_agent) {
 use Carp ();
 </pre>
 <h3> Comments </h3>
-<h4> The format of the comment is to write one # , followed by a space, and then the comment </h4>
+<p>
+  # <h4> The format of the comment is to write one , followed by a space, and then the comment </h4>
+</p>
 <pre>
 # comment
 </pre>

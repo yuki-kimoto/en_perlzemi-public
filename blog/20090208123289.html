@@ -144,7 +144,7 @@ my $content = do {local $/; &lt;$fh&gt;};
 <pre>
 my $conf_file = "app.conf";
 my $conf = do $conf_file
-  or die qq/Can't load config file "$conf_file": $! $@/;
+  or die qq/Can't load config file "$conf_file":$! $@/;
 </pre>
 <p>
   The contents of the configuration file.

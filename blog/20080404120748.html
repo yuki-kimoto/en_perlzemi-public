@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Representing word character delimiters-\ b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use the regular expression character  \ b  to separate word characters.">
+<meta name="description" content="Use the regular expression character \b  to separate word characters.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Representing word character delimiters-\ b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use the regular expression character  \ b  to separate word characters." />
+<meta name="twitter:description" content="Use the regular expression character \b  to separate word characters." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -67,7 +67,7 @@
 </ol>
 <h2><a href="/blog/20080404120748.html"> Representing word character delimiters-\ b </a></h2>
 <p>
-  Use the regular expression character <strong> \ b </strong> to separate word characters.
+  Use the regular expression character <strong>\b </strong> to separate word characters.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -92,7 +92,7 @@
   \ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd",/\ bcd/can represent the 0 character between'' and c.
 </p>
 <p>
-  Word characters are alphanumeric characters and underscores. Whitespace is the character represented by \ s, which is a space, tab, or newline.
+  Word characters are alphanumeric characters and underscores. Whitespace is the character represented by\s, which is a space, tab, or newline.
 </p>
 <h3> Sample </h3>
 <p>
@@ -102,19 +102,19 @@
 use strict;
 use warnings;
 
-# Represents a word character delimiter. \ b
+# Represents a word character delimiter.\b
 # (A word character is a character consisting of alphanumeric characters and an underscore)
 
 my $word_space = "ab cd ef";
 my $word = "abcd ef";
 
 print "1: Represents word string delimiters\n";
-if ($word_space =~ /ab \ b/&amp;&amp; $word !~ /Ab \ b /) {
+if ($word_space =~ /ab\b/&amp;&amp; $word !~ /Ab\b/) {
   print "/ ab \\ b/matches'ab cd ef', but".
     "Does not match'abcd ef'.\n\n";
 }
 
-if ($word_space =~ /\ bcd \ b/&amp;&amp; $word !~ /\ Bb \ b /) {
+if ($word_space =~ /\bcd\b/&amp;&amp; $word !~ /\Bb\b/) {
   print "/ \\ bcd \\ b/matches'ab cd ef', but".
     "Does not match'abcd ef'.\n";
 }

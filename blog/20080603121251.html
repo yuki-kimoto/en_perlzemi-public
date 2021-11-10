@@ -93,7 +93,7 @@
   When you execute the command prompt, the command prompt will be launched as shown below.
 </p>
 <p>
-  <img src = "/ images/commandprompt/commandprompt.png">
+  <img src="/images/commandprompt/commandprompt.png">
 </p>
 <p>
   The command prompt home directory is the user directory.
@@ -102,7 +102,7 @@
   In this example:
 </p>
 <pre>
-C: \ Users \ kimot
+C:\Users\kimot
 </pre>
 <h4> Show extension </h4>
 <p>
@@ -119,7 +119,7 @@ C: \ Users \ kimot
   In this example, access the following directories.
 </p>
 <pre>
-C: \ Users \ kimot
+C:\Users\kimot
 </pre>
 <p>
   Right-click the Windows menu at the bottom left of the screen → click "Explorer" → click the left menu "OS (C :)" → click "User" → click "kimot".
@@ -128,7 +128,7 @@ C: \ Users \ kimot
   Please note that the part corresponding to Users is displayed as "User" in Japanese.
 </p>
 <p>
-  Right-click an empty part of the C: \ Users \ kimot directory → "New" → "Text Document". Name it "start.pl" and save it. You can note that "If you change the extension, it may not work", but proceed as it is.
+  Right-click an empty part of the C:\Users\kimot directory → "New" → "Text Document". Name it "start.pl" and save it. You can note that "If you change the extension, it may not work", but proceed as it is.
 </p>
 <p>
   Change the association of ".pl" to Notepad. If you have a text editor you are using, change the association to the text editor you are using.
@@ -212,15 +212,15 @@ Ctrl + f
 </p>
 <h4> Display environment variables </h4>
 <pre>
-echo%PATH% (when looking at the contents of the environment variable PATH)
+echo %PATH% (when looking at the contents of the environment variable PATH)
 </pre>
 <p>
-  To see the environment variables, use echo%environment variable name%.
+  To see the environment variables, use echo %environment variable name%.
 </p>
 <h4> Set environment variables </h4>
 <pre>
 SET DATE = 20080604 (when setting the environment variable DATE to 20080604)
-perl start.pl%DATE% (Example using environment variables as arguments)
+perl start.pl %DATE% (Example using environment variables as arguments)
 </pre>
 <p>
   You can set environment variables with SET environment variable name = value. There should be no space to the left or right of =. To use an environment variable, use%environment variable name%.
@@ -245,7 +245,7 @@ perl start.pl%DATE% (Example using environment variables as arguments)
   To set filename completion, add:/f on to the end of the command prompt path labeled "link destination". There must be a space before the :. This will enable the "8. Complete Filename" command.
 </p>
 <p>
-  Example%SystemRoot% \ system32 \ cmd.exe: /f on
+  Example%SystemRoot%\system32\cmd.exe: /f on
 </p>
 <p>
   <b> Easy edit mode setting </b>

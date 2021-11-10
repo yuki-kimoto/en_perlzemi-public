@@ -104,7 +104,7 @@ print "1: Convert a csv format string to an array of arrays.\n";
 my $people = parse ($text);
 
 require Data::Dumper;
-print Data::Dumper-&gt;Dump ([$persons], ['$perlsons']);
+print Data::Dumper-&gt;Dump([$persons], ['$perlsons']);
 
 sub parse {
   my $text = shift;
@@ -200,7 +200,7 @@ my $headers = ['name', 'age', 'country'];
 my $people = parse ($text, $headers);
 
 require Data::Dumper;
-print Data::Dumper-&gt;Dump ([$persons], ['$perlsons']);
+print Data::Dumper-&gt;Dump([$persons], ['$perlsons']);
 
 sub parse {
   my ($text, $headers) = @_;
@@ -280,9 +280,9 @@ for my $line (@lines) {
 @items_hash {('name', 'age', 'country') = ('tora', 24, 'Japan');
 
 # When disassembled
-$items_hash{name} ='tora';
+$items_hash{name} = 'tora';
 $items_hash{age} = 24;
-$items_hash{contry} ='Japan';
+$items_hash{contry} = 'Japan';
 </pre>
 <p>
   Using hash slices in this way eliminates the need to write iterations.
@@ -293,7 +293,7 @@ push @$items_hash_list, {%items_hash};
 <p>
   The push function requests a list after the second argument, but do not pass a hash as%items_hash. Then finally create a reference to the hash as {%items_hash} and push it.
 </p>
-<h3> Find the maximum and minimum values ​​</h3>
+<h3> Find the maximum and minimum values </h3>
 <p>
   This is a sample to find the maximum and minimum values.
 </p>
@@ -303,7 +303,7 @@ use warnings;
 
 my @nums = (1, 2, 3);
 
-print "1: Subroutine for finding maximum and minimum values ​​\n";
+print "1: Subroutine for finding maximum and minimum values \n";
 print "(". join(',', @nums). ")\n";
 print "maximum value:". Max (@nums) . "\n";
 print "Minimum:". Min (@nums) . "\n";
@@ -316,7 +316,7 @@ my $max_num;
       $max_num = $num;
     }
     else {
-      if ($num&gt; $max_num) {
+      if ($num &gt; $max_num) {
         $max_num = $num;
       }
     }
@@ -331,7 +331,7 @@ sub min {
       $min_num = $num;
     }
     else {
-      if ($num &lt;$min_num) {
+      if ($num &lt; $min_num) {
         $min_num = $num;
       }
     }
@@ -350,7 +350,7 @@ sub max {
       $max_num = $num;
     }
     else {
-      if ($num&gt; $max_num) {
+      if ($num &gt; $max_num) {
         $max_num = $num;
       }
     }
@@ -403,11 +403,11 @@ sub bubble_sort_ascend {
   # Finally
   # Swap a [0] and a [1].
 
-  In # bubble sort, the maximum value is set every time the exchange goes around.
+  # In bubble sort, the maximum value is set every time the exchange goes around.
   # It will be confirmed, so every time the exchange goes around
   # Decrease the number of exchanges by 1.
                        
-  while ($change_cnt&gt; 0) {
+  while ($change_cnt &gt; 0) {
     for my $i (0 .. $change_cnt - 1) {
        
      # If you are bigger than the next number, replace it,
@@ -433,7 +433,7 @@ sub bubble_sort_descend {
   
   my $change_cnt = @nums - 1;
                        
-  while ($change_cnt&gt; 0) {
+  while ($change_cnt &gt; 0) {
     for my $i (0 .. $change_cnt - 1) {
      if ($nums[$i] &lt;$nums[$i + 1]) {
        ($nums[$i], $nums[$i + 1]) = ($nums[$i + 1], $nums[$i]);
@@ -524,7 +524,7 @@ sub bubble_sort {
   
   # Error handling
   my @nums;
-  Check if # $nums is an array reference.
+  # Check if $nums is an array reference.
   if (defined $nums) {
    if (ref $nums eq 'ARRAY') {
      @nums = @$nums
@@ -533,11 +533,11 @@ sub bubble_sort {
   }
   else {return}
   
-  my $order ='ascend';
-  Check if # $opt is a hash reference
+  my $order = 'ascend';
+  # Check if $opt is a hash reference
   if (defined $opt) {
     if (ref $opt eq 'HASH') {
-      Substitute if # $opt-&gt;{order} is a true value.
+      # Substitute if $opt-&gt;{order} is a true value.
       $order = $opt-&gt;{order} if $opt-&gt;{order};
       
       unless ($order eq 'ascend' || $order eq 'descend') {
@@ -554,7 +554,7 @@ sub bubble_sort {
   
   my $change_cnt = @nums - 1;
                        
-  while ($change_cnt&gt; 0) {
+  while ($change_cnt &gt; 0) {
     for my $i (0 .. $change_cnt - 1) {
       # To select ascending or descending order, you only have to rewrite this part from the last time.
       my $is_change;
@@ -603,7 +603,7 @@ else {return}
 </p>
 <h4> (3) Set the default value </h4>
 <pre>
-my $order ='ascend';
+my $order = 'ascend';
 $order = $opt-&gt;{order} if $opt-&gt;{order};
 </pre>
 <p>

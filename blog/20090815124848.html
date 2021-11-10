@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> DateTime - General-purpose handling of dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="DateTime gives you a general idea of ​​dates and times.">
+<meta name="description" content="DateTime gives you a general idea of dates and times.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" DateTime - General-purpose handling of dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="DateTime gives you a general idea of ​​dates and times." />
+<meta name="twitter:description" content="DateTime gives you a general idea of dates and times." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -67,7 +67,7 @@
 </ol>
 <h2><a href="/blog/20090815124848.html"> DateTime - General-purpose handling of dates and times </a></h2>
 <p>
-  DateTime gives you a general idea of ​​dates and times.
+  DateTime gives you a general idea of dates and times.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -162,13 +162,13 @@ my $qtr = $dt-&gt;quarter;
   Use the now method to create a DateTime object that represents the current time. If you specify local for time_zone in the argument, it will be the time zone of your country that should be set in the OS.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(time_zone =&gt;'local');
 </pre>
 <p>
   You can also specify the time zone explicitly.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
+my $dt = DateTime-&gt;now(time_zone =&gt;'Asia/Tokyo');
 </pre>
 <p>
   It seems that specifying the time zone explicitly is a little slower than specifying local. However, explicit specification impairs portability.
@@ -184,13 +184,13 @@ my $dt = DateTime-&gt;now;
   Use the from_epoch method to create a DateTime object from epoch seconds.
 </p>
 <pre>
-my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch);
+my $dt = DateTime-&gt;from_epoch(epoch =&gt; $epoch);
 </pre>
 <p>
   If you do not specify time_zone as an argument, it will be UTC (Coordinated Universal Time). You can get the local time by adding time_zone =>'local' as shown below.
 </p>
 <pre>
-my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch, time_zone =&gt;'local');
+my $dt = DateTime-&gt;from_epoch(epoch =&gt; $epoch, time_zone =&gt;'local');
 </pre>
 <h3> Create a timezone object </h3>
 <p>
@@ -211,7 +211,7 @@ my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
   As shown below, if you specify the time zone in the DateTime constructor (new, now, etc.), the DateTime::TimeZone object is automatically created internally.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
+my $dt = DateTime-&gt;now(time_zone =&gt;'Asia/Tokyo');
 </pre>
 <p>
   Every time you create a DateTime object, a DateTime::TimeZone object will be created.
@@ -224,7 +224,7 @@ my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
   Just specify the created DateTime::TimeZone object in time_zone, which is an argument of the DateTime constructor.
 </p>
 <pre>
-my $dt1 = DateTime-&gt;now (time_zone =&gt; $time_zone);
+my $dt1 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 </pre>
 <p>
   See "<a href="/blog/20081101122558.html">Time Zone List</a>" for a list of time zones.
@@ -234,7 +234,7 @@ my $dt1 = DateTime-&gt;now (time_zone =&gt; $time_zone);
   The expression of the date differs depending on the country or region. For example, January is expressed as January in the United States. Monday is expressed as Monday. A set of expressions for each country or region is called a locale. The DateTime module allows you to specify locales for different countries and regions.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (locale =&gt;'ja');
+my $dt = DateTime-&gt;now(locale =&gt;'ja');
 </pre>
 <p>
   The Japanese locale is ja.
@@ -247,7 +247,7 @@ my $dt = DateTime-&gt;now (locale =&gt;'ja');
   Also, by specifying local for time_zone, time information is created at the local time.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(locale =&gt;'ja', time_zone =&gt;'local');
 </pre>
 <h4> Locale-dependent information Month name and day name </h4>
 <p>
@@ -280,15 +280,15 @@ my $day_abbr = $dt-&gt;day_abbr;
   Windows people output in Shift-JIS, and other OS people output in UTF-8.
 </p>
 <pre>
-Since the # UTF-8 flag is set, encode it.
+# Since the UTF-8 flag is set, encode it.
 my $encode_to;
-if ($^O eq 'MSWin32') {$encode_to ='shift-jis'}
-else {$encode_to ='utf8'}
+if ($^O eq 'MSWin32') {$encode_to = 'shift-jis'}
+else {$encode_to = 'utf8'}
 print(
-  encode ($encode_to, $month_name) . "\n".
-  encode ($encode_to, $month_abbr) . "\n".
-  encode ($encode_to, $day_name) . "\n".
-  encode ($encode_to, $day_abbr) . "\n"
+  encode($encode_to, $month_name) . "\n".
+  encode($encode_to, $month_abbr) . "\n".
+  encode($encode_to, $day_name) . "\n".
+  encode($encode_to, $day_abbr) . "\n"
 );
 </pre>
 <h3> Class for specifying locale </h3>
@@ -296,14 +296,14 @@ print(
   You can specify the locale name in the argument of the DateTime constructor.
 </p>
 <pre>
-my $locale = DateTime::Locale-&gt;load ('ja');
+my $locale = DateTime::Locale-&gt;load('ja');
 </pre>
 <p>
   DateTime creates a DateTime::Locale object in its constructor. Then, based on the generated locale object, it creates an output of date information for each region or country.
 </p>
 <h4> Explicit creation of locale object </h4>
 <pre>
-my $locale = DateTime::Locale-&gt;load ('ja');
+my $locale = DateTime::Locale-&gt;load('ja');
 </pre>
 <p>
   To explicitly create a DateTime::Locale object, use the load method. The load method creates a DateTime::Locale object the first time, but reuses the DateTime::Locale object saved in memory from the second time onward.
@@ -316,13 +316,13 @@ my $locale = DateTime::Locale-&gt;load ('ja');
   To pass the locale object to the DateTime constructor:
 </p>
 <pre>
-my $dt = DateTime-&gt;now (locale =&gt; $locale, time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(locale =&gt; $locale, time_zone =&gt;'local');
 </pre>
 <p>
   You can explicitly pass a locale object, but
 </p>
 <pre>
-my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(locale =&gt;'ja', time_zone =&gt;'local');
 </pre>
 <p>
   It is easy to specify by a character string like. If you write this, the DateTime::Locale object will be created automatically in the DateTime constructor.
@@ -340,26 +340,26 @@ my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
 my $ymd = $dt-&gt;ymd;
 
 # yyyy/mm/dd
-my $ymd_slash = $dt-&gt;ymd ('/');
+my $ymd_slash = $dt-&gt;ymd('/');
 
 # mm-dd-yyyy
 my $mdy = $dt-&gt;mdy;
 
 # mm/dd/yyyy
-my $mdy_slash = $dt-&gt;mdy ('/');
+my $mdy_slash = $dt-&gt;mdy('/');
 
 # dd-mm-yyyy
 my $dmy = $dt-&gt;dmy;
 
 # dd/mm/yyyy
-my $dmy_slash = $dt-&gt;dmy ('/');
+my $dmy_slash = $dt-&gt;dmy('/');
 
 # Time information
 # hh: mm: ss
 my $hms = $dt-&gt;hms;
 
 # hh-mm-ss
-my $hms_hyphen = $dt-&gt;hms ('-');
+my $hms_hyphen = $dt-&gt;hms('-');
 
 # Date and time information
 my $ymdhms = $dt-&gt;datetime;
@@ -390,7 +390,7 @@ Year, month, day, hour, minute, second 2008-11-14T23:48:14
 my $is_leap_year = $dt1-&gt;is_leap_year;
 
 # Last day of the month
-my $dt2 = DateTime-&gt;last_day_of_month (year =&gt; 2008, month =&gt; 11);
+my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 </pre>
 <h4> Determine if it is a leap year. </h4>
 <p>
@@ -404,7 +404,7 @@ my $is_leap_year = $dt1-&gt;is_leap_year;
   To get the last day of the month, use the last_day_of_month method. If you specify year and month as arguments, a DateTime object that represents the last day of the month is returned (not the last day of the month itself). Get the date from the returned DateTime object with the day method.
 </p>
 <pre>
-my $dt2 = DateTime-&gt;last_day_of_month (year =&gt; 2008, month =&gt; 11);
+my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 </pre>
 <h3> Date formatting "strftime" method </h3>
 <p>
@@ -776,25 +776,25 @@ $dt-&gt;strftime("%Y-%m-%d");
 </p>
 <pre>
 # Addition of days
-$dt-&gt;add (days =&gt; 1);
+$dt-&gt;add(days =&gt; 1);
 
 # Monthly addition
-$dt-&gt;add (months =&gt; 1);
+$dt-&gt;add(months =&gt; 1);
 
 # Year addition
-$dt-&gt;add (years =&gt; 1);
+$dt-&gt;add(years =&gt; 1);
 
 # Hour addition
-$dt-&gt;add (hours =&gt; 1);
+$dt-&gt;add(hours =&gt; 1);
 
-Addition of # minutes
-$dt-&gt;add (minutes =&gt; 1);
+# Addition of minutes
+$dt-&gt;add(minutes =&gt; 1);
 
 # Addition of seconds
-$dt-&gt;add (seconds =&gt; 1);
+$dt-&gt;add(seconds =&gt; 1);
 
 # Add all together
-$dt-&gt;add (years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minutes =&gt; 1, seconds =&gt; 1);
+$dt-&gt;add(years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minutes =&gt; 1, seconds =&gt; 1);
 </pre>
 <h3> Date subtraction </h3>
 <p>
@@ -802,22 +802,22 @@ $dt-&gt;add (years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minutes
 </p>
 <pre>
 # Subtraction of days
-$dt-&gt;subtract (days =&gt; 1);
+$dt-&gt;subtract(days =&gt; 1);
 
 # Month subtraction
-$dt-&gt;subtract (months =&gt; 1);
+$dt-&gt;subtract(months =&gt; 1);
 
 # Year subtraction
-$dt-&gt;subtract (years =&gt; 1);
+$dt-&gt;subtract(years =&gt; 1);
 
 # Hour subtraction
-$dt-&gt;subtract (hours =&gt; 1);
+$dt-&gt;subtract(hours =&gt; 1);
 
-Subtraction of # minutes
-$dt-&gt;subtract (minutes =&gt; 1);
+# Subtraction of minutes
+$dt-&gt;subtract(minutes =&gt; 1);
 
 # Second subtraction
-$dt-&gt;subtract (seconds =&gt; 1);
+$dt-&gt;subtract(seconds =&gt; 1);
 </pre>
 <p>
   You can also subtract dates. You can use the <strong>-</strong> symbol to make the calculation normal. (This is achieved using a feature called operator overloading.) The return value is a DateTime::Duration object that represents the period, not a DateTime object. You can get the date of the period with the years, months, days method.
@@ -881,13 +881,13 @@ $duration-&gt;is_negative
 </p>
 <pre>
 # 27 if the period is 1 year and 15 months
-my $months = $duration-&gt;in_units ('months');
+my $months = $duration-&gt;in_units('months');
 
 # 2 if the period is 1 year and 15 months
-my $years = $duration-&gt;in_inits ('years');
+my $years = $duration-&gt;in_inits('years');
 
 # If the period is 1 year and 15 months, it will be (2, 3).
-my ($years, $months) = $duration-&gt;in_units ('years', 'months');
+my ($years, $months) = $duration-&gt;in_units('years', 'months');
 </pre>
 <p>
   If you pass two arguments, you must receive them in <a href="/blog/20080608121292.html">list context</a>.
@@ -954,12 +954,12 @@ Seconds and milliseconds (1 second is 1000 milliseconds)
 <pre>
 my $dt = DateTime-&gt;new(%user_input, time_zone =&gt; $user_tz);
 
-Convert to # UTC
-$dt-&gt;set_time_zone ('UTC');
+# Convert to UTC
+$dt-&gt;set_time_zone('UTC');
 
 # Calculate the date.
 # Return to the original time zone.
-$dt-&gt;set_time_zone ($user_tz);
+$dt-&gt;set_time_zone($user_tz);
 print $dt-&gt;datetime;
 </pre>
 <p>
@@ -985,13 +985,13 @@ print $dt-&gt;datetime;
 </p>
 <pre>
 # Current year and month
-my $current_dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $current_dt = DateTime-&gt;now(time_zone =&gt;'local');
   
 # Previous month
-my $prev_dt = $current_dt-&gt;clone-&gt;add (months =&gt; -1, end_of_month =&gt;'limit');
+my $prev_dt = $current_dt-&gt;clone-&gt;add(months =&gt; -1, end_of_month =&gt;'limit');
 
 # Next month
-my $next_dt = $current_dt-&gt;clone-&gt;add (months =&gt; 1, end_of_month =&gt;'limit');
+my $next_dt = $current_dt-&gt;clone-&gt;add(months =&gt; 1, end_of_month =&gt;'limit');
 </pre>
 <p>
   With the "end_of_month =>'limit'" option, I feel that the date can be obtained correctly even if the date is 1/31. For example, the result of adding January to 1/31 is 2/28.
@@ -1063,10 +1063,10 @@ use warnings;
 use DateTime;
 
 # (1) -1 Get the current time(local time)
-my $dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(time_zone =&gt;'local');
 
 # (1) -2 When explicitly specifying the time zone.
-# my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
+# my $dt = DateTime-&gt;now(time_zone =&gt;'Asia/Tokyo');
 
 # (1) -3 UTC Coordinated Universal Time
 # my $dt = DateTime-&gt;now;
@@ -1110,7 +1110,7 @@ use DateTime;
 
 # Create date information from epoch seconds.
 my $epoch = 1225589752;
-my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch);
+my $dt = DateTime-&gt;from_epoch(epoch =&gt; $epoch);
 
 # Get method to get time information
 my $year = $dt-&gt;year;
@@ -1162,8 +1162,8 @@ my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
 # my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'local');
                                                      
 # (2) Use of timezone object
-my $dt1 = DateTime-&gt;now (time_zone =&gt; $time_zone);
-my $dt2 = DateTime-&gt;now (time_zone =&gt; $time_zone);
+my $dt1 = DateTime-&gt;now(time_zone =&gt; $time_zone);
+my $dt2 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 </pre>
 <p>
   This is a sample to set the locale.
@@ -1175,7 +1175,7 @@ use DateTime;
 use Encode;
 
 print "(1) Print the month name and day of the week name in Japanese.\n";
-my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(locale =&gt;'ja', time_zone =&gt;'local');
 
 # Month name
 my $month_name = $dt-&gt;month_name;
@@ -1189,16 +1189,16 @@ my $day_name = $dt-&gt;day_name;
 # Abbreviated name of the day of the week
 my $day_abbr = $dt-&gt;day_abbr;
 
-Since the # UTF-8 flag is set, encode it.
+# Since the UTF-8 flag is set, encode it.
 my $encode_to;
-if ($^O eq 'MSWin32') {$encode_to ='shift-jis'}
-else {$encode_to ='utf8'}
+if ($^O eq 'MSWin32') {$encode_to = 'shift-jis'}
+else {$encode_to = 'utf8'}
 
 print(
-  encode ($encode_to, $month_name) . "\n".
-  encode ($encode_to, $month_abbr) . "\n".
-  encode ($encode_to, $day_name) . "\n".
-  encode ($encode_to, $day_abbr) . "\n"
+  encode($encode_to, $month_name) . "\n".
+  encode($encode_to, $month_abbr) . "\n".
+  encode($encode_to, $day_name) . "\n".
+  encode($encode_to, $day_abbr) . "\n"
 );
 </pre>
 <p>
@@ -1223,18 +1223,18 @@ use DateTime::Locale;
 # For encoding
 use Encode;
 my $encode_to;
-if ($^O eq 'MSWin32') {$encode_to ='s
+if ($^O eq 'MSWin32') {$encode_to = 's
 hift-jis'}
-else {$encode_to ='utf8'}
+else {$encode_to = 'utf8'}
 
 # Generation of locale
 print "(1) DateTime::Locale object\n";
-my $locale = DateTime::Locale-&gt;load ('ja');
-my $dt = DateTime-&gt;now (locale =&gt; $locale, time_zone =&gt;'local');
+my $locale = DateTime::Locale-&gt;load('ja');
+my $dt = DateTime-&gt;now(locale =&gt; $locale, time_zone =&gt;'local');
 
 # Day of the week name
 my $day_name = $dt-&gt;day_name;
-print encode ($encode_to, $day_name) . "\n";
+print encode($encode_to, $day_name) . "\n";
 </pre>
 <p>
   This is a sample to get the date and time.
@@ -1246,17 +1246,17 @@ use DateTime;
 use DateTime::TimeZone;
 use DateTime::Locale;
 
-my $dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(time_zone =&gt;'local');
 
 print "(1) Convenient output method of DateTime date/time\n";
 my $ymd = $dt-&gt;ymd;
-my $ymd_slash = $dt-&gt;ymd ('/');
+my $ymd_slash = $dt-&gt;ymd('/');
 my $mdy = $dt-&gt;mdy;
-my $mdy_slash = $dt-&gt;mdy ('/');
+my $mdy_slash = $dt-&gt;mdy('/');
 my $dmy = $dt-&gt;dmy;
-my $dmy_slash = $dt-&gt;dmy ('/');
+my $dmy_slash = $dt-&gt;dmy('/');
 my $hms = $dt-&gt;hms;
-my $hms_hyphen = $dt-&gt;hms ('-');
+my $hms_hyphen = $dt-&gt;hms('-');
 my $ymdhms = $dt-&gt;datetime;
 
 print(
@@ -1280,13 +1280,13 @@ use warnings;
 use DateTime;
 
 print "(1) Determine if it is a leap year.\n";
-my $dt1 = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt1 = DateTime-&gt;now(time_zone =&gt;'local');
 my $is_leap_year = $dt1-&gt;is_leap_year;
 if ($is_leap_year) {print "This year is a leap year.\n\n"}
 else {print "This year is not a leap year.\n\n"}
 
 print "(2) Get the last day of the month.\n";
-my $dt2 = DateTime-&gt;last_day_of_month (year =&gt; 2008, month =&gt; 11);
+my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 print "The last day of November 2008 is". $Dt2-&gt;day. "The day.\n";
 </pre>
 <p>
@@ -1298,7 +1298,7 @@ use warnings;
 use DateTime;
 
 print "(1) strftime format specification list\n";
-my $dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(time_zone =&gt;'local');
 
 print'%a: Abbreviation for day of the week:'. $Dt-&gt;strftime("%a") . "\n";
 print'%A: Day of the week name:'. $Dt-&gt;strftime("%A") . "\n";
@@ -1355,7 +1355,7 @@ print'%z: Time zone time shift from UTC (Coordinated Universal Time):'
   . $dt-&gt;strftime("%z") . "\n";
 print'%Z: timezone name:'. $Dt-&gt;strftime("%Z") . "\n";
 print'%%:%:'. $Dt-&gt;strftime("%%") . "\n";
-print'%{method}: You can use the method of DateTime.pm. Example%{ymd}:'
+print'%{method}:You can use the method of DateTime.pm. Example%{ymd}:'
   . $dt-&gt;strftime("%{ymd}") . "\n";
 </pre>
 <p>
@@ -1421,19 +1421,19 @@ use warnings;
 use DateTime;
 
 print "(1) -1 Addition of dates\n";
-my $dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(time_zone =&gt;'local');
 
 # Addition of days
 my $dt_tommorow = $dt-&gt;clone;
-$dt_tommorow-&gt;add (days =&gt; 1);
+$dt_tommorow-&gt;add(days =&gt; 1);
 
 # Monthly addition
 my $dt_next_month = $dt-&gt;clone;
-$dt_next_month-&gt;add (months =&gt; 1);
+$dt_next_month-&gt;add(months =&gt; 1);
 
 # Year addition
 my $dt_next_year = $dt-&gt;clone;
-$dt_next_year-&gt;add (years =&gt; 1);
+$dt_next_year-&gt;add(years =&gt; 1);
 
 print'Currently'. $Dt-&gt;date. ".\n\n";
 print'Tomorrow'. $Dt_tommorow-&gt;date. ".\n";
@@ -1443,15 +1443,15 @@ print '1 year later'. $Dt_next_year-&gt;date. ".\n\n";
 # Hour addition
 print "(1) -2 Add time\n";
 my $dt_next_hour = $dt-&gt;clone;
-$dt_next_hour-&gt;add (hours =&gt; 1);
+$dt_next_hour-&gt;add(hours =&gt; 1);
 
-Addition of # minutes
+# Addition of minutes
 my $dt_next_minutes = $dt-&gt;clone;
-$dt_next_minutes-&gt;add (minutes =&gt; 1);
+$dt_next_minutes-&gt;add(minutes =&gt; 1);
 
 # Addition of seconds
 my $dt_next_second = $dt-&gt;clone;
-$dt_next_second-&gt;add (seconds =&gt; 1);
+$dt_next_second-&gt;add(seconds =&gt; 1);
 
 print'Currently'. $Dt-&gt;time. ".\n\n";
 print '1 hour later'. $Dt_next_hour-&gt;time. ".\n";
@@ -1485,18 +1485,18 @@ use warnings;
 use DateTime;
 
 print "(1) Date subtraction\n";
-my $dt = DateTime-&gt;now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now(time_zone =&gt;'local');
 
 # Subtraction of days
 my $dt_yesterday = $dt-&gt;clone;
-$dt_yesterday-&gt;subtract (days =&gt; 1);
+$dt_yesterday-&gt;subtract(days =&gt; 1);
 
 print'The current date is'. $Dt-&gt;date. ".\n";
 print'Yesterday's date is'. $Dt_yesterday-&gt;date. ".\n\n";
 
 # Combine addition and subtraction.
 my $dt_mix = $dt-&gt;clone;
-$dt_mix = $dt_mix-&gt;add (months =&gt; 1)-&gt;subtract (days =&gt; 1);
+$dt_mix = $dt_mix-&gt;add(months =&gt; 1)-&gt;subtract(days =&gt; 1);
 
 print "(2) Subtraction between DateTime objects\n";
 my $dt1 = DateTime-&gt;new(year =&gt; 2000, month =&gt; 2, day =&gt; 1);
@@ -1569,7 +1569,7 @@ elsif ($duration-&gt;is_negative) {
 print "\n";
 
 print "(3) Get the period on a monthly basis.\n";
-print'The period is'. $Duration-&gt;in_units ('months'). "Months.\n";
+print'The period is'. $Duration-&gt;in_units('months'). "Months.\n";
 </pre>
 <p>
   Execution result

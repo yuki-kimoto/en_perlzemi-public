@@ -65,7 +65,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20151212144988.html"> Validator::Custom - validation of HTML input data </a></​​h2>
+<h2><a href="/blog/20151212144988.html"> Validator::Custom - validation of HTML input data </a></h2>
 <p>
   Validator::Custom is a Perl module to help validate HTML forms. You can concisely describe value checking and filtering, and error message handling. It is extremely easy to use and can flexibly handle complex validation combinations.
 </p>
@@ -96,7 +96,7 @@
   
   # Input data
   my $id = 1;
-  my $name ='Ken Suzuki';
+  my $name = 'Ken Suzuki';
   my $price = '19.23';
   my $favorite = ['001', '002'];
   
@@ -104,25 +104,25 @@
   my $validation = $vc-&gt;validation;
   
   # Check that "ID" is an integer
-  if (! $vc-&gt;check ($id, 'int')) {
+  if (!$vc-&gt;check($id, 'int')) {
     # Add message on failure
-    $validation-&gt;add_failed (id =&gt;'id must be integer');
+    $validation-&gt;add_failed(id =&gt;'id must be integer');
   }
   
   # Check that the "name" has a length
   if (! (length $name)) {
-    $validation-&gt;add_failed (name =&gt;'name must have length');
+    $validation-&gt;add_failed(name =&gt;'name must have length');
   }
   # Check that the length of the "name" is less than 30
-  elsif (! (length $name &lt;30)) {
-    $validation-&gt;add_failed (name =&gt;'name is too long');
+  elsif (! (length $name &lt; 30)) {
+    $validation-&gt;add_failed(name =&gt;'name is too long');
   }
   
   # Filter "price" to remove left and right blanks
-  $price = $vc-&gt;filter ($price, 'trim');
+  $price = $vc-&gt;filter($price, 'trim');
 
   # Check that "Price" is a number with two decimal places
-  if (! $vc-&gt;check ($price ,, 'number', {decimal_part_max =&gt; 2})) {
+  if (!$vc-&gt;check($price ,, 'number', {decimal_part_max =&gt; 2})) {
     # Set default value if validation fail
     $price = 20.25;
   }
@@ -132,11 +132,11 @@
   
   # Check that "Favorites" have at least one value
   if (@$favorite == 0) {
-    $validation-&gt;add_failed (favorite =&gt;'favorite must be selected more than one');
+    $validation-&gt;add_failed(favorite =&gt;'favorite must be selected more than one');
   }
   # Check that "Favorites" is one of "001", "002", and "003"
   elsif (! ($vc-&gt;check_each($favorite, 'in', ['001', '002', '003']))) {
-    $validation-&gt;add_failed (favorite =&gt;'favorite is invalid');
+    $validation-&gt;add_failed(favorite =&gt;'favorite is invalid');
   }
   
   # Check if the validation result is correct
@@ -146,7 +146,7 @@
   else {
     
     # Check which parameter failed
-    unless ($validation-&gt;is_valid ('name')) {
+    unless ($validation-&gt;is_valid('name')) {
       # ...
     }
     
@@ -154,7 +154,7 @@
     my $failed = $validation-&gt;failed;
 
     # Get message for one failed parameter
-    my $name_message = $validation-&gt;message ('name');
+    my $name_message = $validation-&gt;message('name');
     
     # Get messages for all failed parameters
     my $messages = $validation-&gt;messages;
@@ -207,7 +207,7 @@
 </p>
 <pre>
   my $id = 1;
-  my $name ='Ken Suzuki';
+  my $name = 'Ken Suzuki';
   my $price = '19.23';
   my $favorite = ['001', '002'];
 </pre>
@@ -227,13 +227,13 @@
   A <a href="/blog/20151210144988.html">Validator::Custom::Validation</a> object to store the failed parameter name and message.
 </p>
 <p>
-  <b> 4. Validation of input data </​​b>
+  <b> 4. Validation of input data </b>
 </p>
 <pre>
   # Check that "ID" is an integer
-  if (! $vc-&gt;check ($id, 'int')) {
+  if (!$vc-&gt;check($id, 'int')) {
     # Add message on failure
-    $validation-&gt;add_failed (id =&gt;'id must be integer');
+    $validation-&gt;add_failed(id =&gt;'id must be integer');
   }
 </pre>
 <p>
@@ -244,7 +244,7 @@
 </p>
 <pre>
   # Filter "price" to remove left and right blanks
-  $price = $vc-&gt;filter ($price, 'trim');
+  $price = $vc-&gt;filter($price, 'trim');
 </pre>
 <p>
   You can use the <b> trim </b> filter function to remove the left and right spaces.
@@ -259,11 +259,11 @@
 <pre>
   # Check that "Favorites" have at least one value
   if (@$favorite == 0) {
-    $validation-&gt;add_failed (favorite =&gt;'favorite must be selected more than one');
+    $validation-&gt;add_failed(favorite =&gt;'favorite must be selected more than one');
   }
   # Check that "Favorites" is one of "001", "002", and "003"
   elsif (! ($vc-&gt;check_each($favorite, 'in', ['001', '002', '003']))) {
-    $validation-&gt;add_failed (favorite =&gt;'favorite is invalid');
+    $validation-&gt;add_failed(favorite =&gt;'favorite is invalid');
   }
 </pre>
 <p>
@@ -290,7 +290,7 @@
 </p>
 <pre>
   # Check which parameter failed
-  unless ($validation-&gt;is_valid ('name')) {
+  unless ($validation-&gt;is_valid('name')) {
     # ...
   }
 </pre>
@@ -306,7 +306,7 @@
 </p>
 <pre>
   # Get message for parameters that failed validation
-  my $name_message = $validation-&gt;message ('name');
+  my $name_message = $validation-&gt;message('name');
 </pre>
 <p>
   You can use the <b> messages </b> method to get messages for all parameters that failed validation.
@@ -333,12 +333,12 @@
   If you want, you can add the check function yourself using the <b> add_check </b> method.
 </p>
 <pre>
-  $vc-&gt;add_check (
+  $vc-&gt;add_check(
     telephone =&gt; sub {
       my ($vc, $value, $arg) = @_;
       
       my $is_valid;
-      if ($value =~ /^ [\ d-] + $/) {
+      if ($value =~ /^ [\d-] +$/) {
         $is_valid = 1;
       }
       return $is_valid;
@@ -358,7 +358,7 @@
   If you want, you can add the filter function yourself using the <b> add_filter </b> method.
 </p>
 <pre>
-  $vc-&gt;add_filter (
+  $vc-&gt;add_filter(
     to_upper_case =&gt; sub {
       my ($vc, $value, $arg) = @_;
       
@@ -381,7 +381,7 @@
 <h4> int </h4>
 <pre>
   my $value = 19;
-  my $is_valid = $vc-&gt;check ($value, 'int');
+  my $is_valid = $vc-&gt;check($value, 'int');
 </pre>
 <p>
   Check if it is an integer value.
@@ -404,11 +404,11 @@
   If you also want to check the range of values, you can write:
 </p>
 <pre>
-  my $is_valid = $vc-&gt;check ($value, 'int') &amp;&amp; $value&gt; 0;
+  my $is_valid = $vc-&gt;check($value, 'int') &amp;&amp; $value &gt; 0;
 </pre>
 <h4> number </h4>
 <pre>
-  my $is_valid = $vc-&gt;check ($value, 'number');
+  my $is_valid = $vc-&gt;check($value, 'number');
 </pre>
 <p>
   Checks if the value is a number. Numbers mean integers and decimals.
@@ -436,7 +436,7 @@
   You can also use the <b> decimal_part_max </b> option to specify the maximum number of decimal places.
 </p>
 <pre>
-  my $is_valid = $vc-&gt;check ($value, 'number', {decimal_part_max =&gt; 3});
+  my $is_valid = $vc-&gt;check($value, 'number', {decimal_part_max =&gt; 3});
 </pre>
 <p>
   Example of correct value:
@@ -455,7 +455,7 @@
 </pre>
 <h4> ascii_graphic </h4>
 <pre>
-  my $is_valid = $vc-&gt;check ($value, 'ascii');
+  my $is_valid = $vc-&gt;check($value, 'ascii');
 </pre>
 <p>
   Check if the value is an ASCII graphic character (hexadecimal "21-7e"). Generally, it is used to check the characters of the password.
@@ -476,7 +476,7 @@
 <h4> in </h4>
 <pre>
   my $value = '001';
-  my $is_valid = $vc-&gt;check ($value, 'in', ['001', '002', '003']);
+  my $is_valid = $vc-&gt;check($value, 'in', ['001', '002', '003']);
 </pre>
 <p>
   Checks if the value is one of several given values.
@@ -502,7 +502,7 @@
 </p>
 <h4> trim </h4>
 <pre>
-  my $new_value = $vc-&gt;filter ($value, 'trim');
+  my $new_value = $vc-&gt;filter($value, 'trim');
 </pre>
 <p>
   Remove the leading and trailing blanks. Note that it removes Unicode whitespace as well as ASCII whitespace [\t\n\r\f].
@@ -516,7 +516,7 @@
 </pre>
 <h4> remove_blank </h4>
 <pre>
-  my $new_values ​​= $vc-&gt;filter ($values, 'remove_blank');
+  my $new_values = $vc-&gt;filter($values, 'remove_blank');
 </pre>
 <p>
   Removes empty and undefined characters from the array reference.
@@ -541,7 +541,7 @@
 </p>
 <h4> add_check </h4>
 <pre>
-  $vc-&gt;add_check (int =&gt; sub {...});
+  $vc-&gt;add_check(int =&gt; sub {...});
 </pre>
 <p>
   Add a check function.
@@ -550,11 +550,11 @@
   sample:
 </p>
 <pre>
-  $vc-&gt;add_check (
+  $vc-&gt;add_check(
     int =&gt; sub {
       my ($vc, $value, $arg) = @_;
       
-      my $is_valid = $value =~ /^ \-? [\ D] + $/;
+      my $is_valid = $value =~ /^ \-? [\D] +$/;
       
       return $is_valid;
     }
@@ -565,7 +565,7 @@
 </p>
 <h4> add_filter </h4>
 <pre>
-  $vc-&gt;add_filter (trim =&gt; sub {...});
+  $vc-&gt;add_filter(trim =&gt; sub {...});
 </pre>
 <p>
   Add a filter function.
@@ -574,12 +574,12 @@
   sample:
 </p>
 <pre>
-  $vc-&gt;add_filter (
+  $vc-&gt;add_filter(
     trim =&gt; sub {
       my ($vc, $value, $arg) = @_;
       
-      $value =~ s/^ \ s + //;
-      $value =~ s/\ s + $//;
+      $value =~ s/^\s + //;
+      $value =~ s/\s +$//;
       
       return $value;
     }
@@ -593,8 +593,8 @@
 </p>
 <h4> check </h4>
 <pre>
-  my $is_valid = $vc-&gt;check ($value, 'int');
-  my $is_valid = $vc-&gt;check ($value, 'int', $arg);
+  my $is_valid = $vc-&gt;check($value, 'int');
+  my $is_valid = $vc-&gt;check($value, 'int', $arg);
 </pre>
 <p>
   Execute the check function.
@@ -608,15 +608,15 @@
   my $is_valid = $vc-&gt;check_each($values, 'int', $arg);
 </pre>
 <p>
-  Executes the check function on all elements of the array reference. If one or more values ​​are invalid, the <b> check_each </b> method returns a fake value.
+  Executes the check function on all elements of the array reference. If one or more values are invalid, the <b> check_each </b> method returns a fake value.
 </p>
 <p>
   The first argument is the value to check. This should be an array reference. The second argument is the name of the check function. The third argument is the argument of the check function.
 </p>
 <h4> filter </h4>
 <pre>
-  my $new_value = $vc-&gt;filter ($value, 'trim');
-  my $new_value = $vc-&gt;filter ($value, 'trim', $arg);
+  my $new_value = $vc-&gt;filter($value, 'trim');
+  my $new_value = $vc-&gt;filter($value, 'trim', $arg);
 </pre>
 <p>
   Execute the filter function.
@@ -626,8 +626,8 @@
 </p>
 <h4> filter_each </h4>
 <pre>
-  my $new_values ​​= $vc-&gt;filter_each($values, 'trim');
-  my $new_values ​​= $vc-&gt;filter_each($values, 'trim', $arg);
+  my $new_values = $vc-&gt;filter_each($values, 'trim');
+  my $new_values = $vc-&gt;filter_each($values, 'trim', $arg);
 </pre>
 <p>
   Executes the filter function on all elements of the array reference.
@@ -643,19 +643,19 @@
   Password check:
 </p>
 <pre>
-  my $password ='abc';
-  my $password2 ='abc';
+  my $password = 'abc';
+  my $password2 = 'abc';
   
   my $validation = $vc-&gt;validation;
   
   if (! length $password) {
-    $validation-&gt;add_failed (password =&gt;'password must have length');
+    $validation-&gt;add_failed(password =&gt;'password must have length');
   }
-  elsif (! $vc-&gt;check ($password, 'ascii')) {
-    $validation-&gt;add_failed (password =&gt;'password contains invalid characters');
+  elsif (!$vc-&gt;check($password, 'ascii')) {
+    $validation-&gt;add_failed(password =&gt;'password contains invalid characters');
   }
   elsif ($password ne $password2) {
-    $validation-&gt;add_failed (password =&gt; "two passwords don't match");
+    $validation-&gt;add_failed(password =&gt; "two passwords don't match");
   }
   
   if ($validation-&gt;is_valid) {
@@ -675,10 +675,10 @@
   
   if (@$favorite == 0) {
 
-    $validation-&gt;add_failed (favorite =&gt;'favorite must be selected at least 1');
+    $validation-&gt;add_failed(favorite =&gt;'favorite must be selected at least 1');
   }
-  elsif (! $V c-&gt;check ($favorite, 'in', ['001', '002', '003'])) {
-    $validation-&gt;add_failed (favorite =&gt;'favorite have invalid value');
+  elsif (!$V c-&gt;check($favorite, 'in', ['001', '002', '003'])) {
+    $validation-&gt;add_failed(favorite =&gt;'favorite have invalid value');
   }
   
   if ($validation-&gt;is_valid) {
@@ -698,12 +698,12 @@
   
   my $date_tp;
   if (! length $datetime) {
-    $validation-&gt;add_failed (date =&gt;'date must have length');
+    $validation-&gt;add_failed(date =&gt;'date must have length');
   }
   else {
     eval {$date_tp = Time::Piece-&gt;strptime($date, '%Y /%m /%d')};
-    if (! $date_tp) {
-      $validation-&gt;add_failed (date =&gt;'date value is invalid');
+    if (!$date_tp) {
+      $validation-&gt;add_failed(date =&gt;'date value is invalid');
     }
   }
 </pre>
@@ -717,12 +717,12 @@
   
   my $datetime_tp;
   if (! length $datetime) {
-    $validation-&gt;add_failed (datetime =&gt;'datetime must have length');
+    $validation-&gt;add_failed(datetime =&gt;'datetime must have length');
   }
   else {
     eval {$datetime_tp = Time::Piece-&gt;strptime($datetime, '%Y /%m /%d%H:%M:%S')};
-    if (! $Datetime_tp) {
-      $validation-&gt;add_failed (datetime =&gt;'datetime value is invalid');
+    if (!$Datetime_tp) {
+      $validation-&gt;add_failed(datetime =&gt;'datetime value is invalid');
     }
   }
 </pre>
@@ -760,7 +760,7 @@
   space
 </p>
 <pre>
-  $vc-&gt;add_check (space =&gt; sub {
+  $vc-&gt;add_check(space =&gt; sub {
     my ($vc, $value, $arg) = @_;
     return defined $value &amp;&amp; $value =~ '^ [\t\n\r\f] * $'? 1: 0;
   });
@@ -769,16 +769,16 @@
   http_url
 </p>
 <pre>
-  $vc-&gt;add_check (http_url =&gt; sub {
+  $vc-&gt;add_check(http_url =&gt; sub {
     my ($vc, $value, $arg) = @_;
-    return defined $value &amp;&amp; $value =~ /^ s? https ?: \/\/[-_.!~ *'() A-zA-Z0-9; \ /?: ​​\@&amp; = + \$, % # ] + $/? 1: 0;
+    return defined $value &amp;&amp; $value =~ /^ s? https ?: \/\/[-_.!~ *'() A-zA-Z0-9;\/?: \@&amp; = + \$, % # ] +$/? 1: 0;
   });
 </pre>
 <p>
   decimal
 </p>
 <pre>
-  $vc-&gt;add_check (decimal =&gt; sub {
+  $vc-&gt;add_check(decimal =&gt; sub {
     my ($vc, $value, $arg) = @_;
 
     return undef unless defined $value;
@@ -815,7 +815,7 @@
     }
     
     # Check value
-    if ($value =~ /$re /) {
+    if ($value =~ /$re/) {
       return 1;
     }
     else {
@@ -831,13 +831,13 @@
   trim_collapse
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_collapse =&gt; sub {
+  $vc-&gt;add_filter(trim_collapse =&gt; sub {
     my ($vc, $value, $arg) = @_;
     
     return undef unless defined $value;
     
     $value =~ s/[\t\n\r\f] +// g;
-    $value =~ s/^ [\t\n\r\f] * (. *?) [\t\n\r\f] * $/ $1/ms;
+    $value =~ s/^ [\t\n\r\f] * (. *?) [\t\n\r\f] *$/ $1/ms;
 
     return $value;
   });
@@ -846,12 +846,12 @@
   trim_lead
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_lead =&gt; sub {
+  $vc-&gt;add_filter(trim_lead =&gt; sub {
     my ($vc, $value, $arg) = @_;
     
     return undef unless defined $value;
 
-    $value =~ s/^ [\t\n\r\f] + (. *) $/ $1/ms;
+    $value =~ s/^ [\t\n\r\f] + (. *)$/ $1/ms;
 
     return $value;
   });
@@ -860,12 +860,12 @@
   trim_trail
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_trail =&gt; sub {
+  $vc-&gt;add_filter(trim_trail =&gt; sub {
     my ($vc, $value, $arg) = @_;
     
     return undef unless defined $value;
 
-    $value =~ s/^ (. *?) [\t\n\r\f] + $/ $1/ms;
+    $value =~ s/^ (. *?) [\t\n\r\f] +$/ $1/ms;
 
     return $value;
   });
@@ -874,12 +874,12 @@
   trim_uni
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_uni =&gt; sub {
+  $vc-&gt;add_filter(trim_uni =&gt; sub {
     my ($vc, $value, $arg) = @_;
     
     return undef unless defined $value;
 
-    $value =~ s/^ \ s * (. *?) \ S * $/ $1/ms;
+    $value =~ s/^\s * (. *?)\S *$/ $1/ms;
 
     return $value;
   });
@@ -888,13 +888,13 @@
   trim_uni_collapse
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_uni_collapse =&gt; sub {
+  $vc-&gt;add_filter(trim_uni_collapse =&gt; sub {
     my ($vc, $value, $arg) = @_;
 
     return undef unless defined $value;
     
-    $value =~ s/\ s +// g;
-    $value =~ s/^ \ s * (. *?) \ S * $/ $1/ms;
+    $value =~ s/\s +// g;
+    $value =~ s/^\s * (. *?)\S *$/ $1/ms;
 
     return $value;
   });
@@ -903,12 +903,12 @@
   trim_uni_lead
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_uni_lead =&gt; sub {
+  $vc-&gt;add_filter(trim_uni_lead =&gt; sub {
     my ($vc, $value, $arg) = @_;
     
     return undef unless defined $value;
     
-    $value =~ s/^ \ s + (. *) $/ $1/ms;
+    $value =~ s/^\s + (. *)$/ $1/ms;
     
     return $value;
   });
@@ -917,12 +917,12 @@
   trim_uni_trail
 </p>
 <pre>
-  $vc-&gt;add_filter (trim_uni_trail =&gt; sub {
+  $vc-&gt;add_filter(trim_uni_trail =&gt; sub {
     my ($vc, $value, $arg) = @_;
     
     return undef unless defined $value;
 
-    $value =~ s/^ (. *?) \ S + $/ $1/ms;
+    $value =~ s/^ (. *?)\S +$/ $1/ms;
 
     return $value;
   });
@@ -962,19 +962,19 @@
 </p>
 <pre>
 # Hiragana
-$vc-&gt;add_check (
+$vc-&gt;add_check(
   hiragana =&gt; sub {
     my ($vc, $value) = @_;
-    my $is_valid = $value =~ /^\p{InHiragana} + $/;
+    my $is_valid = $value =~ /^\p{InHiragana} +$/;
     return $is_valid;
   }
 );
 
 # Katakana
-$vc-&gt;add_check (
+$vc-&gt;add_check(
   katakana =&gt; sub {
     my ($vc, $value) = @_;
-    my $is_valid = $value =~ /^\p{InKatakana} + $/
+    my $is_valid = $value =~ /^\p{InKatakana} +$/
     return $is_valid;
   }
 );
@@ -986,10 +986,10 @@ $vc-&gt;add_check (
 <pre>
 use Email::Valid::Loose;
 
-$vc-&gt;add_check (
+$vc-&gt;add_check(
   email =&gt; sub {
     my ($vc, $value) = @_;
-    return Email::Valid::Loose-&gt;address ($value);
+    return Email::Valid::Loose-&gt;address($value);
   }
 );
 </pre>

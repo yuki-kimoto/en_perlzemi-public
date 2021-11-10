@@ -65,7 +65,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20171222151394.html"> unpack function-restore packed data </a></​​h2>
+<h2><a href="/blog/20171222151394.html"> unpack function-restore packed data </a></h2>
 <p>
   You can use the unpack function to restore the data packed in binary format with the <a href="/blog/20171218151360.html">pack function</a>.
 </p>
@@ -86,7 +86,7 @@
 
 
 <pre>
-my @values ​​= unpack($format, $packed);
+my @values = unpack($format, $packed);
 </pre>
 <p>
   The first argument is the format.
@@ -104,10 +104,10 @@ my @values ​​= unpack($format, $packed);
 <pre>
 my $packed = pack("l3", 7, 8, 9);
 
-my @values ​​= unpack("l3", $packed);
+my @values = unpack("l3", $packed);
 </pre>
 <p>
-  @values ​​will be a <a href="/blog/20161012147627.html">array</a> called (7, 8, 9).
+  @values will be a <a href="/blog/20161012147627.html">array</a> called (7, 8, 9).
 </p>
 <h4> Restore floating point packed data in signed double binary format </h4>
 <p>
@@ -116,7 +116,7 @@ my @values ​​= unpack("l3", $packed);
 <pre>
 my $packed = pack("d3", 0.5, 1.2, 5.4);
 
-my @values ​​= unpack("d3", $packed);
+my @values = unpack("d3", $packed);
 </pre>
 <h4> Endian conversion </h4>
 <p>

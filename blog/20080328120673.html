@@ -131,9 +131,9 @@ foreach my $num (@$nums) {
   print "$num\n";
 }
 </pre>
- This is a sample that outputs the values ​​contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
+ This is a sample that outputs the values contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
 <pre>
-# Output the values ​​contained in the 2D array in tabs for each line
+# Output the values contained in the 2D array in tabs for each line
 my $data = [
   ['a', 1],
   ['b', 2]
@@ -144,10 +144,10 @@ foreach my $record(@$data) {
 }
 </pre>
 <p>
-  This is a sample that outputs the values ​​contained in the hash array for each line, separated by tabs.
+  This is a sample that outputs the values contained in the hash array for each line, separated by tabs.
 </p>
 <pre>
-# Outputs the values ​​contained in the hash array, tab-separated line by line
+# Outputs the values contained in the hash array, tab-separated line by line
 my $people = [
   {name =&gt;'Ken', age =&gt; 19},
   {name =&gt;'Taro', age =&gt; 32}
@@ -175,7 +175,7 @@ print "\n";
 print "[2]\n";
 my @numbers = (1, 2, 3);
 foreach my $number (@numbers) {
-  Since what is passed to # $number is an alias for the element, you can change the value of the array itself.
+  # Since what is passed to $number is an alias for the element, you can change the value of the array itself.
   $number = $number * 2;
 }
 print "\@numbers = (", join(',', @numbers), ")\n\n";

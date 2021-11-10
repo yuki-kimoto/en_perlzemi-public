@@ -107,7 +107,7 @@ if (condition) {
 }
 </pre>
 <p>
-  <b> == </b> is a comparison operator that returns true if the numbers are equal.
+  <b >= = </b> is a comparison operator that returns true if the numbers are equal.
 </p>
 <p>
   In the case of this example, "$num == 5" returns true because the variable contains 5.
@@ -196,7 +196,7 @@ else {
 </p>
 <h4> Numeric comparison operator </h4>
 <p>
-  Numeric comparison operators are operators used to compare values ​​as numbers.
+  Numeric comparison operators are operators used to compare values as numbers.
 </p>
 <table>
   <tr>
@@ -233,7 +233,7 @@ else {
   </tr>
   <tr>
     <td>
-      A> = B
+      A >= B
     </td>
     <td>
       A is B or higher
@@ -320,7 +320,7 @@ else {
 </table>
 <h4> Numerical comparison and string comparison </h4>
 <p>
-  In Perl, use the numeric comparison operator if you want to compare values ​​as numbers, and the string comparison operator if you want to compare as strings.
+  In Perl, use the numeric comparison operator if you want to compare values as numbers, and the string comparison operator if you want to compare as strings.
 </p>
 <p>
   Please note that this is what makes it different from other languages.
@@ -328,12 +328,12 @@ else {
 <pre>
 # Numerical comparison
 my $num = 4;
-if ($num &lt;6) {
+if ($num &lt; 6) {
   ...
 }
 
 # String comparison
-my $animal ='Cat':
+my $animal = 'Cat':
 if ($animal eq 'Dog') {
   ...
 }
@@ -352,7 +352,7 @@ my $num1 = '1';
 my $num2 = '03';
 
 # Numerical comparison
-if ($num1&gt; $num2) {
+if ($num1 &gt; $num2) {
   # Not executed
   print "OK 1\n";
 }
@@ -380,7 +380,7 @@ if ($num1 gt $num2) {
 </p>
 <h4> Perl false value </h4>
 <p>
-  There are four false values ​​in Perl:
+  There are four false values in Perl:
 </p>
 <table>
   <tr>
@@ -614,7 +614,7 @@ if (@nums) {
   For example, to express the condition that the variable "$num" is "greater than 1 and less than 5", use <b> && </b> and write as follows.
 </p>
 <pre>
-if ($num&gt; 1 &amp;&amp; $num &lt;5) {
+if ($num &gt; 1 &amp;&amp; $num &lt; 5) {
   ...
 }
 </pre>
@@ -626,7 +626,7 @@ if ($num&gt; 1 &amp;&amp; $num &lt;5) {
   Next, to express the condition that the variable "$num" is "less than 1 or greater than 5", use <b> || </b> and write as follows.
 </p>
 <pre>
-if ($num &lt;1 || $num&gt; 5) {
+if ($num &lt; 1 || $num &gt; 5) {
   ...
 }
 </pre>
@@ -638,7 +638,7 @@ if ($num &lt;1 || $num&gt; 5) {
   To express the condition that the variable "$num" is "not true", we can use <b>! </B> to write:
 </p>
 <pre>
-if (! $num)) {
+if (!$num)) {
   ...
 }
 </pre>
@@ -650,7 +650,7 @@ if (! $num)) {
   Logical operators can be used in combination. You can control the join order of operators by using parentheses.
 </p>
 <pre>
-if ($num&gt; 10 || (($num&gt; -3 &amp;&amp; $num &lt;6) &amp;&amp;! ($Num == 0))) {
+if ($num &gt; 10 || (($num&gt; -3 &amp;&amp; $num &lt; 6) &amp;&amp;! ($Num == 0))) {
   ...
 }
 </pre>
@@ -674,7 +674,7 @@ if ($num&gt; 10 || (($num&gt; -3 &amp;&amp; $num &lt;6) &amp;&amp;! ($Num == 0))
   <a href="/blog/20100125126425.html">unless statement</a> can write the same processing as when the condition is denied by the if statement.
 </p>
 <pre>
-Execute block if # $num is not true
+# Execute block if $num is not true
 unless ($num) {
   ...
 }
@@ -683,7 +683,7 @@ unless ($num) {
   It has exactly the same meaning as the following if statement.
 </p>
 <pre>
-if (! $num) {
+if (!$num) {
   ...
 }
 </pre>
@@ -710,7 +710,7 @@ unless (defined $num) {
 </p>
 <pre>
 open(my $fh, "&lt;", $file)
-  or die "Can't open $file: $!";
+  or die "Can't open $file:$!";
 </pre>
 <p>
   The main processing is written first, and the auxiliary error processing is written later using or. One of the interesting things about Perl is that you can write programming in a natural language-like expression like this.
@@ -721,7 +721,7 @@ open(my $fh, "&lt;", $file)
 </p>
 <pre>
 # Postfix if
-$num1 = 1 if! defined $num1;
+$num1 = 1 if !defined $num1;
 
 # Postfix unless
 $num2 = 1 unless defined $num2;
@@ -740,11 +740,11 @@ $num2 = 1 unless defined $num2;
 </p>
 <pre>
 for my $num (@nums) {
-  last if! defined $num;
+  last if !defined $num;
 }
 
 for my $num (@nums) {
-  next if! defined $num;
+  next if !defined $num;
 }
 </pre>
 <h4> Ternary operator </h4>
@@ -768,7 +768,7 @@ Condition? Value 1: Value 2
 my $flag = 1;
 
 # Ternary operator
-my $animal = $flag ?'Cat':'Dog';
+my $animal = $flag ? 'Cat':'Dog';
 </pre>
 <p>
   You can do the same with conditional branching using if, but you can write it concisely using the ternary operator.
@@ -783,15 +783,15 @@ my $animal = $flag ?'Cat':'Dog';
 my $flag = 2;
 
 my $animal =
-    $flag == 0?'Cat'
-  : $flag == 1?'Dog'
-  : $flag == 2?'Mouse'
+    $flag == 0 ? 'Cat'
+  : $flag == 1 ? 'Dog'
+  : $flag == 2 ? 'Mouse'
   :'Cow';
 </pre>
 <p>
   Since "$flag" is "2", "Mouse" is assigned to "$animal". When using ternary operators in layers, it is recommended to write them in multiple lines for easy viewing.
 </p>
-<h4> Set default values ​​with special assignment operators "||=" and "//=" </h4>
+<h4> Set default values with special assignment operators "||=" and "//=" </h4>
 <p>
   Perl has a commonly used default value setting method. It is a way to use the <a href="/blog/20161005147566.html">special assignment operator</a> "||=" or "//=" .
 </p>

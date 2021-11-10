@@ -92,7 +92,7 @@ use File::Temp 'temp file';
 use Mojolicious::Lite;
 
 # render CGI
-app-&gt;hook (before_dispatch =&gt; sub {
+app-&gt;hook(before_dispatch =&gt; sub {
   my $c = shift;
   
   my $req = $c-&gt;req;
@@ -101,29 +101,29 @@ app-&gt;hook (before_dispatch =&gt; sub {
   
   if ($path =~ /\.cgi$/) {
     my $method = $c-&gt;req-&gt;method;
-    my $script_name = $c-&gt;app-&gt;home-&gt;rel_file ("public/$path");
+    my $script_name = $c-&gt;app-&gt;home-&gt;rel_file("public/$path");
     
     # CGI Environment variable
-    local $ENV{AUTH_TYPE} ='';
+    local $ENV{AUTH_TYPE} = '';
     local $ENV{CONTENT_LENGTH} = $req-&gt;headers-&gt;content_length;
     local $ENV{CONTENT_TYPE} = $req-&gt;headers-&gt;content_type;
-    local $ENV{GATEWAY_INTERFACE} ='CGI/1.1';
+    local $ENV{GATEWAY_INTERFACE} = 'CGI/1.1';
     local $ENV{PATH_INFO} = $req-&gt;url-&gt;path;
     local $ENV{PATH_TRANSLATED} = $req-&gt;url-&gt;path;
     local $ENV{QUERY_STRING} = $req-&gt;url-&gt;query-&gt;to_string;
     local $ENV{REMOTE_ADDR} = $c-&gt;tx-&gt;remote_address;
     local $ENV{REMOTE_HOST} = $c-&gt;tx-&gt;remote_address;
-    local $ENV{REMOTE_IDENT} ='';
-    local $ENV{REMOTE_USER} ='';
+    local $ENV{REMOTE_IDENT} = '';
+    local $ENV{REMOTE_USER} = '';
     local $ENV{REQUEST_METHOD} = $method;
     local $ENV{SCRIPT_NAME} = $script_name;
-    local $ENV{SERVER_NAME} ='localhost';
+    local $ENV{SERVER_NAME} = 'localhost';
     local $ENV{SERVER_PORT} = $c-&gt;tx-&gt;remote_port;
     local $ENV{SERVER_SOFTWARE} = "Mojolicious (Perl)";
-    local $ENV{SERVER_PROTOCOL} ='HTTP/1.1';
+    local $ENV{SERVER_PROTOCOL} = 'HTTP/1.1';
     
     # Check script name
-    unless ($script_name =~ /^ [a-zA-Z_0-9 \/\-\.] + $/) {
+    unless ($script_name =~ /^ [a-zA-Z_0-9 \/\-\.] +$/) {
       die "Invalid script name";
     }
     
@@ -133,8 +133,8 @@ app-&gt;hook (before_dispatch =&gt; sub {
       # GET requst
       $output = `$^X $script_name`;
       if ($?) {
-        $c-&gt;res-&gt;code ('505');
-        $c-&gt;render (text =&gt; "Internal Server Error");
+        $c-&gt;res-&gt;code('505');
+        $c-&gt;render(text =&gt; "Internal Server Error");
       }
     }
     elsif ($method eq 'POST') {
@@ -145,8 +145,8 @@ app-&gt;hook (before_dispatch =&gt; sub {
       close $in_fh;
       $output = `$^X -pe" "$in_file | $^X $script_name`;
       if ($?) {
-        $c-&gt;res-&gt;code ('505');
-        $c-&gt;render (text =&gt; "Internal Server Error");
+        $c-&gt;res-&gt;code('505');
+        $c-&gt;render(text =&gt; "Internal Server Error");
       }
       unlink $in_file;
     }
@@ -156,19 +156,19 @@ app-&gt;hook (before_dispatch =&gt; sub {
     
     # Response
     my $res = Mojo::Message::Response-&gt;new;
-    while (! $Res-&gt;is_finished) {
-      $res-&gt;parse ($header_part);
+    while (!$Res-&gt;is_finished) {
+      $res-&gt;parse($header_part);
     }
-    $c-&gt;res-&gt;code ($res-&gt;code);
-    $c-&gt;res-&gt;headers ($res-&gt;headers);
-    $c-&gt;render (data =&gt; $body_part);
+    $c-&gt;res-&gt;code($res-&gt;code);
+    $c-&gt;res-&gt;headers($res-&gt;headers);
+    $c-&gt;render(data =&gt; $body_part);
   }
 });
 
 get'/' =&gt; sub {
   my $c = shift;
   
-  $c-&gt;reply-&gt;static ('index.html');
+  $c-&gt;reply-&gt;static('index.html');
 };
 
 app-&gt;start;

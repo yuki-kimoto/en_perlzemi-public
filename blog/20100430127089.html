@@ -121,14 +121,14 @@ croak "Exception!";
   Let's first look at the die example.
 </p>
 <pre>
-When an exception is raised with # die # 1
+# When an exception is raised with die # 1
 package YourModule; # 2
                                           # 3
                                           # Four
 sub parse {# 5
-  Raise an exception with # die # 6
+  # Raise an exception with die # 6
   die "Exception!"; # 7
-} # 8
+# } 8
                                           # 9
 package main; # 10
                                           # 11
@@ -146,14 +146,14 @@ Exception! At a.pl line 7.
   Next is the case of croak.
 </p>
 <pre>
-When an exception is raised by # croak # 1
+# When an exception is raised by croak # 1
 package YourModule; # 2
 use Carp 'croak'; # 3
                                           # Four
 sub parse {# 5
-  Raise an exception with # die # 6
+  # Raise an exception with die # 6
   croak "Exception!"; # 7
-} # 8
+# } 8
                                           # 9
 package main; # 10
                                           # 11
@@ -178,7 +178,7 @@ Exception! At a.pl line 14
   Just add the following line anywhere in the script.
 </p>
 <pre>
-Change the # croak message to one that contains the complete stack trace information
+# Change the croak message to one that contains the complete stack trace information
 use Carp 'verbose';
 </pre>
 <p>
@@ -248,7 +248,7 @@ perl -MCarp = verbose script.pl
 <pre>
 # bash
 export PERL5OPT = -MCarp = verbose
-export PERL5OPT ='-Mstrict -MCarp = verbose'
+export PERL5OPT = '-Mstrict -MCarp = verbose'
 
 # Windows
 set PERL5OPT = -MCarp = verbose

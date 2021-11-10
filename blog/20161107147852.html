@@ -132,7 +132,7 @@ our%SCORE;
     <a href="/blog/20080308120495.html">Declaration of package variables by our</a>
   </li>
 </ul>
-<h4> Saving and restoring values ​​with "local" </h4>
+<h4> Saving and restoring values with "local" </h4>
 <p>
   You can use "local" to temporarily save a package variable and restore it at the end of scope.
 </p>
@@ -163,7 +163,7 @@ our $NUM = 5;
   <b> Typical scalar value </b>
 </p>
 <p>
-  Typical scalar values ​​are as follows.
+  Typical scalar values are as follows.
 </p>
 <ul class = "check-list"><ul>
   <li>
@@ -192,7 +192,7 @@ $scalar = {x =&gt; 6}; # Reference to hash
 $scalar = sub {return 7}; # Reference to subroutine
 $scalar = undef; # undefined value
 </pre>
-<h4> "Array variable" - stores multiple values ​​</h4>
+<h4> "Array variable" - stores multiple values </h4>
 <p>
   An "array variable" can contain multiple values. Only scalar variables can be included in the "elements" of an array variable.
 </p>
@@ -226,7 +226,7 @@ my @list = (1, 2, 3, 4);
   The hash has the following characteristics.
 </p>
 <p>
-  Includes multiple values ​​that are a set of "key and value". Only scalar variables can be included in the "elements" of a hash variable.
+  Includes multiple values that are a set of "key and value". Only scalar variables can be included in the "elements" of a hash variable.
 </p>
 <p>
   A hash variable is represented by prefixing the variable with "%". Only "list ()" can be assigned to a hash variable.
@@ -241,7 +241,7 @@ my %scores = (math =&gt; 70, engligh =&gt; 80);
   Both array variables and hash variables have a list as their content, so they can be converted to each other.
 </p>
 <pre>
-@array =%hash;
+@array = %hash;
 %hash = @array;
 </pre>
 <h3> Variables and scope </h3>

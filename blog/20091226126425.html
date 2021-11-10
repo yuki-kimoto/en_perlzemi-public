@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Perl Basic Grammar Fastest Master  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages ​​and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl.">
+<meta name="description" content="Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Perl Basic Grammar Fastest Master  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages ​​and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl." />
+<meta name="twitter:description" content="Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -63,7 +63,7 @@
 </ol>
 <h2><a href="/blog/20091226126425.html"> Perl Basic Grammar Fastest Master </a></h2>
 <p>
-  Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages ​​and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl.
+  Is there anyone who needs Perl in the IT field and is studying now? If you know some other languages and read "Perl Basic Grammar Fastest Master", the basics of how to use Perl You can master and write Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -143,7 +143,7 @@ perl script.pl
   Use redirection to write the output to a file.
 </p>
 <pre>
-perl script.pl&gt; file.txt
+perl script.pl &gt; file.txt
 </pre>
 <p>
   Windows requires a command prompt to run the script. Please refer to the following article for how to use the command prompt.
@@ -201,14 +201,14 @@ my $num = 100_000_000;
 $num = 1 + 1;
 $num = 1 - 1;
 $num = 1 * 2;
-$num = 1/2;
+$num = 1 / 2;
 </pre>
 <p>
   How to find a quotient. To find the quotient, perform ordinary division and then extract the integer part with the int function.
 </p>
 <pre>
 # Quotient
-$div = int(3/2);
+$div = int(3 / 2);
 
 # Remainder
 $mod = 3 % 2;
@@ -238,7 +238,7 @@ $i--
   Enclose the string in single or double quotes. You can use special characters such as\t (tab) and\n (newline) in double quotes. You can also expand variables in a string enclosed in double quotes.
 </p>
 <pre>
-my $str1 ='abc';
+my $str1 = 'abc';
 my $str2 = "def";
 my $str3 = "a\tbc\n";
 
@@ -251,15 +251,15 @@ my $str4 = "$str1 def";
 </p>
 <pre>
 # Join
-my $join1 ='aaa'.' Bbb';
+my $join1 = 'aaa' . ' Bbb';
 
-my $join2 = join(',','aaa','bbb','ccc');
+my $join2 = join(',','aaa', 'bbb', 'ccc');
 
 # Split
-my @record = split(/, /,'aaa, bbb, ccc');
+my @record = split(/,/, 'aaa,bbb,ccc');
 
 # length
-my $length = length'abcdef';
+my $length = length 'abcdef';
 
 # Cut out
 my $substr = substr('abcd', 0, 2); # ab
@@ -361,7 +361,7 @@ $hash{b} = 7;
 @keys = keys %hash;
 
 # Get value
-@values ​​= values %hash;
+@values = values %hash;
 
 # Key existence confirmation
 exists $hash{a};
@@ -443,7 +443,7 @@ elsif (condition) {
   </tr>
   <tr>
     <td>
-      $p <$q
+      $p < $q
     </td>
     <td>
       $p is less than $q
@@ -451,7 +451,7 @@ elsif (condition) {
   </tr>
   <tr>
     <td>
-      $p> $q
+      $p > $q
     </td>
     <td>
       $p is greater than $q
@@ -467,7 +467,7 @@ elsif (condition) {
   </tr>
   <tr>
     <td>
-      $p> = $q
+      $p >= $q
     </td>
     <td>
       $p is over $q
@@ -545,7 +545,7 @@ elsif (condition) {
 </p>
 <pre>
 my $i = 0;
-while ($i &lt;5) {
+while ($i &lt; 5) {
     
     # process
     
@@ -557,7 +557,7 @@ while ($i &lt;5) {
   It is a for statement.
 </p>
 <pre>
-for (my $i = 0; $i &lt;5; $i++) {
+for (my $i = 0; $i &lt; 5; $i++) {
   ...
 }
 </pre>
@@ -608,7 +608,7 @@ sub sum {
 </p>
 <pre>
 open my $fh, '&lt;', $file
-  or die "Cannot open'$file': $!";
+  or die "Cannot open'$file':$!";
 
 while (my $line = &lt;$fh&gt;) {
   ...
@@ -633,7 +633,7 @@ close $fh;
 </p>
 <h4> Perl truth value </h4>
 <p>
-  <a href="/blog/20080323120628.html">Perl boolean</a> has the following definition: There are four types of values ​​that Perl determines to be false: "undef", "''", "0", and "'0'". Everything else is true.
+  <a href="/blog/20080323120628.html">Perl boolean</a> has the following definition: There are four types of values that Perl determines to be false: "undef", "''", "0", and "'0'". Everything else is true.
 </p>
 <h4> Determine if a defined value is defined </h4>
 <p>
@@ -657,7 +657,7 @@ my $file = shift;
 </pre>
 <h4> Scalar context and list context </h4>
 <p>
-  In Perl, some functions have different return values ​​depending on the context. For example, the localtime function. This is a Perl-specific grammar called <a href="/blog/20080608121292.html">context</a>.
+  In Perl, some functions have different return values depending on the context. For example, the localtime function. This is a Perl-specific grammar called <a href="/blog/20080608121292.html">context</a>.
 </p>
 <pre>
 # Scalar context (get date/time as a character string)
@@ -681,7 +681,7 @@ unless (condition) {
 </p>
 <pre>
 # Postfix if
-print $num if $num&gt; 3;
+print $num if $num &gt; 3;
 
 # Postfix unless
 die "error" unless $num;
@@ -695,7 +695,7 @@ die "error" unless $num;
 print $_ for @nums;
 </pre>
 <p>
-  The values ​​are sequentially assigned to "$_".
+  The values are sequentially assigned to "$_".
 </p>
 <h4> Array slices and hash slices </h4>
 <p>
@@ -703,7 +703,7 @@ print $_ for @nums;
 </p>
 <pre>
 # Array slice
-@select = @array [1, 4, 5];
+@select = @array[1, 4, 5];
 
 # Hash slice
 @select = @hash {'a', 'b', 'd'};
@@ -738,7 +738,7 @@ my @numes = (0 .. 5);
 </pre>
 <h4> String list operator </h4>There is something called a <a href="/blog/20080222120369.html">string list operator</a> that makes it easy to write a list of strings.
 <pre>
-my @strs = qw (aaa bbb ccc);
+my @strs = qw(aaa bbb ccc);
 </pre>
 <h4> Single return </h4>
 <p>
@@ -817,7 +817,7 @@ use module name;
 <pre>
 my $conf_file = "app.conf";
 my $conf = do $conf_file
-  or die qq/Can't load config file "$conf_file": $! $@/;
+  or die qq/Can't load config file "$conf_file":$! $@/;
 </pre>
 <p>
   The contents of the configuration file.
@@ -836,11 +836,11 @@ my $conf = do $conf_file
   You can comment on multiple lines by writing as follows.
 </p>
 <pre>
-= pod
+=pod
 
 The text you want to comment on
 
-= cut
+=cut
 </pre>
 
   </div>
