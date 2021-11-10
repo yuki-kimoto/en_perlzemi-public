@@ -172,11 +172,11 @@ void MyClass::print_static () {
 # include "MyClass.h"
 
 # define XS_OBJ_TO_PTR (x, type) (INT2PTR (type, SvROK (x)? SvIV (SvRV (x)): SvIV (x)))
-# define XS_PTR_TO_OBJ (x, class)\  sv_bless(\
+# define XS_PTR_TO_OBJ (x, class)\sv_bless(\
     sv_2mortal (\
       newRV_inc (\
         sv_2mortal (\
-          newSViv (PTR2IV (x))\        )\      )\    ),\    gv_stashpv (class, 1)\  );
+          newSViv (PTR2IV (x))\        )\      )\    ),\gv_stashpv (class, 1)\  );
 
 MODULE = MyClass PACKAGE = MyClass
 
@@ -225,11 +225,11 @@ void DESTORY (...)
 </p>
 <pre>
 # define XS_OBJ_TO_PTR (x, type) (INT2PTR (type, SvROK (x)? SvIV (SvRV (x)): SvIV (x)))
-# define XS_PTR_TO_OBJ (x, class)\  sv_bless(\
+# define XS_PTR_TO_OBJ (x, class)\sv_bless(\
     sv_2mortal (\
       newRV_inc (\
         sv_2mortal (\
-          newSViv (PTR2IV (x))\        )\      )\    ),\    gv_stashpv (class, 1)\  );
+          newSViv (PTR2IV (x))\        )\      )\    ),\gv_stashpv (class, 1)\  );
 </pre>
 <p>
   <b> Constructor </b>

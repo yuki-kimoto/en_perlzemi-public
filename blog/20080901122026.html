@@ -205,11 +205,11 @@ sub dec_to_n {
     my ($dec, $n) = @_;
 
     # Checking the validity of $n
-    return if !defined $n || $n !~ /^\D +$/ || $n &lt; 2 || $n &gt; 16;
+    return if !defined $n || $n !~ /^\D+$/ || $n &lt; 2 || $n &gt; 16;
 
     # Checking the validity of $dec
     return if !defined $dec;
-    return if $dec !~ /^ ([+-]?)\D +$/;
+    return if $dec !~ /^([+-]?)\D+$/;
 
     # Save the sign if it exists
     my $sign = $1 ? substr($dec, 0, 1, ''):'';
@@ -250,7 +250,7 @@ dec_to_n (255, 16);
   <b> Checking the validity of $n </b>
 </p>
 <pre>
-return if !defined $n || $n !~ /^\D +$/ || $n &lt; 2 || $n &gt; 16;
+return if !defined $n || $n !~ /^\D+$/ || $n &lt; 2 || $n &gt; 16;
 </pre>
 <p>
   First, $n must be passed as an argument. Then it must be an integer greater than or equal to 2 and less than or equal to 16. The above sentence expresses this condition on one line.
@@ -266,14 +266,14 @@ return if !defined $n || $n !~ /^\D +$/ || $n &lt; 2 || $n &gt; 16;
 </p>
 <pre>
 return if !defined $dec;
-return if $dec !~ /^ ([+-]?)\D +$/;
+return if $dec !~ /^([+-]?)\D+$/;
 my $sign = $1 ? substr($dec, 0, 1, ''):'';
 </pre>
 <p>
   $dec must be passed as an argument. Next, it must be a decimal integer. <a href="/blog/20080831122025.html">Regular expression for decimal integers</a>
 </p>
 <pre>
-/ ^ ([+-]?)\D + $/
+/^([+-]?)\D+$/
 </pre>
 <p>
   Will be. (Read "It doesn't matter if there is a + or-at the beginning, followed by one or more numbers")
@@ -380,7 +380,7 @@ sub n_to_dec {
   my ($num_str, $n) = @_;
 
   # Checking the validity of $n
-  return if !defined $n || $n !~ /^\D +$/ || $n &lt; 2 || $n &gt; 16;
+  return if !defined $n || $n !~ /^\D+$/ || $n &lt; 2 || $n &gt; 16;
     
   # Checking the validity of $num_str (including checking the consistency with $n)
   return if !defined $num_str;
@@ -428,7 +428,7 @@ n_to_dec ('FE16', 16);
   <b> Checking the validity of $n </b>
 </p>
 <pre>
-return if !defined $n || $n !~ /^\D +$/ || $n &lt; 2 || $n &gt; 16;
+return if !defined $n || $n !~ /^\D+$/ || $n &lt; 2 || $n &gt; 16;
 </pre>
 <p>
   First, $n must be passed as an argument. Then it must be an integer greater than or equal to 2 and less than or equal to 16. The above sentence expresses this condition on one line.

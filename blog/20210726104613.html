@@ -194,28 +194,28 @@ my $win;
     # Go to Console tab
     SendKeys ('^]');
     # Go to Elements tab
-    SendKeys ('^ [');
+    SendKeys ('^[');
     
     # Move to the tag below
     SendKeys ('{DOWN}');
     # Move to the tag above (body can be selected
     SendKeys ('{UP}');
 <p>
-  SendKeys ('^ c');
+  SendKeys ('^c');
 </p>
-  SendKeys ('^ l');
-  SendKeys ('^ v');
+  SendKeys ('^l');
+  SendKeys ('^v');
   SendKeys ('{ENTER}');
   SendKeys ('{TAB}' x $baibai_bukken_search_button_tab_press_count);
-  SendKeys ('^ v');
+  SendKeys ('^v');
     SendKeys ('{LEFT}');
   SendKeys ('{RIGHT}' x $bukken_search_results_pagenation_forword_right_count_max);
   SendKeys ('{F12}');
     SendKeys ('^]');
-    SendKeys ('^ [');
+    SendKeys ('^[');
     SendKeys ('{DOWN}');
     SendKeys ('{UP}');
-  SendKeys ('^ c');
+  SendKeys ('^c');
   SendKeys ('{F12}');
 <p>
   ->
@@ -258,7 +258,7 @@ $text = Encode::decode("UTF16-LE", $string);
 </p>
 <pre>
 # Paste the contents of the clipboard into a form part
-SendKeys ('^ c');
+SendKeys ('^c');
 </pre>
 <h3> Points for creating RPA robots </h3>
 <h4> Wait for browser response </h4>

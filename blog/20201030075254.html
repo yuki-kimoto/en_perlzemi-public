@@ -142,7 +142,7 @@ print "Hello\n";
 <h3> Escape sequence that directly describes ASCII code </h3>
  
 <p>
-  There are also escape sequences that allow you to write the ASCII code itself in hexadecimal by starting with "\ x".
+  There are also escape sequences that allow you to write the ASCII code itself in hexadecimal by starting with "\x".
 </p>
 <pre>
 # Specify ASCII code directly in hexadecimal to represent HTTP protocol line breaks
@@ -150,7 +150,7 @@ my $message = "Hello\x0D\x0A";
 print $message;
 </pre>
 <p>
-  The above example is a sample that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\ x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
+  The above example is a sample that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
 </p>
 <h3> Document with all escape sequences </h3>
 <p>

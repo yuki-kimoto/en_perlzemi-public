@@ -144,7 +144,7 @@ sub message_factory {
 <h4> Name an anonymous subroutine </h4>
 <pre>
  * sum = sub {
-  return $_[0] + $_[1];
+  return $_[0]+$_[1];
 };
 </pre>
 <p>
@@ -332,7 +332,7 @@ print "1: Name the anonymous subroutine.\n";
 * sum = sub {
   # * sum is a function called type blog, and you can create an alias.
   # Here, the unnamed subroutine is named sum.
-  return $_[0] + $_[1];
+  return $_[0]+$_[1];
 };
 
 print "The sum of 1 and 2 is" .sum (1, 2). ".\n\n";

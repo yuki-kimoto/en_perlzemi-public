@@ -116,7 +116,7 @@ get'/' =&gt; sub {
     $self-&gt;stash(error =&gt;'');
     $self-&gt;stash(output =&gt;'');
     
-    if ($module &amp;&amp; $module =~ /^ [:\w] +$/) {
+    if ($module &amp;&amp; $module =~ /^[:\w]+$/) {
         my $home = $ENV{DOCUMENT_ROOT};
         $home =~ s #/www $# #;
         

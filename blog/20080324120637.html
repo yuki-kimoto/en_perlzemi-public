@@ -92,7 +92,7 @@ Statement if condition;
 </p>
 <pre>
 for my $line (@lines) {
-  next if $line =~ /^ #/;
+  next if $line =~ /^#/;
 }
 </pre>
 <p>
@@ -135,7 +135,7 @@ my @lines = (
 
 for my $line (@lines) {
   # If starts with # , go to the next line
-  next if $line =~ /^ #/;
+  next if $line =~ /^#/;
   print $line, "\n";
 }
 print "\n";

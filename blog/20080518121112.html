@@ -97,7 +97,7 @@ my ($base_name, $dir, $suffix) = fileparse ($file_txt, '.txt');
 </p>
 <pre>
 use File::Basename;
-my $regex_suffix = qr/\. [^ \.] + $/;
+my $regex_suffix = qr/\. [^\.]+$/;
 my $suffix_txt = (fileparse ($file_txt, $regex_suffix)) [2];
 </pre>
 <p>
@@ -124,7 +124,7 @@ print "\$dir = $dir\n",
   "\$suffix = $suffix\n\n";
 
 print "2: Extract the extension from the file name. (Specify the extension name pattern)\n";
-my $regex_suffix = qr/\. [^ \.] + $/;
+my $regex_suffix = qr/\. [^\.]+$/;
 
 my $suffix_txt = (fileparse $file_txt, $regex_suffix) [2];
 my $suffix_log = (fileparse $file_log, $regex_suffix) [2];

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Representing word character delimiters-\ b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> Representing word character delimiters-\b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the regular expression character \b  to separate word characters.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Representing word character delimiters-\ b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" Representing word character delimiters-\b  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the regular expression character \b  to separate word characters." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -65,7 +65,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20080404120748.html"> Representing word character delimiters-\ b </a></h2>
+<h2><a href="/blog/20080404120748.html"> Representing word character delimiters-\b </a></h2>
 <p>
   Use the regular expression character <strong>\b </strong> to separate word characters.
 </p>
@@ -86,10 +86,10 @@
 
 
 <pre>
-\ b
+\b
 </pre>
 <p>
-  \ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd",/\ bcd/can represent the 0 character between'' and c.
+  \b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd",/\bcd/can represent the 0 character between'' and c.
 </p>
 <p>
   Word characters are alphanumeric characters and underscores. Whitespace is the character represented by\s, which is a space, tab, or newline.
@@ -110,12 +110,12 @@ my $word = "abcd ef";
 
 print "1: Represents word string delimiters\n";
 if ($word_space =~ /ab\b/&amp;&amp; $word !~ /Ab\b/) {
-  print "/ ab \\ b/matches'ab cd ef', but".
+  print "/ ab \\b/matches'ab cd ef', but".
     "Does not match'abcd ef'.\n\n";
 }
 
 if ($word_space =~ /\bcd\b/&amp;&amp; $word !~ /\Bb\b/) {
-  print "/ \\ bcd \\ b/matches'ab cd ef', but".
+  print "/ \\bcd \\b/matches'ab cd ef', but".
     "Does not match'abcd ef'.\n";
 }
 </pre>

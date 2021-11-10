@@ -343,7 +343,7 @@ my $data = {admin_email =&gt;'foo@my.com'};
 $vc-&gt;register_constraint(
   tel_num =&gt; sub {
     my $value = shift;
-    $value =~ /^ [\d-] +$/? 1: 0;
+    $value =~ /^[\d-]+$/? 1: 0;
   }
 );
 </pre>
@@ -363,7 +363,7 @@ $rule-&gt;require('tel')-&gt;check('tel_num');
 $vc-&gt;register_constraint(
   tel_num =&gt; sub {
      my $value = shift;
-     $value =~ /^ [\d-] +$/? 1: 0;
+     $value =~ /^[\d-]+$/? 1: 0;
   },
   hiragana =&gt; sub {...}
 );
@@ -388,7 +388,7 @@ $rule-&gt;optional('name')-&gt;check('int');
 my $vc = Validator::Custom-&gt;new;
 $data = {name1 =&gt;'Ken', name2 =&gt;'', name3 =&gt;'Taro'};
 $rule = [
-  {key =&gt; qr/^ name\d + $/} =&gt; [
+  {key =&gt; qr/^name\d+$/} =&gt; [
     'merge',
     'trim',
     'not_blank'
@@ -599,7 +599,7 @@ $rule-&gt;require('age')-&gt;check('uint');
 my $is_valid = $vc-&gt;validate($data, $rule);
 </pre>
 <p>
-  Internally, the regular expression "^ [0-9] + $" is used.
+  Internally, the regular expression "^[0-9]+$" is used.
 </p>
 <h3> duplication (constraint function) - Check that email addresses match </h3>
 <p>

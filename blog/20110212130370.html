@@ -380,14 +380,14 @@ my $content = do {# create block
   A line feed code is a special character string that represents the end of a line. The line feed code differs depending on the OS. In Windows, it is a sequence of characters "0D 0A" in hexadecimal, and in Unix it is "0A".
 </p>
 <p>
-  It is as follows when it is described as a character string of Perl. You can write characters in hexadecimal with the notation "\ x".
+  It is as follows when it is described as a character string of Perl. You can write characters in hexadecimal with the notation "\x".
 </p>
 <pre>
 # Windows line feed code
-my $ln_win = "\ x0D\x0A";
+my $ln_win = "\x0D\x0A";
 
 # Unix line feed code
-my $ln_unix = "\ x0A";
+my $ln_unix = "\x0A";
 </pre>
 <h4> Behavior of line input operator </h4>
 <p>
@@ -395,10 +395,10 @@ my $ln_unix = "\ x0A";
 </p>
 <pre>
 # Input record separator on Windows
-$/ = "\ x0D\x0A";
+$/ = "\x0D\x0A";
 
 # Unix input record separator
-$/ = "\ x0A";
+$/ = "\x0A";
 </pre>
 <h4> behavior of chomp function </h4>
 <p>
@@ -429,7 +429,7 @@ open my $fh, '&lt;', $file
 # Read file
 {
   # Line feed code
-  my $ln = "\ x0D0A"
+  my $ln = "\x0D0A"
 
   # Temporarily change the input record separator
   local $/ = $ln;

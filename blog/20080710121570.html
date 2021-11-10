@@ -381,7 +381,7 @@ sub new {
 
 sub add_count {
   my $self = shift;
-  $self-&gt;{cnt} ++;
+  $self-&gt;{cnt}++;
 }
 
 sub count {
@@ -410,7 +410,7 @@ sub make_counter {
   # Closures implement methods using references to subroutines.
   my $funcs = {};
   $funcs-&gt;{add_count} = sub {
-    $self-&gt;{cnt} ++;
+    $self-&gt;{cnt}++;
   };
    
    $funcs-&gt;{count} = sub {

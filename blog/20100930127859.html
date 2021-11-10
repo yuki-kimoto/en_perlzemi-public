@@ -672,10 +672,10 @@ while (my $line = &lt;&gt;) {
   $infos-&gt;{$time} ||= [];
   
   # (3) Total number of cases
-  $infos-&gt;{$time}[0] ++;
+  $infos-&gt;{$time}[0]++;
   
   # (4) Total response time
-  $infos-&gt;{$time}[1] += $res_time;
+  $infos-&gt;{$time}[1]+= $res_time;
 
   # (5) Maximum response time
   $infos-&gt;{$time}[2] = $res_time
@@ -823,10 +823,10 @@ while (my $line = &lt;&gt;) {
   $infos-&gt;{$time} ||= {};
   
   # (3) Total number of cases
-  $infos-&gt;{$time}{count} ++;
+  $infos-&gt;{$time}{count}++;
   
   # (4) Total response time
-  $infos-&gt;{$time}{total_time} += $res_time;
+  $infos-&gt;{$time}{total_time}+= $res_time;
 
   # (5) Maximum response time
   $infos-&gt;{$time}{max_time} = $res_time
