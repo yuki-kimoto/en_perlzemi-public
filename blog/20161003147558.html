@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Perl string processing basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,10 +53,7 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
@@ -107,7 +98,7 @@ my $str2 = "Hello";
 </pre>
 <h4> When enclosed in double quotes </h4>
 <p>
-  When creating a string, enclose it in single quotes or double quotes, but if you enclose it in double quote operators, <a href="/blog/20201030075254.html"> double quote string escape sequences</a> And <a href="/blog/20180228151982.html"> variable expansion</a> can be used.
+  When creating a string, enclose it in single quotes or double quotes, but if you enclose it in double quote operators, <a href="/blog/20201030075254.html">double quote string escape sequences</a> And <a href="/blog/20180228151982.html">variable expansion</a> can be used.
 </p>
 <ul>
   <li>
@@ -119,13 +110,13 @@ my $str2 = "Hello";
 </ul>
 <h4> Escape sequence </h4>
 <p>
-  <a href="/blog/20201028075254.html"> Escape sequence</a> is <a href="/blog/20201027075254.html"> string enclosed in single quotes</a> and <a href= "/blog/20201026075254.html"> Double quoted strings</a> are special characters that can be used.
+  <a href="/blog/20201028075254.html">Escape sequence</a> is <a href="/blog/20201027075254.html">string enclosed in single quotes</a> and <a href= "/blog/20201026075254.html">Double quoted strings</a> are special characters that can be used.
 </p>
 <p>
   For example, you can use the <b> line break "\n" </b> or the <b> tab "\t" </b>. Line breaks and tabs are invisible characters, but they can be represented using escape sequences.
 </p>
 <p>
-  This is a <a href="/blog/20201030075254.html"> double quote string escape sequence</a>.
+  This is a <a href="/blog/20201030075254.html">double quote string escape sequence</a>.
 </p>
 <pre>
 # new line
@@ -148,7 +139,7 @@ my $str1 = "Hello \\ World"
   <b> If you want to use single quotes or double quotes </b>
 </p>
 <p>
-  If you want to use single quotes in a string enclosed in single quotes, use <a href="/blog/20201029075254.html"> single quote string escape sequences</a>.
+  If you want to use single quotes in a string enclosed in single quotes, use <a href="/blog/20201029075254.html">single quote string escape sequences</a>.
 </p>
 <pre>
 # Use single quotes
@@ -210,7 +201,7 @@ my $str3 = "I have ${str1} AIUEO";
 </pre>
 <h4> Concatenation of strings </h4>
 <p>
-  Next, let's concatenate the strings. Use the <a href="/blog/20080221120361.html"> string concatenation operator "."</a> to concatenate strings.
+  Next, let's concatenate the strings. Use the <a href="/blog/20080221120361.html">string concatenation operator "."</a> to concatenate strings.
 </p>
 <pre>
 my $str1 ='I have a'.'pen';
@@ -235,7 +226,7 @@ $str1 = $str1. $Str2;
 </pre>
 <h4> String output </h4>
 <p>
-  Use the <a href="/blog/20170404149131.html"> print function</a> to print the string to the screen.
+  Use the <a href="/blog/20170404149131.html">print function</a> to print the string to the screen.
 </p>
 <pre>
 my $message ='Hello';
@@ -254,10 +245,10 @@ print $message;
 </p>
 <pre>
 # Normal method
-my @ strs1 = ('Cat','Dog','Mouse');
+my @strs1 = ('Cat', 'Dog', 'Mouse');
 
 # How to use the string list operator
-my @ strs2 = qw (Cat Dog Mouse);
+my @strs2 = qw (Cat Dog Mouse);
 </pre>
 <p>
   This operator is especially useful when the word you want to use follows many lines in a text file.
@@ -282,7 +273,7 @@ my @strs = qw (
 </p>
 <ul>
   <li>
-    <a href="/blog/20080222120369.html"> String list operator</a>
+    <a href="/blog/20080222120369.html">String list operator</a>
   </li>
 </ul>
 <h4> Remove line breaks </h4>
@@ -290,13 +281,13 @@ my @strs = qw (
   You may want to <b> remove trailing line breaks </b> when reading a text file.
 </p>
 <p>
-  Perl has a <a href="/blog/20080226120403.html"> chomp function</a> for removing line breaks, but this function is environment dependent.
+  Perl has a <a href="/blog/20080226120403.html">chomp function</a> for removing line breaks, but this function is environment dependent.
 </p>
 <p>
   When running on a Windows OS, remove the "CR + LF" which is a line break in Windows, and when running on Unix / Linux / Mac, remove "LF".
 </p>
 <p>
-  To ensure that line breaks are removed, it's a good idea to use the following <a href="/blog/20100827127859.html"> regular expression</a>.
+  To ensure that line breaks are removed, it's a good idea to use the following <a href="/blog/20100827127859.html">regular expression</a>.
 </p>
 <pre>
 $str = ~ s / \ x0D? \ X0A? $//;
@@ -315,7 +306,7 @@ $str = ~ s / \ x0D? \ X0A? $//;
   You can easily do this with the <b> join function </b>.
 </p>
 <pre>
-my @animals = ('Cat','Dog','Mouse');
+my @animals = ('Cat', 'Dog', 'Mouse');
 
 # Create CSV data "Cat, Dog, Mouse"
 my $csv = join(',', @animals);
@@ -328,7 +319,7 @@ my $tsv = join("\t", @animals);
 </p>
 <ul>
   <li>
-    <a href="/blog/20081007122338.html"> join function - Concatenate strings by specifying a delimiter</a>
+    <a href="/blog/20081007122338.html">join function - Concatenate strings by specifying a delimiter</a>
   </li>
 </ul>
 <h4> Split the string with the specified characters </h4>
@@ -341,7 +332,7 @@ my $tsv = join("\t", @animals);
 <pre>
 my $csv ='Cat, Dog, Mouse';
 
-Create an array by specifying # comma. ('Cat','Dog','Mouse')
+Create an array by specifying # comma. ('Cat', 'Dog', 'Mouse')
 my @animals = split(/, /, $csv);
 </pre>
 <p>
@@ -367,7 +358,7 @@ my @animals = split(/ +/, $csv);
 </p>
 <ul>
   <li>
-    <a href="/blog/20080301120434.html"> split function-splits a string with the specified characters</a>
+    <a href="/blog/20080301120434.html">split function-splits a string with the specified characters</a>
   </li>
 </ul>
 <h4> Get the length of the string </h4>
@@ -383,7 +374,7 @@ my $length = length "ABCDE";
 </p>
 <ul>
   <li>
-    <a href="/blog/20080926122245.html"> length function-get the length of a string</a>
+    <a href="/blog/20080926122245.html">length function-get the length of a string</a>
   </li>
 </ul>
 <h4> String format specification </h4>
@@ -392,17 +383,17 @@ my $length = length "ABCDE";
 </p>
 <pre>
 # Fill the left with 0 with 3 digits and it becomes "Code is 013"
-my $str1 = sprintf("Code is% 03d", 13);
+my $str1 = sprintf("Code is%03d", 13);
 
 # Display up to 3 decimal places "Number is 0.146"
-my $str2 = sprintf("Number is% .3f", 0.145677);
+my $str2 = sprintf("Number is%.3f", 0.145677);
 </pre>
 <p>
   See below for a detailed explanation of formatting.
 </p>
 <ul>
   <li>
-    <a href="/blog/20081001122296.html"> sprintf function-creates a formatted string</a>
+    <a href="/blog/20081001122296.html">sprintf function-creates a formatted string</a>
   </li>
 </ul>
 <h3> Here document </h3>
@@ -476,7 +467,7 @@ EOS
 </p>
 <ul>
   <li>
-    <a href="/blog/20080619121405.html"> Here-Document-Easily create multi-line strings</a>
+    <a href="/blog/20080619121405.html">Here-Document-Easily create multi-line strings</a>
   </li>
 </ul>
 <h3> Regular expression </h3>
@@ -517,7 +508,7 @@ $message = ~ s / dog / cat /;
 </p>
 <ul>
   <li>
-    <a href="/blog/20100827127859.html"> Regular expressions useful in actual battles</a>
+    <a href="/blog/20100827127859.html">Regular expressions useful in actual battles</a>
   </li>
 </ul>
 <h3> Perl handles Japanese correctly </h3>
@@ -603,7 +594,7 @@ if ($message = ~ / day /) {
   If you know how to handle strings in Java, it is easy to understand by considering the correspondence between "string stream" and "byte stream".
 </p>
 <p>
-  Use the decode function of the <a href="/blog/20091118124667.html"> Encode module</a> to decode.
+  Use the decode function of the <a href="/blog/20091118124667.html">Encode module</a> to decode.
 </p>
 <p>
   <b> Read a file with the character code "cp932" written on Windows </b>
@@ -628,7 +619,7 @@ while (my $line = &lt;&gt;) {
 }
 </pre>
 <p>
-  The <a href="/blog/20100123126425.html"> while statement</a> is used to read line by line from the file specified by the command line arguments.
+  The <a href="/blog/20100123126425.html">while statement</a> is used to read line by line from the file specified by the command line arguments.
 </p>
 <p>
   The sample of the file "name.txt" is as follows. Save it with cp932.
@@ -654,7 +645,7 @@ perl decode.pl name.txt
   Therefore, even if Japanese is received as a command line argument, it will always be decoded.
 </p>
 <pre>
-my $name = $ARGV [0];
+my $name = $ARGV[0];
 $name = decode ('cp932', $name);
 </pre>
 <h4> Encode the character string to be output to the outside </h4>
@@ -665,7 +656,7 @@ $name = decode ('cp932', $name);
   Encoding means converting an "internal string" to a "byte string".
 </p>
 <p>
-  To encode, use the encode function of the <a href="/blog/20091118124667.html"> Encode module</a>.
+  To encode, use the encode function of the <a href="/blog/20091118124667.html">Encode module</a>.
 </p>
 <p>
   For example, if you want to output in UTF-8, write as follows.<pre>
@@ -702,7 +693,7 @@ use Encode'encode';
 my $file ='test.txt';
 
 # Open a file with a Japanese name
-open my $fh,'&lt;', encode ('cp932', $file)
+open my $fh, '&lt;', encode ('cp932', $file)
   or die encode ('cp932', "Can't open file \" $file \ ": $!");
 </pre>
 <p>
@@ -713,7 +704,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
 </p>
 <ul>
   <li>
-    <a href="/blog/20091118124667.html"> Encode module-Properly handles multi-byte character strings such as Japanese</a>
+    <a href="/blog/20091118124667.html">Encode module-Properly handles multi-byte character strings such as Japanese</a>
   </li>
 </ul>
 <h3> Operators related to strings </h3>
@@ -722,10 +713,10 @@ open my $fh,'&lt;', encode ('cp932', $file)
 </p>
 <ul>
   <li>
-    <a href="/blog/20100304126967.html"> Quart operator "q" - Alternative representation of quotes</a>
+    <a href="/blog/20100304126967.html">Quart operator "q" - Alternative representation of quotes</a>
   </li>
   <li>
-    <a href="/blog/20100305126967.html"> Double quote operator "qq" - Alternative representation of double quote</a>
+    <a href="/blog/20100305126967.html">Double quote operator "qq" - Alternative representation of double quote</a>
   </li>
 </ul>
 <h3> Function for string processing </h3>
@@ -735,7 +726,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
 <table>
   <tr>
     <td>
-      <a href="/blog/20080224120386.html"> substr function</a>
+      <a href="/blog/20080224120386.html">substr function</a>
     </td>
     <td>
       Extracts and replaces the character at the specified position
@@ -743,7 +734,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20080225120395.html"> index function</a>
+      <a href="/blog/20080225120395.html">index function</a>
     </td>
     <td>
       Search for strings
@@ -751,7 +742,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20100321126967.html"> rindex function</a>
+      <a href="/blog/20100321126967.html">rindex function</a>
     </td>
     <td>
       Search for a string from the end
@@ -759,7 +750,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20080930122278.html"> reverse function</a>
+      <a href="/blog/20080930122278.html">reverse function</a>
     </td>
     <td>
       Invert the order of strings
@@ -767,7 +758,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20100325127089.html"> ucfirst function</a>
+      <a href="/blog/20100325127089.html">ucfirst function</a>
     </td>
     <td>
       Convert the first character of a string to uppercase
@@ -775,7 +766,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20100327127089.html"> lcfirst function</a>
+      <a href="/blog/20100327127089.html">lcfirst function</a>
     </td>
     <td>
       Convert the first character of a string to lowercase
@@ -783,7 +774,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20080903122057.html"> uc function</a>
+      <a href="/blog/20080903122057.html">uc function</a>
     </td>
     <td>
       Convert lowercase letters to uppercase
@@ -791,7 +782,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20100326127089.html"> lc function</a>
+      <a href="/blog/20100326127089.html">lc function</a>
     </td>
     <td>
       Convert uppercase to lowercase
@@ -799,7 +790,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20080928122260.html"> chr function</a>
+      <a href="/blog/20080928122260.html">chr function</a>
     </td>
     <td>
       Convert numbers to ASCII code-corresponding characters
@@ -807,7 +798,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
   </tr>
   <tr>
     <td>
-      <a href="/blog/20080929122278.html"> ord function</a>
+      <a href="/blog/20080929122278.html">ord function</a>
     </td>
     <td>
       Convert ASCII code characters to numbers, which is an internal representation
@@ -816,15 +807,14 @@ open my $fh,'&lt;', encode ('cp932', $file)
 </table>
 <h3> Summary </h3>
 <p>
-  If you remember this much, I think that you will be able to perform about 90% of character string processing including Japanese.
+  If you remember this much, I think that you will be able to perform about 90%of character string processing including Japanese.
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -841,12 +831,9 @@ open my $fh,'&lt;', encode ('cp932', $file)
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -855,8 +842,7 @@ open my $fh,'&lt;', encode ('cp932', $file)
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

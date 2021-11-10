@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,16 +24,15 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Extract the directory name and base name from the file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To extract the directory name and base name from the file name, use the  fileparse  method of the  File::Basename module.">
+<meta name="description" content="To extract the directory name and base name from the file name, use the  fileparse  method of the File::Basename module.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Extract the directory name and base name from the file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To extract the directory name and base name from the file name, use the  fileparse  method of the  File::Basename module." />
+<meta name="twitter:description" content="To extract the directory name and base name from the file name, use the  fileparse  method of the File::Basename module." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,24 +53,20 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/"><span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161126148016.html"> <span itemprop = "name"> File operation </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161126148016.html"><span itemprop = "name">File operation </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20080517121111.html"> Extract the directory name and base name from the file name </a></h2>
 <p>
-  To extract the directory name and base name from the file name, use the <strong> fileparse </strong> method of the <a href="/blog/20100225126425.html"> File::Basename</a> module.
+  To extract the directory name and base name from the file name, use the <strong> fileparse </strong> method of the <a href="/blog/20100225126425.html">File::Basename</a> module.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -120,18 +110,18 @@ my $file_win ='dir1 \\ dir2 \\ base_name.txt';
 print "1: Extract the directory name and base name from the file name.\n";
 my ($base_name, $dir) = fileparse $file_unix;
 print "For Unix\n".
-  "\ $dir = $dir\n".
-  "\ $base_name = $base_name\n\n";
+  "\$dir = $dir\n".
+  "\$base_name = $base_name\n\n";
 
 ($base_name, $dir) = fileparse $file_win;
 print "For Windows\n".
-  "\ $dir = $dir\n".
-  "\ $base_name = $base_name\n\n";
+  "\$dir = $dir\n".
+  "\$base_name = $base_name\n\n";
       
 print "2: Extract only the base name.\n";
 # In the array slice, extract only the 0th of the list.
 my $base_name_only = (fileparse $file_unix) [0];
-print "\ $base_name_only = $base_name_only\n\n";
+print "\$base_name_only = $base_name_only\n\n";
 </pre>
 <p>
   Execution result
@@ -151,15 +141,14 @@ $base_name_only = base_name.txt
 </pre>
 <hr>
 <p>
-  <a href="/blog/20080229120427.html"> Perl Reverse Dictionary</a>
+  <a href="/blog/20080229120427.html">Perl Reverse Dictionary</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -176,12 +165,9 @@ $base_name_only = base_name.txt
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -190,8 +176,7 @@ $base_name_only = base_name.txt
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

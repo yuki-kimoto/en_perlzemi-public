@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Time::Piece - A new way to handle dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -110,7 +99,7 @@
 </p>
 <ul>
   <li>
-    <a href="/blog/20161123147990.html"> Handling dates and times in Perl</a>
+    <a href="/blog/20161123147990.html">Handling dates and times in Perl</a>
   </li>
 </ul>
 <h3> Acquisition of time / date information </h3>
@@ -124,13 +113,13 @@ Get # Time::Piece object
 my $t = localtime;
 
 # Get date and time information
-my $year = $t-&gt; year;
-my $month = $t-&gt; mon;
-my $mday = $t-&gt; mday;
+my $year = $t-&gt;year;
+my $month = $t-&gt;mon;
+my $mday = $t-&gt;mday;
 
-my $hour = $t-&gt; hour;
-my $minute = $t-&gt; minute;
-my $second = $t-&gt; sec;
+my $hour = $t-&gt;hour;
+my $minute = $t-&gt;minute;
+my $second = $t-&gt;sec;
 </pre>
 <p>
   You can get the Time::Piece object by calling localtime, and you can get the date and time information from now on.
@@ -158,7 +147,7 @@ $year + = 1900;
 <table>
   <tr>
     <td>
-      $t-> year
+      $t->year
     </td>
     <td>
        Year
@@ -166,7 +155,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> _ year
+      $t->_ year
     </td>
     <td>
        Year-1900 (same as localtime for standard function) = "aaa"
@@ -174,7 +163,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> yy
+      $t->yy
     </td>
     <td>
        Last two digits of the year
@@ -182,7 +171,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> mon
+      $t->mon
     </td>
     <td>
        Month (starting from 1)
@@ -190,7 +179,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> _mon
+      $t->_mon
     </td>
     <td>
        Month (starting at 0, same as the standard function localtime)
@@ -198,7 +187,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> monname
+      $t->monname
     </td>
     <td>
        Abbreviated name of month (Feb, etc.)
@@ -206,15 +195,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> month
+      $t->month
     </td>
     <td>
-       Same as $t-> monname
+       Same as $t->monname
     </td>
   </tr>
   <tr>
     <td>
-      $t-> fullmonth
+      $t->fullmonth
     </td>
     <td>
        Month name (February, etc.)
@@ -222,7 +211,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> mday
+      $t->mday
     </td>
     <td>
        Day
@@ -230,15 +219,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> day_of_month
+      $t->day_of_month
     </td>
     <td>
-       Same as $t-> mday
+       Same as $t->mday
     </td>
   </tr>
   <tr>
     <td>
-      $t-> hour
+      $t->hour
     </td>
     <td>
        24 hour
@@ -246,7 +235,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> min
+      $t->min
     </td>
     <td>
        Minutes
@@ -254,15 +243,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> minute
+      $t->minute
     </td>
     <td>
-       Same as $t-> min
+       Same as $t->min
     </td>
   </tr>
   <tr>
     <td>
-      $t-> sec
+      $t->sec
     </td>
     <td>
        Seconds
@@ -270,15 +259,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> second
+      $t->second
     </td>
     <td>
-       Same as $t-> sec
+       Same as $t->sec
     </td>
   </tr>
   <tr>
     <td>
-      $t-> wday
+      $t->wday
     </td>
     <td>
        Week number (1 is Sunday)
@@ -286,7 +275,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> _wday
+      $t->_wday
     </td>
     <td>
        Week number (0 is Sunday)
@@ -294,15 +283,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> day_of_week
+      $t->day_of_week
     </td>
     <td>
-       $t-> _wday
+       $t->_wday
     </td>
   </tr>
   <tr>
     <td>
-      $t-> wdayname
+      $t->wdayname
     </td>
     <td>
        Weekly abbreviation (Tue, etc.)
@@ -310,15 +299,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> day
+      $t->day
     </td>
     <td>
-       $t-> wdayname
+       $t->wdayname
     </td>
   </tr>
   <tr>
     <td>
-      $t-> fullday
+      $t->fullday
     </td>
     <td>
        Week name (Tuesday, etc.)
@@ -326,7 +315,7 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> yday
+      $t->yday
     </td>
     <td>
        How many days in the year
@@ -334,15 +323,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> day_of_year
+      $t->day_of_year
     </td>
     <td>
-       Same as $t-> yday
+       Same as $t->yday
     </td>
   </tr>
   <tr>
     <td>
-      $t-> isdst
+      $t->isdst
     </td>
     <td>
        Whether it is daylight saving time
@@ -350,15 +339,15 @@ $year + = 1900;
   </tr>
   <tr>
     <td>
-      $t-> daylight_savings
+      $t->daylight_savings
     </td>
     <td>
-       Same as $t-> isdst
+       Same as $t->isdst
     </td>
   </tr>
   <tr>
     <td>
-      $t-> epoch
+      $t->epoch
     </td>
     <td>
        Seconds from epoch
@@ -371,10 +360,10 @@ $year + = 1900;
 </p>
 <pre>
 # Is it a leap year?
-$t-&gt; is_leap_year
+$t-&gt;is_leap_year
 
 # Get the last day of the month (return the number 28-31)
-$t-&gt; month_last_day
+$t-&gt;month_last_day
 </pre>
 <h3> Format date / time </h3>
 <p>
@@ -386,7 +375,7 @@ $t-&gt; month_last_day
 </p>
   <tr>
     <td>
-      $t-> hms
+      $t->hms
     </td>
     <td>
        12:34:56
@@ -394,7 +383,7 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> hms (".")
+      $t->hms (".")
     </td>
     <td>
        12.34.56
@@ -402,15 +391,15 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> time
+      $t->time
     </td>
     <td>
-       Same as $t-> hms
+       Same as $t->hms
     </td>
   </tr>
   <tr>
     <td>
-      $t-> ymd
+      $t->ymd
     </td>
     <td>
        2000-02-29
@@ -418,15 +407,15 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> date
+      $t->date
     </td>
     <td>
-       Same as $t-> ymd
+       Same as $t->ymd
     </td>
   </tr>
   <tr>
     <td>
-      $t-> mdy
+      $t->mdy
     </td>
     <td>
        02-29-2000
@@ -434,7 +423,7 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> mdy ("/")
+      $t->mdy ("/")
     </td>
     <td>
        02/29/2000
@@ -442,7 +431,7 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> dmy
+      $t->dmy
     </td>
     <td>
        29-02-2000
@@ -450,7 +439,7 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> dmy (".")
+      $t->dmy (".")
     </td>
     <td>
        29.02.2000
@@ -458,15 +447,15 @@ $t-&gt; month_last_day
   </tr>
   <tr>
     <td>
-      $t-> datetime
+      $t->datetime
     </td>
     <td>
-       2000-02-29T12: 34: 56 (ISO 8601)
+       2000-02-29T12:34:56 (ISO 8601)
     </td>
   </tr>
   <tr>
     <td>
-      $t-> cdate
+      $t->cdate
     </td>
     <td>
        Tue Feb 29 12:34:56 2000
@@ -477,7 +466,7 @@ $t-&gt; month_last_day
       "$t"
     </td>
     <td>
-       Same as $t-> cdate
+       Same as $t->cdate
     </td>
   </tr>
 </table>
@@ -486,59 +475,59 @@ $t-&gt; month_last_day
   If you want to customize the format freely, use the strftime method. Specify the time representation in $format.
 </p>
 <pre>
-$t-&gt; strftime($format)
+$t-&gt;strftime($format)
 </pre>
 <p>
   This is a sample format of date and time.
 </p>
 <pre>
-$t-&gt; strftime('% Y-% m-% d% H:% M:% S'); # 2009-11-34 12:14:15
+$t-&gt;strftime('%Y-%m-%d%H:%M:%S'); # 2009-11-34 12:14:15
 </pre>
 <p>
   A list of formats that can be used with strftime.
 </p>
 <pre>
-% a: Abbreviated name of the day of the week
-% A: Day of the week name
-% b: month abbreviation
-% B: Month name
-% c: Default format
-% C: First two digits of the year
-% d: days (01 to 31)
-% D: Same as% m /% d /% y. Month day year
-% e: day (1 to 31)
-% F: Same as% Y-% m-% d (for example, 2008-11-31)
-% G: 4 digits per year. If the year and week of ISO 8608 format is the previous year or the next year, that year.
-% g: Last two digits of the year. If the year and week of ISO 8608 format is the previous year or the next year, that year.
-% h: Same as% b. Month abbreviation
-% H: Hour (00 to 23)
-% I: Hour (01 to 12) Time in 12-hour notation
-% j: What day is it for the first time from the beginning of the year? (001 to 366)
-% k: Hour (0 to 23) The second digit of the one-digit number (0 to 9) is a space.
-% l: Hour (1 to 12) Time in 12-hour notation The second digit of the one-digit number (0 to 9) is a space.
-% m: Month number (01-12)
-% M: Minutes (00 to 59)
-% n: Newline character
-% N: Milliseconds (Write% 3N displays milliseconds in 3 digits,% 6N displays milliseconds in 6 digits)
-% p: am or pm
-% P: AM or PM
-Same as% r:% I:% M:% S% p. (11:55:23 PM etc.)
-% R: hour and minute (for example, 15:16)
-% s: Seconds from epoch
-% S: seconds (00 to 61)
-% t: tab character
-Same as% T:% H:% M:% S. Hours, minutes and seconds (such as 23:14:03)
-% u: Day of the week number (1 to 7. Monday is 1)
-% U: How many weeks from the beginning of the year? Count the first Sunday of the year (00-53) as the beginning of the week. The first Sunday week is 01. The week before that was 00.
-% V: How many weeks from the beginning of the year? (01-53) A week with at least 4 days is the first week of the year. Count Monday as the beginning of the week. Year and week in ISO 8608 format.
-% w: Day of the week number (0 to 6. Sunday is 0)
-% W: Weeks counting from the beginning of the year (00 to 53) Count the first Monday of the year as the beginning of the week. The first Monday week is 01. The week before that was 00.
-% x: Default format for dates
-% X: Default format for time
-% y: last two digits of the year
-% Y: year
-% z: Time zone time shift from UTC (Coordinated Universal Time))
-% Z: Timezone name
+%a: Abbreviated name of the day of the week
+%A: Day of the week name
+%b: month abbreviation
+%B: Month name
+%c: Default format
+%C: First two digits of the year
+%d: days (01 to 31)
+%D: Same as%m /%d /%y. Month day year
+%e: day (1 to 31)
+%F: Same as%Y-%m-%d (for example, 2008-11-31)
+%G: 4 digits per year. If the year and week of ISO 8608 format is the previous year or the next year, that year.
+%g: Last two digits of the year. If the year and week of ISO 8608 format is the previous year or the next year, that year.
+%h: Same as%b. Month abbreviation
+%H: Hour (00 to 23)
+%I: Hour (01 to 12) Time in 12-hour notation
+%j: What day is it for the first time from the beginning of the year? (001 to 366)
+%k: Hour (0 to 23) The second digit of the one-digit number (0 to 9) is a space.
+%l: Hour (1 to 12) Time in 12-hour notation The second digit of the one-digit number (0 to 9) is a space.
+%m: Month number (01-12)
+%M: Minutes (00 to 59)
+%n: Newline character
+%N: Milliseconds (Write%3N displays milliseconds in 3 digits,%6N displays milliseconds in 6 digits)
+%p: am or pm
+%P: AM or PM
+Same as%r:%I:%M:%S%p. (11:55:23 PM etc.)
+%R: hour and minute (for example, 15:16)
+%s: Seconds from epoch
+%S: seconds (00 to 61)
+%t: tab character
+Same as%T:%H:%M:%S. Hours, minutes and seconds (such as 23:14:03)
+%u: Day of the week number (1 to 7. Monday is 1)
+%U: How many weeks from the beginning of the year? Count the first Sunday of the year (00-53) as the beginning of the week. The first Sunday week is 01. The week before that was 00.
+%V: How many weeks from the beginning of the year? (01-53) A week with at least 4 days is the first week of the year. Count Monday as the beginning of the week. Year and week in ISO 8608 format.
+%w: Day of the week number (0 to 6. Sunday is 0)
+%W: Weeks counting from the beginning of the year (00 to 53) Count the first Monday of the year as the beginning of the week. The first Monday week is 01. The week before that was 00.
+%x: Default format for dates
+%X: Default format for time
+%y: last two digits of the year
+%Y: year
+%z: Time zone time shift from UTC (Coordinated Universal Time))
+%Z: Timezone name
 %%:%
 </pre>
 <h4> Precautions when handling Japanese </h4>
@@ -547,31 +536,31 @@ Same as% T:% H:% M:% S. Hours, minutes and seconds (such as 23:14:03)
 </p>
 <pre>
 # Byte string is always returned
-my $bytes = $tp-&gt; strftime("% Y year% m month");
+my $bytes = $tp-&gt;strftime("%Y year%m month");
 </pre>
 <h3> Parse the character string that expresses the date / time </h3>
 <p>
   You can parse date and time representations to create Time::Piece objects. Use the strptime method to parse dates and times.
 </p>
 <pre>
-my $t = Time::Piece-&gt; strptime(character string representing date / time, format);
+my $t = Time::Piece-&gt;strptime(character string representing date / time, format);
 </pre>
 <p>
   As a sample, let's parse the MySQL date representation and create a Time::Piece object. Use the above strftime format for the format.
 </p>
 <pre>
 my $datetime_mysql = '2009-12-31 23:59:59';
-my $t = Time::Piece-&gt; strptime($datetime_mysql,'% Y-% m-% d% H:% M:% S');
+my $t = Time::Piece-&gt;strptime($datetime_mysql, '%Y-%m-%d%H:%M:%S');
 </pre>
 <h3> Localization </h3>
 <p>
   By default, month and week names are in English. If you want to get the Japanese week name, pass an array of day names to the method to get the week name.
 </p>
 <pre>
-my @week_names = ('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+my @week_names = ('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
 my $t = Time::Piece::localtime;
 # Get week name in Japanese
-my $wday = $t-&gt; wdayname (@week_names);
+my $wday = $t-&gt;wdayname (@week_names);
 </pre>
 <h3> Calculation of date / time information </h3>
 <h4> Tempe::Piece object subtraction </h4>
@@ -585,15 +574,15 @@ my $sec = $t2- $t1;
   You can also convert Time::Soconds objects to days and years.
 </p>
 <pre>
-$sec-&gt; seconds;
-$sec-&gt; minutes;
-$sec-&gt; hours;
-$sec-&gt; days;
-$sec-&gt; weeks;
-$sec-&gt; months;
+$sec-&gt;seconds;
+$sec-&gt;minutes;
+$sec-&gt;hours;
+$sec-&gt;days;
+$sec-&gt;weeks;
+$sec-&gt;months;
 
 # 30 days
-$sec-&gt; financial_months;
+$sec-&gt;financial_months;
 </pre>
 <p>
   The conversion to days and years is done according to the following rules. One day is converted to 24 hours. One week is converted to 7 days. One year is converted to 365.24225 days. One year is converted to 12 months.
@@ -604,7 +593,7 @@ $sec-&gt; financial_months;
 </p>
 <pre>
 $t + 533;
-$t + Time::Seconds-&gt; new (300);
+$t + Time::Seconds-&gt;new (300);
 </pre>
 <p>
   Time::Seconds also provides constants that can be added to the Time::Piece object.
@@ -629,7 +618,7 @@ $t + ONE_DAY * 5
 </pre>
 <h3> Date comparison </h3>
 <p>
-  You can use comparison operators to compare dates. You can use "<", ">", "<=", "> =", "<=>", "==" and "! =".
+  You can use comparison operators to compare dates. You can use "<", ">", "<=", ">=", "<=>", "==" and "! =" .
 </p>
 <pre>
 $t1 &lt;$t2
@@ -639,7 +628,7 @@ $t1 &lt;$t2
   As far as I read the document, it seems that there is no choice but to use the strptime method to create a Time::Piece object at any date and time.
 </p>
 <pre>
-my $t = Time::Piece-&gt; strptime('2009-12-31 23:59:59','% Y-% m-% d% H:% M:% S');
+my $t = Time::Piece-&gt;strptime('2009-12-31 23:59:59', '%Y-%m-%d%H:%M:%S');
 </pre>
 <p>
   (When I read the source code, there is a parse method, but when I tried it, it seems to be broken ... It seems that it is private because it is not in the document.)
@@ -661,8 +650,7 @@ sub today {
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -679,12 +667,9 @@ sub today {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -693,8 +678,7 @@ sub today {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Benchmark - Benchmark (performance comparison)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -153,9 +142,9 @@ cmpthese $result;
 <pre>
 # Benchmark output result
 Benchmark: timing 10000 iterations of loop1, loop2, loop3 ...
-     loop1: 4 wallclock secs (2.98 usr + 0.00 sys = 2.98 CPU) @ 3351.21 / s (n = 10000)
-     loop2: 2 wallclock secs (1.75 usr + 0.00 sys = 1.75 CPU) @ 5714.29 / s (n = 10000)
-     loop3: 1 wallclock secs (1.03 usr + 0.00 sys = 1.03 CPU) @ 9699.32 / s (n = 10000)
+     loop1: 4 wallclock secs (2.98 usr + 0.00 sys = 2.98 CPU) @3351.21 / s (n = 10000)
+     loop2: 2 wallclock secs (1.75 usr + 0.00 sys = 1.75 CPU) @5714.29 / s (n = 10000)
+     loop3: 1 wallclock secs (1.03 usr + 0.00 sys = 1.03 CPU) @9699.32 / s (n = 10000)
         Rate loop1 loop2 loop3
 loop1 3351 / s - - 41% -65%
 loop2 5714 / s 71% - - 41%
@@ -166,13 +155,13 @@ loop3 9699 / s 189% 70% -
   Q. Does the Benchmark module calculate the actual processing time?
 </p>
 <p>
-  A. The time displayed by wallclock is the actual time taken. The value after @ is calculated as "number of trials / CPU time".
+  A. The time displayed by wallclock is the actual time taken. The value after @is calculated as "number of trials / CPU time".
 </p>
 <p>
-  The value after @ is calculated by the formula "number of trials / CPU time". CPU time is the time of the CPU used by the process, so it does not include I / O waits such as database access or time to execute child processes. Also, when the <a href="/blog/20170522149546.html"> sleep function</a> is executed, it is not included in the execution time because it does not use the CPU.
+  The value after @is calculated by the formula "number of trials / CPU time". CPU time is the time of the CPU used by the process, so it does not include I / O waits such as database access or time to execute child processes. Also, when the <a href="/blog/20170522149546.html">sleep function</a> is executed, it is not included in the execution time because it does not use the CPU.
 </p>
 <p>
-  This means that the value after @ cannot be used as a reference when benchmarking I / O or calling child processes. The value compared by cmpthese is also "number of trials / CPU time", so the displayed value cannot be used for evaluation as it is.
+  This means that the value after @cannot be used as a reference when benchmarking I / O or calling child processes. The value compared by cmpthese is also "number of trials / CPU time", so the displayed value cannot be used for evaluation as it is.
 </p>
 <p>
   If you are doing I / O or running a child process, you need to look at the value displayed on the wallclock. However, in most cases, you will use the Benchmark module for the purpose of evaluating the algorithm of the program, so you can use the value compared by cmpthese as a guide.
@@ -182,8 +171,7 @@ loop3 9699 / s 189% 70% -
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -200,12 +188,9 @@ loop3 9699 / s 189% 70% -
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -214,8 +199,7 @@ loop3 9699 / s 189% 70% -
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

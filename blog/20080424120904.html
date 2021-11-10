@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> caller function-get caller information  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161004147558.html">
-      <span itemprop = "name"> standard function </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161004147558.html">      <span itemprop = "name">standard function </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    here
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
 <h2><a href="/blog/20080424120904.html"> caller function-get caller information </a></h2>
@@ -97,10 +85,10 @@
 
 
 <p>
-  To get the calling package name, call the caller function in <a href="/blog/20180531152777.html"> scalar context</a>.
+  To get the calling package name, call the caller function in <a href="/blog/20180531152777.html">scalar context</a>.
 </p>
 <p>
-  To get the calling package name, filename, and line number, call the caller function in <a href="/blog/20180530152777.html"> list context</a>.
+  To get the calling package name, filename, and line number, call the caller function in <a href="/blog/20180530152777.html">list context</a>.
 </p>
 <pre>
 # package name
@@ -125,7 +113,7 @@ my ($package_name, $file_name, $line) = caller;
   You can also get additional subroutine names and so on.
 </p>
 <p>
-  See <a href="http://perldoc.jp/func/caller"> official documentation</a> for details.
+  See <a href="http://perldoc.jp/func/caller">official documentation</a> for details.
 </p>
 <h3> Sample </h3>
 <p>
@@ -155,7 +143,7 @@ func_name_none_package ();
 
 sub func_name_none_package {
   my $this_func_name = (caller 0) [3];
-  $this_func_name = ~ s /. *:: //;
+  $this_func_name = ~ s /. *:://;
   print $this_func_name, "\n\n";
 }
 
@@ -163,14 +151,14 @@ print "3: Make function name acquisition into a subroutine.\n";
 test1 ();
 
 sub test1 {
-  print get_func_name (). "\n";
+  print get_func_name () . "\n";
 }
 
 sub get_func_name {
   If 1 is specified as the argument of the # caller function
   # You can get the information of the calling function.
   my $this_func_name = (caller 1) [3];
-  $this_func_name = ~ s /. *:: //;
+  $this_func_name = ~ s /. *:://;
   return $this_func_name;
 }
 </pre>
@@ -192,8 +180,7 @@ test1
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -210,12 +197,9 @@ test1
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -224,8 +208,7 @@ test1
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

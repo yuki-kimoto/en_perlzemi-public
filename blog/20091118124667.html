@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Encode module-Properly handles multi-byte character strings such as Japanese  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -109,7 +98,7 @@
 </ol>
 <h3> Terms in this commentary </h3>
 <p>
-  In this explanation, the character string input from the outside is called "<span style =" font-weight: bold; "> byte character string </span>". Let's call the string converted to Perl's internal representation "<span style =" font-weight: bold; "> internal string </span>". If the "byte character string" is described in a specific character code, it will be called "UTF-8 byte character string" or "Shift_JIS byte character string".
+  In this explanation, the character string input from the outside is called "<span style =" font-weight: bold;">byte character string </span>". Let's call the string converted to Perl's internal representation "<span style =" font-weight: bold;">internal string </span>". If the "byte character string" is described in a specific character code, it will be called "UTF-8 byte character string" or "Shift_JIS byte character string".
 </p>
 <p>
   When dealing with Japanese in programming, it is necessary to clearly distinguish whether the character string is a byte character string or an internal character string. The rule when dealing with multiple languages ​​in Perl is that the program is responsible for converting between internal and byte strings. This method is a little tricky, but the mechanism is very simple as you only have to remember the above three rules.
@@ -144,7 +133,7 @@ $str = decode ('UTF-8', $str);
 </p>
 <pre>
                 Convert "UTF-8 byte string" to "internal string"
-UTF-8 byte string - -&gt; internal string
+UTF-8 byte string - -&gt;internal string
 </pre>
 <p>
   The meaning of the first argument of the decode function is easy to misunderstand. Specifies which character code the byte string is actually encoded in.
@@ -176,7 +165,7 @@ $str = encode ('UTF-8', $str);
 </p>
 <pre>
                 Convert "internal string" to "UTF-8 byte string"
-Internal string - -&gt; UTF-8 byte string
+Internal string - -&gt;UTF-8 byte string
 </pre>
 <h3> Save the source code in UTF-8 and enable the utf8 pragma </h3>
 <p>
@@ -197,7 +186,7 @@ my $str = "Write Japanese etc.";
 </p>
 <blockquote>
 <p>
-  Select "File"-> "Save As"-> "Character Code"-> "UTF-8".
+  Select "File"->"Save As"->"Character Code"->"UTF-8".
 </p>
 </blockquote>
 <p>
@@ -208,14 +197,14 @@ my $str = "Write Japanese etc.";
 </p>
 <pre>
                                 use utf8
-UTF-8 byte string - -&gt; internal string
+UTF-8 byte string - -&gt;internal string
 </pre>
 <p>
   As long as you follow the following three things mentioned at the beginning, you will have less trouble with character codes. If you are worried about the character code, please go back to this principle first.
 </p>
 <h3> Meaning of converting to an internal string </h3>
 <p>
-  Let's see the effect of actually converting it to an internal character string. You can see that Perl handles strings correctly. The <a href="/blog/20080926122245.html"> length function</a> returns the correct length, and the <a href="/blog/20100827127859.html"> regular expression</a> It works correctly.
+  Let's see the effect of actually converting it to an internal character string. You can see that Perl handles strings correctly. The <a href="/blog/20080926122245.html">length function</a> returns the correct length, and the <a href="/blog/20100827127859.html">regular expression</a> It works correctly.
 </p>
 <p>
   Save the source code in UTF-8. If it is not saved in UTF-8, you will get a warning such as "Malformed UTF-8 character".
@@ -269,7 +258,7 @@ $str = encode ('Shift_JIS', $str);
   The diagram is as follows.
 </p>
 <pre>
-UTF-8 byte string-&gt; internal string-&gt; Shift_JIS byte string
+UTF-8 byte string-&gt;internal string-&gt;Shift_JIS byte string
 </pre>
 <p>
   This is a bit annoying, so we have a function called from_to.The first argument is a byte string, the second argument is the character code before conversion, and the third argument is the character code after conversion. Note that unlike the enocde and decode functions, the byte string itself specified in the first argument is converted.
@@ -279,7 +268,7 @@ UTF-8 byte string-&gt; internal string-&gt; Shift_JIS byte string
 use Encode'from_to';
 
 # $str itself is converted
-from_to ($str,'UTF-8','Shift_JIS');
+from_to ($str, 'UTF-8', 'Shift_JIS');
 </pre>
 <h3> Character string specified as the file name </h3>
 <p>
@@ -292,7 +281,7 @@ use utf8;
 use Encode'encode';
 
 my $file ='Ah.txt';
-open my $fh,'&lt;', encode ('cp932', $file)
+open my $fh, '&lt;', encode ('cp932', $file)
   or die "Can't open". encode ('cp932', $file). ": $!";
 </pre>
 <p>
@@ -312,7 +301,7 @@ sub d ($) {decode ($enc, shift)}
 sub e ($) {encode ($enc, shift)}
 
 my $file ='Ah.txt';
-open my $fh,'&lt;', e $file
+open my $fh, '&lt;', e $file
   or die qq / Can't open "$file": $! /;
 </pre>
 <p>
@@ -335,7 +324,7 @@ open my $fh,'&lt;', e $file
   Whether a function in a module accepts an internal string or a byte string as an argument depends on the intention of the module creator. The same is true for the return value of a function. It is up to the author to decide whether to return a byte string or an internal string. Be sure to read the documentation.
 </p>
 <p>
-  I think this is one of the things programmers find particularly difficult when programming in Perl. But don't just deny it, remember that you're benefiting from the other big benefits of "maintaining backwards compatibility," "simple conversion rules," and "correct and proper handling of strings." I think Perl handles strings pretty well compared to other languages.
+  I think this is one of the things programmers find particularly difficult when programming in Perl. But don't just deny it, remember that you're benefiting from the other big benefits of "maintaining backwards compatibility, " "simple conversion rules, " and "correct and proper handling of strings." I think Perl handles strings pretty well compared to other languages.
 </p>
 <p>
   As you can see from the implementation of other programming languages, there is a trade-off with the handling of character codes. It's a difficult field to deal with.
@@ -346,7 +335,7 @@ open my $fh,'&lt;', e $file
 </p>
 <ul>
   <li>
-    <a href="http://d.hatena.ne.jp/dayflower/20080219/1203493616"> UTF8 flag this and that (daily dayflower)</a>
+    <a href="http://d.hatena.ne.jp/dayflower/20080219/1203493616">UTF8 flag this and that (daily dayflower)</a>
   </li>
 </ul>
 
@@ -354,8 +343,7 @@ open my $fh,'&lt;', e $file
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -372,12 +360,9 @@ open my $fh,'&lt;', e $file
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -386,8 +371,7 @@ open my $fh,'&lt;', e $file
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Read a csv file and convert it to an array of Perl hashes  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">      <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20110212130370.html">      <span itemprop = "name">File input / output </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20080729121734.html"> Read a csv file and convert it to an array of Perl hashes </a></h2>
@@ -111,7 +99,7 @@ unless ($file) {
 }
 
 Create a key for each column of # csv
-my $headers = ['name','age','country'];
+my $headers = ['name', 'age', 'country'];
 
 # Parse the file and convert the csv format data to an array of arrays.
 # The header key is also passed as an argument.
@@ -120,7 +108,7 @@ my @recs = parse_file ($file, $headers);
 # Output (because it is an array of hashes, follow it with for)
 for my $items (@recs) {
   # Concatenate using hash slices
-  print join(',', @ {$items} {@ $headers}). "\n";
+  print join(',', @{$items}{@$headers}) . "\n";
 }
 
 # Function for file analysis (I just write it back this time ...)
@@ -140,13 +128,13 @@ sub parse_file {
       # Header using hash slice
       Assign to the key corresponding to #
       my $items = {};
-      @ {$items} {@ $headers} = split(',', $line);
+      @{$items}{@$headers} = split(',', $line);
 
-      Since the first argument of the # push function is an array, dereference it with @ $recs.
-      push @ $recs, $items;
+      Since the first argument of the # push function is an array, dereference it with @$recs.
+      push @$recs, $items;
     }
     close $fh;
-    wantarray? return @ $recs: return $recs;
+    wantarray? return @$recs: return $recs;
 }
 </pre>
 <p>
@@ -160,7 +148,7 @@ rika, 38, France
 <h3> Code explanation </h3>
 <h4> (1) Creating an array of hash keys </h4>
 <pre>
-my $headers = ['name','age','country'];
+my $headers = ['name', 'age', 'country'];
 </pre>
 <p>
   By using the hash key, we give meaning to what was just an array last time. The first item of the csv file corresponds to name, the second item corresponds to age, and the third item corresponds to country.
@@ -188,15 +176,15 @@ rika, 38, France
 <h4> (3) Output an array of hashes </h4>
 <pre>
 for my $items (@recs) {
-  print join(',', @ {$items} {@ $headers}). "\n";
+  print join(',', @{$items}{@$headers}) . "\n";
 }
 </pre>
 <p>
-  Since it is an array, the outside is a foreach loop. Output $items, which is a reference to the hash, concatenated with commas with <a href="/blog/20081007122338.html"> join function</a>.
+  Since it is an array, the outside is a foreach loop. Output $items, which is a reference to the hash, concatenated with commas with <a href="/blog/20081007122338.html">join function</a>.
 </p>
 <h4> (3) -1 Explanation of hash slices </h4>
 <p>
-  I will explain the esoteric hash slice @ {$items} {@ $headers}.
+  I will explain the esoteric hash slice @{$items}{@$headers}.
 </p>
 <p>
   First, $items is a reference to the hash.
@@ -211,53 +199,53 @@ for my $items (@recs) {
   I usually use% $items to dereference, but I want to dereference it so that hash slices can be used.
 </p>
 <pre>
-@ {$items} {list of hash keys}
+@{$items}{list of hash keys}
 </pre>
 <p>
   will do.
 </p>
 <pre>
-@ {$items} {'name','age','country'}
+@{$items}{'name', 'age', 'country'}
 </pre>
 <p>
   If you write
 </p>
 <pre>
-('masao', 10,'Japan')
+('masao', 10, 'Japan')
 </pre>
 <p>
   Can be obtained.
 </p>
 <p>
-  Also, since ['name','age','country'] is assigned to $headers, you can get ('name','age','country') by dereferencing @ $headers. increase.
+  Also, since ['name', 'age', 'country'] is assigned to $headers, you can get ('name', 'age', 'country') by dereferencing @$headers. increase.
 </p>
 <pre>
-@ {$items} {@ $headers}
+@{$items}{@$headers}
 </pre>
 <p>
   Is the description
 </p>
 <pre>
-@ {$items} {'name','age','country'}
+@{$items}{'name', 'age', 'country'}
 </pre>
 <p>
   Is the same as the description
 </p>
 <pre>
-('masao', 10,'Japan')
+('masao', 10, 'Japan')
 </pre>
 <p>
   Can be obtained.
 </p>
 <pre>
-join(',', @ {$items} {@ $headers})
+join(',', @{$items}{@$headers})
 </pre>
 <p>
   As a result, it is completed by connecting with commas.
 </p>
 <h4> (4) Processing in a while loop </h4>
 <p>
-  I'm using a <a href="/blog/20100123126425.html"> while statement</a> to create a Perl data structure.
+  I'm using a <a href="/blog/20100123126425.html">while statement</a> to create a Perl data structure.
 </p>
 <pre>
 while (my $line = &lt;$fh&gt;) {
@@ -268,11 +256,11 @@ while (my $line = &lt;$fh&gt;) {
   my $items = {};
   # Header using hash slice
   Assign to the key corresponding to #
-  @ {$items} {@ $headers} = split(',', $line);
+  @{$items}{@$headers} = split(',', $line);
 
-  The first argument of the # push function is an array, so @ $recs
+  The first argument of the # push function is an array, so @$recs
   # And dereference.
-  push @ $recs, $items;
+  push @$recs, $items;
 }
 </pre>
 <h4> (4) -1 Prepare a reference to the hash </h4>
@@ -284,7 +272,7 @@ my $items = {}; # Prepare a reference to the hash that stores the data
 </p>
 <h4> (4) -2 Assign hash slice to corresponding key on the left side </h4>
 <pre>
-@ {$items} {@ $headers} = split(',', $line);
+@{$items}{@$headers} = split(',', $line);
 </pre>
 <p>
   Same as explained above. Make the left side a hash slice and assign the list divided by the split function to it.
@@ -294,8 +282,7 @@ my $items = {}; # Prepare a reference to the hash that stores the data
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -312,12 +299,9 @@ my $items = {}; # Prepare a reference to the hash that stores the data
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -326,8 +310,7 @@ my $items = {}; # Prepare a reference to the hash that stores the data
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

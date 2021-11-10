@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> perlapi - Data manipulation functions in XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20100809127859.html">
-      <span itemprop = "name"> XS </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20100809127859.html">      <span itemprop = "name">XS </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -120,7 +109,7 @@ my $str = "Hello";
 SV * sv_str = newSVpv ("Hello", 0);
 </pre>
 <p>
-  Perl scalars support SV * in XS. You can use the newSVpv function to create an SV * that represents a <a href="/blog/20161003147558.html"> string</a>. The first argument is a string. The second argument is a STRLEN type argument that specifies the length of the string. If you specify 0, the length of the character string is automatically determined.
+  Perl scalars support SV * in XS. You can use the newSVpv function to create an SV * that represents a <a href="/blog/20161003147558.html">string</a>. The first argument is a string. The second argument is a STRLEN type argument that specifies the length of the string. If you specify 0, the length of the character string is automatically determined.
 </p>
 <p>
   Others include the newSVpvn and newSVpvs functions, which focus on efficiency.
@@ -154,11 +143,11 @@ my $num = 1.14;
 SV * sv_num = newSVnv (1.14);
 </pre>
 <p>
-  Perl treats all <a href="/blog/20161026147748.html"> numbers</a> as floating point, but internally they are unsigned integers (UV type), integers ( There are three types: IV type) and numerical type (NV type). Numeric types are the most versatile, but unsigned integers and integers are better for efficiency. These are retained as SV * internal values. UV U is "unsigned int" u. I in IV is i in int. NV's N is number n.
+  Perl treats all <a href="/blog/20161026147748.html">numbers</a> as floating point, but internally they are unsigned integers (UV type), integers ( There are three types: IV type) and numerical type (NV type). Numeric types are the most versatile, but unsigned integers and integers are better for efficiency. These are retained as SV * internal values. UV U is "unsigned int" u. I in IV is i in int. NV's N is number n.
 </p>
 <h4> Undefined value (corresponding to undef) </h4>
 <p>
-  In XS, Perl's <a href="/blog/20100220126425.html"> undef</a> is represented by & PL_sv_undef.
+  In XS, Perl's <a href="/blog/20100220126425.html">undef</a> is represented by & PL_sv_undef.
 </p>
 <pre>
 # Perl
@@ -169,7 +158,7 @@ SV * sv_val = &amp; PL_sv_undef;
 </pre>
 <h4> Check if the value is defined(corresponding to the defined function) </h4>
 <p>
-  Use the <b> SvOK </b> function to see if a value of type SV * is defined. This is the equivalent of Perl's <a href="/blog/20100219126425.html"> defined function</a>.
+  Use the <b> SvOK </b> function to see if a value of type SV * is defined. This is the equivalent of Perl's <a href="/blog/20100219126425.html">defined function</a>.
 </p>
 <pre>
 # Perl
@@ -194,7 +183,7 @@ char * str = SvPV_nolen (sv_some);
 sub print_line {
   my $file = shift;
   
-  open my $fh,'&lt;', $file
+  open my $fh, '&lt;', $file
     or die $!;
   
   while (my $line = &lt;$fh&gt;) {
@@ -235,7 +224,7 @@ print_line (...)
 </p>
 <ul>
   <li>
-    <a href="/blog/20141220141904.html"> How to write a program without causing a memory leak in XS</a>
+    <a href="/blog/20141220141904.html">How to write a program without causing a memory leak in XS</a>
   </li>
 </ul>
 <h4> Discover APIs for Perl operations </h4>
@@ -244,7 +233,7 @@ print_line (...)
 </p>
 <h3> Array manipulation </h3>
 <p>
-  How to write in XS corresponding to the operation of <a href="/blog/20161012147627.html"> array</a>.
+  How to write in XS corresponding to the operation of <a href="/blog/20161012147627.html">array</a>.
 </p>
 <p>
   Variable declaration.
@@ -261,7 +250,7 @@ AV * av_nums = newAV ();
 </p>
 <pre>
 # Perl
-$nums [0] = 1;
+$nums[0] = 1;
 
 # XS
 av_store (av_nums, 0, newSVuv (1));
@@ -271,7 +260,7 @@ av_store (av_nums, 0, newSVuv (1));
 </p>
 <pre>
 # Perl
-my $num = $nums [0];
+my $num = $nums[0];
 
 # XS
 SV ** const sv_num_ptr = av_fetch (nums, 0, FALSE);
@@ -340,12 +329,12 @@ av_clear (av_nums);
 </pre>
 <h3> Hash operation </h3>
 <p>
-  How to write in XS corresponding to the operation of <a href="/blog/20161013147635.html"> hash</a>.
+  How to write in XS corresponding to the operation of <a href="/blog/20161013147635.html">hash</a>.
 </p>
 <h4> Confirmation of key existence </h4>
 <pre>
 # Perl
-exists $hash {"key"};
+exists $hash{"key"};
 
 # XS
 hv_exists(hash, "key", strlen ("key"));
@@ -396,16 +385,16 @@ sub return_array_of_hash {
   my @persons;
  
   my %person1;
-  $person1 {name} ='Ken';
-  $person1 {age} = 19;
-  push @ peoples, \% person1;
+  $person1{name} ='Ken';
+  $person1{age} = 19;
+  push @peoples, \%person1;
   
   my %person2;
-  $person2 {name} ='Taro';
-  $person2 {age} = 26;
-  push @persons, \% person2;
+  $person2{name} ='Taro';
+  $person2{age} = 26;
+  push @persons, \%person2;
   
-  return \ @persons;
+  return \@persons;
 }
 
 # XS
@@ -481,7 +470,7 @@ SV * return_array_of_hash ()
 </pre>
 <h3> String manipulation </h3>
 <p>
-  <a href="/blog/20161003147558.html"> string</a> operation in XS.
+  <a href="/blog/20161003147558.html">string</a> operation in XS.
 </p>
 <h4> Creating a string </h4>
 <pre>
@@ -527,7 +516,7 @@ my $str = "$num1 and $num2";
 # XS
 int num1 = 1;
 int num2 = 2;
-SV * sv_str = newSVpvf ("% d and% d", num1, num2);
+SV * sv_str = newSVpvf ("%d and%d", num1, num2);
 </pre>
 <h4> String concatenation + variable expansion </h4>
 <pre>
@@ -541,7 +530,7 @@ $str. = "$num1 and $num2";
 int num1 = 1;
 int num2 = 2;
 SV * sv_str = newSVpv ("abc", 0);
-sv_catpvf (sv_str, "% d and% d", num1, num2);
+sv_catpvf (sv_str, "%d and%d", num1, num2);
 </pre>
 <h4> String comparison </h4>
 <p>
@@ -581,7 +570,7 @@ if (strNE ("foo", "bar")) {...}
 # Perl
 $Foo::bar;
 @Foo::bar;
-% Foo::bar;
+%Foo::bar;
 
 # XS
 SV * sv_var = get_sv ("Foo::bar", 0);
@@ -599,7 +588,7 @@ HV * hv_var = get_hv ("Foo::bar", 0);
 # Perl
 our $Foo::bar;
 our @Foo::bar;
-our% Foo::bar;
+our%Foo::bar;
 
 # XS
 SV * sv_var = get_sv ("Foo::bar", GV_ADD);
@@ -608,11 +597,11 @@ HV * hv_var = get_hv ("Foo::b"ar ", GV_ADD);
 </pre>
 <h3> Use regular expressions </h3>
 <p>
-  I will explain how to use <a href="/blog/20100827127859.html"> regular expressions</a> in <b> XS </b>. However, the Perl documentation doesn't currently explain how to use it, so I'm trying it out, so please let me know if it's wrong.
+  I will explain how to use <a href="/blog/20100827127859.html">regular expressions</a> in <b> XS </b>. However, the Perl documentation doesn't currently explain how to use it, so I'm trying it out, so please let me know if it's wrong.
 </p>
 <h4> Regular expression compilation </h4>
 <p>
-  To use <a href="/blog/20100827127859.html"> regular expressions</a> in XS, you must first compile the regular expressions using the <b> pregcomp </b> function. Think of it as corresponding to the operation of creating a regular expression reference.
+  To use <a href="/blog/20100827127859.html">regular expressions</a> in XS, you must first compile the regular expressions using the <b> pregcomp </b> function. Think of it as corresponding to the operation of creating a regular expression reference.
 </p>
 <pre>
 # Perl
@@ -735,7 +724,7 @@ Perl_reg_numbered_buff_fetch (aTHX_ sv_re, 2, match2);
 </pre>
 <h3> Object-oriented API </h3>
 <p>
-  Introducing the XS API related to <a href="/blog/20130305136248.html"> object-oriented</a>.
+  Introducing the XS API related to <a href="/blog/20130305136248.html">object-oriented</a>.
 </p>
 <h4> Create an object </h4>
 <p>
@@ -783,10 +772,10 @@ sv_isobject (sv_obj) &amp;&amp; sv_derived_from (sv_obj, "MyClass")
 <h3> Official Perl API documentation </h3>
 <ul>
   <li>
-    <a href="http://perldoc.jp/docs/perl/5.20.1/perlguts.pod"> perlguts - Introduction to Perl API</a> - Introduction to Perl's internal data structure and API increase.
+    <a href="http://perldoc.jp/docs/perl/5.20.1/perlguts.pod">perlguts - Introduction to Perl API</a> - Introduction to Perl's internal data structure and API increase.
   </li>
   <li>
-    <a href="http://perldoc.jp/docs/perl/5.12.1/perlapi.pod"> perlapi - Perl public API auto-generated documentation</a> - A list of Perl APIs is posted. ..
+    <a href="http://perldoc.jp/docs/perl/5.12.1/perlapi.pod">perlapi - Perl public API auto-generated documentation</a> - A list of Perl APIs is posted. ..
   </li>
 </ul>
 
@@ -794,8 +783,7 @@ sv_isobject (sv_obj) &amp;&amp; sv_derived_from (sv_obj, "MyClass")
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -812,12 +800,9 @@ sv_isobject (sv_obj) &amp;&amp; sv_derived_from (sv_obj, "MyClass")
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -826,8 +811,7 @@ sv_isobject (sv_obj) &amp;&amp; sv_derived_from (sv_obj, "MyClass")
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Histogram graph / Statistical analysis by PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -90,14 +84,14 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
 my $x = pdl [1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 5, 5, 5, 6, 7, 7, 7, 7, 8, 8, 10] ;
 my $bin_count = 5;
 
 # Create a histogram graph
-$pl-&gt; histogram (
+$pl-&gt;histogram (
    $x,
    $bin_count,
    BOX =&gt; [0, 10, 0, 20],
@@ -105,19 +99,18 @@ $pl-&gt; histogram (
 );
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 <hr>
 <p>
-  <a href="/blog/20121214135538.html"> Statistical analysis by PDL</a>
+  <a href="/blog/20121214135538.html">Statistical analysis by PDL</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -134,12 +127,9 @@ $pl-&gt; close;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -148,8 +138,7 @@ $pl-&gt; close;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

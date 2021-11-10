@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Math::Bezier - Find the coordinates of a Bezier curve with Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -83,22 +77,22 @@
 use Math::Bezier;
  
 # (x, y) Create a curve by passing a list of control points
-my $bezier = Math::Bezier-&gt; new ($x1, $y1, $x2, $y2, ..., $xn, $yn);
+my $bezier = Math::Bezier-&gt;new ($x1, $y1, $x2, $y2, ..., $xn, $yn);
  
 # Pass the reference instead
-my $bezier = Math::Bezier-&gt; new ([$x1, $y1, $x2, $y2, ..., $xn, $yn]);
+my $bezier = Math::Bezier-&gt;new ([$x1, $y1, $x2, $y2, ..., $xn, $yn]);
  
 # Determine the point(x, y) in the curve. Specify a range from 0 to 1.
-my ($x, $y) = $bezier-&gt; point(0.5);
+my ($x, $y) = $bezier-&gt;point(0.5);
  
 # Returns a list in scalar context
-my $xy = $bezier-&gt; point(0.5);
+my $xy = $bezier-&gt;point(0.5);
  
 # Returns the (x, y) points divided into 20 along the curve.
-my @curve = $bezier-&gt; curve (20);
+my @curve = $bezier-&gt;curve (20);
  
 # Receive in reference
-my $curve = $bezier-&gt; curve (20);
+my $curve = $bezier-&gt;curve (20);
 </pre>
 <h3> A sample that draws a 3D Bezier curve and divides it into 100 points </h3>
 <p>
@@ -120,13 +114,13 @@ use warnings;
 use Math::Bezier;
 
 # List of control points (x, y)
-my $bezier = Math::Bezier-&gt; new (0, 0, 10, 10, 20, 40);
+my $bezier = Math::Bezier-&gt;new (0, 0, 10, 10, 20, 40);
 
-my $curve_points = $bezier-&gt; curve (100);
+my $curve_points = $bezier-&gt;curve (100);
 
-for (my $i = 0; $i &lt;@ $curve_points; $i + = 2) {
-  my $x = $curve_points-&gt; [$i];
-  my $y = $curve_points-&gt; [$i + 1];
+for (my $i = 0; $i &lt;@$curve_points; $i + = 2) {
+  my $x = $curve_points-&gt;[$i];
+  my $y = $curve_points-&gt;[$i + 1];
   
   print "($x, $y)\n";
 }
@@ -238,15 +232,14 @@ for (my $i = 0; $i &lt;@ $curve_points; $i + = 2) {
 </pre>
 <h3> Math::Bezier documentation </h3>
 <p>
-  <a href="http://www.mahoroba.ne.jp/~felix/Toolbox/Lang/Perl/Package/Math-Bezier.html"> Math::Bezier documentation</a>
+  <a href="http://www.mahoroba.ne.jp/~felix/Toolbox/Lang/Perl/Package/Math-Bezier.html">Math::Bezier documentation</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -263,12 +256,9 @@ for (my $i = 0; $i &lt;@ $curve_points; $i + = 2) {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -277,8 +267,7 @@ for (my $i = 0; $i &lt;@ $curve_points; $i + = 2) {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

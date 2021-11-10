@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -90,7 +84,7 @@
   Strawberry Perl has a GUI operation module installed to create a web browser automatic operation robot. Mouse position specification, click, keyboard operation, clipboard operation, etc.
 </p>
 <p>
-  <a href="https://perlzemi.com/blog/20180808153368.html"> Installing Strawberry Perl</a>
+  <a href="https://perlzemi.com/blog/20180808153368.html">Installing Strawberry Perl</a>
 </p>
 <h3> Perl module used to create a web browser automatic operation robot </h3>
 <p>
@@ -192,7 +186,7 @@ my $win;
   unless ($browser_wins_count == 1) {
     die "Must be open one window");
   }
-  $win = $browser_wins [0];
+  $win = $browser_wins[0];
 }
 </pre>
 <!-
@@ -239,7 +233,7 @@ use Win32::Clipboard;
 </p>
 <pre>
 # Clipboard object creation
-my $clip = Win32::Clipboard-&gt; new;
+my $clip = Win32::Clipboard-&gt;new;
 </pre>
 <h4> Save Perl string to clipboard </h4>
 <p>
@@ -247,7 +241,7 @@ my $clip = Win32::Clipboard-&gt; new;
 </p>
 <pre>
 # Save string to clipboard
-$clip-&gt; Set (encode ('cp932', $string));
+$clip-&gt;Set (encode ('cp932', $string));
 </pre>
 <h4> Extract Perl string from clipboard </h4>
 <p>
@@ -255,7 +249,7 @@ $clip-&gt; Set (encode ('cp932', $string));
 </p>
 <pre>
 # Fetch a Perl string from the clipboard
-my $string = $CLIP-&gt; GetAs (CF_UNICODETEXT);
+my $string = $CLIP-&gt;GetAs (CF_UNICODETEXT);
 $text = Encode::decode ("UTF16-LE", $string);
 </pre>
 <h4> Paste the contents of the clipboard to the form part </h4>
@@ -296,8 +290,7 @@ sleep 3;
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -314,12 +307,9 @@ sleep 3;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -328,8 +318,7 @@ sleep 3;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

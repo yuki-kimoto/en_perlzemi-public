@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Archive::Tar - Create and extract tar file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -99,23 +88,23 @@
 <pre>
 # Loading modules and creating objects
 use Archive::Tar;
-my $tar = Archive::Tar-&gt; new;
+my $tar = Archive::Tar-&gt;new;
 </pre>
 <p>
   Use the <strong> read </strong> method to read the tar file information into memory. To extract the file, use the <strong> extract </strong> method after loading the tar file. The file will be expanded to the current directory.
 </p>
 <pre>
 # Extract tar file
-$tar-&gt; read('archive.tar');
-$tar-&gt; extract;
+$tar-&gt;read('archive.tar');
+$tar-&gt;extract;
 </pre>
 <p>
   You can also extract the tar file if it is compressed in gzip format. It will automatically determine if the file is compressed in gzip format.
 </p>
 <pre>
 # Extract tar file compressed in gzip format
-$tar-&gt; read('archive.tar.gz');
-$tar-&gt; extract;
+$tar-&gt;read('archive.tar.gz');
+$tar-&gt;extract;
 </pre>
 <p>
   To create a tar file, add the file with the <strong> add_files </strong> method and then write to the tar file with the <strong> write </strong> method. After changing the current directory, add the file name with add_files with a relative path.
@@ -126,15 +115,15 @@ my $curdir ='/ somedir';
 chdir $curdir
   or die qq / Can't change directory "$curdir": $! /;
 
-$tar-&gt; add_files ('xxx.txt','dir / yyy.txt');
-$tar-&gt; write ('archive.tar');
+$tar-&gt;add_files ('xxx.txt', 'dir / yyy.txt');
+$tar-&gt;write ('archive.tar');
 </pre>
 <p>
   You can also create a tar file compressed in gzip format. When compressing to gzip format, specify a value from 2 to 9 indicating the compression ratio in the second argument. The larger the number, the higher the compression ratio.
 </p>
 <pre>
 # Create tar.gz file
-$tar-&gt; write ('archive.tar.gz', 9);
+$tar-&gt;write ('archive.tar.gz', 9);
 </pre>
 <h3> Archive::Tar's Other Techniques </h3>
 <p>
@@ -142,35 +131,35 @@ $tar-&gt; write ('archive.tar.gz', 9);
 </p>
 <pre>
 # Extract only specified files
-$tar-&gt; extract ('xxx.txt','dir / yyy.txt');
+$tar-&gt;extract ('xxx.txt', 'dir / yyy.txt');
 </pre>
 <p>
   Use the <strong> list_files </strong> method to find out which files are contained in the tar file.
 </p>
 <pre>
 # Get the list of files contained in the tar file
-my @files = $tar-&gt; list_files;
+my @files = $tar-&gt;list_files;
 </pre>
 <p>
   Use the <strong> remove </strong> method to remove the specified file from the tar file.
 </p>
 <pre>
 # Remove the specified file from the tar file
-$tar-&gt; remove ('xxx.txt');
+$tar-&gt;remove ('xxx.txt');
 </pre>
 <p>
   Use the <strong> rename </strong> method to rename the file contained in the tar file.
 </p>
 <pre>
 # Rename the file contained in the tar file
-$tar-&gt; rename ('from.txt','to.txt');
+$tar-&gt;rename ('from.txt', 'to.txt');
 </pre>
 <p>
   You can use the <strong> clear method </strong> to clear the information in the tar file in memory.
 </p>
 <pre>
 # Clear tar file information in memory
-$tar-&gt; clear;
+$tar-&gt;clear;
 </pre>
 <h3> Archive::Tar FAQ </h3>
 <p>
@@ -188,7 +177,7 @@ my $curdir ='/ somedir';
 chdir $curdir
   or die qq / Can't change directory "$curdir": $! /;
 
-my $tar = Archive::Tar-&gt; new;
+my $tar = Archive::Tar-&gt;new;
 my $top ='top';
 
 my @files;
@@ -196,8 +185,8 @@ find (sub {
   push @files, $File::Find::name;
 }, $top);
 
-$tar-&gt; add_files (@files);
-$tar-&gt; write ("$top.tar");
+$tar-&gt;add_files (@files);
+$tar-&gt;write ("$top.tar");
 </pre>
 <p>
   Q. Is it possible to include the symbolic linked file in the tar file?
@@ -208,18 +197,17 @@ $tar-&gt; write ("$top.tar");
 <pre>
 # Include the symbolic link destination file in the tar file
 local $Archive::Tar::FOLLOW_SYMLINK = 1;
-$tar-&gt; write ('archive.tar');
+$tar-&gt;write ('archive.tar');
 </pre>
 <p>
-  (Reference) <a href="/blog/20080309120507.html"> local - Temporarily save and restore package variables</a>
+  (Reference) <a href="/blog/20080309120507.html">local - Temporarily save and restore package variables</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -236,12 +224,9 @@ $tar-&gt; write ('archive.tar');
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -250,8 +235,7 @@ $tar-&gt; write ('archive.tar');
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

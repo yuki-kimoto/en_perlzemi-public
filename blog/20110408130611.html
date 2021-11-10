@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Specify the class that describes the template when drawing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -78,15 +72,15 @@
 </div>
 
 
-  $headers-> content_type ('text / csv; charset = UTF-8');
+  $headers->content_type ('text / csv; charset = UTF-8');
   
   # Render data
-  return $self-> render (data => $content);
+  return $self->render (data => $content);
 <p>
   };
 </p>
 <p>
-  app-> start;
+  app->start;
 </p>
 </pre>
 <p>
@@ -100,7 +94,7 @@
   You can specify <strong> template_class </strong> as an argument of the render method for the class that describes the template when drawing.
 </p>
 <pre>
-$c-&gt; render (template_class =&gt; $class);
+$c-&gt;render (template_class =&gt; $class);
 </pre>
 <p>
   This is very useful if you want to write the template directly in a plugin etc. Mojolicious plugins are very flexible and allow you to write and incorporate the web application itself.
@@ -112,11 +106,11 @@ use Mojo::Base'Mojolicious::Plugin';
 sub register {
   my ($self, $app, $conf) = @_;
   
-  my $r = $app-&gt; route;
-  $r-&gt; get ('/ viewer', sub {
+  my $r = $app-&gt;route;
+  $r-&gt;get ('/ viewer', sub {
      my $self = shift;
      # Specify template class
-     return $self-&gt; render (template_class =&gt; __PACKAGE__);
+     return $self-&gt;render (template_class =&gt; __PACKAGE__);
   });
 }
 
@@ -124,7 +118,7 @@ sub register {
 
 __DATA__
 
-@@ viewer.html.ep
+@@viewer.html.ep
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt; Viewer &lt;/title&gt;
@@ -148,12 +142,12 @@ get'/ sizeunknowndata' =&gt; sub {
   my $self = shift;
 
   my $file ='foo.tar.gz';
-  open my $fh,'&lt;', $file
+  open my $fh, '&lt;', $file
     or die "Error";
 
   # Write chunk
-  $self-&gt; res-&gt; headers-&gt; content_type ('application / gzip');
-  $self-&gt; res-&gt; headers-&gt; content_disposition (qq / attachment; filename = "$file" /);
+  $self-&gt;res-&gt;headers-&gt;content_type ('application / gzip');
+  $self-&gt;res-&gt;headers-&gt;content_disposition (qq / attachment; filename = "$file" /);
   my $cb;
   $cb = sub {
     my $c = shift;
@@ -164,9 +158,9 @@ get'/ sizeunknowndata' =&gt; sub {
       undef $cb;
       return;
     }
-    $c-&gt; write_chunk ($buffer, $cb);
+    $c-&gt;write_chunk ($buffer, $cb);
   };
-  $self-&gt; $cb;
+  $self-&gt;$cb;
 };
 </pre>
 <p>
@@ -181,7 +175,7 @@ get'/ sizeunknowndata' =&gt; sub {
 </p>
 <h3> Draw a 404 Not Found page </h3>
 <p>
-  Use <strong> reply-> not_found </strong> to draw a 404 Not found page (the page to display when the page is not found). Twice
+  Use <strong> reply->not_found </strong> to draw a 404 Not found page (the page to display when the page is not found). Twice
 </p>
 <pre>
 get'/' =&gt; sub {
@@ -189,19 +183,19 @@ get'/' =&gt; sub {
   
   If you want to draw a page with # 404 not found
   if (...) {
-    return $self-&gt; reply-&gt; not_found;
+    return $self-&gt;reply-&gt;not_found;
   }
 
-  $self-&gt; render;
+  $self-&gt;render;
 }
 </pre>
 <h4> Changes in Mojolicious 6 </h4>
 <p>
-  The rendering of the 404 Not Found page has changed from render_not_found to reply-> not_found.
+  The rendering of the 404 Not Found page has changed from render_not_found to reply->not_found.
 </p>
 <h3> Draw exception (error) page </h3>
 <p>
-  You may want to show the error page to the user if something goes wrong with unintended processing. Use <strong> reply-> exception </strong> to draw such a page. Twice
+  You may want to show the error page to the user if something goes wrong with unintended processing. Use <strong> reply->exception </strong> to draw such a page. Twice
 </p>
 <pre>
 get'/' =&gt; sub {
@@ -209,15 +203,15 @@ get'/' =&gt; sub {
   
   # Draw exception (error) page
   if (...) {
-    return $self-&gt; reply-&gt; exception;
+    return $self-&gt;reply-&gt;exception;
   }
 
-  $self-&gt; render;
+  $self-&gt;render;
 }
 </pre>
 <h4> Changes in Mojolicious 6 </h4>
 <p>
-  The render_exception method for rendering exception pages has been changed to reply-> exception.
+  The render_exception method for rendering exception pages has been changed to reply->exception.
 </p>
 <h3> How to use JSON::XS to draw JSON </h3>
 <p>
@@ -228,18 +222,18 @@ use Mojolicious::Lite;
 use Mojo::JSON::XS;
 
 Replace handler for drawing # json
-app-&gt; renderer-&gt; add_handler (json =&gt; sub {
+app-&gt;renderer-&gt;add_handler (json =&gt; sub {
   my ($self, $c, $output, $options) = @_;
-  $$output = Mojo::JSON::XS-&gt; new-&gt; encode ($options-&gt; {json});
+  $$output = Mojo::JSON::XS-&gt;new-&gt;encode ($options-&gt;{json});
 });
 
 get'/' =&gt; sub {
   my $self = shift;
   
-  $self-&gt; render (json =&gt; {name =&gt;'kimoto'});
+  $self-&gt;render (json =&gt; {name =&gt;'kimoto'});
 };
 
-app-&gt; start;
+app-&gt;start;
 </pre>
 <p>
   Mojo::JSON::XS is a module that has the same interface as Mojo::JSON and uses JSON::XS internally. It's included in a package called Mojo::JSON::Any, so install it when you use it.
@@ -252,8 +246,7 @@ cpan Mojo::JSON::Any
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -270,12 +263,9 @@ cpan Mojo::JSON::Any
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -284,8 +274,7 @@ cpan Mojo::JSON::Any
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

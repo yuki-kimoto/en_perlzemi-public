@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,16 +24,15 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Selenium::Chrome - JavaScript-enabled web scraping using Chrome  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of  Selenium::Remote::Driver for Chrome. You can use it by installing Selenium::Remote::Driver.">
+<meta name="description" content="Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of Selenium::Remote::Driver for Chrome. You can use it by installing Selenium::Remote::Driver.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Selenium::Chrome - JavaScript-enabled web scraping using Chrome  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of  Selenium::Remote::Driver for Chrome. You can use it by installing Selenium::Remote::Driver." />
+<meta name="twitter:description" content="Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of Selenium::Remote::Driver for Chrome. You can use it by installing Selenium::Remote::Driver." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -78,7 +67,7 @@
 </ol>
 <h2><a href="/blog/20210107090920.html"> Selenium::Chrome - JavaScript-enabled web scraping using Chrome </a></h2>
 <p>
-  Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of <a href="/blog/20210105145700.html"> Selenium::Remote::Driver</a> for Chrome. You can use it by installing Selenium::Remote::Driver.
+  Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of <a href="/blog/20210105145700.html">Selenium::Remote::Driver</a> for Chrome. You can use it by installing Selenium::Remote::Driver.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,10 +89,10 @@
 <pre>
 # When running on Windows, Mac
 use Selenium::Chrome;
-my $driver = Selenium::Chrome-&gt; new;
-$driver-&gt; get ('http://www.google.com');
-print $driver-&gt; get_title ();
-$driver-&gt; shutdown_binary ();
+my $driver = Selenium::Chrome-&gt;new;
+$driver-&gt;get ('http://www.google.com');
+print $driver-&gt;get_title ();
+$driver-&gt;shutdown_binary ();
 </pre>
 <h4> When executing headless when there is no GUI screen such as Unix / Linux </h4>
 <p>
@@ -112,16 +101,16 @@ $driver-&gt; shutdown_binary ();
 <pre>
 When executing headless when there is no GUI screen such as # Unix / Linux
 use Selenium::Chrome;
-my $driver = Selenium::Chrome-&gt; new (
+my $driver = Selenium::Chrome-&gt;new (
   extra_capabilities =&gt; {
     'goog: chromeOptions' =&gt; {
-      args =&gt; ['headless','disable-gpu','window-size = 1920,1080','no-sandbox']
+      args =&gt; ['headless', 'disable-gpu', 'window-size = 1920,1080', 'no-sandbox']
     }
   }
 );
-$driver-&gt; get ('http://www.google.com');
-print $driver-&gt; get_title ();
-$driver-&gt; shutdown_binary ();
+$driver-&gt;get ('http://www.google.com');
+print $driver-&gt;get_title ();
+$driver-&gt;shutdown_binary ();
 </pre>
 <p>
   If the following error occurs, please execute headless with the above option.
@@ -142,32 +131,31 @@ $driver-&gt; shutdown_binary ();
 </p>
 <h4> For Unix / Linux </h4>
 <p>
-  <a href="https://centos.perlclub.net/blog/20210103090837.html"> Install Chrome Driver - Cent OS 7</a>
+  <a href="https://centos.perlclub.net/blog/20210103090837.html">Install Chrome Driver - Cent OS 7</a>
 </p>
 <p>
-  <a href="https://centos.perlclub.net/blog/20210104090837.html"> Install Google Chrome - CentOS 7</a>
+  <a href="https://centos.perlclub.net/blog/20210104090837.html">Install Google Chrome - CentOS 7</a>
 </p>
 <p>
-  For other <a href="https://linux.perlclub.net/"> UNIX / Linux</a> such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
+  For other <a href="https://linux.perlclub.net/">UNIX / Linux</a> such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
 </p>
 <h4> Windows </h4>
 <p>
-  <a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27"> On the SPA site, the environment construction procedure of performing GUI test with Selenium::Remote::Driver</a> will be helpful.
+  <a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27">On the SPA site, the environment construction procedure of performing GUI test with Selenium::Remote::Driver</a> will be helpful.
 </p>
 <p>
-  <a href="https://perlzemi.com/blog/20080602121231.html"> Active Perl</a> but <a href="https://perlzemi.com/blog/20180808153368.html"> Strawberry Perl </a> I think it's okay.
+  <a href="https://perlzemi.com/blog/20080602121231.html">Active Perl</a> but <a href="https://perlzemi.com/blog/20180808153368.html">Strawberry Perl </a> I think it's okay.
 </p>
 <h4> For Mac </h4>
 <p>
-  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455"> Using Selenium from Perl</a> The environment construction procedure will be helpful.
+  <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Using Selenium from Perl</a> The environment construction procedure will be helpful.
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -184,12 +172,9 @@ $driver-&gt; shutdown_binary ();
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -198,8 +183,7 @@ $driver-&gt; shutdown_binary ();
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

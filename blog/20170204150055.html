@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> How to use C ++ classes from XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20100809127859.html">
-        <span itemprop = "name"> XS </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20100809127859.html">        <span itemprop = "name">XS </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -98,7 +87,7 @@
 
 <h3> Create a module with h2xs </h3>
 <p>
-  First, create a module for XS with <a href="/blog/20170209150055.html"> h2xs</a>.
+  First, create a module for XS with <a href="/blog/20170209150055.html">h2xs</a>.
 </p>
 <pre>
 h2xs -A -n MyClass
@@ -217,7 +206,7 @@ print(...)
 {
   MyClass * self = XS_OBJ_TO_PTR (ST (0), MyClass *);
   
-  self-&gt; print();
+  self-&gt;print();
   XSRETURN (0);
 }
 
@@ -288,12 +277,12 @@ print(...)
 {
   MyClass * self = XS_OBJ_TO_PTR (ST (0), MyClass *);
   
-  self-&gt; print();
+  self-&gt;print();
   XSRETURN (0);
 }
 </pre>
 <p>
-  In the method call, the Perl object is passed as the first argument, so convert it to the pointer "MyClass *". Then call the method as "self-> print".
+  In the method call, the Perl object is passed as the first argument, so convert it to the pointer "MyClass *". Then call the method as "self->print".
 </p>
 <p>
   <b> Calling class methods </b>
@@ -329,7 +318,7 @@ void DESTORY (...)
 </pre>
 <h3> Modify Makefile.PL </h3>
 <p>
-  Next, let's modify <a href="/blog/20150725143778.html"> Makefile.PL</a> a little. The bottom "OBJECT" option is commented out by default, so uncomment it. If you set "$(O_FILES)", all C language source files and C ++ source files in the current directory will be compiled.
+  Next, let's modify <a href="/blog/20150725143778.html">Makefile.PL</a> a little. The bottom "OBJECT" option is commented out by default, so uncomment it. If you set "$(O_FILES)", all C language source files and C ++ source files in the current directory will be compiled.
 </p>
 <p>
   Then change the compiler and linker to "g ++". The compiler can be set with the "CC" option, and the linker can be set with the "LD".
@@ -346,9 +335,9 @@ WriteMakefile (
     ($]&gt; = 5.005? # # Add these new keywords supported since 5.005
       (ABSTRACT_FROM =&gt;'lib / MyClass.pm', # retrieve abstract from module
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') :()),
-    LIBS =&gt; [''], # e.g.,'-lm'
-     DEFINE =&gt;'', # e.g.,'-DHAVE_SOMETHING'
-     INC =&gt;'-I.', # e.g.,'-I. -I / usr / include / other'
+    LIBS =&gt; [''], # e.g., '-lm'
+     DEFINE =&gt;'', # e.g., '-DHAVE_SOMETHING'
+     INC =&gt;'-I.', # e.g., '-I. -I / usr / include / other'
      OBJECT =&gt;'$(O_FILES)', # link all the C files too
      CC =&gt;'g ++',
      LD =&gt;'g ++',
@@ -364,9 +353,9 @@ use warnings;
 
 use MyClass;
 
-my $obj = MyClass-&gt; new;
-$obj-&gt; print;
-MyClass-&gt; print_static;
+my $obj = MyClass-&gt;new;
+$obj-&gt;print;
+MyClass-&gt;print_static;
 </pre>
 <h3> Compile and run </h3>
 <p>
@@ -397,7 +386,7 @@ MyClass::print_static
     
     // Assign to array
     nums [i] = num;
-    printf("% d\n", num);
+    printf("%d\n", num);
   }
   
   // Release when no longer needed
@@ -446,7 +435,7 @@ foo (...)
 </pre>
 <h4> Convert hash reference to struct </h4>
 <p>
-  I will explain how to convert <a href="/blog/20161013147635.html"> Perl hash</a> to a C language structure.
+  I will explain how to convert <a href="/blog/20161013147635.html">Perl hash</a> to a C language structure.
 </p>
 <p>
   Declare the structure in the C language section.
@@ -495,11 +484,11 @@ foo (...)
   
   // Create a pointer to the structure
   Point * point = (Point *) malloc (sizeof (Point));
-  point-&gt; x = x;
-  point-&gt; y = y;
+  point-&gt;x = x;
+  point-&gt;y = y;
   
-  printf("% f\n", point-&gt; x);
-  printf("% f\n", point-&gt; y);
+  printf("%f\n", point-&gt;x);
+  printf("%f\n", point-&gt;y);
   
   // Release when no longer needed
   free (point);
@@ -530,12 +519,12 @@ foo (...)
 {
   // Structure
   Point * point = (Point *) malloc (sizeof (Point));
-  point-&gt; x = 1;
-  point-&gt; y = 2;
+  point-&gt;x = 1;
+  point-&gt;y = 2;
   
   // Convert value to SV * type
-  SV * x_sv = sv_2mortal (newSVnv (point-&gt; x));
-  SV * y_sv = sv_2mortal (newSVnv (point-&gt; y));
+  SV * x_sv = sv_2mortal (newSVnv (point-&gt;x));
+  SV * y_sv = sv_2mortal (newSVnv (point-&gt;y));
   
   // Create hash
   HV * point_hv = (HV *) sv_2mortal ((SV *) newHV ());
@@ -560,7 +549,7 @@ foo (...)
 </p>
 <ul>
   <li>
-    <a href="/blog/20100818127859.html"> perlapi - API for data manipulation in XS</a>
+    <a href="/blog/20100818127859.html">perlapi - API for data manipulation in XS</a>
   </li>
 </ul>
 
@@ -568,8 +557,7 @@ foo (...)
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -586,12 +574,9 @@ foo (...)
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -600,8 +585,7 @@ foo (...)
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

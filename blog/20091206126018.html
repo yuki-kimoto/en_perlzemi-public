@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> SQL basics learned using SQLite  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -85,7 +79,7 @@
 </p>
 <blockquote>
 <p>
-  <a href="/blog/20091203126018.html"> Install SQLite on Windows</a>
+  <a href="/blog/20091203126018.html">Install SQLite on Windows</a>
 </p>
 </blockquote>
 <p>
@@ -158,7 +152,7 @@ insert into table name (field name 1, field name 2, ..) values ​​(value 1, v
   To add a record with "title" of "Good life", "author" of "Saki" and "price" of "1900" to the table, execute the following SQL. Note that if the data is a string, enclose it in single quotes.
 </p>
 <pre>
-insert into books (title, author, price) values ​​('Good life','Saki', 1900);
+insert into books (title, author, price) values ​​('Good life', 'Saki', 1900);
 </pre>
 <p>
   This will add a record like the one below to the table.
@@ -183,8 +177,8 @@ select * from books;
   Let's insert a few more records for the rest of this.
 </p>
 <pre>
-insert into books (title, author, price) values ​​('Simple is good','Mai', 2000);
-insert into books (title, author, price) values ​​('Good morning','Kenta', 3000);
+insert into books (title, author, price) values ​​('Simple is good', 'Mai', 2000);
+insert into books (title, author, price) values ​​('Good morning', 'Kenta', 3000);
 </pre>
 <h3> Record update update </h3>
 <p>
@@ -204,7 +198,7 @@ update books set title ='Ruby' where author ='taro'
 </p>
 <pre>
 my $update = "update books set title ='Ruby' where author ='taro'";
-$dbh-&gt; do($update);
+$dbh-&gt;do($update);
 </pre>
 <p>
   The previous record is updated and looks like this:
@@ -234,22 +228,21 @@ delete from books where author ='taro';
 </p>
 <pre>
 my $delete = "delete from books where author ='taro';";
-$dbh-&gt; do($delete);
+$dbh-&gt;do($delete);
 </pre>
 <p>
   The record will be deleted.
 </p>
 <hr>
 <p>
-  <a href="/blog/20091205126018.html"> To the basics of databases learned with SQLite</a>
+  <a href="/blog/20091205126018.html">To the basics of databases learned with SQLite</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -266,12 +259,9 @@ $dbh-&gt; do($delete);
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -280,8 +270,7 @@ $dbh-&gt; do($delete);
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

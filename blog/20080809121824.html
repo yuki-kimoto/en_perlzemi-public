@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Safely read and write files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">      <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20110212130370.html">      <span itemprop = "name">File input / output </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20080809121824.html"> Safely read and write files </a></h2>
@@ -162,11 +150,11 @@ File::Copy::move ($tmpfile, $infile)
   or die "Cannot move $tmpfile to $infile";
 </pre>
 <p>
-  I'm using a <a href="/blog/20100123126425.html"> while statement</a> to safely read the rows in order.
+  I'm using a <a href="/blog/20100123126425.html">while statement</a> to safely read the rows in order.
 </p>
 <h3> How to read and write files safely </h3>
 <p>
-  If you read the <a href="/blog/20080718121643.html"> open function</a> documentation, you should specify the open mode "+ <" for the open function to read and write files. maybe. You can read and write this way, but it's very dangerous.
+  If you read the <a href="/blog/20080718121643.html">open function</a> documentation, you should specify the open mode "+ <" for the open function to read and write files. maybe. You can read and write this way, but it's very dangerous.
 </p>
 <p>
   If the system crashes while writing, the files will be corrupted and cannot be restored.
@@ -241,10 +229,10 @@ close $tmpfh
   Although omitting the error check for closing the read file does not cause a serious problem, it is necessary to perform the error check for the written file.
 </p>
 <p>
-  Perl's <a href="/blog/20170404149131.html"> print function</a> buffers (stores in memory) what you write. Buffering means that when you call the print function, it doesn't actually write to the file. Outputting to a file is very slow, so it is implicit that the contents to be written are stored in a buffer and written out all at once.
+  Perl's <a href="/blog/20170404149131.html">print function</a> buffers (stores in memory) what you write. Buffering means that when you call the print function, it doesn't actually write to the file. Outputting to a file is very slow, so it is implicit that the contents to be written are stored in a buffer and written out all at once.
 </p>
 <p>
-  If the written contents are accumulated to a certain extent, it will be output to a file, but it will not be output until then. In that case, when the <a href="/blog/20160312145776.html"> close function</a> is called, it will be output to a file (forcibly writing the buffer contents to a file is called flash). increase).
+  If the written contents are accumulated to a certain extent, it will be output to a file, but it will not be output until then. In that case, when the <a href="/blog/20160312145776.html">close function</a> is called, it will be output to a file (forcibly writing the buffer contents to a file is called flash). increase).
 </p>
 <p>
   So if close fails, the buffer will be left unflushed and you will not be able to write the correct content. To prevent this from happening, you need to code to ensure that you avoid close errors.
@@ -256,18 +244,17 @@ File::Copy::move ($tmpfile, $infile)
   or die "Cannot move $tmpfile to $infile";
 </pre>
 <p>
-  (Reference) <a href="/blog/20100212126425.html"> die function</a>
+  (Reference) <a href="/blog/20100212126425.html">die function</a>
 </p>
 <p>
-  Use the <a href="/blog/20100408127089.html"> File::Copy</a> module to rename the temporary file for writing to the original file name. That's it.
+  Use the <a href="/blog/20100408127089.html">File::Copy</a> module to rename the temporary file for writing to the original file name. That's it.
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -284,12 +271,9 @@ File::Copy::move ($tmpfile, $infile)
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -298,8 +282,7 @@ File::Copy::move ($tmpfile, $infile)
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

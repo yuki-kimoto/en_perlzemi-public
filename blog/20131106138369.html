@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Creating a graph with PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">        <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-        <span itemprop = "name"> PDL </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">        <span itemprop = "name">PDL </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -99,7 +87,7 @@
 
 <h3> Install PDL::Graphics::PLplot </h3>
 <p>
-  Install the module <strong> PDL::Graphics::PLplot </strong> to draw the graph. (You need to <a href="/blog/20131101138330.html"> PDL installed</a> first.)
+  Install the module <strong> PDL::Graphics::PLplot </strong> to draw the graph. (You need to <a href="/blog/20131101138330.html">PDL installed</a> first.)
 </p>
 <h4> Windows </h4>
 <p>
@@ -150,19 +138,19 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object (output as graph.png in PNG format)
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # Create a PDL variable that represents 0 to 99 as the value of x
-my $x = pdl-&gt; sequence (100);
+my $x = pdl-&gt;sequence (100);
 
 # y = 2x
 my $y = 2 * $x;
 
 # Create a graph
-$pl-&gt; xyplot ($x, $y);
+$pl-&gt;xyplot ($x, $y);
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 <p>
   You can create a graph of the linear function as follows.
@@ -177,7 +165,7 @@ $pl-&gt; close;
   Here are some graph options. It can be passed as an argument to the new method.
 </p>
 <pre>
-my $pl = PDL::Graphics::PLplot-&gt; new (
+my $pl = PDL::Graphics::PLplot-&gt;new (
   DEV =&gt;'png',
   FILE =&gt;'graph.png',
   PAGESIZE =&gt; [500, 400]
@@ -197,7 +185,7 @@ PAGESIZE =&gt; [500, 400]
   This option is specified when drawing the graph.
 </p>
 <pre>
-$pl-&gt; xyplot ($x, $y, XLAB =&gt;'x', YLAB =&gt;'y');
+$pl-&gt;xyplot ($x, $y, XLAB =&gt;'x', YLAB =&gt;'y');
 </pre>
 <p>
   <b> x-axis label </b>
@@ -329,20 +317,20 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object (output as graph.png in PNG format)
-my $pl = PDL::Graphics::PLplot-&gt; new (
+my $pl = PDL::Graphics::PLplot-&gt;new (
   DEV =&gt;'png',
   FILE =&gt;'graph.png',
   PAGESIZE =&gt; [600, 300],
 );
 
 # Create a PDL variable that represents 0 to 99 as the value of x
-my $x = pdl-&gt; sequence (100)- 50;
+my $x = pdl-&gt;sequence (100)- 50;
 
 # y = 2x
 my $y = (1/2) * $x + 10;
 
 # Create a graph
-$pl-&gt; xyplot (
+$pl-&gt;xyplot (
   $x,
   $y,
   XLAB =&gt;'x',
@@ -355,7 +343,7 @@ $pl-&gt; xyplot (
 );
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 <h3> Graph of n-th order function </h3>
 <p>
@@ -372,19 +360,19 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value (0 to 4 in 0.1 increments)
-my $x = pdl-&gt; sequence (40) * 0.1;
+my $x = pdl-&gt;sequence (40) * 0.1;
 
 # y = x ^ 3 - 6x ^ 2 + 11x -6
 my $y = ($x ** 3) -6 * ($x ** 2) + (11 * $x) -6;
 
 # Create a graph
-$pl-&gt; xyplot ($x, $y);
+$pl-&gt;xyplot ($x, $y);
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 <h3> Trigonometric function </h3>
 <p>
@@ -401,19 +389,19 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
-my $x = pdl-&gt; sequence (200) * 0.1;
+my $x = pdl-&gt;sequence (200) * 0.1;
 
 # y = sin(x)
-my $y = $x-&gt; sin;
+my $y = $x-&gt;sin;
 
 # Create a graph
-$pl-&gt; xyplot ($x, $y);
+$pl-&gt;xyplot ($x, $y);
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 <h3> Exponential function </h3>
 <p>
@@ -430,22 +418,22 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # e
 my $e = pdl [exp(1)];
 
 # x value
-my $x = pdl-&gt; sequence (60) * 0.1 - 3;
+my $x = pdl-&gt;sequence (60) * 0.1 - 3;
 
 # y = e ^ x
 my $y = $e ** $x;
 
 # Create a graph
-$pl-&gt; xyplot ($x, $y);
+$pl-&gt;xyplot ($x, $y);
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 
 </pre>
 <h3> Logarithmic function (natural logarithm) </h3>
@@ -463,19 +451,19 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
-my $x = pdl-&gt; sequence (100) * 0.1 + 0.1;
+my $x = pdl-&gt;sequence (100) * 0.1 + 0.1;
 
 # y = log(x)
-my $y = $x-&gt; log;
+my $y = $x-&gt;log;
 
 # Create a graph
-$pl-&gt; xyplot ($x, $y);
+$pl-&gt;xyplot ($x, $y);
 
 # Close
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 <h3> Strip plot-graph of one x-axis and multiple y-axis </h3>
 <p>
@@ -492,36 +480,35 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt; new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # data
-my $x = pdl-&gt; sequence (20);
+my $x = pdl-&gt;sequence (20);
 my $pi = 4 * atan2 (1,1);
 my $y1 = $x ** 2;
 my $y2 = sqrt $x;
 my $y3 = $x ** 3;
 my $y4 = sin(($x / 20) * 2 * $pi);
-my $ys = $y1-&gt; cat ($y2, $y3, $y4);
+my $ys = $y1-&gt;cat ($y2, $y3, $y4);
 
 # Strip plot
-$pl-&gt; stripplots (
+$pl-&gt;stripplots (
   $x,
   $ys,
   PLOTTYPE =&gt;'LINE',
   TITLE =&gt;'functions',
-  YLAB =&gt; ['x ** 2','sqrt(x)','x ** 3','sin(x / 20 * 2pi)'],
-  COLOR =&gt; ['GREEN','DEEPSKYBLUE','DARKORCHID1','DEEPPINK'],
+  YLAB =&gt; ['x ** 2', 'sqrt(x)', 'x ** 3', 'sin(x / 20 * 2pi)'],
+  COLOR =&gt; ['GREEN', 'DEEPSKYBLUE', 'DARKORCHID1', 'DEEPPINK'],
   XLAB =&gt;'X label'
 );
-$pl-&gt; close;
+$pl-&gt;close;
 </pre>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -538,12 +525,9 @@ $pl-&gt; close;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -552,8 +536,7 @@ $pl-&gt; close;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

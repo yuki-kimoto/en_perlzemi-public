@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Subroutine reference  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161025147739.html">
-        <span itemprop = "name"> Subroutine </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161025147739.html">        <span itemprop = "name">Subroutine </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -101,24 +89,24 @@
 # Create reference
 my $twice_ref = \ &amp; twice;
 # Dereference and call
-my $twice_num = $twice_ref-&gt; ($num);
+my $twice_num = $twice_ref-&gt;($num);
  
 sub twice {
-  return $_ [0] * 2;
+  return $_[0] * 2;
 }
 </pre>
 <p>
-  Express the subroutine itself with & twice. (Similar to an array with @ and a hash with%, a subroutine is represented with &.) Normally, subroutines are called like twice ($num). You can also call it explicitly, like & twice ($num).
+  Express the subroutine itself with & twice. (Similar to an array with @and a hash with%, a subroutine is represented with &.) Normally, subroutines are called like twice ($num). You can also call it explicitly, like & twice ($num).
 </p>
 <p>
-  To represent a reference to a subroutine, use \ & twice. To call the subroutine, dereference the reference to the subroutine, as in $twice_ref-> (1). A description very similar to a hash or array dereference.
+  To represent a reference to a subroutine, use \ & twice. To call the subroutine, dereference the reference to the subroutine, as in $twice_ref->(1). A description very similar to a hash or array dereference.
 </p>
 <p>
   See the following articles for a detailed explanation of the reference.
 </p>
 <ul>
   <li>
-    <a href="/blog/20100930127859.html"> Let's master how to use the reference</a>
+    <a href="/blog/20100930127859.html">Let's master how to use the reference</a>
   </li>
 </ul>
 <h4> Reference to anonymous subroutines </h4>
@@ -157,7 +145,7 @@ Create a # array of references to # subroutines.
 my @calc_funcs = (\ &amp; sum, \ &amp; average);
                                        
 for my $calc_func (@calc_funcs) {
-  my $result = $calc_func-&gt; (@nums);
+  my $result = $calc_func-&gt;(@nums);
   print "Result: $result\n";
 }
 print "\n";
@@ -187,7 +175,7 @@ else {
   $calc_func = \ &amp; average;
 }
 
-my $result = $calc_func-&gt; (@nums);
+my $result = $calc_func-&gt;(@nums);
 
 print "Calculation method: $how_to_calc\n".
   "Result: $result\n\n";
@@ -197,10 +185,10 @@ print "3: Selectively process using reference to subroutine and hash.\n";
 $how_to_calc ='average';
 my %calc_table = (sum =&gt; \ &amp; sum, average =&gt; \ &amp; average);
 
-# $calc_table {'average'} is a reference to the subroutine
-Since # is included, dereference it with the-&gt; operator.
+# $calc_table{'average'} is a reference to the subroutine
+Since # is included, dereference it with the-&gt;operator.
 # Call a subroutine.
-$result = $calc_table {$how_to_calc}-&gt; (@nums);
+$result = $calc_table{$how_to_calc}-&gt;(@nums);
 
 print "Calculation method: $how_to_calc\n".
   "Result: $result\n\n";
@@ -209,11 +197,11 @@ print "Calculation method: $how_to_calc\n".
 <pre>
 my @calc_funcs = (\ &amp; sum, \ &amp; average);
 for my $calc_func (@calc_funcs) {
-  my $result = $calc_func-&gt; (@nums);
+  my $result = $calc_func-&gt;(@nums);
 }
 </pre>
 <p>
-  To apply subroutines in sequence to a <a href="/blog/20161107147852.html"> variable</a>, use a reference to the subroutine. Store the reference to the subroutine in an array and call the subroutine repeatedly in <a href="/blog/20170521149524.html"> for loop</a>.
+  To apply subroutines in sequence to a <a href="/blog/20161107147852.html">variable</a>, use a reference to the subroutine. Store the reference to the subroutine in an array and call the subroutine repeatedly in <a href="/blog/20170521149524.html">for loop</a>.
 </p>
 <h4> Image of variables and subroutines </h4>
 <pre>
@@ -241,13 +229,13 @@ else {
   $calc_func = \ &amp; average;
 }
 
-my $result = $calc_func-&gt; (@nums);
+my $result = $calc_func-&gt;(@nums);
 </pre>
 <p>
   Polymorphism is a term that means "the same description but different functions are called". Object-oriented often means that "different methods are applied depending on the object".
 </p>
 <p>
-  In this example, the statement $calc_func-> (@num) has different meanings depending on what is assigned to $calc_func. If \ $sum is assigned, the sum subroutine is called, and if \ $average is assigned, the average subroutine is called.
+  In this example, the statement $calc_func->(@num) has different meanings depending on what is assigned to $calc_func. If \$sum is assigned, the sum subroutine is called, and if \$average is assigned, the average subroutine is called.
 </p>
 <p>
   In java, overloading and overriding are the ways to achieve polymorphism, and in C they are function pointers.
@@ -256,10 +244,10 @@ my $result = $calc_func-&gt; (@nums);
 <pre>
 $how_to_calc ='average';
 my %calc_table = (sum =&gt; \ &amp; sum, average =&gt; \ &amp; average);
-$result = $calc_table {$how_to_calc}-&gt; (@nums);
+$result = $calc_table{$how_to_calc}-&gt;(@nums);
 </pre>
 <p>
-  I think the <a href="/blog/20161013147635.html"> hash</a> method is the most sophisticated form of function-referenced polymorphism.
+  I think the <a href="/blog/20161013147635.html">hash</a> method is the most sophisticated form of function-referenced polymorphism.
 </p>
 <p>
   Although it is a selective process, it does not use any if statements. The process is branched by calling the subroutine corresponding to the hash key.
@@ -269,16 +257,16 @@ $result = $calc_table {$how_to_calc}-&gt; (@nums);
   A <strong> signal handler </strong> is a subroutine that is executed triggered by a signal. A signal is a signal that the OS sends to a process. Ctrl + c asks the OS to "send an INT signal to the currently running process." The alerm function also asks the OS to "send a LARM signal to the currently running process after n seconds".
 </p>
 <pre>
-$SIG {INT} = sub {
+$SIG{INT} = sub {
   die "INT signal sent to this process.";
 };
 
-$SIG {ALRM} = sub {
+$SIG{ALRM} = sub {
   die "ALRM signal was sent to this process.";
 };
 </pre>
 <p>
-  To catch the INT signal, assign a reference to the subroutine to $SIG {INT}. This example defines an anonymous subroutine and assigns its reference.
+  To catch the INT signal, assign a reference to the subroutine to $SIG{INT}. This example defines an anonymous subroutine and assigns its reference.
 </p>
 <p>
   There are a lot of things to note about signals, but I won't write them here. I write it when I write about interprocess communication.
@@ -306,10 +294,10 @@ text,
 # Subroutine that parses a string (event detection function)
 sub parse {
   # Receives a hash of text and event handlers.
-  my ($text,% handler) = @_;
+  my ($text,%handler) = @_;
   
   # First called handler
-  $handler {start_h}-&gt; ();
+  $handler{start_h}-&gt;();
   
   # Analyze one character at a time.
   for my $i (0 .. length($text) ―― 1) {
@@ -319,12 +307,12 @@ sub parse {
     # Made available in callback functions
     # Pass the character and position as arguments.
     if ($char = ~ / [a-z] /) {
-      $handler {lc_h}-&gt; ($char, $i);
+      $handler{lc_h}-&gt;($char, $i);
     }
   }
   
   # Last called handler
-  $handler {end_h}-&gt; ();
+  $handler{end_h}-&gt;();
 }
 
 # Event handler (callback function)
@@ -346,7 +334,7 @@ sub end {
 }
 </pre>
 <p>
-  (Reference) <a href="/blog/20080224120386.html"> substr function</a>
+  (Reference) <a href="/blog/20080224120386.html">substr function</a>
 </p>
 <h4> (1) Subroutine for detecting events </h4>
 <pre>
@@ -361,10 +349,10 @@ parse (
 # Event detection function
 sub parse {
   # Receives a hash of text and event handlers.
-  my ($text,% handler) = @_;
+  my ($text,%handler) = @_;
   
   # First called handler
-  $handler {start_h}-&gt; ();
+  $handler{start_h}-&gt;();
   # ...
 }
 </pre>
@@ -419,17 +407,17 @@ print "1: Reference to subroutine\n";
 my $twice_ref = \ &amp; twice;
 
 # When calling
-# $sub_ref-&gt; (arg1, arg2)
+# $sub_ref-&gt;(arg1, arg2)
 Call it like # .
 # When no argument is needed
-# $sub_ref-&gt; ().
+# $sub_ref-&gt;().
 my $num = 1;
-my $twice_num = $twice_ref-&gt; ($num);
+my $twice_num = $twice_ref-&gt;($num);
 
 print "Twice of $num is $twice_num.\n\n";
 
 sub twice {
-  return $_ [0] * 2;
+  return $_[0] * 2;
 }
 
 
@@ -444,12 +432,12 @@ my $sum_ref = sub {
   return $total;
 };
 
-my $total = $sum_ref-&gt; (1, 2, 3);
+my $total = $sum_ref-&gt;(1, 2, 3);
 print "The sum of 1,2,3 is $total.\n\n";
 </pre>
 <h4> Signal handler </h4>
 <p>
-  This is a sample using a signal handler. I'm using a <a href="/blog/20100123126425.html"> while statement</a> to do an infinite loop.
+  This is a sample using a signal handler. I'm using a <a href="/blog/20100123126425.html">while statement</a> to do an infinite loop.
 </p>
 <pre>
 use strict;
@@ -457,7 +445,7 @@ use warnings;
 
 print "1: Capture INT signal with signal handler.\n";
 
-$SIG {INT} = sub {
+$SIG{INT} = sub {
   die "INT signal sent to this process.";
 };
 
@@ -472,7 +460,7 @@ use warnings;
 
 print "2: Capture ALRM signal with signal handler.\n";
 
-$SIG {ALRM} = sub {
+$SIG{ALRM} = sub {
   die "ALRM signal was sent to this process.";
 };
 
@@ -487,8 +475,7 @@ while (1) {};
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -505,12 +492,9 @@ while (1) {};
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -519,8 +503,7 @@ while (1) {};
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

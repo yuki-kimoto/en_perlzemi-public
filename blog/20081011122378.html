@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Get holidays with Google Calendar Data API  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161123147990.html">
-        <span itemprop = "name"> Date / Time </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161123147990.html">        <span itemprop = "name">Date / Time </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -96,7 +85,7 @@
   In this sample, we will get the data of Japanese holidays provided by Google with Google Calendar Data API.
 </p>
 <p>
-  It is not absolutely reliable because it is the data of Japanese holidays examined by Google. <span style = "color: # FF0000;"> If Google is wrong, it will get the wrong holiday data, so please do not use it as it is for applications where the wrong date causes damage. </span> Make sure you are correct by other means.
+  It is not absolutely reliable because it is the data of Japanese holidays examined by Google. <span style = "color: # FF0000;">If Google is wrong, it will get the wrong holiday data, so please do not use it as it is for applications where the wrong date causes damage. </span> Make sure you are correct by other means.
 </p>
 <pre>
 use strict;
@@ -126,28 +115,28 @@ my $query = "start-min = ${start_date} &amp; start-max = ${end_date} &amp; max-r
 my $feed_url = $feed_base.'?'. $Query;
 
 # Get XML from the web
-my $http_client = LWP::UserAgent-&gt; new;
-my $response = $http_client-&gt; get ($feed_url);
+my $http_client = LWP::UserAgent-&gt;new;
+my $response = $http_client-&gt;get ($feed_url);
 
 my $holidays_xml;
-if ($response-&gt; is_success) {
-  $holidays_xml = $response-&gt; content;
+if ($response-&gt;is_success) {
+  $holidays_xml = $response-&gt;content;
 }
 else {
   die "Failed to get the feed.";
 }
 
 # Parse XML
-my $xml_parser = XML::Simple-&gt; new;
+my $xml_parser = XML::Simple-&gt;new;
 # XML::Change parser for those who don't have SAX
 $XML::Simple::PREFERRED_PARSER ='XML::Parser';
-my $holidays_data = $xml_parser-&gt; XMLin ($holidays_xml);
+my $holidays_data = $xml_parser-&gt;XMLin ($holidays_xml);
 
 my $holidays = [];
-for my $key (keys%{$holidays_data-&gt; {'entry'}}) {
-  my $holiday_day = $holidays_data-&gt; {entry} {$key} {'gd: when'} {startTime};
-  my $holiday_name = $holidays_data-&gt; {entry} {$key} {title} {content};
-  push @ $holidays, {day =&gt; $holiday_day, name =&gt; $holiday_name};
+for my $key (keys %{$holidays_data-&gt;{'entry'}}) {
+  my $holiday_day = $holidays_data-&gt;{entry}{$key}{'gd: when'}{startTime};
+  my $holiday_name = $holidays_data-&gt;{entry}{$key}{title}{content};
+  push @$holidays, {day =&gt; $holiday_day, name =&gt; $holiday_name};
 }
 
 # Character code is Perl's internal representation (UTF8), so encode as you like
@@ -161,14 +150,14 @@ else {
 }
 
 # Encode all data
-for my $holiday (@ $holidays) {
+for my $holiday (@$holidays) {
   for my $key (keys %$holiday) {
-    $holiday-&gt; {$key} = encode ($encode_to, $holiday-&gt; {$key});
+    $holiday-&gt;{$key} = encode ($encode_to, $holiday-&gt;{$key});
   }
 }
 
 use Data::Dumper;
-print Data::Dumper-&gt; Dump ([$holidays], ['* holidays']);
+print Data::Dumper-&gt;Dump ([$holidays], ['* holidays']);
 </pre>
 <h3> Holiday issues </h3>
 <p>
@@ -219,12 +208,12 @@ my $feed_url = $feed_base.'?'. $Query;
 </p>
 <pre>
 use LWP::UserAgent;
-my $http_client = LWP::UserAgent-&gt; new;
-my $response = $http_client-&gt; get ($feed_url);
+my $http_client = LWP::UserAgent-&gt;new;
+my $response = $http_client-&gt;get ($feed_url);
 
 my $holidays_xml;
-if ($response-&gt; is_success) {
-  $holidays_xml = $response-&gt; content;
+if ($response-&gt;is_success) {
+  $holidays_xml = $response-&gt;content;
 }
 else {
   die "Failed to get the feed.";
@@ -238,15 +227,15 @@ else {
 use XML::Simple;
 
 # Parse XML
-my $xml_parser = XML::Simple-&gt; new ();
+my $xml_parser = XML::Simple-&gt;new ();
 $XML::Simple::PREFERRED_PARSER ='XML::Parser';
-my $holidays_data = $xml_parser-&gt; XMLin ($holidays_xml);
+my $holidays_data = $xml_parser-&gt;XMLin ($holidays_xml);
 
 my $holidays = [];
-for my $key (keys%{$holidays_data-&gt; {'entry'}}) {
-  my $holiday_day = $holidays_data-&gt; {entry} {$key} {'gd: when'} {startTime};
-  my $holiday_name = $holidays_data-&gt; {entry} {$key} {title} {content};
-  push @ $holidays, {day =&gt; $holiday_day, name =&gt; $holiday_name};
+for my $key (keys %{$holidays_data-&gt;{'entry'}}) {
+  my $holiday_day = $holidays_data-&gt;{entry}{$key}{'gd: when'}{startTime};
+  my $holiday_name = $holidays_data-&gt;{entry}{$key}{title}{content};
+  push @$holidays, {day =&gt; $holiday_day, name =&gt; $holiday_name};
 }
 </pre>
 <p>
@@ -254,10 +243,10 @@ for my $key (keys%{$holidays_data-&gt; {'entry'}}) {
 </p>
 <pre>
 # Holiday dates
-$holidays_data-&gt; {'entry'} {URL as an identifier} {'gd: when'} {startTime};
+$holidays_data-&gt;{'entry'}{URL as an identifier}{'gd: when'}{startTime};
 
 # Holiday name
-$holidays_data-&gt; {entry} {URL as an identifier} {title} {content};
+$holidays_data-&gt;{entry}{URL as an identifier}{title}{content};
 </pre>
 <h4> Convert character code </h4>
 <p>
@@ -280,9 +269,9 @@ else {
 }
 
 # Encode all data
-for my $holiday (@ $holidays) {
+for my $holiday (@$holidays) {
    for my $key (keys %$holiday) {
-     $holiday-&gt; {$key} = encode ($encode_to, $holiday-&gt; {$key});
+     $holiday-&gt;{$key} = encode ($encode_to, $holiday-&gt;{$key});
    }
 }
 </pre>
@@ -291,8 +280,7 @@ for my $holiday (@ $holidays) {
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -309,12 +297,9 @@ for my $holiday (@ $holidays) {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -323,8 +308,7 @@ for my $holiday (@ $holidays) {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

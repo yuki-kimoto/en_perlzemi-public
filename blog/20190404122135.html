@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> How to serve static HTML files and CGI in development environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -98,35 +92,35 @@ use File::Temp'temp file';
 use Mojolicious::Lite;
 
 # render CGI
-app-&gt; hook (before_dispatch =&gt; sub {
+app-&gt;hook (before_dispatch =&gt; sub {
   my $c = shift;
   
-  my $req = $c-&gt; req;
+  my $req = $c-&gt;req;
   
-  my $path = $req-&gt; url-&gt; path;
+  my $path = $req-&gt;url-&gt;path;
   
   if ($path = ~ /\.cgi$/) {
-    my $method = $c-&gt; req-&gt; method;
-    my $script_name = $c-&gt; app-&gt; home-&gt; rel_file ("public / $path");
+    my $method = $c-&gt;req-&gt;method;
+    my $script_name = $c-&gt;app-&gt;home-&gt;rel_file ("public / $path");
     
     # CGI Environment variable
-    local $ENV {AUTH_TYPE} ='';
-    local $ENV {CONTENT_LENGTH} = $req-&gt; headers-&gt; content_length;
-    local $ENV {CONTENT_TYPE} = $req-&gt; headers-&gt; content_type;
-    local $ENV {GATEWAY_INTERFACE} ='CGI / 1.1';
-    local $ENV {PATH_INFO} = $req-&gt; url-&gt; path;
-    local $ENV {PATH_TRANSLATED} = $req-&gt; url-&gt; path;
-    local $ENV {QUERY_STRING} = $req-&gt; url-&gt; query-&gt; to_string;
-    local $ENV {REMOTE_ADDR} = $c-&gt; tx-&gt; remote_address;
-    local $ENV {REMOTE_HOST} = $c-&gt; tx-&gt; remote_address;
-    local $ENV {REMOTE_IDENT} ='';
-    local $ENV {REMOTE_USER} ='';
-    local $ENV {REQUEST_METHOD} = $method;
-    local $ENV {SCRIPT_NAME} = $script_name;
-    local $ENV {SERVER_NAME} ='localhost';
-    local $ENV {SERVER_PORT} = $c-&gt; tx-&gt; remote_port;
-    local $ENV {SERVER_SOFTWARE} = "Mojolicious (Perl)";
-    local $ENV {SERVER_PROTOCOL} ='HTTP / 1.1';
+    local $ENV{AUTH_TYPE} ='';
+    local $ENV{CONTENT_LENGTH} = $req-&gt;headers-&gt;content_length;
+    local $ENV{CONTENT_TYPE} = $req-&gt;headers-&gt;content_type;
+    local $ENV{GATEWAY_INTERFACE} ='CGI / 1.1';
+    local $ENV{PATH_INFO} = $req-&gt;url-&gt;path;
+    local $ENV{PATH_TRANSLATED} = $req-&gt;url-&gt;path;
+    local $ENV{QUERY_STRING} = $req-&gt;url-&gt;query-&gt;to_string;
+    local $ENV{REMOTE_ADDR} = $c-&gt;tx-&gt;remote_address;
+    local $ENV{REMOTE_HOST} = $c-&gt;tx-&gt;remote_address;
+    local $ENV{REMOTE_IDENT} ='';
+    local $ENV{REMOTE_USER} ='';
+    local $ENV{REQUEST_METHOD} = $method;
+    local $ENV{SCRIPT_NAME} = $script_name;
+    local $ENV{SERVER_NAME} ='localhost';
+    local $ENV{SERVER_PORT} = $c-&gt;tx-&gt;remote_port;
+    local $ENV{SERVER_SOFTWARE} = "Mojolicious (Perl)";
+    local $ENV{SERVER_PROTOCOL} ='HTTP / 1.1';
     
     # Check script name
     unless ($script_name = ~ / ^ [a-zA-Z_0-9 \ / \-\.] + $/) {
@@ -139,20 +133,20 @@ app-&gt; hook (before_dispatch =&gt; sub {
       # GET requst
       $output = `$^ X $script_name`;
       if ($?) {
-        $c-&gt; res-&gt; code ('505');
-        $c-&gt; render (text =&gt; "Internal Server Error");
+        $c-&gt;res-&gt;code ('505');
+        $c-&gt;render (text =&gt; "Internal Server Error");
       }
     }
     elsif ($method eq'POST') {
       # POST request
-      my $body = $req-&gt; body;
+      my $body = $req-&gt;body;
       my ($in_fh, $in_file) = tempfile;
       print $in_fh $body;
       close $in_fh;
       $output = `$^ X -pe" "$in_file | $^ X $script_name`;
       if ($?) {
-        $c-&gt; res-&gt; code ('505');
-        $c-&gt; render (text =&gt; "Internal Server Error");
+        $c-&gt;res-&gt;code ('505');
+        $c-&gt;render (text =&gt; "Internal Server Error");
       }
       unlink $in_file;
     }
@@ -161,23 +155,23 @@ app-&gt; hook (before_dispatch =&gt; sub {
     my ($header_part, $body_part) = split("\n\n", $output, 2);
     
     # Response
-    my $res = Mojo::Message::Response-&gt; new;
-    while (! $Res-&gt; is_finished) {
-      $res-&gt; parse ($header_part);
+    my $res = Mojo::Message::Response-&gt;new;
+    while (! $Res-&gt;is_finished) {
+      $res-&gt;parse ($header_part);
     }
-    $c-&gt; res-&gt; code ($res-&gt; code);
-    $c-&gt; res-&gt; headers ($res-&gt; headers);
-    $c-&gt; render (data =&gt; $body_part);
+    $c-&gt;res-&gt;code ($res-&gt;code);
+    $c-&gt;res-&gt;headers ($res-&gt;headers);
+    $c-&gt;render (data =&gt; $body_part);
   }
 });
 
 get'/' =&gt; sub {
   my $c = shift;
   
-  $c-&gt; reply-&gt; static ('index.html');
+  $c-&gt;reply-&gt;static ('index.html');
 };
 
-app-&gt; start;
+app-&gt;start;
 </pre>
 <p>
   If you have a better way, please let me know on Twitter.
@@ -187,8 +181,7 @@ app-&gt; start;
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -205,12 +198,9 @@ app-&gt; start;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -219,8 +209,7 @@ app-&gt; start;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Insert image - PDF::Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20191228171433.html">
-      <span itemprop = "name"> Form creation </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20191228171433.html">      <span itemprop = "name">Form creation </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -116,7 +105,7 @@
 <pre>
 # Generate a resource object that represents a JPEG image
 my $image_file ='/path/image.jpeg';
-my $image_object = $pdf-&gt; image_jpeg ($image_file);
+my $image_object = $pdf-&gt;image_jpeg ($image_file);
 </pre>
 <p>
   <b> Reading PNG files </b>
@@ -127,7 +116,7 @@ my $image_object = $pdf-&gt; image_jpeg ($image_file);
 <pre>
 # Create a resource object that represents a PNG image
 my $image_file ='/path/image.png';
-my $image_object = $pdf-&gt; image_png ($image_file);
+my $image_object = $pdf-&gt;image_png ($image_file);
 </pre>
 <p>
   If you get the error "Unsupported Interlace", you need to turn off the PNG interlacing feature.
@@ -141,7 +130,7 @@ my $image_object = $pdf-&gt; image_png ($image_file);
 <pre>
 # Create a resource object that represents a GIF image
 my $image_file ='/path/image.gif';
-my $image_object = $pdf-&gt; image_gif ($image_file);
+my $image_object = $pdf-&gt;image_gif ($image_file);
 </pre>
 <h4> Generation of image content object </h4>
 <p>
@@ -149,7 +138,7 @@ my $image_object = $pdf-&gt; image_gif ($image_file);
 </p>
 <pre>
 # Content object needed to insert an image
-my $gfx = $page-&gt; gfx;
+my $gfx = $page-&gt;gfx;
 </pre>
 <h4> Insert image file </h4>
 <p>
@@ -157,13 +146,13 @@ my $gfx = $page-&gt; gfx;
 </p>
 <pre>
 # Insert image at specified position
-$gfx-&gt; image ($image_object, $x, $y);
+$gfx-&gt;image ($image_object, $x, $y);
 
 # Insert image at the specified position. Specify width and height
-$gfx-&gt; image ($image_object, $x, $y, $width, $height);
+$gfx-&gt;image ($image_object, $x, $y, $width, $height);
 
 # Insert image at the specified position. Specify scale (1.5x, etc.)
-$gfx-&gt; image ($image_object, $x, $y, $scale);
+$gfx-&gt;image ($image_object, $x, $y, $scale);
 </pre>
 <p>
   The image will be inserted at the specified position.
@@ -181,35 +170,34 @@ $gfx-&gt; image ($image_object, $x, $y, $scale);
 <pre>
 use PDF::API2;
 
-my $pdf = PDF::API2-&gt; new;
+my $pdf = PDF::API2-&gt;new;
 
-my $page = $pdf-&gt; page;
+my $page = $pdf-&gt;page;
 
 # Create a resource object that represents a PNG image
 my $image_file = "$FindBin::Bin / rokkaku.png";
-my $image_object = $pdf-&gt; image_png ($image_file);
+my $image_object = $pdf-&gt;image_png ($image_file);
 
 # Content object needed to insert an image
-my $gfx = $page-&gt; gfx;
+my $gfx = $page-&gt;gfx;
 
 # Insert image at specified position
 my $x = 50;
 my $y = 500;
-$gfx-&gt; image ($image_object, $x, $y);
+$gfx-&gt;image ($image_object, $x, $y);
 
 my $pdf_file ='image_png.pdf';
-$pdf-&gt; saveas ($pdf_file);
+$pdf-&gt;saveas ($pdf_file);
 </pre>
 <p>
-  <a href="/examples/pdf/image_png.pdf"> Output result PNG image insertion</a>
+  <a href="/examples/pdf/image_png.pdf">Output result PNG image insertion</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -226,12 +214,9 @@ $pdf-&gt; saveas ($pdf_file);
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -240,8 +225,7 @@ $pdf-&gt; saveas ($pdf_file);
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

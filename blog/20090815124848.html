@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> DateTime - General-purpose handling of dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -107,7 +96,7 @@
 </p>
 <ul>
   <li>
-    <a href="/blog/20161123147990.html"> Handling dates and times in Perl</a>
+    <a href="/blog/20161123147990.html">Handling dates and times in Perl</a>
   </li>
 </ul>
 <h4> Install DateTime from CPAN </h4>
@@ -129,7 +118,7 @@
   If you proceed to the end, you are done.
 </p>
 <p>
-  Since Perl 5.10 and later, you can use Time::Piece as a standard Perl module, so it's a good idea to use Time::Piece. For the handling of time by Time::Piece, see "<a href="/blog/20091105124627.html"> Handling date and time by" Time::Piece "</a>".
+  Since Perl 5.10 and later, you can use Time::Piece as a standard Perl module, so it's a good idea to use Time::Piece. For the handling of time by Time::Piece, see "<a href="/blog/20091105124627.html">Handling date and time by" Time::Piece "</a>".
 </p>
 <h3> DateTime initialization and acquisition of date / time information </h3>
 <p>
@@ -137,7 +126,7 @@
 </p>
 <pre>
 use DateTime;
-my $dt = DateTime-&gt; new (
+my $dt = DateTime-&gt;new (
   year =&gt; 1964,
   month =&gt; 10,
   day =&gt; 16,
@@ -147,7 +136,7 @@ my $dt = DateTime-&gt; new (
 );
 </pre>
 <p>
-  The DateTime module is an object-oriented module. Create a DateTime object with the DateTime-> new method. Specify the same number for the year and month.
+  The DateTime module is an object-oriented module. Create a DateTime object with the DateTime->new method. Specify the same number for the year and month.
 </p>
 <p>
   You don't have to specify the year as a number from 1900 or the month as a number starting from 0, unlike the localtime function in the standard function or the Time::Local in the standard module.
@@ -155,15 +144,15 @@ my $dt = DateTime-&gt; new (
 <h4> Acquisition of date / time information </h4>
 <pre>
 # Get method to get time information
-my $year = $dt-&gt; year;
-my $mon = $dt-&gt; month;
-my $mday = $dt-&gt; day;
-my $wday = $dt-&gt; day_of_week;
-my $hour = $dt-&gt; hour;
-my $minute = $dt-&gt; minute;
-my $second = $dt-&gt; second;
-my $yday = $dt-&gt; day_of_year;
-my $qtr = $dt-&gt; quarter;
+my $year = $dt-&gt;year;
+my $mon = $dt-&gt;month;
+my $mday = $dt-&gt;day;
+my $wday = $dt-&gt;day_of_week;
+my $hour = $dt-&gt;hour;
+my $minute = $dt-&gt;minute;
+my $second = $dt-&gt;second;
+my $yday = $dt-&gt;day_of_year;
+my $qtr = $dt-&gt;quarter;
 </pre>
 <p>
   With the above method, you can get the date, hour, minute, second, day of the week, the number of days in a year, the number of counts in a quarter, and so on. Monday is 1 and Sunday is 7.
@@ -173,13 +162,13 @@ my $qtr = $dt-&gt; quarter;
   Use the now method to create a DateTime object that represents the current time. If you specify local for time_zone in the argument, it will be the time zone of your country that should be set in the OS.
 </p>
 <pre>
-my $dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 </pre>
 <p>
   You can also specify the time zone explicitly.
 </p>
 <pre>
-my $dt = DateTime-&gt; now (time_zone =&gt;'Asia / Tokyo');
+my $dt = DateTime-&gt;now (time_zone =&gt;'Asia / Tokyo');
 </pre>
 <p>
   It seems that specifying the time zone explicitly is a little slower than specifying local. However, explicit specification impairs portability.
@@ -188,41 +177,41 @@ my $dt = DateTime-&gt; now (time_zone =&gt;'Asia / Tokyo');
   If no argument is specified, it will be UTC (Coordinated Universal Time).
 </p>
 <pre>
-my $dt = DateTime-&gt; now;
+my $dt = DateTime-&gt;now;
 </pre>
 <h3> Create date information from epoch seconds </h3>
 <p>
   Use the from_epoch method to create a DateTime object from epoch seconds.
 </p>
 <pre>
-my $dt = DateTime-&gt; from_epoch (epoch =&gt; $epoch);
+my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch);
 </pre>
 <p>
   If you do not specify time_zone as an argument, it will be UTC (Coordinated Universal Time). You can get the local time by adding time_zone =>'local' as shown below.
 </p>
 <pre>
-my $dt = DateTime-&gt; from_epoch (epoch =&gt; $epoch, time_zone =&gt;'local');
+my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch, time_zone =&gt;'local');
 </pre>
 <h3> Create a timezone object </h3>
 <p>
   DateTime is a constructor that allows you to specify the time zone. You can reuse the DateTime::TimeZone object by creating it first.
 </p>
 <pre>
-my $time_zone = DateTime::TimeZone-&gt; new (name =&gt;'Asia / Tokyo');
+my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'Asia / Tokyo');
 </pre>
 <h4> Creating a timezone object </h4>
 <p>
   Use the new method to create a timezone object. In the argument, specify the time zone name in name. (List of time zone names)
 </p>
 <pre>
-my $time_zone = DateTime::TimeZone-&gt; new (name =&gt;'Asia / Tokyo');
+my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'Asia / Tokyo');
 </pre>
 <h4> Automatic generation of timezone objects </h4>
 <p>
   As shown below, if you specify the time zone in the DateTime constructor (new, now, etc.), the DateTime::TimeZone object is automatically created internally.
 </p>
 <pre>
-my $dt = DateTime-&gt; now (time_zone =&gt;'Asia / Tokyo');
+my $dt = DateTime-&gt;now (time_zone =&gt;'Asia / Tokyo');
 </pre>
 <p>
   Every time you create a DateTime object, a DateTime::TimeZone object will be created.
@@ -235,17 +224,17 @@ my $dt = DateTime-&gt; now (time_zone =&gt;'Asia / Tokyo');
   Just specify the created DateTime::TimeZone object in time_zone, which is an argument of the DateTime constructor.
 </p>
 <pre>
-my $dt1 = DateTime-&gt; now (time_zone =&gt; $time_zone);
+my $dt1 = DateTime-&gt;now (time_zone =&gt; $time_zone);
 </pre>
 <p>
-  See "<a href="/blog/20081101122558.html"> Time Zone List</a>" for a list of time zones.
+  See "<a href="/blog/20081101122558.html">Time Zone List</a>" for a list of time zones.
 </p>
 <h3> Specify the locale to output the month name and day of the week name in Japanese </h3>
 <p>
   The expression of the date differs depending on the country or region. For example, January is expressed as January in the United States. Monday is expressed as Monday. A set of expressions for each country or region is called a locale. The DateTime module allows you to specify locales for different countries and regions.
 </p>
 <pre>
-my $dt = DateTime-&gt; now (locale =&gt;'ja');
+my $dt = DateTime-&gt;now (locale =&gt;'ja');
 </pre>
 <p>
   The Japanese locale is ja.
@@ -258,7 +247,7 @@ my $dt = DateTime-&gt; now (locale =&gt;'ja');
   Also, by specifying local for time_zone, time information is created at the local time.
 </p>
 <pre>
-my $dt = DateTime-&gt; now (locale =&gt;'ja', time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
 </pre>
 <h4> Locale-dependent information Month name and day name </h4>
 <p>
@@ -269,16 +258,16 @@ my $dt = DateTime-&gt; now (locale =&gt;'ja', time_zone =&gt;'local');
 </p>
 <pre>
 # Month name
-my $month_name = $dt-&gt; month_name;
+my $month_name = $dt-&gt;month_name;
 
 # Month abbreviation (same as month name if there is no abbreviation)
-my $month_abbr = $dt-&gt; month_abbr;
+my $month_abbr = $dt-&gt;month_abbr;
 
 # Day of the week name
-my $day_name = $dt-&gt; day_name;
+my $day_name = $dt-&gt;day_name;
 
 # Abbreviated name of the day of the week
-my $day_abbr = $dt-&gt; day_abbr;
+my $day_abbr = $dt-&gt;day_abbr;
 </pre>
 <h4> Encode for output </h4>
 <p>
@@ -296,10 +285,10 @@ my $encode_to;
 if ($^ O eq'MSWin32') {$encode_to ='shift-jis'}
 else {$encode_to ='utf8'}
 print(
-  encode ($encode_to, $month_name). "\n".
-  encode ($encode_to, $month_abbr). "\n".
-  encode ($encode_to, $day_name). "\n".
-  encode ($encode_to, $day_abbr). "\n"
+  encode ($encode_to, $month_name) . "\n".
+  encode ($encode_to, $month_abbr) . "\n".
+  encode ($encode_to, $day_name) . "\n".
+  encode ($encode_to, $day_abbr) . "\n"
 );
 </pre>
 <h3> Class for specifying locale </h3>
@@ -307,14 +296,14 @@ print(
   You can specify the locale name in the argument of the DateTime constructor.
 </p>
 <pre>
-my $locale = DateTime::Locale-&gt; load ('ja');
+my $locale = DateTime::Locale-&gt;load ('ja');
 </pre>
 <p>
   DateTime creates a DateTime::Locale object in its constructor. Then, based on the generated locale object, it creates an output of date information for each region or country.
 </p>
 <h4> Explicit creation of locale object </h4>
 <pre>
-my $locale = DateTime::Locale-&gt; load ('ja');
+my $locale = DateTime::Locale-&gt;load ('ja');
 </pre>
 <p>
   To explicitly create a DateTime::Locale object, use the load method. The load method creates a DateTime::Locale object the first time, but reuses the DateTime::Locale object saved in memory from the second time onward.
@@ -327,19 +316,19 @@ my $locale = DateTime::Locale-&gt; load ('ja');
   To pass the locale object to the DateTime constructor:
 </p>
 <pre>
-my $dt = DateTime-&gt; now (locale =&gt; $locale, time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (locale =&gt; $locale, time_zone =&gt;'local');
 </pre>
 <p>
   You can explicitly pass a locale object, but
 </p>
 <pre>
-my $dt = DateTime-&gt; now (locale =&gt;'ja', time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
 </pre>
 <p>
   It is easy to specify by a character string like. If you write this, the DateTime::Locale object will be created automatically in the DateTime constructor.
 </p>
 <p>
-  See "<a href="/blog/20081107122606.html"> List of available locales</a>" for available locales.
+  See "<a href="/blog/20081107122606.html">List of available locales</a>" for available locales.
 </p>
 <h3> Get all the date and time information </h3>
 <p>
@@ -348,32 +337,32 @@ my $dt = DateTime-&gt; now (locale =&gt;'ja', time_zone =&gt;'local');
 <pre>
 # Date
 # yyyy-mm-dd
-my $ymd = $dt-&gt; ymd;
+my $ymd = $dt-&gt;ymd;
 
 # yyyy / mm / dd
-my $ymd_slash = $dt-&gt; ymd ('/');
+my $ymd_slash = $dt-&gt;ymd ('/');
 
 # mm-dd-yyyy
-my $mdy = $dt-&gt; mdy;
+my $mdy = $dt-&gt;mdy;
 
 # mm / dd / yyyy
-my $mdy_slash = $dt-&gt; mdy ('/');
+my $mdy_slash = $dt-&gt;mdy ('/');
 
 # dd-mm-yyyy
-my $dmy = $dt-&gt; dmy;
+my $dmy = $dt-&gt;dmy;
 
 # dd / mm / yyyy
-my $dmy_slash = $dt-&gt; dmy ('/');
+my $dmy_slash = $dt-&gt;dmy ('/');
 
 # Time information
 # hh: mm: ss
-my $hms = $dt-&gt; hms;
+my $hms = $dt-&gt;hms;
 
 # hh-mm-ss
-my $hms_hyphen = $dt-&gt; hms ('-');
+my $hms_hyphen = $dt-&gt;hms ('-');
 
 # Date and time information
-my $ymdhms = $dt-&gt; datetime;
+my $ymdhms = $dt-&gt;datetime;
 </pre>
 <p>
   Output result
@@ -390,7 +379,7 @@ Day Month Year (Slash) 14/11/2008
 Hour, minute and second (colon) 23:48:14
 Hour, minute and second (hyphen) 23-48-14
 
-Year, month, day, hour, minute, second 2008-11-14T23: 48: 14
+Year, month, day, hour, minute, second 2008-11-14T23:48:14
 </pre>
 <h3> Judgment of leap year Acquisition of the last day of the month </h3>
 <p>
@@ -398,37 +387,37 @@ Year, month, day, hour, minute, second 2008-11-14T23: 48: 14
 </p>
 <pre>
 # Judge whether it is a leap year
-my $is_leap_year = $dt1-&gt; is_leap_year;
+my $is_leap_year = $dt1-&gt;is_leap_year;
 
 # Last day of the month
-my $dt2 = DateTime-&gt; last_day_of_month (year =&gt; 2008, month =&gt; 11);
+my $dt2 = DateTime-&gt;last_day_of_month (year =&gt; 2008, month =&gt; 11);
 </pre>
 <h4> Determine if it is a leap year. </h4>
 <p>
   Use the is_leap_year method to determine if it is a leap year.
 </p>
 <pre>
-my $is_leap_year = $dt1-&gt; is_leap_year;
+my $is_leap_year = $dt1-&gt;is_leap_year;
 </pre>
 <h4> Get the last day of the month </h4>
 <p>
   To get the last day of the month, use the last_day_of_month method. If you specify year and month as arguments, a DateTime object that represents the last day of the month is returned (not the last day of the month itself). Get the date from the returned DateTime object with the day method.
 </p>
 <pre>
-my $dt2 = DateTime-&gt; last_day_of_month (year =&gt; 2008, month =&gt; 11);
+my $dt2 = DateTime-&gt;last_day_of_month (year =&gt; 2008, month =&gt; 11);
 </pre>
 <h3> Date formatting "strftime" method </h3>
 <p>
   Use the <strong> strftime </strong> method to format the date. Pass the format specifier as an argument.
 </p>
 <pre>
-$dt-&gt; strftime("% a");
+$dt-&gt;strftime("%a");
 </pre>
 <p>
   You can also specify multiple character strings in combination as shown below.
 </p>
 <pre>
-$dt-&gt; strftime("% Y-% m-% d");
+$dt-&gt;strftime("%Y-%m-%d");
 </pre>
 <h4> Strftime format specifier list </h4>
 <p>
@@ -437,7 +426,7 @@ $dt-&gt; strftime("% Y-% m-% d");
 <table>
   <tr>
     <td>
-      % a
+      %a
     </td>
     <td>
       Abbreviated name of the day of the week
@@ -445,7 +434,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % A
+      %A
     </td>
     <td>
       Day of the week name
@@ -453,7 +442,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % b
+      %b
     </td>
     <td>
       Month abbreviation
@@ -461,7 +450,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % B
+      %B
     </td>
     <td>
       Month name
@@ -469,7 +458,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % c
+      %c
     </td>
     <td>
       Default format
@@ -477,7 +466,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % C
+      %C
     </td>
     <td>
       First two digits of the year
@@ -485,7 +474,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % d
+      %d
     </td>
     <td>
       Day (01-31)
@@ -493,15 +482,15 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % D
+      %D
     </td>
     <td>
-      Same as% m /% d /% y. Month day year
+      Same as%m /%d /%y. Month day year
     </td>
   </tr>
   <tr>
     <td>
-      % e
+      %e
     </td>
     <td>
       Day (1 to 31): The second digit of the one-digit number (1 to 9) is a space.
@@ -509,23 +498,23 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % F
+      %F
     </td>
     <td>
-      Same as% Y-% m-% d (for example, 2008-11-31)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      % G
-    </td>
-    <td>
-      Year (I don't know the difference from% Y)
+      Same as%Y-%m-%d (for example, 2008-11-31)
     </td>
   </tr>
   <tr>
     <td>
-      % g
+      %G
+    </td>
+    <td>
+      Year (I don't know the difference from%Y)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      %g
     </td>
     <td>
       Last two digits of the year (00-99)
@@ -533,15 +522,15 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % h
+      %h
     </td>
     <td>
-      Same as% b. Month abbreviation
+      Same as%b. Month abbreviation
     </td>
   </tr>
   <tr>
     <td>
-      % H
+      %H
     </td>
     <td>
       Hour (00 to 23)
@@ -549,7 +538,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % I
+      %I
     </td>
     <td>
       Hours (01 to 12) Time in 12-hour notation
@@ -557,7 +546,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % j
+      %j
     </td>
     <td>
       What day is it for the first time from the beginning of the year? (001 to 366)
@@ -565,7 +554,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % k
+      %k
     </td>
     <td>
       Hour (0 to 23): The second digit of the one-digit number (0-9) is a space.
@@ -573,7 +562,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % l
+      %l
     </td>
     <td>
       Hour (1 to 12) Time in 12-hour notation: The second digit of the one-digit number (0-9) is a space.
@@ -581,7 +570,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % m
+      %m
     </td>
     <td>
       Month number (01-12)
@@ -589,7 +578,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % M
+      %M
     </td>
     <td>
       Minutes (00 to 59)
@@ -597,7 +586,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % n
+      %n
     </td>
     <td>
       Newline character
@@ -605,15 +594,15 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % N
+      %N
     </td>
     <td>
-      Milliseconds (% 3N displays milliseconds in 3 digits,% 6N displays milliseconds in 6 digits)
+      Milliseconds (%3N displays milliseconds in 3 digits,%6N displays milliseconds in 6 digits)
     </td>
   </tr>
   <tr>
     <td>
-      % p
+      %p
     </td>
     <td>
       AM or PM
@@ -621,7 +610,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % P
+      %P
     </td>
     <td>
       am or pm
@@ -629,16 +618,16 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % r
+      %r
     </td>
     <td>
-      Same as% I:% M:% S% p
+      Same as%I:%M:%S%p
       .. (11:55:23 PM etc.)
     </td>
   </tr>
   <tr>
     <td>
-      % R
+      %R
     </td>
     <td>
       Hours and minutes (15:16, etc.)
@@ -646,7 +635,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % s
+      %s
     </td>
     <td>
       Seconds from epoch
@@ -654,7 +643,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % S
+      %S
     </td>
     <td>
       Seconds (00 to 61)
@@ -662,7 +651,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % t
+      %t
     </td>
     <td>
       Tab character
@@ -670,15 +659,15 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % T
+      %T
     </td>
     <td>
-      Same as% H:% M:% S. Hours, minutes and seconds (such as 23:14:03)
+      Same as%H:%M:%S. Hours, minutes and seconds (such as 23:14:03)
     </td>
   </tr>
   <tr>
     <td>
-      % u
+      %u
     </td>
     <td>
       Day of the week number (1 to 7. Monday is 1)
@@ -686,7 +675,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % U
+      %U
     </td>
     <td>
       How many weeks have you counted from the beginning of the year? (00-53): Count the first Sunday of the year as the beginning of the week. The first Sunday week is 01. The week before that was 00.
@@ -694,7 +683,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % V
+      %V
     </td>
     <td>
       How many weeks have you counted from the beginning of the year? (01-53): Let the week with at least 4 days be the first week of the year. Count Monday as the beginning of the week.
@@ -702,7 +691,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % w
+      %w
     </td>
     <td>
       Day of the week number (0 to 6. Sunday is 0)
@@ -710,7 +699,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % W
+      %W
     </td>
     <td>
       Weeks counting from the beginning of the year (00-53) Count the first Monday of the year as the beginning of the week. The first Monday week is 01. The week before that was 00.
@@ -718,7 +707,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % x
+      %x
     </td>
     <td>
       Default format for dates
@@ -726,7 +715,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % X
+      %X
     </td>
     <td>
       Default format for time
@@ -734,7 +723,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % y
+      %y
     </td>
     <td>
       Last two digits of the year
@@ -742,7 +731,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % Y
+      %Y
     </td>
     <td>
       Year
@@ -750,7 +739,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % z
+      %z
     </td>
     <td>
       Time zone time shift from UTC (Coordinated Universal Time))
@@ -758,7 +747,7 @@ $dt-&gt; strftime("% Y-% m-% d");
   </tr>
   <tr>
     <td>
-      % Z
+      %Z
     </td>
     <td>
       Time zone name
@@ -787,25 +776,25 @@ $dt-&gt; strftime("% Y-% m-% d");
 </p>
 <pre>
 # Addition of days
-$dt-&gt; add (days =&gt; 1);
+$dt-&gt;add (days =&gt; 1);
 
 # Monthly addition
-$dt-&gt; add (months =&gt; 1);
+$dt-&gt;add (months =&gt; 1);
 
 # Year addition
-$dt-&gt; add (years =&gt; 1);
+$dt-&gt;add (years =&gt; 1);
 
 # Hour addition
-$dt-&gt; add (hours =&gt; 1);
+$dt-&gt;add (hours =&gt; 1);
 
 Addition of # minutes
-$dt-&gt; add (minutes =&gt; 1);
+$dt-&gt;add (minutes =&gt; 1);
 
 # Addition of seconds
-$dt-&gt; add (seconds =&gt; 1);
+$dt-&gt;add (seconds =&gt; 1);
 
 # Add all together
-$dt-&gt; add (years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minutes =&gt; 1, seconds =&gt; 1);
+$dt-&gt;add (years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minutes =&gt; 1, seconds =&gt; 1);
 </pre>
 <h3> Date subtraction </h3>
 <p>
@@ -813,22 +802,22 @@ $dt-&gt; add (years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minute
 </p>
 <pre>
 # Subtraction of days
-$dt-&gt; subtract (days =&gt; 1);
+$dt-&gt;subtract (days =&gt; 1);
 
 # Month subtraction
-$dt-&gt; subtract (months =&gt; 1);
+$dt-&gt;subtract (months =&gt; 1);
 
 # Year subtraction
-$dt-&gt; subtract (years =&gt; 1);
+$dt-&gt;subtract (years =&gt; 1);
 
 # Hour subtraction
-$dt-&gt; subtract (hours =&gt; 1);
+$dt-&gt;subtract (hours =&gt; 1);
 
 Subtraction of # minutes
-$dt-&gt; subtract (minutes =&gt; 1);
+$dt-&gt;subtract (minutes =&gt; 1);
 
 # Second subtraction
-$dt-&gt; subtract (seconds =&gt; 1);
+$dt-&gt;subtract (seconds =&gt; 1);
 </pre>
 <p>
   You can also subtract dates. You can use the <strong>-</strong> symbol to make the calculation normal. (This is achieved using a feature called operator overloading.) The return value is a DateTime::Duration object that represents the period, not a DateTime object. You can get the date of the period with the years, months, days method.
@@ -854,54 +843,54 @@ my $duration = $dt2- $dt1;
 </p>
 <pre>
 # Year
-$duration-&gt; years;
+$duration-&gt;years;
 
 # Month
-$duration-&gt; months;
+$duration-&gt;months;
 
 # Day 
-$duration-&gt; days;
+$duration-&gt;days;
 
 # Time
-$duration-&gt; hours;
+$duration-&gt;hours;
 
 # Min
-$duration-&gt; minutes;
+$duration-&gt;minutes;
 
 # Seconds
-$duration-&gt; seconds;
+$duration-&gt;seconds;
 </pre>
 <p>
-  It's important to note that each method doesn't make sense on its own. For example, $duration-> days does not represent the number of days in the period itself. If the duration is 1 month and 30 days, then $duration-> months will be 1 and $duration-> days will be 30.
+  It's important to note that each method doesn't make sense on its own. For example, $duration->days does not represent the number of days in the period itself. If the duration is 1 month and 30 days, then $duration->months will be 1 and $duration->days will be 30.
 </p>
 <p>
   The above method always returns a positive value, so it is not possible to determine which period comes first. Use the <strong> is_positive </strong>, <strong> is_zero </strong>, <strong> is_negative </strong> methods to determine the order of the periods.
 </p>
 <pre>
 # Date 2-Date 1 is positive
-$duration-&gt; is_positive
+$duration-&gt;is_positive
 
 # Date 2-Same date 1
-$duration-&gt; is_zero
+$duration-&gt;is_zero
 
 # Date 2-Date 1 is negative
-$duration-&gt; is_negative
+$duration-&gt;is_negative
 </pre>
 <p>
   Use the <strong> in_units </strong> method to get the duration in certain units.
 </p>
 <pre>
 # 27 if the period is 1 year and 15 months
-my $months = $duration-&gt; in_units ('months');
+my $months = $duration-&gt;in_units ('months');
 
 # 2 if the period is 1 year and 15 months
-my $years = $duration-&gt; in_inits ('years');
+my $years = $duration-&gt;in_inits ('years');
 
 # If the period is 1 year and 15 months, it will be (2, 3).
-my ($years, $months) = $duration-&gt; in_units ('years','months');
+my ($years, $months) = $duration-&gt;in_units ('years', 'months');
 </pre>
 <p>
-  If you pass two arguments, you must receive them in <a href="/blog/20080608121292.html"> list context</a>.
+  If you pass two arguments, you must receive them in <a href="/blog/20080608121292.html">list context</a>.
 </p>
 <p>
   Only the following four can be converted in units.
@@ -963,15 +952,15 @@ Seconds and milliseconds (1 second is 1000 milliseconds)
   To simplify the date calculation, convert a specific time zone to UTC before calculating. Then, after the calculation is finished, return to the original time zone.
 </p>
 <pre>
-my $dt = DateTime-&gt; new (% user_input, time_zone =&gt; $user_tz);
+my $dt = DateTime-&gt;new (%user_input, time_zone =&gt; $user_tz);
 
 Convert to # UTC
-$dt-&gt; set_time_zone ('UTC');
+$dt-&gt;set_time_zone ('UTC');
 
 # Calculate the date.
 # Return to the original time zone.
-$dt-&gt; set_time_zone ($user_tz);
-print $dt-&gt; datetime;
+$dt-&gt;set_time_zone ($user_tz);
+print $dt-&gt;datetime;
 </pre>
 <p>
   In Japan, there is no daylight saving time, so even if you calculate with local time, you will not get strange results. It seems that there are quite a few countries in the world that have introduced daylight saving time.
@@ -996,13 +985,13 @@ print $dt-&gt; datetime;
 </p>
 <pre>
 # Current year and month
-my $current_dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $current_dt = DateTime-&gt;now (time_zone =&gt;'local');
   
 # Previous month
-my $prev_dt = $current_dt-&gt; clone-&gt; add (months =&gt; -1, end_of_month =&gt;'limit');
+my $prev_dt = $current_dt-&gt;clone-&gt;add (months =&gt; -1, end_of_month =&gt;'limit');
 
 # Next month
-my $next_dt = $current_dt-&gt; clone-&gt; add (months =&gt; 1, end_of_month =&gt;'limit');
+my $next_dt = $current_dt-&gt;clone-&gt;add (months =&gt; 1, end_of_month =&gt;'limit');
 </pre>
 <p>
   With the "end_of_month =>'limit'" option, I feel that the date can be obtained correctly even if the date is 1/31. For example, the result of adding January to 1/31 is 2/28.
@@ -1025,7 +1014,7 @@ use DateTime;
 # Initialization of DateTime object
 # (Use the same year, not the year elapsed since 1900.)
 # (Month counts from 1 instead of 0. 10 is his October.)
-my $dt = DateTime-&gt; new (
+my $dt = DateTime-&gt;new (
   year =&gt; 1964,
   month =&gt; 10,
   day =&gt; 16,
@@ -1035,17 +1024,17 @@ my $dt = DateTime-&gt; new (
 );
 
 # Get method to get time information
-my $year = $dt-&gt; year;
-my $mon = $dt-&gt; month;
-my $mday = $dt-&gt; day;
+my $year = $dt-&gt;year;
+my $mon = $dt-&gt;month;
+my $mday = $dt-&gt;day;
 
 # Day of the week number (day of the week starts with 1 and 1 is the month and 7 is the day)
-my $wday = $dt-&gt; day_of_week;
-my $hour = $dt-&gt; hour;
-my $minute = $dt-&gt; minute;
-my $second = $dt-&gt; second;
-my $yday = $dt-&gt; day_of_year;
-my $qtr = $dt-&gt; quarter;
+my $wday = $dt-&gt;day_of_week;
+my $hour = $dt-&gt;hour;
+my $minute = $dt-&gt;minute;
+my $second = $dt-&gt;second;
+my $yday = $dt-&gt;day_of_year;
+my $qtr = $dt-&gt;quarter;
 
 print "(1) Date / time information of DateTime\n";
 print(
@@ -1074,24 +1063,24 @@ use warnings;
 use DateTime;
 
 # (1) -1 Get the current time(local time)
-my $dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
 # (1) -2 When explicitly specifying the time zone.
-# my $dt = DateTime-&gt; now (time_zone =&gt;'Asia / Tokyo');
+# my $dt = DateTime-&gt;now (time_zone =&gt;'Asia / Tokyo');
 
 # (1) -3 UTC Coordinated Universal Time
-# my $dt = DateTime-&gt; now;
+# my $dt = DateTime-&gt;now;
 
 # Get method to get time information
-my $year = $dt-&gt; year;
-my $mon = $dt-&gt; month;
-my $mday = $dt-&gt; day;
-my $wday = $dt-&gt; day_of_week;
-my $hour = $dt-&gt; hour;
-my $minute = $dt-&gt; minute;
-my $second = $dt-&gt; second;
-my $yday = $dt-&gt; day_of_year;
-my $qtr = $dt-&gt; quarter;
+my $year = $dt-&gt;year;
+my $mon = $dt-&gt;month;
+my $mday = $dt-&gt;day;
+my $wday = $dt-&gt;day_of_week;
+my $hour = $dt-&gt;hour;
+my $minute = $dt-&gt;minute;
+my $second = $dt-&gt;second;
+my $yday = $dt-&gt;day_of_year;
+my $qtr = $dt-&gt;quarter;
 
 print "(1) Get the current time.\n";
 print(
@@ -1121,18 +1110,18 @@ use DateTime;
 
 # Create date information from epoch seconds.
 my $epoch = 1225589752;
-my $dt = DateTime-&gt; from_epoch (epoch =&gt; $epoch);
+my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch);
 
 # Get method to get time information
-my $year = $dt-&gt; year;
-my $mon = $dt-&gt; month;
-my $mday = $dt-&gt; day;
-my $wday = $dt-&gt; day_of_week; # Day of the week number (day of the week starts with 1 and 1 is the month and 7 is the day)
-my $hour = $dt-&gt; hour;
-my $minute = $dt-&gt; minute;
-my $second = $dt-&gt; second;
-my $yday = $dt-&gt; day_of_year;
-my $qtr = $dt-&gt; quarter;
+my $year = $dt-&gt;year;
+my $mon = $dt-&gt;month;
+my $mday = $dt-&gt;day;
+my $wday = $dt-&gt;day_of_week; # Day of the week number (day of the week starts with 1 and 1 is the month and 7 is the day)
+my $hour = $dt-&gt;hour;
+my $minute = $dt-&gt;minute;
+my $second = $dt-&gt;second;
+my $yday = $dt-&gt;day_of_year;
+my $qtr = $dt-&gt;quarter;
 
 print "(1) Create date information from epoch seconds.\n";
 print(
@@ -1167,14 +1156,14 @@ use DateTime;
 use DateTime::TimeZone;
 
 # (1) Creating a timezone object
-my $time_zone = DateTime::TimeZone-&gt; new (name =&gt;'Asia / Tokyo');
+my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'Asia / Tokyo');
 
 # When automatically acquiring the time zone from the OS settings
-# my $time_zone = DateTime::TimeZone-&gt; new (name =&gt;'local');
+# my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'local');
                                                      
 # (2) Use of timezone object
-my $dt1 = DateTime-&gt; now (time_zone =&gt; $time_zone);
-my $dt2 = DateTime-&gt; now (time_zone =&gt; $time_zone);
+my $dt1 = DateTime-&gt;now (time_zone =&gt; $time_zone);
+my $dt2 = DateTime-&gt;now (time_zone =&gt; $time_zone);
 </pre>
 <p>
   This is a sample to set the locale.
@@ -1186,19 +1175,19 @@ use DateTime;
 use Encode;
 
 print "(1) Print the month name and day of the week name in Japanese.\n";
-my $dt = DateTime-&gt; now (locale =&gt;'ja', time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
 
 # Month name
-my $month_name = $dt-&gt; month_name;
+my $month_name = $dt-&gt;month_name;
 
 # Month abbreviation (same as month name if there is no abbreviation)
-my $month_abbr = $dt-&gt; month_abbr;
+my $month_abbr = $dt-&gt;month_abbr;
 
 # Day of the week name
-my $day_name = $dt-&gt; day_name;
+my $day_name = $dt-&gt;day_name;
 
 # Abbreviated name of the day of the week
-my $day_abbr = $dt-&gt; day_abbr;
+my $day_abbr = $dt-&gt;day_abbr;
 
 Since the # UTF-8 flag is set, encode it.
 my $encode_to;
@@ -1206,10 +1195,10 @@ if ($^ O eq'MSWin32') {$encode_to ='shift-jis'}
 else {$encode_to ='utf8'}
 
 print(
-  encode ($encode_to, $month_name). "\n".
-  encode ($encode_to, $month_abbr). "\n".
-  encode ($encode_to, $day_name). "\n".
-  encode ($encode_to, $day_abbr). "\n"
+  encode ($encode_to, $month_name) . "\n".
+  encode ($encode_to, $month_abbr) . "\n".
+  encode ($encode_to, $day_name) . "\n".
+  encode ($encode_to, $day_abbr) . "\n"
 );
 </pre>
 <p>
@@ -1240,12 +1229,12 @@ else {$encode_to ='utf8'}
 
 # Generation of locale
 print "(1) DateTime::Locale object\n";
-my $locale = DateTime::Locale-&gt; load ('ja');
-my $dt = DateTime-&gt; now (locale =&gt; $locale, time_zone =&gt;'local');
+my $locale = DateTime::Locale-&gt;load ('ja');
+my $dt = DateTime-&gt;now (locale =&gt; $locale, time_zone =&gt;'local');
 
 # Day of the week name
-my $day_name = $dt-&gt; day_name;
-print encode ($encode_to, $day_name). "\n";
+my $day_name = $dt-&gt;day_name;
+print encode ($encode_to, $day_name) . "\n";
 </pre>
 <p>
   This is a sample to get the date and time.
@@ -1257,18 +1246,18 @@ use DateTime;
 use DateTime::TimeZone;
 use DateTime::Locale;
 
-my $dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
 print "(1) Convenient output method of DateTime date / time\n";
-my $ymd = $dt-&gt; ymd;
-my $ymd_slash = $dt-&gt; ymd ('/');
-my $mdy = $dt-&gt; mdy;
-my $mdy_slash = $dt-&gt; mdy ('/');
-my $dmy = $dt-&gt; dmy;
-my $dmy_slash = $dt-&gt; dmy ('/');
-my $hms = $dt-&gt; hms;
-my $hms_hyphen = $dt-&gt; hms ('-');
-my $ymdhms = $dt-&gt; datetime;
+my $ymd = $dt-&gt;ymd;
+my $ymd_slash = $dt-&gt;ymd ('/');
+my $mdy = $dt-&gt;mdy;
+my $mdy_slash = $dt-&gt;mdy ('/');
+my $dmy = $dt-&gt;dmy;
+my $dmy_slash = $dt-&gt;dmy ('/');
+my $hms = $dt-&gt;hms;
+my $hms_hyphen = $dt-&gt;hms ('-');
+my $ymdhms = $dt-&gt;datetime;
 
 print(
   "Date (hyphen) $ymd\n".
@@ -1291,14 +1280,14 @@ use warnings;
 use DateTime;
 
 print "(1) Determine if it is a leap year.\n";
-my $dt1 = DateTime-&gt; now (time_zone =&gt;'local');
-my $is_leap_year = $dt1-&gt; is_leap_year;
+my $dt1 = DateTime-&gt;now (time_zone =&gt;'local');
+my $is_leap_year = $dt1-&gt;is_leap_year;
 if ($is_leap_year) {print "This year is a leap year.\n\n"}
 else {print "This year is not a leap year.\n\n"}
 
 print "(2) Get the last day of the month.\n";
-my $dt2 = DateTime-&gt; last_day_of_month (year =&gt; 2008, month =&gt; 11);
-print "The last day of November 2008 is". $Dt2-&gt; day. "The day.\n";
+my $dt2 = DateTime-&gt;last_day_of_month (year =&gt; 2008, month =&gt; 11);
+print "The last day of November 2008 is". $Dt2-&gt;day. "The day.\n";
 </pre>
 <p>
   This is a sample strftime method. I'm trying all the formats with samples.
@@ -1309,117 +1298,117 @@ use warnings;
 use DateTime;
 
 print "(1) strftime format specification list\n";
-my $dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
-print'% a: Abbreviation for day of the week:'. $Dt-&gt; strftime("% a"). "\n";
-print'% A: Day of the week name:'. $Dt-&gt; strftime("% A"). "\n";
-print'% b: month abbreviation:'. $dt-&gt; strftime("% b"). "\n";
-print'% B: month name:'. $dt-&gt; strftime("% B"). "\n";
-print'% c: default format:'. $Dt-&gt; strftime("% c"). "\n";
-print'% C: First two digits of the year:'. $Dt-&gt; strftime("% C"). "\n";
-print'% d: days (01 to 31):'. $Dt-&gt; strftime("% d"). "\n";
-print'% D: Same as% m /% d /% y. Month Day Year:'. $Dt-&gt; strftime("% D"). "\n";
-print'% e: day (1 to 31) The second digit of the one digit number (1 to 9) is a space. :'
-  . $dt-&gt; strftime("% e"). "\n";
-print'% F: Same as% Y-% m-% d (eg 2008-11-31):'. $Dt-&gt; strftime("% F"). "\n";
-print'% G: Year (I don't know the difference from% Y):'. $Dt-&gt; strftime("% G"). "\n";
-print'% g: Last two digits of the year (00-99):'. $Dt-&gt; strftime("% g"). "\n";
-print'% h: Same as% b. Month abbreviation:'. $Dt-&gt; strftime("% h"). "\n";
-print'% H: Hour (00 to 23):'. $Dt-&gt; strftime("% H"). "\n";
-print'% I: Hour (01 to 12) Time in 12-hour notation:'. $Dt-&gt; strftime("% I"). "\n";
-print'% j: What day is it for the first time in the year? (001 to 366):'
-  . $dt-&gt; strftime("% j"). "\n";
-print'% k: Hour (0 to 23) The second digit of the one digit number (0 to 9) is a space. :'
-  . $dt-&gt; strftime("% k"). "\n";
-print'% l: Hour (1 to 12) Time in 12-hour notation:'. $Dt-&gt; strftime("% l"). "\n";
-print'% m: Month number (01 to 12):'. $Dt-&gt; strftime("% m"). "\n";
-print'% M: Minutes (00 to 59):'. $Dt-&gt; strftime("% M"). "\n";
-print'% n: Newline character:'. $Dt-&gt; strftime("% n"). "\n";
-print'% N: milliseconds (write% 3N will display milliseconds in 3 digits and% 6N will display milliseconds in 6 digits):'
-  . $dt-&gt; strftime("% 3N"). "\n";
-print'% p: AM or PM:'. $Dt-&gt; strftime("% p"). "\n";
-print'% P: am or pm:'. $Dt-&gt; strftime("% P"). "\n";
-print'% r:% I:% M:% S Same as% p. (11:55:23 PM, etc.):'
-  . $dt-&gt; strftime("% r"). "\n";
-print'% R: hours and minutes (15:16, etc.):'. $Dt-&gt; strftime("% R"). "\n";
-print'% s: seconds from epoch:'. $dt-&gt; strftime("% s"). "\n";
-print'% S: seconds (00 to 61):'. $Dt-&gt; strftime("% S"). "\n";
-print'% t: tab character:'. $Dt-&gt; strftime("% t"). "\n";
-print'% T: Same as% H:% M:% S. Hours, minutes and seconds (such as 23:14:03):'
-  . $dt-&gt; strftime("% T"). "\n";
-print'% u: Day of the week number (1 to 7. Monday is 1):'. $Dt-&gt; strftime("% u"). "\n";
-print'% U: How many weeks from the beginning of the year? First Sunday of the year (00-53)'
+print'%a: Abbreviation for day of the week:'. $Dt-&gt;strftime("%a") . "\n";
+print'%A: Day of the week name:'. $Dt-&gt;strftime("%A") . "\n";
+print'%b: month abbreviation:'. $dt-&gt;strftime("%b") . "\n";
+print'%B: month name:'. $dt-&gt;strftime("%B") . "\n";
+print'%c: default format:'. $Dt-&gt;strftime("%c") . "\n";
+print'%C: First two digits of the year:'. $Dt-&gt;strftime("%C") . "\n";
+print'%d: days (01 to 31):'. $Dt-&gt;strftime("%d") . "\n";
+print'%D: Same as%m /%d /%y. Month Day Year:'. $Dt-&gt;strftime("%D") . "\n";
+print'%e: day (1 to 31) The second digit of the one digit number (1 to 9) is a space. :'
+  . $dt-&gt;strftime("%e") . "\n";
+print'%F: Same as%Y-%m-%d (eg 2008-11-31):'. $Dt-&gt;strftime("%F") . "\n";
+print'%G: Year (I don't know the difference from%Y):'. $Dt-&gt;strftime("%G") . "\n";
+print'%g: Last two digits of the year (00-99):'. $Dt-&gt;strftime("%g") . "\n";
+print'%h: Same as%b. Month abbreviation:'. $Dt-&gt;strftime("%h") . "\n";
+print'%H: Hour (00 to 23):'. $Dt-&gt;strftime("%H") . "\n";
+print'%I: Hour (01 to 12) Time in 12-hour notation:'. $Dt-&gt;strftime("%I") . "\n";
+print'%j: What day is it for the first time in the year? (001 to 366):'
+  . $dt-&gt;strftime("%j") . "\n";
+print'%k: Hour (0 to 23) The second digit of the one digit number (0 to 9) is a space. :'
+  . $dt-&gt;strftime("%k") . "\n";
+print'%l: Hour (1 to 12) Time in 12-hour notation:'. $Dt-&gt;strftime("%l") . "\n";
+print'%m: Month number (01 to 12):'. $Dt-&gt;strftime("%m") . "\n";
+print'%M: Minutes (00 to 59):'. $Dt-&gt;strftime("%M") . "\n";
+print'%n: Newline character:'. $Dt-&gt;strftime("%n") . "\n";
+print'%N: milliseconds (write%3N will display milliseconds in 3 digits and%6N will display milliseconds in 6 digits):'
+  . $dt-&gt;strftime("%3N") . "\n";
+print'%p: AM or PM:'. $Dt-&gt;strftime("%p") . "\n";
+print'%P: am or pm:'. $Dt-&gt;strftime("%P") . "\n";
+print'%r:%I:%M:%S Same as%p. (11:55:23 PM, etc.):'
+  . $dt-&gt;strftime("%r") . "\n";
+print'%R: hours and minutes (15:16, etc.):'. $Dt-&gt;strftime("%R") . "\n";
+print'%s: seconds from epoch:'. $dt-&gt;strftime("%s") . "\n";
+print'%S: seconds (00 to 61):'. $Dt-&gt;strftime("%S") . "\n";
+print'%t: tab character:'. $Dt-&gt;strftime("%t") . "\n";
+print'%T: Same as%H:%M:%S. Hours, minutes and seconds (such as 23:14:03):'
+  . $dt-&gt;strftime("%T") . "\n";
+print'%u: Day of the week number (1 to 7. Monday is 1):'. $Dt-&gt;strftime("%u") . "\n";
+print'%U: How many weeks from the beginning of the year? First Sunday of the year (00-53)'
   Count'.'As the beginning of the week. The first Sunday week is 01. The week before that was 00. :'
-  . $dt-&gt; strftime("% U"). "\n";
-print'% V: How many weeks from the beginning of the year? (01-53) Weeks with at least 4 days'
+  . $dt-&gt;strftime("%U") . "\n";
+print'%V: How many weeks from the beginning of the year? (01-53) Weeks with at least 4 days'
   .'Shall be the first week of the year. Count Monday as the beginning of the week. :'
-  . $dt-&gt; strftime("% V"). "\n";
-print'% w: Day of the week number (0 to 6. Sunday is 0):'. $Dt-&gt; strftime("% w"). "\n";
-print'% W: Weeks counting from the beginning of the year (00-53) The first Monday of the year is the week'
+  . $dt-&gt;strftime("%V") . "\n";
+print'%w: Day of the week number (0 to 6. Sunday is 0):'. $Dt-&gt;strftime("%w") . "\n";
+print'%W: Weeks counting from the beginning of the year (00-53) The first Monday of the year is the week'
   .'Count as the first. The first Monday week is 01. The week before that was 00. :'
-  . $dt-&gt; strftime("% W"). "\n";
-print'% x: default date format:'. $Dt-&gt; strftime("% x"). "\n";
-print'% X: Default format for time:'. $Dt-&gt; strftime("% X"). "\n";
-print'% y: last two digits of the year:'. $Dt-&gt; strftime("% y"). "\n";
-print'% Y: Year:'. $Dt-&gt; strftime("% Y"). "\n";
-print'% z: Time zone time shift from UTC (Coordinated Universal Time):'
-  . $dt-&gt; strftime("% z"). "\n";
-print'% Z: timezone name:'. $Dt-&gt; strftime("% Z"). "\n";
-print'%%:%:'. $Dt-&gt; strftime("%%"). "\n";
+  . $dt-&gt;strftime("%W") . "\n";
+print'%x: default date format:'. $Dt-&gt;strftime("%x") . "\n";
+print'%X: Default format for time:'. $Dt-&gt;strftime("%X") . "\n";
+print'%y: last two digits of the year:'. $Dt-&gt;strftime("%y") . "\n";
+print'%Y: Year:'. $Dt-&gt;strftime("%Y") . "\n";
+print'%z: Time zone time shift from UTC (Coordinated Universal Time):'
+  . $dt-&gt;strftime("%z") . "\n";
+print'%Z: timezone name:'. $Dt-&gt;strftime("%Z") . "\n";
+print'%%:%:'. $Dt-&gt;strftime("%%") . "\n";
 print'%{method}: You can use the method of DateTime.pm. Example%{ymd}:'
-  . $dt-&gt; strftime("%{ymd}"). "\n";
+  . $dt-&gt;strftime("%{ymd}") . "\n";
 </pre>
 <p>
   Execution result
 </p>
 <pre>
 (1) strftime format specification list
-% a: Abbreviation for day of the week: Mon
-% A: Day of the week name: Monday
-% b: Month abbreviation: Nov
-% B: Month name: November
-% c: Default format: Nov 17, 2008 12:09:37 AM
-% C: First two digits of the year: 20
-% d: days (01 to 31): 17
-% D: Same as% m /% d /% y. Date Year: 11/17/08
-% e: Day (1 to 31) The second digit of the one digit number (1 to 9) is a space. : 17
-% F: Same as% Y-% m-% d (for example, 2008-11-31): 2008-11-17
-% G: Year (I don't know the difference from% Y): 2008
-% g: Last 2 digits of year (00-99): 08
-% h: Same as% b. Month abbreviation: Nov
-% H: Hour (00 to 23): 00
-% I: Hour (01 to 12) Time in 12-hour notation: 12
-% j: What day is it for the first time from the beginning of the year? (001 to 366): 322
-% k: Hour (0 to 23) The second digit of the one-digit number (0 to 9) is a space
+%a: Abbreviation for day of the week: Mon
+%A: Day of the week name: Monday
+%b: Month abbreviation: Nov
+%B: Month name: November
+%c: Default format: Nov 17, 2008 12:09:37 AM
+%C: First two digits of the year: 20
+%d: days (01 to 31): 17
+%D: Same as%m /%d /%y. Date Year: 11/17/08
+%e: Day (1 to 31) The second digit of the one digit number (1 to 9) is a space. : 17
+%F: Same as%Y-%m-%d (for example, 2008-11-31): 2008-11-17
+%G: Year (I don't know the difference from%Y): 2008
+%g: Last 2 digits of year (00-99): 08
+%h: Same as%b. Month abbreviation: Nov
+%H: Hour (00 to 23): 00
+%I: Hour (01 to 12) Time in 12-hour notation: 12
+%j: What day is it for the first time from the beginning of the year? (001 to 366): 322
+%k: Hour (0 to 23) The second digit of the one-digit number (0 to 9) is a space
 NS. : 0
-% l: Hour (1 to 12) Time in 12-hour notation The second digit of the one-digit number (0 to 9) is a space. : 12
-% m: Month number (01 to 12): 11
-% M: Minutes (00 to 59): 09
-% n: Newline character:
+%l: Hour (1 to 12) Time in 12-hour notation The second digit of the one-digit number (0 to 9) is a space. : 12
+%m: Month number (01 to 12): 11
+%M: Minutes (00 to 59): 09
+%n: Newline character:
 
-% N: Milliseconds (Write% 3N displays milliseconds in 3 digits,% 6N displays milliseconds in 6 digits): 000
-% p: AM or PM: AM
-% P: am or pm: am
-Same as% r:% I:% M:% S% p. (11:55:23 PM etc.): 12:09:37 AM
-% R: Hours and minutes (15:16, etc.): 00:09
-% s: Seconds from Epoch: 1226848177
-% S: Seconds (00 to 61): 37
-% t: tab character:
-Same as% T:% H:% M:% S. Hours, minutes and seconds (such as 23:14:03): 00:09:37
-% u: Day of the week number (1 to 7. Monday is 1): 1
-% U: How many weeks from the beginning of the year? (00-53): Count the first Sunday of the year as the beginning of the week. The first Sunday week is 01. Before that
+%N: Milliseconds (Write%3N displays milliseconds in 3 digits,%6N displays milliseconds in 6 digits): 000
+%p: AM or PM: AM
+%P: am or pm: am
+Same as%r:%I:%M:%S%p. (11:55:23 PM etc.): 12:09:37 AM
+%R: Hours and minutes (15:16, etc.): 00:09
+%s: Seconds from Epoch: 1226848177
+%S: Seconds (00 to 61): 37
+%t: tab character:
+Same as%T:%H:%M:%S. Hours, minutes and seconds (such as 23:14:03): 00:09:37
+%u: Day of the week number (1 to 7. Monday is 1): 1
+%U: How many weeks from the beginning of the year? (00-53): Count the first Sunday of the year as the beginning of the week. The first Sunday week is 01. Before that
 The week is 00. : 46
-% V: How many weeks from the beginning of the year? (01-53): Let the week with at least 4 days be the first week of the year. Count Monday as the beginning of the week
+%V: How many weeks from the beginning of the year? (01-53): Let the week with at least 4 days be the first week of the year. Count Monday as the beginning of the week
 NS. : 47
-% w: Day of the week number (0 to 6. Sunday is 0): 1
-% W: Weeks counting from the beginning of the year (00 to 53) Count the first Monday of the year as the beginning of the week. The first Monday week is 01. The week before that
+%w: Day of the week number (0 to 6. Sunday is 0): 1
+%W: Weeks counting from the beginning of the year (00 to 53) Count the first Monday of the year as the beginning of the week. The first Monday week is 01. The week before that
 Is 00. : 46
-% x: Default date format: Nov 17, 2008
-% X: Default format for time: 12:09:37 AM
-% y: Last 2 digits of year: 08
-% Y: Year: 2008
-% z: Time zone time shift from UTC (Coordinated Universal Time): +0900
-% Z: Timezone name: JST
+%x: Default date format: Nov 17, 2008
+%X: Default format for time: 12:09:37 AM
+%y: Last 2 digits of year: 08
+%Y: Year: 2008
+%z: Time zone time shift from UTC (Coordinated Universal Time): +0900
+%Z: Timezone name: JST
 %%:%:%
 %{method}: DateTime.pm method can be used. %{ymd}: 2008-11-17
 </pre>
@@ -1432,42 +1421,42 @@ use warnings;
 use DateTime;
 
 print "(1) -1 Addition of dates\n";
-my $dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
 # Addition of days
-my $dt_tommorow = $dt-&gt; clone;
-$dt_tommorow-&gt; add (days =&gt; 1);
+my $dt_tommorow = $dt-&gt;clone;
+$dt_tommorow-&gt;add (days =&gt; 1);
 
 # Monthly addition
-my $dt_next_month = $dt-&gt; clone;
-$dt_next_month-&gt; add (months =&gt; 1);
+my $dt_next_month = $dt-&gt;clone;
+$dt_next_month-&gt;add (months =&gt; 1);
 
 # Year addition
-my $dt_next_year = $dt-&gt; clone;
-$dt_next_year-&gt; add (years =&gt; 1);
+my $dt_next_year = $dt-&gt;clone;
+$dt_next_year-&gt;add (years =&gt; 1);
 
-print'Currently'. $Dt-&gt; date. ".\n\n";
-print'Tomorrow'. $Dt_tommorow-&gt; date. ".\n";
-print '1 year later'. $Dt_next_month-&gt; date. ".\n";
-print '1 year later'. $Dt_next_year-&gt; date. ".\n\n";
+print'Currently'. $Dt-&gt;date. ".\n\n";
+print'Tomorrow'. $Dt_tommorow-&gt;date. ".\n";
+print '1 year later'. $Dt_next_month-&gt;date. ".\n";
+print '1 year later'. $Dt_next_year-&gt;date. ".\n\n";
 
 # Hour addition
 print "(1) -2 Add time\n";
-my $dt_next_hour = $dt-&gt; clone;
-$dt_next_hour-&gt; add (hours =&gt; 1);
+my $dt_next_hour = $dt-&gt;clone;
+$dt_next_hour-&gt;add (hours =&gt; 1);
 
 Addition of # minutes
-my $dt_next_minutes = $dt-&gt; clone;
-$dt_next_minutes-&gt; add (minutes =&gt; 1);
+my $dt_next_minutes = $dt-&gt;clone;
+$dt_next_minutes-&gt;add (minutes =&gt; 1);
 
 # Addition of seconds
-my $dt_next_second = $dt-&gt; clone;
-$dt_next_second-&gt; add (seconds =&gt; 1);
+my $dt_next_second = $dt-&gt;clone;
+$dt_next_second-&gt;add (seconds =&gt; 1);
 
-print'Currently'. $Dt-&gt; time. ".\n\n";
-print '1 hour later'. $Dt_next_hour-&gt; time. ".\n";
-print '1 minute later'. $Dt_next_minutes-&gt; time. ".\n";
-print '1 second later'. $Dt_next_second-&gt; time. ".\n";
+print'Currently'. $Dt-&gt;time. ".\n\n";
+print '1 hour later'. $Dt_next_hour-&gt;time. ".\n";
+print '1 minute later'. $Dt_next_minutes-&gt;time. ".\n";
+print '1 second later'. $Dt_next_second-&gt;time. ".\n";
 </pre>
 <p>
   Execution result
@@ -1496,28 +1485,28 @@ use warnings;
 use DateTime;
 
 print "(1) Date subtraction\n";
-my $dt = DateTime-&gt; now (time_zone =&gt;'local');
+my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
 # Subtraction of days
-my $dt_yesterday = $dt-&gt; clone;
-$dt_yesterday-&gt; subtract (days =&gt; 1);
+my $dt_yesterday = $dt-&gt;clone;
+$dt_yesterday-&gt;subtract (days =&gt; 1);
 
-print'The current date is'. $Dt-&gt; date. ".\n";
-print'Yesterday's date is'. $Dt_yesterday-&gt; date. ".\n\n";
+print'The current date is'. $Dt-&gt;date. ".\n";
+print'Yesterday's date is'. $Dt_yesterday-&gt;date. ".\n\n";
 
 # Combine addition and subtraction.
-my $dt_mix = $dt-&gt; clone;
-$dt_mix = $dt_mix-&gt; add (months =&gt; 1)-&gt; subtract (days =&gt; 1);
+my $dt_mix = $dt-&gt;clone;
+$dt_mix = $dt_mix-&gt;add (months =&gt; 1)-&gt;subtract (days =&gt; 1);
 
 print "(2) Subtraction between DateTime objects\n";
-my $dt1 = DateTime-&gt; new (year =&gt; 2000, month =&gt; 2, day =&gt; 1);
-my $dt2 = DateTime-&gt; new (year =&gt; 2003, month =&gt; 3, day =&gt; 19);
+my $dt1 = DateTime-&gt;new (year =&gt; 2000, month =&gt; 2, day =&gt; 1);
+my $dt2 = DateTime-&gt;new (year =&gt; 2003, month =&gt; 3, day =&gt; 19);
 
 my $duration = $dt2- $dt1;
 
-print'Period'. $Duration-&gt; years.' Years and'
-  . $duration-&gt; months.'Months and'
-  . $duration-&gt; days. "Days\n";
+print'Period'. $Duration-&gt;years.' Years and'
+  . $duration-&gt;months.'Months and'
+  . $duration-&gt;days. "Days\n";
 </pre>
 <p>
   Execution result
@@ -1539,7 +1528,7 @@ use warnings;
 use DateTime;
 
 # DateTime Subtraction between objects
-my $dt1 = DateTime-&gt; new (
+my $dt1 = DateTime-&gt;new (
   year =&gt; 2000,
   month =&gt; 2,
   day =&gt; 1,
@@ -1548,7 +1537,7 @@ my $dt1 = DateTime-&gt; new (
   second =&gt; 30
 );
 
-my $dt2 = DateTime-&gt; new (
+my $dt2 = DateTime-&gt;new (
   year =&gt; 2003,
   month =&gt; 3,
   day =&gt; 19,
@@ -1560,27 +1549,27 @@ my $dt2 = DateTime-&gt; new (
 my $duration = $dt2- $dt1;
 
 print "(1) Get the period.\n";
-print "Period is". $Duration-&gt; years. "Year and"
-  . $duration-&gt; months. "Months and"
-  . $duration-&gt; days. "Days and"
-  . $duration-&gt; hours. "Time and"
-  . $duration-&gt; minutes. "minutes and"
-  . $duration-&gt; seconds. "Seconds\n\n";
+print "Period is". $Duration-&gt;years. "Year and"
+  . $duration-&gt;months. "Months and"
+  . $duration-&gt;days. "Days and"
+  . $duration-&gt;hours. "Time and"
+  . $duration-&gt;minutes. "minutes and"
+  . $duration-&gt;seconds. "Seconds\n\n";
 
 print "(2) Determine the order of the periods.\n";
-if ($duration-&gt; is_positive) {
-  print "\ $dt2 is a date after \ $dt1.\n";
+if ($duration-&gt;is_positive) {
+  print "\$dt2 is a date after \$dt1.\n";
 }
-elsif ($duration-&gt; is_zero) {
-  print "\ $dt2 is equal to \ $dt1.\n";
+elsif ($duration-&gt;is_zero) {
+  print "\$dt2 is equal to \$dt1.\n";
 }
-elsif ($duration-&gt; is_negative) {
-  print "\ $dt2 is a date before \ $dt1.\n";
+elsif ($duration-&gt;is_negative) {
+  print "\$dt2 is a date before \$dt1.\n";
 }
 print "\n";
 
 print "(3) Get the period on a monthly basis.\n";
-print'The period is'. $Duration-&gt; in_units ('months'). "Months.\n";
+print'The period is'. $Duration-&gt;in_units ('months'). "Months.\n";
 </pre>
 <p>
   Execution result
@@ -1600,8 +1589,7 @@ The period is 37 months on a monthly basis.
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -1618,12 +1606,9 @@ The period is 37 months on a monthly basis.
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -1632,8 +1617,7 @@ The period is 37 months on a monthly basis.
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

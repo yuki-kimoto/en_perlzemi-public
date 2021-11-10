@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> List of modern Perl writing methods  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,15 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20091120124667.html"> List of modern Perl writing methods </a></h2>
@@ -116,7 +106,7 @@ use warnings;
 my $fh;
 my $file ='file1';
 
-open $fh,'&lt;', $file
+open $fh, '&lt;', $file
   or die "Cannot open'$file': $!";
 
 while (my $lien = &lt;$fh&gt;) {
@@ -130,14 +120,14 @@ while (my $lien = &lt;$fh&gt;) {
   It would also be more modern to put the declarations of lexical variables together in the open function.
 </p>
 <pre>
-open my $fh,'&lt;', $file
+open my $fh, '&lt;', $file
 </pre>
 <h3> Use open function with 3 arguments (required) </h3>
 <p>
   Try to use the 3-argument open function.
 </p>
 <pre>
-open my $fh,'&lt;', $file
+open my $fh, '&lt;', $file
 </pre>
 <p>
   Some old explanations explain the two-argument open function, but don't use it. The two-argument open function is vulnerable to security and should not be used.
@@ -150,17 +140,17 @@ open my $fh, "&lt;$file"; # 2 Do not use the open function as an argument
 </p>
 <pre>
 # ○ (three arguments)
-open my $pipe,'-|','dir';
+open my $pipe, '-|', 'dir';
 
 # × (two arguments)
-open my $pipe,'dir |';
+open my $pipe, 'dir |';
 </pre>
 <h3> Perform error handling when opening a file (required) </h3>
 <p>
   Make sure to handle the error whenever you open the file.
 </p>
 <pre>
-open my $fh,'&lt;', $file
+open my $fh, '&lt;', $file
   or die "Cannot open'$file': $!";
 </pre>
 <p>
@@ -198,7 +188,7 @@ sub create_table {
   I have written a separate article on how to name variables, so please refer to this as well.
 </p>
 <p>
-  <a href="/blog/20081103122562.html"> <Give the variable a proper name></a>
+  <a href="/blog/20081103122562.html"><Give the variable a proper name></a>
 </p>
 <p>
   As a general rule, the naming method for subroutines is "verb + noun". For those whose meaning is clear, it may be possible to use only "verbs" for the convenience of the user. However, I think it is safe to use "verb + noun" because it may cause problems later.
@@ -223,7 +213,7 @@ our $CLASS_INFO;
   As a sample, I will link the source code of Mojo::URL. You can remember it by imitating this.
 </p>
 <p>
-  <a href="http://github.com/kraih/mojo/blob/master/lib/Mojo/URL.pm"> <Mojo::URL source code></a>
+  <a href="http://github.com/kraih/mojo/blob/master/lib/Mojo/URL.pm"><Mojo::URL source code></a>
 </p>
 <p>
   I will write a few points to imitate.
@@ -248,7 +238,7 @@ if ($flg) {
   Use the Encode module to properly handle multibyte characters such as Japanese. This is an article, so I will link it.
 </p>
 <p>
-  <a href="/blog/20091118124667.html"> <Encode Properly process multi-byte character strings such as Japanese></a>
+  <a href="/blog/20091118124667.html"><Encode Properly process multi-byte character strings such as Japanese></a>
 </p>
 <p>
   Techniques such as using Jcode.pm or Jcode.pl as in the old commentary are no longer recommended. Starting with Perl 5.8, using the Encode module is the standard and less problematic method.
@@ -285,7 +275,7 @@ print $_ for @array;
   Perl 5 allows you to declare a lexical variable at the beginning of a foreach statement.
 </p>
 <pre>
-my @students = ('taro','kenji','naoya');
+my @students = ('taro', 'kenji', 'naoya');
 for my $student (@students) {
   ...
 }
@@ -304,7 +294,7 @@ for (@students) {
 </pre>
 <h3> How to receive command line arguments (reference) </h3>
 <p>
-  <a href="/blog/20080108132865.html"> command line arguments</a>It is good to receive it with a feeling.
+  <a href="/blog/20080108132865.html">command line arguments</a>It is good to receive it with a feeling.
 </p>
 <pre>
 # When there is one command line argument
@@ -335,19 +325,19 @@ sub func {
   If you are using Perl 5.10 or later, a module called Time::Piece is attached as standard and can be used for date processing.
 </p>
 <p>
-  <a href="/blog/20091105124627.html"> <Time::Piece - Standard module for handling date / time></a>
+  <a href="/blog/20091105124627.html"><Time::Piece - Standard module for handling date / time></a>
 </p>
 <p>
   You may also want to install the DataTime module if you can install it from CPAN. This is highly functional but a little heavy.
 </p>
 <p>
-  <a href="/blog/20090815124848.html"> <DateTime, a module that handles dates universally></a>
+  <a href="/blog/20090815124848.html"><DateTime, a module that handles dates universally></a>
 </p>
 <p>
   If you can't do that, try localtime or Time::Local.
 </p>
 <p>
-  <a href="/blog/20090809124848.html"> <Handling of dates and times in Perl></a>
+  <a href="/blog/20090809124848.html"><Handling of dates and times in Perl></a>
 </p>
 <h3> Do not load unnecessary modules (required) </h3>
 <p>
@@ -441,7 +431,7 @@ sub func {
 }
 </pre>
 <p>
-  <a href="http://github.com/kraih/mojo/blob/master/lib/Mojo/URL.pm"> <Mojo::URL source code></a>
+  <a href="http://github.com/kraih/mojo/blob/master/lib/Mojo/URL.pm"><Mojo::URL source code></a>
 </p>
 <p>
   Please also refer to.
@@ -457,7 +447,7 @@ my @strings = qw / aa bb cc /;
   It has the same meaning as the following description.
 </p>
 <pre>
-my @strings = ('aa','bb','cc');
+my @strings = ('aa', 'bb', 'cc');
 </pre>
 <h3> Explicit when importing module functions (highly recommended) </h3>
 <p>
@@ -488,11 +478,11 @@ mkpath $dir;
   In such a case, you may end up reading the documentation for all the modules being used. You may know from which module the function was imported, but it's not explicit to anyone reading the source code. So be sure to explicitly specify the function you want to import, no matter how obvious it may seem to you.
 </p>
 <p>
-  (Reference) <a href="/blog/20100409127089.html"> File::Path</a>, <a href="/blog/20100408127089.html"> File::Copy</a>
+  (Reference) <a href="/blog/20100409127089.html">File::Path</a>, <a href="/blog/20100408127089.html">File::Copy</a>
 </p>
 <h3> Don't use goto (required except in really special cases) </h3>
 <p>
-  Perl has a <a href="/blog/20170514149606.html"> goto statement</a>, but you shouldn't use it. Programming with goto is a thing of the past, not just Perl. If for some reason you want to use goto, be sure to have an alternative.
+  Perl has a <a href="/blog/20170514149606.html">goto statement</a>, but you shouldn't use it. Programming with goto is a thing of the past, not just Perl. If for some reason you want to use goto, be sure to have an alternative.
 </p>
 <p>
   If you want to perform loop control, use "last" and "next". If you want to handle the error, use die to throw the exception.
@@ -502,14 +492,14 @@ mkpath $dir;
 </p>
 <h3> do-while is not used (recommended) </h3>
 <p>
-  Statements that can be described by the do while statement can always be described by <a href="/blog/20100123126425.html"> while statement</a>. The use of the do while statement does not mean that the description will be concise. On the contrary, I feel that it becomes difficult to understand the intention because I do not use it normally.
+  Statements that can be described by the do while statement can always be described by <a href="/blog/20100123126425.html">while statement</a>. The use of the do while statement does not mean that the description will be concise. On the contrary, I feel that it becomes difficult to understand the intention because I do not use it normally.
 </p>
 <p>
   Statements that can be described by the do while statement can always be described by the while statement, so it is recommended to consider the logic that uses the while statement.
 </p>
 <h3> Do not use redo(recommended) </h3>
 <p>
-  Perl has a <a href="/blog/20170515149615.html"> redo statement</a>, but you can write the same logic without using redo. I've used redo several times, but I find programming with redo very confusing. Since the same logic can always be written without using redo, it is recommended to consider logic that does not use redo.
+  Perl has a <a href="/blog/20170515149615.html">redo statement</a>, but you can write the same logic without using redo. I've used redo several times, but I find programming with redo very confusing. Since the same logic can always be written without using redo, it is recommended to consider logic that does not use redo.
 </p>
 <h3> Do not use prototype (highly recommended) </h3>
 <p>
@@ -531,7 +521,7 @@ sub func {
 </pre>
 <h3> Use die instead of returning undef as a return value when reporting an error. (Recommended) </h3>
 <p>
-  You might think that Perl has no exception handling. There is no such thing as an exception object like Java, but it does have a concise exception mechanism.First, let's see how to return <a href="/blog/20100220126425.html"> undef</a> to the return value that was the old error handling. If you write a single return when an error occurs, undef is returned for scalar context and an empty list () is returned for list context.
+  You might think that Perl has no exception handling. There is no such thing as an exception object like Java, but it does have a concise exception mechanism.First, let's see how to return <a href="/blog/20100220126425.html">undef</a> to the return value that was the old error handling. If you write a single return when an error occurs, undef is returned for scalar context and an empty list () is returned for list context.
 </p>
 <pre>
 # Return undef when an error occurs
@@ -587,7 +577,7 @@ sub func {
 func ();
 </pre>
 <p>
-  If you don't want to quit the program, use the <a href="/blog/20100312126967.html"> eval block</a>. Think of it as a catch in Java. If an error occurs, the content of the error is set in a special variable called $@, so you can check this variable to see if an error has occurred.
+  If you don't want to quit the program, use the <a href="/blog/20100312126967.html">eval block</a>. Think of it as a catch in Java. If an error occurs, the content of the error is set in a special variable called $@, so you can check this variable to see if an error has occurred.
 </p>
 <pre>
 eval {func ()};
@@ -601,7 +591,7 @@ if ($@) {
   It's a good idea to use the arrow operator to call the constructor. In Perl, there is virtually no difference between a constructor and other methods.
 </p>
 <pre>
-my $obj = SomeClass-&gt; new;
+my $obj = SomeClass-&gt;new;
 </pre>
 <p>
   Indirect object calls may be deprecated in the future.
@@ -615,8 +605,7 @@ my $obj = new SomeClass ();
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -633,12 +622,9 @@ my $obj = new SomeClass ();
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -647,8 +633,7 @@ my $obj = new SomeClass ();
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

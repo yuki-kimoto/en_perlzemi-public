@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,16 +24,15 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> foreach - Processing of each element of the array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use  foreach  to process each element of the  array in turn . Perl prefers to use  while statement.">
+<meta name="description" content="Use  foreach  to process each element of the  array in turn . Perl prefers to use while statement.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" foreach - Processing of each element of the array  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use  foreach  to process each element of the  array in turn . Perl prefers to use  while statement." />
+<meta name="twitter:description" content="Use  foreach  to process each element of the  array in turn . Perl prefers to use while statement." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,33 +53,25 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161023147731.html">
-        <span itemprop = "name"> control structure </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161023147731.html">        <span itemprop = "name">control structure </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161022147731.html">        <span itemprop = "name">Syntax </span></a>
     <meta itemprop = "position" content = "3" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> foreach statement </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">foreach statement </span>
     <meta itemprop = "position" content = "4" />
   </li>
 </ol>
 <h2><a href="/blog/20080328120673.html"> foreach - Processing of each element of the array </a></h2>
 <p>
-  Use <strong> foreach </strong> to process each element of the <strong> array in turn </strong>. Perl prefers to use <a href="/blog/20100123126425.html"> while statement</a>.
+  Use <strong> foreach </strong> to process each element of the <strong> array in turn </strong>. Perl prefers to use <a href="/blog/20100123126425.html">while statement</a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -121,7 +107,7 @@ for my $item (@array) {
 </p>
 <ul>
   <li>
-    <a href="/blog/20170521149524.html"> Let's learn the iterative processing using for statement and while statement</a>
+    <a href="/blog/20170521149524.html">Let's learn the iterative processing using for statement and while statement</a>
   </li>
 </ul>
 <h3> Sample </h3>
@@ -141,11 +127,11 @@ foreach my $num (@nums) {
 <pre>
 # Output array elements in sequence (array reference)
 my $nums = [3, 4, 5];
-foreach my $num (@ $nums) {
+foreach my $num (@$nums) {
   print "$num\n";
 }
 </pre>
- This is a sample that outputs the values ​​contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html"> join function</a> is used to connect the strings contained in the array with tabs.
+ This is a sample that outputs the values ​​contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
 <pre>
 # Output the values ​​contained in the 2D array in tabs for each line
 my $data = [
@@ -153,8 +139,8 @@ my $data = [
   ['b', 2]
 ];;
 
-foreach my $record(@ $data) {
-  print join("\t", @ $record). "\n";
+foreach my $record(@$data) {
+  print join("\t", @$record) . "\n";
 }
 </pre>
 <p>
@@ -167,9 +153,9 @@ my $people = [
   {name =&gt;'Taro', age =&gt; 32}
 ];;
 
-foreach my $person (@ $persons) {
-  my @record = ($person-&gt; {name}, $person-&gt; {age});
-  print join("\t", @record). "\n";
+foreach my $person (@$persons) {
+  my @record = ($person-&gt;{name}, $person-&gt;{age});
+  print join("\t", @record) . "\n";
 }
 </pre>
 <p>
@@ -180,7 +166,7 @@ use strict;
 use warnings;
 
 print "[1]\n";
-my @persons = ('tom','taro','sinji');
+my @persons = ('tom', 'taro', 'sinji');
 foreach my $person (@persons) {
   print $person, "\n";
 }
@@ -192,12 +178,12 @@ foreach my $number (@numbers) {
   Since what is passed to # $number is an alias for the element, you can change the value of the array itself.
   $number = $number * 2;
 }
-print "\ @ numbers = (", join(',', @numbers), ")\n\n";
+print "\@numbers = (", join(',', @numbers), ")\n\n";
 
 print "[3]\n";
 foreach my $index(0 .. $# persons) {
   # When you want to use the element number, pass the element number without passing the element of the array itself.
-  print "\ $persons [$index] = $persons [$index]\n";
+  print "\$persons[$index] = $persons[$index]\n";
 }
 </pre>
 <p>
@@ -213,17 +199,16 @@ sinji
 @numbers = (2,4,6)
 
 [3]
-$people [0] = tom
-$persons [1] = taro
-$persons [2] = sinji
+$people[0] = tom
+$persons[1] = taro
+$persons[2] = sinji
 </pre>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -240,12 +225,9 @@ $persons [2] = sinji
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -254,8 +236,7 @@ $persons [2] = sinji
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

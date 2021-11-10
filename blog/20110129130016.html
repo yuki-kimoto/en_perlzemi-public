@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,16 +24,15 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Speed ​​up with bulk insert  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="th-> execute ($i, $title);">
+<meta name="description" content="th->execute ($i, $title);">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Speed ​​up with bulk insert  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="th-> execute ($i, $title);" />
+<meta name="twitter:description" content="th->execute ($i, $title);" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -60,7 +54,7 @@
   </div>
   <div class="middle">
     <p>
-  th-> execute ($i, $title);
+  th->execute ($i, $title);
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -101,7 +95,7 @@ raw 278 / s 1147% 31% -
   If your database supports bulk inserts, you can do bulk inserts. Currently available for MySQL and PostgreSQL. You can use the database function to insert multiple data at once, so you can expect even higher speeds.
 </p>
 <pre>
-$dbi-&gt; insert ($params, table =&gt;'book', bulk_insert =&gt; 1);
+$dbi-&gt;insert ($params, table =&gt;'book', bulk_insert =&gt; 1);
 </pre>
 <p>
   <b> Benchmark with bulk_insert in MySQL </b>
@@ -116,49 +110,49 @@ use Benchmark qw / timethese cmpthese /;
 
 use DBIx::Custom;
 
-my $dbi = DBIx::Custom-&gt; connect (dsn =&gt;'dbi: mysql: database = usertest',
+my $dbi = DBIx::Custom-&gt;connect (dsn =&gt;'dbi: mysql: database = usertest',
 user =&gt;'root', connector =&gt; 1);
 
 # Performance comparison
 my $result = timethese (100, {
   normal =&gt; sub {
-    $dbi-&gt; connector-&gt; txn (sub {
-      $dbi-&gt; delete_all (table =&gt;'book');
+    $dbi-&gt;connector-&gt;txn (sub {
+      $dbi-&gt;delete_all (table =&gt;'book');
       for my $i (1 .. 100) {
         my $param = {id =&gt; $i, title =&gt;'Perl'};
-        $dbi-&gt; insert ($param, table =&gt;'book');
+        $dbi-&gt;insert ($param, table =&gt;'book');
       }
     });
   },
   multiple =&gt; sub {
-    $dbi-&gt; connector-&gt; txn (sub {
-      $dbi-&gt; delete_all (table =&gt;'book');
+    $dbi-&gt;connector-&gt;txn (sub {
+      $dbi-&gt;delete_all (table =&gt;'book');
       my @params;
       for my $i (1 .. 100) {
         push @params, {id =&gt; $i, title =&gt;'Perl'};
       }
-      $dbi-&gt; insert (\ @ params, table =&gt;'book');
+      $dbi-&gt;insert (\@params, table =&gt;'book');
     });
   },
   bulk_insert =&gt; sub {
-    $dbi-&gt; connector-&gt; txn (sub {
-      $dbi-&gt; delete_all (table =&gt;'book');
+    $dbi-&gt;connector-&gt;txn (sub {
+      $dbi-&gt;delete_all (table =&gt;'book');
       my @params;
       for my $i (1 .. 100) {
         push @params, {id =&gt; $i, title =&gt;'Perl'};
       }
-      $dbi-&gt; insert (\ @ params, table =&gt;'book', bulk_insert =&gt; 1);
+      $dbi-&gt;insert (\@params, table =&gt;'book', bulk_insert =&gt; 1);
     });
   },
   raw =&gt; sub {
-    $dbi-&gt; connector-&gt; txn (sub {
-      $dbi-&gt; delete_all (table =&gt;'book');
+    $dbi-&gt;connector-&gt;txn (sub {
+      $dbi-&gt;delete_all (table =&gt;'book');
       my $sth;
       for my $i (1 .. 100) {
-        $sth || = $dbi-&gt; dbh-&gt; prepare ('insert into book (id, title) values ​​(?,?)');
+        $sth || = $dbi-&gt;dbh-&gt;prepare ('insert into book (id, title) values ​​(?,?)');
         my $id = $i;
         my $title ='Perl';
-        $sth-&gt; execute ($i, $title);
+        $sth-&gt;execute ($i, $title);
       }
     });
   }
@@ -184,8 +178,7 @@ bulk_insert 143 / s 496% 66% 40% -
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -202,12 +195,9 @@ bulk_insert 143 / s 496% 66% 40% -
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -216,8 +206,7 @@ bulk_insert 143 / s 496% 66% 40% -
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

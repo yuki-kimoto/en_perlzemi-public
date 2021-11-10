@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Test::More - Write a test program for automated testing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,15 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Exam </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">Exam </span>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -197,7 +187,7 @@ use Test::More tests =&gt; 2;
   
   my $total = sum ($num1, $num2);
   
-  ok ($total == 3,'sum');
+  ok ($total == 3, 'sum');
 }
 
 # double exam
@@ -207,7 +197,7 @@ use Test::More tests =&gt; 2;
   my $double = double ($num1);
     
   # Failure!
-  ok ($double == 2,'double');
+  ok ($double == 2, 'double');
 }
 
 # Subroutine that sums two numbers
@@ -235,7 +225,7 @@ sub double {
   
   my $total = sum ($num1, $num2);
   
-  ok ($total == 3,'sum');
+  ok ($total == 3, 'sum');
 }
 
 # Subroutine that sums two numbers
@@ -256,7 +246,7 @@ sub sum {
   
   my $total = sum ($num1, $num2);
   
-  ok ($total == 3,'sum');
+  ok ($total == 3, 'sum');
 }
 
 # double exam
@@ -265,7 +255,7 @@ sub sum {
   
   my $double = double ($num1);
   
-  ok ($double == 2,'double'); # Failed!
+  ok ($double == 2, 'double'); # Failed!
 }
 </pre>
 <h4> 3. Test results </h4>
@@ -354,11 +344,11 @@ my $num1 = 1;
   
   my $total = SomeModule::sum ($num1, $num2);
   
-  ok ($total == 3,'sum');
+  ok ($total == 3, 'sum');
 }
 </pre>
 <p>
-  (Reference) <a href="/blog/20100524127696.html"> FindBin</a>
+  (Reference) <a href="/blog/20100524127696.html">FindBin</a>
 </p>
 <h4> double.t </h4>
 <pre>
@@ -378,7 +368,7 @@ use SomeModule;
   
   my $double = SomeModule::double ($num1);
   
-  ok ($double == 2,'double');
+  ok ($double == 2, 'double');
 }
 
 </pre>
@@ -414,7 +404,7 @@ t \ double .... NOK 1/1 # Failed test'double'
 t \ double .... dubius
         Test returned status 1 (wstat 256, 0x100)
 DIED. FAILED test 1
-        Failed 1/1 tests, 0.00% okay
+        Failed 1/1 tests, 0.00%okay
 Failed Test Stat Wstat Total Fail List of Failed
 - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --- - -- -- -- -- -- -- -- -- -
 t \ double.t 1 256 1 1 1
@@ -468,7 +458,7 @@ Files = 2, Tests = 2, 0 wallclock secs (0.00 cusr + 0.00 csys = 0.00 CPU)
       like
     </td>
     <td>
-      Make sure the string matches <a href="/blog/20100827127859.html"> regular expression</a>
+      Make sure the string matches <a href="/blog/20100827127859.html">regular expression</a>
     </td>
   </tr>
   <tr>
@@ -532,10 +522,10 @@ unlike ($str, qr / \ w + /);
   The <strong> cmp_ok function </strong> allows you to test using any comparison operator.
 </p>
 <pre>
-cmp_ok ($num,'&lt;', 3);
+cmp_ok ($num, '&lt;', 3);
 </pre>
 <p>
-  The first and third arguments are the values ​​you want to compare. The second argument is the comparison operator. All comparison operators such as "=", "<", "<=", "> =", ">", "eq", "ne", "gt", "lt", "ge", and "le" can be used.
+  The first and third arguments are the values ​​you want to compare. The second argument is the comparison operator. All comparison operators such as "=", "<", "<=", ">=", ">", "eq", "ne", "gt", "lt", "ge", and "le" can be used.
 </p>
 <h4> is_deeply function </h4>
 <p>
@@ -589,7 +579,7 @@ is_deeply ($hash_ref, {a =&gt; 1, b =&gt; 2});
   The <strong> can_ok function </strong> is used for testing to make sure a class has a method.
 </p>
 <pre>
-can_ok ('Book','title','author','price','to_string','clone');
+can_ok ('Book', 'title', 'author', 'price', 'to_string', 'clone');
 </pre>
 <p>
   This is a test to make sure that the Book class has methods title, author, price, to_string, clone.
@@ -599,8 +589,8 @@ can_ok ('Book','title','author','price','to_string','clone');
   <strong> isa_ok </strong> is used for testing to ensure that an object inherits a class.
 </p>
 <pre>
-my $comic = Comic-&gt; new;
-isa_ok ($comic,'Book');
+my $comic = Comic-&gt;new;
+isa_ok ($comic, 'Book');
 </pre>
 <p>
   This is a test to make sure that the $comic object inherits from the Book class.
@@ -609,14 +599,14 @@ isa_ok ($comic,'Book');
   The exam will also succeed if you specify your own class as follows:
 </p>
 <pre>
-isa_ok ($comic,'Comic');
+isa_ok ($comic, 'Comic');
 </pre>
 <p>
   It also supports testing what kind of reference it is, not an object.
 </p>
 <pre>
 my $ary_ref = [];
-isa_ok ($array_ref,'ARRAY');
+isa_ok ($array_ref, 'ARRAY');
 </pre>
 <h4> require_ok function </h4>
 <p>
@@ -697,7 +687,7 @@ eval {some_func ()};
 like ($@, qr / error /);
 </pre>
 <p>
-  (Reference) <a href="/blog/20100312126967.html"> eval</a>
+  (Reference) <a href="/blog/20100312126967.html">eval</a>
 </p>
 <h4> How do you test the warning? </h4>
 <p>
@@ -708,7 +698,7 @@ like ($@, qr / error /);
 my $warn;
 
 # Handler called when a warning occurs
-local $SIG {__ WARN__} = sub {
+local $SIG{__ WARN__} = sub {
   $warn = shift;
 };
 
@@ -733,8 +723,7 @@ else {
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -751,12 +740,9 @@ else {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -765,8 +751,7 @@ else {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

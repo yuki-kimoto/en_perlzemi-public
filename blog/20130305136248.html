@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Introduction to Object Oriented  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161030147778.html">
-        <span itemprop = "name"> Object Oriented </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161030147778.html">        <span itemprop = "name">Object Oriented </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Introduction </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">Introduction </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -123,15 +111,15 @@ use Object::Simple -base;
   This way you can define a class called <b> MyClass </b>. You can create an object from a class using the constructor <b> new </b>. (This new is inherited from Object::Simple.)
 </p>
 <pre>
-my $obj = MyClass-&gt; new;
+my $obj = MyClass-&gt;new;
 </pre>
 <p>
   The <b> new </b> method can receive a hash or a hash reference.
 </p>
     
 <pre>
-my $obj = MyClass-&gt; new (foo =&gt; 1, bar =&gt; 2);
-my $obj = MyClass-&gt; new ({foo =&gt; 1, bar =&gt; 2});
+my $obj = MyClass-&gt;new (foo =&gt; 1, bar =&gt; 2);
+my $obj = MyClass-&gt;new ({foo =&gt; 1, bar =&gt; 2});
 </pre>
 <p>
   This is set as an attribute value.
@@ -151,10 +139,10 @@ has'foo';
 </p>
 <pre>
 # Value setting
-$obj-&gt; foo (1);
+$obj-&gt;foo (1);
 
 # Get value
-my $foo = $obj-&gt; foo;
+my $foo = $obj-&gt;foo;
 </pre>
 <p>
   You can also specify defaults for attribute values.
@@ -170,7 +158,7 @@ has foo =&gt; 1;
 </p>
 <pre>
 # Get the default value of 1
-my $default = $obj-&gt; foo;
+my $default = $obj-&gt;foo;
 </pre>
 <p>
   If you want to specify a reference or object as the default value, it must be the return value of the subroutine reference.
@@ -178,7 +166,7 @@ my $default = $obj-&gt; foo;
 <pre>
 has foo =&gt; sub {[]};
 has foo =&gt; sub {{}};
-has foo =&gt; sub {MyClass-&gt; new};
+has foo =&gt; sub {MyClass-&gt;new};
 </pre>
 <p>
   You can also generate multiple accessors at once.
@@ -210,7 +198,7 @@ use MyClass -base;
 sub clear {
   my $self = shift;
   
-  $self-&gt; SUPER::clear;
+  $self-&gt;SUPER::clear;
 }
 </pre>
 <h3> Constructor override </h3>
@@ -224,7 +212,7 @@ use Object::Simple -base;
 sub new {
   my $class = shift;
   
-  my $self = $class-&gt; SUPER::new (@_);
+  my $self = $class-&gt;SUPER::new (@_);
   
   return $self;
 }
@@ -260,8 +248,8 @@ has y =&gt; 0;
 sub clear {
   my $self = shift;
   
-  $self-&gt; x (0);
-  $self-&gt; y (0);
+  $self-&gt;x (0);
+  $self-&gt;y (0);
 }
 
 1;
@@ -274,10 +262,10 @@ sub clear {
 </p>
 <pre>
 use Point;
-my $point = Point-&gt; new (x =&gt; 3, y =&gt; 5);
-print $point-&gt; x;
-$point-&gt; y (9);
-$point-&gt; clear;
+my $point = Point-&gt;new (x =&gt; 3, y =&gt; 5);
+print $point-&gt;x;
+$point-&gt;y (9);
+$point-&gt;clear;
 </pre>
 <h4> Point3D class </h4>
 <blockquote>
@@ -306,9 +294,9 @@ has z =&gt; 0;
 sub clear {
   my $self = shift;
   
-  $self-&gt; SUPER::clear;
+  $self-&gt;SUPER::clear;
   
-  $self-&gt; z (0);
+  $self-&gt;z (0);
 }
 
 1;
@@ -318,10 +306,10 @@ sub clear {
 </p>
 <pre>
 use Point3D;
-my $point = Point-&gt; new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
-print $point-&gt; z;
-$point-&gt; z (9);
-$point-&gt; clear;
+my $point = Point-&gt;new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
+print $point-&gt;z;
+$point-&gt;z (9);
+$point-&gt;clear;
 </pre>
 <h3> Executable sample </h3>
 <p>
@@ -341,8 +329,8 @@ has y =&gt; 0;
 sub clear {
   my $self = shift;
   
-  $self-&gt; x (0);
-  $self-&gt; y (0);
+  $self-&gt;x (0);
+  $self-&gt;y (0);
 }
 
 1;
@@ -360,9 +348,9 @@ has z =&gt; 0;
 sub clear {
   my $self = shift;
   
-  $self-&gt; SUPER::clear;
+  $self-&gt;SUPER::clear;
   
-  $self-&gt; z (0);
+  $self-&gt;z (0);
 }
 
 1;
@@ -377,19 +365,19 @@ use warnings;
 use lib'lib';
 use Point3D;
 
-my $point = Point3D-&gt; new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
+my $point = Point3D-&gt;new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
 
 # 8 is displayed
-print $point-&gt; z. "\n";
+print $point-&gt;z . "\n";
 
-$point-&gt; z (9);
+$point-&gt;z (9);
 
 # 9 is displayed
-print $point-&gt; z. "\n";
-$point-&gt; clear;
+print $point-&gt;z . "\n";
+$point-&gt;clear;
 
 # 0 is displayed
-print $point-&gt; z. "\n";
+print $point-&gt;z . "\n";
 </pre>
 <h4> Script execution </h4>
 <p>
@@ -449,14 +437,14 @@ my $class = ref $obj;
   To find out if an object inherits a particular class, use the isa method.
 </p>
 <pre>
-$obj-&gt; isa ('MyClass');
+$obj-&gt;isa ('MyClass');
 </pre>
 <p>
   Use the can method to find out if an object (or class) can call a particular method.
 </p>
 <pre>
-MyClass-&gt; can ('method1');
-$obj-&gt; can ('method1');
+MyClass-&gt;can ('method1');
+$obj-&gt;can ('method1');
 </pre>
 <h4> Encapsulation </h4>
 <p>
@@ -466,14 +454,14 @@ $obj-&gt; can ('method1');
   In order to follow this rule, it is necessary to generate an accessor to get and set the value.
 </p>
 <pre>
-my $value = $obj-&gt; foo;
-$obj-&gt; foo (1);
+my $value = $obj-&gt;foo;
+$obj-&gt;foo (1);
 </pre>
   Accessing data directly is a bad habit.
 <pre>
 # Not good
-my $value = $obj-&gt; {foo};
-$obj-&gt; {foo} = 1;
+my $value = $obj-&gt;{foo};
+$obj-&gt;{foo} = 1;
 </pre>
 <h4> Polymorphism </h4>
 <p>
@@ -508,12 +496,12 @@ sub method1 {return 2}
 </p>
 <pre>
 Returns # 1
-my $obj_p = P-&gt; new;
-$obj_p-&gt; method1;
+my $obj_p = P-&gt;new;
+$obj_p-&gt;method1;
 
 Returns # 2
-my $obj_q = Q-&gt; new;
-$obj_q-&gt; method1; # Return value is 2
+my $obj_q = Q-&gt;new;
+$obj_q-&gt;method1; # Return value is 2
 </pre>
 <p>
   If you want to call a method of the base class from a subclass, use the SUPER pseudo-class.
@@ -526,7 +514,7 @@ sub method1 {
   my $self = shift;
   
   Call method1 of P using the # SUPER pseudo-class
-  my $value = $self-&gt; SUPER::method1 (@ _);
+  my $value = $self-&gt;SUPER::method1 (@_);
   
   return 2 + $value;
 }
@@ -536,7 +524,7 @@ sub method1 {
 </p>
 <pre>
 sub new {
-  my $self = shift-&gt; SUPER::new (@_);
+  my $self = shift-&gt;SUPER::new (@_);
   
   # Initialization process
   
@@ -551,13 +539,13 @@ sub new {
 sub new {
   my $self = shift;
   
-  $self-&gt; SUPER::new (x =&gt; $_ [0], y =&gt; $_ [1]);
+  $self-&gt;SUPER::new (x =&gt; $_[0], y =&gt; $_[1]);
   
   return $self;
 }
 </pre>
 <p>
-  Understanding these three concepts, "inheritance," "encapsulation," and "polymorphism," will create a powerful enough object-oriented program and make the source code readable by users in other languages.
+  Understanding these three concepts, "inheritance, " "encapsulation, " and "polymorphism, " will create a powerful enough object-oriented program and make the source code readable by users in other languages.
 </p>
 <h3> Package block syntax </h3>
 <p>
@@ -573,8 +561,8 @@ package Point {
   sub clear {
     my $self = shift;
     
-    $self-&gt; x (0);
-    $self-&gt; y (0);
+    $self-&gt;x (0);
+    $self-&gt;y (0);
   }
 }
 </pre>
@@ -590,8 +578,7 @@ package Point {
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -608,12 +595,9 @@ package Point {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -622,8 +606,7 @@ package Point {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

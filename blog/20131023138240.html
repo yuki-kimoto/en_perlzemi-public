@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Statistical functions in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">        <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-        <span itemprop = "name"> PDL </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">        <span itemprop = "name">PDL </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -108,7 +96,7 @@ use PDL;
 my $nums = pdl [4, 2, 7];
 
 # Maximum value
-my $max = $nums-&gt; max;
+my $max = $nums-&gt;max;
 </pre>
 <p>
   The PDL::Ufunc module provides functions for calculating statistics from PDL variables.
@@ -119,7 +107,7 @@ my $max = $nums-&gt; max;
 </p>
 <pre>
 # minimum value
-my $min = $nums-&gt; min;
+my $min = $nums-&gt;min;
 </pre>
 <h3> Total </h3>
 <p>
@@ -127,21 +115,21 @@ my $min = $nums-&gt; min;
 </p>
 <pre>
 # total
-my $total = $nums-&gt; sum;
+my $total = $nums-&gt;sum;
 </pre>
 <h3> Average </h3>
 <p>
   Use the <strong> avg method </strong> to find the <strong> average </strong>.
 </p>
 <pre>
-my $average = $nums-&gt; avg;
+my $average = $nums-&gt;avg;
 </pre>
 <h3> Median </h3>
 <p>
   Use the <strong> median method </strong> to find the <strong> median </strong>.
 </p>
 <pre>
-my $median = $nums-&gt; median;
+my $median = $nums-&gt;median;
 </pre>
 <p>
   The median is the value that comes in the middle when all the values ​​are listed.
@@ -151,7 +139,7 @@ my $median = $nums-&gt; median;
   Use the <strong> mode method </strong> to find the <strong> mode </strong>.
 </p>
 <pre>
-my $mode = $nums-&gt; mode;
+my $mode = $nums-&gt;mode;
 </pre>
 <p>
   The mode is the value that appears most often.
@@ -162,7 +150,7 @@ my $mode = $nums-&gt; mode;
 </p>
 <pre>
 # Ascending sort
-my $nums_sort_asc = $nums-&gt; qsort;
+my $nums_sort_asc = $nums-&gt;qsort;
 </pre>
 <p>
   To sort in descending order, combine ascending sort and slice.
@@ -187,22 +175,22 @@ use PDL::NiceSlice;
 my $nums = pdl [4, 4, 2, 2, 2, 7];
 
 # Maximum value
-my $max = $nums-&gt; max;
+my $max = $nums-&gt;max;
 
 # minimum value
-my $min = $nums-&gt; min;
+my $min = $nums-&gt;min;
 
 # total
-my $total = $nums-&gt; sum;
+my $total = $nums-&gt;sum;
 
 # Average
-my $average = $nums-&gt; avg;
+my $average = $nums-&gt;avg;
 
 # Median
-my $median = $nums-&gt; median;
+my $median = $nums-&gt;median;
 
 # Mode
-my $mode = $nums-&gt; mode;
+my $mode = $nums-&gt;mode;
 
 print "Max: $max\n";
 print "Min: $min\n";
@@ -212,7 +200,7 @@ print "Median: $median\n";
 print "Mode: $mode\n";
 
 # Ascending sort
-my $nums_sort_asc = $nums-&gt; qsort;
+my $nums_sort_asc = $nums-&gt;qsort;
 
 # Descending sort(combined with ascending sort and slice)
 my $nums_sort_desc = $nums_sort_asc (-1: 0);
@@ -245,7 +233,7 @@ use PDL::Stats::Basic;
 my $nums = pdl [4, 2, 7];
 
 # Distributed
-my $variance = $nums-&gt; var;
+my $variance = $nums-&gt;var;
 </pre>
 <h3> Bias of an estimulus </h3>
 <p>
@@ -253,7 +241,7 @@ my $variance = $nums-&gt; var;
 </p>
 <pre>
 # Unbiased dispersion
-my $variance = $nums-&gt; var_unbiased;
+my $variance = $nums-&gt;var_unbiased;
 </pre>
 <p>
   Bias of an estimulus has a denominator of (n -1).
@@ -264,7 +252,7 @@ my $variance = $nums-&gt; var_unbiased;
 </p>
 <pre>
 # standard deviation
-my $stdv = $nums-&gt; stdv;
+my $stdv = $nums-&gt;stdv;
 </pre>
 <p>
   The meaning of the standard deviation is an indication of how scattered the data is. The standard deviation formula is the "positive square root of the variance". Variance also indicates how scattered the data is, but because the units are different from the original data, it is difficult to compare with the original data. If you take the positive square root and make it the standard deviation, the unit will be the same as the unit of the original data.
@@ -275,7 +263,7 @@ my $stdv = $nums-&gt; stdv;
 </p>
 <pre>
 # Unbiased standard deviation
-my $stdv = $nums-&gt; stdv_unbiased;
+my $stdv = $nums-&gt;stdv_unbiased;
 </pre>
 <p>
   The unbiased standard deviation formula is the "positive square root of the unbiased variance".
@@ -286,7 +274,7 @@ my $stdv = $nums-&gt; stdv_unbiased;
 </p>
 <pre>
 # Standard error
-my $se = $nums-&gt; se;
+my $se = $nums-&gt;se;
 </pre>
 <h3> Sum of deviation squares </h3>
 <p>
@@ -294,7 +282,7 @@ my $se = $nums-&gt; se;
 </p>
 <pre>
 # Deviation square sum
-my $ss = $nums-&gt; ss;
+my $ss = $nums-&gt;ss;
 </pre>
 <h3> Skewness </h3>
 <p>
@@ -302,7 +290,7 @@ my $ss = $nums-&gt; ss;
 </p>
 <pre>
 # Skewness
-my $skew = $nums-&gt; skew;
+my $skew = $nums-&gt;skew;
 </pre>
 <h3> Bias of an estimulus </h3>
 <p>
@@ -310,7 +298,7 @@ my $skew = $nums-&gt; skew;
 </p>
 <pre>
 # Bias of an estimulus
-my $skew_unbiased = $nums-&gt; skew_unbiased;
+my $skew_unbiased = $nums-&gt;skew_unbiased;
 </pre>
 <h3> Kurtosis </h3>
 <p>
@@ -318,7 +306,7 @@ my $skew_unbiased = $nums-&gt; skew_unbiased;
 </p>
 <pre>
 # Kurtosis
-my $kurt = $nums-&gt; kurt;
+my $kurt = $nums-&gt;kurt;
 </pre>
 <h3> Bias of an estimulus </h3>
 <p>
@@ -326,7 +314,7 @@ my $kurt = $nums-&gt; kurt;
 </p>
 <pre>
 # Bias of an estimulus
-my $kurt_unbiased = $nums-&gt; kurt_unbiased;
+my $kurt_unbiased = $nums-&gt;kurt_unbiased;
 </pre>
 <h3> Sample </h3>
 <p>
@@ -343,34 +331,34 @@ use PDL::Stats::Basic;
 my $nums = pdl [4, 2, 7, 3, 5];
 
 # Distributed
-my $variance = $nums-&gt; var;
+my $variance = $nums-&gt;var;
 
 # Unbiased dispersion
-my $variance_unbiased = $nums-&gt; var_unbiased;
+my $variance_unbiased = $nums-&gt;var_unbiased;
 
 # standard deviation
-my $stdv = $nums-&gt; stdv;
+my $stdv = $nums-&gt;stdv;
 
 # Unbiased standard deviation
-my $stdv_unbiased = $nums-&gt; stdv_unbiased;
+my $stdv_unbiased = $nums-&gt;stdv_unbiased;
 
 # Standard error
-my $se = $nums-&gt; se;
+my $se = $nums-&gt;se;
 
 # Deviation square sum
-my $ss = $nums-&gt; ss;
+my $ss = $nums-&gt;ss;
 
 # Skewness
-my $skew = $nums-&gt; skew;
+my $skew = $nums-&gt;skew;
 
 # Bias of an estimulus
-my $skew_unbiased = $nums-&gt; skew_unbiased;
+my $skew_unbiased = $nums-&gt;skew_unbiased;
 
 # Kurtosis
-my $kurt = $nums-&gt; kurt;
+my $kurt = $nums-&gt;kurt;
 
 # Bias of an estimulus
-my $kurt_unbiased = $nums-&gt; kurt_unbiased;
+my $kurt_unbiased = $nums-&gt;kurt_unbiased;
 
 print "Variance: $variance\n";
 print "Unbiased variance: $variance_unbiased\n ";
@@ -388,8 +376,7 @@ print "Unbiased kurtosis: $kurt_unbiased\n";
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -406,12 +393,9 @@ print "Unbiased kurtosis: $kurt_unbiased\n";
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -420,8 +404,7 @@ print "Unbiased kurtosis: $kurt_unbiased\n";
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> What is file locking?  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">      <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20110212130370.html">      <span itemprop = "name">File input / output </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20080813121863.html"> What is file locking? </a></H2>
@@ -97,7 +85,7 @@
 
 
 <p>
-  File locking, also called exclusive control, is a mechanism in which multiple processes use files in order. Perl has a mechanism for locking files called <a href="/blog/20080814121872.html"> flock function</a>. (Some OSs such as Window98 cannot use flock.)
+  File locking, also called exclusive control, is a mechanism in which multiple processes use files in order. Perl has a mechanism for locking files called <a href="/blog/20080814121872.html">flock function</a>. (Some OSs such as Window98 cannot use flock.)
 </p>
 <h3> If you need to keep the order </h3>
 <p>
@@ -110,10 +98,10 @@
   Also, if there are multiple processes that read and write to one file, data inconsistency will occur. Consider an access counter. Suppose the file says 0. Suppose you have a program that adds 1 to this number and writes it back. Consider the problem that arises when accessing in parallel in this case.
 </p>
 <pre>
-Process A Read - -- -- -- -- -- -- -- -- -&gt; Write
+Process A Read - -- -- -- -- -- -- -- -- -&gt;Write
                   0 1
 
-Process B Read - -- -- -- -- -- -- -- -- -- --&gt; Write
+Process B Read - -- -- -- -- -- -- -- -- -- --&gt;Write
                                  0 1
 
 File contents 0 1 1
@@ -139,15 +127,15 @@ File contents 0 1 1
       Twice
     </td>
     <td>
-      <span style = "font-weight: bold;"> Opportunity to use </span>
+      <span style = "font-weight: bold;">Opportunity to use </span>
     </td>
     <td>
-      <span style = "font-weight: bold;"> When another process tries to lock </span>
+      <span style = "font-weight: bold;">When another process tries to lock </span>
     </td>
   </tr>
   <tr>
     <td>
-      <span style = "font-weight: bold;"> Shared lock </span>
+      <span style = "font-weight: bold;">Shared lock </span>
     </td>
     <td>
       When reading
@@ -158,7 +146,7 @@ File contents 0 1 1
   </tr>
   <tr>
     <td>
-      <span style = "font-weight: bold;"> Exclusive lock </span>
+      <span style = "font-weight: bold;">Exclusive lock </span>
     </td>
     <td>
       When writing
@@ -176,8 +164,7 @@ File contents 0 1 1
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -194,12 +181,9 @@ File contents 0 1 1
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -208,8 +192,7 @@ File contents 0 1 1
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

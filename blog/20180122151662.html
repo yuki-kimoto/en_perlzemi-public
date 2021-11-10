@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,16 +24,15 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Destructor - DESTROY  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Perl is a programming language with  reference counting GC. The object is freed when the reference count reaches zero.">
+<meta name="description" content="Perl is a programming language with reference counting GC. The object is freed when the reference count reaches zero.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Destructor - DESTROY  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Perl is a programming language with  reference counting GC. The object is freed when the reference count reaches zero." />
+<meta name="twitter:description" content="Perl is a programming language with reference counting GC. The object is freed when the reference count reaches zero." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,26 +53,20 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax / Grammar </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161022147731.html">        <span itemprop = "name">Syntax / Grammar </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20180122151662.html"> Destructor - DESTROY </a></h2>
 <p>
-  Perl is a programming language with <a href="/blog/20131010138141.html"> reference counting GC</a>. The object is freed when the reference count reaches zero.
+  Perl is a programming language with <a href="/blog/20131010138141.html">reference counting GC</a>. The object is freed when the reference count reaches zero.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -107,10 +95,10 @@ sub DESTROY {
 </pre>
 <h3> Close the file handle with a destructor </h3>
 <p>
-  For example, suppose you have a File class that represents a file. The File class stores the file handle opened by the <a href="/blog/20080718121643.html"> open function</a> in the fh field.
+  For example, suppose you have a File class that represents a file. The File class stores the file handle opened by the <a href="/blog/20080718121643.html">open function</a> in the fh field.
 </p>
 <p>
-  Suppose you want to close this using the <a href="/blog/20160312145776.html"> close function</a> when you open the object.
+  Suppose you want to close this using the <a href="/blog/20160312145776.html">close function</a> when you open the object.
 </p>
 <p>
   In such a case, write the destructor as follows:
@@ -124,9 +112,9 @@ sub new {
   my ($class, $file) = @_;
   
   my $self = {};
-  open my $fh,'&lt;', $file
+  open my $fh, '&lt;', $file
     or croak "Can't open $file: $!";
-  $self-&gt; {fh} = $fh;
+  $self-&gt;{fh} = $fh;
   
   return bless $self, $class;
 }
@@ -135,17 +123,17 @@ sub new {
 sub DESTROY {
   my $self = shift;
   print "DESTROY";
-  close $self-&gt; {fh};
+  close $self-&gt;{fh};
 }
 
 package main;
 
 {
-  my $file = File-&gt; new ('a.txt');
+  my $file = File-&gt;new ('a.txt');
 }
 </pre>
 <p>
-  Reference: <a href="/blog/20161030147778.html"> Object Oriented</a>, <a href="/blog/20100430127089.html"> Carp Module</a>, <a href="/blog/ 20110128130016.html "> Scope</a>, <a href="/blog/20100419127089.html"> main package</a>
+  Reference: <a href="/blog/20161030147778.html">Object Oriented</a>, <a href="/blog/20100430127089.html">Carp Module</a>, <a href="/blog/ 20110128130016.html">Scope</a>, <a href="/blog/20100419127089.html">main package</a>
 </p>
 <p>
   When I run this script, it says "DESTROY", which I put in to make sure the destructor is running. The destructor is running and the file handle is closed.
@@ -159,8 +147,7 @@ package main;
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -177,12 +164,9 @@ package main;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -191,8 +175,7 @@ package main;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

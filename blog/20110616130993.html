@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Describe image tags  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -79,23 +73,23 @@
 
 
 <pre>
-&lt;% = link_to index =&gt; begin%&gt; Home &lt;% end%&gt;
+&lt;% = link_to index =&gt; begin%&gt; Home &lt;%end%&gt;
 &lt;% = link_to index =&gt; {foo =&gt;'bar'} =&gt; (class =&gt;'links') =&gt; begin%&gt;
   Home
-&lt;% end%&gt;
-&lt;% = link_to'/ path / to / file' =&gt; begin%&gt; File &lt;% end%&gt;
-&lt;% = link_to'http://mojolicio.us' =&gt; begin%&gt; Mojolicious &lt;% end%&gt;
-&lt;% = link_to url_for-&gt; query (foo =&gt; $foo) =&gt; begin%&gt; Retry &lt;% end%&gt;
+&lt;%end%&gt;
+&lt;% = link_to'/ path / to / file' =&gt; begin%&gt; File &lt;%end%&gt;
+&lt;% = link_to'http://mojolicio.us' =&gt; begin%&gt; Mojolicious &lt;%end%&gt;
+&lt;% = link_to url_for-&gt;query (foo =&gt; $foo) =&gt; begin%&gt; Retry &lt;%end%&gt;
 </pre>
 <p>
   It will be expanded to the following HTML. The first argument is the root name or path. You can also pass a Mojo::URL object. The last argument is a block, which allows you to specify the text of the hyperlink.
 </p>
 <pre>
-&lt;a href="/path/to/index"&gt; Home&lt;/a&gt;
-&lt;a class="links" href="/path/to/index/bar"&gt; Home&lt;/a&gt;
-&lt;a href="/path/to/file"&gt; File&lt;/a&gt;
-&lt;a href="http://mojolicio.us"&gt; Mojolicious&lt;/a&gt;
-&lt;a href="/current/path?foo=something"&gt; Retry&lt;/a&gt;
+&lt;a href="/path/to/index"&gt;Home&lt;/a&gt;
+&lt;a class="links" href="/path/to/index/bar"&gt;Home&lt;/a&gt;
+&lt;a href="/path/to/file"&gt;File&lt;/a&gt;
+&lt;a href="http://mojolicio.us"&gt;Mojolicious&lt;/a&gt;
+&lt;a href="/current/path?foo=something"&gt;Retry&lt;/a&gt;
 </pre>
 <h3><a href="/blog/20110616130993.html"> Describe image tags </a></h3>
 <p>
@@ -120,14 +114,14 @@
 &lt;% = stylesheet'/foo.css'%&gt;
 &lt;% = stylesheet begin%&gt;
   body {color: # 000}
-&lt;% end%&gt;
+&lt;%end%&gt;
 </pre>
 <p>
   When specifying a link to an external style sheet, describe the path in the first argument. If you want to describe the style sheet itself, specify the block (begin to end) as the first argument. It will be expanded to the following HTML.
 </p>
 <pre>
 &lt;link href = "/ foo.css" media = "screen" rel = "stylesheet" type = "text / css" /&gt;
-&lt;style type = "text / css"&gt; &lt;! [CDATA [
+&lt;style type = "text / css"&gt;&lt;! [CDATA [
   body {color: # 000}
 ]]&gt; &lt;/style&gt;
 </pre>
@@ -139,14 +133,14 @@
 % = javascript'/script.js';
 % = javascript begin
   var a ='b';
-% end
+%end
 </pre>
 <p>
   The argument can be an external JavaScript path or block (begin to end). You can write the actual JavaScript source code inside the block.
 </p>
 <pre>
 &lt;script src = "/ script.js" type = "text / javascript" /&gt;
-&lt;script type = "text / javascript"&gt; &lt;! [CDATA [
+&lt;script type = "text / javascript"&gt;&lt;! [CDATA [
   var a ='b';
 ]]&gt; &lt;/script&gt;
 </pre>
@@ -187,8 +181,7 @@
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -205,12 +198,9 @@
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -219,8 +209,7 @@
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

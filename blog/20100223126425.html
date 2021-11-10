@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Class::Accessor::Fast - Easy to create accessors  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -104,7 +93,7 @@
 package Your Class;
 use base'Class::Accessor::Fast';
 
-__PACKAGE __-&gt; mk_accessors ($meth1, $meth2, ...);
+__PACKAGE __-&gt;mk_accessors ($meth1, $meth2, ...);
 </pre>
 <p>
   This is a sample of a general class. The Point class has accessors x () and y (). Class::Accessor::Fast's new () can only receive hash references, so it's a good idea to override it so that it can receive hashes and hash references.
@@ -118,17 +107,17 @@ use warnings;
 use base'Class::Accessor::Fast';
 
 # Accessor
-__PACKAGE __-&gt; mk_accessors (qw / x y /);
+__PACKAGE __-&gt;mk_accessors (qw / x y /);
 
 # Constructor
 sub new {
     my $class = shift;
     
     # Attribute
-    my $args = ref $_ [0] eq'HASH'? $_ [0]: {@_};
+    my $args = ref $_[0] eq'HASH'? $_[0]: {@_};
     
     Override # new ()
-    return $class-&gt; SUPER::new ({{
+    return $class-&gt;SUPER::new ({{
         x =&gt; 0,
         y =&gt; 0,
         % $args
@@ -139,24 +128,23 @@ sub new {
   Use this class as follows:
 </p>
 <pre>
-my $point = Point-&gt; new (x =&gt; 1, y =&gt; 2);
-$point-&gt; x (4);
-$point-&gt; y (5);
+my $point = Point-&gt;new (x =&gt; 1, y =&gt; 2);
+$point-&gt;x (4);
+$point-&gt;y (5);
 </pre>
 <h3> FAQ about Class::Accessor::Fast </h3>
 <p>
   Q. I want to pass a hash instead of a hash reference as an argument to the constructor, or set a default value for the accessor.
 </p>
 <p>
-  A. The <a href="/blog/20100224126425.html"> Object::Simple</a> module provides those features. Object::Simple allows you to pass a hash to the constructor and specify default values ​​for accessors. If you want to do it with Class::Accessor::Fast, you can do it by overriding new as shown in the sample.
+  A. The <a href="/blog/20100224126425.html">Object::Simple</a> module provides those features. Object::Simple allows you to pass a hash to the constructor and specify default values ​​for accessors. If you want to do it with Class::Accessor::Fast, you can do it by overriding new as shown in the sample.
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -173,12 +161,9 @@ $point-&gt; y (5);
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -187,8 +172,7 @@ $point-&gt; y (5);
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Let's master Perl regular expressions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,15 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Regular expression </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">Regular expression </span>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -102,15 +92,15 @@ a {1,3}
 </p>
 <pre>
 a
-aa-&gt; a {1,3}
+aa-&gt;a {1,3}
 aaa
 </pre>
 <p>
-  Let's look at another example of a regular expression. A set of character strings "p1", "q1", and "r1" can be represented by one regular expression "[pqr] 1". [] Is called <a href="/blog/20200114103559.html"> character class</a> and can represent a set of multiple characters.
+  Let's look at another example of a regular expression. A set of character strings "p1", "q1", and "r1" can be represented by one regular expression "[pqr] 1". [] Is called <a href="/blog/20200114103559.html">character class</a> and can represent a set of multiple characters.
 </p>
 <pre>
 p1
-q1-&gt; [pqr] 1
+q1-&gt;[pqr] 1
 r1
 </pre>
 <p>
@@ -169,7 +159,7 @@ String: "This string is aar 1"
 Regular expression: (a {1,3}) ([pqr] 1)
 </pre>
 <p>
-  The script looks like this: <a href="/blog/20161102147817.html"> Special variables</a> The parts enclosed in parentheses are assigned to "$1" and "$2" in order.
+  The script looks like this: <a href="/blog/20161102147817.html">Special variables</a> The parts enclosed in parentheses are assigned to "$1" and "$2" in order.
 </p>
 <pre>
 my $str ='This string is aar1';
@@ -201,10 +191,10 @@ Target string = ~ s / regular expression / replacement string /;
 </p>
 <pre>
 Regular expression Replaced string
-a {1,3} - -&gt; bb
+a {1,3} - -&gt;bb
 
 Target character string
-This string is aa - -&gt; This string is bb
+This string is aa - -&gt;This string is bb
 </pre>
 <p>
   The script looks like this:
@@ -334,12 +324,11 @@ a
 b b
 c-&gt;.
 )
-@
-</pre>
-<p>
-  You can also match the "." To any character, including newlines. If you want the "." To match a newline, use the regular expression option "s".
-</p>
-<pre>
+@&lt;/pre&gt;
+
+You can also match the "." To any character, including newlines. If you want the "." To match a newline, use the regular expression option "s".
+
+&lt;pre&gt;
 Match # . To any character, including newlines
 $str = ~ /./s;
 </pre>
@@ -350,7 +339,7 @@ $str = ~ /./s;
 <pre>
 0
 1
-2-&gt; \ d
+2-&gt;\ d
 8
 9
 </pre>
@@ -359,7 +348,7 @@ $str = ~ /./s;
   Use "\ D" to represent non-numeric characters. This is a companion to "\ d".
 </p>
 <pre>
-Other than the number "\ d"-&gt; \ D
+Other than the number "\ d"-&gt;\ D
 </pre>
 <h4> White space "\ s" </h4>
 <p>
@@ -368,7 +357,7 @@ Other than the number "\ d"-&gt; \ D
 <pre>
 space " "
 Tab "\t"
-Page break "\f"-&gt; \ s
+Page break "\f"-&gt;\ s
 Carriage return "\n"
 Line feed "\r"
 </pre>
@@ -377,7 +366,7 @@ Line feed "\r"
   Use "\ S" to represent non-whitespace characters. This is a companion to "\ s".
 </p>
 <pre>
-Other than the space character "\ s"-&gt; \ S
+Other than the space character "\ s"-&gt;\ S
 </pre>
 <h4> Word character "\ w" </h4>
 <p>
@@ -386,7 +375,7 @@ Other than the space character "\ s"-&gt; \ S
 <pre>
 A-Z
 a-z
-       -&gt; \ w
+       -&gt;\ w
 0-9
 _
 </pre>
@@ -395,18 +384,18 @@ _
   Use "\ W" to represent non-word characters.
 </p>
 <pre>
-Other than the word character "\ w"-&gt; \ W
+Other than the word character "\ w"-&gt;\ W
 </pre>
 <h4> The beginning of the character string "^" </h4>
 <p>
   Some regular expression characters can represent the beginning of a character. Use "^" to represent the beginning of a character.
 </p>
 <pre>
-Beginning of string-&gt; ^
+Beginning of string-&gt;^
 </pre>This regular expression character has no character length. Use in combination with other characters. For example, the regular expression "^ abc" matches strings that start with "abc". Even if "abc" is included, it will not match unless it starts with "abc".
 <pre>
 abcppp
-abcqqq-&gt; ^ abc
+abcqqq-&gt;^ abc
 abcrrr
 </pre>
 <p>
@@ -418,7 +407,7 @@ abcrrr
 </p>
 <pre>
 pppabc
-qqqabc-&gt; abc $
+qqqabc-&gt;abc $
 rrrabc
 </pre>
 <p>
@@ -430,12 +419,12 @@ rrrabc
 </p>
 <pre>
 abc /
-abc @-&gt; abc \ b
+abc @-&gt;abc \ b
 abc
 </pre>
 <h3> Character class </h3>
 <p>
-  Use <a href="/blog/20200114103559.html"> character class</a> to represent a set of multiple characters.
+  Use <a href="/blog/20200114103559.html">character class</a> to represent a set of multiple characters.
 </p>
 <pre>
 [Character set]
@@ -445,7 +434,7 @@ abc
 </p>
 <pre>
 a
-b-&gt; [abc]
+b-&gt;[abc]
 c
 </pre>
 <p>
@@ -454,14 +443,14 @@ c
 <pre>
 a
 b b
-c-&gt; [a-e]
+c-&gt;[a-e]
 d
 e
 </pre>
 <pre>
 0
 1
-2-&gt; [0-4]
+2-&gt;[0-4]
 3
 Four
 </pre>
@@ -469,7 +458,7 @@ Four
   If you want to express either an alphabet or a numerical value, write [a-zA-Z0-9].
 </p>
 <pre>
-Alphabets and numbers-&gt; [a-zA-Z0-9]
+Alphabets and numbers-&gt;[a-zA-Z0-9]
 </pre>
 <p>
   You can also use character classes to represent non-specific characters. Use "^" to represent something other than a specific character. Note that if "^" is used at the beginning of the character class [], it means "other than that", not "the beginning of the character".
@@ -478,7 +467,7 @@ Alphabets and numbers-&gt; [a-zA-Z0-9]
   For example, to represent a character other than "a", "b", and "c":
 </p>
 <pre>
-Characters other than "a", "b" and "c"-&gt; [^ abc]
+Characters other than "a", "b" and "c"-&gt;[^ abc]
 </pre>
 <h3> Quantifier </h3>
 <p>
@@ -540,7 +529,7 @@ Characters other than "a", "b" and "c"-&gt; [^ abc]
 </p>
 <pre>
 aaap
-        -&gt; aaap?
+        -&gt;aaap?
 aaa
 </pre>
 <p>
@@ -549,7 +538,7 @@ aaa
 <pre>
 aaa
 aaap
-        -&gt; aaa [pqr]?
+        -&gt;aaa [pqr]?
 aaaq
 aaar
 </pre>
@@ -559,7 +548,7 @@ aaar
 </p>
 <pre>
 aaa
-aaap-&gt; aaap *
+aaap-&gt;aaap *
 aaapp
 </pre>
 <h4> + One or more characters immediately before </h4>
@@ -568,7 +557,7 @@ aaapp
 </p>
 <pre>
 aaap
-aaapp-&gt; aaap +
+aaapp-&gt;aaap +
 aaappp
 </pre>
 <h4> {m, n} The previous character is m or more and n or less </h4>
@@ -577,7 +566,7 @@ aaappp
 </p>
 <pre>
 aaap
-aaapp-&gt; aaap {1,3}
+aaapp-&gt;aaap {1,3}
 aaappp
 </pre>
 <h4> {m,} </h4>
@@ -586,7 +575,7 @@ aaappp
 </p>
 <pre>
 aaapp
-aaappp-&gt; aaap {2,}
+aaappp-&gt;aaap {2,}
 aaapppp
 </pre>
 <h4> {0, n} </h4>
@@ -595,7 +584,7 @@ aaapppp
 </p>
 <pre>
 aaappp
-aaapppp-&gt; aaap {0,5}
+aaapppp-&gt;aaap {0,5}
 aaappppp
 </pre>
 <h3> A set of strings </h3>
@@ -604,7 +593,7 @@ aaappppp
 </p>
 <pre>
 a123b
-a456b-&gt; a (123 | 456 | 789) b
+a456b-&gt;a (123 | 456 | 789) b
 a789b
 </pre>
 <h3> Escape regular expression characters </h3>
@@ -612,10 +601,10 @@ a789b
   To make a regular expression character mean a normal character, you need to add a \ immediately before it. For example, to represent the character "." Itself, you need to use "\.".
 </p>
 <pre>
-.txt-&gt; \ .txt
+.txt-&gt;\ .txt
 </pre>
 <p>
-  If you use <a href="/blog/20100329127089.html"> quotemeta function</a>, it will automatically escape the entire string.
+  If you use <a href="/blog/20100329127089.html">quotemeta function</a>, it will automatically escape the entire string.
 </p>
 <pre>
 my $regex = quotemeta('.txt');
@@ -654,7 +643,7 @@ s | aaa | bbb |
 </pre>
 <h4> Regular expression reference </h4>
 <p>
-  Regular expressions can be referenced using the <a href="/blog/20080419120860.html"> qr operator</a>. You can use it as a regular expression reference and assign it to a variable, including regular expression options.
+  Regular expressions can be referenced using the <a href="/blog/20080419120860.html">qr operator</a>. You can use it as a regular expression reference and assign it to a variable, including regular expression options.
 </p>
 <pre>
 my $regex = qr / (\ d +) / sm;
@@ -768,7 +757,7 @@ $message = ~ / ^ i / s
 </p>
 <pre>
 abc
-Abc-&gt; / abc / i
+Abc-&gt;/ abc / i
 ABC
 </pre>
 <h4> e Use an expression for permutation </h4>
@@ -786,11 +775,11 @@ s / (\ d +) / $1 * 2 / e;
   You can use the x option to ignore whitespace in regular expressions. You will also be able to write comments. If space is not important, you can use the x option to write the regular expression more clearly.
 </p>
 <pre>
-my $time = '03: 02: 56';
+my $time = '03:02:56';
 my $regex = qr /
   (\ d {2}) # hour
-::  (\ d {2}) # min
-::  (\ d {2}) # seconds
+::(\ d {2}) # min
+::(\ d {2}) # seconds
 / x;
 
 if ($time = ~ / $regex /) {
@@ -848,7 +837,7 @@ aaa bbb ccc
 </pre>
 <h3> Japanese and regular expressions </h3>
 <p>
-  In order to use Japanese in a regular expression, both the regular expression and the target character string must be converted to an internal character string. Please refer to <a href="/blog/20091118124667.html"> How to use the Encode module</a> for the conversion to an internal character string.
+  In order to use Japanese in a regular expression, both the regular expression and the target character string must be converted to an internal character string. Please refer to <a href="/blog/20091118124667.html">How to use the Encode module</a> for the conversion to an internal character string.
 </p>
 <h3> At the end </h3>
 <p>
@@ -859,8 +848,7 @@ aaa bbb ccc
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -877,12 +865,9 @@ aaa bbb ccc
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -891,8 +876,7 @@ aaa bbb ccc
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

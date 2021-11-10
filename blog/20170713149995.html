@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> AI::MXNet that performs artificial intelligence and machine learning with Perl looks amazing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -87,7 +81,7 @@
 </p>
 <blockquote>
 <p>
-  <a href="https://metacpan.org/release/AI-MXNet"> Performing artificial intelligence programming with Perl AI::MXNet (CPAN)</a>
+  <a href="https://metacpan.org/release/AI-MXNet">Performing artificial intelligence programming with Perl AI::MXNet (CPAN)</a>
 </p>
 </blockquote>
 <p>
@@ -111,56 +105,56 @@ use Test::More tests =&gt; 1;
 my $batch_size = 100;
  
 # ## model
-my $data = mx-&gt; symbol-&gt; Variable ('data');
-my $conv1 = mx-&gt; symbol-&gt; Convolution (data =&gt; $data, name =&gt;'conv1', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
-my $bn1 = mx-&gt; symbol-&gt; BatchNorm (data =&gt; $conv1, name =&gt; "bn1");
-my $act1 = mx-&gt; symbol-&gt; Activation (data =&gt; $bn1, name =&gt;'relu1', act_type =&gt; "relu");
-my $mp1 = mx-&gt; symbol-&gt; Pooling (data =&gt; $act1, name =&gt;'mp1', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
+my $data = mx-&gt;symbol-&gt;Variable ('data');
+my $conv1 = mx-&gt;symbol-&gt;Convolution (data =&gt; $data, name =&gt;'conv1', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
+my $bn1 = mx-&gt;symbol-&gt;BatchNorm (data =&gt; $conv1, name =&gt; "bn1");
+my $act1 = mx-&gt;symbol-&gt;Activation (data =&gt; $bn1, name =&gt;'relu1', act_type =&gt; "relu");
+my $mp1 = mx-&gt;symbol-&gt;Pooling (data =&gt; $act1, name =&gt;'mp1', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
  
-my $conv2 = mx-&gt; symbol-&gt; Convolution (data =&gt; $mp1, name =&gt;'conv2', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
-my $bn2 = mx-&gt; symbol-&gt; BatchNorm (data =&gt; $conv2, name =&gt; "bn2");
-my $act2 = mx-&gt; symbol-&gt; Activation (data =&gt; $bn2, name =&gt;'relu2', act_type =&gt; "relu");
-my $mp2 = mx-&gt; symbol-&gt; Pooling (data =&gt; $act2, name =&gt;'mp2', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
+my $conv2 = mx-&gt;symbol-&gt;Convolution (data =&gt; $mp1, name =&gt;'conv2', num_filter =&gt; 32, kernel =&gt; [3,3], stride =&gt; [2,2]);
+my $bn2 = mx-&gt;symbol-&gt;BatchNorm (data =&gt; $conv2, name =&gt; "bn2");
+my $act2 = mx-&gt;symbol-&gt;Activation (data =&gt; $bn2, name =&gt;'relu2', act_type =&gt; "relu");
+my $mp2 = mx-&gt;symbol-&gt;Pooling (data =&gt; $act2, name =&gt;'mp2', kernel =&gt; [2,2], stride =&gt; [2,2], pool_type =&gt;'max') ;
  
  
-my $fl = mx-&gt; symbol-&gt; Flatten (data =&gt; $mp2, name =&gt; "flatten");
-my $fc1 = mx-&gt; symbol-&gt; FullyConnected (data =&gt; $fl, name =&gt; "fc1", num_hidden =&gt; 30);
-my $act3 = mx-&gt; symbol-&gt; Activation (data =&gt; $fc1, name =&gt;'relu3', act_type =&gt; "relu");
-my $fc2 = mx-&gt; symbol-&gt; FullyConnected (data =&gt; $act3, name =&gt;'fc2', num_hidden =&gt; 10);
-my $softmax = mx-&gt; symbol-&gt; SoftmaxOutput (data =&gt; $fc2, name =&gt;'softmax');
+my $fl = mx-&gt;symbol-&gt;Flatten (data =&gt; $mp2, name =&gt; "flatten");
+my $fc1 = mx-&gt;symbol-&gt;FullyConnected (data =&gt; $fl, name =&gt; "fc1", num_hidden =&gt; 30);
+my $act3 = mx-&gt;symbol-&gt;Activation (data =&gt; $fc1, name =&gt;'relu3', act_type =&gt; "relu");
+my $fc2 = mx-&gt;symbol-&gt;FullyConnected (data =&gt; $act3, name =&gt;'fc2', num_hidden =&gt; 10);
+my $softmax = mx-&gt;symbol-&gt;SoftmaxOutput (data =&gt; $fc2, name =&gt;'softmax');
  
 # check data
 GetMNIST_ubyte ();
  
-my $train_dataiter = mx-&gt; io-&gt; MNISTIter ({{
+my $train_dataiter = mx-&gt;io-&gt;MNISTIter ({{
     image =&gt; "data / train-images-idx3-ubyte",
     label =&gt; "data / train-labels-idx1-ubyte",
     data_shape =&gt; [1, 28, 28],
     batch_size =&gt; $batch_size, shuffle =&gt; 1, flat =&gt; 0, silent =&gt; 0, seed =&gt; 10});
-my $val_dataiter = mx-&gt; io-&gt; MNISTIter ({{
+my $val_dataiter = mx-&gt;io-&gt;MNISTIter ({{
     image =&gt; "data / t10k-images-idx3-ubyte",
     label =&gt; "data / t10k-labels-idx1-ubyte",
     data_shape =&gt; [1, 28, 28],
     batch_size =&gt; $batch_size, shuffle =&gt; 1, flat =&gt; 0, silent =&gt; 0});
  
 my $n_epoch = 1;
-my $mod = mx-&gt; mod-&gt; new (symbol =&gt; $softmax);
-$mod-&gt; fit (
+my $mod = mx-&gt;mod-&gt;new (symbol =&gt; $softmax);
+$mod-&gt;fit (
     $train_dataiter,
     eval_data =&gt; $val_dataiter,
     optimizer_params =&gt; {learning_rate =&gt; 0.01, momentum =&gt; 0.9},
     num_epoch =&gt; $n_epoch
 );
-my $res = $mod-&gt; score ($val_dataiter, mx-&gt; metric-&gt; create ('acc'));
-ok ($res-&gt; {accuracy}&gt; 0.8);
+my $res = $mod-&gt;score ($val_dataiter, mx-&gt;metric-&gt;create ('acc'));
+ok ($res-&gt;{accuracy}&gt; 0.8);
 </pre>
 <h3> Reference article </h3>
 <ul>
   <li>
-    <a href="http://dokechin.hatenablog.com/entry/2017/07/15/204726"> I saw AI::MXNet running on a Mac | IT diary of a sluggish runner</a>
+    <a href="http://dokechin.hatenablog.com/entry/2017/07/15/204726">I saw AI::MXNet running on a Mac | IT diary of a sluggish runner</a>
   </li>
   <li>
-    <a href="http://codehex.hateblo.jp/entry/2017/09/06/150712"> I learned the basics of MXNet with Perl part 1 | Alpaca Three Musketeers</a>
+    <a href="http://codehex.hateblo.jp/entry/2017/09/06/150712">I learned the basics of MXNet with Perl part 1 | Alpaca Three Musketeers</a>
   </li>
 </ul>
 
@@ -168,8 +162,7 @@ ok ($res-&gt; {accuracy}&gt; 0.8);
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -186,12 +179,9 @@ ok ($res-&gt; {accuracy}&gt; 0.8);
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -200,8 +190,7 @@ ok ($res-&gt; {accuracy}&gt; 0.8);
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

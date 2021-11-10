@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> XML::Simple - Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-      <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -102,14 +91,14 @@
 <pre>
 # Load module and create object
 use XML::Simple;
-my $xml = XML::Simple-&gt; new;
+my $xml = XML::Simple-&gt;new;
 </pre>
 <p>
   Use the <strong> XMLin method </strong> to read the XML file. XML is transformed into Perl data structures (multidimensional hashes and arrays).
 </p>
 <pre>
 # XML file parsing
-my $data = $xml-&gt; XMLin ('conf.xml');
+my $data = $xml-&gt;XMLin ('conf.xml');
 </pre>
 <p>
   This is a sample XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
@@ -118,21 +107,15 @@ my $data = $xml-&gt; XMLin ('conf.xml');
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
 &lt;conf&gt;
   &lt;!-Version 1.01-&gt;
+  &lt;!-Application home directory-&gt;  &lt;app-home-dir&gt; c: \ apphome &lt;/app-home-dir&gt;
 
-  &lt;!-Application home directory-&gt;
-  &lt;app-home-dir&gt; c: \ apphome &lt;/app-home-dir&gt;
+  &lt;!-Library directory-&gt;  &lt;lib-dir&gt; lib &lt;/lib-dir&gt;
 
-  &lt;!-Library directory-&gt;
-  &lt;lib-dir&gt; lib &lt;/lib-dir&gt;
+  &lt;!-Directory to store logs-&gt;  &lt;log-dir&gt; log &lt;/log-dir&gt;
 
-  &lt;!-Directory to store logs-&gt;
-  &lt;log-dir&gt; log &lt;/log-dir&gt;
+  &lt;!-System type-&gt;  &lt;system&gt; xxx yyy zzz &lt;/system&gt;
 
-  &lt;!-System type-&gt;
-  &lt;system&gt; xxx yyy zzz &lt;/system&gt;
-
-  &lt;!-Log type-&gt;
-  &lt;log-types&gt;
+  &lt;!-Log type-&gt;  &lt;log-types&gt;
     &lt;cpu script = "parse_cpu.pl" from-dir = "raw / cpu" to-dir = "edit / cpu" /&gt;
     &lt;mem script = "parse_mem.pl" from-dir = "raw / mem" to-dir = "edit / mem" /&gt;
     &lt;gclog script = "parse_gclog.pl" from-dir = "raw / gclog" to-dir = "edit / gclog" /&gt;
@@ -186,8 +169,8 @@ $conf = {
 <pre>
 # When outputting, convert from internal character string to byte character string
 use Encode'encode';
-my $conf = $xml-&gt; XMLin ('japanese.xml');
-print encode ('UTF-8', $conf-&gt; {name});
+my $conf = $xml-&gt;XMLin ('japanese.xml');
+print encode ('UTF-8', $conf-&gt;{name});
 </pre>
 <h3> XML::Simple options </h3>
 <p>
@@ -195,7 +178,7 @@ print encode ('UTF-8', $conf-&gt; {name});
 </p>
 <pre>
 # Option
-my $xml = XML::Simple-&gt; new (ForceArray =&gt; 1);
+my $xml = XML::Simple-&gt;new (ForceArray =&gt; 1);
 </pre>
 <p>
   The following two options may be used frequently.
@@ -245,8 +228,7 @@ yum -y install libxml2-devel
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -263,12 +245,9 @@ yum -y install libxml2-devel
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -277,8 +256,7 @@ yum -y install libxml2-devel
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

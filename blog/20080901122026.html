@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Binary, octal, hexadecimal conversion  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,15 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> Base conversion </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">Base conversion </span>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -93,25 +83,25 @@
 
 <h4> Conversion from decimal to binary, octal, hexadecimal </h4>
 <p>
-  Let's convert from decimal to binary, octal, and hexadecimal. Use the format specification in the <a href="/blog/20081001122296.html"> sprintf function</a>.
+  Let's convert from decimal to binary, octal, and hexadecimal. Use the format specification in the <a href="/blog/20081001122296.html">sprintf function</a>.
 </p>
 <pre>
 # Convert to binary string
-my $bit_str = sprintf("% b", $num);
+my $bit_str = sprintf("%b", $num);
 </pre>
 <pre>
 # Convert to octal string
-my $oct_str = sprintf("% o", $num);
+my $oct_str = sprintf("%o", $num);
 </pre>
 <pre>
 # Convert to hexadecimal string
-my $hex_str = sprintf("% X", $num);
+my $hex_str = sprintf("%X", $num);
 </pre>
 <p>
-  To convert a decimal string to a binary number, use the sprintf function to specify the format as "% b". To convert to octal and hexadecimal, use "% o" and "% X" respectively.
+  To convert a decimal string to a binary number, use the sprintf function to specify the format as "%b". To convert to octal and hexadecimal, use "%o" and "%X" respectively.
 </p>
 <p>
-  The sprintf function is a common function of the <a href="/blog/20170326149148.html"> printf function</a>. If you use sprintf, you can get the character string output by the printf function as the return value.
+  The sprintf function is a common function of the <a href="/blog/20170326149148.html">printf function</a>. If you use sprintf, you can get the character string output by the printf function as the return value.
 </p>
 <p>
   Below is a sample conversion to binary, octal, and hexadecimal numbers.
@@ -124,13 +114,13 @@ use warnings;
 my $num = 255;
 
 # Convert to binary string
-my $bit_str = sprintf("% b", $num);
+my $bit_str = sprintf("%b", $num);
 
 # Convert to octal string
-my $oct_str = sprintf("% o", $num);
+my $oct_str = sprintf("%o", $num);
 
 # Convert to hexadecimal string
-my $hex_str = sprintf("% X", $num);
+my $hex_str = sprintf("%X", $num);
 
 print "(1) Conversion from decimal string to 2,8, hexadecimal string\n";
 print "decimal string: $num;\n";
@@ -146,7 +136,7 @@ print "Hexadecimal string: $hex_str;\n";
   <b> Binary to Decimal Conversion </b>
 </p>
 <p>
-  Use the <a href="/blog/20171027150945.html"> oct function</a> to convert from binary to decimal. The oct function is originally a function that converts an octal number to a decimal number, but if a character string prefixed with 0b is passed as an argument, the binary number is converted to a decimal number.
+  Use the <a href="/blog/20171027150945.html">oct function</a> to convert from binary to decimal. The oct function is originally a function that converts an octal number to a decimal number, but if a character string prefixed with 0b is passed as an argument, the binary number is converted to a decimal number.
 </p>
 <pre>
 my $num = oct('0b'. $Bit_str);
@@ -155,7 +145,7 @@ my $num = oct('0b'. $Bit_str);
   <b> Conversion from octal to decimal </b>
 </p>
 <p>
-  Use the <a href="/blog/20171027150945.html"> oct function</a> to convert from octal to decimal. In the sample, '17' is passed, but even if there is a leading 0 like '017', it will be converted correctly.
+  Use the <a href="/blog/20171027150945.html">oct function</a> to convert from octal to decimal. In the sample, '17' is passed, but even if there is a leading 0 like '017', it will be converted correctly.
 </p>
 <pre>
 my $num = oct($oct_str);
@@ -164,7 +154,7 @@ my $num = oct($oct_str);
   <b> Hexadecimal to Decimal Conversion </b>
 </p>
 <p>
-  Use the <a href="/blog/20171026150980.html"> hex function</a> to convert from hexadecimal to decimal. In the sample,'FF' is passed as an argument, but even if 0x is added at the beginning like '0xFF', it will be converted correctly.
+  Use the <a href="/blog/20171026150980.html">hex function</a> to convert from hexadecimal to decimal. In the sample, 'FF' is passed as an argument, but even if 0x is added at the beginning like '0xFF', it will be converted correctly.
 </p>
 <pre>
 my $hex_to_dec = hex($hex_str);
@@ -183,17 +173,17 @@ my $hex_str ='FF';
 Convert a binary string to a decimal number with the # oct function.
 print "Binary to Decimal Conversion\n";
 my $bit_to_dec = oct('0b'. $Bit_str);
-print "$bit_str-&gt; $bit_to_dec\n\n";
+print "$bit_str-&gt;$bit_to_dec\n\n";
 
 Convert an octal string to a decimal number with the # oct function.
 print "Octal to Decimal Conversion\n";
 my $oct_to_dec = oct($oct_str);
-print "$oct_str-&gt; $oct_to_dec\n\n";
+print "$oct_str-&gt;$oct_to_dec\n\n";
 
 Convert an octal string to a decimal number with the # hex function.
 print "Hexadecimal to Decimal Conversion\n";
 my $hex_to_dec = hex($hex_str);
-print "$hex_str-&gt; $hex_to_dec\n\n";
+print "$hex_str-&gt;$hex_to_dec\n\n";
 </pre>
 <h4> Algorithm for converting decimal to n-ary </h4>
 <p>
@@ -222,7 +212,7 @@ sub dec_to_n {
     return if $dec! ~ / ^ ([+-]?) \ D + $/;
 
     Save the # sign if it exists
-    my $sign = $1? substr($dec, 0, 1,''):'';
+    my $sign = $1? substr($dec, 0, 1, ''):'';
 
     If # 0, return as it is
     return $dec if $dec == 0;
@@ -240,10 +230,10 @@ sub dec_to_n {
     }
     
     # A table to convert to a base number representation.
-    my @dec_to_n = (0 .. 9,'A' ..'F');
+    my @dec_to_n = (0 .. 9, 'A' ..'F');
 
     # Convert in conversion table and join characters
-    return join('', $sign, map {$dec_to_n [$_]} @rem_list);
+    return join('', $sign, map {$dec_to_n[$_]} @rem_list);
 }
 </pre>
 <p>
@@ -277,10 +267,10 @@ return if! defined $n || $n! ~ / ^ \ D + $/ || $n &lt;2 || $n&gt; 16;
 <pre>
 return if! defined $dec;
 return if $dec! ~ / ^ ([+-]?) \ D + $/;
-my $sign = $1? substr($dec, 0, 1,''):'';
+my $sign = $1? substr($dec, 0, 1, ''):'';
 </pre>
 <p>
-  $dec must be passed as an argument. Next, it must be a decimal integer. <a href="/blog/20080831122025.html"> Regular expression for decimal integers</a>
+  $dec must be passed as an argument. Next, it must be a decimal integer. <a href="/blog/20080831122025.html">Regular expression for decimal integers</a>
 </p>
 <pre>
 / ^ ([+-]?) \ D + $/
@@ -289,13 +279,13 @@ my $sign = $1? substr($dec, 0, 1,''):'';
   Will be. (Read "It doesn't matter if there is a + or-at the beginning, followed by one or more numbers")
 </p>
 <pre>
-my $sign = $1? substr($dec, 0, 1,''):'';
+my $sign = $1? substr($dec, 0, 1, ''):'';
 </pre>
 <p>
   If there is a sign, the sign is assigned to $1, so the presence or absence of the sign is judged by whether or not $1 is defined. Here, the ternary operator is used for conditional branching.
 </p>
 <p>
-  If there is a sign, delete it by replacing the first character with an empty string with the <a href="/blog/20080224120386.html"> substr function</a>. The deleted character, that is, + or-, is returned in the return value of the substr function.
+  If there is a sign, delete it by replacing the first character with an empty string with the <a href="/blog/20080224120386.html">substr function</a>. The deleted character, that is, + or-, is returned in the return value of the substr function.
 </p>
 <p>
   If $1 is undefined, there is no sign, so substitute an empty string.
@@ -315,7 +305,7 @@ while ($dec! = 0) {
 }
 </pre>
 <p>
-  If $dec is 0, the return value will always be 0, so 0 is returned. In the loop of <a href="/blog/20100123126425.html"> while statement</a>, the decimal number is converted to the n-ary number, but if it is 0, an exceptional description must be made. So I processed it first.
+  If $dec is 0, the return value will always be 0, so 0 is returned. In the loop of <a href="/blog/20100123126425.html">while statement</a>, the decimal number is converted to the n-ary number, but if it is 0, an exceptional description must be made. So I processed it first.
 </p>
 <p>
   Decimal number
@@ -346,19 +336,19 @@ If you write the remainder upside down, this is the answer in 1011.
   <b> Convert the numbers assigned to the array to n-ary characters and combine them </b>
 </p>
 <pre>
-my @dec_to_n = (0 .. 9,'A' ..'F');
-return join('', $sign, map {$dec_to_n [$_]} @rem_list);
+my @dec_to_n = (0 .. 9, 'A' ..'F');
+return join('', $sign, map {$dec_to_n[$_]} @rem_list);
 </pre>
 <p>
   For example, for hexadecimal numbers, you need to convert 11 to 15 to A to F. @dec_to_n is an array for conversion.
 </p>
 <p>
-  Convert each element of @rem_list to $dec_to_n [$_] with the map function.
+  Convert each element of @rem_list to $dec_to_n[$_] with the map function.
 </p>
 <pre>
-$dec_to_n [1] → 1
-$dec_to_n [10] → A
-$dec_to_n [15] → F
+$dec_to_n[1] → 1
+$dec_to_n[10] → A
+$dec_to_n[15] → F
 </pre>
 <p>
   Will be converted as
@@ -382,7 +372,7 @@ use warnings;
 
 # Convert from n-ary to decimal
 my $hex_num = "FF"; # 255 in decimal (15 * 16 + 15)
-print "Hex $hex_num =&gt; Decimal". N_to_dec ($hex_num, 16). "\n";
+print "Hex $hex_num =&gt; Decimal". N_to_dec ($hex_num, 16) . "\n";
 
 # Convert n-ary to decimal (up to hexadecimal)
 sub n_to_dec {
@@ -399,19 +389,19 @@ sub n_to_dec {
   my @nums = split(//, $num_str);
     
   # Allow 1-9 and A-F
-  my @valid = (0 .. 9,'A' ..'F');
+  my @valid = (0 .. 9, 'A' ..'F');
   my %valid;
   for (my $i = 0; $i &lt;@valid; $i++) {
-    # Create conversion table ($valid {E} = 15)
-    A table like # $valid {F} = 16)
-    $valid {$valid [$i]} = $i;
+    # Create conversion table ($valid{E} = 15)
+    A table like # $valid{F} = 16)
+    $valid{$valid[$i]} = $i;
   }
     
   If individual numbers in # @nums cannot be converted correctly in the conversion table
   # Alternatively, if the converted number contains $n or more, undef is returned.
   for my $num (@nums) {
     # Convert lowercase letters to uppercase
-    $num = $valid {uc $num};
+    $num = $valid{uc $num};
     return if! defined $num || $num&gt; = $n;
   }
     
@@ -471,10 +461,10 @@ my @nums = split(//, $num_str);
   <b> Creating a hash with valid characters as keys </b>
 </p>
 <pre>
-my @valid = (0 .. 9,'A' ..'F');
+my @valid = (0 .. 9, 'A' ..'F');
 my %valid;
 for (my $i = 0; $i &lt;@valid; $i++) {
-  $valid {$valid [$i]} = $i;
+  $valid{$valid[$i]} = $i;
 }
 </pre>
 <p>
@@ -488,18 +478,18 @@ for (my $i = 0; $i &lt;@valid; $i++) {
 </p>
 <pre>
 for my $num (@nums) {
-  $num = $valid {uc $num};
+  $num = $valid{uc $num};
   return if! defined $num || $num&gt; = $n;
 }
 </pre>
 <p>
-  @nums contains each decomposed character. Convert this to a number if it can be converted using a% valid hash.
+  @nums contains each decomposed character. Convert this to a number if it can be converted using a%valid hash.
 </p>
 <p>
   The uc function is a function that converts to uppercase. Even if it is a lowercase letter such as'f', it will be judged as a valid character by converting it to'F'.
 </p>
 <p>
-  If it cannot be converted using% valid, $num will be assigned undef. If $num is undef, it is judged that it was not a valid $str_num and it returns.
+  If it cannot be converted using%valid, $num will be assigned undef. If $num is undef, it is judged that it was not a valid $str_num and it returns.
 </p>
 <p>
   Also, if $num is greater than or equal to $n (specified base in the argument), it is considered not to be a valid $str_num and returns.
@@ -536,8 +526,7 @@ It is 2 x 8 x 8 + 5 x 8 + 4.
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -554,12 +543,9 @@ It is 2 x 8 x 8 + 5 x 8 + 4.
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -568,8 +554,7 @@ It is 2 x 8 x 8 + 5 x 8 + 4.
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

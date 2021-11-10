@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Learn the basics of PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20091116124667.html">
-        <span itemprop = "name"> Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">        <span itemprop = "name">Module </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-        <span itemprop = "name"> PDL </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">        <span itemprop = "name">PDL </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -136,8 +124,8 @@ my $nums = pdl [2, 4, 7];
   The data created by the pdl function is called a PDL variable. Let's get the elements of a one-dimensional PDL variable. Use the <strong> at </strong> method to get the data.
 </p>
 <pre>
-my $first = $nums-&gt; at (0);
-my $second = $nums-&gt; at (1);
+my $first = $nums-&gt;at (0);
+my $second = $nums-&gt;at (1);
 </pre>
 <p>
   In the above example, we got the value of the element contained in the PDL variable, but we can also get it as a PDL variable.
@@ -160,8 +148,8 @@ my $pdl_second = $nums (1);
   These are PDL variables, so if you want to get the element value itself, you can retrieve it with the <strong> at </strong> method.
 </p>
 <pre>
-my $first = $pdl_first-&gt; at (0);
-my $second = $pdl_second-&gt; at (0);
+my $first = $pdl_first-&gt;at (0);
+my $second = $pdl_second-&gt;at (0);
 </pre>
 <p>
   If you want to change the value of an element, use nice slice notation as well. Use the <strong>. = </Strong> operator. . = Is overridden for assignment, not string concatenation.
@@ -189,7 +177,7 @@ $nums (1: 2). = 8;
   Let's get the length of one-dimensional data. Use the <strong> dims </strong> method to get the length of the data.
 </p>
 <pre>
-my $length = $nums-&gt; dims;
+my $length = $nums-&gt;dims;
 </pre>
 <h3> Sample </h3>
 <p>
@@ -206,8 +194,8 @@ use PDL::NiceSlice;
 my $nums = pdl [2, 4, 7];
 
 # Element output
-print $nums-&gt; at (0). "\n";
-print $nums-&gt; at (1). "\n";
+print $nums-&gt;at (0) . "\n";
+print $nums-&gt;at (1) . "\n";
 
 # Retrieving PDL variables
 my $pdl_first = $nums (0);
@@ -222,7 +210,7 @@ my $pdl_parts = $nums (1: 2);
 # Assignment to multiple elements retrieved as PDL variable
 $nums (1: 2). = 8;
 
-print $nums. "\n";
+print $nums . "\n";
 </pre>
 <h3> Four arithmetic operations of constants </h3>
 <p>
@@ -260,7 +248,7 @@ my $pdl_pow = $pdl + 3;
   Use the <strong> uniq method </strong> to retrieve the <strong> unique value </strong>.
 </p>
 <pre>
-my $pdl_uniq = $pdl-&gt; uniq;
+my $pdl_uniq = $pdl-&gt;uniq;
 </pre>
 <h3> Four arithmetic operations between PDL variables </h3>
 <p>
@@ -300,7 +288,7 @@ my $pdl_pow = $pdl1 + $pdl2;
 </p>
 <pre>
 # Dot product
-my $inner_product = ($pdl1 * $pdl2)-&gt; sum;
+my $inner_product = ($pdl1 * $pdl2)-&gt;sum;
 </pre>
 <p>
   The result of the dot product is just a value, not a PDL variable.
@@ -332,7 +320,7 @@ my $pdl_div = $pdl / 3;
 my $pdl_quotient = $pdl% 3;
 
 # Get unique value
-my $pdl_uniq = $pdl-&gt; uniq;
+my $pdl_uniq = $pdl-&gt;uniq;
 
 # Calculation result
 print "$pdl_add\n";
@@ -369,7 +357,7 @@ my $pdl_quotient = $pdl1% $pdl2;
 my $pdl_pow = $pdl1 + $pdl2;
 
 # Dot product
-my $inner_product = ($pdl1 * $pdl2)-&gt; sum;
+my $inner_product = ($pdl1 * $pdl2)-&gt;sum;
 
 # Calculation result
 print "$pdl_add\n";
@@ -384,8 +372,7 @@ print "$inner_product\n";
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -402,12 +389,9 @@ print "$inner_product\n";
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -416,8 +400,7 @@ print "$inner_product\n";
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

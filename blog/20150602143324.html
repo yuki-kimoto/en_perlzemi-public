@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Perl 5.22 has been released-math related enhancements, method performance improvements, regular expression improvements  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20160225145640.html">
-      <span itemprop = "name"> Version information </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20160225145640.html">      <span itemprop = "name">Version information </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -99,7 +87,7 @@
 
 <blockquote>
 <p>
-  <a href="http://perl5.git.perl.org/perl.git/commit/70f63a4c7dba89e8e48b44de7978faae4319e693"> Perl 5.22 release</a>
+  <a href="http://perl5.git.perl.org/perl.git/commit/70f63a4c7dba89e8e48b44de7978faae4319e693">Perl 5.22 release</a>
 </p>
 </blockquote>
 <p>
@@ -114,19 +102,19 @@
   Perl's internal parser can now efficiently parse multi-tier dereferences. This has improved the performance of multi-tier dereferences.
 </p>
 <pre>
-$scores-&gt; [0] {math};
+$scores-&gt;[0]{math};
 </pre>
 <h4> Method call and SUPER pseudo-class performance improvement </h4>
 <p>
   Method calls and SUPER pseudo-classes are pre-parsed and their information cached. This improves the performance of method calls at runtime.
 </p>
 <pre>
-$obj-&gt; method
-$obj-&gt; SUPER::method;
+$obj-&gt;method
+$obj-&gt;SUPER::method;
 </pre>
 <h4> Performance improvement of length function </h4>
 <p>
-  The length function improves performance by 20% for non-UTF-8 strings.
+  The length function improves performance by 20%for non-UTF-8 strings.
 </p>
 <h4> Array and hash performance improvements </h4>
 <p>
@@ -164,7 +152,7 @@ tgamma
 </p>
 <h4> Flags that don't use regular parentheses for capture </h4>
 <p>
-  Perl 5.22 adds a new flag for <a href="/blog/20100827127859.html"> regular expressions</a> that doesn't use regular parentheses for capture. This makes it possible to write complex regular expressions concisely without using the uncaptured parentheses "(? :)".
+  Perl 5.22 adds a new flag for <a href="/blog/20100827127859.html">regular expressions</a> that doesn't use regular parentheses for capture. This makes it possible to write complex regular expressions concisely without using the uncaptured parentheses "(? :)".
 </p>
 <pre>
  "hello" = ~ / (hi | hello) / n
@@ -192,7 +180,7 @@ use experimental::refaliasing;
 
 my $nums = [1, 2, 3];
 my $nums_alias;
-\ $nums_alias = \ $nums;
+\$nums_alias = \$nums;
 </pre>
 <h4> Constant function support </h4>
 <p>
@@ -231,7 +219,7 @@ use warnings FATAL =&gt;'all';
 </p>
 <pre>
 defined(@array)
-defined(% hash)
+defined(%hash)
 </pre>
 <p>
   This description was deprecated as of 5.6.1, and in 5.16, a warning of deprecation was issued, but in 5.22, an error occurred. When upgrading Perl, please note that the old source code may have this description.
@@ -246,7 +234,7 @@ defined(% hash)
 </p>
 <blockquote>
 <p>
-  <a href="http://search.cpan.org/~ether/Task-Kensho-0.38/lib/Task/Kensho.pm#Task::Kensho::WebDev: _Web_Development"> Task::Kensho::WebDev : _Web_Development</a>
+  <a href="http://search.cpan.org/~ether/Task-Kensho-0.38/lib/Task/Kensho.pm#Task::Kensho::WebDev: _Web_Development">Task::Kensho::WebDev : _Web_Development</a>
 </p>
 </blockquote>
 <h4> Module::Build is off core </h4>
@@ -258,7 +246,7 @@ defined(% hash)
   First of all, I like Perl's enhancements to math-related features. We're happy to see the addition of features that cover areas where Perl is lagging behind.
 </p>
 <p>
-  Also, I think it's great that the performance of methods and multi-level dereferences has improved. For example, it was reported that the Perl web framework Mojolicious had a performance improvement of 20% or more after upgrading to Perl 5.22.
+  Also, I think it's great that the performance of methods and multi-level dereferences has improved. For example, it was reported that the Perl web framework Mojolicious had a performance improvement of 20%or more after upgrading to Perl 5.22.
 </p>
 <p>
   Also, I'm happy to say that converting warnings to fatal errors has been deprecated, giving you the possibility to add them when "use warnings" is "use v5.xx". It was opened. Early policy changes will help improve functions later.
@@ -268,8 +256,7 @@ defined(% hash)
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -286,12 +273,9 @@ defined(% hash)
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -300,8 +284,7 @@ defined(% hash)
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

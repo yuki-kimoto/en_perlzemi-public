@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Line input operator "& lt; & gt;" - Read one line from a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,16 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161005147566.html">
-      <span itemprop = "name"> operator </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161005147566.html">      <span itemprop = "name">operator </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
   <li>
-      <span itemprop = "name"> here </span>
+      <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20080722121673.html"> Line input operator "& lt; & gt;" - Read one line from a file </a></h2>
@@ -100,10 +89,10 @@
 my $line = &lt;$fh&gt;;
 </pre>
 <p>
-  Note that unlike other operators, you put the filehandle between "<" and ">".
+  Note that unlike other operators, you put the filehandle between "<" and">".
 </p>
 <p>
-  Usually used in combination with <a href="/blog/20100123126425.html"> while statement</a> to read lines repeatedly.
+  Usually used in combination with <a href="/blog/20100123126425.html">while statement</a> to read lines repeatedly.
 </p>
 <pre>
 while (my $line = &lt;$fh&gt;) {
@@ -126,7 +115,7 @@ while (defined(my $line = &lt;$fh&gt;)) {
 </p>
 <h3> Diamond operator </h3>
 <p>
-  The line input operator "<>" with nothing between "<" and ">" is specially called the <strong> diamond operator </strong>. If the file handle is omitted, it can be read line by line from the standard input and the file name specified by the <a href="/blog/20080108132865.html"> command line argument</a>.
+  The line input operator "<>" with nothing between "<" and">" is specially called the <strong> diamond operator </strong>. If the file handle is omitted, it can be read line by line from the standard input and the file name specified by the <a href="/blog/20080108132865.html">command line argument</a>.
 </p>
 <pre>
 # Diamond operator
@@ -180,7 +169,7 @@ my @lines = &lt;$fh&gt;
 my $content = do {local $/; &lt;$fh&gt;};
 </pre>
 <p>
-  "$/" Is the line delimiter. If you leave this undefined, the line input operator will populate the entire contents of the file. I'm using <a href="/blog/20080309120507.html"> local</a> to temporarily undefine it. The do block returns the last evaluated value. So, with this description, you can read the contents of the file at once.
+  "$/" Is the line delimiter. If you leave this undefined, the line input operator will populate the entire contents of the file. I'm using <a href="/blog/20080309120507.html">local</a> to temporarily undefine it. The do block returns the last evaluated value. So, with this description, you can read the contents of the file at once.
 </p>
 <h3> Sample </h3>
 <p>
@@ -255,8 +244,7 @@ while (my $line = &lt;$fh&gt;) {
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -273,12 +261,9 @@ while (my $line = &lt;$fh&gt;) {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -287,8 +272,7 @@ while (my $line = &lt;$fh&gt;) {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

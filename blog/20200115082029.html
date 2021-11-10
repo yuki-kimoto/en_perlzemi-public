@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,16 +24,15 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Class::Struct - Core module that provides object orientation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Class::Struct is a classic module that provides Perl with  object-oriented functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields.">
+<meta name="description" content="Class::Struct is a classic module that provides Perl with object-oriented functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content=" Class::Struct - Core module that provides object orientation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Class::Struct is a classic module that provides Perl with  object-oriented functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields." />
+<meta name="twitter:description" content="Class::Struct is a classic module that provides Perl with object-oriented functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -61,7 +55,7 @@
   <div class="middle">
     <h2><a href="/blog/20200115082029.html"> Class::Struct - Core module that provides object orientation </a></h2>
 <p>
-  Class::Struct is a classic module that provides Perl with <a href="/blog/20161030147778.html"> object-oriented</a> functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields.
+  Class::Struct is a classic module that provides Perl with <a href="/blog/20161030147778.html">object-oriented</a> functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,13 +89,13 @@ use Class::Struct __PACKAGE__, {
 };
 </pre>
 <p>
-  <a href="/blog/20090205123287.html"> use</a> allows you to pass arguments after the module name.
+  <a href="/blog/20090205123287.html">use</a> allows you to pass arguments after the module name.
 </p>
 <p>
-  The first argument is the package name. This argument specifies for which package the constructor or accessor should be generated. <a href="/blog/20080425120914.html"> __PACKAGE__</a> is a function that returns the current package name and returns Point.
+  The first argument is the package name. This argument specifies for which package the constructor or accessor should be generated. <a href="/blog/20080425120914.html">__PACKAGE__</a> is a function that returns the current package name and returns Point.
 </p>
 <p>
-  The second argument is the <a href="/blog/20180208151809.html"> hash reference</a> that defines the field. An accessor is automatically generated.
+  The second argument is the <a href="/blog/20180208151809.html">hash reference</a> that defines the field. An accessor is automatically generated.
 </p>
 <h3> Use of Point class </h3>
 <p>
@@ -111,22 +105,22 @@ use Class::Struct __PACKAGE__, {
 package main;
 
 # Create object
-my $point = Point-&gt; new (x =&gt; 1, y =&gt; 2);
+my $point = Point-&gt;new (x =&gt; 1, y =&gt; 2);
 
 Get the value of the # field using an accessor
-my $x = $point-&gt; x;
-my $y = $point-&gt; y;
+my $x = $point-&gt;x;
+my $y = $point-&gt;y;
 print "($x, $y)\n";
 
 # Set field value using accessor
-$point-&gt; x (5);
-$point-&gt; y (10);
-my $x2 = $point-&gt; x;
-my $y2 = $point-&gt; y;
+$point-&gt;x (5);
+$point-&gt;y (10);
+my $x2 = $point-&gt;x;
+my $y2 = $point-&gt;y;
 print "($x2, $y2)\n";
 </pre>
 <p>
-  For the main package, refer to the <a href="/blog/20100419127089.html"> Package Declaration</a> article.
+  For the main package, refer to the <a href="/blog/20100419127089.html">Package Declaration</a> article.
 </p>
 <h4> Call constructor new </h4>
 <p>
@@ -134,7 +128,7 @@ print "($x2, $y2)\n";
 </p>
 <pre>
 # Create object
-my $point = Point-&gt; new (x =&gt; 1, y =&gt; 2);
+my $point = Point-&gt;new (x =&gt; 1, y =&gt; 2);
 </pre>
 <h4> Call accessor </h4>
 <p>
@@ -142,15 +136,15 @@ my $point = Point-&gt; new (x =&gt; 1, y =&gt; 2);
 </p>
 <pre>
 Get the value of the # field using an accessor
-my $x = $point-&gt; x;
-my $y = $point-&gt; y;
+my $x = $point-&gt;x;
+my $y = $point-&gt;y;
 print "($x, $y)\n";
 
 # Set field value using accessor
-$point-&gt; x (5);
-$point-&gt; y (10);
-my $x2 = $point-&gt; x;
-my $y2 = $point-&gt; y;
+$point-&gt;x (5);
+$point-&gt;y (10);
+my $x2 = $point-&gt;x;
+my $y2 = $point-&gt;y;
 print "($x2, $y2)\n";
 </pre>
 <h3> Is it possible to inherit with Class::Struct? </H3>
@@ -158,22 +152,21 @@ print "($x2, $y2)\n";
   It is possible to inherit the class created by Class::Strcut, but as a limitation, you cannot add fields. If you want to inherit, most of the time you want to add a field, so it's a good idea to think that you can't.
 </p>
 <p>
-  If you plan to inherit, use <a href="/blog/20100203126425.html"> bless</a> to create the object for Perl cores only. When using the CPAN module, use a module that supports adding field definitions by inheritance.
+  If you plan to inherit, use <a href="/blog/20100203126425.html">bless</a> to create the object for Perl cores only. When using the CPAN module, use a module that supports adding field definitions by inheritance.
 </p>
 <h3> Is it possible to override the constructor? </H3>
 <p>
   Class::Strcut will generate a constructor for the target class, so you cannot override the constructor.
 </p>
 <p>
-  If you plan to customize the constructor, use <a href="/blog/20100203126425.html"> bless</a> to create the object for Perl cores only. If you want to use the CPAN module, use a module that supports constructor customization.
+  If you plan to customize the constructor, use <a href="/blog/20100203126425.html">bless</a> to create the object for Perl cores only. If you want to use the CPAN module, use a module that supports constructor customization.
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -190,12 +183,9 @@ print "($x2, $y2)\n";
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -204,8 +194,7 @@ print "($x2, $y2)\n";
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

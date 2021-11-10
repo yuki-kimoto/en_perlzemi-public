@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Find the time difference (including the date in the time)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,16 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161123147990.html">
-        <span itemprop = "name"> Date / Time </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161123147990.html">        <span itemprop = "name">Date / Time </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -101,8 +90,8 @@ use warnings;
 
 # Difference is 2 seconds Calculate this
 print "(1) Find the time difference (time includes date)\n";
-my $time_str1 = '30 / Sep / 2006: 23: 59: 59';
-my $time_str2 = '01 / Oct / 2006: 00: 00: 01';
+my $time_str1 = '30 / Sep / 2006:23:59:59';
+my $time_str2 = '01 / Oct / 2006:00:00:01';
 
 
 # Converts a string representation of time into a hash of time information, including dates.
@@ -126,7 +115,7 @@ sub time_from_str {
   if ($time_str = ~ m # ^ (\ d {2}) / (\ w {3}) / (\ d {4}): (\ d {2}): (\ d {2}) :( \ d {2}) $# ) {
     
     # Create hash
-    @ {$time} {qw / mday mon year hour min sec /}
+    @{$time}{qw / mday mon year hour min sec /}
       = ($1, $2, $3, $4, $5, $6);
     
     # Hash corresponding to the English notation of the month and the number of the month
@@ -136,10 +125,10 @@ sub time_from_str {
     );
 
     # Return if the month notation is incorrect
-    $time-&gt; {mon} = $num_of_mon {lc($time-&gt; {mon})};
-    return unless defined $time-&gt; {mon};
+    $time-&gt;{mon} = $num_of_mon{lc($time-&gt;{mon})};
+    return unless defined $time-&gt;{mon};
     
-    $time-&gt; {year}-= 1900;
+    $time-&gt;{year}-= 1900;
     
     return wantarray?% $time: $time;
   }
@@ -149,29 +138,29 @@ sub time_from_str {
 # Function to convert time to seconds
 sub time_to_sec {
   my $time;
-  if (ref $_ [0] eq'HASH') {
+  if (ref $_[0] eq'HASH') {
     $time = shift;
   }
   else {
     % $time = @_;
   }
   
-  return unless defined $time-&gt; {sec};
-  return unless defined $time-&gt; {min};
-  return unless defined $time-&gt; {hour};
-  return unless defined $time-&gt; {mday};
-  return unless defined $time-&gt; {mon};
-  return unless defined $time-&gt; {year};
+  return unless defined $time-&gt;{sec};
+  return unless defined $time-&gt;{min};
+  return unless defined $time-&gt;{hour};
+  return unless defined $time-&gt;{mday};
+  return unless defined $time-&gt;{mon};
+  return unless defined $time-&gt;{year};
   
   Convert to seconds using the # Time::Local module
   require Time::Local;
   my $sec = Time::Local::timelocal (
-    $time-&gt; {sec},
-    $time-&gt; {min},
-    $time-&gt; {hour},
-    $time-&gt; {mday},
-    $time-&gt; {mon},
-    $time-&gt; {year},
+    $time-&gt;{sec},
+    $time-&gt;{min},
+    $time-&gt;{hour},
+    $time-&gt;{mday},
+    $time-&gt;{mon},
+    $time-&gt;{year},
   );
   
   return $sec;
@@ -187,7 +176,7 @@ The time difference is 2 seconds.
 <h3> Explanation </h3>
 <h4> Convert time string representation to hash representing time information </h4>
 <p>
-  Converting a time containing a date such as '30 / Sep / 2006: 23: 59: 59'to a hash representing time information.
+  Converting a time containing a date such as '30 / Sep / 2006:23:59:59'to a hash representing time information.
 </p>
 <p>
   The hash that represents the time information has six keys: sec, min, hour, mday, mon, and year.
@@ -206,7 +195,7 @@ sub time_from_str {
   if ($time_str = ~ m # ^ (\ d {2}) / (\ w {3}) / (\ d {4}): (\ d {2}): (\ d {2}) :( \ d {2}) $# ) {
     
     # Create hash
-    @ {$time} {qw / mday mon year hour min sec /}
+    @{$time}{qw / mday mon year hour min sec /}
       = ($1, $2, $3, $4, $5, $6);
     
     # Hash corresponding to the English notation of the month and the number of the month
@@ -216,10 +205,10 @@ sub time_from_str {
     );
 
     # Return if the month notation is incorrect
-    $time-&gt; {mon} = $num_of_mon {lc($time-&gt; {mon})};
-    return unless defined $time-&gt; {mon};
+    $time-&gt;{mon} = $num_of_mon{lc($time-&gt;{mon})};
+    return unless defined $time-&gt;{mon};
     
-    $time-&gt; {year}-= 1900;
+    $time-&gt;{year}-= 1900;
     
     return wantarray?% $time: $time;
   }
@@ -227,14 +216,14 @@ sub time_from_str {
 }
 </pre>
 <p>
-  Others are the same as "<a href="/blog/20081018122442.html"> Find the time difference (if it does not exceed 24 hours)</a>".
+  Others are the same as "<a href="/blog/20081018122442.html">Find the time difference (if it does not exceed 24 hours)</a>".
 </p>
 <h4> Convert time to seconds </h4>
 <p>
   To convert a time containing a date to seconds (epoch seconds), use the timelocal function of the Time::Local module.
 </p>
 <p>
-  Others are the same as "<a href="/blog/20081018122442.html"> Find the time difference (if it does not exceed 24 hours)</a>".
+  Others are the same as "<a href="/blog/20081018122442.html">Find the time difference (if it does not exceed 24 hours)</a>".
 </p>
 <pre>
 # Convert time information hash to seconds to calculate elapsed seconds
@@ -243,29 +232,29 @@ my $sec_interval = time_to_sec ($time2) - time_to_sec ($time1);
 # Function to convert time to seconds
 sub time_to_sec {
   my $time;
-  if (ref $_ [0] eq'HASH') {
+  if (ref $_[0] eq'HASH') {
     $time = shift;
   }
   else {
     % $time = @_;
   }
   
-  return unless defined $time-&gt; {sec};
-  return unless defined $time-&gt; {min};
-  return unless defined $time-&gt; {hour};
-  return unless defined $time-&gt; {mday};
-  return unless defined $time-&gt; {mon};
-  return unless defined $time-&gt; {year};
+  return unless defined $time-&gt;{sec};
+  return unless defined $time-&gt;{min};
+  return unless defined $time-&gt;{hour};
+  return unless defined $time-&gt;{mday};
+  return unless defined $time-&gt;{mon};
+  return unless defined $time-&gt;{year};
   
   Convert to seconds using the # Time::Local module
   require Time::Local;
   my $sec = Time::Local::timelocal (
-    $time-&gt; {sec},
-    $time-&gt; {min},
-    $time-&gt; {hour},
-    $time-&gt; {mday},
-    $time-&gt; {mon},
-    $time-&gt; {year},
+    $time-&gt;{sec},
+    $time-&gt;{min},
+    $time-&gt;{hour},
+    $time-&gt;{mday},
+    $time-&gt;{mon},
+    $time-&gt;{year},
   );
   
   return $sec;
@@ -276,8 +265,7 @@ sub time_to_sec {
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -294,12 +282,9 @@ sub time_to_sec {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -308,8 +293,7 @@ sub time_to_sec {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

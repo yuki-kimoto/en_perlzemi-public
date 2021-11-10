@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Understand Perl context  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20161022147731.html">
-        <span itemprop = "name"> Syntax </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161022147731.html">        <span itemprop = "name">Syntax </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
@@ -99,17 +87,17 @@
 
 <ul>
   <li>
-    <a href="/blog/20180531152777.html"> Scalar context</a>
+    <a href="/blog/20180531152777.html">Scalar context</a>
   </li>
   <li>
-    <a href="/blog/20180530152777.html"> List context</a>
+    <a href="/blog/20180530152777.html">List context</a>
   </li>
 </ul>
 <p>
   The context evaluated as a scalar is called a scalar context, and the context evaluated as a list is called a list context.
 </p>
 <p>
-  As an example, the <a href="/blog/20081009122357.html"> localtime function</a> returns a string that displays the date / time in the scalar context, and the date / time information in the list context. Is listed and returned.
+  As an example, the <a href="/blog/20081009122357.html">localtime function</a> returns a string that displays the date / time in the scalar context, and the date / time information in the list context. Is listed and returned.
 </p>
 <pre>
 # Scalar context
@@ -133,7 +121,7 @@ $count = @values;
 </p>
 <ul>
   <li>
-    <a href="/blog/20100308126967.html"> List</a>
+    <a href="/blog/20100308126967.html">List</a>
   </li>
 </ul>
 <h4> Scalar context </h4>
@@ -144,7 +132,7 @@ $count = @values;
   <b> Assignment to scalar variables </b>
 </p>
 <p>
-  Assignment to <a href="/blog/20161107147852.html"> scalar variable</a> is a scalar context. When the array is evaluated in scalar context, it returns the length of the array.
+  Assignment to <a href="/blog/20161107147852.html">scalar variable</a> is a scalar context. When the array is evaluated in scalar context, it returns the length of the array.
 </p>
 <pre>
 my $num = @values;
@@ -153,14 +141,14 @@ my $num = @values;
   <b> Comparison operator term </b>
 </p>
 <p>
-  The left and right terms of <a href="/blog/20080318120585.html"> comparison operator</a> are scalar contexts.
+  The left and right terms of <a href="/blog/20080318120585.html">comparison operator</a> are scalar contexts.
 </p>
 <pre>
 $x &lt;@values
 $x == @values
 </pre>
 <p>
-  I often see it in the loop of <a href="/blog/20170521149524.html"> for statement</a>.
+  I often see it in the loop of <a href="/blog/20170521149524.html">for statement</a>.
 </p>
 <pre>
 for (my $i = 0; $i &lt;@nums; $i++) {
@@ -171,7 +159,7 @@ for (my $i = 0; $i &lt;@nums; $i++) {
   <b> if condition part </b>
 </p>
 <p>
-  The conditional part of <a href="/blog/20161023147731.html"> if</a> is the scalar context. In the following, @values ​​is evaluated in scalar context, so it returns the number of arrays.
+  The conditional part of <a href="/blog/20161023147731.html">if</a> is the scalar context. In the following, @values ​​is evaluated in scalar context, so it returns the number of arrays.
 </p>
 <pre>
 if (@values) {
@@ -183,7 +171,7 @@ if (@values) {
 </p>
 <ul>
   <li>
-    <a href="/blog/20180531152777.html"> Scalar context</a>
+    <a href="/blog/20180531152777.html">Scalar context</a>
   </li>
 </ul>
 <h4> List context </h4>
@@ -194,16 +182,16 @@ if (@values) {
   <b> Assignment to an array </b>
 </p>
 <p>
-  Assignment to <a href="/blog/20161012147627.html"> array</a> is a list context.
+  Assignment to <a href="/blog/20161012147627.html">array</a> is a list context.
 </p>
 <pre>
-my @ values2 = @values;
+my @values2 = @values;
 </pre>
 <p>
   <b> List </b>
 </p>
 <p>
-  Inside the <a href="/blog/20100308126967.html"> list</a> is the list context.
+  Inside the <a href="/blog/20100308126967.html">list</a> is the list context.
 </p>
 <pre>
 (@values);
@@ -212,7 +200,7 @@ my @ values2 = @values;
   <b> Subroutine arguments </b>
 </p>
 <p>
-  The argument of <a href="/blog/20101130129876.html"> subroutine</a> is the list context.
+  The argument of <a href="/blog/20101130129876.html">subroutine</a> is the list context.
 </p>
 <pre>
 func (@values);
@@ -222,7 +210,7 @@ func (@values);
 </p>
 <ul>
   <li>
-    <a href="/blog/20180530152777.html"> List context</a>
+    <a href="/blog/20180530152777.html">List context</a>
   </li>
 </ul>
 <h3> Sample </h3>
@@ -264,8 +252,7 @@ print "In list context, a list of date and time values ​​\n".
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -282,12 +269,9 @@ print "In list context, a list of date and time values ​​\n".
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -296,8 +280,7 @@ print "In list context, a list of date and time values ​​\n".
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

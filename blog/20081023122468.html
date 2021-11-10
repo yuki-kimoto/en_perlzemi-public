@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Cut out a record containing a specific time from the log  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -92,22 +86,22 @@ my @records = (
   '5 11:00:00 ooo',
 );
 
-my $start_time = '08: 00: 00';
+my $start_time = '08:00:00';
 
 # This time is not included
-my $end_time = '11: 00: 00';
+my $end_time = '11:00:00';
 
 for my $record(@records) {
   
   # Cut out the time
   if ($record = ~ / (\ d {1,2}): (\ d {2}) :( \ d {2}) /) {
     # You can compare as a character string by matching the format.
-    # '7: 00: 00'-&gt; '07: 00: 00'
-    my $time = sprintf("% 02s:% 02s:% 02s", $1, $2, $3);
+    # '7: 00:00'-&gt;'07:00:00'
+    my $time = sprintf("%02s:%02s:%02s", $1, $2, $3);
     
     # Cut out the records included from the start time to the end time.
     if ($time ge $start_time &amp;&amp; $time lt $end_time) {
-      print $record. "\n";
+      print $record . "\n";
     }
   }
 }
@@ -128,10 +122,10 @@ for my $record(@records) {
 </p>
 <pre>
 if ($record = ~ / (\ d {1,2}): (\ d {2}) :( \ d {2}) /) {
-  my $time = sprintf("% 02s:% 02s:% 02s", $1, $2, $3);
+  my $time = sprintf("%02s:%02s:%02s", $1, $2, $3);
   
   if ($time ge $start_time &amp;&amp; $time lt $end_time) {
-    print $record. "\n";
+    print $record . "\n";
   }
 }
 </pre>
@@ -141,20 +135,19 @@ if ($record = ~ / (\ d {1,2}): (\ d {2}) :( \ d {2}) /) {
 </p>
 <pre>
 if ($time ge $start_time &amp;&amp; $time lt $end_time) {
-  print $record. "\n";
+  print $record . "\n";
 }
 </pre>
 <hr>
 <p>
-  <a href="/blog/20080229122347.html"> Perl Reverse Dictionary / To Date and Time</a>
+  <a href="/blog/20080229122347.html">Perl Reverse Dictionary / To Date and Time</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -171,12 +164,9 @@ if ($time ge $start_time &amp;&amp; $time lt $end_time) {
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -185,8 +175,7 @@ if ($time ge $start_time &amp;&amp; $time lt $end_time) {
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

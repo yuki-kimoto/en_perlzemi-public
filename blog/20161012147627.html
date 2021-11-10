@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Let's understand Perl arrays  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,15 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -117,14 +107,14 @@
 </ul>
 <h4> Array declaration </h4>
 <p>
-  Use my to declare an array as you would for a scalar variable. Prefix with @ (at sign) to represent the array.
+  Use my to declare an array as you would for a scalar variable. Prefix with @(at sign) to represent the array.
 </p>
 <pre>
 my @numbers;
 </pre>
 <h4> Array initialization </h4>
 <p>
-  You can assign data representing multiple values ​​called <a href="/blog/20100308126967.html"> list</a> to the array. The list is
+  You can assign data representing multiple values ​​called <a href="/blog/20100308126967.html">list</a> to the array. The list is
 </p>
 <pre>
 (Value 1, Value 2, Value 3)
@@ -149,27 +139,27 @@ my @numbers = (10, 25, 40, 4, -6);
   To reference the elements of an array: Note that the first character is $, not @. Subscripts start at 0.
 </p>
 <pre>
-$Array [subscript]
+$Array[subscript]
 </pre>
 <p>
   You can output the first element and the second element as follows:
 </p>
 <pre>
-print $numbers [0];
-print $numbers [1];
+print $numbers[0];
+print $numbers[1];
 </pre>
 <h4> Array element assignment </h4>
 <p>
   To make an assignment:
 </p>
 <pre>
-$Array [subscript] = value
+$Array[subscript] = value
 </pre>
 <p>
   Try substituting 20 for the first element.
 </p>
 <pre>
-$numbers [0] = 20;
+$numbers[0] = 20;
 </pre>
 <h4> Number of elements in the array </h4>
 <p>
@@ -183,7 +173,7 @@ my $cnt = @nums;
 </p>
 <ul>
   <li>
-    <a href="/blog/20180604152811.html"> Get the number of elements in the array</a>
+    <a href="/blog/20180604152811.html">Get the number of elements in the array</a>
   </li>
 </ul>
 <h4> Process the elements of the array in order </h4>
@@ -195,7 +185,7 @@ my $cnt = @nums;
 </p>
 <pre>
 for (my $i = 0; $i &lt;@nums; $i++) {
-  print $nums [$i], "\n";
+  print $nums[$i], "\n";
 }
 </pre>
 <p>
@@ -233,7 +223,7 @@ my $first = shift @array;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100104126425.html"> shift function</a>
+    <a href="/blog/20100104126425.html">shift function</a>
   </li>
 </ul>
 <h4> unshift function </h4>
@@ -245,7 +235,7 @@ unshift @array, 5;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100105126425.html"> unshift function</a>
+    <a href="/blog/20100105126425.html">unshift function</a>
   </li>
 </ul>
 <h4> pop function </h4>
@@ -257,7 +247,7 @@ my $last = pop @array;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100106126425.html"> pop function</a>
+    <a href="/blog/20100106126425.html">pop function</a>
   </li>
 </ul>
 <h4> push function </h4>
@@ -269,7 +259,7 @@ push @array, 5;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100107126425.html"> push function</a>
+    <a href="/blog/20100107126425.html">push function</a>
   </li>
 </ul>
 <h3> Sorting the array </h3>
@@ -297,7 +287,7 @@ my @nums = (5, 8, 3, 2);
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100110126528.html"> sort function</a>
+    <a href="/blog/20100110126528.html">sort function</a>
   </li>
 </ul>
 <h4> Easily sort in reverse order </h4>
@@ -309,33 +299,33 @@ my @nums = (5, 8, 3, 2);
 </pre>
 <ul>
   <li>
-    <a href="/blog/20080227120413.html"> reverse function</a>
+    <a href="/blog/20080227120413.html">reverse function</a>
   </li>
 </ul>
 <h3> Array reference </h3>
 <p>
-  <span style = "font-weight: bold;"> A reference is the location of the memory that contains the array </span>. If you know C language, think of it as a "pointer that cannot perform address arithmetic". If you know Java, think of it as a "reference".
+  <span style = "font-weight: bold;">A reference is the location of the memory that contains the array </span>. If you know C language, think of it as a "pointer that cannot perform address arithmetic". If you know Java, think of it as a "reference".
 </p>
 <h4> Creating an array reference </h4>
 <pre>
-my $numbers_ref1 = \ @ numbers;
+my $numbers_ref1 = \@numbers;
 </pre>
 <p>
-  <span style = "font-weight: bold;"> You can create an array reference by prefixing @ with \.
+  <span style = "font-weight: bold;">You can create an array reference by prefixing @with \.
 </p>
 <h4> Create a direct array reference </h4>
 <pre>
 my $numbers_ref2 = [1, 2, 3, 4];
 </pre>
 <p>
-  <span style = "font-weight: bold;"> Enclose the list in [] to serve as an array reference. </span>
+  <span style = "font-weight: bold;">Enclose the list in [] to serve as an array reference. </span>
 </p>
 <h4> Array element reference </h4>
 <pre>
-$numbers_ref2-&gt; [0]
+$numbers_ref2-&gt;[0]
 </pre>
 <p>
-  <span style = "font-weight: bold;"> Array reference-> [element number] </span>
+  <span style = "font-weight: bold;">Array reference->[element number] </span>
 </p>
 <h3> Comparison of arrays and array references </h3>
 <p>
@@ -344,14 +334,14 @@ $numbers_ref2-&gt; [0]
 <h4> Element reference </h4>
 <pre>
 # arrangement
-$numbers [0]
+$numbers[0]
 
 # Array reference
-$numbers_ref-&gt; [0]
+$numbers_ref-&gt;[0]
 </pre>
 <h4> Array reference dereference </h4>
 <pre>
-@ $numbers_ref
+@$numbers_ref
 </pre>
 <p>
   Dereference when you want to return to an array such as a for statement or a function that takes an array as an argument
@@ -361,7 +351,7 @@ $numbers_ref-&gt; [0]
 </p>
 <ul>
   <li>
-    <a href="/blog/20180214151861.html"> Array reference</a>
+    <a href="/blog/20180214151861.html">Array reference</a>
   </li>
 </ul>
 <h3> List </h3>
@@ -372,17 +362,17 @@ $numbers_ref-&gt; [0]
 # List
 ('a', case:
 
-  break; b','c','d')
+  break; b', 'c', 'd')
 </pre>
 <p>
   Lists can be assigned to arrays.
 </p>
 <pre>
 # Assignment to array
-my @array = ('a','b','c','d');
+my @array = ('a', 'b', 'c', 'd');
 </pre>
 <p>
-  RiSee <a href="/blog/20100308126967.html"> List-A list of multiple values ​​</a> for more information on strikes.
+  RiSee <a href="/blog/20100308126967.html">List-A list of multiple values ​​</a> for more information on strikes.
 </p>
 <h3> Functions / syntax / operators related to arrays </h3>
 <h4> splice function </h4>
@@ -398,7 +388,7 @@ splice @array, $pos, $length, @replace;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20080127120141.html"> splice function</a>
+    <a href="/blog/20080127120141.html">splice function</a>
   </li>
 </ul>
 <h4> grep function </h4>
@@ -411,7 +401,7 @@ splice @array, $pos, $length, @replace;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100119126425.html"> grep function</a>
+    <a href="/blog/20100119126425.html">grep function</a>
   </li>
 </ul>
 <h4> map function </h4>
@@ -424,7 +414,7 @@ splice @array, $pos, $length, @replace;
 </pre>
 <ul>
   <li>
-    <a href="/blog/20100118126425.html"> map function</a>
+    <a href="/blog/20100118126425.html">map function</a>
   </li>
 </ul>
 <h4> String list operator </h4>
@@ -444,11 +434,11 @@ my @strings = qw / cat dog mouse /;
   It has the same meaning as the following list of strings.
 </p>
 <pre>
-my @strings = ('cat','dog','mouse');
+my @strings = ('cat', 'dog', 'mouse');
 </pre>
 <ul>
   <li>
-    <a href="/blog/20080222120369.html"> Operator Dictionary-String list operator "qw"</a>
+    <a href="/blog/20080222120369.html">Operator Dictionary-String list operator "qw"</a>
   </li>
 </ul>
 <h4> Array slice </h4>
@@ -457,11 +447,11 @@ my @strings = ('cat','dog','mouse');
 </p>
 <pre>
 # Array slice
-my @values ​​= @array ['m','n', ...]
+my @values ​​= @array ['m', 'n', ...]
 </pre>
 <ul>
   <li>
-    <a href="/blog/20080216120316.html"> Syntax Dictionary-Array Slice</a>
+    <a href="/blog/20080216120316.html">Syntax Dictionary-Array Slice</a>
   </li>
 </ul>
 <h3> "Multidimensional data structure" that combines arrays and hashes </h3>
@@ -478,7 +468,7 @@ my $people = [
 <p>
   The "multidimensional data structure" is explained in detail in the next article, so please refer to it.
 </p>
-<div class = "icon-arrow"> "<a href="/blog/20100930127859.html"> Perl's" arrays "and" hashes "are free to manipulate" multidimensional data structures "</a>" < / div>
+<div class = "icon-arrow">"<a href="/blog/20100930127859.html">Perl's" arrays "and" hashes "are free to manipulate" multidimensional data structures "</a>" < / div>
 <h3> Sample program </h3>
 <h4> Search for elements in an array, remove duplicate elements in an array, count duplicates </h4>
 <p>
@@ -503,7 +493,7 @@ if (grep {$_ == $saerch_number} @numbers) {
 The # hash key has the property of not allowing duplication.
 my %no_duplicate_hash;
 for my $number (@numbers) {
-  $no_duplicate_hash {$number} ++;
+  $no_duplicate_hash{$number} ++;
 }
 
 # Get a list of hash keys
@@ -513,7 +503,7 @@ print '2: @no_duplicate_numbers = ('. join(',', @no_duplicate_numbers). ")\n\n";
 # 3: Count the number of overlapping elements in the array (continued above)
 print "3: Number of elements\n";
 for my $key (sort keys %no_duplicate_hash) {
-  print "$key contains $no_duplicate_hash {$key}.\n";
+  print "$key contains $no_duplicate_hash{$key}.\n";
 }
 </pre>
 <h4> Array reference </h4>
@@ -525,23 +515,23 @@ use strict;
 use warnings;
 
 my @numbers = (1, 2, 3, 4, 5, 6, 7, 8);
-print "array: \ @numbers =", join(',', @numbers). ")\n\n";
+print "array: \@numbers =", join(',', @numbers). ")\n\n";
 
 # 1: Array reference If you put \ before @, it becomes an array reference.
-my $numbers_ref1 = \ @ numbers;
+my $numbers_ref1 = \@numbers;
 
 You can revert to the original array by prefixing the # array reference with @.
 # This is called a dereference.
-print "array: \ @ \ $numbers_ref1 =" .join(',', @ $numbers_ref1), ")\n";
+print "array: \@\$numbers_ref1 =" .join(',', @$numbers_ref1), ")\n";
 
 # 2: However, I usually don't write it like the above.
 # Make a direct array reference using something called an anonymous array ([]).
 my $numbers_ref2 = [1, 2, 3, 4];
-print "array: \ $numbers_ref2 =", join(',', @ $numbers_ref2). "]\n\n";
+print "array: \$numbers_ref2 =", join(',', @$numbers_ref2). "]\n\n";
 
-# 3: Access the elements of the array. ($array_ref-&gt; [element number])
-print "\ $numbers_ref2-&gt; [0] = $numbers_ref2-&gt; [0]\n";
-print "\ $numbers_ref2-&gt; [1] = $numbers_ref2-&gt; [1]\n";
+# 3: Access the elements of the array. ($array_ref-&gt;[element number])
+print "\$numbers_ref2-&gt;[0] = $numbers_ref2-&gt;[0]\n";
+print "\$numbers_ref2-&gt;[1] = $numbers_ref2-&gt;[1]\n";
 </pre>
 <p>
   Execution result
@@ -549,11 +539,11 @@ print "\ $numbers_ref2-&gt; [1] = $numbers_ref2-&gt; [1]\n";
 <pre>
 Array: @numbers = (1,2,3,4,5,6,7,8)
 
-Array: @ $numbers_ref1 = (1,2,3,4,5,6,7,8)
+Array: @$numbers_ref1 = (1,2,3,4,5,6,7,8)
 Array: $numbers_ref2 = [1,2,3,4]
 
-$numbers_ref2-&gt; [0] = 1
-$numbers_ref2-&gt; [1] = 2
+$numbers_ref2-&gt;[0] = 1
+$numbers_ref2-&gt;[1] = 2
 </pre>
 <h4> Sample of array and array reference comparison </h4>
 <p>
@@ -564,32 +554,32 @@ use strict;
 use warnings;
 
 my @numbers = (1, 2, 3);
-print "array: \ @numbers =", join(',', @numbers), ")\n\n";
+print "array: \@numbers =", join(',', @numbers), ")\n\n";
 
 my $numbers_ref = [1, 2, 3];
 
 # 1. Element reference
 print "1. Element reference\n";
-print "\ $numbers [0] =", $numbers [0], "\n";
+print "\$numbers[0] =", $numbers[0], "\n";
 
 # Array reference
-print "\ $numbers_ref-&gt; [0] =", $numbers_ref-&gt; [0], "\n";
+print "\$numbers_ref-&gt;[0] =", $numbers_ref-&gt;[0], "\n";
 print "\n";
 
 # 2. Processing of each element
 print "2. Processing of each element\n";
 
 # arrangement
-print "\ @ numbers =";
+print "\@numbers =";
 for my $number (@numbers) {
-  print $number. ",";
+  print $number. ", ";
 }
 print "\n";
 
 # Array reference (dereference it to the for statement)
-print "\ @ {\ $numbers_ref} =";
-for my $number (@ $numbers_ref) {
-  print $number. ","
+print "\@{\$numbers_ref} =";
+for my $number (@$numbers_ref) {
+  print $number. ", "
 }
 print "\n\n";
 
@@ -599,15 +589,15 @@ print "3. How to use the function\n";
 # arrangement
 push @numbers, 4;
 @numbers = sort {$b &lt;=&gt; $a} @numbers;
-print "\ @ numbers = (", join(',', @numbers), ")\n";
+print "\@numbers = (", join(',', @numbers), ")\n";
 
 # Array reference (dereference and pass to function)
-push @ $numbers_ref, 4;
+push @$numbers_ref, 4;
 
 The # sort function returns an array, so use an anonymous array []
 # Recreating an array reference.
-$numbers_ref = [sort {$b &lt;=&gt; $a} @ $numbers_ref];
-print "\ @ \ $numbers_ref =", join(',', @ $numbers_ref), ")\n\n";
+$numbers_ref = [sort {$b &lt;=&gt; $a} @$numbers_ref];
+print "\@\$numbers_ref =", join(',', @$numbers_ref), ")\n\n";
 </pre>
 <p>
   Execution result
@@ -616,16 +606,16 @@ print "\ @ \ $numbers_ref =", join(',', @ $numbers_ref), ")\n\n";
 Array: @numbers = (1,2,3)
 
 1. Element reference
-$numbers [0] = 1
-$numbers_ref-&gt; [0] = 1
+$numbers[0] = 1
+$numbers_ref-&gt;[0] = 1
 
 2. Processing of each element
 @numbers = 1,2,3,
-@ {$numbers_ref} = 1,2,3,
+@{$numbers_ref} = 1,2,3,
 
 3. How to use the function
 @numbers = (4,3,2,1)
-@ $numbers_ref = (4,3,2,1)
+@$numbers_ref = (4,3,2,1)
 </pre>
 <h3> Column "Perl that incorporates dynamic arrays into language features" </h3>
 <p>
@@ -642,8 +632,7 @@ $numbers_ref-&gt; [0] = 1
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -660,12 +649,9 @@ $numbers_ref-&gt; [0] = 1
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -674,8 +660,7 @@ $numbers_ref-&gt; [0] = 1
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

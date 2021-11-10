@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Script to install CPAN module with Sakura rental server light plan  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,14 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/"> <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/"><span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20140319139520.html"> <span itemprop = "name"> Mojolicious </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20140319139520.html"><span itemprop = "name">Mojolicious </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -94,7 +85,7 @@
   [f: id: perlcodesample: 20110323012954p: image]
 </p>
 <p>
-  <a href="/blog/20101221130016.html"> Start developing Mojolicious on Windows and upload it to Sakura's rental server by FTP using the same procedure as</a> please. The permissions on app.cgi should be 755.
+  <a href="/blog/20101221130016.html">Start developing Mojolicious on Windows and upload it to Sakura's rental server by FTP using the same procedure as</a> please. The permissions on app.cgi should be 755.
 </p>
 <p>
   The directory structure is as follows.
@@ -120,13 +111,13 @@ use utf8;
 get'/' =&gt; sub {
     my $self = shift;
     
-    my $module = $self-&gt; req-&gt; param ('module');
+    my $module = $self-&gt;req-&gt;param ('module');
     
-    $self-&gt; stash (error =&gt;'');
-    $self-&gt; stash (output =&gt;'');
+    $self-&gt;stash (error =&gt;'');
+    $self-&gt;stash (output =&gt;'');
     
     if ($module &amp;&amp; $module = ~ / ^ [: \ w] + $/) {
-        my $home = $ENV {DOCUMENT_ROOT};
+        my $home = $ENV{DOCUMENT_ROOT};
         $home = ~ s # / www $# #;
         
         my @output;
@@ -135,24 +126,24 @@ get'/' =&gt; sub {
             chdir $home
               or die qq {Can't change directory "$home": $!};
             
-            my $ua = LWP::UserAgent-&gt; new;
-            my $res = $ua-&gt; get ('http://xrl.us/cpanm/');
+            my $ua = LWP::UserAgent-&gt;new;
+            my $res = $ua-&gt;get ('http://xrl.us/cpanm/');
             my $cpanm_content;
-            if ($res-&gt; is_success) {
-                $cpanm_content = $res-&gt; content;
+            if ($res-&gt;is_success) {
+                $cpanm_content = $res-&gt;content;
             }
             else {
                 die qq {Can't donwlaod "cpanm"};
             }
             
-            push @cpanm,'#! / usr / bin / perl';
+            push @cpanm, '#! / usr / bin / perl';
             push @cpanm, "BEGIN {".
-                             "\ $ENV {HOME} =" $home'; ".
+                             "\$ENV{HOME} =" $home'; ".
                              "use lib'$home / perl5 / lib / perl5';".
                          "}";
             push @cpanm, $cpanm_content;
             
-            open my $write_fh,'&gt;','cpanm'
+            open my $write_fh, '&gt;', 'cpanm'
               or die qq {Can't open "cpanm" for write: $!};
             
             print $write_fh join("\n", @cpanm);
@@ -163,28 +154,27 @@ get'/' =&gt; sub {
             push @output, split /\n /, $output;
         };
         
-        return $self-&gt; render (error =&gt; $@) if $@;
+        return $self-&gt;render (error =&gt; $@) if $@;
         
-        $self-&gt; render (output =&gt; \ @ output);
+        $self-&gt;render (output =&gt; \@output);
     }
     elsif ($module) {
-        $self-&gt; stash (error =&gt;'Enter module name correctly');
-        $self-&gt; render;
+        $self-&gt;stash (error =&gt;'Enter module name correctly');
+        $self-&gt;render;
     }
     else {
-        $self-&gt; render;
+        $self-&gt;render;
     }
 } =&gt;'index';
 
-app-&gt; start;
+app-&gt;start;
 
 __DATA__
 
-@@ index.html.ep
+@@index.html.ep
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta http-equiv = "Content-type" content = "text / html; charset = UTF-8"&gt;
-    &lt;title&gt; Sakura Rental Server Light CPAN Module Installation &lt;/title&gt;
+    &lt;meta http-equiv = "Content-type" content = "text / html; charset = UTF-8"&gt;    &lt;title&gt; Sakura Rental Server Light CPAN Module Installation &lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;h1&gt; Sakura rental server light CPAN module installation &lt;/h1&gt;
@@ -195,13 +185,12 @@ __DATA__
     
     # This script is available to everyone and should be removed as soon as the installation is complete.
     &lt;/pre&gt;
-    &lt;form method = "get" action = "&lt;% = url_for'/'%&gt;"&gt;
-      &lt;div&gt; Module &lt;input type = "text" name = "module"&gt; &lt;input type = "submit" value = "install"&gt; &lt;/div&gt;
-      &lt;div style = "color: red"&gt; &lt;% = $error%&gt; &lt;/div&gt;
+    &lt;form method = "get" action = "&lt;% = url_for'/'%&gt;"&gt;      &lt;div&gt; Module &lt;input type = "text" name = "module"&gt;&lt;input type = "submit" value = "install"&gt;&lt;/div&gt;
+      &lt;div style = "color: red"&gt;&lt;% = $error%&gt; &lt;/div&gt;
       &lt;div&gt;
-        % if ($output) {
-          % foreach my $line (@ $output) {
-            &lt;p style = "margin: 0; padding: 0"&gt; &lt;% = $line%&gt; &lt;/p&gt;
+        %if ($output) {
+          %foreach my $line (@$output) {
+            &lt;p style = "margin: 0; padding: 0"&gt;&lt;% = $line%&gt; &lt;/p&gt;
           %}
         %}
       &lt;/div&gt;
@@ -210,15 +199,14 @@ __DATA__
 &lt;/html&gt;
 </pre>
 <p>
-  (Reference) <a href="/blog/20100408127089.html"> File::Copy</a>, <a href="/blog/20100524127696.html"> FindBin</a>
+  (Reference) <a href="/blog/20100408127089.html">File::Copy</a>, <a href="/blog/20100524127696.html">FindBin</a>
 </p>
 
   </div>
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -235,12 +223,9 @@ __DATA__
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -249,8 +234,7 @@ __DATA__
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

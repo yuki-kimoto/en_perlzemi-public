@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Read a CSV file and convert it to an array of arrays  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,21 +53,15 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-      <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">      <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/blog/20110212130370.html">
-      <span itemprop = "name"> File input / output </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20110212130370.html">      <span itemprop = "name">File input / output </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <span itemprop = "name"> here </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
 <h2><a href="/blog/20080728121733.html"> Read a CSV file and convert it to an array of arrays </a></h2>
@@ -97,7 +85,7 @@
 
 
 <p>
-  CSV etc. including line breaks etc. cannot be processed correctly by the following programs. If you want to process CSV correctly, <a href="https://perldoc.jp/docs/modules/Text-CSV_XS-0.23/Text-CSV_XS-0.23.pod"> Text::CSV_XS</a> or There is <a href="https://perlzemi.com/blog/20110627131112.html"> Text::CSV::Encoded</a>. Text::CSV::Encoded is a wrapper module of Text::CSV or Text::CSV_XS and can handle Japanese easily.
+  CSV etc. including line breaks etc. cannot be processed correctly by the following programs. If you want to process CSV correctly, <a href="https://perldoc.jp/docs/modules/Text-CSV_XS-0.23/Text-CSV_XS-0.23.pod">Text::CSV_XS</a> or There is <a href="https://perlzemi.com/blog/20110627131112.html">Text::CSV::Encoded</a>. Text::CSV::Encoded is a wrapper module of Text::CSV or Text::CSV_XS and can handle Japanese easily.
 </p>
 <pre>
 use strict;
@@ -117,7 +105,7 @@ my @recs = parse_file ($file);
 # Output (because it is a two-dimensional array, follow it with for)
 for my $items (@recs) {
   Output by connecting with # comma.
-  print join(',', @ $items). "\n";
+  print join(',', @$items) . "\n";
 }
 
 # Function for file analysis (I just write it back this time ...)
@@ -135,14 +123,14 @@ sub parse_file {
     # Prepare a reference to the array that stores the data
     # Separate rows with commas and store in array
     # split returns an array, so
-    Dereference with # @ $items
+    Dereference with # @$items
 
     my $items = [];
-    @ $items = split(/, /, $line);
+    @$items = split(/, /, $line);
 
-    The first argument of the # push function is an array, so @ $recs
+    The first argument of the # push function is an array, so @$recs
     # And dereference.
-    push @ $recs, $items;
+    push @$recs, $items;
   }
   close $fh;
   return $recs;
@@ -182,20 +170,20 @@ rika, 38, France
 ↓
 
 @recs = (
-    ['masao', 10,'Japan'],
-    ['taro', 20,'USA'],
-    ['rika', 38,'France'],
+    ['masao', 10, 'Japan'],
+    ['taro', 20, 'USA'],
+    ['rika', 38, 'France'],
 )
 </pre>
 <h4> (3) Output in csv format </h4>
 <pre>
 for my $items (@recs) {
   Output by connecting with # comma.
-  print join(',', @ $items). "\n";
+  print join(',', @$items) . "\n";
 }
 </pre>
 <p>
-  To output, repeat the foreach statement for the number of records contained in @recs. Each record is concatenated with a comma with <a href="/blog/20081007122338.html"> join function</a> and output. Add a line break at the end.
+  To output, repeat the foreach statement for the number of records contained in @recs. Each record is concatenated with a comma with <a href="/blog/20081007122338.html">join function</a> and output. Add a line break at the end.
 </p>
 <h4> (4) Explanation of the function that reads a file and converts csv format text into an array of arrays </h4>
 <pre>
@@ -214,12 +202,12 @@ sub parse_file {
     # Prepare a reference to the array that stores the data
     # Separate rows with commas and store in array
     # split returns an array, so
-    Dereference with # @ $items
+    Dereference with # @$items
     my $items = [];
-    @ $items = split(/, /, $line);
+    @$items = split(/, /, $line);
 
-    Since the first argument of the # push function is an array, dereference it with @ $recs.
-    push @ $recs, $items;
+    Since the first argument of the # push function is an array, dereference it with @$recs.
+    push @$recs, $items;
   }
   close $fh;
   return $recs;
@@ -241,14 +229,14 @@ my $recs = []; # Prepare a reference to an array that stores multiple records
 </p>
 <pre>
 $recs = [
-  ['masao', 10,'Japan'],
-  ['taro', 20,'USA'],
-  ['rika', 38,'France'],
+  ['masao', 10, 'Japan'],
+  ['taro', 20, 'USA'],
+  ['rika', 38, 'France'],
 ]
 </pre>
 <h4> (4) -3 Processing in a while loop </h4>
 <p>
-  I'm using a <a href="/blog/20100123126425.html"> while statement</a> to create a Perl data structure.
+  I'm using a <a href="/blog/20100123126425.html">while statement</a> to create a Perl data structure.
 </p>
 <pre>
 while (my $line = &lt;$fh&gt;) {
@@ -260,11 +248,11 @@ while (my $line = &lt;$fh&gt;) {
 
   # Separate rows with commas and store in array
   # split returns an array, so
-  Dereference with # @ $items
-  @ $items = split(/, /, $line);
+  Dereference with # @$items
+  @$items = split(/, /, $line);
 
-  Since the first argument of the # push function is an array, dereference it with @ {$recs}.
-  push @ $recs, $items;
+  Since the first argument of the # push function is an array, dereference it with @{$recs}.
+  push @$recs, $items;
 }
 </pre>
 <h4> (4) -3-a Creating a reference to an empty array </h4>
@@ -276,21 +264,21 @@ my $items = [];
 </p>
 <h4> (4) -3-b Comma-separated string split </h4>
 <pre>
-@ $items = split(/, /, $line);
+@$items = split(/, /, $line);
 </pre>
 <p>
-  The split function returns an array, so to receive it, dereference $items to @ $items.
+  The split function returns an array, so to receive it, dereference $items to @$items.
 </p>
 <h4> (4) -3-c Add the created record to the reference to the array </h4>
 <pre>
-push @ $recs, $items;
+push @$recs, $items;
 </pre>
 <p>
   Add $items to $recs. When the first while is finished, it will be as follows.
 </p>
 <pre>
 $recs = [
-  ['masao', 10,'Japan'],
+  ['masao', 10, 'Japan'],
 ]
 </pre>
 <p>
@@ -298,8 +286,8 @@ $recs = [
 </p>
 <h3> Rewrote the subroutine after being pointed out by kits </h3>
 <pre>
-Put the data in my @recs rather than push @ $recs
-It's like returning @recs or \ @recs at the end.
+Put the data in my @recs rather than push @$recs
+It's like returning @recs or \@recs at the end.
 (I feel that the effort of dereference is wasted)
 </pre>
 <p>
@@ -326,7 +314,7 @@ chomp $line;
      push @recs, [@items];
    }
    close $fh;
-   return \ @recs;
+   return \@recs;
 }
 </pre>
 
@@ -334,8 +322,7 @@ chomp $line;
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -352,12 +339,9 @@ chomp $line;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -366,8 +350,7 @@ chomp $line;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>

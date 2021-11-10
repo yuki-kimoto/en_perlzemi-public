@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"><meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
 
 <link rel="shortcut icon" href="/images/logo.png">
-
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
 <link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
 <script>
@@ -28,8 +24,7 @@
   });
 </script>
 
-<script type="text/javascript" language="javascript">
-    var vc_pid = "886663612";
+<script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title> Understand Perl scope  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
@@ -45,8 +40,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">
-  <h1>
+        <div class="header_main">  <h1>
     <a href="/"><img src="/images/logo.png">Perl Zemi</a>
   </h1>
 </div>
@@ -59,15 +53,11 @@
     
   </div>
   <div class="middle">
-    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-    <a itemprop="item" href="/">
-        <span itemprop = "name"> Perl </span></a>
+    <ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">
-      <span itemprop = "name"> scope </span>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">scope </span>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -145,7 +135,7 @@ print $Foo::NUM;
 </p>
 <h4> Package variables modified locally </h4>
 <p>
-  You can use <a href="/blog/20080309120507.html"> local</a> to temporarily change a package variable. This changed value is reverted at the end of the scope.
+  You can use <a href="/blog/20080309120507.html">local</a> to temporarily change a package variable. This changed value is reverted at the end of the scope.
 </p>
 <pre>
 package Foo;
@@ -193,18 +183,18 @@ foo ();
   my $foo = sub {...};
 
   # Can be called
-  $foo-&gt; ();
+  $foo-&gt;();
 }
 
 # Cannot be called from this position
-$foo-&gt; ();
+$foo-&gt;();
 </pre>
 <p>
   At the end of the scope, the subroutine reference assigned to $foo is released. Note that the subroutine itself is not freed. sub {...} is parsed and placed in memory at compile time.
 </p>
 <h3> Scope in if and while statements </h3>
 <p>
-  The "{}" used in if statements and <a href="/blog/20100123126425.html"> while statements</a> is also a scope. In Perl, the scope is "{}", which is used in all kinds of syntax. It's consistent in this regard and is very straightforward compared to other languages.
+  The "{}" used in if statements and <a href="/blog/20100123126425.html">while statements</a> is also a scope. In Perl, the scope is "{}", which is used in all kinds of syntax. It's consistent in this regard and is very straightforward compared to other languages.
 </p>
 <pre>
 if (condition) {
@@ -224,7 +214,7 @@ sub {
 }
 </pre>
 <p>
-  (Reference) <a href="/blog/20100312126967.html"> eval</a>
+  (Reference) <a href="/blog/20100312126967.html">eval</a>
 </p>
 <p>
   Files also have one scope.
@@ -273,7 +263,7 @@ Statement if my $num = 1;
 print $num;
 </pre>
 <p>
-  The same is true for unless statements and <a href="/blog/20100123126425.html"> while statements</a>.
+  The same is true for unless statements and <a href="/blog/20100123126425.html">while statements</a>.
 </p>
 <pre>
 # unless
@@ -330,8 +320,7 @@ print $num;
   <div class="bottom">
     <h3>Related Informatrion</h3>
 
-<div style="margin:10px 10px;">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -348,12 +337,9 @@ print $num;
 
         </div>
         <div class="side">
-          <div class="side_list">
-  <div class="side_list_body">
-    <ul>
+          <div class="side_list">  <div class="side_list_body">    <ul>
       <li>
-        <div class="side_list_image">
-        </div>
+        <div class="side_list_image">        </div>
       </li>
     </ul>
   </div>
@@ -362,8 +348,7 @@ print $num;
         </div>
       </div>
       <div class="footer">
-        <div class="perlri_link">
-  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
+        <div class="perlri_link">  <a rel="nofollow" href="javascript:void(0)">Perl Club</a>
 </div>
 
       </div>
