@@ -73,7 +73,7 @@
 <Strong> Unicode characters </strong> have <strong> code points </strong> assigned to all characters. In Perl, Unicode characters can be represented using code points.
 <pre>
 # a
-my $str = "\ x {3042}";
+my $str = "\x{3042}";
 </pre>
 <p>
   Note that strings containing Unicode characters represented by code points are always treated as internal strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.
@@ -95,7 +95,7 @@ my $str = "\ x {3042}";
 
 
 <pre>
-use Encode'encode';
+use Encode 'encode';
 print encode ('UTF-8', $str);
 </pre>
 <p>

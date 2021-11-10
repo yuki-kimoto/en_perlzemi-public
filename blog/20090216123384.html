@@ -95,7 +95,7 @@
 
 <pre>
 # File representation on Unix
-dir1 / dir2 / file.txt
+dir1/dir2/file.txt
 </pre>
 <p>
   Suppose you want to convert this Unix file representation to a Windows file representation on Windows. It's easy to do the following:
@@ -105,7 +105,7 @@ dir1 / dir2 / file.txt
 </p>
 <pre>
 use File::Spec;
-my $unix_path ='dir1 / dir2 / file.txt';
+my $unix_path ='dir1/dir2/file.txt';
 my $windows_path = File::Spec-&gt;catfile (File::Spec-&gt;splitdir ($unix_path));
 </pre>
 <h3> Executable sample </h3>
@@ -114,7 +114,7 @@ use strict;
 use warnings;
 
 use File::Spec;
-my $unix_path ='dir1 / dir2 / file.txt';
+my $unix_path ='dir1/dir2/file.txt';
 my $windows_path = File::Spec-&gt;catfile (File::Spec-&gt;splitdir ($unix_path));
 
 print "1. Convert to Windows file path\n";

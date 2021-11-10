@@ -108,7 +108,7 @@
   </tr>
   <tr>
     <td>
-      A! = B
+      A != B
     </td>
     <td>
       A and B are not equal
@@ -181,7 +181,7 @@ if ($num1&gt; $num2) {
 my $num1 = 4;
 my $num2 = 3;
 
-my $message = $num1&gt; $num2? "OK": "Not OK";
+my $message = $num1&gt; $num2 ? "OK": "Not OK";
 </pre>
 <p>
   Since $num1 is larger than $num2, true is returned and "OK" is assigned to $message.
@@ -292,7 +292,7 @@ if ($num1 &lt;1 || $num1&gt; 5) {
 </p>
 <pre>
 If # $str1 contains "Cat"
-if ($str1 = ~ / Cat /) {
+if ($str1 =~ /Cat /) {
   ...
 }
 </pre>

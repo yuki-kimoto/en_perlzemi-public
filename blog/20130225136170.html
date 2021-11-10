@@ -138,12 +138,12 @@ twenty three
 twenty three
 2 ^ 5
 2 == 3
-2! = 3
+2 != 3
 2 &lt;3
 2&gt; 3
 'a'.'b'
-'a' eq'b'
-'a' ne'b'
+'a' eq 'b'
+'a' ne 'b'
 </pre>
 <h4> Insert a space immediately after the if statement, unless statement, while statement, and for statement </h4>
 <p>
@@ -211,7 +211,7 @@ else {$num = 2}
 <pre>
 my $str ='Hello World!';
 </pre>
-<h3> Conditional statement / repeating statement </h3>
+<h3> Conditional statement/repeating statement </h3>
 <h4> Use while without using until </h4>
 <pre>
 while (condition) {
@@ -267,7 +267,7 @@ printf $fh "Hello%d", 3;
 </p>
 <h4> Specify the function to import </h4>
 <pre>
-use Encode'encode';
+use Encode 'encode';
 </pre>
 <p>
   exception. When it is very common not to describe the import.
@@ -278,11 +278,11 @@ use Time::Piece;
 </pre>
 <h4> If there is only one function to import, enclose it in single quotes </h4>
 <pre>
-use Encode'encode';
+use Encode 'encode';
 </pre>
 <h4> Use the string list operator qw // when there are multiple functions to import </h4>
 <pre>
-use Encode qw / encode decode /;
+use Encode qw/encode decode/;
 </pre>
 <h4> Always use use to load modules </h4>
 <pre>
@@ -319,7 +319,7 @@ use Carp ();
 # Time
 my $time = time;
 </pre>
-<h3> Array / hash </h3>
+<h3> Array/hash </h3>
 <h4> If the elements of the array fit in one line, write in one line </h4>
 <pre>
 my @animals = ('cat', 'dog', 'mouse');

@@ -90,7 +90,7 @@
 </p>
 <pre>
 # Import function
-use Pod::Usage'pod2usage';
+use Pod::Usage 'pod2usage';
 </pre>
 <p>
   This is the most basic usage sample of pod2 usage. Exit the program by displaying the item "SYNOPSIS" in the document.
@@ -104,7 +104,7 @@ script.pl FILE
 
 = cut
 
-use Pod::Usage'pod2usage';
+use Pod::Usage 'pod2usage';
 
 # Command line arguments
 my $file = shift;
@@ -131,8 +131,8 @@ script.pl [- force] FILE
 
 = cut
 
-use Pod::Usage'pod2usage';
-use Getopt::Long'GetOptions';
+use Pod::Usage 'pod2usage';
+use Getopt::Long 'GetOptions';
 
 # Analysis of command line options
 my $force;

@@ -95,7 +95,7 @@ BEGIN {
   require is similar to use, except that it loads the module at runtime and does not automatically execute the import method.
 </p>
 <pre>
-use File::Basename'basename';
+use File::Basename 'basename';
 
 # Same meaning as above
 BEGIN {
@@ -284,7 +284,7 @@ perldoc -f -X
   You may sometimes see tr, but the tr operator does string substitutions. The following sentence replaces "a ⇒ 1", "b ⇒ 2", and "c ⇒ 3".
 </p>
 <pre>
-$str = ~ tr / abc / 123 /;
+$str =~ tr/abc/123/;
 </pre>
 <h3> See the settings in Perl itself </h3>
 <p>
@@ -301,7 +301,7 @@ perl -V
   The notation of dereferencing a hash reference and hash slicing is very hard to read.
 </p>
 <pre>
-my ($key1, $key2, $key3) = @{$hash}{qw / key1 key2 key3 /};
+my ($key1, $key2, $key3) = @{$hash}{qw/key1 key2 key3 /};
 </pre>
 <p>
   I think it is better to substitute one by one if possible.
@@ -383,7 +383,7 @@ system $command;
 if ($? == -1) {
   die "failed to execute: $!\n";
 }
-elsif ($? &gt;&gt; 8! = 0) {
+elsif ($? &gt;&gt; 8 != 0) {
   die "Return error status\n";
 }
 </pre>
@@ -403,7 +403,7 @@ elsif ($? &gt;&gt; 8! = 0) {
 </p>
 <pre>
 Same as # our $VAR;
-use vars'VAR';
+use vars 'VAR';
 </pre>
 <h3> Operators starting with q that you want to remember </h3>
   Operators starting with q are difficult to remember, so I will summarize them. You can also use //, {}, # #, ||, etc. as the enclosing characters.
@@ -411,26 +411,24 @@ use vars'VAR';
   q is a single quote operator. It is the same as single quote except that single quote can be used.
 </p>
 <pre>
-my $str = q / aaa'''bbb /;
+my $str = q/aaa'''bbb/;
 </pre>
 <p>
   qq is a double quote operator. Same as double quotes except that double quotes can be used.
 </p>
 <pre>
-my $str = qq / aaa "" "$str /;
+my $str = qq/aaa "" "$str/;
 </pre>
 <p>
   qw is a string list operator. You can easily write a list of strings.
 </p>
 <pre>
 Same as # ('foo', 'bar', 'baz')
-my $str = qw / foo bar baz /
-</pre>
-<p>
-  qr is a regular expression reference.
-</p>
-<pre>
-my $regex_ref = qr / ^ aaa. * Bbb $/ ms;
+my $str = qw/foo bar baz/&lt;/pre&gt;
+
+qr is a regular expression reference.
+&lt;pre&gt;
+my $regex_ref = qr/^ aaa. * Bbb $/ ms;
 </pre>
 <h3> 1; is required at the end of the module </h3>
 <p>
@@ -589,7 +587,7 @@ $fh-&gt;print($output);
   On Windows, it doesn't work well if the argument of the glob function contains a space. To get this to work, you need to enclose it in double quotes.
 </p>
 <pre>
-my @files = glob('"C: / Documents and Settings / *. *"');
+my @files = glob('"C:/Documents and Settings/*. *"');
 </pre>
 <h3> If you need parentheses for the subroutine </h3>
 <p>
@@ -605,7 +603,7 @@ func1'aaaa';
 </p>
 <pre>
 # You don't need parentheses when you import
-use Carp'croak';
+use Carp 'croak';
 
 croak'aaa';
 </pre>
@@ -634,7 +632,7 @@ sub func1 {print 1}
   If you want to get a part of the matched character using <a href="/blog/20100827127859.html">regular expression</a>, write as follows in combination with the if statement.
 </p>
 <pre>
-if ($str = ~ / regular expression /) {
+if ($str =~ /regular expression /) {
   my $match1 = $1;
   my $match2 = $2;
 }
@@ -643,26 +641,25 @@ if ($str = ~ / regular expression /) {
   Another way to write it is to evaluate the regular expression in the list context to get the matched characters.
 </p>
 <pre>
-my ($match1, $match2) = $str = ~ / regular expression /;
+my ($match1, $match2) = $str =~ /regular expression/;
 </pre>
 <h3> Change the enclosing character of the regular expression </h3>
 <p>
   Normally, the regular expression is written as follows.
 </p>
 <pre>
-$str = ~ / regular expression /
-</pre>
-<p>
-  There is another way of writing that has the same meaning. Using m has the same meaning as above.
-</p>
-<pre>
-$str = ~ m / regular expression /;
+$str =~ /regular expression/&lt;/pre&gt;
+
+There is another way of writing that has the same meaning. Using m has the same meaning as above.
+
+&lt;pre&gt;
+$str =~ m/regular expression/;
 </pre>
 <p>
   The reason for this is that you can change the regex enclosing character if you find it very difficult to escape when there are a lot of "/" s in the regex. This is an example of changing the enclosing character to "#".
 </p>
 <pre>
-$str = ~ m # http://aaa.com#;
+$str =~ m # http://aaa.com#;
 </pre>
 <h3> ord function is an abbreviation for ordinal </h3>
 <p>
@@ -691,7 +688,7 @@ A or B
 <pre>
 my $conf_file = "app.conf";
 my $conf = do $conf_file
-  or die qq / Can't load config file "$conf_file": $! $@/;
+  or die qq/Can't load config file "$conf_file": $! $@/;
 </pre>
 <p>
   The contents of the configuration file.

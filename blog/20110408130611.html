@@ -72,7 +72,7 @@
 </div>
 
 
-  $headers->content_type ('text / csv; charset = UTF-8');
+  $headers->content_type ('text/csv; charset = UTF-8');
   
   # Render data
   return $self->render (data => $content);
@@ -84,7 +84,7 @@
 </p>
 </pre>
 <p>
-  Use the Text::CSV::Encoded module to create CSV data. The only way to convert the data of one record to a row is to use the print method, which is a method for printing to a filehandle. Therefore, Perl's scalar input / output function is used to output to scalar variables.
+  Use the Text::CSV::Encoded module to create CSV data. The only way to convert the data of one record to a row is to use the print method, which is a method for printing to a filehandle. Therefore, Perl's scalar input/output function is used to output to scalar variables.
 </p>
 <p>
   You can name the file using the Content-Disposition header. Let's also specify the Content-Type so that we can see that it is CSV data. When drawing, CSV data is binary data (not an internal string), so use the data option.
@@ -101,7 +101,7 @@ $c-&gt;render (template_class =&gt; $class);
 </p>
 <pre>
 package Mojolicious::Plugin::Viewer;
-use Mojo::Base'Mojolicious::Plugin';
+use Mojo::Base 'Mojolicious::Plugin';
 
 sub register {
   my ($self, $app, $conf) = @_;
@@ -123,7 +123,7 @@ __DATA__
   &lt;head&gt;
     &lt;title&gt; Viewer &lt;/title&gt;
   &lt;body&gt;
-     Viewer &lt;% = lc'A'%&gt;
+     Viewer &lt;%= lc'A' %&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </pre>
@@ -146,8 +146,8 @@ get'/ sizeunknowndata' =&gt; sub {
     or die "Error";
 
   # Write chunk
-  $self-&gt;res-&gt;headers-&gt;content_type ('application / gzip');
-  $self-&gt;res-&gt;headers-&gt;content_disposition (qq / attachment; filename = "$file" /);
+  $self-&gt;res-&gt;headers-&gt;content_type ('application/gzip');
+  $self-&gt;res-&gt;headers-&gt;content_disposition (qq/attachment; filename = "$file" /);
   my $cb;
   $cb = sub {
     my $c = shift;
@@ -171,7 +171,7 @@ get'/ sizeunknowndata' =&gt; sub {
   The title "Deliver a large file" was misleading. Changed the title to "Deliver large files dynamically".
 </p>
 <p>
-  Large static files can usually be delivered under "public" without straining memory. Also, Mojolicious is an asynchronous I / O, so processing will not be blocked.
+  Large static files can usually be delivered under "public" without straining memory. Also, Mojolicious is an asynchronous I/O, so processing will not be blocked.
 </p>
 <h3> Draw a 404 Not Found page </h3>
 <p>

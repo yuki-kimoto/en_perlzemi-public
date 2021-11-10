@@ -89,16 +89,16 @@ require File::Path;
   <b> The important thing here is that the directory "/ tmp" can be read and written by other users. </b>
 </p>
 <p>
-  Being writable by other users means that you can put a file called "Find / Path.pm". (Reference: <a href="/blog/20100409127089.html">File::Path</a>)
+  Being writable by other users means that you can put a file called "Find/Path.pm". (Reference: <a href="/blog/20100409127089.html">File::Path</a>)
 </p>
 <p>
   If the current directory "." Exists at the beginning of the module load path, it first tries to load the module that exists in the current directory.
 </p>
 <p>
-  This script then tries to read "Find / Path.pm" which exists in the current directory "/ tmp".
+  This script then tries to read "Find/Path.pm" which exists in the current directory "/ tmp".
 </p>
 <p>
-  If the contents of "Find / Path.pm" are made into an attack program, "test.pl" will unintentionally execute "Find / Path.pm" in "/ tmp". ..
+  If the contents of "Find/Path.pm" are made into an attack program, "test.pl" will unintentionally execute "Find/Path.pm" in "/ tmp". ..
 </p>
 <p>
   This seems to be a problem of "untrustworthy search path vulnerability".

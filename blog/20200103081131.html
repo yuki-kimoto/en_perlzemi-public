@@ -155,7 +155,7 @@ my $books = [
 # Amount subtotal
 my $price_total_no_tax = 0;
 for my $book (@$books) {
-  $price_total_no_tax + = $book-&gt;{unit_price} * $book-&gt;{count};
+  $price_total_no_tax += $book-&gt;{unit_price} * $book-&gt;{count};
 }
 my $price_total_no_tax_disp = price_disp ($price_total_no_tax);
 
@@ -186,9 +186,9 @@ my $page_left_margin = 49;
 my $page_right_margin = 49;
 
 # Loading TrueType fonts that support Japanese-normal fonts and bold fonts
-my $true_type_font_file = "$FindBin::Bin / AozoraMinchoRegular.ttf";
+my $true_type_font_file = "$FindBin::Bin/AozoraMinchoRegular.ttf";
 my $font = $pdf-&gt;ttfont ($true_type_font_file);
-my $true_type_font_bold_file = "$FindBin::Bin / AozoraMincho-bold.ttf";
+my $true_type_font_bold_file = "$FindBin::Bin/AozoraMincho-bold.ttf";
 my $font_bold = $pdf-&gt;ttfont ($true_type_font_bold_file);
 
 # Font size-default
@@ -209,7 +209,7 @@ my $render_end_y = $page_bottom_margin;
 # The layout has a table structure
 # Set the minimum unit of height and width, the minimum unit of width is divided into 100
 my $unit_height = 14;
-my $unit_width = ($render_end_x-$render_start_x) / 100;
+my $unit_width = ($render_end_x-$render_start_x)/100;
 
 # Text drawing padding
 my $text_bottom_padding = 3;
@@ -245,7 +245,7 @@ $gfx-&gt;move ($render_start_x, $render_start_y);
 $gfx-&gt;hline ($render_end_x);
 $gfx-&gt;linewidth (10);
 $gfx-&gt;stroke;
-$cur_row + = 1.5;
+$cur_row += 1.5;
 
 # Application date
 $text-&gt;translate ($render_end_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
@@ -257,7 +257,7 @@ $gfx-&gt;move ($render_start_x + $send_company_start_tds_count * $unit_width);
 $gfx-&gt;hline ($render_end_x);
 $gfx-&gt;linewidth ($line_width_basic);
 $gfx-&gt;stroke;
-$cur_row + = 2;
+$cur_row += 2;
 
 # Save logo start position
 my $cur_logo_row = $cur_row - 1.5;
@@ -266,7 +266,7 @@ my $cur_logo_row = $cur_row - 1.5;
 $text-&gt;translate ($render_start_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font_bold, 20);
 $text-&gt;text ('invoice');
-$cur_row + = 3;
+$cur_row += 3;
 
 # Save the start position in the right column
 my $cur_right_row = $cur_row + 1;
@@ -285,7 +285,7 @@ $gfx-&gt;move ($render_start_x, $render_start_y-$unit_height * $cur_row);
 $gfx-&gt;hline ($render_start_x + $receive_company_end_tds_count * $unit_width);
 $gfx-&gt;linewidth ($line_width_basic);
 $gfx-&gt;stroke;
-$cur_row + = 4;
+$cur_row += 4;
 
 # subject
 my $subject_label ='Subject:';
@@ -303,7 +303,7 @@ $gfx-&gt;move ($render_start_x, $render_start_y-$unit_height * $cur_row);
 $gfx-&gt;hline ($render_start_x + $receive_company_end_tds_count * $unit_width);
 $gfx-&gt;linewidth ($line_width_basic);
 $gfx-&gt;stroke;
-$cur_row + = 1;
+$cur_row += 1;
 
 # Delivery date
 my $delivery_date_label ='Delivery date:';
@@ -321,13 +321,13 @@ $gfx-&gt;move ($render_start_x, $render_start_y-$unit_height * $cur_row);
 $gfx-&gt;hline ($render_start_x + $receive_company_end_tds_count * $unit_width);
 $gfx-&gt;linewidth ($line_width_basic);
 $gfx-&gt;stroke;
-$cur_row + = 2.8;
+$cur_row += 2.8;
 
 # Billing message
 $text-&gt;translate ($render_start_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ('We will charge you as below.');
-$cur_row + = 2;
+$cur_row += 2;
 
 # Amount of money
 my $price_total_top_label ='amount';
@@ -354,10 +354,10 @@ $gfx-&gt;move ($render_start_x, $render_start_y-$unit_height * $cur_row - 2);
 $gfx-&gt;hline ($render_start_x + $receive_company_end_tds_count * $unit_width);
 $gfx-&gt;linewidth ($line_width_basic);
 $gfx-&gt;stroke;
-$cur_row + = 0.5;
+$cur_row += 0.5;
 
 # Insert company logo
-my $logo_image_file = "$FindBin::Bin / logo.png";
+my $logo_image_file = "$FindBin::Bin/logo.png";
 my $logo_image_object = $pdf-&gt;image_png ($logo_image_file);
 my $logo_image_width = 60;
 $gfx-&gt;image (
@@ -376,7 +376,7 @@ $text-&gt;translate (
 );
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ($sender_company_name);
-$cur_right_row + = 1;
+$cur_right_row += 1;
 
 # Postal code
 my $sender_zip_code ='Address: 123-4567';
@@ -386,7 +386,7 @@ $text-&gt;translate (
 );
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ($sender_zip_code);
-$cur_right_row + = 1;
+$cur_right_row += 1;
 
 # address
 my $sender_address ='Minato-ku, Tokyo 〇〇 123-4';
@@ -396,7 +396,7 @@ $text-&gt;translate (
 );
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ($sender_address);
-$cur_right_row + = 1;
+$cur_right_row += 1;
 
 # telephone number
 my $sender_tel ='TEL: 090-1234-5678';
@@ -406,7 +406,7 @@ $text-&gt;translate (
 );
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ($sender_tel);
-$cur_right_row + = 1;
+$cur_right_row += 1;
 
 # FAX
 my $sender_fax ='FAX: 090-1234-5679';
@@ -416,7 +416,7 @@ $text-&gt;translate (
 );
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ($sender_fax);
-$cur_right_row + = 1;
+$cur_right_row += 1;
 
 # responsible person
 my $sender_staff ='Responsible: Taro Tanaka';
@@ -470,7 +470,7 @@ $gfx-&gt;hline ($render_end_x);
 $gfx-&gt;linewidth ($line_width_bold);
 $gfx-&gt;strokecolor ($color_black);
 $gfx-&gt;stroke;
-$cur_row + = 1;
+$cur_row += 1;
 
 # Save the position of the thick line under the quotation heading
 my $header_bottom_line_row = $cur_row;
@@ -482,32 +482,32 @@ my $no_units_count = 10;
 $text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + $text_left_padding, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text ('No.');
-$cur_column_units_count + = $no_units_count;
+$cur_column_units_count += $no_units_count;
 
 # Item
 my $name_units_count = 34;
-$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($name_units_count * $unit_width / 2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
+$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($name_units_count * $unit_width/2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_center ('item');
-$cur_column_units_count + = $name_units_count;
+$cur_column_units_count += $name_units_count;
 
 # quantity
 my $count_units_count = 14;
-$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($count_units_count * $unit_width / 2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
+$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($count_units_count * $unit_width/2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_center ('quantity');
-$cur_column_units_count + = $count_units_count;
+$cur_column_units_count += $count_units_count;
 
 # unit price
 my $unit_price_units_count = 14;
-$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($unit_price_units_count * $unit_width / 2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
+$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($unit_price_units_count * $unit_width/2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_center ('unit price');
-$cur_column_units_count + = $unit_price_units_count;
+$cur_column_units_count += $unit_price_units_count;
 
 # Amount of money
 my $price_units_count = 28;
-$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($price_units_count * $unit_width / 2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
+$text-&gt;translate ($render_start_x + $cur_column_units_count * $unit_width + ($price_units_count * $unit_width/2), $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_center ('amount');
 $cur_column_units_count = 0;
@@ -521,7 +521,7 @@ for (my $row = 0; $row &lt;$rows_count; $row ++) {
   my $book = $books-&gt;[$row];
   
   # Lines are painted alternately
-  if ($row% 2 == 1) {
+  if ($row % 2 == 1) {
     $gfx-&gt;rectxy (
       $render_start_x,
       $render_start_y-$unit_height * $cur_row,
@@ -541,7 +541,7 @@ for (my $row = 0; $row &lt;$rows_count; $row ++) {
     $text-&gt;font ($font, $font_size_default);
     $text-&gt;text ($row + 1);
   }
-  $cur_column_units_count + = $no_units_count;
+  $cur_column_units_count += $no_units_count;
 
   # Item
   $gfx-&gt;poly (
@@ -561,7 +561,7 @@ for (my $row = 0; $row &lt;$rows_count; $row ++) {
     $text-&gt;font ($font, $font_size_default);
     $text-&gt;text ($book-&gt;{name});
   }
-  $cur_column_units_count + = $name_units_count;
+  $cur_column_units_count += $name_units_count;
 
   # quantity
   $gfx-&gt;poly (
@@ -581,7 +581,7 @@ for (my $row = 0; $row &lt;$rows_count; $row ++) {
     $text-&gt;font ($font, $font_size_defa)ult);
     $text-&gt;text_right ($book-&gt;{count});
   }
-  $cur_column_units_count + = $count_units_count;
+  $cur_column_units_count += $count_units_count;
 
   # unit price
   $gfx-&gt;poly (
@@ -602,7 +602,7 @@ for (my $row = 0; $row &lt;$rows_count; $row ++) {
     my $unit_price_disp = price_disp ($book-&gt;{unit_price});
     $text-&gt;text_right ($unit_price_disp);
   }
-  $cur_column_units_count + = $unit_price_units_count;
+  $cur_column_units_count += $unit_price_units_count;
 
   # Amount of money
   $gfx-&gt;poly (
@@ -650,7 +650,7 @@ $text-&gt;text ($price_total_no_tax_label);
 $text-&gt;translate ($render_end_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_right ($price_total_no_tax_disp);
-$cur_row + = 1;
+$cur_row += 1;
 
 # consumption tax
 my $tax_label ='consumption tax';
@@ -660,7 +660,7 @@ $text-&gt;text ($tax_label);
 $text-&gt;translate ($render_end_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_right ($tax_disp);
-$cur_row + = 1;
+$cur_row += 1;
 
 # consumption tax
 my $price_total_label ='total including tax';
@@ -670,7 +670,7 @@ $text-&gt;text ($price_total_label);
 $text-&gt;translate ($render_end_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
 $text-&gt;font ($font, $font_size_default);
 $text-&gt;text_right ("\$price_total_disp");
-$cur_row + = 1;
+$cur_row += 1;
 
 # Thick line
 $gfx-&gt;move ($render_start_x, $render_start_y-$unit_height * ($cur_row - 1));
@@ -690,7 +690,7 @@ for my $line (split /\n /, $furikomi_disp) {
   $text-&gt;translate ($render_start_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
   $text-&gt;font ($font, $font_size_default);
   $text-&gt;text ($line);
-  $cur_row + = 1;
+  $cur_row += 1;
 }
 
 # Thin line
@@ -708,7 +708,7 @@ for my $line (split /\n /, $bikou_disp) {
   $text-&gt;translate ($render_start_x, $render_start_y-$unit_height * $cur_row + $text_bottom_padding);
   $text-&gt;font ($font, $font_size_default);
   $text-&gt;text ($line);
-  $cur_row + = 1;
+  $cur_row += 1;
 }
 
 # Thick line
@@ -722,7 +722,7 @@ $gfx-&gt;stroke;
 sub price_disp {
   my ($price) = @_;
   
-  1 while $price = ~ s / (. * \ D) (\ d \ d \ d) / $1, $2 /;
+  1 while $price =~ s/(. * \ D) (\ d \ d \ d)/$1, $2/;
   
   return $price;
 }

@@ -126,7 +126,7 @@ sub clear {
   Use the Point class as follows: The constructor new is inherited from Object::Simple.
 </p>
 <pre>
-my $point = Point-&gt;new (x =&gt; 4, y =&gt; 6);
+my $point = Point-&gt;new(x =&gt; 4, y =&gt; 6);
 
 $point-&gt;x (1);
 $point-&gt;y (2);
@@ -170,7 +170,7 @@ has baz =&gt; sub {LWP::UserAgent-&gt;new};
 </p>
 <h4> Define all accessors at once </h4>
 <pre>
-has [qw / foo bar baz /],
+has [qw/foo bar baz /],
     some =&gt; 1,
     other =&gt; sub {5};
 </pre>
@@ -197,12 +197,12 @@ sub clear {
 </pre>
 <h3> Constructor override </h3>
 <p>
-  You can override the constructor new () for object initialization and argument processing.
+  You can override the constructor new() for object initialization and argument processing.
 </p>
 <pre>
-# Override new () for object initialization
+# Override new() for object initialization
 sub new {
-  my $self = shift-&gt;SUPER::new (@_);
+  my $self = shift-&gt;SUPER::new(@_);
   
   # Initialization
   
@@ -210,11 +210,11 @@ sub new {
 }
 </pre>
 <pre>
-# Override new () for argument processing
+# Override new() for argument processing
 sub new {
   my $self = shift;
   
-  $self-&gt;SUPER::new (x =&gt; $_[0], y =&gt; $_[1]);
+  $self-&gt;SUPER::new(x =&gt; $_[0], y =&gt; $_[1]);
   
   return $self;
 }

@@ -118,8 +118,8 @@ my $obj = MyClass-&gt;new;
 </p>
     
 <pre>
-my $obj = MyClass-&gt;new (foo =&gt; 1, bar =&gt; 2);
-my $obj = MyClass-&gt;new ({foo =&gt; 1, bar =&gt; 2});
+my $obj = MyClass-&gt;new(foo =&gt; 1, bar =&gt; 2);
+my $obj = MyClass-&gt;new({foo =&gt; 1, bar =&gt; 2});
 </pre>
 <p>
   This is set as an attribute value.
@@ -172,8 +172,8 @@ has foo =&gt; sub {MyClass-&gt;new};
   You can also generate multiple accessors at once.
 </p>
 <pre>
-has [qw / foo bar baz /];
-has [qw / foo bar baz /] =&gt; 0;
+has [qw/foo bar baz /];
+has [qw/foo bar baz /] =&gt; 0;
 </pre>
 <h3> Inheritance </h3>
 <p>
@@ -212,7 +212,7 @@ use Object::Simple -base;
 sub new {
   my $class = shift;
   
-  my $self = $class-&gt;SUPER::new (@_);
+  my $self = $class-&gt;SUPER::new(@_);
   
   return $self;
 }
@@ -262,7 +262,7 @@ sub clear {
 </p>
 <pre>
 use Point;
-my $point = Point-&gt;new (x =&gt; 3, y =&gt; 5);
+my $point = Point-&gt;new(x =&gt; 3, y =&gt; 5);
 print $point-&gt;x;
 $point-&gt;y (9);
 $point-&gt;clear;
@@ -306,7 +306,7 @@ sub clear {
 </p>
 <pre>
 use Point3D;
-my $point = Point-&gt;new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
+my $point = Point-&gt;new(x =&gt; 3, y =&gt; 5, z =&gt; 8);
 print $point-&gt;z;
 $point-&gt;z (9);
 $point-&gt;clear;
@@ -315,7 +315,7 @@ $point-&gt;clear;
 <p>
   I'll write a sample that can be executed.
 </p>
-<h4> lib / Point.pm </h4>
+<h4> lib/Point.pm </h4>
 <p>
   Create a directory called lib and create a file called Point.pm in it.
 </p>
@@ -335,7 +335,7 @@ sub clear {
 
 1;
 </pre>
-<h4> lib / Point3D.pm </h4>
+<h4> lib/Point3D.pm </h4>
 <p>
   Create a file called Point3D.pm in a directory called lib.
 </p>
@@ -362,10 +362,10 @@ sub clear {
 <pre>
 use strict;
 use warnings;
-use lib'lib';
+use lib 'lib';
 use Point3D;
 
-my $point = Point3D-&gt;new (x =&gt; 3, y =&gt; 5, z =&gt; 8);
+my $point = Point3D-&gt;new(x =&gt; 3, y =&gt; 5, z =&gt; 8);
 
 # 8 is displayed
 print $point-&gt;z . "\n";
@@ -524,7 +524,7 @@ sub method1 {
 </p>
 <pre>
 sub new {
-  my $self = shift-&gt;SUPER::new (@_);
+  my $self = shift-&gt;SUPER::new(@_);
   
   # Initialization process
   
@@ -539,7 +539,7 @@ sub new {
 sub new {
   my $self = shift;
   
-  $self-&gt;SUPER::new (x =&gt; $_[0], y =&gt; $_[1]);
+  $self-&gt;SUPER::new(x =&gt; $_[0], y =&gt; $_[1]);
   
   return $self;
 }

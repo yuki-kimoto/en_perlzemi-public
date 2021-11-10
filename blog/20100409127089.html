@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File::Path - Create / delete multi-level directories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> File::Path - Create/delete multi-level directories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  File::Path  module allows you to create and delete multi-level directories.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File::Path - Create / delete multi-level directories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" File::Path - Create/delete multi-level directories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  File::Path  module allows you to create and delete multi-level directories." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -65,7 +65,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100409127089.html"> File::Path - Create / delete multi-level directories </a></h2>
+<h2><a href="/blog/20100409127089.html"> File::Path - Create/delete multi-level directories </a></h2>
 <p>
   The <b> File::Path </b> module allows you to create and delete multi-level directories.
 </p>
@@ -87,10 +87,10 @@
 
 <pre>
 # Loading modules and importing functions
-use File::Path qw / mkpath rmtree /;
+use File::Path qw/mkpath rmtree/;
 </pre>
 <p>
-  You can create multiple-level directories with mkpath (* 1). The return value is a list of created directory names. For example, if you create a directory called'xxx / yyy / zzz', @created will be ('xxx', 'xxx / yyy', 'xxx / yyy / zzz'). If an error (* 2) occurs in mkpath, an exception will be thrown.
+  You can create multiple-level directories with mkpath (* 1). The return value is a list of created directory names. For example, if you create a directory called'xxx/yyy/zzz', @created will be ('xxx', 'xxx/yyy', 'xxx/yyy/zzz'). If an error (* 2) occurs in mkpath, an exception will be thrown.
 </p>
 <pre>
 # Create a multi-level directory
@@ -114,7 +114,7 @@ $removed = rmtree $dir;
 </p>
 <pre>
 # Create a multi-level directory
-my $dir ='xxx / yyy / zzz';
+my $dir ='xxx/yyy/zzz';
 mkpath $dir;
 </pre>
 <p>

@@ -278,7 +278,7 @@ func ({name =&gt;'Ken', age =&gt; 19});
 
 sub func {
   # Convert to hash reference as needed
-  my $arg = ref $_[0] eq'HASH'? $_[0]: {@_};
+  my $arg = ref $_[0] eq 'HASH'? $_[0]: {@_};
 }
 </pre>
 <p>
@@ -428,7 +428,7 @@ sub num {
 <pre>
 sub num {
   my $num = shift;
-  $num // = 0;
+  $num //= 0;
 }
 </pre>
 <h3> Error handling </h3>
@@ -481,7 +481,7 @@ sub foo {
   If you want to throw an exception in a module, use the carp module's croak function. The caller information is easy to understand.
 </p>
 <pre>
-use Carp'croak';
+use Carp 'croak';
 
 sub foo {
   
@@ -563,7 +563,7 @@ print'Hello';
 </p>
 <pre>
 # Functions imported from module
-use Carp'croak';
+use Carp 'croak';
 croak'Error';
 </pre>
 <p>

@@ -91,12 +91,12 @@
 <pre>
 # Generation of accessor
 package Your Class;
-use base'Class::Accessor::Fast';
+use base 'Class::Accessor::Fast';
 
 __PACKAGE __-&gt;mk_accessors ($meth1, $meth2, ...);
 </pre>
 <p>
-  This is a sample of a general class. The Point class has accessors x () and y (). Class::Accessor::Fast's new () can only receive hash references, so it's a good idea to override it so that it can receive hashes and hash references.
+  This is a sample of a general class. The Point class has accessors x () and y (). Class::Accessor::Fast's new() can only receive hash references, so it's a good idea to override it so that it can receive hashes and hash references.
 </p>
 <pre>
 package Point;
@@ -104,20 +104,20 @@ package Point;
 use strict;
 use warnings;
 
-use base'Class::Accessor::Fast';
+use base 'Class::Accessor::Fast';
 
 # Accessor
-__PACKAGE __-&gt;mk_accessors (qw / x y /);
+__PACKAGE __-&gt;mk_accessors (qw/x y /);
 
 # Constructor
 sub new {
     my $class = shift;
     
     # Attribute
-    my $args = ref $_[0] eq'HASH'? $_[0]: {@_};
+    my $args = ref $_[0] eq 'HASH'? $_[0]: {@_};
     
-    Override # new ()
-    return $class-&gt;SUPER::new ({{
+    Override # new()
+    return $class-&gt;SUPER::new({{
         x =&gt; 0,
         y =&gt; 0,
         % $args
@@ -128,7 +128,7 @@ sub new {
   Use this class as follows:
 </p>
 <pre>
-my $point = Point-&gt;new (x =&gt; 1, y =&gt; 2);
+my $point = Point-&gt;new(x =&gt; 1, y =&gt; 2);
 $point-&gt;x (4);
 $point-&gt;y (5);
 </pre>

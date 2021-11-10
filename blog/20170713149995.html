@@ -127,18 +127,18 @@ my $softmax = mx-&gt;symbol-&gt;SoftmaxOutput (data =&gt; $fc2, name =&gt;'softm
 GetMNIST_ubyte ();
  
 my $train_dataiter = mx-&gt;io-&gt;MNISTIter ({{
-    image =&gt; "data / train-images-idx3-ubyte",
-    label =&gt; "data / train-labels-idx1-ubyte",
+    image =&gt; "data/train-images-idx3-ubyte",
+    label =&gt; "data/train-labels-idx1-ubyte",
     data_shape =&gt; [1, 28, 28],
     batch_size =&gt; $batch_size, shuffle =&gt; 1, flat =&gt; 0, silent =&gt; 0, seed =&gt; 10});
 my $val_dataiter = mx-&gt;io-&gt;MNISTIter ({{
-    image =&gt; "data / t10k-images-idx3-ubyte",
-    label =&gt; "data / t10k-labels-idx1-ubyte",
+    image =&gt; "data/t10k-images-idx3-ubyte",
+    label =&gt; "data/t10k-labels-idx1-ubyte",
     data_shape =&gt; [1, 28, 28],
     batch_size =&gt; $batch_size, shuffle =&gt; 1, flat =&gt; 0, silent =&gt; 0});
  
 my $n_epoch = 1;
-my $mod = mx-&gt;mod-&gt;new (symbol =&gt; $softmax);
+my $mod = mx-&gt;mod-&gt;new(symbol =&gt; $softmax);
 $mod-&gt;fit (
     $train_dataiter,
     eval_data =&gt; $val_dataiter,

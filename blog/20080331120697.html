@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> "= ~" - Pattern matching operator  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content=""= ~" Is called "pattern matching operator" and is used when performing pattern matching and replacement with regular expression.">
+<title> "=~ " - Pattern matching operator  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content=""=~ " Is called "pattern matching operator" and is used when performing pattern matching and replacement with regular expression.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" "= ~" - Pattern matching operator  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content=""= ~" Is called "pattern matching operator" and is used when performing pattern matching and replacement with regular expression." />
+<meta name="twitter:title" content=" "=~ " - Pattern matching operator  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content=""=~ " Is called "pattern matching operator" and is used when performing pattern matching and replacement with regular expression." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -65,9 +65,9 @@
       <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080331120697.html"> "= ~" - Pattern matching operator </a></h2>
+<h2><a href="/blog/20080331120697.html"> "=~ " - Pattern matching operator </a></h2>
 <p>
-  "= ~" Is called "pattern matching operator" and is used when performing pattern matching and replacement with <a href="/blog/20100827127859.html">regular expression</a>.
+  "=~ " Is called "pattern matching operator" and is used when performing pattern matching and replacement with <a href="/blog/20100827127859.html">regular expression</a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -90,30 +90,28 @@
   To find out if a string contains the specified regular expression:
 </p>
 <pre>
-$message = ~ / play /
+$message =~ /play/&lt;/pre&gt;
+
+$string =~ /Regular expression /. If $string contains a regular expression, it returns non-zero. =~ Is called the pattern matching operator. In this example, we're using the letters play instead of regular expressions.
+
+&lt;h3&gt; Pattern matching does not match &lt;/h3&gt;
+
+To check if a string contains the specified regular expression:
+
+&lt;pre&gt;
+$message !~ /You/&lt;/pre&gt;
+
+$string !~ /Regular expression /. If $string does not contain a regular expression, it returns non-zero.
+
+&lt;h3&gt; Replacement &lt;/h3&gt;
+
+To replace a string with a regular expression:
+
+&lt;pre&gt;
+$message =~ s/tennis/baseball/;
 </pre>
 <p>
-  $string = ~ / Regular expression /. If $string contains a regular expression, it returns non-zero. = ~ Is called the pattern matching operator. In this example, we're using the letters play instead of regular expressions.
-</p>
-<h3> Pattern matching does not match </h3>
-<p>
-  To check if a string contains the specified regular expression:
-</p>
-<pre>
-$message! ~ / You /
-</pre>
-<p>
-  $string! ~ / Regular expression /. If $string does not contain a regular expression, it returns non-zero.
-</p>
-<h3> Replacement </h3>
-<p>
-  To replace a string with a regular expression:
-</p>
-<pre>
-$message = ~ s / tennis / baseball /;
-</pre>
-<p>
-  $string = ~ s / regular expression / replacement string /. If $string contains a regular expression, replace it with the specified string. The $message itself will be replaced.
+  $string =~ s/regular expression/replacement string /. If $string contains a regular expression, replace it with the specified string. The $message itself will be replaced.
 </p>
 <h3> Sample </h3>
 <p>
@@ -128,22 +126,21 @@ use warnings;
 my $message ='I play tennis.';
 print "\$message =" $message'\n\n ";
 
-# Pattern matching basics ($var = ~ / regular expression /) (Here, just a string (play))
+# Pattern matching basics ($var =~ /regular expression /) (Here, just a string (play))
 print "1: Check if the string contains play.\n";
-if ($message = ~ / play /) {
+if ($message =~ /play /) {
   print "\$message contains play.\n\n";
 }
 
 print "2: Check if the string contains you.\n";
-if ($message! ~ / You /) {
+if ($message !~ /You /) {
   print "\$message does not contain you.\n\n";
 }
 
 # Substitution basics
 print "3: Replace tennis in the string with baseball.\n";
 
-# $var = ~ s / regular expression / replacement string /
-$message = ~ s / tennis / baseball /;
+# $var =~ s/regular expression/replacement string/$message =~ s/tennis/baseball/;
 
 print "$message\n";
 </pre>

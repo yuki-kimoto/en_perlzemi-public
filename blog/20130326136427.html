@@ -101,7 +101,7 @@ perltidy source file
   First, find the desired file using the <b> find2perl </b> command. I think files ending in .pm and files ending in .pl will be formatted. The target directory name is dir.
 </p>
 <pre>
-find2perl perl_lib / -name "* .p [ml]" | perl
+find2perl perl_lib/-name "* .p [ml]" | perl
 </pre>
 <p>
   If the target file is correct, proceed to the next step.
@@ -111,7 +111,7 @@ find2perl perl_lib / -name "* .p [ml]" | perl
   Now let's run perltidy on the output file.
 </p>
 <pre>
-find2perl perl_lib / -name "* .p [ml]" | perl | perl -ne "system('perltidy', $_)"
+find2perl perl_lib/-name "* .p [ml]" | perl | perl -ne "system('perltidy', $_)"
 </pre>
 <p>
   You now have a file with the extension <b> .tdy </b>. This is the formatted source file. Let's check if the output is correct.
@@ -121,7 +121,7 @@ find2perl perl_lib / -name "* .p [ml]" | perl | perl -ne "system('perltidy', $_)
   Overwrites the original file with a file with a .tdy extension. That's it.
 </p>
 <pre>
-find2perl perl_lib / -name "* .p [ml]" | perl | perl -MFile::Copy -ne "chomp $_; move ($_.'. Tdy', $_)"
+find2perl perl_lib/-name "* .p [ml]" | perl | perl -MFile::Copy -ne "chomp $_; move ($_.'. Tdy', $_)"
 </pre>
 <p>
   I want perltidy to have the ability to easily format multiple files in a directory.

@@ -120,14 +120,11 @@ Perl-(no interpreter)
   Interpreter variables are defined using special macros. It's a macro called PERLVAR.
 </p>
 <pre>
-PERLVAR (I, stack_sp, SV **) / * top of the stack * /
-PERLVAR (I, op, OP *) / * currently executing op * /
-PERLVAR (I, curpad, SV **) / * active pad (lexicals + tmps) * /
-</pre>
-<p>
-  Let's take a look at the PERLVAR macro. There is a definition in "perl.h".
-</p>
-<pre>
+PERLVAR (I, stack_sp, SV **)/* top of the stack */PERLVAR (I, op, OP *)/* currently executing op */PERLVAR (I, curpad, SV **)/* active pad (lexicals + tmps) */&lt;/pre&gt;
+
+Let's take a look at the PERLVAR macro. There is a definition in "perl.h".
+
+&lt;pre&gt;
 /*perl.h */
 # define PERLVAR (prefix, var, type) type prefix # # var;
 </pre>
@@ -168,8 +165,7 @@ END_EXTERN_C
 </p>
 <pre>
 # if defined(MULTIPLICITY)
-/ * cases 2 and 3 above * /
-
+/ * cases 2 and 3 above */
 # if defined(PERL_IMPLICIT_CONTEXT)
 # define vTHX aTHX
 # else

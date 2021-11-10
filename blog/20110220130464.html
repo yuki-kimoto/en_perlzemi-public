@@ -110,16 +110,16 @@ sudo cpan App::perlbrew
 perlbrew init
 </pre>
 <p>
-  Next, let's pass the path of perlbrew. Add the configuration file for bash provided by perlbrew to "~ / .bashrc" (in the case of bash).
+  Next, let's pass the path of perlbrew. Add the configuration file for bash provided by perlbrew to "~/.bashrc" (in the case of bash).
 </p>
 <pre>
-echo "source ~ / perl5 / perlbrew / etc / bashrc"&gt;&gt; ~ / .bashrc
+echo "source ~/perl5/perlbrew/etc/bashrc"&gt;&gt; ~/.bashrc
 </pre>
 <p>
   Reload ".bashrc".
 </p>
 <pre>
-source ~ / .bashrc
+source ~/.bashrc
 </pre>
 <h3> Installing Perl in the user environment </h3>
 <p>
@@ -153,7 +153,7 @@ perlbrew list
 </p>
 <pre>
   perl-5.28.2
-* / usr / bin / perl (5.8.8)
+*/usr/bin/perl (5.8.8)
 </pre>
 <p>
   Use perlbrew's switch command to switch Perl.
@@ -216,7 +216,7 @@ env | grep PATH
   You will see some environment variables that include PATH, so look for something called PATH. (This is an example when the user name is admins.)
 </p>
 <pre>
-PATH = / home / admins / perl5 / perlbrew / bin: / home / admins / perl5 / perlbrew / perls / perl-5.16.2 / bin: / usr / kerberos / bin: / usr / local / bin: / bin: / usr / bin: / home / admins / bin
+PATH =/home/admins/perl5/perlbrew/bin:/home/admins/perl5/perlbrew/perls/perl-5.16.2/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/admins/bin
 </pre>
 <p>
   Edit crontab with the following command.
@@ -228,7 +228,7 @@ crontab -e
   Then write the above PATH value to the top of crontab.
 </p>
 <pre>
-PATH = / home / admins / perl5 / perlbrew / bin: / home / admins / perl5 / perlbrew / perls / perl-5.16.2 / bin: / usr / kerberos / bin: / usr / local / bin: / bin: / usr / bin: / home / admins / bin
+PATH =/home/admins/perl5/perlbrew/bin:/home/admins/perl5/perlbrew/perls/perl-5.16.2/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/admins/bin
 
 # cron settings continue ...
 </pre>
@@ -240,7 +240,7 @@ PATH = / home / admins / perl5 / perlbrew / bin: / home / admins / perl5 / perlb
   Write the first line of the Perl script using the env command as shown below.
 </p>
 <pre>
-# ! / usr / bin / env perl
+# !/usr/bin/env perl
 </pre>
 <p>
   This will automatically detect perl from the set PATH value.

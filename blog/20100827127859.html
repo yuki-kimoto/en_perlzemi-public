@@ -112,13 +112,12 @@ r1
 </p>
 <pre>
 # Pattern matching
-$str = ~ / regular expression /
-</pre>
-<p>
-  The pattern matching operator is "= ~". Regular expressions must be enclosed in slashes "/". Returns true if there is a match, false if there is no match. Pattern matching is often used in combination with if statements.
-</p>
-<pre>
-if ($str = ~ / regular expression /) {
+$str =~ /regular expression/&lt;/pre&gt;
+
+The pattern matching operator is "=~ ". Regular expressions must be enclosed in slashes "/". Returns true if there is a match, false if there is no match. Pattern matching is often used in combination with if statements.
+
+&lt;pre&gt;
+if ($str =~ /regular expression /) {
   # What to do if there is a match
 }
 </pre>
@@ -136,7 +135,7 @@ Regular expression: "a {1,3}"
 <pre>
 my $str ='This string is aa.';
 
-if ($str = ~ / a {1,3} /) {
+if ($str =~ /a {1,3} /) {
   print "Match\n";
 }
 </pre>
@@ -144,16 +143,16 @@ if ($str = ~ / a {1,3} /) {
   "Match!" Is output.
 </p>
 <p>
-  On the other hand, there is also an operator "! ~" That means that the pattern does not match.
+  On the other hand, there is also an operator "!~ " That means that the pattern does not match.
 </p>
 <pre>
-$str! ~ / Regular expression /
-</pre>
-<h4> Get the matched string </h4>
-<p>
-  You can use pattern matching to get the matched string. To get the matched character string, enclose the part you want to get in "()". Let's get "aa" and "r1" in the string "This string is aar1".
-</p>
-<pre>
+$str !~ /Regular expression/&lt;/pre&gt;
+
+&lt;h4&gt; Get the matched string &lt;/h4&gt;
+
+You can use pattern matching to get the matched string. To get the matched character string, enclose the part you want to get in "()". Let's get "aa" and "r1" in the string "This string is aar1".
+
+&lt;pre&gt;
 String: "This string is aar 1"
 
 Regular expression: (a {1,3}) ([pqr] 1)
@@ -163,7 +162,7 @@ Regular expression: (a {1,3}) ([pqr] 1)
 </p>
 <pre>
 my $str ='This string is aar1';
-if ($str = ~ / (a ​​{1,3}) ([pqr] 1) /) {
+if ($str =~ /(a ​​{1,3}) ([pqr] 1) /) {
   print "Get $1 and $2";
 }
 </pre>
@@ -184,7 +183,7 @@ Get aaa and p1
   You can use a regular expression to replace the matched string. The replacement syntax is as follows:
 </p>
 <pre>
-Target string = ~ s / regular expression / replacement string /;
+Target string =~ s/regular expression/replacement string/;
 </pre>
 <p>
   Now let's replace the string "This string is aa" with the string "This string is bb". This sample uses the regular expression "a {1,3}" that matches aa.
@@ -201,7 +200,7 @@ This string is aa - -&gt;This string is bb
 </p>
 <pre>
 my $str ='This string is aa';
-$str = ~ s / a {1,3} / bb /;
+$str =~ s/a {1,3}/bb/;
 </pre>
 <p>
   Only one is replaced. For example, if you have the string "This string is aa aaa", the above replacement will result in "This string is bb aaa" and only the first matching string will be replaced.
@@ -211,14 +210,14 @@ $str = ~ s / a {1,3} / bb /;
 </p>
 <pre>
 # Replace all matched strings
-Target string = ~ s / regular expression / replaced string / g;
+Target string =~ s/regular expression/replaced string/g;
 </pre>
 <p>
   The script that replaces all the matched strings looks like this:
 </p>
 <pre>
 my $str ='This string is aa aaa';
-$str = ~ s / a {1,3} / bb / g;
+$str =~ s/a {1,3}/bb/g;
 </pre>
 <p>
   The output of the replaced character string is as follows.
@@ -330,7 +329,7 @@ You can also match the "." To any character, including newlines. If you want the
 
 &lt;pre&gt;
 Match # . To any character, including newlines
-$str = ~ /./s;
+$str =~ /./s;
 </pre>
 <h4> Number "\ d" </h4>
 <p>
@@ -418,8 +417,7 @@ rrrabc
   Use "\ b" to represent word character boundaries. The boundary of a word character is the part that changes from a word character to another character. For example, the regular expression "abc \ b" does not match "abcd" but does match "abc /", "abc @", and "abc".
 </p>
 <pre>
-abc /
-abc @-&gt;abc \ b
+abc/abc @-&gt;abc \ b
 abc
 </pre>
 <h3> Character class </h3>
@@ -628,11 +626,10 @@ my $regex = quotemeta('.txt');
   If you see a lot of slashes in your regular expression, it's very annoying because you have to escape with \. In such cases, you can put m immediately before to change the enclosing character of the regular expression.
 </p>
 <pre>
-/ \ / aaa \ / bbb /
-
+/ \/aaa \/bbb/
 # Above and meaning
-m # / aaa / bbb #
-m {/ aaa / bbb}
+m #/aaa/bbb #
+m {/ aaa/bbb}
 </pre>
 <p>
   You can also change the enclosing character for replacement.
@@ -646,14 +643,14 @@ s | aaa | bbb |
   Regular expressions can be referenced using the <a href="/blog/20080419120860.html">qr operator</a>. You can use it as a regular expression reference and assign it to a variable, including regular expression options.
 </p>
 <pre>
-my $regex = qr / (\ d +) / sm;
+my $regex = qr/(\ d +)/sm;
 </pre>
 <p>
   This can also be used in regular pattern matching.
 </p>
 <pre>
 my $num = 34;
-if ($num = ~ / $regex /) {
+if ($num =~ /$regex /) {
    
 }
 </pre>
@@ -723,7 +720,7 @@ if ($num = ~ / $regex /) {
   Regular expression options are specified at the end of the regular expression. It is also possible to combine multiple options.
 </p>
 <pre>
-/ Regular expression / sm
+/ Regular expression/sm
 </pre>
 <h4> g Replace all matched strings </h4>
 <p>
@@ -731,7 +728,7 @@ if ($num = ~ / $regex /) {
 </p>
 <blockquote>
 <p>
-  $message2 = ~ s / yah / yes / g;
+  $message2 =~ s/yah/yes/g;
 </p>
 </blockquote>
 <p>
@@ -742,14 +739,14 @@ if ($num = ~ / $regex /) {
   You can use the <strong> m </strong> option to match "^" and "$" to the beginning and end of a line.
 </p>
 <pre>
-$message = ~ / ^ i / m
+$message =~ /^ i/m
 </pre>
 <h4> s Match "." To line breaks s option </h4>
 <p>
   You can use the <strong> s </strong> option to match a "line break" to a ".".
 </p>
 <pre>
-$message = ~ / ^ i / s
+$message =~ /^ i/s
 </pre>
 <h4> i Case sensitiveMatch without </h4>
 <p>
@@ -757,7 +754,7 @@ $message = ~ / ^ i / s
 </p>
 <pre>
 abc
-Abc-&gt;/ abc / i
+Abc-&gt;/ abc/i
 ABC
 </pre>
 <h4> e Use an expression for permutation </h4>
@@ -768,7 +765,7 @@ ABC
   The following sample is a sample that doubles the matched number.
 </p>
 <pre>
-s / (\ d +) / $1 * 2 / e;
+s/(\ d +)/$1 * 2/e;
 </pre>
 <h4> x Ignore whitespace in regular expressions </h4>
 <p>
@@ -776,13 +773,12 @@ s / (\ d +) / $1 * 2 / e;
 </p>
 <pre>
 my $time = '03:02:56';
-my $regex = qr /
-  (\ d {2}) # hour
-::(\ d {2}) # min
-::(\ d {2}) # seconds
+my $regex = qr/  (\d{2}) # hour
+::(\d{2}) # min
+::(\d{2}) # seconds
 / x;
 
-if ($time = ~ / $regex /) {
+if ($time =~ /$regex /) {
   my $hour = $1;
   my $minute = $2;
   my $second = $3;
@@ -798,11 +794,11 @@ if ($time = ~ / $regex /) {
 <pre>
 my $regex = "a pen";
 for (1 .. 10) {
-  $message = ~ / $regex / o;
+  $message =~ /$regex/o;
 }
 </pre>
 <p>
-  With the o option, variable expansion is done only the first time. In other words, from the second time of the loop, / a pen / is used as it is without the variable expansion of / $regex / → / a pen /.
+  With the o option, variable expansion is done only the first time. In other words, from the second time of the loop,/a pen/is used as it is without the variable expansion of/$regex/→/a pen /.
 </p>
 <h3> Shortest match </h3>
 <p>

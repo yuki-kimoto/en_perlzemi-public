@@ -101,7 +101,7 @@
 </p>
 <pre>
 # Import function
-use File::Basename'basename', 'dirname';
+use File::Basename 'basename', 'dirname';
 </pre>
 <h3> basename function </h3>
 <p>
@@ -120,12 +120,12 @@ $basename = basename $file;
 $dirname = dirname $file;
 </pre>
 <p>
-  Samples of basename and dirname. If the file name is "dir / a.txt", you can get "a.txt" with basename and "dir" with dirname.
+  Samples of basename and dirname. If the file name is "dir/a.txt", you can get "a.txt" with basename and "dir" with dirname.
 </p>
 <pre>
 # Get base name and directory name
-use File::Basename qw / basename dirname /;
-my $file ='dir / a.txt';
+use File::Basename qw/basename dirname/;
+my $file ='dir/a.txt';
 my $basename = basename $file;
 my $dirname = dirname $file;
 </pre>
@@ -145,16 +145,16 @@ my $dirname = dirname $file;
 ($basename, $dirname, $ext) = fileparse ($file, $regex);
 </pre>
 <p>
-  This is a sample to extract the extension. Specify a regular expression as the second argument. The regular expression "\ .. * $" means ". Comes and ends with 0 or more characters that can be anything." If $file is "dir / a.txt", $basename will be "a" and $ext will be ".txt".
+  This is a sample to extract the extension. Specify a regular expression as the second argument. The regular expression "\ .. * $" means ". Comes and ends with 0 or more characters that can be anything." If $file is "dir/a.txt", $basename will be "a" and $ext will be ".txt".
 </p>
 <pre>
 # Extract extension
-use File::Basename'fileparse';
-my $file ='dir / a.txt';
-my ($basename, $dirname, $ext) = fileparse ($file, qr / \ .. * $/);
+use File::Basename 'fileparse';
+my $file ='dir/a.txt';
+my ($basename, $dirname, $ext) = fileparse ($file, qr/\ .. * $/);
 </pre>
 <p>
-  The above is an example of extracting the extension, but if two extensions continue, the extension after the first extension will be extracted. For example, if the file name is "dir / a.txt.gz", $ext will be ".txt.gz".
+  The above is an example of extracting the extension, but if two extensions continue, the extension after the first extension will be extracted. For example, if the file name is "dir/a.txt.gz", $ext will be ".txt.gz".
 </p>
 <p>
   If you want to retrieve ".gz", change the regular expression to "\. [^ \.] * $". The meaning of this regular expression is that ". Comes and ends with 0 or more characters other than.".

@@ -90,13 +90,13 @@
 package Your Module;
 
 Inherit # Exporter
-use Exporter'import';
+use Exporter 'import';
 
 # Write the function to export
-our @EXPORT = qw / func1 func2 /;
+our @EXPORT = qw/func1 func2/;
 
 # Write an exportable function
-our @EXPORT_OK = qw / func3 func4 /;
+our @EXPORT_OK = qw/func3 func4/;
 
 # Function
 sub func1 {...}
@@ -119,7 +119,7 @@ use Your Module;
 </p>
 <pre>
 # @EXPORT_OK or the functions contained in @EXPORT (func2, func3 and func4) are imported
-use YourModule qw / func2 func3 func4 /;
+use YourModule qw/func2 func3 func4/;
 </pre>
 <p>
   @EXPORT, @EXPORT_OK are package variables.
@@ -155,13 +155,13 @@ sub import {
 </p>
 <pre>
 # Part 1
-use Exporter'import';
+use Exporter 'import';
 
 # 2
 push @ISA, 'Exporter';
 
 # 3
-use base'Exporter';
+use base 'Exporter';
 </pre>
 <p>
   Here is the first one that seems to be the most intuitive.

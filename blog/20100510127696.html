@@ -113,9 +113,9 @@ $tar-&gt;extract;
 # Create tar file
 my $curdir ='/ somedir';
 chdir $curdir
-  or die qq / Can't change directory "$curdir": $! /;
+  or die qq/Can't change directory "$curdir": $!/;
 
-$tar-&gt;add_files ('xxx.txt', 'dir / yyy.txt');
+$tar-&gt;add_files ('xxx.txt', 'dir/yyy.txt');
 $tar-&gt;write ('archive.tar');
 </pre>
 <p>
@@ -131,7 +131,7 @@ $tar-&gt;write ('archive.tar.gz', 9);
 </p>
 <pre>
 # Extract only specified files
-$tar-&gt;extract ('xxx.txt', 'dir / yyy.txt');
+$tar-&gt;extract ('xxx.txt', 'dir/yyy.txt');
 </pre>
 <p>
   Use the <strong> list_files </strong> method to find out which files are contained in the tar file.
@@ -170,12 +170,12 @@ $tar-&gt;clear;
 </p>
 <pre>
 # Specify a directory to create a tar file from all files under it
-use File::Find'find';
+use File::Find 'find';
 use Archive::Tar;
 
 my $curdir ='/ somedir';
 chdir $curdir
-  or die qq / Can't change directory "$curdir": $! /;
+  or die qq/Can't change directory "$curdir": $!/;
 
 my $tar = Archive::Tar-&gt;new;
 my $top ='top';

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> List of frequently used functions / standard modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title> List of frequently used functions/standard modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ret. Twice">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" List of frequently used functions / standard modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content=" List of frequently used functions/standard modules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ret. Twice" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -58,10 +58,10 @@
   </li>
   &#8250;
   <li>
-    Frequently used functions / modules
+    Frequently used functions/modules
   </li>
 </ol>
-<h2><a href="/blog/20091025125219.html"> List of frequently used functions / standard modules </a></h2>
+<h2><a href="/blog/20091025125219.html"> List of frequently used functions/standard modules </a></h2>
 <p>
   This is a list of frequently used functions and standard modules. Remembering these functions can make Perl more useful. I avoid detailed explanations and introduce simple samples. Those with a return value are represented by the symbol $ret. Twice
 </p>
@@ -98,13 +98,13 @@
     <a href="#hash">hash operation</a>
   </li>
   <li>
-    <a href="#file-io">File I / O</a>
+    <a href="#file-io">File I/O</a>
   </li>
   <li>
     <a href="#file-directory">File directory operations</a>
   </li>
   <li>
-    <a href="#date-time">Time / Time</a>
+    <a href="#date-time">Time/Time</a>
   </li>
   <li>
     <a href="#other">Other important functions</a>
@@ -156,7 +156,7 @@ $ret = int $num;
   To round up the decimal point, use the POSIX module's <a href="/blog/20080924122227.html">ceil function</a>.
 </p>
 <pre>
-use POSIX'ceil';
+use POSIX 'ceil';
 $ret = ceil $num;
 </pre>
 <h4> floor(POSIX) </h4>
@@ -164,7 +164,7 @@ $ret = ceil $num;
   To round down the decimal point, use the <a href="/blog/20090430122227.html">floor function</a> of the POSIX module.
 </p>
 <pre>
-use POSIX'floor';
+use POSIX 'floor';
 $ret = floor $num;
 </pre>
 <h4> rand </h4>
@@ -179,7 +179,7 @@ $ret = rand $num;
   Use the <a href="/blog/20090501124313.html">looks_like_number function</a> of the Scalar::Util module to determine if it is a number.
 </p>
 <pre>
-use Scalar::Util'looks_like_number';
+use Scalar::Util 'looks_like_number';
 $ret = looks_like_number $num;
 </pre>
 <div id = "string"></div>
@@ -525,7 +525,7 @@ splice(@array, $pos, $size, @items);
   To find the maximum value of an array element, use the max function of the <a href="/blog/20080114120030.html">List::Util module</a>.
 </p>
 <pre>
-use List::Util'max';
+use List::Util 'max';
 $ret = max @array;
 </pre>
 <h4> min (List::Util) </h4>
@@ -533,7 +533,7 @@ $ret = max @array;
   To find the minimum value of an array element, use the min function of the <a href="/blog/20080114120030.html">List::Util module</a>.
 </p>
 <pre>
-use List::Util'min';
+use List::Util 'min';
 $ret = min @array;
 </pre>
 <h4> sum (List::Util) </h4>
@@ -541,7 +541,7 @@ $ret = min @array;
   Use the sum function of the <a href="/blog/20080114120030.html">List::Util module</a> to sum the elements of the array.
 </p>
 <pre>
-use List::Util'sum';
+use List::Util 'sum';
 $ret = sum @array;
 </pre>
 <h4> sort </h4>
@@ -604,7 +604,7 @@ $ret = sum @array;
   To sort the array randomly, use the shuffle function of the <a href="/blog/20080114120030.html">List::Util module</a>.
 </p>
 <pre>
-use List::Util'shuffle';
+use List::Util 'shuffle';
 @ret = shuffle @array;
 </pre>
 <h4> reverse </h4>
@@ -639,13 +639,13 @@ use List::Util'shuffle';
 </pre>
 <h4> each </h4>
 <p>
-  Use the <a href="/blog/20080212120283.html">each function</a> to get the hash key / value pairs in sequence.
+  Use the <a href="/blog/20080212120283.html">each function</a> to get the hash key/value pairs in sequence.
 </p>
 <pre>
 ($key, $value) = each %hash;
 </pre>
 <p>
-  Use the <a href="/blog/20100123126425.html">while statement</a> to process all key / value pairs in sequence.
+  Use the <a href="/blog/20100123126425.html">while statement</a> to process all key/value pairs in sequence.
 </p>
 <pre>
 while (my ($key, $value) = each %hash) {
@@ -674,7 +674,7 @@ delete $hash{$key};
 %ret = reverse %hash;
 </pre>
 <div id = "file-io"></div>
-<h3> 5 File input / output </h3>
+<h3> 5 File input/output </h3>
 <h4> open </h4>
 <p>
   Use the <a href="/blog/20080718121643.html">open function</a> to open the file.
@@ -772,7 +772,7 @@ while (my $file = readdir $dh) {
 }
 </pre>
 <div id = "file-directory"></div>
-<h3> 6 File / directory operations </h3>
+<h3> 6 File/directory operations </h3>
 <h4> unlink </h4>
 <p>
   Use the <a href="/blog/20080520121125.html">unlink function</a> to delete the file.
@@ -786,7 +786,7 @@ unlink $file
   To copy a file, use the copy function of the <a href="/blog/20100408127089.html">File::Copy</a> module.
 </p>
 <pre>
-use File::Copy'copy';
+use File::Copy 'copy';
 copy ($file_from, $file_to)
   or die "Cannot copy $file_from to $file_to: $!";
 </pre>
@@ -795,7 +795,7 @@ copy ($file_from, $file_to)
   To move a file, use the move function of the <a href="/blog/20100408127089.html">File::Copy</a> module.
 </p>
 <pre>
-use File::Copy'copy';
+use File::Copy 'copy';
 move ($file_from, $file_to)
   or die "Cannot move $file_from to $file_to: $!";
 </pre>
@@ -828,7 +828,7 @@ rmdir $dir
   To create a multi-level directory, use the mkpath function of the <a href="/blog/20100409127089.html">File::Path</a> module.
 </p>
 <pre>
-use File::Path'mkpath';
+use File::Path 'mkpath';
 eval {
   mkpath $dir
 };
@@ -845,7 +845,7 @@ if ($@) {
   If you want to delete the directory that contains the files inside, use the rmtree function of the <a href="/blog/20100409127089.html">File::Path module</a>.
 </p>
 <pre>
-use File::Path'rmtree';
+use File::Path 'rmtree';
 
 rmtree ($dir, {error =&gt; \ my $errors});
 for my $diag (@$errors) {
@@ -861,7 +861,7 @@ for my $diag (@$errors) {
   To get the current directory, use the getcwd function of the <a href="/blog/20100527127859.html">Cwd module</a>.
 </p>
 <pre>
-use Cwd'getcwd';
+use Cwd 'getcwd';
 $ret = getcwd;
 </pre>
 <h4> chmod </h4>
@@ -877,7 +877,7 @@ chmod($permission, $file)
   To retrieve the base name of a file, use the basename function of the <a href="/blog/20100225126425.html">File::Basename module</a>.
 </p>
 <pre>
-use File::Basename'basename';
+use File::Basename 'basename';
 $ret = basename $file;
 </pre>
 <p>
@@ -888,11 +888,11 @@ $ret = basename $file;
   To get the name of the directory that contains the file, use the dirname function of the <a href="/blog/20100225126425.html">File::Basename module</a>.
 </p>
 <pre>
-use File::Basename'dirname';
+use File::Basename 'dirname';
 $ret = dirname $file;
 </pre>
 <p>
-  In the case of the file name /a/b/c.txt, / a / b corresponds to the directory name.
+  In the case of the file name /a/b/c.txt,/a/b corresponds to the directory name.
 </p>
 <h4> FileStrike operator </h4>
 <p>
@@ -928,7 +928,7 @@ if (-f $file) {
 -s Get phi size (unit is bytes)
 </pre>
 <div id = "date-time"></div>
-<h3> 7 Time / Time </h3>
+<h3> 7 Time/Time </h3>
 <h4> time </h4>
 <p>
   Use the <a href="/blog/20081008122347.html">time function</a> to get the elapsed seconds from the epoch to the present.
@@ -945,8 +945,8 @@ $ret = time;
 </p>
 <pre>
 ($sec, $min, $hour, $mday, $mon, $year, $wday) = localtime;
-$year + = 1900;
-$mon + = 1;
+$year += 1900;
+$mon += 1;
 </pre>
 <p>
   From the beginning, the order is "seconds, minutes, hours, days, months, years, days of the week". The year is an elapsed year from 1900, so you need to add 1900 to the year you acquired it. Months start at 0, so you need to add 1 to get the actual month.
@@ -956,7 +956,7 @@ $mon + = 1;
   To get the elapsed seconds since the epoch from the date and time information, use the <a href="/blog/20081014122416.html">Time::Local module's timelocal function</a>.
 </p>
 <pre>
-use Time::Local'timelocal';
+use Time::Local 'timelocal';
 $ret = timelocal ($sec, $min, $hour, $mday, $mon, $year);
 </pre>
 <h4> sleep </h4>
@@ -974,7 +974,7 @@ sleep $sec;
   To sleep in microseconds, use the usleep function of the <a href="/blog/20180309152509.html">Time::HiRes</a> module.
 </p>
 <pre>
-use Time::HiRes'usleep';
+use Time::HiRes 'usleep';
 usleep $microsec;
 </pre>
 <div id = "other"></div>
@@ -1018,7 +1018,7 @@ $ret = getpwuid($&gt;);
   To get the hostname, use the hostname function in the <a href="/blog/20100522127696.html">Sys::Hostname module</a>.
 </p>
 <pre>
-use Sys::Hostname'hostname';
+use Sys::Hostname 'hostname';
 $ret = hostname;
 </pre>
 <h4> die </h4>
@@ -1106,8 +1106,8 @@ $$Process ID
 $&gt; Execution user ID
 $) Execution group ID
 $0 Name of the program being executed
-$^ O OS name
-$^ T Time when the program started
+$^O OS name
+$^T Time when the program started
 @INC module search path
 %INC Information on loaded modules
 %ENV environment variable
@@ -1128,7 +1128,7 @@ use File::Spec;
 my $file_name = File::Spec-&gt;catfile ('dir', 'file.txt');
 </pre>
 <p>
-  On Windows operating systems, $file_name is dir\file.txt, and on Unix operating systems, the file name is dir / file.txt.
+  On Windows operating systems, $file_name is dir\file.txt, and on Unix operating systems, the file name is dir/file.txt.
 </p>
 <h4> FindBin </h4>
 <p>
@@ -1146,7 +1146,7 @@ my $script_dir = $FindBin::Bin;
   You can add a module search path using the <a href="/blog/20100525127859.html">lib module</a>.
 </p>
 <pre>
-use lib qw /. lib /;
+use lib qw /. lib/;
 </pre>
 <p>
   This is an example of adding the current directory and the lib directory of the current directory to the module search path.
@@ -1156,7 +1156,7 @@ use lib qw /. lib /;
   Use the <a href="/blog/20100430127089.html">Carp module</a> to report an error from the caller's perspective. Use croak instead of die and carp instead of warn.
 </p>
 <pre>
-use Carp qw / croak carp /;
+use Carp qw/croak carp/;
 
 Same as # die
 croak ($​​message);
@@ -1175,7 +1175,7 @@ perl script_name - length = 100 - file = test.txt - verbose
   To receive this option, write:
 </p>
 <pre>
-use Getopt::Long'GetOptions';
+use Getopt::Long 'GetOptions';
 
 # Set default value
 my $data ='file.dat';
@@ -1197,7 +1197,7 @@ GetOptions (
 <pre>
 use URI;
 
-my $url = URI-&gt;new ('http://www.perl.com/index.html');
+my $url = URI-&gt;new('http://www.perl.com/index.html');
 
 # URL schema name http
 my $schema = $url-&gt;schema;
@@ -1266,7 +1266,7 @@ else {
 use Net::FTP;
 
 # Specify the host name (or IP address) to connect to the FTP server
-my $ftp = Net::FTP-&gt;new ($host)
+my $ftp = Net::FTP-&gt;new($host)
   or die "Cannot connect to $host: $@";
 
 # Login by specifying user name and password
@@ -1289,7 +1289,7 @@ $ftp-&gt;quit;
   If you want to check the difference between files, use <a href="/blog/20100414127089.html">Text::Diff module</a>.
 </p>
 <pre>
-use Text::Diff'diff';
+use Text::Diff 'diff';
 my $diff = diff ($file1, $file2);
 </pre>
 

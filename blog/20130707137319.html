@@ -140,7 +140,7 @@ has y =&gt; 0;
 </p>
 <pre>
 package P;
-use Mojo::Base'R';
+use Mojo::Base 'R';
 
 use Q;
 
@@ -155,7 +155,7 @@ has q =&gt; sub {Q-&gt;new};
 </p>
 <pre>
 sub new {
-  my $self = shift-&gt;SUERP::new (@_);
+  my $self = shift-&gt;SUERP::new(@_);
 
   # Gonyo Gonyo
 

@@ -205,14 +205,14 @@ sub dec_to_n {
     my ($dec, $n) = @_;
 
     Checking the validity of # $n
-    return if! defined $n || $n! ~ / ^ \ D + $/ || $n &lt;2 || $n&gt; 16;
+    return if! defined $n || $n !~ /^ \ D + $/ || $n &lt;2 || $n&gt; 16;
 
     Checking the validity of # $dec
     return if! defined $dec;
-    return if $dec! ~ / ^ ([+-]?) \ D + $/;
+    return if $dec !~ /^ ([+-]?) \ D + $/;
 
     Save the # sign if it exists
-    my $sign = $1? substr($dec, 0, 1, ''):'';
+    my $sign = $1 ? substr($dec, 0, 1, ''):'';
 
     If # 0, return as it is
     return $dec if $dec == 0;
@@ -221,12 +221,12 @@ sub dec_to_n {
     my @rem_list;
     
     # Convert decimal to n-ary.
-    while ($dec! = 0) {
+    while ($dec != 0) {
       # Find the remainder and save it.
-      unshift(@rem_list, $dec% $n);
+      unshift(@rem_list, $dec % $n);
       
       # Ask for a quotient.
-      $dec = int($dec / $n);
+      $dec = int($dec/$n);
     }
     
     # A table to convert to a base number representation.
@@ -250,7 +250,7 @@ dec_to_n (255, 16);
   <b> Checking the validity of $n </b>
 </p>
 <pre>
-return if! defined $n || $n! ~ / ^ \ D + $/ || $n &lt;2 || $n&gt; 16;
+return if! defined $n || $n !~ /^ \ D + $/ || $n &lt;2 || $n&gt; 16;
 </pre>
 <p>
   First, $n must be passed as an argument. Then it must be an integer greater than or equal to 2 and less than or equal to 16. The above sentence expresses this condition on one line.
@@ -266,8 +266,8 @@ return if! defined $n || $n! ~ / ^ \ D + $/ || $n &lt;2 || $n&gt; 16;
 </p>
 <pre>
 return if! defined $dec;
-return if $dec! ~ / ^ ([+-]?) \ D + $/;
-my $sign = $1? substr($dec, 0, 1, ''):'';
+return if $dec !~ /^ ([+-]?) \ D + $/;
+my $sign = $1 ? substr($dec, 0, 1, ''):'';
 </pre>
 <p>
   $dec must be passed as an argument. Next, it must be a decimal integer. <a href="/blog/20080831122025.html">Regular expression for decimal integers</a>
@@ -279,7 +279,7 @@ my $sign = $1? substr($dec, 0, 1, ''):'';
   Will be. (Read "It doesn't matter if there is a + or-at the beginning, followed by one or more numbers")
 </p>
 <pre>
-my $sign = $1? substr($dec, 0, 1, ''):'';
+my $sign = $1 ? substr($dec, 0, 1, ''):'';
 </pre>
 <p>
   If there is a sign, the sign is assigned to $1, so the presence or absence of the sign is judged by whether or not $1 is defined. Here, the ternary operator is used for conditional branching.
@@ -299,9 +299,9 @@ return $dec if $dec == 0;
 my @rem_list;
     
 # Convert decimal to n-ary.
-while ($dec! = 0) {
-  unshift(@rem_list, $dec% $n);
-  $dec = int($dec / $n);
+while ($dec != 0) {
+  unshift(@rem_list, $dec % $n);
+  $dec = int($dec/$n);
 }
 </pre>
 <p>
@@ -380,7 +380,7 @@ sub n_to_dec {
   my ($num_str, $n) = @_;
 
   Checking the validity of # $n
-  return if! defined $n || $n! ~ / ^ \ D + $/ || $n &lt;2 || $n&gt; 16;
+  return if! defined $n || $n !~ /^ \ D + $/ || $n &lt;2 || $n&gt; 16;
     
   # Checking the validity of $num_str (including checking the consistency with $n)
   return if! defined $num_str;
@@ -428,7 +428,7 @@ n_to_dec ('FE16', 16);
   <b> Checking the validity of $n </b>
 </p>
 <pre>
-return if! defined $n || $n! ~ / ^ \ D + $/ || $n &lt;2 || $n&gt; 16;
+return if! defined $n || $n !~ /^ \ D + $/ || $n &lt;2 || $n&gt; 16;
 </pre>
 <p>
   First, $n must be passed as an argument. Then it must be an integer greater than or equal to 2 and less than or equal to 16. The above sentence expresses this condition on one line.

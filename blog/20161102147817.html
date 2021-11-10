@@ -121,7 +121,7 @@ map {$_ =&gt; 1} @elements
   <b> grep function </b>
 </p>
 <pre>
-grep {$_ eq'foo'} @elements
+grep {$_ eq 'foo'} @elements
 </pre>
 <p>
   <b> Postfix for </b>
@@ -166,7 +166,7 @@ $0;
   <b> Use the lib module to add a module search path </b>
 </p>
 <pre>
-use lib'./lib';
+use lib './lib';
 </pre>
 <p>
   You can add the search path to @INC at compile time by using the <a href="/blog/20100525127859.html">lib</a> module.
@@ -193,23 +193,23 @@ unshift @INC, './lib2';
 <p>
   It has nothing to do with @INC, which stores the module's search path. @INC and%INC are completely different variables. If you want to know only the module name, use the <a href="/blog/20080210120265.html">keys function</a> to retrieve only the keys.
 </p>
-<h4> $^ O - Get OS name </h4>
+<h4> $^O - Get OS name </h4>
 <p>
-  To get the <a href="/blog/20180527152759.html">OS name</a>, use the special variable <strong> $^ O </strong>.
+  To get the <a href="/blog/20180527152759.html">OS name</a>, use the special variable <strong> $^O </strong>.
 </p>
 <pre>
-$^ O
+$^O
 </pre>
 <p>
-  <b> $^ O value and OS type </b>
+  <b> $^O value and OS type </b>
 </p>
 <p>
-  The value of "$^ O" in each OS is summarized.
+  The value of "$^O" in each OS is summarized.
 </p>
 <table>
   <tr>
     <td>
-      <span style = "font-weight: bold;">$^ O value </span>
+      <span style = "font-weight: bold;">$^O value </span>
     </td>
     <td>
       <span style = "font-weight: bold;">Description and link </span>
@@ -236,7 +236,7 @@ $^ O
       os2
     </td>
     <td>
-       OS / 2
+       OS/2
     </td>
   </tr>
   <tr>
@@ -347,12 +347,12 @@ $$
 <p>
   The process ID is the unique knowledge of the process by the OS.To separate it, it is an identifier assigned when a process is started.
 </p>
-<h4> $^ T - Get the process start time </h4>
+<h4> $^T - Get the process start time </h4>
 <p>
-  <a href="/blog/20180526152759.html">To get the process start time</a>, use the special variable "<strong> $^ T </strong>".
+  <a href="/blog/20180526152759.html">To get the process start time</a>, use the special variable "<strong> $^T </strong>".
 </p>
 <pre>
-$^ T
+$^T
 </pre>
 <p>
   The time is obtained in epoch seconds (seconds from 00:00:00 on January 1, 1970).
@@ -478,7 +478,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ F
+      $^F
     </td>
     <td>
       Maximum file descriptor
@@ -510,7 +510,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ I
+      $^I
     </td>
     <td>
       Replacement edit extension
@@ -518,7 +518,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ M
+      $^M
     </td>
     <td>
       Do you want to trap if you run out of memory?
@@ -526,7 +526,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ O
+      $^O
     </td>
     <td>
       Operating system name
@@ -545,7 +545,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ T
+      $^T
     </td>
     <td>
       Time when the program started
@@ -553,7 +553,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ V
+      $^V
     </td>
     <td>
       Perl version information
@@ -561,7 +561,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ X
+      $^X
     </td>
     <td>
       Name when executed
@@ -609,7 +609,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ N
+      $^N
     </td>
     <td>
       Last used group in pattern matching
@@ -652,7 +652,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ R
+      $^R
     </td>
     <td>
       Result of regular expression assertion
@@ -748,7 +748,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ A
+      $^A
     </td>
     <td>
       Format special variables
@@ -756,7 +756,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ L
+      $^L
     </td>
     <td>
       Format special variables
@@ -819,7 +819,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ E
+      $^E
     </td>
     <td>
       Current OS error information
@@ -827,7 +827,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ S
+      $^S
     </td>
     <td>
       Current interpreter status
@@ -835,7 +835,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ W
+      $^W
     </td>
     <td>
       warning
@@ -874,7 +874,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ C
+      $^C
     </td>
     <td>
       Compile switch
@@ -882,7 +882,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ D
+      $^D
     </td>
     <td>
       Debug flag
@@ -906,7 +906,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ H
+      $^H
     </td>
     <td>
       Compile time tips
@@ -917,7 +917,7 @@ $?
       % ^ H
     </td>
     <td>
-      Has the same scope as $^ H
+      Has the same scope as $^H
     </td>
   </tr>
   <tr>
@@ -930,7 +930,7 @@ $?
   </tr>
   <tr>
     <td>
-      $^ P
+      $^P
     </td>
     <td>
       Internal variables for debugging

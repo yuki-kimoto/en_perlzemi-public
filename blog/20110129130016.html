@@ -86,9 +86,9 @@
 </p>
 <pre>
            Rate normal multiple raw
-normal 22.3 / s - - 90% -92%
-multiple 213 / s 855% - -23%
-raw 278 / s 1147% 31% -
+normal 22.3/s - - 90% -92%
+multiple 213/s 855% - -23%
+raw 278/s 1147% 31% -
 </pre>
 <h4><a href="/blog/20110129130016.html"> Speed ​​up with bulk insert </a></h4>
 <p>
@@ -106,7 +106,7 @@ $dbi-&gt;insert ($params, table =&gt;'book', bulk_insert =&gt; 1);
 <pre>
 use strict;
 use warnings;
-use Benchmark qw / timethese cmpthese /;
+use Benchmark qw/timethese cmpthese/;
 
 use DBIx::Custom;
 
@@ -149,7 +149,7 @@ my $result = timethese (100, {
       $dbi-&gt;delete_all (table =&gt;'book');
       my $sth;
       for my $i (1 .. 100) {
-        $sth || = $dbi-&gt;dbh-&gt;prepare ('insert into book (id, title) values ​​(?,?)');
+        $sth ||= $dbi-&gt;dbh-&gt;prepare ('insert into book (id, title) values ​​(?,?)');
         my $id = $i;
         my $title ='Perl';
         $sth-&gt;execute ($i, $title);
@@ -165,13 +165,13 @@ cmpthese ($result);
 </p>
 <pre>
               Rate normal multiple raw bulk_insert
-normal 24.0 / s - - 72% -76% -83%
-multiple 86.2 / s 259% - -16% -40%
-raw 102 / s 326% 18% - - 29%
-bulk_insert 143 / s 496% 66% 40% -
+normal 24.0/s - - 72% -76% -83%
+multiple 86.2/s 259% - -16% -40%
+raw 102/s 326% 18% - - 29%
+bulk_insert 143/s 496% 66% 40% -
 </pre>
 <p>
-  If bulk inserts are not performing well, check once to see if there is enough memory space for database inserts. If this memory area is insufficient, swap-in / swap-out will occur, which will be very slow.
+  If bulk inserts are not performing well, check once to see if there is enough memory space for database inserts. If this memory area is insufficient, swap-in/swap-out will occur, which will be very slow.
 </p>
 
   </div>

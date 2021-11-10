@@ -89,7 +89,7 @@
 <pre>
 use Amazon::S3::Thin;
  
-my $s3client = Amazon::S3::Thin-&gt;new ({{
+my $s3client = Amazon::S3::Thin-&gt;new({{
       aws_access_key_id =&gt; $aws_access_key_id,
       aws_secret_access_key =&gt; $aws_secret_access_key,
       aws_session_token =&gt; $aws_session_token, # optional
@@ -97,7 +97,7 @@ my $s3client = Amazon::S3::Thin-&gt;new ({{
     });
  
 my $bucket = "mybucket";
-my $key = "dir / file.txt";
+my $key = "dir/file.txt";
 my $response;
  
 $response = $s3client-&gt;put_bucket ($bucket);
@@ -118,7 +118,7 @@ $response = $s3client-&gt;list_objects (
   You can also pass any user agent as you like
 </p>
 <pre>
-my $s3client = Amazon::S3::Thin-&gt;new ({{
+my $s3client = Amazon::S3::Thin-&gt;new({{
         ...
         ua =&gt; $any_LWP_copmatible_useragent,
     });
@@ -127,7 +127,7 @@ my $s3client = Amazon::S3::Thin-&gt;new ({{
   By default, signature version 4 is used. To use signature version 2, add an option. signature_version
 </p>
 <pre>
-my $s3client = Amazon::S3::Thin-&gt;new ({{
+my $s3client = Amazon::S3::Thin-&gt;new({{
         ...
         signature_version =&gt; 2,
     });
@@ -170,7 +170,7 @@ my $s3client = Amazon::S3::Thin-&gt;new ({{
   In some situations it is very important to check her raw HTTP communication. That's why I made this module.
 </p>
 <h3> Constructor </h3>
-<h4> new (\%params) </h4>
+<h4> new(\%params) </h4>
 <B> Arguments: Hash reference with </b> options.
 <p>
   <b> Return value </b>: Amazon::S3::Thin object
@@ -189,7 +189,7 @@ my $s3client = Amazon::S3::Thin-&gt;new ({{
 </ul>
 <h3> Accessor </h3>
 <p>
-  The following accessors are provided: You can use these to get / set the attributes of an object.
+  The following accessors are provided: You can use these to get/set the attributes of an object.
 </p>
 <h4> secure </h4>
 <p>
@@ -242,7 +242,7 @@ my $s3client = Amazon::S3::Thin-&gt;new ({{
   <b> Return: </b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the content () method on the returned object to read its contents.
 </p>
 <pre>
-my $res = $s3-&gt;get_object ('my.bucket', 'my / key.ext');
+my $res = $s3-&gt;get_object ('my.bucket', 'my/key.ext');
  
 if ($res-&gt;is_success) {
     my $content = $res-&gt;content;
@@ -268,7 +268,7 @@ if ($res-&gt;is_success) {
   <b> Return: </b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request. You can use the header () method on the returned object to read the metadata.
 </p>
 <pre>
-my $res = $s3-&gt;head_object ('my.bucket', 'my / key.ext');
+my $res = $s3-&gt;head_object ('my.bucket', 'my/key.ext');
  
 if ($res-&gt;is_success) {
     my $etag = $res-&gt;header ('etag'); # =&gt; `" fba9dede5f27731c9771645a39863328 "`
@@ -304,7 +304,7 @@ if ($res-&gt;is_success) {
   <b> Return: </b> <a href="https://metacpan.org/pod/HTTP::Response">HTTP::Response</a> object in response to the request.
 </p>
 <p>
-  This method is a variation of the PUT operation described in Amazon's S3 API. Make a copy of the object that is already stored in Amazon S3. This "PUT copy" operation is the same as performing a GET from the old bucket / key and performing her PUT on the new bucket / key.
+  This method is a variation of the PUT operation described in Amazon's S3 API. Make a copy of the object that is already stored in Amazon S3. This "PUT copy" operation is the same as performing a GET from the old bucket/key and performing her PUT on the new bucket/key.
 </p>
 <p>
   A COPY request may return an error response with 200 OK, but this method determines the error response and rewrites the status code to 500.
@@ -381,7 +381,7 @@ if ($res-&gt;is_success) {
   2. Key (string)-a string with a destination key
 </p>
 <p>
-  3. Field (Array Reference)-Builds an array reference for key / value pairs on top of the pre-filled form field.
+  3. Field (Array Reference)-Builds an array reference for key/value pairs on top of the pre-filled form field.
 </p>
 <p>
   4. Condition (array reference)-Array reference of the condition (array reference or hash reference) to include in the policy
@@ -402,7 +402,7 @@ if ($res-&gt;is_success) {
   This is an example of generating a signed URL and uploading the file "test.txt". In this case, you can set the object metadata "x-amz-meta-foo" with any value and the upload size is limited to 1MB.
 </p>
 <pre>
-my $presigned = $s3-&gt;generate_presigned_post ('my.bucket', 'my / key.ext', [
+my $presigned = $s3-&gt;generate_presigned_post ('my.bucket', 'my/key.ext', [
     'x-amz-meta-foo' =&gt;'bar',
 ], [
     ['starts-with' =&gt;'$x-amz-meta-foo', ''],
@@ -412,7 +412,7 @@ my $presigned = $s3-&gt;generate_presigned_post ('my.bucket', 'my / key.ext', [
 my $ua = LWP::UserAgent-&gt;new;
 my $res = $ua-&gt;post (
     $signed-&gt;{url},
-    Content_Type =&gt;'multipart / form-data',
+    Content_Type =&gt;'multipart/form-data',
     Content =&gt; [
         @{$signed-&gt;{fields}},
         file =&gt; ['test.txt'],

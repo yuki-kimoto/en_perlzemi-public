@@ -201,7 +201,7 @@ my $num = 100_000_000;
 $num = 1 + 1;
 $num = 1 - 1;
 $num = 1 * 2;
-$num = 1 / 2;
+$num = 1/2;
 </pre>
 <p>
   How to find a quotient. To find the quotient, perform ordinary division and then extract the integer part with the int function.
@@ -435,7 +435,7 @@ elsif (condition) {
   </tr>
   <tr>
     <td>
-      $p! = $q
+      $p != $q
     </td>
     <td>
       $p and $q are not equal
@@ -602,9 +602,9 @@ sub sum {
     <a href="/blog/20101130129876.html">How to create a subroutine</a>
   </li>
 </ul>
-<h3> File input / output </h3>
+<h3> File input/output </h3>
 <p>
-  File input / output.
+  File input/output.
 </p>
 <pre>
 open my $fh, '&lt;', $file
@@ -620,11 +620,11 @@ close $fh;
   When you open a file with the open function, the file handle is assigned to $fh. '<' Is the read mode. When writing, use'>'. You can read a line from a file with the description <$fh>. After or, it is executed when the file open fails. die is a function that displays an error message and terminates the program. $! Is an error message from the OS when the file open fails.
 </p>
 <p>
-  Perl's file I / O is explained in detail on the following pages.
+  Perl's file I/O is explained in detail on the following pages.
 </p>
 <ul>
   <li>
-    <a href="/blog/20110212130370.html">Basics of file input / output</a>
+    <a href="/blog/20110212130370.html">Basics of file input/output</a>
   </li>
 </ul>
 <h3> Grammar you should know </h3>
@@ -660,7 +660,7 @@ my $file = shift;
   In Perl, some functions have different return values ​​depending on the context. For example, the localtime function. This is a Perl-specific grammar called <a href="/blog/20080608121292.html">context</a>.
 </p>
 <pre>
-# Scalar context (get date / time as a character string)
+# Scalar context (get date/time as a character string)
 my $time_str = localtime();
 
 # List context (get each element of date and time as an array)
@@ -720,7 +720,7 @@ print $_ for @nums;
   You can use <a href="/blog/20100119126425.html">grep function</a> to get only the elements that match the conditions as an array. The elements of @array are assigned to $_ in order.
 </p>
 <pre>
-@select = grep {$_ = ~'cat'} @array;
+@select = grep {$_ =~ 'cat'} @array;
 </pre>
 <h4> List assignment </h4>
 <p>
@@ -787,21 +787,21 @@ my $content = join('', &lt;$fh&gt;);
   <a href="/blog/20080325120646.html">Ternary operator</a>. In the sample below, 1 is assigned to $num if $flg is true, and 2 is assigned to $num if it is false.
 </p>
 <pre>
-my $num = $flg? 1: 2;
+my $num = $flg ? 1: 2;
 </pre>
-<h4> || = </h4>
+<h4> ||= </h4>
 <p>
   Substitutes the rvalue if the lvalue is a false value. In the case of the sample below, 2 is assigned to $num if $num is a false value.
 </p>
 <pre>
-$num || = 2;
+$num ||= 2;
 </pre>
-<h4> // = </h4>
+<h4> //= </h4>
 <p>
   Defined-or operator. Substitutes the rvalue if the lvalue is undefined. In the sample below, 2 is assigned to $num if $num is undefined.
 </p>
 <pre>
-$num // = 2;
+$num //= 2;
 </pre>
 <h4> Loading modules </h4>
 <p>
@@ -817,7 +817,7 @@ use module name;
 <pre>
 my $conf_file = "app.conf";
 my $conf = do $conf_file
-  or die qq / Can't load config file "$conf_file": $! $@/;
+  or die qq/Can't load config file "$conf_file": $! $@/;
 </pre>
 <p>
   The contents of the configuration file.

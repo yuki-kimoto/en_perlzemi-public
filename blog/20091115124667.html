@@ -89,7 +89,7 @@
   IT-related work often accesses servers to download and upload files. Doing this using FTP client software such as FFFTP can be very tedious. You'll want to automate it if you can.
 </p>
 <p>
-  Perl comes standard with a module called Net::FTP for creating client applications for FTP. If you use Net::FTP, file download / upload work can be automated and work efficiency can be improved.
+  Perl comes standard with a module called Net::FTP for creating client applications for FTP. If you use Net::FTP, file download/upload work can be automated and work efficiency can be improved.
 </p>
 <h3> What is FTP? </H3>
 <p>
@@ -121,13 +121,13 @@
 use Net::FTP;
 
 # Connect to FTP server (host name or IP address is OK)
-my $ftp = Net::FTP-&gt;new ('somehost');
+my $ftp = Net::FTP-&gt;new('somehost');
 
 # Login by specifying user name and password
 $ftp-&gt;login ('user', 'password');
 
 Download the file using the command # get to get the file
-$ftp-&gt;get ('/ dir / somefile');
+$ftp-&gt;get ('/ dir/somefile');
 
 # Exit the connection
 $ftp-&gt;quit;
@@ -150,13 +150,13 @@ $ftp-&gt;quit;
   Create a Net::FTP object to connect to the FTP server.
 </p>
 <pre>
-$ftp = Net::FTP-&gt;new ($host);
+$ftp = Net::FTP-&gt;new($host);
 </pre>
 <p>
   You can specify the host name or IP address as an argument. In addition, options can be specified after the second argument. Options are specified in the hash reference. Frequently used options include Timeout to set the number of seconds to time out. The default timeout period is 120 seconds.
 </p>
 <pre>
-$ftp = Net::FTP-&gt;new ($host, Timeout =&gt; 180)
+$ftp = Net::FTP-&gt;new($host, Timeout =&gt; 180)
 </pre>
 <h4> login </h4>
 <p>
@@ -355,7 +355,7 @@ $ftp-&gt;quit;
 </p>
 <pre>
 # Connect to FTP server
-my $ftp = Net::FTP-&gt;new ('somehost')
+my $ftp = Net::FTP-&gt;new('somehost')
   or die "Cannot connect to'$host': $!";
 
 # Login
@@ -363,7 +363,7 @@ $ftp-&gt;login ('user', 'password')
   or die "Cannot login'$host: $user: $password':". $ftp-&gt;message;
 
 # Download
-$ftp-&gt;get ('/ dir / somefile');
+$ftp-&gt;get ('/ dir/somefile');
   or die "FTP command fail:". $ftp-&gt;message;
 
 $ftp-&gt;quit;
@@ -382,7 +382,7 @@ $ftp-&gt;quit;
   If the connection to the FTP server fails with the new method, the return value will be undef, so do or die to terminate the program. Include the OS error message $!.
 </p>
 <pre>
-my $ftp = Net::FTP-&gt;new ('somehost')
+my $ftp = Net::FTP-&gt;new('somehost')
   or die "Cannot connect to'$host': $!";
 </pre>
 <h4> [B] Other error handling </h4>
@@ -395,7 +395,7 @@ $ftp-&gt;login ('user', 'password')
   or die "Cannot login'$host: $user: $password:'". $ftp-&gt;message;
 
 # Download
-$ftp-&gt;get ('/ dir / somefile');
+$ftp-&gt;get ('/ dir/somefile');
   or die "FTP command fail:". $ftp-&gt;message;
 </pre>
 <h3> Net::FTP executable sample </h3>
@@ -411,13 +411,13 @@ use Net::FTP;
 my $host ='ftp.u-aizu.ac.jp';
 my $user ='anonymous';
 
-my $ftp = Net::FTP-&gt;new ($host)
+my $ftp = Net::FTP-&gt;new($host)
   or die "Cannot connect to'$host': $!";
 
 $ftp-&gt;login ($user)
   or die "Cannot login'$host: $user':". $ftp-&gt;message;
 
-$ftp-&gt;cwd ('/ pub / CPAN')
+$ftp-&gt;cwd ('/ pub/CPAN')
   or die "FTP command fail:". $ftp-&gt;message;
 
 $ftp-&gt;get ('index.html')
@@ -425,18 +425,18 @@ $ftp-&gt;get ('index.html')
 
 $ftp-&gt;quit;
 </pre>
-<h3> FTPS connection - FTP over SSL / TLS </h3>
+<h3> FTPS connection - FTP over SSL/TLS </h3>
 <p>
-  I will explain how to connect with FTPS by Net::FTP. FTPS is a protocol for FTP connection over SSL / TSL. Please note that it is different from SFTP, which transfers files over SSH.
+  I will explain how to connect with FTPS by Net::FTP. FTPS is a protocol for FTP connection over SSL/TSL. Please note that it is different from SFTP, which transfers files over SSH.
 </p>
 <p>
-  This section describes how to perform "explicit TSL / SSL encryption" that makes an SSL connection request with the AUTH command after making an FTP connection with the FTP port number (21 as standard).
+  This section describes how to perform "explicit TSL/SSL encryption" that makes an SSL connection request with the AUTH command after making an FTP connection with the FTP port number (21 as standard).
 </p>
 <p>
   Net::FTP can communicate using FTPS if IO::Socket::SSL is installed. If you have an older version of IO::Socket::SSL, please upgrade.
 </p>
 <p>
-  To do "explicit TSL / SSL encryption", just call the starttls method immediately after connecting with the new method. Let's rewrite the above sample with "explicit TSL / SSL encryption".
+  To do "explicit TSL/SSL encryption", just call the starttls method immediately after connecting with the new method. Let's rewrite the above sample with "explicit TSL/SSL encryption".
 </p>
 <pre>
 use strict;
@@ -447,16 +447,16 @@ use Net::FTP;
 my $host ='ftp.u-aizu.ac.jp';
 my $user ='anonymous';
 
-my $ftp = Net::FTP-&gt;new ($host)
+my $ftp = Net::FTP-&gt;new($host)
   or die "Cannot connect to'$host': $!";
 
-# Start explicit TSL / SSL encryption
+# Start explicit TSL/SSL encryption
 $ftp-&gt;starttls () or die "Can't upgrade start TLS:";
 
 $ftp-&gt;login ($user)
   or die "Cannot login'$host: $user':". $ftp-&gt;message;
 
-$ftp-&gt;cwd ('/ pub / CPAN')
+$ftp-&gt;cwd ('/ pub/CPAN')
   or die "FTP command fail:". $ftp-&gt;message;
 
 $ftp-&gt;get ('index.html')

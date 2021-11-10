@@ -112,7 +112,7 @@
 use IO::ScalarArray;
 {
   my @inputs = ("1\n", "2\n", "3\n");
-  my $stdin = IO::ScalarArray-&gt;new (\@inputs);
+  my $stdin = IO::ScalarArray-&gt;new(\@inputs);
   local * STDIN = * $stdin;
   # Exam description
 }
@@ -133,7 +133,7 @@ use IO::ScalarArray;
 
 {
   my @answers = ("y\n");
-  my $stdin = IO::ScalarArray-&gt;new (\@answers);
+  my $stdin = IO::ScalarArray-&gt;new(\@answers);
   
   local * STDIN = * $stdin;
   
@@ -148,15 +148,15 @@ sub question {
   
   chomp $answer;
   my $is_man;
-  if ($answer eq'y') {$is_man = 1}
+  if ($answer eq 'y') {$is_man = 1}
   else {$is_man = 0}
   
   return $is_man;
 }
 </pre>
-<h3> How to use scalar input / output </h3>
+<h3> How to use scalar input/output </h3>
 <p>
-  This is a sample that uses Perl's scalar input / output function.
+  This is a sample that uses Perl's scalar input/output function.
 </p>
 <pre>
 use Test::More tests =&gt; 1;
@@ -169,7 +169,7 @@ y\n
 n\n
 EOS
 
-  # How to use scalar input / output
+  # How to use scalar input/output
   open my $stdin, "&lt;", \$inputs;
   
   local * STDIN = * $stdin;
@@ -188,7 +188,7 @@ sub question {
   
   chomp $answer;
   my $is_man;
-  if ($answer eq'y') {$is_man = 1}
+  if ($answer eq 'y') {$is_man = 1}
   else {$is_man = 0}
 
   return $is_man;

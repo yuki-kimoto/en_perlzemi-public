@@ -111,7 +111,7 @@
   Specify the character code of the byte string in the first argument of the decode function, and specify the byte string in the second argument. The return value will be an internal string.
 </p>
 <pre>
-use Encode'decode';
+use Encode 'decode';
 
 # External input (command line argument)
 my $str = shift;
@@ -146,7 +146,7 @@ UTF-8 byte string - -&gt;internal string
   The first argument of the encode function specifies which character code to convert. Specify the internal character string in the second argument.
 </p>
 <pre>
-use Encode'encode';
+use Encode 'encode';
 
 # When converting an internal string to a UTF-8 byte string
 $str = encode ('UTF-8', $str);
@@ -218,7 +218,7 @@ use strict;
 use warnings;
 
 use utf8;
-use Encode qw / encode decode /;
+use Encode qw/encode decode/;
 
 # Command line argument (UTF-8 byte string)
 my $str1 = shift;
@@ -233,7 +233,7 @@ my $str2 = "Japanese";
 print length $str2, "\n"; # 3
 
 # Regular expressions can be used correctly between internal strings
-if ($str1 = ~ / $str2 /) {
+if ($str1 =~ /$str2 /) {
   print "Match!\n";
 }
 
@@ -265,7 +265,7 @@ UTF-8 byte string-&gt;internal string-&gt;Shift_JIS byte string
 </p>
 <pre>
 # Character code conversion
-use Encode'from_to';
+use Encode 'from_to';
 
 # $str itself is converted
 from_to ($str, 'UTF-8', 'Shift_JIS');
@@ -278,7 +278,7 @@ from_to ($str, 'UTF-8', 'Shift_JIS');
 use strict;
 use warnings;
 use utf8;
-use Encode'encode';
+use Encode 'encode';
 
 my $file ='Ah.txt';
 open my $fh, '&lt;', encode ('cp932', $file)
@@ -294,7 +294,7 @@ open my $fh, '&lt;', encode ('cp932', $file)
 use warnings;
 use utf8;
 
-use Encode qw / encode decode /;
+use Encode qw/encode decode/;
 my $enc ='cp932';
 binmode STDERR, ": encoding ($enc)";
 sub d ($) {decode ($enc, shift)}
@@ -302,7 +302,7 @@ sub e ($) {encode ($enc, shift)}
 
 my $file ='Ah.txt';
 open my $fh, '&lt;', e $file
-  or die qq / Can't open "$file": $! /;
+  or die qq/Can't open "$file": $!/;
 </pre>
 <p>
   Now you can handle Perl character codes very simply.

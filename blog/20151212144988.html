@@ -338,7 +338,7 @@
       my ($vc, $value, $arg) = @_;
       
       my $is_valid;
-      if ($value = ~ / ^ [\ d-] + $/) {
+      if ($value =~ /^ [\ d-] + $/) {
         $is_valid = 1;
       }
       return $is_valid;
@@ -554,7 +554,7 @@
     int =&gt; sub {
       my ($vc, $value, $arg) = @_;
       
-      my $is_valid = $value = ~ / ^ \-? [\ D] + $/;
+      my $is_valid = $value =~ /^ \-? [\ D] + $/;
       
       return $is_valid;
     }
@@ -578,8 +578,8 @@
     trim =&gt; sub {
       my ($vc, $value, $arg) = @_;
       
-      $value = ~ s / ^ \ s + //;
-      $value = ~ s / \ s + $//;
+      $value =~ s/^ \ s + //;
+      $value =~ s/\ s + $//;
       
       return $value;
     }
@@ -762,7 +762,7 @@
 <pre>
   $vc-&gt;add_check (space =&gt; sub {
     my ($vc, $value, $arg) = @_;
-    return defined $value &amp;&amp; $value = ~'^ [\t\n\r\f] * $'? 1: 0;
+    return defined $value &amp;&amp; $value =~ '^ [\t\n\r\f] * $'? 1: 0;
   });
 </pre>
 <p>
@@ -771,7 +771,7 @@
 <pre>
   $vc-&gt;add_check (http_url =&gt; sub {
     my ($vc, $value, $arg) = @_;
-    return defined $value &amp;&amp; $value = ~ / ^ s? https ?: \ / \ / [-_.! ~ *'() A-zA-Z0-9; \ /?: ​​\@&amp; = + \$, % # ] + $/? 1: 0;
+    return defined $value &amp;&amp; $value =~ /^ s? https ?: \/\/[-_.!~ *'() A-zA-Z0-9; \ /?: ​​\@&amp; = + \$, % # ] + $/? 1: 0;
   });
 </pre>
 <p>
@@ -788,7 +788,7 @@
     # Digit
     my $digits;
     if (defined $digits_tmp) {
-      if (ref $digits_tmp eq'ARRAY') {
+      if (ref $digits_tmp eq 'ARRAY') {
         $digits = $digits_tmp;
       }
       else {
@@ -802,20 +802,20 @@
     # Regex
     my $re;
     if (defined $digits-&gt;[0] &amp;&amp; defined $digits-&gt;[1]) {
-      $re = qr / ^ [0-9]{1, $digits-&gt;[0]} (\. [0-9]{0, $digits-&gt;[1]})? $/;
+      $re = qr/^ [0-9]{1, $digits-&gt;[0]} (\. [0-9]{0, $digits-&gt;[1]})? $/;
     }
     elsif (defined $digits-&gt;[0]) {
-      $re = qr / ^ [0-9]{1, $digits-&gt;[0]} (\. [0-9] *)? $/;
+      $re = qr/^ [0-9]{1, $digits-&gt;[0]} (\. [0-9] *)? $/;
     }
     elsif (defined $digits-&gt;[1]) {
-      $re = qr / ^ [0-9] + (\. [0-9]{0, $digits-&gt;[1]})? $/;
+      $re = qr/^ [0-9] + (\. [0-9]{0, $digits-&gt;[1]})? $/;
     }
     else {
-      $re = qr / ^ [0-9] + (\. [0-9] *)? $/;
+      $re = qr/^ [0-9] + (\. [0-9] *)? $/;
     }
     
     # Check value
-    if ($value = ~ / $re /) {
+    if ($value =~ /$re /) {
       return 1;
     }
     else {
@@ -836,8 +836,8 @@
     
     return undef unless defined $value;
     
-    $value = ~ s / [\t\n\r\f] + / / g;
-    $value= ~ s / ^ [\t\n\r\f] * (. *?) [\t\n\r\f] * $/ $1 / ms;
+    $value =~ s/[\t\n\r\f] +// g;
+    $value =~ s/^ [\t\n\r\f] * (. *?) [\t\n\r\f] * $/ $1/ms;
 
     return $value;
   });
@@ -851,7 +851,7 @@
     
     return undef unless defined $value;
 
-    $value = ~ s / ^ [\t\n\r\f] + (. *) $/ $1 / ms;
+    $value =~ s/^ [\t\n\r\f] + (. *) $/ $1/ms;
 
     return $value;
   });
@@ -865,7 +865,7 @@
     
     return undef unless defined $value;
 
-    $value = ~ s / ^ (. *?) [\t\n\r\f] + $/ $1 / ms;
+    $value =~ s/^ (. *?) [\t\n\r\f] + $/ $1/ms;
 
     return $value;
   });
@@ -879,7 +879,7 @@
     
     return undef unless defined $value;
 
-    $value = ~ s / ^ \ s * (. *?) \ S * $/ $1 / ms;
+    $value =~ s/^ \ s * (. *?) \ S * $/ $1/ms;
 
     return $value;
   });
@@ -893,8 +893,8 @@
 
     return undef unless defined $value;
     
-    $value = ~ s / \ s + / / g;
-    $value = ~ s / ^ \ s * (. *?) \ S * $/ $1 / ms;
+    $value =~ s/\ s +// g;
+    $value =~ s/^ \ s * (. *?) \ S * $/ $1/ms;
 
     return $value;
   });
@@ -908,7 +908,7 @@
     
     return undef unless defined $value;
     
-    $value = ~ s / ^ \ s + (. *) $/ $1 / ms;
+    $value =~ s/^ \ s + (. *) $/ $1/ms;
     
     return $value;
   });
@@ -922,7 +922,7 @@
     
     return undef unless defined $value;
 
-    $value = ~ s / ^ (. *?) \ S + $/ $1 / ms;
+    $value =~ s/^ (. *?) \ S + $/ $1/ms;
 
     return $value;
   });
@@ -965,7 +965,7 @@
 $vc-&gt;add_check (
   hiragana =&gt; sub {
     my ($vc, $value) = @_;
-    my $is_valid = $value = ~ / ^ \ p {InHiragana} + $/;
+    my $is_valid = $value =~ /^\p{InHiragana} + $/;
     return $is_valid;
   }
 );
@@ -974,7 +974,7 @@ $vc-&gt;add_check (
 $vc-&gt;add_check (
   katakana =&gt; sub {
     my ($vc, $value) = @_;
-    my $is_valid = $value = ~ / ^ \ p {InKatakana} + $/
+    my $is_valid = $value =~ /^\p{InKatakana} + $/
     return $is_valid;
   }
 );

@@ -116,9 +116,9 @@ my $data = $xml-&gt;XMLin ('conf.xml');
   &lt;!-System type-&gt;  &lt;system&gt; xxx yyy zzz &lt;/system&gt;
 
   &lt;!-Log type-&gt;  &lt;log-types&gt;
-    &lt;cpu script = "parse_cpu.pl" from-dir = "raw / cpu" to-dir = "edit / cpu" /&gt;
-    &lt;mem script = "parse_mem.pl" from-dir = "raw / mem" to-dir = "edit / mem" /&gt;
-    &lt;gclog script = "parse_gclog.pl" from-dir = "raw / gclog" to-dir = "edit / gclog" /&gt;
+    &lt;cpu script = "parse_cpu.pl" from-dir = "raw/cpu" to-dir = "edit/cpu" /&gt;
+    &lt;mem script = "parse_mem.pl" from-dir = "raw/mem" to-dir = "edit/mem" /&gt;
+    &lt;gclog script = "parse_gclog.pl" from-dir = "raw/gclog" to-dir = "edit/gclog" /&gt;
   &lt;/log-types&gt;
 &lt;/conf&gt;
 </pre>
@@ -132,19 +132,19 @@ my $data = $xml-&gt;XMLin ('conf.xml');
 $conf = {
   'log-types' =&gt; {
     'cpu' =&gt; {
-      'to-dir' =&gt;'edit / cpu',
+      'to-dir' =&gt;'edit/cpu',
       'script' =&gt;'parse_cpu.pl',
-      'from-dir' =&gt;' raw / cpu'
+      'from-dir' =&gt;' raw/cpu'
     },
     'gclog' =&gt; {
-      'to-dir' =&gt;'edit / gclog',
+      'to-dir' =&gt;'edit/gclog',
       'script' =&gt;'parse_gclog.pl',
-      'from-dir' =&gt;' raw / gclog'
+      'from-dir' =&gt;' raw/gclog'
     },
     'mem' =&gt; {
-      'to-dir' =&gt;'edit / mem',
+      'to-dir' =&gt;'edit/mem',
       'script' =&gt;'parse_mem.pl',
-      'from-dir' =&gt;' raw / mem'
+      'from-dir' =&gt;' raw/mem'
     }
   },
   'system' =&gt;'xxx yyy zzz',
@@ -168,7 +168,7 @@ $conf = {
 </p>
 <pre>
 # When outputting, convert from internal character string to byte character string
-use Encode'encode';
+use Encode 'encode';
 my $conf = $xml-&gt;XMLin ('japanese.xml');
 print encode ('UTF-8', $conf-&gt;{name});
 </pre>
@@ -178,7 +178,7 @@ print encode ('UTF-8', $conf-&gt;{name});
 </p>
 <pre>
 # Option
-my $xml = XML::Simple-&gt;new (ForceArray =&gt; 1);
+my $xml = XML::Simple-&gt;new(ForceArray =&gt; 1);
 </pre>
 <p>
   The following two options may be used frequently.

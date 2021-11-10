@@ -104,7 +104,7 @@ package FilePath;
 
 sub new {
   my $self = shift;
-  if ($^ O eq'MSWin32') {
+  if ($^O eq 'MSWin32') {
     return FilePath::Windows-&gt;new;
   }
   else {
@@ -130,7 +130,7 @@ sub cat_path {
 
 # For Unix
 package FilePath::Unix;
-use base'FilePath::Base';
+use base 'FilePath::Base';
 
 # Unix delimiter
 sub delimiter {return'/'}
@@ -138,7 +138,7 @@ sub delimiter {return'/'}
 
 # For Windows
 package FilePath::Windows;
-use base'FilePath::Base';
+use base 'FilePath::Base';
 
 # Delimiter for Windows
 sub delimiter {return'\\'}
@@ -153,7 +153,7 @@ Result: a \ b
   Otherwise,
 </p>
 <pre>
-Result: a / b
+Result: a/b
 </pre>
 <p>
   It will be. If the environment is Windows, an object of the FilePath::Windows class is created, otherwise an object of the FilePath::Unix class is created.
@@ -173,7 +173,7 @@ package FilePath;
 
 sub new {
   my $self = shift;
-  if ($^ O eq'MSWin32') {
+  if ($^O eq 'MSWin32') {
     return FilePath::Windows-&gt;new;
   }
   else {
@@ -182,16 +182,16 @@ sub new {
 }
 </pre>
 <p>
-  I'm looking at $^ O to find out what type of OS I'm using and changing the objects I create. The constructor in this example takes no arguments, but since constructors generally take arguments.
+  I'm looking at $^O to find out what type of OS I'm using and changing the objects I create. The constructor in this example takes no arguments, but since constructors generally take arguments.
 </p>
 <pre>
 sub new {
   my $self = shift;
-  if ($^ O eq'MSWin32') {
-    return FilePath::Windows-&gt;new (@_);
+  if ($^O eq 'MSWin32') {
+    return FilePath::Windows-&gt;new(@_);
   }
   else {
-    return FilePath::Unix-&gt;new (@_);
+    return FilePath::Unix-&gt;new(@_);
   }
 }
 </pre>
@@ -201,8 +201,8 @@ sub new {
 <pre>
 sub new {
   my $self = shift;
-  return $^ O eq'MSWin32'? FilePath::Windows-&gt;new (@_):
-                            FilePath::Unix-&gt;new (@_);
+  return $^O eq 'MSWin32'? FilePath::Windows-&gt;new(@_):
+                            FilePath::Unix-&gt;new(@_);
 }
 </pre>
 <h3> 3. Convenient part of inheritance </h3>
@@ -220,7 +220,7 @@ sub new {
   Follow this sample with a debugger. You can understand it by observing how it moves around between classes.
 </p>
 <p>
-  You can emulate Windows and Unix by changing the value of $^ O. Also, use the ref function to see the class to which the created object belongs.
+  You can emulate Windows and Unix by changing the value of $^O. Also, use the ref function to see the class to which the created object belongs.
 </p>
 
   </div>

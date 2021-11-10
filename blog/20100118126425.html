@@ -103,7 +103,7 @@ my @doubled = map {$_ * 2} @nums;
 <pre>
 # Excluding leading blanks
 my @strs = ('a', 'b', 'c');
-my @trimed = map {$_ = ~ s / ^ \ s + //; $_} @strs;
+my @trimed = map {$_ =~ s/^ \ s + //; $_} @strs;
 </pre>
 <p>
   You can also convert one element into two elements. If @keys is ('a', 'b', 'c') then @mapped is (a => 1, b => 1, c => 1).

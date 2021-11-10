@@ -167,10 +167,10 @@
   In UNIX, you can execute a Perl script by directly specifying the file name, such as ./sample.pl, by giving execute permission to the file. (./ Means the current directory. The description sample.pl cannot be executed due to UNIX specifications.)
 </p>
 <pre>
-# ! / usr / bin / perl
+# !/usr/bin/perl
 </pre>
 <p>
-  Is a request to the OS to execute this file with the program / usr / bin / perl if this file has execute permission.
+  Is a request to the OS to execute this file with the program/usr/bin/perl if this file has execute permission.
 </p>
 <p>
   This concludes the explanation of terms related to file permissions.
@@ -788,7 +788,7 @@ ls -l directory name
   I will explain how to check the permissions. To find out the file permissions, use the <a href="/blog/20080512121060.html">stat function</a> to retrieve the file permissions information. The third element is the mode information. Converting with the obtained S_IMODE function gives pure permission information.
 </p>
 <pre>
-use Fcntl': mode';
+use Fcntl ': mode';
 my $mode = (stat $file) [2];
 printf "%03o\n", S_IMODE ($mode);
 </pre>
@@ -823,7 +823,7 @@ use strict;
 use warnings;
 
 # Import constants for file permissions
-use Fcntl': mode';
+use Fcntl ': mode';
 
 my $file = shift || die "Usage: $0 file\n";
 

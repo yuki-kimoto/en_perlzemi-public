@@ -89,7 +89,7 @@
 \ b
 </pre>
 <p>
-  \ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd", / \ bcd / can represent the 0 character between'' and c.
+  \ b represents the delimiter. The delimiter is the boundary between word characters and whitespace characters. With "ab cd",/\ bcd/can represent the 0 character between'' and c.
 </p>
 <p>
   Word characters are alphanumeric characters and underscores. Whitespace is the character represented by \ s, which is a space, tab, or newline.
@@ -109,13 +109,13 @@ my $word_space = "ab cd ef";
 my $word = "abcd ef";
 
 print "1: Represents word string delimiters\n";
-if ($word_space = ~ / ab \ b / &amp;&amp; $word! ~ / Ab \ b /) {
-  print "/ ab \\ b / matches'ab cd ef', but".
+if ($word_space =~ /ab \ b/&amp;&amp; $word !~ /Ab \ b /) {
+  print "/ ab \\ b/matches'ab cd ef', but".
     "Does not match'abcd ef'.\n\n";
 }
 
-if ($word_space = ~ / \ bcd \ b / &amp;&amp; $word! ~ / \ Bb \ b /) {
-  print "/ \\ bcd \\ b / matches'ab cd ef', but".
+if ($word_space =~ /\ bcd \ b/&amp;&amp; $word !~ /\ Bb \ b /) {
+  print "/ \\ bcd \\ b/matches'ab cd ef', but".
     "Does not match'abcd ef'.\n";
 }
 </pre>

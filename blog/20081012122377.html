@@ -57,7 +57,7 @@
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161123147990.html">        <span itemprop = "name">Date / Time </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161123147990.html">        <span itemprop = "name">Date/Time </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -107,11 +107,11 @@ sub is_leap_year {
   my $year = shift;
 
   If it is not divisible by # 4, it is not a leap year.
-  return if $year% 4;
+  return if $year % 4;
 
   # If it is not divisible by 100 and not divisible by 400
   # Not a leap year.
-  return if! ($year% 100) &amp;&amp; ($year% 400);
+  return if! ($year % 100) &amp;&amp; ($year % 400);
 
   # Other than that, it is a leap year.
   return 1;
@@ -125,7 +125,7 @@ sub is_leap_year {
   First, determine if it is divisible by 4. Being divisible by 4 is a prerequisite for a leap year. If it is not divisible by 4, it is not a leap year.
 </p>
 <pre>
-return if $year% 4;
+return if $year % 4;
 </pre>
 <p>
   Only those that are divisible by 4 in the above judgment are left. In the sample example, (1900, 2000, 2003, 2004) remains (1900, 2000, 2004).
@@ -134,7 +134,7 @@ return if $year% 4;
   Next, make a judgment that "it is divisible by 100 and not divisible by 400". Those that meet this condition are not leap years. The 1900 meets this requirement.
 </p>
 <pre>
-return if! ($year% 100) &amp;&amp; ($year% 400);
+return if! ($year % 100) &amp;&amp; ($year % 400);
 </pre>
 <p>
   With the above judgment, (2000, 2004) remains. These are leap years.

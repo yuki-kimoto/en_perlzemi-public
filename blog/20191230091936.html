@@ -536,7 +536,7 @@ $text-&gt;font ($font, $font_size);
 $text-&gt;translate ($render_start_x, $render_start_y);
 
 # Extract one character at a time
-while ($message = ~ / (.) / G) {
+while ($message =~ /(.)/G) {
   my $char = $1;
   
   # Line break if the current drawing position exceeds the drawing end x coordinate
@@ -583,7 +583,7 @@ $pdf-&gt;saveas ($pdf_file);
   In my environment, 12,000 characters take 1-2 seconds. PDF output is a surprisingly heavy process.
 </p>
 <p>
-  <a href = "/ examples / pdf / margin_full_text.pdf">Output result margins, line breaks, page breaks</a>
+  <a href = "/ examples/pdf/margin_full_text.pdf">Output result margins, line breaks, page breaks</a>
 </p>
 <h4> How to represent HTML headlines and p tags? </H4>
 <p>
@@ -664,7 +664,7 @@ use utf8;
 <pre>
 use FindBin;
 
-my $true_type_font_file = "$FindBin::Bin / kochi-gothic-subst.ttf";
+my $true_type_font_file = "$FindBin::Bin/kochi-gothic-subst.ttf";
 </pre>
 <h4> I want to make it bold with a TrueType font that supports Japanese </h4>
 <p>
@@ -730,9 +730,9 @@ use PDF::API2;
 my $pdf = PDF::API2-&gt;new;
 
 # Reading TrueType fonts that support Japanese
-my $true_type_font_file = "$FindBin::Bin / AozoraMinchoRegular.ttf";
+my $true_type_font_file = "$FindBin::Bin/AozoraMinchoRegular.ttf";
 my $font = $pdf-&gt;ttfont ($true_type_font_file);
-my $true_type_font_bold_file = "$FindBin::Bin / AozoraMincho-bold.ttf";
+my $true_type_font_bold_file = "$FindBin::Bin/AozoraMincho-bold.ttf";
 my $font_bold = $pdf-&gt;ttfont ($true_type_font_bold_file);
 
 my $font_size = 11;
@@ -795,7 +795,7 @@ $text-&gt;font ($font, $font_size);
 $text-&gt;translate ($render_start_x, $render_start_y);
   
 # Extract one character at a time
-while ($message = ~ / (.) / G) {
+while ($message =~ /(.)/G) {
   my $char = $1;
   
   # Line break if the current drawing position exceeds the drawing end x coordinate
@@ -826,7 +826,7 @@ while ($message = ~ / (.) / G) {
   }
   
   # Bold world
-  if ($char eq'world' || $char eq'world') {
+  if ($char eq 'world' || $char eq 'world') {
     $text-&gt;font ($font_bold, $font_size);
   }
   else {

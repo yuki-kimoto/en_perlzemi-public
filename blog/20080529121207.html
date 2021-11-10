@@ -126,7 +126,7 @@ my @all_files = glob "*";
   </tr>
   <tr>
     <td>
-      "lib / *
+      "lib/*
     </td>
     <td>
       Files under the lib directory
@@ -134,7 +134,7 @@ my @all_files = glob "*";
   </tr>
   <tr>
     <td>
-      c: / dir / *
+      c:/dir/*
     </td>
     <td>
       Specified by absolute path
@@ -222,9 +222,9 @@ sub get_files {
   my $dir = shift;
   
   opendir my $dh, $dir
-    or die qq / Can't open directory "$dir": $! /;
+    or die qq/Can't open directory "$dir": $!/;
   
-  my @dirs = map {"$dir / $_"} grep {$_ ne'.' &amp;&amp; $_ ne' ..'} readdir $dh;
+  my @dirs = map {"$dir/$_"} grep {$_ ne '.' &amp;&amp; $_ ne ' ..'} readdir $dh;
   
   return @dirs;
 }
@@ -233,7 +233,7 @@ sub get_files {
   How to use
 </p>
 <pre>
-my @files = get_files ('c: / pictures');
+my @files = get_files ('c:/pictures');
 </pre>
 
   </div>

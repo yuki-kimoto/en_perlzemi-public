@@ -87,7 +87,7 @@
 
 <blockquote>
 <p>
-  <a href="http://argrath.ub32.org/perldocjp/5.20.0/perl5200delta.html">Features added / changed in Perl 5.20</a>
+  <a href="http://argrath.ub32.org/perldocjp/5.20.0/perl5200delta.html">Features added/changed in Perl 5.20</a>
 </p>
 </blockquote>
 <h3> IO::Socket::IP becomes core module </h3>
@@ -106,7 +106,7 @@
   Subroutine signatures have been added experimentally. This is a function that can be used with ordinary arguments in Perl. It is still in the experimental stage, so you will be warned if you use it.
 </p>
 <pre>
-use feature'signatures';
+use feature 'signatures';
 
 sub foo ($x, $y) {
   ...
@@ -131,7 +131,7 @@ sub foo: prototype ($$) {
   Array slices and hash slices can now be written in a new notation.
 </p>
 <pre>
-use feature'postderef';
+use feature 'postderef';
 
 # Array slice
 my ($title, $author) = $array_ref-&gt;@[0, 1];
@@ -145,9 +145,9 @@ my ($title, $author) = $hash_ref-&gt;@{'title', 'author'};
 <p>
   Slice notation is easy to understand and convenient.
 </p>
-<h3> New slices "index / value slice" and "key / value slice" and </h3>
+<h3> New slices "index/value slice" and "key/value slice" and </h3>
 <p>
-  An "index / value slice" has been added that allows you to get an "index-value" pair when you specify an index in an array.
+  An "index/value slice" has been added that allows you to get an "index-value" pair when you specify an index in an array.
 </p>
 <pre>
 my @array = (1, 3, 5);
@@ -156,7 +156,7 @@ my @array = (1, 3, 5);
 my %index_values ​​=%array [0, 1];
 </pre>
 <p>
-  A "key / value slice" has been added that allows you to get a "key / value" pair by specifying a key in the hash.
+  A "key/value slice" has been added that allows you to get a "key/value" pair by specifying a key in the hash.
 </p>
 <pre>
 my %hash = (a =&gt; 1, b =&gt; 2, c =&gt; 3);

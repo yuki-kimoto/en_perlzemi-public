@@ -108,10 +108,10 @@ my $value ='foo' //'default'; # 'foo'
 my $name = $opts{name} //'Ken';
 </pre>
 <p>
-  You can also write <b> // = </b>.
+  You can also write <b> //= </b>.
 </p>
 <pre>
-$value // ='default';
+$value //='default';
 </pre>
 <p>
   Only if $value is undefined will $value be assigned'default'.
@@ -127,7 +127,7 @@ $value ='default' unless defined $value;
   Also, since this writing method is verbose, many people used the <b> || </b> operator to write as follows.
 </p>
 <pre>
-$value || ='default';
+$value ||='default';
 </pre>
 <p>
   However, this way of writing introduced a potential bug to the application because'default' was assigned even if $value was 0 or an empty string.

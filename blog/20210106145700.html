@@ -76,7 +76,7 @@
 <pre>
 # Generate driver. The following two are the same, but only work with Firefox 48+.
 my $driver = Selenium::Firefox-&gt;new;
-$driver = Selenium::Firefox-&gt;new (marionette_enabled =&gt; 1);
+$driver = Selenium::Firefox-&gt;new(marionette_enabled =&gt; 1);
  
 # Do something
 
@@ -84,7 +84,7 @@ $driver = Selenium::Firefox-&gt;new (marionette_enabled =&gt; 1);
 $driver-&gt;shutdown_binary;
 
 # For Firefox 47 and if it's too old. Marionettes are disabled.
-$driver = Selenium::Firefox-&gt;new (marionette_enabled =&gt; 0);
+$driver = Selenium::Firefox-&gt;new(marionette_enabled =&gt; 0);
 $driver-&gt;shutdown_binary; &lt;/pre&gt;
 </pre>
 <h3> Preparation of execution environment </h3>

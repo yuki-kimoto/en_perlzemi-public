@@ -146,15 +146,15 @@ Characters other than "a", "b" and "c"-&gt;[^ abc]
    \ h Horizontal whitespace
    \ H Non-horizontal whitespace character
   \n Non-line feed (if not followed by'{NAME}'; experimental; in character class
-           Illegal; equivalent to [^\n]; similar to'.' Without / s)
+           Illegal; equivalent to [^\n]; similar to'.' Without/s)
    \ v Vertical whitespace
    \ V Non-vertical whitespace
   \r General line breaks (?&gt; \ V | \ x0D \ x0A)
    \ C Match 1 byte (in Unicode, '.' Matches a character)
    \ pP P P's name (Unicode) property
-   \ p {...} Matches a Unicode property with a name longer than one character
+\p{...} Matches a Unicode property with a name longer than one character
    \ PP Matches non-P
-   \ P {...} Matches one that does not have a Unicode property with a name longer than one character
+\P{...} Matches one that does not have a Unicode property with a name longer than one character
    \ X Matches Unicode extended grapheme clusters
 </pre>
 <p>
@@ -178,7 +178,7 @@ Characters other than "a", "b" and "c"-&gt;[^ abc]
 </p>
 <pre>
 # Match only numbers in the ASCII range.
-$str = ~ / \ d + / a;
+$str =~ /\ d +/a;
 </pre>
 <h4> Character class that represents only ASCII range </h4>
 <p>
@@ -189,7 +189,7 @@ $str = ~ / \ d + / a;
 </p>
 <pre>
 Character classes that match alphabets and numbers in the # ASCII range
-\ p {PosixAlnum}
+\p{PosixAlnum}
 </pre>
 <p>
   <a href="https://perldoc.jp/docs/perl/5.16.1/perlreref.pod#CHARACTER32CLASSES">Character class - Regular expression reference</a>, quote the defined character class ..
@@ -200,13 +200,13 @@ Character classes that match alphabets and numbers in the # ASCII range
 <pre>
             ASCII- Full-
    POSIX range range backslash
- [[: ...:]] \ p {...} \ p {...} sequence Description
+ [[: ...:]]\p{...}\p{...} sequence Description
  - -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --- - -- -- -- -- -- -- -
  alnum PosixAlnum XPosixAlnum Alpha and Digit
  alpha PosixAlpha XPosixAlpha alphabet
  ascii ASCII any ASCII character
  blank PosixBlank XPosixBlank \ h Horizontal blank;
-                                                   All types are \ p {HorizSpace}
+                                                   All types are\p{HorizSpace}
                                                    Tomo (GNU extension)
  cntrl PosixCntrl XPosixCntrl Control character
  digit PosixDigit XPosixDigit \ d Numbers
@@ -238,16 +238,16 @@ use utf8;
 
 # Use character class
 my $str ='Hello';
-if ($str = ~ / [abcde] /) {
+if ($str =~ /[abcde] /) {
   print "Match\n";
 }
 
 # Match with web service user ID (a-zA-Z0-9_)
 my $user_id ='kimoto_yuki089';
 my $user_id_invalid ='abc &amp; cde';
-if ($user_id = ~ / ^ \ p {PosixWord} + $/) {print "user_is valid\n";
+if ($user_id =~ /^\p{PosixWord} + $/) {print "user_is valid\n";
 }
-unless ($user_id_invalid = ~ / ^ \ p {PosixWord} + $/) {
+unless ($user_id_invalid =~ /^\p{PosixWord} + $/) {
    print "user_id_invalid is invalid\n";
 }
 
@@ -255,13 +255,13 @@ unless ($user_id_invalid = ~ / ^ \ p {PosixWord} + $/) {
 my $password ='Ufy | &amp; 123_';
 my $passowrd_invalid1 ='abc def';
 my $passowrd_invalid2 ='abc a';
-if ($password = ~ / ^ \ p {PosixGraph} + $/) {
+if ($password =~ /^\p{PosixGraph} + $/) {
    print "password is valid\n";
 }
-unless ($passowrd_invalid1 = ~ / ^ \ p {PosixGraph} + $/) {
+unless ($passowrd_invalid1 =~ /^\p{PosixGraph} + $/) {
    print "passowrd_invalid1 is inalid\n";
 }
-unless ($passowrd_invalid2 = ~ / ^ \ p {PosixGraph} + $/) {
+unless ($passowrd_invalid2 =~ /^\p{PosixGraph} + $/) {
    print "passowrd_invalid2 is inalid\n";
 }
 </pre>

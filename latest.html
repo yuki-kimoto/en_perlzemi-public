@@ -56,7 +56,7 @@
 use v7;
 </pre>
 <p>
-  In the description of "use v7", "use strict;" which makes Perl grammar strict and "use warnings;" which outputs warnings are enabled, and you can write Perl with high maintainability in one line description.
+  In the description of "use v7 ", "use strict;" which makes Perl grammar strict and "use warnings;" which outputs warnings are enabled, and you can write Perl with high maintainability in one line description.
 </p>
 <p>
   You can use functions that were available as Perl 5 features, such as the say function.
@@ -112,10 +112,10 @@ use v7;
   Create a command prompt shortcut. Right-click to display properties. The link destination is as follows. The code 65001 is the UTF-8 code.
 </p>
 <pre>
-%windir% \ system32 \ cmd.exe / k "chcp 65001"
+%windir% \ system32 \ cmd.exe/k "chcp 65001"
 </pre>
 <p>
-  <img src = "/ images / command prompt / win_command_utf8.png">
+  <img src = "/ images/command prompt/win_command_utf8.png">
 </p>
 <p>
   For Perl programs, writing the source code in UTF-8 is currently the recommended method, so it's nice to be able to view UTF-8 at the command prompt.
@@ -224,7 +224,7 @@ Perl Club-Google Chrome
 my $win;
 {
   my $desktop_win = GetDesktopWindow ();
-  die "Oops!" if GetParent ($desktop_win)! = 0;
+  die "Oops!" if GetParent ($desktop_win) != 0;
 
   my @browser_wins;
   my $browser_name ='Chrome';
@@ -234,8 +234,8 @@ my $win;
     my $win_text = GetWindowText ($win);
 
     # Browser name
-    if ($win_text = ~ / \ b $browser_name \ b /) {
-      if ($win_text = ~ / Perl Club /) {
+    if ($win_text =~ /\ b $browser_name \ b /) {
+      if ($win_text =~ /Perl Club /) {
         push @browser_wins, $win;
       }
     }
@@ -384,14 +384,14 @@ $driver-&gt;get ('http://www.google.com');
 print $driver-&gt;get_title ();
 $driver-&gt;shutdown_binary ();
 </pre>
-<h4> When executing headless when there is no GUI screen such as Unix / Linux </h4>
+<h4> When executing headless when there is no GUI screen such as Unix/Linux </h4>
 <p>
   If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
 </p>
 <pre>
-When executing headless when there is no GUI screen such as # Unix / Linux
+When executing headless when there is no GUI screen such as # Unix/Linux
 use Selenium::Chrome;
-my $driver = Selenium::Chrome-&gt;new (
+my $driver = Selenium::Chrome-&gt;new(
   extra_capabilities =&gt; {
     'goog: chromeOptions' =&gt; {
       args =&gt; ['headless', 'disable-gpu', 'window-size = 1920,1080', 'no-sandbox']
@@ -410,7 +410,7 @@ $driver-&gt;shutdown_binary ();
   Could not create new session: unknown error: Chrome failed to start: exited abnormally.
 </p>
   (unknown error: DevToolsActivePort file doesn't exist)
-  (The process started from chrome location / usr / bin / google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) At access.pl line 79.
+  (The process started from chrome location/usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) At access.pl line 79.
 </blockquote>
 <h3> Preparation of execution environment </h3>
 <p>
@@ -419,7 +419,7 @@ $driver-&gt;shutdown_binary ();
 <p>
   It's a good idea to match Chrome browser and Chrome Driver versions as much as possible to avoid binary compatibility issues.
 </p>
-<h4> For Unix / Linux </h4>
+<h4> For Unix/Linux </h4>
 <p>
   <a href="https://centos.perlclub.net/blog/20210103090837.html">Install Chrome Driver - Cent OS 7</a>
 </p>
@@ -427,7 +427,7 @@ $driver-&gt;shutdown_binary ();
   <a href="https://centos.perlclub.net/blog/20210104090837.html">Install Google Chrome - CentOS 7</a>
 </p>
 <p>
-  For other <a href="https://linux.perlclub.net/">UNIX / Linux</a> such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
+  For other <a href="https://linux.perlclub.net/">UNIX/Linux</a> such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
 </p>
 <h4> Windows </h4>
 <p>
@@ -449,7 +449,7 @@ $driver-&gt;shutdown_binary ();
 <pre>
 # Generate driver. The following two are the same, but only work with Firefox 48+.
 my $driver = Selenium::Firefox-&gt;new;
-$driver = Selenium::Firefox-&gt;new (marionette_enabled =&gt; 1);
+$driver = Selenium::Firefox-&gt;new(marionette_enabled =&gt; 1);
  
 # Do something
 
@@ -457,7 +457,7 @@ $driver = Selenium::Firefox-&gt;new (marionette_enabled =&gt; 1);
 $driver-&gt;shutdown_binary;
 
 # For Firefox 47 and if it's too old. Marionettes are disabled.
-$driver = Selenium::Firefox-&gt;new (marionette_enabled =&gt; 0);
+$driver = Selenium::Firefox-&gt;new(marionette_enabled =&gt; 0);
 $driver-&gt;shutdown_binary; &lt;/pre&gt;
 </pre>
 <h3> Preparation of execution environment </h3>
@@ -522,16 +522,16 @@ my $line = "ID\tName\tPrice\n";
   There is one caveat regarding line breaks "\n".
 </p>
 <p>
-  In the source code of the program, "\n" is a single character and represents "LF" in ASCII code and "0A" in hexadecimal. This matches the Linx / Unix line feed code.
+  In the source code of the program, "\n" is a single character and represents "LF" in ASCII code and "0A" in hexadecimal. This matches the Linx/Unix line feed code.
 </p>
 <p>
-  One thing to keep in mind is that Perl's I / O layer automatically converts to OS line feed code when outputting to standard output or files.
+  One thing to keep in mind is that Perl's I/O layer automatically converts to OS line feed code when outputting to standard output or files.
 </p>
 <p>
-  "\n" is converted to a two-character line feed code "0D 0A" on Windows. On Unix / Linux / macOS, it is "0A" without conversion.
+  "\n" is converted to a two-character line feed code "0D 0A" on Windows. On Unix/Linux/macOS, it is "0A" without conversion.
 </p>
 <pre>
-# "0D 0A" on Windows, "0A" on Unix / Linux / Mac
+# "0D 0A" on Windows, "0A" on Unix/Linux/Mac
 print "Hello\n";
 </pre>
 <p>

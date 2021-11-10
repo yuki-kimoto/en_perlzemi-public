@@ -110,7 +110,7 @@
 <h3> New features </h3>
 <h4> __SUB__ </h4>
 <p>
-  It is now possible to write __SUB__, which is similar to __FILE__ and __PACKAGE__. This is a feature that allows you to get a reference to the subroutine you are currently executing, making it easier to write recursive subroutines. It can be used in the state of use 5.16 or use feature'current_sub'.
+  It is now possible to write __SUB__, which is similar to __FILE__ and __PACKAGE__. This is a feature that allows you to get a reference to the subroutine you are currently executing, making it easier to write recursive subroutines. It can be used in the state of use 5.16 or use feature 'current_sub'.
 </p>
 <pre>
 sub func {
@@ -174,7 +174,7 @@ use v5.16;
 </p>
 <pre>
     for (1..10_000_000) {
-        if ("foo" = ~ / (foo | (? &lt;capture&gt; bar))? /) {
+        if ("foo" =~ /(foo | (? &lt;capture&gt; bar))? /) {
             my $capture = $+ {capture}
         }
     }
@@ -185,7 +185,7 @@ use v5.16;
 </p>
 <h3> Deprecated </h3>
 <p>
-  Unicode database files located in lib / unicore are no longer read. This is to make Perl's core smaller. Use the new Unicode::UCD function instead.
+  Unicode database files located in lib/unicore are no longer read. This is to make Perl's core smaller. Use the new Unicode::UCD function instead.
 </p>
 <h3> Deprecated modules </h3>
 <ul>
@@ -248,7 +248,7 @@ use v5.16;
     abbrev.pl assert.pl bigfloat.pl bigint.pl bigrat.pl cacheout.pl
     complete.pl ctime.pl dotsh.pl exceptions.pl fastcwd.pl flush.pl
     getcwd.pl getopt.pl getopts.pl hostname.pl importenv.pl
-    lib / find {, depth} .pl look.pl newgetopt.pl open2.pl open3.pl
+    lib/find {, depth} .pl look.pl newgetopt.pl open2.pl open3.pl
     pwd.pl shellwords.pl stat.pl tainted.pl termcap.pl timelocal.pl
 </blockquote>
 <p>

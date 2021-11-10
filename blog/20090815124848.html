@@ -120,13 +120,13 @@
 <p>
   Since Perl 5.10 and later, you can use Time::Piece as a standard Perl module, so it's a good idea to use Time::Piece. For the handling of time by Time::Piece, see "<a href="/blog/20091105124627.html">Handling date and time by" Time::Piece "</a>".
 </p>
-<h3> DateTime initialization and acquisition of date / time information </h3>
+<h3> DateTime initialization and acquisition of date/time information </h3>
 <p>
   To handle dates generically, use the DateTime module.
 </p>
 <pre>
 use DateTime;
-my $dt = DateTime-&gt;new (
+my $dt = DateTime-&gt;new(
   year =&gt; 1964,
   month =&gt; 10,
   day =&gt; 16,
@@ -141,7 +141,7 @@ my $dt = DateTime-&gt;new (
 <p>
   You don't have to specify the year as a number from 1900 or the month as a number starting from 0, unlike the localtime function in the standard function or the Time::Local in the standard module.
 </p>
-<h4> Acquisition of date / time information </h4>
+<h4> Acquisition of date/time information </h4>
 <pre>
 # Get method to get time information
 my $year = $dt-&gt;year;
@@ -168,7 +168,7 @@ my $dt = DateTime-&gt;now (time_zone =&gt;'local');
   You can also specify the time zone explicitly.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (time_zone =&gt;'Asia / Tokyo');
+my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
 </pre>
 <p>
   It seems that specifying the time zone explicitly is a little slower than specifying local. However, explicit specification impairs portability.
@@ -197,21 +197,21 @@ my $dt = DateTime-&gt;from_epoch (epoch =&gt; $epoch, time_zone =&gt;'local');
   DateTime is a constructor that allows you to specify the time zone. You can reuse the DateTime::TimeZone object by creating it first.
 </p>
 <pre>
-my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'Asia / Tokyo');
+my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
 </pre>
 <h4> Creating a timezone object </h4>
 <p>
   Use the new method to create a timezone object. In the argument, specify the time zone name in name. (List of time zone names)
 </p>
 <pre>
-my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'Asia / Tokyo');
+my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
 </pre>
 <h4> Automatic generation of timezone objects </h4>
 <p>
   As shown below, if you specify the time zone in the DateTime constructor (new, now, etc.), the DateTime::TimeZone object is automatically created internally.
 </p>
 <pre>
-my $dt = DateTime-&gt;now (time_zone =&gt;'Asia / Tokyo');
+my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
 </pre>
 <p>
   Every time you create a DateTime object, a DateTime::TimeZone object will be created.
@@ -282,7 +282,7 @@ my $day_abbr = $dt-&gt;day_abbr;
 <pre>
 Since the # UTF-8 flag is set, encode it.
 my $encode_to;
-if ($^ O eq'MSWin32') {$encode_to ='shift-jis'}
+if ($^O eq 'MSWin32') {$encode_to ='shift-jis'}
 else {$encode_to ='utf8'}
 print(
   encode ($encode_to, $month_name) . "\n".
@@ -339,19 +339,19 @@ my $dt = DateTime-&gt;now (locale =&gt;'ja', time_zone =&gt;'local');
 # yyyy-mm-dd
 my $ymd = $dt-&gt;ymd;
 
-# yyyy / mm / dd
+# yyyy/mm/dd
 my $ymd_slash = $dt-&gt;ymd ('/');
 
 # mm-dd-yyyy
 my $mdy = $dt-&gt;mdy;
 
-# mm / dd / yyyy
+# mm/dd/yyyy
 my $mdy_slash = $dt-&gt;mdy ('/');
 
 # dd-mm-yyyy
 my $dmy = $dt-&gt;dmy;
 
-# dd / mm / yyyy
+# dd/mm/yyyy
 my $dmy_slash = $dt-&gt;dmy ('/');
 
 # Time information
@@ -368,7 +368,7 @@ my $ymdhms = $dt-&gt;datetime;
   Output result
 </p>
 <pre>
-(1) Convenient output method of DateTime date / time
+(1) Convenient output method of DateTime date/time
 Date (hyphen) 2008-11-14
 Date (slash) 2008/11/14
 Month, day, year (hyphen) 11-14-2008
@@ -952,7 +952,7 @@ Seconds and milliseconds (1 second is 1000 milliseconds)
   To simplify the date calculation, convert a specific time zone to UTC before calculating. Then, after the calculation is finished, return to the original time zone.
 </p>
 <pre>
-my $dt = DateTime-&gt;new (%user_input, time_zone =&gt; $user_tz);
+my $dt = DateTime-&gt;new(%user_input, time_zone =&gt; $user_tz);
 
 Convert to # UTC
 $dt-&gt;set_time_zone ('UTC');
@@ -1014,7 +1014,7 @@ use DateTime;
 # Initialization of DateTime object
 # (Use the same year, not the year elapsed since 1900.)
 # (Month counts from 1 instead of 0. 10 is his October.)
-my $dt = DateTime-&gt;new (
+my $dt = DateTime-&gt;new(
   year =&gt; 1964,
   month =&gt; 10,
   day =&gt; 16,
@@ -1036,7 +1036,7 @@ my $second = $dt-&gt;second;
 my $yday = $dt-&gt;day_of_year;
 my $qtr = $dt-&gt;quarter;
 
-print "(1) Date / time information of DateTime\n";
+print "(1) Date/time information of DateTime\n";
 print(
   "${year} year ${mon} month ${mday} day ${wday} th day\n".
   "${hour} hours ${minute} minutes ${second} seconds\n".
@@ -1048,7 +1048,7 @@ print(
   Execution result
 </p>
 <pre>
-(1) Date / time information of DateTime
+(1) Date/time information of DateTime
 October 16, 1964 5th day of the week
 16:12:47
 Day 290 (counting in one year)
@@ -1066,7 +1066,7 @@ use DateTime;
 my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
 # (1) -2 When explicitly specifying the time zone.
-# my $dt = DateTime-&gt;now (time_zone =&gt;'Asia / Tokyo');
+# my $dt = DateTime-&gt;now (time_zone =&gt;'Asia/Tokyo');
 
 # (1) -3 UTC Coordinated Universal Time
 # my $dt = DateTime-&gt;now;
@@ -1156,10 +1156,10 @@ use DateTime;
 use DateTime::TimeZone;
 
 # (1) Creating a timezone object
-my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'Asia / Tokyo');
+my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
 
 # When automatically acquiring the time zone from the OS settings
-# my $time_zone = DateTime::TimeZone-&gt;new (name =&gt;'local');
+# my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'local');
                                                      
 # (2) Use of timezone object
 my $dt1 = DateTime-&gt;now (time_zone =&gt; $time_zone);
@@ -1191,7 +1191,7 @@ my $day_abbr = $dt-&gt;day_abbr;
 
 Since the # UTF-8 flag is set, encode it.
 my $encode_to;
-if ($^ O eq'MSWin32') {$encode_to ='shift-jis'}
+if ($^O eq 'MSWin32') {$encode_to ='shift-jis'}
 else {$encode_to ='utf8'}
 
 print(
@@ -1223,7 +1223,7 @@ use DateTime::Locale;
 # For encoding
 use Encode;
 my $encode_to;
-if ($^ O eq'MSWin32') {$encode_to ='s
+if ($^O eq 'MSWin32') {$encode_to ='s
 hift-jis'}
 else {$encode_to ='utf8'}
 
@@ -1248,7 +1248,7 @@ use DateTime::Locale;
 
 my $dt = DateTime-&gt;now (time_zone =&gt;'local');
 
-print "(1) Convenient output method of DateTime date / time\n";
+print "(1) Convenient output method of DateTime date/time\n";
 my $ymd = $dt-&gt;ymd;
 my $ymd_slash = $dt-&gt;ymd ('/');
 my $mdy = $dt-&gt;mdy;
@@ -1264,11 +1264,11 @@ print(
   "Date (slash) $ymd_slash\n".
   "Month, day, year (hyphen) $mdy\n".
   "Month, day, year (slash) $mdy_slash\n".
-  "Day / month / year (hyphen) $dmy\n".
-  "Day / month / year (slash) $dmy_slash\n\n".
+  "Day/month/year (hyphen) $dmy\n".
+  "Day/month/year (slash) $dmy_slash\n\n".
   "Hour, minute, second (colon) $hms\n".
   "Hour, minute and second (hyphen) $hms_hyphen\n\n".
-  "Year / month / day / hour / minute / second $ymdhms\n"
+  "Year/month/day/hour/minute/second $ymdhms\n"
 );
 </pre>
 <p>
@@ -1499,8 +1499,8 @@ my $dt_mix = $dt-&gt;clone;
 $dt_mix = $dt_mix-&gt;add (months =&gt; 1)-&gt;subtract (days =&gt; 1);
 
 print "(2) Subtraction between DateTime objects\n";
-my $dt1 = DateTime-&gt;new (year =&gt; 2000, month =&gt; 2, day =&gt; 1);
-my $dt2 = DateTime-&gt;new (year =&gt; 2003, month =&gt; 3, day =&gt; 19);
+my $dt1 = DateTime-&gt;new(year =&gt; 2000, month =&gt; 2, day =&gt; 1);
+my $dt2 = DateTime-&gt;new(year =&gt; 2003, month =&gt; 3, day =&gt; 19);
 
 my $duration = $dt2- $dt1;
 
@@ -1528,7 +1528,7 @@ use warnings;
 use DateTime;
 
 # DateTime Subtraction between objects
-my $dt1 = DateTime-&gt;new (
+my $dt1 = DateTime-&gt;new(
   year =&gt; 2000,
   month =&gt; 2,
   day =&gt; 1,
@@ -1537,7 +1537,7 @@ my $dt1 = DateTime-&gt;new (
   second =&gt; 30
 );
 
-my $dt2 = DateTime-&gt;new (
+my $dt2 = DateTime-&gt;new(
   year =&gt; 2003,
   month =&gt; 3,
   day =&gt; 19,

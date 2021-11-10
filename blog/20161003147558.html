@@ -284,13 +284,13 @@ my @strs = qw (
   Perl has a <a href="/blog/20080226120403.html">chomp function</a> for removing line breaks, but this function is environment dependent.
 </p>
 <p>
-  When running on a Windows OS, remove the "CR + LF" which is a line break in Windows, and when running on Unix / Linux / Mac, remove "LF".
+  When running on a Windows OS, remove the "CR + LF" which is a line break in Windows, and when running on Unix/Linux/Mac, remove "LF".
 </p>
 <p>
   To ensure that line breaks are removed, it's a good idea to use the following <a href="/blog/20100827127859.html">regular expression</a>.
 </p>
 <pre>
-$str = ~ s / \ x0D? \ X0A? $//;
+$str =~ s/\ x0D? \ X0A? $//;
 </pre>
 <p>
   I'll talk more about regular expressions later.
@@ -481,12 +481,12 @@ EOS
 <pre>
 my $message = "It is my dog ​​\n";
 
-if ($message = ~ / dog /) {
+if ($message =~ /dog /) {
   ...
 }
 </pre>
 <p>
-  <b> = ~ </b> is called the pattern matching operator and is an operator for performing regular expression pattern matching.
+  <b> =~ </b> is called the pattern matching operator and is an operator for performing regular expression pattern matching.
 </p>
 <p>
   Regular expressions must be enclosed in the symbol "//".
@@ -498,10 +498,10 @@ if ($message = ~ / dog /) {
 <pre>
 my $message = "It is my dog ​​\n";
 
-$message = ~ s / dog / cat /;
+$message =~ s/dog/cat/;
 </pre>
 <p>
-  You can replace with the syntax <b> "s / string to replace / string after replacement /" </b>.
+  You can replace with the syntax <b> "s/string to replace/string after replacement /" </b>.
 </p>
 <p>
   See the following articles for a detailed explanation of regular expressions.
@@ -567,7 +567,7 @@ The # length function works correctly. 5 is returned.
 my $length = length $message;
 
 # Regular expressions work correctly
-if ($message = ~ / day /) {
+if ($message =~ /day /) {
   ...;
 }
 </pre>
@@ -607,13 +607,13 @@ if ($message = ~ / day /) {
 use strict;
 use warnings;
 use utf8;
-use Encode'decode';
+use Encode 'decode';
 
 # Read file
 while (my $line = &lt;&gt;) {
   $line = decode ('cp932', $line);
   
-  if ($line = ~ / Tanaka /) {
+  if ($line =~ /Tanaka /) {
     print "OK";
   }
 }
@@ -665,7 +665,7 @@ $name = decode ('cp932', $name);
   use utf8;
 </p>
 <p>
-  use Encode'encode';
+  use Encode 'encode';
 </p>
 <p>
   my $message ='aiueo';
@@ -688,7 +688,7 @@ $name = decode ('cp932', $name);
 </p>
 <pre>
 use utf8;
-use Encode'encode';
+use Encode 'encode';
 
 my $file ='test.txt';
 

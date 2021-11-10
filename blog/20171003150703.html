@@ -124,7 +124,7 @@ b.txt
 <pre>
 # Read all files
 while (my $file = readdir $dh) {
-  next if $file eq'.' || $file eq' ..';
+  next if $file eq '.' || $file eq ' ..';
   print "$file\n";
 }
 </pre>
@@ -137,7 +137,7 @@ while (my $file = readdir $dh) {
 <pre>
 my @files;
 while (my $file = readdir $dh) {
-  next if $file eq'.' || $file eq' ..';
+  next if $file eq '.' || $file eq ' ..';
   push @files, $file;
 }
 </pre>

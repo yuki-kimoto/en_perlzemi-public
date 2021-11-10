@@ -188,7 +188,7 @@ List of # cpan settings
     ..
     username undef
     wait_list undef
-    wget [/ usr / bin / wget]
+    wget [/ usr/bin/wget]
     yaml_load_code [0]
     yaml_module [YAML]
 </pre>
@@ -258,13 +258,11 @@ o conf urllist shift
 </p>
 <pre>
 # Proxy settings
-o conf http_proxy ftp_proxy = http: //proxy.you.com: 8000 /
-o conf ftp_proxy http_proxy = http: //proxy.you.com: 8000 /
-</pre>
-<p>
-  Also, even though only HTTP connection is allowed to the outside, if the urllist contains the ftp URL, the connection will fail. Include one of the URLs below at the beginning of your urllist.
-</p>
-<pre>
+o conf http_proxy ftp_proxy = http: //proxy.you.com: 8000/o conf ftp_proxy http_proxy = http: //proxy.you.com: 8000/&lt;/pre&gt;
+
+Also, even though only HTTP connection is allowed to the outside, if the urllist contains the ftp URL, the connection will fail. Include one of the URLs below at the beginning of your urllist.
+
+&lt;pre&gt;
 # When installing with HTTP connection
 http://ftp.nara.wide.ad.jp/pub/CPAN/
 http://ftp.jaist.ac.jp/pub/CPAN/
@@ -366,10 +364,10 @@ cat installed.txt | xargs cpan
   Q. I would like to know the distribution name of the installed module.
 </p>
 <p>
-  A. The distribution name is something like "ADAMK / DBD-SQLite-1.29.tar.gz"
+  A. The distribution name is something like "ADAMK/DBD-SQLite-1.29.tar.gz"
 </p>
 <p>
-  It has a structure like "author name / module name-version.tar.gz".
+  It has a structure like "author name/module name-version.tar.gz".
 </p>
 <p>
   You can find this out on "cpan -a".

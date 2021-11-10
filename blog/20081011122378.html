@@ -57,7 +57,7 @@
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161123147990.html">        <span itemprop = "name">Date / Time </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161123147990.html">        <span itemprop = "name">Date/Time </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
@@ -142,7 +142,7 @@ for my $key (keys %{$holidays_data-&gt;{'entry'}}) {
 # Character code is Perl's internal representation (UTF8), so encode as you like
 use Encode;
 my $encode_to;
-if ($^ O eq'MSWin32') {
+if ($^O eq 'MSWin32') {
   $encode_to ='shift-jis';
 }
 else {
@@ -227,7 +227,7 @@ else {
 use XML::Simple;
 
 # Parse XML
-my $xml_parser = XML::Simple-&gt;new ();
+my $xml_parser = XML::Simple-&gt;new();
 $XML::Simple::PREFERRED_PARSER ='XML::Parser';
 my $holidays_data = $xml_parser-&gt;XMLin ($holidays_xml);
 
@@ -261,7 +261,7 @@ $holidays_data-&gt;{entry}{URL as an identifier}{title}{content};
 <pre>
 use Encode;
 my $encode_to;
-if ($^ O eq'MSWin32') {
+if ($^O eq 'MSWin32') {
   $encode_to ='shift-jis';
 }
 else {

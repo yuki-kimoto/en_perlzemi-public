@@ -124,12 +124,12 @@ $$
 <p>
   The process ID is an identifier assigned when the process is started so that the OS can uniquely identify the process.
 </p>
-<h4> $^ T - Get the process start time </h4>
+<h4> $^T - Get the process start time </h4>
 <p>
-  Use the special variable "<strong> $^ T </strong>" to get the start time of the process.
+  Use the special variable "<strong> $^T </strong>" to get the start time of the process.
 </p>
 <pre>
-$^ T
+$^T
 </pre>
 <p>
   The time is obtained in epoch seconds (seconds from 00:00:00 on January 1, 1970).
@@ -176,7 +176,7 @@ my $pid = wait;
   To release the resources of the child process, use the waitpid function and write the following.
 </p>
 <pre>
-use POSIX'WNOHANG';
+use POSIX 'WNOHANG';
 $SIG{CHLD} = sub {while (waitpid (-1, WNOHANG)&gt; 0) {Resource release process}}
 </pre>
 <p>
@@ -268,7 +268,7 @@ use warnings;
 
 # (1) Open a pipe to read the output of other commands
 open my $pipe, '-|', 'dir'
-  or die qq / Can't open pipe: $! /;
+  or die qq/Can't open pipe: $!/;
 
 # (2) Read from pipe
 while (my $line = &lt;$pipe&gt;) {
@@ -280,7 +280,7 @@ close $pipe;
 <h4> (1) Open a pipe to read the output of other commands </h4>
 <pre>
 open my $pipe, '-|', 'dir'
-  or die qq / Can't open pipe: $! /;
+  or die qq/Can't open pipe: $!/;
 </pre>
 <p>
   The open function has special uses. To open a pipe that receives the output of other commands, specify "-|" in the second argument and the command in the third argument. This time, "dir", which is a command to output the contents of the directory, is specified.
@@ -310,7 +310,7 @@ use warnings;
 
 # (1) Open a pipe to send output to other commands
 open my $pipe, '|-', 'more'
-  or die qq / Can't open pipe: $! /;
+  or die qq/Can't open pipe: $!/;
 
 # (2) Write to pipe
 print $pipe "Hello world";
@@ -320,7 +320,7 @@ close $pipe;
 <h4> (1) Open a pipe to send output to other commands </h4>
 <pre>
 open my $pipe, '|-', 'more'
-  or die qq / Can't open pipe: $! /;
+  or die qq/Can't open pipe: $!/;
 </pre>
 <p>
   The open function has special uses. To open a pipe that receives the output of other commands, specify "|-" in the second argument and the command in the third argument. This time, "more", which is a command to output the contents of the file, is specified.

@@ -91,7 +91,7 @@
 </p>
 <pre>
 use Math::BigInt;
-my $big_int = Math::BigInt-&gt;new ("11111111111111111111111111111111111111111111");
+my $big_int = Math::BigInt-&gt;new("11111111111111111111111111111111111111111111");
 $big_int = $big_int * 2;
 </pre>
 <h4> Calculation of numbers with a large number of digits after the decimal point </h4>
@@ -100,7 +100,7 @@ $big_int = $big_int * 2;
 </p>
 <pre>
 use Math::BigFloat;
-my $big_float = Math::BigFloat-&gt;new ("0.1111111111111111111111111111111111111");
+my $big_float = Math::BigFloat-&gt;new("0.1111111111111111111111111111111111111");
 $big_float = $big_float * 2;
 </pre>
 <h3> Sample </h3>
@@ -114,12 +114,12 @@ use Math::BigInt;
 use Math::BigFloat;
 
 print "(1) Operation of large integers\n";
-my $big_int = Math::BigInt-&gt;new ("11111111111111111111111111111111111111111111");
+my $big_int = Math::BigInt-&gt;new("11111111111111111111111111111111111111111111");
 $big_int = $big_int * 2;
 print $big_int. "\n\n";
 
 print "(2) Operations on numbers with a large number of digits after the decimal point\n";
-my $big_float = Math::BigFloat-&gt;new ("0.1111111111111111111111111111111111111");
+my $big_float = Math::BigFloat-&gt;new("0.1111111111111111111111111111111111111");
 $big_float = $big_float * 2;
 print $big_float . "\n";
 </pre>

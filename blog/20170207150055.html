@@ -114,22 +114,20 @@ h2xs -A -n SomeModule
 </p>
 <pre>
 Changes
-lib /
-Makefile.PL
+lib/Makefile.PL
 MANIFEST
 ppport.h
 README
 SomeModule.xs
-t /
-</pre>
-<h4> XS file description </h4>
-<p>
-  I will create an XS file. Let's add a function called foo that displays "foo" to SomeModule, and a function called bar that displays "bar" to SomeModule::Util.
-</p>
-<p>
-  First of all, when you open the XS file, you should see something like the following.
-</p>
-<pre>
+t/&lt;/pre&gt;
+
+&lt;h4&gt; XS file description &lt;/h4&gt;
+
+I will create an XS file. Let's add a function called foo that displays "foo" to SomeModule, and a function called bar that displays "bar" to SomeModule::Util.
+
+First of all, when you open the XS file, you should see something like the following.
+
+&lt;pre&gt;
 # include "EXTERN.h"
 # include "perl.h"
 # include "XSUB.h"
@@ -199,7 +197,7 @@ XSLoader::load ('SomeModule', $VERSION);
   <b> SomeModule::Util source code </b>
 </p>
 <p>
-  Let's also create SomeModule::Util::bar. Save this in "lib / SomeModule / Util.pm". This is an almost empty file with only the package name declared.
+  Let's also create SomeModule::Util::bar. Save this in "lib/SomeModule/Util.pm". This is an almost empty file with only the package name declared.
 </p>
 <pre>
 package SomeModule::Util;

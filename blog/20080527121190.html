@@ -85,7 +85,7 @@
 
 
 <pre>
-use File::Path'rmtree';
+use File::Path 'rmtree';
 rmtree $dir;
 </pre>
 <h3> Sample </h3>
@@ -95,12 +95,12 @@ rmtree $dir;
 <pre>
 use strict;
 use warnings;
-use File::Path'rmtree';
+use File::Path 'rmtree';
 
 # Delete the directory
 # Preparation (creating a directory)
 my $dir1 = "dir_20080527_ $$";
-my $dir2 = "$dir1 / dir2";
+my $dir2 = "$dir1/dir2";
 mkdir $dir1
   or die "Unable to create $dir1.: $!";
 mkdir $dir2

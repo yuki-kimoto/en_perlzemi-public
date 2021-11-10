@@ -86,7 +86,7 @@
 
 
 <p>
-  In traditional Perl, standard modules didn't have an intuitive way to handle dates and times. It took a little tedious work to handle dates and times. Time::Piece provides intuitive manipulation of dates and times. It also has a date / time formatting function and an analysis function.
+  In traditional Perl, standard modules didn't have an intuitive way to handle dates and times. It took a little tedious work to handle dates and times. Time::Piece provides intuitive manipulation of dates and times. It also has a date/time formatting function and an analysis function.
 </p>
 <p>
   Perl has a module called DateTime, which is essentially the standard for date-handling modules. However, this module must be installed from CPAN, not the standard module. Also, since it is a huge module, it takes a lot of time to load the module. You may be a little dissatisfied with the execution speed except in an environment where modules can be expanded in memory such as mod_perl.
@@ -102,7 +102,7 @@
     <a href="/blog/20161123147990.html">Handling dates and times in Perl</a>
   </li>
 </ul>
-<h3> Acquisition of time / date information </h3>
+<h3> Acquisition of time/date information </h3>
 <p>
   Use the Time::Piece module as follows: When used, the Time::Piece module overwrites the core localtime and gmtime.
 </p>
@@ -132,10 +132,10 @@ my $second = $t-&gt;sec;
 my ($second, $minute, $hour, $mday, $month, $year) = localtime;
 
 # Month starts from 0, so add 1
-$month + = 1;
+$month += 1;
 
 # Year is obtained by subtracting 1900, so add 1900
-$year + = 1900;
+$year += 1900;
 </pre>
 <p>
   It is more intuitive to use localtime of Time::Piece to handle date and time information.
@@ -365,9 +365,9 @@ $t-&gt;is_leap_year
 # Get the last day of the month (return the number 28-31)
 $t-&gt;month_last_day
 </pre>
-<h3> Format date / time </h3>
+<h3> Format date/time </h3>
 <p>
-  You may want to format the date / time and output it. Time::Piece provides several fixed formats. You can also format it freely using the strftime method.
+  You may want to format the date/time and output it. Time::Piece provides several fixed formats. You can also format it freely using the strftime method.
 </p>
 <h4> [A] Formats provided by default </h4>
 <p>
@@ -538,12 +538,12 @@ Same as%T:%H:%M:%S. Hours, minutes and seconds (such as 23:14:03)
 # Byte string is always returned
 my $bytes = $tp-&gt;strftime("%Y year%m month");
 </pre>
-<h3> Parse the character string that expresses the date / time </h3>
+<h3> Parse the character string that expresses the date/time </h3>
 <p>
   You can parse date and time representations to create Time::Piece objects. Use the strptime method to parse dates and times.
 </p>
 <pre>
-my $t = Time::Piece-&gt;strptime(character string representing date / time, format);
+my $t = Time::Piece-&gt;strptime(character string representing date/time, format);
 </pre>
 <p>
   As a sample, let's parse the MySQL date representation and create a Time::Piece object. Use the above strftime format for the format.
@@ -562,7 +562,7 @@ my $t = Time::Piece::localtime;
 # Get week name in Japanese
 my $wday = $t-&gt;wdayname (@week_names);
 </pre>
-<h3> Calculation of date / time information </h3>
+<h3> Calculation of date/time information </h3>
 <h4> Tempe::Piece object subtraction </h4>
 <p>
   Time::Piece can also calculate dates and times. If you subtract between Time::Piece objects, the return value will be a Time::Seconds object. This object is in seconds when evaluated as a string.
@@ -593,7 +593,7 @@ $sec-&gt;financial_months;
 </p>
 <pre>
 $t + 533;
-$t + Time::Seconds-&gt;new (300);
+$t + Time::Seconds-&gt;new(300);
 </pre>
 <p>
   Time::Seconds also provides constants that can be added to the Time::Piece object.
@@ -618,7 +618,7 @@ $t + ONE_DAY * 5
 </pre>
 <h3> Date comparison </h3>
 <p>
-  You can use comparison operators to compare dates. You can use "<", ">", "<=", ">=", "<=>", "==" and "! =" .
+  You can use comparison operators to compare dates. You can use "<", ">", "<=", ">=", "<=>", "==" and " != " .
 </p>
 <pre>
 $t1 &lt;$t2

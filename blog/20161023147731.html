@@ -217,7 +217,7 @@ else {
   </tr>
   <tr>
     <td>
-      A! = B
+      A != B
     </td>
     <td>
       A and B are not equal
@@ -334,7 +334,7 @@ if ($num &lt;6) {
 
 # String comparison
 my $animal ='Cat':
-if ($animal eq'Dog') {
+if ($animal eq 'Dog') {
   ...
 }
 </pre>
@@ -768,7 +768,7 @@ Condition? Value 1: Value 2
 my $flag = 1;
 
 # Ternary operator
-my $animal = $flag?'Cat':'Dog';
+my $animal = $flag ?'Cat':'Dog';
 </pre>
 <p>
   You can do the same with conditional branching using if, but you can write it concisely using the ternary operator.
@@ -791,25 +791,25 @@ my $animal =
 <p>
   Since "$flag" is "2", "Mouse" is assigned to "$animal". When using ternary operators in layers, it is recommended to write them in multiple lines for easy viewing.
 </p>
-<h4> Set default values ​​with special assignment operators "|| =" and "// =" </h4>
+<h4> Set default values ​​with special assignment operators "||=" and "//=" </h4>
 <p>
-  Perl has a commonly used default value setting method. It is a way to use the <a href="/blog/20161005147566.html">special assignment operator</a> "|| =" or "// =" .
+  Perl has a commonly used default value setting method. It is a way to use the <a href="/blog/20161005147566.html">special assignment operator</a> "||=" or "//=" .
 </p>
 <pre>
 # If "$x" is false, set "$x" to 5.
-$x || = 5;
+$x ||= 5;
 
 # Set 7 to "$y" if "$x" is undefined
-$y // =7;
+$y //=7;
 </pre>
 <p>
-  For "A || = B", if "A" is false, the content of "B" is assigned to "A".
+  For "A ||= B", if "A" is false, the content of "B" is assigned to "A".
 </p>
 <p>
-  For "A // = B", if "A" is undefined, the contents of "B" will be assigned to "A".
+  For "A //= B", if "A" is undefined, the contents of "B" will be assigned to "A".
 </p>
 <p>
-  The syntax for "A // = B" was introduced in Perl 5.10, so you can use "A // = B" in Perl 5.10 and later. "A || = B" is prone to bugs, so it is recommended to use it. For example, if "A || = B", the default value will be set when "A" is "0".
+  The syntax for "A //= B" was introduced in Perl 5.10, so you can use "A //= B" in Perl 5.10 and later. "A ||= B" is prone to bugs, so it is recommended to use it. For example, if "A ||= B", the default value will be set when "A" is "0".
 </p>
 <p>
   Remember this because it's a frequently used syntax.

@@ -97,25 +97,22 @@ h2xs -A -n MyClass
 </p>
 <pre>
 Changes
-lib /
-Makefile.PL
+lib/Makefile.PL
 MANIFEST
 ppport.h
 README
 MyClass.xs
-t /
-</pre>
-<h3> Creating a class in C ++ </h3>
-<p>
-  Let's create a class in C ++. Create a header file and a source file.
-</p>
-<p>
-  <b> MyClass.h </b>
-</p>
-<p>
-  This is a header file. Declares constructors, methods and class methods. This is done to understand the difference between calling regular methods and class methods. The file name is "MyClass.h".
-</p>
-<pre>
+t/&lt;/pre&gt;
+
+&lt;h3&gt; Creating a class in C ++ &lt;/h3&gt;
+
+Let's create a class in C ++. Create a header file and a source file.
+
+&lt;b&gt; MyClass.h &lt;/b&gt;
+
+This is a header file. Declares constructors, methods and class methods. This is done to understand the difference between calling regular methods and class methods. The file name is "MyClass.h".
+
+&lt;pre&gt;
 # ifndef MYCLASS_INCLUDE
 # define MYCLASS_INCLUDE
 class MyClass {
@@ -190,7 +187,7 @@ void MyClass::print_static () {
 MODULE = MyClass PACKAGE = MyClass
 
 void
-new (...)
+new(...)
   PPCODE:
 {
   MyClass * self = new MyClass ();
@@ -254,7 +251,7 @@ void DESTORY (...)
 </p>
 <pre>
 void
-new (...)
+new(...)
   PPCODE:
 {
   MyClass * self = new MyClass ();
@@ -330,14 +327,14 @@ use warnings;
 
 WriteMakefile (
     NAME =&gt;'MyClass',
-    VERSION_FROM =&gt;'lib / MyClass.pm', # finds $VERSION
+    VERSION_FROM =&gt;'lib/MyClass.pm', # finds $VERSION
     PREREQ_PM =&gt; {}, # e.g., Module::Name =&gt; 1.1
     ($]&gt; = 5.005? # # Add these new keywords supported since 5.005
-      (ABSTRACT_FROM =&gt;'lib / MyClass.pm', # retrieve abstract from module
+      (ABSTRACT_FROM =&gt;'lib/MyClass.pm', # retrieve abstract from module
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') :()),
     LIBS =&gt; [''], # e.g., '-lm'
      DEFINE =&gt;'', # e.g., '-DHAVE_SOMETHING'
-     INC =&gt;'-I.', # e.g., '-I. -I / usr / include / other'
+     INC =&gt;'-I.', # e.g., '-I. -I/usr/include/other'
      OBJECT =&gt;'$(O_FILES)', # link all the C files too
      CC =&gt;'g ++',
      LD =&gt;'g ++',
@@ -416,7 +413,7 @@ foo (...)
   IV nums [] = {1, 2, 3};
   
   // Array length
-  size_t nums_len = sizeof nums / sizeof nums [0];
+  size_t nums_len = sizeof nums/sizeof nums [0];
   
   // Perl array
   AV * nums_av = (AV *) sv_2mortal ((SV *) newAV ());

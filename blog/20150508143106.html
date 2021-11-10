@@ -87,7 +87,9 @@
        Chinese characters
      </td>
      <td>
-       \ p {Han}
+<p>
+  \p{Han}
+</p>
      </td>
    </tr>
    <tr>
@@ -95,7 +97,9 @@
        Hiragana
      </td>
      <td>
-       \ p {Hiragana}
+<p>
+  \p{Hiragana}
+</p>
      </td>
    </tr>
    <tr>
@@ -103,7 +107,9 @@
        Kanakana
      </td>
      <td>
-       \ p {Katakana}
+<p>
+  \p{Katakana}
+</p>
      </td>
    </tr>
 </table>
@@ -113,7 +119,7 @@ use warnings;
 use utf8;
 
 my $str ='Ai Uesan';
-if ($str = ~ / [\ p {Han} \ p {Hiragana} \ p {Katakana}] /) {
+if ($str =~ /[\p{Han}\p{Hiragana}\p{Katakana}] /) {
    # Contains Japanese
 }
 </pre>

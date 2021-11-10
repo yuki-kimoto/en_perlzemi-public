@@ -91,8 +91,7 @@
 </p>
 <pre>
 # if defined(MULTIPLICITY)
-/ * cases 2 and 3 above * /
-
+/ * cases 2 and 3 above */
 # if defined(PERL_IMPLICIT_CONTEXT)
 # define vTHX aTHX
 # else
@@ -128,8 +127,7 @@
   my_perl is a global variable and represents an interpreter.
 </p>
 <pre>
-/* perlmain.c * /
-static PerlInterpreter * my_perl;
+/* perlmain.c */static PerlInterpreter * my_perl;
 </pre>
 <p>
   Next, if "PERL_IMPLICIT_CONTEXT" is not defined, "PERL_GET_INTERP" is defined as follows and is the current interpreter. This is a global variable.
@@ -139,19 +137,16 @@ static PerlInterpreter * my_perl;
 # define PERL_GET_INTERP (PL_curinterp)
 </pre>
 <pre>
-/* perlvar.h * /
-PERLVARI (G, curinterp, PerlInterpreter *, NULL)
+/* perlvar.h */PERLVARI (G, curinterp, PerlInterpreter *, NULL)
 / * currently running interpreter
 * (initial parent interpreter under under
-* useithreads) * /
-</pre>
-<p>
-  If "PERL_IMPLICT_CONTEXT" is defined, "vTHX" will be expanded as "my_perl", otherwise it will be expanded as "Gcurinterp". ..
-</p>
-<p>
-  And the access to the interpreted variable is defined as follows.
-</p>
-<pre>
+* useithreads) */&lt;/pre&gt;
+
+If "PERL_IMPLICT_CONTEXT" is defined, "vTHX" will be expanded as "my_perl", otherwise it will be expanded as "Gcurinterp". ..
+
+And the access to the interpreted variable is defined as follows.
+
+&lt;pre&gt;
 # define PL_AboveLatin1 (vTHX-&gt;IAboveLatin1)
 </pre>
 <h3> Global variable abstraction </h3>
@@ -166,8 +161,7 @@ PERLVARI (G, curinterp, PerlInterpreter *, NULL)
 # endif
 </pre>
 <pre>
-/* perlmain.c * /
-struct perl_vars * my_vars = init_global_struct ();
+/* perlmain.c */struct perl_vars * my_vars = init_global_struct ();
 </pre>
 <hr>
 <p>

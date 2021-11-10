@@ -97,25 +97,22 @@ h2xs -A -n SomeModule
 </p>
 <pre>
 Changes
-lib /
-Makefile.PL
+lib/Makefile.PL
 MANIFEST
 ppport.h
 README
 SomeModule.xs
-t /
-</pre>
-<h3> XS file description </h3>
-<p>
-  Let's write an XS file. The pointer of the structure is converted to size_t type by PTR2INT. In addition, size_t type is converted to SV * type, SV * type is converted to SV * type reference, and finally bless is converted to object.
-</p>
-<p>
-  The size_t type is an integer type, but the address value should be received as the size_t type.
-</p>
-<p>
-  When retrieving, dereference is performed, the value of IV contained in SV * is fetched, and INT2PTR is converted into a pointer to the structure.
-</p>
-<pre>
+t/&lt;/pre&gt;
+
+&lt;h3&gt; XS file description &lt;/h3&gt;
+
+Let's write an XS file. The pointer of the structure is converted to size_t type by PTR2INT. In addition, size_t type is converted to SV * type, SV * type is converted to SV * type reference, and finally bless is converted to object.
+
+The size_t type is an integer type, but the address value should be received as the size_t type.
+
+When retrieving, dereference is performed, the value of IV contained in SV * is fetched, and INT2PTR is converted into a pointer to the structure.
+
+&lt;pre&gt;
 # include "EXTERN.h"
 # include "perl.h"
 # include "XSUB.h"
@@ -130,7 +127,7 @@ typedef struct {
 MODULE = Point PACKAGE = Point
 
 void
-new (...)
+new(...)
   PPCODE:
 {
   // name of the class
@@ -256,7 +253,7 @@ use strict;
 use warnings;
 use Point;
 
-my $point = Point-&gt;new (1, 2);
+my $point = Point-&gt;new(1, 2);
 print $point-&gt;x . "\n";
 print $point-&gt;y . "\n";
 </pre>

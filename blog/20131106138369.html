@@ -138,7 +138,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object (output as graph.png in PNG format)
-my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # Create a PDL variable that represents 0 to 99 as the value of x
 my $x = pdl-&gt;sequence (100);
@@ -165,7 +165,7 @@ $pl-&gt;close;
   Here are some graph options. It can be passed as an argument to the new method.
 </p>
 <pre>
-my $pl = PDL::Graphics::PLplot-&gt;new (
+my $pl = PDL::Graphics::PLplot-&gt;new(
   DEV =&gt;'png',
   FILE =&gt;'graph.png',
   PAGESIZE =&gt; [500, 400]
@@ -317,7 +317,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object (output as graph.png in PNG format)
-my $pl = PDL::Graphics::PLplot-&gt;new (
+my $pl = PDL::Graphics::PLplot-&gt;new(
   DEV =&gt;'png',
   FILE =&gt;'graph.png',
   PAGESIZE =&gt; [600, 300],
@@ -360,7 +360,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value (0 to 4 in 0.1 increments)
 my $x = pdl-&gt;sequence (40) * 0.1;
@@ -389,7 +389,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
 my $x = pdl-&gt;sequence (200) * 0.1;
@@ -418,7 +418,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # e
 my $e = pdl [exp(1)];
@@ -451,7 +451,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # x value
 my $x = pdl-&gt;sequence (100) * 0.1 + 0.1;
@@ -480,7 +480,7 @@ use PDL;
 use PDL::Graphics::PLplot;
 
 # Create PLPlot object
-my $pl = PDL::Graphics::PLplot-&gt;new (DEV =&gt;'png', FILE =&gt;'graph.png');
+my $pl = PDL::Graphics::PLplot-&gt;new(DEV =&gt;'png', FILE =&gt;'graph.png');
 
 # data
 my $x = pdl-&gt;sequence (20);
@@ -488,7 +488,7 @@ my $pi = 4 * atan2 (1,1);
 my $y1 = $x ** 2;
 my $y2 = sqrt $x;
 my $y3 = $x ** 3;
-my $y4 = sin(($x / 20) * 2 * $pi);
+my $y4 = sin(($x/20) * 2 * $pi);
 my $ys = $y1-&gt;cat ($y2, $y3, $y4);
 
 # Strip plot
@@ -497,7 +497,7 @@ $pl-&gt;stripplots (
   $ys,
   PLOTTYPE =&gt;'LINE',
   TITLE =&gt;'functions',
-  YLAB =&gt; ['x ** 2', 'sqrt(x)', 'x ** 3', 'sin(x / 20 * 2pi)'],
+  YLAB =&gt; ['x ** 2', 'sqrt(x)', 'x ** 3', 'sin(x/20 * 2pi)'],
   COLOR =&gt; ['GREEN', 'DEEPSKYBLUE', 'DARKORCHID1', 'DEEPPINK'],
   XLAB =&gt;'X label'
 );

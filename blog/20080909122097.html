@@ -89,7 +89,7 @@
   The module that finds pseudo-random numbers by the Mersenne Twister method is <strong> Math::Random::MT </strong>. You can get it from CAPN.
 </p>
 <pre>
-use Math::Random::MT qw / rand srand /;
+use Math::Random::MT qw/rand srand/;
 
 srand time ^ $$;
 my $num = rand 100
@@ -108,7 +108,7 @@ my $num = rand 100
 use strict;
 use warnings;
 
-use Math::Random::MT qw / rand srand /;
+use Math::Random::MT qw/rand srand/;
 
 print "(1) Generates a random random number.\n";
 # Give as random an initial value as possible.

@@ -155,14 +155,14 @@ tgamma
   Perl 5.22 adds a new flag for <a href="/blog/20100827127859.html">regular expressions</a> that doesn't use regular parentheses for capture. This makes it possible to write complex regular expressions concisely without using the uncaptured parentheses "(? :)".
 </p>
 <pre>
- "hello" = ~ / (hi | hello) / n
+ "hello" =~ /(hi | hello)/n
 </pre>
 <p>
   I'm using parentheses, but I don't capture them. If you want to capture with the n option, do the following:
 </p>
 <pre>
-"hello" = ~ / (?-n :( hi | hello)) / n; # $1 is "hello"
-"hello" = ~ / (? &lt;greet&gt; hi | hello) / n; # $1 is "hello", $+ {greet} is also "hello"
+"hello" =~ /(?-n :( hi | hello))/n; # $1 is "hello"
+"hello" =~ /(? &lt;greet&gt; hi | hello)/n; # $1 is "hello", $+ {greet} is also "hello"
 </pre>
 <p>
   When writing complex regular expressions, it might be easier to see them in combination with the n option and a named capture.
@@ -249,7 +249,7 @@ defined(%hash)
   Also, I think it's great that the performance of methods and multi-level dereferences has improved. For example, it was reported that the Perl web framework Mojolicious had a performance improvement of 20%or more after upgrading to Perl 5.22.
 </p>
 <p>
-  Also, I'm happy to say that converting warnings to fatal errors has been deprecated, giving you the possibility to add them when "use warnings" is "use v5.xx". It was opened. Early policy changes will help improve functions later.
+  Also, I'm happy to say that converting warnings to fatal errors has been deprecated, giving you the possibility to add them when "use warnings " is "use v5.xx". It was opened. Early policy changes will help improve functions later.
 </p>
 
   </div>

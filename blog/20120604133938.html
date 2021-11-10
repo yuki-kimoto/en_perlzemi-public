@@ -82,13 +82,13 @@
 
 
 <pre>
-my $menseki = "100m \ x {00B2}"; # 100 square meters
+my $menseki = "100m\x{00B2}"; # 100 square meters
 </pre>
 <p>
   The code point that corresponds to the small 2 is <b> 00B2 </b>.
 </p>
 <p>
-  This is an internal string, so you need to encode it in UTF-8 when you actually output it. Also, in the source code, let's "use utf8" so that all characters are internal strings.
+  This is an internal string, so you need to encode it in UTF-8 when you actually output it. Also, in the source code, let's "use utf8 " so that all characters are internal strings.
 </p>
 <pre>
 print encode ('UTF-8', $menseki);
@@ -102,7 +102,7 @@ print encode ('UTF-8', $menseki);
 </p>
 <ul>
   <li>
-    <a href="http://nakamura001.hatenablog.com/entry/20100620/1277035425">Superscript / Subscript</a>
+    <a href="http://nakamura001.hatenablog.com/entry/20100620/1277035425">Superscript/Subscript</a>
   </li>
 </ul>
 

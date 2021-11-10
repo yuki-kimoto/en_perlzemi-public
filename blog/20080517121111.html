@@ -85,7 +85,7 @@
 
 
 <pre>
-use File::Basename'fileparse';
+use File::Basename 'fileparse';
 my ($base_name, $dir) = fileparse $file;
 </pre>
 <p>
@@ -102,9 +102,9 @@ use warnings;
 
 # Extract the directory name and base name from the file name
 
-use File::Basename'fileparse';
+use File::Basename 'fileparse';
 
-my $file_unix ='dir1 / dir2 / base_name.txt';
+my $file_unix ='dir1/dir2/base_name.txt';
 my $file_win ='dir1 \\ dir2 \\ base_name.txt';
                                
 print "1: Extract the directory name and base name from the file name.\n";
@@ -129,8 +129,7 @@ print "\$base_name_only = $base_name_only\n\n";
 <pre>
 1: Extract the directory name and base name from the file name.
 For Unix
-$dir = dir1 / dir2 /
-$base_name = base_name.txt
+$dir = dir1/dir2/$base_name = base_name.txt
 
 For Windows
 $dir = dir1 \ dir2 \

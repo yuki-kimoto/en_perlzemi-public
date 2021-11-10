@@ -90,12 +90,12 @@
 <pre>
 use strict;
 use warnings;
-use Fcntl qw /: DEFAULT: flock: seek /;
+use Fcntl qw /: DEFAULT: flock: seek/;
 
 # Be careful as it will be overwritten
 my $file = "data_20080814.txt";
 
-# Open in read / write mode (not very secure)
+# Open in read/write mode (not very secure)
 If there is no file with # O_CREAT, create it.
 sysopen(my $fh, $file, O_RDWR | O_CREAT)
   or die "Cannot open $file: $!";
@@ -134,9 +134,9 @@ print "Current count: $cnt\n";
 use strict;
 use warnings;
 use FindBin;
-use Time::HiRes'usleep';
+use Time::HiRes 'usleep';
 
-my $script = "$FindBin::Bin / sample_20080814.pl";
+my $script = "$FindBin::Bin/sample_20080814.pl";
 
 while (1) {
   # Repeat the above script.
@@ -168,7 +168,7 @@ while (1) {
   The <a href="/blog/20180310152509.html">Fcntl</a> module allows you to use the file locking constants used by flock.
 </p>
 <pre>
-use Fcntl qw /: DEFAULT: flock: seek /;
+use Fcntl qw /: DEFAULT: flock: seek/;
 </pre>
 <p>
   Use use Fcntl qw (: flock) to read the constants used by flock. There are three constants read by the: flock tag: LOCK_SH, LOCK_EX, and LOCK_UN.
@@ -205,9 +205,9 @@ use Fcntl qw /: DEFAULT: flock: seek /;
 <p>
   As a side note: DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the <a href="/blog/20080804121794.html">sysopen function</a>. Therefore, it is specified.
 </p>
-<h4> (2) If the file does not exist, create it and open it in read / write mode </h4>
+<h4> (2) If the file does not exist, create it and open it in read/write mode </h4>
 <pre>
-# Open in read / write mode (not very secure)
+# Open in read/write mode (not very secure)
 If there is no file with # O_CREAT, create it.
 sysopen(my $fh, $file, O_RDWR | O_CREAT)
   or die "Cannot open $file: $!";
@@ -261,9 +261,9 @@ close $fh
 <h3> A brief explanation of the loop script </h3>
 <pre>
 use FindBin;
-use Time::HiRes'usleep';
+use Time::HiRes 'usleep';
 
-my $script = "$FindBin::Bin / sample_20080814.pl";
+my $script = "$FindBin::Bin/sample_20080814.pl";
 
 while (1) {
   # Repeat the above script.

@@ -85,14 +85,14 @@
 
 
 <pre>
-use File::Copy'copy';
+use File::Copy 'copy';
 copy $file, $copy_name;
 </pre>
 <p>
   You can also copy the file into a directory.
 </p>
 <pre>
-use File::Copy'copy';
+use File::Copy 'copy';
 copy $file, $dir;
 </pre>
 <h3> Sample </h3>
@@ -103,7 +103,7 @@ copy $file, $dir;
 use strict;
 use warnings;
 use Fcntl;
-use File::Copy'copy';
+use File::Copy 'copy';
 
 # Copy the file.
 my $file = "sample_20080521_$$. txt";

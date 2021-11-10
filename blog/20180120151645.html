@@ -77,19 +77,17 @@
   <a href="/blog/20100827127859.html">Regular expression</a> could be written as follows by combining pattern matching operators.
 </p>
 <pre>
-$string = ~ / cat /
-</pre>
-<p>
-  But now, suppose you want to match the path of a URL, for example. You can escape the slash and write:
-</p>
-<pre>
-$string = ~ / \ / foo \ / bar \ / baz /
-</pre>
-<p>
-  Isn't it a little difficult to read? In Perl, there is a way to change the regular expression enclosing character "/" to another enclosing character. Write as follows.
-</p>
-<pre>
-$string = ~ m | / foo / bar / baz |
+$string =~ /cat/&lt;/pre&gt;
+
+But now, suppose you want to match the path of a URL, for example. You can escape the slash and write:
+
+&lt;pre&gt;
+$string =~ /\/foo \/bar \/baz/&lt;/pre&gt;
+
+Isn't it a little difficult to read? In Perl, there is a way to change the regular expression enclosing character "/" to another enclosing character. Write as follows.
+
+&lt;pre&gt;
+$string =~ m |/foo/bar/baz |
 </pre>
 <p>
   Prefix it with an "m" to change the enclosing character to something else. The following combinations can be used as enclosing characters.

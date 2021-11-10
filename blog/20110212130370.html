@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl file input / output basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Let's master the basics of Perl's file I / O. The goal is to be able to read and write text files.">
+<title> Perl file input/output basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="Let's master the basics of Perl's file I/O. The goal is to be able to read and write text files.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl file input / output basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Let's master the basics of Perl's file I / O. The goal is to be able to read and write text files." />
+<meta name="twitter:title" content=" Perl file input/output basics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="Let's master the basics of Perl's file I/O. The goal is to be able to read and write text files." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -61,9 +61,9 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20110212130370.html"> Perl file input / output basics </a></h2>
+<h2><a href="/blog/20110212130370.html"> Perl file input/output basics </a></h2>
 <p>
-  Let's master the basics of Perl's file I / O. The goal is to be able to read and write text files.
+  Let's master the basics of Perl's file I/O. The goal is to be able to read and write text files.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -91,7 +91,7 @@
 <pre>
 my $file ='data.txt';
 open my $fh, '&lt;', $file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 </pre>
 <p>
   I will explain the process of opening files one by one.
@@ -165,11 +165,11 @@ open my $fh, '&lt;', $file
   You can use Japanese file names in Perl, but you must always specify the file name with the character code of each OS.
 </p>
 <p>
-  Save the source code in UTF-8 and add "use utf8" at the beginning. Use the encode function to convert to the character code of each OS.
+  Save the source code in UTF-8 and add "use utf8 " at the beginning. Use the encode function to convert to the character code of each OS.
 </p>
 <pre>
 use utf8;
-use Encode'encode';
+use Encode 'encode';
 
 my $file = "aiueo";
 
@@ -220,7 +220,7 @@ Can't open file "data.txt": No such file or directory at a.pl line 6.
   </li>
 </ol>
 <pre>
-die qq / Can't open file "$file": $! /;
+die qq/Can't open file "$file": $!/;
 </pre>
 <p>
   "Can't open file" $file "" tells the user that the file open failed. Also, the <a href="/blog/20161102147817.html">special variable</a> called $! Is set to the content of the message notified by the OS when the system call fails. Please include the exception message.
@@ -236,7 +236,7 @@ die qq / Can't open file "$file": $! /;
 # Open in read mode
 my $file ='data.txt';
 open my $fh, '&lt;', $file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 </pre>
 <p>
   Use the <a href="/blog/20080722121673.html">line input operator</a> to read the file line by line.
@@ -280,7 +280,7 @@ close $fh;
 # Open in additional write mode
 my $file ='data.txt';
 open my $fh, '&gt;', $file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 </pre>
 <p>
   Use the <a href="/blog/20170404149131.html">print function</a> to write a string to the file.
@@ -299,7 +299,7 @@ print $fh $str;
   After writing, close the file. In the case of writing, writing to the file is completed when close is performed, so it is safe to add exception handling.
 </p>
 <pre>
-close $fh or die qw / Can't close file "$file": $! /;
+close $fh or die qw/Can't close file "$file": $!/;
 </pre>
 <p>
   You can see that the string "Hello" is written in data.txt.
@@ -312,7 +312,7 @@ close $fh or die qw / Can't close file "$file": $! /;
 # Open in write mode
 my $file ='data.txt';
 open my $fh, '&gt;&gt;', $file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 </pre>
 <p>
   Use the print function to write a string to a file.
@@ -325,7 +325,7 @@ print $fh $str;
   After writing, close the file. In the case of writing, writing to the file is completed when close is performed, so it is safe to add exception handling.
 </p>
 <pre>
-close $fh or die qw / Can't close file "$file": $! /;
+close $fh or die qw/Can't close file "$file": $!/;
 </pre>
 <p>
   When you run the program repeatedly, you can see that the character string "Hello" is added to data.txt.
@@ -424,7 +424,7 @@ chomp string;
 # File open
 my $file ='data.txt';
 open my $fh, '&lt;', $file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 
 # Read file
 {
@@ -449,9 +449,9 @@ open my $fh, '&lt;', $file
 <p>
   If you don't mind changing the line feed code that is output, it is better to output\n.
 </p>
-<h3> File read / write approach </h3>
+<h3> File read/write approach </h3>
 <p>
-  If you want to read or write a file, you may think that you should open it in read / write mode in open mode, but when you actually read / write, it generally does not open in read / write mode. This is because if the system crashes during writing, the original contents will be destroyed. If you keep the original contents until the writing is completed, the original contents will remain even if it crashes during writing.
+  If you want to read or write a file, you may think that you should open it in read/write mode in open mode, but when you actually read/write, it generally does not open in read/write mode. This is because if the system crashes during writing, the original contents will be destroyed. If you keep the original contents until the writing is completed, the original contents will remain even if it crashes during writing.
 </p>
 <p>
   So, to read and write to a file, take the following approach.
@@ -480,12 +480,12 @@ open my $fh, '&lt;', $file
 use strict;
 use warnings;
 
-use File::Copy'move';
+use File::Copy 'move';
 
 # (1) Read the contents of the file
 my $file ='date.txt';
 open my $fh, '&lt;', $file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 my $content = do {local $/; &lt;$fh&gt;};
 close $fh;
 
@@ -495,20 +495,20 @@ $content ='Hello!';
 # (3) Export to temporary file
 my $temp_file = "$file. $$.". Int (rand 10000);
 open my $temp_fh, '&gt;', $temp_file
-  or die qq / Can't open file "$file": $! /;
+  or die qq/Can't open file "$file": $!/;
 print $temp_fh $content;
-close $temp_fh or die qq / Can't open file "$file": $! /;
+close $temp_fh or die qq/Can't open file "$file": $!/;
 
 # (4) Change the temporary file name to the original file name
 move $temp_file, $file
-  or die qq / Can't move "$temp_file" to "$file": $! /;
+  or die qq/Can't move "$temp_file" to "$file": $!/;
 </pre>
 <p>
   (Reference) <a href="/blog/20100408127089.html">File::Copy</a>
 </p>
-<h3> File I / O Techniques </h3>
+<h3> File I/O Techniques </h3>
 <p>
-  Please refer to the following for various file input / output techniques.
+  Please refer to the following for various file input/output techniques.
 </p>
 <h4> Handling CSV files </h4>
 <ul>
@@ -528,19 +528,19 @@ move $temp_file, $file
     <a href="/blog/20100204126425.html">Binary mode - binmode function</a>
   </li>
 </ul>
-<h4> File read / write </h4>
+<h4> File read/write </h4>
 <ul>
   <li>
     <a href="/blog/20080809121824.html">Read and write files safely</a>
   </li>
 </ul>
-<h4> OS input / output mechanism </h4>
+<h4> OS input/output mechanism </h4>
 <ul>
   <li>
     <a href="/blog/20080730121743.html">Standard input, standard output, standard error output</a>
   </li>
   <li>
-    <a href="/blog/20080731121760.html">Standard I / O and redirection</a>
+    <a href="/blog/20080731121760.html">Standard I/O and redirection</a>
   </li>
   <li>
     <a href="/blog/20080801121768.html">Pipe</a>

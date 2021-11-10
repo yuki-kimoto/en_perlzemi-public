@@ -96,7 +96,7 @@
   In your local environment, the CPAN module may be present, but not on the server. If you add the following description to the beginning of the script, the error content when loading fails will be displayed.
 </p>
 <pre>
-use CGI::Carp'fatalsToBrowser';
+use CGI::Carp 'fatalsToBrowser';
 </pre>
 <h3> Line feed code conversion error </h3>
 <p>
@@ -111,7 +111,7 @@ use CGI::Carp'fatalsToBrowser';
   An error will occur if the Perl path on the first line is incorrect.
 </p>
 <pre>
-# ! / usr / bin / perl
+# !/usr/bin/perl
 </pre>
 
   </div>

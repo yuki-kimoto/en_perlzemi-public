@@ -99,12 +99,12 @@
 use MIME::Lite;
 
 # Create multipart message
-my $msg = MIME::Lite-&gt;new (
+my $msg = MIME::Lite-&gt;new(
   From =&gt;'me@myhost.com',
   To =&gt;'you@yourhost.com',
   Cc =&gt;'some@other.com, some@more.com',
   Subject =&gt;'A message with 2 parts ...',
-  Type =&gt;'multipart / mixed'
+  Type =&gt;'multipart/mixed'
 );
 
 # Add text
@@ -115,7 +115,7 @@ $msg-&gt;attach (
 
 # Add image
 $msg-&gt;attach (
-  Type =&gt;'image / gif',
+  Type =&gt;'image/gif',
   Path =&gt;'aaa000123.gif',
   Filename =&gt;'logo.gif',
   Disposition =&gt;'attachment'
@@ -162,15 +162,15 @@ $msg-&gt;send;
 <pre>
 use utf8;
 use MIME::Lite;
-use Encode'encode';
+use Encode 'encode';
 
 # Create multipart message
-my $msg = MIME::Lite-&gt;new (
+my $msg = MIME::Lite-&gt;new(
   From =&gt;'me@myhost.com',
   To =&gt;'you@yourhost.com',
   Cc =&gt;'some@other.com, some@more.com',
   Subject =&gt; encode ('MIME-Header-ISO_2022_JP', 'mail title'),
-  Type =&gt;'multipart / mixed'
+  Type =&gt;'multipart/mixed'
 );
 
 # Add text
@@ -181,7 +181,7 @@ $msg-&gt;attach (
 
 # Add image
 $msg-&gt;attach (
-  Type =&gt;'image / gif',
+  Type =&gt;'image/gif',
   Path =&gt;'aaa000123.gif',
   Filename =&gt;'logo.gif',
   Disposition =&gt;'attachment'
@@ -197,15 +197,15 @@ $msg-&gt;send;
 <pre>
 use utf8;
 use MIME::Lite;
-use Encode'encode';
+use Encode 'encode';
 
 # Create multipart message
-my $msg = MIME::Lite-&gt;new (
+my $msg = MIME::Lite-&gt;new(
   From =&gt;'me@myhost.com',
   To =&gt;'you@yourhost.com',
   Cc =&gt;'some@other.com, some@more.com',
   Subject =&gt; encode ('MIME-Header', 'mail title'),
-  Type =&gt;'multipart / mixed'
+  Type =&gt;'multipart/mixed'
 );
 
 # Add text
@@ -216,7 +216,7 @@ $msg-&gt;attach (
 
 # Add image
 $msg-&gt;attach (
-  Type =&gt;'image / gif',
+  Type =&gt;'image/gif',
   Path =&gt;'aaa000123.gif',
   Filename =&gt;'logo.gif',
   Disposition =&gt;'attachment'
@@ -242,7 +242,7 @@ $msg-&gt;send;
   MIME::Lite is easy to use, but is currently deprecated.
 </p>
 <p>
-  MIME::Lite is personally the easiest email sending module to use, but if you follow the community's wishes, <a href="http://search.cpan.org/~rjbs/Email-Sender-1.300031/lib/" Use Email / Sender.pm">Email::Sender</a>.
+  MIME::Lite is personally the easiest email sending module to use, but if you follow the community's wishes, <a href="http://search.cpan.org/~rjbs/Email-Sender-1.300031/lib/" Use Email/Sender.pm">Email::Sender</a>.
 </p>
 <h4> Garbled characters occur </h4>
 <p>

@@ -97,25 +97,22 @@ h2xs -A -n SomeModule
 </p>
 <pre>
 Changes
-lib /
-Makefile.PL
+lib/Makefile.PL
 MANIFEST
 ppport.h
 README
 SomeModule.xs
-t /
-</pre>
-<h3> Creating a C language library </h3>
-<p>
-  First, let's create a C language library. Create a header file and a source file.
-</p>
-<p>
-  <b> mylib.h </b>
-</p>
-<p>
-  This is a header file. Declaring mylib_print.
-</p>
-<pre>
+t/&lt;/pre&gt;
+
+&lt;h3&gt; Creating a C language library &lt;/h3&gt;
+
+First, let's create a C language library. Create a header file and a source file.
+
+&lt;b&gt; mylib.h &lt;/b&gt;
+
+This is a header file. Declaring mylib_print.
+
+&lt;pre&gt;
 void mylib_print();
 </pre>
 <p>
@@ -165,14 +162,14 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile (
     NAME =&gt;'SomeModule',
-    VERSION_FROM =&gt;'lib / SomeModule.pm', # finds $VERSION
+    VERSION_FROM =&gt;'lib/SomeModule.pm', # finds $VERSION
     PREREQ_PM =&gt; {}, # e.g., Module::Name =&gt; 1.1
     ($]&gt; = 5.005? # # Add these new keywords supported since 5.005
-      (ABSTRACT_FROM =&gt;'lib / SomeModule.pm', # retrieve abstract from module
+      (ABSTRACT_FROM =&gt;'lib/SomeModule.pm', # retrieve abstract from module
        AUTHOR =&gt;'A. U. Thor &lt;kimoto@sakura.ne.jp&gt;') :()),
     LIBS =&gt; [''], # e.g., '-lm'
     DEFINE =&gt;'', # e.g., '-DHAVE_SOMETHING'
-    INC =&gt;'-I.', # e.g., '-I. -I / usr / include / other'
+    INC =&gt;'-I.', # e.g., '-I. -I/usr/include/other'
     OBJECT =&gt;'$(O_FILES)', # link all the C files too
 );
 </pre>

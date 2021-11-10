@@ -85,7 +85,7 @@
 </div>
 
 
-<h3> Output, scalar, standard input / output </h3>
+<h3> Output, scalar, standard input/output </h3>
 <p>
   It seems that XS is easy to understand if you understand the correspondence between Perl and XS (C language) API.
 </p>
@@ -98,7 +98,7 @@ print "Hello";
 PerlIO_printf(PerlIO_stdout (), "Hello");
 </pre>
 <p>
-  PerlIO_printf is a function that corresponds to printf in the C standard library. The first argument is a PerlIO * type variable, and the second argument is a char * type variable. The standard output can be obtained with the PerlIO_stdout function. In XS, the standard library of standard input / output C is not used, but the functions provided by Perl are used. This is detailed in a document called perlapio.
+  PerlIO_printf is a function that corresponds to printf in the C standard library. The first argument is a PerlIO * type variable, and the second argument is a char * type variable. The standard output can be obtained with the PerlIO_stdout function. In XS, the standard library of standard input/output C is not used, but the functions provided by Perl are used. This is detailed in a document called perlapio.
 </p>
 <h4> String </h4>
 <pre>
@@ -177,7 +177,7 @@ char * str = SvPV_nolen (sv_some);
 <p>
   The first argument of the SvPV_nolen function is an SV * type variable. The length will be calculated automatically.
 </p>
-<h4> File input / output </h4>
+<h4> File input/output </h4>
 <pre>
 # Perl
 sub print_line {
@@ -213,7 +213,7 @@ print_line (...)
 }
 </pre>
 <p>
-  difficult. I wonder if this is the file input / output.
+  difficult. I wonder if this is the file input/output.
 </p>
 <h4> Keep SV * volatile </h4>
 <p>
@@ -605,7 +605,7 @@ HV * hv_var = get_hv ("Foo::b"ar ", GV_ADD);
 </p>
 <pre>
 # Perl
-my $re = qr / [0-9] + /;
+my $re = qr/[0-9] +/;
 
 # XS (the second argument of pregcomp is a regular expression flag)
 SV * sv_re_str = newSVpv ("[0-9] +", 0);
@@ -624,7 +624,7 @@ REGEXP * sv_re = (REGEXP *) sv_2mortal ((SV *) pregcomp (sv_re_str, 0));
 </p>
 <pre>
 # Perl
-my $re = qr / abc / im;
+my $re = qr/abc/im;
 
 # XS
 SV * sv_re_str = newSVpv ("[0-9] +", 0);
@@ -636,7 +636,9 @@ REGEXP * sv_re = pregcomp (sv_re_str, RXf_PMf_FOLD | RXf_PMf_MULTILINE);
 <table>
   <tr>
     <td>
-      / m
+<p>
+  /m
+</p>
     </td>
     <td>
       RXf_PMf_MULTILINE
@@ -645,7 +647,9 @@ REGEXP * sv_re = pregcomp (sv_re_str, RXf_PMf_FOLD | RXf_PMf_MULTILINE);
  
   <tr>
     <td>
-      / s
+<p>
+  /s
+</p>
     </td>
     <td>
       RXf_PMf_SINGLELINE
@@ -654,7 +658,9 @@ REGEXP * sv_re = pregcomp (sv_re_str, RXf_PMf_FOLD | RXf_PMf_MULTILINE);
  
   <tr>
     <td>
-      / i
+<p>
+  /i
+</p>
     </td>
     <td>
       RXf_PMf_FOLD
@@ -662,7 +668,9 @@ REGEXP * sv_re = pregcomp (sv_re_str, RXf_PMf_FOLD | RXf_PMf_MULTILINE);
   </tr>
   <tr>
     <td>
-      / x
+<p>
+  /x
+</p>
     </td>
     <td>
       RXf_PMf_EXTENDED
@@ -674,17 +682,9 @@ REGEXP * sv_re = pregcomp (sv_re_str, RXf_PMf_FOLD | RXf_PMf_MULTILINE);
   Use the <b> pregexec </b> function to execute a regular expression. The arguments of the pregexec function are very complicated.
 </p>
 <pre>
-/ * pregexec - Match a regular expression against a string. * /
-I32
+/ * pregexec - Match a regular expression against a string. */I32
 pregexec (
-  REGEXP * const prog, / * Compiled regular expression * /
-  char * stringarg, / * Position to start string matching * /
-  char * stretch, / * End of string (null pointer position) * /
-  char * strbeg, / * Start position of string * /
-  SSize_t minend, / * Number of bytes where the end of the match after stringarg must be greater than or equal to minend * /
-  SV * screamer, / * Represents a string SV: Used only for the utf8 flag * /
-  U32 nosave / * Set to 1 if not to capture * /
-)
+  REGEXP * const prog,/* Compiled regular expression */  char * stringarg,/* Position to start string matching */  char * stretch,/* End of string (null pointer position) */  char * strbeg,/* Start position of string */  SSize_t minend,/* Number of bytes where the end of the match after stringarg must be greater than or equal to minend */  SV * screamer,/* Represents a string SV: Used only for the utf8 flag */  U32 nosave/* Set to 1 if not to capture */)
 </pre>
 <p>
   If the match is successful, the return value will be true. I will write a sample.
@@ -757,11 +757,9 @@ sv_derived_from (sv_obj, "MyClass");
   This function can also be used to verify that it is an array reference or a hash reference.
 </p>
 <pre>
-/ * Array reference * /
-sv_derived_from (sv_obj, "ARRAY");
+/ * Array reference */sv_derived_from (sv_obj, "ARRAY");
 
-/ * Hash reference * /
-sv_derived_from (sv_obj, "HASH");
+/ * Hash reference */sv_derived_from (sv_obj, "HASH");
 </pre>
 <p>
   So, to make sure it is an object and inherits a particular class, use a combination of the sv_isobject and sv_derived_from functions.

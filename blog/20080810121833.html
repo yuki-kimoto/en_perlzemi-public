@@ -57,7 +57,7 @@
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20110212130370.html">      <span itemprop = "name">File input / output </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20110212130370.html">      <span itemprop = "name">File input/output </span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -94,7 +94,7 @@ use Fcntl qw (: seek);
 # Rewrite the file contents by random access.
 my $file = "data_20080810.txt";
 
-# Open in read / write mode (not very secure)
+# Open in read/write mode (not very secure)
 open(my $fh, "+ &lt;", $file)
   or die "Cannot open $file";
 
@@ -131,7 +131,7 @@ $len_read = read($fh, $age, $len_age);
 if (! defined $len_read) {
   die "Cannot read $file: $!";
 }
-elsif ($len_read! = $len_age) {
+elsif ($len_read != $len_age) {
   die "Read only $len_read bytes";
 }
 
@@ -257,7 +257,7 @@ $len_read = read($fh, $age, $len_age);
 if (! defined $len_read) {
   die "Cannot read $file: $!";
 }
-elsif ($len_read! = $len_age) {
+elsif ($len_read != $len_age) {
   die "Read only $len_read bytes";
 }
 </pre>

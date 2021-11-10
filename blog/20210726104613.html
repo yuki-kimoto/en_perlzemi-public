@@ -165,7 +165,7 @@ Perl Club-Google Chrome
 my $win;
 {
   my $desktop_win = GetDesktopWindow ();
-  die "Oops!" if GetParent ($desktop_win)! = 0;
+  die "Oops!" if GetParent ($desktop_win) != 0;
 
   my @browser_wins;
   my $browser_name ='Chrome';
@@ -175,8 +175,8 @@ my $win;
     my $win_text = GetWindowText ($win);
 
     # Browser name
-    if ($win_text = ~ / \ b $browser_name \ b /) {
-      if ($win_text = ~ / Perl Club /) {
+    if ($win_text =~ /\ b $browser_name \ b /) {
+      if ($win_text =~ /Perl Club /) {
         push @browser_wins, $win;
       }
     }

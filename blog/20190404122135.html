@@ -87,7 +87,7 @@ morbo serve_cgi.pl
 <pre>
 # serve_cgi.pl
 use Mojo::Message::Response;
-use File::Temp'temp file';
+use File::Temp 'temp file';
 
 use Mojolicious::Lite;
 
@@ -99,15 +99,15 @@ app-&gt;hook (before_dispatch =&gt; sub {
   
   my $path = $req-&gt;url-&gt;path;
   
-  if ($path = ~ /\.cgi$/) {
+  if ($path =~ /\.cgi$/) {
     my $method = $c-&gt;req-&gt;method;
-    my $script_name = $c-&gt;app-&gt;home-&gt;rel_file ("public / $path");
+    my $script_name = $c-&gt;app-&gt;home-&gt;rel_file ("public/$path");
     
     # CGI Environment variable
     local $ENV{AUTH_TYPE} ='';
     local $ENV{CONTENT_LENGTH} = $req-&gt;headers-&gt;content_length;
     local $ENV{CONTENT_TYPE} = $req-&gt;headers-&gt;content_type;
-    local $ENV{GATEWAY_INTERFACE} ='CGI / 1.1';
+    local $ENV{GATEWAY_INTERFACE} ='CGI/1.1';
     local $ENV{PATH_INFO} = $req-&gt;url-&gt;path;
     local $ENV{PATH_TRANSLATED} = $req-&gt;url-&gt;path;
     local $ENV{QUERY_STRING} = $req-&gt;url-&gt;query-&gt;to_string;
@@ -120,30 +120,30 @@ app-&gt;hook (before_dispatch =&gt; sub {
     local $ENV{SERVER_NAME} ='localhost';
     local $ENV{SERVER_PORT} = $c-&gt;tx-&gt;remote_port;
     local $ENV{SERVER_SOFTWARE} = "Mojolicious (Perl)";
-    local $ENV{SERVER_PROTOCOL} ='HTTP / 1.1';
+    local $ENV{SERVER_PROTOCOL} ='HTTP/1.1';
     
     # Check script name
-    unless ($script_name = ~ / ^ [a-zA-Z_0-9 \ / \-\.] + $/) {
+    unless ($script_name =~ /^ [a-zA-Z_0-9 \/\-\.] + $/) {
       die "Invalid script name";
     }
     
     # Run CGI script
     my $output;
-    if ($method eq'GET') {
+    if ($method eq 'GET') {
       # GET requst
-      $output = `$^ X $script_name`;
+      $output = `$^X $script_name`;
       if ($?) {
         $c-&gt;res-&gt;code ('505');
         $c-&gt;render (text =&gt; "Internal Server Error");
       }
     }
-    elsif ($method eq'POST') {
+    elsif ($method eq 'POST') {
       # POST request
       my $body = $req-&gt;body;
       my ($in_fh, $in_file) = tempfile;
       print $in_fh $body;
       close $in_fh;
-      $output = `$^ X -pe" "$in_file | $^ X $script_name`;
+      $output = `$^X -pe" "$in_file | $^X $script_name`;
       if ($?) {
         $c-&gt;res-&gt;code ('505');
         $c-&gt;render (text =&gt; "Internal Server Error");

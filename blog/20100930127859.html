@@ -658,7 +658,7 @@ for my $time(sort keys %$infos) {
 01:03,1
 </pre>
 <p>
-  From such a file, let's create a hash of an array with "number of cases per time", "total response time", and "maximum response time" as data. The total response time is saved because the average response time can be calculated later by "Total response time / number of cases".
+  From such a file, let's create a hash of an array with "number of cases per time", "total response time", and "maximum response time" as data. The total response time is saved because the average response time can be calculated later by "Total response time/number of cases".
 </p>
 <pre>
 my $infos = {};
@@ -669,13 +669,13 @@ while (my $line = &lt;&gt;) {
   my ($time, $res_time) = split(',', $line);
   
   # (2) Array reference for storing data at each time
-  $infos-&gt;{$time} || = [];
+  $infos-&gt;{$time} ||= [];
   
   # (3) Total number of cases
   $infos-&gt;{$time}[0] ++;
   
   # (4) Total response time
-  $infos-&gt;{$time}[1] + = $res_time;
+  $infos-&gt;{$time}[1] += $res_time;
 
   # (5) Maximum response time
   $infos-&gt;{$time}[2] = $res_time
@@ -809,7 +809,7 @@ for my $time(sort keys %$infos) {
 01:03,1
 </pre>
 <p>
-  From such a file, let's create a hash of a hash with the total number of cases per time, the total response time, and the maximum response time as data. The total response time is saved because the average response time can be calculated by "Total response time / number of cases".
+  From such a file, let's create a hash of a hash with the total number of cases per time, the total response time, and the maximum response time as data. The total response time is saved because the average response time can be calculated by "Total response time/number of cases".
 </p>
 <pre>
 my $infos = {};
@@ -820,13 +820,13 @@ while (my $line = &lt;&gt;) {
   my ($time, $res_time) = split(',', $line);
   
   # (2) Array reference for storing data at each time
-  $infos-&gt;{$time} || = {};
+  $infos-&gt;{$time} ||= {};
   
   # (3) Total number of cases
   $infos-&gt;{$time}{count} ++;
   
   # (4) Total response time
-  $infos-&gt;{$time}{total_time} + = $res_time;
+  $infos-&gt;{$time}{total_time} += $res_time;
 
   # (5) Maximum response time
   $infos-&gt;{$time}{max_time} = $res_time
