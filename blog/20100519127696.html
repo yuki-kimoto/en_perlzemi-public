@@ -103,7 +103,7 @@ my $alive = $p-&gt;ping('localhost');
   To check the existence using ICMP, specify icmp in the constructor. However, you need root privileges to do this (* 1).
 </p>
 <pre>
-# Survival confirmation using ICMP
+# Survival check using ICMP
 my $p = Net::Ping-&gt;new('icmp');
 my $alive = $p-&gt;ping('somehost');
 </pre>
@@ -111,7 +111,7 @@ my $alive = $p-&gt;ping('somehost');
   If you want to check the existence by HTTP, use the <strong> port_number </strong> method and specify 80 as the port number. (v5.10.0 or later)
 </p>
 <pre>
-# Survival confirmation using HTTP
+# Survival check using HTTP
 $p-&gt;port_number(80);
 my $alive = $p-&gt;ping('www.google.co.jp');
 </pre>
