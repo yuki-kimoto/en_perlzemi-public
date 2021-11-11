@@ -128,15 +128,15 @@ local $nums[1];
 my %score = (math =&gt; 90, english =&gt; 70);
 local $score{math};
 </pre>
-<h3>local for special variables</h3>
+<h3>local for predefined variables</h3>
 <p>
-  The most common use of local in Perl is for <a href="/blog/20161102147817.html">special variables</a> such as "$/", "%ENV" and "@ARGV".
+  The most common use of local in Perl is for <a href="/blog/20161102147817.html">predefined variables</a> such as "$/", "%ENV" and "@ARGV".
 </p>
 <p>
-  local targets package variables, but special variables actually belong to the <a href="/blog/20100419127089.html">package</a> called main.
+  local targets package variables, but predefined variables actually belong to the <a href="/blog/20100419127089.html">package</a> called main.
 </p>
 <p>
-  So you can use local for special variables as well.
+  So you can use local for predefined variables as well.
 </p>
 <pre>
 local $/;
@@ -211,7 +211,7 @@ my $content = do {local $/; &lt;$fh&gt;};
   The <a href="/blog/20090208123289.html">do block</a> returns the last evaluated value.
 </p>
 <p>
-  local undefined the <a href="/blog/20161102147817.html">special variable</a> "$/" that represents a line break in the file.
+  local undefined the <a href="/blog/20161102147817.html">predefined variable</a> "$/" that represents a line break in the file.
 </p>
 <p>
   This causes the <a href="/blog/20080722121673.html">file input operator</a> "<$fh>" to return the contents of the entire file.
@@ -224,17 +224,17 @@ my $content = do {local $/; &lt;$fh&gt;};
 </p>
 <h3>local example program</h3>
 <p>
-  This is a example to temporarily change a special variable using local. Special variables are package variables that belong to the main package.
+  This is an example to temporarily change a predefined variable using local. Special variables are package variables that belong to the main package.
 </p>
 <pre>
 {
-    # Temporary change of special variable $/
+    # Temporary change of predefined variable $/
     local $/ = undef;
 }
 # Original value is restored when exiting scope
 </pre>
 <p>
-  This is a example to understand local.
+  This is an example to understand local.
 </p>
 <pre>
 use strict;

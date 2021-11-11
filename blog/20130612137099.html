@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title>Expressing Unicode characters with code points - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Note that strings containing Unicode characters represented by code points are always treated as internal strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.">
+<meta name="description" content="Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="Expressing Unicode characters with code points - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Note that strings containing Unicode characters represented by code points are always treated as internal strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows." />
+<meta name="twitter:description" content="Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -75,7 +75,7 @@
 my $str = "\x{3042}";
 </pre>
 <p>
-  Note that strings containing Unicode characters represented by code points are always treated as internal strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.
+  Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"

@@ -111,7 +111,7 @@ for my $item (@array) {
 </ul>
 <h3>Example</h3>
 <p>
-  This is a example that outputs the elements of the array in order.
+  This is an example that outputs the elements of the array in order.
 </p>
 <pre>
 # Output array elements in order
@@ -121,7 +121,7 @@ foreach my $num (@nums) {
 }
 </pre>
 <p>
-  This is a example that outputs the elements of an array in order when the data structure is an array reference.
+  This is an example that outputs the elements of an array in order when the data structure is an array reference.
 </p>
 <pre>
 # Output array elements in sequence (array reference)
@@ -130,7 +130,7 @@ foreach my $num (@$nums) {
   print "$num\n";
 }
 </pre>
- This is a example that outputs the values contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
+ This is an example that outputs the values contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
 <pre>
 # Output the values contained in the 2D array in tabs for each line
 my $data = [
@@ -143,7 +143,7 @@ foreach my $record(@$data) {
 }
 </pre>
 <p>
-  This is a example that outputs the values contained in the hash array for each line, separated by tabs.
+  This is an example that outputs the values contained in the hash array for each line, separated by tabs.
 </p>
 <pre>
 # Outputs the values contained in the hash array, tab-separated line by line
@@ -181,7 +181,7 @@ print "\@numbers = (", join(',', @numbers), ")\n\n";
 
 print "[3]\n";
 foreach my $index(0 .. $# persons) {
-  # When you want to use the element number, pass the element number without passing the element of the array itself.
+  # When you want to use the index, pass the index without passing the element of the array itself.
   print "\$persons[$index] = $persons[$index]\n";
 }
 </pre>

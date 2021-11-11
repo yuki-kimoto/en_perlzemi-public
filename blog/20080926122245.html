@@ -99,10 +99,10 @@ my $length = length'abcde';
   The length function returns the length of a string, but there is one thing to remember in order to get the correct length of a Japanese string.
 </p>
 <p>
-  That is, you need to use the length function on the internal string. The internal string is the string decoded by the decode function of the Encode module.
+  That is, you need to use the length function on the decoded string. The decoded string is the string decoded by the decode function of the Encode module.
 </p>
 <p>
-  For the internal string, refer to the following article.
+  For the decoded string, refer to the following article.
 </p>
 <ul>
   <li>
@@ -110,10 +110,10 @@ my $length = length'abcde';
   </li>
 </ul>
 <p>
-  Below is a example program.
+  Below is an example program.
 </p>
 <p>
-  For multibyte characters such as Japanese, convert them to internal strings with the Encode module's decode function and then use the length function to get the correct results. The same idea applies when processing full-width Japanese.
+  For multibyte characters such as Japanese, convert them to decoded strings with the Encode module's decode function and then use the length function to get the correct results. The same idea applies when processing full-width Japanese.
 </p>
 <pre>
 use strict;
@@ -168,7 +168,7 @@ my $has_length = length $foo;
 </p>
 <h3>Example program</h3>
 <p>
-  This is a example to get the length of a string using the length function.
+  This is an example to get the length of a string using the length function.
 </p>
 <pre>
 # Get the length of the string

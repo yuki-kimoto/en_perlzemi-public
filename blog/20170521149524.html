@@ -283,7 +283,7 @@ Five
   Let's combine the for statement and the if statement. Programming will improve when you can combine for and if statements.
 </p>
 <p>
-  I will write a example program that loops from "0" to "10", but outputs only when the loop variable is a multiple of 3.
+  I will write an example program that loops from "0" to "10", but outputs only when the loop variable is a multiple of 3.
 </p>
 <pre>
 for (my $i = 0; $i &lt; 10; $i++) {
@@ -498,9 +498,9 @@ for my $animal (@animals) {
 <p>
   First, consider whether you can write this way.
 </p>
-<h4>When an element number is required, a normal for statement</h4>
+<h4>When an index is required, a normal for statement</h4>
 <p>
-  Next, suppose you may need the element number. In that case, use the normal for statement. The following example program outputs the element numbers and array elements. Note that you can get the length of the array by evaluating "@animals" in a scalar context.
+  Next, suppose you may need the index. In that case, use the normal for statement. The following example program outputs the indexes and array elements. Note that you can get the length of the array by evaluating "@animals" in a scalar context.
 </p>
 <pre>
 my @animals = ('Cat', 'Dog', 'Mouse');
@@ -518,9 +518,9 @@ for (my $i = 0; $i &lt; @animals; $i++) {
 1: Dog
 2: Mouse
 </pre>
-<h4>While statement for repetition that does not increase the element number</h4>
+<h4>While statement for repetition that does not increase the index</h4>
 <p>
-  Finally, use a while statement if the repetition does not increase the element number. Here are some common examples.
+  Finally, use a while statement if the repetition does not increase the index. Here are some common examples.
 </p>
 <p>
   <b> 1. Read a line from a file </b>
@@ -590,7 +590,7 @@ while (1) {
 </pre>
 <h3>Multidimensional data structures and iterations</h3>
 <p>
-  Finally, I will write a multidimensional data structure and a repetitive example program. In Perl, we often use a data structure called an array of hashes, so I'll write a example of it.
+  Finally, I will write a multidimensional data structure and a repetitive example program. In Perl, we often use a data structure called an array of hashes, so I'll write an example of it.
 </p>
 <pre>
 # Hash array example program
@@ -664,7 +664,7 @@ for my $value1 (@values1) {
   A special for syntax is the for modifier, which allows you to put a for after a statement. If you can write a for statement in one line, this writing method is also simple.
 </p>
 <p>
-  Below is a example that outputs all the elements of the array. The elements of the array are sequentially assigned to the default argument "$_".
+  Below is an example that outputs all the elements of the array. The elements of the array are sequentially assigned to the default argument "$_".
 </p>
 <pre>
 my @values = (3, 4, 5);

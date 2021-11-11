@@ -100,7 +100,7 @@ my $xml = XML::Simple-&gt;new;
 my $data = $xml-&gt;XMLin('conf.xml');
 </pre>
 <p>
-  This is a example XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
+  This is an example XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
 </p>
 <pre>
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
@@ -154,7 +154,7 @@ $conf = {
 </pre>
 <h3>Handling Japanese in XML::Simple</h3>
 <p>
-  When a string containing Japanese is read by XMLin, the character code specified by the encoding attribute of the XML declaration is converted to the internal string. Note that it is not a byte string.
+  When a string containing Japanese is read by XMLin, the character code specified by the encoding attribute of the XML declaration is converted to the decoded string. Note that it is not a byte string.
 </p>
 <pre>
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
@@ -163,10 +163,10 @@ $conf = {
 &lt;/conf&gt;
 </pre>
 <p>
-  Since it is converted to an internal string, if you want to output it, you need to convert it to a byte string using the encode function of the Encode module.
+  Since it is converted to an decoded string, if you want to output it, you need to convert it to a byte string using the encode function of the Encode module.
 </p>
 <pre>
-# When outputting, convert from internal string to byte string
+# When outputting, convert from decoded string to byte string
 use Encode 'encode';
 my $conf = $xml-&gt;XMLin('japanese.xml');
 print encode('UTF-8', $conf-&gt;{name});

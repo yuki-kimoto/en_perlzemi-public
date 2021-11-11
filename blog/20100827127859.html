@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>Let's master Perl regular expressions - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="A description of Perl's  regular expressions . After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice">
+<title>Let's master Perl a regular expression - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="A description of Perl's  a regular expression . After reading this article, you can quickly master all of the a regular expression you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Let's master Perl regular expressions - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="A description of Perl's  regular expressions . After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice" />
+<meta name="twitter:title" content="Let's master Perl a regular expression - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="A description of Perl's  a regular expression . After reading this article, you can quickly master all of the a regular expression you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -60,9 +60,9 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20100827127859.html">Let's master Perl regular expressions</a></h2>
+<h2><a href="/blog/20100827127859.html">Let's master Perl a regular expression</a></h2>
 <p>
-  A description of Perl's <strong> regular expressions </strong>. After reading this article, you can quickly master all of the regular expressions you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice
+  A description of Perl's <strong> a regular expression </strong>. After reading this article, you can quickly master all of the a regular expression you use in your daily life. Regular expressions allow you to represent a set of strings, and you can search for and replace strings that match the regular expression. Twice
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -81,7 +81,7 @@
 
 
 <p>
-  You can use regular expressions to represent a set of strings. For example, let's express the three strings "a", "aa", and "aaa" with regular expressions. You can write the following using the regular expression "{}" that expresses the number of consecutive characters.
+  You can use a regular expression to represent a set of strings. For example, let's express the three strings "a", "aa", and "aaa" with a regular expression. You can write the following using the regular expression "{}" that expresses the number of consecutive characters.
 </p>
 <pre>
 a{1,3}
@@ -225,7 +225,7 @@ $str =~ s/a{1,3}/bb/g;
 This string is bb bb
 </pre>
 <p>
-  Now let's look at various regular expressions.
+  Now let's look at various a regular expression.
 </p>
 <h3>Regular expression character</h3>
 <p>
@@ -237,7 +237,7 @@ This string is bb bb
       ..
     </td>
     <td>
-      All characters except line breaks
+      All characters except a line break
     </td>
   </tr>
   <tr>
@@ -287,7 +287,7 @@ This string is bb bb
 </p>
     </td>
     <td>
-      White space (space "", tab character "\t", newline character "\n,\r", etc.)
+      White space (space "", tab character "\t", line break character "\n,\r", etc.)
     </td>
   </tr>
   <tr>
@@ -326,9 +326,9 @@ This string is bb bb
     </td>
   </tr>
 </table>
-<h4>Any single character "." Except for line breaks</h4>
+<h4>Any single character "." Except for a line break</h4>
 <p>
-  Use "." To represent any single character except line breaks.
+  Use "." To represent any single character except a line break.
 </p>
 <pre>
 a
@@ -337,10 +337,10 @@ c-&gt;.
 )
 @&lt;/pre&gt;
 
-You can also match the "." To any character, including newlines. If you want the "." To match a newline, use the regular expression option "s".
+You can also match the "." To any character, including line breaks. If you want the "." To match a line break, use the regular expression option "s".
 
 &lt;pre&gt;
-# Match . To any character, including newlines
+# Match . To any character, including line breaks
 $str =~ /./s;
 </pre>
 <h4>Number "\d"</h4>
@@ -684,7 +684,7 @@ if ($num =~ /$regex/) {
       s
     </td>
     <td>
-      Match "." To line breaks
+      Match "." To a line break
     </td>
   </tr>
   <tr>
@@ -716,7 +716,7 @@ if ($num =~ /$regex/) {
       x
     </td>
     <td>
-      Ignore spaces in regular expressions
+      Ignore spaces in a regular expression
     </td>
   </tr>
   <tr>
@@ -753,7 +753,7 @@ if ($num =~ /$regex/) {
 <pre>
 $message =~ /^i/m
 </pre>
-<h4>s Match "." To line breaks s option</h4>
+<h4>s Match "." To a line break s option</h4>
 <p>
   You can use the <strong> s </strong> option to match a "line break" to a ".".
 </p>
@@ -774,14 +774,14 @@ ABC
   The e option allows you to use an expression as the result of the replacement.
 </p>
 <p>
-  The following example is a example that doubles the matched number.
+  The following example is an example that doubles the matched number.
 </p>
 <pre>
 s/(\d+)/$1 * 2/e;
 </pre>
-<h4>x Ignore whitespace in regular expressions</h4>
+<h4>x Ignore whitespace in a regular expression</h4>
 <p>
-  You can use the x option to ignore whitespace in regular expressions. You will also be able to write comments. If space is not important, you can use the x option to write the regular expression more clearly.
+  You can use the x option to ignore whitespace in a regular expression. You will also be able to write comments. If space is not important, you can use the x option to write the regular expression more clearly.
 </p>
 <pre>
 my $time = '03:02:56';
@@ -814,7 +814,7 @@ for (1 .. 10) {
 </p>
 <h3>Shortest match</h3>
 <p>
-  Perl regular expressions have one quirk. That is, the quantifier matches at the longest position. For example, which part would match given the following regular expression and string?
+  Perl a regular expression have one quirk. That is, the quantifier matches at the longest position. For example, which part would match given the following regular expression and string?
 </p>
 <pre>
 # Regular expressions
@@ -824,7 +824,7 @@ for (1 .. 10) {
 aaa bbb ccc
 </pre>
 <p>
-  The regular expression .+\s means "one or more characters other than newline and blank". There are multiple candidates in the example above. There are two candidates, "aaa" and "aaa bbb". Perl's default behavior is to match the longest position and match "aaa bbb".
+  The regular expression .+\s means "one or more characters other than line break and blank". There are multiple candidates in the example above. There are two candidates, "aaa" and "aaa bbb". Perl's default behavior is to match the longest position and match "aaa bbb".
 </p>
 <pre>
 # Matching string
@@ -843,13 +843,13 @@ aaa bbb ccc
 <pre>
 "Aaaa"
 </pre>
-<h3>Japanese and regular expressions</h3>
+<h3>Japanese and a regular expression</h3>
 <p>
-  In order to use Japanese in a regular expression, both the regular expression and the target string must be converted to an internal string. Please refer to <a href="/blog/20091118124667.html">How to use the Encode module</a> for the conversion to an internal string.
+  In order to use Japanese in a regular expression, both the regular expression and the target string must be converted to an decoded string. Please refer to <a href="/blog/20091118124667.html">How to use the Encode module</a> for the conversion to an decoded string.
 </p>
 <h3>At the end</h3>
 <p>
-  As long as you remember what you learned in this commentary, you will not have any problems in practice. Regular expressions allow you to extract or easily replace only the lines you need. Please enjoy the regular expressions that are the real pleasure of Perl.
+  As long as you remember what you learned in this commentary, you will not have any problems in practice. Regular expressions allow you to extract or easily replace only the lines you need. Please enjoy the a regular expression that are the real pleasure of Perl.
 </p>
 
   </div>

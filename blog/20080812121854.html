@@ -97,7 +97,7 @@ $| = 1;
 </pre>
 <h3>Example</h3>
 <p>
-  Below is a example to switch to command buffering.
+  Below is an example to switch to command buffering.
 </p>
 <pre>
 use strict;
@@ -153,7 +153,7 @@ $| = 1;
 select $oldfh;
 </pre>
 <p>
-  Command buffering is enabled by setting the special variable $| to 1. It should be noted here that the operation for $| is the operation for the "default output destination".
+  Command buffering is enabled by setting the predefined variable $| to 1. It should be noted here that the operation for $| is the operation for the "default output destination".
 </p>
 <p>
   The "default output destination" is the output destination when the file handle is omitted in the print function. The default output destination is STDOUT.

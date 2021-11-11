@@ -125,7 +125,7 @@ my $str1 = "Hello\n";
 my $str2 = "Cat\tDog";
 </pre>
 <p>
-  Frequently used escape sequences are line breaks and tabs, so be sure to remember these two.
+  Frequently used escape sequences are a line break and tabs, so be sure to remember these two.
 </p>
 <p>
   The "\" symbol is used for escaping. If you want to express the symbol "\" itself, use "\\".
@@ -275,24 +275,24 @@ my @strs = qw(
     <a href="/blog/20080222120369.html">String list operator</a>
   </li>
 </ul>
-<h4>Remove line breaks</h4>
+<h4>Remove a line break</h4>
 <p>
-  You may want to <b> remove trailing line breaks </b> when reading a text file.
+  You may want to <b> remove trailing a line break </b> when reading a text file.
 </p>
 <p>
-  Perl has a <a href="/blog/20080226120403.html">chomp function</a> for removing line breaks, but this function is environment dependent.
+  Perl has a <a href="/blog/20080226120403.html">chomp function</a> for removing a line break, but this function is environment dependent.
 </p>
 <p>
   When running on a Windows OS, remove the "CR + LF" which is a line break in Windows, and when running on Unix/Linux/Mac, remove "LF".
 </p>
 <p>
-  To ensure that line breaks are removed, it's a good idea to use the following <a href="/blog/20100827127859.html">regular expression</a>.
+  To ensure that a line break are removed, it's a good idea to use the following <a href="/blog/20100827127859.html">regular expression</a>.
 </p>
 <pre>
 $str =~ s/\x0D?\X0A?$//;
 </pre>
 <p>
-  I'll talk more about regular expressions later.
+  I'll talk more about a regular expression later.
 </p>
 <h4>Concatenate array elements with the specified characters</h4>
 <p>
@@ -350,7 +350,7 @@ my $data = "Cat Dog Mouse";
 my @animals = split(/ +/, $csv);
 </pre>
 <p>
-  I'll talk more about regular expressions later.
+  I'll talk more about a regular expression later.
 </p>
 <p>
   See the following article for a detailed explanation of the split function.
@@ -492,7 +492,7 @@ if ($message =~ /dog/) {
 </p>
 <h4>Replace</h4>
 <p>
-  You can also use regular expressions to make substitutions. If you rewrite "dog" to "cat", write as follows.
+  You can also use a regular expression to make substitutions. If you rewrite "dog" to "cat", write as follows.
 </p>
 <pre>
 my $message = "It is my dog \n";
@@ -503,7 +503,7 @@ $message =~ s/dog/cat/;
   You can replace with the syntax <b> "s/string to replace/string after replacement /" </b>.
 </p>
 <p>
-  See the following articles for a detailed explanation of regular expressions.
+  See the following articles for a detailed explanation of a regular expression.
 </p>
 <ul>
   <li>
@@ -518,7 +518,7 @@ $message =~ s/dog/cat/;
   If you are a beginner, you will feel how to do Japanese processing correctly in Perl.
 </p>
 <p>
-  For example, the length function or regular expression must be converted to an internal string and then executed before it returns the correct result.
+  For example, the length function or regular expression must be converted to an decoded string and then executed before it returns the correct result.
 </p>
 <p>
   If you say "Regular expressions don't work well in Japanese", it's possible that Perl doesn't handle Japanese correctly.
@@ -554,7 +554,7 @@ my $message = 'Hello';
   Remember this as a convention first.
 </p>
 <p>
-  Now the length function and regular expressions will work correctly for the strings written in the source code.
+  Now the length function and a regular expression will work correctly for the strings written in the source code.
 </p>
 <pre>
 # utf8 Specify pragma
@@ -571,20 +571,20 @@ if ($message =~ /day/) {
 }
 </pre>
 <p>
-  The utf8 pragma converts the "UTF-8 byte string" written in the source code to the "internal string".
+  The utf8 pragma converts the "UTF-8 byte string" written in the source code to the "decoded string".
 </p>
 <p>
-  By converting to an internal string, you will be able to perform string processing correctly.
+  By converting to an decoded string, you will be able to perform string processing correctly.
 </p>
 <p>
-  "Byte string" and "internal string" will be explained later.
+  "Byte string" and "decoded string" will be explained later.
 </p>
 <h4>Be sure to decode the string received from the outside</h4>
 <p>
-  <b> Decoding </b> means converting a "string written in a specific character code" into a "Perl internal string".
+  <b> Decoding </b> means converting a "string written in a specific character code" into a "Perl decoded string".
 </p>
 <p>
-  For the sake of convenience, "Perl's internal string" is called <b> internal string </b>, and "string written in a specific character code" is a <b> byte character. Let's call it a column </b>.
+  For the sake of convenience, "Perl's decoded string" is called <b> decoded string </b>, and "string written in a specific character code" is a <b> byte character. Let's call it a column </b>.
 </p>
 <p>
   For example, a string written with the character code "UTF-8" is called "UTF-8 byte string", and a string written with the character code "EUC-jp" is called "EUC-jp byte character". It is called "column".
@@ -599,7 +599,7 @@ if ($message =~ /day/) {
   <b> Read a file with the character code "cp932" written on Windows </b>
 </p>
 <p>
-  Let's write a example to read a file with the character code "cp932" written on Windows.
+  Let's write an example to read a file with the character code "cp932" written on Windows.
 </p>
 <pre>
 # decode.pl
@@ -652,7 +652,7 @@ $name = decode('cp932', $name);
   While the string received from the outside is decoded, the character output to the outside is always encoded.
 </p>
 <p>
-  Encoding means converting an "internal string" to a "byte string".
+  Encoding means converting an "decoded string" to a "byte string".
 </p>
 <p>
   To encode, use the encode function of the <a href="/blog/20091118124667.html">Encode module</a>.

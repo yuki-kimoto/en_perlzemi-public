@@ -311,7 +311,7 @@ $text-&gt;text_right('Hello World!');
 my ($x, $y) = $text-&gt;textpos();
 </pre>
 <p>
-  You can use this value to check where line breaks should occur and where page breaks should occur.
+  You can use this value to check where a line break should occur and where page breaks should occur.
 </p>
 <h3>Get the font size</h3>
 <p>
@@ -460,9 +460,9 @@ my $render_end_x = $page_width - 1- $page_right_margin;
 # Drawing end y coordinate
 my $render_end_y = $page_bottom_margin;
 </pre>
-<h4>Text drawing corresponding to margins, line breaks, and page breaks</h4>
+<h4>Text drawing corresponding to margins, a line break, and page breaks</h4>
 <p>
-  Now, let's draw the text, paying attention to the margins, line breaks, and page breaks. When it reaches the right end, it will start a new line. English only. English words are broken on a character-by-character basis. When you reach the bottom, the page will break.
+  Now, let's draw the text, paying attention to the margins, a line break, and page breaks. When it reaches the right end, it will start a new line. English only. English words are broken on a character-by-character basis. When you reach the bottom, the page will break.
 </p>
 <pre>
 use strict;
@@ -582,7 +582,7 @@ $pdf-&gt;saveas($pdf_file);
   In my environment, 12,000 characters take 1-2 seconds. PDF output is a surprisingly heavy process.
 </p>
 <p>
-  <a href="/examples/pdf/margin_full_text.pdf">Output result margins, line breaks, page breaks</a>
+  <a href="/examples/pdf/margin_full_text.pdf">Output result margins, a line break, page breaks</a>
 </p>
 <h4>How to represent HTML headlines and p tags? </H4>
 <p>
@@ -714,9 +714,9 @@ my $font_bold = $pdf-&gt;ttfont($true_type_font_file);
 <p>
   In this case, please note that the setting above the margin needs to be taken into consideration because the characters will protrude upward.
 </p>
-<h3>Examples for margins, line breaks, page breaks, Japanese, and bold</h3>
+<h3>Examples for margins, a line break, page breaks, Japanese, and bold</h3>
 <p>
-  This is a example that supports margins, line breaks, page breaks, Japanese, and bold. "Hello world." Is displayed repeatedly, and only in the case of the world, it is in bold.
+  This is an example that supports margins, a line break, page breaks, Japanese, and bold. "Hello world." Is displayed repeatedly, and only in the case of the world, it is in bold.
 </p>
 <pre>
 use strict;

@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title>Read a CSV file and convert it to an array of arrays - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is a example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.">
+<meta name="description" content="This is an example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="Read a CSV file and convert it to an array of arrays - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is a example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file." />
+<meta name="twitter:description" content="This is an example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -65,7 +65,7 @@
 </ol>
 <h2><a href="/blog/20080728121733.html">Read a CSV file and convert it to an array of arrays</a></h2>
 <p>
-  This is a example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.
+  This is an example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -84,7 +84,7 @@
 
 
 <p>
-  CSV etc. including line breaks etc. cannot be processed correctly by the following programs. If you want to process CSV correctly, <a href="https://perldoc.jp/docs/modules/Text-CSV_XS-0.23/Text-CSV_XS-0.23.pod">Text::CSV_XS</a> or There is <a href="https://perlzemi.com/blog/20110627131112.html">Text::CSV::Encoded</a>. Text::CSV::Encoded is a wrapper module of Text::CSV or Text::CSV_XS and can handle Japanese easily.
+  CSV etc. including a line break etc. cannot be processed correctly by the following programs. If you want to process CSV correctly, <a href="https://perldoc.jp/docs/modules/Text-CSV_XS-0.23/Text-CSV_XS-0.23.pod">Text::CSV_XS</a> or There is <a href="https://perlzemi.com/blog/20110627131112.html">Text::CSV::Encoded</a>. Text::CSV::Encoded is a wrapper module of Text::CSV or Text::CSV_XS and can handle Japanese easily.
 </p>
 <pre>
 use strict;
@@ -117,7 +117,7 @@ sub parse_file {
   # Prepare a reference to an array that stores multiple records
   my $recs = [];
   while (my $line = &lt;$fh&gt;) {
-    chomp $line; # Remove line breaks
+    chomp $line; # Remove a line break
     
     # Prepare a reference to the array that stores the data
     # Separate rows with commas and store in array
@@ -136,7 +136,7 @@ sub parse_file {
 }
 </pre>
 <p>
-  Below is a example of csv data. Create a CSV file, give it to the first argument of the script, and execute it.
+  Below is an example of csv data. Create a CSV file, give it to the first argument of the script, and execute it.
 </p>
 <pre>
 masao, 10, Japan
@@ -152,7 +152,7 @@ unless ($file) {
 }
 </pre>
 <p>
-  Check the arguments as much as possible. If there is no file name in the first argument, indicate the usage and exit. $0 is the name of the script running in the special variable.
+  Check the arguments as much as possible. If there is no file name in the first argument, indicate the usage and exit. $0 is the name of the script running in the predefined variable.
 </p>
 <h4>(2) Read the file and convert the csv format text to an array of arrays</h4>
 <pre>
@@ -195,7 +195,7 @@ sub parse_file {
   # Prepare a reference to an array that stores multiple records
   my $recs = [];
   while (my $line = &lt;$fh&gt;) {
-    # Remove line breaks
+    # Remove a line break
     chomp $line;
     
     # Prepare a reference to the array that stores the data
@@ -239,7 +239,7 @@ $recs = [
 </p>
 <pre>
 while (my $line = &lt;$fh&gt;) {
-  # Remove line breaks
+  # Remove a line break
   chomp $line;
 
   # Prepare a reference to the array that stores the data
@@ -302,7 +302,7 @@ sub parse_file {
   # Change to array
   my @recs;
   while (my $line = &lt;$fh&gt;) {
-    # Remove line breaks
+    # Remove a line break
 chomp $line;
       
      # Change to array

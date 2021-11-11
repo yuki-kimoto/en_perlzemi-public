@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title>index function - string search - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  index function  to search for strings.">
+<title>index function - search for a string - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  index function  to search for string.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="index function - string search - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  index function  to search for strings." />
+<meta name="twitter:title" content="index function - search for a string - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  index function  to search for string." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -64,9 +64,9 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20080225120395.html">index function - string search</a></h2>
+<h2><a href="/blog/20080225120395.html">index function - search for a string</a></h2>
 <p>
-  You can use the <strong> index function </strong> to search for <a href="/blog/20161003147558.html">strings</a>.
+  You can use the <strong> index function </strong> to search for <a href="/blog/20161003147558.html">string</a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -85,52 +85,52 @@
 
 
 <p>
-  In the first argument, specify the string to be searched, and in the second argument, specify the string you want to search. You can specify the search start position in the third argument. If omitted, the search will be performed from the beginning of the string. If found, that position is returned, otherwise -1 is returned.
+  In the first argument, specify the string to be searched, and in the second argument, specify the string you want to search. You can specify the search start index in the third argument. If omitted, the search will be performed from the beginning of the string. If found, that index is returned, otherwise -1 is returned.
 </p>
 <pre>
-my $pos = index($target, $str);
+my $found_index = index($target, $str);
 </pre>
-<h4>Search for the character that appears the second time</h4>
+<h4>Search for the string that appears the second time</h4>
 <pre>
 my $word_love_pos_second
   = index($message, 'love', $word_love_pos_first + 1);
 </pre>
 <p>
-  The search start position can be specified in the third argument of index. In the first search, specify the position next to the found position.
+  The search start index can be specified in the third argument of index. In the first search, specify the index next to the found index.
 </p>
-<h4>Get all positions of the searched character</h4>
+<h4>Get all indexes of the searched string</h4>
 <pre>
 {
-  my @found_positions = ();
+  my @found_indexes = ();
   my $found_posision = -1;
     
   while (1) {
     $found_posision = index($message, 'love', $found_posision + 1);
     last if $found_posision == -1;
-    push @found_positions, $found_posision;
+    push @found_indexes, $found_posision;
   }
     
-  print "Founded positions:" . join(',', @found_positions) . "\n";
+  print "Founded indexes:" . join(',', @found_indexes) . "\n";
 }
 </pre>
 <p>
   In <a href="/blog/20100123126425.html">while statement</a>, repeat the index function until the return value becomes -1.
 </p>
-<h4>If you want to handle Japanese</h4>
+<h4>If you want to handle Unicode such as using Japanese</h4>
 <p>
-  In order for the index function to handle Japanese correctly, the string must be an internal string. See the following articles for internal strings.
+  In order for the index function to handle Japanese correctly, the string must be an decoded string. See the following articles for decoded the string.
 </p>
 <ul>
   <li>
-    <a href="/blog/20091118124667.html">Encode module-Properly handles multi-byte strings such as Japanese</a>
+    <a href="/blog/20091118124667.html">Encode module-Properly handles Unicode such as using Japanese</a>
   </li>
 </ul>
 <h4>Search by regular expression</h4>
 <p>
-  You can also search for strings using <a href="/blog/20100827127859.html">regular expressions</a>. If you want to specify the target string instead of the character position, use a regular expression.
+  You can also search for the string using <a href="/blog/20100827127859.html">regular expression</a>. If you want to specify the target string instead of the string index, use a regular expression.
 </p>
 <pre>
-# Use regular expressions to find out if Ken exists
+# Use a regular expression to find out if Ken exists
 my $message = "I'm Ken";
 if ($message =~ /Ken/) {
   ...
@@ -138,15 +138,16 @@ if ($message =~ /Ken/) {
 </pre>
 <h3>Programming example using index function</h3>
 <p>
-  This is a example to check the first position of the comma using the index function.
+  This is an example to get the first index of the comma using the index function.
 </p>
 <pre>
-# Find out the first position of the comma
+# Find out the first index of the comma
 my $csv = 'aaa,bbb,ccc';
-my $pos = index($csv, ', ');
+my $found_index = index($csv, ',');
+print "$found_index\n";
 </pre>
 <p>
-  This is a example that processes only when a string is found.
+  This is an example of simple index function.
 </p>
 <pre>
 # Process only if the string is found
@@ -166,7 +167,7 @@ use warnings;
 
 my $message = "love love love.";
 
-# Search for characters using the index function
+# Search for the string using the index function
 my $word_love_pos_first = index($message, 'love');
 
 # Search for the second love
@@ -176,24 +177,24 @@ print "First: $word_love_pos_first, Second: $word_love_pos_second\n";
 
 # Repeated search
 {
-  my @found_positions = ();
+  my @found_indexes = ();
   my $found_posision = -1;
     
   while (1) {
     $found_posision = index($message, 'love', $found_posision + 1);
     last if $found_posision == -1;
-    push @found_positions, $found_posision;
+    push @found_indexes, $found_posision;
   }
 
-  print "Found:" . join(',', @found_positions) . "\n";
+  print "Found:" . join(',', @found_indexes) . "\n";
 }
 </pre>
 <p>
   Output result
 </p>
 <pre>
-First: 0,Second: 5
-Found: 0,5,10
+First: 0, Second: 5
+Found:0,5,10
 </pre>
 
   </div>

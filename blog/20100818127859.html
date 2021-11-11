@@ -594,13 +594,13 @@ SV * sv_var = get_sv ("Foo::bar", GV_ADD);
 AV * av_var = get_av ("Foo::bar", GV_ADD);
 HV * hv_var = get_hv ("Foo::b"ar ", GV_ADD);
 </pre>
-<h3>Use regular expressions</h3>
+<h3>Use a regular expression</h3>
 <p>
-  I will explain how to use <a href="/blog/20100827127859.html">regular expressions</a> in <b> XS </b>. However, the Perl documentation doesn't currently explain how to use it, so I'm trying it out, so please let me know if it's wrong.
+  I will explain how to use <a href="/blog/20100827127859.html">regular expression</a> in <b> XS </b>. However, the Perl documentation doesn't currently explain how to use it, so I'm trying it out, so please let me know if it's wrong.
 </p>
 <h4>Regular expression compilation</h4>
 <p>
-  To use <a href="/blog/20100827127859.html">regular expressions</a> in XS, you must first compile the regular expressions using the <b> pregcomp </b> function. Think of it as corresponding to the operation of creating a regular expression reference.
+  To use <a href="/blog/20100827127859.html">regular expression</a> in XS, you must first compile the a regular expression using the <b> pregcomp </b> function. Think of it as corresponding to the operation of creating a regular expression reference.
 </p>
 <pre>
 # Perl
@@ -686,7 +686,7 @@ pregexec (
   REGEXP * const prog,/* Compiled regular expression */  char * stringarg,/* Position to start string matching */  char * stretch,/* End of string (null pointer position) */  char * strbeg,/* Start position of string */  SSize_t minend,/* Number of bytes where the end of the match after stringarg must be greater than or equal to minend */  SV * screamer,/* Represents a string SV: Used only for the utf8 flag */  U32 nosave/* Set to 1 if not to capture */)
 </pre>
 <p>
-  If the match is successful, the return value will be true. I will write a example.
+  If the match is successful, the return value will be true. I will write an example.
 </p>
 <pre>
 SV * sv_value = sv_2mortal (newSVpv ("12", 0));

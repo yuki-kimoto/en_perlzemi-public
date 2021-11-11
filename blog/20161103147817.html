@@ -115,7 +115,7 @@
 </pre>
 <h4>$$ - Get process ID</h4>
 <p>
-  Use the special variable "<strong> $$</strong>" to get the process ID.
+  Use the predefined variable "<strong> $$</strong>" to get the process ID.
 </p>
 <pre>
 $$
@@ -125,7 +125,7 @@ $$
 </p>
 <h4>$^T - Get the process start time</h4>
 <p>
-  Use the special variable "<strong> $^T </strong>" to get the start time of the process.
+  Use the predefined variable "<strong> $^T </strong>" to get the start time of the process.
 </p>
 <pre>
 $^T
@@ -161,14 +161,14 @@ my $pid = wait;
 </p>
 <h3>$? - Child process exit status</h3>
 <p>
-  If wait waits for the child process to terminate, the special variable "$?" Stores multiple values including the exit status of the child process. $? Is also set when a child process is executed using the system function.
+  If wait waits for the child process to terminate, the predefined variable "$?" Stores multiple values including the exit status of the child process. $? Is also set when a child process is executed using the system function.
 </p>
 <h4>Exit status of child process ***</h4>
 <p>
   The method of interpreting $? Is a little complicated. $? Is set to a 16-bit value. The exit status of the child process is set to the <b> upper 8 bits </b>. The <b> 8th bit of the lower 8 bits </b> indicates whether a core dump was generated </b>. The <b> lower 8 bits up to the 7th bit </b> represent the <b> signal number that terminated the process </b>, if any.
 </p>
 <p>
-  For more information on the special variable "$?", See "<a href="http://d.hatena.ne.jp/perlcodeexample/20161102">See the list of" special variables "in Perl</a>". Please give me.
+  For more information on the predefined variable "$?", See "<a href="http://d.hatena.ne.jp/perlcodeexample/20161102">See the list of" predefined variables "in Perl</a>". Please give me.
 </p>
 <h3>Describe the process of releasing the resource of the child process</h3>
 <p>
@@ -339,7 +339,7 @@ print $pipe "Hello world";
 </p>
 <h3>getpwuid function - get user information (user name)</h3>
 <p>
-  To get the <strong> username </strong>, use the <a href="/blog/20101222130016.html">getpwuid function</a> and the special variable <strong> $> </strong> below will do so.
+  To get the <strong> username </strong>, use the <a href="/blog/20101222130016.html">getpwuid function</a> and the predefined variable <strong> $> </strong> below will do so.
 </p>
 <pre>
 my $user = getpwuid($&gt;);

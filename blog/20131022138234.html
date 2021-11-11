@@ -136,7 +136,7 @@ my $second = $nums-&gt;at(1);
 use PDL::NiceSlice;
 </pre>
 <p>
-  To get an element as a PDL variable, use the notation <strong> $variable name (element number) </strong>.
+  To get an element as a PDL variable, use the notation <strong> $variable name (index) </strong>.
 </p>
 <pre>
 # Get element as PDL variable
@@ -158,7 +158,7 @@ my $second = $pdl_second-&gt;at(0);
 $nums (0). = 5;
 </pre>
 <p>
-  PDL also allows you to cut out multiple parts of a PDL variable as a new PDL variable. Let's cut out the second and third elements. You can cut out a part of the PDL variable by using the notation <strong> $variable name (n: m) </strong> as follows.
+  PDL also allows you to extract multiple parts of a PDL variable as a new PDL variable. Let's extract the second and third elements. You can extract a part of the PDL variable by using the notation <strong> $variable name (n: m) </strong> as follows.
 </p>
 <pre>
 my $pdl_parts = $nums (1: 2);
@@ -170,7 +170,7 @@ my $pdl_parts = $nums (1: 2);
 $nums (1: 2). = 8;
 </pre>
 <p>
-  The feature of PDL is that the same operation can be performed on the set of parts cut out in this way.
+  The feature of PDL is that the same operation can be performed on the set of parts extract in this way.
 </p>
 <p>
   Let's get the length of one-dimensional data. Use the <strong> dims </strong> method to get the length of the data.
@@ -180,7 +180,7 @@ my $length = $nums-&gt;dims;
 </pre>
 <h3>Example</h3>
 <p>
-  This is a example that can be executed.
+  This is an example that can be executed.
 </p>
 <pre>
 use strict;
@@ -294,7 +294,7 @@ my $inner_product = ($pdl1 * $pdl2)-&gt;sum;
 </p>
 <h3>Example</h3>
 <p>
-  This is a example that can be executed.
+  This is an example that can be executed.
 </p>
 <pre>
 use strict;

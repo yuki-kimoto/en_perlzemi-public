@@ -85,7 +85,7 @@
 
 
 <p>
-  So far, I've written articles trying to handle dates with standard modules, but it's not really a good idea. There are many exceptions to the date and time, and if you write your own script, bugs are likely to be mixed in.
+  So far, I've written articles trying to handle dates with standard modules, but it's not really a good idea. There are many exceptions to the date and time, and if you write its own script, bugs are likely to be mixed in.
 </p>
 <p>
   This module is useful, but it relies on a large number of modules to handle dates generically. Also, some of them are written in C language to speed up the calculation of dates. For this reason, a little preparation is required for installation in a Windows environment.
@@ -1003,7 +1003,7 @@ my $next_dt = $current_dt-&gt;clone-&gt;add(months =&gt; 1, end_of_month =&gt;'l
   Finally, I will post the example code.
 </p>
 <p>
-  This is a example using DateTime.
+  This is an example using DateTime.
 </p>
 <pre>
 use strict;
@@ -1054,7 +1054,7 @@ Day 290 (counting in one year)
 4th term (out of 4th half)
 </pre>
 <p>
-  This is a example to get the current date and time.
+  This is an example to get the current date and time.
 </p>
 <pre>
 use strict;
@@ -1100,7 +1100,7 @@ Day 307 (counting in one year)
 4th term (out of 4th half)
 </pre>
 <p>
-  This is a example to create date information from epoch seconds.
+  This is an example to create date information from epoch seconds.
 </p>
 <pre>
 use strict;
@@ -1146,7 +1146,7 @@ Day 307 (counting in one year)
 4th term (out of 4th half)
 </pre>
 <p>
-  This is a example to specify the time zone.
+  This is an example to specify the time zone.
 </p>
 <pre>
 use strict;
@@ -1165,7 +1165,7 @@ my $dt1 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 my $dt2 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 </pre>
 <p>
-  This is a example to set the locale.
+  This is an example to set the locale.
 </p>
 <pre>
 use strict;
@@ -1211,7 +1211,7 @@ Friday
 Money
 </pre>
 <p>
-  This is a example to specify the locale with DateTime.
+  This is an example to specify the locale with DateTime.
 </p>
 <pre>
 use strict;
@@ -1236,7 +1236,7 @@ my $day_name = $dt-&gt;day_name;
 print encode($encode_to, $day_name) . "\n";
 </pre>
 <p>
-  This is a example to get the date and time.
+  This is an example to get the date and time.
 </p>
 <pre>
 use strict;
@@ -1271,7 +1271,7 @@ print(
 );
 </pre>
 <p>
-  This is a example to get the leap year judgment and the last day of the month.
+  This is an example to get the leap year judgment and the last day of the month.
 </p>
 <pre>
 use strict;
@@ -1289,7 +1289,7 @@ my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 print "The last day of November 2008 is". $Dt2-&gt;day. "The day.\n";
 </pre>
 <p>
-  This is a example strftime method. I'm trying all the formats with examples.
+  This is an example strftime method. I'm trying all the formats with examples.
 </p>
 <pre>
 use strict;
@@ -1412,7 +1412,7 @@ Is 00. : 46
 %{method}: DateTime.pm method can be used. %{ymd}: 2008-11-17
 </pre>
 <p>
-  This is a example that calculates the date and time using DateTime.
+  This is an example that calculates the date and time using DateTime.
 </p>
 <pre>
 use strict;
@@ -1519,7 +1519,7 @@ Yesterday's date is 2008-11-17.
 The period is 3 years, 1 month and 4 days
 </pre>
 <p>
-  This is a example to get the period information.
+  This is an example to get the period information.
 </p>
 <pre>
 use strict;

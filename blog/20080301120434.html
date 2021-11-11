@@ -90,7 +90,7 @@ my @ret = split(/,/, $person_csv);
 <p>
   In the first argument, specify the delimiter with <a href="/blog/20100827127859.html">regular expression</a>. In the second argument, specify the string you want to split. The return value is a <a href="/blog/20161012147627.html">array</a> of the split strings.
 </p>
-<h4>Use regular expressions</h4>
+<h4>Use a regular expression</h4>
 <p>
   Since the split function receives a regular expression as the first argument, it is easy to split with multiple spaces.
 </p>
@@ -108,11 +108,11 @@ my @ret = split(/ +/, $line);
 </ul>
 <h3>Example</h3>
 <p>
-  This is a example program of the split function.
+  This is an example program of the split function.
 </p>
 <h4>CSV data</h4>
 <p>
-  This is a example to convert CSV format data to an array.
+  This is an example to convert CSV format data to an array.
 </p>
 <pre>
 # Convert CSV format data to array
@@ -121,7 +121,7 @@ my @record = split /,/, $string;
 </pre>
 <h4>Blank delimiter</h4>
 <p>
-  This is a example to convert to a data array separated by blanks.
+  This is an example to convert to a data array separated by blanks.
 </p>
 <pre>
 # Convert data separated by blanks to an array
@@ -130,7 +130,7 @@ my @record = split /\s+/, $string;
 </pre>
 <h4>Comma separated</h4>
 <p>
-  This is a example that processes comma-separated strings.
+  This is an example that processes comma-separated strings.
 </p>
 <pre>
 use strict;
@@ -140,7 +140,7 @@ use warnings;
 my $header_csv = "name,age,country\n";
 my $person_csv = "kaori,23,Japan\n";
 
-# Remove line breaks with chomp function
+# Remove a line break with chomp function
 chomp $header_csv;
 chomp $person_csv;
 

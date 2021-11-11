@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title>Read a csv file and convert it to an array of Perl hashes - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is a example that reads a csv format file and converts it into an array of hashes.">
+<meta name="description" content="This is an example that reads a csv format file and converts it into an array of hashes.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="Read a csv file and convert it to an array of Perl hashes - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is a example that reads a csv format file and converts it into an array of hashes." />
+<meta name="twitter:description" content="This is an example that reads a csv format file and converts it into an array of hashes." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -65,7 +65,7 @@
 </ol>
 <h2><a href="/blog/20080729121734.html">Read a csv file and convert it to an array of Perl hashes</a></h2>
 <p>
-  This is a example that reads a csv format file and converts it into an array of hashes.
+  This is an example that reads a csv format file and converts it into an array of hashes.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -84,7 +84,7 @@
 
 
 <p>
-  Readability is a bit low because we are actively using a feature called hash slices. If you haven't used Perl for a while and aren't used to it, it may look cryptographic. The structure is almost the same as the previous example, so I will explain only the different parts.
+  Readability is a bit low because we are actively using a feature called hash slice. If you haven't used Perl for a while and aren't used to it, it may look cryptographic. The structure is almost the same as the previous example, so I will explain only the different parts.
 </p>
 <pre>
 use strict;
@@ -106,7 +106,7 @@ my @recs = parse_file ($file, $headers);
 
 # Output (because it is an array of hashes, follow it with for)
 for my $items (@recs) {
-  # Concatenate using hash slices
+  # Concatenate using hash slice
   print join(',', @{$items}{@$headers}) . "\n";
 }
 
@@ -120,7 +120,7 @@ sub parse_file {
   # Prepare a reference to an array that stores multiple records
   my $recs = [];
     while (my $line = &lt;$fh&gt;) {
-      # Remove line breaks
+      # Remove a line break
       chomp $line;
       
       # Prepare a reference to the hash that stores the data
@@ -137,7 +137,7 @@ sub parse_file {
 }
 </pre>
 <p>
-  Below is a example of csv data. Create a csv file, give it to the first argument of the script, and execute it.
+  Below is an example of csv data. Create a csv file, give it to the first argument of the script, and execute it.
 </p>
 <pre>
 masao, 10, Japan
@@ -181,7 +181,7 @@ for my $items (@recs) {
 <p>
   Since it is an array, the outside is a foreach loop. Output $items, which is a reference to the hash, concatenated with commas with <a href="/blog/20081007122338.html">join function</a>.
 </p>
-<h4>(3) - 1 Explanation of hash slices</h4>
+<h4>(3) - 1 Explanation of hash slice</h4>
 <p>
   I will explain the esoteric hash slice @{$items}{@$headers}.
 </p>
@@ -195,7 +195,7 @@ for my $items (@recs) {
   It looks like this.
 </p>
 <p>
-  I usually use%$items to dereference, but I want to dereference it so that hash slices can be used.
+  I usually use%$items to dereference, but I want to dereference it so that hash slice can be used.
 </p>
 <pre>
 @{$items}{list of hash keys}
@@ -248,7 +248,7 @@ join(',', @{$items}{@$headers})
 </p>
 <pre>
 while (my $line = &lt;$fh&gt;) {
-  # Remove line breaks
+  # Remove a line break
   chomp $line;
 
   # Prepare a reference to the hash that stores the data

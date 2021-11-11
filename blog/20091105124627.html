@@ -477,7 +477,7 @@ $t-&gt;month_last_day
 $t-&gt;strftime($format)
 </pre>
 <p>
-  This is a example format of date and time.
+  This is an example format of date and time.
 </p>
 <pre>
 $t-&gt;strftime('%Y-%m-%d%H:%M:%S'); # 2009-11-34 12:14:15
@@ -531,7 +531,7 @@ Same as%T:%H:%M:%S. Hours, minutes and seconds (such as 23:14:03)
 </pre>
 <h4>Precautions when handling Japanese</h4>
 <p>
-  Note that Time::Piece's strftime method always returns a byte string, whether the input is a byte string or an internal string.
+  Note that Time::Piece's strftime method always returns a byte string, whether the input is a byte string or an decoded string.
 </p>
 <pre>
 # Byte string is always returned
@@ -545,7 +545,7 @@ my $bytes = $tp-&gt;strftime("%Y year%m month");
 my $t = Time::Piece-&gt;strptime(string representing date/time, format);
 </pre>
 <p>
-  As a example, let's parse the MySQL date representation and create a Time::Piece object. Use the above strftime format for the format.
+  As an example, let's parse the MySQL date representation and create a Time::Piece object. Use the above strftime format for the format.
 </p>
 <pre>
 my $datetime_mysql = '2009-12-31 23:59:59';

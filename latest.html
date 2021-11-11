@@ -216,7 +216,7 @@ Perl Club-Google Chrome
 </pre>
 <h4>Get the target window</h4>
 <p>
-  If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write a example to get the target window. Make sure that the target page of the target web browser is launched.
+  If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write an example to get the target window. Make sure that the target page of the target web browser is launched.
 </p>
 <pre>
 # Get the target window (Perl Club-Google Chrome)
@@ -488,7 +488,7 @@ $driver-&gt;shutdown_binary; &lt;/pre&gt;
 </p>
 <h3>Escape sequence corresponding to ASCII code</h3>
 <p>
-  Frequently used ones are line breaks "\n" and tabs "\t".
+  Frequently used ones are a line break "\n" and tabs "\t".
 </p>
 <table>
   <tr> <th> Escape <br> Sequence </th> <th> Code <br> Point <br> Decimal </th> <th> Code <br> Point <br> Hexadecimal </th> < th> ASCII </th> <th> meaning </th> </tr>
@@ -501,10 +501,10 @@ $driver-&gt;shutdown_binary; &lt;/pre&gt;
   <tr> <td>\t </td> <td> 9 </td> <td> 09 </td> <td> TAB </td> <td> Tab </td> </tr>
 </table>
 <p>
-  This is a example using the escape sequence of tabs and line breaks.
+  This is an example using the escape sequence of tabs and a line break.
 </p>
 <pre>
-# Use tabs and line breaks
+# Use tabs and a line break
 my $line = "ID\tName\tPrice\n";
 </pre>
 <h3>Occasional escape sequences</h3>
@@ -518,7 +518,7 @@ my $line = "ID\tName\tPrice\n";
 </table>
 <h3>Notes on line break "\n"</h3>
 <p>
-  There is one caveat regarding line breaks "\n".
+  There is one caveat regarding a line break "\n".
 </p>
 <p>
   In the source code of the program, "\n" is a single character and represents "LF" in ASCII code and "0A" in hexadecimal. This matches the Linx/Unix line feed code.
@@ -542,12 +542,12 @@ print "Hello\n";
   There are also escape sequences that allow you to write the ASCII code itself in hexadecimal by starting with "\x".
 </p>
 <pre>
-# Specify ASCII code directly in hexadecimal to represent HTTP protocol line breaks
+# Specify ASCII code directly in hexadecimal to represent HTTP protocol a line break
 my $message = "Hello\x0D\x0A";
 print $message;
 </pre>
 <p>
-  The above example is a example that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
+  The above example is an example that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
 </p>
 <h3>Document with all escape sequences</h3>
 <p>
@@ -557,7 +557,7 @@ print $message;
   <li> <a href="https://perldoc.jp/docs/perl/5.10.1/perlrebackslash.pod">perlrebackslash - Perl regular expression reverse slash sequence and escape - perldoc.jp</a> </li >
 </ul>
 <p>
-  Although it covers all the escape sequences of regular expressions, the escape sequences of double-quoted strings are included in the escape sequences of regular expressions, so let's refer only to the escape sequences of the part related to double-quoted strings.
+  Although it covers all the escape sequences of a regular expression, the escape sequences of double-quoted strings are included in the escape sequences of a regular expression, so let's refer only to the escape sequences of the part related to double-quoted strings.
 </p>
 
 

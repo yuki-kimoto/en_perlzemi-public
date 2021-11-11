@@ -28,11 +28,11 @@
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
 <title>String list operator - qw() - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="String list operator is a operator to create a list of strings easily. You can use the string list operator to represent a list of strings without writing single quotes or commas.">
+<meta name="description" content="String list operator is a operator to create a list of strings easily. You can create a list of strings without writing single quotes and commas.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="String list operator - qw() - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="String list operator is a operator to create a list of strings easily. You can use the string list operator to represent a list of strings without writing single quotes or commas." />
+<meta name="twitter:description" content="String list operator is a operator to create a list of strings easily. You can create a list of strings without writing single quotes and commas." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -66,7 +66,7 @@
 </ol>
 <h2><a href="/blog/20080222120369.html">String list operator - qw()</a></h2>
 <p>
-  <b>String list operator</b> is a operator to create a <a href="/blog/20100308126967.html">list</a> of <a href="/blog/20161003147558.html">strings</a> easily. You can use the string list operator to represent a list of strings without writing single quotes or commas.
+  <b>String list operator</b> is a operator to create a <a href="/blog/20100308126967.html">list</a> of <a href="/blog/20161003147558.html">strings</a> easily. You can create a list of strings without writing single quotes and commas.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -88,19 +88,19 @@
 qw(string1 string2 string3)
 </pre>
 <p>
-  This is an example of actually using the string list operator.
+  The following is an example of the string list operator. The return value is assigned to a <a href="/blog/20161012147627.html">array</a>.
 </p>
 <pre>
-my @strings = qw/cat dog mouse/;
+my @strings = qw(cat dog mouse);
 </pre>
 <p>
-  It has the same meaning as the following list of strings.
+  This is the same as the following list of strings.
 </p>
 <pre>
 my @strings = ('cat', 'dog', 'mouse');
 </pre>
 <p>
-  Characters other than () can be used for the symbols surrounding the string.
+  You can also use characters other than "(" and ")" to create a list of strings.
 </p>
 <pre>
 qw(cat dog mouse)
@@ -112,29 +112,27 @@ qw!cat dog mouse!
 </pre>
 <h3>Example program</h3>
 <p>
-  This is a example program that uses the string list operator.
+  This is an example program that uses the string list operator. 
 </p>
 <pre>
 use strict;
 use warnings;
 
 # String list operator
-my @strings = qw/cat dog mouse/; # Same meaning as ('cat', 'dog', 'mouse')
+my @strings = qw(cat dog mouse); # Same meaning as ('cat', 'dog', 'mouse')
 print "1: String list\n";
 print join(',', @strings) . "\n";
 </pre>
 <p>
   Reference: <a href="/blog/20081007122338.html">join function</a>
 </p>
-<h3>Reference "Array of Perl"</h3>
 <p>
-  See below for a description of Perl's "arrays".
+  Execution result:
 </p>
-<ul>
-  <li>
-    <a href="/blog/20161012147627.html">Understand Perl's "arrays"</a>
-  </li>
-</ul>
+<pre>
+1: String list
+cat,dog,mouse
+</pre>
 
   </div>
   <div class="bottom">

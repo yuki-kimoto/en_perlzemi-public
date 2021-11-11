@@ -450,7 +450,7 @@ $rule-&gt;require('price')
 {Constraint name =&gt; Arguments}
 </pre>
 <p>
-  Here is a example of <b> equal_to </b> and <b> between </b>:
+  Here is an example of <b> equal_to </b> and <b> between </b>:
 </p>
 <pre>
 my $rule = $vc-&gt;create_rule;
@@ -638,7 +638,7 @@ $rule-&gt;require('value4')-&gt;check({'length' =&gt; {min =&gt; 2, max =&gt; 5}
 $rule-&gt;require('value4')-&gt;check({'length' =&gt; {max =&gt; 5}});
 </pre>
 <p>
-  You can check the length. If the string is an internal string, you can check the length of the string. If the string is a byte string, check the number of bytes.
+  You can check the length. If the string is an decoded string, you can check the length of the string. If the string is a byte string, check the number of bytes.
 </p>
 <h3>defined(constraint function) - defined</h3>
 <p>
@@ -745,7 +745,7 @@ $rule-&gt;require('num')-&gt;check({'regex' =&gt; qr/\d{0,3} /});
 </pre>
 <h3>not_space (constraint function) - not whitespace</h3>
 <p>
-  In a <strong> HTML form </strong>, use the <strong> not_space </strong> constraint function if you want to check that it is <strong> not whitespace </strong>. A space character is a string that consists only of a space character, a tab character, and a newline character. This includes cases where the string does not exist. It does not include whitespace in Unicode.
+  In a <strong> HTML form </strong>, use the <strong> not_space </strong> constraint function if you want to check that it is <strong> not whitespace </strong>. A space character is a string that consists only of a space character, a tab character, and a line break character. This includes cases where the string does not exist. It does not include whitespace in Unicode.
 </p>
 <pre>
 # data

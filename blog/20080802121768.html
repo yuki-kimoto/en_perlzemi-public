@@ -106,7 +106,7 @@ use warnings;
 
 # Special line input operator &lt;&gt;
 while (&lt;&gt;) {
-  # The read line is assigned to the special variable $_.
+  # The read line is assigned to the predefined variable $_.
   chomp $_;
   my @items = split(/,/, $_);
   print $items[0] . "\n";
@@ -116,7 +116,7 @@ while (&lt;&gt;) {
 <pre>
 # Special line read operator &lt;&gt;
 while (&lt;&gt;) {
-  # The read line is assigned to the special variable $_.
+  # The read line is assigned to the predefined variable $_.
   chomp $_;
   my @items = split(',', $_);
   print $items[0] . "\n";
@@ -133,7 +133,7 @@ while (&lt;&gt;) {
   The <> operator can be used to describe unix-like filter programming conditions in a very concise way. Files are also opened and closed automatically.
 </p>
 <p>
-  The read line is assigned to the special variable $_. With the above in mind, the rest is normal programming.
+  The read line is assigned to the predefined variable $_. With the above in mind, the rest is normal programming.
 </p>
 <h4>(2) Advantages of Unix - like filter programming</h4>
 <p>

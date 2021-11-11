@@ -107,7 +107,7 @@ printf "%x\n", ord($str);
 </pre>
 <h3>Easily check with Data::Dumper</h3>
 <p>
-  There is also a simple way to find out using the Data::Dumper module. This is because Data::Dumper converts any character that is not in the ASCII range to a code point when outputting the internal string.
+  There is also a simple way to find out using the Data::Dumper module. This is because Data::Dumper converts any character that is not in the ASCII range to a code point when outputting the decoded string.
 </p>
 <pre>
 use utf8;
