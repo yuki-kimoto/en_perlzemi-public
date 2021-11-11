@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> IO::Capture - Capture standard output/standard error output  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>IO::Capture - Capture standard output/standard error output - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Occasionally I have tested standard output. For example, if you want to create interactive programming or test a function that uses print in your source code.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" IO::Capture - Capture standard output/standard error output  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="IO::Capture - Capture standard output/standard error output - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Occasionally I have tested standard output. For example, if you want to create interactive programming or test a function that uses print in your source code." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20090304123521.html"> IO::Capture - Capture standard output/standard error output </a></h2>
+<h2><a href="/blog/20090304123521.html">IO::Capture - Capture standard output/standard error output</a></h2>
 <p>
   Occasionally I have tested standard output. For example, if you want to create interactive programming or test a function that uses print in your source code.
 </p>
@@ -97,7 +96,7 @@ cpan IO::Capture
 <p>
   Install with.
 </p>
-<h3> 1. Capture standard output </h3>
+<h3>1. Capture standard output</h3>
 <p>
   To get standard output, use the IO::Capture::Stdout module. It comes with the installation of the IO::Capture module.
 </p>
@@ -126,7 +125,7 @@ my @stdout = $capture-&gt;read;
 <p>
   In the list context, you can get ("aaa", "bbb") by calling read.
 </p>
-<h4> How to capture standard output using only standard features </h4>
+<h4>How to capture standard output using only standard features</h4>
 <p>
   There was also a way to capture standard output using only standard features without using modules, so I'll describe it here.
 </p>
@@ -150,7 +149,7 @@ close $temp;
 
 print $stdout; # "hoge" is output
 </pre>
-<h3> 2. Capture standard error output </h3>
+<h3>2. Capture standard error output</h3>
 <p>
   You can do the same with IO::Capture::Stderr.
 </p>
@@ -163,7 +162,7 @@ print STDERR "aaa";
 $capture-&gt;stop;
 my $stderr = $capture-&gt;read;
 </pre>
-<h4> How to capture standard error using only standard features </h4>
+<h4>How to capture standard error using only standard features</h4>
 <p>
   There was also a way to capture standard error output using only standard features without using modules, so I will describe it here.
 </p>

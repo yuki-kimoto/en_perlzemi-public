@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Object::Simple - Generate Mojo::Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Object::Simple - Generate Mojo::Base compatible accessor - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use  Object::Simple  to create an accessor with a default value. Object::Simple is highly compatible with Mojolicious's Mojo::Base.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Object::Simple - Generate Mojo::Base compatible accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Object::Simple - Generate Mojo::Base compatible accessor - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use  Object::Simple  to create an accessor with a default value. Object::Simple is highly compatible with Mojolicious's Mojo::Base." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100224126425.html"> Object::Simple - Generate Mojo::Base compatible accessor </a></h2>
+<h2><a href="/blog/20100224126425.html">Object::Simple - Generate Mojo::Base compatible accessor</a></h2>
 <p>
   Use <strong> Object::Simple </strong> to create an accessor with a default value. Object::Simple is highly compatible with Mojolicious's Mojo::Base.
 </p>
@@ -102,9 +101,9 @@ print $point-&gt;x;
 <p>
   You can inherit Object::Simple by specifying -base when using. Object::Simple has a new method. It also imports a method called has for defining accessors. Also, strict and warnings are automatically enabled.
 </p>
-<h3> General class sample </h3>
+<h3>General class example</h3>
 <p>
-  This is a sample of a general class. The Point class has accessors x and y. It also has a method called clear that initializes x and y to 0.
+  This is a example of a general class. The Point class has accessors x and y. It also has a method called clear that initializes x and y to 0.
 </p>
 <pre>
 package Point;
@@ -136,11 +135,11 @@ my $y = $point-&gt;y;
 
 $point-&gt;clear;
 </pre>
-<h3> How to use Object::Simple </h3>
+<h3>How to use Object::Simple</h3>
 <p>
   There are several ways to define attributes.
 </p>
-<h4> Define multiple attributes at once </h4>
+<h4>Define multiple attributes at once</h4>
 <pre>
 # No default value
 has ['x', 'y'];
@@ -151,7 +150,7 @@ has ['x', 'y'] =&gt; 0;
 <p>
   You can define multiple accessors at once by specifying the array reference as the first argument of has.
 </p>
-<h4> Specify default value </h4>
+<h4>Specify default value</h4>
 <pre>
 # Constant
 has foo =&gt; 1;
@@ -168,7 +167,7 @@ has baz =&gt; sub {LWP::UserAgent-&gt;new};
 <p>
   When setting array references, hash references, objects, etc. to default values, you need to enclose them in sub {} for lazy evaluation.
 </p>
-<h4> Define all accessors at once </h4>
+<h4>Define all accessors at once</h4>
 <pre>
 has [qw/foo bar baz /],
     some =&gt; 1,
@@ -177,9 +176,9 @@ has [qw/foo bar baz /],
 <p>
   You can also define all accessors at once.
 </p>
-<h3> Inheritance sample </h3>
+<h3>Inheritance example</h3>
 <p>
-  This is a sample to create a Point3D class that inherits the Point class.
+  This is a example to create a Point3D class that inherits the Point class.
 </p>
 <pre>
 package Point3D;
@@ -195,7 +194,7 @@ sub clear {
 
 1;
 </pre>
-<h3> Constructor override </h3>
+<h3>Constructor override</h3>
 <p>
   You can override the constructor new() for object initialization and argument processing.
 </p>

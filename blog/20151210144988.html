@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Validator::Custom::Validation - Validation result  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Validator::Custom::Validation - Validation result - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Validator::Custom::Validation - Validation result">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Validator::Custom::Validation - Validation result  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Validator::Custom::Validation - Validation result - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Validator::Custom::Validation - Validation result" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -53,8 +52,8 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20151210144988.html"> Validator::Custom::Validation - Validation result </a></h2>
-<h3> Name </h3>
+    <h2><a href="/blog/20151210144988.html">Validator::Custom::Validation - Validation result</a></h2>
+<h3>Name</h3>
 <p>
   Validator::Custom::Validation - Validation result
 </p>
@@ -74,7 +73,7 @@
 </div>
 
 
-<h3> How to use </h3>
+<h3>How to use</h3>
 <pre>
   my $validation = $vc-&gt;validation;
   
@@ -96,11 +95,11 @@
 <p>
   =====
 </p>
-<h3> Method </h3>
+<h3>Method</h3>
 <p>
   Validator::Custom::Validation is all methods from <a href="http://search.cpan.org/dist/Object-Simple/lib/Object/Simple.pm">Object::Simple</a> It inherits from and implements the following new methods:
 </p>
-<h4> new </h4>
+<h4>new</h4>
 <pre>
   my $validation = Validator::Custom::Validation-&gt;new;
 </pre>
@@ -113,7 +112,7 @@
 <pre>
   my $validation = $vc-&gt;validation;
 </pre>
-<h4> is_valid </h4>
+<h4>is_valid</h4>
 <pre>
   my $is_valid = $validation-&gt;is_valid;
   my $is_valid = $validation-&gt;is_valid('title');
@@ -121,7 +120,7 @@
 <p>
   Check if the validation result is correct. If given a name, it checks if the parameters corresponding to that name are correct.
 </p>
-<h4> add_failed </h4>
+<h4>add_failed</h4>
 <pre>
   $validation-&gt;add_failed('title' =&gt;'title is invalid value');
   $validation-&gt;add_failed('title');
@@ -129,28 +128,28 @@
 <p>
   Add the name and message of the failed parameter. If the message is omitted, the default message will be set automatically.
 </p>
-<h4> failed </h4>
+<h4>failed</h4>
 <pre>
   my $failed = $validation-&gt;failed;
 </pre>
 <p>
   Gets the names of all failed parameters.
 </p>
-<h4> message </h4>
+<h4>message</h4>
 <pre>
   my $message = $validation-&gt;message('title');
 </pre>
 <p>
   Gets the failure message that corresponds to the name.
 </p>
-<h4> messages </h4>
+<h4>messages</h4>
 <pre>
   my $messgaes = $validation-&gt;messages;
 </pre>
 <p>
   Get all failure messages.
 </p>
-<h4> messages_to_hash </h4>
+<h4>messages_to_hash</h4>
 <pre>
   my $messages_h = $validation-&gt;messages_to_hash;
 </pre>

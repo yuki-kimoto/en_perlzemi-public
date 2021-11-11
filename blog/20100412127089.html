@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File::Spec - Create OS-independent file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>File::Spec - Create OS - independent file name - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  File::Spec  module allows you to do portable processing on filenames. For example, you can create a file name using an OS-specific file name delimiter.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File::Spec - Create OS-independent file name  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="File::Spec - Create OS - independent file name - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  File::Spec  module allows you to do portable processing on filenames. For example, you can create a file name using an OS-specific file name delimiter." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100412127089.html"> File::Spec - Create OS-independent file name </a></h2>
+<h2><a href="/blog/20100412127089.html">File::Spec - Create OS - independent file name</a></h2>
 <p>
   The <strong> File::Spec </strong> module allows you to do portable processing on filenames. For example, you can create a file name using an OS-specific file name delimiter.
 </p>
@@ -96,8 +95,8 @@ use File::Spec;
 # Class method call
 File::Spec-&gt;$method;
 </pre>
-<h3> method </h3>
-<h4> catfile </h4>
+<h3>method</h3>
+<h4>catfile</h4>
 <p>
   Use catfile to create filenames from individual parts. $file is "xxx\yyy\zzz" for Windows and "xxx/yyy/zzz" for Unix. OS-specific delimiters are used to create filenames.
 </p>
@@ -115,7 +114,7 @@ my $file = 'zzz';
 
 my $file_abs = File::Spec-&gt;catfile($dir, $file);
 </pre>
-<h4> splitdir </h4>
+<h4>splitdir</h4>
 <p>
   Use splitdir to split the filename into individual parts. @parts becomes ('xxx','yyy','zzz').
 </p>
@@ -123,7 +122,7 @@ my $file_abs = File::Spec-&gt;catfile($dir, $file);
 # Decompose file name
 my @parts = File::Spec-&gt;splitdir('xxx/yyy/zzz');
 </pre>
-<h4> File::Spec Technique </h4>
+<h4>File::Spec Technique</h4>
 <p>
   You may want to create a file name with the delimiter "/" even on Windows. To achieve this, use File::Spec::Unix instead of File::Spec.
 </p>
@@ -132,11 +131,11 @@ my @parts = File::Spec-&gt;splitdir('xxx/yyy/zzz');
 use File::Spec::Unix;
 my $file = File::Spec::Unix-&gt;catfile('xxx', 'yyy', 'zzz');
 </pre>
-<h3> Supplement </h3>
+<h3>Supplement</h3>
 <p>
   The standard open function etc. works correctly with both the Unix delimiter "/" and the Windows delimiter "\". So if you just want to open a file, you don't need to convert Unix delimiters to Windows delimiters.
 </p>
-<h3> Related articles </h3>
+<h3>Related articles</h3>
 <ul>
   <li>
     <a href="/blog/20080516121095.html">Create an OS-independent file name</a>

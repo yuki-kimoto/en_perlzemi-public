@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Understand how pipes work  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Understand how pipes work - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="In modern operating systems, it is possible to pass "standard output of one program" to "standard input of another program". This OS function is called a pipe.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Understand how pipes work  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Understand how pipes work - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="In modern operating systems, it is possible to pass "standard output of one program" to "standard input of another program". This OS function is called a pipe." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080801121768.html"> Understand how pipes work </a></h2>
+<h2><a href="/blog/20080801121768.html">Understand how pipes work</a></h2>
 <p>
   In modern operating systems, it is possible to pass "standard output of one program" to "standard input of another program". This OS function is called a pipe.
 </p>
@@ -87,7 +86,7 @@
 <p>
   The function called pipe is a very convenient function. If you create a program that receives data from standard input and outputs it to standard output, you can link multiple programs.
 </p>
-<h3> 1. Image of pipe </h3>
+<h3>1. Image of pipe</h3>
 <pre>
                | - -- -- --- | | - -- -- --- | | - -- -- --- |
 First input - -&gt;| Program A | - -&gt;| Program B | - -&gt;| Program C | - -&gt;Final output
@@ -96,7 +95,7 @@ First input - -&gt;| Program A | - -&gt;| Program B | - -&gt;| Program C | - -&g
 <p>
   You can use a pipe to connect the standard output of Program A to the standard input of Program B. In addition, the standard output of program B can be concatenated with the standard input of program C. By concatenating standard output and standard input in this way, data can be processed continuously without creating an intermediate file.
 </p>
-<h3> 2. Use pipes </h3>
+<h3>2. Use pipes</h3>
 <pre>
 perldoc perlintro | perl -ne "print if/open /"
 </pre>
@@ -109,7 +108,7 @@ perldoc perlintro | perl -ne "print if/open /"
 <p>
   Overall, I'm pulling out the line containing open from the perlinto man page. Pipes allow multiple programs to process data continuously.
 </p>
-<h3> 3. How the pipe works </h3>
+<h3>3. How the pipe works</h3>
 <p>
   Pipe is a function that connects the standard output of one program to the standard input of another program. I think that understanding will deepen if you know what the OS is actually doing internally, so I will write it down.
 </p>

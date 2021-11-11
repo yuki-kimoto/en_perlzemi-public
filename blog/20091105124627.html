@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Time::Piece - A new way to handle dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Time::Piece - A new way to handle dates and times - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Starting with Perl 5.10, a module called Time::Piece has been added to the standard module to handle time conveniently. If you're using Perl 5.10 or higher, the Time::Piece module is useful if you want to work with dates and times.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Time::Piece - A new way to handle dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Time::Piece - A new way to handle dates and times - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Starting with Perl 5.10, a module called Time::Piece has been added to the standard module to handle time conveniently. If you're using Perl 5.10 or higher, the Time::Piece module is useful if you want to work with dates and times." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20091105124627.html"> Time::Piece - A new way to handle dates and times </a></h2>
+<h2><a href="/blog/20091105124627.html">Time::Piece - A new way to handle dates and times</a></h2>
 <p>
   Starting with Perl 5.10, a module called Time::Piece has been added to the standard module to handle time conveniently. If you're using Perl 5.10 or higher, the Time::Piece module is useful if you want to work with dates and times.
 </p>
@@ -102,7 +101,7 @@
     <a href="/blog/20161123147990.html">Handling dates and times in Perl</a>
   </li>
 </ul>
-<h3> Acquisition of time/date information </h3>
+<h3>Acquisition of time/date information</h3>
 <p>
   Use the Time::Piece module as follows: When used, the Time::Piece module overwrites the core localtime and gmtime.
 </p>
@@ -125,10 +124,10 @@ my $second = $t-&gt;sec;
   You can get the Time::Piece object by calling localtime, and you can get the date and time information from now on.
 </p>
 <p>
-  The case where the time information is acquired by the standard function localtime is described for comparison.
+  The case where the time information is got by the standard function localtime is described for comparison.
 </p>
 <pre>
-# When time information is acquired by localtime of standard function
+# When time information is got by localtime of standard function
 my ($second, $minute, $hour, $mday, $month, $year) = localtime;
 
 # Month starts from 0, so add 1
@@ -140,7 +139,7 @@ $year += 1900;
 <p>
   It is more intuitive to use localtime of Time::Piece to handle date and time information.
 </p>
-<h3> List of information that can be obtained with Time::Piece </h3>
+<h3>List of information that can be obtained with Time::Piece</h3>
 <p>
   A list of information that can be obtained with Time::Piece.
 </p>
@@ -354,7 +353,7 @@ $year += 1900;
     </td>
   </tr>
 </table>
-<h3> Judgment of date </h3>
+<h3>Judgment of date</h3>
 <p>
   You can use Time::Piece to determine if it is a leap year and if it is the last day of the month.
 </p>
@@ -365,11 +364,11 @@ $t-&gt;is_leap_year
 # Get the last day of the month (return the number 28-31)
 $t-&gt;month_last_day
 </pre>
-<h3> Format date/time </h3>
+<h3>Format date/time</h3>
 <p>
   You may want to format the date/time and output it. Time::Piece provides several fixed formats. You can also format it freely using the strftime method.
 </p>
-<h4> [A] Formats provided by default </h4>
+<h4>[A] Formats provided by default</h4>
 <p>
   The formats provided by default are as follows.<table>
 </p>
@@ -470,7 +469,7 @@ $t-&gt;month_last_day
     </td>
   </tr>
 </table>
-<h4> [B] Format customization </h4>
+<h4>[B] Format customization</h4>
 <p>
   If you want to customize the format freely, use the strftime method. Specify the time representation in $format.
 </p>
@@ -478,7 +477,7 @@ $t-&gt;month_last_day
 $t-&gt;strftime($format)
 </pre>
 <p>
-  This is a sample format of date and time.
+  This is a example format of date and time.
 </p>
 <pre>
 $t-&gt;strftime('%Y-%m-%d%H:%M:%S'); # 2009-11-34 12:14:15
@@ -530,7 +529,7 @@ Same as%T:%H:%M:%S. Hours, minutes and seconds (such as 23:14:03)
 %Z: Timezone name
 %%:%
 </pre>
-<h4> Precautions when handling Japanese </h4>
+<h4>Precautions when handling Japanese</h4>
 <p>
   Note that Time::Piece's strftime method always returns a byte string, whether the input is a byte string or an internal string.
 </p>
@@ -538,21 +537,21 @@ Same as%T:%H:%M:%S. Hours, minutes and seconds (such as 23:14:03)
 # Byte string is always returned
 my $bytes = $tp-&gt;strftime("%Y year%m month");
 </pre>
-<h3> Parse the character string that expresses the date/time </h3>
+<h3>Parse the string that expresses the date/time</h3>
 <p>
   You can parse date and time representations to create Time::Piece objects. Use the strptime method to parse dates and times.
 </p>
 <pre>
-my $t = Time::Piece-&gt;strptime(character string representing date/time, format);
+my $t = Time::Piece-&gt;strptime(string representing date/time, format);
 </pre>
 <p>
-  As a sample, let's parse the MySQL date representation and create a Time::Piece object. Use the above strftime format for the format.
+  As a example, let's parse the MySQL date representation and create a Time::Piece object. Use the above strftime format for the format.
 </p>
 <pre>
 my $datetime_mysql = '2009-12-31 23:59:59';
 my $t = Time::Piece-&gt;strptime($datetime_mysql, '%Y-%m-%d%H:%M:%S');
 </pre>
-<h3> Localization </h3>
+<h3>Localization</h3>
 <p>
   By default, month and week names are in English. If you want to get the Japanese week name, pass an array of day names to the method to get the week name.
 </p>
@@ -562,8 +561,8 @@ my $t = Time::Piece::localtime;
 # Get week name in Japanese
 my $wday = $t-&gt;wdayname(@week_names);
 </pre>
-<h3> Calculation of date/time information </h3>
-<h4> Tempe::Piece object subtraction </h4>
+<h3>Calculation of date/time information</h3>
+<h4>Tempe::Piece object subtraction</h4>
 <p>
   Time::Piece can also calculate dates and times. If you subtract between Time::Piece objects, the return value will be a Time::Seconds object. This object is in seconds when evaluated as a string.
 </p>
@@ -587,7 +586,7 @@ $sec-&gt;financial_months;
 <p>
   The conversion to days and years is done according to the following rules. One day is converted to 24 hours. One week is converted to 7 days. One year is converted to 365.24225 days. One year is converted to 12 months.
 </p>
-<h4> Addition of Time::Piece objects </h4>
+<h4>Addition of Time::Piece objects</h4>
 <p>
   Time::Piece objects cannot be added to each other. You can add seconds or a Time::Seconds object to the Timpe::Piece object.
 </p>
@@ -616,14 +615,14 @@ NON_LEAP_YEAR
 use Time::Seconds;
 $t + ONE_DAY * 5
 </pre>
-<h3> Date comparison </h3>
+<h3>Date comparison</h3>
 <p>
   You can use comparison operators to compare dates. You can use "<", ">", "<=", " >= ", "<=>", "==" and " != " .
 </p>
 <pre>
 $t1 &lt; $t2
 </pre>
-<h3> Create Time::Piece object </h3>
+<h3>Create Time::Piece object</h3>
 <p>
   As far as I read the document, it seems that there is no choice but to use the strptime method to create a Time::Piece object at any date and time.
 </p>
@@ -633,7 +632,7 @@ my $t = Time::Piece-&gt;strptime('2009-12-31 23:59:59', '%Y-%m-%d%H:%M:%S');
 <p>
   (When I read the source code, there is a parse method, but when I tried it, it seems to be broken ... It seems that it is private because it is not in the document.)
 </p>
-<h3> Get an object that represents today's date </h3>
+<h3>Get an object that represents today's date</h3>
 <p>
   To use the <strong> Time::Piece </strong> module to get an object that represents today:
 </p>

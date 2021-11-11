@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Procedure for connecting to SQL Server using Perl's DBI on CentOS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Procedure for connecting to SQL Server using Perl's DBI on CentOS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Here are the steps to connect to SQL Server using Perl's DBI on CentOS. You need to properly install and configure the Unix (Linux) libraries FreeTDS, Unix ODBC and the Perl DBD::ODBC module.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Procedure for connecting to SQL Server using Perl's DBI on CentOS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Procedure for connecting to SQL Server using Perl's DBI on CentOS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Here are the steps to connect to SQL Server using Perl's DBI on CentOS. You need to properly install and configure the Unix (Linux) libraries FreeTDS, Unix ODBC and the Perl DBD::ODBC module." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20101218130016.html"> Procedure for connecting to SQL Server using Perl's DBI on CentOS </a></h2>
+<h2><a href="/blog/20101218130016.html">Procedure for connecting to SQL Server using Perl's DBI on CentOS</a></h2>
 <p>
   Here are the steps to connect to SQL Server using Perl's DBI on CentOS. You need to properly install and configure the Unix (Linux) libraries FreeTDS, Unix ODBC and the Perl DBD::ODBC module.
 </p>
@@ -97,7 +96,7 @@ DBI-ODWD (using FreeTDS protocol for communication)-SQL Server
 <p>
   DBI requires ODBC as a driver. The corresponding Perl module is DBD::ODBC. DBD::ODBC also requires a library called UnixODBC. A library called UnixODBC requires a library called FreeTDS to communicate with SQL Server.
 </p>
-<h3> Installing UnixODBC </h3>
+<h3>Installing UnixODBC</h3>
 <p>
   Unix ODBC is one of the Unix implementations of ODBC. Let's install Unix ODBC from source code. As the number of dependent modules increases, GUI support is optionally removed. Make will take some time, so wait for a while.
 </p>
@@ -116,7 +115,7 @@ make install
 <pre>
 ls /usr/local/lib/libodbc.so
 </pre>
-<h3> FreeTDS installation </h3>
+<h3>FreeTDS installation</h3>
 <p>
   FreeTDS is a library that implements the "Tabular Data Stream" communication protocol. Used by Unix ODBC.
 </p>
@@ -137,7 +136,7 @@ make install
 <pre>
 ls /usr/local/lib/libtdsodbc.so
 </pre>
-<h3> DBD::ODBC module installation </h3>
+<h3>DBD::ODBC module installation</h3>
 <p>
   Install the DBD::ODBC module.
 </p>
@@ -148,7 +147,7 @@ cpan DBD::ODBC
 <p>
   DBD::ODBC does not need to be installed with root privileges, so it is a good idea to install it in your personal directory using something like cpanm.
 </p>
-<h3> FreeTDS settings </h3>
+<h3>FreeTDS settings</h3>
 <p>
   Edit the FreeTDS configuration file. Describe the connection destination information etc. in the FreeTDS configuration file.
 </p>
@@ -164,7 +163,7 @@ tds version = 8.0
 <p>
   Specify the connection destination information and TDS version. Currently 8.0 seems to be fine. The name in [] is the name used in Unix ODBC.
 </p>
-<h3> UnixODBC settings </h3>
+<h3>UnixODBC settings</h3>
 <p>
   Edit the Unix ODBC configuration file.
 </p>
@@ -184,7 +183,7 @@ Database = dbname
 <p>
   For Driver, specify the path of the FreeTDS library, for Servername, specify the name set in the FreeTDS configuration file, and for DesDatabase, specify the database name of the connection destination.
 </p>
-<h3> Check FreeTDS and UnixODBC settings </h3>
+<h3>Check FreeTDS and UnixODBC settings</h3>
 <p>
   First, let's check if the FreeTDS settings are correct by invoking the command tsql.
 </p>
@@ -203,7 +202,7 @@ isql sqlserver kimoto pipipi
 <p>
   If the connection with isql is successful, you can confirm that the Unix ODBC settings are correct. You can exit with the Enter key.
 </p>
-<h3> Connect to SQL Server from Perl </h3>
+<h3>Connect to SQL Server from Perl</h3>
 <p>
   Then if you can connect from the script using the DBI module, you are successful.
 </p>

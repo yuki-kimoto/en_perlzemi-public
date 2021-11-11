@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to load C library from XS file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to load C library from XS file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to read the C language library from the XS file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to load C library from XS file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to load C library from XS file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to read the C language library from the XS file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170206150055.html"> How to load C library from XS file </a></h2>
+<h2><a href="/blog/20170206150055.html">How to load C library from XS file</a></h2>
 <p>
   I will explain how to read the C language library from the XS file.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Create a module with h2xs </h3>
+<h3>Create a module with h2xs</h3>
 <p>
   First, create a module for XS with <a href="/blog/20170209150055.html">h2xs</a>.
 </p>
@@ -104,7 +103,7 @@ README
 SomeModule.xs
 t/&lt;/pre&gt;
 
-&lt;h3&gt; Creating a C language library &lt;/h3&gt;
+&lt;h3&gt;Creating a C language library&lt;/h3&gt;
 
 First, let's create a C language library. Create a header file and a source file.
 
@@ -131,7 +130,7 @@ void mylib_print() {
 <p>
   Save the header and source files and place them in the same directory where the XS files are located. Keeping it in the same directory is the point of view because there are few later settings.
 </p>
-<h3> XS file description </h3>
+<h3>XS file description</h3>
 <p>
   Let's write an XS file. I am calling mylib_print.
 </p>
@@ -153,7 +152,7 @@ foo (...)
   XSRETURN (0);
 }
 </pre>
-<h3> Modify Makefile.PL </h3>
+<h3>Modify Makefile.PL</h3>
 <p>
   Next, let's modify <a href="/blog/20150725143778.html">Makefile.PL</a> a little. The bottom "OBJECT" option is commented out by default, so uncomment it. If you set "$(O_FILES)", all C language source files in the current directory will be compiled.
 </p>
@@ -173,7 +172,7 @@ WriteMakefile (
     # OBJECT =&gt;'$(O_FILES)', link all the C files too
 );
 </pre>
-<h3> Test script </h3>
+<h3>Test script</h3>
 <p>
   Create a test script. This should be in the same directory where the XS files are located.
 </p>
@@ -185,7 +184,7 @@ use SomeModule;
 
 SomeModule::foo ();
 </pre>
-<h3> Compile and run </h3>
+<h3>Compile and run</h3>
 <p>
   Let's compile and run it.
 </p>

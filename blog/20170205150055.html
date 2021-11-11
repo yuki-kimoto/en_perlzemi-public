@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to treat a C language structure as a Perl object in XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to treat a C language structure as a Perl object in XS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="In XS, you can also treat the structure itself as a Perl object. I will explain how to treat a C language structure as a Perl object.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to treat a C language structure as a Perl object in XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to treat a C language structure as a Perl object in XS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="In XS, you can also treat the structure itself as a Perl object. I will explain how to treat a C language structure as a Perl object." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170205150055.html"> How to treat a C language structure as a Perl object in XS </a></h2>
+<h2><a href="/blog/20170205150055.html">How to treat a C language structure as a Perl object in XS</a></h2>
 <p>
   In XS, you can also treat the structure itself as a Perl object. I will explain how to treat a C language structure as a Perl object.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Create a module with h2xs </h3>
+<h3>Create a module with h2xs</h3>
 <p>
   First, create a module for XS with h2xs.
 </p>
@@ -104,7 +103,7 @@ README
 SomeModule.xs
 t/&lt;/pre&gt;
 
-&lt;h3&gt; XS file description &lt;/h3&gt;
+&lt;h3&gt;XS file description&lt;/h3&gt;
 
 Let's write an XS file. The pointer of the structure is converted to size_t type by PTR2INT. In addition, size_t type is converted to SV * type, SV * type is converted to SV * type reference, and finally bless is converted to object.
 
@@ -234,7 +233,7 @@ DESTORY (...)
 
 MODULE = SomeModule PACKAGE = SomeModule
 </pre>
-<h3> Creating a Point module </h3>
+<h3>Creating a Point module</h3>
 <p>
   Please put a file called Point.pm under lib. SomeModule is loaded because SomeModule has a binding description.
 </p>
@@ -244,7 +243,7 @@ use SomeModule;
 
 1;
 </pre>
-<h3> Test script </h3>
+<h3>Test script</h3>
 <p>
   Create a test script. This should be in the same directory where the XS files are located.
 </p>
@@ -257,7 +256,7 @@ my $point = Point-&gt;new(1, 2);
 print $point-&gt;x . "\n";
 print $point-&gt;y . "\n";
 </pre>
-<h3> Compile and run </h3>
+<h3>Compile and run</h3>
 <p>
   Let's compile and run it.
 </p>

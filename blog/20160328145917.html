@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> opcode.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>opcode.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="opcode.h  contains information about each operation. In Perl language research, "OP type" data is called an operation. Perl is converted to a syntax tree after parsing, but each of these nodes is "OP type".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" opcode.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="opcode.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="opcode.h  contains information about each operation. In Perl language research, "OP type" data is called an operation. Perl is converted to a syntax tree after parsing, but each of these nodes is "OP type"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20160328145917.html"> opcode.h </a></h2>
+<h2><a href="/blog/20160328145917.html">opcode.h</a></h2>
 <p>
   <strong> opcode.h </strong> contains information about each operation. In Perl language research, "OP type" data is called an operation. Perl is converted to a syntax tree after parsing, but each of these nodes is "OP type".
 </p>
@@ -88,7 +87,7 @@
 <p>
   Operations are categorized by operation code, and each has its own information. That information is described.
 </p>
-<h3> Name of operation </h3>
+<h3>Name of operation</h3>
 <p>
   For example, the name of the operation is described.
 </p>
@@ -107,7 +106,7 @@ EXTCONST char * const PL_op_name [] = {
 <p>
   =====
 </p>
-<h3> Operation explanation </h3>
+<h3>Operation explanation</h3>
 <p>
   Next, a description of the operation is described.
 </p>
@@ -124,7 +123,7 @@ EXTCONST char * const PL_op_desc [] = {
   ...
 };
 </pre>
-<h3> Address of the function that the operation executes </h3>
+<h3>Address of the function that the operation executes</h3>
 <p>
   Each operation has a corresponding function, but the address to that function is described.
 </p>
@@ -146,7 +145,7 @@ EXT Perl_ppaddr_t PL_ppaddr [] /* or perlvars.h */# endif
 <p>
   The prefix "pp" means "push pop", and the function executed is the function that manipulates the argument stack.
 </p>
-<h3> Functions that optimize operations </h3>
+<h3>Functions that optimize operations</h3>
 <p>
   Each operation is optimized with a function prefixed with "ck". The address of the function is described. "Ck" is an abbreviation for "check".
 </p>
@@ -156,7 +155,7 @@ EXT Perl_ppaddr_t PL_ppaddr [] /* or perlvars.h */# endif
 = {
   Perl_ck_null,/* null */  Perl_ck_null,/* stub */  Perl_ck_fun,/* scalar */  Perl_ck_null,/* pushmark */  Perl_ck_null,/* wantarray */  Perl_ck_svconst,/* const */  Perl_ck_null,/* gvsv */};
 </pre>
-<h3> Function argument information </h3>
+<h3>Function argument information</h3>
 <p>
   The argument information of the function to be executed is described.
 </p>
@@ -227,7 +226,7 @@ EXTCONST U32 PL_opargs [] = {
 # make temp copy in list assignment - d (OA_DANGEROUS)
 # uses $_ if no argument given - u (OA_DEFGV)
 </pre>
-<h3> Private flags for operations </h3>
+<h3>Private flags for operations</h3>
 <p>
   And there is private flag information about the operation. A detailed description of these can be found in "regen/op_private".
 </p>

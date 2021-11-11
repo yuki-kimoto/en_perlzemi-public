@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File::Temp - Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>File::Temp - Create a temporary file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use  File::Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File::Temp - Create a temporary file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="File::Temp - Create a temporary file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use  File::Temp  to create  temporary files  and  temporary directories . You can create temporary files (or temporary directories) in a secure way regardless of the OS." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100413127089.html"> File::Temp - Create a temporary file </a></h2>
+<h2><a href="/blog/20100413127089.html">File::Temp - Create a temporary file</a></h2>
 <p>
   You can use <strong> File::Temp </strong> to create <b> temporary files </b> and <b> temporary directories </b>. You can create temporary files (or temporary directories) in a secure way regardless of the OS.
 </p>
@@ -105,7 +104,7 @@ $fh = tempfile;
 $dir = tempdir;
 </pre>
 <p>
-  This is a sample that safely overwrites a file using a temporary file. (* 1)
+  This is a example that safely overwrites a file using a temporary file. (* 1)
 </p>
 <pre>
 # Safely overwrite files
@@ -145,7 +144,7 @@ sub get_content {
 <p>
   (Reference) <a href="/blog/20100408127089.html">File::Copy</a>
 </p>
-<h3> tempfile options </h3>
+<h3>tempfile options</h3>
 <p>
   You can specify options as arguments to tempfile.
 </p>
@@ -174,7 +173,7 @@ tempfile (DIR =&gt;'somedir', SUFFIX =&gt;'.dat');
 <p>
   If DIR is omitted, the directory for creating temporary files is automatically determined. For Unix it is/tmp.
 </p>
-<h3> Note </h3>
+<h3>Note</h3>
 <p>
   * 1 It is not safe to open a file in read/write mode and write to the read file. This is because if the computer crashes during writing, the data before reading will be corrupted. It is safe to write to a different file than the one you read and then overwrite with that file.
 </p>

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> grep function - Get only array elements that meet certain conditions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>grep function - Get only array elements that meet certain conditions - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the " grep function " to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $_. Only elements that meet the conditional statement will be added to @matched.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" grep function - Get only array elements that meet certain conditions  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="grep function - Get only array elements that meet certain conditions - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the " grep function " to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $_. Only elements that meet the conditional statement will be added to @matched." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20100119126425.html"> grep function - Get only array elements that meet certain conditions </a></h2>
+<h2><a href="/blog/20100119126425.html">grep function - Get only array elements that meet certain conditions</a></h2>
 <p>
   You can use the "<strong> grep function </strong>" to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $_. Only elements that meet the conditional statement will be added to @matched.
 </p>
@@ -88,9 +87,9 @@
 # Extract only the elements that match the conditions
 @matched = grep {conditional statement} @array;
 </pre>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample to get only the elements that match <a href="/blog/20100827127859.html">regular expression</a>. In this sample, only integers are taken. If @nums is (1.23, 123, 43) then @matched will be (123, 43).
+  This is a example to get only the elements that match <a href="/blog/20100827127859.html">regular expression</a>. In this example, only integers are taken. If @nums is (1.23, 123, 43) then @matched will be (123, 43).
 </p>
 <pre>
 # Get only the elements that match the regular expression
@@ -98,14 +97,14 @@ my @nums = (1.23, 123, 43);
 my @matched = grep {/^\d+$/} @nums;
 </pre>
 <p>
-  If the pattern matching operator (=~ ) is omitted in the regular expression, the default variable $_ will be the target of pattern matching. The sample above has the same meaning as:
+  If the pattern matching operator (=~ ) is omitted in the regular expression, the default variable $_ will be the target of pattern matching. The example above has the same meaning as:
 </p>
 <pre>
 # Explicitly specify the default variable $_
 my @matched = grep {$_ =~ /^\d+$/} @nums;
 </pre>
 <p>
-  This is a sample to get only multiples of 2. If @nums is (1, 2, 3, 4) then @even is (2, 4).
+  This is a example to get only multiples of 2. If @nums is (1, 2, 3, 4) then @even is (2, 4).
 </p>
 <pre>
 # Get only multiples of 2
@@ -123,7 +122,7 @@ for my $num (@nums) {
   push @matched, $num if $num =~ /^\d+$/;
 }
 </pre>
-<h3> Reference "Array of Perl" </h3>
+<h3>Reference "Array of Perl"</h3>
 <p>
   See below for a description of Perl's "arrays".
 </p>

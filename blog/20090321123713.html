@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Generate accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Generate accessor - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Let's create an accessor this time.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Generate accessor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Generate accessor - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Let's create an accessor this time." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20090321123713.html"> Generate accessor </a></h2>
+<h2><a href="/blog/20090321123713.html">Generate accessor</a></h2>
 <p>
   Let's create an accessor this time.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> 1. What is an accessor? </H3>
+<h3>1. What is an accessor? </H3>
 <p>
   You can't <b> directly mess with data </b> in object-oriented programming. This is because in object-oriented programming, it is correct to access objects through <b> exposed methods </b>.
 </p>
@@ -108,12 +107,12 @@ $book-&gt;title('aaa');
 <p>
   The creator of the class is obliged to create and publish the accessor.
 </p>
-<h3> 2. Creating an accessor </h3>
+<h3>2. Creating an accessor</h3>
 <p>
   Now let's create an accessor. In Perl, it's common to use the same accessor to get and set a value.
 </p>
 <p>
-  (The book Perl Best Plastis says that the accessor for setting and the accessor for getting should be separated, but in practice such as CPAN, it seems that it is preferable to make only one accessor. is.)
+  (The book Perl Best Plastis says that the accessor for setting and the accessor for getting should be separated, but in practice such as CPAN, it seems that it is preferable to make only one accessor.)
 </p>
 <pre>
 sub title {
@@ -130,7 +129,7 @@ sub title {
 <p>
   The last line returns $self->{title}.
 </p>
-<h3> 3. If a value is set, create an accessor that returns the old value </h3>
+<h3>3. If a value is set, create an accessor that returns the old value</h3>
 <p>
   In addition to the above accessors, it is also common to implement an accessor that <b> returns the old value </b> when a value is set.
 </p>

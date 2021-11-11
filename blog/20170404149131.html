@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> print function-prints a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>print function - prints a string - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  print function  to print the string.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" print function-prints a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="print function - prints a string - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  print function  to print the string." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170404149131.html"> print function-prints a string </a></h2>
+<h2><a href="/blog/20170404149131.html">print function - prints a string</a></h2>
 <p>
   Use the <b> print function </b> to print the string.
 </p>
@@ -89,14 +88,14 @@
 print "Hello World!";
 </pre>
 <p>
-  You can also assign a string to a variable and then pass it to the print function. This method is recommended when actually writing a program. It is a method to create one character string and then pass it to the print function.
+  You can also assign a string to a variable and then pass it to the print function. This method is recommended when actually writing a program. It is a method to create one string and then pass it to the print function.
 </p>
 <pre>
 my $message = "Hello World!";
 print $message;
 </pre>
 <p>
-  You can also pass a <a href="/blog/20100308126967.html">list</a> or an array to the print function. The character strings are concatenated and output. When actually writing a program, the above method is recommended over this method.
+  You can also pass a <a href="/blog/20100308126967.html">list</a> or an array to the print function. The strings are concatenated and output. When actually writing a program, the above method is recommended over this method.
 </p>
 <pre>
 # List
@@ -106,7 +105,7 @@ print "Hello", "World", "!";
 my @strings = ("Hello", "World", "!");
 print @strings;
 </pre>
-<h3> How to output after concatenating an array into one character string </h3>
+<h3>How to output after concatenating an array into one string</h3>
 <p>
   A common technique is to concatenate array strings with commas and output with a newline at the end.
 </p>
@@ -117,7 +116,7 @@ print @strings;
 my @animals = ('Dog', 'Cat', 'Mouse');
 print join(',', @animals) . "\n";
 </pre>
-<h3> The default output destination of the print function is standard output </h3>
+<h3>The default output destination of the print function is standard output</h3>
 <p>
   The default output destination for the print function is the screen, or <b> standard output </b>. Please refer to the following article for a detailed explanation of standard output.
 </p>
@@ -142,7 +141,7 @@ STDOUT-&gt;print("Hello");
 <p>
   It is Perl's convention to use indirect object syntax when specifying the output destination in the print function.
 </p>
-<h3> Specify standard error output </h3>
+<h3>Specify standard error output</h3>
 <p>
   You can specify <b> standard error output </b> as the output destination. Specify <b> STDERR </b> as the output destination.
 </p>
@@ -157,7 +156,7 @@ print STDERR "Hello";
     <a href="/blog/20080730121743.html">Standard input Standard output Standard error output</a>
   </li>
 </ul>
-<h3> Specify file handle </h3>
+<h3>Specify file handle</h3>
 <p>
   You can also change the output destination of the print function to a file. In that case, open the file with <a href="/blog/20080718121643.html">open function</a>, create a file handle, and specify the file handle with the print function.
 </p>
@@ -170,11 +169,11 @@ print $fh "Hello";
 <p>
   "Hello" is output to a file called "output.txt".
 </p>
-<h3> Same as the echo function in the shell </h3>
+<h3>Same as the echo function in the shell</h3>
 <p>
   If you're using bash, you'd probably use echo for output, which is a feature of Perl's print function.
 </p>
-<h3> If you want to format it, printf function or sprintf function </h3>
+<h3>If you want to format it, printf function or sprintf function</h3>
 <p>
   If you want to specify the format like the C language printf function, use <a href="/blog/20170326149148.html">printf function</a> or <a href="/blog/20081001122296.html" Create a string formatted with the> sprintf function</a> and pass it to the print function.
 </p>
@@ -186,7 +185,7 @@ printf "Number%d", 3;
 my $string = sprintf("Number%d", 3);
 print $string;
 </pre>
-<h3> Technique to output to a file by redirect </h3>
+<h3>Technique to output to a file by redirect</h3>
 <p>
   A common technique is to redirect standard output to a file. This technique allows you to output to a file without using the open function.
 </p>

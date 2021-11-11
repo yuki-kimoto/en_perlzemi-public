@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> wait function-waits for the termination of the child process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>wait function - waits for the termination of the child process - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="If you branch with fork, you don't know which of the parent and child processes will terminate first. This time, I will explain how the parent process waits for the child process to finish.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" wait function-waits for the termination of the child process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="wait function - waits for the termination of the child process - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="If you branch with fork, you don't know which of the parent and child processes will terminate first. This time, I will explain how the parent process waits for the child process to finish." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20090414124049.html"> wait function-waits for the termination of the child process </a></h2>
+<h2><a href="/blog/20090414124049.html">wait function - waits for the termination of the child process</a></h2>
 <p>
   If you branch with fork, you don't know which of the parent and child processes will terminate first. This time, I will explain how the parent process waits for the child process to finish.
 </p>
@@ -84,7 +83,7 @@
 </div>
 
 
-<h3> 1. Wait for the end of the child process with wait </h3>
+<h3>1. Wait for the end of the child process with wait</h3>
 <p>
   Use the <b> wait </b> function to wait for the child process to terminate. The wait function <b> waits until one child process terminates </b>. The return value is <b> the process ID of the terminated child process </b>. If the child process was automatically reclaimed for any reason, -1 will be returned.
 </p>
@@ -92,7 +91,7 @@
 my $pid = wait;
 </pre>
 <p>
-  This is a sample that waits for a child process. Let's modify the previous sample a little. To make the result easier to understand, the <a href="/blog/20170522149546.html">sleep function</a> waits for 2 seconds before executing the print statement on the child process side.
+  This is a example that waits for a child process. Let's modify the previous example a little. To make the result easier to understand, the <a href="/blog/20170522149546.html">sleep function</a> waits for 2 seconds before executing the print statement on the child process side.
 </p>
 <pre>
 use strict;
@@ -123,7 +122,7 @@ Parent process (child process ID: 25870)
 <p>
   It will be. You can see that the parent process is waiting for the child process.
 </p>
-<h3> 2. Termination of child process and deletion from process table </h3>
+<h3>2. Termination of child process and deletion from process table</h3>
 <p>
   When a child process terminates, it is <b> not immediately deleted from the process table </b>. (The process table is used by the OS to manage the process.)
 </p>
@@ -133,7 +132,7 @@ Parent process (child process ID: 25870)
 <p>
   Calling wait removes the terminated child process from the process table. The child process is also deleted from the process table when the parent process terminates.
 </p>
-<h3> 3. Child process exit status </h3>
+<h3>3. Child process exit status</h3>
 <p>
   When you call wait
 </p>
@@ -143,7 +142,7 @@ $?
 <p>
   Multiple data including the exit status of the child process are stored in the special variable called. Next time, I will explain how to get the exit status of the child process stored in $?.
 </p>
-<h3> 4. What wait really does </h3>
+<h3>4. What wait really does</h3>
 <p>
   In fact, <b> wait is not waiting for the child process to terminate </b>. Waiting for the child process to <b> generate a CHLD signal </b>. The CHLD signal occurs not only when the child process terminates, but also when the child process is stopped or restarted.
 </p>

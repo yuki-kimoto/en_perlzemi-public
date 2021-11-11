@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to write a program without causing a memory leak in XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to write a program without causing a memory leak in XS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to write a program without causing a memory leak in XS.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to write a program without causing a memory leak in XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to write a program without causing a memory leak in XS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to write a program without causing a memory leak in XS." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20141220141904.html"> How to write a program without causing a memory leak in XS </a></h2>
+<h2><a href="/blog/20141220141904.html">How to write a program without causing a memory leak in XS</a></h2>
 <p>
   I will explain how to write a program without causing a memory leak in XS.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Perl memory management is a reference counting method </h3>
+<h3>Perl memory management is a reference counting method</h3>
 <p>
   First of all, as a basic knowledge, please be aware that Perl's memory management is performed by the <a href="/blog/20131010138141.html">reference counting method</a>. In the reference counting method, the memory is released when the reference count reaches 0. In other words, freeing memory in Perl is equivalent to setting the reference count to 0.
 </p>
@@ -125,11 +124,11 @@
 <p>
   Following this process, the memory is released.
 </p>
-<h3> Basics of memory management in XS </h3>
+<h3>Basics of memory management in XS</h3>
 <p>
   Next, based on this, I will explain the basics of memory management in XS.
 </p>
-<h4> Perl variables </h4>
+<h4>Perl variables</h4>
 <p>
   First, let's take a brief look at Perl variables.
 </p>
@@ -160,7 +159,7 @@ SV * sv_str_ref = newRV_inc (sv_str);
 <p>
   There is another function called newRV, but when generating a reference, it is a rule to increase the reference count by 1 with newRV_inc.
 </p>
-<h3> Make all created variables mortal </h3>
+<h3>Make all created variables mortal</h3>
 <p>
   Then proceed to memory management. The ironclad rule of Perl's memory management is that all newly created Perl variables should be mortal. By making it mortal, the reference count of variables that are out of scope is decremented by 1 and the memory is automatically freed.
 </p>
@@ -225,7 +224,7 @@ foo (...)
   
 /* End of Perl scope */}
 </pre>
-<h3> When storing data in arrays and hashes </h3>
+<h3>When storing data in arrays and hashes</h3>
 <p>
   If you code while observing the above iron rules, memory release will not work if you store data in arrays and hashes. This is because arrays and hashes decrement the reference count of the "SV * type" data they contain by one when they are destroyed by themselves.
 </p>
@@ -241,7 +240,7 @@ av_push(av_nums, SvREFCNT_inc (sv_num));
 HV * hv_scores = (HV *) sv_2mortal ((SV *) newHV ());
 hv_store (hv_scores, "math", strlen ("math"), SvREFCNT_inc (sv_score_math), 0);
 </pre>
-<h3> When storing Perl data in a C structure </h3>
+<h3>When storing Perl data in a C structure</h3>
 <p>
   If you want to store Perl data in a C structure, you need to manage the memory yourself. As a premise of this story, you should look at <a href="/blog/20140807140729.html">How to treat C structs as Perl objects</a>.
 </p>
@@ -302,7 +301,7 @@ DESTORY (...)
 <p>
   If you want to store data in a member of the C world structure (same as the class) in this way, you need to manually increase or decrease the reference count.
 </p>
-<h3> Summary </h3>
+<h3>Summary</h3>
 <p>
   In summary, there are three main points.
 </p>
@@ -320,7 +319,7 @@ DESTORY (...)
 <p>
   This should work in most cases.
 </p>
-<h3> Reference </h3>
+<h3>Reference</h3>
 <p>
   The functions used in XS mentioned in this explanation are explained in detail in the following articles.
 </p>

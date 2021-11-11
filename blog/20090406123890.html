@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Communicate with socket  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Communicate with socket - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="A description of Perl's "sockets".">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Communicate with socket  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Communicate with socket - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="A description of Perl's "sockets"." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20090406123890.html"> Communicate with socket </a></h2>
+<h2><a href="/blog/20090406123890.html">Communicate with socket</a></h2>
 <p>
   A description of Perl's "sockets".
 </p>
@@ -81,7 +80,7 @@
 </div>
 
 
-<h3> What is a socket? </H3>
+<h3>What is a socket? </H3>
 <p>
   Sockets are used when you want to <b> exchange data over a network </b>. For example, a web server exchanges data with a browser over the network. At this time, the socket is used in the internal mounting.
 </p>
@@ -91,7 +90,7 @@
 <p>
   If you want to create an application that wants to exchange data over the network, use sockets or use wrapper classes that make sockets easy to use.
 </p>
-<h4> Socket image </h4>
+<h4>Socket image</h4>
 <p>
   It's easiest to think of a socket as a <b> kind of filehandle </b>. To open a file in write mode
 </p>
@@ -121,34 +120,34 @@ print $sock'aaa';
 <p>
   The socket function corresponds to the open function. When writing, you can write with the print function.
 </p>
-<h3> Studying sockets is difficult </h3>
+<h3>Studying sockets is difficult</h3>
 <p>
   Studying sockets is difficult. There are several difficult causes.
 </p>
-<h4> The procedure for creating a socket is complicated </h4>
+<h4>The procedure for creating a socket is complicated</h4>
 <p>
   The procedure for creating a socket is complicated. You need to <b> write the source code over and over again </b> before you can memorize and use the socket.
 </p>
-<h4> Two programs, client and server, are required to communicate </h4>
+<h4>Two programs, client and server, are required to communicate</h4>
 <p>
   The hard part about studying sockets is that you have to write two programs, <b> client and server </b>. Even if you create only a client, you cannot try the program without a communication partner. Due to these difficulties, we will first prepare the server-side program here so that we can concentrate on creating the client-side program at first.
 </p>
-<h4> The status of the communication partner is uncertain </h4>
+<h4>The status of the communication partner is uncertain</h4>
 <p>
   Since it communicates over the network, <b> the status of the other party is uncertain </b>. There is no guarantee that it will almost certainly be written locally like a file. There may be sudden disconnections or delays. It means that you need to write a program to handle such errors.
 </p>
 <p>
-  The simplest sample of <h3> sockets. Echo server </h3>
+  The simplest example of <h3>sockets. Echo server</h3>
 </p>
 <p>
-  Here is a sample socket program that you can run first. When the client sends the character Hello, the server adds the echo: string to the string and returns it to the client.
+  Here is a example socket program that you can run first. When the client sends the character Hello, the server adds the echo: string to the string and returns it to the client.
 </p>
 <p>
-  This sample is not complete, but it is the basis for learning client-server communication. It's one of the simplest client-server programs, but it's quite difficult for a normal program. First look at the sample in action.
+  This example is not complete, but it is the basis for learning client-server communication. It's one of the simplest client-server programs, but it's quite difficult for a normal program. First look at the example in action.
 </p>
-<h4> Client-side program echo_client.pl </h4>
+<h4>Client - side program echo_client.pl</h4>
 <p>
-  A program that sends a character string to the server and outputs the received character string.
+  A program that sends a string to the server and outputs the received string.
 </p>
 <pre>
 use strict;
@@ -198,7 +197,7 @@ while (my $line = &lt;$sock&gt;) {
 # 6. Close the socket
 close $sock;
 </pre>
-<h4> 2. Server-side program echo_server.pl </h4>
+<h4>2. Server - side program echo_server.pl</h4>
 <p>
   This is a server-side program. Adds the string echo: to the string received from the client and returns it to the client. <a href="/blog/20100123126425.html">while statement</a> is used to create a state that can be accepted repeatedly.
 </p>
@@ -244,9 +243,9 @@ while (accept ($sock_client, $sock_receive)) {
   close $sock_client;
 }
 </pre>
-<h4> 3. Run the sample </h4>
+<h4>3. Run the example</h4>
 <p>
-  To run this sample, first
+  To run this example, first
 </p>
 <pre>
 perl echo_server.pl
@@ -269,7 +268,7 @@ echo: Hello
 <p>
   It will be displayed.
 </p>
-<h3> Create a socket </h3>
+<h3>Create a socket</h3>
 <p>
   This is an explanation of the part of creating a socket on the client side.
 </p>
@@ -281,7 +280,7 @@ my $sock;
 socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   or die "Cannot create socket:$!";
 </pre>
-<h4> 1. Creating a socket </h4>
+<h4>1. Creating a socket</h4>
 <p>
   To use socket-related functions and constants
 </p>
@@ -301,7 +300,7 @@ socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
 <p>
   Specify the domain in the second argument. In the third argument, specify the type. Specify the protocol number in the 4th argument.
 </p>
-<h4> 2. Specifying the domain </h4>
+<h4>2. Specifying the domain</h4>
 <p>
   The second argument of the socket function specifies the <b> domain </b>. It's very confusing, but it has nothing to do with domain names, which are used in a similar sense to host names. As for the feeling of words, it may be better to imagine the word <b> area </b>, which is a translation of the domain into Japanese. Commonly used domains include <b> PF_UNIX domains </b> and <b> PF_INET domains </b>.
 </p>
@@ -340,9 +339,9 @@ socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   The PF_INET domain represents the area covered by the <b> Internet </b>. This means that computers around the world are within range of communication.
 </p>
 <p>
-  Since this sample is trying to communicate via the Internet, PF_INET is specified as the domain. By the way, the acronym PF is an abbreviation for the word protocol family.
+  Since this example is trying to communicate via the Internet, PF_INET is specified as the domain. By the way, the acronym PF is an abbreviation for the word protocol family.
 </p>
-<h4> 3. Type specification </h4>
+<h4>3. Type specification</h4>
 <p>
   Specify <b> type </b> for the third argument of the socket function. If you want to communicate using <b> TCP </b>, specify <b> SOCK_STREAM </b>. If you want to communicate using <b> UDP </b>, specify <b> SOCK_DGRAM </b>.
 </p>
@@ -379,9 +378,9 @@ socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
   UPD is a <b> unreliable but fast </b> communication method. Send data without checking the connection with the other party. Also, even if data is lost on the network, it will not be resent. Use UDP when some data such as audio and video is lost but it is meaningful enough and speed is prioritized.
 </p>
 <p>
-  When communicating a character string, it is necessary to communicate using TCP because the data becomes meaningless if a part is lost.
+  When communicating a string, it is necessary to communicate using TCP because the data becomes meaningless if a part is lost.
 </p>
-<h4> 4. Specifying the protocol number </h4>
+<h4>4. Specifying the protocol number</h4>
 <p>
   Specify <b> protocol number </b> in the 4th argument of the socket function.
 </p>
@@ -429,7 +428,7 @@ C:\WINDOWS\system32\drivers\etc\protocol
 <p>
   It looks like this.
 </p>
-<h4> 5. Error handling </h4>
+<h4>5. Error handling</h4>
 <p>
   It is safer to handle the error.
 </p>
@@ -440,13 +439,13 @@ socket ($sock, PF_INET, SOCK_STREAM, getprotobyname ('tcp'))
 <p>
   If the socket function fails, it returns undef and sets $! To the error content.
 </p>
-<h4> 6. Tips for learning sockets </h4>
+<h4>6. Tips for learning sockets</h4>
 <p>
   It takes a lot of effort to be able to use sockets. It turns out that there are many things you need to understand just by looking at creating sockets. The trick to remembering sockets is to type them many times. I can't remember just by looking at it.
 </p>
-<h3> Create information on the connection destination of the socket </h3>
+<h3>Create information on the connection destination of the socket</h3>
 <p>
-  Explains how to create information on the connection destination of the socket. The following part of the echo server sample client-side program.
+  Explains how to create information on the connection destination of the socket. The following part of the echo server example client-side program.
 </p>
 <pre>
 # 2. Creating socket information
@@ -466,7 +465,7 @@ my $sock_addr = sockaddr_in ($remote_port, $packed_remote_host)
 <p>
   I use a socket to connect to a server, but at that time I need <b> information on the server to connect to </b>.
 </p>
-<h4> 1. Host name or IP address of the connection destination </h4>
+<h4>1. Host name or IP address of the connection destination</h4>
 <p>
   The first thing you need is the <b> hostname or IP address </b> to connect to. The Internet uses IP addresses to uniquely identify your computer. It also generally has a corresponding host name. Either the host name or the IP address can be used.
 </p>
@@ -489,7 +488,7 @@ my $remote_host = '127.0.0.1';
 <p>
   When actually communicating over the Internet, specify the IP address or host name of the server computer.
 </p>
-<h4> 2. Convert the host name of the string to binary format </h4>
+<h4>2. Convert the host name of the string to binary format</h4>
 <p>
   The host name or IP address cannot be used as a <b> string </b>. You need to convert it to binary format using the <b> inet_aton </b> function.
 </p>
@@ -503,7 +502,7 @@ my $packed_remote_host = inet_aton ($remote_host)
 <p>
   In aton, a means ascii and n means network. To be precise, the binary format is a <b> 4-byte number expressed in network byte order </b>.
 </p>
-<h4> 3. Port number </h4>
+<h4>3. Port number</h4>
 <p>
   IP addresses and host names uniquely identify a computer, while port numbers are used to identify <b> applications </b> running within that computer.
 </p>
@@ -514,7 +513,7 @@ my $remote_port = 9000;
 <p>
   Port numbers can be used from 0 to 65535. However, 0 to 1023 are common port numbers, so use 1024 to 65535. Make sure to use the same port number to communicate with the client and server.
 </p>
-<h4> 4. Collect port numbers and IP addresses </h4>
+<h4>4. Collect port numbers and IP addresses</h4>
 <p>
   Next, you need to group the port number and IP address together using the sockaddr_in function.
 </p>
@@ -526,7 +525,7 @@ my $sock_addr = sockaddr_in ($remote_port, $packed_remote_host)
 <p>
   The first argument is the port number, and the second argument is the IP address converted to binary format. The $sock_addr created in this way will be passed to the argument of the connect function for connection.
 </p>
-<h3> Connect to server - connect function </h3>
+<h3>Connect to server - connect function</h3>
 <p>
   Use the connect function to connect to the server.
 </p>
@@ -535,7 +534,7 @@ my $sock_addr = sockaddr_in ($remote_port, $packed_remote_host)
 connect ($sock, $sock_addr)
   or die "Cannot connect $remote_host: $remote_port:$!";
 </pre>
-<h4> Connect to the server </h4>
+<h4>Connect to the server</h4>
 <p>
   Use the connect function to connect to the server. The first argument is the socket created by the socket function.
 </p>

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Understand Perl hashes  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Understand Perl hashes - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="A description of Perl's "hash". Perl hashes are "associative arrays" in other languages.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Understand Perl hashes  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Understand Perl hashes - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="A description of Perl's "hash". Perl hashes are "associative arrays" in other languages." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20161013147635.html"> Understand Perl hashes </a></h2>
+<h2><a href="/blog/20161013147635.html">Understand Perl hashes</a></h2>
 <p>
   A description of Perl's "hash". Perl hashes are "associative arrays" in other languages.
 </p>
@@ -82,13 +81,13 @@
 
 
 <p>
-  In an array, you could retrieve an element by specifying a number, but in an "associative array", you can retrieve an element by specifying a character string as a key.
+  In an array, you could retrieve an element by specifying a number, but in an "associative array", you can retrieve an element by specifying a string as a key.
 </p>
-<h3> Hash basics </h3>
+<h3>Hash basics</h3>
 <p>
-  The basis of hashing. Hash declaration and initialization. Hash output and assignment. You can think of a hash as an array from which you can get a value of a string as a subscript. You can retrieve the value using a character string as a key.
+  The basis of hashing. Hash declaration and initialization. Hash output and assignment. You can think of a hash as an array from which you can get a value of a string as a subscript. You can retrieve the value using a string as a key.
 </p>
-<h4> Hash declaration and initialization </h4>
+<h4>Hash declaration and initialization</h4>
 <p>
   Declaring and initializing the hash is done as follows.
 </p>
@@ -100,18 +99,18 @@ my %fathers = (Taro =&gt;'Kenji', Naoko =&gt;'Yoshio');
 <p>
   The variable prefix is <b> percent sign </b> "%". (Key 1 => Value 1, Key 2 => Value 2, ...). Taro's father can be read as Kenji, Naoko's father as Yoshio
 </p>
-<h4> Hash element output </h4>
+<h4>Hash element output</h4>
 <pre>
 print $mothers{'Taro'};
 </pre>
 <p>
   When printing, $instead of%. $When dealing with a single element. Use {} to specify the key. (In the case of an array, it was []). {} Is read as a bracket. ([] Is brace. () Is parenthesis)
 </p>
-<h3> Hash element assignment </h3>
+<h3>Hash element assignment</h3>
 <pre>
 $mothers{'Naoko'} = 'Haruna';
 </pre>
-<h3> Processing of each element of hash </h3>
+<h3>Processing of each element of hash</h3>
 <ul>
   <li>
     <a href="/blog/20080210120265.html">Get all of the hashes - keys function</a> <span style = "color: red">[Important] </span>
@@ -123,7 +122,7 @@ $mothers{'Naoko'} = 'Haruna';
     <a href="/blog/20080212120283.html">Get all keys and values of a hash - each function</a>
   </li>
 </ul>
-<h3> Hash manipulation </h3>
+<h3>Hash manipulation</h3>
 <ul>
   <li>
     <a href="/blog/20080213120291.html">Check for the existence of a key - exists function</a> <span style = "color: red">[Important] </span>
@@ -138,7 +137,7 @@ $mothers{'Naoko'} = 'Haruna';
     <a href="/blog/20080215120307.html">Hash slice ... Extract multiple values of hash</a>
   </li>
 </ul>
-<h3> Hash reference </h3>
+<h3>Hash reference</h3>
 <p>
   You can create a hash reference as follows:
 </p>
@@ -148,7 +147,7 @@ my $math_scores_ref = \%math_scores;
 <p>
   Prefix%with\to generate a reference to the hash. Assign the generated reference to the scalar variable $math_score_href
 </p>
-<h4> Create a direct hash reference using an anonymous hash. </h4>
+<h4>Create a direct hash reference using an anonymous hash.</h4>
 <pre>
 my $math_scores_ref2 = {
   Aiko =&gt; 89,
@@ -159,11 +158,11 @@ my $math_scores_ref2 = {
 <p>
   You can use {} instead of () to create a reference to a direct hash
 </p>
-<h4> Access the hash element </h4>
+<h4>Access the hash element</h4>
 <pre>
 $math_scores_ref-&gt;{Aiko}
 </pre>
-<h4> Extract the hash from the hash reference </h4>
+<h4>Extract the hash from the hash reference</h4>
 <p>
   Dereference to retrieve a hash from a hash reference.
 </p>
@@ -194,7 +193,7 @@ $math_scores-&gt;{Taro};
     <a href="/blog/20180208151809.html">Hash reference</a>
   </li>
 </ul>
-<h3> Multidimensional data structure using hash </h3>
+<h3>Multidimensional data structure using hash</h3>
 <p>
   The multidimensional data structure using hashes is explained in detail in the following articles. You can learn about "array hash", "hash array", and "hash hash".
 </p>
@@ -203,7 +202,7 @@ $math_scores-&gt;{Taro};
     <a href="/blog/20100930127859.html">Manipulate "multidimensional data structure" freely with "array" and "hash"</a>
   </li>
 </ul>
-<h3> Column "It's Perl's fault that associative arrays are called hashes" </h3>
+<h3>Column "It's Perl's fault that associative arrays are called hashes"</h3>
 <p>
   Perl has made a great decision to incorporate associative arrays as a feature of the language. It's incredibly convenient. This was a huge success, and almost all other scripting languages have been affected to incorporate associative arrays into the language itself.
 </p>
@@ -213,10 +212,10 @@ $math_scores-&gt;{Taro};
 <p>
   But, surprisingly, it seems to represent the data structure exactly.
 </p>
-<h3> Sample code </h3>
-<h4> Hash basics </h4>
+<h3>Example code</h3>
+<h4>Hash basics</h4>
 <p>
-  The basis of hashing. Hash declaration and initialization. This is a sample of hash output and assignment.
+  The basis of hashing. Hash declaration and initialization. This is a example of hash output and assignment.
 </p>
 <pre>
 use strict;
@@ -257,9 +256,9 @@ $mothers{'Taro'} = Tomoko
 2: Assignment of hash elements
 $mothers{'Naoko'} = Haruna
 </pre>
-<h4> Hash reference </h4>
+<h4>Hash reference</h4>
 <p>
-  This is a sample using the hash reference.
+  This is a example using the hash reference.
 </p>
 <pre>
 use strict;
@@ -320,9 +319,9 @@ $math_scores_ref2 = {
 $math_scores_ref-&gt;{Aiko} = 89
 $math_scores_ref-&gt;{Kenta} = 100
 </pre>
-<h4> Hash reference dereference </h4>
+<h4>Hash reference dereference</h4>
 <p>
-  This is a sample to dereference the hash reference.
+  This is a example to dereference the hash reference.
 </p>
 <pre>
 use strict;

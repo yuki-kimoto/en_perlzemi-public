@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Conditional branching by if statement  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Conditional branching by if statement - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="When writing programming, you may want to change the process or repeat the same process depending on the conditions.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Conditional branching by if statement  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Conditional branching by if statement - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="When writing programming, you may want to change the process or repeat the same process depending on the conditions." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <span itemprop = "name">here </span></a>
   </li>
 </ol>
-<h2><a href="/blog/20161023147731.html"> Conditional branching by if statement </a></h2>
+<h2><a href="/blog/20161023147731.html">Conditional branching by if statement</a></h2>
 <p>
   When writing programming, you may want to change the process or repeat the same process depending on the conditions.
 </p>
@@ -84,11 +83,11 @@
 <p>
   In such a case, conditional branching and repetition can be realized by using if and for statements.
 </p>
-<h3> Basics of conditional branching </h3>
+<h3>Basics of conditional branching</h3>
 <p>
   I will explain the basics of conditional branching.
 </p>
-<h4> if statement </h4>
+<h4>if statement</h4>
 <p>
   Use <a href="/blog/20080317120577.html">if statement</a> to do conditional branching in Perl. First, let's write a simple conditional branch. This is an if statement that outputs "OK" when the value of the variable is "5".
 </p>
@@ -118,7 +117,7 @@ if (condition) {
 <p>
   Also check that "OK" is not displayed when you change the contents of the variable to "4".
 </p>
-<h4> if ～ else statement </h4>
+<h4>if ～ else statement</h4>
 <p>
   By using <a href="/blog/20080320120602.html">if ～ else statement</a>, you can write the process to be executed when the condition is true and the process to be executed when the condition is false.
 </p>
@@ -132,7 +131,7 @@ else {
   print "Not OK\n";
 }
 </pre>
-<h4> if ～ elsif statement </h4>
+<h4>if ～ elsif statement</h4>
 <p>
   You can use <a href="/blog/20080320120602.html">if ～ elsif statement</a> to describe multiple conditions.
 </p>
@@ -187,14 +186,14 @@ else {
   print "Not match\n";
 }
 </pre>
-<h3> Comparison operator </h3>
+<h3>Comparison operator</h3>
 <p>
   I used the symbol "==" in the condition of the if statement, which is one of the <b> comparison operators </b>.
 </p>
 <p>
   Here are the Perl comparison operators. Perl has two types of comparison operators. <b> Numeric comparison operators </b> and <b> String comparison operators </b>.
 </p>
-<h4> Numeric comparison operator </h4>
+<h4>Numeric comparison operator</h4>
 <p>
   Numeric comparison operators are operators used to compare values as numbers.
 </p>
@@ -256,7 +255,7 @@ else {
     </td>
   </tr>
 </table>
-<h4> String comparison operator </h4>
+<h4>String comparison operator</h4>
 <p>
   The string comparison operator is an operator used to compare strings in lexicographical order.
 </p>
@@ -318,7 +317,7 @@ else {
     </td>
   </tr>
 </table>
-<h4> Numerical comparison and string comparison </h4>
+<h4>Numerical comparison and string comparison</h4>
 <p>
   In Perl, use the numeric comparison operator if you want to compare values as numbers, and the string comparison operator if you want to compare as strings.
 </p>
@@ -345,7 +344,7 @@ if ($animal eq 'Dog') {
   For example, when comparing "1" and "03" numerically, "1" is interpreted as "1" and "03" is interpreted as "3", and "03" is larger.
 </p>
 <p>
-  However, when comparing the character strings of "1" and "03", it is judged from the first character, and "1" and "0" are larger for "1" because the character code is larger for "1".
+  However, when comparing the strings of "1" and "03", it is judged from the first character, and "1" and "0" are larger for "1" because the character code is larger for "1".
 </p>
 <pre>
 my $num1 = '1';
@@ -371,14 +370,14 @@ if ($num1 gt $num2) {
     <a href="/blog/20080318120585.html">Perl comparison operator</a>
   </li>
 </ul>
-<h3> Perl boolean </h3>
+<h3>Perl boolean</h3>
 <p>
   Next, let's get a good understanding of Perl's <b> boolean </b>. In the if statement, the inside of the block was executed when the condition became true. It was not executed when it became false.
 </p>
 <p>
   Now let's get a good understanding of Perl booleans.
 </p>
-<h4> Perl false value </h4>
+<h4>Perl false value</h4>
 <p>
   There are four false values in Perl:
 </p>
@@ -449,7 +448,7 @@ if ("0") {
   # Not executed
 }
 </pre>
-<h4> Perl true value </h4>
+<h4>Perl true value</h4>
 <p>
   Everything is true except what is false above. For example, the following is true:
 </p>
@@ -515,7 +514,7 @@ if ($object) {
   # Be executed
 }
 </pre>
-<h4> When writing an array in the condition of an if statement </h4>
+<h4>When writing an array in the condition of an if statement</h4>
 <p>
   It's common to write an array in an if statement, so let's see how it is evaluated as a false value.
 </p>
@@ -544,7 +543,7 @@ if (@nums) {
     <a href="/blog/20080323120628.html">Perl truth value</a>
   </li>
 </ul>
-<h3> Perl logical operators </h3>
+<h3>Perl logical operators</h3>
 <p>
   Next, I will explain the logical operators that can express "A and B", "A or B", and "not A".
 </p>
@@ -609,7 +608,7 @@ if (@nums) {
     </td>
   </tr>
 </table>
-<h4> Logical product (A and B) </h4>
+<h4>Logical product (A and B)</h4>
 <p>
   For example, to express the condition that the variable "$num" is "greater than 1 and less than 5", use <b> && </b> and write as follows.
 </p>
@@ -621,7 +620,7 @@ if ($num &gt; 1 &amp;&amp; $num &lt; 5) {
 <p>
   And has the same meaning, but the priority of the operator is low, and it is customary to use "&&" when writing in the conditional part of the if statement.
 </p>
-<h4> OR (A or B) </h4>
+<h4>OR (A or B)</h4>
 <p>
   Next, to express the condition that the variable "$num" is "less than 1 or greater than 5", use <b> || </b> and write as follows.
 </p>
@@ -633,7 +632,7 @@ if ($num &lt; 1 || $num &gt; 5) {
 <p>
   Or has the same meaning, but the priority of the operator is low, and it is customary to use "||" when writing in the conditional part of the if statement.
 </p>
-<h4> Negation (not A) </h4>
+<h4>Negation (not A)</h4>
 <p>
   To express the condition that the variable "$num" is "not true", we can use <b>! </B> to write:
 </p>
@@ -645,7 +644,7 @@ if (!$num)) {
 <p>
   Not has the same meaning, but the operator priority is low, and it seems that it is rarely used in the source code.
 </p>
-<h4> Use a combination of logical operators </h4>
+<h4>Use a combination of logical operators</h4>
 <p>
   Logical operators can be used in combination. You can control the join order of operators by using parentheses.
 </p>
@@ -665,11 +664,11 @@ if ($num &gt; 10 || (($num&gt; -3 &amp;&amp; $num &lt; 6) &amp;&amp;! ($Num == 0
     <a href="/blog/20100816136168.html">List of Perl logical operators</a>
   </li>
 </ul>
-<h3> Slightly special conditional branching </h3>
+<h3>Slightly special conditional branching</h3>
 <p>
   Learn about some of the more unusual conditionals that are often used in Perl.
 </p>
-<h4> unless statement </h4>
+<h4>unless statement</h4>
 <p>
   <a href="/blog/20100125126425.html">unless statement</a> can write the same processing as when the condition is denied by the if statement.
 </p>
@@ -698,7 +697,7 @@ unless (defined $num) {
   ...
 }
 </pre>
-<h4> Write the branch in the failed process with or </h4>
+<h4>Write the branch in the failed process with or</h4>
 <p>
   Perl often customarily writes conditional branching using the <a href="/blog/20100816136168.html">logical operator or</a>.
 </p>
@@ -715,7 +714,7 @@ open(my $fh, "&lt;", $file)
 <p>
   The main processing is written first, and the auxiliary error processing is written later using or. One of the interesting things about Perl is that you can write programming in a natural language-like expression like this.
 </p>
-<h4> Postfix if and postfix unless </h4>
+<h4>Postfix if and postfix unless</h4>
 <p>
   In Perl, if and unless can be written after the process.
 </p>
@@ -747,7 +746,7 @@ for my $num (@nums) {
   next if !defined $num;
 }
 </pre>
-<h4> Ternary operator </h4>
+<h4>Ternary operator</h4>
 <p>
   Perl has an operator called <a href="/blog/20080325120646.html">ternary operator</a>.
 </p>
@@ -791,7 +790,7 @@ my $animal =
 <p>
   Since "$flag" is "2", "Mouse" is assigned to "$animal". When using ternary operators in layers, it is recommended to write them in multiple lines for easy viewing.
 </p>
-<h4> Set default values with special assignment operators "||=" and "//=" </h4>
+<h4>Set default values with special assignment operators "||=" and "//="</h4>
 <p>
   Perl has a commonly used default value setting method. It is a way to use the <a href="/blog/20161005147566.html">special assignment operator</a> "||=" or "//=" .
 </p>
@@ -814,7 +813,7 @@ $y //=7;
 <p>
   Remember this because it's a frequently used syntax.
 </p>
-<h3> Repeat statement </h3>
+<h3>Repeat statement</h3>
 <p>
   Please refer to the following article for repetitive sentences.
 </p>

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Safely read and write files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Safely read and write files - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="When reading a file and writing to the same file, it is very dangerous to specify a read/write open mode "+ <" and write it back. If the system crashes while you are writing, the files will be corrupted and you will not be able to restore them.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Safely read and write files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Safely read and write files - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="When reading a file and writing to the same file, it is very dangerous to specify a read/write open mode "+ <" and write it back. If the system crashes while you are writing, the files will be corrupted and you will not be able to restore them." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080809121824.html"> Safely read and write files </a></h2>
+<h2><a href="/blog/20080809121824.html">Safely read and write files</a></h2>
 <p>
   When reading a file and writing to the same file, it is very dangerous to specify a read/write open mode "+ <" and write it back. If the system crashes while you are writing, the files will be corrupted and you will not be able to restore them.
 </p>
@@ -88,7 +87,7 @@
   For safe writing, write to a new file and then rename the file to the original one to overwrite it.
 </p>
 <p>
-  The following is a sample for safe reading and writing. You need to do a thorough error check.
+  The following is a example for safe reading and writing. You need to do a thorough error check.
 </p>
 <pre>
 use strict;
@@ -152,7 +151,7 @@ File::Copy::move ($tmpfile, $infile)
 <p>
   I'm using a <a href="/blog/20100123126425.html">while statement</a> to safely read the rows in order.
 </p>
-<h3> How to read and write files safely </h3>
+<h3>How to read and write files safely</h3>
 <p>
   If you read the <a href="/blog/20080718121643.html">open function</a> documentation, you should specify the open mode "+ <" for the open function to read and write files. maybe. You can read and write this way, but it's very dangerous.
 </p>
@@ -176,15 +175,15 @@ File::Copy::move ($tmpfile, $infile)
 <p>
   This will preserve the contents of the original file until the third file is renamed. Even if the system crashes while renaming a file, you can avoid losing the contents of the file.
 </p>
-<h3> Code explanation </h3>
-<h3> (1) Creating a temporary file name for writing </h3>
+<h3>Code explanation</h3>
+<h3>(1) Creating a temporary file name for writing</h3>
 <pre>
 my $tmpfile = "tmp $$";
 </pre>
 <p>
   Make sure that the temporary file name includes the process ID ($$). By making it a convention to include the process ID ($) in the temporary file name, you can avoid conflicting temporary files with other processes (unless the convention is broken. )
 </p>
-<h3> (2) Open both read file and temporary write file </h3>
+<h3>(2) Open both read file and temporary write file</h3>
 <pre>
 open(my $infh, "&lt;", $infile)
   or die "Cannot open $infile:$!";
@@ -195,7 +194,7 @@ open(my $tmpfh, "&gt;", $tmpfile)
 <p>
   The input file is opened in read mode ("<") and the temporary file for writing is opened in write mode (">").
 </p>
-<h3> (3) File reading error check </h3>
+<h3>(3) File reading error check</h3>
 <pre>
     unless (defined($line = &lt;$infh&gt;)) {
       if ($!) {
@@ -209,7 +208,7 @@ open(my $tmpfh, "&gt;", $tmpfile)
 <p>
   If an error occurs at the end of the loading, we will exit the while loop. Then, it happens that the original file is overwritten because it was processed halfway. To prevent this from happening, you need to code to ensure that read errors are avoided.
 </p>
-<h3> (4) Error checking when writing a file </h3>
+<h3>(4) Error checking when writing a file</h3>
 <pre>
     print $tmpfh $line
       or die "Error Writing $tmpfile:$!";
@@ -217,7 +216,7 @@ open(my $tmpfh, "&gt;", $tmpfile)
 <p>
   If an error occurs during aile writing, the original file may be overwritten with incorrect content. To prevent this from happening, you need to code to make sure you avoid write errors.
 </p>
-<h3> (5) Error checking when closing a file </h3>
+<h3>(5) Error checking when closing a file</h3>
 <pre>
 close $infh;
 
@@ -237,7 +236,7 @@ close $tmpfh
 <p>
   So if close fails, the buffer will be left unflushed and you will not be able to write the correct content. To prevent this from happening, you need to code to ensure that you avoid close errors.
 </p>
-<h3> (6) Rename the temporary file name for writing to the original file name </h3>
+<h3>(6) Rename the temporary file name for writing to the original file name</h3>
 <pre>
 # Change the temporary file name to the original file name.
 File::Copy::move ($tmpfile, $infile)

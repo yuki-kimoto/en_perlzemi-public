@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> readdir function-reads the contents of a directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>readdir function - reads the contents of a directory - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  readdir function  to read the contents of the directory.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" readdir function-reads the contents of a directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="readdir function - reads the contents of a directory - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  readdir function  to read the contents of the directory." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20171003150703.html"> readdir function-reads the contents of a directory </a></h2>
+<h2><a href="/blog/20171003150703.html">readdir function - reads the contents of a directory</a></h2>
 <p>
   Use the <b> readdir function </b> to read the contents of the directory.
 </p>
@@ -91,7 +90,7 @@ readdir directory handle
   Specify the directory handle obtained by <a href="/blog/20171002150691.html">opendir function</a>. The return value is the name of the file in the directory. You can read all the files in the directory by calling it repeatedly.
 </p>
 <p>
-  Let's write a sample program that gets the directory handle with the opendir function and reads all the files with the readdir function. I use <a href="/blog/20100123126425.html">while statement</a> to get the file names one by one.
+  Let's write a example program that gets the directory handle with the opendir function and reads all the files with the readdir function. I use <a href="/blog/20100123126425.html">while statement</a> to get the file names one by one.
 </p>
 <pre>
 # Directory name
@@ -141,7 +140,7 @@ while (my $file = readdir $dh) {
   push @files, $file;
 }
 </pre>
-<h3> How to get a list of files including subdirectories? </H3>
+<h3>How to get a list of files including subdirectories? </H3>
 <p>
   If you want to process files recursively, including subdirectories, you should use the File::Find module.
 </p>
@@ -150,7 +149,7 @@ while (my $file = readdir $dh) {
     <a href="/blog/20080530121229.html">File::Find - Recursively process subdirectories</a>
   </li>
 </ul>
-<h3> Please tell me how to use it properly with the glob function </h3>
+<h3>Please tell me how to use it properly with the glob function</h3>
 <p>
   In Perl, you can get a list of filenames by using the <a href="/blog/20080529121207.html">glob function</a> without using the directory handle.
 </p>

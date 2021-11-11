@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Find the time difference (if it does not exceed 24 hours)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To find the time difference, you first need to convert what is labeled hhmmss to seconds. After finding the difference in seconds, restore to the time representation of hhmmss again. This is a sample to find the time difference.">
+<title>Find the time difference (if it does not exceed 24 hours) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="To find the time difference, you first need to convert what is labeled hhmmss to seconds. After finding the difference in seconds, restore to the time representation of hhmmss again. This is a example to find the time difference.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Find the time difference (if it does not exceed 24 hours)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To find the time difference, you first need to convert what is labeled hhmmss to seconds. After finding the difference in seconds, restore to the time representation of hhmmss again. This is a sample to find the time difference." />
+<meta name="twitter:title" content="Find the time difference (if it does not exceed 24 hours) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="To find the time difference, you first need to convert what is labeled hhmmss to seconds. After finding the difference in seconds, restore to the time representation of hhmmss again. This is a example to find the time difference." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,9 +60,9 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20081018122442.html"> Find the time difference (if it does not exceed 24 hours) </a></h2>
+<h2><a href="/blog/20081018122442.html">Find the time difference (if it does not exceed 24 hours)</a></h2>
 <p>
-  To find the time difference, you first need to convert what is labeled hhmmss to seconds. After finding the difference in seconds, restore to the time representation of hhmmss again. This is a sample to find the time difference.
+  To find the time difference, you first need to convert what is labeled hhmmss to seconds. After finding the difference in seconds, restore to the time representation of hhmmss again. This is a example to find the time difference.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -180,10 +179,10 @@ sub sec_to_time {
 (1) Find the time difference (does not exceed 24 hours)
 The time difference is 18:50:22.
 </pre>
-<h3> Code explanation </h3>
-<h4> Convert time string representation to hash representing time information </h4>
+<h3>Code explanation</h3>
+<h4>Convert time string representation to hash representing time information</h4>
 <p>
-  If the time is displayed in the log etc., it is a character string. It is convenient to convert this string into a hash that represents the time information.
+  If the time is displayed in the log etc., it is a string. It is convenient to convert this string into a hash that represents the time information.
 </p>
 <p>
   It's common to convert strings to hashes in this way. (Structuring the data increases abstraction, readability, and reusability.)
@@ -218,7 +217,7 @@ sub time_from_str {
 <pre>
 return wantarray?%$time: $time;
 </pre>
-<h4> Convert the hash of time information to seconds and calculate the elapsed seconds </h4>
+<h4>Convert the hash of time information to seconds and calculate the elapsed seconds</h4>
 <p>
   The calculation to convert the time to seconds is "hours x 3600 + minutes x 60 + seconds".
 </p>
@@ -246,7 +245,7 @@ sub time_to_sec {
   return $sec;
 }
 </pre>
-<h4> Convert elapsed seconds to hash of time representation </h4>
+<h4>Convert elapsed seconds to hash of time representation</h4>
 <p>
   To convert seconds to time, find the quotient and remainder of seconds divided by 3600. This quotient becomes "time".
 </p>
@@ -272,7 +271,7 @@ sub sec_to_time {
   return wantarray?%$time: $time;
 }
 </pre>
-<h4> Convert time representation hash to time string representation </h4>
+<h4>Convert time representation hash to time string representation</h4>
 <p>
   Finally, it returns to the string again. Here, I used the sprintf function.
 </p>

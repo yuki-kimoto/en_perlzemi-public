@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Getting Started with Command Prompt to Run Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Getting Started with Command Prompt to Run Perl - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl programming is done by typing text called commands. First of all, I would like to explain the command prompt, which is a command execution tool in Windows. The explanation assumes that you are using Windows 10. You can follow almost the same procedure on Windows 7 and 8, but there may be some differences, such as where to look for the application.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Getting Started with Command Prompt to Run Perl  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Getting Started with Command Prompt to Run Perl - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl programming is done by typing text called commands. First of all, I would like to explain the command prompt, which is a command execution tool in Windows. The explanation assumes that you are using Windows 10. You can follow almost the same procedure on Windows 7 and 8, but there may be some differences, such as where to look for the application." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20080603121251.html"> Getting Started with Command Prompt to Run Perl </a></h2>
+<h2><a href="/blog/20080603121251.html">Getting Started with Command Prompt to Run Perl</a></h2>
 <p>
   Perl programming is done by typing text called commands. First of all, I would like to explain the command prompt, which is a command execution tool in Windows. The explanation assumes that you are using Windows 10. You can follow almost the same procedure on Windows 7 and 8, but there may be some differences, such as where to look for the application.
 </p>
@@ -81,11 +80,11 @@
 </div>
 
 
-<h4> What is a command prompt? </H4>
+<h4>What is a command prompt? </H4>
 <p>
   The command prompt is the execution environment of the program using CUI in the Windows environment. CUI is an abbreviation for Character-based User Interface, which is an interface for inputting text and executing a program. When programming Perl on Windows, you will run Perl using the command prompt.
 </p>
-<h4> To run the command prompt </h4>
+<h4>To run the command prompt</h4>
 <p>
   You can execute it from "Windows System Tools"->"Command Prompt" in the list of apps from the Windows menu at the bottom left of the screen. It is convenient to create a shortcut on the desktop by right-clicking and dragging the command prompt icon.
 </p>
@@ -104,14 +103,14 @@
 <pre>
 C:\Users\kimot
 </pre>
-<h4> Show extension </h4>
+<h4>Show extension</h4>
 <p>
   The Perl program is just a text file, but the extension is ".pl", so let's set it to display the extension. The extension is used to indicate the type of program.
 </p>
 <p>
   Right-click the Windows menu at the bottom left of the screen → click "Explorer" → click "View" on the upper tab → check "File name extension".
 </p>
-<h4> Create a Perl program </h4>
+<h4>Create a Perl program</h4>
 <p>
   Open the command prompt home directory in Explorer.
 </p>
@@ -148,7 +147,7 @@ print "Hello World";
 <p>
   Save by selecting "File"->"Save" in the upper left.
 </p>
-<h4> Run Perl </h4>
+<h4>Run Perl</h4>
 <p>
   Use the perl command to run Perl. Enter the following at the command prompt and enter Enter.
 </p>
@@ -161,7 +160,7 @@ perl start.pl
 <pre>
 Hello World
 </pre>
-<h4> First command to remember </h4>
+<h4>First command to remember</h4>
 <p>
   You can display a list of files with the dir command. Type dir and press Enter.
 </p>
@@ -180,14 +179,14 @@ cd directory name
 <pre>
 cd ..
 </pre>
-<h4> Pass an argument with a blank </h4>
+<h4>Pass an argument with a blank</h4>
 <pre>
 perl start.pl "a i u"
 </pre>
 <p>
   If the argument contains spaces, enclose it in double quotes.
 </p>
-<h4> Change drive </h4>
+<h4>Change drive</h4>
 <pre>
 c:
 d:
@@ -195,7 +194,7 @@ d:
 <p>
   You can change the drive to C drive with c: and to D drive with d :.
 </p>
-<h4> Refer to command history </h4>
+<h4>Refer to command history</h4>
 <pre>
 ↑
 ↓
@@ -203,21 +202,21 @@ d:
 <p>
   You can follow the command history with the up and down keys.
 </p>
-<h4> Completing the file name </h4>
+<h4>Completing the file name</h4>
 <pre>
 Ctrl + f
 </pre>
 <p>
   You can enter the file name halfway and press Ctrl + f to complete the file name. It is necessary to change the command prompt settings described below.
 </p>
-<h4> Display environment variables </h4>
+<h4>Display environment variables</h4>
 <pre>
 echo %PATH% (when looking at the contents of the environment variable PATH)
 </pre>
 <p>
   To see the environment variables, use echo %environment variable name%.
 </p>
-<h4> Set environment variables </h4>
+<h4>Set environment variables</h4>
 <pre>
 SET DATE = 20080604 (when setting the environment variable DATE to 20080604)
 perl start.pl %DATE% (Example using environment variables as arguments)
@@ -228,7 +227,7 @@ perl start.pl %DATE% (Example using environment variables as arguments)
 <p>
   Setting environment variables does not change the value of OS environment variables. It is valid only within the command prompt that is running.
 </p>
-<h4> Convenient command prompt settings </h4>
+<h4>Convenient command prompt settings</h4>
 <p>
   <b> How to change the command prompt settings </b>
 </p>

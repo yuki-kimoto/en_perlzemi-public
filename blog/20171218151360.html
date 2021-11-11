@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> pack function-packs data into binary format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>pack function - packs data into binary format - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  pack function  packs the data into various binary formats.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" pack function-packs data into binary format  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="pack function - packs data into binary format - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  pack function  packs the data into various binary formats." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20171218151360.html"> pack function-packs data into binary format </a></h2>
+<h2><a href="/blog/20171218151360.html">pack function - packs data into binary format</a></h2>
 <p>
   The <b> pack function </b> packs the data into various binary formats.
 </p>
@@ -97,7 +96,7 @@ my $packed = pack($format, @values);
 <p>
   The return value is the packed data.
 </p>
-<h4> Packed in signed 32-bit binary format </h4>
+<h4>Packed in signed 32 - bit binary format</h4>
 <p>
   As an example, to pack three integers into a signed 32-bit binary format:
 </p>
@@ -126,7 +125,7 @@ my $packed = pack("l3", 7, 8, 9);
 my @values = (7, 8, 9);
 my $packed = pack("l3", @values);
 </pre>
-<h4> Pack floating point into signed double binary format </h4>
+<h4>Pack floating point into signed double binary format</h4>
 <p>
   Let's pack the three floating point numbers into a double precision floating point double binary format.
 </p>
@@ -136,7 +135,7 @@ my $packed = pack("d3", 0.5, 1.2, 5.4);
 <p>
   Double-precision floating point numbers can be packed with the symbol "d".
 </p>
-<h4> To write binary data </h4>
+<h4>To write binary data</h4>
 <p>
   To write binary data, set the filehandle to binary mode using the <a href="/blog/20100204126425.html">binmode function</a> and <a href="/blog/20170404149131.html">print Use the function</a>.
 </p>
@@ -157,7 +156,7 @@ print $fh $data;
 # Close file
 close $fh;
 </pre>
-<h4> To change endianness </h4>
+<h4>To change endianness</h4>
 <p>
   The conversion from big endian to little endian can be done using "N" and "V". The following example is an example of an unsigned 32-bit integer.
 </p>
@@ -168,11 +167,11 @@ my $value = unpack('N1', $value_big);
 # Perl value to little endian
 my $value_litte = pack('V1', $value);
 </pre>
-<h4> How to restore packed data </h4>
+<h4>How to restore packed data</h4>
 <p>
   Use the unpack function to restore the packed data.
 </p>
-<h3> List of formats </h3>
+<h3>List of formats</h3>
 <p>
   List of formats for the pack function.
 </p>
@@ -418,21 +417,21 @@ my $value_litte = pack('V1', $value);
     </td>
   </tr>
 </table>
-<h3> Advantages of binary format </h3>
+<h3>Advantages of binary format</h3>
 <p>
   The advantage of the <b> binary format is that it is smaller in size. </b> Perl numbers are internally a structure called SVIt is represented by, and the size is larger by the existence of the field of the structure.
 </p>
 <p>
   Another advantage is that it is <b> placed in a contiguous area </b>. Since 32bit is 4 bytes, 3 4 bytes are consecutive and 12 bytes can express 3 integers.
 </p>
-<h4> Data exchange with C language </h4>
+<h4>Data exchange with C language</h4>
 <p>
   C language arrays correspond to just the packed binary format. The following declaration has exactly the same data structure as the packed binary format.
 </p>
 <pre>
 int32_t values [3];
 </pre>
-<h3> More details </h3>
+<h3>More details</h3>
 <p>
   For more information about the pack function, see the official documentation <a href="http://perldoc.jp/docs/perl/5.8.8/perlpacktut.pod">Introduction to pack</a> and <a href=" Please refer to http://perldoc.jp/func/pack">pack function</a>.
 </p>

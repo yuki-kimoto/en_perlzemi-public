@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> package - Package declaration  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>package - Package declaration - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="A feature called namespaces in other languages is called  packages  in Perl (* 1). A namespace is like a real-world address. I think there are several "Tatsuya Tanaka" in Japan, but there is only one "Tatsuya Tanaka" in "3- ○-△, Shinjuku-ku, Tokyo". You can decide which Tatsuya Tanaka you are by specifying the address. The namespace is the real world address.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" package - Package declaration  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="package - Package declaration - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="A feature called namespaces in other languages is called  packages  in Perl (* 1). A namespace is like a real-world address. I think there are several "Tatsuya Tanaka" in Japan, but there is only one "Tatsuya Tanaka" in "3- ○-△, Shinjuku-ku, Tokyo". You can decide which Tatsuya Tanaka you are by specifying the address. The namespace is the real world address." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -67,7 +66,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20100419127089.html"> package - Package declaration </a></h2>
+<h2><a href="/blog/20100419127089.html">package - Package declaration</a></h2>
 <p>
   A feature called namespaces in other languages is called <strong> packages </strong> in Perl (* 1). A namespace is like a real-world address. I think there are several "Tatsuya Tanaka" in Japan, but there is only one "Tatsuya Tanaka" in "3- ○-△, Shinjuku-ku, Tokyo". You can decide which Tatsuya Tanaka you are by specifying the address. The namespace is the real world address.
 </p>
@@ -87,7 +86,7 @@
 </div>
 
 
-<h3> Package declaration </h3>
+<h3>Package declaration</h3>
 <p>
   Use <strong> package </strong> to declare a package.
 </p>
@@ -117,7 +116,7 @@ package Class::Accessor::Fast;
 # The name of the package to which it currently belongs
 __PACKAGE__
 </pre>
-<h3> Default namespace main </h3>
+<h3>Default namespace main</h3>
 <p>
   In Perl, there is no such thing as not belonging to a package. It belongs to a package called main while no package declaration is made. If you want to return to the default namespace, specify main for the package name.
 </p>
@@ -125,7 +124,7 @@ __PACKAGE__
 # Return to default namespace
 package main;
 </pre>
-<h3> Package variables and subroutines belong to a particular package </h3>
+<h3>Package variables and subroutines belong to a particular package</h3>
 <p>
   Package variables and subroutines always belong to a particular package. This corresponds to Mr. Tatsuya Yamada (name part) explained at the beginning.
 </p>
@@ -150,14 +149,14 @@ $SomeModule::VAR;
 SomeModule::func ();
 </pre>
 <p>
-  This is a sample that calls a function with a fully qualified name.
+  This is a example that calls a function with a fully qualified name.
 </p>
 <pre>
 # Call a function with a fully qualified name
 use File::Basename;
 File::Basename::basename('xxx/yyy.txt');
 </pre>
-<h3> Package name and module file structure </h3>
+<h3>Package name and module file structure</h3>
 <p>
   The package name is closely related to the file structure of the module. For example, if the module name is "Foo::Bar::Baz", the corresponding file structure will be "Foo/Bar/Baz.pm". Create a directory called "Bar" in a directory called "Foo" and create a file called "Baz.pm" in it. Declare the package at the beginning of "Baz.pm".
 </p>

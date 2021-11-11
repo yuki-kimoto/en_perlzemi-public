@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Take a peek inside the symbol table  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Take a peek inside the symbol table - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl has a symbol table that programmers can reference and make changes to. Perl is more flexible and adaptable than other languages, but one of the features that makes it so powerful is the symbol table.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Take a peek inside the symbol table  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Take a peek inside the symbol table - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl has a symbol table that programmers can reference and make changes to. Perl is more flexible and adaptable than other languages, but one of the features that makes it so powerful is the symbol table." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080613121341.html"> Take a peek inside the symbol table </a></h2>
+<h2><a href="/blog/20080613121341.html">Take a peek inside the symbol table</a></h2>
 <p>
   Perl has a symbol table that programmers can reference and make changes to. Perl is more flexible and adaptable than other languages, but one of the features that makes it so powerful is the symbol table.
 </p>
@@ -87,12 +86,12 @@
 <p>
   The symbol table is just a hash named%main::. From the hash%main::, you can see all the subroutines and package variables of the script being executed. (Excluding lexical variables)
 </p>
-<h3> Take a peek at the contents of the symbol table </h3>
+<h3>Take a peek at the contents of the symbol table</h3>
 <pre>
 # main A symbol table containing the contents of the package
 # %main::Another name for %main::%::&lt;/pre&gt;
 
-&lt;h3&gt; Know the contents of package variables through the symbol table &lt;/h3&gt;
+&lt;h3&gt;Know the contents of package variables through the symbol table&lt;/h3&gt;
 
 &lt;pre&gt;
 our $num = 1;
@@ -102,7 +101,7 @@ ${$main::{num}};
   A detailed explanation is given in the explanation of typeglobs. Here, remember Perl's ability to know the contents of package variables and subroutines from the symbol table.
 </p>
 <p>
-  This is a sample that outputs the contents of the symbol table.
+  This is a example that outputs the contents of the symbol table.
 </p>
 <pre>
 use strict;
@@ -140,7 +139,7 @@ my $num_from_symbol = ${$main::{num}};
 print $num_from_symbol;
 
 </pre>
-<h3> Meaning of output result </h3>
+<h3>Meaning of output result</h3>
 <pre>
 print $main::{num};
 # Output result

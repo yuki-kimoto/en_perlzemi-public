@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to create a Linux-like environment with Strawberry Perl and command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to create a Linux - like environment with Strawberry Perl and command prompt - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will show you how to create a Linux -like environment with Strawberry Perl and a command prompt.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to create a Linux-like environment with Strawberry Perl and command prompt  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to create a Linux - like environment with Strawberry Perl and command prompt - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will show you how to create a Linux -like environment with Strawberry Perl and a command prompt." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -53,7 +52,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200117144713.html"> How to create a Linux-like environment with Strawberry Perl and command prompt </a></h2>
+    <h2><a href="/blog/20200117144713.html">How to create a Linux - like environment with Strawberry Perl and command prompt</a></h2>
 <p>
   I will show you how to create a <a href="https://linux.perlclub.net/">Linux</a> -like environment with Strawberry Perl and a command prompt.
 </p>
@@ -82,50 +81,50 @@
 <p>
   I will show you how to work at the command prompt in the same way as Linux.
 </p>
-<h3> You can work in the same way in Linux environment and command prompt </h3>
+<h3>You can work in the same way in Linux environment and command prompt</h3>
 <p>
   Is it possible to work in the same way in the Linux environment and the command prompt first? In January 2020, the following items were confirmed in the Windows 10 environment.
 </p>
-<h4> cd command </h4>
+<h4>cd command</h4>
 <p>
   The Linux <a href="https://linux.perlclub.net/blog/20191012191854.html">cd command</a> also exists as a cd command at the command prompt.
 </p>
-<h4> File path delimiter is OK with "/" </h4>
+<h4>File path delimiter is OK with "/"</h4>
 <p>
   The Windows file path delimiter is "\", but you can actually use "/". This is an example of using "/" in the cd command of the command prompt.
 </p>
 <pre>
 cd labo/perlzemi
 </pre>
-<h4> gcc can be used if Strawberry Perl is installed </h4>
+<h4>gcc can be used if Strawberry Perl is installed</h4>
 <p>
   Use gcc, the C language compiler required to install Perl's XS module, from the beginning if <a href="/blog/20180808153368.html">Strawberry Perl</a> is installed. I can.
 </p>
 <pre>
 gcc - help
 </pre>
-<h4> Close command prompt </h4>
+<h4>Close command prompt</h4>
 <p>
   If you close the command prompt, the same command as the Linux exit command exists at the command prompt.
 </p>
 <pre>
 exit
 </pre>
-<h4> Right-click to copy and paste </h4>
+<h4>Right - click to copy and paste</h4>
 <p>
   If you check the simple edit mode in the command prompt settings, you can copy and paste by right-clicking.
 </p>
 <p>
   <a href="https://www.relief.jp/docs/003578.html">Easily copy and paste command prompt-right click</a>
 </p>
-<h4> Continuous command execution by && </h4>
+<h4>Continuous command execution by &&</h4>
 <p>
   You can use && at the command prompt as you would Linux.
 </p>
 <pre>
 command1 &amp;&amp; command2
 </pre>
-<h4> Redirects and pipes </h4>
+<h4>Redirects and pipes</h4>
 <p>
   Linux redirection and pipes are also available at the command prompt.
 </p>
@@ -134,7 +133,7 @@ command&gt; file.txt
 command &lt;file.txt
 command1 | command2
 </pre>
-<h3> Linux commands that do not exist at the command prompt </h3>
+<h3>Linux commands that do not exist at the command prompt</h3>
 <p>
   The following are Linux commands that do not exist at the command prompt. If it doesn't exist, let's create it.
 </p>
@@ -150,7 +149,7 @@ C:\Strawberry\perl\site\bin
 <p>
   Let's write a command that does not exist in this path.
 </p>
-<h4> Create ls command </h4>
+<h4>Create ls command</h4>
 <p>
   Let's create a command that corresponds to the Linux <a href="https://linux.perlclub.net/blog/20191126082723.html">ls command</a>.
 </p>
@@ -172,7 +171,7 @@ dir
 <pre>
 ls
 </pre>
-<h4> Create make command </h4>
+<h4>Create make command</h4>
 <p>
   The command gmake can be used from the beginning if <a href="/blog/20180808153368.html">Strawberry Perl</a> is installed.
 </p>
@@ -197,11 +196,11 @@ gmake% 1
 <pre>
 make
 </pre>
-<h4> Other Linux commands </h4>
+<h4>Other Linux commands</h4>
 <p>
   <a href="https://linux.perlclub.net/blog/20200113083613.html">cat command</a> or <a href="https://linux.perlclub.net/blog/" if needed 20191210081417.html">rm command</a> etc. seems to be easy to make in the same way.
 </p>
-<h3> Try a Linux-like environment </h3>
+<h3>Try a Linux - like environment</h3>
 <p>
   Now let's do that for Linux. That is an example.
 </p>
@@ -213,15 +212,15 @@ make &amp;&amp; make test
 <p>
   Sounds good!
 </p>
-<h3> Frequently Asked Questions </h3>
+<h3>Frequently Asked Questions</h3>
 <p>
   Frequently asked questions.
 </p>
-<h4> Should I use an alias with DOSKEY? </H4>
+<h4>Should I use an alias with DOSKEY? </H4>
 <p>
   Yes, I tried this. But when you run &&, the command prompt runs a new process. Actually, at this time, the environment is not inherited and the alias does not work.
 </p>
-<h4> Is powershell useless? </H4>
+<h4>Is powershell useless? </H4>
 <p>
   I feel that Powershell is designed to make Windows easier to operate, rather than improving the command prompt.
 </p>

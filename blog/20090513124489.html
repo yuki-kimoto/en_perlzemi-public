@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Module::Starter - Create a distribution module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Module::Starter - Create a distribution module - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="If you want to distribute a module, it is convenient to have a module that automatically creates the distribution format. For example, if you want to upload a module you created to CPAN, you must have a defined distribution format. One of the modules that creates the template is  Module::Starter .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Module::Starter - Create a distribution module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Module::Starter - Create a distribution module - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="If you want to distribute a module, it is convenient to have a module that automatically creates the distribution format. For example, if you want to upload a module you created to CPAN, you must have a defined distribution format. One of the modules that creates the template is  Module::Starter ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20090513124489.html"> Module::Starter - Create a distribution module </a></h2>
+<h2><a href="/blog/20090513124489.html">Module::Starter - Create a distribution module</a></h2>
 <p>
   If you want to distribute a module, it is convenient to have a module that automatically creates the distribution format. For example, if you want to upload a module you created to CPAN, you must have a defined distribution format. One of the modules that creates the template is <strong> Module::Starter </strong>.
 </p>
@@ -85,33 +84,33 @@
 </div>
 
 
-<h3> Create a template with the module-starter command </h3>
+<h3>Create a template with the module - starter command</h3>
 <p>
   When you install Module::Starter, the <strong> module-starter </strong> command is also installed. Create a module using this command. When you execute it, you can confirm that a directory called Somo-Module has been created.
 </p>
 <pre>
 module-starter - module = Some::Module - author = "Yuki Kimoto" - email = kimoto.yuki@gmail.com
 </pre>
-<h4> Specifying the module name </h4>
+<h4>Specifying the module name</h4>
 <p>
   Specify the module name with <strong>-module </strong>.
 </p>
-<h4> Specify build method </h4>
+<h4>Specify build method</h4>
 <p>
   Specify the build method with - builder. You can specify either "ExtUtils::MakeMaker" that uses make, which is the standard build method for Unix-like OS, or "Module::Build" that uses Build written in genuine Perl. By default, "ExtUtils::MakeMaker" is used. Here, "Module::Build" is used.
 </p>
 <p>
   Unless you have a specific need, it's safe to use ExtUtils::MakeMaker, which is compatible with older versions of Perl.
 </p>
-<h4> Your name </h4>
+<h4>Your name</h4>
 <p>
   Specify your name with <strong> - author </strong>.
 </p>
-<h4> Your email address </h4>
+<h4>Your email address</h4>
 <p>
   Specify your email address with <strong> - email </strong>.
 </p>
-<h3> Directory structure </h3>
+<h3>Directory structure</h3>
 <p>
   Immediately after creating the template, the directory structure is as follows.
 </p>
@@ -126,7 +125,7 @@ drwxr-xr-x 2 root root 4096 2009-06-14 12:40 t
 <p>
   I will briefly explain the roles one by one.
 </p>
-<h4> Makefile.PL </h4>
+<h4>Makefile.PL</h4>
 <p>
   Makefile.PL is a script written in Perl for creating a script called Makefile. A script called Makefile is a script for building, testing, and installing modules.
 </p>
@@ -142,19 +141,19 @@ perl Makefile.PL
 <p>
   Will create a script called Makefile.
 </p>
-<h4> Changes </h4>
+<h4>Changes</h4>
 <p>
   Changes is for writing the history when the module is upgraded. Please note that you often forget to write when you upgrade the module.
 </p>
-<h3> lib </h3>
+<h3>lib</h3>
 <p>
   lib is the directory where the modules are stored. The script that is the main body of the module is stored in this.
 </p>
-<h3> MANIFEST </h3>
+<h3>MANIFEST</h3>
 <p>
   In MANIFEST, describe the file to be stored when the module is distributed. You can edit the MANIFEST file directly, but you can also create it automatically.
 </p>
-<h4> t </h4>
+<h4>t</h4>
 <p>
   The directory that stores the module's automated tests.
 </p>

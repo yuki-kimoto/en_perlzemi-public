@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> length function-get the length of a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>length function - get the length of a string - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  length function  to get the length of the string.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" length function-get the length of a string  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="length function - get the length of a string - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  length function  to get the length of the string." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20080926122245.html"> length function-get the length of a string </a></h2>
+<h2><a href="/blog/20080926122245.html">length function - get the length of a string</a></h2>
 <p>
   You can use the <strong> length function </strong> to get the length of the <a href="/blog/20161003147558.html">string</a>.
 </p>
@@ -95,7 +94,7 @@ $ret = length $str;
 # String length is 5
 my $length = length'abcde';
 </pre>
-<h4> Get the correct length of a Japanese string </h4>
+<h4>Get the correct length of a Japanese string</h4>
 <p>
   The length function returns the length of a string, but there is one thing to remember in order to get the correct length of a Japanese string.
 </p>
@@ -103,15 +102,15 @@ my $length = length'abcde';
   That is, you need to use the length function on the internal string. The internal string is the string decoded by the decode function of the Encode module.
 </p>
 <p>
-  For the internal character string, refer to the following article.
+  For the internal string, refer to the following article.
 </p>
 <ul>
   <li>
-    <a href="/blog/20091118124667.html">Encode module-Properly handles multi-byte character strings such as Japanese</a>
+    <a href="/blog/20091118124667.html">Encode module-Properly handles multi-byte strings such as Japanese</a>
   </li>
 </ul>
 <p>
-  Below is a sample program.
+  Below is a example program.
 </p>
 <p>
   For multibyte characters such as Japanese, convert them to internal strings with the Encode module's decode function and then use the length function to get the correct results. The same idea applies when processing full-width Japanese.
@@ -129,7 +128,7 @@ my $bytes = shift;
 my $string = decode('UTF-8', $bytes);
 my $length = length $string;
 </pre>
-<h4> length cannot get the length of the array </h4>
+<h4>length cannot get the length of the array</h4>
 <p>
   Note that Perl's length function is a function that gets the length of a string, not a function that gets the length of a <a href="/blog/20161012147627.html">array</a>.
 </p>
@@ -148,7 +147,7 @@ my $count = @nums;
     <a href="/blog/20080608121292.html">Understand Perl context</a>
   </li>
 </ul>
-<h4> length less than Perl 5.10 raises a warning when passing an undefined value </h4>
+<h4>length less than Perl 5.10 raises a warning when passing an undefined value</h4>
 <p>
   Lengths less than Perl 5.10 will warn you when you pass an undefined value. So, if you want to write length in a general-purpose module, write as follows and the warning will not appear.
 </p>
@@ -167,9 +166,9 @@ my $has_length = length $foo;
 <p>
   If you're using the latest Perl in your business application, it's simple to write as above.
 </p>
-<h3> Sample program </h3>
+<h3>Example program</h3>
 <p>
-  This is a sample to get the length of a string using the length function.
+  This is a example to get the length of a string using the length function.
 </p>
 <pre>
 # Get the length of the string

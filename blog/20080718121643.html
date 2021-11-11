@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> open function-opens a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="To open a  file , use the  open function . The first argument is a variable for assigning the acquired file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed.">
+<title>open function - opens a file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="To open a  file , use the  open function . The first argument is a variable for assigning the got file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" open function-opens a file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="To open a  file , use the  open function . The first argument is a variable for assigning the acquired file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed." />
+<meta name="twitter:title" content="open function - opens a file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="To open a  file , use the  open function . The first argument is a variable for assigning the got file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,9 +63,9 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20080718121643.html"> open function-opens a file </a></h2>
+<h2><a href="/blog/20080718121643.html">open function - opens a file</a></h2>
 <p>
-  To open a <strong> file </strong>, use the <strong> open function </strong>. The first argument is a variable for assigning the acquired file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed.
+  To open a <strong> file </strong>, use the <strong> open function </strong>. The first argument is a variable for assigning the got file handle, the second argument is open mode, and the third argument is the file name. Returns true if the file was opened successfully, false if it failed.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -97,7 +96,7 @@ open(my $fh, "&lt;", $file)
 <p>
   "<" Means open mode, and when reading a file, specify "<".
 </p>
-<h3> Commonly used open mode </h3>
+<h3>Commonly used open mode</h3>
 <table>
   <tr>
     <td>
@@ -135,19 +134,19 @@ open(my $fh, "&lt;", $file)
 <p>
   Specify in the second argument of the open function. Enclose it in double or single quotes and pass it as a string.
 </p>
-<h4> Read mode <</h4>
+<h4>Read mode <</h4>
 <p>
   Read mode is a mode in which a file is opened read-only. If the file does not exist, an error will occur.
 </p>
-<h4> Write mode> </h4>
+<h4>Write mode></h4>
 <p>
   Write mode is a mode in which a file is opened write-only. The contents of the original file are deleted the moment you open it. If the file does not exist, it will be created.
 </p>
-<h4> Additional write mode >> </h4>
+<h4>Additional write mode >></h4>
 <p>
   The additional write mode is a mode in which a file is opened exclusively for additional write, and writing starts from the end of the current file. If the file does not exist, it will be created.
 </p>
-<h4> What if you want to read a file and write to it? </H4>
+<h4>What if you want to read a file and write to it? </H4>
 <p>
   There is another read/write mode in the file open mode, but this mode is not used for general purposes. It's easy to think that read-write mode is used when reading a file and writing to that file, but it's different.
 </p>
@@ -168,7 +167,7 @@ open(my $fh, "&lt;", $file)
     Rename the temporary file to the original file name.
   </li>
 </ol>
-<h3> Exception handling </h3>
+<h3>Exception handling</h3>
 <p>
   When you open the file, you also need to handle the exception. If the file fails to open, there is no point in moving on to the subsequent processing, so use the die function to terminate the program. The cause of the file opening failure is assigned to "$!", So include that in the error message as well.
 </p>
@@ -176,7 +175,7 @@ open(my $fh, "&lt;", $file)
 open(my $fh, "&lt;", $file)
   or die "Can't open $file:$!";
 </pre>
-<h3> Open two arguments-not recommended </h3>
+<h3>Open two arguments - not recommended</h3>
 <p>
   Older source code may use a two-argument open function, but now it is recommended to use a three-argument open function.
 </p>
@@ -184,9 +183,9 @@ open(my $fh, "&lt;", $file)
 # 2 Argument open function is deprecated
 open($fh, "&lt;$file");
 </pre>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample file open using the open function.
+  This is a example file open using the open function.
 </p>
 <pre>
 use strict;
@@ -198,7 +197,7 @@ my $file = shift;
 open(my $fh2, "&lt;", $file)
   or die "Can't open file $file:$!";
 </pre>
-<h3> Related articles </h3>
+<h3>Related articles</h3>
 <ul>
   <li>
     <a href="/blog/20080519121125.html">Create a file</a>

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Net::FTP - File transfer using FTP  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Net::FTP - File transfer using FTP - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Net::FTP allows you to download and upload files via FTP.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Net::FTP - File transfer using FTP  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Net::FTP - File transfer using FTP - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Net::FTP allows you to download and upload files via FTP." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20091115124667.html"> Net::FTP - File transfer using FTP </a></h2>
+<h2><a href="/blog/20091115124667.html">Net::FTP - File transfer using FTP</a></h2>
 <p>
   Net::FTP allows you to download and upload files via FTP.
 </p>
@@ -91,7 +90,7 @@
 <p>
   Perl comes standard with a module called Net::FTP for creating client applications for FTP. If you use Net::FTP, file download/upload work can be automated and work efficiency can be improved.
 </p>
-<h3> What is FTP? </H3>
+<h3>What is FTP? </H3>
 <p>
   FTP is a protocol for transferring files. You can use FTP to upload and download files. A little more explanation of FTP is "<a href="http://www5e.biglobe.ne.jp/~aji/3min/56.html">56th FTP (1) Overview (3 minutes Networking</a> I think it is easy to understand.
 </p>
@@ -112,9 +111,9 @@
     Close the connection
   </li>
 </ol>
-<h3> A simple sample to download a file </h3>
+<h3>A simple example to download a file</h3>
 <p>
-  Let's write a simple sample to actually download the file.
+  Let's write a simple example to actually download the file.
 </p>
 <pre>
 # Load module
@@ -139,13 +138,13 @@ $ftp-&gt;quit;
   You can log in to the FTP server by specifying the user name and password in the login method. To put it simply, login is a state in which the server has given permission to execute FTP commands.
 </p>
 <p>
-  You can download the file using a method called get. The file will be downloaded to the current directory. The file name will be the last name (somefile in this sample), not including the directory name.
+  You can download the file using a method called get. The file will be downloaded to the current directory. The file name will be the last name (somefile in this example), not including the directory name.
 </p>
-<h3> Frequently used methods </h3>
+<h3>Frequently used methods</h3>
 <p>
   Here are some commonly used methods.
 </p>
-<h4> new </h4>
+<h4>new</h4>
 <p>
   Create a Net::FTP object to connect to the FTP server.
 </p>
@@ -158,7 +157,7 @@ $ftp = Net::FTP-&gt;new($host);
 <pre>
 $ftp = Net::FTP-&gt;new($host, Timeout =&gt; 180)
 </pre>
-<h4> login </h4>
+<h4>login</h4>
 <p>
   Log in by specifying the user name and password.
 </p>
@@ -171,7 +170,7 @@ $ftp-&gt;login($user, $password)
 <pre>
 $ftp-&gt;login('anonymous')
 </pre>
-<h4> cwd </h4>
+<h4>cwd</h4>
 <p>
   Change the current directory of the connection destination.
 </p>
@@ -185,7 +184,7 @@ $ftp-&gt;cwd($dir)
 # $ftp-&gt;cwd('dir') change current directory
 # $ftp-&gt;get('somefile') Download file
 </pre>
-<h4> get </h4>
+<h4>get</h4>
 <p>
   Use get to download the file.
 </p>
@@ -198,7 +197,7 @@ $ftp-&gt;get($file)
 <pre>
 $ftp-&gt;get($file, $renamed_file)
 </pre>
-<h4> put </h4>
+<h4>put</h4>
 <p>
   Use put to upload the file.
 </p>
@@ -211,7 +210,7 @@ $ftp-&gt;put($file $)
 <pre>
 $ftp-&gt;put($file, $renamed_file)
 </pre>
-<h4> binary </h4>
+<h4>binary</h4>
 <p>
   Change the file transfer mode to binary mode.
 </p>
@@ -224,7 +223,7 @@ $ftp-&gt;binary
 <p>
   Binary mode does not perform any conversion when transferring files. When transferring image files, video files, etc., it is necessary to transfer in binary mode.
 </p>
-<h4> ascii </h4>
+<h4>ascii</h4>
 <p>
   Change the file transfer mode to ASCII mode.
 </p>
@@ -234,7 +233,7 @@ $ftp-&gt;ascii
 <p>
   If you specify ASCII mode, the line feed code will be converted automatically. For example, the default line feed code for Windows is\r\n. The default line feed code for Unix is \n. If you transfer a file created with Windows Notepad to Unix as it is, it cannot be displayed correctly. If you transfer in ASCII mode, this conversion will be done automatically.
 </p>
-<h4> ls </h4>
+<h4>ls</h4>
 <p>
   Get a list of file names.
 </p>
@@ -242,12 +241,12 @@ $ftp-&gt;ascii
 @files = $ftp-&gt;ls($dir)
 </pre>
 <p>
-  If the directory name is omitted, the list of files included in the current directory of the connection destination is acquired.
+  If the directory name is omitted, the list of files included in the current directory of the connection destination is got.
 </p>
 <p>
   To check the existence of a file, use the ls method to get a list of files and check.
 </p>
-<h4> dir </h4>
+<h4>dir</h4>
 <p>
   Get a list of file names, including detailed information.
 </p>
@@ -262,7 +261,7 @@ $ftp-&gt;ascii
 -rwxr-xr-x 3 someuser somegroup 512 Apr 1 2009 a.pl
 -rwx- -- - 1 someuser somegroup 77 Apr 1 2009 mm.txt
 </pre>
-<h4> rmdir </h4>
+<h4>rmdir</h4>
 <p>
   Delete the directory.
 </p>
@@ -270,7 +269,7 @@ $ftp-&gt;ascii
 # Delete directory
 $ftp-&gt;rmdir($dir)
 </pre>
-<h4> mkdir </h4>
+<h4>mkdir</h4>
 <p>
   Create a directory. If the second argument is true, the directory will be created recursively.
 </p>
@@ -281,14 +280,14 @@ $ftp-&gt;mkdir($dir)
 # Recursively create directories
 $ftp-&gt;mkdir($dir, $is_recurse)
 </pre>
-<h4> quit </h4>
+<h4>quit</h4>
 <p>
   Close the connection with the FTP server.
 </p>
 <pre>
 $ftp-&gt;quit;
 </pre>
-<h4> Sometimes used method </h4>
+<h4>Sometimes used method</h4>
 <p>
   This method is used from time to time.
 </p>
@@ -342,16 +341,16 @@ $ftp-&gt;quit;
     </td>
   </tr>
 </table>
-<h4> List of all methods </h4>
+<h4>List of all methods</h4>
 <p>
   See the Net::FTP documentation for a complete list of methods.
 </p>
 <p>
   <a href="http://perldoc.jp/docs/modules/libnet-1.12/Net/FTP.pod">Net::FTP (perldocjp)</a>
 </p>
-<h3> Net::FTP error handling </h3>
+<h3>Net::FTP error handling</h3>
 <p>
-  In fact, the first sample omitted error handling to briefly explain how to use Net::FTP. Net::FTP does not throw an exception when a command fails, so you need to handle the error yourself. Adding error handling to the first sample gives:
+  In fact, the first example omitted error handling to briefly explain how to use Net::FTP. Net::FTP does not throw an exception when a command fails, so you need to handle the error yourself. Adding error handling to the first example gives:
 </p>
 <pre>
 # Connect to FTP server
@@ -377,7 +376,7 @@ $ftp-&gt;quit;
 <p>
   Let's take a brief look at Net::FTP error handling.
 </p>
-<h4> [A] Connection error handling </h4>
+<h4>[A] Connection error handling</h4>
 <p>
   If the connection to the FTP server fails with the new method, the return value will be undef, so do or die to terminate the program. Include the OS error message $!.
 </p>
@@ -385,7 +384,7 @@ $ftp-&gt;quit;
 my $ftp = Net::FTP-&gt;new('somehost')
   or die "Cannot connect to'$host':$!";
 </pre>
-<h4> [B] Other error handling </h4>
+<h4>[B] Other error handling</h4>
 <p>
   If an error occurs after connecting, you can get the details of the error with $ftp->message. Make sure to include this error message in the error message.
 </p>
@@ -398,9 +397,9 @@ $ftp-&gt;login('user', 'password')
 $ftp-&gt;get('/ dir/somefile');
   or die "FTP command fail:". $ftp-&gt;message;
 </pre>
-<h3> Net::FTP executable sample </h3>
+<h3>Net::FTP executable example</h3>
 <p>
-  The sample cannot connect to the FTP server that specifies the user and password. Try downloading the file from an anonymous server that does not require a password. This is a sample to download the CPAN top page (index.html) from the CPAN mirror site.
+  The example cannot connect to the FTP server that specifies the user and password. Try downloading the file from an anonymous server that does not require a password. This is a example to download the CPAN top page (index.html) from the CPAN mirror site.
 </p>
 <pre>
 use strict;
@@ -425,7 +424,7 @@ $ftp-&gt;get('index.html')
 
 $ftp-&gt;quit;
 </pre>
-<h3> FTPS connection - FTP over SSL/TLS </h3>
+<h3>FTPS connection - FTP over SSL/TLS</h3>
 <p>
   I will explain how to connect with FTPS by Net::FTP. FTPS is a protocol for FTP connection over SSL/TSL. Please note that it is different from SFTP, which transfers files over SSH.
 </p>
@@ -436,7 +435,7 @@ $ftp-&gt;quit;
   Net::FTP can communicate using FTPS if IO::Socket::SSL is installed. If you have an older version of IO::Socket::SSL, please upgrade.
 </p>
 <p>
-  To do "explicit TSL/SSL encryption", just call the starttls method immediately after connecting with the new method. Let's rewrite the above sample with "explicit TSL/SSL encryption".
+  To do "explicit TSL/SSL encryption", just call the starttls method immediately after connecting with the new method. Let's rewrite the above example with "explicit TSL/SSL encryption".
 </p>
 <pre>
 use strict;

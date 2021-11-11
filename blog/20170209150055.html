@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Create an XS module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Create an XS module - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="A C language (or C ++) function created so that it can be called from Perl is called an extension. Generally, it seems that it is often collectively called XS, so I will call it XS. I would like to write the flow from creating an XS module to creating a module to call from Perl. The work flow is as follows. Twice">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Create an XS module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Create an XS module - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="A C language (or C ++) function created so that it can be called from Perl is called an extension. Generally, it seems that it is often collectively called XS, so I will call it XS. I would like to write the flow from creating an XS module to creating a module to call from Perl. The work flow is as follows. Twice" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170209150055.html"> Create an XS module </a></h2>
+<h2><a href="/blog/20170209150055.html">Create an XS module</a></h2>
 <p>
   A C language (or C ++) function created so that it can be called from Perl is called an extension. Generally, it seems that it is often collectively called XS, so I will call it XS. I would like to write the flow from creating an XS module to creating a module to call from Perl. The work flow is as follows. Twice
 </p>
@@ -105,8 +104,8 @@
 <ul>
   <li> <a href="https://clanguage.perlclub.net/">Introduction to C language for Perl XS users</a> </li>
 </ul>
-<h3> Flow of XS module creation </h3>
-<h4> Create XS file </h4>
+<h3>Flow of XS module creation</h3>
+<h4>Create XS file</h4>
 <p>
   The first is to create an XS file. The extension is (.xs). The file contains the C language source code and XSUB. XSUB is written in the XS language and is very similar to C functions. Think of it as writing a C language function in substance.
 </p>
@@ -125,7 +124,7 @@ Function name
 Mold
 Processing (the processing part is C language)
 </pre>
-<h4> Generate C language source file from XS file </h4>
+<h4>Generate C language source file from XS file</h4>
 <p>
   Convert the XS file to a C language source file using a program called xsubpp. At this time, a definition called typemap is used to convert the types of Perl in C language to each other. The typemap is included in the ExtUtils::MakeMaker module.
 </p>
@@ -136,7 +135,7 @@ XS file + typemap - -- -- -- -&gt;C language source file
 <p>
   With the XS language, you often don't have to write the C and Perl type conversion process yourself. xsubpp will refer to the typemap file and automatically add the conversion process. You can also write the conversion process yourself or extend the typemap.
 </p>
-<h4> Dynamic link library generation </h4>
+<h4>Dynamic link library generation</h4>
 <p>
   C language source files are compiled using a C compiler (such as gcc) and converted to a dynamic link library (such as * .so).
 </p>
@@ -147,7 +146,7 @@ C language source file - -- -- -- -- -- -&gt;Dynamic link library
 <p>
   A dynamic link library is a library that can be called dynamically. Normally, the library is created in this format.
 </p>
-<h4> Creating a Perl module to call a dynamic link library </h4>
+<h4>Creating a Perl module to call a dynamic link library</h4>
 <p>
   Finally, create a Perl module to call the dynamic link library. A module called XSLoader allows you to load a dynamic link library and call the functions written in the dynamic link library as Perl functions.
 </p>
@@ -160,14 +159,14 @@ XSLoader::load'YourPackage', $YourPackage::VERSION;
 <p>
   XSLoader loads the dynamic link library under the directory auto in the search path contained in @INC. The dynamic link library has the extension dll on Windows and so on Linux.
 </p>
-<h4> To actually create an XS module </h4>
+<h4>To actually create an XS module</h4>
 <p>
   Make sure to remember the above flow. When creating an XS module, the flow is the same no matter what you create. All the programmer needs to focus on is creating the XS file. Most of the rest of the work can be automated, so creating a simple XS module is not difficult.
 </p>
 <p>
   However, generally speaking, creating an XS module is difficult. This is because it requires a large amount of not-so-easy peripheral knowledge such as "XS language", "typemap", "Perl API", "make", "C compiler", "linker", and "ExtUtils::MakeMaker". Therefore, it is important to first grasp the basics firmly and then acquire peripheral knowledge.
 </p>
-<h3> Create XS module - h2xs command </h3>
+<h3>Create XS module - h2xs command</h3>
 <p>
   Use the command <b> h2xs </b> to create an XS module.
 </p>
@@ -194,7 +193,7 @@ h2xs -A -n SomeModule
 <p>
   This command creates a directory named "SomeModule" in the current directory.
 </p>
-<h4> Module configuration </h4>
+<h4>Module configuration</h4>
 <p>
   The created module has the following structure.
 </p>
@@ -248,7 +247,7 @@ t - SomeModule.t
     <a href="/blog/20150725143778.html">How to write Makefile.PL - Learn ExtUtil::MakeMaker</a>
   </li>
 </ul>
-<h4> XS file template </h4>
+<h4>XS file template</h4>
 <p>
   Now try opening SomeModule.xs first. The following template should be generated.
 </p>
@@ -307,7 +306,7 @@ MODULE = SomeModule PACKAGE = SomeModule
 Perl C language
 SomeModule::twice - -&gt;XS_SomeModule_twice
 </pre>
-<h4> XSUB description </h4>
+<h4>XSUB description</h4>
 <p>
   From here, it is the part that describes the XS language. Let's write XSUB using the XS language. XSUB is a description of a function using the XS language, which is very similar to a function in the C language. Below is a function that doubles the received integer.
 </p>
@@ -358,7 +357,7 @@ Function name (...)
     <a href="/blog/20170208150055.html">Mutual conversion between Perl type and C type in XS</a>
   </li>
 </ul>
-<h4> Compile and run </h4>
+<h4>Compile and run</h4>
 <p>
   As explained so far, in order to use it from a Perl module, it was necessary to process the XS file with xsubpp, compile the C language source file, and create a dynamic link library. However, this process can be automated by a program called make. Makefile.PL will generate a makefile that automates this task. So just run the following command:
 </p>

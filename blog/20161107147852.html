@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl variables  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl variables - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="A description of Perl variables. Explains variable declarations and variable types.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl variables  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl variables - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="A description of Perl variables. Explains variable declarations and variable types." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20161107147852.html"> Perl variables </a></h2>
+<h2><a href="/blog/20161107147852.html">Perl variables</a></h2>
 <p>
   A description of Perl variables. Explains variable declarations and variable types.
 </p>
@@ -81,11 +80,11 @@
 </div>
 
 
-<h3> Variable declaration </h3>
+<h3>Variable declaration</h3>
 <p>
   Describes Perl variable declarations.
 </p>
-<h4> Declaration of "lexical variable" by "my" </h4>
+<h4>Declaration of "lexical variable" by "my"</h4>
 <p>
   You can use "my" to declare a "lexical variable".
 </p>
@@ -107,7 +106,7 @@ my %score;
     <a href="/blog/20080307120491.html">Declare lexical variables using my</a>
   </li>
 </ul>
-<h4> Declaration of "package variable" by "our" </h4>
+<h4>Declaration of "package variable" by "our"</h4>
 <p>
   You can use "our" to declare "package variables".
 </p>
@@ -132,7 +131,7 @@ our%SCORE;
     <a href="/blog/20080308120495.html">Declaration of package variables by our</a>
   </li>
 </ul>
-<h4> Saving and restoring values with "local" </h4>
+<h4>Saving and restoring values with "local"</h4>
 <p>
   You can use "local" to temporarily save a package variable and restore it at the end of scope.
 </p>
@@ -151,11 +150,11 @@ our $NUM = 5;
     local is explained in "<a href="/blog/20080309120507.html">local - temporarily save and restore package variables</a>".
   </li>
 </ul>
-<h3> Perl variable type </h3>
+<h3>Perl variable type</h3>
 <p>
   Perl has three "variable types": "scalar variables", "array variables", and "hash variables". Please note that it does not indicate the type of a number like "int type" and "double type" like C language and Java.
 </p>
-<h4> "Scalar variable"-stores one value </h4>
+<h4>"Scalar variable" - stores one value</h4>
 <p>
   A "scalar variable" can contain only one value within a variable. A scalar variable is represented by prefixing the variable name with "$".
 </p>
@@ -181,7 +180,7 @@ our $NUM = 5;
 </ul>
 </ul>
 <p>
-  <b> Sample of assignment of scalar value to scalar variable </b>
+  <b> Example of assignment of scalar value to scalar variable </b>
 </p>
 <pre>
 my $scalar;
@@ -192,7 +191,7 @@ $scalar = {x =&gt; 6}; # Reference to hash
 $scalar = sub {return 7}; # Reference to subroutine
 $scalar = undef; # undefined value
 </pre>
-<h4> "Array variable" - stores multiple values </h4>
+<h4>"Array variable" - stores multiple values</h4>
 <p>
   An "array variable" can contain multiple values. Only scalar variables can be included in the "elements" of an array variable.
 </p>
@@ -221,7 +220,7 @@ my @list_in_list = ((1, 2), (3, 4));
 # It will be the same as this.
 my @list = (1, 2, 3, 4);
 </pre>
-<h4> "Hash variable"-stores key/value pairs </h4>
+<h4>"Hash variable" - stores key/value pairs</h4>
 <p>
   The hash has the following characteristics.
 </p>
@@ -244,7 +243,7 @@ my %scores = (math =&gt; 70, engligh =&gt; 80);
 @array = %hash;
 %hash = @array;
 </pre>
-<h3> Variables and scope </h3>
+<h3>Variables and scope</h3>
 <p>
   Another thing to know about variables is their <b> scope </b> and <b> lifetime </b>. Scope is a term that describes where a variable is visible. Lifespan is the length of time a variable stores a value.
 </p>

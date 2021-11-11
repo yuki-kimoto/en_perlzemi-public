@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> @INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>@INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="In Perl 5.26, the current directory "." Is deleted from the beginning of @INC, which is the module search path. There is an explanation that it is for security measures, but I thought about what kind of situation there is actually danger.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" @INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="@INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="In Perl 5.26, the current directory "." Is deleted from the beginning of @INC, which is the module search path. There is an explanation that it is for security measures, but I thought about what kind of situation there is actually danger." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -53,7 +52,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20170414149217.html"> @INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path </a></h2>
+    <h2><a href="/blog/20170414149217.html">@INC problem, I thought about what kind of danger there is if there is a current directory "." At the beginning of the module path</a></h2>
 <p>
   In Perl 5.26, the current directory "." Is deleted from the beginning of @INC, which is the module search path. There is an explanation that it is for security measures, but I thought about what kind of situation there is actually danger.
 </p>
@@ -73,7 +72,7 @@
 </div>
 
 
-<h3> It is dangerous to change the directory writable by other users to the current directory </h3>
+<h3>It is dangerous to change the directory writable by other users to the current directory</h3>
 <p>
   For example, consider the following script (test.pl).
 </p>
@@ -111,7 +110,7 @@ require File::Path;
 <p>
   Scripts other than "/ tmp" that make a directory writable by other users the current directory can be said to have this vulnerability.
 </p>
-<h3> Addendum </h3>
+<h3>Addendum</h3>
 <p>
   I've written many times that "." Has been added to the beginning of @INC, but it was a mistake that <b> "." Was added to the end </b>. I got an indication on Twitter.
 </p>

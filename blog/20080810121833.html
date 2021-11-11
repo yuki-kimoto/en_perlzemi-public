@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Read and write using random access  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is a random access sample where you can pinpoint only the part you want to change, change it, and write it back. Random access is generally used for fixed-length binary files, but for convenience, we will use fixed-length text files here.">
+<title>Read and write using random access - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="This is a random access example where you can pinpoint only the part you want to change, change it, and write it back. Random access is generally used for fixed-length binary files, but for convenience, we will use fixed-length text files here.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Read and write using random access  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is a random access sample where you can pinpoint only the part you want to change, change it, and write it back. Random access is generally used for fixed-length binary files, but for convenience, we will use fixed-length text files here." />
+<meta name="twitter:title" content="Read and write using random access - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="This is a random access example where you can pinpoint only the part you want to change, change it, and write it back. Random access is generally used for fixed-length binary files, but for convenience, we will use fixed-length text files here." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,9 +63,9 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080810121833.html"> Read and write using random access </a></h2>
+<h2><a href="/blog/20080810121833.html">Read and write using random access</a></h2>
 <p>
-  This is a random access sample where you can pinpoint only the part you want to change, change it, and write it back. Random access is generally used for fixed-length binary files, but for convenience, we will use fixed-length text files here.
+  This is a random access example where you can pinpoint only the part you want to change, change it, and write it back. Random access is generally used for fixed-length binary files, but for convenience, we will use fixed-length text files here.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -157,15 +156,15 @@ close $fh
 <pre>
 taro 00000023peko 00000018akira 00000023
 </pre>
-<h3> Code explanation </h3>
-<h4> (1) Preparing to use the symbols used in the seek function </h4>
+<h3>Code explanation</h3>
+<h4>(1) Preparing to use the symbols used in the seek function</h4>
 <pre>
 use Fcntl qw(:seek);
 </pre>
 <p>
   Import the symbols associated with the seek function from the Fcntl module. Three constants, SEEK_SET, SEEK_CUR and SEEK_END, are imported.
 </p>
-<h4> (2) How to specify the position in a fixed-length file </h4>
+<h4>(2) How to specify the position in a fixed - length file</h4>
 <pre>
 # 16 bytes
 my $len_rec = 16;
@@ -189,7 +188,7 @@ my $pos_peko_age = 1 * $len_rec + $pos_age;
 <p>
   For fixed-length files, you can specify the byte position directly. As mentioned above, it is convenient to define the length of one record, the position from the beginning of each data and the number of bytes, when specifying the position.
 </p>
-<h4> (3) Use the seek function to move to the byte position you want to read. </h4>
+<h4>(3) Use the seek function to move to the byte position you want to read.</h4>
 <pre>
 # Move the position of the file pointer to the position of Peco's age
 
@@ -245,7 +244,7 @@ seek ($fh, $pos_peko_age, SEEK_SET)
 <p>
   If the seek function fails, it returns undef and sets $! To the error content.
 </p>
-<h4> (4) Read the data with the read function </h4>
+<h4>(4) Read the data with the read function</h4>
 <pre>
 # Load peko's age into $age
 my $age;
@@ -270,7 +269,7 @@ elsif ($len_read != $len_age) {
 <p>
   If the number of bytes read is insufficient, error handling is performed for each read error.
 </p>
-<h4> (5) Move to the write position with the seek function </h4>
+<h4>(5) Move to the write position with the seek function</h4>
 <pre>
 # When read, the file pointer advances by the amount read, so return it to the original position.
 seek ($fh, $pos_peko_age, SEEK_SET)
@@ -279,13 +278,13 @@ seek ($fh, $pos_peko_age, SEEK_SET)
 <p>
   The read function advances the position of the file pointer by the amount read. To write to the same position again, call the seek function again.
 </p>
-<h4> (6) Write to a file </h4>
+<h4>(6) Write to a file</h4>
 <pre>
 printf $fh "%08s", $age
   or die "Cannot print: $file:$!";
 </pre>
 <p>
-  Writing is done by specifying the format with the <a href="/blog/20170326149148.html">printf function</a>. By specifying%08s, it means that "in an 8-digit character string, the part less than 8 digits is filled with 0".
+  Writing is done by specifying the format with the <a href="/blog/20170326149148.html">printf function</a>. By specifying%08s, it means that "in an 8-digit string, the part less than 8 digits is filled with 0".
 </p>
 
   </div>

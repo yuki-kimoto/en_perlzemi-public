@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> umask function-limit permissions with bitmask  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>umask function - limit permissions with bitmask - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  umask  function to specify the bitmask.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" umask function-limit permissions with bitmask  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="umask function - limit permissions with bitmask - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  umask  function to specify the bitmask." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20080824121967.html"> umask function-limit permissions with bitmask </a></h2>
+<h2><a href="/blog/20080824121967.html">umask function - limit permissions with bitmask</a></h2>
 <p>
   Use the <strong> umask </strong> function to specify the bitmask.
 </p>
@@ -92,9 +91,9 @@ umask 0022;
   To specify the bitmask, use the umask function. <a href="/blog/20080822121950.html">Permissions</a> is specified in 3-digit octal. In Perl, you can represent an octal number by prefixing it with 0.
 </p>
 <p>
-  The permissions when creating the file are affected by the bitmask. A bitmask is a bit string that limits permissions when creating a file or directory. The following is a sample to specify the bitmask.
+  The permissions when creating the file are affected by the bitmask. A bitmask is a bit string that limits permissions when creating a file or directory. The following is a example to specify the bitmask.
 </p>
-<h3> What is a bit mask? </H3>
+<h3>What is a bit mask? </H3>
 <p>
   Bitmasks affect the permissions when creating files and directories with the <a href="/blog/20080804121794.html">sysopen function</a> and mkdir functions.
 </p>
@@ -107,7 +106,7 @@ umask 0022;
 <p>
   (However, in the case of a file that should never be written to another person, create it with permissions such as 644.)
 </p>
-<h3> Bitmask operation </h3>
+<h3>Bitmask operation</h3>
 <p>
   The bitmask calculation is as follows.
 </p>
@@ -196,9 +195,9 @@ Permission created = Specified permission &amp; negation of bitmask
 <p>
   The logical product of "file permission" and "negation of bitmask" is "permission to be created".
 </p>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample to set the bit mask.
+  This is a example to set the bit mask.
 </p>
 <pre>
 use strict;

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Understand typeglobs  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Understand typeglobs - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The typeglob represents an entry in the symbol table.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Understand typeglobs  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Understand typeglobs - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The typeglob represents an entry in the symbol table." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20080614121342.html"> Understand typeglobs </a></h2>
+<h2><a href="/blog/20080614121342.html">Understand typeglobs</a></h2>
 <p>
   The typeglob represents an entry in the symbol table.
 </p>
@@ -91,7 +90,7 @@
 <p>
   If you omit the package name, it becomes an entry in the symbol table of the current current package.
 </p>
-<h3> Typeglobs and variables </h3>
+<h3>Typeglobs and variables</h3>
 <pre>
 my $num_from_typedglob = ${* main::num}; # Same as $num
 my @num_from_typedglob = @{* main::num}; # Same as @num
@@ -101,7 +100,7 @@ my $ret_from_typedglob = &amp; {* main::num}; # Same as &amp; num (also same as 
 <p>
   A typeglob is a kind of hash, <a href="/blog/20161107147852.html">scalar variable</a>, <a href="/blog/20161012147627.html">array</a>, < You can access a href="/blog/20161013147635.html">hash</a>, <a href="/blog/20101130129876.html">subroutine</a>, and more. It looks exactly like a dereference, but it's not a dereference.
 </p>
-<h3> Image of type glob </h3>
+<h3>Image of type glob</h3>
 <pre>
 | - -- -- -- -- |
 | * typedglob |-|
@@ -116,9 +115,9 @@ my $ret_from_typedglob = &amp; {* main::num}; # Same as &amp; num (also same as 
                  | - -- &gt; | &amp; {* typedglob} |
                         | - -- -- -- -- --- |
 </pre>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  A sample to understand typeglobs and symbol tables.
+  A example to understand typeglobs and symbol tables.
 </p>
 <pre>
 use strict;

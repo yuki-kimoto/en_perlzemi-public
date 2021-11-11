@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File::Basename - Get the base name of the file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>File::Basename - Get the base name of the file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="File::Basename  is a module to get the base name and directory name from the file name. You can use the following three functions:">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File::Basename - Get the base name of the file  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="File::Basename - Get the base name of the file - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="File::Basename  is a module to get the base name and directory name from the file name. You can use the following three functions:" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100225126425.html"> File::Basename - Get the base name of the file </a></h2>
+<h2><a href="/blog/20100225126425.html">File::Basename - Get the base name of the file</a></h2>
 <p>
   <strong> File::Basename </strong> is a module to get the base name and directory name from the file name. You can use the following three functions:
 </p>
@@ -103,7 +102,7 @@
 # Import function
 use File::Basename 'basename', 'dirname';
 </pre>
-<h3> basename function </h3>
+<h3>basename function</h3>
 <p>
   Use the basename function to get the base name of a file. The base name is the last part of the file name.
 </p>
@@ -111,7 +110,7 @@ use File::Basename 'basename', 'dirname';
 # Get base name
 $basename = basename $file;
 </pre>
-<h3> dirname function </h3>
+<h3>dirname function</h3>
 <p>
   Use the dirname function to get the directory name.
 </p>
@@ -120,7 +119,7 @@ $basename = basename $file;
 $dirname = dirname $file;
 </pre>
 <p>
-  Samples of basename and dirname. If the file name is "dir/a.txt", you can get "a.txt" with basename and "dir" with dirname.
+  Examples of basename and dirname. If the file name is "dir/a.txt", you can get "a.txt" with basename and "dir" with dirname.
 </p>
 <pre>
 # Get base name and directory name
@@ -129,7 +128,7 @@ my $file = 'dir/a.txt';
 my $basename = basename $file;
 my $dirname = dirname $file;
 </pre>
-<h3> A little more detailed operation on the file name </h3>
+<h3>A little more detailed operation on the file name</h3>
 <p>
   You can use fileparse to get the base name and directory name at once.
 </p>
@@ -145,7 +144,7 @@ my $dirname = dirname $file;
 ($basename, $dirname, $ext) = fileparse ($file, $regex);
 </pre>
 <p>
-  This is a sample to extract the extension. Specify a regular expression as the second argument. The regular expression "\ .. * $" means ". Comes and ends with 0 or more characters that can be anything." If $file is "dir/a.txt", $basename will be "a" and $ext will be ".txt".
+  This is a example to extract the extension. Specify a regular expression as the second argument. The regular expression "\ .. * $" means ". Comes and ends with 0 or more characters that can be anything." If $file is "dir/a.txt", $basename will be "a" and $ext will be ".txt".
 </p>
 <pre>
 # Extract extension

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Handling of "matrix" in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Handling of "matrix" in PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain the handling of "matrix" in PDL.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Handling of "matrix" in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Handling of "matrix" in PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain the handling of "matrix" in PDL." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20121109135538.html"> Handling of "matrix" in PDL </a></h2>
+<h2><a href="/blog/20121109135538.html">Handling of "matrix" in PDL</a></h2>
 <p>
   I will explain the handling of "matrix" in PDL.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Creating a matrix </h3>
+<h3>Creating a matrix</h3>
 <p>
   Use the <b> pdl </b> function to create a matrix.
 </p>
@@ -106,7 +105,7 @@ my $mat = mpdl [
  [3 4]
 ]
 </pre>
-<h3> Matrix addition </h3>
+<h3>Matrix addition</h3>
 <p>
   Use the <b> + </b> operator to add matrices.
 </p>
@@ -133,7 +132,7 @@ my $mat_sum = $mat1 + $mat2;
  [10 12]
 ]
 </pre>
-<h3> Matrix subtraction </h3>
+<h3>Matrix subtraction</h3>
 <p>
   Use the <strong>-</strong> operator to add matrices.
 </p>
@@ -161,7 +160,7 @@ my $mat_sub = $mat2- $mat1;
  [4 4]
 ]
 </pre>
-<h3> Matrix product </h3>
+<h3>Matrix product</h3>
 <p>
   Use the <strong> x </strong> operator to find the matrix product.
 </p>
@@ -188,7 +187,7 @@ my $mat_multi = $mat1 x $mat2;
  [43 50]
 ]
 </pre>
-<h3> Get matrix elements </h3>
+<h3>Get matrix elements</h3>
 <p>
   Use the <strong> at </strong> method to get the elements of the matrix. Note that the row and column order is different from a regular matrix, and the subscripts start at 0.
 </p>
@@ -196,7 +195,7 @@ my $mat_multi = $mat1 x $mat2;
 $matrix-&gt;at(column, row)
 </pre>
 <p>
-  The following is a sample to get the value (3) of the 2nd row and 1st column of the 2x2 matrix.
+  The following is a example to get the value (3) of the 2nd row and 1st column of the 2x2 matrix.
 </p>
 <pre>
 use PDL;
@@ -207,7 +206,7 @@ my $mat = pdl [
 ];;
 my $val = $mat-&gt;at(0, 1);
 </pre>
-<h3> Set matrix elements </h3>
+<h3>Set matrix elements</h3>
 <p>
   To set the elements of a matrix, use the notation <strong> nice slice </strong>. You need to load the <b> PDL::NiceSlice </b> module to use nice slice notation.
 </p>
@@ -221,7 +220,7 @@ $matrix (column, row). = Value
   This notation is a bit special, with parentheses after the variable. Also, the <b>. = </B> string concatenation and equal combination is overloaded for value assignment.
 </p>
 <p>
-  Below is a sample of a 2x2 matrix with the value in the 2nd row and 1st column set to 5. Note that the subscripts start at 0.
+  Below is a example of a 2x2 matrix with the value in the 2nd row and 1st column set to 5. Note that the subscripts start at 0.
 </p>
 <pre>
 use PDL;
@@ -242,7 +241,7 @@ $mat (0, 1). = 5;
  [5 4]
 ]
 </pre>
-<h3> Create an identity matrix </h3>
+<h3>Create an identity matrix</h3>
 <p>
   Let's create an identity matrix. Let's make a 3x3 identity matrix. The procedure is to create a 3x3 square matrix with all zeros in the <b> zeroes </b> function of <strong> PDL::Core </strong>. Then slice the diagonal with the <b> diagonal </b> method and substitute 1. The argument (0, 1) means 1D and 2D. It means to get the diagonal of 1D and 2D.
 </p>
@@ -262,7 +261,7 @@ $mat-&gt;diagonal(0, 1). = 1;
  [0 0 1]
 ]
 </pre>
-<h3> Find the determinant </h3>
+<h3>Find the determinant</h3>
 <p>
   Use the <b> det </b> method to find the determinant.
 </p>
@@ -282,7 +281,7 @@ my $det = $mat-&gt;det;
 <pre>
 -2
 </pre>
-<h3> Find the inverse matrix </h3>
+<h3>Find the inverse matrix</h3>
 <p>
   Use the <b> inv </b> function to find the inverse matrix.
 </p>
@@ -302,7 +301,7 @@ my $mat_inv = inv $mat;
  [1.5 -0.5]
 ]
 </pre>
-<h3> Create a vector (column vector) </h3>
+<h3>Create a vector (column vector)</h3>
 <p>
   To create a vector (column vector):
 </p>
@@ -323,7 +322,7 @@ my $vec = pdl [
  [2]
 ]
 </pre>
-<h3> Calculate the linear transformation </h3>
+<h3>Calculate the linear transformation</h3>
 <p>
   Let's calculate the linear transformation. It is an operation of square matrix × column vector.
 </p>

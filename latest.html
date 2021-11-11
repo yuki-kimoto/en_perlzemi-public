@@ -31,9 +31,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -45,7 +44,7 @@
   </div>
   <div class="middle">
     <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/21</div>
-<h2><a href="/blog/20210921094146.html"> Maintainable Perl 7 plan </a></h2>
+<h2><a href="/blog/20210921094146.html">Maintainable Perl 7 plan</a></h2>
 <p>
   As of 2021, Perl 7 with high maintainability is planned. Perl7 is a new version of Perl that improves the maintainability of Perl, reduces beginner mistakes, and maintains high backward compatibility with the current version of Perl5.
 </p>
@@ -66,30 +65,30 @@ use v7;
 
 say'Hello';
 </pre>
-<h3> What happened to Perl 7's announcement? </H3>
+<h3>What happened to Perl 7's announcement? </H3>
 <p>
   There was a <a href="https://www.perl.com/article/announcing-perl-7/">Perl 7 announcement</a> on Perl.com in June 2020, but it was announced. The content is now updated.
 </p>
-<h3> What happened to Perl6? </H3>
+<h3>What happened to Perl6? </H3>
 <p>
   <a href="/blog/20210605102758.html">Perl6</a>, which was once developed as a successor to Perl5, has been renamed to Raku. As of 2021, some sites mention Perl 6 as it is without updating the information, but the correct information is that Perl 6 has been renamed to Raku.
 </p>
-<h3> Relationship between Perl 7, Perl 6, and Perl 5 </h3>
+<h3>Relationship between Perl 7, Perl 6, and Perl 5</h3>
 <p>
   There is so much misunderstanding and confusion about Perl 7, Perl 6, and Perl 5. I feel this is the responsibility of Perl, and I feel that things will get better a few years after Perl 7 is officially released.
 </p>
 <p>
   To reduce misunderstandings and confusion, I'll write about the 2021 versions of Perl 7, Perl 6, and Perl 5.
 </p>
-<h4> The latest version of Perl is Perl 5.34 </h4>
+<h4>The latest version of Perl is Perl 5.34</h4>
 <p>
   The latest version of Perl in 2021 is Perl 5.34. The latest version of Perl 5 is the latest version of Perl.
 </p>
-<h4> Perl 6 renamed to Raku </h4>
+<h4>Perl 6 renamed to Raku</h4>
 <p>
   Perl 6, which was supposed to be the next version of Perl, is now defined as a different programming language and has been renamed to Raku.
 </p>
-<h4> The next Perl will be Perl 7, the release date of Perl 7 is undecided </h4>
+<h4>The next Perl will be Perl 7, the release date of Perl 7 is undecided</h4>
 <p>
   It has been decided that the next Perl will be released as Perl 7 with very high compatibility with the current Perl 5.
 </p>
@@ -104,7 +103,7 @@ use v7;
 </p>
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/03</div>
-<h2><a href="/blog/20210903122616.html"> How to display UTF-8 at the Windows command prompt </a></h2>
+<h2><a href="/blog/20210903122616.html">How to display UTF - 8 at the Windows command prompt</a></h2>
 <p>
   I will show you how to display UTF-8 at the Windows command prompt. It was confirmed on Windows 10 on September 3, 2021.
 </p>
@@ -128,11 +127,11 @@ use v7;
 </p>
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/07/26</div>
-<h2><a href="/blog/20210726104613.html"> Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing) </a></h2>
+<h2><a href="/blog/20210726104613.html">Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing)</a></h2>
 <p>
   Here is a summary of how to create a web browser automatic operation robot in Perl. For Windows users.
 </p>
-<h3> Install Strawberry Perl on Windows </h3>
+<h3>Install Strawberry Perl on Windows</h3>
 <p>
   To create a web browser auto-operation robot, you need Perl set up for Windows.
 </p>
@@ -145,7 +144,7 @@ use v7;
 <p>
   <a href="https://perlzemi.com/blog/20180808153368.html">Installing Strawberry Perl</a>
 </p>
-<h3> Perl module used to create a web browser automatic operation robot </h3>
+<h3>Perl module used to create a web browser automatic operation robot</h3>
 <p>
   Web browser automatic operation Perl modules used to create robots are mainly as follows.
 </p>
@@ -153,7 +152,7 @@ use v7;
   <li> Win32::GuiTest - Mouse position specification, keyboard operation </li>
   <li> Win32::Clipboard - Clipboard operation </li>
 </ul>
-<h3> Window operation </h3>
+<h3>Window operation</h3>
 <p>
   On Windows, use Win32::GuiTest to get windows, position the mouse, click, and operate the keyboard. Loading the required function.
 </p>
@@ -172,7 +171,7 @@ use Win32::GuiTest (
   'Send Keys',
 );
 </pre>
-<h4> Enable Unicode semantics </h4>
+<h4>Enable Unicode semantics</h4>
 <p>
   First of all, Perl is Unicode-enabled since Perl 5.8, so Win32::GuiTest will also be able to use Unicode-enabled semantics. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written.
 </p>
@@ -180,7 +179,7 @@ use Win32::GuiTest (
 # Enable unicode semantics
 Unicode Semantics (1);
 </pre>
-<h4> Get desktop window </h4>
+<h4>Get desktop window</h4>
 <p>
   To get the desktop window, use the GetDesktopWindow function. A desktop window is a window that shows the entire desktop.
 </p>
@@ -188,7 +187,7 @@ Unicode Semantics (1);
 # Get desktop window
 my $desktop_win = GetDesktopWindow ();
 </pre>
-<h4> Get a list of child windows </h4>
+<h4>Get a list of child windows</h4>
 <p>
   In order to perform automatic operation of the web browser, it is necessary to get the window of the browser, but in order to do so, it is necessary to first get the list of child windows managed under the desktop window. Use GetChildWindows to get a list of child windows.
 </p>
@@ -201,7 +200,7 @@ for my $window (@windows) {
   
 }
 </pre>
-<h4> Get the text of the window </h4>
+<h4>Get the text of the window</h4>
 <p>
   Use the GetWindowText function to get the text of the window.
 </p>
@@ -215,9 +214,9 @@ my $win_text = GetWindowText ($win);
 <pre>
 Perl Club-Google Chrome
 </pre>
-<h4> Get the target window </h4>
+<h4>Get the target window</h4>
 <p>
-  If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write a sample to get the target window. Make sure that the target page of the target web browser is launched.
+  If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write a example to get the target window. Make sure that the target page of the target web browser is launched.
 </p>
 <pre>
 # Get the target window (Perl Club-Google Chrome)
@@ -249,7 +248,7 @@ my $win;
 }
 </pre>
 <!-
-<h4> Keyboard input </h4>
+<h4>Keyboard input</h4>
     # Go to Console tab
     SendKeys ('^]');
     # Go to Elements tab
@@ -279,14 +278,14 @@ my $win;
 <p>
   ->
 </p>
-<h3> Clipboard </h3>
+<h3>Clipboard</h3>
 <p>
   Use the Win32::Clipboard module to work with the Windows clipboard.
 </p>
 <pre>
 use Win32::Clipboard;
 </pre>
-<h4> Clipboard object generation </h4>
+<h4>Clipboard object generation</h4>
 <p>
   First create a clipboard object.
 </p>
@@ -294,15 +293,15 @@ use Win32::Clipboard;
 # Clipboard object creation
 my $clip = Win32::Clipboard-&gt;new;
 </pre>
-<h4> Save Perl string to clipboard </h4>
+<h4>Save Perl string to clipboard</h4>
 <p>
-  Save the Perl string with the Set method. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written. When saving a character string from the Perl side to the Windows clipboard, encode it in cp932 and pass it. This is because the character code of the text on the Windows clipboard is cp932.
+  Save the Perl string with the Set method. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written. When saving a string from the Perl side to the Windows clipboard, encode it in cp932 and pass it. This is because the character code of the text on the Windows clipboard is cp932.
 </p>
 <pre>
 # Save string to clipboard
 $clip-&gt;Set(encode('cp932', $string));
 </pre>
-<h4> Extract Perl string from clipboard </h4>
+<h4>Extract Perl string from clipboard</h4>
 <p>
   By specifying "CF_UNICODETEXT" in the argument of the GetAs method, it can be obtained in one Unicode encoding format called "UTF16-LE". Convert this to a Perl string using the Perl Encode function decode function. You can get the contents of the Windows clipboard as a Perl string. Please note that you cannot get it correctly with just the GetText function.
 </p>
@@ -311,7 +310,7 @@ $clip-&gt;Set(encode('cp932', $string));
 my $string = $CLIP-&gt;GetAs(CF_UNICODETEXT);
 $text = Encode::decode("UTF16-LE", $string);
 </pre>
-<h4> Paste the contents of the clipboard to the form part </h4>
+<h4>Paste the contents of the clipboard to the form part</h4>
 <p>
   Send "Ctrl + c" to paste the contents of the clipboard into a text field or form part such as a text area. "^" Means "Ctrl".
 </p>
@@ -319,8 +318,8 @@ $text = Encode::decode("UTF16-LE", $string);
 # Paste the contents of the clipboard into a form part
 SendKeys ('^c');
 </pre>
-<h3> Points for creating RPA robots </h3>
-<h4> Wait for browser response </h4>
+<h3>Points for creating RPA robots</h3>
+<h4>Wait for browser response</h4>
 <p>
   If you want to wait for the browser response, use the sleep function. Set the seconds as safe as possible when the browser response is returned. However, it depends on the network conditions, so it may happen that the next operation starts and the operation changes without returning.
 </p>
@@ -328,7 +327,7 @@ SendKeys ('^c');
 # Wait 3 seconds
 sleep 3;
 </pre>
-<h3> Notes on RPA robots </h3>
+<h3>Notes on RPA robots</h3>
 <p>
   RPA is a method with many problems in processing automation and operational efficiency. RPA robots are impressed with their movement the moment they see them, but keep in mind that processing speed, program maintainability, and automation are unreliable.
 </p>
@@ -346,11 +345,11 @@ sleep 3;
 </p>
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/06/05</div>
-<h2><a href="/blog/20210605102758.html"> Perl 6 has been renamed to Raku, and Perl 7 is planned to succeed Perl 5 </a></h2>
+<h2><a href="/blog/20210605102758.html">Perl 6 has been renamed to Raku, and Perl 7 is planned to succeed Perl 5</a></h2>
 <p>
   Perl 6, which was once developed as the successor to Perl 5, has been renamed to Raku.
 </p>
-<h4> What happens to Perl? </H4>
+<h4>What happens to Perl? </H4>
 <p>
   Perl is currently planning a new version of Perl, <b> Perl 7 </b>, for future releases. In Perl 6, "6" is included in the language name, but in Perl 7, "7" is not part of the language name, but a major version number.
 </p>
@@ -371,11 +370,11 @@ sleep 3;
     here
   </li>
 </ol>
-<h2><a href="/blog/20210107090920.html"> Selenium::Chrome - JavaScript-enabled web scraping using Chrome </a></h2>
+<h2><a href="/blog/20210107090920.html">Selenium::Chrome - JavaScript - enabled web scraping using Chrome</a></h2>
 <p>
   Selenium::Chrome allows you to use Chrome for JavaScript-enabled web scraping. Selenium::Chrome is an extension of <a href="/blog/20210105145700.html">Selenium::Remote::Driver</a> for Chrome. You can use it by installing Selenium::Remote::Driver.
 </p>
-<h4> When running on Windows, Mac </h4>
+<h4>When running on Windows, Mac</h4>
 <pre>
 # When running on Windows, Mac
 use Selenium::Chrome;
@@ -384,7 +383,7 @@ $driver-&gt;get('http://www.google.com');
 print $driver-&gt;get_title();
 $driver-&gt;shutdown_binary();
 </pre>
-<h4> When executing headless when there is no GUI screen such as Unix/Linux </h4>
+<h4>When executing headless when there is no GUI screen such as Unix/Linux</h4>
 <p>
   If you want to execute on the CUI screen when there is no GUI environment, execute headless as follows.
 </p>
@@ -412,14 +411,14 @@ $driver-&gt;shutdown_binary();
   (unknown error: DevToolsActivePort file doesn't exist)
   (The process started from chrome location/usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) At access.pl line 79.
 </blockquote>
-<h3> Preparation of execution environment </h3>
+<h3>Preparation of execution environment</h3>
 <p>
   Chrome browser and Chrome Driver are required as an execution environment for JavaScript-compatible web scraping using Selenium::Chrome. Chrome Driver is software for operating Chrome itself. The environment construction procedure differs depending on the OS, refer to the following.
 </p>
 <p>
   It's a good idea to match Chrome browser and Chrome Driver versions as much as possible to avoid binary compatibility issues.
 </p>
-<h4> For Unix/Linux </h4>
+<h4>For Unix/Linux</h4>
 <p>
   <a href="https://centos.perlclub.net/blog/20210103090837.html">Install Chrome Driver - Cent OS 7</a>
 </p>
@@ -429,20 +428,20 @@ $driver-&gt;shutdown_binary();
 <p>
   For other <a href="https://linux.perlclub.net/">UNIX/Linux</a> such as Ubuntu, Debian, FreeBSD, try searching for the Chrome browser itself and how to install the Chrome Driver. Let's do it.
 </p>
-<h4> Windows </h4>
+<h4>Windows</h4>
 <p>
   <a href="https://qiita.com/omokawa_yasu/items/2d985efb346dd889fe27">On the SPA site, the environment construction procedure of performing GUI test with Selenium::Remote::Driver</a> will be helpful.
 </p>
 <p>
   <a href="https://perlzemi.com/blog/20080602121231.html">Active Perl</a> but <a href="https://perlzemi.com/blog/20180808153368.html">Strawberry Perl </a> I think it's okay.
 </p>
-<h4> For Mac </h4>
+<h4>For Mac</h4>
 <p>
   <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Using Selenium from Perl</a> The environment construction procedure will be helpful.
 </p>
 
 <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/01/06</div>
-<h2><a href="/blog/20210106145700.html"> Selenium::Firefox for JavaScript-enabled web scraping </a></h2>
+<h2><a href="/blog/20210106145700.html">Selenium::Firefox for JavaScript - enabled web scraping</a></h2>
 <p>
   Let's do JavaScript-enabled web scraping with Selenium::Firefox. Selenium::Firefox is a <a href="/blog/20210105145700.html">Selenium::Remote::Driver</a> customized for Firefox.
 </p>
@@ -460,8 +459,8 @@ $driver-&gt;shutdown_binary;
 $driver = Selenium::Firefox-&gt;new(marionette_enabled =&gt; 0);
 $driver-&gt;shutdown_binary; &lt;/pre&gt;
 </pre>
-<h3> Preparation of execution environment </h3>
-<h4> For Mac </h4>
+<h3>Preparation of execution environment</h3>
+<h4>For Mac</h4>
 <p>
   <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Using Selenium from Perl</a> The environment construction procedure will be helpful.
 </p>
@@ -483,11 +482,11 @@ $driver-&gt;shutdown_binary; &lt;/pre&gt;
     here
   </li>
 </ol>
-<h2><a href="/blog/20201030075254.html"> Escape sequence of double quoted strings </a></h2>
+<h2><a href="/blog/20201030075254.html">Escape sequence of double quoted strings</a></h2>
 <p>
   Here are the escape sequences that can be used in double-quoted strings.
 </p>
-<h3> Escape sequence corresponding to ASCII code </h3>
+<h3>Escape sequence corresponding to ASCII code</h3>
 <p>
   Frequently used ones are line breaks "\n" and tabs "\t".
 </p>
@@ -502,13 +501,13 @@ $driver-&gt;shutdown_binary; &lt;/pre&gt;
   <tr> <td>\t </td> <td> 9 </td> <td> 09 </td> <td> TAB </td> <td> Tab </td> </tr>
 </table>
 <p>
-  This is a sample using the escape sequence of tabs and line breaks.
+  This is a example using the escape sequence of tabs and line breaks.
 </p>
 <pre>
 # Use tabs and line breaks
 my $line = "ID\tName\tPrice\n";
 </pre>
-<h3> Occasional escape sequences </h3>
+<h3>Occasional escape sequences</h3>
 <p>
   I also sometimes use escape sequences that represent double quotes "\" "and backslashes themselves" \\ ".
 </p>
@@ -517,7 +516,7 @@ my $line = "ID\tName\tPrice\n";
   <tr> <td>\"</td> <td>" </td> </tr>
   <tr> <td> \\ </td> <td>\</td> </tr>
 </table>
-<h3> Notes on line break "\n" </h3>
+<h3>Notes on line break "\n"</h3>
 <p>
   There is one caveat regarding line breaks "\n".
 </p>
@@ -537,7 +536,7 @@ print "Hello\n";
 <p>
   To avoid this conversion, use escape sequences that directly specify the ASCII code. How to specify the ASCII code directly is explained below.
 </p>
-<h3> Escape sequence that directly describes ASCII code </h3>
+<h3>Escape sequence that directly describes ASCII code</h3>
  
 <p>
   There are also escape sequences that allow you to write the ASCII code itself in hexadecimal by starting with "\x".
@@ -548,9 +547,9 @@ my $message = "Hello\x0D\x0A";
 print $message;
 </pre>
 <p>
-  The above example is a sample that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
+  The above example is a example that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
 </p>
-<h3> Document with all escape sequences </h3>
+<h3>Document with all escape sequences</h3>
 <p>
   Below is the Perl documentation with all the escape sequences.
 </p>

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl 5.20 released-support for ipv6, new subroutine syntax, new slice notation, Unicode 6.3 support, etc.  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl 5.20 released - support for ipv6, new subroutine syntax, new slice notation, Unicode 6.3 support, etc. - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl 5.20 has been released. There are quite a lot this time. I will pick it up and introduce it.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl 5.20 released-support for ipv6, new subroutine syntax, new slice notation, Unicode 6.3 support, etc.  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl 5.20 released - support for ipv6, new subroutine syntax, new slice notation, Unicode 6.3 support, etc. - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl 5.20 has been released. There are quite a lot this time. I will pick it up and introduce it." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20140528140125.html"> Perl 5.20 released-support for ipv6, new subroutine syntax, new slice notation, Unicode 6.3 support, etc. </a></h2>
+<h2><a href="/blog/20140528140125.html">Perl 5.20 released - support for ipv6, new subroutine syntax, new slice notation, Unicode 6.3 support, etc.</a></h2>
 <p>
   Perl 5.20 has been released. There are quite a lot this time. I will pick it up and introduce it.
 </p>
@@ -90,18 +89,18 @@
   <a href="http://argrath.ub32.org/perldocjp/5.20.0/perl5200delta.html">Features added/changed in Perl 5.20</a>
 </p>
 </blockquote>
-<h3> IO::Socket::IP becomes core module </h3>
+<h3>IO::Socket::IP becomes core module</h3>
 <p>
   IO::Socket::IP is now the core module in Perl 5.20. Perl used IO::Socket::INET when using sockets, but it seems to be a module that can be used with the same interface, including support for ipv6.
 </p>
-<h3> CGI, Module::Build will be deprecated </h3>
+<h3>CGI, Module::Build will be deprecated</h3>
 <p>
   The CGI module, which has been a core module for many years, will be removed from the core in the next release. .. Also, Module::Build, which can do make equivalents in pure Perl, will be out of the core in the next release.
 </p>
 <p>
   Starting with the next release of Perl 5.22, the CGI module will need to be installed from cpan if needed. As for Module::Build, it will be installed automatically if necessary, so there seems to be no problem.
 </p>
-<h3> Subroutine signature </h3>
+<h3>Subroutine signature</h3>
 <p>
   Subroutine signatures have been added experimentally. This is a function that can be used with ordinary arguments in Perl. It is still in the experimental stage, so you will be warned if you use it.
 </p>
@@ -126,7 +125,7 @@ sub foo: prototype ($$) {
 <p>
   This feature is so good that I hope the warning goes away early on.
 </p>
-<h3> New notation for array slices and hash slices </h3>
+<h3>New notation for array slices and hash slices</h3>
 <p>
   Array slices and hash slices can now be written in a new notation.
 </p>
@@ -145,7 +144,7 @@ my ($title, $author) = $hash_ref-&gt;@{'title', 'author'};
 <p>
   Slice notation is easy to understand and convenient.
 </p>
-<h3> New slices "index/value slice" and "key/value slice" and </h3>
+<h3>New slices "index/value slice" and "key/value slice" and</h3>
 <p>
   An "index/value slice" has been added that allows you to get an "index-value" pair when you specify an index in an array.
 </p>
@@ -167,18 +166,18 @@ my %key_values = %hash {'a', 'b'};
 <p>
   It's convenient, but it's a little difficult to read unless you get used to it.
 </p>
-<h3> Improved string copy performance </h3>
+<h3>Improved string copy performance</h3>
 <p>
   Copy-on-write now works when copying strings. If you just refer to it, even large strings will copy very quickly and you won't have to use a scalar reference.
 </p>
-<h3> ithread has been deprecated </h3>
+<h3>ithread has been deprecated</h3>
 <p>
   ithread has been officially deprecated. The ithread looks like a fast, lightweight thread for multitasking, but that's not the case, it's very hard to use and heavy.
 </p>
 <p>
   Historically, it's probably implemented to emulate forks on Windows, but it's marked as deprecated because it was so misleading and difficult for users to use. I think it's a good thing.
 </p>
-<h3> Other minor changes </h3>
+<h3>Other minor changes</h3>
 <ul>
   <li>
     Supports Unicode 6.3

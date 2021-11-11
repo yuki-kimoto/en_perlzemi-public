@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to check the PDF file from the browser  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to check the PDF file from the browser - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to check the PDF file from the browser.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to check the PDF file from the browser  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to check the PDF file from the browser - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to check the PDF file from the browser." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20200102105023.html"> How to check the PDF file from the browser </a></h2>
+<h2><a href="/blog/20200102105023.html">How to check the PDF file from the browser</a></h2>
 <p>
   I will explain how to check the PDF file from the browser.
 </p>
@@ -94,11 +93,11 @@
 <p>
   It is convenient to distribute the PDF file on the web server and check it on the web browser. The web browser supports PDF display, so let's use this.
 </p>
-<h3> Start a web server with Mojolicious </h3>
+<h3>Start a web server with Mojolicious</h3>
 <p>
   It's easy to use <a href="https://webapp.perlzemi.com/">Mojolicious</a> to start a web server that delivers static files.
 </p>
-<h4> Web server program </h4>
+<h4>Web server program</h4>
 <p>
   Write the web server program as follows. Name it serve.pl.
 </p>
@@ -120,7 +119,7 @@ app-&gt;static-&gt;paths(['.']);
 
 app-&gt;start;
 </pre>
-<h4> Start the web server </h4>
+<h4>Start the web server</h4>
 <p>
   Use the morbo command to start the web server.
 </p>
@@ -137,9 +136,9 @@ http://127.0.0.1:3000
 # For remote Linux
 http: // server IP address or domain name: 3000
 </pre>
-<h4> Change port number </h4>
+<h4>Change port number</h4>
 <p>
-  To change the port number to something other than the default 3000, use the "MOJO_LISTEN" environment variable. The following is a sample to change to No. 3001.
+  To change the port number to something other than the default 3000, use the "MOJO_LISTEN" environment variable. The following is a example to change to No. 3001.
 </p>
 <pre>
 MOJO_LISTEN = http: //*:3001 morbo serve.pl

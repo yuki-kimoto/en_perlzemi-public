@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Binary, octal, hexadecimal conversion  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Binary, octal, hexadecimal conversion - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to perform "base conversion" in Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Binary, octal, hexadecimal conversion  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Binary, octal, hexadecimal conversion - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to perform "base conversion" in Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20080901122026.html"> Binary, octal, hexadecimal conversion </a></h2>
+<h2><a href="/blog/20080901122026.html">Binary, octal, hexadecimal conversion</a></h2>
 <p>
   I will explain how to perform "base conversion" in Perl.
 </p>
@@ -81,7 +80,7 @@
 </div>
 
 
-<h4> Conversion from decimal to binary, octal, hexadecimal </h4>
+<h4>Conversion from decimal to binary, octal, hexadecimal</h4>
 <p>
   Let's convert from decimal to binary, octal, and hexadecimal. Use the format specification in the <a href="/blog/20081001122296.html">sprintf function</a>.
 </p>
@@ -101,10 +100,10 @@ my $hex_str = sprintf("%X", $num);
   To convert a decimal string to a binary number, use the sprintf function to specify the format as "%b". To convert to octal and hexadecimal, use "%o" and "%X" respectively.
 </p>
 <p>
-  The sprintf function is a common function of the <a href="/blog/20170326149148.html">printf function</a>. If you use sprintf, you can get the character string output by the printf function as the return value.
+  The sprintf function is a common function of the <a href="/blog/20170326149148.html">printf function</a>. If you use sprintf, you can get the string output by the printf function as the return value.
 </p>
 <p>
-  Below is a sample conversion to binary, octal, and hexadecimal numbers.
+  Below is a example conversion to binary, octal, and hexadecimal numbers.
 </p>
 <pre>
 use strict;
@@ -128,7 +127,7 @@ print "binary string: $bit_str;\n";
 print "octal string: $oct_str;\n";
 print "Hexadecimal string: $hex_str;\n";
 </pre>
-<h4> Binary, Octal, Hexadecimal to Decimal Conversion </h4>
+<h4>Binary, Octal, Hexadecimal to Decimal Conversion</h4>
 <p>
   I will explain the conversion from binary numbers, octal numbers, and hexadecimal numbers to decimal numbers.
 </p>
@@ -136,7 +135,7 @@ print "Hexadecimal string: $hex_str;\n";
   <b> Binary to Decimal Conversion </b>
 </p>
 <p>
-  Use the <a href="/blog/20171027150945.html">oct function</a> to convert from binary to decimal. The oct function is originally a function that converts an octal number to a decimal number, but if a character string prefixed with 0b is passed as an argument, the binary number is converted to a decimal number.
+  Use the <a href="/blog/20171027150945.html">oct function</a> to convert from binary to decimal. The oct function is originally a function that converts an octal number to a decimal number, but if a string prefixed with 0b is passed as an argument, the binary number is converted to a decimal number.
 </p>
 <pre>
 my $num = oct('0b'. $Bit_str);
@@ -145,7 +144,7 @@ my $num = oct('0b'. $Bit_str);
   <b> Conversion from octal to decimal </b>
 </p>
 <p>
-  Use the <a href="/blog/20171027150945.html">oct function</a> to convert from octal to decimal. In the sample, '17' is passed, but even if there is a leading 0 like '017', it will be converted correctly.
+  Use the <a href="/blog/20171027150945.html">oct function</a> to convert from octal to decimal. In the example, '17' is passed, but even if there is a leading 0 like '017', it will be converted correctly.
 </p>
 <pre>
 my $num = oct($oct_str);
@@ -154,13 +153,13 @@ my $num = oct($oct_str);
   <b> Hexadecimal to Decimal Conversion </b>
 </p>
 <p>
-  Use the <a href="/blog/20171026150980.html">hex function</a> to convert from hexadecimal to decimal. In the sample, 'FF' is passed as an argument, but even if 0x is added at the beginning like '0xFF', it will be converted correctly.
+  Use the <a href="/blog/20171026150980.html">hex function</a> to convert from hexadecimal to decimal. In the example, 'FF' is passed as an argument, but even if 0x is added at the beginning like '0xFF', it will be converted correctly.
 </p>
 <pre>
 my $hex_to_dec = hex($hex_str);
 </pre>
 <p>
-  This is a sample to convert binary, octal, and hexadecimal numbers to decimal numbers.
+  This is a example to convert binary, octal, and hexadecimal numbers to decimal numbers.
 </p>
 <pre>
 use strict;
@@ -185,9 +184,9 @@ print "Hexadecimal to Decimal Conversion\n";
 my $hex_to_dec = hex($hex_str);
 print "$hex_str-&gt;$hex_to_dec\n\n";
 </pre>
-<h4> Algorithm for converting decimal to n-ary </h4>
+<h4>Algorithm for converting decimal to n - ary</h4>
 <p>
-  This is a sample to convert from decimal to n-ary. I also checked the validity of the arguments properly.
+  This is a example to convert from decimal to n-ary. I also checked the validity of the arguments properly.
 </p>
 <pre>
 use strict;
@@ -317,7 +316,7 @@ while ($dec != 0) {
 Divide the decimal number by n and repeat until the quotient is 0. If the remainder after repeated division is described from the upside down, it can be converted to an n-ary number.
 </pre>
 <p>
-  I will write it in an easy-to-understand manner using a few more numbers.
+  I will write it in an easy-to-understand way using a few more numbers.
 </p>
 <pre>
 Converts the decimal number 11 to a binary number.
@@ -354,17 +353,17 @@ $dec_to_n[15] → F
   Will be converted as
 </p>
 <p>
-  The converted array and the code saved in $sign are combined with the join function to form a single character string.
+  The converted array and the code saved in $sign are combined with the join function to form a single string.
 </p>
-<h4> Algorithm for converting from n-ary to decimal </h4>
+<h4>Algorithm for converting from n - ary to decimal</h4>
 <p>
-  This is a sample to convert from n-ary to decimal.
+  This is a example to convert from n-ary to decimal.
 </p>
 <p>
   Since the algorithm for converting from n-ary to decimal is simple, I also checked the validity of the arguments properly.
 </p>
 <p>
-  In this sample, the validity check of the argument is about 3 times as much as this process, but it is common that there are more error processing descriptions than this process.
+  In this example, the validity check of the argument is about 3 times as much as this process, but it is common that there are more error processing descriptions than this process.
 </p>
 <pre>
 use strict;
@@ -422,7 +421,7 @@ n_to_dec ($num_str, $n);
 n_to_dec ('FE16', 16);
 </pre>
 <p>
-  The first argument is an n-ary character string, and the second argument is a number that specifies the number to convert from base to decimal. The return value returns the corresponding decimal number if it can be converted, and undef if it cannot be converted. $n supports binary to hexadecimal numbers.
+  The first argument is an n-ary string, and the second argument is a number that specifies the number to convert from base to decimal. The return value returns the corresponding decimal number if it can be converted, and undef if it cannot be converted. $n supports binary to hexadecimal numbers.
 </p>
 <p>
   <b> Checking the validity of $n </b>
@@ -446,7 +445,7 @@ return if !defined $n || $n !~ /^\D+$/ || $n &lt; 2 || $n &gt; 16;
   If $num_str is valid, then "$num_str is defined" and "$num_str consists of numbers or A to F, a to f".
 </p>
 <p>
-  Also, the validity of $num_str depends on $n. If $n is 8, for example, then $num_str should not have the number 9. If the number 9 appears in the octal character string, an error will occur.
+  Also, the validity of $num_str depends on $n. If $n is 8, for example, then $num_str should not have the number 9. If the number 9 appears in the octal string, an error will occur.
 </p>
 <p>
   <b> Decompose into individual characters </b>
@@ -455,7 +454,7 @@ return if !defined $n || $n !~ /^\D+$/ || $n &lt; 2 || $n &gt; 16;
 my @nums = split(//, $num_str);
 </pre>
 <p>
-  If you want to convert the binary character string "1010" to decimal, you need to calculate 8 * 1 + 4 * 0 + 2 * 1 + 1 * 0, so use the split function to break it down into individual characters. I will do it.
+  If you want to convert the binary string "1010" to decimal, you need to calculate 8 * 1 + 4 * 0 + 2 * 1 + 1 * 0, so use the split function to break it down into individual characters. I will do it.
 </p>
 <p>
   <b> Creating a hash with valid characters as keys </b>
@@ -468,7 +467,7 @@ for (my $i = 0; $i &lt; @valid; $i++) {
 }
 </pre>
 <p>
-  We want to consider 0-9, A-F, a-f to be valid. Also, in preparation for the calculation of base conversion, create a hash that converts the character string A to 10 and the character F to 15.
+  We want to consider 0-9, A-F, a-f to be valid. Also, in preparation for the calculation of base conversion, create a hash that converts the string A to 10 and the character F to 15.
 </p>
 <p>
   This hashtable is convenient, if it is a valid character it will return the converted character, otherwise it will return undef. If you create such a hash table, you can convert and judge whether it is convertible at the same time.

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Amazon::S3::Thin - Thin, lightweight, low-level Amazon S3 client  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Amazon::S3::Thin - Thin, lightweight, low - level Amazon S3 client - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Amazon::S3::Thin is a thin, lightweight, low-level Amazon S3 client. The following is a Japanese translation of Amazon::S3::Thin 0.29.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Amazon::S3::Thin - Thin, lightweight, low-level Amazon S3 client  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Amazon::S3::Thin - Thin, lightweight, low - level Amazon S3 client - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Amazon::S3::Thin is a thin, lightweight, low-level Amazon S3 client. The following is a Japanese translation of Amazon::S3::Thin 0.29." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20200729183827.html"> Amazon::S3::Thin - Thin, lightweight, low-level Amazon S3 client </a></h2>
+<h2><a href="/blog/20200729183827.html">Amazon::S3::Thin - Thin, lightweight, low - level Amazon S3 client</a></h2>
 <p>
   Amazon::S3::Thin is a thin, lightweight, low-level Amazon S3 client. The following is a Japanese translation of <a href="https://metacpan.org/pod/Amazon::S3::Thin">Amazon::S3::Thin</a> 0.29.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Overview </h3>
+<h3>Overview</h3>
 <pre>
 use Amazon::S3::Thin;
  
@@ -132,7 +131,7 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
         signature_version =&gt; 2,
     });
 </pre>
-<h3> Explanation </h3>
+<h3>Explanation</h3>
 <p>
   Amazon::S3:::Thin is a thin, lightweight, low-level Amazon S3 client.
 </p>
@@ -169,8 +168,8 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
 <p>
   In some situations it is very important to check her raw HTTP communication. That's why I made this module.
 </p>
-<h3> Constructor </h3>
-<h4> new(\%params) </h4>
+<h3>Constructor</h3>
+<h4>new(\%params)</h4>
 <B> Arguments: Hash reference with </b> options.
 <p>
   <b> Return value </b>: Amazon::S3::Thin object
@@ -187,24 +186,24 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
   <li> debug- Debug options. The default is 0 (false). If the setting value is 1, the contents of HTTP requests and responses are displayed in stderr. </li>
   <li> virtual_host-Whether to use a virtual host type request format. The default is 0 (path style). </li>
 </ul>
-<h3> Accessor </h3>
+<h3>Accessor</h3>
 <p>
   The following accessors are provided:You can use these to get/set the attributes of an object.
 </p>
-<h4> secure </h4>
+<h4>secure</h4>
 <p>
   Whether to use https (1) or http (0) when connecting to S3.
 </p>
-<h4> ua </h4>
+<h4>ua</h4>
 <p>
   The user agent used it internally to execute the request and return a response. If you set this attribute, it's an object compatible with <a href="https://metacpan.org/pod/LWP::UserAgent">LWP::UserAgent</a> (which provides the same interface). Please set with.
 </p>
-<h4> debug </h4>
+<h4>debug</h4>
 <p>
   Debug options.
 </p>
-<h3> Operation on bucket </h3>
-<h4> put_bucket ($bucket[, $headers]) </h4>
+<h3>Operation on bucket</h3>
+<h4>put_bucket ($bucket[, $headers])</h4>
 <p>
   <b> Arguments: </b>
 </p>
@@ -214,7 +213,7 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
 <p>
   2. Header (optional)-Hash reference with extra header information
 </p>
-<h4> delete_bucket ($bucket[$headers]) </h4>
+<h4>delete_bucket ($bucket[$headers])</h4>
 <p>
   <b> Arguments: </b>
 </p>
@@ -224,8 +223,8 @@ my $s3client = Amazon::S3::Thin-&gt;new({{
 <p>
   2. Header (optional)-Hash reference with extra header information
 </p>
-<h3> Operations on objects </h3>
-<h4> get_object ($bucket, $key[, $headers]) </h4>
+<h3>Operations on objects</h3>
+<h4>get_object ($bucket, $key[, $headers])</h4>
 <p>
   <b> Arguments: </b>
 </p>
@@ -254,7 +253,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">Amazon documentation on GET</a>.
 </p>
-<h4> head_object ($bucket, $key) </h4>
+<h4>head_object ($bucket, $key)</h4>
 <p>
   <b> Arguments: </b>
 </p>
@@ -280,7 +279,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjSee ectHEAD.html">Amazon documentation on HEAD</a>.
 </p>
-<h4> delete_object ($bucket, $key) </h4>
+<h4>delete_object ($bucket, $key)</h4>
 <p>
   <b> Arguments: </b> A string with a bucket name and a string with a key name.
 </p>
@@ -296,7 +295,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html">Amazon documentation on DELETE</a>.
 </p>
-<h4> copy_object ($src_bucket, $src_key, $dst_bucket, $dst_key[, $headers]) </h4>
+<h4>copy_object ($src_bucket, $src_key, $dst_bucket, $dst_key[, $headers])</h4>
 <p>
   <b> Arguments: </b> A list with source (bucket, key) and destination (bucket, key), hash reference (optional) with additional header information.
 </p>
@@ -312,7 +311,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">Amazon documentation on COPY</a>.
 </p>
-<h4> put_object ($bucket, $key, $content[, $headers]) </h4>
+<h4>put_object ($bucket, $key, $content[, $headers])</h4>
 <p>
   <b> Arguments: </b>
 </p>
@@ -337,7 +336,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html">Amazon documentation on PUT</a>.
 </p>
-<h4> delete_multiple_objects ($bucket, @keys) </h4>
+<h4>delete_multiple_objects ($bucket, @keys)</h4>
 <p>
   <b> Arguments: </b> An array containing a string with the bucket name and all the keys to delete.
 </p>
@@ -350,7 +349,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/multiobjectdeleteapi.html">DELETE's Amazon documentation on deleting multiple objects</a>. Please give me.
 </p>
-<h4> list_objects ($bucket[, \%options]) </h4>
+<h4>list_objects ($bucket[, \%options])</h4>
 <p>
   <b> Arguments: </b> Use either a string with the bucket name and a hash reference (optional) that includes the following options:
 </p>
@@ -370,7 +369,7 @@ if ($res-&gt;is_success) {
 <p>
   For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGET.html">AMAZON REST Bucket GET Documentation</a>.
 </p>
-<h4> generate_presigned_post ($bucket, $key[, $fields, $conditions, $expires_in]) </h4>
+<h4>generate_presigned_post ($bucket, $key[, $fields, $conditions, $expires_in])</h4>
 <p>
   <b> Arguments: </b>
 </p>
@@ -422,7 +421,7 @@ my $res = $ua-&gt;post(
 <p>
   For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-HTTPPOSTConstructPolicy.html">Amazon documentation on creating POST policies</a>. Please give me.
 </p>
-<h3> Todo </h3>
+<h3>Todo</h3>
 <p>
   Many APIs have not been implemented yet.
 </p>
@@ -432,18 +431,18 @@ my $res = $ua-&gt;post(
 <p>
   <a href="https://github.com/DQNEO/Amazon-S3-Thin">https://github.com/DQNEO/Amazon-S3-Thin</a>
 </p>
-<h3> License </h3>
+<h3>License</h3>
 <p>
   Copyright (C) DQNEO.
 </p>
 <p>
   This library is free software. It can be redistributed or modified using the same terminology as Perl itself.
 </p>
-<h3> Author </h3>
+<h3>Author</h3>
 <p>
   DQNEO
 </p>
-<h3> Thanks </h3>
+<h3>Thanks</h3>
 <p>
   Timothy Apnel Breno G. de Olivey
 </p>

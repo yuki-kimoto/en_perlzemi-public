@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Convert the file name to the file name in the OS of the execution environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Convert the file name to the file name in the OS of the execution environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You could use File::Spec->catfile to create an OS-independent filename. This time, I will explain how to convert a certain file representation to the file name of the OS of the execution environment. When specifying a file name in a configuration file, etc., the file representation in Unix is often used.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Convert the file name to the file name in the OS of the execution environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Convert the file name to the file name in the OS of the execution environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You could use File::Spec->catfile to create an OS-independent filename. This time, I will explain how to convert a certain file representation to the file name of the OS of the execution environment. When specifying a file name in a configuration file, etc., the file representation in Unix is often used." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -73,7 +72,7 @@
     <meta itemprop = "position" content = "4" />
   </li>
 </ol>
-<h2><a href="/blog/20090216123384.html"> Convert the file name to the file name in the OS of the execution environment </a></h2>
+<h2><a href="/blog/20090216123384.html">Convert the file name to the file name in the OS of the execution environment</a></h2>
 <p>
   You could use File::Spec->catfile to create an OS-independent filename. This time, I will explain how to convert a certain file representation to the file name of the OS of the execution environment. When specifying a file name in a configuration file, etc., the file representation in Unix is often used.
 </p>
@@ -108,7 +107,7 @@ use File::Spec;
 my $unix_path = 'dir1/dir2/file.txt';
 my $windows_path = File::Spec-&gt;catfile(File::Spec-&gt;splitdir($unix_path));
 </pre>
-<h3> Executable sample </h3>
+<h3>Executable example</h3>
 <pre>
 use strict;
 use warnings;
@@ -120,7 +119,7 @@ my $windows_path = File::Spec-&gt;catfile(File::Spec-&gt;splitdir($unix_path));
 print "1. Convert to Windows file path\n";
 print $windows_path, "\n";
 </pre>
-<h3> Output result on Windows </h3>
+<h3>Output result on Windows</h3>
 <pre>
 1. Convert to Windows file path
 dir1\dir2\file.txt

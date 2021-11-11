@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> flock function - exclusive control of files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>flock function - exclusive control of files - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  flock function  for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" flock function - exclusive control of files  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="flock function - exclusive control of files - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  flock function  for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20080814121872.html"> flock function - exclusive control of files </a></h2>
+<h2><a href="/blog/20080814121872.html">flock function - exclusive control of files</a></h2>
 <p>
   You can use the <strong> flock function </strong> for exclusive control of files. This time, we will actually use the flock function to read and write to the file in order. (Generally, it is called exclusive processing.)
 </p>
@@ -85,7 +84,7 @@
 
 
 <p>
-  The following is a sample that makes you realize that you are actually reading and writing in order. Save it as sample_20080814.pl.
+  The following is a example that makes you realize that you are actually reading and writing in order. Save it as example_20080814.pl.
 </p>
 <pre>
 use strict;
@@ -136,7 +135,7 @@ use warnings;
 use FindBin;
 use Time::HiRes 'usleep';
 
-my $script = "$FindBin::Bin/sample_20080814.pl";
+my $script = "$FindBin::Bin/example_20080814.pl";
 
 while (1) {
   # Repeat the above script.
@@ -162,8 +161,8 @@ while (1) {
 <p>
   Kill all three processes with Ctrl + C and make sure there are no duplicate counts. If the counts do not overlap, you can see that you are reading and writing in order. (Flock doesn't work on some operating systems (such as Winows98), but it will work on most operating systems.)
 </p>
-<h3> Code explanation </h3>
-<h4> Fcntl - Read constants for file locking </h4>
+<h3>Code explanation</h3>
+<h4>Fcntl - Read constants for file locking</h4>
 <p>
   The <a href="/blog/20180310152509.html">Fcntl</a> module allows you to use the file locking constants used by flock.
 </p>
@@ -205,7 +204,7 @@ use Fcntl qw /:DEFAULT :flock :seek/;
 <p>
   As a side note:DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the <a href="/blog/20080804121794.html">sysopen function</a>. Therefore, it is specified.
 </p>
-<h4> (2) If the file does not exist, create it and open it in read/write mode </h4>
+<h4>(2) If the file does not exist, create it and open it in read/write mode</h4>
 <pre>
 # Open in read/write mode (not very secure)
 # If there is no file with O_CREAT, create it.
@@ -215,7 +214,7 @@ sysopen(my $fh, $file, O_RDWR | O_CREAT)
 <p>
   In sysopen, specify O_RDWR and O_CREAT for the open flags.
 </p>
-<h4> (3) Exclusive lock is performed with the flock function </h4>
+<h4>(3) Exclusive lock is performed with the flock function</h4>
 <pre>
 # Exclusive lock (exclusive lock because it reads and writes)
 flock($fh, LOCK_EX)
@@ -227,7 +226,7 @@ flock($fh, LOCK_EX)
 <p>
   Note that the first argument is an open filehandle, not a file. When all processes access a file, they can access the file in order by keeping the promise of acquiring the lock with flock.
 </p>
-<h4> (4) Count up and write </h4>
+<h4>(4) Count up and write</h4>
 <pre>
 my $cnt;
 $cnt = &lt;$fh&gt;;
@@ -249,7 +248,7 @@ truncate ($fh, length $cnt);
 <p>
   Read from the file and count up if there are no errors. Since the file pointer is advanced at the time of reading, use the seek function to return it to the beginning. Write with the print function and truncate to the written size with the truncate function. (This time, the numbers are just going up, so there is no need for truncate.)
 </p>
-<h4> (5) Unlock </h4>
+<h4>(5) Unlock</h4>
 <pre>
 # The file lock is released at the time of close.
 close $fh
@@ -258,12 +257,12 @@ close $fh
 <p>
   Calling the close function unlocks the file.
 </p>
-<h3> A brief explanation of the loop script </h3>
+<h3>A brief explanation of the loop script</h3>
 <pre>
 use FindBin;
 use Time::HiRes 'usleep';
 
-my $script = "$FindBin::Bin/sample_20080814.pl";
+my $script = "$FindBin::Bin/example_20080814.pl";
 
 while (1) {
   # Repeat the above script.

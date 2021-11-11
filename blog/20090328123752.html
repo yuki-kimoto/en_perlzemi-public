@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Create an object according to the environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Create an object according to the environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Let's modify the class a little and change the behavior according to the OS.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Create an object according to the environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Create an object according to the environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Let's modify the class a little and change the behavior according to the OS." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20090328123752.html"> Create an object according to the environment </a></h2>
+<h2><a href="/blog/20090328123752.html">Create an object according to the environment</a></h2>
 <p>
   Let's modify the class a little and change the behavior according to the OS.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> 1. Polymorphism that changes its behavior according to the environment </h3>
+<h3>1. Polymorphism that changes its behavior according to the environment</h3>
 <p>
   If the environment is Windows, I created an object of FilePath::Windows class, and if the environment is not, I wrote a class that creates an object of FilaPath::Unix class.
 </p>
@@ -164,7 +163,7 @@ print ref $file_path;
 <p>
   Then you can see which class of object is created.
 </p>
-<h3> 2. Change the behavior with the constructor </h3>
+<h3>2. Change the behavior with the constructor</h3>
 <p>
   We have prepared a class called FilePath as a class for users to use. The constructor of this class will create an object according to the environment. (Generally, it's called a factory class.)
 </p>
@@ -205,7 +204,7 @@ sub new {
                             FilePath::Unix-&gt;new(@_);
 }
 </pre>
-<h3> 3. Convenient part of inheritance </h3>
+<h3>3. Convenient part of inheritance</h3>
 <p>
   If you use inheritance well, you will find that you can clearly write a description that makes it behave according to the environment.
 </p>
@@ -215,9 +214,9 @@ sub new {
 <p>
   In other words, when it comes to situations where inheritance is effective, there are many patterns and there is a high possibility of expansion. Twice
 </p>
-<h3> 4. If you find it difficult to inherit </h3>
+<h3>4. If you find it difficult to inherit</h3>
 <p>
-  Follow this sample with a debugger. You can understand it by observing how it moves around between classes.
+  Follow this example with a debugger. You can understand it by observing how it moves around between classes.
 </p>
 <p>
   You can emulate Windows and Unix by changing the value of $^O. Also, use the ref function to see the class to which the created object belongs.

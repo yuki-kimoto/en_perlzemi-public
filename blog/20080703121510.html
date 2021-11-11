@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Hash::Util - Prohibit the addition of hash keys  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Hash::Util - Prohibit the addition of hash keys - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the Hash::Util module to prevent the addition of hash keys.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Hash::Util - Prohibit the addition of hash keys  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Hash::Util - Prohibit the addition of hash keys - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the Hash::Util module to prevent the addition of hash keys." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20080703121510.html"> Hash::Util - Prohibit the addition of hash keys </a></h2>
+<h2><a href="/blog/20080703121510.html">Hash::Util - Prohibit the addition of hash keys</a></h2>
 <p>
   You can use the Hash::Util module to prevent the addition of <a href="/blog/20161013147635.html">hash</a> keys.
 </p>
@@ -110,7 +109,7 @@ Hash::Util::unlock_keys(%hash);
 <p>
   The Hash::Util::lock_keys function does not prohibit delete keys from being deleted. Only the addition of keys is prohibited.
 </p>
-<h3> Prohibit changing hash value and adding/deleting keys </h3>
+<h3>Prohibit changing hash value and adding/deleting keys</h3>
 <pre>
 Hash::Util::lock_hash (%hash);
 
@@ -123,9 +122,9 @@ Hash::Util::lock_hash (%hash);
 <p>
   To make the hash completely read-only, use Hash::Util::lock_hash_recurse. If the hash value contains a reference, you can prevent the reference from changing the value it points to.
 </p>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample that uses Hash::Util to limit the change of hash key and value.
+  This is a example that uses Hash::Util to limit the change of hash key and value.
 </p>
 <pre>
 use strict;
@@ -143,7 +142,7 @@ print "1-1: Prohibit the addition of hash keys.\n";
 Hash::Util::lock_keys(%hash);
 
 # Added key3.
-# Die, so capture it with eval for a sample.
+# Die, so capture it with eval for a example.
 eval {$hash{key3} = 3};
 print "$@\n";
 

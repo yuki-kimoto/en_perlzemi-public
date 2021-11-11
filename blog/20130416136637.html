@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Study of Perl language implementation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Study of Perl language implementation - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="A personal note about the implementation of the Perl language. The findings obtained by reading the Perl source code are described here. Please note that my understanding is partial, as I don't understand the big picture of Perl's implementation. I think it will be helpful when writing XS.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Study of Perl language implementation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Study of Perl language implementation - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="A personal note about the implementation of the Perl language. The findings obtained by reading the Perl source code are described here. Please note that my understanding is partial, as I don't understand the big picture of Perl's implementation. I think it will be helpful when writing XS." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20130416136637.html"> Study of Perl language implementation </a></h2>
+<h2><a href="/blog/20130416136637.html">Study of Perl language implementation</a></h2>
 <p>
   A personal note about the implementation of the Perl language. The findings obtained by reading the Perl source code are described here. Please note that my understanding is partial, as I don't understand the big picture of Perl's implementation. I think it will be helpful when writing <a href="/blog/20100809127859.html">XS</a>.
 </p>
@@ -81,7 +80,7 @@
 </div>
 
 
-<h3> Overview of source code </h3>
+<h3>Overview of source code</h3>
 <p>
   A brief description of the source code. There are many directories and source code in Perl repositories, but I'll briefly explain what each of them implements.
 </p>
@@ -327,7 +326,7 @@
     </td>
   </tr>
 </table>
-<h3> OP node type of syntax tree </h3>
+<h3>OP node type of syntax tree</h3>
 <p>
   Perl is the language to be compiled. Perl source code is parsed and converted into a syntax tree after lexical analysis is complete.
 </p>
@@ -735,7 +734,7 @@ OP_ANONCONST = 392,
 OP_max
 } opcode;
 </pre>
-<h3> Perl parser structure </h3>
+<h3>Perl parser structure</h3>
 <p>
   Perl parsers are generated using bison. Think of bison as a tool that adds functionality to the parsing tool yacc.
 </p>
@@ -787,7 +786,7 @@ Perl_yylex (pTHX)
   // ...
 }
 </pre>
-<h3> Parser stack frame information </h3>
+<h3>Parser stack frame information</h3>
 <p>
   Stack frames are used when locating source code.
 </p>
@@ -809,7 +808,7 @@ must always be 1st union member) */    char * pval;
 
 / * Line 2058 of yacc.c */} YYSTYPE;
 </pre>
-<h3> aTHX_ is expanded when threads are enabled and Perl is compiled </h3>
+<h3>aTHX_ is expanded when threads are enabled and Perl is compiled</h3>
 <p>
   aTHX_ will be expanded to the current thread when the thread is enabled and Perl is compiled.
 </p>
@@ -826,7 +825,7 @@ must always be 1st union member) */    char * pval;
 # define aTHX
 # define aTHX_
 </pre>
-<h3> Expected abbreviations </h3>
+<h3>Expected abbreviations</h3>
 <p>
   Since you can roughly predict the abbreviations used for variables, pick up the ones that are often used.
 </p>
@@ -838,7 +837,7 @@ must always be 1st union member) */    char * pval;
     Abbreviation for ix - index
   </li>
 </ul>
-<h3> Safefree is just free memory </h3>
+<h3>Safefree is just free memory</h3>
 <p>
   Safefree is used to free memory for variables, but it's just free memory. Think of it as free. The process is hidden so that it can handle various conditions.
 </p>
@@ -874,7 +873,7 @@ Perl_safesysfree (Malloc_t where)
 //iperlsys.h
 # define PerlMem_free (buf) free ((buf))
 </pre>
-<h3> SvREFCNT_dec is performed when freeing the memory of SV type variable. </h3>
+<h3>SvREFCNT_dec is performed when freeing the memory of SV type variable.</h3>
 <p>
   In perl_destruct, the memory of variables used in Perl is released, which is done as follows.
 </p>
@@ -891,7 +890,7 @@ PL_ofsgv = NULL;
 <p>
   NULL is assigned to the reference source variable.
 </p>
-<h3> Skeleton of processing the contents of perl_parse </h3>
+<h3>Skeleton of processing the contents of perl_parse</h3>
 <p>
   When parsing a Perl script, a function called perl_parse is called, but I'll take out the internal skeleton of this function.
 </p>
@@ -935,7 +934,7 @@ S_parse_body (pTHX_ char ** env, XSINIT_t xsinit)
 <p>
   Once this is done, the Perl script is broken down into the smallest units of parsing called tokens.
 </p>
-<h3> If you take out only the skeleton of the Perl interpreter </h3>
+<h3>If you take out only the skeleton of the Perl interpreter</h3>
 <p>
   I took out only the skeleton of the Perl interpreter. The processing flow is as follows. If you go into the details from this skeleton part, it's a good idea to read the source code of Perl itself.
 </p>
@@ -967,25 +966,25 @@ main (int argc, char ** argv, char ** env)
 <p>
   Looking only at the skeleton, it's very simple.
 </p>
-<h3> Difference between EXTERN.h and INTERN.h </h3>
+<h3>Difference between EXTERN.h and INTERN.h</h3>
 <p>
   There are EXTERN.h and INTERN.h in Perl, but for the purpose, EXTERN.h is used when referencing Perl itself from an extension module. You need to load EXTERN.h to make the global variables that Perl itself has visible to the extension module.
 </p>
 <p>
   INTERN.h, on the other hand, is used when compiling Perl itself. The values of global variables are set.
 </p>
-<h3> SVp_IOK indicates that you have a valid integer that is not exposed. </h3>
+<h3>SVp_IOK indicates that you have a valid integer that is not exposed.</h3>
 <p>
   SVp_IOK indicates that it has a valid integer that is not exposed. SVf_IOK, on the other hand, indicates that it has a valid public integer.
 </p>
 <p>
   What does it mean to be public?
 </p>
-<h3> SVt_PVIV means that both SVt_PV and SVt_IV are set. </h3>
+<h3>SVt_PVIV means that both SVt_PV and SVt_IV are set.</h3>
 <p>
   SVt_PV indicates that SV is a string, and SVt_IV indicates that SV is an integer. SVt_PVIV indicates that SV is a string and is an integer.
 </p>
-<h3> new_XPVNV </h3>
+<h3>new_XPVNV</h3>
 <p>
   XPVNV is assigned to SV type sv_any. It represents a number.
 </p>
@@ -1017,7 +1016,7 @@ void ** const r3wt = &amp; PL_body_roots [sv_type];\xpv = (PTR_TBL_ENT_t *) (* (
 
 
 </pre>
-<h3> SV type definition </h3>
+<h3>SV type definition</h3>
 <p>
   SV type definition.
 </p>
@@ -1050,7 +1049,7 @@ struct regexp * svu_rx;\SV ** svu_array;\HE ** svu_hash;\GP * svu_gp;\PerlIO * s
 <p>
   sv_any is a pointer to a structure that stores the actual value held by the SV. sv_refcnt is a reference count, sv_flag is a type and flag related to SV, for example, the type is an integer, the flag is read-only, and so on. I'm not sure how sv_u is used.
 </p>
-<h3> SV type type </h3>
+<h3>SV type type</h3>
 <p>
   SV types can be extended and can be various, but these types are implemented as svtypes.
 </p>
@@ -1058,7 +1057,7 @@ struct regexp * svu_rx;\SV ** svu_array;\HE ** svu_hash;\GP * svu_gp;\PerlIO * s
 typedef enum {
 SVt_NULL,/* 0 *// * BIND was here, before INVLIST replaced it. */SVt_IV,/* 1 */SVt_NV,/* 2 *// * RV was here, before it was merged with IV. */SVt_PV,/* 3 */SVt_INVLIST,/* 4, implemented as a PV */SVt_PVIV,/* 5 */SVt_PVNV,/* 6 */SVt_PVMG,/* 7 */SVt_REGEXP,/* 8 *// * PVBM was here, before BIND replaced it. */SVt_PVGV,/* 9 */SVt_PVLV,/* 10 */SVt_PVAV,/* 11 */SVt_PVHV,/* 12 */SVt_PVCV,/* 13 */SVt_PVFM,/* 14 */SVt_PVIO,/* 15 */SVt_LAST/* keep last in enum. Used to size arrays */} svtype;
 </pre>
-<h3> Perl can have multiple interpreters </h3>
+<h3>Perl can have multiple interpreters</h3>
 <p>
   When reading the source code, it is important to understand that Perl can have multiple interpreters, and that the information of the current interpreter is accessed from functions etc. prize.
 </p>
@@ -1070,7 +1069,7 @@ Perl-Perl Interpreter 1 (current interpreter)
 <p>
   By default, it's a good idea to follow the source code, imagining that only one interpreter is running.
 </p>
-<h3> You don't have to be aware of dVar </h3>
+<h3>You don't have to be aware of dVar</h3>
 <p>
   The declaration dVar sometimes comes up, but I don't think you need to be aware of it.
 </p>
@@ -1093,7 +1092,7 @@ Perl-Perl Interpreter 1 (current interpreter)
 // symbian/PerlBase.h:
 # define PERL_GLOBAL_STRUCT
 </pre>
-<h3> System call wrappers are described in iperlsys.h </h3>
+<h3>System call wrappers are described in iperlsys.h</h3>
 <p>
   In Perl source code, you don't call malloc etc. directly. The system call is accessed using a wrapper function or macro, and the definition of this wrapper is described in "iperlsys.h".
 </p>
@@ -1102,11 +1101,11 @@ Perl-Perl Interpreter 1 (current interpreter)
   iperlsys.h
 </p>
 </blockquote>
-<h3> perl_alloc just allocates memory and initializes with 0 </h3>
+<h3>perl_alloc just allocates memory and initializes with 0</h3>
 <p>
   perl_alloc just allocates memory and initializes with 0.
 </p>
-<h3> Easy to read tips </h3>
+<h3>Easy to read tips</h3>
 <ul>
   <li>
     Ignore macros that contain ASSERT because they just call assert
@@ -1130,14 +1129,14 @@ Perl-Perl Interpreter 1 (current interpreter)
     Forget the thread description in your code
   </li>
 </ul>
-<h3> How to compile Perl source code </h3>
+<h3>How to compile Perl source code</h3>
  The method for compiling the Perl source code is described below.
 <blockquote>
 <p>
   <a href="/blog/20141219141897.html">How to compile Perl itself from source code</a>
 </p>
 </blockquote>
-<h3> Perl entry point is perlmain.c </h3>
+<h3>Perl entry point is perlmain.c</h3>
 <p>
   Perl's entry point is in perlmain.c. However, this file is not included in the Perl source code.
 </p>
@@ -1161,7 +1160,7 @@ sh writemain $(DYNALOADER) $(static_ext)&gt; perlmain.c
 <p>
   In other words, "mini perlmain.c" with the dynamic load function added is "perlmain.c". So, if you look at "miniperlmain.c", you can see almost everything.
 </p>
-<h3> OP type is op type and is defined in op.h </h3>
+<h3>OP type is op type and is defined in op.h</h3>
 <p>
   The OP type that stores operator information is defined in op.h.
 </p>
@@ -1206,7 +1205,7 @@ struct op {
  * which may or may not check number of children).
  */
 </pre>
-<h3> Perl's lexar (talker) main routine is yylex </h3>
+<h3>Perl's lexar (talker) main routine is yylex</h3>
 <p>
   The main routine for Perl's lexar (talkerizer) is yylex.
 </p>
@@ -1230,11 +1229,11 @@ Perl_yylex (pTHX)
 <p>
   Perl scripts are decomposed into tokens by this routine.
 </p>
-<h3> YYSTYPE is defined in perly.h </h3>
+<h3>YYSTYPE is defined in perly.h</h3>
 <p>
   YYSTYPE is defined in perly.h.
 </p>
-<h3> PL_parser is the same as yy_parser </h3>
+<h3>PL_parser is the same as yy_parser</h3>
 <p>
   In the description of embedvar.h and intrpvar.h, yy_parser is given the name PL_parser.
 </p>
@@ -1272,7 +1271,7 @@ to the next */    char * oldbufptr;/* in yylex, beginning of current token */   
     line_t herelines;/* number of lines in here-doc */    line_t preambling;/* line # when processing $ENV{PERL5DB} */    U8 lex_fakeeof;/* precedence at which to fake EOF */    U8 lex_flags;
     PERL_BITFIELD16 in_pod: 1;/* lexer is within a =pod section */    PERL_BITFIELD16 filtered: 1;/* source filters in evalbytes */    PERL_BITFIELD16 saw_infix_sigil: 1;/* saw &amp; or * or%operator */    PERL_BITFIELD16 parsed_sub: 1;/* last thing parsed was a sub */} yy_parser;
 </pre>
-<h3> PADLIST </h3>
+<h3>PADLIST</h3>
 <p>
   PADLIST is a list of lexical variables.
 </p>
@@ -1316,7 +1315,7 @@ struct padname {
     _PADNAME_BASE;
 };
 </pre>
-<h3> ANY </h3>
+<h3>ANY</h3>
 <p>
   ANY is a data structure that can be assigned anything.
 </p>
@@ -1340,12 +1339,12 @@ union any {
 };
 # endif
 </pre>
-<h3> Be aware of whether the data structure is intended for arrays or pointers </h3>
+<h3>Be aware of whether the data structure is intended for arrays or pointers</h3>
 <pre>
 // Is it intended to be an array of integers or a pointer to a single integer?
 PERLVAR (I, markstack_max, I32 *)
 </pre>
-<h3> STMT_START and STMT_END are mechanisms to safely execute statements in macros </h3>
+<h3>STMT_START and STMT_END are mechanisms to safely execute statements in macros</h3>
 <p>
   STMT_START and STMT_END are mechanisms to safely execute statements in macros. You can think of it as "do {" and "} while (0)".
 </p>
@@ -1355,7 +1354,7 @@ PERLVAR (I, markstack_max, I32 *)
 # define SWAP (x, y)\do {\
     tmp = x;\x = y;\y = tmp;}\while (0)
 </pre>
-<h3> PoisonNew is filled with one pattern </h3>
+<h3>PoisonNew is filled with one pattern</h3>
 <p>
   PoisonNew is filled with one pattern. Think of it as memset.
 </p>
@@ -1364,7 +1363,7 @@ PERLVAR (I, markstack_max, I32 *)
 # define PoisonNew (d, n, t) PoisonWith (d, n, t, 0xAB)
 # define PoisonWith (d, n, t, b) (MEM_WRAP_CHECK_ (n, t) (void) memset ((char *) (d), (U8) (b), (n) * sizeof (t)))
 </pre>
-<h3> Renew stands for realloc </h3>
+<h3>Renew stands for realloc</h3>
 <p>
   Renew stands for realloc. It will also check if the memory to be secured does not overflow.
 </p>
@@ -1377,11 +1376,11 @@ PERLVAR (I, markstack_max, I32 *)
 <p>
   n is a pointer, n is a size, and t is a type. The secured size is n × t.
 </p>
-<h3> I don't know what STRESS_REALLOC is </h3>
+<h3>I don't know what STRESS_REALLOC is</h3>
 <p>
   I don't know what STRESS_REALLOC is. Where can it be defined?
 </p>
-<h3> PERL_SI is stack information </h3>
+<h3>PERL_SI is stack information</h3>
 <p>
   PERL_SI is stack information.
 </p>
@@ -1396,7 +1395,7 @@ struct stackinfo {
 
 typedef struct stackinfo PERL_SI;
 </pre>
-<h3> Variables starting with PL_ may be global variables </h3>
+<h3>Variables starting with PL_ may be global variables</h3>
 <p>
   Variables that start with PL_ can also be global variables. PL_Yes and PL_No are defined in perl.h.
 </p>
@@ -1413,7 +1412,7 @@ typedef struct stackinfo PERL_SI;
 </p>
   INIT ("");
 </blockquote>
-<h3> Variable names starting with PL_ are interpreted variables </h3>
+<h3>Variable names starting with PL_ are interpreted variables</h3>
 <p>
   Variable names starting with PL_ are interpreted variables. A variable that holds information about the currently running Perl interpreter. It is defined in embedvar.h.
 </p>
@@ -1456,7 +1455,7 @@ PERLVAR (I, InBitmap, SV *)
 <p>
   A macro called PERLVAR will generate a combined variable name such as "I AboveLatin1".
 </p>
-<h4> UNLIKELY is a macro described in perl.h </h4>
+<h4>UNLIKELY is a macro described in perl.h</h4>
 <p>
   This is code that is optimized when the condition is false, and is semantically just a Boolean.
 </p>
@@ -1501,7 +1500,7 @@ if (UNLIKLY (condition)) {
 <p>
   There is also LIKELY, which is expected to be true and optimized.
 </p>
-<h3> I32 and I16 are integer types </h3>
+<h3>I32 and I16 are integer types</h3>
 <p>
   There are types <b> I32 </b>, <b> I16 </b>, <b> U32 </b>, and <b> U16 </b> in the Perl core. These are integer types.
 </p>
@@ -1522,47 +1521,47 @@ if (UNLIKLY (condition)) {
 <p>
   I'm wondering why I don't use int or long directly, but probably because Perl runs on many operating systems to abstract integer types. (Perlguts says, "These are usually exactly 32-bit and 16-bit, but on Cray (the OS) they are both 64-bit.")
 </p>
-<h3> SV is a scalar type </h3>
+<h3>SV is a scalar type</h3>
 <p>
   SV is a scalar type.
 </p>
 <pre>
 SV * sv;
 </pre>
-<h3> AV is an array type </h3>
+<h3>AV is an array type</h3>
 <p>
   AV is an array type.
 </p>
 <pre>
 AV * array;
 </pre>
-<h3> GV is a glob type </h3>
+<h3>GV is a glob type</h3>
 <p>
   GV is a glob type.
 </p>
 <pre>
 GV * gv;
 </pre>
-<h3> HV is a hash type </h3>
+<h3>HV is a hash type</h3>
 <p>
   HV is a hash type.
 </p>
 <pre>
 HV * hash;
 </pre>
-<h3> CV is a functional type </h3>
+<h3>CV is a functional type</h3>
 <p>
   CV is a functional type.
 </p>
 <pre>
 CV * cv;
 </pre>
-<h3> pv is a character string </h3>
+<h3>pv is a string</h3>
 <p>
   These days I'm calling the core of Perl. It's hard to read because there are many omissions, but I don't get much information even if I search on google, so I'll make a note of it.
 </p>
 <p>
-  <b> pv </b> is a character string. If pv is included in the function name, I think it is a function related to a character string.
+  <b> pv </b> is a string. If pv is included in the function name, I think it is a function related to a string.
 </p>
 <p>
   <b> pvn </b> is included in the string and the function that specifies the length of the string. I wonder if <b> n </b> is number n.
@@ -1570,22 +1569,22 @@ CV * cv;
 <p>
   In terms of performance, pvn is probably faster because you specify the length yourself.
 </p>
-<h3> mg is magic </h3>
+<h3>mg is magic</h3>
 <p>
   <b> mg </b> is magic. Magic is, well, magic. Is it additional processing?
 </p>
-<h3> Newx allocates memory </h3>
+<h3>Newx allocates memory</h3>
 <p>
   <b> Newx </b> allocates memory. It's doing quite complicated things internally, but I think it's a malloc in the sense. It feels like a new memory area.
 </p>
-<h3> const means a constant </h3>
+<h3>const means a constant</h3>
 <p>
   The core of Perl is written in C. So if you can't read C, you can't read Perl's core. So make a note of the C language information as well.
 </p>
 <p>
   <b> const </b> means a constant. In other words, it is a read-only variable that cannot be rewritten.
 </p>
-<h3> const came out 3 times </h3>
+<h3>const came out 3 times</h3>
 <p>
   While reading the core of Perl, I came across something like this:
 </p>
@@ -1595,7 +1594,7 @@ const char * const * const search_ext
 <p>
   When const came out three times and I investigated what it meant, the object of const was different. The first const was the const for the variable pointed to by the pointer of the pointer, the second const was the const for the pointer of the pointer, and the third was the const for the pointer (search_ext).
 </p>
-<h3> va_list receives variadic arguments </h3>
+<h3>va_list receives variadic arguments</h3>
 <p>
   In C language, there is a method of receiving variable arguments. If you write <b> ... </b> in the argument part, you can receive variable arguments.
 </p>

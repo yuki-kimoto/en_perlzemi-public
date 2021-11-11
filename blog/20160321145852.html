@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> interpvar.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>interpvar.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="interpretvar.h  contains the definitions of interpreted variables. Interpreter variables are variables that are defined for each Perl interpreter.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" interpvar.h  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="interpvar.h - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="interpretvar.h  contains the definitions of interpreted variables. Interpreter variables are variables that are defined for each Perl interpreter." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20160321145852.html"> interpvar.h </a></h2>
+<h2><a href="/blog/20160321145852.html">interpvar.h</a></h2>
 <p>
   <strong> interpretvar.h </strong> contains the definitions of interpreted variables. Interpreter variables are variables that are defined for each Perl interpreter.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> What is an interpreter? </H3>
+<h3>What is an interpreter? </H3>
 <p>
   Perl can have multiple interpreters. Perl will generate an interpreter and begin interpreting the source code. Normally, one interpreter is enough, but if you want to keep multiple interpreters in a C language program, you can generate multiple interpreters.
 </p>
@@ -109,7 +108,7 @@ Perl-(no interpreter)
 <p>
   =====
 </p>
-<h3> Interpreter variable </h3>
+<h3>Interpreter variable</h3>
 <p>
   Interpreter variables are variables that each interpreter has. When reading Perl source code, you will open interpvar.h very often. This is because the variables defined here are used throughout the Perl source code.
 </p>
@@ -148,7 +147,7 @@ SV ** Icurpad;
 <p>
   When actually reading the source code, if you see the variable name "PL_stack_sp", you first guess that this is an interpreter variable. Then open "interpvar.h" and check if there is a definition like "PERLVAR (I, stack_sp, SV **)".
 </p>
-<h3> Interpreter variables are defined as global variables when "MULTIPLICITY" is not enabled </h3>
+<h3>Interpreter variables are defined as global variables when "MULTIPLICITY" is not enabled</h3>
 <p>
   Interpreter variables are defined as global variables when "MULTIPLICITY" is not enabled. The description is in "perl.h".
 </p>
@@ -159,7 +158,7 @@ START_EXTERN_C
 END_EXTERN_C
 # endif
 </pre>
-<h3> vTHX is the current interpreter </h3>
+<h3>vTHX is the current interpreter</h3>
 <p>
   vTHX is an interpreter. Under "MULTIPLICITY", "vTHX" expands to "aTHX" and "PERL_GET_INTERP", but in general Perl, read as "PERL_IMPLICIT_CONTEXT" is defined. In other words, let's think that it will be expanded to "aTHX".
 </p>
@@ -205,7 +204,7 @@ struct interpreter {
 <p>
   You can see that "PL_stack_sp" is expanded to "my_perl->Istack_sp". This means accessing a member variable called "Istack_sp" in the current interpreter.
 </p>
-<h3> Summary </h3>
+<h3>Summary</h3>
 <p>
   Keep in mind that "PL_stack_sp" will be expanded to "my_perl->Istack_sp". In addition, if "MULTIPLICITY" is not enabled, "Istack_sp" is directly available as a global variable. By using "PL_stack_sp", you can access with or without multiple interpreters without being aware of it.
 </p>

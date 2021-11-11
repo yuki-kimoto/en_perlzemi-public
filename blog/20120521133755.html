@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> The latest version of Perl, 5.16.0, has been released  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>The latest version of Perl, 5.16.0, has been released - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The long-awaited latest version of Perl, Perl 5.16.0, was released on May 20, 2012.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" The latest version of Perl, 5.16.0, has been released  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="The latest version of Perl, 5.16.0, has been released - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The long-awaited latest version of Perl, Perl 5.16.0, was released on May 20, 2012." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20120521133755.html"> The latest version of Perl, 5.16.0, has been released </a></h2>
+<h2><a href="/blog/20120521133755.html">The latest version of Perl, 5.16.0, has been released</a></h2>
 <p>
   The long-awaited latest version of Perl, Perl 5.16.0, was released on May 20, 2012.
 </p>
@@ -107,8 +106,8 @@
   <a href="http://perldoc.jp/docs/perl/5.16.0/perl5160delta.pod">Changes in Perl 5.16</a>
 </p>
 </blockquote>
-<h3> New features </h3>
-<h4> __SUB__ </h4>
+<h3>New features</h3>
+<h4>__SUB__</h4>
 <p>
   It is now possible to write __SUB__, which is similar to __FILE__ and __PACKAGE__. This is a feature that allows you to get a reference to the subroutine you are currently executing, making it easier to write recursive subroutines. It can be used in the state of use 5.16 or use feature 'current_sub'.
 </p>
@@ -118,11 +117,11 @@ sub func {
   __SUB__-&gt;();
 }
 </pre>
-<h4> Add enable and disable in debugger </h4>
+<h4>Add enable and disable in debugger</h4>
 <p>
   You can now enable and disable breakpoints.
 </p>
-<h4> Specify the file name in the breakpoint setting in the debugger </h4>
+<h4>Specify the file name in the breakpoint setting in the debugger</h4>
 <p>
   You can now specify the file name in addition to the line number with the b command (specify breakpoints).
 </p>
@@ -132,29 +131,29 @@ b [file]: [line]
 <p>
   This may reduce the work of moving back and forth between files.
 </p>
-<h4> Many Perl keywords are now available in the CORE namespace </h4>
+<h4>Many Perl keywords are now available in the CORE namespace</h4>
 <p>
   Until now, CORE was not actually a namespace, but it seems that CORE has become a namespace and can be treated in the same way as a normal namespace.
 </p>
 <pre>
 Core::tie
 </pre>
-<h4> Providing a modified type map </h4>
+<h4>Providing a modified type map</h4>
 <p>
   Additional typemaps such as T_AVREF_REFCOUNT_FIXED are now provided. This is a story on XS.
 </p>
 <pre>
 HV * T_HVREF_REFCOUNT_FIXED
 </pre>
-<h4> Almost compatible with Unicode 6.1 </h4>
+<h4>Almost compatible with Unicode 6.1</h4>
 <p>
   Almost compatible with Unicode 6.1. Please note that Unicode 6.0 and Unicode 6.1 are not fully compatible.
 </p>
 <p>
   Speaking of Unicode6, it is characteristic that emoticons are included as characters. I wonder if it will be easier to create an application that sends emails from mobile phones.
 </p>
-<h3> Minor changes </h3>
-<h4> use VERSION is now expected to work with that Perl version </h4>
+<h3>Minor changes</h3>
+<h4>use VERSION is now expected to work with that Perl version</h4>
 <p>
   The statement "use v5.16" is now expected to work with Perl 5.16.
 </p>
@@ -164,11 +163,11 @@ use v5.16;
 <p>
   In other words, "use v5.14" expects Perl 5.14 to work, and "use v5.16" expects Perl 5.16 to work.
 </p>
-<h4> $[is no longer disabled under use v5.16. </h4>
+<h4>$[is no longer disabled under use v5.16.</h4>
 <p>
   $[Now is no longer valid under use v5.16.
 </p>
-<h4> Fixed a memory leak in a regular expression named capture </h4>
+<h4>Fixed a memory leak in a regular expression named capture</h4>
 <p>
   A memory leak in the following code has been fixed. This has been around since Perl 5.10.
 </p>
@@ -183,11 +182,11 @@ use v5.16;
 <p>
   I wonder if named capture is now available in the daemon process.
 </p>
-<h3> Deprecated </h3>
+<h3>Deprecated</h3>
 <p>
   Unicode database files located in lib/unicore are no longer read. This is to make Perl's core smaller. Use the new Unicode::UCD function instead.
 </p>
-<h3> Deprecated modules </h3>
+<h3>Deprecated modules</h3>
 <ul>
   <li>
     Version::Requirements
@@ -196,7 +195,7 @@ use v5.16;
 <p>
   Version::Requirements has been deprecated. Use CPAN::Meta::Requirements.
 </p>
-<h3> Future deprecated modules </h3>
+<h3>Future deprecated modules</h3>
 <p>
   The following modules will be deprecated in the future. It will be removed after a while after being deprecated. However, it's still available on CPAN, so if you're using it, you'll have to spend more time installing it.
 </p>
@@ -229,7 +228,7 @@ use v5.16;
 <p>
   The core may get smaller little by little by removing unnecessary modules.
 </p>
-<h3> Removed modules and pragmas </h3>
+<h3>Removed modules and pragmas</h3>
 <p>
   The following modules have been removed from the core. It's on CPAN.
 </p>

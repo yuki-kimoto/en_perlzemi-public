@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Trivia-Useful to know  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Trivia - Useful to know - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="We'll add a lot of things that may make Perl easier to use and read if you know it.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Trivia-Useful to know  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Trivia - Useful to know - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="We'll add a lot of things that may make Perl easier to use and read if you know it." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20100802127859.html"> Trivia-Useful to know </a></h2>
+<h2><a href="/blog/20100802127859.html">Trivia - Useful to know</a></h2>
 <p>
   We'll add a lot of things that may make Perl easier to use and read if you know it.
 </p>
@@ -81,7 +80,7 @@
 </div>
 
 
-<h3> BEGIN </h3>
+<h3>BEGIN</h3>
 <p>
   BEGIN means that it is executed at compile time.
 </p>
@@ -90,7 +89,7 @@ BEGIN {
   # Statement you want to execute when compiling
 }
 </pre>
-<h3> require </h3>
+<h3>require</h3>
 <p>
   require is similar to use, except that it loads the module at runtime and does not automatically execute the import method.
 </p>
@@ -106,7 +105,7 @@ BEGIN {
 <p>
   If you want to load the module dynamically, you may use require, but for general use it will be easier to unify with use.
 </p>
-<h3> local </h3>
+<h3>local</h3>
 <p>
   local is not meant to generate local variables. local is for temporarily changing the value and restoring it when it goes out of scope. For some reason it cannot be used for the scalar variable itself declared by my. You can use package variables and hash elements, array elements, and so on.
 </p>
@@ -140,7 +139,7 @@ print $scores-&gt;{math};
     <a href="/blog/20080309120507.html">local - Temporarily save and restore package variables</a>
   </li>
 </ul>
-<h3> Multi-line comment </h3>
+<h3>Multi - line comment</h3>
 <p>
   # There is no multi-line comment syntax, so it's a bit disappointing, but the comment is only . If you want to comment on multiple lines while debugging, you can comment out by interpreting it as a document.
 </p>
@@ -155,7 +154,7 @@ my $foo = 'foo';
 <p>
   The part enclosed as "=pod" and "=cut" is interpreted as a document and ignored.
 </p>
-<h3> Different variables with different sigils </h3>
+<h3>Different variables with different sigils</h3>
 <p>
   Different sigils are completely different variables.
 </p>
@@ -169,14 +168,14 @@ my $ids;
 <p>
   The above variable has the name ids, but it's a completely different variable.
 </p>
-<h3> Examine the meaning of special variables </h3>
+<h3>Examine the meaning of special variables</h3>
 <p>
   Special variables are very difficult to find by google search. It is also troublesome to search from the document. You can use the "-v" option of the perldoc command to find out the meaning of special variables, albeit in English.
 </p>
 <pre>
 perldoc -v $.
 </pre>
-<h3> Method call </h3>
+<h3>Method call</h3>
 <p>
   In Perl you can use->to make method calls.
 </p>
@@ -202,7 +201,7 @@ sub method {
   my ($self, $arg1, $arg2) = @_;
 }
 </pre>
-<h3> Mini perldoc guide </h3>
+<h3>Mini perldoc guide</h3>
 <p>
   You can see the Perl documentation with the perldoc command.
 </p>
@@ -239,7 +238,7 @@ perldoc -f substr
 <pre>
 perldoc File::Basename&gt; File-Basename.txt
 </pre>
-<h3> Anonymous subroutine </h3>
+<h3>Anonymous subroutine</h3>
 <p>
   In Perl you can create anonymous subroutines by using sub {}.
 </p>
@@ -256,7 +255,7 @@ my $twice = sub {
 <pre>
 my $result = $twice-&gt;(5);
 </pre>
-<h3> Omission of {} in dereference </h3>
+<h3>Omission of {} in dereference</h3>
 <p>
   The dereference symbol {} can be omitted.
 </p>
@@ -272,21 +271,21 @@ my @array = @{$array_ref};
 <pre>
 my @array = @{$var-&gt;nums};
 </pre>
-<h3> How to read the document of the file operator </h3>
+<h3>How to read the document of the file operator</h3>
 <p>
   I often use file operators such as -s and -f, but it's hard to figure out how to look at the documentation. At the command line:
 </p>
 <pre>
 perldoc -f -X
 </pre>
-<h3> Character substitution tr </h3>
+<h3>Character substitution tr</h3>
 <p>
   You may sometimes see tr, but the tr operator does string substitutions. The following sentence replaces "a ⇒ 1", "b ⇒ 2", and "c ⇒ 3".
 </p>
 <pre>
 $str =~ tr/abc/123/;
 </pre>
-<h3> See the settings in Perl itself </h3>
+<h3>See the settings in Perl itself</h3>
 <p>
   With command line arguments
 </p>
@@ -296,7 +295,7 @@ perl -V
 <p>
   will do.
 </p>
-<h3> Hash slice of hash reference </h3>
+<h3>Hash slice of hash reference</h3>
 <p>
   The notation of dereferencing a hash reference and hash slicing is very hard to read.
 </p>
@@ -311,7 +310,7 @@ my $key1 = $hash-&gt;{key1};
 my $key2 = $hash-&gt;{key2};
 my $key3 = $hash-&gt;{key3};
 </pre>
-<h3> How to use eval </h3>
+<h3>How to use eval</h3>
 <pre>
 eval {execution statement; 1;} or die "Exception";
 </pre>
@@ -325,7 +324,7 @@ die "Exception" if $@;
 <p>
   I prefer.
 </p>
-<h3> Frequently used special variables </h3>
+<h3>Frequently used special variables</h3>
 <ul>
   <li>
     @_ - Subroutine arguments
@@ -352,7 +351,7 @@ die "Exception" if $@;
     $?-Child process status
   </li>
 </ul>
-<h3> Default argument of shift function </h3>
+<h3>Default argument of shift function</h3>
 <p>
   If no argument is specified in the shift function, the argument will be the command line argument (@ARGV) if it is the top level, and the subroutine argument (@_) if it is in the subroutine. A single shift is often used.
 </p>
@@ -372,7 +371,7 @@ sub {
   my $num = shift @_;
 }
 </pre>
-<h3> Exit status of external process </h3>
+<h3>Exit status of external process</h3>
 <p>
   When an external process is called with the system function etc., the exit status of the external process is in the upper 8 bits of the special variable $?. If the command call itself fails, $? Is set to -1. So, to check that the exit status is normal (normal if 0), do the following:vinegar.
 </p>
@@ -387,14 +386,14 @@ elsif ($? &gt;&gt; 8 != 0) {
   die "Return error status\n";
 }
 </pre>
-<h3> Perl's ithread implementation isn't very good </h3>
+<h3>Perl's ithread implementation isn't very good</h3>
 <p>
   Perl has a lightweight thread implementation called ithread, but it's rumored that the implementation isn't very good. Also, the CPAN module wasn't created with thread safety in mind, so you'll run into unexpected bugs. It also does not support native threads. It is safer to give up writing in Perl for the process of automatically switching threads.
 </p>
 <p>
   If you want to switch threads yourself, you can use the coroutine Coro.
 </p>
-<h3> Classic Perl </h3>
+<h3>Classic Perl</h3>
 <p>
   I don't use it when writing, but you may come across classical grammar when reading.
 </p>
@@ -405,7 +404,7 @@ elsif ($? &gt;&gt; 8 != 0) {
 Same as # our $VAR;
 use vars 'VAR';
 </pre>
-<h3> Operators starting with q that you want to remember </h3>
+<h3>Operators starting with q that you want to remember</h3>
   # Operators starting with q are difficult to remember, so I will summarize them. You can also use //, {}, #, ||, etc. as the enclosing characters.
 <p>
   q is a single quote operator. It is the same as single quote except that single quote can be used.
@@ -430,7 +429,7 @@ qr is a regular expression reference.
 &lt;pre&gt;
 my $regex_ref = qr/^aaa. * Bbb $/ ms;
 </pre>
-<h3> 1; is required at the end of the module </h3>
+<h3>1; is required at the end of the module</h3>
 <p>
   1; is required at the end of the module. It doesn't have to be 1 but can be any true value, but usually 1; is used.
 </p>
@@ -442,7 +441,7 @@ package SomeModule;
 1;
 </pre>
 <p>
-  No semicolon is required at the end of the <h3> block. No return is required if the evaluation is final. </h3>
+  No semicolon is required at the end of the <h3>block. No return is required if the evaluation is final.</h3>
 </p>
 <p>
   The semicolon may or may not be present at the end of the block.
@@ -473,9 +472,9 @@ sub func1 {
 # Constant etc.
 sub CONST_VALUE {3}
 </pre>
-<h3> When you want to try Perl a lot </h3>
+<h3>When you want to try Perl a lot</h3>
 <p>
-  If I want to run a sample I find somewhere, I have a simple file called a.pl and I experiment there. It's also a hassle to delete, so if you want to experiment anew, use "__END__" and the script will be considered to end there.
+  If I want to run a example I find somewhere, I have a simple file called a.pl and I experiment there. It's also a hassle to delete, so if you want to experiment anew, use "__END__" and the script will be considered to end there.
 </p>
 <pre>
 perl a.pl
@@ -490,7 +489,7 @@ __END__
 
 print'bbb';
 </pre>
-<h3> Do not end the program when the last line is executed in the debugger </h3>
+<h3>Do not end the program when the last line is executed in the debugger</h3>
 <p>
   If you want to avoid the program ending when you execute the last line when using the Perl debugger, put the meaningless "1;" executable statement in the last line as follows.
 </p>
@@ -500,7 +499,7 @@ print $str;
 
 1;
 </pre>
-<h3> Shortcut for reading files </h3>
+<h3>Shortcut for reading files</h3>
 <p>
   If you're writing a disposable script, writing a file open can be a bit tedious. You can use the diamond operator alone to read a file line by line from command line arguments or standard input.
 </p>
@@ -525,7 +524,7 @@ while (defined(my $line = &lt;&gt;)) {
 <p>
   Since it has the same meaning as, it is safe because it correctly reads lines that contain only 0.
 </p>
-<h3> Notes on variable expansion </h3>
+<h3>Notes on variable expansion</h3>
 <p>
   If the variable name is followed by a colon or underscore, the variable cannot be expanded correctly. In such a case, enclose it in "{}" to explicitly indicate the variable name.
 </p>
@@ -533,7 +532,7 @@ while (defined(my $line = &lt;&gt;)) {
 my $name = 'aaa';
 my $message = "${name}::aaa ${name} _ppp";
 </pre>
-<h3> Take a peek at the symbol table </h3>
+<h3>Take a peek at the symbol table</h3>
 <p>
   A data structure in which names such as variables and subroutines are registered. The symbol for each package is stored in a variable with "::" at the end of the package name.
 </p>
@@ -541,7 +540,7 @@ my $message = "${name}::aaa ${name} _ppp";
 # Symbol table
 %main::%CGI::%File::Basename::&lt;/pre&gt;
 
-&lt;h3&gt; use each function only in while &lt;/h3&gt;
+&lt;h3&gt;use each function only in while&lt;/h3&gt;
 
 Each function has an iterator internally, so if you use it only once, the iterator will stay advanced.
 
@@ -564,7 +563,7 @@ while (my ($key, $value) = each %hash) {
   ...
 }
 </pre>
-<h3> The filehandle passed to the print function is not the first argument </h3>
+<h3>The filehandle passed to the print function is not the first argument</h3>
 <p>
   It's a strange specification. The filehandle passed to the print function is not the first argument. There is no comma behind the file handle.
 </p>
@@ -578,18 +577,18 @@ print $fh $output;
 <pre>
 $fh-&gt;print($output);
 </pre>
-<h3> On Windows IO::Poll and select only work for sockets </h3>
+<h3>On Windows IO::Poll and select only work for sockets</h3>
 <p>
   On Windows, asynchronous IO processing can only be done on sockets. Not for files.
 </p>
-<h3> On Windows, it doesn't work well if the argument of the glob function contains a space. </H3>
+<h3>On Windows, it doesn't work well if the argument of the glob function contains a space. </H3>
 <p>
   On Windows, it doesn't work well if the argument of the glob function contains a space. To get this to work, you need to enclose it in double quotes.
 </p>
 <pre>
 my @files = glob('"C:/Documents and Settings/*. *"');
 </pre>
-<h3> If you need parentheses for the subroutine </h3>
+<h3>If you need parentheses for the subroutine</h3>
 <p>
   If the subroutine has already been declared, no parentheses are needed.
 </p>
@@ -615,7 +614,7 @@ croak'aaa';
 func1 ('aaa');
 sub func1 {print 1}
 </pre>
-<h3> Anonymous subroutines exist from start to finish </h3>
+<h3>Anonymous subroutines exist from start to finish</h3>
 <p>
   Anonymous subroutines that appear to be dynamically created are compiled at the beginning of the program and destroyed at the end of the program. The following code produces a subroutine reference, not the subroutine itself. Be careful as it can easily get mixed up.
 </p>
@@ -627,7 +626,7 @@ sub func1 {print 1}
   }
 }
 </pre>
-<h3> Regular expression list context </h3>
+<h3>Regular expression list context</h3>
 <p>
   If you want to get a part of the matched character using <a href="/blog/20100827127859.html">regular expression</a>, write as follows in combination with the if statement.
 </p>
@@ -643,7 +642,7 @@ if ($str =~ /regular expression/) {
 <pre>
 my ($match1, $match2) = $str =~ /regular expression/;
 </pre>
-<h3> Change the enclosing character of the regular expression </h3>
+<h3>Change the enclosing character of the regular expression</h3>
 <p>
   Normally, the regular expression is written as follows.
 </p>
@@ -661,14 +660,14 @@ $str =~ m/regular expression/;
 <pre>
 $str =~ m # http://aaa.com#;
 </pre>
-<h3> ord function is an abbreviation for ordinal </h3>
+<h3>ord function is an abbreviation for ordinal</h3>
 <p>
-  The ord function that returns a code point when a character string is passed is an abbreviation for ordinal. This means ordinal when translated into Japanese. By the way, the paired chr function converts it to a character when you pass a code point.
+  The ord function that returns a code point when a string is passed is an abbreviation for ordinal. This means ordinal when translated into Japanese. By the way, the paired chr function converts it to a character when you pass a code point.
 </p>
 <pre>
 ord function &lt;-&gt;chr function
 </pre>
-<h3> or is read in English as "if the left side is not true". </h3>
+<h3>or is read in English as "if the left side is not true".</h3>
 <p>
   Although or is originally a logical operator, it is often used for conditional branching without being used as a logical operator.
 </p>
@@ -681,7 +680,7 @@ A or B
 <p>
   That is, the left sideIf (A) is true, the right-hand side (B) is executed, and if the left-hand side (A) is false, the right-hand side (B) is executed. When read in English, it can be read as "If the left side (A) is not true, the right side (B) is effective".
 </p>
-<h3> Write the configuration file in Perl </h3>
+<h3>Write the configuration file in Perl</h3>
 <p>
   It is convenient to write the configuration file in Perl. Use <a href="/blog/20090208123289.html">do</a> to load the configuration file.
 </p>

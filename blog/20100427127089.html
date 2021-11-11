@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> JSON - Analyzing JSON data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>JSON - Analyzing JSON data - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  JSON module  to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" JSON - Analyzing JSON data  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="JSON - Analyzing JSON data - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  JSON module  to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100427127089.html"> JSON - Analyzing JSON data </a></h2>
+<h2><a href="/blog/20100427127089.html">JSON - Analyzing JSON data</a></h2>
 <p>
   You can use the <strong> JSON module </strong> to parse JSON data. JSON is a language for describing data and can represent data structures such as arrays and hashes. JSON is just a string, so it's portable. It is often used when exchanging data with other programming languages.
 </p>
@@ -128,7 +127,7 @@ my $data = decode_json ($json_in);
 # Convert Perl data structures to JSON
 my $json_out = encode_json ($data);
 </pre>
-<h3> Handling of Japanese in JSON module </h3>
+<h3>Handling of Japanese in JSON module</h3>
 <p>
   You need to be a little careful when dealing with Japanese in the JSON module. You need to remember the following:
 </p>
@@ -181,12 +180,12 @@ $json = encode_utf8 ($json);
 
 my $data = decode_json ($json);
 </pre>
-<h3> Read the JSON written in the file </h3>
+<h3>Read the JSON written in the file</h3>
 <p>
   Since the JSON module does not have a function to read a file, I will describe how to read from a file.
 </p>
 <pre>
-# Sample to read JSON from file
+# Example to read JSON from file
 use JSON 'decode_json';
 
 my $file = shift;

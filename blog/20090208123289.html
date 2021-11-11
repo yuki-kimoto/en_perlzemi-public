@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> do-block that returns a value, load a script  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>do - block that returns a value, load a script - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use  do  to create a block that returns the last evaluated value for block syntax. For string syntax, you can specify the name of the file and load the script.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" do-block that returns a value, load a script  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="do - block that returns a value, load a script - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use  do  to create a block that returns the last evaluated value for block syntax. For string syntax, you can specify the name of the file and load the script." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20090208123289.html"> do-block that returns a value, load a script </a></h2>
+<h2><a href="/blog/20090208123289.html">do - block that returns a value, load a script</a></h2>
 <p>
   You can use <b> do </b> to create a block that returns the last evaluated value for block syntax. For string syntax, you can specify the name of the file and load the script.
 </p>
@@ -94,7 +93,7 @@ do $file_name;
 <p>
   Note that the block syntax and the string syntax have completely different functions. Let's take a closer look at each syntax.
 </p>
-<h3> Block that returns the last value - do block </h3>
+<h3>Block that returns the last value - do block</h3>
 <p>
   You can use the <b> do block </b> to create a block that returns the last evaluated value.
 </p>
@@ -112,7 +111,7 @@ my $value = do {
 <p>
   There is no particular reason to use this syntax when programming normally, but it is customary to use this syntax if you want to read the contents of a file all at once.
 </p>
-<h4> Read the contents of the file at once </h4>
+<h4>Read the contents of the file at once</h4>
 <p>
   The following description allows you to read all the contents of a file at once.
 </p>
@@ -130,14 +129,14 @@ my $content = do {local $/; &lt;$fh&gt;};
 <p>
   local is explained in "<a href="/blog/20080309120507.html">local - temporarily save and restore package variables</a>".
 </p>
-<h3> Loading script - do string </h3>
+<h3>Loading script - do string</h3>
 <p>
   You can use the <b> do string </b> syntax to read a file as Perl source code.
 </p>
 <p>
   A common method is to write the configuration file in Perl and read it.
 </p>
-<h4> Write the configuration file in Perl </h4>
+<h4>Write the configuration file in Perl</h4>
 <p>
   It is convenient to write the configuration file in Perl.
 </p>

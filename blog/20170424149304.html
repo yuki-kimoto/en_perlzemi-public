@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> MIME::Lite-Easily send emails  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>MIME::Lite - Easily send emails - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  MIME::Lite  module makes it easy to send emails.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" MIME::Lite-Easily send emails  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="MIME::Lite - Easily send emails - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  MIME::Lite  module makes it easy to send emails." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170424149304.html"> MIME::Lite-Easily send emails </a></h2>
+<h2><a href="/blog/20170424149304.html">MIME::Lite - Easily send emails</a></h2>
 <p>
   The <b> MIME::Lite </b> module makes it easy to send emails.
 </p>
@@ -91,7 +90,7 @@
 <p>
   There are several ways to send an email, but I think sending an email with the sendmail command is an easy way to deal with various email issues.
 </p>
-<h3> Send an email </h3>
+<h3>Send an email</h3>
 <p>
   To send an email: It's easy to create in the form of a multipart message and attach and send text or images.
 </p>
@@ -135,7 +134,7 @@ $msg-&gt;send;
     Send an email with the <b> send </b> method.
   </li>
 </ol>
-<h3> Send Japanese email with MIME::Lite </h3>
+<h3>Send Japanese email with MIME::Lite</h3>
 <p>
   When sending Japanese emails with MIME::Lite, you need to think about encoding.
 </p>
@@ -157,7 +156,7 @@ $msg-&gt;send;
   Save the source code in UTF-8 and enable the <b> utf8 pragma </b> at the beginning.
 </p>
 <p>
-  The above sample can be rewritten for Japanese transmission as follows.
+  The above example can be rewritten for Japanese transmission as follows.
 </p>
 <pre>
 use utf8;
@@ -190,9 +189,9 @@ $msg-&gt;attach(
 # Send email "
 $msg-&gt;send;
 </pre>
-<h4> When sending in UTF-8 </h4>
+<h4>When sending in UTF - 8</h4>
 <p>
-  As of 2017, I'm not sure what's going on, but I feel that it's often sent in UTF-8, so I'll post a sample of that as well.
+  As of 2017, I'm not sure what's going on, but I feel that it's often sent in UTF-8, so I'll post a example of that as well.
 </p>
 <pre>
 use utf8;
@@ -230,21 +229,21 @@ $msg-&gt;send;
 </p>
 <ul>
   <li>
-    <a href="/blog/20091118124667.html">Encode module-Properly handles multi-byte character strings such as Japanese</a>
+    <a href="/blog/20091118124667.html">Encode module-Properly handles multi-byte strings such as Japanese</a>
   </li>
 </ul>
-<h3> FAQ </h3>
+<h3>FAQ</h3>
 <p>
   Answer the FAQ about MIME::Lite.
 </p>
-<h4> MIME::Lite seems to be deprecated </h4>
+<h4>MIME::Lite seems to be deprecated</h4>
 <p>
   MIME::Lite is easy to use, but is currently deprecated.
 </p>
 <p>
   MIME::Lite is personally the easiest email sending module to use, but if you follow the community's wishes, <a href="http://search.cpan.org/~rjbs/Email-Sender-1.300031/lib/" Use Email/Sender.pm">Email::Sender</a>.
 </p>
-<h4> Garbled characters occur </h4>
+<h4>Garbled characters occur</h4>
 <p>
   The cause is that there are characters that can be expressed in UTF-8 but not in "ISO-2022-JP".
 </p>

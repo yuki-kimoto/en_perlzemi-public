@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> XML::Simple - Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>XML::Simple - Easy to parse XML - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  XML::Simple  module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML::Simple is the best in terms of easy handling.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" XML::Simple - Easy to parse XML  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="XML::Simple - Easy to parse XML - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  XML::Simple  module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML::Simple is the best in terms of easy handling." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100424127089.html"> XML::Simple - Easy to parse XML </a></h2>
+<h2><a href="/blog/20100424127089.html">XML::Simple - Easy to parse XML</a></h2>
 <p>
   The <strong> XML::Simple </strong> module allows you to easily parse XML and convert it into Perl data structures. "SAX that analyzes sequentially from the beginning" and "DOM that builds an XML tree structure" are famous as XML analysis methods, but XML::Simple is the best in terms of easy handling.
 </p>
@@ -101,7 +100,7 @@ my $xml = XML::Simple-&gt;new;
 my $data = $xml-&gt;XMLin('conf.xml');
 </pre>
 <p>
-  This is a sample XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
+  This is a example XML of the configuration file. Imagine an application that edits multiple logs on multiple systems. Save the file in UTF-8.
 </p>
 <pre>
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
@@ -153,9 +152,9 @@ $conf = {
   'lib-dir' =&gt;'lib'
 };
 </pre>
-<h3> Handling Japanese in XML::Simple </h3>
+<h3>Handling Japanese in XML::Simple</h3>
 <p>
-  When a character string containing Japanese is read by XMLin, the character code specified by the encoding attribute of the XML declaration is converted to the internal character string. Note that it is not a byte string.
+  When a string containing Japanese is read by XMLin, the character code specified by the encoding attribute of the XML declaration is converted to the internal string. Note that it is not a byte string.
 </p>
 <pre>
 &lt;? xml version = "1.0" encoding = "UTF-8"?&gt;
@@ -164,15 +163,15 @@ $conf = {
 &lt;/conf&gt;
 </pre>
 <p>
-  Since it is converted to an internal character string, if you want to output it, you need to convert it to a byte character string using the encode function of the Encode module.
+  Since it is converted to an internal string, if you want to output it, you need to convert it to a byte string using the encode function of the Encode module.
 </p>
 <pre>
-# When outputting, convert from internal character string to byte character string
+# When outputting, convert from internal string to byte string
 use Encode 'encode';
 my $conf = $xml-&gt;XMLin('japanese.xml');
 print encode('UTF-8', $conf-&gt;{name});
 </pre>
-<h3> XML::Simple options </h3>
+<h3>XML::Simple options</h3>
 <p>
   XML::Simple allows you to specify options in the constructor arguments.
 </p>
@@ -209,14 +208,14 @@ my $xml = XML::Simple-&gt;new(ForceArray =&gt; 1);
     </td>
   </tr>
 </table>
-<h3> XML::LibXML - Standard and fast XML parsing </h3>
+<h3>XML::LibXML - Standard and fast XML parsing</h3>
 <p>
   XML::Simple is not suitable for parsing complex XML. If you want to parse XML in a standard and fast way, you can choose the XML::LibXML module. XML::LibXML can read XML as a DOM tree. You can also access each element of XML using a method called XPath.
 </p>
 <p>
   This method requires more coding than XML::Simple and is technically difficult, but it is the best method for some requirements.
 </p>
-<h4> What to do if the XML::LibXML module cannot be installed on CentOS </h4>
+<h4>What to do if the XML::LibXML module cannot be installed on CentOS</h4>
 <p>
   If the <strong> XML::LibXML </strong> module <strong> installation fails </strong> on CentOS, the <b> libxml2-devel </b> package is missing and you should install it.
 </p>

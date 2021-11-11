@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Test::More - Write a test program for automated testing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Test::More - Write a test program for automated testing - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Almost every Perl module on CPAN comes with a program to test your program. Not only the program, but also the program for testing the program comes with it. This is called an automatic test. Instead of running each program by hand, you can just run the automated test program and see if it works properly.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Test::More - Write a test program for automated testing  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Test::More - Write a test program for automated testing - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Almost every Perl module on CPAN comes with a program to test your program. Not only the program, but also the program for testing the program comes with it. This is called an automatic test. Instead of running each program by hand, you can just run the automated test program and see if it works properly." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20090221123410.html"> Test::More - Write a test program for automated testing </a></h2>
+<h2><a href="/blog/20090221123410.html">Test::More - Write a test program for automated testing</a></h2>
 <p>
   Almost every Perl module on CPAN comes with a program to test your program. Not only the program, but also the program for testing the program comes with it. This is called an automatic test. Instead of running each program by hand, you can just run the automated test program and see if it works properly.
 </p>
@@ -84,24 +83,24 @@
 <p>
   In Perl, it's convenient to write automated test programs using the standard module <strong> Test::More </strong>. Here, we will explain the advantages of automated tests and how to write automated tests with Test::More.
 </p>
-<h3> Advantages of automated testing </h3>
-<h4> 1. Regression test can be done easily. </h4>
+<h3>Advantages of automated testing</h3>
+<h4>1. Regression test can be done easily.</h4>
 <p>
   The regression test, also known as the regression test, is a test that confirms that the original function works properly when a function is added to the program. Once you have created an automated test, you only have to make sure that the automated test succeeds after you add functionality to your program.
 </p>
-<h4> 2. Can be refactored </h4>
+<h4>2. Can be refactored</h4>
 <p>
   Refactoring is about cleaning up your code. The act of rewriting the code to improve versatility and readability. It is not good to leave a dirty code. For programs that need to adapt to change, you need to code to make it easier to add features.
 </p>
 <p>
   Creating an automated test allows you to refactor without compromising functionality.
 </p>
-<h3> Notes on automatic testing </h3>
-<h4> 1. I don't know whether the code itself is good or bad. </h4>
+<h3>Notes on automatic testing</h3>
+<h4>1. I don't know whether the code itself is good or bad.</h4>
 <p>
   An automated test is a test to see the function. I can't tell if the code is versatile, if it's neatly organized into subroutines, or if it's highly readable. I think it would be better to combine it with inspection, code reading, etc.
 </p>
-<h4> 2. Visual confirmation is also performed </h4>
+<h4>2. Visual confirmation is also performed</h4>
 <p>
   Automatic exams are not perfect exams. There will be a mistake in writing the automatic test. It is also possible that the automatic test was not conducted due to a misunderstanding, or that the test itself was wrong.
 </p>
@@ -111,7 +110,7 @@
 <p>
   Once you have written the correct exam, you can check it automatically.
 </p>
-<h3> Simple sample of automatic test </h3>
+<h3>Simple example of automatic test</h3>
 <p>
   Now let's write an automated test program using Perl's module for automated tests Test::More.
 </p>
@@ -133,14 +132,14 @@ ok ($num2 == 1);
 <p>
   A description of the automated test script.
 </p>
-<h4> 1. Specify the number of exams. </h4>
+<h4>1. Specify the number of exams.</h4>
 <p>
   When using Test::More, specify the number of tests.
 </p>
 <pre>
 use Test::More tests =&gt; 2;
 </pre>
-<h4> 2. Check the test result with the ok function </h4>
+<h4>2. Check the test result with the ok function</h4>
 <p>
   The first argument of the ok function describes the conditions under which the test will succeed.
 </p>
@@ -156,9 +155,9 @@ ok ($num2 == 1);
 <p>
   This statement can be read as "If $num1 is equal to 1, the test is successful" and "If $num2 is equal to 1, the test is successful".
 </p>
-<h4> 3. Test results </h4>
+<h4>3. Test results</h4>
 <p>
-  The test results of the above sample are as follows. You can see that the first exam was successful and the second exam was unsuccessful.
+  The test results of the above example are as follows. You can see that the first exam was successful and the second exam was unsuccessful.
 </p>
 <pre>
 1..2
@@ -168,9 +167,9 @@ not ok 2 - Test2
 # at b.pl line 9.
 # Looks like you failed 1 test of 2.
 </pre>
-<h3> Test subroutines </h3>
+<h3>Test subroutines</h3>
 <p>
-  Let's take a look at another simple sample. Test a function called sum that sums two numbers and a function called double that doubles the numbers. The double function is supposed to be doubled, but it is mistakenly tripled so that the automated test fails.
+  Let's take a look at another simple example. Test a function called sum that sums two numbers and a function called double that doubles the numbers. The double function is supposed to be doubled, but it is mistakenly tripled so that the automated test fails.
 </p>
 <pre>
 use strict;
@@ -214,9 +213,9 @@ sub double {
   return $num * 3
 }
 </pre>
-<h4> 1. Automatic subroutine test </h4>
+<h4>1. Automatic subroutine test</h4>
 <p>
-  Performs an automatic test for each subroutine. In this sample, we are testing a subroutine called sum.
+  Performs an automatic test for each subroutine. In this example, we are testing a subroutine called sum.
 </p>
 <pre>
 {
@@ -234,7 +233,7 @@ sub sum {
   return $num1 + $num2;
 }
 </pre>
-<h4> 2. Create a scope for each test unit. </h4>
+<h4>2. Create a scope for each test unit.</h4>
 <p>
   As you write a lot of tests, variable name collisions become more frequent. To avoid this, create a scope with {} and write each test in it.
 </p>
@@ -258,7 +257,7 @@ sub sum {
   ok ($double == 2, 'double'); # Failed!
 }
 </pre>
-<h4> 3. Test results </h4>
+<h4>3. Test results</h4>
 <p>
   Let's take a look at the test results. The double function is wrongly a function that triples, so the second test fails.
 </p>
@@ -269,7 +268,7 @@ not ok 2 - double
 # at - line 25.
 # Looks like you failed 1 test of 2.
 </pre>
-<h3> Automatic test layout </h3>
+<h3>Automatic test layout</h3>
 <p>
   The above script was done in one file, but I'll show you the general layout of the automated test directory. The layout of the automated test directory is as follows. Suppose you want to test a module called SomeModule.pm.
 </p>
@@ -290,9 +289,9 @@ SomeModule/    |
 <p>
   There are no absolute rules for the layout, but many modules that make Perl's automated testing useful assume this layout, so let's do it.
 </p>
-<h4> Module sample </h4>
+<h4>Module example</h4>
 <p>
-  This is a sample module for testing. Save it as "SomeModule.pm" and store it in "lib".
+  This is a example module for testing. Save it as "SomeModule.pm" and store it in "lib".
 </p>
 <pre>
 package SomeModule;
@@ -318,11 +317,11 @@ sub double {
 <p>
   The last line of the module should return a true value. Be careful as it is easy to forget.
 </p>
-<h4> Test script </h4>
+<h4>Test script</h4>
 <p>
-  This is a sample of automatic test.
+  This is a example of automatic test.
 </p>
-<h4> sum.t </h4>
+<h4>sum.t</h4>
 <pre>
 use strict;
 use warnings;
@@ -347,7 +346,7 @@ my $num1 = 1;
 <p>
   (Reference) <a href="/blog/20100524127696.html">FindBin</a>
 </p>
-<h4> double.t </h4>
+<h4>double.t</h4>
 <pre>
 use strict;
 use warnings;
@@ -369,7 +368,7 @@ use SomeModule;
 }
 
 </pre>
-<h4> Execution of automatic test </h4>
+<h4>Execution of automatic test</h4>
 <p>
   Let's run an automated test. To do an automated test, first go inside the Somo Module. Then run the following command:
 </p>
@@ -379,7 +378,7 @@ perl t/sum.t
 <p>
   You can run the exam.
 </p>
-<h3> Run all automated tests with prove script </h3>
+<h3>Run all automated tests with prove script</h3>
 <p>
   As the number of automated test programs increases, it is very troublesome to perform automated tests one by one. Perl has a handy script called <strong> prove </strong> that runs all the automated tests.
 </p>
@@ -418,7 +417,7 @@ t\double .... ok
 All tests successful.
 Files = 2, Tests = 2, 0 wallclock secs (0.00 cusr + 0.00 csys = 0.00 CPU)
 </pre>
-<h3> Test::More function </h3>
+<h3>Test::More function</h3>
 <p>
   So far, we've used only the "ok function" to create tests, but the Test::More module has a lot of useful functions.
 </p>
@@ -483,7 +482,7 @@ Files = 2, Tests = 2, 0 wallclock secs (0.00 cusr + 0.00 csys = 0.00 CPU)
     </td>
   </tr>
 </table>
-<h4> is and isnt functions </h4>
+<h4>is and isnt functions</h4>
 <p>
   The <strong> is function </strong> tests that the strings are equal. The <strong> isnt function </strong> tests that the strings are not equal.
 </p>
@@ -500,7 +499,7 @@ isnt ($str, 5);
 <p>
   Otherwise, use a function called cmp_ok.
 </p>
-<h4> like and dislike functions </h4>
+<h4>like and dislike functions</h4>
 <p>
   The <strong> like function </strong> tests that the string matches the regular expression. The <strong> dislike function </strong> tests that it doesn't match the regular expression </strong>.
 </p>
@@ -514,7 +513,7 @@ unlike ($str, qr/\w+/);
 <p>
   Note that the second argument is a reference to the regular expression qr/\w+/. If you change this to'\w+'or/\w+/, the test will not work.
 </p>
-<h4> cmp_ok function </h4>
+<h4>cmp_ok function</h4>
 <p>
   The <strong> cmp_ok function </strong> allows you to test using any comparison operator.
 </p>
@@ -524,7 +523,7 @@ cmp_ok ($num, '&lt;', 3);
 <p>
   The first and third arguments are the values you want to compare. The second argument is the comparison operator. All comparison operators such as "=", "<", "<=", " >= ", ">", "eq", "ne", "gt", "lt", "ge", and "le" can be used.
 </p>
-<h4> is_deeply function </h4>
+<h4>is_deeply function</h4>
 <p>
   You can use the <strong> is_deeply function </strong> to test complex data structures such as array references and hash references. This is very convenient.
 </p>
@@ -571,7 +570,7 @@ is_deeply ($hash_ref, {a =&gt; 1, b =&gt; 2});
     </td>
   </tr>
 </table>
-<h4> can_ok function </h4>
+<h4>can_ok function</h4>
 <p>
   The <strong> can_ok function </strong> is used for testing to make sure a class has a method.
 </p>
@@ -581,7 +580,7 @@ can_ok ('Book', 'title', 'author', 'price', 'to_string', 'clone');
 <p>
   This is a test to make sure that the Book class has methods title, author, price, to_string, clone.
 </p>
-<h4> isa_ok function </h4>
+<h4>isa_ok function</h4>
 <p>
   <strong> isa_ok </strong> is used for testing to ensure that an object inherits a class.
 </p>
@@ -605,7 +604,7 @@ isa_ok ($comic, 'Comic');
 my $ary_ref = [];
 isa_ok ($array_ref, 'ARRAY');
 </pre>
-<h4> require_ok function </h4>
+<h4>require_ok function</h4>
 <p>
   The <strong> require_ok function </strong> is used for testing to ensure that a module can be required.
 </p>
@@ -615,7 +614,7 @@ require_ok ('Book');
 <p>
   This is a test to make sure the Book module can be required. It is a usage of require_ok, but it can be used when the module you want to distribute depends on another module, or when you want to confirm that the module exists.
 </p>
-<h4> use_ok function </h4>
+<h4>use_ok function</h4>
 <p>
   The <strong> use_ok function </strong> is used for testing to verify that the module can be used.
 </p>
@@ -624,15 +623,15 @@ BEGIN {use_o
 
 k ('Some::Module')}
 </pre>
-<h3> FAQ </h3>
-<h4> Is it possible to display easy-to-understand comments on the test results? </H4>
+<h3>FAQ</h3>
+<h4>Is it possible to display easy - to - understand comments on the test results? </H4>
 <p>
   You can use the <strong> note function </strong> to display comments in your test results.
 </p>
 <pre>
 note'some test';
 </pre>
-<h4> It's annoying to describe the number of exams </h4>
+<h4>It's annoying to describe the number of exams</h4>
 <p>
   Use "no_plan" or "done_testing".
 </p>
@@ -652,7 +651,7 @@ done_testing;
 <p>
   In rare cases, there seems to be an edge case that passes even though the test has failed. If you want certainty, write the number of tests.
 </p>
-<h4> I want to skip some exams </h4>
+<h4>I want to skip some exams</h4>
 <p>
   For example, in certain environments you may want to skip the exam. Write as follows.
 </p>
@@ -665,7 +664,7 @@ else {
   plan tests =&gt; 42;
 }
 </pre>
-<h4> How do you test for exceptions? </h4>
+<h4>How do you test for exceptions?</h4>
 <p>
   If you want to see the exception occur, do the following:
 </p>
@@ -686,7 +685,7 @@ like ($@, qr/error /);
 <p>
   (Reference) <a href="/blog/20100312126967.html">eval</a>
 </p>
-<h4> How do you test the warning? </h4>
+<h4>How do you test the warning?</h4>
 <p>
   If you want to see the warning, use a signal handler and do the following:
 </p>
@@ -708,7 +707,7 @@ else {
   ok (0);
 }
 </pre>
-<h3> Finally </h3>
+<h3>Finally</h3>
 <p>
   It is convenient to create an automated test using Test::More so that you can check whether the program is correct just by running the automated test. Also, in order to write your own CPAN module, you must remember it.
 </p>

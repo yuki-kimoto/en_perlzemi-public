@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Polymorphism with inheritance  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Polymorphism with inheritance - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="One of the characteristics of object orientation is polymorphism. Polymorphism can be understood in the sense that  similar descriptions behave differently .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Polymorphism with inheritance  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Polymorphism with inheritance - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="One of the characteristics of object orientation is polymorphism. Polymorphism can be understood in the sense that  similar descriptions behave differently ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20090327123752.html"> Polymorphism with inheritance </a></h2>
+<h2><a href="/blog/20090327123752.html">Polymorphism with inheritance</a></h2>
 <p>
   One of the characteristics of object orientation is polymorphism. Polymorphism can be understood in the sense that <b> similar descriptions behave differently </b>.
 </p>
@@ -85,9 +84,9 @@
 </div>
 
 
-<h3> 1. Make different behaviors depending on the class </h3>
+<h3>1. Make different behaviors depending on the class</h3>
 <p>
-  Now, let's write a sample that behaves differently depending on the class to which you belong. A simple example is to concatenate strings with specific symbols. The Unix delimiter and the Windows delimiter are treated as samples.
+  Now, let's write a example that behaves differently depending on the class to which you belong. A simple example is to concatenate strings with specific symbols. The Unix delimiter and the Windows delimiter are treated as examples.
 </p>
 <pre>
 use strict;
@@ -133,7 +132,7 @@ use base 'FilePath::Base';
 sub delimiter {return'\\'}
 </pre>
 <p>
-  When you run this sample
+  When you run this example
 </p>
 <pre>
 unix: a/b
@@ -142,9 +141,9 @@ win: a\b
 <p>
   It will be displayed.
 </p>
-<h3> 2. Pay attention to the behavior of cat_path </h3>
+<h3>2. Pay attention to the behavior of cat_path</h3>
 <p>
-  First of all, the characteristic of this sample is that the method called cat_path has two meanings.
+  First of all, the characteristic of this example is that the method called cat_path has two meanings.
 </p>
 <pre>
 package FilePath::Base;
@@ -174,7 +173,7 @@ my $win_result = $file_path_win-&gt;cat_path('a', 'b');
 <p>
   The next thing to pay attention to is the description of $self->delimiter in cat_path.
 </p>
-<h3> 3. Call a subclass method in the superclass. </h3>
+<h3>3. Call a subclass method in the superclass.</h3>
 <p>
   Let's pay attention to the inside of cat_path.
 </p>
@@ -199,7 +198,7 @@ my $unix_result = $file_path_unix-&gt;cat_path('a', 'b');
 <p>
   The FilePath::Unix class has a delimiter method, so you can call the delimiter method from within the cat_path method.
 </p>
-<h3> 4. The FilePath::Base class is an incomplete class that is intended to be inherited. </h3>
+<h3>4. The FilePath::Base class is an incomplete class that is intended to be inherited.</h3>
 <p>
   If you create an object of the FilePath::Base class, cat_file will fail if you try to call the delimiter method internally.
 </p>
@@ -213,7 +212,7 @@ $file_path_base-&gt;cat_file('a', 'b'); # Failure!
 <p>
   I would like to name such a class <b> inherited class </b>. (I couldn't find a proper name for such a class in a Perl book, so I'll call it a <b> inherited class </b>. It's called a Java abstract class because it can create objects. Not really)
 </p>
-<h3> 5. Defining methods in subclasses </h3>
+<h3>5. Defining methods in subclasses</h3>
 <p>
   And notice that the FilePath::Unix class and the FilePath::Windows class have different implementations of the delimiter method to achieve polymorphism.
 </p>

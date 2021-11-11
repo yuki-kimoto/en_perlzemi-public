@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> File::Find - Recursively process subdirectories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>File::Find - Recursively process subdirectories - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use  File::Find  to process all files recursively.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" File::Find - Recursively process subdirectories  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="File::Find - Recursively process subdirectories - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use  File::Find  to process all files recursively." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20080530121229.html"> File::Find - Recursively process subdirectories </a></h2>
+<h2><a href="/blog/20080530121229.html">File::Find - Recursively process subdirectories</a></h2>
 <p>
   You can use <strong> File::Find </strong> to process all files recursively.
 </p>
@@ -99,7 +98,7 @@ sub process {
 <p>
   After the second argument, pass the list of directories you want to process. (In the example, only one). You can change the scan order by using finddepth instead of find. (Explanation below)
 </p>
-<h4> If you do not want to change the current directory </h4>
+<h4>If you do not want to change the current directory</h4>
 <p>
   If you want to scan without changing the current directory, you can use the "no_chdir" option.
 </p>
@@ -109,7 +108,7 @@ sub process {
 <pre>
 find({wanted =&gt; \&amp;process, no_chdir =&gt; 1}, $top_dir);
 </pre>
-<h3> Variables that can be used in the processing description </h3>
+<h3>Variables that can be used in the processing description</h3>
 <table>
   <tr>
     <td>
@@ -139,7 +138,7 @@ find({wanted =&gt; \&amp;process, no_chdir =&gt; 1}, $top_dir);
 <p>
   In the sub process, you can get the current directory and the file name to be processed. Use these to describe what you want to do in each file.
 </p>
-<h3> Find scan order (going order) </h3>
+<h3>Find scan order (going order)</h3>
 <pre>
 (1) $top_dir |-(2) top.txt
              |
@@ -152,7 +151,7 @@ find({wanted =&gt; \&amp;process, no_chdir =&gt; 1}, $top_dir);
 <p>
   Scan in what is commonly referred to as the destination order. In the case of the same hierarchy, files are processed before the directory. (2) comes before (3).
 </p>
-<h3> Finddepth scanning order (returning order) </h3>
+<h3>Finddepth scanning order (returning order)</h3>
 <pre>
 (10) $top_dir |-(1) top.txt
               |
@@ -165,9 +164,9 @@ find({wanted =&gt; \&amp;process, no_chdir =&gt; 1}, $top_dir);
 <p>
   Scan in what is commonly referred to as the return order. Each directory is processed immediately after all the processing in the hierarchy below it is completed. In the case of the same hierarchy, files are processed before the directory.
 </p>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample that recursively processes all files.
+  This is a example that recursively processes all files.
 </p>
 <pre>
 use strict;
@@ -201,7 +200,7 @@ for my $file (@files) {
 }
 print "Preparation: $top_dir has been created.\n\n";
 
-# File::Find sample
+# File::Find example
 
 print "1: Recursively print all file names (base names).\n";
 # In the first argument, write the processing you want to do for each file

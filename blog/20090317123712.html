@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Creating a constructor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Creating a constructor - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Last time, I created the following class template.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Creating a constructor  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Creating a constructor - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Last time, I created the following class template." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20090317123712.html"> Creating a constructor </a></h2>
+<h2><a href="/blog/20090317123712.html">Creating a constructor</a></h2>
 <p>
   Last time, I created the following class template.
 </p>
@@ -94,7 +93,7 @@ sub title {# Implementation of accessor}
 sub author {# Implementation of accessor}
 
 </pre>
-<h3> 1. What is a constructor? </H3>
+<h3>1. What is a constructor? </H3>
 <p>
   <b> Objects are created based on the class </b>. Forget a little about what an object is and what a class is, and remember that "objects are created from a class".
 </p>
@@ -110,7 +109,7 @@ my $book = Book-&gt;new;
 <p>
   The name <b> new </b> is customarily used for the constructor name. But be sure to name the constructor new(because those who use your module expect the constructor name to be new)
 </p>
-<h3> 2. Implementation of the simplest constructor </h3>
+<h3>2. Implementation of the simplest constructor</h3>
 <p>
   Now let's implement the constructor. Below is the simplest constructor implementation. But the easiest is a little difficult.
 </p>
@@ -133,7 +132,7 @@ my $book = Book-&gt;new;
 <p>
   The answer is <b> Book </b>. The constructor new takes a <b> class name </b> as the first argument.
 </p>
-<h3> 3. Prepare a hash reference </h3>
+<h3>3. Prepare a hash reference</h3>
 <pre>
   my $self = {};
 </pre>
@@ -146,7 +145,7 @@ my $book = Book-&gt;new;
 <p>
   (To tell the truth, the object is the data itself. Remember that the object owns the data at first so it doesn't get confusing.)
 </p>
-<h3> 4. Connect data to class </h3>
+<h3>4. Connect data to class</h3>
 <p>
   Last line
 </p>
@@ -162,7 +161,7 @@ return bless $self, $class;
 <p>
   Objects are created by <b> connecting data and classes </b>. Then, I will return the tied one to the caller.
 </p>
-<h3> 5. What are objects in Perl? </H3>
+<h3>5. What are objects in Perl? </H3>
 <p>
   A Perl object is the data associated with a <b> class </b>. It doesn't mean anything more or less.
 </p>

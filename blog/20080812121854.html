@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Disable buffering  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Disable buffering - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Block buffering was very efficient in terms of performance because it stores the output in a write buffer and writes the accumulated amount all at once.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Disable buffering  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Disable buffering - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Block buffering was very efficient in terms of performance because it stores the output in a write buffer and writes the accumulated amount all at once." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080812121854.html"> Disable buffering </a></h2>
+<h2><a href="/blog/20080812121854.html">Disable buffering</a></h2>
 <p>
   Block buffering was very efficient in terms of performance because it stores the output in a write buffer and writes the accumulated amount all at once.
 </p>
@@ -96,16 +95,16 @@
 <pre>
 $| = 1;
 </pre>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  Below is a sample to switch to command buffering.
+  Below is a example to switch to command buffering.
 </p>
 <pre>
 use strict;
 use warnings;
 
 # File for writing (Note that it will be overwritten)
-my $file = "sample20080812.txt";
+my $file = "example20080812.txt";
 
 open(my $fh, "&gt;", $file)
   or die "Cannot open $file:$!";
@@ -128,7 +127,7 @@ close $fh or die "Cannot close $file";
 <p>
   (Reference) <a href="/blog/20170522149546.html">sleep function</a>, <a href="/blog/20080718121643.html">open function</a>, <a href="/blog" /20160312145776.html">close function</a>, <a href="/blog/20100212126425.html">die function</a>
 </p>
-<h3> Command buffering </h3>
+<h3>Command buffering</h3>
 <p>
   Perl does not support writing without buffering at all. You don't have to write one character at a time. Instead, you can use command buffering to write when the command print is finished.
 </p>
@@ -141,8 +140,8 @@ close $fh or die "Cannot close $file";
 <p>
   Command buffering is used to avoid this.
 </p>
-<h3> Code explanation </h3>
-<h4> (1) Enable command buffering </h4>
+<h3>Code explanation</h3>
+<h4>(1) Enable command buffering</h4>
 <pre>
 # Change default output handle
 my $oldfh = select $fh;

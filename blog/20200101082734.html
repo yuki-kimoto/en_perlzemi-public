@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Drawing basic figures and creating tables - PDF::Create forms with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Drawing basic figures and creating tables - PDF::Create forms with API2 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to create a table with PDF::API2.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Drawing basic figures and creating tables - PDF::Create forms with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Drawing basic figures and creating tables - PDF::Create forms with API2 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to create a table with PDF::API2." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20200101082734.html"> Drawing basic figures and creating tables - PDF::Create forms with API2 </a></h2>
+<h2><a href="/blog/20200101082734.html">Drawing basic figures and creating tables - PDF::Create forms with API2</a></h2>
 <p>
   I will explain how to create a table with PDF::API2.
 </p>
@@ -106,11 +105,11 @@
   <tr> <td> Item </td> <td> Item </td> <td> Item </td> </tr>
   <tr> <td> Item </td> <td> Item </td> <td> Item </td> </tr>
 </table>
-<h3> Draw basic shapes </h3>
+<h3>Draw basic shapes</h3>
 <p>
   First of all, let's draw a basic shape with PDF::API2 as a basis for creating a table.
 </p>
-<h4> Generate content object for graphics </h4>
+<h4>Generate content object for graphics</h4>
 <p>
   First of all, create a content object for the graphic. You can create a content object for graphics by calling the gfx method from the page object. This is a PDF::API2::Content object.
 </p>
@@ -124,7 +123,7 @@ my $page = $pdf-&gt;page;
 # Generate content objects for graphics
 my $gfx = $page-&gt;gfx;
 </pre>
-<h4> Draw a line </h4>
+<h4>Draw a line</h4>
 <p>
   As the most basic drawing, let's draw a line with PDF::API2.
 </p>
@@ -151,7 +150,7 @@ $gfx-&gt;stroke;
 <p>
   When drawing figures in PDF::API2, remember the feeling of connecting paths and drawing.
 </p>
-<h4> Set line thickness </h4>
+<h4>Set line thickness</h4>
 <p>
   The line thickness can be set with the linewidth method. Call it before you stroke.
 </p>
@@ -162,7 +161,7 @@ $gfx-&gt;linewidth(3);
 <p>
   The line width is the same for the settings when drawing circles and polygons.
 </p>
-<h4> Set line color </h4>
+<h4>Set line color</h4>
 <p>
   The line color can be set with the strokecolor method. Call it before you stroke. The color can be specified by color name, RGB, or CMYK. Each color can have a 1-byte, 2-byte, 3-byte, or 4-byte value. For example, cyan can be set as%F000 or%FFFF000000000000.
 </p>
@@ -182,7 +181,7 @@ $gfx-&gt;strokecolor('%FF000000');
 <p>
   The color format is the same for the fill color settings.
 </p>
-<h4> Draw a triangle surrounded by a line </h4>
+<h4>Draw a triangle surrounded by a line</h4>
 <p>
   As an application of drawing a line, let's draw a triangle surrounded by a line. The line method connects the points and finally returns to the starting point.
 </p>
@@ -262,7 +261,7 @@ $gfx-&gt;stroke;
 my $pdf_file = 'render_tri.pdf';
 $pdf-&gt;saveas($pdf_file);
 </pre>
-<h4> Fill </h4>
+<h4>Fill</h4>
 <p>
   You can fill it by enclosing it in a path. Use the fill method to fill. The default fill color is black. Note that fill must be called before the stroke.
 </p>
@@ -280,7 +279,7 @@ $gfx-&gt;stroke;
 # Fill and draw a line
 $gfx-&gt;fillstroke;
 </pre>
-<h4> Set the fill color </h4>
+<h4>Set the fill color</h4>
 <p>
   The fill color can be set with the fillcolor method. Call it before filling. The color can be specified by color name, RGB, or CMYK. Each color can have a 1-byte, 2-byte, 3-byte, or 4-byte value. For example, cyan can be set as%F000 or%FFFF000000000000.
 </p>
@@ -294,7 +293,7 @@ $gfx-&gt;fillcolor('# 0123ab');
 # Set fill color (CMYK)
 $gfx-&gt;fillcolor('%FF000000');
 </pre>
-<h3> Draw a rectangle </h3>
+<h3>Draw a rectangle</h3>
 <p>
   PDF::API2 has a convenient method for drawing rectangles. All shapes can be created by connecting lines using the above method, but since there are many steps to connect lines, a method for drawing basic shapes such as rectangles is prepared.
 </p>
@@ -341,65 +340,65 @@ my $pdf_file = 'basic_rect.pdf';
 $pdf-&gt;saveas($pdf_file);
 </pre>
 <p>
-  This is a sample that can draw a rectangle that can be executed as it is.
+  This is a example that can draw a rectangle that can be executed as it is.
 </p>
-<h3> Write other basic figures </h3>
+<h3>Write other basic figures</h3>
 <p>
   I will introduce which method to use when you want to write other basic figures.
 </p>
-<h4> Write a circle </h4>
+<h4>Write a circle</h4>
 <p>
   If you want to draw a circle, use the circle method. It can be used for bullet points in the list.
 </p>
-<h4> Draw an ellipse </h4>
+<h4>Draw an ellipse</h4>
 <p>
   If you want to draw an ellipse, use the ellipse method.
 </p>
-<h4> Write a fan shape</H4>
+<h4>Write a fan shape</H4>
 <p>
   If you want to draw a sector, use the pie method.
 </p>
-<h4> Draw an arc </h4>
+<h4>Draw an arc</h4>
 <p>
   If you want to draw an arc, use the arc or bogen method. The bogen method can be used for rounded corners because you can specify the start and end points of the arc.
 </p>
-<h4> Draw an elliptical arc </h4>
+<h4>Draw an elliptical arc</h4>
 <p>
   If you want to draw an elliptical arc, use the bogen method.
 </p>
-<h4> Write a curve (Peget curve) </h4>
+<h4>Write a curve (Peget curve)</h4>
 <p>
   To draw a curve (Peget curve), use the curve method. You can draw a curve by the Peje curve algorithm.
 </p>
-<h4> Write a curve (spline curve) </h4>
+<h4>Write a curve (spline curve)</h4>
 <p>
   To draw a curve (spline curve), use the spline method. You can draw a curve that connects points smoothly.
 </p>
-<h4> Draw a polygon </h4>
+<h4>Draw a polygon</h4>
 <p>
   Use the poly method to draw a polygon. You can draw triangles, pentagons, hexagons, etc.
 </p>
-<h4> Rotate the shape </h4>
+<h4>Rotate the shape</h4>
 <p>
   Use the rotate method to rotate the shape.
 </p>
-<h4> Enlarge/reduce the figure </h4>
+<h4>Enlarge/reduce the figure</h4>
 <p>
   Use the scale method to scale the shape.
 </p>
-<h4> To draw a horizontal line </h4>
+<h4>To draw a horizontal line</h4>
 <p>
   There is a hline method that allows you to easily draw a horizontal line.
 </p>
-<h4> To draw a vertical line </h4>
+<h4>To draw a vertical line</h4>
 <p>
   There is a vline method that allows you to easily draw vertical lines.
 </p>
-<h4> To draw a dashed line </h4>
+<h4>To draw a dashed line</h4>
 <p>
   To draw a wavy line, use the linedash method.
 </p>
-<h3> Create a table </h3>
+<h3>Create a table</h3>
 <p>
   Now let's create a table.
 </p>
@@ -518,9 +517,9 @@ $pdf-&gt;saveas($pdf_file);
 <p>
   <a href="/examples/pdf/table.pdf">Output result empty table</a>,
 </p>
-<h4> Sample table with headings and items </h4>
+<h4>Example table with headings and items</h4>
 <p>
-  Finally, let's create a sample table with headings and items.
+  Finally, let's create a example table with headings and items.
 </p>
 <p>
   The following table will be exported to PDF.

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Here is a summary of how to create a web browser automatic operation robot in Perl. For Windows users.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Here is a summary of how to create a web browser automatic operation robot in Perl. For Windows users." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -53,7 +52,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20210726104613.html"> Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing) </a></h2>
+    <h2><a href="/blog/20210726104613.html">Summary of how to create a web browser automatic operation robot with Perl - Let's make a practical RPA with Perl (start writing)</a></h2>
 <p>
   Here is a summary of how to create a web browser automatic operation robot in Perl. For Windows users.
 </p>
@@ -73,7 +72,7 @@
 </div>
 
 
-<h3> Install Strawberry Perl on Windows </h3>
+<h3>Install Strawberry Perl on Windows</h3>
 <p>
   To create a web browser auto-operation robot, you need Perl set up for Windows.
 </p>
@@ -86,7 +85,7 @@
 <p>
   <a href="https://perlzemi.com/blog/20180808153368.html">Installing Strawberry Perl</a>
 </p>
-<h3> Perl module used to create a web browser automatic operation robot </h3>
+<h3>Perl module used to create a web browser automatic operation robot</h3>
 <p>
   Web browser automatic operation Perl modules used to create robots are mainly as follows.
 </p>
@@ -94,7 +93,7 @@
   <li> Win32::GuiTest - Mouse position specification, keyboard operation </li>
   <li> Win32::Clipboard - Clipboard operation </li>
 </ul>
-<h3> Window operation </h3>
+<h3>Window operation</h3>
 <p>
   On Windows, use Win32::GuiTest to get windows, position the mouse, click, and operate the keyboard. Loading the required function.
 </p>
@@ -113,7 +112,7 @@ use Win32::GuiTest (
   'Send Keys',
 );
 </pre>
-<h4> Enable Unicode semantics </h4>
+<h4>Enable Unicode semantics</h4>
 <p>
   First of all, Perl is Unicode-enabled since Perl 5.8, so Win32::GuiTest will also be able to use Unicode-enabled semantics. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written.
 </p>
@@ -121,7 +120,7 @@ use Win32::GuiTest (
 # Enable unicode semantics
 Unicode Semantics (1);
 </pre>
-<h4> Get desktop window </h4>
+<h4>Get desktop window</h4>
 <p>
   To get the desktop window, use the GetDesktopWindow function. A desktop window is a window that shows the entire desktop.
 </p>
@@ -129,7 +128,7 @@ Unicode Semantics (1);
 # Get desktop window
 my $desktop_win = GetDesktopWindow ();
 </pre>
-<h4> Get a list of child windows </h4>
+<h4>Get a list of child windows</h4>
 <p>
   In order to perform automatic operation of the web browser, it is necessary to get the window of the browser, but in order to do so, it is necessary to first get the list of child windows managed under the desktop window. Use GetChildWindows to get a list of child windows.
 </p>
@@ -142,7 +141,7 @@ for my $window (@windows) {
   
 }
 </pre>
-<h4> Get the text of the window </h4>
+<h4>Get the text of the window</h4>
 <p>
   Use the GetWindowText function to get the text of the window.
 </p>
@@ -156,9 +155,9 @@ my $win_text = GetWindowText ($win);
 <pre>
 Perl Club-Google Chrome
 </pre>
-<h4> Get the target window </h4>
+<h4>Get the target window</h4>
 <p>
-  If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write a sample to get the target window. Make sure that the target page of the target web browser is launched.
+  If you want to create a web browser automatic operation robot, you need to get the target window from the list of child windows. Write a example to get the target window. Make sure that the target page of the target web browser is launched.
 </p>
 <pre>
 # Get the target window (Perl Club-Google Chrome)
@@ -190,7 +189,7 @@ my $win;
 }
 </pre>
 <!-
-<h4> Keyboard input </h4>
+<h4>Keyboard input</h4>
     # Go to Console tab
     SendKeys ('^]');
     # Go to Elements tab
@@ -220,14 +219,14 @@ my $win;
 <p>
   ->
 </p>
-<h3> Clipboard </h3>
+<h3>Clipboard</h3>
 <p>
   Use the Win32::Clipboard module to work with the Windows clipboard.
 </p>
 <pre>
 use Win32::Clipboard;
 </pre>
-<h4> Clipboard object generation </h4>
+<h4>Clipboard object generation</h4>
 <p>
   First create a clipboard object.
 </p>
@@ -235,15 +234,15 @@ use Win32::Clipboard;
 # Clipboard object creation
 my $clip = Win32::Clipboard-&gt;new;
 </pre>
-<h4> Save Perl string to clipboard </h4>
+<h4>Save Perl string to clipboard</h4>
 <p>
-  Save the Perl string with the Set method. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written. When saving a character string from the Perl side to the Windows clipboard, encode it in cp932 and pass it. This is because the character code of the text on the Windows clipboard is cp932.
+  Save the Perl string with the Set method. It is assumed that the Perl source code is written in UTF-8 and "use utf8;" is written. When saving a string from the Perl side to the Windows clipboard, encode it in cp932 and pass it. This is because the character code of the text on the Windows clipboard is cp932.
 </p>
 <pre>
 # Save string to clipboard
 $clip-&gt;Set(encode('cp932', $string));
 </pre>
-<h4> Extract Perl string from clipboard </h4>
+<h4>Extract Perl string from clipboard</h4>
 <p>
   By specifying "CF_UNICODETEXT" in the argument of the GetAs method, it can be obtained in one Unicode encoding format called "UTF16-LE". Convert this to a Perl string using the Perl Encode function decode function. You can get the contents of the Windows clipboard as a Perl string. Please note that you cannot get it correctly with just the GetText function.
 </p>
@@ -252,7 +251,7 @@ $clip-&gt;Set(encode('cp932', $string));
 my $string = $CLIP-&gt;GetAs(CF_UNICODETEXT);
 $text = Encode::decode("UTF16-LE", $string);
 </pre>
-<h4> Paste the contents of the clipboard to the form part </h4>
+<h4>Paste the contents of the clipboard to the form part</h4>
 <p>
   Send "Ctrl + c" to paste the contents of the clipboard into a text field or form part such as a text area. "^" Means "Ctrl".
 </p>
@@ -260,8 +259,8 @@ $text = Encode::decode("UTF16-LE", $string);
 # Paste the contents of the clipboard into a form part
 SendKeys ('^c');
 </pre>
-<h3> Points for creating RPA robots </h3>
-<h4> Wait for browser response </h4>
+<h3>Points for creating RPA robots</h3>
+<h4>Wait for browser response</h4>
 <p>
   If you want to wait for the browser response, use the sleep function. Set the seconds as safe as possible when the browser response is returned. However, it depends on the network conditions, so it may happen that the next operation starts and the operation changes without returning.
 </p>
@@ -269,7 +268,7 @@ SendKeys ('^c');
 # Wait 3 seconds
 sleep 3;
 </pre>
-<h3> Notes on RPA robots </h3>
+<h3>Notes on RPA robots</h3>
 <p>
   RPA is a method with many problems in processing automation and operational efficiency. RPA robots are impressed with their movement the moment they see them, but keep in mind that processing speed, program maintainability, and automation are unreliable.
 </p>

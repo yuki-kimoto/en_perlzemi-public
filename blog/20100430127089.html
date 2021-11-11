@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Carp-Raise an exception from the caller's point of view  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Carp - Raise an exception from the caller's point of view - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The  Carp  module allows you to raise an exception from the perspective of the module caller.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Carp-Raise an exception from the caller's point of view  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Carp - Raise an exception from the caller's point of view - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The  Carp  module allows you to raise an exception from the perspective of the module caller." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20100430127089.html"> Carp-Raise an exception from the caller's point of view </a></h2>
+<h2><a href="/blog/20100430127089.html">Carp - Raise an exception from the caller's point of view</a></h2>
 <p>
   The <strong> Carp </strong> module allows you to raise an exception from the perspective of the module caller.
 </p>
@@ -110,9 +109,9 @@ croak "Exception!";
     Use croak to raise an exception in a Perl module (* .pm).
   </li>
 </ul>
-<h3> What is the perspective of the module caller? </H3>
+<h3>What is the perspective of the module caller? </H3>
 <p>
-  I think the term module caller's point of view is a little difficult to understand, so I'll explain it using a sample.
+  I think the term module caller's point of view is a little difficult to understand, so I'll explain it using a example.
 </p>
 <p>
   Let's say your Module module defines a parse function. Suppose you call this function in the main package and you get an exception.
@@ -170,7 +169,7 @@ Exception! At a.pl line 14
 <p>
   You can use croak in this way to throw an exception from the caller's point of view.
 </p>
-<h3> See full stack trace </h3>
+<h3>See full stack trace</h3>
 <p>
   You may want to know all the information about where the function was called and where the exception occurred. In such cases, you can change the message added by croak to show the complete stack and race.
 </p>
@@ -215,7 +214,7 @@ Module 2-If croak is executed here, the caller will be module 1.
 <p>
   Even in such a case, you can get a complete stack trace by writing use Carp 'verbose'.
 </p>
-<h3> FAQ about Carp module </h3>
+<h3>FAQ about Carp module</h3>
 <p>
   Q. The Carp module also has a function called confess, should I use croak?
 </p>

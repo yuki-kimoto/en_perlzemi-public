@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to use C ++ library from XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to use C ++ library from XS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl's XS also allows you to call libraries written in  C ++ . Just specify "g ++" for C ++ for the compiler and linker.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to use C ++ library from XS  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to use C ++ library from XS - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl's XS also allows you to call libraries written in  C ++ . Just specify "g ++" for C ++ for the compiler and linker." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170203150055.html"> How to use C ++ library from XS </a></h2>
+<h2><a href="/blog/20170203150055.html">How to use C ++ library from XS</a></h2>
 <p>
   Perl's XS also allows you to call libraries written in <b> C ++ </b>. Just specify "g ++" for C ++ for the compiler and linker.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Create a module with h2xs </h3>
+<h3>Create a module with h2xs</h3>
 <p>
   First, create a module for XS with h2xs.
 </p>
@@ -104,7 +103,7 @@ README
 SomeModule.xs
 t/&lt;/pre&gt;
 
-&lt;h3&gt; Creating a C ++ library &lt;/h3&gt;
+&lt;h3&gt;Creating a C ++ library&lt;/h3&gt;
 
 Let's create a C ++ library. Create a header file and a source file.
 
@@ -131,7 +130,7 @@ void mylib_print() {
 <p>
   Save the header and source files and place them in the same directory where the XS files are located.
 </p>
-<h3> XS file description </h3>
+<h3>XS file description</h3>
 <p>
   Let's write an XS file. I am calling mylib_print.
 </p>
@@ -153,7 +152,7 @@ foo (...)
   XSRETURN (0);
 }
 </pre>
-<h3> Modify Makefile.PL </h3>
+<h3>Modify Makefile.PL</h3>
 <p>
   Next, let's modify Makefile.PL a little. The bottom "OBJECT" option is commented out by default, so uncomment it. If you set "$(O_FILES)", all C language source files and C ++ source files in the current directory will be compiled.
 </p>
@@ -180,7 +179,7 @@ WriteMakefile (
     LD =&gt;'g ++',
 );
 </pre>
-<h3> Test script </h3>
+<h3>Test script</h3>
 <p>
   Create a test script. This should be in the same directory where the XS files are located.
 </p>
@@ -192,7 +191,7 @@ use SomeModule;
 
 SomeModule::foo ();
 </pre>
-<h3> Compile and run </h3>
+<h3>Compile and run</h3>
 <p>
   Let's compile and run it.
 </p>
@@ -210,12 +209,12 @@ mylib_cpp
 <p>
   Now you can use the C ++ library from the XS file.
 </p>
-<h3> FAQ </h3>
-<h4> Is it possible to write C ++ directly in the XS file? </h4>
+<h3>FAQ</h3>
+<h4>Is it possible to write C ++ directly in the XS file?</h4>
 <p>
   I can do it. However, it tends to cause problems such as collision with Perl symbols, so I think it is better to describe it in the source file and header file.
 </p>
-<h4> Is it possible to use a mixture of C language libraries and C ++ libraries? </h4>
+<h4>Is it possible to use a mixture of C language libraries and C ++ libraries?</h4>
 <p>
   C ++ is almost upward compatible with C language, so I think it's okay if the C language library can be compiled with g ++. If not, I'm not sure.
 </p>

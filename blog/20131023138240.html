@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Statistical functions in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Statistical functions in PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Here are some basic statistical functions.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Statistical functions in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Statistical functions in PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Here are some basic statistical functions." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20131023138240.html"> Statistical functions in PDL </a></h2>
+<h2><a href="/blog/20131023138240.html">Statistical functions in PDL</a></h2>
 <p>
   Here are some basic statistical functions.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Maximum </h3>
+<h3>Maximum</h3>
 <p>
   To find the <strong> maximum </strong> from a one-dimensional PDL variable, use the <strong> max method </strong>.
 </p>
@@ -101,7 +100,7 @@ my $max = $nums-&gt;max;
 <p>
   The PDL::Ufunc module provides functions for calculating statistics from PDL variables.
 </p>
-<h3> Minimum </h3>
+<h3>Minimum</h3>
 <p>
   Use the <strong> min method </strong> to find the <strong> minimum </strong>.
 </p>
@@ -109,7 +108,7 @@ my $max = $nums-&gt;max;
 # minimum value
 my $min = $nums-&gt;min;
 </pre>
-<h3> Total </h3>
+<h3>Total</h3>
 <p>
   Use the <strong> sum method </strong> to find the <strong> sum </strong>.
 </p>
@@ -117,14 +116,14 @@ my $min = $nums-&gt;min;
 # total
 my $total = $nums-&gt;sum;
 </pre>
-<h3> Average </h3>
+<h3>Average</h3>
 <p>
   Use the <strong> avg method </strong> to find the <strong> average </strong>.
 </p>
 <pre>
 my $average = $nums-&gt;avg;
 </pre>
-<h3> Median </h3>
+<h3>Median</h3>
 <p>
   Use the <strong> median method </strong> to find the <strong> median </strong>.
 </p>
@@ -134,7 +133,7 @@ my $median = $nums-&gt;median;
 <p>
   The median is the value that comes in the middle when all the values are listed.
 </p>
-<h3> Mode </h3>
+<h3>Mode</h3>
 <p>
   Use the <strong> mode method </strong> to find the <strong> mode </strong>.
 </p>
@@ -144,7 +143,7 @@ my $mode = $nums-&gt;mode;
 <p>
   The mode is the value that appears most often.
 </p>
-<h3> Sort </h3>
+<h3>Sort</h3>
 <p>
   Use the <strong> qsort method </strong> to sort in ascending order.
 </p>
@@ -160,9 +159,9 @@ use PDL::NiceSlice;
 my $nums_sort_desc = $nums_sort_asc (-1: 0);
 </pre>
  The meaning of "-1: 0" means that the first -1 is the last element. 0 means the first element. "-1: 0" means from the last element to the first element, and the order can be reversed.
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample that can be executed.
+  This is a example that can be executed.
 </p>
 <pre>
 use strict;
@@ -208,7 +207,7 @@ my $nums_sort_desc = $nums_sort_asc (-1: 0);
 print "$nums_sort_asc\n";
 print "$nums_sort_desc\n";
 </pre>
-<h3> Install PDL::Stats::Basic </h3>
+<h3>Install PDL::Stats::Basic</h3>
 <p>
   The following statistical functions are made available by a module called <strong> PDL::Stats::Basic </strong>. You need to install PDL::Stats.
 </p>
@@ -221,7 +220,7 @@ cpan PDL::Stats;
 <pre>
 use PDL::Stats::Basic;
 </pre>
-<h3> Distributed </h3>
+<h3>Distributed</h3>
 <p>
   To find the <strong> distributed </strong>, use the <strong> var </strong> method.
 </p>
@@ -235,7 +234,7 @@ my $nums = pdl [4, 2, 7];
 # Distributed
 my $variance = $nums-&gt;var;
 </pre>
-<h3> Bias of an estimulus </h3>
+<h3>Bias of an estimulus</h3>
 <p>
   To find the <strong> unbiased variance </strong>, use the <strong> var_unbiased </strong> method.
 </p>
@@ -246,7 +245,7 @@ my $variance = $nums-&gt;var_unbiased;
 <p>
   Bias of an estimulus has a denominator of (n -1).
 </p>
-<h3> Standard deviation </h3>
+<h3>Standard deviation</h3>
 <p>
   To find the <strong> standard deviation </strong>, use the <strong> stdv </strong> method.
 </p>
@@ -257,7 +256,7 @@ my $stdv = $nums-&gt;stdv;
 <p>
   The meaning of the standard deviation is an indication of how scattered the data is. The standard deviation formula is the "positive square root of the variance". Variance also indicates how scattered the data is, but because the units are different from the original data, it is difficult to compare with the original data. If you take the positive square root and make it the standard deviation, the unit will be the same as the unit of the original data.
 </p>
-<h3> Bias of an estimulus </h3>
+<h3>Bias of an estimulus</h3>
 <p>
   To find the <strong> unbiased standard deviation </strong>, use the <strong> stdv_unbiased </strong> method.
 </p>
@@ -268,7 +267,7 @@ my $stdv = $nums-&gt;stdv_unbiased;
 <p>
   The unbiased standard deviation formula is the "positive square root of the unbiased variance".
 </p>
-<h3> Standard error </h3>
+<h3>Standard error</h3>
 <p>
   To find the <strong> standard error </strong>, use the <strong> se </strong> method.
 </p>
@@ -276,7 +275,7 @@ my $stdv = $nums-&gt;stdv_unbiased;
 # Standard error
 my $se = $nums-&gt;se;
 </pre>
-<h3> Sum of deviation squares </h3>
+<h3>Sum of deviation squares</h3>
 <p>
   To find the <strong> sum of squared deviations </strong>, use the <strong> ss </strong> method.
 </p>
@@ -284,7 +283,7 @@ my $se = $nums-&gt;se;
 # Deviation square sum
 my $ss = $nums-&gt;ss;
 </pre>
-<h3> Skewness </h3>
+<h3>Skewness</h3>
 <p>
   To find the <strong> skewness </strong>, use the <strong> skew </strong> method.
 </p>
@@ -292,7 +291,7 @@ my $ss = $nums-&gt;ss;
 # Skewness
 my $skew = $nums-&gt;skew;
 </pre>
-<h3> Bias of an estimulus </h3>
+<h3>Bias of an estimulus</h3>
 <p>
   To find the <strong> unbiased skewness </strong>, use the <strong> skew_unbiased </strong> method.
 </p>
@@ -300,7 +299,7 @@ my $skew = $nums-&gt;skew;
 # Bias of an estimulus
 my $skew_unbiased = $nums-&gt;skew_unbiased;
 </pre>
-<h3> Kurtosis </h3>
+<h3>Kurtosis</h3>
 <p>
   To find the <strong> kurtosis </strong>, use the <strong> kurt </strong> method.
 </p>
@@ -308,7 +307,7 @@ my $skew_unbiased = $nums-&gt;skew_unbiased;
 # Kurtosis
 my $kurt = $nums-&gt;kurt;
 </pre>
-<h3> Bias of an estimulus </h3>
+<h3>Bias of an estimulus</h3>
 <p>
   To find the <strong> unbiased kurtosis </strong>, use the <strong> kurt_unbiased </strong> method.
 </p>
@@ -316,9 +315,9 @@ my $kurt = $nums-&gt;kurt;
 # Bias of an estimulus
 my $kurt_unbiased = $nums-&gt;kurt_unbiased;
 </pre>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample that can be executed.
+  This is a example that can be executed.
 </p>
 <pre>
 use strict;

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Representation of multidimensional data in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Representation of multidimensional data in PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="So far, we have only dealt with one-dimensional data, but I would like to explain how to represent  multidimensional data  in PDL.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Representation of multidimensional data in PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Representation of multidimensional data in PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="So far, we have only dealt with one-dimensional data, but I would like to explain how to represent  multidimensional data  in PDL." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20131029138301.html"> Representation of multidimensional data in PDL </a></h2>
+<h2><a href="/blog/20131029138301.html">Representation of multidimensional data in PDL</a></h2>
 <p>
   So far, we have only dealt with one-dimensional data, but I would like to explain how to represent <strong> multidimensional data </strong> in PDL.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Representation of multidimensional data </h3>
+<h3>Representation of multidimensional data</h3>
 <p>
   To represent multidimensional data, use the pdl function as follows:
 </p>
@@ -118,7 +117,7 @@ my $data = pdl [
 Rank 1 Rank 2 Rank 3
 [one two Three],
 </pre>
-<h4> Get and set elements </h4>
+<h4>Get and set elements</h4>
 <p>
   Learn how to get and set elements of multidimensional data. Use nice slice notation to get and set elements. Specify in the order of 1D rank and 2D rank, and the subscripts start from 0.
 </p>
@@ -143,9 +142,9 @@ my $data_1_2_raw = $data-&gt;at(1, 2);
 # Set element.
 $data (1, 2). = 20;
 </pre>
-<h4> Get multiple elements, set multiple elements </h4>
+<h4>Get multiple elements, set multiple elements</h4>
 <p>
-  You can also get and set multiple elements for a PDL variable. In the following example, the 2nd to 3rd ranks of the 1st dimension and the 3rd rank of the 2nd dimension are acquired.
+  You can also get and set multiple elements for a PDL variable. In the following example, the 2nd to 3rd ranks of the 1st dimension and the 3rd rank of the 2nd dimension are got.
 </p>
 <pre>
 # Acquisition of multiple elements (1D 2-3 ranks, 2D 3 ranks)
@@ -188,9 +187,9 @@ $data (1: 2, 0: 1). = pdl [
   [42, 43]
 ];;
 </pre>
-<h4> Sample </h4>
+<h4>Example</h4>
 <p>
-  This is a sample that can be executed.
+  This is a example that can be executed.
 </p>
 <pre>
 use strict;
@@ -257,11 +256,11 @@ $data (1: 2, 0: 1). = pdl [
 
 print "$data";
 </pre>
-<h3> Data initialization </h3>
+<h3>Data initialization</h3>
 <p>
   PDL has various data initialization functions. I will show you how to initialize the data.
 </p>
-<h4> Initialize with 0 </h4>
+<h4>Initialize with 0</h4>
 <p>
   Use the zeros method to specify a multidimensional rank number and initialize it with 0. zeros is defined in PDL::Core.
 </p>
@@ -271,7 +270,7 @@ use PDL;
 # Initialize with 0 (1D has 2 ranks, 2D has 3 ranks)
 my $data_zeros = pdl-&gt;sequence(2, 3);
 </pre>
-<h4> Initialize with 1 </h4>
+<h4>Initialize with 1</h4>
 <p>
   Use the ones method to specify the number of ranks in multiple dimensions and initialize with 1. ones is defined in PDL::Core.
 </p>
@@ -280,7 +279,7 @@ my $data_zeros = pdl-&gt;sequence(2, 3);
 my $data_ones = pdl-&gt;ones(2, 3);
 print "$data_ones\n";
 </pre>
-<h4> Initialize with null </h4>
+<h4>Initialize with null</h4>
 <p>
   The PDL defines a value of null. Use the null method to initialize with null. null is defined in PDL::Core.
 </p>
@@ -288,7 +287,7 @@ print "$data_ones\n";
 # Initialize with null
 my $data_null = pdl-&gt;null;
 </pre>
-<h4> Initialize from 1 to n </h4>
+<h4>Initialize from 1 to n</h4>
 <p>
   Use the <strong> sequence </strong> method to <strong> initialize with a value between 0 and n-1 </strong>. sequence is defined in PDL::Basic.
 </p>
@@ -303,9 +302,9 @@ my $data_seq = pdl-&gt;sequence(20);
 # Initialize with 0-14 (1D 3 ranks, 2D 5 ranks)
 my $data_seq2 = pdl-&gt;sequence(3, 5);
 </pre>
-<h4> Sample </h4>
+<h4>Example</h4>
 <p>
-  This is a sample that can be executed.
+  This is a example that can be executed.
 </p>
 <pre>
 use PDL;
@@ -330,7 +329,7 @@ print "$data_seq\n";
 my $data_seq2 = pdl-&gt;sequence(3, 5);
 print "$data_seq2\n";
 </pre>
-<h3> Calculate multiple elements at once </h3>
+<h3>Calculate multiple elements at once</h3>
 <p>
   PDL allows you to calculate multiple elements at once. See the data below.
 </p>
@@ -344,7 +343,7 @@ my $data = pdl [
   [10, 11, 12]
 ];;
 </pre>
-<h4> Sum calculation to reduce one-dimensional rank </h4>
+<h4>Sum calculation to reduce one - dimensional rank</h4>
 <p>
   First, let's perform a sum operation that reduces the one-dimensional rank. The above data is an image that looks like the following.
 </p>
@@ -370,7 +369,7 @@ my $data_sumover1 = $data-&gt;sumover;
 <pre>
 [6, 15, 24, 33]
 </pre>
-<h4> Sum calculation to reduce 2D rank </h4>
+<h4>Sum calculation to reduce 2D rank</h4>
 <p>
   In the above example, the sum operation is performed to reduce the one-dimensional rank. Next, let's perform a sum operation that reduces the two-dimensional rank. To do this, use the <strong> xchg </strong> method to exchange 1D and 2D positions, and then use the someover function.
 </p>
@@ -387,7 +386,7 @@ my $data_sumover2 = $data-&gt;xchg(0, 1)-&gt;sumover;
 <p>
   In addition to xchg, there are <strong> mv </strong> and <strong> reorder </strong> methods for moving the position of the dimension, so let's check them.
 </p>
-<h4> Methods that perform other operations that reduce dimensions </h4>
+<h4>Methods that perform other operations that reduce dimensions</h4>
 <p>
   In addition to sumover, PDL::Ufunc defines methods that perform the same type of operations.
 </p>
@@ -481,9 +480,9 @@ my $data_sumover2 = $data-&gt;xchg(0, 1)-&gt;sumover;
     </td>
   </tr>
 </table>
-<h4> Sample </h4>
+<h4>Example</h4>
 <p>
-  This is a sample that can be executed.
+  This is a example that can be executed.
 </p>
 <pre>
 use strict;

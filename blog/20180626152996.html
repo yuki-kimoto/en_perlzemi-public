@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl 5.28 released-Unicode 10.0 support, faster string concatenation, ref function, keys function, faster for loop  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl 5.28 released - Unicode 10.0 support, faster string concatenation, ref function, keys function, faster for loop - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl 5.28 released-Unicode 10.0 support, faster string concatenation, ref function, keys function, faster for loop  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl 5.28 released - Unicode 10.0 support, faster string concatenation, ref function, keys function, faster for loop - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -53,9 +52,9 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20180626152996.html"> Perl 5.28 released-Unicode 10.0 support, faster string concatenation, ref function, keys function, faster for loop </a></h2>
+    <h2><a href="/blog/20180626152996.html">Perl 5.28 released - Unicode 10.0 support, faster string concatenation, ref function, keys function, faster for loop</a></h2>
 <p>
-  <a href="http://f.hatena.ne.jp/perlcodesample/20180626074702"><img src = "https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample" /20180626/20180626074702.png "alt =" 20180626074702"></a>
+  <a href="http://f.hatena.ne.jp/perlcodeexample/20180626074702"><img src = "https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodeexample" /20180626/20180626074702.png "alt =" 20180626074702"></a>
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -76,11 +75,11 @@
 <p>
   Perl 5.28 was released on June 22, 2018. Introducing some nice features in Perl 5.28.
 </p>
-<h4> Unicode 10.0 support </h4>
+<h4>Unicode 10.0 support</h4>
 <p>
   <a href="https://internet.watch.impress.co.jp/docs/news/1066482.html">Unicode 10.0</a> is now supported. It seems that 56 kinds of new emoji can be used.
 </p>
-<h4> Speeding up string concatenation </h4>
+<h4>Speeding up string concatenation</h4>
 <p>
   Multiple string concatenation has been sped up. This is because it is now processed internally by a single opcode called multiconcat.
 </p>
@@ -107,28 +106,28 @@
 <p>
   In addition, sprintf, which contains constant strings, has also been optimized using multiconcat.
 </p>
-<h4> Speeding up the ref function </h4>
+<h4>Speeding up the ref function</h4>
 <p>
   The ref function is now much faster in boolean contexts. This is because the boolean context no longer creates temporary strings.
 </p>
-<h4> Speeding up the keys function </h4>
+<h4>Speeding up the keys function</h4>
 <p>
   The keys function has been more optimized in the scalar context.
 </p>
-<h4> Speed up for loop </h4>
+<h4>Speed up for loop</h4>
 <p>
   For loops and similar syntax have become more efficient in most cases.
 </p>
  
-<h4> Perl -i replacement is safe </h4>
+<h4>Perl - i replacement is safe</h4>
 <p>
   Replacing file contents with perl -i is now safer as it is backed up during editing.
 </p>
-<h4> Fixed a bug that cannot be installed on Cent OS 5 </h4>
+<h4>Fixed a bug that cannot be installed on Cent OS 5</h4>
 <p>
   Perl 5.26 couldn't be installed on Cent OS 5, but Perl 5.28 allows it to be installed. Try it in my environment and see if it can be installed!
 </p>
-<h4> Attribute position changed in experimental subroutine signature </h4>
+<h4>Attribute position changed in experimental subroutine signature</h4>
 <p>
   The position of the attribute in the experimental subroutine signature has changed.
 </p>
@@ -136,20 +135,20 @@
 Before change sub foo ($foo, $bar): attr;
 After change sub foo: attr ($foo, $bar)
 </pre>
-<h3> Incompatible changes </h3>
-<h4> Perl requires C89 </h4>
+<h3>Incompatible changes</h3>
+<h4>Perl requires C89</h4>
 <p>
   A compiler that can compile C89 is now required to compile Perl. It's not C99 or C11, so don't get me wrong.
 </p>
-<h4> Setting the value to ${^ENCODING} is invalid </h4>
+<h4>Setting the value to ${^ENCODING} is invalid</h4>
 <p>
   Please note if anyone has set ${^ENCODING} in the past.
 </p>
-<h4> The sort algorithm by the sort pragma can no longer be specified </h4>
+<h4>The sort algorithm by the sort pragma can no longer be specified</h4>
 <p>
   You can no longer specify the sort algorithm with the sort pragma. The Perl default sort algorithm is always used.
 </p>
-<h3> Perl 5.28 release miscellaneous thoughts </h3>
+<h3>Perl 5.28 release miscellaneous thoughts</h3>
 <p>
   I feel that this release focuses on small performance improvements. I'm very happy that the improved string performance benefits all Perl users.
 </p>

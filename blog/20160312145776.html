@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> close function-close file handle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>close function - close file handle - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  close function  to close the  filehandle .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" close function-close file handle  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="close function - close file handle - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  close function  to close the  filehandle ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20160312145776.html"> close function-close file handle </a></h2>
+<h2><a href="/blog/20160312145776.html">close function - close file handle</a></h2>
 <p>
   Use the <strong> close function </strong> to close the <strong> filehandle </strong>.
 </p>
@@ -90,7 +89,7 @@ close $fh;
 <p>
   In a little more detail, when the close function is called, the current buffer is flushed and then the filehandle is closed.
 </p>
-<h3> Is it necessary to close the file handle with the close function? </H3>
+<h3>Is it necessary to close the file handle with the close function? </H3>
 <p>
   Is it necessary to close the file handle with the close function after opening the file with the open function? It is not always necessary.
 </p>
@@ -106,7 +105,7 @@ open(my $fh, '&lt;', $file);
 <p>
   Here are some examples when you need to use the close function.
 </p>
-<h4> When a file handle is assigned to a type glob or symbol </h4>
+<h4>When a file handle is assigned to a type glob or symbol</h4>
 <p>
   Filehandles can also be assigned to typeglobs and filehandles. In old source code, you will often see the following open.
 </p>
@@ -120,7 +119,7 @@ open(FH, '&lt;', $file)
 <p>
   In such a case, if you do not explicitly close it, the file handle will remain open even after the scope ends, so let's close it. If you have a short program and the program quits quickly, Global Destruction will close the file, so you don't have to close it, but it's a good idea to do so.
 </p>
-<h4> If you want to flush the buffer immediately and close the filehandle </h4>
+<h4>If you want to flush the buffer immediately and close the filehandle</h4>
 <p>
   The close function flushes the buffer and then closes the file handle. A buffer is data that has not yet been written to a file.
 </p>
@@ -130,7 +129,7 @@ open(FH, '&lt;', $file)
 <p>
   In such a case, if you want to flush immediately, you can use the close function.
 </p>
-<h4> When you need to open a pipe, socket, etc. and explicitly close it </h4>
+<h4>When you need to open a pipe, socket, etc. and explicitly close it</h4>
 <p>
   If you use the fork and open functions to open multiple pipes, sockets, etc., you may want to close only the write side or only the read side. In that case, explicitly call the close function.
 </p>

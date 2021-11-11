@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> kill function-sends a signal to the process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>kill function - sends a signal to the process - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  kill function  to kill the process.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" kill function-sends a signal to the process  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="kill function - sends a signal to the process - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  kill function  to kill the process." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20171226151430.html"> kill function-sends a signal to the process </a></h2>
+<h2><a href="/blog/20171226151430.html">kill function - sends a signal to the process</a></h2>
 <p>
   You can use the <b> kill function </b> to kill the process.
 </p>
@@ -102,7 +101,7 @@ kill(signal number, process ID);
 <pre>
 kill(signal number, process ID1, process ID2, ...);
 </pre>
-<h3> Get the process ID </h3>
+<h3>Get the process ID</h3>
 <p>
   The process ID is specified in the second argument of the kill function, but in the case of Linux, this ID can be obtained by executing "ps -ef".
 </p>
@@ -115,7 +114,7 @@ kimoto 20220 25715 0 Dec25? 00:05:35/home/kimoto/labo/perltweet/script/perltweet
 <p>
   For example, the second number from the left, "20220", is the process ID. This will be the process ID you specify for kill.
 </p>
-<h3> Get signal number </h3>
+<h3>Get signal number</h3>
 <p>
   A list of signals can be found by loading the Config module and using "$Config{sig_name}".
 </p>
@@ -129,7 +128,7 @@ print Dumper $Config{sig_name};
 <p>
   This number is the signal number because it is arranged in order from the first.
 </p>
-<h3> Check if the signal can be received </h3>
+<h3>Check if the signal can be received</h3>
 <p>
   Signal number 0 is a special number that allows the target process to check if it can receive the signal.
 </p>
@@ -139,7 +138,7 @@ my $success = kill(0, process ID);
 <p>
   This can be used to check if the child process is actually alive.
 </p>
-<h3> Doesn't work well for Windows fork child processes </h3>
+<h3>Doesn't work well for Windows fork child processes</h3>
 <p>
   Note that the kill function works fine for Linux/Unix-based fork child processes, but not for Windows fork child processes.
 </p>

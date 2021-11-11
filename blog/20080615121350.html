@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Compare the flexibility of Perl subroutines with C  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Compare the flexibility of Perl subroutines with C - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Here is a summary of the features of Perl subroutines. I compared it with C language. You can see the flexibility of Perl as a language. * 1">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Compare the flexibility of Perl subroutines with C  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Compare the flexibility of Perl subroutines with C - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Here is a summary of the features of Perl subroutines. I compared it with C language. You can see the flexibility of Perl as a language. * 1" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080615121350.html"> Compare the flexibility of Perl subroutines with C </a></h2>
+<h2><a href="/blog/20080615121350.html">Compare the flexibility of Perl subroutines with C</a></h2>
 <p>
   Here is a summary of the features of Perl subroutines. I compared it with C language. You can see the flexibility of Perl as a language. * 1
 </p>
@@ -84,7 +83,7 @@
 </div>
 
 
-<h3> Perl Subroutine Features </h3>
+<h3>Perl Subroutine Features</h3>
 <table>
   <tr>
     <td>
@@ -186,7 +185,7 @@
     </td>
   </tr>
 </table>
-<h3> 1. Subroutines can be defined anywhere </h3>
+<h3>1. Subroutines can be defined anywhere</h3>
 <pre>
 # perl (Subroutine definition can be done anywhere)
 
@@ -212,7 +211,7 @@ int func (int x) {
 <p>
   In C, function names are resolved at compile time. If the function definition is after the place where the function is used, the forward declaration (prototype declaration) must be made before the place where the function is used.
 </p>
-<h3> 2. 3. 4. It is not necessary to determine the argument type, the number of arguments, and the return type. </H3>
+<h3>2. 3. 4. It is not necessary to determine the argument type, the number of arguments, and the return type. </H3>
 <pre>
 # Perl (The first thing to decide is the name of the subroutine.)
 sub func {
@@ -228,7 +227,7 @@ int func (int x, int y) {
 <p>
   In Perl, the argument type, the number of arguments, and the return type are determined at run time. In C, the argument type, the number of arguments, and the return type are determined at compile time.
 </p>
-<h3> 5. List can be used as return value </h3>
+<h3>5. List can be used as return value</h3>
 <pre>
 # Perl (list can be used as return value)
 
@@ -246,7 +245,7 @@ void func (int * ary) {
 <p>
   In Perl, you can use a list as a return value. In C language, an array cannot be returned as a return value. If you want to return the array to the caller, you need to pass it as a pointer as an argument and operate it.
 </p>
-<h3> 6. A reference to a lexical variable can be used as a return value </h3>
+<h3>6. A reference to a lexical variable can be used as a return value</h3>
 <pre>
 # Perl
 sub func {
@@ -263,11 +262,11 @@ sub func {
 <p>
   In Perl, lexical variables are not destroyed from memory as long as they are referenced from somewhere. In C, local variables are discarded when the function ends.
 </p>
-<h3> 7. There is a concept of context </h3>
+<h3>7. There is a concept of context</h3>
 <p>
   Perl can use a scalar or list as the return value of a function, depending on the context. There is no such concept in C language.
 </p>
-<h3> 8. There is a namespace to which the subroutine belongs </h3>
+<h3>8. There is a namespace to which the subroutine belongs</h3>
 <pre>
 # Perl
 # The real name is main::func (func subroutine belonging to the main package)
@@ -291,7 +290,7 @@ sub func {
 <p>
   In Perl, all subroutines belong to namespaces. In Perl, namespaces are called packages. C language does not have a namespace.
 </p>
-<h3> Note </h3>
+<h3>Note</h3>
 <p>
   <span style = "font-size: small;">* 1 I'm not criticizing C, so I'm not sure. C has the characteristics of "fast execution speed", "programming from hardware", and "good at low-level data manipulation". Perl is not good at this. </span>
 </p>

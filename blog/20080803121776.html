@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Write a filter program that can specify options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Write a filter program that can specify options - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Write a filter program that can specify options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Write a filter program that can specify options - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080803121776.html"> Write a filter program that can specify options </a></h2>
+<h2><a href="/blog/20080803121776.html">Write a filter program that can specify options</a></h2>
 <p>
   Let's write a filter program that can specify options with command line arguments. You can specify the position of the column to be cut out and the delimiter as options.
 </p>
@@ -95,7 +94,7 @@ use warnings;
 use Getopt::Long 'GetOptions';
 
 # Write Unix-like filter programming.
-# This time, it is a filter program that extracts the first column of comma-separated character strings.
+# This time, it is a filter program that extracts the first column of comma-separated strings.
 
 # Default value if no command line option is specified
 my $col = 1;
@@ -135,8 +134,8 @@ masao: 10:Japan
 taro: 20:USA
 rika: 38:France
 </pre>
-<h3> Code explanation </h3>
-<h4> (1) How to specify command line options </h4>
+<h3>Code explanation</h3>
+<h4>(1) How to specify command line options</h4>
 <pre>
 use Getopt::Long;
 </pre>
@@ -161,12 +160,12 @@ perl script name - col = 1 - sep =: file name
 # Specification method 3 (abbreviated form)
 perl script name -c1 -s: file name
 </pre>
-<h3> (2) GetOptions function </h3>
+<h3>(2) GetOptions function</h3>
 <p>
   The GetOption function is a function that makes it easy to receive command line options. It will be imported when you use Getopt::Long.
 </p>
 <p>
-  Below is a sample of how to write.
+  Below is a example of how to write.
 </p>
 <pre>
 # Default value if no command line option is specified
@@ -191,7 +190,7 @@ GetOptions(
 <p>
   I will arrange the description. The value type can be s, which represents a string, i, which represents a number, and so on.
 </p>
-<h4> (3) Improvement of line reading in while loop </h4>
+<h4>(3) Improvement of line reading in while loop</h4>
 <pre>
 while (&lt;&gt;) {
   chomp;
@@ -207,14 +206,14 @@ while (&lt;&gt;) {
     <a href="/blog/20170521149524.html">Iterative processing using for statement and while statement</a>
   </li>
 </ul>
-<h4> (3) -1 Omission of $_ </h4>
+<h4>(3) - 1 Omission of $_</h4>
 <pre>
 chomp;
 </pre>
 <p>
   <a href="/blog/20080226120403.html">chomp function</a> If you omit the argument, the target that works is <a href="/blog/20161102147817.html">special variable</a> "$_ Will be. There are many other functions in Perl that act on $_ if you omit the argument.
 </p>
-<h4> (3) -Specify -1 as the third argument of the -2 split function </h4>
+<h4>(3) - Specify - 1 as the third argument of the - 2 split function</h4>
 <pre>
 split(/ $sep /, $_, -1)
 </pre>
@@ -237,9 +236,9 @@ taro, 10,
 ('taro', 10)
 </pre>
 <p>
-  Will be acquired. To solve this, you can make the last empty string recognized by giving -1 to the third argument of split.
+  Will be got. To solve this, you can make the last empty string recognized by giving -1 to the third argument of split.
 </p>
-<h4> (3) -3 Get only the elements specified in the array slice </h4>
+<h4>(3) - 3 Get only the elements specified in the array slice</h4>
 <pre>
 my $item = (split(/ $sep /, $_, -1)) [$col -1];
 </pre>

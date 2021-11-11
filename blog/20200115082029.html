@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Class::Struct - Core module that provides object orientation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Class::Struct - Core module that provides object orientation - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Class::Struct is a classic module that provides Perl with object-oriented functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Class::Struct - Core module that provides object orientation  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Class::Struct - Core module that provides object orientation - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Class::Struct is a classic module that provides Perl with object-oriented functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -53,7 +52,7 @@
     
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200115082029.html"> Class::Struct - Core module that provides object orientation </a></h2>
+    <h2><a href="/blog/20200115082029.html">Class::Struct - Core module that provides object orientation</a></h2>
 <p>
   Class::Struct is a classic module that provides Perl with <a href="/blog/20161030147778.html">object-oriented</a> functionality. The constructor new can be automatically generated and the accessor can be automatically generated. An accessor is a method for setting and retrieving fields.
 </p>
@@ -76,7 +75,7 @@
 <p>
   The Perl Primer will show you how to have a hash reference as the basic type of an object and provide a scalar accessor.
 </p>
-<h3> Create a Point class with fields x and y </h3>
+<h3>Create a Point class with fields x and y</h3>
 <p>
   Let's use Class::Struct to create a Point class with fields x and y.
 </p>
@@ -97,7 +96,7 @@ use Class::Struct __PACKAGE__, {
 <p>
   The second argument is the <a href="/blog/20180208151809.html">hash reference</a> that defines the field. An accessor is automatically generated.
 </p>
-<h3> Use of Point class </h3>
+<h3>Use of Point class</h3>
 <p>
   Let's use the Point class. Following the code above, write the following.
 </p>
@@ -122,7 +121,7 @@ print "($x2, $y2)\n";
 <p>
   For the main package, refer to the <a href="/blog/20100419127089.html">Package Declaration</a> article.
 </p>
-<h4> Call constructor new </h4>
+<h4>Call constructor new</h4>
 <p>
   You can call the constructor new. You can also pass the value of the field.
 </p>
@@ -130,7 +129,7 @@ print "($x2, $y2)\n";
 # Create object
 my $point = Point-&gt;new(x =&gt; 1, y =&gt; 2);
 </pre>
-<h4> Call accessor </h4>
+<h4>Call accessor</h4>
 <p>
   You can call the accessor to set/get the value.
 </p>
@@ -147,14 +146,14 @@ my $x2 = $point-&gt;x;
 my $y2 = $point-&gt;y;
 print "($x2, $y2)\n";
 </pre>
-<h3> Is it possible to inherit with Class::Struct? </H3>
+<h3>Is it possible to inherit with Class::Struct? </H3>
 <p>
   It is possible to inherit the class created by Class::Strcut, but as a limitation, you cannot add fields. If you want to inherit, most of the time you want to add a field, so it's a good idea to think that you can't.
 </p>
 <p>
   If you plan to inherit, use <a href="/blog/20100203126425.html">bless</a> to create the object for Perl cores only. When using the CPAN module, use a module that supports adding field definitions by inheritance.
 </p>
-<h3> Is it possible to override the constructor? </H3>
+<h3>Is it possible to override the constructor? </H3>
 <p>
   Class::Strcut will generate a constructor for the target class, so you cannot override the constructor.
 </p>

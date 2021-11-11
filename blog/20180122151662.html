@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Destructor - DESTROY  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Destructor - DESTROY - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl is a programming language with reference counting GC. The object is freed when the reference count reaches zero.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Destructor - DESTROY  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Destructor - DESTROY - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl is a programming language with reference counting GC. The object is freed when the reference count reaches zero." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20180122151662.html"> Destructor - DESTROY </a></h2>
+<h2><a href="/blog/20180122151662.html">Destructor - DESTROY</a></h2>
 <p>
   Perl is a programming language with <a href="/blog/20131010138141.html">reference counting GC</a>. The object is freed when the reference count reaches zero.
 </p>
@@ -93,7 +92,7 @@ sub DESTROY {
   ...
 }
 </pre>
-<h3> Close the file handle with a destructor </h3>
+<h3>Close the file handle with a destructor</h3>
 <p>
   For example, suppose you have a File class that represents a file. The File class stores the file handle opened by the <a href="/blog/20080718121643.html">open function</a> in the fh field.
 </p>
@@ -138,7 +137,7 @@ package main;
 <p>
   When I run this script, it says "DESTROY", which I put in to make sure the destructor is running. The destructor is running and the file handle is closed.
 </p>
-<h3> Main uses of destructors </h3>
+<h3>Main uses of destructors</h3>
 <p>
   Destructors are often used when closing external resources such as files and databases. Since Perl has a clear timing for the object to be released, you can write the resource closing process in the destructor.
 </p>

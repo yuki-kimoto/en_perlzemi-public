@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> glob function - get list of files contained in directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>glob function - get list of files contained in directory - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  glob  function to get a list of files.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" glob function - get list of files contained in directory  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="glob function - get list of files contained in directory - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  glob  function to get a list of files." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20080529121207.html"> glob function - get list of files contained in directory </a></h2>
+<h2><a href="/blog/20080529121207.html">glob function - get list of files contained in directory</a></h2>
 <p>
   You can use the <strong> glob </strong> function to get a list of files.
 </p>
@@ -90,7 +89,7 @@ my @all_files = glob "*";
 <p>
   Use the glob operator to get a list of files. The target is files (including directories) in the current directory. When you get the file list of another directory, move the current directory with <a href="/blog/20080528121197.html">chdir function</a>, or express it with a relative path or an absolute path. ..
 </p>
-<h3> Example of glob argument expression </h3>
+<h3>Example of glob argument expression</h3>
 <table>
   <tr>
     <td>
@@ -144,9 +143,9 @@ my @all_files = glob "*";
 <p>
   You can specify multiple patterns by separating them with a blank. In addition to relative paths, you can also use absolute paths. * Is one of the wildcards used in the Unix shell. The glob function expands filenames containing * according to shell wildcard expansion rules.
 </p>
-<h3> Sample </h3>
+<h3>Example</h3>
 <p>
-  This is a sample glob function.
+  This is a example glob function.
 </p>
 <pre>
 use strict;
@@ -210,9 +209,9 @@ hello.exe
 hello.pl
 yuki-kimoto-Portablebbs-b578c1d.zip
 </pre>
-<h3> Use the directory handle because the glob function doesn't work properly on Windows </h3>
+<h3>Use the directory handle because the glob function doesn't work properly on Windows</h3>
 <p>
-  I think you often use the glob function to get a list of files. But for now, it's best to see that the glob function doesn't work properly on Windows. If the directory name contains a specific character string, the file list cannot be obtained correctly.
+  I think you often use the glob function to get a list of files. But for now, it's best to see that the glob function doesn't work properly on Windows. If the directory name contains a specific string, the file list cannot be obtained correctly.
 </p>
 <p>
   So, instead of using the glob function, it's a good idea to create a function that gets a list of filenames like this: <a href="/blog/20171002150691.html">opendir function</a> to open the directory handle, <a href="/blog/20171003150703.html">readdir function</a> to read the directory Use>.

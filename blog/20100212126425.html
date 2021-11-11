@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> die function - display an error message and exit the program  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>die function - display an error message and exit the program - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  die function  to display a  error message and exit the program . The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" die function - display an error message and exit the program  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="die function - display an error message and exit the program - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  die function  to display a  error message and exit the program . The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20100212126425.html"> die function - display an error message and exit the program </a></h2>
+<h2><a href="/blog/20100212126425.html">die function - display an error message and exit the program</a></h2>
 <p>
   Use the <strong> die function </strong> to display a <strong> error message and exit the program </strong>. The line number where the program ended is automatically added to the end of the message. To hide the line number, end it with a newline.
 </p>
@@ -94,7 +93,7 @@ die $message;
 die "$message\n";
 </pre>
 <p>
-  This is a sample that displays the usage and terminates the program when the argument does not exist. $0 is the script name.
+  This is a example that displays the usage and terminates the program when the argument does not exist. $0 is the script name.
 </p>
 <pre>
 # Exit the program if the argument does not exist
@@ -102,7 +101,7 @@ my $file = shift;
 die "Usage: $0[file]" unless $file;
 </pre>
 <p>
-  This is a sample to terminate the program when the file open fails.
+  This is a example to terminate the program when the file open fails.
 </p>
 <pre>
 # Quit the program if file open fails
@@ -118,7 +117,7 @@ open my $fh, '&lt;', $file
 2. If $! Is 0 ($? &gt;&gt; 8). (Exit status of child process)
 3. 255 if ($? &gt;&gt; 8) is 0
 </pre>
-<h3> Exception handling </h3>
+<h3>Exception handling</h3>
 <p>
   Languages such as Java provide a mechanism called exceptions. Perl provides a concise exception handling mechanism that uses die and <a href="/blog/20100312126967.html">eval</a> blocks.
 </p>
@@ -136,7 +135,7 @@ if ($@) {
 }
 </pre>
 <p>
-  A simple sample of exception handling.
+  A simple example of exception handling.
 </p>
 <pre>
 # Exception handling

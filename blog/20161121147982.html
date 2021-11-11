@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl One Liner-Explanation of e Options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl One Liner - Explanation of e Options - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl has a feature called Oneliner that allows you to execute Perl scripts from the command line. Windows doesn't have the convenience of commands like Linux, so you can do something similar with Perl's one-liner. Introducing a one-liner that is often used in Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl One Liner-Explanation of e Options  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl One Liner - Explanation of e Options - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl has a feature called Oneliner that allows you to execute Perl scripts from the command line. Windows doesn't have the convenience of commands like Linux, so you can do something similar with Perl's one-liner. Introducing a one-liner that is often used in Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -62,7 +61,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20161121147982.html"> Perl One Liner-Explanation of e Options </a></h2>
+<h2><a href="/blog/20161121147982.html">Perl One Liner - Explanation of e Options</a></h2>
 <p>
   Perl has a feature called Oneliner that allows you to execute Perl scripts from the command line. Windows doesn't have the convenience of commands like Linux, so you can do something similar with Perl's one-liner. Introducing a one-liner that is often used in Perl.
 </p>
@@ -82,26 +81,26 @@
 </div>
 
 
-<h3> What is one-liner? </H3>
+<h3>What is one - liner? </H3>
 <p>
   A one-line Perl script that can be executed directly from the command line
 </p>
-<h4> -e </h4>
+<h4> - e</h4>
 <p>
   If -e is specified, subsequent Perl scripts will be executed directly.
 </p>
-<h4> -n </h4>
+<h4> - n</h4>
 <p>
   If -n is specified, the subsequent Perl script will be enclosed in "while (<>) {}" using the line input operator in the <a href="/blog/20100123126425.html">while statement</a>. It will be a script.
 </p>
-<h4> One-liner commentary </h4>
+<h4>One - liner commentary</h4>
 <pre>
 perl -ne "print if (/ search /)" inputfile.txt&gt; outputfile.txt
 </pre>
 <p>
   This sentence is the same as 1 and 2 below.
 </p>
-<h4> 1: grep.pl </h4>
+<h4>1: grep.pl</h4>
 <pre>
 # Each line of the file given by the argument is passed to &lt;&gt;.
 # Each line received by &lt;&gt; is passed to $_ in a loop.
@@ -111,17 +110,17 @@ while (&lt;&gt;) {
   print if/search/;
 }
 </pre>
-<h4> 2: Execution </h4>
+<h4>2: Execution</h4>
 <pre>
 perl grep.pl inputfile.txt&gt; outputfile.txt
 </pre>
-<h3> Extract lines containing the specified string to grep with Perl </h3>
- Let's use a function called One Liner to extract the line containing the character string specified in Perl.
-<h4> One liner to realize grep(used from command prompt) </h4>
+<h3>Extract lines containing the specified string to grep with Perl</h3>
+ Let's use a function called One Liner to extract the line containing the string specified in Perl.
+<h4>One liner to realize grep(used from command prompt)</h4>
 <pre>
 perl -ne "print if (/ search /)" inputfile.txt&gt; outputfile.txt
 </pre>
-<h4> inputfile.txt </h4>
+<h4>inputfile.txt</h4>
 <pre>
 search1
 kjhkh
@@ -130,7 +129,7 @@ lkjlkjl
 oiuyyiu
 search3
 </pre>
-<h3> Cat at the Windows command prompt </h3>
+<h3>Cat at the Windows command prompt</h3>
 <p>
   This time I will introduce a one-liner for doing the same thing as cat on Linux on Windows. The cat command is a command that allows you to combine the contents of files. To cat at the command prompt:
 </p>

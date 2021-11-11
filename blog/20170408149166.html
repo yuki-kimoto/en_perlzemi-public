@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to write POD (Plain Old Documentation)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to write POD (Plain Old Documentation) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl allows you to embed documentation in your source code. This in-source document is called  POD  and has its own description method.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to write POD (Plain Old Documentation)  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to write POD (Plain Old Documentation) - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl allows you to embed documentation in your source code. This in-source document is called  POD  and has its own description method." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20170408149166.html"> How to write POD (Plain Old Documentation) </a></h2>
+<h2><a href="/blog/20170408149166.html">How to write POD (Plain Old Documentation)</a></h2>
 <p>
   Perl allows you to embed documentation in your source code. This in-source document is called <b> POD </b> and has its own description method.
 </p>
@@ -90,14 +89,14 @@
 <p>
   Let's think that POD can easily write HTML and is automatically converted to HTML.
 </p>
-<h3> Character code </h3>
+<h3>Character code</h3>
 <p>
   If you want to include non-alphanumeric characters in the document, you need to set the character code. When writing in "UTF-8", write as follows at the beginning of the document.
 </p>
 <pre>
 = encoding utf8
 </pre>
-<h3> Header </h3>
+<h3>Header</h3>
 <p>
   Corresponds to HTML h1 to h6.
 </p>
@@ -121,7 +120,7 @@
 =head1 Header 1
 =head2 Header 2
 </pre>
-<h3> Source code </h3>
+<h3>Source code</h3>
 <p>
   To write the source code, set a blank at the beginning of the source code. This corresponds to the HTML pre.
 </p>
@@ -132,11 +131,11 @@
 <p>
   The space can be 1, 2, or 4, and can be any width.
 </p>
-<h3> List </h3>
+<h3>List</h3>
 <p>
   I will explain how to write a list.
 </p>
-<h4> Unordered list </h4>
+<h4>Unordered list</h4>
 <p>
   The unordered list is written as follows:
 </p>
@@ -160,7 +159,7 @@ Item 3
 
 = back
 </pre>
-<h4> Order list </h4>
+<h4>Order list</h4>
 <p>
   The sequence list is described as follows. It's almost the same as an unordered list, but if you specify a number after "= item", it becomes an ordered list.
 </p>
@@ -181,50 +180,50 @@ Item 3
 
 = back
 </pre>
-<h3> Format </h3>
+<h3>Format</h3>
 <p>
   How to format with POD.
 </p>
-<h4> Bold </h4>
+<h4>Bold</h4>
 <p>
   To set it in bold, use the description "B & lt; & gt;".
 </p>
 <pre>
 B &lt;aiueo&gt;
 </pre>
-<h4> Italics </h4>
+<h4>Italics</h4>
 <p>
   Use the description "I & lt; & gt;" to set italics.
 </p>
 <pre>
 I &lt;aiueo&gt;
 </pre>
-<h4> Program text </h4>
+<h4>Program text</h4>
 <p>
   You can use "C <>" if you want to format the function name in the text in a way that you can understand.
 </p>
 <pre>
 C &lt;select&gt;
 </pre>
-<h3> Hyperlink </h3>
+<h3>Hyperlink</h3>
 <p>
   I will explain the notation of hyperlinks.
 </p>
-<h4> Other CPAN modules </h4>
+<h4>Other CPAN modules</h4>
 <p>
   To write a link to another CPAN module, use "L & lt; & gt;" and write:It will be a link to the Object::Simple page.
 </p>
 <pre>
 L &lt;Object::Simple&gt;
 </pre>
-<h4> Links to general URLs </h4>
+<h4>Links to general URLs</h4>
 <p>
   A general URL is described as "L & lt; text | URL & gt;".
 </p>
 <pre>
-L &lt;Perl Seminar | http://d.hatena.ne.jp/perlcodesample&gt;
+L &lt;Perl Seminar | http://d.hatena.ne.jp/perlcodeexample&gt;
 </pre>
-<h3> Start and end of POD </h3>
+<h3>Start and end of POD</h3>
 <p>
   The start of POD ends with "=pod" and the end of POD ends with "=cut".
 </p>
@@ -238,7 +237,7 @@ document
 <p>
   Generally, when even one description of POD such as "=head1" appears, POD starts, so it is rare to write "=pod". However, when using <a href="/blog/20130712137361.html">multi-line comment</a> in the source code, this description method is used.
 </p>
-<h3> Character escape </h3>
+<h3>Character escape</h3>
 <p>
   If you want to use the symbols used in POD, you need to escape. Escape can be done using "".
 </p>
@@ -246,19 +245,19 @@ document
 E &lt;lt&gt; &lt;
 E &lt;gt &gt;&gt;
 </pre>
-<h3> FAQ </h3>
+<h3>FAQ</h3>
 <p>
   FAQ about POD.
 </p>
-<h4> Is it possible to write a table in POD? </h4>
+<h4>Is it possible to write a table in POD?</h4>
 <p>
   You cannot write a table in POD.
 </p>
-<h4> Is it possible to use images with POD? </h4>
+<h4>Is it possible to use images with POD?</h4>
 <p>
   Images are not available in POD.
 </p>
-<h4> What is the customary way to write on the CPAN module? </H4>
+<h4>What is the customary way to write on the CPAN module? </H4>
 <p>
   CPAN module documentation is generally written as follows:
 </p>
@@ -269,7 +268,7 @@ Module name-A brief description of the module
 
 =head1 SYNOPSIS
 
-  Source code sample
+  Source code example
   
 =head1 DESCRIPTION
 
@@ -291,7 +290,7 @@ Copyright notice
 
 =cut
 </pre>
-<h3> Detailed POD documentation </h3>
+<h3>Detailed POD documentation</h3>
 <p>
   For detailed POD documentation, see Perl's POD documentation.
 </p>

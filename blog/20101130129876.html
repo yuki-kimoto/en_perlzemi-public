@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> How to create a subroutine  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>How to create a subroutine - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Learn how to create a subroutine. A subroutine is a function that allows you to name and call a set of functions. It is the same as a function called a function in other languages. Perl standard functions are explained in Perl standard functions.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" How to create a subroutine  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="How to create a subroutine - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Learn how to create a subroutine. A subroutine is a function that allows you to name and call a set of functions. It is the same as a function called a function in other languages. Perl standard functions are explained in Perl standard functions." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -60,7 +59,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20101130129876.html"> How to create a subroutine </a></h2>
+<h2><a href="/blog/20101130129876.html">How to create a subroutine</a></h2>
 <p>
   Learn how to create a subroutine. A subroutine is a function that allows you to name and call a set of functions. It is the same as a function called a function in other languages. Perl standard functions are explained in <a href="/blog/20161004147558.html">Perl standard functions</a>.
 </p>
@@ -80,7 +79,7 @@
 </div>
 
 
-<h3> Subroutine definition </h3>
+<h3>Subroutine definition</h3>
 <p>
   To define a subroutine:
 </p>
@@ -107,7 +106,7 @@ sub total {
 <p>
   (1) The argument is stored in the variable "<strong> @_ </strong>". I've reassigned the variables $num1 and $num2 to give the arguments descriptive names. (2) The two values are totaled. (3) The return value can be returned using the <a href="/blog/20171111151040.html">return function</a>.
 </p>
-<h3> Subroutine call </h3>
+<h3>Subroutine call</h3>
 <p>
   To call the subroutine: You can pass an argument and receive the processed result as a return value.
 </p>
@@ -140,11 +139,11 @@ sub total {
 <p>
   (1) This is the value to be passed to the argument. (2) This is a subroutine call. The return value is assigned to $total. The result of adding 1 and 2 is returned, so $total is 3. (3) Subroutine definitions can also be placed under the call. This is because the subroutine definition is read at compile time.
 </p>
-<h3> Subroutine arguments </h3>
+<h3>Subroutine arguments</h3>
 <p>
   Explains how to receive subroutine arguments.
 </p>
-<h4> Receive one argument </h4>
+<h4>Receive one argument</h4>
 <p>
   A common way to receive a single argument is to use the shift function.
 </p>
@@ -164,7 +163,7 @@ sub func {
 <p>
   Will be the same as.
 </p>
-<h4> Receive multiple arguments </h4>
+<h4>Receive multiple arguments</h4>
 <p>
   A commonly used method when receiving multiple arguments is list assignment.
 </p>
@@ -184,7 +183,7 @@ sub func {
   my @args = @_;
 }
 </pre>
-<h4> Access arguments directly </h4>
+<h4>Access arguments directly</h4>
 <p>
   "@_" Is an array, but you can also access this array directly.
 </p>
@@ -198,7 +197,7 @@ $_[1]
 <p>
   This style of writing reduces readability and is recommended not to be used unless performance is absolutely necessary.
 </p>
-<h4> Pass an array as a subroutine argument </h4>
+<h4>Pass an array as a subroutine argument</h4>
 <p>
   You can pass an array to a subroutine.
 </p>
@@ -212,7 +211,7 @@ sub sum {
   # process
 }
 </pre>
-<h4> Pass a hash as a subroutine argument </h4>
+<h4>Pass a hash as a subroutine argument</h4>
 <p>
   You can also pass a hash to the subroutine. On the receiving side, @_ will be assigned to the hash. In Perl, the contents of an array are lists, so you can assign them to hashes.
 </p>
@@ -226,7 +225,7 @@ sub sum_examin {
   # process
 }
 </pre>
-<h4> I want to pass multiple arrays to a subroutine </h4>
+<h4>I want to pass multiple arrays to a subroutine</h4>
 <p>
   If you want to pass multiple arrays to a subroutine, you need to pass them as an array reference.
 </p>
@@ -254,7 +253,7 @@ sub func {
   my @array = @_;
 }
 </pre>
-<h4> Pass arrays and hashes separately to subroutines </h4>
+<h4>Pass arrays and hashes separately to subroutines</h4>
 <p>
   What if I want to put both an array and a hash in a subroutine? In such cases, you need to use array references and hash references.
 </p>
@@ -268,7 +267,7 @@ sub summary {
   # process                            
 }
 </pre>
-<h4> Allow both "hash" and "hash reference" to be received as subroutine arguments </h4>
+<h4>Allow both "hash" and "hash reference" to be received as subroutine arguments</h4>
 <p>
   To receive a hash or hash reference in a subroutine, write:
 </p>
@@ -284,11 +283,11 @@ sub func {
 <p>
   If the argument is a hash reference, it is assigned as it is, and if it is a hash, it is converted to a hash reference. $_[0] is the first element of the argument @_.
 </p>
-<h3> Typical pattern of how to receive arguments </h3>
+<h3>Typical pattern of how to receive arguments</h3>
 <p>
   Here is a typical pattern of how to receive arguments.
 </p>
-<h4> (1) Multiple scalars </h4>
+<h4>(1) Multiple scalars</h4>
 <pre>
 search ('aiueo', 'eo', 2);
 
@@ -299,7 +298,7 @@ sub search {
 <p>
   Receive in a list and assign each value in the list to a scalar on the receiving side.
 </p>
-<h4> (2) Simple list </h4>
+<h4>(2) Simple list</h4>
 <pre>
 average (1,2,3,4,5);
 
@@ -310,7 +309,7 @@ sub average {
 <p>
   Receive it in a list and assign it to an array.
 </p>
-<h4> (3) One scalar and list </h4>
+<h4>(3) One scalar and list</h4>
 <pre>
 search_file ('file', 'apple', 'dog');
 
@@ -321,7 +320,7 @@ sub search_file {
 <p>
   The first argument is assigned to the scalar, and the second and subsequent arguments are assigned to the array.
 </p>
-<h4> (4) Simple hash </h4>
+<h4>(4) Simple hash</h4>
 <pre>
 search_arg_hash (str =&gt;'aiueo', search =&gt;'eo', offset =&gt; 2);
 
@@ -336,7 +335,7 @@ sub search_arg_hash {
 <p>
   It is not always necessary to reassign the hash to the scalar, but it is often easier to see and code.
 </p>
-<h4> (5) One scalar and hash </h4>
+<h4>(5) One scalar and hash</h4>
 <pre>
 parse_file ('in_file', out_file =&gt;'out_file', search_path =&gt;'dir');
 
@@ -349,8 +348,8 @@ sub parse_file {
 <p>
   Assign the first argument to the scalar and the second and subsequent arguments to the hash. You can use this interface if the first argument is a required argument and the other arguments are considered optional.
 </p>
-<h3> Subroutine return value </h3>
-<h4> Return the scalar value as the return value </h4>
+<h3>Subroutine return value</h3>
+<h4>Return the scalar value as the return value</h4>
 <p>
   Basically, the scalar value is returned as the return value of the subroutine.
 </p>
@@ -361,7 +360,7 @@ sub func {
   return $name;
 }
 </pre>
-<h4> Return an array or hash as a return value </h4>
+<h4>Return an array or hash as a return value</h4>
 <p>
   Perl can also return lists (arrays and hashes).
 </p>
@@ -378,7 +377,7 @@ func {
 <p>
   You can also use the <a href="/blog/20080610121319.html">wantarray function</a> to return arguments depending on the context of the caller, but this is not recommended. The reason is that changing the return value depending on the context forces the user to write "scalar func ()" at some point to enforce the scalar context.
 </p>
-<h4> Return reference as return value </h4>
+<h4>Return reference as return value</h4>
 <p>
   Array references and hash references are also scalar values, so they can be returned as return values.
 </p>
@@ -397,7 +396,7 @@ sub func {
   return $score;
 }
 </pre>
-<h4> Single return </h4>
+<h4>Single return</h4>
 <p>
   A single return returns an undefined value undef in a scalar context and an empty list () in a list context.
 </p>
@@ -410,7 +409,7 @@ sub func_name {
 <p>
   It is customary to use a "single return" if you want to return an undefined value. "Return undef" has some advantages, but it seems to be used less frequently.
 </p>
-<h3> Setting default values </h3>
+<h3>Setting default values</h3>
 <p>
   You may want to specify a default value for the subroutine argument. In such a case, if the argument is undefined, set the default value.
 </p>
@@ -431,11 +430,11 @@ sub num {
   $num //= 0;
 }
 </pre>
-<h3> Error handling </h3>
+<h3>Error handling</h3>
 <p>
   Explains how to handle errors in subroutines.
 </p>
-<h4> How to return undef </h4>
+<h4>How to return undef</h4>
 <p>
   The easiest way is to return "undef" when the subroutine fails. Returns undef with a single return.
 </p>
@@ -461,7 +460,7 @@ unless (defined $ret) {
   # Error handling
 }
 </pre>
-<h4> How to throw an exception </h4>
+<h4>How to throw an exception</h4>
 <p>
   The recommended method is to throw an exception when an error occurs. Use the die function to throw an exception.
 </p>
@@ -512,7 +511,7 @@ if (my $error = $@) {
 <p>
   For a detailed explanation of exception handling, see "<a href="/blog/20100411127089.html">Perl's" Exception Handling "Mechanism-Error Notification and Detection</a>".
 </p>
-<h3> Subroutine exercises </h3>
+<h3>Subroutine exercises</h3>
 <p>
   I have created an exercise to understand the subroutine properly.
 </p>
@@ -529,7 +528,7 @@ if (my $error = $@) {
   CSV, array of arrays, array of hashes, maximum and minimum values, sort, bubble sort, ascending, descending order
 </p>
 </blockquote>
-<h3> Subroutine reference </h3>
+<h3>Subroutine reference</h3>
 <p>
   This is a description of the subroutine reference.
 </p>
@@ -546,8 +545,8 @@ if (my $error = $@) {
   Subroutine references, polymorphism, dispatch tables, signal handlers, event-driven programming
 </p>
 </blockquote>
-<h3> Subroutine technique </h3>
-<h4> Function parenthesis omission rules </h4>
+<h3>Subroutine technique</h3>
+<h4>Function parenthesis omission rules</h4>
 <p>
   You may or may not use standard function parentheses.
 </p>
@@ -583,7 +582,7 @@ sub func {
 <p>
   * Regarding the relationship with the prototype, I will not write it because the prototype is deprecated.
 </p>
-<h4> Redefine subroutine (monkey patch) </h4>
+<h4>Redefine subroutine (monkey patch)</h4>
 <p>
   Perl allows you to redefine a subroutine definition once it has been done.
 </p>
@@ -598,11 +597,11 @@ sub sum {...}
 <p>
   Overwriting a subroutine is sometimes referred to as a monkey patch. If you find a subroutine that has a bug, you can temporarily overwrite the subroutine and apply a patch.
 </p>
-<h4> caller function-get the name of the function you are executing </h4>
+<h4>caller function - get the name of the function you are executing</h4>
 <p>
   Use the caller function to get the name of the function you are executing. For the caller function, see "<a href="/blog/20080424120904.html">caller function - get the name of the function being executed</a>".
 </p>
-<h4> Get the arguments of the calling subroutine </h4>
+<h4>Get the arguments of the calling subroutine</h4>
 <p>
   You can use the caller function to get the package name, subroutine name, etc. of the caller of the function. It is also possible to get the arguments of the calling subroutine.
 </p>
@@ -623,7 +622,7 @@ sub a2 {
   }
 }
 </pre>
-<h4> Subroutine autoloading </h4>
+<h4>Subroutine autoloading</h4>
 <p>
   Perl has a feature called autoloading that defines a function that will be executed if a subroutine isn't defined.
 </p>
@@ -632,7 +631,7 @@ sub a2 {
     <a href="/blog/20080709121562.html">Subroutine autoload AUTOLOAD</a>
   </li>
 </ul>
-<h4> Dynamic creation of subroutines </h4>
+<h4>Dynamic creation of subroutines</h4>
 <p>
   You can dynamically create subroutines in Perl.
 </p>
@@ -641,11 +640,11 @@ sub a2 {
     <a href="/blog/20080716121630.html">Dynamic generation of subroutines</a>
   </li>
 </ul>
-<h4> Creating a closure </h4>
+<h4>Creating a closure</h4>
 <p>
   For information on creating "closures" in Perl, see <a href="/blog/20080710121570.html">How to create "closures" in Perl</a>.
 </p>
-<h3> Reading material about subroutines </h3>
+<h3>Reading material about subroutines</h3>
 <ul>
   <li>
     <a href="/blog/20080612121341.html">Subroutine definitions are not affected by scope</a>
@@ -660,7 +659,7 @@ sub a2 {
     <a href="/blog/20080620121405.html">Subroutine exercises</a>
   </li>
 </ul>
-<h3> List of standard Perl functions </h3>
+<h3>List of standard Perl functions</h3>
 <p>
   If you want to see a list of standard Perl functions, see <a href="/blog/20161004147558.html">List of Perl functions</a>.
 </p>

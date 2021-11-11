@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl seminar coding rules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl seminar coding rules - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Perl seminars are created according to the following coding rules. Please refer to it.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl seminar coding rules  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl seminar coding rules - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Perl seminars are created according to the following coding rules. Please refer to it." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20130225136170.html"> Perl seminar coding rules </a></h2>
+<h2><a href="/blog/20130225136170.html">Perl seminar coding rules</a></h2>
 <p>
   Perl seminars are created according to the following coding rules. Please refer to it.
 </p>
@@ -81,8 +80,8 @@
 </div>
 
 
-<h3> Style </h3>
-<h4> Indent is 2 in space </h4>
+<h3>Style</h3>
+<h4>Indent is 2 in space</h4>
 <pre>
 sub parse {
   my $str = shift;
@@ -93,15 +92,15 @@ sub parse {
   return $tree;
 }
 </pre>
-<h4> One line can be up to 79 characters </h4>
+<h4>One line can be up to 79 characters</h4>
 <p>
   One line is written within 79 characters.
 </p>
 <pre>
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 </pre>
-<h3> Space </h3>
-<h4> Do not put spaces inside parentheses () </h4>
+<h3>Space</h3>
+<h4>Do not put spaces inside parentheses ()</h4>
 <pre>
 my @nums = (2, 4, 5);
 my %ages = (kimoto =&gt; 20, ken =&gt; 25);
@@ -109,28 +108,28 @@ my $total = (2 + 3) + 2;
 while ($num == 2) {...}
 for (my $i = 4; $i &lt; 5; $i++) {...}
 </pre>
-<h4> Do not put a space inside the bracket [] </h4>
+<h4>Do not put a space inside the bracket []</h4>
 <pre>
 my $nums = [2, 4, 5];
 </pre>
-<h4> Do not put spaces inside the hash reference brace {} </h4>
+<h4>Do not put spaces inside the hash reference brace {}</h4>
 <pre>
 my $ages = {kimoto =&gt; 20, ken =&gt; 25};
 </pre>
-<h4> When the subroutine is one line, put a space inside the brace </h4>
+<h4>When the subroutine is one line, put a space inside the brace</h4>
 <pre>
 sub ua {LWP::UserAgent-&gt;new}
 </pre>
-<h4> When the sentence is one line, put a space inside the brace </h4>
+<h4>When the sentence is one line, put a space inside the brace</h4>
 <pre>
 if (condition) {$num = 1}
 else {$num = 2}
 </pre>
-<h4> Do not put a space in front of the comma, put a space behind the comma </h4>
+<h4>Do not put a space in front of the comma, put a space behind the comma</h4>
 <pre>
 my @nums = (2, 4, 5);
 </pre>
-<h4> Insert spaces to the left and right of the operator </h4>
+<h4>Insert spaces to the left and right of the operator</h4>
 <pre>
 2 + 3
 twenty three
@@ -145,7 +144,7 @@ twenty three
 'a' eq 'b'
 'a' ne 'b'
 </pre>
-<h4> Insert a space immediately after the if statement, unless statement, while statement, and for statement </h4>
+<h4>Insert a space immediately after the if statement, unless statement, while statement, and for statement</h4>
 <p>
   Insert a space immediately after the if statement, unless statement, <a href="/blog/20100123126425.html">while statement</a>, for statement.
 </p>
@@ -163,7 +162,7 @@ while (condition) {
 
 }
 </pre>
-<h4> If, unless, while, for opening brace {insert a space in front of </h4>
+<h4>If, unless, while, for opening brace {insert a space in front of</h4>
 <pre>
 if (condition) {
 
@@ -178,7 +177,7 @@ while (condition) {
 
 }
 </pre>
-<h4> One space is always available </h4>
+<h4>One space is always available</h4>
 <pre>
 my $num = 1;
 my $title = 'Perl';
@@ -187,32 +186,32 @@ my $author = 'kimoto';
 <p>
   It looks beautiful if you have equal (=), but it is troublesome considering the trouble of correction, so I always keep one space.
 </p>
-<h4> Indent +2 when there are multiple lines </h4>
+<h4>Indent +2 when there are multiple lines</h4>
 <pre>
 my $str = 'Hello Hello Hello Hello Hello Hello Hello Hello'
   .'Hello Hello Hello Hello Hello Hello Hello Hello Hello'
   . "Hello Hello Hello Hello Hello\n";
 </pre>
 <p>
-  It is easy to see if it is aligned at the position of the character string, but since it takes time to correct the blank, I try to connect the next line to the +2 position with a blank.
+  It is easy to see if it is aligned at the position of the string, but since it takes time to correct the blank, I try to connect the next line to the +2 position with a blank.
 </p>
-<h3> Semicolon </h3>
-<h4> Do not add a semicolon; when the subroutine is on one line </h4>
+<h3>Semicolon</h3>
+<h4>Do not add a semicolon; when the subroutine is on one line</h4>
 <pre>
 sub ua {LWP::UserAgent-&gt;new}
 </pre>
-<h4> Do not add a semicolon; when the statement is on one line </h4>
+<h4>Do not add a semicolon; when the statement is on one line</h4>
 <pre>
 if (condition) {$num = 1}
 else {$num = 2}
 </pre>
-<h3> String </h3>
-<h4> Use single quotes when the string does not contain variables </h4>
+<h3>String</h3>
+<h4>Use single quotes when the string does not contain variables</h4>
 <pre>
 my $str = 'Hello World!';
 </pre>
-<h3> Conditional statement/repeating statement </h3>
-<h4> Use while without using until </h4>
+<h3>Conditional statement/repeating statement</h3>
+<h4>Use while without using until</h4>
 <pre>
 while (condition) {
 
@@ -221,7 +220,7 @@ while (condition) {
 <p>
   Since all conditional statements can be written with while and it is common in other languages, while is used instead of until.
 </p>
-<h4> Use while without do ~ while </h4>
+<h4>Use while without do ~ while</h4>
 <pre>
 while (condition) {
 
@@ -230,25 +229,25 @@ while (condition) {
 <p>
   All statements that can be written with do ~ while can be written with while, and there is a restriction that next and last cannot be used in do, so while is used.
 </p>
-<h4> Use for instead of foreach </h4>
+<h4>Use for instead of foreach</h4>
 <pre>
 for (condition) {...}
 </pre>
 <p>
   Since foreach is another name for for, we use for which can be written short.
 </p>
-<h3> Modules, Subroutines, Methods </h3>
-<h4> Do not put parentheses for functions with one argument </h4>
+<h3>Modules, Subroutines, Methods</h3>
+<h4>Do not put parentheses for functions with one argument</h4>
 <pre>
 my $num = int 5;
 my $class = ref $obj;
 </pre>
-<h4> Do not put parentheses on functions and methods that do not require arguments </h4>
+<h4>Do not put parentheses on functions and methods that do not require arguments</h4>
 <pre>
 my $time = time;
 my $ua = LWP::UserAgent-&gt;new;
 </pre>
-<h4> Use direct object syntax </h4>
+<h4>Use direct object syntax</h4>
 <pre>
 my $ua = LWP::UserAgent-&gt;new;
 </pre>
@@ -265,7 +264,7 @@ printf $fh "Hello%d", 3;
 <p>
   Because it is a very general way of writing.
 </p>
-<h4> Specify the function to import </h4>
+<h4>Specify the function to import</h4>
 <pre>
 use Encode 'encode';
 </pre>
@@ -276,15 +275,15 @@ use Encode 'encode';
 use Mojolicious::Lite;
 use Time::Piece;
 </pre>
-<h4> If there is only one function to import, enclose it in single quotes </h4>
+<h4>If there is only one function to import, enclose it in single quotes</h4>
 <pre>
 use Encode 'encode';
 </pre>
-<h4> Use the string list operator qw // when there are multiple functions to import </h4>
+<h4>Use the string list operator qw // when there are multiple functions to import</h4>
 <pre>
 use Encode qw/encode decode/;
 </pre>
-<h4> Always use use to load modules </h4>
+<h4>Always use use to load modules</h4>
 <pre>
 use LWP::UserAgent;
 use XML::Simple;
@@ -300,33 +299,33 @@ if ($use_agent) {
 <p>
   However, in most cases I use use because it is fast enough.
 </p>
-<h4> Use "use module name ()" if you don't want to import the function </h4>
+<h4>Use "use module name ()" if you don't want to import the function</h4>
 <pre>
 use Carp ();
 </pre>
-<h3> Comments </h3>
+<h3>Comments</h3>
 <p>
-  # <h4> The format of the comment is to write one , followed by a space, and then the comment </h4>
+  # <h4>The format of the comment is to write one , followed by a space, and then the comment</h4>
 </p>
 <pre>
 # comment
 </pre>
-<h4> Comments start at the beginning of a line or just multiple spaces </h4>
+<h4>Comments start at the beginning of a line or just multiple spaces</h4>
 <pre>
 # comment
   # comment
 </pre>
-<h4> Write comments before expressions </h4>
+<h4>Write comments before expressions</h4>
 <pre>
 # Time
 my $time = time;
 </pre>
-<h3> Array/hash </h3>
-<h4> If the elements of the array fit in one line, write in one line </h4>
+<h3>Array/hash</h3>
+<h4>If the elements of the array fit in one line, write in one line</h4>
 <pre>
 my @animals = ('cat', 'dog', 'mouse');
 </pre>
-<h4> If the elements of the array do not fit on one line, write each element on one line </h4>
+<h4>If the elements of the array do not fit on one line, write each element on one line</h4>
 <pre>
 my @animals = (
   'cat',
@@ -335,11 +334,11 @@ my @animals = (
   ...
 );
 </pre>
-<h4> If the hash element fits on one line, write it on one line </h4>
+<h4>If the hash element fits on one line, write it on one line</h4>
 <pre>
 my %ages = (kimoto =&gt; 32, ken =&gt; 25, asuka =&gt; 50);
 </pre>
-<h4> If the hash elements don't fit on one line, write each element on one line </h4>
+<h4>If the hash elements don't fit on one line, write each element on one line</h4>
 <pre>
 my %ages = (
   kimoto =&gt; 32,
@@ -348,7 +347,7 @@ my %ages = (
   ...
 );
 </pre>
-<h3> Please refer to the coding rules </h3>
+<h3>Please refer to the coding rules</h3>
 <p>
   This is a Perl seminar coding rule. I've written Perl and feel that it's general, easy to understand, beautiful, and short. Please use it as a reference for good coding.
 </p>

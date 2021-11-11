@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> perlbrew - Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>perlbrew - Install Perl in your environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="To install Perl in your environment, use a tool called perlbrew. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use perlbrew to switch between multiple versions of Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" perlbrew - Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="perlbrew - Install Perl in your environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="To install Perl in your environment, use a tool called perlbrew. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use perlbrew to switch between multiple versions of Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20110220130464.html"> perlbrew - Install Perl in your environment </a></h2>
+<h2><a href="/blog/20110220130464.html">perlbrew - Install Perl in your environment</a></h2>
 <p>
   To install Perl in your environment, use a tool called perlbrew. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use perlbrew to switch between multiple versions of Perl.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Install perlbrew </h3>
+<h3>Install perlbrew</h3>
 <p>
   Execute the following command.
 </p>
@@ -121,7 +120,7 @@ echo "source ~/perl5/perlbrew/etc/bashrc"&gt;&gt; ~/.bashrc
 <pre>
 source ~/.bashrc
 </pre>
-<h3> Installing Perl in the user environment </h3>
+<h3>Installing Perl in the user environment</h3>
 <p>
   Install Perl in your environment. Let's install Perl for 5.28.2. It will take some time, so wait(about 30 minutes).
 </p>
@@ -173,7 +172,7 @@ perl -v
 <pre>
 This is perl 5, version 16, subversion 3 (v5.28.2) built for i686-linux
 </pre>
-<h3> Install cpanm </h3>
+<h3>Install cpanm</h3>
 <p>
   Let's also install cpanm, which is convenient for installing modules.
 </p>
@@ -192,14 +191,14 @@ cpanm JSON
 <pre>
 /home/kimoto/perl5/perlbrew/perls/perl-5.28.2/lib/site_perl/5.28.2/
 </pre>
-<h3> Revert to original Perl </h3>
+<h3>Revert to original Perl</h3>
 <p>
   To revert to the original Perl:
 </p>
 <pre>
 perlbrew off
 </pre>
-<h3> How to use the version of Perl specified by perlbrew with crontab </h3>
+<h3>How to use the version of Perl specified by perlbrew with crontab</h3>
 <p>
   One of the main points of perlbrew is that the version of Perl specified by perlbrew is not used by cron. This is because .bash_profile is not loaded when running from cron because the shell is not started. The setting by perlbrew is described in .bash_profile.
 </p>
@@ -235,7 +234,7 @@ PATH =/home/admins/perl5/perlbrew/bin:/home/admins/perl5/perlbrew/perls/perl-5.1
 <p>
   Now cron will use the specified version of Perl.
 </p>
-<h4> First line description of Perl script </h4>
+<h4>First line description of Perl script</h4>
 <p>
   Write the first line of the Perl script using the env command as shown below.
 </p>

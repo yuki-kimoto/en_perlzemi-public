@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> each function - processes all keys and values in the hash  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  each function  to get the hash and key/value pairs. With repeated use, you can get all the keys and values.">
+<title>each function - processes all keys and values in the hash - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use the  each function  to get a key/value pair of the hash in order. With repeated use, you can get all the keys and values.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" each function - processes all keys and values in the hash  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  each function  to get the hash and key/value pairs. With repeated use, you can get all the keys and values." />
+<meta name="twitter:title" content="each function - processes all keys and values in the hash - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use the  each function  to get a key/value pair of the hash in order. With repeated use, you can get all the keys and values." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,9 +63,9 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20080212120283.html"> each function - processes all keys and values in the hash </a></h2>
+<h2><a href="/blog/20080212120283.html">each function - processes all keys and values in the hash</a></h2>
 <p>
-  You can use the <strong> each function </strong> to get the <a href="/blog/20161013147635.html">hash</a> and key/value pairs. With repeated use, you can get all the keys and values.
+  You can use the <strong> each function </strong> to get a key/value pair of the <a href="/blog/20161013147635.html">hash</a> in order. With repeated use, you can get all the keys and values.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -89,7 +88,7 @@
 my ($key, $value) = each %hash;
 </pre>
 <p>
-  You can get all (key, value) pairs in order by using each in succession. The order of the (key, value) pairs to get is indefinite.
+  You can get all (key, value) pairs in order by using each repeatedly. The order of the (key, value) pairs to get is indefinite.
 </p>
 <pre>
 # Get (key, value) pairs in order
@@ -107,9 +106,9 @@ while (my ($name, $age) = each %age) {
 <p>
   You can also use the <a href="/blog/20100222126425.html">values function</a> to get only all the values of the hash.
 </p>
-<h3> Sample program </h3>
+<h3>Example program</h3>
 <p>
-  This is a sample that processes all the elements of the hash using the each function.
+  This is a example that processes all the elements of the hash using the each function.
 </p>
 <pre>
 use strict;
@@ -125,11 +124,11 @@ my %math_scores = (
 # Output all elements of the hash using the each function.
 print "1: All elements of the hash Print using the each function\n";
 while (my ($key, $value) = each %math_scores) {
-  print "%math_scores{$key} =" . $math_scores{$key} . "\n";
+  print "%math_scores{$key} = " . $math_scores{$key} . "\n";
 }
 print "\n";
 </pre>
-<h4> Execution result </h4>
+<h4>Execution result</h4>
 <pre>
 # 1: Output using all elements of the hash each function
 %math_scores{Kenji} = 54

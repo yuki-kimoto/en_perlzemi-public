@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> localtime function - get current date/time  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>localtime function - get current date/time - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  localtime function  to get the current date and time. You can get the local time according to each region.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" localtime function - get current date/time  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="localtime function - get current date/time - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  localtime function  to get the current date and time. You can get the local time according to each region." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    here
   </li>
 </ol>
-<h2><a href="/blog/20081009122357.html"> localtime function - get current date/time </a></h2>
+<h2><a href="/blog/20081009122357.html">localtime function - get current date/time</a></h2>
 <p>
   You can use the <strong> localtime function </strong> to get the current date and time. You can get the local time according to each region.
 </p>
@@ -94,7 +93,7 @@ my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime;
 my $localtime = localtime;
 </pre>
 <p>
-  <a href="/blog/20180530152777.html">List context</a>, date/time element information, <a href="/blog/20180531152777.html">Scalar context</a> When used in, you can get the character string that represents the date and time.
+  <a href="/blog/20180530152777.html">List context</a>, date/time element information, <a href="/blog/20180531152777.html">Scalar context</a> When used in, you can get the string that represents the date and time.
 </p>
 <p>
   If you want to get Coordinated Universal Time, use the <a href="/blog/20081010122376.html">gmtime function</a>.
@@ -113,7 +112,7 @@ my $localtime = localtime;
     <a href="/blog/20161123147990.html">Handling dates and times in Perl</a>
   </li>
 </ul>
-<h4> Local Time and Coordinated Universal Time </h4>
+<h4>Local Time and Coordinated Universal Time</h4>
 <p>
   If you set the time like "The time when the sun is highest is noon (12:00)", the times will not match in each country. For example, when Japan is at noon (12:00), the other side of the globe is at midnight.
 </p>
@@ -126,9 +125,9 @@ my $localtime = localtime;
 <p>
   In the case of Japan, the local time is 9 hours ahead of Coordinated Universal Time.
 </p>
-<h3> Sample localtime function </h3>
+<h3>Example localtime function</h3>
 <p>
-  This is a sample using the localtime function.
+  This is a example using the localtime function.
 </p>
 <pre>
 use strict;
@@ -165,7 +164,7 @@ print "(2) Get the current date (local time) as a string.\n";
 my $date_str = localtime;
 print $date_str . "\n";
 </pre>
-<h4> Get the current date and time(local time) </h4>
+<h4>Get the current date and time(local time)</h4>
 <pre>
 my ($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst) = localtime;
 </pre>
@@ -193,14 +192,14 @@ my @day_of_week = qw/Sun Mon Tue Wed Thu Fri Sat/;
 <p>
   $yday is the number of days since the beginning of the year. $isdst is whether or not daylight saving time is applied.
 </p>
-<h4> Get the current date (local time) as a string </h4>
+<h4>Get the current date (local time) as a string</h4>
 <pre>
 my $date_str = localtime;
 </pre>
 <p>
   To get a string representation of the time, evaluate the return value of the localtime function in a scalar context.
 </p>
-<h4> Default argument of localtime function </h4>
+<h4>Default argument of localtime function</h4>
 <p>
   If no argument is given to the localtime function, the value of the <a href="/blog/20081008122347.html">time function</a> (the number of seconds elapsed since the epoch) will be used. You can also explicitly give an argument for the number of seconds since the epoch.
 </p>

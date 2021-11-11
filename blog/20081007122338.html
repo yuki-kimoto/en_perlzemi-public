@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> join function-join array with delimiter  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>join function - join array with delimiter - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use the  join function  to join arrays by specifying a delimiter.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" join function-join array with delimiter  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="join function - join array with delimiter - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use the  join function  to join arrays by specifying a delimiter." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20081007122338.html"> join function-join array with delimiter </a></h2>
+<h2><a href="/blog/20081007122338.html">join function - join array with delimiter</a></h2>
 <p>
   You can use the <strong> join function </strong> to join <a href="/blog/20161012147627.html">arrays</a> by specifying a delimiter.
 </p>
@@ -92,7 +91,7 @@ my $joined = join(',', @array);
   The first argument is the delimiter. In this example, a comma is specified as the delimiter. The strings contained in the array given in the second and subsequent arguments are combined with a delimiter.
 </p>
 <p>
-  See the following simple example. Here is a simple example of how to use the join function. CSV data is created by concatenating the character strings contained in the array with commas.
+  See the following simple example. Here is a simple example of how to use the join function. CSV data is created by concatenating the strings contained in the array with commas.
 </p>
 <pre>
 # Create "Yuki, Toro, Kato" from an array
@@ -116,23 +115,23 @@ my $names_csv = join("\t", @names);
 <pre>
 my $line = join("\t", @names) . "\n";
 </pre>
-<h4> Decompose to array by specifying delimiter </h4>
+<h4>Decompose to array by specifying delimiter</h4>
 <p>
   You can use the <a href="/blog/20080301120434.html">split function</a> to split into an array by doing the opposite of the join function, that is, by specifying a delimiter.
 </p>
 <pre>
 my @names = split(/,/, "Yuki, Taro, Kato");
 </pre>
-<h4> Push function to add data to the array to join </h4>
+<h4>Push function to add data to the array to join</h4>
 <p>
   If you want to add data to combine, you can use <a href="/blog/20100106126425.html">push function</a>.
 </p>
 <pre>
 push @names, 'Kenta';
 </pre>
-<h3> Sample join function </h3>
+<h3>Example join function</h3>
 <p>
-  This is a sample that joins characters by "tab" using the join function.
+  This is a example that joins characters by "tab" using the join function.
 </p>
 <pre>
 use strict;

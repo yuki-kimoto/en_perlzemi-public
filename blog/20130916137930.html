@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> warnings module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>warnings module - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="Use the  warnings  pragma to display warnings.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" warnings module  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="warnings module - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="Use the  warnings  pragma to display warnings." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20130916137930.html"> warnings module </a></h2>
+<h2><a href="/blog/20130916137930.html">warnings module</a></h2>
 <p>
   Use the <strong> warnings </strong> pragma to display warnings.
 </p>
@@ -91,11 +90,11 @@ use warnings;
 <p>
   In Perl, in the default state, no warning is displayed and the script is executed. You can use the warnings pragma to display warnings. When writing a script, be sure to write it together with the strict pragma.
 </p>
-<h3> Frequently seen warning </h3>
+<h3>Frequently seen warning</h3>
 <p>
   Here are some of the warnings you'll see often.
 </p>
-<h4> Use undefined values </h4>
+<h4>Use undefined values</h4>
 <p>
   A warning is displayed if you use an undefined value. In the following script, the undefined value is output as it is by the print function.
 </p>
@@ -121,7 +120,7 @@ I am using the undefined value $str in print. 6th line.
 <p>
   If you get a warning that you are using undefined, it means that the variable is left unassigned. In other words, there is a mistake in the script. Let's modify the script so that this warning does not appear.
 </p>
-<h3> String is not encoded </h3>
+<h3>String is not encoded</h3>
 <p>
   When using multibyte characters such as Japanese, you may see a warning that the string is unencoded. Below is the script that raises the warning.
 </p>
@@ -157,7 +156,7 @@ use Encode 'encode';
 my $str = 'Hello';
 print encode('UTF-8', $str);
 </pre>
-<h3> Subroutines have been redefined </h3>
+<h3>Subroutines have been redefined</h3>
 <p>
   If you define a subroutine more than once, you will be warned that the subroutine has been redefined. Below is the script that raises the warning.
 </p>
@@ -200,7 +199,7 @@ sub one {1}
 <p>
   Warnings other than subroutine redefinition warnings can be suppressed in a similar way, but in principle warnings should not be suppressed. You should fix the part that caused the warning.
 </p>
-<h3> Suppress subroutine redefinition warnings </h3>
+<h3>Suppress subroutine redefinition warnings</h3>
 <p>
   If you have a bug during development and need to fix it in a hurry, you will sometimes apply a monkey patch. A monkey patch is to overwrite the definition of a subroutine or method so that it behaves correctly.
 </p>
@@ -211,7 +210,7 @@ sub one {1}
 no warnings'redefine';
 </pre>
 <p>
-  The warning will no longer be displayed. It has a lexical scope. Below is a sample that overrides the module's methods.
+  The warning will no longer be displayed. It has a lexical scope. Below is a example that overrides the module's methods.
 </p>
 
   </div>

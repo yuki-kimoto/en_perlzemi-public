@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Create PDF file - Create form with PDF::API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Create PDF file - Create form with PDF::API2 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="To create a PDF file with PDF::API2:">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Create PDF file - Create form with PDF::API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Create PDF file - Create form with PDF::API2 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="To create a PDF file with PDF::API2:" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20191226175520.html"> Create PDF file - Create form with PDF::API2 </a></h2>
+<h2><a href="/blog/20191226175520.html">Create PDF file - Create form with PDF::API2</a></h2>
 <p>
   To create a PDF file with PDF::API2:
 </p>
@@ -119,7 +118,7 @@ $pdf-&gt;saveas($pdf_file);
 <p>
   <a href="/examples/pdf/empty.pdf">Output result empty page</a>
 </p>
-<h3> Open an existing PDF file </h3>
+<h3>Open an existing PDF file</h3>
 <p>
   To open an existing PDF file with PDF::API2, use the open method.
 </p>
@@ -127,7 +126,7 @@ $pdf-&gt;saveas($pdf_file);
 # Open an existing PDF file
 my $pdf = PDF::API2-&gt;open('some.pdf');
 </pre>
-<h3> Add a new page </h3>
+<h3>Add a new page</h3>
 <p>
   Use the page method to add a new page in PDF::API2. The page created by page is added to the end of the PDF document.
 </p>
@@ -142,7 +141,7 @@ my $page = $pdf-&gt;page;
 # Add page to specified page of PDF document
 my $page = $pdf-&gt;page(5);
 </pre>
-<h3> Get an existing page </h3>
+<h3>Get an existing page</h3>
 <p>
   To get the page that already exists in PDF::API2, specify the page number in the openpage method. Page numbers start at 1. Note that it does not start at 0.
 </p>
@@ -150,7 +149,7 @@ my $page = $pdf-&gt;page(5);
 # Get pages that already exist
 my $page = $pdf-&gt;openpage($page_number);
 </pre>
-<h3> Get the number of pages </h3>
+<h3>Get the number of pages</h3>
 <p>
   In PDF::API2, use the pages method to get the number of existing pages.
 </p>
@@ -158,7 +157,7 @@ my $page = $pdf-&gt;openpage($page_number);
 # Get the number of pages in a PDF document
 my $pages_count = $pdf-&gt;pages;
 </pre>
-<h3> Set the paper size </h3>
+<h3>Set the paper size</h3>
 <p>
   To set the page paper size in PDF::API2, use the mediabox method.
 </p>
@@ -210,7 +209,7 @@ $page-&gt;mediabox($width, $height)
 </p>
 </blockquote>
 <p>
-  This is a sample to specify the paper size in PDF::API2.
+  This is a example to specify the paper size in PDF::API2.
 </p>
 <pre>
 use PDF::API2;
@@ -246,7 +245,7 @@ use PDF::API2;
 <p>
   <a href="/examples/pdf/size_a4.pdf">Output result A4 size</a>, <a href="/examples/pdf/size_b5.pdf">Output result B5 size</a>, <a href="/examples/pdf/size_595_842.pdf">Output result 595 × 842 size</a>
 </p>
-<h3> Get the paper size </h3>
+<h3>Get the paper size</h3>
 <p>
   To get the paper size, use the page object's mediabox method with no arguments.
 </p>
@@ -271,7 +270,7 @@ my @page_size_infos = $page-&gt;mediabox;
 <p>
   Generally, the margin X from the lower left is 0 and the margin Y from the lower left is 0, so you can think of the upper right coordinate X as the width and the upper right coordinate Y as the height.
 </p>
-<h3> Combine multiple PDF files </h3>
+<h3>Combine multiple PDF files</h3>
 <p>
   Here are the steps to combine multiple PDF files. Create a new PDF::API2 object. Open an existing PDF file.
 </p>

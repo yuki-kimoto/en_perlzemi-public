@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> ExtUtils::MakeMaker - Customize Makefile.PL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>ExtUtils::MakeMaker - Customize Makefile.PL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="ExtUtils::MakeMaker is used to explain how to write  Makefile.PL . ..">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" ExtUtils::MakeMaker - Customize Makefile.PL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="ExtUtils::MakeMaker - Customize Makefile.PL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="ExtUtils::MakeMaker is used to explain how to write  Makefile.PL . .." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20170210150108.html"> ExtUtils::MakeMaker - Customize Makefile.PL </a></h2>
+<h2><a href="/blog/20170210150108.html">ExtUtils::MakeMaker - Customize Makefile.PL</a></h2>
 <p>
   <a href="http://pointoht.ti-da.net/e9338756.html">ExtUtils::MakeMaker</a> is used to explain how to write <b> Makefile.PL </b>. ..
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h4> Specify a test script </h4>
+<h4>Specify a test script</h4>
 <p>
   By default, the test scripts under the "t" directory are executed, but you may want to execute the test scripts in subdirectories in a deeper hierarchy.
 </p>
@@ -95,7 +94,7 @@
 <pre>
   test =&gt; {TESTS =&gt;'t /*.t t /*/*.tt/*/*/*.t'}
 </pre>
-<h4> Add files to be deleted when doing make clean, make real clean </h4>
+<h4>Add files to be deleted when doing make clean, make real clean</h4>
 <p>
   Makefile.PL automatically creates a Makefile, which defines the commands that are executed by "make clean" and "make real clean".
 </p>
@@ -114,7 +113,7 @@ realclean =&gt; {FILES =&gt;'$(INST_ARCHAUTODIR) /*.xyz'}
 <p>
   Please note that in FILES, it is necessary to describe the file name according to the make syntax rules.
 </p>
-<h4> How to rename the XS file </h4>
+<h4>How to rename the XS file</h4>
 <p>
   When you create an XS module using h2xs, if the namespace contains "::", the XS file name will be "last name.xs".
 </p>
@@ -155,7 +154,7 @@ WriteMakefile (
 <p>
   If you write like this, "SomeModule.c" will be compiled. It's complicated.
 </p>
-<h4> Specify gcc optimization options </h4>
+<h4>Specify gcc optimization options</h4>
 <p>
   To specify gcc optimization options on XS Specify the <strong> OPTIMIZE </strong> option as a WriteMakefile option in Makefile.PL.
 </p>
@@ -166,7 +165,7 @@ OPTIMIZE =&gt;'-O3'
   Specifying <strong> -O3 </strong> seems to give the strongest optimization.
 </p>
 <p>
-  The following is a sample using the OPTIMIZE option.
+  The following is a example using the OPTIMIZE option.
 </p>
 <pre>
 use strict;
@@ -199,7 +198,7 @@ WriteMakefile (
     OBJECT =&gt;'$(O_FILES)',
 );
 </pre>
-<h4> How to add a search path for a C/C ++ language header file in Makefile.PL </h4>
+<h4>How to add a search path for a C/C ++ language header file in Makefile.PL</h4>
 <p>
   When writing Makefile.PL, you may want to change or add the location of C/C ++ header files. For ExtUtils::MakeMaker, you can set it with the <b> INC </b> and <b> H </b> options in the WriteMakefile.
 </p>
@@ -210,7 +209,7 @@ WriteMakefile (
     INC =&gt;'-I. -I./Rstats_lib/include',
     H =&gt; ['ppport.h', glob('Rstats_lib/include/*. h')],
 </pre>
-<h4> Add header file include path </h4>
+<h4>Add header file include path</h4>
 <p>
   Use the option "INC" to add the include path for the header file. By default, the current directory is set, so "./Rstats_lib/include" is added to this.
 </p>
@@ -235,7 +234,7 @@ WriteMakefile (
 <p>
   If this is not specified, the dependency will not be resolved correctly when make is executed, so be sure to specify it. The "INC" option alone will compile successfully for the first time, but make will not understand the dependencies correctly.
 </p>
-<h4> How to add a search path for C/C ++ language source files in Makefile.PL </h4>
+<h4>How to add a search path for C/C ++ language source files in Makefile.PL</h4>
 <p>
   How can I store C/C ++ language source files in a different directory when writing an XS? You can do that if you write Makefile.PL well. Write the WriteMakefile options in Makefile.PL as follows:
 </p>
@@ -247,7 +246,7 @@ WriteMakefile (
   This is the case when the module name is Rstats and the source file directory is "Rstats_lib/src". It is assumed that a file called Rstats.xs is located at the top "/". The source file type is a C ++ source file.
 </p>
 <p>
-  To make the image easier, I'll show you the structure of the directory and a complete sample of Makefile.PL.
+  To make the image easier, I'll show you the structure of the directory and a complete example of Makefile.PL.
 </p>
 <pre>
 ..
@@ -333,7 +332,7 @@ WriteMakefile (
     DEFINE =&gt;'-o $@'
 );
 </pre>
-<h4> C language source file description </h4>
+<h4>C language source file description</h4>
 <p>
   I think it is difficult to understand as it is, so I will explain the options of WriteMakefile.
 </p>
@@ -351,7 +350,7 @@ WriteMakefile (
 <p>
   Internally, the file specified by the "C" option is stored in a variable called "C_FILES" in Makefile. In addition, a variable called "O_FILES" with the extension of "C_FILES" changed to ".o" is automatically created.
 </p>
-<h4> Change the output location of the object file </h4>
+<h4>Change the output location of the object file</h4>
 <p>
   What does the "DEFINE" option describe?
 </p>
@@ -364,7 +363,7 @@ WriteMakefile (
 <p>
   What is "$@"? This is a Makefile syntax rule for variables to which the target name is automatically assigned. Since the target name is the object file name, if you write it like this, the object file will be output in the same directory as the source code file.
 </p>
-<h4> Linker targeting </h4>
+<h4>Linker targeting</h4>
 <p>
   Finally, you need to describe the targeting of the linker. You need to tell the linker the object file name, as all the object files will be merged into one and the final dynamic link library will end up with a ".so" extension.
 </p>

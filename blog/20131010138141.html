@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl's garbage collection (GC) characteristics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl's garbage collection (GC) characteristics - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The mechanism that automatically releases objects (variables and values) from memory when they are no longer needed is called  garbage collection . Garbage means garbage. Collection means to collect.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl's garbage collection (GC) characteristics  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl's garbage collection (GC) characteristics - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The mechanism that automatically releases objects (variables and values) from memory when they are no longer needed is called  garbage collection . Garbage means garbage. Collection means to collect." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -61,7 +60,7 @@
     <meta itemprop = "position" content = "2" />
   </li>
 </ol>
-<h2><a href="/blog/20131010138141.html"> Perl's garbage collection (GC) characteristics </a></h2>
+<h2><a href="/blog/20131010138141.html">Perl's garbage collection (GC) characteristics</a></h2>
 <p>
   The mechanism that automatically releases objects (variables and values) from memory when they are no longer needed is called <strong> garbage collection </strong>. Garbage means garbage. Collection means to collect.
 </p>
@@ -82,9 +81,9 @@
 
 
 <p>
-  # <img style = "border: 1px solid ddd" src = "https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodesample/20180907/20180907084205.png">
+  # <img style = "border: 1px solid ddd" src = "https://cdn-ak.f.st-hatena.com/images/fotolife/p/perlcodeexample/20180907/20180907084205.png">
 </p>
-<h3> Perl's garbage collection is a reference counting method </h3>
+<h3>Perl's garbage collection is a reference counting method</h3>
 <p>
   Perl's garbage collection is called the <strong> reference counting method </strong>. Each time a reference to an object is created, it increments the reference count by one. Conversely, it decrements the reference count by one when the object's reference is removed. The object is released when the reference count reaches 0.
 </p>
@@ -103,7 +102,7 @@
 <p>
   The third is that it does not stop at the timing of Full GC like the generational GC. In generational GC, there is something called FullGC in which many objects are released at a specific timing. The program will stop during FullGC. But for web apps, you probably don't care too much (probably).
 </p>
-<h3> The disadvantage of the reference counting method is that cross-references cannot be resolved </h3>
+<h3>The disadvantage of the reference counting method is that cross - references cannot be resolved</h3>
 <p>
   The obvious drawback of the reference counting method is that it cannot resolve cross-references. Objects that are referenced to each other are not released from memory. Programmers need to be careful if objects are cross-referenced or circularly referenced.
 </p>

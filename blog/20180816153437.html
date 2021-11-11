@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> plenv - Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>plenv - Install Perl in your environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="You can use a tool called plenv to install Perl in your environment. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use plenv to switch between multiple versions of Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" plenv - Install Perl in your environment  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="plenv - Install Perl in your environment - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="You can use a tool called plenv to install Perl in your environment. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use plenv to switch between multiple versions of Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20180816153437.html"> plenv - Install Perl in your environment </a></h2>
+<h2><a href="/blog/20180816153437.html">plenv - Install Perl in your environment</a></h2>
 <p>
   You can use a tool called plenv to install Perl in your environment. This is useful if you don't want to use the system standard Perl or if you want to use a newer version of Perl. You can also use plenv to switch between multiple versions of Perl.
 </p>
@@ -85,7 +84,7 @@
 </div>
 
 
-<h3> Install plenv </h3>
+<h3>Install plenv</h3>
 <p>
   Let's install plenv. As a prerequisite, please note that git must be installed to install plenv.
 </p>
@@ -105,7 +104,7 @@ echo'export PATH = "$HOME/.plenv/bin: $PATH"' &gt;&gt; ~/.bash_profile
 echo'eval "$(plenv init-)"'&gt;&gt; ~/.bash_profile
 exec $SHELL -l
 </pre>
-<h3> Installing Perl in the user environment </h3>
+<h3>Installing Perl in the user environment</h3>
 <p>
   Let's take a look at the list of available Perls.
 </p>
@@ -169,7 +168,7 @@ plenv versions
 plenv global 5.20.3
 </pre>
 <p>
-  As an advantage of plenv, you can also switch Perl for each directory by using <a href="https://papix.hatenablog.com/entry/2018/03/10/160838">local command</a>. is.
+  As an advantage of plenv, you can also switch Perl for each directory by using <a href="https://papix.hatenablog.com/entry/2018/03/10/160838">local command</a>.
 </p>
 <p>
   Let's actually check the version of Perl.
@@ -184,7 +183,7 @@ perl -v
 This is perl 5, version 20, subversion 3 (v5.20.3) built for x86_64-linux
 (with 1 registered patch, see perl -V for more detail)
 </pre>
-<h3> Install cpanm </h3>
+<h3>Install cpanm</h3>
 <p>
   Let's also install cpanm, which is convenient for installing modules.
 </p>
@@ -197,14 +196,14 @@ plenv install-cpanm
 <pre>
 cpanm JSON
 </pre>
-<h3> Revert to original Perl </h3>
+<h3>Revert to original Perl</h3>
 <p>
   To revert to the original Perl:
 </p>
 <pre>
 plenv global system
 </pre>
-<h3> How to use Perl installed with plenv with crontab </h3>
+<h3>How to use Perl installed with plenv with crontab</h3>
 <p>
   One of the main points of plenv is that Perl installed with plenv is not used by cron. This is because .bash_profile is not loaded when running from cron because the shell is not started. The setting by plenv is described in .bash_profile.
 </p>
@@ -240,7 +239,7 @@ PATH =/home/kimoto2/.plenv/shims: /home/kimoto2/.plenv/bin:/home/kimoto2/.plenv/
 <p>
   Now cron will use the specified version of Perl.
 </p>
-<h4> First line description of Perl script </h4>
+<h4>First line description of Perl script</h4>
 <p>
   Write the first line of the Perl script using the env command as shown below.
 </p>

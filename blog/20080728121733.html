@@ -27,12 +27,12 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Read a CSV file and convert it to an array of arrays  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is a sample that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.">
+<title>Read a CSV file and convert it to an array of arrays - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="This is a example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Read a CSV file and convert it to an array of arrays  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is a sample that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file." />
+<meta name="twitter:title" content="Read a CSV file and convert it to an array of arrays - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="This is a example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,9 +63,9 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080728121733.html"> Read a CSV file and convert it to an array of arrays </a></h2>
+<h2><a href="/blog/20080728121733.html">Read a CSV file and convert it to an array of arrays</a></h2>
 <p>
-  This is a sample that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.
+  This is a example that actually reads a CSV file, converts it to a Perl data type (array of arrays), and writes it to standard output. The conversion from csv to an array of arrays is done using subroutines. I think it will also be a basic template for reading and editing some kind of file.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -137,15 +136,15 @@ sub parse_file {
 }
 </pre>
 <p>
-  Below is a sample of csv data. Create a CSV file, give it to the first argument of the script, and execute it.
+  Below is a example of csv data. Create a CSV file, give it to the first argument of the script, and execute it.
 </p>
 <pre>
 masao, 10, Japan
 taro, 20, USA
 rika, 38, France
 </pre>
-<h3> Code explanation </h3>
-<h4> (1) Processing when the file name is not given in the first argument </h4>
+<h3>Code explanation</h3>
+<h4>(1) Processing when the file name is not given in the first argument</h4>
 <pre>
 unless ($file) {
   # If there is no argument, indicate the usage and end.
@@ -155,7 +154,7 @@ unless ($file) {
 <p>
   Check the arguments as much as possible. If there is no file name in the first argument, indicate the usage and exit. $0 is the name of the script running in the special variable.
 </p>
-<h4> (2) Read the file and convert the csv format text to an array of arrays </h4>
+<h4>(2) Read the file and convert the csv format text to an array of arrays</h4>
 <pre>
 my @recs = parse_file ($file);
 </pre>
@@ -175,7 +174,7 @@ rika, 38, France
     ['rika', 38, 'France'],
 )
 </pre>
-<h4> (3) Output in csv format </h4>
+<h4>(3) Output in csv format</h4>
 <pre>
 for my $items (@recs) {
   # Output by connecting with comma.
@@ -185,7 +184,7 @@ for my $items (@recs) {
 <p>
   To output, repeat the foreach statement for the number of records contained in @recs. Each record is concatenated with a comma with <a href="/blog/20081007122338.html">join function</a> and output. Add a line break at the end.
 </p>
-<h4> (4) Explanation of the function that reads a file and converts csv format text into an array of arrays </h4>
+<h4>(4) Explanation of the function that reads a file and converts csv format text into an array of arrays</h4>
 <pre>
 sub parse_file {
   my $file = shift;
@@ -213,14 +212,14 @@ sub parse_file {
   return $recs;
 }
 </pre>
-<h4> (4) -1 Receive file name as an argument </h4>
+<h4>(4) - 1 Receive file name as an argument</h4>
 <pre>
 my $file = shift;
 </pre>
 <p>
   Give the file name as an argument to open and close the file in the subroutine.
 </p>
-<h4> (4) -2 Creating an array of arrays to return as a return value </h4>
+<h4>(4) - 2 Creating an array of arrays to return as a return value</h4>
 <pre>
 my $recs = []; # Prepare a reference to an array that stores multiple records
 </pre>
@@ -234,7 +233,7 @@ $recs = [
   ['rika', 38, 'France'],
 ]
 </pre>
-<h4> (4) -3 Processing in a while loop </h4>
+<h4>(4) - 3 Processing in a while loop</h4>
 <p>
   I'm using a <a href="/blog/20100123126425.html">while statement</a> to create a Perl data structure.
 </p>
@@ -255,21 +254,21 @@ while (my $line = &lt;$fh&gt;) {
   push @$recs, $items;
 }
 </pre>
-<h4> (4) -3-a Creating a reference to an empty array </h4>
+<h4>(4) - 3 - a Creating a reference to an empty array</h4>
 <pre>
 my $items = [];
 </pre>
 <p>
   At the end of the first while loop, it will be [masao, 10, Japan], but first create only the frame.
 </p>
-<h4> (4) -3-b Comma-separated string split </h4>
+<h4>(4) - 3 - b Comma - separated string split</h4>
 <pre>
 @$items = split(/,/, $line);
 </pre>
 <p>
   The split function returns an array, so to receive it, dereference $items to @$items.
 </p>
-<h4> (4) -3-c Add the created record to the reference to the array </h4>
+<h4>(4) - 3 - c Add the created record to the reference to the array</h4>
 <pre>
 push @$recs, $items;
 </pre>
@@ -284,7 +283,7 @@ $recs = [
 <p>
   The first argument of push receives an array and dereferences it.
 </p>
-<h3> Rewrote the subroutine after being pointed out by kits </h3>
+<h3>Rewrote the subroutine after being pointed out by kits</h3>
 <pre>
 Put the data in my @recs rather than push @$recs
 It's like returning @recs or \@recs at the end.

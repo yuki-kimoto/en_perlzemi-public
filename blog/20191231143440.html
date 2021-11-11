@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Insert image - PDF::Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Insert image - PDF::Create form with API2 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to insert PNG, GIF, JPEG images with PDF::API2.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Insert image - PDF::Create form with API2  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Insert image - PDF::Create form with API2 - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to insert PNG, GIF, JPEG images with PDF::API2." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20191231143440.html"> Insert image - PDF::Create form with API2 </a></h2>
+<h2><a href="/blog/20191231143440.html">Insert image - PDF::Create form with API2</a></h2>
 <p>
   I will explain how to insert PNG, GIF, JPEG images with PDF::API2.
 </p>
@@ -88,11 +87,11 @@
 <p>
   The PDF can contain images. PDF::API2 allows you to insert PNG, GIF, JPEG images into PDF.
 </p>
-<h3> Insert image file </h3>
+<h3>Insert image file</h3>
 <p>
   To insert an image file, you must first read the image file and create a resource object to represent the image.
 </p>
-<h4> Reading image files </h4>
+<h4>Reading image files</h4>
 <p>
   Let's read the image file and generate a resource object to represent the image.
 </p>
@@ -132,7 +131,7 @@ my $image_object = $pdf-&gt;image_png($image_file);
 my $image_file = '/path/image.gif';
 my $image_object = $pdf-&gt;image_gif($image_file);
 </pre>
-<h4> Generation of image content object </h4>
+<h4>Generation of image content object</h4>
 <p>
   Create a content object to insert the image. This is a PDF::API2::Content object.
 </p>
@@ -140,7 +139,7 @@ my $image_object = $pdf-&gt;image_gif($image_file);
 # Content object needed to insert an image
 my $gfx = $page-&gt;gfx;
 </pre>
-<h4> Insert image file </h4>
+<h4>Insert image file</h4>
 <p>
   In PDF::API2, use the image method of the content object to insert an image file.
 </p>
@@ -163,9 +162,9 @@ $gfx-&gt;image($image_object, $x, $y, $scale);
 <p>
   As an example, if you want to display a 600x600 image at 600dpi resolution, specify 72.
 </p>
-<h3> Sample to insert PNG image </h3>
+<h3>Example to insert PNG image</h3>
 <p>
-  Let's write a sample to insert a PNG image.
+  Let's write a example to insert a PNG image.
 </p>
 <pre>
 use PDF::API2;

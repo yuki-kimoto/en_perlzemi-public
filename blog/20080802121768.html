@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Write Unix-like filter programming  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Write Unix - like filter programming - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="There is a kind of programming that should be called Unix-like filter programming. To describe the features">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Write Unix-like filter programming  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Write Unix - like filter programming - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="There is a kind of programming that should be called Unix-like filter programming. To describe the features" />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -64,7 +63,7 @@
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <span itemprop = "name">here </span>
   </li>
 </ol>
-<h2><a href="/blog/20080802121768.html"> Write Unix-like filter programming </a></h2>
+<h2><a href="/blog/20080802121768.html">Write Unix - like filter programming</a></h2>
 <p>
   There is a kind of programming that should be called Unix-like filter programming. To describe the features
 </p>
@@ -103,7 +102,7 @@ use strict;
 use warnings;
 
 # Write Unix-like filter programming.
-# This time, it is a filter program that extracts the first column of comma-separated character strings.
+# This time, it is a filter program that extracts the first column of comma-separated strings.
 
 # Special line input operator &lt;&gt;
 while (&lt;&gt;) {
@@ -113,7 +112,7 @@ while (&lt;&gt;) {
   print $items[0] . "\n";
 }
 </pre>
-<h3> Code explanation </h3>
+<h3>Code explanation</h3>
 <pre>
 # Special line read operator &lt;&gt;
 while (&lt;&gt;) {
@@ -123,7 +122,7 @@ while (&lt;&gt;) {
   print $items[0] . "\n";
 }
 </pre>
-<h4> (1) <> Operator </h4>
+<h4>(1) <> Operator</h4>
 <p>
   "<>" Is a slightly unusual operator. The file handle is empty in the <a href="/blog/20080722121673.html">line input operator</a>. If a file is given as an argument, <> reads a line from that file. If a file is given to the standard input, it will read one line of the file from the standard input.
 </p>
@@ -131,12 +130,12 @@ while (&lt;&gt;) {
   If multiple files are specified in the argument, the files are read in the order of argument 1 and argument 2. If both standard input and arguments are specified, the standard input is read.
 </p>
 <p>
-  The <> operator can be used to describe unix-like filter programming conditions in a very concise manner. Files are also opened and closed automatically.
+  The <> operator can be used to describe unix-like filter programming conditions in a very concise way. Files are also opened and closed automatically.
 </p>
 <p>
   The read line is assigned to the special variable $_. With the above in mind, the rest is normal programming.
 </p>
-<h4> (2) Advantages of Unix-like filter programming </h4>
+<h4>(2) Advantages of Unix - like filter programming</h4>
 <p>
   The biggest advantage is that it can be used naturally when used alone or when using a pipe. When using alone
 </p>

@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> DateTime - General-purpose handling of dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>DateTime - General - purpose handling of dates and times - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="DateTime gives you a general idea of dates and times.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" DateTime - General-purpose handling of dates and times  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="DateTime - General - purpose handling of dates and times - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="DateTime gives you a general idea of dates and times." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20090815124848.html"> DateTime - General-purpose handling of dates and times </a></h2>
+<h2><a href="/blog/20090815124848.html">DateTime - General - purpose handling of dates and times</a></h2>
 <p>
   DateTime gives you a general idea of dates and times.
 </p>
@@ -99,7 +98,7 @@
     <a href="/blog/20161123147990.html">Handling dates and times in Perl</a>
   </li>
 </ul>
-<h4> Install DateTime from CPAN </h4>
+<h4>Install DateTime from CPAN</h4>
 <p>
   At the command prompt
 </p>
@@ -120,7 +119,7 @@
 <p>
   Since Perl 5.10 and later, you can use Time::Piece as a standard Perl module, so it's a good idea to use Time::Piece. For the handling of time by Time::Piece, see "<a href="/blog/20091105124627.html">Handling date and time by" Time::Piece "</a>".
 </p>
-<h3> DateTime initialization and acquisition of date/time information </h3>
+<h3>DateTime initialization and acquisition of date/time information</h3>
 <p>
   To handle dates generically, use the DateTime module.
 </p>
@@ -141,7 +140,7 @@ my $dt = DateTime-&gt;new(
 <p>
   You don't have to specify the year as a number from 1900 or the month as a number starting from 0, unlike the localtime function in the standard function or the Time::Local in the standard module.
 </p>
-<h4> Acquisition of date/time information </h4>
+<h4>Acquisition of date/time information</h4>
 <pre>
 # Get method to get time information
 my $year = $dt-&gt;year;
@@ -157,7 +156,7 @@ my $qtr = $dt-&gt;quarter;
 <p>
   With the above method, you can get the date, hour, minute, second, day of the week, the number of days in a year, the number of counts in a quarter, and so on. Monday is 1 and Sunday is 7.
 </p>
-<h3> Get the current date and time </h3>
+<h3>Get the current date and time</h3>
 <p>
   Use the now method to create a DateTime object that represents the current time. If you specify local for time_zone in the argument, it will be the time zone of your country that should be set in the OS.
 </p>
@@ -179,7 +178,7 @@ my $dt = DateTime-&gt;now(time_zone =&gt;'Asia/Tokyo');
 <pre>
 my $dt = DateTime-&gt;now;
 </pre>
-<h3> Create date information from epoch seconds </h3>
+<h3>Create date information from epoch seconds</h3>
 <p>
   Use the from_epoch method to create a DateTime object from epoch seconds.
 </p>
@@ -192,21 +191,21 @@ my $dt = DateTime-&gt;from_epoch(epoch =&gt; $epoch);
 <pre>
 my $dt = DateTime-&gt;from_epoch(epoch =&gt; $epoch, time_zone =&gt;'local');
 </pre>
-<h3> Create a timezone object </h3>
+<h3>Create a timezone object</h3>
 <p>
   DateTime is a constructor that allows you to specify the time zone. You can reuse the DateTime::TimeZone object by creating it first.
 </p>
 <pre>
 my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
 </pre>
-<h4> Creating a timezone object </h4>
+<h4>Creating a timezone object</h4>
 <p>
   Use the new method to create a timezone object. In the argument, specify the time zone name in name. (List of time zone names)
 </p>
 <pre>
 my $time_zone = DateTime::TimeZone-&gt;new(name =&gt;'Asia/Tokyo');
 </pre>
-<h4> Automatic generation of timezone objects </h4>
+<h4>Automatic generation of timezone objects</h4>
 <p>
   As shown below, if you specify the time zone in the DateTime constructor (new, now, etc.), the DateTime::TimeZone object is automatically created internally.
 </p>
@@ -219,7 +218,7 @@ my $dt = DateTime-&gt;now(time_zone =&gt;'Asia/Tokyo');
 <p>
   This is a cost, so if you want to create a DateTime object more than once, it's a good idea to create a DateTime::TimeZone object first.
 </p>
-<h4> Use of timezone objects </h4>
+<h4>Use of timezone objects</h4>
 <p>
   Just specify the created DateTime::TimeZone object in time_zone, which is an argument of the DateTime constructor.
 </p>
@@ -229,7 +228,7 @@ my $dt1 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 <p>
   See "<a href="/blog/20081101122558.html">Time Zone List</a>" for a list of time zones.
 </p>
-<h3> Specify the locale to output the month name and day of the week name in Japanese </h3>
+<h3>Specify the locale to output the month name and day of the week name in Japanese</h3>
 <p>
   The expression of the date differs depending on the country or region. For example, January is expressed as January in the United States. Monday is expressed as Monday. A set of expressions for each country or region is called a locale. The DateTime module allows you to specify locales for different countries and regions.
 </p>
@@ -239,7 +238,7 @@ my $dt = DateTime-&gt;now(locale =&gt;'ja');
 <p>
   The Japanese locale is ja.
 </p>
-<h4> Specifying the locale </h4>
+<h4>Specifying the locale</h4>
 <p>
   The now method creates a DateTime object with current time information. You can specify locale as an argument.
 </p>
@@ -249,7 +248,7 @@ my $dt = DateTime-&gt;now(locale =&gt;'ja');
 <pre>
 my $dt = DateTime-&gt;now(locale =&gt;'ja', time_zone =&gt;'local');
 </pre>
-<h4> Locale-dependent information Month name and day name </h4>
+<h4>Locale - dependent information Month name and day name</h4>
 <p>
   The following four methods depend on the locale. For example, day_name might be Monday if the locale is Japan, or Monday if the locale is somewhere in the Americas.
 </p>
@@ -269,7 +268,7 @@ my $day_name = $dt-&gt;day_name;
 # Abbreviated name of the day of the week
 my $day_abbr = $dt-&gt;day_abbr;
 </pre>
-<h4> Encode for output </h4>
+<h4>Encode for output</h4>
 <p>
   When you get the month name or day name, the characters used there are flagged as UTF-8. The fact that the UTF-8 flag is set means that Perl handles strings in an internal representation.
 </p>
@@ -291,7 +290,7 @@ print(
   encode($encode_to, $day_abbr) . "\n"
 );
 </pre>
-<h3> Class for specifying locale </h3>
+<h3>Class for specifying locale</h3>
 <p>
   You can specify the locale name in the argument of the DateTime constructor.
 </p>
@@ -301,7 +300,7 @@ my $locale = DateTime::Locale-&gt;load('ja');
 <p>
   DateTime creates a DateTime::Locale object in its constructor. Then, based on the generated locale object, it creates an output of date information for each region or country.
 </p>
-<h4> Explicit creation of locale object </h4>
+<h4>Explicit creation of locale object</h4>
 <pre>
 my $locale = DateTime::Locale-&gt;load('ja');
 </pre>
@@ -311,7 +310,7 @@ my $locale = DateTime::Locale-&gt;load('ja');
 <p>
   There is always only one DateTime::Locale object that represents'ja' in your program. Such an object is called a singleton. It is not created every time like the DateTime::TimeZone object.
 </p>
-<h4> Pass the locale object to the constructor </h4>
+<h4>Pass the locale object to the constructor</h4>
 <p>
   To pass the locale object to the DateTime constructor:
 </p>
@@ -325,12 +324,12 @@ my $dt = DateTime-&gt;now(locale =&gt; $locale, time_zone =&gt;'local');
 my $dt = DateTime-&gt;now(locale =&gt;'ja', time_zone =&gt;'local');
 </pre>
 <p>
-  It is easy to specify by a character string like. If you write this, the DateTime::Locale object will be created automatically in the DateTime constructor.
+  It is easy to specify by a string like. If you write this, the DateTime::Locale object will be created automatically in the DateTime constructor.
 </p>
 <p>
   See "<a href="/blog/20081107122606.html">List of available locales</a>" for available locales.
 </p>
-<h3> Get all the date and time information </h3>
+<h3>Get all the date and time information</h3>
 <p>
   You can use DateTime to get date and time information. You can get it in various formats. You can specify the delimiter with the argument. If the argument is omitted, the date information is concatenated with-and the time information is concatenated with :.
 </p>
@@ -381,7 +380,7 @@ Hour, minute and second (hyphen) 23-48-14
 
 Year, month, day, hour, minute, second 2008-11-14T23:48:14
 </pre>
-<h3> Judgment of leap year Acquisition of the last day of the month </h3>
+<h3>Judgment of leap year Acquisition of the last day of the month</h3>
 <p>
   DateTime has a method to determine the leap year and a method to get the last day.
 </p>
@@ -392,21 +391,21 @@ my $is_leap_year = $dt1-&gt;is_leap_year;
 # Last day of the month
 my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 </pre>
-<h4> Determine if it is a leap year. </h4>
+<h4>Determine if it is a leap year.</h4>
 <p>
   Use the is_leap_year method to determine if it is a leap year.
 </p>
 <pre>
 my $is_leap_year = $dt1-&gt;is_leap_year;
 </pre>
-<h4> Get the last day of the month </h4>
+<h4>Get the last day of the month</h4>
 <p>
   To get the last day of the month, use the last_day_of_month method. If you specify year and month as arguments, a DateTime object that represents the last day of the month is returned (not the last day of the month itself). Get the date from the returned DateTime object with the day method.
 </p>
 <pre>
 my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 </pre>
-<h3> Date formatting "strftime" method </h3>
+<h3>Date formatting "strftime" method</h3>
 <p>
   Use the <strong> strftime </strong> method to format the date. Pass the format specifier as an argument.
 </p>
@@ -414,12 +413,12 @@ my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 $dt-&gt;strftime("%a");
 </pre>
 <p>
-  You can also specify multiple character strings in combination as shown below.
+  You can also specify multiple strings in combination as shown below.
 </p>
 <pre>
 $dt-&gt;strftime("%Y-%m-%d");
 </pre>
-<h4> Strftime format specifier list </h4>
+<h4>Strftime format specifier list</h4>
 <p>
   A list of strftime format specifiers.
 </p>
@@ -770,7 +769,7 @@ $dt-&gt;strftime("%Y-%m-%d");
     </td>
   </tr>
 </table>
-<h3> Date addition </h3>
+<h3>Date addition</h3>
 <p>
   Use the <strong> add </strong> method to add dates and times.
 </p>
@@ -796,7 +795,7 @@ $dt-&gt;add(seconds =&gt; 1);
 # Add all together
 $dt-&gt;add(years =&gt; 1, months =&gt; 1, days =&gt; 1, hours =&gt; 1, minutes =&gt; 1, seconds =&gt; 1);
 </pre>
-<h3> Date subtraction </h3>
+<h3>Date subtraction</h3>
 <p>
   Use the <strong> subtract </strong> method to subtract a period from a date.
 </p>
@@ -828,7 +827,7 @@ my $duration = $dt2- $dt1;
 <p>
   There are two types of date subtraction. Some subtract the period on a date (for example, one month ago), while others subtract the dates (for example, the difference between October 10, 2008 and March 14, 2009).
 </p>
-<h3> Object representing the period </h3>
+<h3>Object representing the period</h3>
 <p>
   The period between dates is represented by the DateTime::Duration object. DateTime represents date information, while DateTime::Duration represents period information. When adding a certain period to a date or subtracting a certain period, I used the add method and the submit method, but internally, the operation is performed after the DateTime::Duration object is created.
 </p>
@@ -907,11 +906,11 @@ Seconds and milliseconds (1 second is 1000 milliseconds)
 <p>
   It seems that minutes and seconds can be converted to each other, but they cannot. This is because the presence of leap seconds can make one minute 61 seconds.
 </p>
-<h3> Notes on date calculation </h3>
+<h3>Notes on date calculation</h3>
 <p>
   The date calculation has irregular parts, so it is better to use the simplest method possible. Here are some things to keep in mind about date calculations, including the causes that complicate date calculations.
 </p>
-<h4> Floating TimeZone </h4>
+<h4>Floating TimeZone</h4>
 <p>
   If the DateTime object is created with the new method and no time zone is specified, the default time zone will be what is called a floating time zone.
 </p>
@@ -924,14 +923,14 @@ Seconds and milliseconds (1 second is 1000 milliseconds)
 <p>
   For example, if you want to get the date from the log and get the date after 3 months, there is no problem in calculating in the floating time zone.
 </p>
-<h4> What is a leap second? </H4>
+<h4>What is a leap second? </H4>
 <p>
   The time is not absolute, and the time when the rotation of the earth is one week is counted as one day, so if the rotation of the earth is delayed, the length of the day will change. Leap seconds are seconds that are inserted once every few years because the rotation of the earth is delayed year by year.
 </p>
 <p>
   If you use a time zone that takes leap seconds into account and calculate the date so that the leap seconds are in between, there will be a one second difference from the case where the leap seconds are not in between.
 </p>
-<h4> What is daylight saving time? </H4>
+<h4>What is daylight saving time? </H4>
 <p>
   Daylight saving time is a policy to advance the time by one hour for a certain period of the year. Because at a certain moment, the time is advanced by one hour.
 </p>
@@ -947,7 +946,7 @@ Seconds and milliseconds (1 second is 1000 milliseconds)
 <p>
   In Japan, there is no daylight saving time, so there is no need to consider the effects of daylight saving time.
 </p>
-<h4> Convert a specific timezone to UTC </h4>
+<h4>Convert a specific timezone to UTC</h4>
 <p>
   To simplify the date calculation, convert a specific time zone to UTC before calculating. Then, after the calculation is finished, return to the original time zone.
 </p>
@@ -965,21 +964,21 @@ print $dt-&gt;datetime;
 <p>
   In Japan, there is no daylight saving time, so even if you calculate with local time, you will not get strange results. It seems that there are quite a few countries in the world that have introduced daylight saving time.
 </p>
-<h4> Calculation in a specific time zone </h4>
+<h4>Calculation in a specific time zone</h4>
 <p>
   Calculations in a particular time zone usually return correct results. However, if daylight savings time is in place and includes the time zone of the change to daylight savings time, weird results will be returned.
 </p>
 <p>
   As explained above, it is safe to convert to UTC, calculate and then undo.
 </p>
-<h4> The default timezone for the now method </h4>
+<h4>The default timezone for the now method</h4>
 <p>
   You can get the current time with the now method, but the default timezone is UTC.
 </p>
 <p>
   If you create a DateTime object with new, the default timezone will be the floating timezone.
 </p>
-<h3> How to get the previous month and the next month </h3>
+<h3>How to get the previous month and the next month</h3>
 <p>
   How to get the previous month and the next month using DateTime. (But I'm a little unsure)
 </p>
@@ -999,12 +998,12 @@ my $next_dt = $current_dt-&gt;clone-&gt;add(months =&gt; 1, end_of_month =&gt;'l
 <p>
   I think that it is convenient for applications that want to transition pages to the previous month or the next month.
 </p>
-<h3> Sample code </h3>
+<h3>Example code</h3>
 <p>
-  Finally, I will post the sample code.
+  Finally, I will post the example code.
 </p>
 <p>
-  This is a sample using DateTime.
+  This is a example using DateTime.
 </p>
 <pre>
 use strict;
@@ -1055,7 +1054,7 @@ Day 290 (counting in one year)
 4th term (out of 4th half)
 </pre>
 <p>
-  This is a sample to get the current date and time.
+  This is a example to get the current date and time.
 </p>
 <pre>
 use strict;
@@ -1101,7 +1100,7 @@ Day 307 (counting in one year)
 4th term (out of 4th half)
 </pre>
 <p>
-  This is a sample to create date information from epoch seconds.
+  This is a example to create date information from epoch seconds.
 </p>
 <pre>
 use strict;
@@ -1147,7 +1146,7 @@ Day 307 (counting in one year)
 4th term (out of 4th half)
 </pre>
 <p>
-  This is a sample to specify the time zone.
+  This is a example to specify the time zone.
 </p>
 <pre>
 use strict;
@@ -1166,7 +1165,7 @@ my $dt1 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 my $dt2 = DateTime-&gt;now(time_zone =&gt; $time_zone);
 </pre>
 <p>
-  This is a sample to set the locale.
+  This is a example to set the locale.
 </p>
 <pre>
 use strict;
@@ -1212,7 +1211,7 @@ Friday
 Money
 </pre>
 <p>
-  This is a sample to specify the locale with DateTime.
+  This is a example to specify the locale with DateTime.
 </p>
 <pre>
 use strict;
@@ -1237,7 +1236,7 @@ my $day_name = $dt-&gt;day_name;
 print encode($encode_to, $day_name) . "\n";
 </pre>
 <p>
-  This is a sample to get the date and time.
+  This is a example to get the date and time.
 </p>
 <pre>
 use strict;
@@ -1272,7 +1271,7 @@ print(
 );
 </pre>
 <p>
-  This is a sample to get the leap year judgment and the last day of the month.
+  This is a example to get the leap year judgment and the last day of the month.
 </p>
 <pre>
 use strict;
@@ -1290,7 +1289,7 @@ my $dt2 = DateTime-&gt;last_day_of_month(year =&gt; 2008, month =&gt; 11);
 print "The last day of November 2008 is". $Dt2-&gt;day. "The day.\n";
 </pre>
 <p>
-  This is a sample strftime method. I'm trying all the formats with samples.
+  This is a example strftime method. I'm trying all the formats with examples.
 </p>
 <pre>
 use strict;
@@ -1413,7 +1412,7 @@ Is 00. : 46
 %{method}: DateTime.pm method can be used. %{ymd}: 2008-11-17
 </pre>
 <p>
-  This is a sample that calculates the date and time using DateTime.
+  This is a example that calculates the date and time using DateTime.
 </p>
 <pre>
 use strict;
@@ -1520,7 +1519,7 @@ Yesterday's date is 2008-11-17.
 The period is 3 years, 1 month and 4 days
 </pre>
 <p>
-  This is a sample to get the period information.
+  This is a example to get the period information.
 </p>
 <pre>
 use strict;

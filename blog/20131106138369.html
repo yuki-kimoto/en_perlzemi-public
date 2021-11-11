@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Creating a graph with PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Creating a graph with PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain how to create a graph using PDL.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Creating a graph with PDL  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Creating a graph with PDL - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain how to create a graph using PDL." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20131106138369.html"> Creating a graph with PDL </a></h2>
+<h2><a href="/blog/20131106138369.html">Creating a graph with PDL</a></h2>
 <p>
   I will explain how to create a graph using PDL.
 </p>
@@ -85,11 +84,11 @@
 </div>
 
 
-<h3> Install PDL::Graphics::PLplot </h3>
+<h3>Install PDL::Graphics::PLplot</h3>
 <p>
   Install the module <strong> PDL::Graphics::PLplot </strong> to draw the graph. (You need to <a href="/blog/20131101138330.html">PDL installed</a> first.)
 </p>
-<h4> Windows </h4>
+<h4>Windows</h4>
 <p>
   To install in ppm, execute the following command.
 </p>
@@ -125,11 +124,11 @@ Running PDL-Graphics-PLplot-0.62 install script ...
   And set your PLPLOT_DRV_DIR environment variable to:
    C:\Perl64\site\bin
 </pre>
-<h3> Creating a simple graph </h3>
+<h3>Creating a simple graph</h3>
 <p>
   Let's draw a graph in PDL. Use the module <strong> PDL::Graphics::PLplot </strong> to draw the graph.
 </p>
-<h4> Linear function graph </h4>
+<h4>Linear function graph</h4>
 <p>
   First, let's draw a graph of the simplest linear function "y = 2x". Use the <strong> xyplot </strong> method to create a xy graph.
 </p>
@@ -157,10 +156,10 @@ $pl-&gt;close;
 </p>
 <blockquote>
 <p>
-  [f: id: perlcodesample: 20131106082618p: image: w500]
+  [f: id: perlcodeexample: 20131106082618p: image: w500]
 </p>
 </blockquote>
-<h4> new options </h4>
+<h4>new options</h4>
 <p>
   Here are some graph options. It can be passed as an argument to the new method.
 </p>
@@ -180,7 +179,7 @@ my $pl = PDL::Graphics::PLplot-&gt;new(
 <pre>
 PAGESIZE =&gt; [500, 400]
 </pre>
-<h4> Options for drawing graphs </h4>
+<h4>Options for drawing graphs</h4>
 <p>
   This option is specified when drawing the graph.
 </p>
@@ -303,13 +302,13 @@ COLOR =&gt;'RED'
   CHARTREUSE3 GOLD2 SIENNA1 CORAL
   HOTPINK LIGHTCORAL LIGHTPINK1 LIGHTGOLDENROD
 </pre>
-<h4> Sample </h4>
+<h4>Example</h4>
 <p>
   I wrote a graph of a linear function "y = 1/2 x + 10".
 </p>
 <blockquote>
 <p>
-  [f: id: perlcodesample: 20131106082619p: image: w500]
+  [f: id: perlcodeexample: 20131106082619p: image: w500]
 </p>
 </blockquote>
 <pre>
@@ -345,12 +344,12 @@ $pl-&gt;xyplot(
 # Close
 $pl-&gt;close;
 </pre>
-<h3> Graph of n-th order function </h3>
+<h3>Graph of n - th order function</h3>
 <p>
   Now let's draw a cubic function. It's interesting to know immediately what kind of shape it is.
 </p>
 <p>
-  [f: id: perlcodesample: 20131106102521p: image: w500]
+  [f: id: perlcodeexample: 20131106102521p: image: w500]
 </p>
 <pre>
 use strict;
@@ -374,12 +373,12 @@ $pl-&gt;xyplot($x, $y);
 # Close
 $pl-&gt;close;
 </pre>
-<h3> Trigonometric function </h3>
+<h3>Trigonometric function</h3>
 <p>
   The following is a graph of trigonometric functions (sin). Use the <strong> sin </strong> method to calculate trigonometric functions. It is defined in PDL::Math.
 </p>
 <p>
-  [f: id: perlcodesample: 20131106102522p: image: w500]
+  [f: id: perlcodeexample: 20131106102522p: image: w500]
 </p>
 <pre>
 use strict;
@@ -403,12 +402,12 @@ $pl-&gt;xyplot($x, $y);
 # Close
 $pl-&gt;close;
 </pre>
-<h3> Exponential function </h3>
+<h3>Exponential function</h3>
 <p>
   Next is the graph of the exponential function. Note that the value e to be calculated is created as a PDL variable.
 </p>
 <p>
-  [f: id: perlcodesample: 20131106102523p: image: w500]
+  [f: id: perlcodeexample: 20131106102523p: image: w500]
 </p>
 <pre>
 use strict;
@@ -436,12 +435,12 @@ $pl-&gt;xyplot($x, $y);
 $pl-&gt;close;
 
 </pre>
-<h3> Logarithmic function (natural logarithm) </h3>
+<h3>Logarithmic function (natural logarithm)</h3>
 <p>
   The last is a graph of logarithmic function (natural logarithm). Use the <strong> log </strong> method to calculate the logarithmic function (natural logarithm). It is defined in PDL::Math. Note that the graph starts at 0.1, as the value of log0 will be infinitesimal.
 </p>
 <p>
-  [f: id: perlcodesample: 20131106102524p: image: w500]
+  [f: id: perlcodeexample: 20131106102524p: image: w500]
 </p>
 <pre>
 use strict;
@@ -465,12 +464,12 @@ $pl-&gt;xyplot($x, $y);
 # Close
 $pl-&gt;close;
 </pre>
-<h3> Strip plot-graph of one x-axis and multiple y-axis </h3>
+<h3>Strip plot - graph of one x - axis and multiple y - axis</h3>
 <p>
   One x-axis and multiple y-axis graphs are called strip plots and can be drawn using the <strong> stripplots </strong> method.
 </p>
 <p>
-  [f: id: perlcodesample: 20131107113838p: image: w500]
+  [f: id: perlcodeexample: 20131107113838p: image: w500]
 </p>
 <pre>
 use strict;

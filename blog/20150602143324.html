@@ -27,11 +27,11 @@
 <script type="text/javascript" language="javascript">    var vc_pid = "886663612";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
 
-<title> Perl 5.22 has been released-math related enhancements, method performance improvements, regular expression improvements  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>Perl 5.22 has been released - math related enhancements, method performance improvements, regular expression improvements - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="The latest version of Perl 5.22 was released on June 1, 2015.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content=" Perl 5.22 has been released-math related enhancements, method performance improvements, regular expression improvements  - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="Perl 5.22 has been released - math related enhancements, method performance improvements, regular expression improvements - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="The latest version of Perl 5.22 was released on June 1, 2015." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -40,9 +40,8 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="header_main">  <h1>
-    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
-  </h1>
+        <div class="header_main">  <h1>    <a href="/"><img src="/images/logo.png">Perl Zemi</a>
+</h1>
 </div>
 
       </div>
@@ -65,7 +64,7 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20150602143324.html"> Perl 5.22 has been released-math related enhancements, method performance improvements, regular expression improvements </a></h2>
+<h2><a href="/blog/20150602143324.html">Perl 5.22 has been released - math related enhancements, method performance improvements, regular expression improvements</a></h2>
 <p>
   The latest version of Perl 5.22 was released on June 1, 2015.
 </p>
@@ -93,18 +92,18 @@
 <p>
   This release has a lot of feature additions.
 </p>
-<h3> Performance improvements </h3>
+<h3>Performance improvements</h3>
 <p>
   The best part about Perl 5.22 is the performance improvements. Improved performance with multi-reference parsing and improved method parsing.
 </p>
-<h4> Improved performance of multi-level dereference </h4>
+<h4>Improved performance of multi - level dereference</h4>
 <p>
   Perl's internal parser can now efficiently parse multi-tier dereferences. This has improved the performance of multi-tier dereferences.
 </p>
 <pre>
 $scores-&gt;[0]{math};
 </pre>
-<h4> Method call and SUPER pseudo-class performance improvement </h4>
+<h4>Method call and SUPER pseudo - class performance improvement</h4>
 <p>
   Method calls and SUPER pseudo-classes are pre-parsed and their information cached. This improves the performance of method calls at runtime.
 </p>
@@ -112,19 +111,19 @@ $scores-&gt;[0]{math};
 $obj-&gt;method
 $obj-&gt;SUPER::method;
 </pre>
-<h4> Performance improvement of length function </h4>
+<h4>Performance improvement of length function</h4>
 <p>
   The length function improves performance by 20%for non-UTF-8 strings.
 </p>
-<h4> Array and hash performance improvements </h4>
+<h4>Array and hash performance improvements</h4>
 <p>
   Access to array and hash elements is faster if the key is a constant or a simple variable.
 </p>
-<h3> Addition of Perl 5.22 features </h3>
+<h3>Addition of Perl 5.22 features</h3>
 <p>
   Perl 5.22 includes improvements to math-related features.
 </p>
-<h3> C99 math functions are now available </h3>
+<h3>C99 math functions are now available</h3>
 <p>
   Mathematical functions supported by C99 in Perl are now available through the POSIX module.
 </p>
@@ -132,12 +131,12 @@ $obj-&gt;SUPER::method;
 atanh
 tgamma
 </pre>
-<h4> Improved handling of infinity and NaN (non-numeric) </h4>
+<h4>Improved handling of infinity and NaN (non - numeric)</h4>
 <p>
   Inf and NaN are now more robustly available.
 </p>
  
-<h4> Improved hexadecimal floating point parsing </h4>
+<h4>Improved hexadecimal floating point parsing</h4>
 <p>
   Hexadecimal floating point parsing has been improved. It also adds a literal that describes floating point points in hexadecimal.
 </p>
@@ -150,7 +149,7 @@ tgamma
 <p>
   As you can see, Perl 5.22 has significantly improved math-related features.
 </p>
-<h4> Flags that don't use regular parentheses for capture </h4>
+<h4>Flags that don't use regular parentheses for capture</h4>
 <p>
   Perl 5.22 adds a new flag for <a href="/blog/20100827127859.html">regular expressions</a> that doesn't use regular parentheses for capture. This makes it possible to write complex regular expressions concisely without using the uncaptured parentheses "(? :)".
 </p>
@@ -167,11 +166,11 @@ tgamma
 <p>
   When writing complex regular expressions, it might be easier to see them in combination with the n option and a named capture.
 </p>
-<h4> Unicode 7.0 support </h4>
+<h4>Unicode 7.0 support</h4>
 <p>
   Perl 5.22 now supports Unicode 7.0. Perl supports Unicode very quickly.
 </p>
-<h4> Alias through reference </h4>
+<h4>Alias through reference</h4>
 <p>
   There is a feature called aliases as a feature of Perl, which can now be called at the syntax level. This feature is experimental.
 </p>
@@ -182,27 +181,27 @@ my $nums = [1, 2, 3];
 my $nums_alias;
 \$nums_alias = \$nums;
 </pre>
-<h4> Constant function support </h4>
+<h4>Constant function support</h4>
 <p>
   Constant functions are now supported by the const subroutine attribute. Once the function is executed, its value is saved, and the value is used from the second time onward. This feature is experimental.
 </p>
 <pre>
 my $value = sub: const{100 * 100};
 </pre>
-<h4> Double Diamond Operator-Safer Diamond Operator </h4>
+<h4>Double Diamond Operator - Safer Diamond Operator</h4>
 <p>
   A safer double diamond operator "<< >>" is now supported. Traditional diamond operators use the two-argument open function internally, while double-diamond operators use the three-argument open function.
 </p>
 <pre>
 my $line = &lt;&lt;&gt;&gt;;
 </pre>
-<h4> encoding module now has lexical scope </h4>
+<h4>encoding module now has lexical scope</h4>
 <p>
   The encoding module is a deprecated module, but it is still alive. Therefore, the range of impact when using encoding as a functional improvement has changed from global to lexical. The encoding module can now be partially used, such as on a file-by-file basis.
 </p>
-<h3> Deprecated features </h3>
+<h3>Deprecated features</h3>
 <p>
-  Converting all <h4> warnings to fatal errors has been deprecated. </h4>
+  Converting all <h4>warnings to fatal errors has been deprecated.</h4>
 </p>
 <p>
   Any statement that makes all warnings fatal errors has been deprecated. The following description is deprecated in the future and should be avoided.
@@ -213,7 +212,7 @@ use warnings FATAL =&gt;'all';
 <p>
   This is because when the Perl core adds a new warning, there is a risk that the previously running application will get stuck due to an error. It seems that Perl's core team has opted for safe addition of new warnings rather than full compatibility. I also agree with this.
 </p>
-<h3> Incompatible changes </h3>
+<h3>Incompatible changes</h3>
 <p>
   The following description resulted in an error.
 </p>
@@ -224,8 +223,8 @@ defined(%hash)
 <p>
   This description was deprecated as of 5.6.1, and in 5.16, a warning of deprecation was issued, but in 5.22, an error occurred. When upgrading Perl, please note that the old source code may have this description.
 </p>
-<h3> Module off core </h3>
-<h4> CGI module is off core </h4>
+<h3>Module off core</h3>
+<h4>CGI module is off core</h4>
 <p>
   The CGI module is off the core. This may come as a surprise, but it's also a trend of the times. After that, please install and use it from CPAN.
 </p>
@@ -237,11 +236,11 @@ defined(%hash)
   <a href="http://search.cpan.org/~ether/Task-Kensho-0.38/lib/Task/Kensho.pm#Task::Kensho::WebDev: _Web_Development">Task::Kensho::WebDev : _Web_Development</a>
 </p>
 </blockquote>
-<h4> Module::Build is off core </h4>
+<h4>Module::Build is off core</h4>
 <p>
   Module::Build has been removed from the core. When Module::Build is needed, it has been removed for the purpose of having a mechanism in Perl that automatically installs from CPAN and to keep core management as small as possible.
 </p>
-<h3> Summary </h3>
+<h3>Summary</h3>
 <p>
   First of all, I like Perl's enhancements to math-related features. We're happy to see the addition of features that cover areas where Perl is lagging behind.
 </p>
