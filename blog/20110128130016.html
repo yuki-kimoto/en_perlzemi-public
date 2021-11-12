@@ -165,7 +165,7 @@ print $NUM;
 </p>
 <h4>Subroutine</h4>
 <p>
-  Perl subroutines are scope-independent.
+  Perl subroutine are scope-independent.
 </p>
 <pre>
 {
@@ -200,9 +200,9 @@ $foo-&gt;();
 <p>
   At the end of the scope, the subroutine reference assigned to $foo is released. Note that the subroutine itself is not freed. sub {...} is parsed and placed in memory at compile time.
 </p>
-<h3>Scope in if and while statements</h3>
+<h3>Scope in if and while statement</h3>
 <p>
-  The "{}" used in if statements and <a href="/blog/20100123126425.html">while statements</a> is also a scope. In Perl, the scope is "{}", which is used in all kinds of syntax. It's consistent in this regard and is very straightforward compared to other languages.
+  The "{}" used in if statement and <a href="/blog/20100123126425.html">while statement</a> is also a scope. In Perl, the scope is "{}", which is used in all kinds of syntax. It's consistent in this regard and is very straightforward compared to other languages.
 </p>
 <pre>
 if (condition) {
@@ -271,7 +271,7 @@ Statement if my $num = 1;
 print $num;
 </pre>
 <p>
-  The same is true for unless statements and <a href="/blog/20100123126425.html">while statements</a>.
+  The same is true for unless statement and <a href="/blog/20100123126425.html">while statement</a>.
 </p>
 <pre>
 # unless

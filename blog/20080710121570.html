@@ -118,7 +118,7 @@ print var (), "\n";
 </pre>
 <h4>Closure definition</h4>
 <p>
-  The condition for being a closure is that the subroutine references a lexical variable that is out of its scope. (In this example, var refers to $var outside its scope.)
+  The condition for being a closure is that the subroutine reference a lexical variable that is out of its scope. (In this example, var refers to $var outside its scope.)
 </p>
 <p>
   The definition of closure is ambiguous depending on the person and the situation. The var subroutine is sometimes called a closure, and the "environment containing the variable $var referenced by the var subroutine" is sometimes called a closure.
@@ -168,7 +168,7 @@ print var (), "\n";
                    Data is inaccessible from outside the scope
 </pre>
 <p>
-  Data can only be accessed from outside the scope through subroutines. You cannot access the data directly.
+  Data can only be accessed from outside the scope through subroutine. You cannot access the data directly.
 </p>
 <h3>Create closures using "function generator"</h3>
 <p>
@@ -314,7 +314,7 @@ t;
 }
 </pre>
 <p>
-  When you create a closure, you can initialize the variables that the closure references. Pass it as an argument when creating the closure. Take it as an argument to the function generator and set it in a variable.
+  When you create a closure, you can initialize the variables that the closure reference. Pass it as an argument when creating the closure. Take it as an argument to the function generator and set it in a variable.
 </p>
 <h3>Explain the concept of closures in an easy - to - understand way in comparison with classes</h3>
 <p>
@@ -415,7 +415,7 @@ sub make_counter {
   my $self = {};
   $self-&gt;{cnt} = shift;
    
-  # Closures implement methods using references to subroutines.
+  # Closures implement methods using reference to subroutine.
   my $funcs = {};
   $funcs-&gt;{add_count} = sub {
     $self-&gt;{cnt}++;

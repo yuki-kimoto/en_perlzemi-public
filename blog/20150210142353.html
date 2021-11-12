@@ -193,7 +193,7 @@
 </p>
 <h3>High responsiveness due to reference counting GC</h3>
 <p>
-  Perl's GC method is a simple reference counting method. It is released when there are no more references to the object. I have to manage cross-references and circular references myself, but the impact on performance is small.
+  Perl's GC method is a simple reference counting method. It is released when there are no more reference to the object. I have to manage cross-reference and circular reference myself, but the impact on performance is small.
 </p>
 <p>
   The advantage of the reference counting method is that it does not lose its responsiveness even when many objects are created. Implementations that require Full GC will be less responsive when releasing a large number of objects.
