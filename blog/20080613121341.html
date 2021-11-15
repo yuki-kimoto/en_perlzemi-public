@@ -93,21 +93,21 @@
 
 
 <p>
-  The symbol table is just a hash named%main::. From the hash%main::, you can see all the subroutine and package variables of the script being executed. (Excluding lexical variables)
+  The symbol table is just a hash named%main::. From the hash%main::, you can see all the subroutine and a package variable of the script being executed. (Excluding a lexical variable)
 </p>
 <h3>Take a peek at the contents of the symbol table</h3>
 <pre>
 # main A symbol table containing the contents of the package
 # %main::Another name for %main::%::&lt;/pre&gt;
 
-&lt;h3&gt;Know the contents of package variables through the symbol table&lt;/h3&gt;
+&lt;h3&gt;Know the contents of a package variable through the symbol table&lt;/h3&gt;
 
 &lt;pre&gt;
 our $num = 1;
 ${$main::{num}};
 </pre>
 <p>
-  A detailed explanation is given in the explanation of typeglobs. Here, remember Perl's ability to know the contents of package variables and subroutine from the symbol table.
+  A detailed explanation is given in the explanation of typeglobs. Here, remember Perl's ability to know the contents of a package variable and subroutine from the symbol table.
 </p>
 <p>
   This is an example that outputs the contents of the symbol table.

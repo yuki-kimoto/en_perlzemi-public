@@ -99,7 +99,7 @@
 <p>
   If you omit the package name, it becomes an entry in the symbol table of the current current package.
 </p>
-<h3>Typeglobs and variables</h3>
+<h3>Typeglobs and variable</h3>
 <pre>
 my $num_from_typedglob = ${* main::num}; # Same as $num
 my @num_from_typedglob = @{* main::num}; # Same as @num
@@ -107,7 +107,7 @@ my %num_from_typedglob = %{* main::num}; # Same as%num
 my $ret_from_typedglob = &amp; {* main::num}; # Same as &amp; num (also same as num ())
 </pre>
 <p>
-  A typeglob is a kind of hash, <a href="/blog/20161107147852.html">scalar variable</a>, <a href="/blog/20161012147627.html">array</a>, < You can access a href="/blog/20161013147635.html">hash</a>, <a href="/blog/20101130129876.html">subroutine</a>, and more. It looks exactly like a dereference, but it's not a dereference.
+  A typeglob is a kind of hash, <a href="/blog/20161107147852.html">a scalar variable</a>, <a href="/blog/20161012147627.html">array</a>, < You can access a href="/blog/20161013147635.html">hash</a>, <a href="/blog/20101130129876.html">subroutine</a>, and more. It looks exactly like a dereference, but it's not a dereference.
 </p>
 <h3>Image of type glob</h3>
 <pre>
@@ -137,7 +137,7 @@ use warnings;
 # Represents an entry in the symbol table.
 
 
-# Variables with the same name but different only in funny characters ($, @,%)
+# Variable with the same name but different only in funny characters ($, @,%)
 our $num = 11;
 our @num = (12, 13);
 our%num = (key =&gt; 14);
@@ -149,7 +149,7 @@ sub num {
 
 require Data::Dumper;
 
-print "1-1: Access variables from the symbol table.\n";
+print "1-1: Access variable from the symbol table.\n";
 # Enclosed in ${}, a scalar entry
 my $num_from_symbol = ${$main::{num}};
 # Array entries, enclosed in @{}

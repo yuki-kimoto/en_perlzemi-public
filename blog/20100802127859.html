@@ -116,7 +116,7 @@ BEGIN {
 </p>
 <h3>local</h3>
 <p>
-  local is not meant to generate local variables. local is for temporarily changing the value and restoring it when it goes out of scope. For some reason it cannot be used for the scalar variable itself declared by my. You can use package variables and hash elements, array elements, and so on.
+  local is not meant to generate a local variable. local is for temporarily changing the value and restoring it when it goes out of scope. For some reason it cannot be used for the scalar variable itself declared by my. You can use a package variable and hash elements, array elements, and so on.
 </p>
 <pre>
 our $num = 1;
@@ -145,7 +145,7 @@ print $scores-&gt;{math};
 </p>
 <ul>
   <li>
-    <a href="/blog/20080309120507.html">local - Temporarily save and restore package variables</a>
+    <a href="/blog/20080309120507.html">local - Temporarily save and restore a package variable</a>
   </li>
 </ul>
 <h3>Multi - line comment</h3>
@@ -163,9 +163,9 @@ my $foo = 'foo';
 <p>
   The part enclosed as "=pod" and "=cut" is interpreted as a document and ignored.
 </p>
-<h3>Different variables with different sigils</h3>
+<h3>Different variable with different sigils</h3>
 <p>
-  Different sigils are completely different variables.
+  Different sigils are completely different variable.
 </p>
 <pre>
 # arrangement
@@ -177,9 +177,9 @@ my $ids;
 <p>
   The above variable has the name ids, but it's a completely different variable.
 </p>
-<h3>Examine the meaning of predefined variables</h3>
+<h3>Examine the meaning of predefined variable</h3>
 <p>
-  Special variables are very difficult to find by google search. It is also troublesome to search from the document. You can use the "-v" option of the perldoc command to find out the meaning of predefined variables, albeit in English.
+  Predefined variable are very difficult to find by google search. It is also troublesome to search from the document. You can use the "-v" option of the perldoc command to find out the meaning of predefined variable, albeit in English.
 </p>
 <pre>
 perldoc -v $.
@@ -236,7 +236,7 @@ perldoc -m File::Basename
 perldoc -l File::Basename
 </pre>
 <p>
-  If you want to see the standard function documentation, specify the f option.
+  If you want to see the builtin functions documentation, specify the f option.
 </p>
 <pre>
 perldoc -f substr
@@ -333,7 +333,7 @@ die "Exception" if $@;
 <p>
   I prefer.
 </p>
-<h3>Frequently used predefined variables</h3>
+<h3>Frequently used predefined variable</h3>
 <ul>
   <li>
     @_ - Subroutine arguments
@@ -543,7 +543,7 @@ my $message = "${name}::aaa ${name} _ppp";
 </pre>
 <h3>Take a peek at the symbol table</h3>
 <p>
-  A data structure in which names such as variables and subroutine are registered. The symbol for each package is stored in a variable with "::" at the end of the package name.
+  A data structure in which names such as variable and subroutine are registered. The symbol for each package is stored in a variable with "::" at the end of the package name.
 </p>
 <pre>
 # Symbol table

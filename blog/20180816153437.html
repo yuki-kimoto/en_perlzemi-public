@@ -226,7 +226,7 @@ plenv global system
 env | grep PATH
 </pre>
 <p>
-  You will see some environment variables that include PATH, so look for something called PATH. (This is an example when the user name is admins.)
+  You will see some environment variable that include PATH, so look for something called PATH. (This is an example when the user name is admins.)
 </p>
 <pre>
 PATH =/home/kimoto2/.plenv/shims: /home/kimoto2/.plenv/bin:/home/kimoto2/.plenv/shims:/home/kimoto2/.plenv/bin:/usr/local/bin:/ bin:/usr/bin:/usr/local/sbin: /usr/sbin:/home/kimoto2/.local/bin:/home/kimoto2/bin:/home/kimoto2/.local/bin:/home/kimoto2 /bin:/home/kimoto2/.local/bin:/home/kimoto2/bin
@@ -262,7 +262,7 @@ PATH =/home/kimoto2/.plenv/shims: /home/kimoto2/.plenv/bin:/home/kimoto2/.plenv/
   As you can see, this method is completely non-portable to crontab. The user name kimoto2 is directly embedded.
 </p>
 <p>
-  But I think this method is the best. The reason is that it is difficult to make it portable because there is a limitation that environment variables cannot be expanded in crontab. Portability increases the amount of description, requires additional scripts, and complicates management.
+  But I think this method is the best. The reason is that it is difficult to make it portable because there is a limitation that environment variable cannot be expanded in crontab. Portability increases the amount of description, requires additional scripts, and complicates management.
 </p>
 <p>
   Also, no matter how hard you try, crontab usually has some differences depending on the environment, so even if you keep portability, there may not be much merit.

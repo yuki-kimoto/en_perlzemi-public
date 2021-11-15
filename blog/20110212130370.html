@@ -357,10 +357,10 @@ my $content = do {local $/; &lt;$fh&gt;};
   An input record separator is set for the predefined variable "$/". By default, the standard line feed code of the OS is set as the input record separator. You can use the line input operator to read the contents of a file at once by setting the input record separator to undef. So if you set $/ to undef, you can get all the contents of the file when you run <$fh>. However, $/ is global, so you should always restore it to its original value if you change it.
 </p>
 <p>
-  <a href="/blog/20080309120507.html">local</a> is for temporarily changing the contents of a variable. local can be used for variables other than lexical variables.
+  <a href="/blog/20080309120507.html">local</a> is for temporarily changing the contents of a variable. local can be used for variable other than a lexical variable.
 </p>
 <pre>
-local variable;
+a local variable;
 </pre>
 <p>
   You can temporarily undef the contents of a variable until the end of scope. When the scope ends, the original value is restored.
@@ -416,7 +416,7 @@ $/ = "\x0A";
 chomp string;
 </pre>
 <p>
-  That is, you can change the a line break that you remove by changing the input record separator.
+  That is, you can change the line break that you remove by changing the input record separator.
 </p>
 <p>
   Characters output by <h4>\n</h4>

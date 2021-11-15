@@ -145,7 +145,7 @@ print var (), "\n";
 }
 </pre>
 <p>
-  Since $var is referenced in the var subroutine, it is not deleted from memory when the scope ends. (Lexical variables are destroyed from memory when they are out of scope and are not referenced anywhere.)
+  Since $var is referenced in the var subroutine, it is not deleted from memory when the scope ends. (Lexical variable are destroyed from memory when they are out of scope and are not referenced anywhere.)
 </p>
 <p>
   When the scope ends, $var is no longer visible outside the scope. (The var subroutine is not affected by the scope and is visible from outside the scope.)
@@ -234,7 +234,7 @@ my $timer1 = create_timer ();
 my $timer2 = create_timer ();
 </pre>
 <p>
-  The return value serves as a reference to the subroutine. This subroutine is a closure and has its own environment (variables referenced in the subroutine and the definition of the subroutine) in memory.
+  The return value serves as a reference to the subroutine. This subroutine is a closure and has its own environment (variable referenced in the subroutine and the definition of the subroutine) in memory.
 </p>
 <h4>Call closure</h4>
 <pre>
@@ -250,7 +250,7 @@ $timer1-&gt;();
 <p>
   You can do the same thing by creating a class, but if you don't want to create a class, use closures. (If you create one class, it will take more time to manage the class. If you do not want to create a class for simple description like this example, use closure.)
 </p>
-<h3>"Initialize variables" referenced by closures</h3>
+<h3>"Initialize variable" referenced by closures</h3>
 <p>
   This is an example to initialize the variable referenced by the closure.
 </p>
@@ -291,7 +291,7 @@ sub create_sign_checker {
   }
 }
 </pre>
-<h4>Initialize variables referenced by closures</h4>
+<h4>Initialize variable referenced by closures</h4>
 <pre>
 # Generate closures. (Initialize the variable referenced by the closure with 1)
 my $sign_inversion = create_sign_checker (1);
@@ -314,7 +314,7 @@ t;
 }
 </pre>
 <p>
-  When you create a closure, you can initialize the variables that the closure reference. Pass it as an argument when creating the closure. Take it as an argument to the function generator and set it in a variable.
+  When you create a closure, you can initialize the variable that the closure reference. Pass it as an argument when creating the closure. Take it as an argument to the function generator and set it in a variable.
 </p>
 <h3>Explain the concept of closures in an easy - to - understand way in comparison with classes</h3>
 <p>

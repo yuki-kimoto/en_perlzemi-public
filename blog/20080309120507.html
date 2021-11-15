@@ -36,12 +36,12 @@
   gtag('config', 'G-JDYCKHXVT5');
 </script>
 
-<title>local - Temporarily save and restore package variables - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use  local  to temporarily change package variables.">
+<title>local - Temporarily save and restore a package variable - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use  local  to temporarily change a package variable.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="local - Temporarily save and restore package variables - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use  local  to temporarily change package variables." />
+<meta name="twitter:title" content="local - Temporarily save and restore a package variable - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use  local  to temporarily change a package variable." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -73,9 +73,9 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20080309120507.html">local - Temporarily save and restore package variables</a></h2>
+<h2><a href="/blog/20080309120507.html">local - Temporarily save and restore a package variable</a></h2>
 <p>
-  You can use <b> local </b> to temporarily change package variables.
+  You can use <b> local </b> to temporarily change a package variable.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -111,7 +111,7 @@ our $NUM = 5;
 # Here, "$NUM" returns to "5" which is the "original value"
 </pre>
 <p>
-  Package variables modified by local are restored at the end of <a href="/blog/20110128130016.html">scope</a>.
+  Package variable modified by local are restored at the end of <a href="/blog/20110128130016.html">scope</a>.
 </p>
 <p>
   If initialization is not performed, the initial value of the variable value will be an undefined value.
@@ -120,7 +120,7 @@ our $NUM = 5;
 local $NUM;
 </pre>
 <p>
-  local is for package variables declared with <a href="/blog/20080308120495.html">our</a>. Note that it is not available for lexical variables declared by <a href="/blog/20080307120491.html">my</a>.
+  local is for a package variable declared with <a href="/blog/20080308120495.html">our</a>. Note that it is not available for a lexical variable declared by <a href="/blog/20080307120491.html">my</a>.
 </p>
 <pre>
 # Compile error
@@ -137,15 +137,15 @@ local $nums[1];
 my %score = (math =&gt; 90, english =&gt; 70);
 local $score{math};
 </pre>
-<h3>local for predefined variables</h3>
+<h3>local for predefined variable</h3>
 <p>
-  The most common use of local in Perl is for <a href="/blog/20161102147817.html">predefined variables</a> such as "$/", "%ENV" and "@ARGV".
+  The most common use of local in Perl is for <a href="/blog/20161102147817.html">predefined variable</a> such as "$/", "%ENV" and "@ARGV".
 </p>
 <p>
-  local targets package variables, but predefined variables actually belong to the <a href="/blog/20100419127089.html">package</a> called main.
+  local targets a package variable, but predefined variable actually belong to the <a href="/blog/20100419127089.html">package</a> called main.
 </p>
 <p>
-  So you can use local for predefined variables as well.
+  So you can use local for predefined variable as well.
 </p>
 <pre>
 local $/;
@@ -154,7 +154,7 @@ local @ARGV;
 </pre>
 <h3>Use my for variable declaration</h3>
 <p>
-  Since <a href="/blog/20160225145640.html">Perl 5.0</a>, Perl introduces variable declaration by "my", and there is almost no need to declare variables by lcoal. Try to use "my" for almost all variable declarations.
+  Since <a href="/blog/20160225145640.html">Perl 5.0</a>, Perl introduces variable declaration by "my", and there is almost no need to declare variable by lcoal. Try to use "my" for almost all variable declarations.
 </p>
 <pre>
 # Variable declaration
@@ -165,7 +165,7 @@ my $num;
   local is not a variable declaration, contrary to the expectation of the name. It has a dynamic scope.
 </p>
 <p>
-  Local variables in other languages are lexical variables using my in Perl.
+  Local variable in other languages are a lexical variable using my in Perl.
 </p>
 <table>
   <tr>
@@ -229,11 +229,11 @@ my $content = do {local $/; &lt;$fh&gt;};
   And when the scope ends, "$/" returns to its original state.
 </p>
 <p>
-  Keep in mind that Perl, which doesn't have a standard function to read a file at once, may read the entire contents of the file in this way.
+  Keep in mind that Perl, which doesn't have a builtin functions to read a file at once, may read the entire contents of the file in this way.
 </p>
 <h3>local example program</h3>
 <p>
-  This is an example to temporarily change a predefined variable using local. Special variables are package variables that belong to the main package.
+  This is an example to temporarily change a predefined variable using local. Predefined variable are a package variable that belong to the main package.
 </p>
 <pre>
 {
@@ -256,7 +256,7 @@ print "\$NUM = $NUM\n";
 
 # The fully qualified name of $NUM is $main::NUM and belongs to the main package.
 # (In Perl, no variable is a global variable
-# Perl has only lexical and package variables. )
+# Perl has only lexical and a package variable. )
 
 print "\$main::NUM = $main::NUM\n";
 print "\n";

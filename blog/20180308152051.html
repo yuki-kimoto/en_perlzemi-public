@@ -92,7 +92,7 @@
 </div>
 
 
-<h4>Creating a reference for scalar variables</h4>
+<h4>Creating a reference for a scalar variable</h4>
 <p>
   To create a scalar variable reference:
 </p>
@@ -100,7 +100,7 @@
 my $str = "Hello";
 my $str_ref = \$str;
 </pre>
-<h4>Dereference scalar variable reference</h4>
+<h4>Dereference a scalar variable reference</h4>
 <p>
   Use "${}" to dereference the scalar variable reference.
 </p>
@@ -108,7 +108,7 @@ my $str_ref = \$str;
 my $str = ${$str_ref};
 </pre>
 <p>
-  Simple variables can be dereferenced by simply prefixing them with "$".
+  Simple variable can be dereferenced by simply prefixing them with "$".
 </p>
 <pre>
 my $str = $$str_ref;
@@ -125,7 +125,7 @@ my $str = $$str_ref;
 </p>
 <h4>Getopt::Long</h4>
 <p>
-  When programming yourself, you rarely have the opportunity to use scalar variable reference, but if your library uses them, you need to remember how to use them.
+  When programming yourself, you rarely have the opportunity to use a scalar variable reference, but if your library uses them, you need to remember how to use them.
 </p>
 <p>
   A frequently used module is <a href="/blog/20100514127696.html">Getopt::Long</a>.
