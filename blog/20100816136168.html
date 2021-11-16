@@ -181,7 +181,7 @@ if (!$num) {
 </pre>
 <h4>and AND (A and B) Low priority</h4>
 <p>
-  You can also use <b> and </b> to represent the conjunction "A and B". The priority is lower than "&&". It is recommended to use "&&" for AND. "And" can be used for conditional branching explained below.
+  You can also use <b> and </b> to represent the conjunction "A and B". The priority is lower than "&&". It is recommended to use "&&" for AND. "And" can be used for conditional branch explained below.
 </p>
 <pre>
 # Greater than 1 and less than 4
@@ -191,7 +191,7 @@ if ($num &gt; 1 and $num &lt; 4) {
 </pre>
 <h4>or OR (A or B) Low priority</h4>
 <p>
-  You can also use <b> or </b> to represent the conjunction "A or B". The priority is lower than "||". It is recommended to use "||" for the logical sum. "Or" can be used for conditional branching explained below.
+  You can also use <b> or </b> to represent the conjunction "A or B". The priority is lower than "||". It is recommended to use "||" for the logical sum. "Or" can be used for conditional branch explained below.
 </p>
 <pre>
 # 'dog' or'cat'
@@ -247,7 +247,7 @@ $var1 || $var2
   Use <h3>or as a conditional branch</h3>
 </p>
 <p>
-  Taking advantage of these properties, or is often used for conditional branching. For example, if the <a href="/blog/20080718121643.html">open function</a> fails, write as follows.
+  Taking advantage of these properties, or is often used for conditional branch. For example, if the <a href="/blog/20080718121643.html">open function</a> fails, write as follows.
 </p>
 <pre>
 open my $fh, '&lt;', $file
@@ -264,10 +264,10 @@ system(@cmd) == 0
   or die "Can't execute command @cmd";
 </pre>
 <p>
-  If you want to write the main processing first and write supplementary error processing later, you can use conditional branching with or.
+  If you want to write the main processing first and write supplementary error processing later, you can use conditional branch with or.
 </p>
 <p>
-  You can use "and" for conditional branching, but "or" is recommended because it is difficult to read.
+  You can use "and" for conditional branch, but "or" is recommended because it is difficult to read.
 </p>
 <pre>
 # Example rewritten with and

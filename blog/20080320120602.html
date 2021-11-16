@@ -36,12 +36,12 @@
   gtag('config', 'G-JDYCKHXVT5');
 </script>
 
-<title>if ~ elseif ~ else - Perform complicated conditional branching - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can use the  if  statement to perform conditional branching. If the condition is true, the inside of the parentheses is executed.">
+<title>if ~ elsif ~ else - Multiple conditional branch - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="You can use a  if  statement for a conditional branch. If the condition is true, the inside of the block is executed.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="if ~ elseif ~ else - Perform complicated conditional branching - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can use the  if  statement to perform conditional branching. If the condition is true, the inside of the parentheses is executed." />
+<meta name="twitter:title" content="if ~ elsif ~ else - Multiple conditional branch - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="You can use a  if  statement for a conditional branch. If the condition is true, the inside of the block is executed." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -73,9 +73,9 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20080320120602.html">if ~ elseif ~ else - Perform complicated conditional branching</a></h2>
+<h2><a href="/blog/20080320120602.html">if ~ elsif ~ else - Multiple conditional branch</a></h2>
 <p>
-  You can use the <strong> if </strong> statement to perform conditional branching. If the condition is true, the inside of the parentheses is executed.
+  You can use a <strong> if </strong> statement for a conditional branch. If the condition is true, the inside of the block is executed.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,67 +98,69 @@ if (condition) {
   ...
 }
 </pre>
+<h4>elsif</h4>
 <p>
   You can also use elsif to make multiple conditional branches.
 </p>
 <pre>
-if (condition 1) {
+if (condition1) {
   ...
 }
-elsif (condition 2) {
+elsif (condition2) {
   ...
 }
 </pre>
 <p>
-  If you use else, you can perform processing when the condition is not met.
+  More conditinal branches.
+</p>
+<pre>
+if (condition1) {
+  ...
+}
+elsif (condition2) {
+  ...
+}
+elsif (condition3) {
+  ...
+}
+</pre>
+<h4>else</h4>
+<p>
+  If you use else, you can create the branch executed if the condition is not met.
 </p>
 <pre>
 if (condition) {
   ...
 }
 else {
-  What to do if the conditions are not met
+  # Do the things if the condition is not met
 }
 </pre>
 <p>
-  Please see below for details on how to use conditional branching using if statement.
+  A combination with elsif statements:
+</p>
+<pre>
+if (condition1) {
+  ...
+}
+elsif (condition2) {
+  ...
+}
+elsif (condition3) {
+  ...
+}
+else {
+
+}
+</pre>
+<p>
+  Please see below for details on how to use conditional branch using if statement.
 </p>
 <ul>
   <li>
-    <a href="/blog/20161023147731.html">Conditional branching by if statement</a>
+    <a href="/blog/20161023147731.html">Conditional branch using if statement</a>
   </li>
 </ul>
-<h3>Conditional branch if ~ else</h3>
-<pre>
-if (condition) {
-  When the conditions are met
-}
-else {
-  If the conditions are not met
-}
-</pre>
-<p>
-  It is used when conditional branching is performed depending on whether the condition is satisfied or not.
-</p>
-  
-<h3>Conditional branch if ~ elsif</h3>
-<pre>
-if (condition 1) {
-  When condition 1 is met
-}
-elsif (condition 2) {
-  When condition 2 is met
-}
-elsif (condition 3) {
-  When condition 3 is met
-}
-else {
-  If you didn't see any of the conditions.
-}
-</pre>
-<p>
-  Used when conditional branching is performed under multiple conditions. Unlike C language and Java, it is not written as else if. Write elsif.
-</p>
 <h3>If statement example</h3>
 <p>
   It is an example of if ～ else and if ～ elsif.
@@ -192,6 +194,16 @@ elsif ($num == 3) {
 else {
   # Not effective
 }
+</pre>
+<p>
+  Execution result:
+</p>
+<pre>
+1: if ~ else statement
+$num is not 1.
+
+2: if ~ elsif ~ elsif ~ else
+$num is 2
 </pre>
 
   </div>

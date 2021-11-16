@@ -37,11 +37,11 @@
 </script>
 
 <title>Perl boolean - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Explains  boolean  in Perl. There are five  false values  in Perl:">
+<meta name="description" content="Explains  boolean  in Perl.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="Perl boolean - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Explains  boolean  in Perl. There are five  false values  in Perl:" />
+<meta name="twitter:description" content="Explains  boolean  in Perl." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -75,7 +75,7 @@
 </ol>
 <h2><a href="/blog/20080323120628.html">Perl boolean</a></h2>
 <p>
-  Explains <strong> boolean </strong> in Perl. There are five <strong> false values </strong> in Perl:
+  Explains <strong> boolean </strong> in Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -93,6 +93,10 @@
 </div>
 
 
+<h4>False values</h4>
+<p>
+  There are <strong>five false values </strong> in Perl. Undefined value, equal to 0 as a <a href="/blog/20161026147748.html">number</a>, empty <a href="/blog/20161003147558.html">string</a>, string "0", a empty <a href="/blog/20100308126967.html">list</a> are false value.
+</p>
 <table>
   <tr>
     <td>
@@ -124,12 +128,12 @@
       0
     </td>
     <td>
-      0
+      Equal to 0 as a number.
     </td>
   </tr>
   <tr>
     <td>
-      Four
+      4
     </td>
     <td>
       "0"
@@ -138,14 +142,25 @@
       String 0
     </td>
   </tr>
+  <tr>
+    <td>
+      5
+    </td>
+    <td>
+      ()
+    </td>
+    <td>
+      Empty list
+    </td>
+  </tr>
 </table>
+<h4>True values</h4>
 <p>
-  The <strong> true value </strong> in Perl is all but the above.
+  The <strong> true value </strong> in Perl is all values except the above.
 </p>
 <p>
-  Undefined value, equal to 0 in <a href="/blog/20161026147748.html">number</a>, empty <a href="/blog/20161003147558.html">string</a>, 0 Only the string, the empty <a href="/blog/20100308126967.html">list</a>, will be false.
+  The following is the example of true values.
 </p>
-<h4>Examples of true values</h4>
 <pre>
 # 1
 1;
@@ -160,7 +175,7 @@ my $obj = Point-&gt;new;
 "0.0"
 </pre>
 <p>
-  "0.0" is numerically equal to 0, but is treated as true.
+  Note that "0.0" is a true value. Only "0" is a false value in strings which has more than zero length.
 </p>
 <h3>Example program</h3>
 <p>
@@ -180,7 +195,7 @@ $var = '0'; # False.
 # $var = '0.0' True. True for strings except '0' and''.
 </pre>
 <p>
-  False values are often used in if statement. Please see the following article for conditional branching by if statement.
+  See the following article for the combination with if statement.
 </p>
 <ul>
   <li>
