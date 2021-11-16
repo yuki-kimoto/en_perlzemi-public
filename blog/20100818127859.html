@@ -281,7 +281,7 @@ SV * const sv_num = num_ptr? * Sv_num_ptr: &amp; PL_sv_undef;
 # Perl
 my $count = @nums;
 
-# XS (Note that a value 1 smaller than the length is returned due to historical reasons)
+# XS (Note that a value 1 less than the length is returned due to historical reasons)
 int count = av_len (nums) + 1;
 </pre>
 <p>

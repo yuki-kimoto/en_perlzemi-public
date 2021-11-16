@@ -36,11 +36,11 @@
   gtag('config', 'G-JDYCKHXVT5');
 </script>
 
-<title>our - Declaration of a package variable - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<title>our - Package variable declaration - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
 <meta name="description" content="I will explain the declaration of  a package variable  by  our .">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="our - Declaration of a package variable - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:title" content="our - Package variable declaration - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
 <meta name="twitter:description" content="I will explain the declaration of  a package variable  by  our ." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
@@ -73,7 +73,7 @@
     <meta itemprop = "position" content = "4" />
   </li>
 </ol>
-<h2><a href="/blog/20080308120495.html">our - Declaration of a package variable</a></h2>
+<h2><a href="/blog/20080308120495.html">our - Package variable declaration</a></h2>
 <p>
   I will explain the declaration of <b> a package variable </b> by <b> our </b>.
 </p>
@@ -93,7 +93,7 @@
 </div>
 
 
-<h3>Declaration of a package variable</h3>
+<h3>Package variable declaration</h3>
 <p>
   Use <strong> our </strong> to declare a package variable.
 </p>
@@ -101,14 +101,14 @@
 our $NUM;
 </pre>
 <p>
-  Package variable are global variable that belong to one namespace. Package variable have qualified names (package names) and can be referenced from anywhere in the source code.
+  A package variable are a global variable that belong to a package(For example, Foo). Package variable have a fully qualified name(For example, $Foo::NUM). You can access to the package variable from anywhere in the program.
 </p>
 <p>
-  It is customary in Perl to make the variable name of a package variable "uppercase".
+  Usually the name of a package variable is wrriten by uppercase characters.
 </p>
-<h3>Initialization of a package variable</h3>
+<h3>Package variable initialization</h3>
 <p>
-  "Initialization" can be performed at the same time as the declaration of the package variable.
+  You can initialize a package variable at the same time as the declaration of the package variable.
 </p>
 <pre>
 our $NUM = 5;
@@ -123,7 +123,7 @@ our $NUM = 5;
 </p>
 <h4>Package variable scope</h4>
 <p>
-  At the end of the scope, you will not be able to see it without the package name. You can refer to it by using the fully qualified name.
+  At the end of the scope, you will not be able to see it without the package name. You can access to it by using the fully qualified name.
 </p>
 <pre>
 package SomePackage;
@@ -135,7 +135,7 @@ $PACKAGE_VAR1 = 1;
 {
   our $PACKAGE_VAR2 = 2;
 }
-# At the end of scope, you can only refer to it with a fully qualified name
+# At the end of scope, you can only access to it with a fully qualified name
 $SomePackage::PACKAGE_VAR2;
 </pre>
 <p>
@@ -148,7 +148,7 @@ $SomePackage::PACKAGE_VAR2;
 </ul>
 <h3>Package declaration</h3>
 <p>
-  In Perl, a package declaration is a namespace declaration in another language. Generally, package names start with an uppercase letter. Capitalize the word breaks as well.
+  In Perl, a package declaration is the same as a namespace declaration in other language. Generally, package names start with an uppercase character as follows.
 </p>
 <pre>
 package SomePackage;
@@ -160,7 +160,7 @@ package SomePackage;
 $SomePackage::PACKAGE_VAR1
 </pre>
 <p>
-  See the following articles for more information on package declarations.
+  See the following articles for more information on the package declaration.
 </p>
 <ul>
   <li>
@@ -169,24 +169,24 @@ $SomePackage::PACKAGE_VAR1
 </ul>
 <h3>main package</h3>
 <p>
-  If no package is declared, the package variable declared with our belong to the main package.
+  If no package is declared, the package variable declared in the "main" package.
 </p>
 <pre>
 # Belongs to "main package" as "$main::NUM"
 our $NUM;
 </pre>
 <p>
-  In Perl, there are no variable that do not have a package. What looks like no package actually belongs to the main package.
+  In Perl, all package variables belong to thier own package. If a package variable looks like not to belong to a package, the package variable belongs to the main package.
 </p>
 <p>
-  For example, <a href="/blog/20161102147817.html">predefined variable</a> don't seem to belong to the package, but they do.
+  For example, <a href="/blog/20161102147817.html">predefined variables</a> belong to the "CORE" package.
 </p>
-<h3>Should we use variable declaration by our?</h3>
+<h3>Should I use package variable declarations?</h3>
 <p>
-  If you write its own program, you rarely have the opportunity to use our variable declarations. The safer and faster "my" variable declaration makes it possible to write a complete program. Avoid "our" as much as possible and use only "my".
+  If you write your own program, you rarely have the opportunity to use our variable declarations. The safer and faster "my" variable declaration makes it possible to write a enough program. Avoid "our" as much as possible and use "my" in most places.
 </p>
 <p>
-  my has a lexical scope and is safe with a small accessible range. Since it is in a continuous area, it has the characteristic that the access speed to variable is fast.
+  Because my has a lexical scope and a small accessible range, you can write more safety program. Access speed to the variable is also faster.
 </p>
 <p>
   See the following article for variable declaration by my.
@@ -222,8 +222,7 @@ print "\$OtherPackage::PACKAGE_VAR1 = $OtherPackage::PACKAGE_VAR1\n\n";
   Execution result
 </p>
 <pre>
-1: The a package variable has a qualified name (SomePackage) from any position in the program (Sco)
-You can also refer to it from outside the loop).
+1: Package variable has a qualified name (SomePackage)It can be referenced from anywhere in the program (even from outside the scope).
 $SomePackage::PACKAGE_VAR1 = 1
 $OtherPackage::PACKAGE_VAR1 = 2
 </pre>
