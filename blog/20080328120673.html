@@ -37,11 +37,11 @@
 </script>
 
 <title>foreach - Processing of each element of the array - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use  foreach  to process each element of the  array in turn . Perl prefers to use while statement.">
+<meta name="description" content="Use  foreach  statement to iterate the elements of the array.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="foreach - Processing of each element of the array - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use  foreach  to process each element of the  array in turn . Perl prefers to use while statement." />
+<meta name="twitter:description" content="Use  foreach  statement to iterate the elements of the array." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -65,10 +65,6 @@
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161023147731.html">        <span itemprop = "name">control structure </span></a>
-    <meta itemprop = "position" content = "2" />
-  </li>
-  &#8250;
   <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161022147731.html">        <span itemprop = "name">Syntax </span></a>
     <meta itemprop = "position" content = "3" />
   </li>
@@ -79,7 +75,7 @@
 </ol>
 <h2><a href="/blog/20080328120673.html">foreach - Processing of each element of the array</a></h2>
 <p>
-  Use <strong> foreach </strong> to process each element of the <strong> array in turn </strong>. Perl prefers to use <a href="/blog/20100123126425.html">while statement</a>.
+  Use <strong> foreach </strong> statement to iterate the elements of the array.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -98,27 +94,35 @@
 
 
 <pre>
-foreach my $item (@array) {
+foreach my $element (@array) {
   ...
 }
 </pre>
 <p>
-  Also, in Perl, foreach is another name for for, so you can use for instead of foreach. I think this is more concise.
+  In Perl, foreach is the alias for for statement, so you can use for instead of foreach.
 </p>
 <pre>
-for my $item (@array) {
+for my $element (@array) {
   ...
 }
 </pre>
 <p>
-  The method of outputting the elements in order is explained in detail on the following page.
+  The way to output the elements of a array is explained in detail on the following article.
 </p>
 <ul>
   <li>
-    <a href="/blog/20170521149524.html">Let's learn the iterative processing using for statement and while statement</a>
+    <a href="/blog/20170521149524.html">Let's learn the repeat syntax using for statement and while statement</a>
   </li>
 </ul>
+<h3>Other repeat syntaxes</h3>
+<p>
+  Other repeat syntaxes are <a href="/blog/20100123126425.html">while statement</a> and for statement. foreach statement is the merely alias for for statement.
+</p>
 <h3>Example</h3>
+<p>
+  Examples of foreach statement.
+</p>
+<h4>Array</h4>
 <p>
   This is an example that outputs the elements of the array in order.
 </p>
@@ -130,6 +134,15 @@ foreach my $num (@nums) {
 }
 </pre>
 <p>
+  Output:
+</p>
+<pre>
+3
+4
+5
+</pre>
+<h4>Array reference</h4>
+<p>
   This is an example that outputs the elements of an array in order when the data structure is an array reference.
 </p>
 <pre>
@@ -139,7 +152,18 @@ foreach my $num (@$nums) {
   print "$num\n";
 }
 </pre>
- This is an example that outputs the values contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
+<p>
+  Output:
+</p>
+<pre>
+3
+4
+5
+</pre>
+<h4>2D array</h4>
+<p>
+  This is an example that outputs the values contained in the two-dimensional array, separated by tabs for each line. <a href="/blog/20081007122338.html">join function</a> is used to connect the strings contained in the array with tabs.
+</p>
 <pre>
 # Output the values contained in the 2D array in tabs for each line
 my $data = [
@@ -147,16 +171,24 @@ my $data = [
   ['b', 2]
 ];;
 
-foreach my $record(@$data) {
+foreach my $record (@$data) {
   print join("\t", @$record) . "\n";
 }
 </pre>
+<p>
+  Output:
+</p>
+<pre>
+a	1
+b	2
+</pre>
+<h4>Join with tab</h4>
 <p>
   This is an example that outputs the values contained in the hash array for each line, separated by tabs.
 </p>
 <pre>
 # Outputs the values contained in the hash array, tab-separated line by line
-my $people = [
+my $persons = [
   {name =&gt;'Ken', age =&gt; 19},
   {name =&gt;'Taro', age =&gt; 32}
 ];;
@@ -166,6 +198,14 @@ foreach my $person (@$persons) {
   print join("\t", @record) . "\n";
 }
 </pre>
+<p>
+  Output:
+</p>
+<pre>
+Ken	19
+Taro	32
+</pre>
+<h4>Output strings</h4>
 <p>
   Here are some examples of foreach.
 </p>
@@ -195,7 +235,7 @@ foreach my $index(0 .. $# persons) {
 }
 </pre>
 <p>
-  Execution result
+  Output:
 </p>
 <pre>
 [1]

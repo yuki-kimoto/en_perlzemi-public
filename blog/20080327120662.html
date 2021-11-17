@@ -36,12 +36,12 @@
   gtag('config', 'G-JDYCKHXVT5');
 </script>
 
-<title>for statement - Repeat using index - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Use  for  to iterate over  indexes . Other iterative syntax is while statement and foreach statement, but for is used when the index of the array is required.">
+<title>for statement - Repeat syntax - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="for  statement is the syntax for repeat.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="for statement - Repeat using index - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Use  for  to iterate over  indexes . Other iterative syntax is while statement and foreach statement, but for is used when the index of the array is required." />
+<meta name="twitter:title" content="for statement - Repeat syntax - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="for  statement is the syntax for repeat." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -73,9 +73,9 @@
     <meta itemprop = "position" content = "3" />
   </li>
 </ol>
-<h2><a href="/blog/20080327120662.html">for statement - Repeat using index</a></h2>
+<h2><a href="/blog/20080327120662.html">for statement - Repeat syntax</a></h2>
 <p>
-  Use <strong> for </strong> to iterate over <strong> indexes </strong>. Other iterative syntax is <a href="/blog/20100123126425.html">while statement</a> and foreach statement, but for is used when the index of the array is required.
+  <strong> for </strong> statement is the syntax for repeat.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -94,8 +94,8 @@
 
 
 <pre>
-# for
-for (Initialize counter variable; Condition; Update counter variable) {
+# for statement
+for (InitializeCounterVariable; Condition; UpdateCounterVariable) {
   ...
 }
 </pre>
@@ -104,46 +104,83 @@ for (Initialize counter variable; Condition; Update counter variable) {
 </p>
 <ul>
   <li>
-    <a href="/blog/20170521149524.html">Let's learn the iterative processing using for statement and while statement</a>
+    <a href="/blog/20170521149524.html">Let's learn the repeat syntax using for statement and while statement</a>
   </li>
 </ul>
+<h3>Other repeat syntaxes</h3>
+<p>
+  Other repeat syntaxes are <a href="/blog/20100123126425.html">while statement</a> and foreach statement. foreach statement is the merely alias for for statement.
+</p>
+ 
 <h3>Example</h3>
+<p>
+  Examples of for statements.
+</p>
+<h4>Array</h4>
 <p>
   This is an example that outputs the elements of the array in order.
 </p>
 <pre>
-# Process array elements in sequence
+# Iterate array elements
 my @nums = (3, 4, 5);
 for (my $i = 0; $i &lt; @nums; $i++) {
-  print "$i:". $nums[$i] . "\n";
+  print "$i:" . $nums[$i] . "\n";
 }
 </pre>
+<p>
+  Output:
+</p>
+<pre>
+0:3
+1:4
+2:5
+</pre>
+<h4>Array reference</h4>
 <p>
   This is an example that outputs the elements of an array in order when the data structure is an array reference.
 </p>
 <pre>
-# Process array elements in sequence (array reference)
+# Iterate array elements when the data structure is an array reference
 my $nums = [3, 4, 5];
 for (my $i = 0; $i &lt; @$nums; $i++) {
   print "$i:". $nums-&gt;[$i] . "\n";
 }
 </pre>
 <p>
-  This is an example that outputs all the elements of a two-dimensional array in order. In Perl, 2D arrays must be created using reference.
+  Output:
+</p>
+<pre>
+0:3
+1:4
+2:5
+</pre>
+<h4>2D array</h4>
+<p>
+  This is an example that outputs all the elements of a two-dimensional array in order. In Perl, 2D arrays is created by using reference.
 </p>
 <pre>
 # Output all elements of 2D array
 my $data = [
   ['a', 1],
   ['b', 2]
-];;
+];
 
 for (my $i = 0; $i &lt; @$data; $i++) {
   for (my $k = 0; $k &lt;@{$data-&gt;[$i]}; $k ++) {
-    print "($i, $k):". $Data-&gt;[$i]-&gt;[$k] . "\n";
+    print "($i, $k):". $data-&gt;[$i]-&gt;[$k] . "\n";
   }
 }
 </pre>
+<p>
+  Output:
+</p>
+<pre>
+(0, 0):a
+(0, 1):1
+(1, 0):b
+(1, 1):2
+</pre>
+<h4>Join with tab</h4>
 <p>
   This is an example that outputs the values contained in the two-dimensional array, separated by tabs for each line.
 </p>
@@ -157,30 +194,37 @@ my $data = [
 for (my $i = 0; $i &lt; @$data; $i++) {
   print join("\t", @{$data-&gt;[$i]}) . "\n";
 }
-
-Here are some examples of the for statement.
-
-&lt;pre&gt;
+</pre>
+<p>
+  Output:
+</p>
+<pre>
+a	1
+b	2
+</pre>
+<h4>Output strings</h4>
+<p>
+  Here are some examples of the for statement.
+</p>
+<pre>
 use strict;
 use warnings;
 
 print "[1]\n";
 for (my $i = 0; $i &lt; 5; $i++) {
-  # Add 1 at a time, and when $val reaches 5, exit the loop.
   print "$i\n";
 }
 print "\n";
 
 print "[2]\n";
-my @chars = qw/a b c d e/;
+my @chars = qw(a b c d e);
 for (my $i = 0; $i &lt; @chars; $i++) {
-  # @chars (array size) is 5, so when $index becomes 5, it exits the loop.
   print "$chars[$i]\n";
 }
 print "\n";
 </pre>
 <p>
-  Execution result
+  Output:
 </p>
 <pre>
 [1]
@@ -188,11 +232,11 @@ print "\n";
 1
 2
 3
-Four
+4
 
 [2]
 a
-b b
+b
 c
 d
 e
