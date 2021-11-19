@@ -52,7 +52,58 @@
     
   </div>
   <div class="middle">
-    <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/21</div>
+    <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/11/19</div>
+<h2><a href="/blog/20211119124656.html">JavaScript Supported Web Scraping using Perl</a></h2>
+<p>
+  I explain JavaScript supported web scraping using Perl and <a href="https://metacpan.org/pod/Selenium::Remote::Driver">Selenium::Remote::Driver</a>. Selenium::Remote::Driver is a Perl module for Selenium. Selenium provides the APIs for JavaScript supported web scraping. 
+</p>
+<h3>Download and Install Perl</h3>
+<p>
+  See the following articles about how to donwload and install Perl.
+</p>
+<ul>
+  <li><a href="/blog/20180820153471.html">Download and Install Perl</a></li>
+</ul>
+<h3>Download and Install Google Chrome</h3>
+<p>
+  I explain the way to install web browsers.
+</p>
+<h4>Windows and Mac</h4>
+<p>
+  You can download and install Google Chrome in the following page.
+</p>
+<ul>
+ <li><a href="https://www.google.com/chrome/">Google Chrome - Download</a></li>
+</ul>
+<h4>Linux</h4>
+<p>
+  In Linux you maybe install Google Chrome using package managers. I try the installing Google Chrome on the some Linux distributions.
+</p>
+<h5>Ubuntu</h5>
+<ul>
+ <li><a href="https://ubuntu.perlzemi.com/blog/20211117083934.html">Install Google Chrome on Ubuntu</a></li>
+</ul>
+<h5>CentOS</h5>
+<ul>
+ <li><a href="https://centos.perlzemi.com/blog/20210104090837.html">Install Google Chrome on CentOS</a></li>
+</ul>
+<h3>Download and Install Web Drivers</h3>
+<p>
+  Web Drivers is tools to control Web browsers by using programs.
+</p>
+<h5>Ubuntu</h5>
+<ul>
+ <li><a href="https://ubuntu.perlzemi.com/blog/20211116083934.html">Install ChromeDriver on Ubuntu</a></li>
+</ul>
+<h5>CentOS</h5>
+<ul>
+ <li><a href="https://centos.perlzemi.com/blog/20210103090837.html">Install ChromeDriver on CentOS</a></li>
+</ul>
+<p>
+  (Uncompleted)
+</p>
+
+<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/21</div>
 <h2><a href="/blog/20210921094146.html">Maintainable Perl 7 plan</a></h2>
 <p>
   As of 2021, Perl 7 with high maintainability is planned. Perl7 is a new version of Perl that improves the maintainability of Perl, reduces beginner mistakes, and maintains high backward compatibility with the current version of Perl5.
@@ -472,101 +523,6 @@ $driver-&gt;shutdown_binary; &lt;/pre&gt;
 <h4>For Mac</h4>
 <p>
   <a href="https://sironekotoro.hateblo.jp/entry/2020/06/06/185455">Using Selenium from Perl</a> The environment construction procedure will be helpful.
-</p>
-
-<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2020/10/30</div>
-<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
-    <meta itemprop = "position" content = "1" />
-  </li>
-  &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161022147731.html">        <span itemprop = "name">Syntax </span></a>
-    <meta itemprop = "position" content = "2" />
-  </li>
-  &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20161003147558.html">        <span itemprop = "name">string </span></a>
-    <meta itemprop = "position" content = "3" />
-  </li>
-  &#8250;
-  <li>
-    here
-  </li>
-</ol>
-<h2><a href="/blog/20201030075254.html">Escape sequence of double quoted strings</a></h2>
-<p>
-  Here are the escape sequences that can be used in double-quoted strings.
-</p>
-<h3>Escape sequence corresponding to ASCII code</h3>
-<p>
-  Frequently used ones are a line break "\n" and tabs "\t".
-</p>
-<table>
-  <tr> <th> Escape <br> Sequence </th> <th> Code <br> Point <br> Decimal </th> <th> Code <br> Point <br> Hexadecimal </th> < th> ASCII </th> <th> meaning </th> </tr>
-  <tr> <td>\a </td> <td> 7 </td> <td> 07 </td> <td> BEL </td> <td> Alarm or Bell </td> </tr>
-  <tr> <td>\b </td> <td> 8 </td> <td> 08 </td> <td> BS </td> <td> Backspace </td> </tr>
-  <tr> <td>\e </td> <td> 27 </td> <td> 1B </td> <td> ESC </td> <td> Escape Sequence </td> </tr>
-  <tr> <td>\f </td> <td> 12 </td> <td> 0C </td> <td> FF </td> <td> form feed </td> </tr>
-  <tr> <td>\n </td> <td> 10 </td> <td> 0A </td> <td> LF </td> <td> Line feed </td> </tr>
-  <tr> <td>\r </td> <td> 13 </td> <td> 0D </td> <td> CR </td> <td> Carriage return </td> </tr>
-  <tr> <td>\t </td> <td> 9 </td> <td> 09 </td> <td> TAB </td> <td> Tab </td> </tr>
-</table>
-<p>
-  This is an example using the escape sequence of tabs and a line break.
-</p>
-<pre>
-# Use tabs and a line break
-my $line = "ID\tName\tPrice\n";
-</pre>
-<h3>Occasional escape sequences</h3>
-<p>
-  I also sometimes use escape sequences that represent double quotes "\" "and backslashes themselves" \\ ".
-</p>
-<table>
-  <tr> <th> Escape <br> Sequence </th> <th> Meaning </th> </tr>
-  <tr> <td>\"</td> <td>" </td> </tr>
-  <tr> <td> \\ </td> <td>\</td> </tr>
-</table>
-<h3>Notes on line break "\n"</h3>
-<p>
-  There is one caveat regarding a line break "\n".
-</p>
-<p>
-  In the source code of the program, "\n" is a single character and represents "LF" in ASCII code and "0A" in hexadecimal. This matches the Linx/Unix line feed code.
-</p>
-<p>
-  One thing to keep in mind is that Perl's I/O layer automatically converts to OS line feed code when outputting to standard output or files.
-</p>
-<p>
-  "\n" is converted to a two-character line feed code "0D 0A" on Windows. On Unix/Linux/macOS, it is "0A" without conversion.
-</p>
-<pre>
-# "0D 0A" on Windows, "0A" on Unix/Linux/Mac
-print "Hello\n";
-</pre>
-<p>
-  To avoid this conversion, use escape sequences that directly specify the ASCII code. How to specify the ASCII code directly is explained below.
-</p>
-<h3>Escape sequence that directly describes ASCII code</h3>
- 
-<p>
-  There are also escape sequences that allow you to write the ASCII code itself in hexadecimal by starting with "\x".
-</p>
-<pre>
-# Specify ASCII code directly in hexadecimal to represent HTTP protocol a line break
-my $message = "Hello\x0D\x0A";
-print $message;
-</pre>
-<p>
-  The above example is an example that expresses the line feed code in the HTTP protocol because it is an ASCII hexadecimal sequence of "D" and "A". The 0 after the "\x" is not required, but it is included according to the convention of representing ASCII codes in 2-digit hexadecimal numbers.
-</p>
-<h3>Document with all escape sequences</h3>
-<p>
-  Below is the Perl documentation with all the escape sequences.
-</p>
-<ul>
-  <li> <a href="https://perldoc.jp/docs/perl/5.10.1/perlrebackslash.pod">perlrebackslash - Perl regular expression reverse slash sequence and escape - perldoc.jp</a> </li >
-</ul>
-<p>
-  Although it covers all the escape sequences of a regular expression, the escape sequences of double-quoted strings are included in the escape sequences of a regular expression, so let's refer only to the escape sequences of the part related to double-quoted strings.
 </p>
 
 
