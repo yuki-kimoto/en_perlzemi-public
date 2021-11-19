@@ -123,7 +123,7 @@ while (defined(my $line = &lt;$fh&gt;)) {
 </p>
 <h3>Diamond operator</h3>
 <p>
-  The line input operator "<>" with nothing between "<" and">" is specially called the <strong> diamond operator </strong>. If the file handle is omitted, it can be read line by line from the standard input and the file name specified by the <a href="/blog/20080108132865.html">command line argument</a>.
+  The line input operator "<>" with nothing between "<" and">" is specially called the <strong> diamond operator </strong>. If the file handle is omitted, it can be read line by line from the standard input and the file name specified by <a href="/blog/20080108132865.html">command line argument</a>.
 </p>
 <pre>
 # Diamond operator
@@ -220,13 +220,13 @@ while (my $line = readline $fh) {
 }
 </pre>
 <p>
-  To read the file line by line, use the readline function. $fh is the filehandle opened by the open function. Repeat reading one line with a while statement to read to the end of the file.
+  To read the file line by line, use the readline function. $fh is the filehandle opened by the open function. Repeat reading one line with while statement to read to the end of the file.
 </p>
 <p>
-  It may seem strange to read one line at the position where the conditional statement of the while loop is written, but such a description is possible. With the description my $line = readline $fh, I declare a lexical variable called $line and assign the read line to $line. $line is valid only inside a while loop and is not visible from the outside.
+  It may seem strange to read one line at the position where conditional statement of the while loop is written, but such a description is possible. With the description my $line = readline $fh, I declare a lexical variable called $line and assign the read line to $line. $line is valid only inside a while loop and is not visible from the outside.
 </p>
 <p>
-  When the end of the file is reached, the readline function returns undef and $line is assigned undef. Since $line is undef, the while statement ends.
+  When the end of the file is reached, the readline function returns undef and $line is assigned undef. Since $line is undef, while statement ends.
 </p>
 <h4>(2) Remove a line break with chomp function</h4>
 <pre>

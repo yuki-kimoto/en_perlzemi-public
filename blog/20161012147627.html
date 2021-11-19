@@ -189,7 +189,7 @@ my $cnt = @nums;
   Use a for or foreach statement to process the elements of an array in sequence. For is used when you want to access in order using subscripts, and foreach is used when you simply want to process arrays in order. It's a good practice in Perl to use for when foreach can't handle it.
 </p>
 <p>
-  Let's output the elements of the array in order with the for statement.
+  Let's output the elements of the array in order with for statement.
 </p>
 <pre>
 for (my $i = 0; $i &lt; @nums; $i++) {
@@ -197,7 +197,7 @@ for (my $i = 0; $i &lt; @nums; $i++) {
 }
 </pre>
 <p>
-  Let's output the elements of the array in order with the foreach statement.
+  Let's output the elements of the array in order with foreach statement.
 </p>
 <pre>
 foreach my $num (@nums) {
@@ -352,7 +352,7 @@ $numbers_ref-&gt;[0]
 @$numbers_ref
 </pre>
 <p>
-  Dereference when you want to return to an array such as a for statement or a function that takes an array as an argument
+  Dereference when you want to return to an array such as for statement or a function that takes an array as an argument
 </p>
 <p>
   Array reference are also explained in detail on the following pages.
@@ -401,7 +401,7 @@ splice @array, $pos, $length, @replace;
 </ul>
 <h4>grep function</h4>
 <p>
-  You can use the "<strong> grep function </strong>" to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $_. Only elements that meet the conditional statement will be added to @matched.
+  You can use the "<strong> grep function </strong>" to retrieve only the elements that match the conditions in the array. Each element of @array is passed to the default argument $_. Only elements that meet conditional statement will be added to @matched.
 </p>
 <pre>
 # Extract only the elements that match the conditions
@@ -493,7 +493,7 @@ print'array: @numbers = ('. join(',', @numbers). ")\n\n";
 # Apply grep.
 my $saerch_number = 3;
 if (grep {$_ == $saerch_number} @numbers) {
-  # If the element to be searched is found, the inside of the if statement will be true.
+  # If the element to be searched is found, the inside of if statement will be true.
   print "1: $saerch_number exists.\n";
 }
 
@@ -584,7 +584,7 @@ for my $number (@numbers) {
 }
 print "\n";
 
-# Array reference (dereference it to the for statement)
+# Array reference (dereference it to for statement)
 print "\@{\$numbers_ref} =";
 for my $number (@$numbers_ref) {
   print $number. ", "

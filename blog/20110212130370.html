@@ -94,7 +94,7 @@
   You must first open the file in order to read it. Files are managed by the OS, so you must first tell the OS that you want to work with the files programmatically. The OS returns the identifier of the target file to the program.
 </p>
 <p>
-  Use the <a href="/blog/20080718121643.html">open function</a>: title = open function] to open the file.
+  Use <a href="/blog/20080718121643.html">open function</a>: title = open function] to open the file.
 </p>
 <pre>
 my $file = 'data.txt';
@@ -106,10 +106,10 @@ open my $fh, '&lt;', $file
 </p>
 <h4>open function</h4>
 <p>
-  The open function takes three arguments. Specify the lexical variable in the first argument, the open mode in the second argument, and the file name in the third argument. When the file is opened, the <a href="/blog/20080721121664.html">file handle</a> is stored in the lexical variable specified by the first argument. Input from a file and output to a file are done through this file handle. The second argument is open mode, and if you want to read the contents from the file, specify "<".
+  The open function takes three arguments. Specify the lexical variable in the first argument, the open mode in the second argument, and the file name in the third argument. When the file is opened, <a href="/blog/20080721121664.html">file handle</a> is stored in the lexical variable specified by the first argument. Input from a file and output to a file are done through this file handle. The second argument is open mode, and if you want to read the contents from the file, specify "<".
 </p>
 <p>
-  If the open function fails because the file does not exist, it returns <a href="/blog/20100220126425.html">undef</a>. If it fails, use the <a href="/blog/20100212126425.html">die function</a> to throw an exception. By using <a href="/blog/20180125151688.html">or operator</a>, if the executable statement on the left side of or is false, you can describe the process of executing the executable statement on the right side.
+  If the open function fails because the file does not exist, it returns <a href="/blog/20100220126425.html">undef</a>. If it fails, use <a href="/blog/20100212126425.html">die function</a> to throw an exception. By using <a href="/blog/20180125151688.html">or operator</a>, if executable statement on the left side of or is false, you can describe the process of executing executable statement on the right side.
 </p>
 <h4>Open mode</h4>
 <p>
@@ -192,7 +192,7 @@ use Encode::UTF8Mac;
 open my $fh, '&lt;', encode('' utf-8-mac'', $file);
 </pre>
 <p>
-  Note that Mac OS X is stored in a special UTF-8, not a simple UTF-8. Use the <a href="/blog/20120201132807.html">Encode::UTF8Mac</a> module.
+  Note that Mac OS X is stored in a special UTF-8, not a simple UTF-8. Use <a href="/blog/20120201132807.html">Encode::UTF8Mac</a> module.
 </p>
 <p>
   The following explanation is detailed about the handling of Japanese.
@@ -231,7 +231,7 @@ Can't open file "data.txt": No such file or directory at a.pl line 6.
 die qq/Can't open file "$file":$!/;
 </pre>
 <p>
-  "Can't open file" $file "" tells the user that the file open failed. Also, the <a href="/blog/20161102147817.html">predefined variable</a> called $! Is set to the content of the message notified by the OS when the system call fails. Please include the exception message.
+  "Can't open file" $file "" tells the user that the file open failed. Also, <a href="/blog/20161102147817.html">predefined variable</a> called $! Is set to the content of the message notified by the OS when the system call fails. Please include the exception message.
 </p>
 <p>
   For a detailed explanation of <a href="/blog/20100411127089.html">exception handling</a>, see the following article.
@@ -247,14 +247,14 @@ open my $fh, '&lt;', $file
   or die qq/Can't open file "$file":$!/;
 </pre>
 <p>
-  Use the <a href="/blog/20080722121673.html">line input operator</a> to read the file line by line.
+  Use <a href="/blog/20080722121673.html">line input operator</a> to read the file line by line.
 </p>
 <pre>
 # Line input operator
 &lt;File handle&gt;
 </pre>
 <p>
-  Use the <a href="/blog/20170521149524.html">while statement</a> to read the lines line by line. The following is an example of outputting all lines to standard output (screen).
+  Use <a href="/blog/20170521149524.html">while statement</a> to read the lines line by line. The following is an example of outputting all lines to standard output (screen).
 </p>
 <pre>
 while (my $line = &lt;$fh&gt;) {
@@ -262,17 +262,17 @@ while (my $line = &lt;$fh&gt;) {
 }
 </pre>
 <p>
-  The line input operator reads one line and assigns it to a variable called $line. This is done to the end of the file using a while statement.
+  The line input operator reads one line and assigns it to a variable called $line. This is done to the end of the file using while statement.
 </p>
 <p>
-  The line input operator returns an undef when it reaches the end of the file, so it escapes the while statement at the end of the file.
+  The line input operator returns an undef when it reaches the end of the file, so it escapes while statement at the end of the file.
 </p>
 <h3>File close</h3>
 <p>
   Close the file after reading or writing to it.
 </p>
 <p>
-  Use the <a href="/blog/20160312145776.html">close function</a> to close the file.
+  Use <a href="/blog/20160312145776.html">close function</a> to close the file.
 </p>
 <pre>
 close $fh;
@@ -291,7 +291,7 @@ open my $fh, '&gt;', $file
   or die qq/Can't open file "$file":$!/;
 </pre>
 <p>
-  Use the <a href="/blog/20170404149131.html">print function</a> to write a string to the file.
+  Use <a href="/blog/20170404149131.html">print function</a> to write a string to the file.
 </p>
 <pre>
 print file handle string
@@ -410,7 +410,7 @@ $/ = "\x0A";
 </pre>
 <h4>behavior of chomp function</h4>
 <p>
-  You can use the <a href="/blog/20080226120403.html">chomp function</a> to remove the trailing line break, but it's actually removing the trailing input record separator.
+  You can use <a href="/blog/20080226120403.html">chomp function</a> to remove the trailing line break, but it's actually removing the trailing input record separator.
 </p>
 <pre>
 chomp string;

@@ -159,7 +159,7 @@ while (1) {
   (Reference) <a href="/blog/20100524127696.html">FindBin</a>, <a href="/blog/20180309152509.html">Time::HiRes</a>
 </p>
 <p>
-  The script is called repeatedly using the <a href="/blog/20100123126425.html">while statement</a>.
+  The script is called repeatedly using <a href="/blog/20100123126425.html">while statement</a>.
 </p>
 <p>
   Launch about 3 command prompts and execute write_loop_20080814.pl at all prompts. Read data_20080814.txt, count up and write back in 3 parallels.
@@ -173,7 +173,7 @@ while (1) {
 <h3>Code explanation</h3>
 <h4>Fcntl - Read constants for file locking</h4>
 <p>
-  The <a href="/blog/20180310152509.html">Fcntl</a> module allows you to use the file locking constants used by flock.
+  <a href="/blog/20180310152509.html">Fcntl</a> module allows you to use the file locking constants used by flock.
 </p>
 <pre>
 use Fcntl qw /:DEFAULT :flock :seek/;
@@ -211,7 +211,7 @@ use Fcntl qw /:DEFAULT :flock :seek/;
   LOCK_NB is used with LOCK_SH LOCK_EX to return control to the program without waiting for the lock to be released if the lock has already been applied.
 </p>
 <p>
-  As a side note:DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in the <a href="/blog/20080804121794.html">sysopen function</a>. Therefore, it is specified.
+  As a side note:DEFAULT uses his SEEK_SET in the seek function to use O_RDWR and O_CREAT in <a href="/blog/20080804121794.html">sysopen function</a>. Therefore, it is specified.
 </p>
 <h4>(2) If the file does not exist, create it and open it in read/write mode</h4>
 <pre>
@@ -283,7 +283,7 @@ while (1) {
 }
 </pre>
 <p>
-  FindBin is a module that allows you to know the path of a script. The system function is a function that can execute a specified command. The rand function is a function for generating a random number. The usleep function is a function that stops the script for a certain period of time. Unlike the <a href="/blog/20170522149546.html">sleep function</a>, you can specify the number of seconds in microseconds.
+  FindBin is a module that allows you to know the path of a script. The system function is a function that can execute a specified command. The rand function is a function for generating a random number. The usleep function is a function that stops the script for a certain period of time. Unlike <a href="/blog/20170522149546.html">sleep function</a>, you can specify the number of seconds in microseconds.
 </p>
 <p>
   The usleep function is given a random value of 1 second or less, and when this process is run in parallel, it is devised so that a file conflict occurs.

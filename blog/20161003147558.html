@@ -124,7 +124,7 @@ my $str2 = "Hello";
   For example, you can use the <b> line break "\n" </b> or the <b> tab "\t" </b>. Line breaks and tabs are invisible characters, but they can be represented using escape sequences.
 </p>
 <p>
-  This is a <a href="/blog/20201030075254.html">double quote string escape sequence</a>.
+  This is <a href="/blog/20201030075254.html">double quote string escape sequence</a>.
 </p>
 <pre>
 # new line
@@ -209,7 +209,7 @@ my $str3 = "I have ${str1} AIUEO";
 </pre>
 <h4>Concatenation of strings</h4>
 <p>
-  Next, let's concatenate the strings. Use the <a href="/blog/20080221120361.html">string concatenation operator "."</a> to concatenate strings.
+  Next, let's concatenate the strings. Use <a href="/blog/20080221120361.html">string concatenation operator "."</a> to concatenate strings.
 </p>
 <pre>
 my $str1 = 'I have a'.'pen';
@@ -234,7 +234,7 @@ $str1 = $str1. $Str2;
 </pre>
 <h4>String output</h4>
 <p>
-  Use the <a href="/blog/20170404149131.html">print function</a> to print the string to the screen.
+  Use <a href="/blog/20170404149131.html">print function</a> to print the string to the screen.
 </p>
 <pre>
 my $message = 'Hello';
@@ -289,7 +289,7 @@ my @strs = qw(
   You may want to <b> remove trailing a line break </b> when reading a text file.
 </p>
 <p>
-  Perl has a <a href="/blog/20080226120403.html">chomp function</a> for removing a line break, but this function is environment dependent.
+  Perl has <a href="/blog/20080226120403.html">chomp function</a> for removing a line break, but this function is environment dependent.
 </p>
 <p>
   When running on a Windows OS, remove the "CR + LF" which is a line break in Windows, and when running on Unix/Linux/Mac, remove "LF".
@@ -602,7 +602,7 @@ if ($message =~ /day/) {
   If you know how to handle strings in Java, it is easy to understand by considering the correspondence between "string stream" and "byte stream".
 </p>
 <p>
-  Use the decode function of the <a href="/blog/20091118124667.html">Encode module</a> to decode.
+  Use the decode function of <a href="/blog/20091118124667.html">Encode module</a> to decode.
 </p>
 <p>
   <b> Read a file with the character code "cp932" written on Windows </b>
@@ -627,7 +627,7 @@ while (my $line = &lt;&gt;) {
 }
 </pre>
 <p>
-  The <a href="/blog/20100123126425.html">while statement</a> is used to read line by line from the file specified by the command line arguments.
+  <a href="/blog/20100123126425.html">while statement</a> is used to read line by line from the file specified by the command line arguments.
 </p>
 <p>
   The example of the file "name.txt" is as follows. Save it with cp932.
@@ -664,7 +664,7 @@ $name = decode('cp932', $name);
   Encoding means converting an "decoded string" to a "byte string".
 </p>
 <p>
-  To encode, use the encode function of the <a href="/blog/20091118124667.html">Encode module</a>.
+  To encode, use the encode function of <a href="/blog/20091118124667.html">Encode module</a>.
 </p>
 <p>
   For example, if you want to output in UTF-8, write as follows.<pre>

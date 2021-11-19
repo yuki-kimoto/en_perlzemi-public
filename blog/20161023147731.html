@@ -107,7 +107,7 @@ if ($num == 5) {
 }
 </pre>
 <p>
-  The if statement has the following syntax. When the condition becomes true, the following blocks are executed.
+  if statement has the following syntax. When the condition becomes true, the following blocks are executed.
 </p>
 <pre>
 if (condition) {
@@ -197,7 +197,7 @@ else {
 </pre>
 <h3>Comparison operator</h3>
 <p>
-  I used the symbol "==" in the condition of the if statement, which is one of the <b> comparison operators </b>.
+  I used the symbol "==" in the condition of if statement, which is one of the <b> comparison operators </b>.
 </p>
 <p>
   Here are the Perl comparison operators. Perl has two types of comparison operators. <b> Numeric comparison operators </b> and <b> String comparison operators </b>.
@@ -381,7 +381,7 @@ if ($num1 gt $num2) {
 </ul>
 <h3>Perl boolean</h3>
 <p>
-  Next, let's get a good understanding of Perl's <b> boolean </b>. In the if statement, the inside of the block was executed when the condition became true. It was not executed when it became false.
+  Next, let's get a good understanding of Perl's <b> boolean </b>. In if statement, the inside of the block was executed when the condition became true. It was not executed when it became false.
 </p>
 <p>
   Now let's get a good understanding of Perl booleans.
@@ -437,7 +437,7 @@ if ($num1 gt $num2) {
   </tr>
 </table>
 <p>
-  If the condition of the if statement is a false value as shown below, the inside of the block will not be executed.
+  If the condition of if statement is a false value as shown below, the inside of the block will not be executed.
 </p>
 <pre>
 # Not executed if condition is false
@@ -502,7 +502,7 @@ my $object = XML::Simple-&gt;new;
 (1, 2);
 </pre>
 <p>
-  If the condition of the if statement is true as shown below, the inside of the block is executed.
+  If the condition of if statement is true as shown below, the inside of the block is executed.
 </p>
 <pre>
 # Executed if the condition is true
@@ -627,7 +627,7 @@ if ($num &gt; 1 &amp;&amp; $num &lt; 5) {
 }
 </pre>
 <p>
-  And has the same meaning, but the priority of the operator is low, and it is customary to use "&&" when writing in the conditional part of the if statement.
+  And has the same meaning, but the priority of the operator is low, and it is customary to use "&&" when writing in the conditional part of if statement.
 </p>
 <h4>OR (A or B)</h4>
 <p>
@@ -639,7 +639,7 @@ if ($num &lt; 1 || $num &gt; 5) {
 }
 </pre>
 <p>
-  Or has the same meaning, but the priority of the operator is low, and it is customary to use "||" when writing in the conditional part of the if statement.
+  Or has the same meaning, but the priority of the operator is low, and it is customary to use "||" when writing in the conditional part of if statement.
 </p>
 <h4>Negation (not A)</h4>
 <p>
@@ -679,7 +679,7 @@ if ($num &gt; 10 || (($num&gt; -3 &amp;&amp; $num &lt; 6) &amp;&amp;! ($Num == 0
 </p>
 <h4>unless statement</h4>
 <p>
-  <a href="/blog/20100125126425.html">unless statement</a> can write the same processing as when the condition is denied by the if statement.
+  <a href="/blog/20100125126425.html">unless statement</a> can write the same processing as when the condition is denied by if statement.
 </p>
 <pre>
 # Execute block if $num is not true
@@ -696,7 +696,7 @@ if (!$num) {
 }
 </pre>
 <p>
-  When should the unless statement be used if the meanings are the same? That is when you want to strengthen your feelings of "otherwise". The feeling that unless is "otherwise" stands out.
+  When should unless statement be used if the meanings are the same? That is when you want to strengthen your feelings of "otherwise". The feeling that unless is "otherwise" stands out.
 </p>
 <p>
   For example, if the error checking process is the main process, writing the following is more noticeable than writing using "if" and "!". It is a process to execute a block when a value is not defined using <a href="/blog/20100219126425.html">define function</a>.
@@ -708,10 +708,10 @@ unless (defined $num) {
 </pre>
 <h4>Write the branch in the failed process with or</h4>
 <p>
-  Perl often customarily writes conditional branch using the <a href="/blog/20100816136168.html">logical operator or</a>.
+  Perl often customarily writes conditional branch using <a href="/blog/20100816136168.html">logical operator or</a>.
 </p>
 <p>
-  In a typical example, "or" will appear in the error handling when the <a href="/blog/20080718121643.html">open function</a> fails.
+  In a typical example, "or" will appear in the error handling when <a href="/blog/20080718121643.html">open function</a> fails.
 </p>
 <p>
   If the open function fails and returns a false value, the processing after the "or" is performed.
@@ -735,7 +735,7 @@ $num1 = 1 if !defined $num1;
 $num2 = 1 unless defined $num2;
 </pre>
 <p>
-  This is more accurately called the <a href="/blog/20080324120637.html">if modifier</a> and the <a href="/blog/20080324120637.html">unless modifier</a>.
+  This is more accurately called <a href="/blog/20080324120637.html">if modifier</a> and <a href="/blog/20080324120637.html">unless modifier</a>.
 </p>
 <p>
   If it is a conditional branch that can be written in one line, it can also be written using the postfix if and unless.
@@ -801,7 +801,7 @@ my $animal =
 </p>
 <h4>Set default values with special assignment operators "||=" and "//="</h4>
 <p>
-  Perl has a commonly used default value setting method. It is a way to use the <a href="/blog/20161005147566.html">special assignment operator</a> "||=" or "//=" .
+  Perl has a commonly used default value setting method. It is a way to use <a href="/blog/20161005147566.html">special assignment operator</a> "||=" or "//=" .
 </p>
 <pre>
 # If "$x" is false, set "$x" to 5.

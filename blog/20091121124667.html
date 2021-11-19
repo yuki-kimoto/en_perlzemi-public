@@ -184,11 +184,11 @@ $dbh-&gt;disconnect;
     How to execute directly using the do method
   </li>
   <li>
-    How to prepare a SQL statement with the prepare method and then execute it with the execute method
+    How to prepare SQL statement with the prepare method and then execute it with the execute method
   </li>
 </ol>
 <p>
-  The second method is used to execute what is called a select statement in SQL. The first method is used to execute SQL other than the select statement. Remember "select is prepare and execute" and "otherwise do".
+  The second method is used to execute what is called select statement in SQL. The first method is used to execute SQL other than select statement. Remember "select is prepare and execute" and "otherwise do".
 </p>
 <h3>Create a table</h3>
 <p>
@@ -233,7 +233,7 @@ $dbh-&gt;do($drop_table);
 </pre>
 <h3>Add record insert</h3>
 <p>
-  Use the insert statement to insert a record into the table.
+  Use insert statement to insert a record into the table.
 </p>
 <pre>
 insert into table name (field name 1, field name 2, ..) values (value 1, value 2, value 3);
@@ -245,7 +245,7 @@ insert into table name (field name 1, field name 2, ..) values (value 1, value 2
 insert into book (title, author) values ('Perl', 'taro');
 </pre>
 <p>
-  Let's execute an insert statement using do. Please wait until the select statement is explained a little further to confirm whether it has been inserted.
+  Let's execute an insert statement using do. Please wait until select statement is explained a little further to confirm whether it has been inserted.
 </p>
 <pre>
 my $insert = "insert into book (title, author) values ('Perl', 'taro');";
@@ -263,7 +263,7 @@ $dbh-&gt;do($insert);
 </pre>
 <h3>Record update update</h3>
 <p>
-  Use the update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in the select statement, multiple conditions can be specified in the where section.
+  Use update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in select statement, multiple conditions can be specified in the where section.
 </p>
 <pre>
 update table name set field name 1 = value 1, feel name 2 = value 2, .. where to search field name = value
@@ -275,7 +275,7 @@ update table name set field name 1 = value 1, feel name 2 = value 2, .. where to
 update book set title = 'Ruby' where author = 'taro'
 </pre>
 <p>
-  Let's execute the update statement using do.
+  Let's execute update statement using do.
 </p>
 <pre>
 my $update = "update book set title = 'Ruby' where author = 'taro'";
@@ -293,7 +293,7 @@ $dbh-&gt;do($update);
 </pre>
 <h3>Delete record delete</h3>
 <p>
-  Use the delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
+  Use delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
 </p>
 <pre>
 delete from table name where field name to search = value
@@ -305,7 +305,7 @@ delete from table name where field name to search = value
 delete from book where author = 'taro';
 </pre>
 <p>
-  Let's execute a delete statement using do.
+  Let's execute delete statement using do.
 </p>
 <pre>
 my $delete = "delete from book where author = 'taro';";
@@ -316,7 +316,7 @@ $dbh-&gt;do($delete);
 </p>
 <h3>Get record select</h3>
 <p>
-  It's finally a select statement. Up to this point, you couldn't check the added record or deleted record, but you can check it by remembering the select statement. Now let's write the simplest select statement. To get all the columns in the specified table: * Means all fields.
+  It's finally select statement. Up to this point, you couldn't check the added record or deleted record, but you can check it by remembering select statement. Now let's write the simplest select statement. To get all the columns in the specified table: * Means all fields.
 </p>
 <pre>
 select * from table name;
@@ -328,10 +328,10 @@ select * from table name;
 select * from book;
 </pre>
 <p>
-  Execution of select statement cannot be done with do. To execute the select statement, you need to prepare the SQL statement with a method called prepare and then execute it with execute. The prepare method returns what is called a statement handle that contains the prepared SQL. Execute execute from this statement handle.
+  Execution of select statement cannot be done with do. To execute select statement, you need to prepare SQL statement with a method called prepare and then execute it with execute. The prepare method returns what is called a statement handle that contains the prepared SQL. Execute execute from this statement handle.
 </p>
 <p>
-  Now let's actually execute the select statement.
+  Now let's actually execute select statement.
 </p>
 <pre>
 my $select = "select * from book;";
@@ -339,13 +339,13 @@ my $sth = $dbh-&gt;prepare($select);
 $sth-&gt;execute;
 </pre>
 <p>
-  You can now execute the select statement. The next thing you need to do is actually get each row by an operation called fetch. To fetch a row and assign it to an array, use a method called fetchrow_array from the statement handle.
+  You can now execute select statement. The next thing you need to do is actually get each row by an operation called fetch. To fetch a row and assign it to an array, use a method called fetchrow_array from the statement handle.
 </p>
 <pre>
 $sth-&gt;fetchrow_array;
 </pre>
 <p>
-  This is usually repeated using a <a href="/blog/20100123126425.html">while statement</a> until you get all the rows.
+  This is usually repeated using <a href="/blog/20100123126425.html">while statement</a> until you get all the rows.
 </p>
 <pre>
 while (my @row = $sth-&gt;fetchrow_array) {

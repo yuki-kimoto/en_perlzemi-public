@@ -90,13 +90,13 @@ open my $fh, '&lt;', $file
 my $content = do {local $/; &lt;$fh&gt;};
 </pre>
 <p>
-  The <a href="/blog/20090208123289.html">do block</a> returns the last evaluated value.
+  <a href="/blog/20090208123289.html">do block</a> returns the last evaluated value.
 </p>
 <p>
-  local undefined the <a href="/blog/20161102147817.html">predefined variable</a> "$/" that represents a line break in the file.
+  local undefined <a href="/blog/20161102147817.html">predefined variable</a> "$/" that represents a line break in the file.
 </p>
 <p>
-  This causes the <a href="/blog/20080722121673.html">file input operator</a> "<$fh>" to return the contents of the entire file.
+  This causes <a href="/blog/20080722121673.html">file input operator</a> "<$fh>" to return the contents of the entire file.
 </p>
 <p>
   And when the scope ends, "$/" returns to its original state.

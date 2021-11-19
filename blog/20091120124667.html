@@ -280,7 +280,7 @@ print $_ for @array;
 </p>
 <h3>Declare a lexical variable in foreach statement (highly recommended)</h3>
 <p>
-  Perl 5 allows you to declare a lexical variable at the beginning of a foreach statement.
+  Perl 5 allows you to declare a lexical variable at the beginning of foreach statement.
 </p>
 <pre>
 my @students = ('taro', 'kenji', 'naoya');
@@ -492,7 +492,7 @@ mkpath $dir;
 </p>
 <h3>Don't use goto (required except in really special cases)</h3>
 <p>
-  Perl has a <a href="/blog/20170514149606.html">goto statement</a>, but you shouldn't use it. Programming with goto is a thing of the past, not just Perl. If for some reason you want to use goto, be sure to have an alternative.
+  Perl has <a href="/blog/20170514149606.html">goto statement</a>, but you shouldn't use it. Programming with goto is a thing of the past, not just Perl. If for some reason you want to use goto, be sure to have an alternative.
 </p>
 <p>
   If you want to perform loop control, use "last" and "next". If you want to handle the error, use die to throw the exception.
@@ -505,11 +505,11 @@ mkpath $dir;
   Statements that can be described by the do while statement can always be described by <a href="/blog/20100123126425.html">while statement</a>. The use of the do while statement does not mean that the description will be concise. On the contrary, I feel that it becomes difficult to understand the intention because I do not use it normally.
 </p>
 <p>
-  Statements that can be described by the do while statement can always be described by the while statement, so it is recommended to consider the logic that uses the while statement.
+  Statements that can be described by the do while statement can always be described by while statement, so it is recommended to consider the logic that uses while statement.
 </p>
 <h3>Do not use redo(recommended)</h3>
 <p>
-  Perl has a <a href="/blog/20170515149615.html">redo statement</a>, but you can write the same logic without using redo. I've used redo several times, but I find programming with redo very confusing. Since the same logic can always be written without using redo, it is recommended to consider logic that does not use redo.
+  Perl has <a href="/blog/20170515149615.html">redo statement</a>, but you can write the same logic without using redo. I've used redo several times, but I find programming with redo very confusing. Since the same logic can always be written without using redo, it is recommended to consider logic that does not use redo.
 </p>
 <h3>Do not use prototype (highly recommended)</h3>
 <p>
@@ -587,7 +587,7 @@ sub func {
 func ();
 </pre>
 <p>
-  If you don't want to quit the program, use the <a href="/blog/20100312126967.html">eval block</a>. Think of it as a catch in Java. If an error occurs, the content of the error is set in a predefined variable called $@, so you can check this variable to see if an error has occurred.
+  If you don't want to quit the program, use <a href="/blog/20100312126967.html">eval block</a>. Think of it as a catch in Java. If an error occurs, the content of the error is set in a predefined variable called $@, so you can check this variable to see if an error has occurred.
 </p>
 <pre>
 eval {func ()};

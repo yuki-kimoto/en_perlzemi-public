@@ -103,7 +103,7 @@
 </p>
 <h3>Syntax other than select</h3>
 <p>
-  The difficult part in SQL is the select statement. Other syntax is relatively simple. In preparation for executing the select statement, I will first explain the SQL that is frequently used other than the select statement.
+  The difficult part in SQL is select statement. Other syntax is relatively simple. In preparation for executing select statement, I will first explain the SQL that is frequently used other than select statement.
 </p>
 <h4>create table - create table</h4>
 <p>
@@ -151,7 +151,7 @@ drop table books;
 </p>
 <h3>insert - add record</h3>
 <p>
-  Use the insert statement to insert a record into the table.
+  Use insert statement to insert a record into the table.
 </p>
 <pre>
 insert into table name (field name 1, field name 2, ..) values (value 1, value 2, value 3);
@@ -173,13 +173,13 @@ insert into books (title, author, price) values ('Good life', 'Saki', 1900);
 + - -- -- -- --- + - -- -- -- - + - -- --- +
 </pre>
 <p>
-  I will explain the select statement in detail later, but let's execute the select statement to confirm that one line has been inserted.
+  I will explain select statement in detail later, but let's execute select statement to confirm that one line has been inserted.
 </p>
 <pre>
 select * from books;
 </pre>
 <p>
-  If the above content is displayed, insert is successful. (The output format is slightly different. I will explain how to display it in an easy-to-read format in the select statement)
+  If the above content is displayed, insert is successful. (The output format is slightly different. I will explain how to display it in an easy-to-read format in select statement)
 </p>
 <p>
   Let's insert a few more records for the rest of this.
@@ -190,7 +190,7 @@ insert into books (title, author, price) values ('Good morning', 'Kenta', 3000);
 </pre>
 <h3>Record update update</h3>
 <p>
-  Use the update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in the select statement, multiple conditions can be specified in the where section.
+  Use update statement to update the data in the table. Generally, you can narrow down the update target by specifying the search conditions in the where section. As explained in select statement, multiple conditions can be specified in the where section.
 </p>
 <pre>
 update table name set field name 1 = value 1, feel name 2 = value 2, .. where to search field name = value
@@ -202,7 +202,7 @@ update table name set field name 1 = value 1, feel name 2 = value 2, .. where to
 update books set title = 'Ruby' where author = 'taro'
 </pre>
 <p>
-  Let's execute the update statement using do.
+  Let's execute update statement using do.
 </p>
 <pre>
 my $update = "update books set title = 'Ruby' where author = 'taro'";
@@ -220,7 +220,7 @@ $dbh-&gt;do($update);
 </pre>
 <h3>Delete record delete</h3>
 <p>
-  Use the delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
+  Use delete statement to delete a record. Generally, the search condition is specified in the where section to narrow down the deletion target.
 </p>
 <pre>
 delete from table name where field name to search = value
@@ -232,7 +232,7 @@ delete from table name where field name to search = value
 delete from books where author = 'taro';
 </pre>
 <p>
-  Let's execute a delete statement using do.
+  Let's execute delete statement using do.
 </p>
 <pre>
 my $delete = "delete from books where author = 'taro';";

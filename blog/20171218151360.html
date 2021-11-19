@@ -100,7 +100,7 @@ my $packed = pack($format, @values);
   The first argument specifies the binary data format.
 </p>
 <p>
-  After the second argument, specify the <a href="/blog/20100308126967.html">list</a> of the values.
+  After the second argument, specify <a href="/blog/20100308126967.html">list</a> of the values.
 </p>
 <p>
   The return value is the packed data.
@@ -128,7 +128,7 @@ my $packed = pack("l3", 7, 8, 9);
   Overall, it means packing the numbers 7, 8 and 9 in binary format with three signed 32-bit integers in a row.
 </p>
 <p>
-  In this example, we are passing a list as an argument, but you can also pass a <a href="/blog/20161012147627.html">array</a>.
+  In this example, we are passing a list as an argument, but you can also pass <a href="/blog/20161012147627.html">array</a>.
 </p>
 <pre>
 my @values = (7, 8, 9);
@@ -146,7 +146,7 @@ my $packed = pack("d3", 0.5, 1.2, 5.4);
 </p>
 <h4>To write binary data</h4>
 <p>
-  To write binary data, set the filehandle to binary mode using the <a href="/blog/20100204126425.html">binmode function</a> and <a href="/blog/20170404149131.html">print Use the function</a>.
+  To write binary data, set the filehandle to binary mode using <a href="/blog/20100204126425.html">binmode function</a> and <a href="/blog/20170404149131.html">print Use the function</a>.
 </p>
 <pre>
 # Packed binary data

@@ -37,11 +37,11 @@
 </script>
 
 <title>while statement - Repeat processing - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="You can write a  iterative process  using a while statement. Repeat the contents of the block while the condition is true.">
+<meta name="description" content="You can write a  iterative process  using while statement. Repeat the contents of the block while the condition is true.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="while statement - Repeat processing - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="You can write a  iterative process  using a while statement. Repeat the contents of the block while the condition is true." />
+<meta name="twitter:description" content="You can write a  iterative process  using while statement. Repeat the contents of the block while the condition is true." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -75,7 +75,7 @@
 </ol>
 <h2><a href="/blog/20100123126425.html">while statement - Repeat processing</a></h2>
 <p>
-  You can write a <strong> iterative process </strong> using a while statement. Repeat the contents of the block while the condition is true.
+  You can write a <strong> iterative process </strong> using while statement. Repeat the contents of the block while the condition is true.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -100,7 +100,7 @@ while (condition) {
 </pre>
 <h3>Output numerical value from 0 to 2</h3>
 <p>
-  This is an example that outputs a numerical value from 0 to 2 using a while statement. The variable "$i" is incremented at the end of the while statement. When "$i" becomes 3, the condition becomes false, so the while exits.
+  This is an example that outputs a numerical value from 0 to 2 using while statement. The variable "$i" is incremented at the end of while statement. When "$i" becomes 3, the condition becomes false, so the while exits.
 </p>
 <pre>
 # Output numerical values from 0 to 2
@@ -111,10 +111,10 @@ while ($i &lt;= 2) {
 }
 </pre>
 <p>
-  What is the difference between a while statement and a <a href="/blog/20080327120662.html">for statement</a> (or <a href="/blog/20080328120673.html">foreach statement</a>)? ??
+  What is the difference between while statement and <a href="/blog/20080327120662.html">for statement</a> (or <a href="/blog/20080328120673.html">foreach statement</a>)? ??
 </p>
 <p>
-  You can write all the iterative processing with the while statement, but if you can write it with the for statement or foreach statement, it is better to write it using the for statement or foreach statement.
+  You can write all the iterative processing with while statement, but if you can write it with for statement or foreach statement, it is better to write it using for statement or foreach statement.
 </p>
 <pre>
 # for statement
@@ -128,7 +128,7 @@ foreach my $num (@nums) {
 }
 </pre>
 <p>
-  As a side note, in Perl, the for statement and the foreach statement are exactly the same and can be rewritten to each other.
+  As a side note, in Perl, for statement and foreach statement are exactly the same and can be rewritten to each other.
 </p>
 <h3>Example using infinite loop</h3>
 <p>
@@ -140,10 +140,10 @@ while (1) {
 }
 </pre>
 <p>
-  To break out of the loop, use the <a href="/blog/20170527149589.html">last statement</a>. Note that the loop escape is not a break statement but a last statement unlike C language.
+  To break out of the loop, use <a href="/blog/20170527149589.html">last statement</a>. Note that the loop escape is not break statement but last statement unlike C language.
 </p>
 <p>
-  In the example below, the <a href="/blog/20161012147627.html">array</a> elements are removed one by one with the <a href="/blog/20100106126425.html">pop function</a>. So, when there are no more elements in the array, it is judged by <a href="/blog/20161023147731.html">if statement</a>, and the while block is exited by using the last statement.
+  In the example below, <a href="/blog/20161012147627.html">array</a> elements are removed one by one with <a href="/blog/20100106126425.html">pop function</a>. So, when there are no more elements in the array, it is judged by <a href="/blog/20161023147731.html">if statement</a>, and the while block is exited by using last statement.
 </p>
 <pre>
 my @nums = (1, 2, 3);
@@ -180,7 +180,7 @@ while (my $line = &lt;&gt;) {
   Using <a href="/blog/20161102147817.html">predefined variable "$."</a> and <a href="/blog/20080329120687.html">next statement</a>, the line number is Processing is skipped only at the first line.
 </p>
 <p>
-  Use this program as follows. Using the while statement and the line input operator, you can easily write a program that reads lines from a file or standard input.
+  Use this program as follows. Using while statement and the line input operator, you can easily write a program that reads lines from a file or standard input.
 </p>
 <pre>
 # When reading a file name from a command line argument
@@ -209,7 +209,7 @@ cat file1 file2&gt; perl script.pl
   </li>
 </ul>
 <p>
-  Perl also has <a href="/blog/20171225151420.html">do ~ while statement</a>, but since the next and last statement cannot be used as they are, it is strongly recommended to use the while statement. I recommend it.
+  Perl also has <a href="/blog/20171225151420.html">do ~ while statement</a>, but since the next and last statement cannot be used as they are, it is strongly recommended to use while statement. I recommend it.
 </p>
 
   </div>
