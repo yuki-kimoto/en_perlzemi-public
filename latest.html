@@ -87,6 +87,19 @@
 <ul>
  <li><a href="https://centos.perlzemi.com/blog/20210104090837.html">Install Google Chrome on CentOS(Japanese)</a></li>
 </ul>
+<h4>Check the version of Google Chrome</h4>
+<p>
+  Check the version of Google Chrome.
+</p>
+<pre>
+google-chrome --version
+</pre>
+<p>
+  An example of the output:
+</p>
+<pre>
+Google Chrome 87.0.4280.88
+</pre>
 <h3>Download and Install ChromeDriver</h3>
 <p>
   ChromeDriver is a web driver. Web drivers is tools to control Web browsers by using programs.
@@ -99,6 +112,22 @@
 <ul>
  <li><a href="https://centos.perlzemi.com/blog/20210103090837.html">Install ChromeDriver on CentOS(Japanese)</a></li>
 </ul>
+<h4>Check the version of ChromeDriver</h4>
+<p>
+  Check the version of ChromeDriver.
+</p>
+<pre>
+chromedriver --version
+</pre>
+<p>
+  An example of the output:
+</p>
+<pre>
+ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761})
+</pre>
+<p>
+  It is good that the version of ChromeDriver is the same as Google Chrome to prevent problems.
+</p>
 <h3>Install Selenium::Remote::Driver</h3>
 <p>
   Let's install <a href="https://metacpan.org/pod/Selenium::Remote::Driver">Selenium::Remote::Driver</a> using <a href="/blog/20101027127859.html">cpanm</a> or <a href="/blog/20100504127089.html">cpan</a>. Selenium::Remote::Driver is a Perl module for Selenium.
@@ -109,6 +138,96 @@ cpanm Selenium::Remote::Driver
 
 # cpan
 cpan Selenium::Remote::Driver
+</pre>
+<h3>Get a Web Page using Selenium</h3>
+<p>
+  Get a Web Page using Selenium.
+</p>
+<h4>Load Selenium::Chrome</h4>
+<p>
+  Let's load <b>Selenium::Chrome</b>. Selenium::Chrome is a sub class of Selenium::Remote::Driver for Google Chrome.
+</p>
+<pre>
+use Selenium::Chrome;
+</pre>
+<h4>Create a Selenium::Chrome Object</h4>
+<p>
+  Create a Selenium::Chrome object with headless options.
+</p>
+<pre>
+my $driver = Selenium::Chrome-&gt;new(
+  extra_capabilities =&gt; {
+    'goog:chromeOptions' =&gt; {
+      args =&gt; ['headless', 'disable-gpu', 'window-size=1920,1080', 'no-sandbox' ]
+    }
+  }
+);
+</pre>
+<p>
+  These options is needed for headless execution. Headless execution means you get a page without the GUI of Google Chrome.
+</p>
+<p>
+  If there are no these options and you don't have GUI display, you will see the following error message.
+</p>
+<pre>
+Could not create new session: unknown error: Chrome failed to start: exited abnormally.
+
+(unknown error: DevToolsActivePort file doesn't exist) (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.) at access.pl line 79.
+</pre>
+<h4>Shutdown a Selenium::Chrome Object</h4>
+<p>
+  If you finish the use of Selenium::Chrome, you need to shutdown it.
+</p>
+<pre>
+$driver-&gt;shutdown_binary;
+</pre>
+<h4>Get a Web Page and the Title</h4>
+<p>
+  You can get a web page using a <b>get</b> method.
+</p>
+<pre>
+$driver-&gt;get('http://www.google.com');
+</pre>
+<p>
+  You can get the title using a <b>get_title</b> method.
+</p>
+<pre>
+my $title = $driver-&gt;get_title;
+</pre>
+<p>
+  <b>Examples:</b>
+</p>
+<p>
+  This is an example to get a page and the title.
+</p>
+<pre>
+use Selenium::Chrome;
+
+# Create a Selenium::Chrome object
+my $driver = Selenium::Chrome-&gt;new(
+  extra_capabilities =&gt; {
+    'goog:chromeOptions' =&gt; {
+      args =&gt; ['headless', 'disable-gpu', 'window-size=1920,1080', 'no-sandbox' ]
+    }
+  }
+);
+
+# Get a page
+$driver-&gt;get('http://www.google.com');
+
+# Get the title
+my $title = $driver-&gt;get_title;
+
+print "$title\n";
+
+# Shutdown
+$driver-&gt;shutdown_binary;
+</pre>
+<p>
+  The output:
+</p>
+<pre>
+Google
 </pre>
 <p>
   (Uncompleted)
