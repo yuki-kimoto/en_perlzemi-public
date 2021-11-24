@@ -253,6 +253,24 @@ $driver-&gt;shutdown_binary;
 <pre>
 Google
 </pre>
+<h4>Get the Screenshot</h4>
+<p>
+  You can get the screenshot using <b>capture_screenshot</b> method.
+</p>
+<pre>
+$driver-&gt;capture_screenshot("screenshot.png");
+</pre>
+<p>
+  If you want to save the screenshot to the program directory, you can use <a href="/blog/20100524127696.html">FindBin</a> module.
+</p>
+<pre>
+use FindBin;
+
+$driver-&gt;capture_screenshot("$FindBin::Bin/screenshot.png");
+</pre>
+<p>
+  If you see character corruption, Fonts is needed.
+</p>
 <p>
   (Uncompleted)
 </p>
