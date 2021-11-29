@@ -37,11 +37,11 @@
 </script>
 
 <title>Expressing Unicode characters with code points - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.">
+<meta name="description" content="Unicode characters  have  code points  assigned to all characters. In Perl, Unicode characters can be represented using code points.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
 <meta name="twitter:title" content="Expressing Unicode characters with code points - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows." />
+<meta name="twitter:description" content="Unicode characters  have  code points  assigned to all characters. In Perl, Unicode characters can be represented using code points." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -78,13 +78,8 @@
   </li>
 </ol>
 <h2><a href="/blog/20130612137099.html">Expressing Unicode characters with code points</a></h2>
-<Strong> Unicode characters </strong> have <strong> code points </strong> assigned to all characters. In Perl, Unicode characters can be represented using code points.
-<pre>
-# a
-my $str = "\x{3042}";
-</pre>
 <p>
-  Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.
+  <Strong> Unicode characters </strong> have <strong> code points </strong> assigned to all characters. In Perl, Unicode characters can be represented using code points.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -102,6 +97,13 @@ my $str = "\x{3042}";
 </div>
 
 
+<pre>
+# a
+my $str = "\x{3042}";
+</pre>
+<p>
+  Note that strings containing Unicode characters represented by code points are always treated as decoded strings, with or without utf8 pragma. In other words, it is already decoded. To output, encode as follows.
+</p>
 <pre>
 use Encode 'encode';
 print encode('UTF-8', $str);

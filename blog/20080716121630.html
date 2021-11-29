@@ -200,7 +200,9 @@ BEGIN {
   Use BEGIN to dynamically determine the subroutine name at compile time. Store the reference to the anonymous subroutine in a variable with the description my $code = sub {} ;, and finally name it as * {$func_name} = $code ;. In this way, you should keep the scope of no strict'refs' as narrow as possible.
 </p>
 <h3>Function template</h3>
-<Strong> Function template </strong> is a programming technique that dynamically creates multiple subroutine. Instead of naming the subroutine before the program starts, name the subroutine after the program starts.
+<p>
+  <Strong> Function template </strong> is a programming technique that dynamically creates multiple subroutine. Instead of naming the subroutine before the program starts, name the subroutine after the program starts.
+</p>
 <p>
   By using anonymous subroutine and typeglobs, you can dynamically generate subroutine and name them dynamically. You can use a function template to create a process according to the subroutine name.
 </p>
