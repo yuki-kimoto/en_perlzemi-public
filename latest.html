@@ -610,6 +610,22 @@ $select-&gt;send_keys(KEYS-&gt;{'down_arrow'} x $key_down_count);
 # Input enter key
 $select-&gt;send_keys(KEYS-&gt;{'enter'});
 </pre>
+<h3>Get Page Source</h3>
+<p>
+  You can get the page source that is parsed after the web browser using <b>get_page_source</b> method. This is not a pure raw page source.
+</p>
+<pre>
+# Get the page source
+my $page_source = $driver-&gt;get_page_source;
+</pre>
+<h3>Get body Text</h3>
+<p>
+  You can get the text in the body tag using <b>get_body</b> method. The return value doesn't contain HTML tags, only contains text.
+</p>
+<pre>
+# Get the body text
+my $body_text = $driver-&gt;get_body;
+</pre>
 <p>
   (Uncompleted)
 </p>
