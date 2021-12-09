@@ -216,6 +216,12 @@ $driver-&gt;shutdown_binary;
 $driver-&gt;get('http://www.google.com');
 </pre>
 <p>
+  It is good to wait for a few seconds because the page is maybe not yet rendered.
+</p>
+<pre>
+sleep 3;
+</pre>
+<p>
   You can get the title using a <b>get_title</b> method.
 </p>
 <pre>
@@ -241,6 +247,8 @@ my $driver = Selenium::Chrome-&gt;new(
 
 # Get a page
 $driver-&gt;get('http://www.google.com');
+
+sleep 3;
 
 # Get the title
 my $title = $driver-&gt;get_title;
