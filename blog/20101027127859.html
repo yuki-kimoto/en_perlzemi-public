@@ -36,12 +36,12 @@
   gtag('config', 'G-JDYCKHXVT5');
 </script>
 
-<title>Building a local Perl environment with cpanm - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
-<meta name="description" content="This is the procedure to build a local environment using cpanm. It is a straightforward procedure without hesitation.">
+<title>cpanm - Install Perl Module on your Home Directory - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="cpanm is a command to install CPAN modules quickly. You can also install CPAN modules on your home directory.">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@perlzemi" />
-<meta name="twitter:title" content="Building a local Perl environment with cpanm - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
-<meta name="twitter:description" content="This is the procedure to build a local environment using cpanm. It is a straightforward procedure without hesitation." />
+<meta name="twitter:title" content="cpanm - Install Perl Module on your Home Directory - Perl Zemi|Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="cpanm is a command to install CPAN modules quickly. You can also install CPAN modules on your home directory." />
 <meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
 
 
@@ -65,7 +65,7 @@
     <meta itemprop = "position" content = "1" />
   </li>
   &#8250;
-  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Module </span></a>
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/blog/20091116124667.html">      <span itemprop = "name">Modules</span></a>
     <meta itemprop = "position" content = "2" />
   </li>
   &#8250;
@@ -73,9 +73,9 @@
     here
   </li>
 </ol>
-<h2><a href="/blog/20101027127859.html">Building a local Perl environment with cpanm</a></h2>
+<h2><a href="/blog/20101027127859.html">cpanm - Install Perl Module on your Home Directory</a></h2>
 <p>
-  This is the procedure to build a local environment using cpanm. It is a straightforward procedure without hesitation.
+  <b>cpanm</b> is a command to install CPAN modules quickly. You can also install CPAN modules on your home directory.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -95,98 +95,113 @@
 
 <h3>Install cpanm</h3>
 <p>
-  Execute the following command as an individual user.
+  Explain how to install cpanm. At first you can check if cpanm is installed.
 </p>
 <pre>
-# installation of cpanm
-curl -L -O http://xrl.us/cpanm
-perl cpanm App::cpanminus
+cpanm -h
 </pre>
 <p>
-  cpanm makes it easy to install CPAN modules in your local environment. If you don't have root privileges, the CPAN module will be installed under the directory perl5 under your home directory. The installation may take some time, but wait for a while.
+  If cpanm is not installed, you can install cpanm in the following ways.
 </p>
-<h3>Settings for using modules and commands</h3>
+<h4>perlbrew with cpanm</h4>
 <p>
-  To use the installed modules and commands, you need to add the following settings to the bash configuration file called ".bashrc".
+  If you use <a href="/blog/20110220130464.html">perlbrew</a> to install Perl, you can install cpanm in the following command.
 </p>
 <pre>
-export PERL_CPANM_OPT = "- local-lib =~ /perl5"
-export PATH = $HOME/perl5/bin: $PATH;
-export PERL5LIB = $HOME/perl5/lib/perl5: $PERL5LIB;
+# perlbrew with cpanm
+perlbrew install-cpanm
+</pre>
+<h4>plenv with cpanm</h4>
+<p>
+  If you use <a href="/blog/20180816153437.html">plenv</a> to install Perl, you can install cpanm in the following command.
+</p>
+<pre>
+# plenv with cpanm
+plenv install-cpanm
+</pre>
+<h4>Install cpanm using cpan Command</h4>
+<p>
+  You can install cpanm using <a href="/blog/20100504127089.html">cpan command</a>. If you use perlbrew or plenv, the above ways is recommended.
+</p>
+<pre>
+cpan App::cpanminus
+</pre>
+<h4>Install cpanm using Package Managers</h4>
+<p>
+  Install cpanm using Package Managers.
+</p>
+<p>
+  <b><a href="https://en.ubuntu.perlzemi.com/">Ubuntu</a>, Debian</b>
+</p>
+<pre>
+apt install cpanminus
 </pre>
 <p>
-  PERL_CPANM_OPT is an environment variable for setting cpanm. Specifies the directory where the module will be installed. By default, it is installed under "~/perl5", but a warning will occur, so specify it explicitly. PATH is a setting for using installed commands. For example, the cpanm command will be available. You can add a module include path with PERL5LIB. With this setting, the modules installed from the script will be available.
-</p>
-<p>
-  Edit ".bashrc" as follows and add the above description.
+  <b>Redhat Renux, <a href="https://en.centos.perlzemi.com/">Cent OS</a></b>
 </p>
 <pre>
-vi ~/.bashrc
+yum install perl-App-cpanminus
 </pre>
+<h3>Install CPAN Modules</h3>
 <p>
-  Then reflect this setting.
+  Install CPAN modules using cpanm.
 </p>
 <pre>
-source ~/.bashrc
-</pre>
-<h3>Module installation</h3>
-<p>
-  Let's try installing a module called Mojolicious.
-</p>
-<pre>
+# Install CPAN modules.
 cpanm Mojolicious
 </pre>
 <p>
-  You can use the ls command to check that Mojolicious is installed in the directory "~/perl5/lib/perl5".
+  If you see the document of module, the installation is succeed.
 </p>
 <pre>
-ls ~/perl5/lib/perl5
+perldoc Mojolicious
 </pre>
+<h4>Install CPAN modules in the specified directory</h4>
 <p>
-  Also try to see if the module is actually available. If you execute the following command from the command line and no error occurs, it is successful.
-</p>
-<pre>
-perl -MMojolicious -e 1
-</pre>
-<p>
-  Now you can install more and more modules in your local environment. If you want to put the module on another server, just copy "~/perl5" entirely if the architecture is exactly the same. Of course, don't forget to write ".bashrc". Deploying in Perl is very easy, isn't it?
-</p>
-<h3>Install the CPAN module in the directory you specified using cpanm</h3>
-<p>
-  Use the <b> -L </b> option to install the CPAN module on the directory specified using cpanm.
+  You can install CPAN modules in the specified directory using <b>-L</b> option.
 </p>
 <pre>
 cpanm -L extlib DBIx::Custom
 </pre>
 <p>
-  DBIx::Custom will be installed in the current directory <b> extlib </b>.
+  DBIx::Custom will be installed "extlib" in the current directory.
 </p>
-<h3>Install the module by specifying the version with cpanm and cpanfile</h3>
+<h3>cpanfile - Define Required Modules using </h3>
 <p>
-  <strong> cpanm </strong> and <strong> cpanfile </strong> allow you to specify the version to install the module.
+  You can defined required modules and the versions using <b>cpanfile</b>.
 </p>
-<h4>Cpanfile description</h4>
+<h4>cpanfile</h4>
 <p>
-  Write a cpanfile. cpanfile is a file for specifying the module version. Create a file named cpanfile. Make the following description.
+  <b>cpanfile</b> is a file to define the requred modules and the versions.
 </p>
-<pre>
-requires'DBI', '== 1.619';
-requires'DBD::SQLite', '== 1.36_04';
-requires'DBIx::Custom', '== 0.25';
-</pre>
 <p>
-  Describe in the following format.
+  Create the file "cpanfile".
 </p>
 <pre>
-requires module name version
+# Create cpanfile
+touch cpanfile
 </pre>
 <p>
-  You can use the following notation for the version:
+  Define cpanfile.
+</p>
+<pre>
+requires 'DBI', '== 1.619';
+requires 'DBD::SQLite', '== 1.36_04';
+requires 'DBIx::Custom', '== 0.25';
+</pre>
+<p>
+  Explain cpanfile formats.
+</p>
+<pre>
+requires MODULE_NAME VERSION
+</pre>
+<p>
+  You can use the following syntax for the version:
 </p>
 <table>
   <tr>
     <td>
-      <b> Meaning </b>
+      <b> Description </b>
     </td>
     <td>
       <b> Format </b>
@@ -214,7 +229,7 @@ requires module name version
       Version only or >= version
     </td>
     <td>
-      0.03 or >= 0.03
+      >= 0.03
     </td>
   </tr>
   <tr>
@@ -247,26 +262,24 @@ requires module name version
       <Version
     </td>
     <td>
-      <0.03
+      < 0.03
     </td>
   </tr>
 </table>
-<h4>Module installation</h4>
+<h4>Install CPAN Modules defined in cpanfile</h4>
 <p>
-  The cpanm <strong> - installdeps </strong> option will look up the description in the cpanfile and install the module for you. (Note that the dot follows the option)
+  You can install CPAN modules defined in cpanfile using <b>--installdeps</b> option.
 </p>
 <pre>
-perl cpanm - installdeps.
+# Install CPAN modules defined in cpanfile
+perl cpanm --installdeps .
 </pre>
 <p>
-  You can also use the <strong> -L </strong> option to install the module in a specified directory.
+  You can also install the module in the specified directory using <strong>-L</strong> option.
 </p>
 <pre>
 perl cpanm -L extlib - installdeps.
 </pre>
-<p>
-  If your Perl application depends on a module that exists on CPAN, you can include cpanm and cpanfile together to make it easier for your users to use.
-</p>
 
   </div>
   <div class="bottom">
