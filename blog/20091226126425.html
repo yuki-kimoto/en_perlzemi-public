@@ -152,72 +152,68 @@ perl script.pl &gt; file.txt
 </ul>
 <h4>Compile check</h4>
 <p>
-  To perform a compile check in advance, do the following on the command line.
+  You can do only compile check without runing the script.
 </p>
 <pre>
 perl -c script.pl
 </pre>
-<h4>Debugger startup</h4>
+<h4>Perl Debugger</h4>
 <p>
-  Perl comes standard with a debugger. To start the debugger, do the following on the command line:
+  Perl has the <a href="/blog/20100302126967.html">debugger</a>. To start the debugger, use <b>-d</b> option with the <b>perl</b> command.
 </p>
 <pre>
 perl -d script.pl
 </pre>
+<h3>Numbers</h3>
+<h4>Numbers</h4>
 <p>
-  Please refer to the following for details on how to use the debugger.
-</p>
-<ul>
-  <li>
-    <a href="/blog/20100302126967.html">Perl Debugger Guide</a>
-  </li>
-</ul>
-<h3>Numerical value</h3>
-<h4>Numerical representation</h4>
-<p>
-  You can assign a number to a scalar variable. You can assign either an integer or a decimal. If the number of digits is large, the underscore can be used as a delimiter.
+  You can assign a number to a scalar variable. The number is a integral number or a floating point number.
 </p>
 <pre>
 my $num = 1;
 my $num = 1.234;
-my $num = 100_000_000;
 </pre>
 <p>
-  Such a numerical representation is called a numeric literal. See the following articles for more information on numerical literals.
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080826121977.html">Numeric literals - Representation of numbers in source code</a>
-  </li>
-</ul>
-<h4>Four arithmetic operations</h4>
-<p>
-  It is an arithmetic operation.
+  If the digits is large, underscores can be used as delimiters.
 </p>
 <pre>
+my $num = 100_000_000;
+</pre>
+ 
+<p>
+  Numbers written in source codes are called <a href="/blog/20080826121977.html">numeric literals</a>.
+</p>
+<h4>Arithmetic Operations</h4>
+<p>
+  These are basic <a href="/blog/20080910122105.html">arithmetic operations</a>.
+</p>
+<pre>
+# Addition
 $num = 1 + 1;
+
+# Subtruction
 $num = 1 - 1;
+
+# Multiplication
 $num = 1 * 2;
+
+# Division
 $num = 1 / 2;
 </pre>
 <p>
-  How to find a quotient. To find the quotient, perform ordinary division and then extract the integer part with the int function.
+  To culcurate the quotient, perform division and then extract the integer part using the <a href="/blog/20080923122214.html">int function</a>.
 </p>
 <pre>
 # Quotient
-$div = int(3 / 2);
-
+$quo = int(3 / 2);
+</pre>
+<p>
+  The <b>%</b> operator calculates the remainder.
+</p>
+<pre>
 # Remainder
 $mod = 3 % 2;
 </pre>
-<p>
-  See the following articles for a detailed explanation of the four arithmetic operations.
-</p>
-<ul>
-  <li>
-    <a href="/blog/20080910122105.html">Operators that perform four arithmetic operations</a>
-  </li>
-</ul>
 <h4>Increment and decrement</h4>
 <p>
   <a href="/blog/20180224151948.html">Increment</a> and <a href="/blog/20180226151973.html">Decrement</a>.
