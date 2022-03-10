@@ -225,40 +225,62 @@ $i++
 # Decrement
 $i--
 </pre>
-<h3>String</h3>
-<h4>String representation</h4>
+<h3>Strings</h3>
+<h4>Single Quoted Strings</h4>
 <p>
-  Enclose the string in single or double quotes. You can use special characters such as\t (tab) and\n (line break) in double quotes. You can also expand variable in a string enclosed in double quotes.
+  This is a <a href="/blog/20201027075254.html">single quoted string</a>. You can assign it to a scalar varialbe.
 </p>
 <pre>
 my $str1 = 'abc';
-my $str2 = "def";
-my $str3 = "a\tbc\n";
-
-# Variable expansion (result is abc def)
-my $str4 = "$str1 def";
 </pre>
-<h4>String manipulation</h4>
+<h4>Double Quoted Strings</h4>
 <p>
-  Various string operations. Dot operator to concatenate strings, <a href="/blog/20081007122338.html">join function</a>, split string <a href="/blog/20080301120434.html">split function </a>, <a href="/blog/20080926122245.html">length function</a> to get the length, <a href="/blog/20080224120386.html">substr function to replace the string <a href="/blog/20080224120386.html">substr function </a>, <a href="/blog/20080225120395.html">index function</a> for searching, etc.
+  This is a <a href="/blog/20201026075254.html">double quoted string</a>.  You can assign it to a scalar varialbe. In double quoted strings, you can use escape sequences such as <b>\t</b>(tab), <b>\n</b>(line break) or etc.
 </p>
 <pre>
-# Join
+my $str2 = "def";
+my $str3 = "a\tbc\n";
+</pre>
+<p>
+  You can also use variable expansions in double quoted strings.
+</p>
+<pre>
+# Variable expansion - The result is "abc def"
+my $str4 = "$str1 def";
+</pre>
+<h4>String Operators and Functions</h4>
+<p>
+  Often used string operators and functions.
+</p>
+<ul>
+  <li><a href="/blog/20080221120361.html">String Concatnation Operator</a></li>
+  <li><a href="/blog/20081007122338.html">join Function</a></li>
+  <li><a href="/blog/20080301120434.html">split Function</a></li>
+  <li><a href="/blog/20080926122245.html">length Function</a></li>
+  <li><a href="/blog/20080224120386.html">substr Function</a></li>
+  <li><a href="/blog/20080225120395.html">index Function</a></li>
+</ul>
+<p>
+  <b>Examples:</b>
+</p>
+<pre>
+# Concat two strings
 my $join1 = 'aaa' . ' Bbb';
 
+# Concat strings with a delimiter
 my $join2 = join(',','aaa', 'bbb', 'ccc');
 
 # Split
 my @record = split(/,/, 'aaa,bbb,ccc');
 
-# length
+# Length
 my $length = length 'abcdef';
 
-# Extract
-my $substr = substr('abcd', 0, 2); # ab
+# Cut - The result is "ab"
+my $substr = substr('abcd', 0, 2);
 
-# search
-my $result = index('abcd', 'cd'); # Returns its position if found, -1 if not found
+# Search - Returns the found position, otherwise returns -1
+my $result = index('abcd', 'cd');
 </pre>
 <h3>Array</h3>
 <p>
