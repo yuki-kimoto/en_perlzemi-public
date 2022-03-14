@@ -69,7 +69,7 @@
 </ol>
 <h2><a href="/blog/20091226126425.html">The Fastest Master of Perl Basic Syntax</a></h2>
 <p>
-  This article is a summary of Perl's basic syntax to learn Perl quickly.
+  This article is a summary of Perl's basic <a href="/blog/20161022147731.html">syntax</a> to learn Perl quickly.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -539,78 +539,84 @@ elsif ($condition1) {
     </td>
   </tr>
 </table>
-<h3>Loop syntax</h3>
+<h3>Loop Syntax</h3>
 <p>
-  Learn about Perl's iterative syntax.
+  Explains <a href="/blog/20170521149524.html">loop syntax such as while/for</a>.
 </p>
-<h4>while statement</h4>
+<h4>The while statement</h4>
 <p>
-  <a href="/blog/20100123126425.html">while statement</a>.
+  This is a <a href="/blog/20100123126425.html">while</a> statement.
 </p>
 <pre>
 my $i = 0;
 while ($i &lt; 5) {
     
-    # process
+    # Do something
     
     $i++;
 }
 </pre>
-<h4>for statement</h4>
+<h4>The for statement</h4>
 <p>
-  It is for statement.
+  This is a <a href="/blog/20080327120662.html">for</a> statement.
 </p>
 <pre>
 for (my $i = 0; $i &lt; 5; $i++) {
-  ...
+  # Do something
 }
 </pre>
-<h4>foreach statement</h4>
+<h4>The foreach statement</h4>
 <p>
-  It is foreach statement. You can process each element of the array. foreach is an alias for for and is essentially the same.
+  This is a <a href="/blog/20080328120673.html">foreach</a> statement to iterate each element of the array.
 </p>
 <pre>
-foreach my $field (@fields) {
-  ...
+foreach my $num (@nums) {
+  # Do something
 }
 </pre>
 <p>
-  Perl's iterative syntax is explained in detail in the next article.
+  In Perl, the <b>foreach</b> statement is alias for the <b>for</b> statement.
 </p>
-<ul>
-  <li>
-    <a href="/blog/20170521149524.html">Let's learn the iterative processing using for statement and while statement</a>
-  </li>
-</ul>
-<h3>Subroutine</h3>
+<pre>
+# Same as the above foreach statement
+for my $num (@nums) {
+  # Do something
+}
+</pre>
+<h3>Subroutines</h3>
 <p>
-  In Perl, a function is also called a subroutine. To create a subroutine:
+  Explaines <a href="/blog/20101130129876.html">subroutines</a>. 
+</p>
+<h4>Subroutine Definition</h4>
+<p>
+  This is a subroutine defintiion. A subroutine recieves the arguments, execute the statements, and return the return values.
 </p>
 <pre>
 sub sum {
+  # Revices arguments
   my ($num1, $num2) = @_;
   
+  # Execute the statements
   my $total = $num1 + $num2;
   
+  # Return the return values
   return $total;
 }
 </pre>
+<h4>Calling Subroutines</h4>
 <p>
-  Perl doesn't require you to explicitly specify argument names like in other languages. Since the argument is contained in the array @_, use it as needed. Use return to return the return value.
-</p>
-<p>
-  The following article explains in detail how to create a subroutine.
-</p>
-<ul>
-  <li>
-    <a href="/blog/20101130129876.html">How to create a subroutine</a>
-  </li>
-</ul>
-<h3>File input/output</h3>
-<p>
-  File input/output.
+  Call a subroutine.
 </p>
 <pre>
+# Call a subroutine
+my $sum = sum(1, 2);
+</pre>
+<h3>File Input/Output</h3>
+<p>
+  Explains <a href="/blog/20110212130370.html">file Input/Output</a>.
+</p>
+<pre>
+# Open file
 open my $fh, '&lt;', $file
   or die "Cannot open'$file':$!";
 
@@ -621,16 +627,14 @@ while (my $line = &lt;$fh&gt;) {
 close $fh;
 </pre>
 <p>
-  When you open a file with the open function, the file handle is assigned to $fh. '<' Is the read mode. When writing, use'>'. You can read a line from a file with the description <$fh>. After or, it is executed when the file open fails. die is a function that displays an error message and terminates the program. $! Is an error message from the OS when the file open fails.
+  The <a href="/blog/20080718121643.html">open function</a> opens a file. The "<" means the read mode.
 </p>
 <p>
-  Perl's file I/O is explained in detail on the following pages.
+  The <b>&lt;$fh&gt;</b> is a <a href="/blog/20080722121673.html">line input operator</a>.
 </p>
-<ul>
-  <li>
-    <a href="/blog/20110212130370.html">Basics of file input/output</a>
-  </li>
-</ul>
+<p>
+  <b>$!</b> is a <a href="/blog/20161102147817.html">predefined variable</a> to be set to the error that the operating system returns.
+</p>
 <h3>Grammar you should know</h3>
 <p>
   Here's a list of grammars you should know that often appear in Perl.
