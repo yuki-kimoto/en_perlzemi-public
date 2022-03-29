@@ -91,7 +91,7 @@
   <img src="/images/msys2.png">
 </p>
 <p>
-  On msys2, you can use <a href="https://en.linux.perlzemi.com/blog/20200211081227.html">Linux commands</a> such as ls, cat, tar, and <a href="https://en.git.perlzemi.com/">git</a>. The terminal charset is UTF-8.
+  On msys2, you can use <a href="https://en.linux.perlzemi.com/blog/20200211081227.html">Linux commands</a> such as <a href="https://en.linux.perlzemi.com/blog/20191126082723.html">ls</a>, <a href="https://en.linux.perlzemi.com/blog/20200113083613.html">cat</a>, <a href="https://en.linux.perlzemi.com/blog/20190129171737.html">tar</a>, and <a href="https://en.git.perlzemi.com/">git</a>. The terminal charset is UTF-8.
 </p>
 <p>
   The msys2 is compatible with POSIX. The Perl web framework such as <a href="https://en.mojolicious.perlzemi.com/">Mojolicious</a> can work correctly.
@@ -147,22 +147,19 @@
 </p>
 <h3>Instalation of Perl on msys2</h3>
 <p>
-  Make Perl available on msys2. Let's install Perl and the list of development environments required for Perl together.
-</p>
-<p>
-  pacman is a package manager for msys2.
+  Let's install Perl. <b>pacman</b> is the package manager of msys2.
 </p>
 <pre>
 pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
 </pre>
 <p>
-  Copy the above and select "Right click"->"Paste" in msys2 to paste it. Press Enter to execute the above command.
+  Copy the above command and paste it on msys2 by clicking the right mouse button.
 </p>
 <p>
-  You will be asked if you want to install it, so press "Enter" to proceed. No matter what you ask, just press "Enter".
+  You will be asked if you want to install them. Press "Enter".
 </p>
 <p>
-  The following will be installed. This is the minimum environment required for Perl to work properly. Perl is written in <a href="https://en.c.perlzemi.com/">C language</a> and is a C language compiler <a href="https://linux" for compiling Perl modules. .perlclub.net/blog/20201216103956.html">gcc</a> is required.
+  The following softwares will be installed for Perl.
 </p>
 <ul>
   <li>
@@ -182,95 +179,40 @@ pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
   </li>
 </ul>
 <p>
-  <b> Now press the cross on the upper right once to close the terminal and restart "MSYS2 MSYS". If you don't do this, your PATH settings will be incorrect and the cpan command will not work properly. </b>
+  Some Perl modules are written by C/C++ language. To compile these modules, <a href="https://en.linux.perlzemi.com/blog/20201216103956.html">gcc</a> and make are required.
 </p>
+<h3>Check of Perl Installation</h3>
 <p>
-  Make sure you have Perl installed.
+  Checks of Perl installation.
 </p>
 <pre>
 perl -v
 </pre>
 <p>
-  If you see the following, it is installed. The version may be new.
+  If you see the version of Perl, the Perl installation is succeed.
 </p>
 <pre>
 This is perl 5, version 24, subversion 4 (v5.24.4) built for x86_64-msys-thread-multi
 </pre>
-<h4>Run Perl script</h4>
+<h3>Installation of CPAN Modules</h3>
 <p>
-  The user directory of msys2 is in the following location. Place your Perl script under your user directory.
-</p>
-<pre>
-C:\msys64\home\username
-</pre>
-<p>
-  Move the current directory.
-</p>
-<pre>
-cd C:\msys64\home\username
-</pre>
-<p>
-  Create a file called "test.pl" here. Let's write the following.
-</p>
-<pre>
-print "Hello, World!\n";
-</pre>
-<p>
-  Let's run a Perl script.
-</p>
-<pre>
-perl test.pl
-</pre>
-<p>
-  If you see something like the following, Perl is successfully installed and the program is running.
-</p>
-<pre>
-Hello, World!
-</pre>
-<h4>Install CPAN module</h4>
-<p>
-  To make sure your Perl environment is built correctly, install Mojolicious running pure Perl and JSON::XS written in XS.
+  To make sure your Perl environment is built correctly, install some Perl modules.
 </p>
 <p>
-  Some CPAN modules are expected to work in Unix/Linux environments. Make sure the symlink works properly on msys2 with the following settings.
+  Some CPAN modules expect Unix/Linux environments. Make sure the symlink works properly on msys2 with the following command.
 </p>
 <pre>
 export MSYS = winsymlinks
 </pre>
 <p>
-  At the first time, you will be asked if you want to set cpan automatically, so press "Enter" to proceed. No matter what you ask, just press "Enter".
+  At the first time to use cpan, you will be asked if you want to set cpan automatically. Press "Enter".
 </p>
 <pre>
 cpan Mojolicious
 cpan JSON::XS
 </pre>
 <p>
-  If you can confirm this installation, the work is finished. Thank you for your hard work.
-</p>
-<h3>Troubleshooting</h3>
-<p>
-  When the msys2 installation and Perl installation procedures fail, virus checkers (Avast, McAfee, Norton, etc.) may falsely detect msys2 as virus software.
-</p>
-<p>
-  Also, depending on the virus checker, it may not be possible to execute with administrator privileges.
-</p>
-<p>
-  If you encounter this issue, temporarily stop the virus checker and right-click "Run as administrator" before launching the msys2 installer.
-</p>
-<p>
-  If you are using Windows 10, it seems that you can install it without any problem by using the default virus software, Windows Defender.
-</p>
-<h3>Frequently used Linux commands</h3>
-<p>
-  Frequently used <a href="https://en.linux.perlzemi.com/blog/20200211081227.html" such as <a href="https://en.git.perlzemi.com/">git</a> and rsync It's a good idea to have the> Linux commands</a> installed as well.
-</p>
-<pre>
-pacman -S git
-pacman -S rsync
-</pre>
-<h3>Please</h3>
-<p>
-  msys2 is updated regularly and the package name and update command change, so if this procedure doesn't work, <a href="https://github.com/yuki-kimoto/perlzemitut">repository </strong> Please let us know on a> or Twitter.
+  If the installation of these modules are finished, your Perl environment on msys2 is built correctly.
 </p>
 
   </div>
