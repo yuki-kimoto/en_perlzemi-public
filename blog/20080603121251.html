@@ -144,124 +144,71 @@ print "Hello World";
 </p>
 <h3>Runing Perl Programs</h3>
 <p>
-  Use the perl command to run Perl. Enter the following at Command Prompt and enter Enter.
+  You can run your Perl program using <b>perl</b> command.
 </p>
 <pre>
 perl start.pl
 </pre>
 <p>
-  If the output is as follows, the Perl program can be executed. Congratulations.
+  The output is:
 </p>
 <pre>
 Hello World
 </pre>
-<h3>First command to remember</h3>
+<h3>Commands of Command Prompt</h3>
 <p>
-  You can display a list of files with the dir command. Type dir and press Enter.
+  Intorduce offten used commands of Command Prompt.
+</p>
+<h4>dir</h4>
+<p>
+  The "dir" command displays the list of files.
 </p>
 <pre>
 dir
 </pre>
+<h4>cd</h4>
 <p>
-  You can change the working directory with the cd command.
+  The "cd" command changes the working directory.
 </p>
 <pre>
-cd directory name
+cd DirectoryName
 </pre>
 <p>
-  Use cd .. to move up one directory.
+  ".." is the file name that means the folder one level higher.
 </p>
 <pre>
 cd ..
 </pre>
-<h3>Pass an argument with a blank</h3>
-<pre>
-perl start.pl "a i u"
-</pre>
+<h4>Changing Drives</h4>
 <p>
-  If the argument contains spaces, enclose it in double quotes.
+  You can change drives using "c:" or "d:".
 </p>
-<h3>Change drive</h3>
 <pre>
 c:
 d:
 </pre>
+<h4>Seeing Command Histories</h4>
 <p>
-  You can change the drive to C drive with c: and to D drive with d :.
+  You can see command histories using "↑" and "↓" keys.
 </p>
-<h3>Refer to command history</h3>
 <pre>
 ↑
 ↓
 </pre>
+<h4>Getting Environment Variables</h4>
 <p>
-  You can follow the command history with the up and down keys.
+  You can get and show a environment variable as the following.
 </p>
-<h3>Completing the file name</h3>
 <pre>
-Ctrl + f
+echo %PATH%
 </pre>
+<h4>Setting Environment Variable</h4>
 <p>
-  You can enter the file name halfway and press Ctrl + f to complete the file name. It is necessary to change Command Prompt settings described below.
+  You can set a environment variable as the following.
 </p>
-<h3>Display environment variable</h3>
 <pre>
-echo %PATH% (when looking at the contents of the environment variable PATH)
+SET DATE=20080604
 </pre>
-<p>
-  To see the environment variable, use echo %environment variable name%.
-</p>
-<h3>Set environment variable</h3>
-<pre>
-SET DATE = 20080604 (when setting the environment variable DATE to 20080604)
-perl start.pl %DATE% (Example using environment variable as arguments)
-</pre>
-<p>
-  You can set environment variable with SET environment variable name = value. There should be no space to the left or right of =. To use an environment variable, use%environment variable name%.
-</p>
-<p>
-  Setting environment variable does not change the value of OS environment variable. It is valid only within Command Prompt that is running.
-</p>
-<h3>Convenient Command Prompt settings</h3>
-<p>
-  <b> How to change Command Prompt settings </b>
-</p>
-<p>
-  After creating the shortcut on the desktop, you can change the setting by right-clicking "Properties".
-</p>
-<p>
-  <b> Working folder settings and file name completion settings </b>
-</p>
-<p>
-  You can set the working folder and file name completion from the "Shortcut" tab. The working folder is the current directory when the shortcut is started.
-</p>
-<p>
-  To set filename completion, add:/f on to the end of Command Prompt path labeled "link destination". There must be a space before the :. This will enable the "8. Complete Filename" command.
-</p>
-<p>
-  Example%SystemRoot%\system32\cmd.exe: /f on
-</p>
-<p>
-  <b> Easy edit mode setting </b>
-</p>
-<p>
-  You can set the simple edit mode from the "Options" tab. If you check it, you can copy and paste by right-clicking.
-</p>
-<p>
-  <b> Font size setting </b>
-</p>
-<p>
-  You can set the font size from the Font tab. I think it's easier to see if you make it a little smaller.
-</p>
-<p>
-  <b> Screen buffer size setting </b>
-</p>
-<p>
-  You can set the screen buffer size from the "Layout" tab. Set the "Height" item to the maximum value.
-</p>
-<p>
-  If you increase the screen buffer size "height", you can save the output for the set number of lines even if the screen scrolls.
-</p>
 
   </div>
   <div class="bottom">
