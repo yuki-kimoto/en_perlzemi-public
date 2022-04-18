@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google Automatic Advertising -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
+<meta name="google-site-verification" content="4cR7WuQWEtkbu8ThfxGkT1vACiVi5Q_8ykfkRudOnTU" />
+
+<link rel="shortcut icon" href="/images/logo.png">
+<link rel="stylesheet" type="text/css" href="/css/common.css"><script type="text/javascript" src="/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<link  type="text/css" rel="stylesheet" href="/js/google-code-prettify/prettify.css"/>
+<script>
+  $(function(){
+    $("pre").addClass("prettyprint");
+    function init(event){
+      prettyPrint();
+    }
+    if(window.addEventListener)window.addEventListener("load",init,false);
+    else if(window.attachEvent)window.attachEvent("onload",init);
+    
+    $(".to-top").click(function() {
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');;
+    });
+  });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HVBGQBWKJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HVBGQBWKJ2');
+</script>
+
+<title>Installation of Perl on WSL 2 - Perl ABC - Perl Installation, Perl Tutorial, Many Examples</title>
+<meta name="description" content="WSL 2 is Windows Subsystem for Linux. You can install Linux on Windows using WSL 2. And you can use Perl.">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@perlzemi" />
+<meta name="twitter:title" content="Installation of Perl on WSL 2 - Perl ABC - Perl Installation, Perl Tutorial, Many Examples" />
+<meta name="twitter:description" content="WSL 2 is Windows Subsystem for Linux. You can install Linux on Windows using WSL 2. And you can use Perl." />
+<meta name="twitter:image" content="https://en.perlzemi.com//images/twitter_card_large_kaeru.png" />
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_main">
+  <h1><a href="/"><img src="/images/logo.png">Perl ABC</a></h1>
+</div>
+
+      </div>
+      <div class="main">
+        <div class="content">
+          <div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
+    <h2><a href="/blog/20220418170733.html">Installation of Perl on WSL 2</a></h2>
+<p>
+  <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL 2</a> is Windows Subsystem for Linux. You can install Linux on Windows using WSL 2. And you can use Perl.
+</p>
+<div style="width:calc(100% - 30px);margin:10px auto;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+       crossorigin="anonymous"></script>
+  <!-- 最初の段落下 - ディスプレイ 横長 レスポンシブ -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4525414114581084"
+       data-ad-slot="2828858335"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+<h3>Installation of WSL 2</h3>
+<p>
+  Let's intall WSL 2. Run the following command on <a href="/blog/20080603121251.html">Windows Command Prompt</a>.
+</p>
+<pre>
+# Install WSL 2
+wsl --install
+</pre>
+<p>
+  <a href="https://en.ubuntu.perlzemi.com/">Ubuntu</a> is installed by default.
+</p>
+<p>
+  Reboot Windows to enable WSL2.
+</p>
+<p>
+  Take a few minutes.
+</p>
+<p>
+  You see the following messages.
+</p>
+<h4>User Name</h4>
+<pre>
+Installing, this may take a few minutes...
+
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username:
+</pre>
+<p>
+  I enter the following user name as an example.
+</p>
+<pre>
+kimoto_ubuntu
+</pre>
+<p>
+  By right-clicking on Ubuntu terminal, you can paste the user name.
+</p>
+<h4>Password</h4>
+<p>
+  Next, set password.
+</p>
+<p>
+  The setup of Ubuntu is completed.
+</p>
+<h3>Boot Ubuntu</h3>
+<p>
+  Let's boot Ubuntu.
+</p>
+<p>
+  "Start Menu" | "Ubuntu"
+</p>
+<h3>Checking the installation of Perl</h3>
+<p>
+  Perl is installed by default on Ubuntu. Let's check the installation of Perl.
+</p>
+<pre>
+perl -v
+</pre>
+<p>
+  The version of Perl is displayed.
+</p>
+<pre>
+This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
+</pre>
+<h3>Show files using Explore</h3>
+<p>
+  You can see files on Ubuntu by the following path. <b>\\wsl$</b> is root directory of WSL 2.
+</p>
+<pre>
+\\wsl$\Ubuntu\home\kimoto_ubuntu
+</pre>
+
+  </div>
+  <div class="bottom">
+    <h3>Related Informatrion</h3>
+
+<div style="margin:10px 10px;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="9163995495"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="side">
+          <div style="margin-bottom:30px">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
+     crossorigin="anonymous"></script>
+<!-- ディスプレイ縦長 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4525414114581084"
+     data-ad-slot="4544919209"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div class="side_list">
+  <div class="side_list_body">
+    <ul>
+      <li>
+        <div class="side_list_image">
+          <a rel="nofollow" href="/list.html">New Articles</a><br>
+          <a rel="nofollow" href="https://twitter.com/perlzemien">Updated Articles</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="perlri_link">
+  <a rel="nofollow" href="https://perlclub.net/en">Perl Club</a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
