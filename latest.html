@@ -54,7 +54,179 @@
     
   </div>
   <div class="middle">
-    <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2022/04/18</div>
+    <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2022/04/20</div>
+<h2><a href="/blog/20220420170117.html">PowerShell(pwsh) Tutorail for Perl</a></h2>
+<ol class = "bread" itemscope itemtype = "http://schema.org/BreadcrumbList">  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">    <a itemprop="item" href="/">        <span itemprop = "name">Perl </span></a>
+    <meta itemprop = "position" content = "1" />
+  </li>
+  &#8250;
+  <li itemprop = "itemListElement" itemscope itemtype = "http://schema.org/ListItem">      <span itemprop = "name">here </span>
+    <meta itemprop = "position" content = "2" />
+  </li>
+</ol>
+<p>
+  PowerShell(pwsh) is a <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> tool to run programs on Windows. 
+</p>
+<h3>Features of PowerShell(pwsh)</h3>
+<ul>
+  <li>UTF-8</li>
+  <li>Linux/UNIX-like Shell</li>
+  <li>ls, echo commands, etc</li>
+  <li>A string is quoted "" and ''</li>
+</ul>
+<h3>Installation of PowerShell(pwsh)</h3>
+<p>
+  PowerShell(pwsh) can be downloaded from the following page.
+</p>
+<p>
+  <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7#installing-the-msi-package">Installing PowerShell on Windows</a>
+</p>
+<p>
+  Click the following link to download PowerShell(pwsh).
+</p>
+<p>
+  <a href="https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/PowerShell-7.2.2-win-x64.msi"!>PowerShell-7.2.2-win-x64.msi</a>
+</p>
+<p>
+  And double-click the downloaded file. The installer is executed.
+</p>
+<p>
+  "Next" | "Next" | "Next" | "Install" | "Finish"
+</p>
+<h3>Execution of PowerShell/pwsh</h3>
+<p>
+  Let's execute PowerShell/pwsh.
+</p>
+<p>
+  "Start Menu" | "Apps" | "PowerShell" | "PowerShell 7 (x64)"
+</p>
+<p>
+  <img src="/images/installation/pwsh.png">
+</p>
+<p>
+  Your home directory is shown on PowerShell/pwsh.
+</p>
+<pre>
+PS C:\Users\kimot
+</pre>
+<h3>Showing File Extensions</h3>
+<p>
+  The extension of Perl program is "<b>.pl</b>". It is useful if extensions of files are displayed.
+</p>
+<p>
+  The way to show file extensions is described in the following page.
+</p>
+<p>
+  <a href="https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/">How to Make Windows Show File Extensions</a>
+</p>
+<h3>Execution of Notepad</h3>
+<p>
+  Perl programs are text files. You can create your Perl programs using Notepad.
+</p>
+<p>
+  The way to use Notepad is described in the following page.
+</p>
+<p>
+  <a href="https://www.digitalcitizen.life/start-notepad-windows/">11 ways to start Notepad in Windows</a>
+</p>
+<h3>Creating Perl Programs</h3>
+<p>
+  Let's create a Perl program.
+</p>
+<p>
+  Create a file named "start.pl" at your home directory.
+</p>
+<pre>
+C:\Users\kimot\start.pl
+</pre>
+<p>
+  And write the following text.
+</p>
+<pre>
+print "Hello World";
+</pre>
+<p>
+  And save it.
+</p>
+<h3>Runing Perl Programs</h3>
+<p>
+  You can run your Perl program using <b>perl</b> command.
+</p>
+<pre>
+perl start.pl
+</pre>
+<p>
+  The output is:
+</p>
+<pre>
+Hello World
+</pre>
+<h3>Commands of PowerShell/pwsh</h3>
+<p>
+  Intorduce offten used commands of PowerShell/pwsh.
+</p>
+<h4>ls</h4>
+<p>
+  The "ls" command displays the list of files.
+</p>
+<pre>
+ls
+</pre>
+<h4>cd</h4>
+<p>
+  The "cd" command changes the working directory.
+</p>
+<pre>
+cd DirectoryName
+</pre>
+<p>
+  ".." is the file name that means the folder one level higher.
+</p>
+<pre>
+cd ..
+</pre>
+<h4>Changing Drives</h4>
+<p>
+  You can change drives using "c:" or "d:".
+</p>
+<pre>
+Set-Location -Path c:
+Set-Location -Path d:
+</pre>
+<h4>Seeing Command Histories</h4>
+<p>
+  You can see command histories using "↑" and "↓" keys.
+</p>
+<pre>
+↑
+↓
+</pre>
+<h3>Show Environment Variables</h3>
+<p>
+  Show environment variables.
+</p>
+<pre>
+ls env:
+</pre>
+<h4>Getting Environment Variables</h4>
+<p>
+  You can get and show an environment variable as the following.
+</p>
+<pre>
+echo $env:PATH
+</pre>
+<p>
+  $env:MYENV = "This is my env."
+</p>
+<h4>Setting Environment Variable</h4>
+<p>
+  You can set an environment variable as the following.
+</p>
+<pre>
+$env:DATE=20080604
+</pre>
+
+<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2022/04/18</div>
 <h2><a href="/blog/20220418170733.html">Installation of Perl on WSL 2</a></h2>
 <p>
   <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL 2</a> is Windows Subsystem for Linux. You can install Linux on Windows using WSL 2. And you can use Perl.
@@ -1237,19 +1409,6 @@ sleep 3;
 <p>
   (Still continuing)
 </p>
-
-<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/06/05</div>
-<h2><a href="/blog/20210605102758.html">Perl 6 has been renamed to Raku, and Perl 7 is planned to succeed Perl 5</a></h2>
-<p>
-  Perl 6, which was once developed as the successor to Perl 5, has been renamed to Raku.
-</p>
-<h4>What happens to Perl? </H4>
-<p>
-  Perl is currently planning a new version of Perl, <b> Perl 7 </b>, for future releases. In Perl 6, "6" is included in the language name, but in Perl 7, "7" is not part of the language name, but a major version number.
-</p>
-<ul>
-   <li> <a href="/blog/20210921094146.html">Maintainable Perl 7 plan</a> </li>
-</ul>
 
 
   </div>
