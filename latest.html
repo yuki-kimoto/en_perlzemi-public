@@ -54,7 +54,253 @@
     
   </div>
   <div class="middle">
-    <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2022/04/26</div>
+    <div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2022/05/30</div>
+<h2><a href="/blog/20220530161828.html">Perl 5.36 is released - warnings enabled, subroutine signatures, try-catch-finally statements, Unicode 14 support</a></h2>
+<p>
+  Perl 5.36 was released on May 28, 2022. Enabling warnings, subroutine signatures, try-catch-finally statements, Unicode 14 support, and the functions to distinguish between booleans, strings, and numbers.
+</p>
+<h3>Use Perl 5.36 Features</h3>
+<p>
+  To use all the features of Perl 5.36, put the version declaration "use v5.36" at the beginning of the source code.
+</p>
+<pre>
+use v5.36;
+</pre>
+<p>
+  The version declaration should be written at the beginning of the source code. Otherwise, unexpected behavior may occur.
+</p>
+<h3>Enable Warnings</h3>
+<p>
+  The <a href="/blog/20130916137930.html">warnings module</a> is enabled by the version declaration.
+</p>
+<pre>
+use warnings;
+</pre>
+<p>
+  The <a href="/blog/20130912137895.html">strict module</a> is already enabled by the version declaration, so in Perl 5.36 the version declaration enables strict and warning.
+</p>
+<pre>
+# From now
+use strict;
+use warnings;
+
+# Perl 5.36+
+use v5.36;
+</pre>
+<p>
+  If <a href="http://blogs.perl.org/users/psc/2022/05/what-happened-to-perl-7.html">Perl 7</a> is released in the future, you can omit the minor version:
+</p>
+<pre>
+use v7;
+</pre>
+<h3>Subroutine signature is no longer experimental</h3>
+<p>
+  Subroutine signature is no longer experimental and is enabled by the version declaration. Subroutine signature is the feature to write arguments after a subroutine name.
+</p>
+<pre>
+use v5.36;
+
+sub add ($x, $y) {
+  return $x + $y;
+}
+</pre>
+<p>
+  You can write subroutines as follows.
+</p>
+<pre>
+# From now
+sub add ($x, $y) {
+  my ($x, $y) = @_;
+  
+  $y = 3 unless defined $y;
+  
+  return $x + $y;
+}
+
+# v5.36
+sub add ($x, $y = 3) {
+  return $x + $y;
+}
+</pre>
+<p>
+  Note that a subroutine signature checkes the number of arguments. If there are few or many arguments given, an exception will be thrown.
+</p>
+<p>
+  If you want to disable the number of arguments check, please write as follows.
+</p>
+<pre>
+sub add ($x, $y, @) {
+  return $x + $y;
+}
+</pre>
+<h3>Experimental try-catch-finally Statement</h3>
+<p>
+  You can use experimental try-catch-finally statement.
+</p>
+<pre>
+use feature'try';
+
+try {
+  
+}
+catch ($e) {
+  
+}
+finally {
+  
+}
+</pre>
+<h3>"-g" Command Line Flag</h3>
+<p>
+  An option "-g" is added to the perl command. This option reads a whole file .
+</p>
+<pre>
+perl -n -g -E'if (m | &lt;h1&gt; (. *?)&lt;/h1&gt; |) {say $1;}' a.html
+</pre>
+<p>
+  Previously, Perl do the same thing using the option "-0777", but this feature is used so often, an easy way is added.
+</p>
+<pre>
+perl -n -0777 -E'if (m | &lt;h1&gt; (. *?)&lt;/h1&gt; |) {say $1;}' a.html
+</pre>
+<h3>Unicode 14.0 Support</h3>
+<p>
+  <a href="https://gigazine.net/news/20210916-unicode-14-emoji/">Unicode 14.0</a> is now supported.
+</p>
+<h3>builtin Namespace</h3>
+<p>
+  Experimentally "builtin" namespace is added for standard functions. Perl can add functions without worrying about name clashes.
+</p>
+<pre>
+my $true = builtin::true;
+
+use builtin 'true';
+
+my $true = true;
+</pre>
+<p>
+  All functions in the builtin namespace are currently experimental.
+</p>
+<h3>true Function, false Function, and is_bool Function</h3>
+<p>
+  "builtin::true" and "builtin::false" functions are added to represent boolean values.
+</p>
+<pre>
+# True
+builtin::true;
+
+# False
+builtin::false;
+</pre>
+<p>
+  "builtin::true" is equal to "!!1" and builtin::false is equal to "!!0".
+</p>
+<p>
+  You can check the boolean value with "builtin::is_bool" function.
+</p>
+<pre>
+if (builtin::is_bool $bool) {
+  
+}
+</pre>
+<p>
+  This is useful when generating JSON.
+</p>
+<h3> You can distinguish between numbers and strings</h3>
+<p>
+  In Perl 5.36, you can use the "builtin::created_as_number" and "builtin::created_as_string" functions to distinguish between numbers and strings. It is supposed to be used in serializers such as JSON.
+</p>
+<pre>
+if (builtin::created_as_number $data) {
+  
+}
+
+if (builtin::created_as_string $data) {
+  
+}
+</pre>
+<p>
+  The combination with "builtin::is_bool" allows correct JSON serialization and deserialization using only the Perl core functions.
+</p>
+<pre>
+if (builtin::is_bool $data) {
+  
+}
+eleif (builtin::created_as_number $data) {
+  
+}
+elsif (builtin::created_as_string $data) {
+  
+}
+</pre>
+<h3>builtin::trim Function</h3>
+<p>
+  A builtin::trim function is added. You can remove the leading and trailing spaces.
+</p>
+<pre>
+my $trim = builtin::trim $string;
+</pre>
+<h3> Iterating multiple elements</h3>
+<p>
+  The "for" statement supports the iteratating multiple elements. This feature is experimental.
+</p>
+<pre>
+for my ($key, $value) (%hash) {...}
+for my ($left, $right, $grinding) (@moties) {...}
+</pre>
+<h3>How to install Perl 5.36 quickly?</H3>
+<p>
+  <a href="/blog/20110220130464.html"> perlbrew</a> or <a href="/blog/20180816153437.html"> plenv</a> is easy ways to install Perl 5.36.
+</p>
+<p>
+  <b> perlbrew</b>
+</p>
+<pre>
+perlbrew install perl-5.36.0
+</pre>
+<p>
+  <b> plenv</b>
+</p>
+<pre>
+plenv install 5.36.0
+</pre>
+<h3> See all changes</h3>
+<p>
+  See perldelta to see all the changes.
+</p>
+<p>
+  <a href="https://metacpan-org.translate.goog/release/RJBS/perl-5.36.0/view/pod/perldelta.pod?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=wapp"> perldelta</a>
+</p>
+<p>
+  You can past release information.
+</p>
+<p>
+  <a href="/blog/20160225145640.html">Perl Release Information</a>
+</p>
+<h3>My Comments</h3>
+<p>
+  Congratulations on the release of Perl 5.36! Thank you to all the developers.
+</p>
+<p>
+  "use warnings" is enabled by the version declaration. I want to use the version declaration more.
+</p>
+<p>
+  I want to use "for" syntax that iterates multiple elements.
+</p>
+<p>
+  The "-g" option makes one-liner easier.
+</p>
+<p>
+  "trim" seems to be used frequently.
+</p>
+<p>
+  It is very good to be able to distinguish between strings, numbers and booleans.
+</p>
+<p>
+  Checking the number of arguments in a subroutine signature is a bit worrisome when used in a production environment for products that require high reliability, as it raises unexpected run-time exceptions.
+</p>
+
+<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2022/04/26</div>
 <h2><a href="/blog/20220426170406.html">Installing Strawberry Perl using Chocolatey</a></h2>
 <p>
   If you use <a href="https://docs.chocolatey.org/en-us/">Chocolatey</a>, you can install <a href="/blog/20180808153368.html">Strawberry Perl</a> from <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>.
@@ -1200,30 +1446,6 @@ use v7;
 </p>
 <p>
   The release date for Perl 7 is undecided as of September 2021.
-</p>
-
-<div style="font-weight:bold;font-size:18px;letter-spacing:2px;margin:35px 0 0px 0;padding-left:5px;padding-top:5px;border-top:2px solid #ddd">2021/09/03</div>
-<h2><a href="/blog/20210903122616.html">How to display UTF - 8 at the Windows command prompt</a></h2>
-<p>
-  I will show you how to display UTF-8 at the Windows command prompt. It was confirmed on Windows 10 on September 3, 2021.
-</p>
-<p>
-  Create a command prompt shortcut. Right-click to display properties. The link destination is as follows. The code 65001 is the UTF-8 code.
-</p>
-<pre>
-%windir%\system32\cmd.exe/k "chcp 65001"
-</pre>
-<p>
-  <img src="/images/command prompt/win_command_utf8.png">
-</p>
-<p>
-  For Perl programs, writing the source code in UTF-8 is currently the recommended method, so it's nice to be able to view UTF-8 at the command prompt.
-</p>
-<p>
-  I referred to the following information.
-</p>
-<p>
-  <a href="https://qiita.com/s4i/items/75c19c9feb10b54c1ce9">How to change the character code to UTF-8 when PowerShell starts - Qiita</a>
 </p>
 
 
